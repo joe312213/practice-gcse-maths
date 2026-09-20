@@ -1,72 +1,66 @@
 # Maths revision starters
 
-## Purpose and scope
+## Purpose
 
-Create regular short starter activities for Level 2 college students retaking Foundation GCSE Maths. Refresh prior learning, practise weak arithmetic skills, and break common exam problems into useful steps. These are not lessons teaching each topic from scratch.
+Maximise students' chances of achieving grade 4+ in Foundation GCSE Maths. Most currently work at grades 2–3, with weak arithmetic, algebra, problem-solving skills and confidence. Use short regular starters and occasional pre-exam revision sessions to refresh learning and build accurate, independent work. These are not full lessons teaching every topic from scratch.
 
-Start with three separate modules: **Lattice Multiplication**, **Bus Stop Division**, and **Application to Exam Problems** using those methods. Lattice multiplication supersedes the earlier request for the box method. Ratio is a requested later topic; other Foundation topics can follow.
+Computing lessons provide the time, not the subject matter. Use Foundation exam-style calculations and everyday problems. Difficulty should come from useful mathematical thinking, not confusing language or unnecessarily large numbers. The exam board is unspecified; do not assume its paper numbering or calculator arrangements.
 
-The remaining requested areas are fraction arithmetic (+, −, ×, ÷), percentages, ratio, area and volume including missing lengths, speed/distance/time and Foundation problems, forming equations, solving equations, 2D enlargement/reflection/rotation/translation, and two distinct geometry topics: polygons (total interior angles, interior/exterior angles and parallelogram area), and Pythagoras’ theorem. Pythagoras must include problems after the method introduction. Ratio must include application problems as well as core ratio calculations. See `content/TOPIC_PLAN.md` for proposed module splits. FDP equivalence and best buys are optional supporting drafts, not substitutes for the requested topics.
+Teach in prerequisite order: secure arithmetic first, then fractions and proportional reasoning, then algebra and applications, with geometry building on those skills. Follow the sequence in the topic plan; module IDs and deck creation dates do not determine teaching order. Use assessments to identify missing foundations and revisit earlier skills in later starters.
 
-`initial_chat2.html` records the discussion. Follow the user's refinements, not every Gemini suggestion or its rejected AGENTS.md drafts. `initial_draft_GCSE_Maths_Resit_Starter_Grid.pptx` is an existing 21-slide first draft, not the final specification.
+For session status, current outputs and the next unfinished topic, read [HANDOFF.md](HANDOFF.md).
 
-## Module structure
+## Content and review workflow
 
-Each skill gets a seven-slide set:
+- Maintain exact content in `content/`: questions, row labels, prompts, worked steps, diagram specifications, answers and visible method/error/check notes. Keep it in step with the slides.
+- Normally review Markdown before building. If the user requests PowerPoint for easier review, build the review draft without another approval gate. Distinguish draft content from accepted content; generating a deck does not imply acceptance.
+- Develop separate question and answer decks per topic. Once the individual topics are finalised, compile them into one question PowerPoint in the agreed teaching sequence in `content/TOPIC_PLAN.md`. Use the same topic order in the separate shared answer PowerPoint. Compilation order follows that sequence, not module IDs, filenames or completion dates. Keep each topic's assessment first and preserve its internal slide order.
+- Preserve accepted questions, assessments and manual slide edits. Do not regenerate a saved deck from older source without accounting for those edits. When changing a question, update its working, answer, diagrams and diagnostic notes together.
+- Keep stable module/slide/thread/question references when inserting assessment or recap slides. Record current versions and review status in the topic README, not this file.
 
-1. **Worked demo:** one full question at the top of each challenge column; subsequent rows show every essential step and its worked result.
-2. **Two step-by-step practice slides:** new questions, the same row structure, and short prompts. Students do the work.
-3. **Four independent practice slides:** three columns, each containing at least six full questions. No decomposed step rows. Provide varied practice, not repeated questions.
+Read the relevant linked specifications before working on their content; they remain requirements:
 
-Use a consistent grid: three challenge columns labelled **Thread 1: Guided**, **Thread 2: Core**, **Thread 3: Depth**. On demo and step-by-step slides, each row represents one meaningful step; keep the whole question visible above it. Do not spread one question's steps over separate slides. Students record working in booklets or a webapp.
+- [Topic plan](content/TOPIC_PLAN.md): requested scope and proposed module splits. Module IDs do not prescribe teaching order. FDP equivalence and best buys are optional supporting topics.
+- [Teaching specifications](content/TEACHING_SPECIFICATIONS.md): exact lattice/division methods, application row labels and challenge, and ratio variety requirements. Read alongside the relevant module Markdown.
+- [Slide layout](content/SLIDE_LAYOUT.md): diagram alignment and approved progression arrows; exact arrow offsets are in [progression_arrow.json](content/progression_arrow.json).
+- [Answer format](content/ANSWER_SLIDES.md) and [answer index](content/answers/README.md): student answer content and consolidation.
 
-## Arithmetic method modules
+Latest user decisions take precedence over older drafts or notes. `initial_chat2.html` is historical context, not a requirement to adopt rejected Gemini suggestions. `old_agents.md` is an archive, not the active instruction file.
 
-Use numerical calculations, such as `43 × 6`, rather than word problems. Row headings and prompts must describe the actual algorithm. Use the same wording across practice slides and columns where the action is the same.
+## Topic slide structure
 
-### Lattice multiplication
+1. **Initial assessment, always physical slide 1:** four fresh questions—two Guided level, one Core and one Depth. No hints, worked steps or method diagrams. Answers belong in the separate answer deck.
+2. **Rules recap where needed:** clearly state the relevant rules with short examples. Give it a separate slide if combining it with the demo would impair readability. For signed arithmetic, distinguish operation signs from number signs; do not apply multiplication sign shortcuts to addition/subtraction.
+3. **Worked demo:** one full question at the top of each challenge column, followed by every essential step and its result. Include clear editable diagrams where useful.
+4. **Two step-by-step practice slides:** new questions with the same meaningful step rows and short prompts. Students do the work.
+5. **Four independent practice slides:** at least six full questions per column; no decomposed step rows.
 
-1. **Draw Grid & Arrange Digits:** Draw the grid with diagonals. Write the first number's digits left to right across the top and the second number's digits top to bottom down the right edge.
-2. **Find & Fill Cell Products:** Multiply each column digit by each row digit. Put tens in the top half of the cell and units in the bottom half. Include a zero in the top half when the product is less than 10.
-3. **Sum Diagonals & Track Carries:** Start at the bottom-right diagonal. Include any carry from the previous diagonal. Write the result digit at the bottom end of its diagonal; put any carry at the bottom end of the next diagonal in smaller text. Keep result digits and carries clearly distinct and consistently positioned.
-4. **Write Final Answer:** Read from the digit beside the top-left diagonal, down the left edge and along the bottom. Omit leading zeros.
+Use the exact headings **Thread 1: Guided**, **Thread 2: Core**, **Thread 3: Depth** on challenge grids. Keep the whole question visible above its steps. Students record working in booklets or a webapp. Use the approved arrow alone beneath the first two practice columns to encourage progression.
 
-Scale from two digits × one digit (`43 × 6`), to two digits × two digits (`34 × 12`). The third column must include several four-digit × three-digit and four-digit × four-digit questions, with a larger multiplication demonstrated. Do not stop at four digits × two digits. The longer numbers are operands, not a limit on the answer's length.
+Arithmetic method practice stays numerical. Application practice uses clear Foundation exam problems and neutral prompts that leave students to choose the operations. Retain agreed row labels; do not rotate synonyms for variety.
 
-### Bus stop division
+## Question quality and variety
 
-1. **Draw Frame & Position Digits:** Put the dividend (the number being divided) inside the frame and the divisor outside on the left. Space digits clearly.
-2. **Divide Left-to-Right & Carry:** Work left to right. Write how many whole times the divisor fits above the corresponding digit. Carry each remainder as a small prefix to the next digit. Preserve place-value zeros.
-3. **Track Remainders or Decimals:** State the final remainder, or continue with a decimal point and zeros as required by the question. Align decimal points in dividend and answer.
-4. **Write Final Quotient:** Write the complete answer, including the remainder or decimal part where required.
+- Differentiate the thinking, not just the numbers. Guided is accessible; Core and Depth add interpretation or connected steps. Some overlap and spaced repetition are useful. Model harder features before expecting independent use.
+- Vary question types, givens, objectives, contexts and relevant units **within each column**, across each slide and across the module. Arithmetic-only sets instead vary operations, signs, numerical relationships and result types.
+- Do not let row position, repeated wording or column membership give away the method or answer. Worked-demo columns illustrate approaches; they do not assign one question type to every later question in that column.
+- Changing names or scaling the same numbers is insufficient variety. Deliberate reversal and repetition can teach useful distinctions, but must sit alongside different relationships and objectives. Avoid repetitive clusters without introducing awkward numbers merely to meet a count.
+- Review question banks as sets. Automated counts support, but do not replace, a teaching review. Apply the detailed ratio checks in the teaching specifications when relevant.
+- Carry corrections into later modules. Keep language friendly and unambiguous; preserve meaningful challenge without unmodelled prerequisites or excessive reading.
 
-Scale from division without carrying (`63 ÷ 3`), through carrying and remainders (`145 ÷ 6`), to larger dividends and decimal answers. Include four-digit ÷ two-digit questions in the third column and demonstrate one (`4,834 ÷ 16`). Do not define the dividend as the “larger number” or describe division with remainders as fitting “perfectly”.
+## Separate student answers
 
-## Application to exam problems
+Keep assessment and practice answers out of the question deck; worked demos remain worked. Match answers to the source thread and question numbers. Show all answers, with paired quantities clearly labelled.
 
-Keep these distinct row labels:
+Use **Answer**, **Method**, **If you got…**, and **Check**. Give short method notes and selected wrong-answer examples on readable separate pages when needed. Vary the questions discussed rather than always selecting Q1. Each error example must show an actual incorrect calculation, its result, the correction and a useful check. Describe a possible mistake, not a diagnosis proved by the answer. Help students locate their first wrong step.
 
-1. **Keywords & Calculation:** Identify the keywords. Write down the calculation(s) needed.
-2. **Written Method:** Set up and use the written method for the calculation(s).
-3. **Ballpark Check & Math:** Check the answer using rough ballpark calculations.
-4. **Final Answer:** Clearly state the answer to the question, with units where needed.
+Speaker notes and teacher keys do not replace visible student answer slides. Keep all topics' answers separate when consolidating.
 
-These labels preserve the wording reached in the chat; the prompts must ensure students calculate and actually check their result. Worked demos show the chosen operations and all working. Practice prompts must not reveal the operation or method: “draw a bus stop” gives away the decision students need to make.
+## Production and checks
 
-Differentiate the thinking, not just the numbers:
-
-- **Guided:** one clear operation. Example: share 84 tins equally among four boxes; find tins per box.
-- **Core:** one operation requiring more thought to identify or interpret. Example: pack 130 biscuits in packs of six; find completely full packs.
-- **Depth:** two operations, with the first result feeding the second. Example: transport 145 students in minibuses with nine passenger seats, each costing £40; find total hire cost. Students must round up before calculating cost.
-
-Use clear, unambiguous questions. Difficulty should come from the maths, not confusing language. Mix multiplication and division in application practice so students must choose.
-
-## Working rules
-
-- Develop new content in `content/` Markdown files before adding it to PowerPoint. Include the exact questions, row labels, prompts, worked steps, diagram descriptions and teacher answers. Mark drafts clearly. Only add a module to PowerPoint after the user agrees its content; record what was agreed.
-- Treat the existing multiplication, division and application content as accepted. Preserve the added initial assessment. The current `build_starters.py` rebuilds only the original 21 slides, and `add_initial_assessment.py` adds another assessment each time it runs; do not run them blindly against the current deck.
-- Call a spade a spade. No synonym rotation, inflated terminology, marketing language, or decorative filler. Keep labels stable; change wording when it fixes an error, not for variety.
-- Include clear, editable diagrams in worked demos; the user can replace them. Keep answer digits and carries consistently positioned. Do not substitute confusing ASCII diagrams.
-- Check calculations, intermediate steps, carries, units, remainder interpretation, and actual differences in challenge. Check projected readability and text fit when producing slides.
-- Deliver complete requested files. Diagram placeholders are intentional; missing questions or “repeat this for the remaining slides” are unfinished work. Only claim a file is generated when it exists.
-- Use judgement for implementation and new question content. Preserve these teaching decisions without turning every incidental Gemini suggestion into a requirement.
+- Check new or changed mathematics: answers, intermediate steps, signs, carries, units, ratio order, remainder interpretation and wrong-answer examples. Confirm all requested questions and answers are present.
+- Check projected readability, text fit and diagram accuracy. Never shrink text or remove questions to hide a layout problem. Number-line digits must be centred beneath ticks, with minus signs extending left; follow the layout specification.
+- Match verification to the change. New content needs mathematical and teaching checks; a small visual fix needs a focused visual check and preservation of unrelated content, not a full audit. Update the generator as well as the output so fixes survive regeneration.
+- Save new versions and preserve user edits. `scripts/build_starters.py` rebuilds only the original 21 slides and would lose the added assessment; `scripts/add_initial_assessment.py` adds another assessment on every run. Do not run either blindly against the current deck.
+- Deliver complete, readable files and link the current outputs. Only claim a file is generated when it exists. Intentional diagram placeholders do not excuse missing questions or unfinished slides.
+- Call a spade a spade: no inflated terminology, decorative filler or unnecessary permission requests. Use judgement for routine implementation while preserving the teaching decisions.

@@ -1,4 +1,4 @@
-# M10 — Solving equations
+# M10 — Solving given equations
 
 **Status: Draft — awaiting review. Not approved for PowerPoint.**
 

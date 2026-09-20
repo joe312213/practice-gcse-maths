@@ -1,6 +1,8 @@
-# M11 — Forming and solving equations
+# M11 — Forming equations from problems
 
 **Status: Draft — awaiting review. Not approved for PowerPoint.**
+
+M10 starts with an equation already written. This module starts with words or a diagram: students form the equation, then solve and interpret it. The title names the distinguishing skill; solving remains the final step.
 
 ## Scope
 

@@ -1,0 +1,22 @@
+{
+  "reference": "User-edited M04 questions v5, slide 2, 20 September 2026",
+  "colour": "accent6 with lumMod 60000 and lumOff 40000",
+  "arrows": [
+    {
+      "x": 5850635,
+      "y": 7351126,
+      "cx": 621792,
+      "cy": 314053,
+      "boundary_offset_inches": -0.3650010936132988,
+      "bottom_offset_inches": -0.07071084864391963
+    },
+    {
+      "x": 9865783,
+      "y": 7342632,
+      "cx": 621792,
+      "cy": 314053,
+      "boundary_offset_inches": -0.4173151793525811,
+      "bottom_offset_inches": -0.08000000000000007
+    }
+  ]
+}
