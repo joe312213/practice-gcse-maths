@@ -1,12 +1,14 @@
+> Current production requirement (30 September 2026): deliver questions as PowerPoint and separate answers as HTML, using stable filenames without `_vN`. Maintain all built topics individually under `topics/` and compile matching main files. Topic order and IA → recap/demo → scaffolded practice → SE → independent practice follow AGENTS.md and SLIDE_LAYOUT.md. Older slide-based answer layout notes below are historical; retain their answer/method/error/check content in HTML. Current outputs and build instructions are in HANDOFF.md.
+
 # Separate student answer slides
 
 **Status: Working specification; ratio is now built separately for review.** The user has requested separate answers with short method notes and common errors, including the wrong answers they cause. Exact presentation and content below are proposed.
 
 ## Structure and exact labels
 
-Keep **one teaching/question deck and one separate answer deck for all topics**. Do not interleave answers with questions. Build separate topic question/answer pairs during development, then consolidate ready topics into the two final decks. Retain the seven teaching/question slides per module. S01 is the worked demo. S02–S07 each have a matching section, S02-A–S07-A, in the shared answer deck. An extra answer page is allowed when the working needs more room. Keep stable question references when inserting pages.
+Keep **one teaching/question deck and one separate HTML answer file for all topics**. Do not interleave answers with questions. Build separate topic question/answer pairs during development, then consolidate ready topics into the two final decks. Retain the seven teaching/question slides per module. S01 is the worked demo. S02–S07 each have a matching section, S02-A–S07-A, in the shared HTML answer file. An extra answer page is allowed when the working needs more room. Keep stable question references when inserting pages.
 
-Question slides contain questions and the agreed practice prompts, without solutions or diagnostic hints that reveal the operation. Switch to the matching section of the separate answer deck after students attempt the questions. Use the same thread headings and question numbers.
+Question slides contain questions and the agreed practice prompts, without solutions or diagnostic hints that reveal the operation. Switch to the matching section of the separate HTML answer file after students attempt the questions. Use the same thread headings and question numbers.
 
 Use these labels:
 
@@ -46,9 +48,9 @@ Student instruction: **Compare your working. Correct the first wrong step, then 
 
 ## Completion status
 
-[The shared answer-deck index](answers/README.md) links complete drafts for all six practice answer sections in each of M01, M02 and M03. Their accepted questions remain unchanged. The example above illustrates M03-S04-A; the module answer file is authoritative if edited later. M13 and M14 contain all six answer sections within their module Markdown files; these sections also belong in the shared answer deck. M04–M12 still need visible method/error/check notes. No new PowerPoint files have been produced; these drafts await content agreement.
+[The shared answer-deck index](answers/README.md) links complete drafts for all six practice answer sections in each of M01, M02 and M03. Their accepted questions remain unchanged. The example above illustrates M03-S04-A; the module answer file is authoritative if edited later. M13 and M14 contain all six answer sections within their module Markdown files; these sections also belong in the shared HTML answer file. M04–M12 still need visible method/error/check notes. No new PowerPoint files have been produced; these drafts await content agreement.
 
 
 ## Topic build workflow — 20 September 2026
 
-The user requested standalone topic slide decks first, starting with ratio. During development, each topic has a teaching/question file and a separate answer file. Consolidate ready topics into one teaching/question deck and one shared answer deck later; do not interleave practice answers. The M04 core-ratio build is in `topics/ratio/` at the project root. The additional ratio-application set is still planned.
+The user requested standalone topic slide decks first, starting with ratio. During development, each topic has a teaching/question file and a separate answer file. Consolidate ready topics into one teaching/question deck and one shared HTML answer file later; do not interleave practice answers. The M04 core-ratio build is in `topics/ratio/` at the project root. The additional ratio-application set is still planned.

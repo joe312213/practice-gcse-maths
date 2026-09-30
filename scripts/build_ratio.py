@@ -199,7 +199,7 @@ def make():
    count+=n
   if count*size*1.05>(h-.05)*72+1:overflow.append((value[:90],round(count*size*1.05,1),round((h-.05)*72,1)))
  if overflow:raise ValueError(overflow)
- for p,name in [(qprs,'Ratio_M04_questions_v6.pptx'),(aprs,'Ratio_M04_answers_v5.pptx')]:
+ for p,name in [(qprs,'Ratio_M04_questions_prev8.pptx'),(aprs,'Ratio_M04_answers_prev5.pptx')]:
   for s in p.slides:
    for sh in s.shapes:assert sh.left>=0 and sh.top>=0 and sh.left+sh.width<=p.slide_width+100 and sh.top+sh.height<=p.slide_height+100,(name,sh.name)
   temp=Path('/private/tmp')/name;p.save(temp);payload=temp.read_bytes();target=OUT/name;target.write_bytes(payload);assert hashlib.sha256(target.read_bytes()).digest()==hashlib.sha256(payload).digest()

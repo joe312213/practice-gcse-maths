@@ -1,6 +1,8 @@
-# Shared answer deck
+> Current production requirement (30 September 2026): deliver questions as PowerPoint and separate answers as HTML, using stable filenames without `_vN`. Maintain all built topics individually under `topics/` and compile matching main files. Topic order and IA → recap/demo → scaffolded practice → SE → independent practice follow AGENTS.md and SLIDE_LAYOUT.md. Older slide-based answer layout notes below are historical; retain their answer/method/error/check content in HTML. Current outputs and build instructions are in HANDOFF.md.
 
-**Status: Answer content in development. M04 ratio now has a standalone answer PowerPoint for review.**
+# Shared HTML answer file
+
+**Status: Answer content in development. M04 ratio now has a standalone HTML answer file for review.**
 
 All topics’ answers belong in **one separate answer slide deck**. Keep the teaching/question deck separate. M01–M03 questions are accepted and unchanged; only their answer material is being developed. Worked demos already contain working and remain in the teaching deck.
 
@@ -27,4 +29,4 @@ The source snapshots have been used because the saved current deck was not reada
 
 ## Topic build workflow — 20 September 2026
 
-The user requested standalone topic slide decks first, starting with ratio. During development, each topic has a teaching/question file and a separate answer file. Consolidate ready topics into one teaching/question deck and one shared answer deck later; do not interleave practice answers. The M04 core-ratio build is in `topics/ratio/` at the project root. The additional ratio-application set is still planned.
+The user requested standalone topic slide decks first, starting with ratio. During development, each topic has a teaching/question file and a separate answer file. Consolidate ready topics into one teaching/question deck and one shared HTML answer file later; do not interleave practice answers. The M04 core-ratio build is in `topics/ratio/` at the project root. The additional ratio-application set is still planned.

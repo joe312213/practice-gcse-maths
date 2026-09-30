@@ -55,7 +55,7 @@ for ref,v in variety.items():
  assert len(v['given'])>=3 and len(v['target'])>=2,(ref,v)
  if '-T1' in ref or '-T2' in ref:assert difference_counts[ref]==2,(ref,difference_counts[ref])
  if '-T3' in ref:assert {'total','difference'}<=v['given'] and 'difference' in v['target'],(ref,v)
-qprs=Presentation(root/'topics/ratio/Ratio_M04_questions_v6.pptx');aprs=Presentation(root/'topics/ratio/Ratio_M04_answers_v5.pptx')
+qprs=Presentation(root/'topics/ratio/Ratio_M04_questions_prev8.pptx');aprs=Presentation(root/'topics/ratio/Ratio_M04_answers_prev5.pptx')
 assert len(qprs.slides)==7 and len(aprs.slides)==12
 for ref,q in qs.items():
  sn=int(ref.split('-')[1][1:]);text='\n'.join(sh.text for sh in qprs.slides[sn-1].shapes if sh.has_text_frame);assert q in text,(ref,q)

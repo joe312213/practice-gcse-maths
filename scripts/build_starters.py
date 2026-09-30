@@ -14,8 +14,8 @@ from pptx.oxml.ns import qn
 from PIL import ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'GCSE_Maths_Revision_Starters_v3.pptx'
-KEY = ROOT / 'GCSE_Maths_Revision_Starters_v3_answers.md'
+OUT = ROOT / 'GCSE_Maths_Revision_Starters_prev4.pptx'
+KEY = ROOT / 'GCSE_Maths_Revision_Starters_answers_prev4.md'
 prs = Presentation()
 prs.slide_width, prs.slide_height = Inches(16), Inches(9)
 prs.core_properties.title = 'GCSE Maths Revision Starters'
@@ -512,7 +512,7 @@ def validate():
 if __name__=='__main__':
     make_multiplication(); make_division(); make_application(); validate()
     # Write to a local temporary file first, then verify the OneDrive copy.
-    tmp=Path('/private/tmp/GCSE_Maths_Revision_Starters_v3.pptx')
+    tmp=Path('/private/tmp/GCSE_Maths_Revision_Starters_prev4.pptx')
     prs.save(tmp)
     payload=tmp.read_bytes(); OUT.write_bytes(payload)
     assert hashlib.sha256(OUT.read_bytes()).digest()==hashlib.sha256(payload).digest()

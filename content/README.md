@@ -1,3 +1,5 @@
+> Current production requirement (30 September 2026): deliver questions as PowerPoint and separate answers as HTML, using stable filenames without `_vN`. Maintain all built topics individually under `topics/` and compile matching main files. Topic order and IA → recap/demo → scaffolded practice → SE → independent practice follow AGENTS.md and SLIDE_LAYOUT.md. Older slide-based answer layout notes below are historical; retain their answer/method/error/check content in HTML. Current outputs and build instructions are in HANDOFF.md.
+
 Current teaching order is in [TOPIC_PLAN.md](TOPIC_PLAN.md#teaching-sequence--foundations-before-applications). Follow prerequisites, not module numbers or deck creation dates. Later notes below include historical review states; use topic READMEs for current output versions.
 
 # Content and review
@@ -9,7 +11,7 @@ Start with [TOPIC_PLAN.md](TOPIC_PLAN.md), which follows the user's latest topic
 1. Draft each module in a Markdown file here. Include all seven teaching/question slides and their separate answer partners: exact student text, worked steps, diagram descriptions, answers and visible method/error/check notes. Follow [ANSWER_SLIDES.md](ANSWER_SLIDES.md).
 2. Check the maths, progression, consistent labels and likely slide fit.
 3. Ask the user to review the concrete draft. Record agreed changes and change its status to **Agreed** only when the user agrees it.
-4. Build the teaching/question PowerPoint and the single shared answer PowerPoint from the agreed content. Do not rewrite questions or teaching instructions during layout work. Return substantive changes to Markdown for review.
+4. Build the teaching/question PowerPoint and the single shared HTML answer file from the agreed content. Do not rewrite questions or teaching instructions during layout work. Return substantive changes to Markdown for review.
 5. Check the rendered slides and keep Markdown, slide notes, answer key and PDF preview in step.
 
 Stable question references use module / local slide / thread / question, for example `M04-S04-T2-Q3`. They remain usable when assessment or other slides change the deck's page numbers. Module slide numbers below are local, not deck page numbers.
@@ -19,7 +21,7 @@ Stable question references use module / local slide / thread / question, for exa
 | Item | State |
 | --- | --- |
 | Modules 1–3: [Lattice Multiplication](M01_lattice_multiplication.md), [Bus Stop Division](M02_bus_stop_division.md), [Application to Exam Problems](M03_application_to_exam_problems.md) | Accepted by the user. Markdown transcriptions captured from the v3 source; keep their teaching content. |
-| `GCSE_Maths_Revision_Starters_v3.pptx` | Current deck. OneDrive marks it online-only; reading it timed out during this review. Do not replace it with a rebuild. |
+| `GCSE_Maths_Revision_Starters_prev4.pptx` | Current deck. OneDrive marks it online-only; reading it timed out during this review. Do not replace it with a rebuild. |
 | `scripts/add_initial_assessment.py` | Adds a 12-question, no-calculator assessment before the original slides. Its questions and speaker-note answers have been reviewed from source. |
 | Initial assessment in the saved deck | Reported added by the user; saved slide not yet independently inspected because of the OneDrive read timeout. |
 | `scripts/build_starters.py` | Contains the accepted 21-slide content and renderer together. Running it overwrites v3 and loses the added assessment. |
@@ -72,7 +74,7 @@ Separate solving equations from forming them, as with the accepted arithmetic me
 - M01–M03: questions remain accepted and unchanged. All six practice answer sections per topic are now drafted, with method/error/check notes and worked-diagram specifications: see [the shared answer-deck index](answers/README.md). Awaiting review.
 - M05–M12: existing seven-slide drafts and teacher answers remain available, but visible answer-slide method/error notes must be completed before PowerPoint approval.
 
-All topics’ answers will be in **one separate answer deck**; they will not be interleaved into the teaching deck. M13/M14 answer sections are recorded beside their questions in Markdown solely for review.
+All topics’ answers will be in **one separate HTML answer file**; they will not be interleaved into the teaching deck. M13/M14 answer sections are recorded beside their questions in Markdown solely for review.
 
 M13–M14 each contain 72 independent questions, plus three demo questions and six step-by-step questions. They propose groundwork before the remaining topics; their IDs do not set teaching order. Numerical answers and the selected incorrect calculations have been checked. These are Markdown drafts; no PowerPoint changes have been made.
 
@@ -95,13 +97,13 @@ The 648 independent answers were checked by recalculating from their question te
 
 ## Topic build workflow — 20 September 2026
 
-The user requested standalone topic slide decks first, starting with ratio. During development, each topic has a teaching/question file and a separate answer file. Consolidate ready topics into one teaching/question deck and one shared answer deck later; do not interleave practice answers. The M04 core-ratio build is in `topics/ratio/` at the project root. The additional ratio-application set is still planned.
+The user requested standalone topic slide decks first, starting with ratio. During development, each topic has a teaching/question file and a separate answer file. Consolidate ready topics into one teaching/question deck and one shared HTML answer file later; do not interleave practice answers. The M04 core-ratio build is in `topics/ratio/` at the project root. The additional ratio-application set is still planned.
 
-- Ratio M04: standalone question and answer decks generated for review, with PDF previews under `topics/ratio/`. M10’s title is now “Solving given equations”; M11’s is “Forming equations from problems” (forming followed by solving and interpretation).
+- Ratio M04: standalone question and HTML answer files generated for review, with PDF previews under `topics/ratio/`. M10’s title is now “Solving given equations”; M11’s is “Forming equations from problems” (forming followed by solving and interpretation).
 
-- Ratio v2: revised at the user’s request to vary contexts, units, givens and objectives within every column. Both question and answer decks and PDF previews are refreshed in `topics/ratio/`; use the v2 files.
+- Ratio v2: revised at the user’s request to vary contexts, units, givens and objectives within every column. Both question and HTML answer files and PDF previews are refreshed in `topics/ratio/`; use the v2 files.
 
-- Ratio v3: reduced repetition of equivalent/reversed ratios; revised questions, worked answers, decks and previews. Current files are `Ratio_M04_questions_v3.pptx` and `Ratio_M04_answers_v3.pptx`. The general variety and quality requirements are now recorded in AGENTS.md.
+- Ratio v3: reduced repetition of equivalent/reversed ratios; revised questions, worked answers, decks and previews. Current files are `Ratio_M04_questions_prev5.pptx` and `Ratio_M04_answers_prev3.pptx`. The general variety and quality requirements are now recorded in AGENTS.md.
 
 - Ratio v4: added friendly given-difference/find-one-amount questions to Guided and Core and curved progression arrows below those columns on practice slides. Current decks and PDF previews use the v4 filenames in `topics/ratio/`. Answers and method notes match the revised questions.
 

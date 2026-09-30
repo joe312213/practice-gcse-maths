@@ -1,3 +1,5 @@
+> Current production requirement (30 September 2026): deliver questions as PowerPoint and separate answers as HTML, using stable filenames without `_vN`. Maintain all built topics individually under `topics/` and compile matching main files. Topic order and IA → recap/demo → scaffolded practice → SE → independent practice follow AGENTS.md and SLIDE_LAYOUT.md. Older slide-based answer layout notes below are historical; retain their answer/method/error/check content in HTML. Current outputs and build instructions are in HANDOFF.md.
+
 # Topic plan
 
 **Status: Draft — based on the user's topic list and subsequent refinements. Topic scope is confirmed; module splits and detailed examples below remain proposed for review.**
@@ -10,7 +12,7 @@ Maximise the chance of grade 4+ for students currently mostly at grades 2–3. B
 
 The user requires a logical sequence in which foundations precede topics that use them. Follow the sequence below when teaching and consolidating decks. Existing module IDs remain stable references; earlier production of ratio does not put ratio first. A complete draft is not automatically accepted content.
 
-All topics’ answers must be collected in one separate answer deck. Preserve the existing M01–M03 questions and develop only their answer slides. All practice slides need matching student answers with short method notes and specific wrong-answer examples: see [ANSWER_SLIDES.md](ANSWER_SLIDES.md). Check older drafts for complete visible diagnostic notes before slide production; ratio and signed addition/subtraction already have separate answer decks.
+All topics’ answers must be collected in one separate HTML answer file. Preserve the existing M01–M03 questions and develop only their answer slides. All practice slides need matching student answers with short method notes and specific wrong-answer examples: see [ANSWER_SLIDES.md](ANSWER_SLIDES.md). Check older drafts for complete visible diagnostic notes before slide production; ratio and signed addition/subtraction already have separate HTML answer files.
 
 ## Accepted content
 
@@ -212,42 +214,52 @@ For example, a 5 m ladder has its foot 3 m from a vertical wall on horizontal gr
 
 Use integer triples initially and some non-integer results later. Propose calculator use for non-integer lengths, state the rounding requirement, and keep unrounded values for a subsequent area calculation. Check that the hypotenuse is longest. Pythagoras finds side lengths in right-angled triangles; it does not find unknown angles. Trigonometry is not included.
 
-## Teaching sequence — foundations before applications
+## Teaching sequence — priority and prerequisites (1 October 2026)
 
-This is the default teaching and consolidation order. It follows prerequisites rather than file numbering or the order in which decks were built. Use each topic's initial assessment to decide whether its recap needs more attention. Revisit earlier skills in later starters rather than treating each topic as finished permanently.
+Prioritise secure methods that recur across Foundation questions and open access to later topics. This is a teaching judgement for this grade-2/3 retake group, not a measured national ranking of its biggest weaknesses. Use the initial assessments to adjust time and revisit gaps. Do not delay equations and percentages until every number topic is complete; provide short prerequisite recaps where needed.
 
-| Order | Topic | Foundation and purpose |
+**Next implementation: M10 solving equations, then M15 fraction addition/subtraction. M06 percentages of amounts and percentage change follows next.** M15 is a new stable ID for the already-planned fraction set, not a new scope addition. Fraction multiplication and division remain separate later sets.
+
+| Order | Topic | Priority and rationale |
 | --- | --- | --- |
-| 1 | Written multiplication — M01 | Refresh place value and multiplication facts as needed; establish reliable whole-number calculation. Preserve the accepted lattice content. |
-| 2 | Written division — M02 | Build on multiplication, place value and inverse operations; interpret remainders and decimals. |
-| 3 | Signed addition and subtraction — M13 | Secure number order, crossing zero and the distinction between operation and number signs. |
-| 4 | Signed multiplication/division and order of operations — M14 | Combine signed-number understanding with the written arithmetic already practised. |
-| 5 | One- and two-step multiplication/division problems — M03 | Choose operations, connect results, interpret units and round appropriately. |
-| 6 | Fraction addition and subtraction | Recap equivalence, simplification, common multiples and mixed/improper forms before operating. |
-| 7 | Fraction multiplication | Use multiplication and common factors; include whole numbers and mixed numbers. |
-| 8 | Fraction division | Build on fraction multiplication and reciprocals; check by multiplication. |
-| 9 | Percentages of amounts and percentage change — M06 | Recap the needed fraction/decimal/percentage equivalents; connect percentages to fractions of amounts and the original whole. |
-| 10 | Ratio: sharing and missing amounts — M04 | Apply multiplication, division and equal parts to totals, known amounts and differences. |
-| 11 | Ratio applications | Use secure ratio methods in recipes, mixtures, scales, costs and changed quantities. Recap relevant unit conversions. |
-| 12 | Solving given equations — M10 | Use inverse operations, signed arithmetic and order of operations; model brackets and collecting terms before harder practice. |
-| 13 | Forming equations from problems — M11 | Use the solving methods to represent, solve and interpret unfamiliar situations. |
-| 14 | Reverse percentages — M07 | Work backwards from the known percentage using proportional reasoning and inverse operations. Distinguish this from subtracting the original percentage. |
-| 15 | Area calculations, including parallelograms | Apply multiplication and formula substitution; recap length units, perpendicular height and square units. |
-| 16 | Volume calculations | Extend area to layers or cross-sectional area × length; distinguish cubic units. |
-| 17 | Missing lengths from area and volume — M08 | Combine known formulae with inverse operations and equation skills. |
-| 18 | Speed, distance and time — M12 | Choose and rearrange relationships, convert units and connect stages of a journey. |
-| 19 | Polygons and angles | Recap straight-line, full-turn and triangle angle facts; use arithmetic/equations for totals, individual angles and missing values. Parallelogram area is already covered in area calculations. |
-| 20 | Translation → reflection → rotation → enlargement | Recap coordinates and negative axes; develop moves and symmetry before turns, then use scale factors and ratio for enlargement. Each transformation keeps its own starter set. |
-| 21 | Pythagoras' theorem and its applications | Recap squares, square roots and the hypotenuse; combine equations and area/length skills in right-triangle problems after introducing the method. |
+| 1 | M01 written multiplication | Built; retrieve essential facts/place value as needed. |
+| 2 | M02 written division | Built; supports fractions, percentages and inverse operations. |
+| 3 | M13 signed addition/subtraction | Built; supports rearranging equations and negative answers. |
+| 4 | M10 solving equations | Build first: balanced operations, one/two steps, then brackets and both sides. Short signed-division recap supports negative solutions. |
+| 5 | M15 fraction addition/subtraction | Build second: equivalence, common denominators, simplification, then mixed numbers. |
+| 6 | M06 percentages of amounts and percentage change | Next priority: basic percentages, original amount, increase/decrease; recap fraction/decimal equivalence in this topic. |
+| 7 | M03 multiplication/division problems | Built; revisit choosing operations and interpreting remainders. |
+| 8 | M04 core ratio | Built; equal parts, known totals/amounts/differences. |
+| 9 | Fraction multiplication | Secure fraction structure and cancellation, including fractions of amounts. |
+| 10 | Fraction division | Follow multiplication with reciprocal reasoning and mixed numbers. |
+| 11 | M11 forming and solving equations | Apply the equation method to clear word and geometry problems. |
+| 12 | Ratio applications | Recipes, mixtures, scales, costs and changed ratios. |
+| 13 | Area calculations | Rectangles, triangles, parallelograms, trapezia and compound shapes. |
+| 14 | Polygons and angles | Straight-line/full-turn/triangle facts, then polygon angles. |
+| 15 | M14 signed multiplication/division and order | Consolidate the earlier short sign recaps into a full varied set. Bring forward if assessments show a gap. |
+| 16 | Volume calculations | Follow area and units. |
+| 17 | M08 missing lengths from area/volume | Connect equations to geometry; follow direct calculations. |
+| 18 | M12 speed, distance and time | Connected arithmetic plus time/unit conversions. |
+| 19 | M07 reverse percentages | Follow confidence with ordinary percentage change and inverse reasoning. |
+| 20 | Translation → reflection → rotation → enlargement | Four separate sets; use coordinates, angle facts and scaling. |
+| 21 | Pythagoras and applications | Squares, roots, right triangles and choice of length. |
 
-This is a practical linear order, not a claim that every preceding topic is essential to every later one. Keep necessary foundations first; retain flexibility for retrieval practice and identified gaps. Do not insert whole new prerequisite modules automatically: use brief recaps or targeted starters unless assessment shows a larger need. M05 FDP equivalence and M09 best buys remain optional supporting sets, not compulsory additions.
+Keep earlier topics alive through retrieval rather than treating this as a rigid once-through course. This order governs the main deck; omit unbuilt sets and preserve each topic's internal sequence. Optional M05 FDP equivalence and M09 best buys remain supporting resources, not required extra modules.
+
+### Evidence informing the priority
+
+- [AQA June 2023 Foundation Paper 1 examiner report](https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-83001F-WRE-JUN23.PDF), Q8–12, Q22, Q24–25: errors with negative substitution, FDP equivalence, percentage increase, signs in expansion, forming equations and mixed-number work. Performance varies by question; this does not establish a retaker-only ranking.
+- [AQA Foundation assessment objectives](https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/scheme-of-assessment): approximately 50% standard techniques, 25% reasoning and 25% problem solving. Keep written methods, error evaluation and interpretation together.
+- [AQA question-level analysis guidance](https://www.aqa.org.uk/discover-qlapd-maths): question performance data can support later adjustment alongside this group's actual assessment responses.
+
+The exam board remains unspecified. These sources inform common teaching priorities; the resources do not adopt AQA-specific paper assumptions.
 
 ## Final compiled PowerPoints
 
-Once all individual topic decks are finalised, include them in the single compiled question PowerPoint in the teaching sequence above. This order is required for compilation, not merely a suggested lesson order. Preserve each topic's assessment as its first slide, followed by its finalised internal slide sequence. Use the same topic order in the separate compiled answer PowerPoint, with matching stable references. Module IDs, filenames and dates of completion do not determine inclusion order. Include optional topics only if agreed, placing them according to their prerequisites.
+Once all individual topic decks are finalised, include them in the single compiled question PowerPoint in the teaching sequence above. This order is required for compilation, not merely a suggested lesson order. Preserve each topic's assessment as its first slide, followed by its finalised internal slide sequence. Use the same topic order in the separate compiled HTML answer file, with matching stable references. Module IDs, filenames and dates of completion do not determine inclusion order. Include optional topics only if agreed, placing them according to their prerequisites.
 
 ## Development and review
 
-The existing accepted M01–M03 questions are retained. Ratio was developed first at the user's request and now has question/answer decks with its own assessment. Signed addition/subtraction has accepted questions, a clearer rules recap and corrected number-line labels; see the topic READMEs for current files.
+The existing accepted M01–M03 questions are retained. Ratio was developed first at the user's request and now has question/HTML answer files with its own assessment. Signed addition/subtraction has accepted questions, a clearer rules recap and corrected number-line labels; see the topic READMEs for current files.
 
-The next unbuilt arithmetic set is M14 signed multiplication/division and order of operations, followed by the fraction sets. Development may reuse completed modules without rebuilding them merely to change teaching order. Keep topic decks separate during review; consolidate later in the sequence above, preserving assessments, stable references and user edits. Review may take place in Markdown or directly in PowerPoint as requested.
+The revised build priority is M10 solving equations, M15 fraction addition/subtraction, then M06 percentages; use the dated sequence above. Development may reuse completed modules without rebuilding them merely to change teaching order. Keep topic decks separate during review; consolidate later in the sequence above, preserving assessments, stable references and user edits. Review may take place in Markdown or directly in PowerPoint as requested.

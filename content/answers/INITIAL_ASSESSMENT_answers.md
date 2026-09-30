@@ -2,7 +2,7 @@
 
 **Status: Draft — matches the source questions recorded in content/README.md.**
 
-Destination: the single shared answer deck. Keep the assessment’s three **topic** headings, not the later challenge-thread headings. Answers may use a second page for notes. The recorded division assessment accepts decimals or remainders.
+Destination: the separate HTML answers. Split this recorded table into M01-IA, M02-IA and M03-IA sections at the start of each topic; the table below preserves the original question mapping. The recorded division assessment accepts decimals or remainders.
 
 ## Answer
 

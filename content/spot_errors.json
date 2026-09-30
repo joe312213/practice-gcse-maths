@@ -1,0 +1,847 @@
+{
+  "M02": [
+    [
+      {
+        "question": "84 ÷ 4",
+        "working": "Bus-stop layout: dividend 84; quotient 20. Answer: 20",
+        "correction": "4 ÷ 4 = 1, so the quotient is 21.",
+        "check": "21 × 4 = 84.",
+        "bus": {
+          "divisor": 4,
+          "digits": [
+            "8",
+            "4"
+          ],
+          "quotient": [
+            "2",
+            "0"
+          ],
+          "carries": {},
+          "remainder": null
+        },
+        "final": "Answer: 20",
+        "correct_result": "21",
+        "incorrect_result": "20"
+      },
+      {
+        "question": "505 ÷ 5",
+        "working": "Bus-stop layout: dividend 505; quotient 11. Answer: 11",
+        "correction": "Keep the place-value zero: 101.",
+        "check": "101 × 5 = 505.",
+        "bus": {
+          "divisor": 5,
+          "digits": [
+            "5",
+            "0",
+            "5"
+          ],
+          "quotient": [
+            "1",
+            "",
+            "1"
+          ],
+          "carries": {},
+          "remainder": null
+        },
+        "final": "Answer: 11",
+        "correct_result": "101",
+        "incorrect_result": "11"
+      },
+      {
+        "question": "96 ÷ 3",
+        "working": "Bus-stop layout: dividend 96; quotient 33. Answer: 33",
+        "correction": "6 ÷ 3 = 2, so the quotient is 32.",
+        "check": "32 × 3 = 96.",
+        "bus": {
+          "divisor": 3,
+          "digits": [
+            "9",
+            "6"
+          ],
+          "quotient": [
+            "3",
+            "3"
+          ],
+          "carries": {},
+          "remainder": null
+        },
+        "final": "Answer: 33",
+        "correct_result": "32",
+        "incorrect_result": "33"
+      }
+    ],
+    [
+      {
+        "question": "145 ÷ 6",
+        "working": "Bus-stop layout: dividend 145; quotient 20. Answer: 20 r 5",
+        "correction": "Carry remainder 2 before the 5: 25 ÷ 6 = 4 r 1. Answer: 24 r 1.",
+        "check": "24 × 6 + 1 = 145.",
+        "bus": {
+          "divisor": 6,
+          "digits": [
+            "1",
+            "4",
+            "5"
+          ],
+          "quotient": [
+            "",
+            "2",
+            "0"
+          ],
+          "carries": {
+            "1": 1
+          },
+          "remainder": 5
+        },
+        "final": "Answer: 20 r 5",
+        "correct_result": "24 r 1",
+        "incorrect_result": "20 r 5"
+      },
+      {
+        "question": "132 ÷ 8 (decimal answer)",
+        "working": "Bus-stop layout: dividend 132; quotient 16. Answer: 16.4",
+        "correction": "The remainder is 4/8, not 4/10. Continue: 40 ÷ 8 = 5. Answer: 16.5.",
+        "check": "16.5 × 8 = 132.",
+        "bus": {
+          "divisor": 8,
+          "digits": [
+            "1",
+            "3",
+            "2"
+          ],
+          "quotient": [
+            "",
+            "1",
+            "6"
+          ],
+          "carries": {
+            "1": 1,
+            "2": 5
+          },
+          "remainder": 4
+        },
+        "final": "Answer: 16.4",
+        "correct_result": "16.5",
+        "incorrect_result": "16.4"
+      },
+      {
+        "question": "245 ÷ 6",
+        "working": "Bus-stop layout: dividend 245; quotient 310. Answer: 310 r 5",
+        "correction": "A remainder must be less than 6. 24 ÷ 6 = 4; then 5 ÷ 6 = 0 r 5. Answer: 40 r 5.",
+        "check": "40 × 6 + 5 = 245.",
+        "bus": {
+          "divisor": 6,
+          "digits": [
+            "2",
+            "4",
+            "5"
+          ],
+          "quotient": [
+            "",
+            "3",
+            "10"
+          ],
+          "carries": {
+            "1": 2,
+            "2": 6
+          },
+          "remainder": 5
+        },
+        "final": "Answer: 310 r 5",
+        "correct_result": "40 r 5",
+        "incorrect_result": "310 r 5"
+      }
+    ],
+    [
+      {
+        "question": "1,248 ÷ 12",
+        "working": "Bus-stop layout: dividend 1248; quotient 14. Answer: 14",
+        "correction": "Keep the zero above the 4: 104.",
+        "check": "104 × 12 = 1,248.",
+        "bus": {
+          "divisor": 12,
+          "digits": [
+            "1",
+            "2",
+            "4",
+            "8"
+          ],
+          "quotient": [
+            "",
+            "1",
+            "",
+            "4"
+          ],
+          "carries": {
+            "1": 1,
+            "3": 4
+          },
+          "remainder": null
+        },
+        "final": "Answer: 14",
+        "correct_result": "104",
+        "incorrect_result": "14"
+      },
+      {
+        "question": "615 ÷ 12 (decimal answer)",
+        "working": "Bus-stop layout: dividend 615.00; quotient 51.25. Answer: 5.125",
+        "correction": "The first two quotient digits are whole-number digits. Answer: 51.25.",
+        "check": "51.25 × 12 = 615.",
+        "bus": {
+          "divisor": 12,
+          "digits": [
+            "6",
+            "1",
+            "5",
+            ".",
+            "0",
+            "0"
+          ],
+          "quotient": [
+            "",
+            "5",
+            "1",
+            ".",
+            "2",
+            "5"
+          ],
+          "carries": {
+            "1": 6,
+            "2": 1,
+            "4": 3,
+            "5": 6
+          },
+          "remainder": null,
+          "decimal_shift": -1.5
+        },
+        "final": "Answer: 5.125",
+        "correct_result": "51.25",
+        "incorrect_result": "5.125"
+      },
+      {
+        "question": "4,834 ÷ 16 (decimal answer)",
+        "working": "Bus-stop layout: dividend 4834.000; quotient 32.125. Answer: 32.125",
+        "correction": "Keep the zero in the whole-number quotient: 302.125.",
+        "check": "302.125 × 16 = 4,834.",
+        "bus": {
+          "divisor": 16,
+          "digits": [
+            "4",
+            "8",
+            "3",
+            "4",
+            ".",
+            "0",
+            "0",
+            "0"
+          ],
+          "quotient": [
+            "",
+            "3",
+            "",
+            "2",
+            ".",
+            "1",
+            "2",
+            "5"
+          ],
+          "carries": {
+            "1": 4,
+            "3": 3,
+            "5": 2,
+            "6": 4,
+            "7": 8
+          },
+          "remainder": null
+        },
+        "final": "Answer: 32.125",
+        "correct_result": "302.125",
+        "incorrect_result": "32.125"
+      }
+    ]
+  ],
+  "M03": [
+    [
+      {
+        "question": "14 boxes hold 8 pens each. How many pens altogether?",
+        "working": "14 + 8 = 22\n22 pens",
+        "correction": "Equal groups require 14 × 8 = 112 pens.",
+        "check": "112 ÷ 14 = 8 pens per box.",
+        "layout": "simple",
+        "lines": [
+          "14 + 8 = 22",
+          "22 pens"
+        ],
+        "correct_result": "112",
+        "incorrect_result": "22"
+      },
+      {
+        "question": "96 stickers are shared equally among 4 pupils. How many per pupil?",
+        "working": "21 stickers each",
+        "correction": "Carry the 1: 16 ÷ 4 = 4. Answer: 24 stickers each.",
+        "check": "24 × 4 = 96.",
+        "layout": "bus",
+        "bus": {
+          "divisor": 4,
+          "digits": [
+            "9",
+            "6"
+          ],
+          "quotient": [
+            "2",
+            "1"
+          ],
+          "carries": {},
+          "remainder": 2
+        },
+        "final": "21 stickers each",
+        "correct_result": "24",
+        "incorrect_result": "21"
+      },
+      {
+        "question": "Cut 3 m of ribbon into 6 equal pieces. Find each length in cm.",
+        "working": "3 m = 30 cm\n30 ÷ 6 = 5\n5 cm",
+        "correction": "3 m = 300 cm; 300 ÷ 6 = 50 cm.",
+        "check": "6 × 50 cm = 300 cm = 3 m.",
+        "layout": "simple",
+        "lines": [
+          "3 m = 30 cm",
+          "30 ÷ 6 = 5",
+          "5 cm"
+        ],
+        "correct_result": "50",
+        "incorrect_result": "5"
+      }
+    ],
+    [
+      {
+        "question": "Pack 166 eggs in boxes of 6. How many full boxes?",
+        "working": "28 full boxes",
+        "correction": "166 ÷ 6 = 27 r 4. Only complete boxes count: 27 full boxes, with 4 eggs left.",
+        "check": "27 × 6 + 4 = 166; 28 × 6 = 168 eggs, more than available.",
+        "layout": "bus",
+        "bus": {
+          "divisor": 6,
+          "digits": [
+            "1",
+            "6",
+            "6"
+          ],
+          "quotient": [
+            "",
+            "2",
+            "7"
+          ],
+          "carries": {
+            "1": 1,
+            "2": 4
+          },
+          "remainder": 4
+        },
+        "final": "28 full boxes",
+        "correct_result": "27",
+        "incorrect_result": "28"
+      },
+      {
+        "question": "32 campers need tents. Each tent sleeps 5. How many tents are needed?",
+        "working": "6 tents",
+        "correction": "Six tents sleep only 30 campers. The remaining 2 campers need another tent: 7 tents.",
+        "check": "6 × 5 = 30 places is insufficient; 7 × 5 = 35 places.",
+        "layout": "bus",
+        "bus": {
+          "divisor": 5,
+          "digits": [
+            "3",
+            "2"
+          ],
+          "quotient": [
+            "",
+            "6"
+          ],
+          "carries": {
+            "1": 3
+          },
+          "remainder": 2
+        },
+        "final": "6 tents",
+        "correct_result": "7",
+        "incorrect_result": "6"
+      },
+      {
+        "question": "Share a £156 bill equally among 8 friends. How much each?",
+        "working": "£19.04 each",
+        "correction": "156 ÷ 8 = 19 r 4. The remaining £4 shared among 8 is £0.50 each, not £0.04. Each pays £19.50.",
+        "check": "8 × £19.50 = £156.",
+        "layout": "bus",
+        "bus": {
+          "divisor": 8,
+          "digits": [
+            "1",
+            "5",
+            "6"
+          ],
+          "quotient": [
+            "",
+            "1",
+            "9"
+          ],
+          "carries": {
+            "1": 1,
+            "2": 7
+          },
+          "remainder": 4
+        },
+        "final": "£19.04 each",
+        "correct_result": "19.5",
+        "incorrect_result": "19.04"
+      }
+    ],
+    [
+      {
+        "question": "Tables seat 6 and cost £12 to hire. Find the cost to seat 94 guests.",
+        "working": "15 tables cost £180",
+        "correction": "All 94 guests need seats. 94 ÷ 6 = 15 r 4, so hire 16 tables. 16 × £12 = £192.",
+        "check": "15 tables seat only 90; 16 seat 96.",
+        "layout": "bus_product",
+        "bus": {
+          "divisor": 6,
+          "digits": [
+            "9",
+            "4"
+          ],
+          "quotient": [
+            "1",
+            "5"
+          ],
+          "carries": {
+            "1": 3
+          },
+          "remainder": 4
+        },
+        "column": [
+          "15",
+          "× 12",
+          "30",
+          "150",
+          "180"
+        ],
+        "final": "15 tables cost £180",
+        "correct_result": "192",
+        "incorrect_result": "180"
+      },
+      {
+        "question": "24 packs hold 15 drinks each. 87 are served. How many are left?",
+        "working": "447 drinks left",
+        "correction": "There are 24 × 15 = 360 drinks. Serving 87 reduces the stock: 360 − 87 = 273 drinks left.",
+        "check": "273 + 87 = 360.",
+        "layout": "product_sum",
+        "column": [
+          "24",
+          "× 15",
+          "120",
+          "240",
+          "360"
+        ],
+        "sum": [
+          "360",
+          "+ 87",
+          "447"
+        ],
+        "final": "447 drinks left",
+        "correct_result": "273",
+        "incorrect_result": "447"
+      },
+      {
+        "question": "Four organisers split the cost of 18 prizes equally. Each prize costs £12. How much does each pay?",
+        "working": "£48 each",
+        "correction": "The organisers share the cost equally, not just the cost of four whole prizes each. All 18 prizes cost 18 × £12 = £216. £216 ÷ 4 = £54 per organiser. Discarding the remainder from 18 ÷ 4 leaves two prizes unpaid for.",
+        "check": "4 × £54 = £216, which pays for all 18 prizes at £12 each.",
+        "layout": "bus_product",
+        "bus": {
+          "divisor": 4,
+          "digits": [
+            "1",
+            "8"
+          ],
+          "quotient": [
+            "",
+            "4"
+          ],
+          "carries": {
+            "1": 1
+          },
+          "remainder": 2
+        },
+        "column": [
+          "12",
+          "× 4",
+          "48"
+        ],
+        "final": "£48 each",
+        "column_y": 1.1,
+        "correct_result": "54",
+        "incorrect_result": "48"
+      }
+    ]
+  ],
+  "M04": [
+    [
+      {
+        "question": "Share £35 between A and B in ratio 2:5. How much does A get?",
+        "working": "2 + 5 = 7 parts\n35 ÷ 7 = 5\nA = 5 × 5\nA = £25\nA receives £25",
+        "correction": "A has 2 parts: 2 × £5 = £10; B gets £25.",
+        "check": "10:25 = 2:5; £10 + £25 = £35.",
+        "left": [
+          "2 + 5 = 7 parts",
+          "35 ÷ 7 = 5"
+        ],
+        "right": [
+          "A = 5 × 5",
+          "A = £25"
+        ],
+        "final": "A receives £25",
+        "correct_result": "10",
+        "incorrect_result": "25"
+      },
+      {
+        "question": "Red:blue = 3:4. There are 12 red counters. How many blue?",
+        "working": "3 + 4 = 7 parts\n12 ÷ 7 = 1 r 5\nBlue = 4 × 1\nBlue = 4\n4 blue counters",
+        "correction": "The 12 counters are the red amount, not the total. Divide by the 3 red parts: 12 ÷ 3 = 4 per part. Blue = 4 × 4 = 16 counters. The shown solution also discards a remainder.",
+        "check": "12:16 = 3:4.",
+        "left": [
+          "3 + 4 = 7 parts",
+          "12 ÷ 7 = 1 r 5"
+        ],
+        "right": [
+          "Blue = 4 × 1",
+          "Blue = 4"
+        ],
+        "final": "4 blue counters",
+        "correct_result": "16",
+        "incorrect_result": "4"
+      },
+      {
+        "question": "Share 12 sweets between A and B in ratio 1:3. How many does B get?",
+        "working": "1 + 3 = 4 parts\n12 ÷ 4 = 3\nB = 3 + 3\nB = 6\nB receives 6 sweets",
+        "correction": "B has 3 parts, each worth 3 sweets. Multiply: B = 3 × 3 = 9 sweets, rather than adding 3 + 3.",
+        "check": "A gets 3 sweets and B gets 9; 3 + 9 = 12 and 3:9 = 1:3.",
+        "left": [
+          "1 + 3 = 4 parts",
+          "12 ÷ 4 = 3"
+        ],
+        "right": [
+          "B = 3 + 3",
+          "B = 6"
+        ],
+        "final": "B receives 6 sweets",
+        "correct_result": "9",
+        "incorrect_result": "6"
+      }
+    ],
+    [
+      {
+        "question": "A and B share counters in ratio 2:7. B has 30 more than A. How many does A have?",
+        "working": "7 − 2 = 5 parts\n30 ÷ 5 = 6\nA = 2 + 6\nA = 8\nA has 8 counters",
+        "correction": "The difference is 5 parts, so one part is 30 ÷ 5 = 6 counters. A has 2 parts: 2 × 6 = 12 counters, rather than 2 + 6.",
+        "check": "B has 7 × 6 = 42 counters; 42 − 12 = 30 more than A.",
+        "left": [
+          "7 − 2 = 5 parts",
+          "30 ÷ 5 = 6"
+        ],
+        "right": [
+          "A = 2 + 6",
+          "A = 8"
+        ],
+        "final": "A has 8 counters",
+        "correct_result": "12",
+        "incorrect_result": "8"
+      },
+      {
+        "question": "Red:blue = 4:3. There are 15 blue counters. How many red counters?",
+        "working": "15 ÷ 4 = 3.75\nRed = 3 × 3.75\nRed = 11.25\n11.25 red counters",
+        "correction": "Blue has 3 parts: 15 ÷ 3 = 5; red = 4 × 5 = 20.",
+        "check": "20:15 = 4:3.",
+        "left": [
+          "15 ÷ 4 = 3.75"
+        ],
+        "right": [
+          "Red = 3 × 3.75",
+          "Red = 11.25"
+        ],
+        "final": "11.25 red counters",
+        "correct_result": "20",
+        "incorrect_result": "11.25"
+      },
+      {
+        "question": "A and B share 56 counters in ratio 3:5. How many more does B get than A?",
+        "working": "3 + 5 = 8 parts\n56 ÷ 8 = 7\nA = 3 × 7 = 21\nB = 5 × 7 = 35\n21 + 35 = 56\nB gets 56 more counters",
+        "correction": "A gets 21 counters and B gets 35. Find how many more B gets by subtracting: 35 − 21 = 14 counters, not adding the two amounts.",
+        "check": "(5 − 3) × 7 = 14; 21 + 35 = 56 checks the total.",
+        "left": [
+          "3 + 5 = 8 parts",
+          "56 ÷ 8 = 7",
+          "A = 3 × 7 = 21"
+        ],
+        "right": [
+          "B = 5 × 7 = 35",
+          "21 + 35 = 56"
+        ],
+        "final": "B gets 56 more counters",
+        "correct_result": "14",
+        "incorrect_result": "56"
+      }
+    ],
+    [
+      {
+        "question": "A group has 65 people. Adults:children = 5:8. How many more children than adults?",
+        "working": "5 + 8 = 13 parts\n65 ÷ 13 = 5\nAdults = 5 × 5 = 25\n8 × 5 = 40\n8 − 5 = 3\n3 more children",
+        "correction": "There are 25 adults and 40 children. Compare the numbers of people: 40 − 25 = 15 more children than adults. The difference of 3 ratio parts represents 3 × 5 = 15 people.",
+        "check": "25 + 40 = 65; 40 − 25 = 15.",
+        "left": [
+          "5 + 8 = 13 parts",
+          "65 ÷ 13 = 5",
+          "Adults = 5 × 5 = 25"
+        ],
+        "right": [
+          "8 × 5 = 40",
+          "8 − 5 = 3"
+        ],
+        "final": "3 more children",
+        "correct_result": "15",
+        "incorrect_result": "3"
+      },
+      {
+        "question": "Two ribbon lengths are in ratio 3:8 and differ by 35 cm. Find their total length.",
+        "working": "8 − 3 = 5 parts\n35 ÷ 5 = 7\nShort = 3 × 7 = 21\nLong = 8 × 7 = 56\n56 − 21 = 35\nTotal length = 35 cm",
+        "correction": "The requested total is 21 + 56 = 77 cm.",
+        "check": "77 ÷ 11 = 7 cm per part; difference 5 × 7 = 35 cm.",
+        "left": [
+          "8 − 3 = 5 parts",
+          "35 ÷ 5 = 7",
+          "Short = 3 × 7 = 21"
+        ],
+        "right": [
+          "Long = 8 × 7 = 56",
+          "56 − 21 = 35"
+        ],
+        "final": "Total length = 35 cm",
+        "correct_result": "77",
+        "incorrect_result": "35"
+      },
+      {
+        "question": "A and B have tokens in ratio 7:4. A has 42. How many tokens in total?",
+        "working": "42 ÷ 7 = 6\nB = 4 × 6 = 24\n42 + 4 = 46\nTotal = 46 tokens",
+        "correction": "Add the amounts, not the ratio part count: 42 + 24 = 66 tokens.",
+        "check": "11 × 6 = 66.",
+        "left": [
+          "42 ÷ 7 = 6",
+          "B = 4 × 6 = 24"
+        ],
+        "right": [
+          "42 + 4 = 46"
+        ],
+        "final": "Total = 46 tokens",
+        "correct_result": "66",
+        "incorrect_result": "46"
+      }
+    ]
+  ],
+  "M13": [
+    [
+      {
+        "question": "−3 + 5",
+        "working": "−3 + 5\n= −3 − 5\n= −8",
+        "correction": "Adding positive 5 moves right: −3 + 5 = 2.",
+        "check": "2 − 5 = −3.",
+        "lines": [
+          "−3 + 5",
+          "= −3 − 5",
+          "= −8"
+        ],
+        "correct_result": "2",
+        "incorrect_result": "-8"
+      },
+      {
+        "question": "4 − 9",
+        "working": "4 − 9\n= 9 − 4\n= 5",
+        "correction": "Keep the subtraction in the stated order. Start at 4 and move 9 left: 4 − 9 = −5.",
+        "check": "−5 + 9 = 4.",
+        "lines": [
+          "4 − 9",
+          "= 9 − 4",
+          "= 5"
+        ],
+        "correct_result": "-5",
+        "incorrect_result": "5"
+      },
+      {
+        "question": "−4 − 6",
+        "working": "−4 − 6\n= 4 + 6\n= 10",
+        "correction": "Subtracting positive 6 moves left from −4: −4 − 6 = −10.",
+        "check": "−10 + 6 = −4.",
+        "lines": [
+          "−4 − 6",
+          "= 4 + 6",
+          "= 10"
+        ],
+        "correct_result": "-10",
+        "incorrect_result": "10"
+      }
+    ],
+    [
+      {
+        "question": "6 + (−10)",
+        "working": "6 + (−10)\n= 6 + 10\n= 16",
+        "correction": "Adding negative 10 moves left: 6 + (−10) = 6 − 10 = −4.",
+        "check": "−4 + 10 = 6.",
+        "lines": [
+          "6 + (−10)",
+          "= 6 + 10",
+          "= 16"
+        ],
+        "correct_result": "-4",
+        "incorrect_result": "16"
+      },
+      {
+        "question": "−6 − (−18)",
+        "working": "−6 − (−18)\n= −6 − 18\n= −24",
+        "correction": "Subtracting −18 adds 18: −6 − (−18) = −6 + 18 = 12.",
+        "check": "12 + (−18) = −6.",
+        "lines": [
+          "−6 − (−18)",
+          "= −6 − 18",
+          "= −24"
+        ],
+        "correct_result": "12",
+        "incorrect_result": "-24"
+      },
+      {
+        "question": "−7 + (−4)",
+        "working": "−7 + (−4)\n= 7 + 4\n= 11",
+        "correction": "Both addends are negative: −7 − 4 = −11.",
+        "check": "−11 − (−4) = −7.",
+        "lines": [
+          "−7 + (−4)",
+          "= 7 + 4",
+          "= 11"
+        ],
+        "correct_result": "-11",
+        "incorrect_result": "11"
+      }
+    ],
+    [
+      {
+        "question": "−4 − (−7) + (−6)",
+        "working": "−4 − (−7) + (−6)\n= −4 + 7 + 6\n= 3 + 6\n= 9",
+        "correction": "Only −(−7) changes to +7. −4 + 7 − 6 = 3 − 6 = −3.",
+        "check": "−3 + 6 = 3; 3 − 7 = −4.",
+        "lines": [
+          "−4 − (−7) + (−6)",
+          "= −4 + 7 + 6",
+          "= 3 + 6",
+          "= 9"
+        ],
+        "correct_result": "-3",
+        "incorrect_result": "9"
+      },
+      {
+        "question": "8 + (−12) − (−5)",
+        "working": "8 + (−12) − (−5)\n= 8 − 12 − 5\n= −4 − 5\n= −9",
+        "correction": "Subtracting −5 gives +5: 8 − 12 + 5 = −4 + 5 = 1.",
+        "check": "1 − 5 + 12 = 8.",
+        "lines": [
+          "8 + (−12) − (−5)",
+          "= 8 − 12 − 5",
+          "= −4 − 5",
+          "= −9"
+        ],
+        "correct_result": "1",
+        "incorrect_result": "-9"
+      },
+      {
+        "question": "−9 − 6 + 18",
+        "working": "−9 − 6 + 18\n= −3 + 18\n= 15",
+        "correction": "The first subtraction moves left: −9 − 6 = −15; then −15 + 18 = 3.",
+        "check": "3 − 18 + 6 = −9.",
+        "lines": [
+          "−9 − 6 + 18",
+          "= −3 + 18",
+          "= 15"
+        ],
+        "correct_result": "3",
+        "incorrect_result": "15"
+      }
+    ]
+  ],
+  "M01": [
+    [
+      {
+        "a": 43,
+        "b": 6,
+        "error": "cell",
+        "correct_result": "258",
+        "incorrect_result": "158"
+      },
+      {
+        "a": 89,
+        "b": 7,
+        "error": "drop",
+        "correct_result": "623",
+        "incorrect_result": "523"
+      },
+      {
+        "a": 76,
+        "b": 7,
+        "error": "carrydigit",
+        "correct_result": "532",
+        "incorrect_result": "5132"
+      }
+    ],
+    [
+      {
+        "a": 34,
+        "b": 16,
+        "error": "half",
+        "correct_result": "544",
+        "incorrect_result": "526"
+      },
+      {
+        "a": 47,
+        "b": 26,
+        "error": "drop",
+        "correct_result": "1222",
+        "incorrect_result": "1122"
+      },
+      {
+        "a": 68,
+        "b": 24,
+        "error": "carrydigit",
+        "correct_result": "1632",
+        "incorrect_result": "16132"
+      }
+    ],
+    [
+      {
+        "a": 234,
+        "b": 56,
+        "error": "half",
+        "correct_result": "13104",
+        "incorrect_result": "13086"
+      },
+      {
+        "a": 476,
+        "b": 82,
+        "error": "drop",
+        "correct_result": "39032",
+        "incorrect_result": "38932"
+      },
+      {
+        "a": 638,
+        "b": 59,
+        "error": "cell",
+        "correct_result": "37642",
+        "incorrect_result": "27642"
+      }
+    ]
+  ]
+}

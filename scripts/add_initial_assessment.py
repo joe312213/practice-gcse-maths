@@ -1,4 +1,4 @@
-"""Add the Initial Assessment slide as Slide 1 to GCSE_Maths_Revision_Starters_v3.pptx.
+"""Add the Initial Assessment slide as Slide 1 to GCSE_Maths_Revision_Starters_prev4.pptx.
 Preserves all existing 21 slides without modifying any of their content.
 """
 from pathlib import Path
@@ -10,8 +10,8 @@ from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.oxml.ns import qn
 
 ROOT = Path(__file__).resolve().parents[1]
-PPTX_PATH = ROOT / 'GCSE_Maths_Revision_Starters_v3.pptx'
-ANSWERS_PATH = ROOT / 'GCSE_Maths_Revision_Starters_v3_answers.md'
+PPTX_PATH = ROOT / 'GCSE_Maths_Revision_Starters_prev4.pptx'
+ANSWERS_PATH = ROOT / 'GCSE_Maths_Revision_Starters_answers_prev4.md'
 
 BG, INK, MUTED, LINE = 'F7F8FA', '182B3A', '526472', 'D8E0E6'
 COLORS = ['176B73', '3559A2', '754B87']

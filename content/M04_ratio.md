@@ -185,8 +185,8 @@ Teacher answers and working:
 
 ## Standalone files
 
-- [Question deck v2](../topics/ratio/Ratio_M04_questions_v5.pptx)
-- [Answer deck v2](../topics/ratio/Ratio_M04_answers_v5.pptx)
+- [Question deck v2](../topics/ratio/Ratio_M04_questions_prev7.pptx)
+- [Answer deck v2](../topics/ratio/Ratio_M04_answers_prev5.pptx)
 
 - Ratio repetition checked after simplifying and ignoring reversal: no repeated ratio within a six-question column; at most two per slide and three across the independent banks.
 
@@ -201,7 +201,7 @@ Version 5 applies the approved bold orange arrow, preserves its aspect ratio and
 
 ## Approved arrow styling — 20 September 2026
 
-Use the user-edited v5 slide 2 colour and placement, recorded in `progression_arrow.json`. Applied to all six practice slides in `Ratio_M04_questions_v6.pptx`; question and answer content unchanged. Position relative to column boundaries and the bottom of each grid.
+Use the user-edited v5 slide 2 colour and placement, recorded in `progression_arrow.json`. Applied to all six practice slides in `Ratio_M04_questions_prev8.pptx`; question and answer content unchanged. Position relative to column boundaries and the bottom of each grid.
 
 
 ## Initial assessment — physical slide 1 (20 September 2026)
