@@ -10,6 +10,8 @@ Teach in prerequisite order: secure essential arithmetic, then prioritise equati
 
 For session status, current outputs and the next unfinished topic, read [HANDOFF.md](HANDOFF.md).
 
+**These instructions should be carefully updated according to new direction detailed in `web_format.md` and conversion to a website**
+
 ## Content and review workflow
 
 - Maintain exact content in `content/`: questions, row labels, prompts, worked steps, diagram specifications, answers and visible method/error/check notes. Keep it in step with the slides.
