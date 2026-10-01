@@ -1,3 +1,5 @@
+> Current answers are HTML. Shared requirements and rendering scripts are documented in [ANSWER_SLIDES.md](../ANSWER_SLIDES.md). Equations and fraction addition/subtraction use structured JSON sources and include full worked solutions. All seven built topics are compiled in registry order.
+
 > Current production requirement (30 September 2026): deliver questions as PowerPoint and separate answers as HTML, using stable filenames without `_vN`. Maintain all built topics individually under `topics/` and compile matching main files. Topic order and IA → recap/demo → scaffolded practice → SE → independent practice follow AGENTS.md and SLIDE_LAYOUT.md. Older slide-based answer layout notes below are historical; retain their answer/method/error/check content in HTML. Current outputs and build instructions are in HANDOFF.md.
 
 # Shared HTML answer file

@@ -13,6 +13,8 @@ from pptx.oxml.ns import qn
 from pptx.opc.packuri import PackURI
 import build_starters as b
 import student_workings as student
+import answer_layout
+from rendering import estimates
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=json.loads((ROOT/'content/spot_errors.json').read_text())
@@ -96,7 +98,7 @@ def lattice_content(item):
   result=result[:-k-1]+str(v)+result[-k-1:]
   explain='The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once.'
  assert int(result) != a*c, (a,c,err,result)
- item.update(question=f'{a:,} × {c:,}',working='Cells: '+' / '.join(', '.join(f'{v:02}' for v in row) for row in cells)+'\nDiagonals from bottom right: '+'; '.join(steps)+'\nAnswer: '+result,correction=explain+f' Correct answer: {a*c:,}.',check=f'{a*c:,} ÷ {c} = {a}.')
+ item.update(question=f'{a:,} × {c:,}',working='Cells: '+' / '.join(', '.join(f'{v:02}' for v in row) for row in cells)+'\nDiagonals from bottom right: '+'; '.join(steps)+'\nAnswer: '+result,correction=explain+f' Correct answer: {a*c:,}.',check=estimates.multiplication(a,c))
  item.update(_cells=cells,_digits=digits,_incoming=incoming_values,_extra=extra,_result=result)
  return cells,steps,result,extra
 
@@ -154,11 +156,13 @@ def md(value):
  return '\n'.join(out)
 
 def error_answers(mid):
- out=[f'<h3>{mid}-SE — Spot the errors: corrections</h3>']
+ out=[f'<h3>{mid}-SE — Spot the errors: corrections</h3><div class="three-columns">']
  for t,col in enumerate(DATA[mid]):
-  out.append('<h4>'+b.LABELS[t]+'</h4>')
+  out.append('<div><h4>'+b.LABELS[t]+'</h4>')
   for i,e in enumerate(col):
-   out.append('<article><h4>'+str(i+1)+'. '+inline(e['question'])+'</h4><p><strong>If you got… (incorrect work)</strong><br>'+e.get('_svg',inline(e['working']).replace('\n','<br>'))+'</p><p><strong>Answer / Method:</strong> '+inline(e['correction'])+'</p><p><strong>Check:</strong> '+inline(e['check'])+'</p></article>')
+   out.append('<article><h4>'+str(i+1)+'. '+inline(e['question'])+'</h4><p><strong>If you got… (incorrect work)</strong><br>'+e.get('_svg',inline(e['working']).replace('\n','<br>'))+'</p><p><strong>Answer / Method:</strong> '+inline(e['correction'])+'</p>'+answer_layout.corrected(mid,e)+'<p><strong>Check:</strong> '+inline(e['check'])+'</p></article>')
+  out.append('</div>')
+ out.append('</div>')
  return '\n'.join(out)
 
 IA={
@@ -167,14 +171,17 @@ IA={
 'M03':['144 ÷ 6 = 24 cm','14 × 25 = 350 seats','145 ÷ 6 = 24 r 1: 24 full boxes, 1 egg left','130 ÷ 24 = 5 r 10: 6 coaches; 6 × £75 = £450']}
 
 def answers(mid):
- out=[f'<section id="{mid}"><h2>{mid} — {TOPICS[mid][2]}</h2><h3>{mid}-IA — Initial assessment</h3>']
+ out=[answer_layout.opening(mid,TOPICS[mid][2])+f'<h3>{mid}-IA — Initial assessment</h3>']
  if mid in IA:
-  out.append('<ol>'+''.join('<li>'+inline(v)+'</li>' for v in IA[mid])+'</ol>')
+  out.append(answer_layout.assessment_cell([f'<strong>Q{i+1}.</strong> '+inline(v) for i,v in enumerate(IA[mid])]))
  else:
   ap=ROOT/('topics/ratio/Ratio_M04_answers_prev6.pptx' if mid=='M04' else 'topics/signed_numbers/Signed_addition_subtraction_M13_answers_prev1.pptx')
   p=Presentation(ap)
+  items=[]
   for sh in p.slides[0].shapes:
-   if sh.has_text_frame and sh.text and sh.top>Inches(1.4) and sh.top<Inches(8.4):out.append('<p>'+inline(sh.text).replace('\n','<br>')+'</p>')
+   if sh.has_text_frame and sh.text and sh.top>Inches(1.4) and sh.top<Inches(8.4):items.append(inline(sh.text).replace('\n','<br>'))
+  assert len(items)==8
+  out.append(answer_layout.assessment_cell([f'<strong>Q{i//2+1}.</strong><p>'+items[i+1]+'</p>' for i in range(0,8,2)]))
  if mid=='M13':
   source=(ROOT/'content/M13_signed_addition_and_subtraction.md').read_text()
   sections={int(n):body for n,body in re.findall(r'^## S(\d+)-A[^\n]*\n(.*?)(?=^## |\Z)',source,re.M|re.S)}
@@ -183,14 +190,12 @@ def answers(mid):
   sections={int(n):body for n,body in re.findall(r'^## '+mid+r'-S(\d+)-A[^\n]*\n(.*?)(?=^## |\Z)',source,re.M|re.S)}
  for sn in range(2,8):
   if sn==4:out.append(error_answers(mid))
-  out.append(f'<h3>{mid}-S{sn:02} — '+('Scaffolded practice '+str(sn-1) if sn<4 else 'Independent practice '+str(sn-3))+'</h3>'+md(sections[sn]))
- out.append('</section>');return '\n'.join(out)
+  out.append(f'<h3>{mid}-S{sn:02} — '+('Scaffolded practice '+str(sn-1) if sn<4 else 'Independent practice '+str(sn-3))+'</h3>'+answer_layout.worked(mid,sections[sn],md,sn))
+ out.append('</div></section>');return '\n'.join(out)
 
 def page(mids):
  nav=' · '.join(f'<a href="#{m}">{html.escape(TOPICS[m][2])}</a>' for m in mids)
- return '''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Maths starters — answers</title><style>
-body{font:19px/1.55 system-ui,sans-serif;color:#182b3a;background:#f7f8fa;margin:0 auto;max-width:1250px;padding:2rem}h1,h2,h3{line-height:1.2}h2{border-bottom:4px solid #176b73;padding-bottom:.6rem;margin-top:3rem}h3{margin-top:2.5rem}nav{position:sticky;top:0;background:#edf6f5;padding:1rem;font-size:16px}a{color:#176b73}.table{overflow-x:auto}table{border-collapse:collapse;width:100%;background:white;font-size:17px}td{border:1px solid #ccd6df;vertical-align:top;padding:.7rem}tr:first-child{background:#edf6f5;font-weight:600}article{background:white;border-left:4px solid #3559a2;padding:.2rem 1.2rem;margin:1rem 0}li{margin:.6rem 0}@media print{nav{position:static}body{font-size:12pt;padding:0}section{break-before:page}article,tr{break-inside:avoid}}
-</style><h1>Maths starters — answers</h1><p>Match the module, practice number, thread and question. Correct the first wrong step, then redo the calculation. IA = initial assessment; SE = spot the errors. References stay fixed when slides move.</p><nav>'''+nav+'</nav>'+''.join(answers(m) for m in mids)+'</html>'
+ return '''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Maths starters — answers</title><style>'''+answer_layout.stylesheet()+'''</style><h1>Maths starters — answers</h1><p>Match the module, practice number, column and question. Correct the first wrong step, then redo the calculation. IA = initial assessment; SE = spot the errors. References stay fixed when slides move.</p><nav>'''+nav+'</nav>'+''.join(answers(m) for m in mids)+'</html>'
 
 def main():
  from review_answer_patterns import review
@@ -224,13 +229,8 @@ def main():
      sh.text_frame.paragraphs[0].runs[0].text=f'{mid}-S{int(local):02}  •  Topic slide {idx}'
   save(p,path);decks[mid]=p
   save_text(directory/(stem+'_answers.html'),page([mid]))
- # Use the accepted main deck's theme, with fresh slide parts for each topic.
- compiled=Presentation(ROOT/'GCSE_Maths_Revision_Starters_prev4.pptx')
- for s in list(compiled.slides):remove(compiled,s)
- for mid in ORDER:
-  for s in decks[mid].slides:clone(compiled,s)
- save(compiled,ROOT/'GCSE_Maths_Revision_Starters.pptx')
- save_text(ROOT/'GCSE_Maths_Revision_Starters_answers.html',page(ORDER))
+ from compile_starters import compile_all
+ compile_all()
  # Human-readable exact content alongside the structured generator input.
  content=['# Spot the errors — exact slide content','Source: `spot_errors.json`; generated by `scripts/update_structure.py`. SE follows S03 and precedes S04; three questions per challenge column. All displayed workings below are deliberately incorrect. Corrections are shown only in HTML answers.']
  for mid in ORDER:

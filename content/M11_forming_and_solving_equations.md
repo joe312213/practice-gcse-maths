@@ -27,7 +27,7 @@ Use these exact labels and prompts on both step-by-step practice slides. Repeat 
 
 Instruction: **Follow each step down your column.**
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | I add 7 to a number and get 19. Find the number. | Three identical tickets and a £5 booking fee cost £26. Find the price of one ticket. | A rectangle is 3 cm longer than it is wide. Its perimeter is 34 cm. Find its width. |
 | Keywords & Calculation | Let x be the number. x + 7 = 19. | Let x be one ticket price in pounds. 3x + 5 = 26. | Let w be width in cm. Length is w+3. 2w + 2(w+3) = 34. |
@@ -43,7 +43,7 @@ For Depth draw an editable rectangle with width w cm and length (w+3) cm. Put �
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | I subtract 8 from a number and get 15. Find the number. | Five identical tickets and a £7 booking fee cost £42. Find one ticket price. | A rectangle is 4 cm longer than it is wide. Its perimeter is 40 cm. Find its width. |
 
@@ -57,7 +57,7 @@ Teacher working:
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | Six times a number is 42. Find the number. | Four identical items cost £23 after a £9 discount on the total. Find the original price of one item. | A rectangle is 5 cm longer than it is wide. Its perimeter is 46 cm. Find its width. |
 
@@ -71,7 +71,7 @@ Teacher working:
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | I add 6 to a number and get 10. Find the number. | 3 identical tickets and a £4 booking fee cost £31. Find the price of one ticket. | A rectangle is 2 cm longer than it is wide. Its perimeter is 56 cm. Find its width. |
 | 2 | I multiply a number by 4 and get 20. Find the number. | 4 identical tickets and a £4 booking fee cost £44. Find the price of one ticket. | Plan A costs £42 plus £2 per visit. Plan B costs £5 per visit. After how many visits do they cost the same? |
@@ -95,7 +95,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | I add 7 to a number and get 14. Find the number. | 3 identical tickets and a £5 booking fee cost £41. Find the price of one ticket. | Plan A costs £48 plus £3 per visit. Plan B costs £6 per visit. After how many visits do they cost the same? |
 | 2 | I multiply a number by 4 and get 32. Find the number. | 4 identical tickets and a £5 booking fee cost £57. Find the price of one ticket. | A rectangle is 4 cm longer than it is wide. Its perimeter is 76 cm. Find its width. |
@@ -119,7 +119,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | I add 8 to a number and get 18. Find the number. | 3 identical tickets and a £6 booking fee cost £51. Find the price of one ticket. | A rectangle is 4 cm longer than it is wide. Its perimeter is 84 cm. Find its width. |
 | 2 | I multiply a number by 4 and get 44. Find the number. | 4 identical tickets and a £6 booking fee cost £70. Find the price of one ticket. | Plan A costs £100 plus £4 per visit. Plan B costs £9 per visit. After how many visits do they cost the same? |
@@ -143,7 +143,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | I add 9 to a number and get 22. Find the number. | 3 identical tickets and a £7 booking fee cost £61. Find the price of one ticket. | Plan A costs £110 plus £5 per visit. Plan B costs £10 per visit. After how many visits do they cost the same? |
 | 2 | I multiply a number by 4 and get 56. Find the number. | 4 identical tickets and a £7 booking fee cost £83. Find the price of one ticket. | A rectangle is 6 cm longer than it is wide. Its perimeter is 104 cm. Find its width. |

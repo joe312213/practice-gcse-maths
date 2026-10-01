@@ -25,7 +25,7 @@ Use these exact labels and prompts on both step-by-step practice slides. Repeat 
 
 Instruction: **Follow each step down your column.**
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | A £80 ticket is discounted by 25%. What is the discount? | A £80 ticket is discounted by 25%. What is the new price? | A price rises from £80 to £100. Find the percentage increase. |
 | Keywords & Calculation | Find 25% of £80. | Find the discount, then the remaining price. | Change relative to the original £80. |
@@ -41,7 +41,7 @@ Use an editable bar labelled £80 / 100%, split into four equal sections. Mark t
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | Find 20% of £150. | A £150 price increases by 20%. Find the new price. | A price rises from £150 to £180. Find the percentage increase. |
 
@@ -55,7 +55,7 @@ Teacher working:
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | Find 15% of £200. | A £200 price decreases by 15%. Find the new price. | A price falls from £200 to £170. Find the percentage decrease. |
 
@@ -69,7 +69,7 @@ Teacher working:
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | Find 10% of £100. | A £300 price increases by 15%. Find the new price. | A price rises from £500 to £625.00. Find the percentage increase. |
 | 2 | Find 25% of £120. | A £320 price decreases by 20%. Find the new price. | A price falls from £520 to £468.00. Find the percentage decrease. |
@@ -93,7 +93,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | Find 10% of £140. | A £340 price decreases by 15%. Find the new price. | A price falls from £540 to £405.00. Find the percentage decrease. |
 | 2 | Find 25% of £160. | A £360 price increases by 20%. Find the new price. | A price rises from £560 to £616.00. Find the percentage increase. |
@@ -117,7 +117,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | Find 10% of £180. | A £380 price increases by 15%. Find the new price. | A price rises from £580 to £725.00. Find the percentage increase. |
 | 2 | Find 25% of £200. | A £400 price decreases by 20%. Find the new price. | A price falls from £600 to £540.00. Find the percentage decrease. |
@@ -141,7 +141,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | Find 10% of £220. | A £420 price decreases by 15%. Find the new price. | A price falls from £620 to £465.00. Find the percentage decrease. |
 | 2 | Find 25% of £240. | A £440 price increases by 20%. Find the new price. | A price rises from £640 to £704.00. Find the percentage increase. |

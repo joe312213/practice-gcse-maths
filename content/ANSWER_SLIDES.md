@@ -1,56 +1,45 @@
-> Current production requirement (30 September 2026): deliver questions as PowerPoint and separate answers as HTML, using stable filenames without `_vN`. Maintain all built topics individually under `topics/` and compile matching main files. Topic order and IA → recap/demo → scaffolded practice → SE → independent practice follow AGENTS.md and SLIDE_LAYOUT.md. Older slide-based answer layout notes below are historical; retain their answer/method/error/check content in HTML. Current outputs and build instructions are in HANDOFF.md.
+# Student HTML answers
 
-# Separate student answer slides
+Current specification — 1 October 2026. Answers are HTML, despite this historical document filename. Maintain one file per built topic and a combined file in the same teaching order as the question deck. Current filenames have no `_vN` suffix; superseded outputs use `_prevN`. Markdown is content source, not the delivered answer format.
 
-**Status: Working specification; ratio is now built separately for review.** The user has requested separate answers with short method notes and common errors, including the wrong answers they cause. Exact presentation and content below are proposed.
+Use **Start**, **Build**, **Confidence** throughout questions and answers. Do not print “Thread” in column headings. Retain stable internal module/activity/column/question references when slides move.
 
-## Structure and exact labels
+## Content and checks
 
-Keep **one teaching/question deck and one separate HTML answer file for all topics**. Do not interleave answers with questions. Build separate topic question/answer pairs during development, then consolidate ready topics into the two final decks. Retain the seven teaching/question slides per module. S01 is the worked demo. S02–S07 each have a matching section, S02-A–S07-A, in the shared HTML answer file. An extra answer page is allowed when the working needs more room. Keep stable question references when inserting pages.
+Show every assessment and practice answer with units and any interpretation of remainders. Use **Answer**, **Method**, **If you got…**, **Check**. Identify the selected question beside each method/error example; vary the selection. Explain the possible first mistake and how to correct it. Spot-the-errors answers include the shown incorrect working, the correct solution, explanation and a useful check for every question.
 
-Question slides contain questions and the agreed practice prompts, without solutions or diagnostic hints that reveal the operation. Switch to the matching section of the separate HTML answer file after students attempt the questions. Use the same thread headings and question numbers.
+Arithmetic checks should be easy mental **ballpark checks**, using rounded numbers or simple bounds and friendly multiplication. Do not ask students to verify a large product by a demanding inverse division, or a decimal quotient by a demanding exact multiplication. For example, 53 × 7 lies between 50 × 7 = 350 and 60 × 7 = 420. Label estimates/bounds as reasonableness checks: they cannot certify every digit. Retain cheap exact checks where useful: substituting small values into an equation, comparing a ratio's total/difference, or checking enough seats. Contextual feasibility and correct units still matter.
 
-Use these labels:
+## Page layout
 
-- **Answer:** complete answers, including required units, rounding and interpretation.
-- **Method:** concise working for the step-by-step questions; selected, explicitly numbered examples for independent practice.
-- **If you got…:** a specific wrong answer, the incorrect calculation that could produce it, and the correction.
-- **Check:** a short numerical or contextual check, or an instruction to find and correct the first wrong step.
+- Each topic starts with a tall coloured horizontal separator and prominent title. Alternate subtle topic background colours. A sticky left rail carries the vertically rotated topic name; it follows scrolling within that topic. The top navigation links directly to each topic.
+- Answer grids show all answers. **Worked diagrams and steps** is one three-column row, aligned Start / Build / Confidence, with a completed diagram and concise explanation in each card. Do not publish prose telling someone to draw a diagram in place of the diagram itself.
+- Spot-the-errors corrections use three columns too: each column contains its three numbered questions, with incorrect work, explanation and correction together. Completed correct lattice/bus-stop working is also supplied. Equation and fraction corrections show every necessary written step.
+- On narrow mobile screens, columns stack to preserve readability. Print removes sticky positioning. Longer complete independent solutions can sit in a clearly labelled expandable section; the main answer grid and selected workings remain visible.
 
-For independent grids, all 18 answers must be visible. Reserve roughly the upper 60% for the answer grid and the lower 40% for method/error/check notes aligned to the columns. Start with one selected question per column. This is a layout proposal to test when rendering, not a reason to shrink text. If notes do not fit at a readable projected size, use a second answer page. Retain editable diagrams where they explain the method. Speaker notes may contain fuller explanations.
+## Deterministic rendering
 
-An incorrect answer is evidence to investigate, not a unique diagnosis. Say “If you got 22, check whether you rounded up…” rather than claiming the student definitely did so. Check the faulty calculation as carefully as the correct one. Avoid generic notes such as “watch your signs” without a worked consequence.
+Use `scripts/answer_layout.py` for the shared HTML layout and `scripts/rendering/` for mathematical working. Separate skill modules are `lattice.py`, `bus_stop.py`, `equations.py`, `fractions.py`, `signed_numbers.py`, `ratio.py`, and `applications.py`; `canvas.py` supplies drawing primitives, while `estimates.py` supplies easy arithmetic checks. `student_workings.py` retains the established deliberately incorrect arithmetic diagrams.
 
-## Concrete example: M03-S04-A
+Render from explicit operands/steps. Lattice rendering computes all cell products, diagonal totals, carries and perimeter result digits. Bus-stop rendering aligns quotient and dividend digits and marks small carried remainders; decimal extensions keep zeros and decimal points. Equation rendering shows the centre line and operations on both sides. Fraction rendering uses stacked numerators/denominators and equal-length whole strips. Other skill scripts format their supplied calculations; they must not invent a method from an answer alone.
 
-**Answers to Application to Exam Problems — independent practice 1.** This proposes an answer partner for the accepted questions in [M03](M03_application_to_exam_problems.md); it does not change those questions.
+This avoids manual positioning and duplicated descriptions, gives clear consistent diagrams, and makes later numerical edits efficient and reproducible. Use native editable shapes in PowerPoint and inline SVG in HTML, without a browser/server dependency for the delivered answers. Keep carry digits visually distinct from answer digits. Never compress full student-style working into algorithm shorthand to fit a card.
 
-### Answer
+For answer-only changes, run `python3 scripts/refresh_answers.py`. It refreshes all current HTML without rebuilding or archiving question decks.
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
-| --- | --- | --- | --- |
-| 1 | 448 books | 21 full cartons | £670 |
-| 2 | 15 students in each group | 7 cars | £975 |
-| 3 | 1,066 bottles | 10 chocolates left | £338 |
-| 4 | 37 m | £476 | £315 |
-| 5 | 1,105 seats | 23 full bags | £405 |
-| 6 | £35 each | £16.50 each | £1,440 |
+## Consistent practice headings and compact assessments
 
-Notes below the answers, each referring to **Q1** in its column:
+Each practice diagnostic block has the heading **Method and error check — practice N**, or **Method and error check — scaffolded practice N**, immediately followed by its table. Use the same Start / Build / Confidence columns and Method / If you got… / Check rows for every topic, including equations and fractions. Show selected question references within the cells. Keep complete diagrams in the method cells or the existing aligned worked-diagram row. Remove production prose such as “Full-answer page”, “Show this on a second answer page” and “Each column identifies…” from delivered student HTML.
 
-| Label | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
-| --- | --- | --- | --- |
-| Method | 14 × 32 = 14 × 30 + 14 × 2 = 420 + 28 = 448 books. | 130 ÷ 6 = 21 remainder 4. Only full cartons count: 21. | 45 × £16 = £720. £720 − £50 = £670. |
-| If you got… | 420: check whether you calculated only 14 × 30. Include 14 × 2 = 28. | 22: check whether you rounded up 21 remainder 4. A 22nd full carton needs 2 more eggs. | £770: check whether you used £720 + £50. A discount reduces the total: subtract £50. |
-| Check | 448 ÷ 14 = 32 books per shelf. | 21 × 6 + 4 = 130; 22 × 6 = 132, too many. | £670 + £50 = £720, the price before the discount. |
+Initial assessment answers occupy **one table cell containing all four numbered solutions**. Lay those solutions side by side on desktop, wrapping on narrow screens. Keep working and final answers together, cap diagram widths at a readable compact size, and omit diagnostic cards and redundant operations such as dividing by one. Do not stretch a single solution diagram across the page. Fraction answer grids use CSS-sized text with stacked numerators/denominators; do not scale a wide SVG canvas down to represent a single answer.
 
-Student instruction: **Compare your working. Correct the first wrong step, then redo the calculation.**
-
-## Completion status
-
-[The shared answer-deck index](answers/README.md) links complete drafts for all six practice answer sections in each of M01, M02 and M03. Their accepted questions remain unchanged. The example above illustrates M03-S04-A; the module answer file is authoritative if edited later. M13 and M14 contain all six answer sections within their module Markdown files; these sections also belong in the shared HTML answer file. M04–M12 still need visible method/error/check notes. No new PowerPoint files have been produced; these drafts await content agreement.
+Lattice carry placement follows SLIDE_LAYOUT.md: small digits anchored close to the receiving grid edge, before the corresponding large answer digit. Apply the same positioning to multiplication and application diagrams; keep deliberate oversized-carry mistakes recognisable in SE examples.
 
 
-## Topic build workflow — 20 September 2026
+## CSS source of truth
 
-The user requested standalone topic slide decks first, starting with ratio. During development, each topic has a teaching/question file and a separate answer file. Consolidate ready topics into one teaching/question deck and one shared HTML answer file later; do not interleave practice answers. The M04 core-ratio build is in `topics/ratio/` at the project root. The additional ratio-application set is still planned.
+`styles/answers.css` owns all answer-page typography, spacing, colours, responsive rules and diagram display sizes. Generators embed its contents into each delivered HTML file, keeping files portable without a separate stylesheet dependency. Edit this CSS source, then run `python3 scripts/refresh_answers.py`; do not edit generated HTML or add stylesheet strings in topic generators.
+
+Use the named `:root` tokens for shared adjustments: `--answer-size` for final fraction/whole/mixed answers, `--fraction-digit-scale` for numerator/denominator text, `--assessment-diagram-width` and `--method-diagram-width` for worked diagrams. Final fraction answers use `.math-answer` and `.fraction` markup from the shared renderer, with no fixed-width SVG or empty canvas. Default answer size is 1.5rem; fraction digits are .85em of that size. All 72 fraction answers use this same component.
+
+Keep CSS selectors organised by component, with responsive and print rules together at the end. No inline display styles, `!important` overrides or duplicate topic-specific CSS. SVG coordinates and internal glyph sizes remain mathematical drawing geometry; CSS controls each complete diagram's displayed size. PowerPoint renderers keep their separate native geometry.

@@ -25,7 +25,7 @@ Use these exact labels and prompts on both step-by-step practice slides. Repeat 
 
 Instruction: **Follow each step down your column.**
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | A car travels 120 km in 2 hours. Find its average speed. | A car travels 90 km in 1 hour 30 minutes. Find its average speed. | A car travels 48 km in 1 hour, then 30 km in 30 minutes. Find its average speed over the whole journey. |
 | Keywords & Calculation | Speed = distance ÷ time. | 1 hour 30 minutes = 1.5 hours. | Use total distance and total time. |
@@ -41,7 +41,7 @@ Use an editable journey line for Depth with two labelled sections: 48 km / 1 h a
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | A car travels at 50 km/h for 3 hours. Find the distance. | A car travels 45 km in 45 minutes. Find its average speed in km/h. | A car travels 40 km in 1 hour, then 24 km in 30 minutes. Find its average speed over the whole journey. |
 
@@ -55,7 +55,7 @@ Teacher working:
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | A car travels 180 km at 60 km/h. Find the time in hours. | A car travels at 48 km/h for 1 hour 15 minutes. Find the distance. | A car travels 120 km in 2 hours, then stops for 30 minutes. Find the average speed including the stop. |
 
@@ -69,7 +69,7 @@ Teacher working:
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A car travels 64 km in 2 hours. Find its average speed. | A car travels 31 km in 30 minutes. Find its average speed in km/h. | A car travels 36 km in 1 hour, then 24 km in 30 minutes. Find its average speed over the whole journey. |
 | 2 | A car travels at 36 km/h for 3 hours. Find the distance. | A car travels at 66 km/h for 45 minutes. Find the distance. | A car travels 42 km in 1 hour, then 27 km in 30 minutes. Find its average speed over the whole journey. |
@@ -93,7 +93,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A car travels 80 km in 2 hours. Find its average speed. | A car travels at 72 km/h for 30 minutes. Find the distance. | A car travels 54 km in 1 hour, then 36 km in 30 minutes. Find its average speed over the whole journey. |
 | 2 | A car travels at 44 km/h for 3 hours. Find the distance. | A car travels 57 km in 45 minutes. Find its average speed in km/h. | A car travels 60 km in 1 hour, then 39 km in 30 minutes. Find its average speed over the whole journey. |
@@ -117,7 +117,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A car travels 96 km in 2 hours. Find its average speed. | A car travels 41 km in 30 minutes. Find its average speed in km/h. | A car travels 290 km in 2 hours, then stops for 30 minutes. Find its average speed including the stop. |
 | 2 | A car travels at 52 km/h for 3 hours. Find the distance. | A car travels at 86 km/h for 45 minutes. Find the distance. | A car travels 305 km in 2 hours, then stops for 30 minutes. Find its average speed including the stop. |
@@ -141,7 +141,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A car travels 112 km in 2 hours. Find its average speed. | A car travels at 92 km/h for 30 minutes. Find the distance. | A car travels 390 km in 2 hours, then stops for 30 minutes. Find its average speed including the stop. |
 | 2 | A car travels at 60 km/h for 3 hours. Find the distance. | A car travels 72 km in 45 minutes. Find its average speed in km/h. | A car travels 405 km in 2 hours, then stops for 30 minutes. Find its average speed including the stop. |

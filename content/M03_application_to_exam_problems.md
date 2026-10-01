@@ -8,7 +8,7 @@ The user accepted this content before the Markdown-first workflow. This is a ref
 
 Worked demo  •  Choose the calculation, use a written method, then check.
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | 84 tins are shared equally among 4 boxes. How many tins go in each box? | 130 biscuits are packed in packs of 6. How many completely full packs can be made? | 145 students need minibuses with 9 passenger seats each. Hire costs £40 per minibus. Find the total cost. |
 | 1. Keywords & Calculation | “shared equally” among 4 boxes<br>84 ÷ 4 | “packs of 6”; “completely full”<br>130 ÷ 6 | “9 passenger seats”; “£40 per minibus”<br>145 ÷ 9, then buses × 40 |
@@ -20,7 +20,7 @@ Worked demo  •  Choose the calculation, use a written method, then check.
 
 Application to Exam Problems — worked demo
 
-Guided: 84 ÷ 4 = 21 tins per box. Core: 130 ÷ 6 = 21 r 4, so 21 full packs. Depth: 145 ÷ 9 = 16 r 1, so 17 minibuses; 17 × 40 = £680.
+Start: 84 ÷ 4 = 21 tins per box. Build: 130 ÷ 6 = 21 r 4, so 21 full packs. Confidence: 145 ÷ 9 = 16 r 1, so 17 minibuses; 17 × 40 = £680.
 
 For Depth, 16 buses would seat only 144 students. The first answer must be interpreted before the next calculation. In the lattice for 17 × 40, top row cells are 04, 28; bottom row cells 00, 00. Diagonal totals from right: 0, 8, 6, 0 → 680. Both worked diagrams are provided as editable groups. Ballpark calculations check scale; they are not exact-answer proofs.
 
@@ -28,7 +28,7 @@ For Depth, 16 buses would seat only 144 students. The first answer must be inter
 
 Step-by-step practice 1  •  Decide which calculation(s) each question needs.
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | 42 packs each contain 15 pens. How many pens are there? | 215 apples go into bags of 6. How many completely full bags can be made? | A painter charges £18 per hour for 32 hours, plus £120 for paint. Find the total bill. |
 | 1. Keywords & Calculation | Identify the keywords. Write down the calculation(s) you need to do. | Identify the keywords. Write down the calculation(s) you need to do. | Identify the keywords. Write down the calculation(s) you need to do. |
@@ -40,17 +40,17 @@ Step-by-step practice 1  •  Decide which calculation(s) each question needs.
 
 Application to Exam Problems — step-by-step practice 1
 
-Thread 1: Guided: 42 × 15 = 630 pens. Estimate: 40 × 15 = 600.
+Start: 42 × 15 = 630 pens. Estimate: 40 × 15 = 600.
 
-Thread 2: Core: 215 ÷ 6 = 35 r 5 → 35 full bags. Estimate: 210 ÷ 6 = 35.
+Build: 215 ÷ 6 = 35 r 5 → 35 full bags. Estimate: 210 ÷ 6 = 35.
 
-Thread 3: Depth: 18 × 32 = 576; 576 + 120 = £696. Estimate: 20 × 30 + 120 = 720.
+Confidence: 18 × 32 = 576; 576 + 120 = £696. Estimate: 20 × 30 + 120 = 720.
 
 ## Slide 3 — Application to Exam Problems
 
 Step-by-step practice 2  •  Decide which calculation(s) each question needs.
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | 168 students form 7 equal groups. How many students are in each group? | A worker earns £16 per hour for 27 hours. What are their total wages? | 157 passengers need vans with 8 passenger seats each. Hire costs £45 per van. Find the total hire cost. |
 | 1. Keywords & Calculation | Identify the keywords. Write down the calculation(s) you need to do. | Identify the keywords. Write down the calculation(s) you need to do. | Identify the keywords. Write down the calculation(s) you need to do. |
@@ -62,17 +62,17 @@ Step-by-step practice 2  •  Decide which calculation(s) each question needs.
 
 Application to Exam Problems — step-by-step practice 2
 
-Thread 1: Guided: 168 ÷ 7 = 24 students. Estimate: 140 ÷ 7 = 20.
+Start: 168 ÷ 7 = 24 students. Estimate: 140 ÷ 7 = 20.
 
-Thread 2: Core: 16 × 27 = £432. Estimate: 16 × 30 = 480.
+Build: 16 × 27 = £432. Estimate: 16 × 30 = 480.
 
-Thread 3: Depth: 157 ÷ 8 = 19 r 5 → 20 vans; 20 × 45 = £900. Estimate: 160 ÷ 8 × 45 = 900.
+Confidence: 157 ÷ 8 = 19 r 5 → 20 vans; 20 × 45 = £900. Estimate: 160 ÷ 8 × 45 = 900.
 
 ## Slide 4 — Application to Exam Problems
 
 Independent practice 1  •  Choose a column. Show your working and check your answers.
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A library has 14 shelves with 32 books on each. How many books are there? | 130 eggs are packed in cartons of 6. How many full cartons can be packed? | 45 tickets cost £16 each. A group gets £50 off the total. How much does it pay? |
 | 2 | 105 students form 7 equal groups. How many students are in each group? | 32 passengers need cars with 5 passenger seats each. How many cars are needed? | 115 passengers need vans with 8 passenger seats each. Hire costs £65 per van. Find the total cost. |
@@ -85,7 +85,7 @@ Independent practice 1  •  Choose a column. Show your working and check your a
 
 Application to Exam Problems — independent practice 1
 
-### Thread 1: Guided
+### Start
 
 1. 14 × 32 = 448 books
 
@@ -99,7 +99,7 @@ Application to Exam Problems — independent practice 1
 
 6. 175 ÷ 5 = £35
 
-### Thread 2: Core
+### Build
 
 1. 130 ÷ 6 = 21 r 4 → 21 full cartons
 
@@ -113,7 +113,7 @@ Application to Exam Problems — independent practice 1
 
 6. 132 ÷ 8 = £16.50
 
-### Thread 3: Depth
+### Confidence
 
 1. 45 × 16 = 720; 720 − 50 = £670
 
@@ -131,7 +131,7 @@ Application to Exam Problems — independent practice 1
 
 Independent practice 2  •  Choose a column. Show your working and check your answers.
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 18 trays each hold 24 plants. How many plants are there? | 197 leaflets are bundled in groups of 8. How many complete bundles can be made? | 28 shirts cost £14 each. Delivery costs £18. Find the total cost. |
 | 2 | 156 pens are shared equally among 6 classes. How many pens does each class get? | A camp has 83 people. Each tent sleeps 6. How many tents are needed? | 94 people need tables seating 6 each. Tables cost £12 each to hire. Find the total hire cost. |
@@ -144,7 +144,7 @@ Independent practice 2  •  Choose a column. Show your working and check your a
 
 Application to Exam Problems — independent practice 2
 
-### Thread 1: Guided
+### Start
 
 1. 18 × 24 = 432 plants
 
@@ -158,7 +158,7 @@ Application to Exam Problems — independent practice 2
 
 6. 189 ÷ 7 = 27 cm
 
-### Thread 2: Core
+### Build
 
 1. 197 ÷ 8 = 24 r 5 → 24 bundles
 
@@ -172,7 +172,7 @@ Application to Exam Problems — independent practice 2
 
 6. 253 ÷ 24 = 10 r 13 → 11 albums
 
-### Thread 3: Depth
+### Confidence
 
 1. 28 × 14 = 392; 392 + 18 = £410
 
@@ -190,7 +190,7 @@ Application to Exam Problems — independent practice 2
 
 Independent practice 3  •  Choose a column. Show your working and check your answers.
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 16 boxes each hold 35 cables. How many cables are there? | 245 apples are packed in bags of 8. How many full bags can be made? | A gardener charges £21 per hour for 18 hours, plus £64 for plants. Find the total bill. |
 | 2 | 252 stickers are shared equally among 7 students. How many does each student get? | A hotel has 137 guests. Each shuttle carries 9 guests. How many shuttle trips are needed? | 167 passengers need coaches with 24 passenger seats each. Hire costs £85 per coach. Find the total cost. |
@@ -203,7 +203,7 @@ Independent practice 3  •  Choose a column. Show your working and check your a
 
 Application to Exam Problems — independent practice 3
 
-### Thread 1: Guided
+### Start
 
 1. 16 × 35 = 560 cables
 
@@ -217,7 +217,7 @@ Application to Exam Problems — independent practice 3
 
 6. 315 ÷ 9 = £35
 
-### Thread 2: Core
+### Build
 
 1. 245 ÷ 8 = 30 r 5 → 30 bags
 
@@ -231,7 +231,7 @@ Application to Exam Problems — independent practice 3
 
 6. 25 × 48 = 1,200 cm²
 
-### Thread 3: Depth
+### Confidence
 
 1. 21 × 18 = 378; 378 + 64 = £442
 
@@ -249,7 +249,7 @@ Application to Exam Problems — independent practice 3
 
 Independent practice 4  •  Choose a column. Show your working and check your answers.
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 27 packets each contain 18 labels. How many labels are there? | 367 bottles are packed in boxes of 12. How many complete boxes can be packed? | 36 tickets cost £17 each. A group gets £75 off the total. How much does it pay? |
 | 2 | 384 books are shared equally among 8 shelves. How many books go on each shelf? | A hostel has 158 guests. Each room holds 6 guests. How many rooms are needed? | 203 people need tables seating 8 each. Hire costs £15 per table. Find the total hire cost. |
@@ -262,7 +262,7 @@ Independent practice 4  •  Choose a column. Show your working and check your a
 
 Application to Exam Problems — independent practice 4
 
-### Thread 1: Guided
+### Start
 
 1. 27 × 18 = 486 labels
 
@@ -276,7 +276,7 @@ Application to Exam Problems — independent practice 4
 
 6. 294 ÷ 6 = 49 cm
 
-### Thread 2: Core
+### Build
 
 1. 367 ÷ 12 = 30 r 7 → 30 boxes
 
@@ -290,7 +290,7 @@ Application to Exam Problems — independent practice 4
 
 6. 319 ÷ 24 = 13 r 7 → 14 folders
 
-### Thread 3: Depth
+### Confidence
 
 1. 36 × 17 = 612; 612 − 75 = £537
 

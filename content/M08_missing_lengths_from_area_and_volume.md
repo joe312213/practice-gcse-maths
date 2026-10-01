@@ -25,7 +25,7 @@ Use these exact labels and prompts on both step-by-step practice slides. Repeat 
 
 Instruction: **Follow each step down your column.**
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | A rectangle has area 48 cm² and length 8 cm. Find its width. | A triangle has area 30 cm² and base 10 cm. Find its perpendicular height. | A cuboid has volume 240 cm³, width 40 mm and height 6 cm. Find its length in cm. |
 | Keywords & Calculation | Area = length × width; 48 = 8 × width. | Area = base × height ÷ 2; 30 = 10 × height ÷ 2. | 40 mm = 4 cm. Volume = length × width × height. |
@@ -41,7 +41,7 @@ Provide editable diagrams for all three demo shapes. Label the rectangle 8 cm an
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | A rectangle has area 72 cm² and length 9 cm. Find its width. | A triangle has area 42 cm² and base 12 cm. Find its perpendicular height. | A cuboid has volume 360 cm³, width 50 mm and height 8 cm. Find its length in cm. |
 
@@ -55,7 +55,7 @@ Teacher working:
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | A rectangle has area 84 cm² and width 7 cm. Find its length. | A parallelogram has area 54 cm² and base 9 cm. Find its perpendicular height. | A cuboid has volume 480 cm³, width 8 cm and height 60 mm. Find its length in cm. |
 
@@ -69,7 +69,7 @@ Teacher working:
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A rectangle has area 24 cm² and length 8 cm. Find its width. | A triangle has area 20 cm² and base 10 cm. Find its perpendicular height. | A cuboid has volume 84 cm³, width 3 cm and height 4 cm. Find its length. |
 | 2 | A rectangle has area 36 cm² and length 9 cm. Find its width. | A parallelogram has area 60 cm² and base 12 cm. Find its perpendicular height. | A cuboid has volume 128 cm³, width 4 cm and height 4 cm. Find its length. |
@@ -93,7 +93,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A rectangle has area 33 cm² and length 11 cm. Find its width. | A parallelogram has area 120 cm² and base 24 cm. Find its perpendicular height. | A cuboid has volume 135 cm³, width 3 cm and height 5 cm. Find its length. |
 | 2 | A rectangle has area 48 cm² and length 12 cm. Find its width. | A triangle has area 78 cm² and base 26 cm. Find its perpendicular height. | A cuboid has volume 200 cm³, width 4 cm and height 5 cm. Find its length. |
@@ -117,7 +117,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A rectangle has area 42 cm² and length 14 cm. Find its width. | A triangle has area 114 cm² and base 38 cm. Find its perpendicular height. | A cuboid has volume 198 cm³, width 30 mm and height 6 cm. Find its length in cm. |
 | 2 | A rectangle has area 60 cm² and length 15 cm. Find its width. | A parallelogram has area 280 cm² and base 40 cm. Find its perpendicular height. | A cuboid has volume 288 cm³, width 40 mm and height 6 cm. Find its length in cm. |
@@ -141,7 +141,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A rectangle has area 51 cm² and length 17 cm. Find its width. | A parallelogram has area 364 cm² and base 52 cm. Find its perpendicular height. | A cuboid has volume 273 cm³, width 30 mm and height 7 cm. Find its length in cm. |
 | 2 | A rectangle has area 72 cm² and length 18 cm. Find its width. | A triangle has area 216 cm² and base 54 cm. Find its perpendicular height. | A cuboid has volume 392 cm³, width 40 mm and height 7 cm. Find its length in cm. |

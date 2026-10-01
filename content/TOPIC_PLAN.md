@@ -32,7 +32,7 @@ All topics’ answers must be collected in one separate HTML answer file. Preser
 | Area and volume, including missing lengths | Area calculations; volume calculations; missing lengths from area/volume | Full draft for missing lengths: [M08](M08_missing_lengths_from_area_and_volume.md). Forward calculations planned below. |
 | Speed, distance and time, including Foundation problems | Select the calculation; convert time units; whole-journey problems | Full draft: [M12](M12_speed_distance_and_time.md). |
 | Forming equations | Define an unknown; form an equation from words or geometry; solve and interpret | Full draft: [M11](M11_forming_and_solving_equations.md). |
-| Solving equations | One step; two steps; brackets and unknowns on both sides | Full draft: [M10](M10_solving_equations.md). |
+| Solving equations | One step; two steps; brackets and unknowns on both sides | Built for review: [M10](M10_solving_equations.md). |
 | Scaling, mirroring, rotating and translating 2D shapes | Enlargement; reflection; rotation; translation — a separate set for each | Planned below; diagrams and full question banks not yet drafted. |
 | Polygons, angles and parallelogram area | Polygon angle totals; interior/exterior angles; parallelogram area | Scope confirmed by the user; detailed planning below. |
 | Pythagoras’ theorem | Introduce the method, then apply it to problems | Separate topic confirmed by the user; detailed planning below. |
@@ -45,9 +45,9 @@ Keep the questions numerical while practising the method. Do not turn these into
 
 ### Addition and subtraction
 
-- **Guided:** common denominators, e.g. 2/7 + 3/7 = 5/7.
-- **Core:** different denominators, one a multiple of the other, e.g. 1/3 + 1/6 = 1/2.
-- **Depth:** unrelated denominators and mixed numbers, e.g. 1 1/3 − 3/4 = 7/12.
+- **Start:** common denominators, e.g. 2/7 + 3/7 = 5/7.
+- **Build:** different denominators, one a multiple of the other, e.g. 1/3 + 1/6 = 1/2.
+- **Confidence:** unrelated denominators and mixed numbers, e.g. 1 1/3 − 3/4 = 7/12.
 - **Proposed row labels:** Prepare the Fractions → Use a Common Denominator → Add or Subtract → Simplify the Answer.
 - **Step detail:** convert mixed numbers to improper fractions when needed; find a common denominator; change numerators and denominators together; operate on numerators only; simplify and give a mixed number when the question requests it.
 - **Diagram:** editable equal-length fraction strips, partitioned into the same-sized parts before combining or subtracting. Do not draw unequal wholes.
@@ -55,9 +55,9 @@ Keep the questions numerical while practising the method. Do not turn these into
 
 ### Multiplication of fractions
 
-- **Guided:** fraction × whole number, e.g. 1/3 × 6 = 2.
-- **Core:** proper fraction × proper fraction, e.g. 3/4 × 2/5 = 3/10.
-- **Depth:** mixed numbers and simplification, e.g. 1 2/3 × 2 1/4 = 3 3/4.
+- **Start:** fraction × whole number, e.g. 1/3 × 6 = 2.
+- **Build:** proper fraction × proper fraction, e.g. 3/4 × 2/5 = 3/10.
+- **Confidence:** mixed numbers and simplification, e.g. 1 2/3 × 2 1/4 = 3 3/4.
 - **Proposed row labels:** Write as Fractions → Simplify Before Multiplying → Multiply → Simplify the Answer.
 - **Step detail:** whole numbers have denominator 1; convert mixed numbers; cancel common factors across numerator and denominator where useful; multiply numerators and denominators; check the final form. Cancellation is division by a common factor, not deleting matching digits.
 - **Diagram:** an editable rectangle can show 3/4 of 2/5 as 6 of 20 equal cells. Match the diagram precisely to the written product.
@@ -65,9 +65,9 @@ Keep the questions numerical while practising the method. Do not turn these into
 
 ### Division of fractions
 
-- **Guided:** fraction ÷ whole number, e.g. 3/4 ÷ 3 = 1/4.
-- **Core:** proper fraction ÷ proper fraction, e.g. 2/3 ÷ 4/5 = 5/6.
-- **Depth:** mixed numbers, e.g. 2 1/4 ÷ 1 1/2 = 1 1/2.
+- **Start:** fraction ÷ whole number, e.g. 3/4 ÷ 3 = 1/4.
+- **Build:** proper fraction ÷ proper fraction, e.g. 2/3 ÷ 4/5 = 5/6.
+- **Confidence:** mixed numbers, e.g. 2 1/4 ÷ 1 1/2 = 1 1/2.
 - **Proposed row labels:** Write as Fractions → Multiply by the Reciprocal → Multiply → Simplify the Answer.
 - **Step detail:** convert mixed numbers first; leave the first fraction unchanged; replace division with multiplication by the reciprocal of the second fraction; simplify and multiply; check by multiplication.
 - **Diagram:** show 3/4 divided into three equal shares for Guided. For a grouping example, show how many 1/4 lengths fit into 3/4. Explain that these are two interpretations of division.
@@ -85,9 +85,9 @@ Use two sets so that practising the core ratio relationships is followed by appl
 
 A separate seven-slide set: one full worked demo, two step-by-step practice slides, then four independent question grids.
 
-- **Guided:** straightforward recipe, mixture or sharing questions. Example: flour:sugar is 3:2; 300 g flour requires **200 g sugar**.
-- **Core:** decide which ratio amount is represented and interpret the units or total. Example: juice:water is 1:4; making 2.5 litres requires **500 ml juice**. Map-scale example: 1:50,000 and 4 cm on the map represents **2 km**.
-- **Depth:** use a ratio calculation in a further decision or calculation. Example: blue:white paint is 2:3; a 15-litre mixture uses 6 litres blue at £8/L and 9 litres white at £5/L, costing **£93**. A change-of-ratio example: girls:boys is 3:2 in a class of 30; four boys join, making the new ratio **9:8**.
+- **Start:** straightforward recipe, mixture or sharing questions. Example: flour:sugar is 3:2; 300 g flour requires **200 g sugar**.
+- **Build:** decide which ratio amount is represented and interpret the units or total. Example: juice:water is 1:4; making 2.5 litres requires **500 ml juice**. Map-scale example: 1:50,000 and 4 cm on the map represents **2 km**.
+- **Confidence:** use a ratio calculation in a further decision or calculation. Example: blue:white paint is 2:3; a 15-litre mixture uses 6 litres blue at £8/L and 9 litres white at £5/L, costing **£93**. A change-of-ratio example: girls:boys is 3:2 in a class of 30; four boys join, making the new ratio **9:8**.
 - **Row labels:** Keywords & Calculation → Written Method → Ballpark Check & Math → Final Answer. Practice prompts stay neutral; students choose the calculation(s).
 - **Worked diagrams:** equal-part bars, labelled with the known total or amount; map problems give the scale explicitly. Use actual units in labels.
 - **Independent banks:** include recipes/mixtures, sharing in context, scale/unit conversion, and cost or changed-quantity problems. Do not fill the whole set with the same A-and-B money question with different numbers.
@@ -101,18 +101,18 @@ Separate calculating area/volume from working backwards to a length. The existin
 
 ### Area calculations
 
-- **Guided:** rectangles and squares, e.g. 8 cm × 5 cm gives 40 cm².
-- **Core:** triangles and parallelograms with a clearly identified perpendicular height, e.g. triangle base 12 cm and height 7 cm gives 42 cm².
-- **Depth:** trapezia and compound rectilinear shapes, e.g. parallel sides 8 cm and 14 cm with perpendicular height 5 cm gives 55 cm².
+- **Start:** rectangles and squares, e.g. 8 cm × 5 cm gives 40 cm².
+- **Build:** triangles and parallelograms with a clearly identified perpendicular height, e.g. triangle base 12 cm and height 7 cm gives 42 cm².
+- **Confidence:** trapezia and compound rectilinear shapes, e.g. parallel sides 8 cm and 14 cm with perpendicular height 5 cm gives 55 cm².
 - **Proposed row labels:** Identify the Shape & Dimensions → Write the Calculation → Calculate the Area → Check & State the Area.
 - **Diagram:** editable shapes with all required dimensions, right-angle marks, and “Not to scale”. A sloping side must not look like the required perpendicular height. Compound diagrams must contain enough dimensions to work out every part.
 - **Practice banks:** vary orientation as well as dimensions; include splitting and subtracting parts for compound area. Require square units.
 
 ### Volume calculations
 
-- **Guided:** cubes and cuboids, e.g. 4 cm × 3 cm × 5 cm gives 60 cm³.
-- **Core:** right triangular prisms, e.g. triangular cross-section base 6 cm and perpendicular height 4 cm, prism length 10 cm, gives 120 cm³.
-- **Depth:** cylinders and compound cuboids, e.g. radius 3 cm and height 10 cm gives 90π cm³ (about 282.7 cm³ to 1 decimal place).
+- **Start:** cubes and cuboids, e.g. 4 cm × 3 cm × 5 cm gives 60 cm³.
+- **Build:** right triangular prisms, e.g. triangular cross-section base 6 cm and perpendicular height 4 cm, prism length 10 cm, gives 120 cm³.
+- **Confidence:** cylinders and compound cuboids, e.g. radius 3 cm and height 10 cm gives 90π cm³ (about 282.7 cm³ to 1 decimal place).
 - **Proposed row labels:** Identify the Cross-section → Find the Cross-sectional Area → Calculate the Volume → Check & State the Volume.
 - **Diagram:** distinguish perpendicular cross-section dimensions from prism length. For cylinders label radius or diameter explicitly, not an ambiguous line.
 - **Practice banks:** include radius/diameter interpretation and simple unit consistency. Specify exact answers in terms of π or a rounding requirement. Calculator use is proposed for the cylinder questions.
@@ -130,36 +130,36 @@ Each module needs its own worked demo, two practice grids and four independent g
 
 ### Enlargement
 
-- **Guided:** positive integer scale factor about the origin.
-- **Core:** enlargement from a stated centre away from the origin.
-- **Depth:** fractional scale factors (reductions), or identify the centre and scale factor from two shapes. Negative scale factors are not assumed in this Foundation plan.
+- **Start:** positive integer scale factor about the origin.
+- **Build:** enlargement from a stated centre away from the origin.
+- **Confidence:** fractional scale factors (reductions), or identify the centre and scale factor from two shapes. Negative scale factors are not assumed in this Foundation plan.
 - **Example:** A(1,1), B(3,1), C(1,2), enlarged by scale factor 2 about (0,0), becomes A′(2,2), B′(6,2), C′(2,4).
 - **Proposed row labels:** Mark the Centre & Scale Factor → Scale Each Vertex → Draw the Image → Check Corresponding Lengths.
 - **Key check:** measure from the centre of enlargement, not necessarily from the origin. Use prime labels for the image.
 
 ### Reflection
 
-- **Guided:** horizontal and vertical mirror lines drawn on a grid.
-- **Core:** lines x = a or y = b, including negative coordinates.
-- **Depth:** diagonal lines y = x and y = −x, or identify the mirror line.
+- **Start:** horizontal and vertical mirror lines drawn on a grid.
+- **Build:** lines x = a or y = b, including negative coordinates.
+- **Confidence:** diagonal lines y = x and y = −x, or identify the mirror line.
 - **Example:** reflecting A(1,1), B(3,1), C(1,2) in x = 0 gives A′(−1,1), B′(−3,1), C′(−1,2).
 - **Proposed row labels:** Mark the Mirror Line → Reflect Each Vertex → Draw the Image → Check Perpendicular Distances.
 - **Key check:** corresponding vertices lie equal perpendicular distances from the mirror line. A vertex on the line stays fixed.
 
 ### Rotation
 
-- **Guided:** quarter- and half-turns about a marked grid point, with direction stated for quarter-turns.
-- **Core:** 90°/180° rotations about a stated centre, including centres away from the origin.
-- **Depth:** describe a rotation completely or perform a less familiar orientation such as 270° clockwise, with centre and direction explicit.
+- **Start:** quarter- and half-turns about a marked grid point, with direction stated for quarter-turns.
+- **Build:** 90°/180° rotations about a stated centre, including centres away from the origin.
+- **Confidence:** describe a rotation completely or perform a less familiar orientation such as 270° clockwise, with centre and direction explicit.
 - **Example:** A(1,1), B(3,1), C(1,2), rotated 90° anticlockwise about (0,0), becomes A′(−1,1), B′(−1,3), C′(−2,1).
 - **Proposed row labels:** Mark the Centre, Angle & Direction → Rotate Each Vertex → Draw the Image → Check Distances & Turn.
 - **Key check:** a complete description needs centre, angle and direction (direction is unnecessary for 180°). Use an asymmetric shape so a rotation can be identified without ambiguity.
 
 ### Translation
 
-- **Guided:** stated horizontal and vertical moves.
-- **Core:** positive and negative column vectors.
-- **Depth:** infer the vector from corresponding shapes, or combine two translations.
+- **Start:** stated horizontal and vertical moves.
+- **Build:** positive and negative column vectors.
+- **Confidence:** infer the vector from corresponding shapes, or combine two translations.
 - **Example:** translating A(1,1), B(3,1), C(1,2) by 4 left and 2 up gives A′(−3,3), B′(−1,3), C′(−3,4).
 - **Proposed row labels:** Read the Translation → Move Each Vertex → Draw the Image → Check the Movement.
 - **Key check:** every vertex moves the same amount; shape size and orientation stay the same. Draw vectors as proper two-entry columns on slides; in Markdown label horizontal and vertical components explicitly.
@@ -174,9 +174,9 @@ This is distinct from Pythagoras. The user confirmed the scope: total interior a
 
 ### Polygon angles
 
-- **Guided:** total interior angle sums, initially triangles and quadrilaterals, then other polygons. Example: a pentagon has (5 − 2) × 180° = **540°** in total.
-- **Core:** individual interior and exterior angles of a regular polygon. Example: a regular hexagon has exterior angle 360° ÷ 6 = **60°**, and interior angle **120°**.
-- **Depth:** work backwards to the number of sides or combine angle facts. Example: a regular polygon with exterior angle 24° has **15 sides**. Its interior angle is **156°**.
+- **Start:** total interior angle sums, initially triangles and quadrilaterals, then other polygons. Example: a pentagon has (5 − 2) × 180° = **540°** in total.
+- **Build:** individual interior and exterior angles of a regular polygon. Example: a regular hexagon has exterior angle 360° ÷ 6 = **60°**, and interior angle **120°**.
+- **Confidence:** work backwards to the number of sides or combine angle facts. Example: a regular polygon with exterior angle 24° has **15 sides**. Its interior angle is **156°**.
 - **Proposed row labels:** Identify the Angle Fact → Write the Calculation → Find the Missing Value → State the Answer & Reason.
 - **Essential distinctions:** (n − 2) × 180° gives the interior-angle **total**; divide by n for an individual angle only when the polygon is regular. One exterior angle at each vertex totals 360° for the convex polygons used here. An interior angle and its adjacent exterior angle sum to 180°.
 - **Diagram:** draw and label an exterior angle on an extended side. Mark regular polygons as regular; do not assume regularity from appearance. Use convex polygons and diagrams marked “Not to scale”.
@@ -193,9 +193,9 @@ This is distinct from Pythagoras. The user confirmed the scope: total interior a
 
 A separate topic. Introduce the theorem and method first, then include Foundation GCSE problems that use it.
 
-- **Guided:** find the hypotenuse, e.g. legs 6 cm and 8 cm give **10 cm**.
-- **Core:** find a shorter side, e.g. hypotenuse 13 cm and one leg 5 cm give **12 cm**.
-- **Depth:** find a length and use it in a problem, e.g. a right triangle with hypotenuse 10 cm and one leg 8 cm has another leg of **6 cm** and area **24 cm²**.
+- **Start:** find the hypotenuse, e.g. legs 6 cm and 8 cm give **10 cm**.
+- **Build:** find a shorter side, e.g. hypotenuse 13 cm and one leg 5 cm give **12 cm**.
+- **Confidence:** find a length and use it in a problem, e.g. a right triangle with hypotenuse 10 cm and one leg 8 cm has another leg of **6 cm** and area **24 cm²**.
 - **Proposed row labels for the method introduction:** Identify the Hypotenuse → Write the Equation → Calculate the Missing Length → Check & Answer the Question.
 - **Step detail:** identify the right angle; identify the opposite side as the hypotenuse; use a² + b² = c²; subtract when finding a shorter side; take the square root; complete any further calculation required.
 - **Diagram:** right-angle marker and clear side labels on every relevant triangle. Vary orientation so the hypotenuse is not always in the same position. State any geometric assumptions needed by a word problem.
@@ -218,15 +218,15 @@ Use integer triples initially and some non-integer results later. Propose calcul
 
 Prioritise secure methods that recur across Foundation questions and open access to later topics. This is a teaching judgement for this grade-2/3 retake group, not a measured national ranking of its biggest weaknesses. Use the initial assessments to adjust time and revisit gaps. Do not delay equations and percentages until every number topic is complete; provide short prerequisite recaps where needed.
 
-**Next implementation: M10 solving equations, then M15 fraction addition/subtraction. M06 percentages of amounts and percentage change follows next.** M15 is a new stable ID for the already-planned fraction set, not a new scope addition. Fraction multiplication and division remain separate later sets.
+**M10 solving equations and M15 fraction addition/subtraction are built for review and integrated. Next implementation: M06 percentages of amounts and percentage change.** M15 is a new stable ID for the already-planned fraction set, not a new scope addition. Fraction multiplication and division remain separate later sets.
 
 | Order | Topic | Priority and rationale |
 | --- | --- | --- |
 | 1 | M01 written multiplication | Built; retrieve essential facts/place value as needed. |
 | 2 | M02 written division | Built; supports fractions, percentages and inverse operations. |
 | 3 | M13 signed addition/subtraction | Built; supports rearranging equations and negative answers. |
-| 4 | M10 solving equations | Build first: balanced operations, one/two steps, then brackets and both sides. Short signed-division recap supports negative solutions. |
-| 5 | M15 fraction addition/subtraction | Build second: equivalence, common denominators, simplification, then mixed numbers. |
+| 4 | M10 solving equations | Built: balanced operations, one/two steps, then brackets and both sides. Short signed-division recap supports negative solutions. |
+| 5 | M15 fraction addition/subtraction | Built: equivalence, common denominators, simplification, then mixed numbers. |
 | 6 | M06 percentages of amounts and percentage change | Next priority: basic percentages, original amount, increase/decrease; recap fraction/decimal equivalence in this topic. |
 | 7 | M03 multiplication/division problems | Built; revisit choosing operations and interpreting remainders. |
 | 8 | M04 core ratio | Built; equal parts, known totals/amounts/differences. |

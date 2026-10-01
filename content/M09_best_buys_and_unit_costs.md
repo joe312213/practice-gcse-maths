@@ -25,7 +25,7 @@ Use these exact labels and prompts on both step-by-step practice slides. Repeat 
 
 Instruction: **Follow each step down your column.**
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | Six pens cost £3. Find the cost per pen. | Pack A has 6 pens for £3. Pack B has 10 pens for £4.50. Which has the lower cost per pen? | You need at least 12 pens. A packs hold 6 for £3; B packs hold 10 for £4.50. Buy one pack type only. Which costs less? |
 | Keywords & Calculation | Find the cost of one pen. | Compare costs for the same quantity: one pen. | Compare whole-pack costs for at least 12 pens. |
@@ -41,7 +41,7 @@ Use editable pack cards with number of items and price. Label each clearly A or 
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | Eight pens cost £2.40. Find the cost per pen. | A: 8 pens for £2.40. B: 12 pens for £3. Which has the lower cost per pen? | You need at least 16 pens. A: 8 for £2.40; B: 12 for £3. Buy one pack type only. Which costs less? |
 
@@ -55,7 +55,7 @@ Teacher working:
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | Five notebooks cost £6. Find the cost per notebook. | A: 5 notebooks for £6. B: 8 for £8.80. Which has the lower cost per notebook? | You need at least 15 notebooks. A: 5 for £6; B: 8 for £8.80. Buy one pack type only. Which costs less? |
 
@@ -69,7 +69,7 @@ Teacher working:
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 4 pens cost £1.00. Find the cost per pen. | A: 4 pens for £1.00. B: 7 pens for £1.40. Which has the lower cost per pen? | You need at least 8 pens. A: 4 for £1.00; B: 7 for £1.40. Buy one pack type only. Which costs less? |
 | 2 | 5 pens cost £1.50. Find the cost per pen. | A: 5 pens for £1.50. B: 8 pens for £2.80. Which has the lower cost per pen? | You need at least 11 pens. A: 5 for £1.50; B: 8 for £2.80. Buy one pack type only. Which costs less? |
@@ -93,7 +93,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 4 pens cost £1.20. Find the cost per pen. | A: 4 pens for £1.20. B: 7 pens for £2.45. Which has the lower cost per pen? | You need at least 12 pens. A: 4 for £1.20; B: 7 for £2.45. Buy one pack type only. Which costs less? |
 | 2 | 5 pens cost £1.75. Find the cost per pen. | A: 5 pens for £1.75. B: 8 pens for £2.40. Which has the lower cost per pen? | You need at least 16 pens. A: 5 for £1.75; B: 8 for £2.40. Buy one pack type only. Which costs less? |
@@ -117,7 +117,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 4 pens cost £1.40. Find the cost per pen. | A: 4 pens for £1.40. B: 7 pens for £2.10. Which has the lower cost per pen? | You need at least 16 pens. A: 4 for £1.40; B: 7 for £2.10. Buy one pack type only. Which costs less? |
 | 2 | 5 pens cost £2.00. Find the cost per pen. | A: 5 pens for £2.00. B: 8 pens for £3.60. Which has the lower cost per pen? | You need at least 21 pens. A: 5 for £2.00; B: 8 for £3.60. Buy one pack type only. Which costs less? |
@@ -141,7 +141,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 4 pens cost £1.60. Find the cost per pen. | A: 4 pens for £1.60. B: 7 pens for £3.15. Which has the lower cost per pen? | You need at least 20 pens. A: 4 for £1.60; B: 7 for £3.15. Buy one pack type only. Which costs less? |
 | 2 | 5 pens cost £2.25. Find the cost per pen. | A: 5 pens for £2.25. B: 8 pens for £3.20. Which has the lower cost per pen? | You need at least 26 pens. A: 5 for £2.25; B: 8 for £3.20. Buy one pack type only. Which costs less? |

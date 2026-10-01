@@ -5,7 +5,7 @@
         "question": "84 ÷ 4",
         "working": "Bus-stop layout: dividend 84; quotient 20. Answer: 20",
         "correction": "4 ÷ 4 = 1, so the quotient is 21.",
-        "check": "21 × 4 = 84.",
+        "check": "Ballpark: 20 × 4 = 80; 30 × 4 = 120. Since 84 lies between these totals, expect a quotient between 20 and 30. This does not prove the exact remainder or decimal.",
         "bus": {
           "divisor": 4,
           "digits": [
@@ -27,7 +27,7 @@
         "question": "505 ÷ 5",
         "working": "Bus-stop layout: dividend 505; quotient 11. Answer: 11",
         "correction": "Keep the place-value zero: 101.",
-        "check": "101 × 5 = 505.",
+        "check": "Ballpark: 100 × 5 = 500; 200 × 5 = 1,000. Since 505 lies between these totals, expect a quotient between 100 and 200. This does not prove the exact remainder or decimal.",
         "bus": {
           "divisor": 5,
           "digits": [
@@ -51,7 +51,7 @@
         "question": "96 ÷ 3",
         "working": "Bus-stop layout: dividend 96; quotient 33. Answer: 33",
         "correction": "6 ÷ 3 = 2, so the quotient is 32.",
-        "check": "32 × 3 = 96.",
+        "check": "Ballpark: 30 × 3 = 90; 40 × 3 = 120. Since 96 lies between these totals, expect a quotient between 30 and 40. This does not prove the exact remainder or decimal.",
         "bus": {
           "divisor": 3,
           "digits": [
@@ -75,7 +75,7 @@
         "question": "145 ÷ 6",
         "working": "Bus-stop layout: dividend 145; quotient 20. Answer: 20 r 5",
         "correction": "Carry remainder 2 before the 5: 25 ÷ 6 = 4 r 1. Answer: 24 r 1.",
-        "check": "24 × 6 + 1 = 145.",
+        "check": "Ballpark: 20 × 6 = 120; 30 × 6 = 180. Since 145 lies between these totals, expect a quotient between 20 and 30. This does not prove the exact remainder or decimal.",
         "bus": {
           "divisor": 6,
           "digits": [
@@ -101,7 +101,7 @@
         "question": "132 ÷ 8 (decimal answer)",
         "working": "Bus-stop layout: dividend 132; quotient 16. Answer: 16.4",
         "correction": "The remainder is 4/8, not 4/10. Continue: 40 ÷ 8 = 5. Answer: 16.5.",
-        "check": "16.5 × 8 = 132.",
+        "check": "Ballpark: 10 × 8 = 80; 20 × 8 = 160. Since 132 lies between these totals, expect a quotient between 10 and 20. This does not prove the exact remainder or decimal.",
         "bus": {
           "divisor": 8,
           "digits": [
@@ -128,7 +128,7 @@
         "question": "245 ÷ 6",
         "working": "Bus-stop layout: dividend 245; quotient 310. Answer: 310 r 5",
         "correction": "A remainder must be less than 6. 24 ÷ 6 = 4; then 5 ÷ 6 = 0 r 5. Answer: 40 r 5.",
-        "check": "40 × 6 + 5 = 245.",
+        "check": "Ballpark: 40 × 6 = 240; 50 × 6 = 300. Since 245 lies between these totals, expect a quotient between 40 and 50. This does not prove the exact remainder or decimal.",
         "bus": {
           "divisor": 6,
           "digits": [
@@ -157,7 +157,7 @@
         "question": "1,248 ÷ 12",
         "working": "Bus-stop layout: dividend 1248; quotient 14. Answer: 14",
         "correction": "Keep the zero above the 4: 104.",
-        "check": "104 × 12 = 1,248.",
+        "check": "Ballpark: 100 × 12 = 1,200; 200 × 12 = 2,400. Since 1,248 lies between these totals, expect a quotient between 100 and 200. This does not prove the exact remainder or decimal.",
         "bus": {
           "divisor": 12,
           "digits": [
@@ -186,7 +186,7 @@
         "question": "615 ÷ 12 (decimal answer)",
         "working": "Bus-stop layout: dividend 615.00; quotient 51.25. Answer: 5.125",
         "correction": "The first two quotient digits are whole-number digits. Answer: 51.25.",
-        "check": "51.25 × 12 = 615.",
+        "check": "Ballpark: 50 × 12 = 600; 60 × 12 = 720. Since 615 lies between these totals, expect a quotient between 50 and 60. This does not prove the exact remainder or decimal.",
         "bus": {
           "divisor": 12,
           "digits": [
@@ -222,7 +222,7 @@
         "question": "4,834 ÷ 16 (decimal answer)",
         "working": "Bus-stop layout: dividend 4834.000; quotient 32.125. Answer: 32.125",
         "correction": "Keep the zero in the whole-number quotient: 302.125.",
-        "check": "302.125 × 16 = 4,834.",
+        "check": "Ballpark: 300 × 16 = 4,800; 400 × 16 = 6,400. Since 4,834 lies between these totals, expect a quotient between 300 and 400. This does not prove the exact remainder or decimal.",
         "bus": {
           "divisor": 16,
           "digits": [
@@ -266,14 +266,21 @@
         "question": "14 boxes hold 8 pens each. How many pens altogether?",
         "working": "14 + 8 = 22\n22 pens",
         "correction": "Equal groups require 14 × 8 = 112 pens.",
-        "check": "112 ÷ 14 = 8 pens per box.",
+        "check": "Ballpark: 10 × 8 = 80 and 20 × 8 = 160. Expect between 80 and 160 pens.",
         "layout": "simple",
         "lines": [
           "14 + 8 = 22",
           "22 pens"
         ],
         "correct_result": "112",
-        "incorrect_result": "22"
+        "incorrect_result": "22",
+        "correct_steps": [
+          [
+            "multiply",
+            14,
+            8
+          ]
+        ]
       },
       {
         "question": "96 stickers are shared equally among 4 pupils. How many per pupil?",
@@ -296,7 +303,14 @@
         },
         "final": "21 stickers each",
         "correct_result": "24",
-        "incorrect_result": "21"
+        "incorrect_result": "21",
+        "correct_steps": [
+          [
+            "divide",
+            96,
+            4
+          ]
+        ]
       },
       {
         "question": "Cut 3 m of ribbon into 6 equal pieces. Find each length in cm.",
@@ -310,7 +324,14 @@
           "5 cm"
         ],
         "correct_result": "50",
-        "incorrect_result": "5"
+        "incorrect_result": "5",
+        "correct_steps": [
+          [
+            "divide",
+            300,
+            6
+          ]
+        ]
       }
     ],
     [
@@ -340,7 +361,14 @@
         },
         "final": "28 full boxes",
         "correct_result": "27",
-        "incorrect_result": "28"
+        "incorrect_result": "28",
+        "correct_steps": [
+          [
+            "divide",
+            166,
+            6
+          ]
+        ]
       },
       {
         "question": "32 campers need tents. Each tent sleeps 5. How many tents are needed?",
@@ -365,13 +393,20 @@
         },
         "final": "6 tents",
         "correct_result": "7",
-        "incorrect_result": "6"
+        "incorrect_result": "6",
+        "correct_steps": [
+          [
+            "divide",
+            32,
+            5
+          ]
+        ]
       },
       {
         "question": "Share a £156 bill equally among 8 friends. How much each?",
         "working": "£19.04 each",
         "correction": "156 ÷ 8 = 19 r 4. The remaining £4 shared among 8 is £0.50 each, not £0.04. Each pays £19.50.",
-        "check": "8 × £19.50 = £156.",
+        "check": "Ballpark: 8 × £20 = £160, slightly above £156. Each share should be just below £20.",
         "layout": "bus",
         "bus": {
           "divisor": 8,
@@ -393,7 +428,14 @@
         },
         "final": "£19.04 each",
         "correct_result": "19.5",
-        "incorrect_result": "19.04"
+        "incorrect_result": "19.04",
+        "correct_steps": [
+          [
+            "decimal",
+            156,
+            8
+          ]
+        ]
       }
     ],
     [
@@ -427,7 +469,19 @@
         ],
         "final": "15 tables cost £180",
         "correct_result": "192",
-        "incorrect_result": "180"
+        "incorrect_result": "180",
+        "correct_steps": [
+          [
+            "divide",
+            94,
+            6
+          ],
+          [
+            "multiply",
+            16,
+            12
+          ]
+        ]
       },
       {
         "question": "24 packs hold 15 drinks each. 87 are served. How many are left?",
@@ -449,7 +503,14 @@
         ],
         "final": "447 drinks left",
         "correct_result": "273",
-        "incorrect_result": "447"
+        "incorrect_result": "447",
+        "correct_steps": [
+          [
+            "multiply",
+            24,
+            15
+          ]
+        ]
       },
       {
         "question": "Four organisers split the cost of 18 prizes equally. Each prize costs £12. How much does each pay?",
@@ -480,7 +541,19 @@
         "final": "£48 each",
         "column_y": 1.1,
         "correct_result": "54",
-        "incorrect_result": "48"
+        "incorrect_result": "48",
+        "correct_steps": [
+          [
+            "multiply",
+            18,
+            12
+          ],
+          [
+            "divide",
+            216,
+            4
+          ]
+        ]
       }
     ]
   ],
@@ -501,7 +574,16 @@
         ],
         "final": "A receives £25",
         "correct_result": "10",
-        "incorrect_result": "25"
+        "incorrect_result": "25",
+        "correct_left": [
+          "2 + 5 = 7 parts",
+          "£35 ÷ 7 = £5"
+        ],
+        "correct_right": [
+          "A: 2 × £5 = £10",
+          "B: 5 × £5 = £25"
+        ],
+        "correct_final": "A gets £10."
       },
       {
         "question": "Red:blue = 3:4. There are 12 red counters. How many blue?",
@@ -518,7 +600,14 @@
         ],
         "final": "4 blue counters",
         "correct_result": "16",
-        "incorrect_result": "4"
+        "incorrect_result": "4",
+        "correct_left": [
+          "12 ÷ 3 = 4"
+        ],
+        "correct_right": [
+          "Blue: 4 × 4 = 16"
+        ],
+        "correct_final": "16 blue counters."
       },
       {
         "question": "Share 12 sweets between A and B in ratio 1:3. How many does B get?",
@@ -535,7 +624,15 @@
         ],
         "final": "B receives 6 sweets",
         "correct_result": "9",
-        "incorrect_result": "6"
+        "incorrect_result": "6",
+        "correct_left": [
+          "1 + 3 = 4 parts",
+          "12 ÷ 4 = 3"
+        ],
+        "correct_right": [
+          "B: 3 × 3 = 9"
+        ],
+        "correct_final": "B gets 9 sweets."
       }
     ],
     [
@@ -554,7 +651,15 @@
         ],
         "final": "A has 8 counters",
         "correct_result": "12",
-        "incorrect_result": "8"
+        "incorrect_result": "8",
+        "correct_left": [
+          "7 − 2 = 5 parts",
+          "30 ÷ 5 = 6"
+        ],
+        "correct_right": [
+          "A: 2 × 6 = 12"
+        ],
+        "correct_final": "A has 12 counters."
       },
       {
         "question": "Red:blue = 4:3. There are 15 blue counters. How many red counters?",
@@ -570,7 +675,14 @@
         ],
         "final": "11.25 red counters",
         "correct_result": "20",
-        "incorrect_result": "11.25"
+        "incorrect_result": "11.25",
+        "correct_left": [
+          "15 ÷ 3 = 5"
+        ],
+        "correct_right": [
+          "Red: 4 × 5 = 20"
+        ],
+        "correct_final": "20 red counters."
       },
       {
         "question": "A and B share 56 counters in ratio 3:5. How many more does B get than A?",
@@ -588,7 +700,16 @@
         ],
         "final": "B gets 56 more counters",
         "correct_result": "14",
-        "incorrect_result": "56"
+        "incorrect_result": "56",
+        "correct_left": [
+          "3 + 5 = 8 parts",
+          "56 ÷ 8 = 7"
+        ],
+        "correct_right": [
+          "A: 3 × 7 = 21",
+          "B: 5 × 7 = 35"
+        ],
+        "correct_final": "35 − 21 = 14 more counters."
       }
     ],
     [
@@ -608,7 +729,16 @@
         ],
         "final": "3 more children",
         "correct_result": "15",
-        "incorrect_result": "3"
+        "incorrect_result": "3",
+        "correct_left": [
+          "5 + 8 = 13 parts",
+          "65 ÷ 13 = 5"
+        ],
+        "correct_right": [
+          "Adults: 5 × 5 = 25",
+          "Children: 8 × 5 = 40"
+        ],
+        "correct_final": "40 − 25 = 15 more children."
       },
       {
         "question": "Two ribbon lengths are in ratio 3:8 and differ by 35 cm. Find their total length.",
@@ -626,7 +756,16 @@
         ],
         "final": "Total length = 35 cm",
         "correct_result": "77",
-        "incorrect_result": "35"
+        "incorrect_result": "35",
+        "correct_left": [
+          "8 − 3 = 5 parts",
+          "35 ÷ 5 = 7 cm"
+        ],
+        "correct_right": [
+          "3 × 7 = 21 cm",
+          "8 × 7 = 56 cm"
+        ],
+        "correct_final": "Total: 21 + 56 = 77 cm."
       },
       {
         "question": "A and B have tokens in ratio 7:4. A has 42. How many tokens in total?",
@@ -642,7 +781,15 @@
         ],
         "final": "Total = 46 tokens",
         "correct_result": "66",
-        "incorrect_result": "46"
+        "incorrect_result": "46",
+        "correct_left": [
+          "42 ÷ 7 = 6"
+        ],
+        "correct_right": [
+          "A: 42",
+          "B: 4 × 6 = 24"
+        ],
+        "correct_final": "Total: 42 + 24 = 66 tokens."
       }
     ]
   ],
@@ -659,7 +806,11 @@
           "= −8"
         ],
         "correct_result": "2",
-        "incorrect_result": "-8"
+        "incorrect_result": "-8",
+        "correct_lines": [
+          "−3 + 5",
+          "= 2"
+        ]
       },
       {
         "question": "4 − 9",
@@ -672,7 +823,11 @@
           "= 5"
         ],
         "correct_result": "-5",
-        "incorrect_result": "5"
+        "incorrect_result": "5",
+        "correct_lines": [
+          "4 − 9",
+          "= −5"
+        ]
       },
       {
         "question": "−4 − 6",
@@ -685,7 +840,11 @@
           "= 10"
         ],
         "correct_result": "-10",
-        "incorrect_result": "10"
+        "incorrect_result": "10",
+        "correct_lines": [
+          "−4 − 6",
+          "= −10"
+        ]
       }
     ],
     [
@@ -700,7 +859,12 @@
           "= 16"
         ],
         "correct_result": "-4",
-        "incorrect_result": "16"
+        "incorrect_result": "16",
+        "correct_lines": [
+          "6 + (−10)",
+          "= 6 − 10",
+          "= −4"
+        ]
       },
       {
         "question": "−6 − (−18)",
@@ -713,7 +877,12 @@
           "= −24"
         ],
         "correct_result": "12",
-        "incorrect_result": "-24"
+        "incorrect_result": "-24",
+        "correct_lines": [
+          "−6 − (−18)",
+          "= −6 + 18",
+          "= 12"
+        ]
       },
       {
         "question": "−7 + (−4)",
@@ -726,7 +895,12 @@
           "= 11"
         ],
         "correct_result": "-11",
-        "incorrect_result": "11"
+        "incorrect_result": "11",
+        "correct_lines": [
+          "−7 + (−4)",
+          "= −7 − 4",
+          "= −11"
+        ]
       }
     ],
     [
@@ -742,7 +916,13 @@
           "= 9"
         ],
         "correct_result": "-3",
-        "incorrect_result": "9"
+        "incorrect_result": "9",
+        "correct_lines": [
+          "−4 − (−7) + (−6)",
+          "= −4 + 7 − 6",
+          "= 3 − 6",
+          "= −3"
+        ]
       },
       {
         "question": "8 + (−12) − (−5)",
@@ -756,7 +936,13 @@
           "= −9"
         ],
         "correct_result": "1",
-        "incorrect_result": "-9"
+        "incorrect_result": "-9",
+        "correct_lines": [
+          "8 + (−12) − (−5)",
+          "= 8 − 12 + 5",
+          "= −4 + 5",
+          "= 1"
+        ]
       },
       {
         "question": "−9 − 6 + 18",
@@ -769,7 +955,12 @@
           "= 15"
         ],
         "correct_result": "3",
-        "incorrect_result": "15"
+        "incorrect_result": "15",
+        "correct_lines": [
+          "−9 − 6 + 18",
+          "= −15 + 18",
+          "= 3"
+        ]
       }
     ]
   ],
@@ -780,21 +971,24 @@
         "b": 6,
         "error": "cell",
         "correct_result": "258",
-        "incorrect_result": "158"
+        "incorrect_result": "158",
+        "check": "Ballpark: 40 × 6 = 240; 50 × 6 = 300. The answer should be between 240 and 300. This checks the size, not every digit."
       },
       {
         "a": 89,
         "b": 7,
         "error": "drop",
         "correct_result": "623",
-        "incorrect_result": "523"
+        "incorrect_result": "523",
+        "check": "Ballpark: 80 × 7 = 560; 90 × 7 = 630. The answer should be between 560 and 630. This checks the size, not every digit."
       },
       {
         "a": 76,
         "b": 7,
         "error": "carrydigit",
         "correct_result": "532",
-        "incorrect_result": "5132"
+        "incorrect_result": "5132",
+        "check": "Ballpark: 70 × 7 = 490; 80 × 7 = 560. The answer should be between 490 and 560. This checks the size, not every digit."
       }
     ],
     [
@@ -803,21 +997,24 @@
         "b": 16,
         "error": "half",
         "correct_result": "544",
-        "incorrect_result": "526"
+        "incorrect_result": "526",
+        "check": "Ballpark: 30 × 10 = 300; 40 × 20 = 800. The answer should be between 300 and 800. This checks the size, not every digit."
       },
       {
         "a": 47,
         "b": 26,
         "error": "drop",
         "correct_result": "1222",
-        "incorrect_result": "1122"
+        "incorrect_result": "1122",
+        "check": "Ballpark: 40 × 20 = 800; 50 × 30 = 1,500. The answer should be between 800 and 1,500. This checks the size, not every digit."
       },
       {
         "a": 68,
         "b": 24,
         "error": "carrydigit",
         "correct_result": "1632",
-        "incorrect_result": "16132"
+        "incorrect_result": "16132",
+        "check": "Ballpark: 60 × 20 = 1,200; 70 × 30 = 2,100. The answer should be between 1,200 and 2,100. This checks the size, not every digit."
       }
     ],
     [
@@ -826,21 +1023,24 @@
         "b": 56,
         "error": "half",
         "correct_result": "13104",
-        "incorrect_result": "13086"
+        "incorrect_result": "13086",
+        "check": "Ballpark: 200 × 50 = 10,000; 300 × 60 = 18,000. The answer should be between 10,000 and 18,000. This checks the size, not every digit."
       },
       {
         "a": 476,
         "b": 82,
         "error": "drop",
         "correct_result": "39032",
-        "incorrect_result": "38932"
+        "incorrect_result": "38932",
+        "check": "Ballpark: 400 × 80 = 32,000; 500 × 90 = 45,000. The answer should be between 32,000 and 45,000. This checks the size, not every digit."
       },
       {
         "a": 638,
         "b": 59,
         "error": "cell",
         "correct_result": "37642",
-        "incorrect_result": "27642"
+        "incorrect_result": "27642",
+        "check": "Ballpark: 600 × 50 = 30,000; 700 × 60 = 42,000. The answer should be between 30,000 and 42,000. This checks the size, not every digit."
       }
     ]
   ]

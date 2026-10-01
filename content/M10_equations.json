@@ -3391,7 +3391,22 @@
           }
         ],
         "correction": "Adding 8 does not undo +8. Subtract 8 from both sides: x = 11.",
-        "check": "11 + 8 = 19."
+        "check": "11 + 8 = 19.",
+        "correct_balance": [
+          {
+            "l": "x + 8",
+            "r": "19"
+          },
+          {
+            "l": "− 8",
+            "r": "− 8",
+            "kind": "op"
+          },
+          {
+            "l": "x",
+            "r": "11"
+          }
+        ]
       },
       {
         "q": "x − 5 = 8",
@@ -3413,7 +3428,22 @@
           }
         ],
         "correction": "Undo −5 by adding 5 to both sides: x = 13.",
-        "check": "13 − 5 = 8."
+        "check": "13 − 5 = 8.",
+        "correct_balance": [
+          {
+            "l": "x − 5",
+            "r": "8"
+          },
+          {
+            "l": "+ 5",
+            "r": "+ 5",
+            "kind": "op"
+          },
+          {
+            "l": "x",
+            "r": "13"
+          }
+        ]
       },
       {
         "q": "6x = 24",
@@ -3435,7 +3465,22 @@
           }
         ],
         "correction": "6x means 6 times x. Divide both sides by 6: x = 4.",
-        "check": "6 × 4 = 24."
+        "check": "6 × 4 = 24.",
+        "correct_balance": [
+          {
+            "l": "6x",
+            "r": "24"
+          },
+          {
+            "l": "÷ 6",
+            "r": "÷ 6",
+            "kind": "op"
+          },
+          {
+            "l": "x",
+            "r": "4"
+          }
+        ]
       }
     ],
     [
@@ -3468,7 +3513,31 @@
           }
         ],
         "correction": "The operations differ across the line. Subtract 6 from both sides: 3x = 24, so x = 8.",
-        "check": "3 × 8 + 6 = 30."
+        "check": "3 × 8 + 6 = 30.",
+        "correct_balance": [
+          {
+            "l": "3x + 6",
+            "r": "30"
+          },
+          {
+            "l": "− 6",
+            "r": "− 6",
+            "kind": "op"
+          },
+          {
+            "l": "3x",
+            "r": "24"
+          },
+          {
+            "l": "÷ 3",
+            "r": "÷ 3",
+            "kind": "op"
+          },
+          {
+            "l": "x",
+            "r": "8"
+          }
+        ]
       },
       {
         "q": "4x − 8 = 16",
@@ -3499,7 +3568,31 @@
           }
         ],
         "correction": "Add 8 to both sides: 4x = 24, then x = 6.",
-        "check": "4 × 6 − 8 = 16."
+        "check": "4 × 6 − 8 = 16.",
+        "correct_balance": [
+          {
+            "l": "4x − 8",
+            "r": "16"
+          },
+          {
+            "l": "+ 8",
+            "r": "+ 8",
+            "kind": "op"
+          },
+          {
+            "l": "4x",
+            "r": "24"
+          },
+          {
+            "l": "÷ 4",
+            "r": "÷ 4",
+            "kind": "op"
+          },
+          {
+            "l": "x",
+            "r": "6"
+          }
+        ]
       },
       {
         "q": "5x + 10 = 45",
@@ -3530,7 +3623,31 @@
           }
         ],
         "correction": "The entire left side must be divided: x + 2 = 9, so x = 7. Alternatively subtract 10 first.",
-        "check": "5 × 7 + 10 = 45."
+        "check": "5 × 7 + 10 = 45.",
+        "correct_balance": [
+          {
+            "l": "5x + 10",
+            "r": "45"
+          },
+          {
+            "l": "− 10",
+            "r": "− 10",
+            "kind": "op"
+          },
+          {
+            "l": "5x",
+            "r": "35"
+          },
+          {
+            "l": "÷ 5",
+            "r": "÷ 5",
+            "kind": "op"
+          },
+          {
+            "l": "x",
+            "r": "7"
+          }
+        ]
       }
     ],
     [
@@ -3567,7 +3684,31 @@
           }
         ],
         "correction": "Multiply both bracket terms by 2: 2x + 10 = 30. A shorter route is divide both sides by 2 first: x + 5 = 15, then x = 10.",
-        "check": "2 × (10 + 5) = 30."
+        "check": "2 × (10 + 5) = 30.",
+        "correct_balance": [
+          {
+            "l": "2(x + 5)",
+            "r": "30"
+          },
+          {
+            "l": "÷ 2",
+            "r": "÷ 2",
+            "kind": "op"
+          },
+          {
+            "l": "x + 5",
+            "r": "15"
+          },
+          {
+            "l": "− 5",
+            "r": "− 5",
+            "kind": "op"
+          },
+          {
+            "l": "x",
+            "r": "10"
+          }
+        ]
       },
       {
         "q": "4x + 3 = 2x + 33",
@@ -3607,7 +3748,40 @@
           }
         ],
         "correction": "Subtract 2x from both sides: 2x + 3 = 33; 2x = 30; x = 15.",
-        "check": "4 × 15 + 3 = 2 × 15 + 33 = 63."
+        "check": "4 × 15 + 3 = 2 × 15 + 33 = 63.",
+        "correct_balance": [
+          {
+            "l": "4x + 3",
+            "r": "2x + 33"
+          },
+          {
+            "l": "− 2x",
+            "r": "− 2x",
+            "kind": "op"
+          },
+          {
+            "l": "2x + 3",
+            "r": "33"
+          },
+          {
+            "l": "− 3",
+            "r": "− 3",
+            "kind": "op"
+          },
+          {
+            "l": "2x",
+            "r": "30"
+          },
+          {
+            "l": "÷ 2",
+            "r": "÷ 2",
+            "kind": "op"
+          },
+          {
+            "l": "x",
+            "r": "15"
+          }
+        ]
       },
       {
         "q": "3(x − 4) = x − 16",
@@ -3651,7 +3825,44 @@
           }
         ],
         "correction": "Expand the whole bracket: 3x − 12 = x − 16. Subtract x, then add 12: 2x = −4, so x = −2.",
-        "check": "3 × (−2 − 4) = −2 − 16 = −18."
+        "check": "3 × (−2 − 4) = −2 − 16 = −18.",
+        "correct_balance": [
+          {
+            "l": "3(x − 4)",
+            "r": "x − 16"
+          },
+          {
+            "l": "3x − 12",
+            "r": "x − 16"
+          },
+          {
+            "l": "− x",
+            "r": "− x",
+            "kind": "op"
+          },
+          {
+            "l": "2x − 12",
+            "r": "-16"
+          },
+          {
+            "l": "+ 12",
+            "r": "+ 12",
+            "kind": "op"
+          },
+          {
+            "l": "2x",
+            "r": "-4"
+          },
+          {
+            "l": "÷ 2",
+            "r": "÷ 2",
+            "kind": "op"
+          },
+          {
+            "l": "x",
+            "r": "-2"
+          }
+        ]
       }
     ]
   ],

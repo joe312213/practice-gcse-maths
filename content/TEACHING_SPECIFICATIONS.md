@@ -37,9 +37,9 @@ These labels preserve the wording reached in the chat; the prompts must ensure s
 
 Differentiate the thinking, not just the numbers:
 
-- **Guided:** one clear operation. Example: share 84 tins equally among four boxes; find tins per box.
-- **Core:** one operation requiring more thought to identify or interpret. Example: pack 130 biscuits in packs of six; find completely full packs.
-- **Depth:** two operations, with the first result feeding the second. Example: transport 145 students in minibuses with nine passenger seats, each costing £40; find total hire cost. Students must round up before calculating cost.
+- **Start:** one clear operation. Example: share 84 tins equally among four boxes; find tins per box.
+- **Build:** one operation requiring more thought to identify or interpret. Example: pack 130 biscuits in packs of six; find completely full packs.
+- **Confidence:** two operations, with the first result feeding the second. Example: transport 145 students in minibuses with nine passenger seats, each costing £40; find total hire cost. Students must round up before calculating cost.
 
 Use clear, unambiguous questions. Difficulty should come from the maths, not confusing language. Vary contexts, units, information supplied and the quantity students must find within every challenge column. A thread must not identify the method just by its position. For ratio, mix total-known, amount-known and difference-known problems where suitable; include finding a difference, not only using a given difference. Mix multiplication and division in application practice so students must choose.
 

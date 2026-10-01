@@ -25,7 +25,7 @@ Use these exact labels and prompts on both step-by-step practice slides. Repeat 
 
 Instruction: **Follow each step down your column.**
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | 25% of an amount is £20. Find the whole amount. | A price after a 20% discount is £64. Find the original price. | An item is discounted by 25%, then £10 delivery is added. The bill is £70. Find the original item price. |
 | Keywords & Calculation | £20 represents 25%, not 100%. | £64 represents 80% of the original. | The bill includes delivery. The discounted item represents 75%. |
@@ -41,7 +41,7 @@ Use editable percentage bars labelled 25% = £20 and 100% = ?. For Core label 80
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | 40% of an amount is £32. Find the whole amount. | After a 10% increase, a price is £99. Find the original price. | An item is discounted by 20%, then £8 delivery is added. The bill is £72. Find the original item price. |
 
@@ -55,7 +55,7 @@ Teacher working:
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | 30% of an amount is £45. Find the whole amount. | After a 25% discount, a price is £90. Find the original price. | An item increases in price by 10%, then £6 delivery is added. The bill is £116. Find the original item price. |
 
@@ -69,7 +69,7 @@ Teacher working:
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 20% of an amount is £20.00. Find the whole amount. | After a 20% increase, a price is £360.00. Find the original price. | An item has a 20% price increase, then £5 delivery is added. The bill is £605.00. Find the original item price. |
 | 2 | 25% of an amount is £30.00. Find the whole amount. | After a 25% discount, a price is £240.00. Find the original price. | An item has a 25% discount, then £6 delivery is added. The bill is £396.00. Find the original item price. |
@@ -93,7 +93,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 20% of an amount is £32.00. Find the whole amount. | After a 20% discount, a price is £288.00. Find the original price. | An item has a 20% discount, then £6 delivery is added. The bill is £454.00. Find the original item price. |
 | 2 | 25% of an amount is £45.00. Find the whole amount. | After a 25% increase, a price is £475.00. Find the original price. | An item has a 25% price increase, then £7 delivery is added. The bill is £732.00. Find the original item price. |
@@ -117,7 +117,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 20% of an amount is £44.00. Find the whole amount. | After a 20% increase, a price is £504.00. Find the original price. | An item has a 20% price increase, then £7 delivery is added. The bill is £751.00. Find the original item price. |
 | 2 | 25% of an amount is £60.00. Find the whole amount. | After a 25% discount, a price is £330.00. Find the original price. | An item has a 25% discount, then £8 delivery is added. The bill is £488.00. Find the original item price. |
@@ -141,7 +141,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 20% of an amount is £56.00. Find the whole amount. | After a 20% discount, a price is £384.00. Find the original price. | An item has a 20% discount, then £8 delivery is added. The bill is £552.00. Find the original item price. |
 | 2 | 25% of an amount is £75.00. Find the whole amount. | After a 25% increase, a price is £625.00. Find the original price. | An item has a 25% price increase, then £9 delivery is added. The bill is £884.00. Find the original item price. |

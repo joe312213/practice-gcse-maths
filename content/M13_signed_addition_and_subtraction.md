@@ -4,7 +4,7 @@
 
 Purpose: strengthen arithmetic needed for Foundation GCSE questions and later algebra. No calculator. The two signed-number sets are proposed as groundwork before the remaining modules; file IDs do not prescribe teaching order.
 
-Guided: add or subtract a positive number, including crossing zero. Core: add or subtract a negative number. Depth: combine two additions/subtractions, keeping each number’s sign.
+Start: add or subtract a positive number, including crossing zero. Build: add or subtract a negative number. Confidence: combine two additions/subtractions, keeping each number’s sign.
 
 Adding a positive number moves right; adding a negative number moves left. Subtraction means adding the opposite: a − b = a + (−b). This includes subtracting a negative number. Do not use “two minuses make a plus” as a rule for every calculation.
 
@@ -36,7 +36,7 @@ These are addition/subtraction rules. Do not import the multiplication/division 
 
 Student instruction: **Follow each calculation. Explain what each sign means.**
 
-| Step | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Step | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | Question | −4 + 7 | 6 − (−3) | −5 + 8 − (−2) |
 | Read the Signs | Start at −4; add positive 7. | Start at 6; subtract negative 3. | Add positive 8, then subtract negative 2. |
@@ -44,13 +44,13 @@ Student instruction: **Follow each calculation. Explain what each sign means.**
 | Calculate | Move 4 right to 0, then 3 right: 3. | 6 + 3 = 9. | −5 + 8 = 3; 3 + 2 = 5. |
 | Check the Answer | 3 − 7 = −4. Answer: 3. | 9 + (−3) = 6. Answer: 9. | 5 + (−2) = 3; 3 − 8 = −5. Answer: 5. |
 
-Diagram specification: Three editable number lines, one per demo column, with integer ticks and a labelled zero. Guided: range −5 to 4, start −4, rightward jumps +4 to 0 and +3 to 3; bracket the jumps as +7. Core: range 0 to 10, start 6 and a rightward jump to 9 labelled “subtract −3 = add 3”. Depth: range −6 to 6, start −5, rightward jump +8 to 3, then +2 to 5. Mark each start and endpoint. Use equal tick spacing, visible arrowheads and labels clear of ticks. These accompany the worked calculation; students need not draw a line for every question.
+Diagram specification: Three editable number lines, one per demo column, with integer ticks and a labelled zero. Start: range −5 to 4, start −4, rightward jumps +4 to 0 and +3 to 3; bracket the jumps as +7. Build: range 0 to 10, start 6 and a rightward jump to 9 labelled “subtract −3 = add 3”. Confidence: range −6 to 6, start −5, rightward jump +8 to 3, then +2 to 5. Mark each start and endpoint. Use equal tick spacing, visible arrowheads and labels clear of ticks. These accompany the worked calculation; students need not draw a line for every question.
 
 ## S02 — Step-by-step practice 1
 
 Student instruction: **Work out each calculation. Show your working.**
 
-| Step | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Step | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | Question | −6 + 9 | 4 + (−7) | −8 + 5 − (−4) |
 | Read the Signs | Identify the operation signs and the signs belonging to the numbers. | Identify the operation signs and the signs belonging to the numbers. | Identify the operation signs and the signs belonging to the numbers. |
@@ -60,7 +60,7 @@ Student instruction: **Work out each calculation. Show your working.**
 
 ## S02-A — Answers to step-by-step practice 1
 
-| Label | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Label | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | Answer | 3 | −3 | 1 |
 | Method | −6 + 6 + 3 = 3; check 3 − 9 = −6. | 4 + (−7) = 4 − 7 = −3; check −3 + 7 = 4. | −8 + 5 + 4 = −3 + 4 = 1; check 1 − 4 − 5 = −8. |
@@ -71,7 +71,7 @@ Student instruction: **Work out each calculation. Show your working.**
 
 Student instruction: **Work out each calculation. Show your working.**
 
-| Step | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Step | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | Question | 3 − 8 | −5 − (−9) | 7 − (−2) + (−12) |
 | Read the Signs | Identify the operation signs and the signs belonging to the numbers. | Identify the operation signs and the signs belonging to the numbers. | Identify the operation signs and the signs belonging to the numbers. |
@@ -81,7 +81,7 @@ Student instruction: **Work out each calculation. Show your working.**
 
 ## S03-A — Answers to step-by-step practice 2
 
-| Label | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Label | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | Answer | −5 | 4 | −3 |
 | Method | 3 + (−8) = −5; check −5 + 8 = 3. | −5 + 9 = 4; check 4 + (−9) = −5. | 7 + 2 − 12 = 9 − 12 = −3; check −3 + 12 − 2 = 7. |
@@ -92,7 +92,7 @@ Student instruction: **Work out each calculation. Show your working.**
 
 Student instruction: **Work out each calculation. Show your working.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | −3 + 8 | 5 − (−2) | −4 + 7 − (−3) |
 | 2 | 2 − 7 | 7 + (−9) | 6 − 9 + 2 |
@@ -105,7 +105,7 @@ Student instruction: **Work out each calculation. Show your working.**
 
 Full-answer page: show all six answers per thread, under **Answer**.
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 5 | 7 | 6 |
 | 2 | −5 | −2 | −1 |
@@ -118,7 +118,7 @@ Full-answer page: show all six answers per thread, under **Answer**.
 
 Show this on a second answer page, with the same thread headings. Question references below are visible student text.
 
-| Label | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Label | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | Method | Q3: −6 + 4 = −2; move four places right. | Q3: −4 + (−6) = −10; move six places left. | Q6: 3 − 8 + 5 = −5 + 5 = 0. |
 | If you got… | Q3: 2 — you may have calculated 6 − 4 = 2. The result stays negative because four steps do not reach zero. | Q3: 10 — you may have calculated 4 + 6 = 10. Both numbers are negative; adding −6 moves further left. | Q6: −10 — you may have calculated 3 − 8 − 5 = −10. Subtracting −5 means adding 5. |
@@ -128,7 +128,7 @@ Show this on a second answer page, with the same thread headings. Question refer
 
 Student instruction: **Work out each calculation. Show your working.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | −4 − 6 | 9 − (−4) | −6 + 9 + (−4) |
 | 2 | −11 + 11 | −6 + (−7) | 4 − (−6) + (−10) |
@@ -141,7 +141,7 @@ Student instruction: **Work out each calculation. Show your working.**
 
 Full-answer page: show all six answers per thread, under **Answer**.
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | −10 | 13 | −1 |
 | 2 | 0 | −13 | 0 |
@@ -154,7 +154,7 @@ Full-answer page: show all six answers per thread, under **Answer**.
 
 Show this on a second answer page, with the same thread headings. Question references below are visible student text.
 
-| Label | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Label | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | Method | Q2: −11 + 11 = 0; the numbers are opposites. | Q3: 0 − (−9) = 0 + 9 = 9. | Q1: −6 + 9 − 4 = 3 − 4 = −1. |
 | If you got… | Q2: −22 — you may have calculated −11 − 11 = −22. Adding positive 11 moves right to zero. | Q3: −9 — you may have calculated 0 − 9 = −9. Subtracting −9 moves right, even when starting at zero. | Q1: 7 — you may have calculated −6 + 9 + 4 = 7. The final number being added is −4, not +4. |
@@ -164,7 +164,7 @@ Show this on a second answer page, with the same thread headings. Question refer
 
 Student instruction: **Work out each calculation. Show your working.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | −8 + 12 | −9 + (−2) | 10 − 14 + (−2) |
 | 2 | −5 − 4 | 8 − (−5) | 6 + (−9) − (−3) |
@@ -177,7 +177,7 @@ Student instruction: **Work out each calculation. Show your working.**
 
 Full-answer page: show all six answers per thread, under **Answer**.
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 4 | −11 | −6 |
 | 2 | −9 | 13 | 0 |
@@ -190,7 +190,7 @@ Full-answer page: show all six answers per thread, under **Answer**.
 
 Show this on a second answer page, with the same thread headings. Question references below are visible student text.
 
-| Label | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Label | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | Method | Q2: −5 − 4 = −9; move four places left. | Q5: −4 − (−10) = −4 + 10 = 6. | Q2: 6 − 9 + 3 = −3 + 3 = 0. |
 | If you got… | Q2: −1 — you may have calculated −5 + 4 = −1. Subtracting positive 4 moves left. | Q5: −14 — you may have calculated −4 − 10 = −14. Subtracting −10 means adding 10; this crosses zero. | Q2: −6 — you may have calculated 6 − 9 − 3 = −6. Keep the intermediate −3; subtracting −3 then adds 3. |
@@ -200,7 +200,7 @@ Show this on a second answer page, with the same thread headings. Question refer
 
 Student instruction: **Work out each calculation. Show your working.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | −12 + 7 | 0 − (−6) | −12 + 7 + 8 |
 | 2 | 11 − 18 | −11 − (−8) | 4 − (−5) + (−12) |
@@ -213,7 +213,7 @@ Student instruction: **Work out each calculation. Show your working.**
 
 Full-answer page: show all six answers per thread, under **Answer**.
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | −5 | 6 | 3 |
 | 2 | −7 | −3 | −3 |
@@ -226,7 +226,7 @@ Full-answer page: show all six answers per thread, under **Answer**.
 
 Show this on a second answer page, with the same thread headings. Question references below are visible student text.
 
-| Label | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Label | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | Method | Q6: 8 − 13 = −5; keep the subtraction in its original order. | Q6: −4 + (−9) = −13. | Q4: 5 − 13 + 2 = −8 + 2 = −6. |
 | If you got… | Q6: 5 — you may have calculated 13 − 8 = 5. Do not swap the numbers to avoid a negative result. | Q6: −5 — you may have calculated 4 − 9 = −5. Keep the initial negative sign; both added numbers are negative. | Q4: −10 — you may have calculated 5 − 13 − 2 = −10. Subtracting −2 means adding 2. |

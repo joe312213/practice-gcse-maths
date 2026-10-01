@@ -6,9 +6,9 @@ The user accepted this content before the Markdown-first workflow. This is a ref
 
 ## Slide 1 — Bus Stop Division
 
-Worked demo  •  Guided: exact answer. Core: remainder. Depth: decimal answer.
+Worked demo  •  Start: exact answer. Build: remainder. Confidence: decimal answer.
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | 63 ÷ 3 | 145 ÷ 6 | 4,834 ÷ 16 |
 | 1. Draw Frame & Position Digits | Inside: 63.<br>Outside on the left: 3.<br>Diagram: Editable bus stop 63 ÷ 3 | Inside: 145.<br>Outside on the left: 6.<br>Diagram: Editable bus stop 145 ÷ 6 | Inside: 4,834.<br>Outside on the left: 16.<br>Diagram: Editable bus stop 4834 ÷ 16 |
@@ -20,53 +20,53 @@ Worked demo  •  Guided: exact answer. Core: remainder. Depth: decimal answer.
 
 Bus Stop Division — worked demo
 
-Guided: 21. Core: 24 r 1. Depth: 302.125.
+Start: 21. Build: 24 r 1. Confidence: 302.125.
 
 The editable bus stop diagrams show each quotient digit above its matching dividend digit. Show carried remainders as small prefixes. Preserve internal zeros, but omit an unnecessary leading zero in the final answer. For Depth, keep the zero in the tens position of 302.125. Align decimal points and show each carried remainder. Use multiples of 16 to check each quotient digit: 16, 32, 48, 64, 80. Checks: 21 × 3 = 63; 24 × 6 + 1 = 145; 302.125 × 16 = 4,834.
 
 ## Slide 2 — Bus Stop Division
 
-Step-by-step practice 1  •  Core: give remainders. Depth: give decimal answers.
+Step-by-step practice 1  •  Build: give remainders. Confidence: give decimal answers.
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | 88 ÷ 4 | 130 ÷ 4 | 5,122 ÷ 16 |
 | 1. Draw Frame & Position Digits | Draw the frame. Dividend inside; divisor outside on the left. Space the digits clearly. | Draw the frame. Dividend inside; divisor outside on the left. Space the digits clearly. | Draw the frame. Dividend inside; divisor outside on the left. Space the digits clearly. |
 | 2. Divide Left-to-Right & Carry | Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the remainder as a small prefix to the next digit. | Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the remainder as a small prefix to the next digit. | Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the remainder as a small prefix to the next digit. |
-| 3. Track Remainders or Decimals | Check the final remainder. Core: write any remainder as r. Depth: add a decimal point and zeros. Continue until the remainder is 0. | Check the final remainder. Core: write any remainder as r. Depth: add a decimal point and zeros. Continue until the remainder is 0. | Check the final remainder. Core: write any remainder as r. Depth: add a decimal point and zeros. Continue until the remainder is 0. |
+| 3. Track Remainders or Decimals | Check the final remainder. Build: write any remainder as r. Confidence: add a decimal point and zeros. Continue until the remainder is 0. | Check the final remainder. Build: write any remainder as r. Confidence: add a decimal point and zeros. Continue until the remainder is 0. | Check the final remainder. Build: write any remainder as r. Confidence: add a decimal point and zeros. Continue until the remainder is 0. |
 | 4. Write Final Quotient | Write the complete answer. Keep place-value zeros. Align decimal points. | Write the complete answer. Keep place-value zeros. Align decimal points. | Write the complete answer. Keep place-value zeros. Align decimal points. |
 
 ### Teacher notes and answers
 
 Bus Stop Division — step-by-step practice 1
 
-Thread 1: Guided: 88 ÷ 4 = **22**
+Start: 88 ÷ 4 = **22**
 
-Thread 2: Core: 130 ÷ 4 = **32 r 2**
+Build: 130 ÷ 4 = **32 r 2**
 
-Thread 3: Depth: 5,122 ÷ 16 = **320.125**
+Confidence: 5,122 ÷ 16 = **320.125**
 
 ## Slide 3 — Bus Stop Division
 
-Step-by-step practice 2  •  Core: give remainders. Depth: give decimal answers.
+Step-by-step practice 2  •  Build: give remainders. Confidence: give decimal answers.
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | 66 ÷ 3 | 227 ÷ 6 | 3,827 ÷ 25 |
 | 1. Draw Frame & Position Digits | Draw the frame. Dividend inside; divisor outside on the left. Space the digits clearly. | Draw the frame. Dividend inside; divisor outside on the left. Space the digits clearly. | Draw the frame. Dividend inside; divisor outside on the left. Space the digits clearly. |
 | 2. Divide Left-to-Right & Carry | Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the remainder as a small prefix to the next digit. | Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the remainder as a small prefix to the next digit. | Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the remainder as a small prefix to the next digit. |
-| 3. Track Remainders or Decimals | Check the final remainder. Core: write any remainder as r. Depth: add a decimal point and zeros. Continue until the remainder is 0. | Check the final remainder. Core: write any remainder as r. Depth: add a decimal point and zeros. Continue until the remainder is 0. | Check the final remainder. Core: write any remainder as r. Depth: add a decimal point and zeros. Continue until the remainder is 0. |
+| 3. Track Remainders or Decimals | Check the final remainder. Build: write any remainder as r. Confidence: add a decimal point and zeros. Continue until the remainder is 0. | Check the final remainder. Build: write any remainder as r. Confidence: add a decimal point and zeros. Continue until the remainder is 0. | Check the final remainder. Build: write any remainder as r. Confidence: add a decimal point and zeros. Continue until the remainder is 0. |
 | 4. Write Final Quotient | Write the complete answer. Keep place-value zeros. Align decimal points. | Write the complete answer. Keep place-value zeros. Align decimal points. | Write the complete answer. Keep place-value zeros. Align decimal points. |
 
 ### Teacher notes and answers
 
 Bus Stop Division — step-by-step practice 2
 
-Thread 1: Guided: 66 ÷ 3 = **22**
+Start: 66 ÷ 3 = **22**
 
-Thread 2: Core: 227 ÷ 6 = **37 r 5**
+Build: 227 ÷ 6 = **37 r 5**
 
-Thread 3: Depth: 3,827 ÷ 25 = **153.08**
+Confidence: 3,827 ÷ 25 = **153.08**
 
 ## Slide 4 — Bus Stop Division
 
@@ -74,7 +74,7 @@ Independent practice 1  •  Choose a column. Show the full written method.
 
 Column descriptions: No carrying; Carrying; give remainders; Includes 2-digit divisors; give decimals
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 48 ÷ 4 | 72 ÷ 3 | 514 ÷ 4 |
 | 2 | 69 ÷ 3 | 135 ÷ 5 | 785 ÷ 2 |
@@ -87,7 +87,7 @@ Column descriptions: No carrying; Carrying; give remainders; Includes 2-digit di
 
 Bus Stop Division — independent practice 1
 
-### Thread 1: Guided
+### Start
 
 1. 48 ÷ 4 = **12**
 
@@ -101,7 +101,7 @@ Bus Stop Division — independent practice 1
 
 6. 88 ÷ 8 = **11**
 
-### Thread 2: Core
+### Build
 
 1. 72 ÷ 3 = **24**
 
@@ -115,7 +115,7 @@ Bus Stop Division — independent practice 1
 
 6. 502 ÷ 8 = **62 r 6**
 
-### Thread 3: Depth
+### Confidence
 
 1. 514 ÷ 4 = **128.5**
 
@@ -135,7 +135,7 @@ Independent practice 2  •  Choose a column. Show the full written method.
 
 Column descriptions: No carrying; Carrying; give remainders; Includes 2-digit divisors; give decimals
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 46 ÷ 2 | 84 ÷ 3 | 627 ÷ 4 |
 | 2 | 93 ÷ 3 | 156 ÷ 4 | 943 ÷ 2 |
@@ -148,7 +148,7 @@ Column descriptions: No carrying; Carrying; give remainders; Includes 2-digit di
 
 Bus Stop Division — independent practice 2
 
-### Thread 1: Guided
+### Start
 
 1. 46 ÷ 2 = **23**
 
@@ -162,7 +162,7 @@ Bus Stop Division — independent practice 2
 
 6. 639 ÷ 3 = **213**
 
-### Thread 2: Core
+### Build
 
 1. 84 ÷ 3 = **28**
 
@@ -176,7 +176,7 @@ Bus Stop Division — independent practice 2
 
 6. 617 ÷ 9 = **68 r 5**
 
-### Thread 3: Depth
+### Confidence
 
 1. 627 ÷ 4 = **156.75**
 
@@ -196,7 +196,7 @@ Independent practice 3  •  Choose a column. Show the full written method.
 
 Column descriptions: No carrying; Carrying; give remainders; Includes 2-digit divisors; give decimals
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 82 ÷ 2 | 95 ÷ 4 | 738 ÷ 4 |
 | 2 | 963 ÷ 3 | 184 ÷ 5 | 859 ÷ 2 |
@@ -209,7 +209,7 @@ Column descriptions: No carrying; Carrying; give remainders; Includes 2-digit di
 
 Bus Stop Division — independent practice 3
 
-### Thread 1: Guided
+### Start
 
 1. 82 ÷ 2 = **41**
 
@@ -223,7 +223,7 @@ Bus Stop Division — independent practice 3
 
 6. 606 ÷ 3 = **202**
 
-### Thread 2: Core
+### Build
 
 1. 95 ÷ 4 = **23 r 3**
 
@@ -237,7 +237,7 @@ Bus Stop Division — independent practice 3
 
 6. 748 ÷ 9 = **83 r 1**
 
-### Thread 3: Depth
+### Confidence
 
 1. 738 ÷ 4 = **184.5**
 
@@ -257,7 +257,7 @@ Independent practice 4  •  Choose a column. Show the full written method.
 
 Column descriptions: No carrying; Carrying; give remainders; Includes 2-digit divisors; give decimals
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 62 ÷ 2 | 108 ÷ 4 | 849 ÷ 4 |
 | 2 | 936 ÷ 3 | 245 ÷ 6 | 967 ÷ 2 |
@@ -270,7 +270,7 @@ Column descriptions: No carrying; Carrying; give remainders; Includes 2-digit di
 
 Bus Stop Division — independent practice 4
 
-### Thread 1: Guided
+### Start
 
 1. 62 ÷ 2 = **31**
 
@@ -284,7 +284,7 @@ Bus Stop Division — independent practice 4
 
 6. 999 ÷ 9 = **111**
 
-### Thread 2: Core
+### Build
 
 1. 108 ÷ 4 = **27**
 
@@ -298,7 +298,7 @@ Bus Stop Division — independent practice 4
 
 6. 703 ÷ 5 = **140 r 3**
 
-### Thread 3: Depth
+### Confidence
 
 1. 849 ÷ 4 = **212.25**
 

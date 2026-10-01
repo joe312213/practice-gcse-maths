@@ -15,7 +15,7 @@ SRC=ROOT/'content/M04_ratio.md'
 ANS=ROOT/'content/answers/M04_answers.md'
 OUT=ROOT/'topics/ratio';OUT.mkdir(parents=True,exist_ok=True)
 INK='182B3A';MUTED='526472';LINE='D8E0E6';COL=['176B73','3559A2','754B87'];TINT=['EDF6F5','EFF3FA','F5F0F7'];BG='F7F8FA'
-LABELS=['Thread 1: Guided','Thread 2: Core','Thread 3: Depth']
+LABELS=['Start','Build','Confidence']
 ROWS=['Keywords & Calculation','Written Method','Ballpark Check & Math','Final Answer']
 PROMPTS=['Identify the keywords. Write down the calculation(s) you need to do.','Set up and use the written method for your calculation(s).','Check your answer using rough ballpark calculations. Does it make sense?','Write your final answer to the question. Include the correct units.']
 # Source text and answer tables are read rather than re-created during layout.

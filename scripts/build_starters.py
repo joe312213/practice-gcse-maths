@@ -24,7 +24,7 @@ prs.core_properties.author = 'Maths teaching resources'
 BG, INK, MUTED, LINE = 'F7F8FA', '182B3A', '526472', 'D8E0E6'
 COLORS = ['176B73', '3559A2', '754B87']
 TINTS = ['EDF6F5', 'EFF3FA', 'F5F0F7']
-LABELS = ['Thread 1: Guided', 'Thread 2: Core', 'Thread 3: Depth']
+LABELS = ['Start', 'Build', 'Confidence']
 MARGIN, LABEL_W, FULL_W = .42, 2.30, 15.16
 COL_W = (FULL_W - LABEL_W) / 3
 GRID_X = MARGIN + LABEL_W
@@ -160,12 +160,12 @@ def lattice(s,x,y,w,h,a,b,c):
         if k<n:
             xx,yy=gx+(n-1-k)*cell,gy+m*cell+.09
             diagram_digit(group,xx,yy,cell,.26,digit,size+1,COLORS[c],True)
-            if carry: diagram_digit(group,xx+.02,yy-.14,cell*.5,.17,f'+{carry}',10,'B14F00',True)
+            if carry: diagram_digit(group,xx+.02,gy+m*cell-.025,.16,.17,f'{carry}',10,'B14F00',True)
         else:
             row=m-1-(k-n); xx,yy=gx-.34,gy+row*cell
             leading=(k==len(sums)-1 and digit==0)
             diagram_digit(group,xx,yy,.29,cell,digit,size+1,'8193A0' if leading else COLORS[c],True)
-            if carry: diagram_digit(group,xx-.02,yy+.01,.35,.17,f'+{carry}',10,'B14F00',True)
+            if carry: diagram_digit(group,gx-.18,yy+.01,.16,.17,f'{carry}',10,'B14F00',True)
         carry=total//10
     assert carry==0
 
@@ -274,7 +274,7 @@ def make_multiplication():
     grid(s,['43 × 6','34 × 12','4,312 × 156'],LATTICE,cells,[.80,2.65,1.85,.80],sizes=[17,17,15,21],
          diagrams={1:[('lattice',43,6,1.65),('lattice',34,12,1.65),('lattice',4312,156,2.15)]})
     notes(s,'Lattice Multiplication — worked demo',
-          'Guided: 43 × 6 = 258. Core: 34 × 12 = 408. Depth: 4,312 × 156 = 672,672.\n\n'
+          'Start: 43 × 6 = 258. Build: 34 × 12 = 408. Confidence: 4,312 × 156 = 672,672.\n\n'
           'The completed lattice diagrams are editable grouped PowerPoint shapes. Diagonals run from bottom left to top right. '
           'Place tens above each diagonal and units below it. Put answer digits at the ends of their diagonal tracks, '
           'down the left edge and along the bottom. Place carries at the bottom end of the NEXT diagonal in smaller text. '
@@ -293,7 +293,7 @@ def make_multiplication():
 
 
 def make_division():
-    s=new_slide(2,'Bus Stop Division','Worked demo  •  Guided: exact answer. Core: remainder. Depth: decimal answer.',1)
+    s=new_slide(2,'Bus Stop Division','Worked demo  •  Start: exact answer. Build: remainder. Confidence: decimal answer.',1)
     cells=[
       ['Inside: 63.\nOutside on the left: 3.','Inside: 145.\nOutside on the left: 6.','Inside: 4,834.\nOutside on the left: 16.'],
       ['6 ÷ 3 = 2. Write 2 above 6.\n3 ÷ 3 = 1. Write 1 above 3.',
@@ -306,7 +306,7 @@ def make_division():
     grid(s,['63 ÷ 3','145 ÷ 6','4,834 ÷ 16'],DIVISION,cells,[1.90,1.55,1.70,.85],sizes=[20,18,19,23],
          diagrams={0:[('bus',63,3,1.03),('bus',145,6,1.03),('bus',4834,16,1.03)]})
     notes(s,'Bus Stop Division — worked demo',
-          'Guided: 21. Core: 24 r 1. Depth: 302.125.\n\n'
+          'Start: 21. Build: 24 r 1. Confidence: 302.125.\n\n'
           'The editable bus stop diagrams show each quotient digit above its matching dividend digit. '
           'Show carried remainders as small prefixes. Preserve internal zeros, but omit an unnecessary leading zero in the final answer. '
           'For Depth, keep the zero in the tens position of 302.125. Align decimal points and show each carried remainder. Use multiples of 16 to check each quotient digit: 16, 32, 48, 64, 80. '
@@ -314,10 +314,10 @@ def make_division():
     prompts=[
       'Draw the frame. Dividend inside; divisor outside on the left. Space the digits clearly.',
       'Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the remainder as a small prefix to the next digit.',
-      'Check the final remainder. Core: write any remainder as r. Depth: add a decimal point and zeros. Continue until the remainder is 0.',
+      'Check the final remainder. Build: write any remainder as r. Confidence: add a decimal point and zeros. Continue until the remainder is 0.',
       'Write the complete answer. Keep place-value zeros. Align decimal points.']
     for i,qs in enumerate([[(88,4),(130,4),(5122,16)],[(66,3),(227,6),(3827,25)]]):
-        s=new_slide(2,'Bus Stop Division',f'Step-by-step practice {i+1}  •  Core: give remainders. Depth: give decimal answers.',i+2)
+        s=new_slide(2,'Bus Stop Division',f'Step-by-step practice {i+1}  •  Build: give remainders. Confidence: give decimal answers.',i+2)
         grid(s,[f'{num(a)} ÷ {b}' for a,b in qs],DIVISION,[[p]*3 for p in prompts],[1.4,1.75,1.70,1.20],sizes=[19,20,19,20])
         notes(s,f'Bus Stop Division — step-by-step practice {i+1}', '\n\n'.join(f'{LABELS[c]}: {num(a)} ÷ {b} = **{division_answer(a,b,c==2)}**' for c,(a,b) in enumerate(qs)))
     for i,bank in enumerate(div_sets): arithmetic_matrix(2,'Bus Stop Division',bank,i)
@@ -425,8 +425,8 @@ def make_application():
     grid(s,questions,APPLICATION,cells,[1.05,2.45,1.05,.70],qheight=1.4,sizes=[17,17,17,20],
          diagrams={1:[('bus',84,4,1.15),('bus',130,6,1.15),('both',145,9,1.35)]})
     notes(s,'Application to Exam Problems — worked demo',
-          'Guided: 84 ÷ 4 = 21 tins per box. Core: 130 ÷ 6 = 21 r 4, so 21 full packs. '
-          'Depth: 145 ÷ 9 = 16 r 1, so 17 minibuses; 17 × 40 = £680.\n\n'
+          'Start: 84 ÷ 4 = 21 tins per box. Build: 130 ÷ 6 = 21 r 4, so 21 full packs. '
+          'Confidence: 145 ÷ 9 = 16 r 1, so 17 minibuses; 17 × 40 = £680.\n\n'
           'For Depth, 16 buses would seat only 144 students. The first answer must be interpreted before the next calculation. '
           'In the lattice for 17 × 40, top row cells are 04, 28; bottom row cells 00, 00. '
           'Diagonal totals from right: 0, 8, 6, 0 → 680. Both worked diagrams are provided as editable groups. '

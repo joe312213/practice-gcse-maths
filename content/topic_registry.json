@@ -18,6 +18,18 @@
     "title": "Signed addition and subtraction"
   },
   {
+    "id": "M10",
+    "folder": "equations",
+    "stem": "Solving_equations_M10",
+    "title": "Solving equations"
+  },
+  {
+    "id": "M15",
+    "folder": "fractions_add_subtract",
+    "stem": "Fraction_addition_subtraction_M15",
+    "title": "Adding and subtracting fractions"
+  },
+  {
     "id": "M03",
     "folder": "problem_solving",
     "stem": "Multiplication_division_problems_M03",

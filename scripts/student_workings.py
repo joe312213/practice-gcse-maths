@@ -25,7 +25,7 @@ class Paper:
  def line(self,x,y,xx,yy,width=1):
   b.diagram_line(self.slide,self.x+x,self.y+y,self.x+xx,self.y+yy,b.INK,width)
   self.svg.append(f'<line x1="{x*72}" y1="{y*72}" x2="{xx*72}" y2="{yy*72}" stroke="#182b3a" stroke-width="{width}"/>')
- def finish(self):return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 152" role="img" aria-label="Student working with a deliberate mistake" style="width:100%;max-width:720px;background:white">'+''.join(self.svg)+'</svg>'
+ def finish(self):return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 152" role="img" aria-label="Student working with a deliberate mistake">'+''.join(self.svg)+'</svg>'
 
 def bus(p,x,y,d,scale=1):
  """Digits occupy genuine place-value columns; remainders are small prefixes."""
@@ -63,8 +63,8 @@ def lattice(p,item):
   p.text(x,y,.30,.30,d,21,align='center')
   carry=item['_incoming'][k]
   if carry:
-   if k<n:cx=x-.06;cy=y-.13
-   else:cx=x+.25;cy=y-.06
+   if k<n:cx=x+.01;cy=gy+m*cell-.015
+   else:cx=gx-.18;cy=gy+(m-1-(k-n))*cell-.025
    big=item['_extra'] is not None and k==item['_extra'][0]+1
    if big:cy=y;cx=x+.23
    p.text(cx,cy,.19,.27,str(carry),21 if big else 11,align='center')

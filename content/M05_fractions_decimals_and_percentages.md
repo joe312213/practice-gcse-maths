@@ -25,7 +25,7 @@ Use these exact labels and prompts on both step-by-step practice slides. Repeat 
 
 Instruction: **Follow each step down your column.**
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | Write 1/4 as a decimal and a percentage. | Write 7/20 as a decimal and a percentage. | Put 3/5, 0.58 and 62% in increasing order. |
 | Identify the Value | 1/4 means 1 ÷ 4. | 7/20 means 7 ÷ 20. | Use the same form to compare all three. |
@@ -41,7 +41,7 @@ An editable 100-square can show 25 shaded cells for 1/4. For Core, group the sam
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | Write 3/4 as a decimal and a percentage. | Write 13/20 as a decimal and a percentage. | Put 0.7, 2/3 and 68% in increasing order. |
 
@@ -55,7 +55,7 @@ Teacher working:
 
 Instruction: **Complete each step in your booklet or webapp.** Use the row prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | Write 40% as a fraction in simplest form and a decimal. | Write 0.375 as a fraction in simplest form and a percentage. | Put 7/8, 86% and 0.88 in increasing order. |
 
@@ -69,7 +69,7 @@ Teacher working:
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | Write 1/2 as a decimal and a percentage. | Write 3/8 as a decimal and a percentage. | Put 23/100, 0.2, 21% in increasing order. |
 | 2 | Write 1/5 as a decimal and a percentage. | Write 7/20 as a decimal and a percentage. | Put 29/100, 0.26, 27% in increasing order. |
@@ -93,7 +93,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | Write 0.5 as a fraction in simplest form and a percentage. | Write 0.375 as a fraction in simplest form and a percentage. | Put 23/100, 0.25, 22% in increasing order. |
 | 2 | Write 0.2 as a fraction in simplest form and a percentage. | Write 0.35 as a fraction in simplest form and a percentage. | Put 29/100, 0.31, 28% in increasing order. |
@@ -117,7 +117,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | Write 50% as a fraction in simplest form and a decimal. | Write 37.5% as a fraction in simplest form and a decimal. | Put 6/25, 0.27, 25% in increasing order. |
 | 2 | Write 20% as a fraction in simplest form and a decimal. | Write 35% as a fraction in simplest form and a decimal. | Put 3/10, 0.33, 31% in increasing order. |
@@ -141,7 +141,7 @@ Teacher answers and working (not student slide text):
 
 Instruction: **Choose a column. Show your working and check your answers.**
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | Simplify 3/6, then write it as a decimal and a percentage. | Simplify 231/600, then write it as a decimal and a percentage. | Put 29/100, 0.27, 26% in increasing order. |
 | 2 | Simplify 3/15, then write it as a decimal and a percentage. | Simplify 27/75, then write it as a decimal and a percentage. | Put 7/20, 0.33, 32% in increasing order. |

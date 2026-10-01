@@ -8,7 +8,7 @@ The user accepted this content before the Markdown-first workflow. This is a ref
 
 Worked demo  •  Follow each step down your column. Small orange numbers show carries.
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | 43 × 6 | 34 × 12 | 4,312 × 156 |
 | 1. Draw Grid & Arrange Digits | 2 columns × 1 row.<br>Top: 4, 3. Right: 6. | 2 columns × 2 rows.<br>Top: 3, 4. Right: 1, 2. | 4 columns × 3 rows.<br>Top: 4, 3, 1, 2. Right: 1, 5, 6. |
@@ -20,7 +20,7 @@ Worked demo  •  Follow each step down your column. Small orange numbers show c
 
 Lattice Multiplication — worked demo
 
-Guided: 43 × 6 = 258. Core: 34 × 12 = 408. Depth: 4,312 × 156 = 672,672.
+Start: 43 × 6 = 258. Build: 34 × 12 = 408. Confidence: 4,312 × 156 = 672,672.
 
 The completed lattice diagrams are editable grouped PowerPoint shapes. Diagonals run from bottom left to top right. Place tens above each diagonal and units below it. Put answer digits at the ends of their diagonal tracks, down the left edge and along the bottom. Place carries at the bottom end of the NEXT diagonal in smaller text. Depth diagonal totals from right to left, including carries: 2, 7, 16, 12, 7, 6, 0. The last 1 in the fourth and fifth sums is a carry. Read the result in reverse order and omit the leading zero: 672672.
 
@@ -28,7 +28,7 @@ The completed lattice diagrams are editable grouped PowerPoint shapes. Diagonals
 
 Step-by-step practice 1  •  Complete each step in your booklet or webapp.
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | 53 × 7 | 24 × 15 | 1,245 × 326 |
 | 1. Draw Grid & Arrange Digits | Draw the grid and diagonals. First number across the top; second number down the right edge. | Draw the grid and diagonals. First number across the top; second number down the right edge. | Draw the grid and diagonals. First number across the top; second number down the right edge. |
@@ -40,17 +40,17 @@ Step-by-step practice 1  •  Complete each step in your booklet or webapp.
 
 Lattice Multiplication — step-by-step practice 1
 
-Thread 1: Guided: 53 × 7 = **371**
+Start: 53 × 7 = **371**
 
-Thread 2: Core: 24 × 15 = **360**
+Build: 24 × 15 = **360**
 
-Thread 3: Depth: 1,245 × 326 = **405,870**
+Confidence: 1,245 × 326 = **405,870**
 
 ## Slide 3 — Lattice Multiplication
 
 Step-by-step practice 2  •  Complete each step in your booklet or webapp.
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | 84 × 5 | 63 × 28 | 3,142 × 2045 |
 | 1. Draw Grid & Arrange Digits | Draw the grid and diagonals. First number across the top; second number down the right edge. | Draw the grid and diagonals. First number across the top; second number down the right edge. | Draw the grid and diagonals. First number across the top; second number down the right edge. |
@@ -62,11 +62,11 @@ Step-by-step practice 2  •  Complete each step in your booklet or webapp.
 
 Lattice Multiplication — step-by-step practice 2
 
-Thread 1: Guided: 84 × 5 = **420**
+Start: 84 × 5 = **420**
 
-Thread 2: Core: 63 × 28 = **1,764**
+Build: 63 × 28 = **1,764**
 
-Thread 3: Depth: 3,142 × 2045 = **6,425,390**
+Confidence: 3,142 × 2045 = **6,425,390**
 
 ## Slide 4 — Lattice Multiplication
 
@@ -74,7 +74,7 @@ Independent practice 1  •  Choose a column. Show the full written method.
 
 Column descriptions: 2 digits × 1 digit; 2 digits × 2 digits; Up to 4 digits × 4 digits
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 32 × 4 | 42 × 13 | 342 × 15 |
 | 2 | 61 × 8 | 26 × 34 | 612 × 24 |
@@ -87,7 +87,7 @@ Column descriptions: 2 digits × 1 digit; 2 digits × 2 digits; Up to 4 digits �
 
 Lattice Multiplication — independent practice 1
 
-### Thread 1: Guided
+### Start
 
 1. 32 × 4 = **128**
 
@@ -101,7 +101,7 @@ Lattice Multiplication — independent practice 1
 
 6. 95 × 9 = **855**
 
-### Thread 2: Core
+### Build
 
 1. 42 × 13 = **546**
 
@@ -115,7 +115,7 @@ Lattice Multiplication — independent practice 1
 
 6. 82 × 57 = **4,674**
 
-### Thread 3: Depth
+### Confidence
 
 1. 342 × 15 = **5,130**
 
@@ -135,7 +135,7 @@ Independent practice 2  •  Choose a column. Show the full written method.
 
 Column descriptions: 2 digits × 1 digit; 2 digits × 2 digits; Up to 4 digits × 4 digits
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 24 × 6 | 23 × 14 | 425 × 23 |
 | 2 | 57 × 4 | 46 × 25 | 708 × 46 |
@@ -148,7 +148,7 @@ Column descriptions: 2 digits × 1 digit; 2 digits × 2 digits; Up to 4 digits �
 
 Lattice Multiplication — independent practice 2
 
-### Thread 1: Guided
+### Start
 
 1. 24 × 6 = **144**
 
@@ -162,7 +162,7 @@ Lattice Multiplication — independent practice 2
 
 6. 74 × 8 = **592**
 
-### Thread 2: Core
+### Build
 
 1. 23 × 14 = **322**
 
@@ -176,7 +176,7 @@ Lattice Multiplication — independent practice 2
 
 6. 79 × 53 = **4,187**
 
-### Thread 3: Depth
+### Confidence
 
 1. 425 × 23 = **9,775**
 
@@ -196,7 +196,7 @@ Independent practice 3  •  Choose a column. Show the full written method.
 
 Column descriptions: 2 digits × 1 digit; 2 digits × 2 digits; Up to 4 digits × 4 digits
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 46 × 7 | 35 × 24 | 536 × 34 |
 | 2 | 29 × 8 | 62 × 17 | 809 × 27 |
@@ -209,7 +209,7 @@ Column descriptions: 2 digits × 1 digit; 2 digits × 2 digits; Up to 4 digits �
 
 Lattice Multiplication — independent practice 3
 
-### Thread 1: Guided
+### Start
 
 1. 46 × 7 = **322**
 
@@ -223,7 +223,7 @@ Lattice Multiplication — independent practice 3
 
 6. 87 × 9 = **783**
 
-### Thread 2: Core
+### Build
 
 1. 35 × 24 = **840**
 
@@ -237,7 +237,7 @@ Lattice Multiplication — independent practice 3
 
 6. 89 × 65 = **5,785**
 
-### Thread 3: Depth
+### Confidence
 
 1. 536 × 34 = **18,224**
 
@@ -257,7 +257,7 @@ Independent practice 4  •  Choose a column. Show the full written method.
 
 Column descriptions: 2 digits × 1 digit; 2 digits × 2 digits; Up to 4 digits × 4 digits
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | 38 × 5 | 27 × 35 | 647 × 45 |
 | 2 | 56 × 9 | 43 × 26 | 902 × 38 |
@@ -270,7 +270,7 @@ Column descriptions: 2 digits × 1 digit; 2 digits × 2 digits; Up to 4 digits �
 
 Lattice Multiplication — independent practice 4
 
-### Thread 1: Guided
+### Start
 
 1. 38 × 5 = **190**
 
@@ -284,7 +284,7 @@ Lattice Multiplication — independent practice 4
 
 6. 97 × 7 = **679**
 
-### Thread 2: Core
+### Build
 
 1. 27 × 35 = **945**
 
@@ -298,7 +298,7 @@ Lattice Multiplication — independent practice 4
 
 6. 96 × 68 = **6,528**
 
-### Thread 3: Depth
+### Confidence
 
 1. 647 × 45 = **29,115**
 

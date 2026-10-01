@@ -8,7 +8,7 @@ This is the core ratio set. The user has also requested ratio problems; a separa
 
 Refresh ratio problem solving. Students distinguish a total, one known amount and a difference, find the value of one part, then answer the actual question. These givens and objectives vary within columns; the worked demo illustrates three methods, not rules tied to particular columns. This is one seven-slide module, not a lesson introducing ratio notation.
 
-Use the established columns **Thread 1: Guided**, **Thread 2: Core**, **Thread 3: Depth**. Guided mixes direct totals, known amounts and two friendly given-difference questions per independent slide. Core mixes totals, known amounts and simple differences. Depth uses all three and also asks students to find a difference from a total or one known amount. These are different reasoning demands, not a requirement that every ratio question have only one or two arithmetic operations. Keep the column headings neutral on student slides: do not add “divide by total parts” or similar hints.
+Use the established columns **Start**, **Build**, **Confidence**. Guided mixes direct totals, known amounts and two friendly given-difference questions per independent slide. Core mixes totals, known amounts and simple differences. Depth uses all three and also asks students to find a difference from a total or one known amount. These are different reasoning demands, not a requirement that every ratio question have only one or two arithmetic operations. Keep the column headings neutral on student slides: do not add “divide by total parts” or similar hints.
 
 No calculator needed for these chosen values. Students record working in booklets or a webapp. All ratios refer to quantities in the order named. Practice answers and visible method/error/check notes belong in the separate answer deck; see [M04 answer content](answers/M04_answers.md).
 
@@ -31,7 +31,7 @@ Title: **Ratio: sharing and missing amounts**
 
 Instruction: **Follow each step down your column.**
 
-| Row | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Row | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | The Full Question | A and B share £120 in the ratio 2:3. How much does B receive? | Red and blue paint are mixed in the ratio 3:5. There are 18 litres of red paint. How many litres of blue paint are needed? | Red and blue counters are in the ratio 3:7. There are 28 more blue counters than red counters. How many counters are there altogether? |
 | Keywords & Calculation | “share £120”: the total is known. 2 + 3 = 5 parts. £120 ÷ 5, then × 3. | “18 litres of red”: 3 parts are known. 18 ÷ 3, then × 5. | “28 more blue”: the difference is known. 7 − 3 = 4 parts. 28 ÷ 4, then × (3 + 7). |
@@ -43,9 +43,9 @@ Instruction: **Follow each step down your column.**
 
 Use editable, equal-sized boxes. Align the two bars at the left; each box represents one part, not one pound, litre or counter. Label both bars by name; colour is optional, not the only way to identify them.
 
-- Guided: A has 2 boxes; B has 3. A bracket covering both bars is labelled “£120 altogether”. Show “1 part = £24”.
-- Core: red has 3 boxes labelled “18 litres”; blue has 5. Show “1 part = 6 litres”.
-- Depth: red has 3 boxes; blue has 7. Bracket the **four extra blue boxes** and label them “28 more”. Show “1 part = 7 counters”. Do not label the overlap as the difference.
+- Start: A has 2 boxes; B has 3. A bracket covering both bars is labelled “£120 altogether”. Show “1 part = £24”.
+- Build: red has 3 boxes labelled “18 litres”; blue has 5. Show “1 part = 6 litres”.
+- Confidence: red has 3 boxes; blue has 7. Bracket the **four extra blue boxes** and label them “28 more”. Show “1 part = 7 counters”. Do not label the overlap as the difference.
 
 Keep the complete question and all four steps on this slide. Fit the diagrams beside the concise working within the Written Method row. Do not introduce a separate step-per-slide sequence.
 
@@ -53,7 +53,7 @@ Keep the complete question and all four steps on this slide. Fit the diagrams be
 
 Instruction: **Complete each step in your booklet or webapp.** Use the four practice prompts above.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | An 84 ml paint mix contains red and white paint in the ratio 3:4. How much red paint is in the mix? | Notebooks and folders are in the ratio 4:7. There are 35 folders. How many notebooks are there? | Adults and children are in the ratio 2:5. There are 24 more children than adults. How many people are there altogether? |
 
@@ -67,7 +67,7 @@ Teacher working:
 
 Instruction and row prompts match Slide 2 exactly.
 
-| Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Start | Build | Confidence |
 | --- | --- | --- |
 | A 96 cm ribbon is cut into pieces A and B in the ratio 5:7. Find the length of B. | Juice and water are mixed in the ratio 2:7. There are 18 litres of juice. How many litres of water are needed? | Two lengths of ribbon, A and B, are in the ratio 5:8. B is 21 cm longer than A. What is their total length? |
 
@@ -87,7 +87,7 @@ Each column mixes contexts, unit types and requested quantities. “Find each”
 
 ### Slide 4 — Independent practice 1
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | Sam and Jo share £60 in the ratio 2:3. How much does Jo receive? | Flour and sugar are mixed in the ratio 3:2. A recipe uses 180 g of flour. What is the total mass of the mixture? | Two ropes have lengths in the ratio 1:3. The longer rope is 12 m longer than the shorter. Find their total length. |
 | 2 | A drink contains 600 ml of juice and water in the ratio 1:4. How much juice is in the drink? | Adult and child tickets sell in the ratio 5:3. There are 16 more adult tickets. How many child tickets are sold? | Red and blue counters are in the ratio 1:5. There are 24 fewer red than blue. Find the number of each colour. |
@@ -109,7 +109,7 @@ Teacher answers and working:
 
 ### Slide 5 — Independent practice 2
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A 560 g snack mix contains raisins and nuts in the ratio 1:7. Find the mass of raisins. | A walk has uphill and level sections in the length ratio 1:8. The uphill section is 3 km. Find the total distance. | Flour and butter have masses in the ratio 9:2. There is 280 g less butter than flour. Find the total mass. |
 | 2 | Fences A and B have lengths in the ratio 7:6. Fence A is 9 m longer than fence B. How long is fence B? | A 490 ml paint mix contains red and white paint in the ratio 3:4. Find the volume of red paint. | Tanks A and B hold water in the ratio 3:8. Tank A holds 15 litres. How much more water is in B than A? |
@@ -131,7 +131,7 @@ Teacher answers and working:
 
 ### Slide 6 — Independent practice 3
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A club has 80 junior and senior members in the ratio 7:3. How many members are seniors? | Study and break times are in the ratio 8:1. Study takes 64 minutes. Find the total time. | Two sessions have durations in the ratio 1:10. The second lasts 72 minutes longer. Find the first session’s duration. |
 | 2 | Milk and coffee are mixed in the ratio 4:1. There is 100 ml of coffee. Find the volume of milk. | Rods A and B have lengths in the ratio 5:8. Rod B is 21 mm longer than rod A. How long is rod B? | Kai and May receive money in the ratio 9:5. May gets £60. Find their combined amount. |
@@ -153,7 +153,7 @@ Teacher answers and working:
 
 ### Slide 7 — Independent practice 4
 
-| Q | Thread 1: Guided | Thread 2: Core | Thread 3: Depth |
+| Q | Start | Build | Confidence |
 | --- | --- | --- | --- |
 | 1 | A 30-minute trip has walking and cycling times in the ratio 1:2. Find the cycling time. | Two charities receive money in the ratio 7:9. The second gets £108. How much is donated altogether? | Two tanks hold water in the ratio 1:11. The second holds 90 litres more. How much water is in the first? |
 | 2 | Two buckets contain 20 litres of water in total, in the ratio 1:3. Find the amount in each bucket. | A tray has 102 red and yellow plants in the ratio 8:9. How many plants are yellow? | Nuts and raisins are mixed in the ratio 11:7 by mass. There are 210 g of raisins. Find the total mass. |

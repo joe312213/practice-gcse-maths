@@ -1,0 +1,1565 @@
+{
+  "id": "M15",
+  "title": "Adding and subtracting fractions",
+  "folder": "fractions_add_subtract",
+  "stem": "Fraction_addition_subtraction_M15",
+  "assessment": [
+    {
+      "q": "{2/7} + {3/7}",
+      "a": "2/7",
+      "b": "3/7",
+      "sign": "+",
+      "answer": "{5/7}",
+      "value": "5/7",
+      "lines": [
+        "{2/7} + {3/7}",
+        "= {5/7}"
+      ],
+      "check": "Addition should make the answer larger than either positive fraction.",
+      "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+    },
+    {
+      "q": "{7/9} − {2/9}",
+      "a": "7/9",
+      "b": "2/9",
+      "sign": "−",
+      "answer": "{5/9}",
+      "value": "5/9",
+      "lines": [
+        "{7/9} − {2/9}",
+        "= {5/9}"
+      ],
+      "check": "Subtracting a positive fraction should make the answer smaller.",
+      "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+    },
+    {
+      "q": "{1/3} + {1/6}",
+      "a": "1/3",
+      "b": "1/6",
+      "sign": "+",
+      "answer": "{1/2}",
+      "value": "1/2",
+      "lines": [
+        "{1/3} + {1/6}",
+        "= {2/6} + {1/6}",
+        "= {3/6}",
+        "= {1/2}"
+      ],
+      "check": "Addition should make the answer larger than either positive fraction.",
+      "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+    },
+    {
+      "q": "1 {1/3} − {3/4}",
+      "a": "4/3",
+      "b": "3/4",
+      "sign": "−",
+      "answer": "{7/12}",
+      "value": "7/12",
+      "lines": [
+        "1 {1/3} − {3/4}",
+        "= {4/3} − {3/4}",
+        "= {16/12} − {9/12}",
+        "= {7/12}"
+      ],
+      "check": "Subtracting a positive fraction should make the answer smaller.",
+      "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+    }
+  ],
+  "demo": [
+    {
+      "q": "{3/8} + {1/8}",
+      "a": "3/8",
+      "b": "1/8",
+      "sign": "+",
+      "answer": "{1/2}",
+      "value": "1/2",
+      "lines": [
+        "{3/8} + {1/8}",
+        "= {4/8}",
+        "= {1/2}"
+      ],
+      "check": "Addition should make the answer larger than either positive fraction.",
+      "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+    },
+    {
+      "q": "{5/6} − {1/3}",
+      "a": "5/6",
+      "b": "1/3",
+      "sign": "−",
+      "answer": "{1/2}",
+      "value": "1/2",
+      "lines": [
+        "{5/6} − {1/3}",
+        "= {5/6} − {2/6}",
+        "= {3/6}",
+        "= {1/2}"
+      ],
+      "check": "Subtracting a positive fraction should make the answer smaller.",
+      "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+    },
+    {
+      "q": "1 {1/3} − {3/4}",
+      "a": "4/3",
+      "b": "3/4",
+      "sign": "−",
+      "answer": "{7/12}",
+      "value": "7/12",
+      "lines": [
+        "1 {1/3} − {3/4}",
+        "= {4/3} − {3/4}",
+        "= {16/12} − {9/12}",
+        "= {7/12}"
+      ],
+      "check": "Subtracting a positive fraction should make the answer smaller.",
+      "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+    }
+  ],
+  "practice": [
+    [
+      {
+        "q": "{2/9} + {5/9}",
+        "a": "2/9",
+        "b": "5/9",
+        "sign": "+",
+        "answer": "{7/9}",
+        "value": "7/9",
+        "lines": [
+          "{2/9} + {5/9}",
+          "= {7/9}"
+        ],
+        "check": "Addition should make the answer larger than either positive fraction.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+      },
+      {
+        "q": "{3/4} − {1/8}",
+        "a": "3/4",
+        "b": "1/8",
+        "sign": "−",
+        "answer": "{5/8}",
+        "value": "5/8",
+        "lines": [
+          "{3/4} − {1/8}",
+          "= {6/8} − {1/8}",
+          "= {5/8}"
+        ],
+        "check": "Subtracting a positive fraction should make the answer smaller.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+      },
+      {
+        "q": "1 {2/5} + {2/3}",
+        "a": "7/5",
+        "b": "2/3",
+        "sign": "+",
+        "answer": "2 {1/15}",
+        "value": "31/15",
+        "lines": [
+          "1 {2/5} + {2/3}",
+          "= {7/5} + {2/3}",
+          "= {21/15} + {10/15}",
+          "= {31/15}",
+          "= 2 {1/15}"
+        ],
+        "check": "Addition should make the answer larger than either positive fraction.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+      }
+    ],
+    [
+      {
+        "q": "{7/10} − {3/10}",
+        "a": "7/10",
+        "b": "3/10",
+        "sign": "−",
+        "answer": "{2/5}",
+        "value": "2/5",
+        "lines": [
+          "{7/10} − {3/10}",
+          "= {4/10}",
+          "= {2/5}"
+        ],
+        "check": "Subtracting a positive fraction should make the answer smaller.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+      },
+      {
+        "q": "{2/3} + {5/9}",
+        "a": "2/3",
+        "b": "5/9",
+        "sign": "+",
+        "answer": "1 {2/9}",
+        "value": "11/9",
+        "lines": [
+          "{2/3} + {5/9}",
+          "= {6/9} + {5/9}",
+          "= {11/9}",
+          "= 1 {2/9}"
+        ],
+        "check": "Addition should make the answer larger than either positive fraction.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+      },
+      {
+        "q": "2 {1/4} − {5/6}",
+        "a": "9/4",
+        "b": "5/6",
+        "sign": "−",
+        "answer": "1 {5/12}",
+        "value": "17/12",
+        "lines": [
+          "2 {1/4} − {5/6}",
+          "= {9/4} − {5/6}",
+          "= {27/12} − {10/12}",
+          "= {17/12}",
+          "= 1 {5/12}"
+        ],
+        "check": "Subtracting a positive fraction should make the answer smaller.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+      }
+    ]
+  ],
+  "banks": [
+    [
+      [
+        {
+          "q": "{1/12} + {1/12}",
+          "a": "1/12",
+          "b": "1/12",
+          "sign": "+",
+          "answer": "{1/6}",
+          "value": "1/6",
+          "lines": [
+            "{1/12} + {1/12}",
+            "= {2/12}",
+            "= {1/6}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{4/7} + {2/7}",
+          "a": "4/7",
+          "b": "2/7",
+          "sign": "+",
+          "answer": "{6/7}",
+          "value": "6/7",
+          "lines": [
+            "{4/7} + {2/7}",
+            "= {6/7}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{7/9} − {2/9}",
+          "a": "7/9",
+          "b": "2/9",
+          "sign": "−",
+          "answer": "{5/9}",
+          "value": "5/9",
+          "lines": [
+            "{7/9} − {2/9}",
+            "= {5/9}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{7/11} − {6/11}",
+          "a": "7/11",
+          "b": "6/11",
+          "sign": "−",
+          "answer": "{1/11}",
+          "value": "1/11",
+          "lines": [
+            "{7/11} − {6/11}",
+            "= {1/11}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{4/11} + {10/11}",
+          "a": "4/11",
+          "b": "10/11",
+          "sign": "+",
+          "answer": "1 {3/11}",
+          "value": "14/11",
+          "lines": [
+            "{4/11} + {10/11}",
+            "= {14/11}",
+            "= 1 {3/11}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{5/7} − {3/7}",
+          "a": "5/7",
+          "b": "3/7",
+          "sign": "−",
+          "answer": "{2/7}",
+          "value": "2/7",
+          "lines": [
+            "{5/7} − {3/7}",
+            "= {2/7}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ],
+      [
+        {
+          "q": "{4/5} − {1/10}",
+          "a": "4/5",
+          "b": "1/10",
+          "sign": "−",
+          "answer": "{7/10}",
+          "value": "7/10",
+          "lines": [
+            "{4/5} − {1/10}",
+            "= {8/10} − {1/10}",
+            "= {7/10}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{7/9} + {2/3}",
+          "a": "7/9",
+          "b": "2/3",
+          "sign": "+",
+          "answer": "1 {4/9}",
+          "value": "13/9",
+          "lines": [
+            "{7/9} + {2/3}",
+            "= {7/9} + {6/9}",
+            "= {13/9}",
+            "= 1 {4/9}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{11/12} − {1/3}",
+          "a": "11/12",
+          "b": "1/3",
+          "sign": "−",
+          "answer": "{7/12}",
+          "value": "7/12",
+          "lines": [
+            "{11/12} − {1/3}",
+            "= {11/12} − {4/12}",
+            "= {7/12}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{3/4} + {5/8}",
+          "a": "3/4",
+          "b": "5/8",
+          "sign": "+",
+          "answer": "1 {3/8}",
+          "value": "11/8",
+          "lines": [
+            "{3/4} + {5/8}",
+            "= {6/8} + {5/8}",
+            "= {11/8}",
+            "= 1 {3/8}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{4/5} − {7/10}",
+          "a": "4/5",
+          "b": "7/10",
+          "sign": "−",
+          "answer": "{1/10}",
+          "value": "1/10",
+          "lines": [
+            "{4/5} − {7/10}",
+            "= {8/10} − {7/10}",
+            "= {1/10}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{2/3} + {7/12}",
+          "a": "2/3",
+          "b": "7/12",
+          "sign": "+",
+          "answer": "1 {1/4}",
+          "value": "5/4",
+          "lines": [
+            "{2/3} + {7/12}",
+            "= {8/12} + {7/12}",
+            "= {15/12}",
+            "= 1 {1/4}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ],
+      [
+        {
+          "q": "{5/6} − {4/5}",
+          "a": "5/6",
+          "b": "4/5",
+          "sign": "−",
+          "answer": "{1/30}",
+          "value": "1/30",
+          "lines": [
+            "{5/6} − {4/5}",
+            "= {25/30} − {24/30}",
+            "= {1/30}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "2 {7/12} + {3/8}",
+          "a": "31/12",
+          "b": "3/8",
+          "sign": "+",
+          "answer": "2 {23/24}",
+          "value": "71/24",
+          "lines": [
+            "2 {7/12} + {3/8}",
+            "= {31/12} + {3/8}",
+            "= {62/24} + {9/24}",
+            "= {71/24}",
+            "= 2 {23/24}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "1 {5/6} − {8/9}",
+          "a": "11/6",
+          "b": "8/9",
+          "sign": "−",
+          "answer": "{17/18}",
+          "value": "17/18",
+          "lines": [
+            "1 {5/6} − {8/9}",
+            "= {11/6} − {8/9}",
+            "= {33/18} − {16/18}",
+            "= {17/18}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "1 {1/6} + {3/4}",
+          "a": "7/6",
+          "b": "3/4",
+          "sign": "+",
+          "answer": "1 {11/12}",
+          "value": "23/12",
+          "lines": [
+            "1 {1/6} + {3/4}",
+            "= {7/6} + {3/4}",
+            "= {14/12} + {9/12}",
+            "= {23/12}",
+            "= 1 {11/12}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "1 {1/6} − {3/8}",
+          "a": "7/6",
+          "b": "3/8",
+          "sign": "−",
+          "answer": "{19/24}",
+          "value": "19/24",
+          "lines": [
+            "1 {1/6} − {3/8}",
+            "= {7/6} − {3/8}",
+            "= {28/24} − {9/24}",
+            "= {19/24}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{1/3} + {2/7}",
+          "a": "1/3",
+          "b": "2/7",
+          "sign": "+",
+          "answer": "{13/21}",
+          "value": "13/21",
+          "lines": [
+            "{1/3} + {2/7}",
+            "= {7/21} + {6/21}",
+            "= {13/21}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "q": "{9/10} − {7/10}",
+          "a": "9/10",
+          "b": "7/10",
+          "sign": "−",
+          "answer": "{1/5}",
+          "value": "1/5",
+          "lines": [
+            "{9/10} − {7/10}",
+            "= {2/10}",
+            "= {1/5}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{1/9} + {2/9}",
+          "a": "1/9",
+          "b": "2/9",
+          "sign": "+",
+          "answer": "{1/3}",
+          "value": "1/3",
+          "lines": [
+            "{1/9} + {2/9}",
+            "= {3/9}",
+            "= {1/3}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{7/11} − {5/11}",
+          "a": "7/11",
+          "b": "5/11",
+          "sign": "−",
+          "answer": "{2/11}",
+          "value": "2/11",
+          "lines": [
+            "{7/11} − {5/11}",
+            "= {2/11}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{5/6} + {5/6}",
+          "a": "5/6",
+          "b": "5/6",
+          "sign": "+",
+          "answer": "1 {2/3}",
+          "value": "5/3",
+          "lines": [
+            "{5/6} + {5/6}",
+            "= {10/6}",
+            "= 1 {2/3}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{7/10} + {9/10}",
+          "a": "7/10",
+          "b": "9/10",
+          "sign": "+",
+          "answer": "1 {3/5}",
+          "value": "8/5",
+          "lines": [
+            "{7/10} + {9/10}",
+            "= {16/10}",
+            "= 1 {3/5}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{2/11} − {2/11}",
+          "a": "2/11",
+          "b": "2/11",
+          "sign": "−",
+          "answer": "0",
+          "value": "0",
+          "lines": [
+            "{2/11} − {2/11}",
+            "= {0/11}",
+            "= 0"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ],
+      [
+        {
+          "q": "{1/4} + {5/12}",
+          "a": "1/4",
+          "b": "5/12",
+          "sign": "+",
+          "answer": "{2/3}",
+          "value": "2/3",
+          "lines": [
+            "{1/4} + {5/12}",
+            "= {3/12} + {5/12}",
+            "= {8/12}",
+            "= {2/3}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{2/3} − {2/9}",
+          "a": "2/3",
+          "b": "2/9",
+          "sign": "−",
+          "answer": "{4/9}",
+          "value": "4/9",
+          "lines": [
+            "{2/3} − {2/9}",
+            "= {6/9} − {2/9}",
+            "= {4/9}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{1/4} + {11/12}",
+          "a": "1/4",
+          "b": "11/12",
+          "sign": "+",
+          "answer": "1 {1/6}",
+          "value": "7/6",
+          "lines": [
+            "{1/4} + {11/12}",
+            "= {3/12} + {11/12}",
+            "= {14/12}",
+            "= 1 {1/6}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{5/12} − {1/4}",
+          "a": "5/12",
+          "b": "1/4",
+          "sign": "−",
+          "answer": "{1/6}",
+          "value": "1/6",
+          "lines": [
+            "{5/12} − {1/4}",
+            "= {5/12} − {3/12}",
+            "= {2/12}",
+            "= {1/6}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{3/5} + {9/10}",
+          "a": "3/5",
+          "b": "9/10",
+          "sign": "+",
+          "answer": "1 {1/2}",
+          "value": "3/2",
+          "lines": [
+            "{3/5} + {9/10}",
+            "= {6/10} + {9/10}",
+            "= {15/10}",
+            "= 1 {1/2}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{4/9} − {1/3}",
+          "a": "4/9",
+          "b": "1/3",
+          "sign": "−",
+          "answer": "{1/9}",
+          "value": "1/9",
+          "lines": [
+            "{4/9} − {1/3}",
+            "= {4/9} − {3/9}",
+            "= {1/9}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ],
+      [
+        {
+          "q": "{2/5} + {1/3}",
+          "a": "2/5",
+          "b": "1/3",
+          "sign": "+",
+          "answer": "{11/15}",
+          "value": "11/15",
+          "lines": [
+            "{2/5} + {1/3}",
+            "= {6/15} + {5/15}",
+            "= {11/15}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{5/9} + {5/6}",
+          "a": "5/9",
+          "b": "5/6",
+          "sign": "+",
+          "answer": "1 {7/18}",
+          "value": "25/18",
+          "lines": [
+            "{5/9} + {5/6}",
+            "= {10/18} + {15/18}",
+            "= {25/18}",
+            "= 1 {7/18}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "2 {2/5} − {1/7}",
+          "a": "12/5",
+          "b": "1/7",
+          "sign": "−",
+          "answer": "2 {9/35}",
+          "value": "79/35",
+          "lines": [
+            "2 {2/5} − {1/7}",
+            "= {12/5} − {1/7}",
+            "= {84/35} − {5/35}",
+            "= {79/35}",
+            "= 2 {9/35}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{7/9} − {1/4}",
+          "a": "7/9",
+          "b": "1/4",
+          "sign": "−",
+          "answer": "{19/36}",
+          "value": "19/36",
+          "lines": [
+            "{7/9} − {1/4}",
+            "= {28/36} − {9/36}",
+            "= {19/36}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "1 {2/5} − {3/4}",
+          "a": "7/5",
+          "b": "3/4",
+          "sign": "−",
+          "answer": "{13/20}",
+          "value": "13/20",
+          "lines": [
+            "1 {2/5} − {3/4}",
+            "= {7/5} − {3/4}",
+            "= {28/20} − {15/20}",
+            "= {13/20}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{4/5} + {1/3}",
+          "a": "4/5",
+          "b": "1/3",
+          "sign": "+",
+          "answer": "1 {2/15}",
+          "value": "17/15",
+          "lines": [
+            "{4/5} + {1/3}",
+            "= {12/15} + {5/15}",
+            "= {17/15}",
+            "= 1 {2/15}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "q": "{10/11} − {9/11}",
+          "a": "10/11",
+          "b": "9/11",
+          "sign": "−",
+          "answer": "{1/11}",
+          "value": "1/11",
+          "lines": [
+            "{10/11} − {9/11}",
+            "= {1/11}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{5/8} + {3/8}",
+          "a": "5/8",
+          "b": "3/8",
+          "sign": "+",
+          "answer": "1",
+          "value": "1",
+          "lines": [
+            "{5/8} + {3/8}",
+            "= {8/8}",
+            "= 1"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{8/9} − {7/9}",
+          "a": "8/9",
+          "b": "7/9",
+          "sign": "−",
+          "answer": "{1/9}",
+          "value": "1/9",
+          "lines": [
+            "{8/9} − {7/9}",
+            "= {1/9}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{1/6} + {1/6}",
+          "a": "1/6",
+          "b": "1/6",
+          "sign": "+",
+          "answer": "{1/3}",
+          "value": "1/3",
+          "lines": [
+            "{1/6} + {1/6}",
+            "= {2/6}",
+            "= {1/3}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{2/11} + {5/11}",
+          "a": "2/11",
+          "b": "5/11",
+          "sign": "+",
+          "answer": "{7/11}",
+          "value": "7/11",
+          "lines": [
+            "{2/11} + {5/11}",
+            "= {7/11}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{4/5} − {3/5}",
+          "a": "4/5",
+          "b": "3/5",
+          "sign": "−",
+          "answer": "{1/5}",
+          "value": "1/5",
+          "lines": [
+            "{4/5} − {3/5}",
+            "= {1/5}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ],
+      [
+        {
+          "q": "{7/12} − {1/3}",
+          "a": "7/12",
+          "b": "1/3",
+          "sign": "−",
+          "answer": "{1/4}",
+          "value": "1/4",
+          "lines": [
+            "{7/12} − {1/3}",
+            "= {7/12} − {4/12}",
+            "= {3/12}",
+            "= {1/4}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{7/8} + {1/4}",
+          "a": "7/8",
+          "b": "1/4",
+          "sign": "+",
+          "answer": "1 {1/8}",
+          "value": "9/8",
+          "lines": [
+            "{7/8} + {1/4}",
+            "= {7/8} + {2/8}",
+            "= {9/8}",
+            "= 1 {1/8}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{2/5} − {3/10}",
+          "a": "2/5",
+          "b": "3/10",
+          "sign": "−",
+          "answer": "{1/10}",
+          "value": "1/10",
+          "lines": [
+            "{2/5} − {3/10}",
+            "= {4/10} − {3/10}",
+            "= {1/10}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{1/3} + {1/9}",
+          "a": "1/3",
+          "b": "1/9",
+          "sign": "+",
+          "answer": "{4/9}",
+          "value": "4/9",
+          "lines": [
+            "{1/3} + {1/9}",
+            "= {3/9} + {1/9}",
+            "= {4/9}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{3/8} + {1/4}",
+          "a": "3/8",
+          "b": "1/4",
+          "sign": "+",
+          "answer": "{5/8}",
+          "value": "5/8",
+          "lines": [
+            "{3/8} + {1/4}",
+            "= {3/8} + {2/8}",
+            "= {5/8}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{3/4} − {3/8}",
+          "a": "3/4",
+          "b": "3/8",
+          "sign": "−",
+          "answer": "{3/8}",
+          "value": "3/8",
+          "lines": [
+            "{3/4} − {3/8}",
+            "= {6/8} − {3/8}",
+            "= {3/8}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ],
+      [
+        {
+          "q": "{1/4} − {1/5}",
+          "a": "1/4",
+          "b": "1/5",
+          "sign": "−",
+          "answer": "{1/20}",
+          "value": "1/20",
+          "lines": [
+            "{1/4} − {1/5}",
+            "= {5/20} − {4/20}",
+            "= {1/20}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "1 {5/6} − {1/9}",
+          "a": "11/6",
+          "b": "1/9",
+          "sign": "−",
+          "answer": "1 {13/18}",
+          "value": "31/18",
+          "lines": [
+            "1 {5/6} − {1/9}",
+            "= {11/6} − {1/9}",
+            "= {33/18} − {2/18}",
+            "= {31/18}",
+            "= 1 {13/18}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{2/9} − {1/6}",
+          "a": "2/9",
+          "b": "1/6",
+          "sign": "−",
+          "answer": "{1/18}",
+          "value": "1/18",
+          "lines": [
+            "{2/9} − {1/6}",
+            "= {4/18} − {3/18}",
+            "= {1/18}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "2 {4/7} + {2/3}",
+          "a": "18/7",
+          "b": "2/3",
+          "sign": "+",
+          "answer": "3 {5/21}",
+          "value": "68/21",
+          "lines": [
+            "2 {4/7} + {2/3}",
+            "= {18/7} + {2/3}",
+            "= {54/21} + {14/21}",
+            "= {68/21}",
+            "= 3 {5/21}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "1 {3/4} + {4/7}",
+          "a": "7/4",
+          "b": "4/7",
+          "sign": "+",
+          "answer": "2 {9/28}",
+          "value": "65/28",
+          "lines": [
+            "1 {3/4} + {4/7}",
+            "= {7/4} + {4/7}",
+            "= {49/28} + {16/28}",
+            "= {65/28}",
+            "= 2 {9/28}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "1 {5/6} + {2/5}",
+          "a": "11/6",
+          "b": "2/5",
+          "sign": "+",
+          "answer": "2 {7/30}",
+          "value": "67/30",
+          "lines": [
+            "1 {5/6} + {2/5}",
+            "= {11/6} + {2/5}",
+            "= {55/30} + {12/30}",
+            "= {67/30}",
+            "= 2 {7/30}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "q": "{6/11} − {1/11}",
+          "a": "6/11",
+          "b": "1/11",
+          "sign": "−",
+          "answer": "{5/11}",
+          "value": "5/11",
+          "lines": [
+            "{6/11} − {1/11}",
+            "= {5/11}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{3/7} − {2/7}",
+          "a": "3/7",
+          "b": "2/7",
+          "sign": "−",
+          "answer": "{1/7}",
+          "value": "1/7",
+          "lines": [
+            "{3/7} − {2/7}",
+            "= {1/7}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{4/7} + {1/7}",
+          "a": "4/7",
+          "b": "1/7",
+          "sign": "+",
+          "answer": "{5/7}",
+          "value": "5/7",
+          "lines": [
+            "{4/7} + {1/7}",
+            "= {5/7}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{8/9} + {4/9}",
+          "a": "8/9",
+          "b": "4/9",
+          "sign": "+",
+          "answer": "1 {1/3}",
+          "value": "4/3",
+          "lines": [
+            "{8/9} + {4/9}",
+            "= {12/9}",
+            "= 1 {1/3}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{7/8} − {3/8}",
+          "a": "7/8",
+          "b": "3/8",
+          "sign": "−",
+          "answer": "{1/2}",
+          "value": "1/2",
+          "lines": [
+            "{7/8} − {3/8}",
+            "= {4/8}",
+            "= {1/2}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{2/7} + {6/7}",
+          "a": "2/7",
+          "b": "6/7",
+          "sign": "+",
+          "answer": "1 {1/7}",
+          "value": "8/7",
+          "lines": [
+            "{2/7} + {6/7}",
+            "= {8/7}",
+            "= 1 {1/7}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ],
+      [
+        {
+          "q": "{2/3} + {1/6}",
+          "a": "2/3",
+          "b": "1/6",
+          "sign": "+",
+          "answer": "{5/6}",
+          "value": "5/6",
+          "lines": [
+            "{2/3} + {1/6}",
+            "= {4/6} + {1/6}",
+            "= {5/6}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{1/6} − {1/12}",
+          "a": "1/6",
+          "b": "1/12",
+          "sign": "−",
+          "answer": "{1/12}",
+          "value": "1/12",
+          "lines": [
+            "{1/6} − {1/12}",
+            "= {2/12} − {1/12}",
+            "= {1/12}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{2/3} − {1/9}",
+          "a": "2/3",
+          "b": "1/9",
+          "sign": "−",
+          "answer": "{5/9}",
+          "value": "5/9",
+          "lines": [
+            "{2/3} − {1/9}",
+            "= {6/9} − {1/9}",
+            "= {5/9}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{9/10} + {4/5}",
+          "a": "9/10",
+          "b": "4/5",
+          "sign": "+",
+          "answer": "1 {7/10}",
+          "value": "17/10",
+          "lines": [
+            "{9/10} + {4/5}",
+            "= {9/10} + {8/10}",
+            "= {17/10}",
+            "= 1 {7/10}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{8/9} + {2/3}",
+          "a": "8/9",
+          "b": "2/3",
+          "sign": "+",
+          "answer": "1 {5/9}",
+          "value": "14/9",
+          "lines": [
+            "{8/9} + {2/3}",
+            "= {8/9} + {6/9}",
+            "= {14/9}",
+            "= 1 {5/9}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{5/6} − {5/12}",
+          "a": "5/6",
+          "b": "5/12",
+          "sign": "−",
+          "answer": "{5/12}",
+          "value": "5/12",
+          "lines": [
+            "{5/6} − {5/12}",
+            "= {10/12} − {5/12}",
+            "= {5/12}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ],
+      [
+        {
+          "q": "{2/3} + {6/11}",
+          "a": "2/3",
+          "b": "6/11",
+          "sign": "+",
+          "answer": "1 {7/33}",
+          "value": "40/33",
+          "lines": [
+            "{2/3} + {6/11}",
+            "= {22/33} + {18/33}",
+            "= {40/33}",
+            "= 1 {7/33}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{2/3} + {6/7}",
+          "a": "2/3",
+          "b": "6/7",
+          "sign": "+",
+          "answer": "1 {11/21}",
+          "value": "32/21",
+          "lines": [
+            "{2/3} + {6/7}",
+            "= {14/21} + {18/21}",
+            "= {32/21}",
+            "= 1 {11/21}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "2 {4/7} − {1/5}",
+          "a": "18/7",
+          "b": "1/5",
+          "sign": "−",
+          "answer": "2 {13/35}",
+          "value": "83/35",
+          "lines": [
+            "2 {4/7} − {1/5}",
+            "= {18/7} − {1/5}",
+            "= {90/35} − {7/35}",
+            "= {83/35}",
+            "= 2 {13/35}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{6/11} − {1/3}",
+          "a": "6/11",
+          "b": "1/3",
+          "sign": "−",
+          "answer": "{7/33}",
+          "value": "7/33",
+          "lines": [
+            "{6/11} − {1/3}",
+            "= {18/33} − {11/33}",
+            "= {7/33}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "{5/8} + {1/6}",
+          "a": "5/8",
+          "b": "1/6",
+          "sign": "+",
+          "answer": "{19/24}",
+          "value": "19/24",
+          "lines": [
+            "{5/8} + {1/6}",
+            "= {15/24} + {4/24}",
+            "= {19/24}"
+          ],
+          "check": "Addition should make the answer larger than either positive fraction.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        },
+        {
+          "q": "1 {3/4} − {4/9}",
+          "a": "7/4",
+          "b": "4/9",
+          "sign": "−",
+          "answer": "1 {11/36}",
+          "value": "47/36",
+          "lines": [
+            "1 {3/4} − {4/9}",
+            "= {7/4} − {4/9}",
+            "= {63/36} − {16/36}",
+            "= {47/36}",
+            "= 1 {11/36}"
+          ],
+          "check": "Subtracting a positive fraction should make the answer smaller.",
+          "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result."
+        }
+      ]
+    ]
+  ],
+  "errors": [
+    [
+      {
+        "q": "{2/7} + {3/7}",
+        "a": "2/7",
+        "b": "3/7",
+        "sign": "+",
+        "answer": "{5/7}",
+        "value": "5/7",
+        "lines": [
+          "{2/7} + {3/7}",
+          "= {5/7}"
+        ],
+        "check": "Addition should make the answer larger than either positive fraction.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result.",
+        "wrong_lines": [
+          "{2/7} + {3/7}",
+          "= {5/14}"
+        ],
+        "wrong_value": "5/14",
+        "correction": "Keep denominator 7: both fractions already count sevenths."
+      },
+      {
+        "q": "{9/11} − {2/11}",
+        "a": "9/11",
+        "b": "2/11",
+        "sign": "−",
+        "answer": "{7/11}",
+        "value": "7/11",
+        "lines": [
+          "{9/11} − {2/11}",
+          "= {7/11}"
+        ],
+        "check": "Subtracting a positive fraction should make the answer smaller.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result.",
+        "wrong_lines": [
+          "{9/11} − {2/11}",
+          "= {11/11}",
+          "= 1"
+        ],
+        "wrong_value": "1",
+        "correction": "This is subtraction: 9 − 2 = 7, not 9 + 2."
+      },
+      {
+        "q": "{5/12} + {1/4}",
+        "a": "5/12",
+        "b": "1/4",
+        "sign": "+",
+        "answer": "{2/3}",
+        "value": "2/3",
+        "lines": [
+          "{5/12} + {1/4}",
+          "= {5/12} + {3/12}",
+          "= {8/12}",
+          "= {2/3}"
+        ],
+        "check": "Addition should make the answer larger than either positive fraction.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result.",
+        "wrong_lines": [
+          "{5/12} + {3/12}",
+          "= {8/12}",
+          "= {4/12}"
+        ],
+        "wrong_value": "1/3",
+        "correction": "To simplify, divide both numerator and denominator by 4: 8/12 = 2/3."
+      }
+    ],
+    [
+      {
+        "q": "{1/4} + {3/8}",
+        "a": "1/4",
+        "b": "3/8",
+        "sign": "+",
+        "answer": "{5/8}",
+        "value": "5/8",
+        "lines": [
+          "{1/4} + {3/8}",
+          "= {2/8} + {3/8}",
+          "= {5/8}"
+        ],
+        "check": "Addition should make the answer larger than either positive fraction.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result.",
+        "wrong_lines": [
+          "{1/4} + {3/8}",
+          "= {1/8} + {3/8}",
+          "= {4/8}"
+        ],
+        "wrong_value": "1/2",
+        "correction": "Changing quarters to eighths doubles the numerator: 1/4 = 2/8."
+      },
+      {
+        "q": "{11/12} − {1/3}",
+        "a": "11/12",
+        "b": "1/3",
+        "sign": "−",
+        "answer": "{7/12}",
+        "value": "7/12",
+        "lines": [
+          "{11/12} − {1/3}",
+          "= {11/12} − {4/12}",
+          "= {7/12}"
+        ],
+        "check": "Subtracting a positive fraction should make the answer smaller.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result.",
+        "wrong_lines": [
+          "{11/12} − {1/3}",
+          "= {11/12} − {1/12}",
+          "= {10/12}"
+        ],
+        "wrong_value": "5/6",
+        "correction": "A third is 4/12, not 1/12. Subtract 4 twelfths."
+      },
+      {
+        "q": "{2/5} + {3/10}",
+        "a": "2/5",
+        "b": "3/10",
+        "sign": "+",
+        "answer": "{7/10}",
+        "value": "7/10",
+        "lines": [
+          "{2/5} + {3/10}",
+          "= {4/10} + {3/10}",
+          "= {7/10}"
+        ],
+        "check": "Addition should make the answer larger than either positive fraction.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result.",
+        "wrong_lines": [
+          "{2/5} + {3/10}",
+          "= {4/10} + {3/10}",
+          "= {7/20}"
+        ],
+        "wrong_value": "7/20",
+        "correction": "Once parts have the same size, keep denominator 10."
+      }
+    ],
+    [
+      {
+        "q": "2 {1/3} − {1/4}",
+        "a": "7/3",
+        "b": "1/4",
+        "sign": "−",
+        "answer": "2 {1/12}",
+        "value": "25/12",
+        "lines": [
+          "2 {1/3} − {1/4}",
+          "= {7/3} − {1/4}",
+          "= {28/12} − {3/12}",
+          "= {25/12}",
+          "= 2 {1/12}"
+        ],
+        "check": "Subtracting a positive fraction should make the answer smaller.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result.",
+        "wrong_lines": [
+          "2 {1/3} − {1/4}",
+          "= {3/3} − {1/4}",
+          "= {9/12}"
+        ],
+        "wrong_value": "3/4",
+        "correction": "Convert 2 1/3 to (2 × 3 + 1)/3 = 7/3 first."
+      },
+      {
+        "q": "1 {3/4} + {2/3}",
+        "a": "7/4",
+        "b": "2/3",
+        "sign": "+",
+        "answer": "2 {5/12}",
+        "value": "29/12",
+        "lines": [
+          "1 {3/4} + {2/3}",
+          "= {7/4} + {2/3}",
+          "= {21/12} + {8/12}",
+          "= {29/12}",
+          "= 2 {5/12}"
+        ],
+        "check": "Addition should make the answer larger than either positive fraction.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result.",
+        "wrong_lines": [
+          "1 {3/4} + {2/3}",
+          "= {9/12} + {8/12}",
+          "= 1 {5/12}"
+        ],
+        "wrong_value": "17/12",
+        "correction": "The whole 1 was dropped. Use 7/4 + 2/3 = 29/12."
+      },
+      {
+        "q": "2 {1/6} − {1/2}",
+        "a": "13/6",
+        "b": "1/2",
+        "sign": "−",
+        "answer": "1 {2/3}",
+        "value": "5/3",
+        "lines": [
+          "2 {1/6} − {1/2}",
+          "= {13/6} − {1/2}",
+          "= {13/6} − {3/6}",
+          "= {10/6}",
+          "= 1 {2/3}"
+        ],
+        "check": "Subtracting a positive fraction should make the answer smaller.",
+        "method": "Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result.",
+        "wrong_lines": [
+          "2 {1/6} − {1/2}",
+          "= {13/6} − {3/6}",
+          "= {10/6} = 1 {3/6}"
+        ],
+        "wrong_value": "3/2",
+        "correction": "10 ÷ 6 leaves remainder 4, not 3. Write 1 4/6, then simplify to 1 2/3."
+      }
+    ]
+  ]
+}
