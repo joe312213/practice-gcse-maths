@@ -1,6 +1,6 @@
 # Website format review — 1 October 2026
 
-Status: discussion before conversion. Reviewed AGENTS.md, web_format.md, HANDOFF.md, linked layout/answer/animation specifications and current build dependencies. No website transition has begun. Recommendations below are proposals, not accepted decisions. The reference T-Level site has not yet been cloned or audited; that is the next research step after this discussion, before selecting an implementation approach.
+Historical review: subsequently clarified through web_format.md and user discussion. Conversion was authorised on 2 October 2026; see docs/WEBSITE_PLAN.md for current work. Original review status: discussion before conversion. Reviewed AGENTS.md, web_format.md, HANDOFF.md, linked layout/answer/animation specifications and current build dependencies. No website transition has begun. Recommendations below are proposals, not accepted decisions. The reference T-Level site has not yet been cloned or audited; that is the next research step after this discussion, before selecting an implementation approach.
 
 ## Main decisions
 

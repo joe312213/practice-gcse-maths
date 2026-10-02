@@ -1,3 +1,93 @@
+# Website handoff — 2 October 2026
+
+This section supersedes the historical slide handoff below. The user authorised website planning and initial actions. Website delivery is primary; no ongoing slide exports or backup stacks.
+
+## Current result
+
+- Local equations prototype: `website/`, served at **http://127.0.0.1:8766** while the preview server is running. Restart command: `python3 -m http.server 8766 --bind 127.0.0.1 --directory website` from practice/.
+- Plan and implementation interpretations: [docs/WEBSITE_PLAN.md](docs/WEBSITE_PLAN.md). Reference code review: [docs/REFERENCE_REVIEW.md](docs/REFERENCE_REVIEW.md). Content audit: [docs/CONTENT_AUDIT.json](docs/CONTENT_AUDIT.json).
+- Imported 94 M10 items (72 independent questions), plus saved recap examples/notes. Active website sources: `content/M10_equations.json` and `content/M10_web_recap.json`. Generate bank using `/Users/joehudson/.pyenv/versions/3.13.3/bin/python3 -B scripts/prepare_web_equations.py`.
+- All seven topic decks match the 67-slide combined deck in text and basic shape geometry. Source questions and recap text checked against M10 deck; existing PPTX/HTML assets untouched.
+- Implemented assessment, method/demo/recap, guided practice, error spotting and adaptive independent practice. Named browser-local profiles, individual exact-number marking, working canvas/typed/paper options, assistance flags, persisted attempt/progress state, light/dark themes and responsive reference panel/modal.
+- Verified **16 unit/content tests**, plus isolated Chrome interaction checks and desktop/mobile visual inspection. Node path in this environment is `/opt/homebrew/bin/node`. Run `/opt/homebrew/bin/node --test tests/*.test.mjs`. Browser checks: `scripts/browser-smoke.mjs`, with local server on 8766 and isolated Chrome debugging port 9238; it only clears that test browser's Maths storage.
+
+## Checkpoint — review deferred by the user
+
+The user will review another time and requested documentation only at this stopping point. The prototype is implemented and checked, **not yet reviewed or accepted by the user**. No further conversion work was performed for this checkpoint. Resume from this section rather than the historical slide tasks below.
+
+### Remaining decisions and implementation details
+
+These are recorded for the next review/design session, not questions requiring an answer now. `web_format.md` remains the product specification; prototype defaults below must not be mistaken for approved teaching decisions.
+
+| Area | Current prototype / recorded interpretation | Still to settle or check |
+| --- | --- | --- |
+| Short-page score history | Rolling history survives page boundaries. Ten-question pages use the last ten eligible outcomes; short pages use a window matching page length, with the specified weights and zero padding. | Confirm rolling versus page-only scoring for short pages and how a future change in page length affects the displayed score. |
+| Reassessment | `min(5, page length)` eligible answers; a minimum of three for hypothetical one/two-question pages. Assisted correct answers do not consume this counter. | Confirm this exact interpretation of “less than 5”; check five-to-nine-question page cases before those lengths enter the UI. |
+| Assistance and trials | Assisted correct answers leave history unchanged; assisted incorrect answers count as failures. Assistance survives switching questions. Trials count unassisted correct answers towards the two-answer confirmation minimum. | Confirm how a correct assisted answer during a trial affects confirmation: currently it neither fails the trial nor contributes to the minimum. Also decide whether merely opening a reference should count when it was not used. |
+| Retries / repeated practice | Each question can be submitted once per page. Solutions are available after submission; a new page can include a previously answered question. No T-Level four-hour restriction is inherited. | Decide whether to offer a same-page unscored retry, and whether repeated questions on new pages need a progress-eligibility interval. |
+| Manual difficulty | Two consecutive submissions at the same lower level change the recommendation. Choosing a higher level changes the recommendation immediately and records manual origin. | Decide how to distinguish manual choice from demonstrated mastery in the future aggregate bar; check interaction with reassessment before expanding the progression UI. |
+| Topic progress / priorities | Only the active page type's recommendation and score are displayed. No aggregate bar or revision-priority list yet. | Define the three-stage bar calculation using plain ×2 and other types ×1, treatment of unattempted types, and attribution/ranking for mixed-topic pages. |
+| Initial assessment | Four accepted questions, no inline hints/reference, immediate individual feedback; no automatic placement. | Decide placement criteria, whether students should complete assessment before other sections, and whether freely navigating to the demo during an unfinished assessment is acceptable. |
+| Error-spotting marking | M10 requires the first incorrect row and correct final x. Both must be correct for the scored result; component feedback is visible. | Review against the proposed error-type multiple-choice/fill-in approach. Establish marking rules for lattice/division/ratio errors and any partial credit. Freehand working is never automatically marked. |
+| Practice sets and codes | Not implemented. Stable subject-qualified question IDs exist; one topic learning sequence is available. | Define subject + nine-character configuration encoding, reproducibility under adaptation, bank revisions, compatibility with T-Level codes, and the up-to-three-page runner. Implement saved-level precedence and first-use inheritance there. |
+| Profiles and stored data | Browser-local names, typo suggestions, separate histories and persisted active pages; no authentication. Current track/page keys are page types within the single Maths/M10 prototype. | Before adding another topic, namespace these keys by subject/topic/type and migrate schema 1. Decide rename/delete/reset, export/import, history limits and handling corrupt/incompatible data. Never silently merge names. |
+| Working area / accessibility | Unsubmitted text/sketches clear when switching questions; typed and paper alternatives exist. Desktop reference panel and mobile modal are checked. | Review practical layout, scrolling and discard behaviour with the teacher; conduct screen-reader, high-zoom and real touch-device checks before rollout. A blank-working reminder is not method assessment. |
+| Site boundary and feature scope | Local standalone Maths prototype. Light/dark themes, streak messages and method animations exist. | Confirm standalone deployment versus integration with the T-Level site. Plan timers/expiry behaviour, issue-report destination, selected puzzle families, college links/configuration and any additional theme controls. Do not publish as a side effect of local work. |
+
+Custom-input animations and an extra challenge tier remain V2. Slide export remains deferred until explicitly requested; these are already decided and need not be asked again.
+
+### Exact next action when work resumes
+
+1. Read this checkpoint, `AGENTS.md`, the latest `web_format.md` and `docs/WEBSITE_PLAN.md`; check Git status for intervening user changes.
+2. Restart the preview if needed and let the user review the current equations prototype. Address that feedback before scaling the layout. Do not infer approval from implementation or test results.
+3. Before importing another topic, generalise subject/topic storage keys and add migration/isolation tests. Define the next Practice-set and progress-bar behaviour with concrete examples from the decision table.
+4. Audit M01 source against its saved deck, then port the accepted lattice working/animation with the correct carry placement. Continue M02, M13, M15, M03 and M04 in the teaching sequence. All six remain non-interactive.
+5. Add the remaining Practice-set, export/import, priority, timer/report/puzzle and college configuration features in the plan. Complete content, accessibility and deployment checks before rollout.
+
+### File map
+
+- `website/app.mjs`: topic navigation, page selection, marking UI, method/recap renderer, working area, profile switching and persistence integration.
+- `website/engine.mjs`: exact numeric answer parser, weighted scores, promotion/reversion/reassessment and manual level changes.
+- `website/profiles.mjs`: storage schema/key, name normalisation, typo suggestions and local profile selection.
+- `website/index.html`, `website/styles.css`: page shell and responsive/theme styles.
+- `website/data/equations.json`: generated bank; edit the content sources, not this file.
+- `content/M10_equations.json`, `content/M10_web_recap.json`: authored equations and recap material.
+- `scripts/prepare_web_equations.py`: bank import and source/deck audit; writes the bank and `docs/CONTENT_AUDIT.json`, never the decks.
+- `tests/website.test.mjs`: 16 recorded unit/content checks. `scripts/browser-smoke.mjs`: isolated Chrome interaction checks.
+- `docs/REFERENCE_REVIEW.md`: findings from reference commit `8906225f458372b7238544341e5f293cc67e685a`. Reference clone: `/private/tmp/maths-starters-reference` (temporary, not a dependency of the prototype).
+
+### Restart and verification commands
+
+Run from `practice/`:
+
+```sh
+python3 -m http.server 8766 --bind 127.0.0.1 --directory website
+```
+
+Open http://127.0.0.1:8766. The URL requires a running local server; its availability is not guaranteed across sessions. No npm install/build is currently required. Do not test by opening index.html with `file://`.
+
+```sh
+/opt/homebrew/bin/node --test tests/*.test.mjs
+/Users/joehudson/.pyenv/versions/3.13.3/bin/python3 -B scripts/prepare_web_equations.py
+```
+
+For browser checks, run the local server and start a separate test Chrome instance:
+
+```sh
+'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --no-first-run --no-default-browser-check --user-data-dir=/private/tmp/maths-web-browser --remote-debugging-port=9238 about:blank
+/opt/homebrew/bin/node scripts/browser-smoke.mjs
+```
+
+The smoke script clears the isolated test browser's Maths storage; do not attach it to the user's review browser. It saves screenshots as `/private/tmp/maths-*.png`. Temporary clone, screenshots and browser profile may disappear; durable source, audit and instructions are in the project. Sandbox approval may be needed for the local server, Chrome and loopback connections.
+
+### Saved-work status and verification limits
+
+The conversion work is saved on disk but **not committed**. At this checkpoint Git shows modifications to `AGENTS.md`, `HANDOFF.md`, `WEB_FORMAT_REVIEW.md`, and new `content/M10_web_recap.json`, `docs/`, `website/`, `tests/`, `scripts/prepare_web_equations.py` and `scripts/browser-smoke.mjs`. Include these new files when a commit is requested; do not assume untracked means disposable. No live deployment was performed. Original PPTX/HTML outputs remain unchanged.
+
+The recorded 16 tests and browser/visual checks passed during the implementation turn. This documentation-only checkpoint did not rerun them or change application code. The content audit compares text/basic shape geometry, not every style/media detail; only M10 source parity was checked. Browser checks cover an isolated Chrome instance, not all browsers or classroom devices. Full screen-reader/accessibility, other-topic migration and production deployment checks remain outstanding.
+
+---
+
 # Session handoff — 1 October 2026
 
 Read [AGENTS.md](AGENTS.md), [SLIDE_LAYOUT.md](content/SLIDE_LAYOUT.md) and [ANSWER_SLIDES.md](content/ANSWER_SLIDES.md).

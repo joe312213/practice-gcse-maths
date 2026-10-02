@@ -1,0 +1,54 @@
+{
+  "combined_sha256": "ea6fd11fea00e1b297810e1eddb84741af9f3c7fbd399ec542ce5723ffee6a96",
+  "topics": [
+    {
+      "topic": "M01",
+      "slides": 10,
+      "text_geometry_differences": [],
+      "sha256": "967026f5b4561b1cfbc5de52abda3311f54e179dc5e784bd69f7bfe4d2335b02"
+    },
+    {
+      "topic": "M02",
+      "slides": 9,
+      "text_geometry_differences": [],
+      "sha256": "13fcf6eabb3fe283e0deefe74cd0a25af5b5eb3e3b6fcad20c93997e6a8ed182"
+    },
+    {
+      "topic": "M13",
+      "slides": 10,
+      "text_geometry_differences": [],
+      "sha256": "00f1a824847de4430b0e0dc933ff3ef667b3afc05fc34c22386b3f5bb9cb0d94"
+    },
+    {
+      "topic": "M10",
+      "slides": 10,
+      "text_geometry_differences": [],
+      "sha256": "21c98ce3f2ee2189e2706b431fd4818edf811b818fd867ece1fdf743ce289b31"
+    },
+    {
+      "topic": "M15",
+      "slides": 10,
+      "text_geometry_differences": [],
+      "sha256": "3890a4d342e35f9e7bf1fee8a5eac0f2057ed4bf434c118fccdfab9f571cabf9"
+    },
+    {
+      "topic": "M03",
+      "slides": 9,
+      "text_geometry_differences": [],
+      "sha256": "6cf705fb4e6311d39d23d8a021d80472303055065d90af09eb5508afa7579d4a"
+    },
+    {
+      "topic": "M04",
+      "slides": 9,
+      "text_geometry_differences": [],
+      "sha256": "4071629dbfab9dda68e36c4ffe1a3aa492d8feafed247787783a60c8a5b50d44"
+    }
+  ],
+  "M10": {
+    "imported": 94,
+    "plain": 72,
+    "source_questions_found_in_saved_deck": 94,
+    "coefficient_answers_verified": 85
+  },
+  "limits": "Shape geometry/text compared; detailed styles/media and non-M10 source parity not yet audited."
+}

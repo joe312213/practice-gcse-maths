@@ -10,39 +10,19 @@ Teach in prerequisite order: secure essential arithmetic, then prioritise equati
 
 For session status, current outputs and the next unfinished topic, read [HANDOFF.md](HANDOFF.md).
 
-**These instructions should be carefully updated according to new direction detailed in `web_format.md` and conversion to a website**
+## Website delivery and current work
 
-Website transition is pending discussion of `WEB_FORMAT_REVIEW.md`; do not begin conversion yet. Existing teaching/content requirements remain applicable. The no-backup policy below applies immediately and supersedes historical notes in all linked documents.
+The user authorised website planning and initial conversion on 2 October 2026. [web_format.md](web_format.md) is the product specification and supersedes slide-specific delivery/layout rules. [docs/WEBSITE_PLAN.md](docs/WEBSITE_PLAN.md) records phases, implementation interpretations and checks; [docs/REFERENCE_REVIEW.md](docs/REFERENCE_REVIEW.md) records the separate T-Level code review. Earlier WEB_FORMAT_REVIEW.md findings are historical, not new approval gates.
 
-## Content and review workflow
-
-- Maintain exact content in `content/`: questions, row labels, prompts, worked steps, diagram specifications, answers and visible method/error/check notes. Keep it in step with the slides.
-- Normally review Markdown before building. If the user requests PowerPoint for easier review, build the review draft without another approval gate. Distinguish draft content from accepted content; generating a deck does not imply acceptance.
-- Maintain one question PowerPoint and one HTML answer file per built topic under `topics/<topic>/`, including multiplication, division and problem solving. Also maintain a combined question PowerPoint and combined HTML answers at the project root, in the teaching sequence in `content/TOPIC_PLAN.md`. Preserve each topic’s assessment and internal slide order. Omit unbuilt topics; do not create placeholders.
-- Preserve accepted questions, assessments and manual slide edits. Do not regenerate a saved deck from older source without accounting for those edits. When changing a question, update its working, answer, diagrams and diagnostic notes together.
-- Keep stable module/slide/thread/question references when inserting assessment or recap slides. Record current versions and review status in the topic README, not this file.
-
-Read the relevant linked specifications before working on their content; they remain requirements:
-
-- [Topic plan](content/TOPIC_PLAN.md): requested scope and proposed module splits. Module IDs do not prescribe teaching order. FDP equivalence and best buys are optional supporting topics.
-- [Teaching specifications](content/TEACHING_SPECIFICATIONS.md): exact lattice/division methods, application row labels and challenge, and ratio variety requirements. Read alongside the relevant module Markdown.
-- [Slide layout](content/SLIDE_LAYOUT.md): diagram alignment and approved progression arrows; exact arrow offsets are in [progression_arrow.json](content/progression_arrow.json).
-- [Answer format](content/ANSWER_SLIDES.md) and [answer index](content/answers/README.md): student answer content and consolidation.
-
-Latest user decisions take precedence over older drafts or notes. `initial_chat2.html` is historical context, not a requirement to adopt rejected Gemini suggestions. `old_agents.md` is an archive, not the active instruction file.
-
-## Topic slide structure
-
-1. **Initial assessment, first within each topic:** four questions—two Start level, one Build and one Confidence. M01–M03 retain the four questions each from the former combined assessment. Place each assessment immediately before that topic’s technique intro/recap (or worked demo when there is no separate recap). No hints, worked steps or method diagrams. Answers belong in the separate HTML answer file.
-2. **Rules recap where needed:** clearly state the relevant rules with short examples. Give it a separate slide if combining it with the demo would impair readability. For signed arithmetic, distinguish operation signs from number signs; do not apply multiplication sign shortcuts to addition/subtraction.
-3. **Worked demo:** one full question at the top of each challenge column, followed by every essential step and its result. Include clear editable diagrams where useful.
-4. **Two step-by-step practice slides:** new questions with the same meaningful step rows and short prompts. Students do the work.
-5. **Spot the errors:** one three-column challenge slide, three fully worked but deliberately incorrect solutions per column. Show complete student-style written methods, with errors visible in their actual positions: lattice grids/results/carries, bus-stop quotient digits/remainder prefixes, vertical arithmetic and line-by-line equations. Do not substitute shorthand algorithm summaries or explanatory prompts for working. Students identify and fix common mistakes; put corrections in the separate HTML answers. See `content/SLIDE_LAYOUT.md` and `content/SPOT_ERRORS.md`.
-6. **Four independent practice slides:** at least six full questions per column; no decomposed step rows.
-
-Use the exact headings **Start**, **Build**, **Confidence** on challenge grids. Keep the whole question visible above its steps. Students record working in booklets or a webapp. Use the approved arrow alone beneath the first two practice columns to encourage progression.
-
-Arithmetic method practice stays numerical. Application practice uses clear Foundation exam problems and neutral prompts that leave students to choose the operations. Retain agreed row labels; do not rotate synonyms for variety.
+- Maintain the website under `website/`. Current PowerPoints and standalone HTML are preserved teaching references; do not regenerate or maintain slide exports unless requested.
+- Preserve existing questions, assessments, accepted methods and manual edits. Reconcile saved decks with source before importing; never assume an older generator reproduces current content. Keep permanent subject/topic/activity/column/question IDs, even as delivery changes.
+- Keep exact authored content in `content/`; build website banks deterministically. M10 imports through `scripts/prepare_web_equations.py`. Update question, answer, full working, check and diagnostic notes together. Generation does not imply user acceptance.
+- Preserve initial assessment → recap/demo → scaffolded practice → error spotting → independent practice as the topic learning path. A Practice set is a separate sequence of up to three activity pages. Adaptive independent pages serve one chosen level at a time; original three-column counts/arrow placements are not website layout requirements.
+- Keep assessment free of hints/reference panels. Show complete written error methods without corrections before submission. Demos retain their full question, balanced steps and static fallback. Use the exact labels Start, Build, Confidence.
+- Store progress by local username, subject, topic, page type and actual challenge level. Keep outcomes and assistance metadata, not only displayed percentages. Scoring transitions belong in a testable module, separate from UI and content.
+- Use shared website CSS tokens/components, accessible native controls and responsive layouts. Mathematical meaning must not depend on colour, pointer input or animation. Support keyboard/typed working alongside touch drawing.
+- Read [TOPIC_PLAN.md](content/TOPIC_PLAN.md), [TEACHING_SPECIFICATIONS.md](content/TEACHING_SPECIFICATIONS.md), topic source and relevant answer/diagram specifications when working on that content. Their mathematical/teaching requirements remain; older PowerPoint geometry, HTML publication and animation timing requirements apply only to legacy exports. Preserve deterministic method-rendering and legibility principles.
+- Latest user decisions take precedence. `initial_chat2.html`, `old_agents.md` and dated slide history are context, not active delivery instructions.
 
 ## Question quality and variety
 
@@ -55,22 +35,15 @@ Arithmetic method practice stays numerical. Application practice uses clear Foun
 - For error-spotting contexts, name the objects and the quantity requested; state equal cost-sharing and capacity assumptions explicitly. Use plausible situations that do not require students to invent a reason for the numbers. Keep the difficulty in the intended mathematical error, not the wording. See `content/SPOT_ERRORS_REVIEW.md` for the full question review.
 - Carry corrections into later modules. Keep language friendly and unambiguous; preserve meaningful challenge without unmodelled prerequisites or excessive reading.
 
-## Separate student answers
+## Answers and feedback
 
-Keep correct assessment and practice answers out of the question deck; worked demos remain worked, and spot-the-errors slides deliberately show incorrect workings and results. Match answers to the source thread and question numbers. Show all answers, with paired quantities clearly labelled.
-
-Use **Answer**, **Method**, **If you got…**, and **Check**. Arithmetic checks use easy mental ballpark estimates/bounds, not demanding inverse calculations. Use deterministic skill-specific renderers for completed working, one three-column row for worked examples, and three columns for SE corrections. Give each HTML topic a tall separator, alternating subtle background and sticky vertical topic label; follow ANSWER_SLIDES.md. Give short method notes and selected wrong-answer examples on readable separate pages when needed. Vary the questions discussed rather than always selecting Q1. Each error example must show an actual incorrect calculation, its result, the correction and a useful check. Describe a possible mistake, not a diagnosis proved by the answer. Help students locate their first wrong step.
-
-All answer-page CSS lives in `styles/answers.css` and is embedded by the shared page generator. Use its named size/spacing tokens and shared math-answer markup; no inline sizing overrides or topic-specific stylesheet fragments. Refresh HTML with `scripts/refresh_answers.py`.
-
-Speaker notes and teacher keys do not replace visible student HTML answers. Keep all topics' answers separate when consolidating.
+Mark each question on submission. Keep full correct working, Answer, Method, If you got… and Check available as appropriate after submission. Explain a possible first mistake rather than diagnosing from a final answer alone. Use easy mental ballpark checks for arithmetic and meaningful substitution/context checks where useful. Never substitute prose instructions for a required worked diagram. Preserve assessment, diagram and diagnostic content during conversion.
 
 ## Production and checks
 
-- Check new or changed mathematics: answers, intermediate steps, signs, carries, units, ratio order, remainder interpretation and wrong-answer examples. Confirm all requested questions and answers are present.
-- Check projected readability, text fit and diagram accuracy. Never shrink text or remove questions to hide a layout problem. Number-line digits must be centred beneath ticks, with minus signs extending left; follow the layout specification.
-- Match verification to the change. New content needs mathematical and teaching checks; a small visual fix needs a focused visual check and preservation of unrelated content, not a full audit. Update the generator as well as the output so fixes survive regeneration.
-- Current outputs always have stable filenames without `_vN`: question decks are `.pptx`; answer files are `.html`. Replace current outputs in place; use Git commits for history. Do not create `_prevN`, `_vN`, or other backup copies. Markdown remains content source, not the delivered answers format. Previous slide, answer and preview stacks have been removed; restore older versions from Git only when explicitly needed.
-- Use `python3 scripts/update_structure.py` for the current build: it preserves saved topic teaching slides, refreshes error slides and compiles the main files. `build_priority_topic.py` builds M10 and `build_fraction_topic.py` builds M15 from their structured sources; both compile all registered topics. `compile_starters.py` only combines saved outputs. Other original `build_*` and `add_*assessment.py` scripts are legacy generators; do not use them to publish current outputs or overwrite manual edits.
-- Deliver complete, readable files and link the current outputs. Only claim a file is generated when it exists. Intentional diagram placeholders do not excuse missing questions or unfinished slides.
-- Call a spade a spade: no inflated terminology, decorative filler or unnecessary permission requests. Use judgement for routine implementation while preserving the teaching decisions.
+- Check changed mathematics, intermediate steps, signs, carries, units, remainder interpretation and deliberate errors. Check content counts and stable IDs against preserved source.
+- Validate adaptive rules, first-attempt scoring, assistance, profile isolation and persistence with meaningful tests. Match visual checks to changed layouts; cover mobile, keyboard and reduced motion. Do not claim browser behaviour verified from unit tests alone.
+- Use `node --test tests/*.test.mjs` for website logic tests and the documented browser smoke command for interaction checks. `python3 scripts/prepare_web_equations.py` requires python-pptx; the known local interpreter is `/Users/joehudson/.pyenv/versions/3.13.3/bin/python3`.
+- Use Git commits for history. Do not create `_prevN`, `_vN` or other output backup stacks. Preserve current resources; do not run legacy publishers during website work.
+- Record implemented behaviour, limitations and the next action in HANDOFF.md. Keep website build/run instructions beside the website. Do not publish/deploy as a side effect of local checks.
+- Call a spade a spade: no inflated terminology, decorative filler or unnecessary permission requests. Use judgement for routine implementation while preserving teaching decisions.

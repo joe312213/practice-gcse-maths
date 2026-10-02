@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Keep the balance",
+    "balance": [{"l":"x + 7","r":"19"},{"l":"− 7","r":"− 7","kind":"op"},{"l":"x","r":"12"}],
+    "notes": ["Do the same operation to both whole sides.", "Undo addition/subtraction before a remaining multiplication or division.", "A negative divided by a positive is negative: −12 ÷ 3 = −4."]
+  },
+  {
+    "title": "Simplify or factorise",
+    "balance": [{"l":"6x + 12","r":"30"},{"l":"6(x + 2)","r":"30"},{"l":"÷ 6","r":"÷ 6","kind":"op"},{"l":"x + 2","r":"5"},{"l":"− 2","r":"− 2","kind":"op"},{"l":"x","r":"3"}],
+    "notes": ["Collect like terms: 2x + 3x = 5x.", "A common factor belongs to every term: 6x + 12 = 6(x + 2)."]
+  },
+  {
+    "title": "Choose a short first step",
+    "balance": [{"l":"3(x + 4)","r":"27"},{"l":"÷ 3","r":"÷ 3","kind":"op"},{"l":"x + 4","r":"9"},{"l":"− 4","r":"− 4","kind":"op"},{"l":"x","r":"5"}],
+    "notes": ["Here, divide by 3 before expanding.", "With x on both sides, subtract the smaller x-term first when convenient.", "If expanding is needed, multiply every bracket term. Check in the original equation."]
+  }
+]

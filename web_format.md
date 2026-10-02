@@ -47,7 +47,6 @@ Marking should take place on a question by question basis, not by page or questi
 
 There are new meanings to 'question type' now. The old meaning is Exam practice vs Puzzles, etc. This should now be called 'Activity type'. The other meaning is question style within a type and topic. E.g. plain multiplication questions vs spot the error in method for multiplication questions vs problem solving using multiplication method. The main styles will be pain questions, spot the error, mixed priority, and problem solving using the method(s). The term 'Question type' or 'Question page type' should refer to this, for this project.
 
-
 ## Key features
 
 ### Challenge Level
