@@ -1,6 +1,6 @@
 # Student HTML answers
 
-Current specification — 1 October 2026. Answers are HTML, despite this historical document filename. Maintain one file per built topic and a combined file in the same teaching order as the question deck. Current filenames have no `_vN` suffix; superseded outputs use `_prevN`. Markdown is content source, not the delivered answer format.
+Current specification — 1 October 2026. Answers are HTML, despite this historical document filename. Maintain one file per built topic and a combined file in the same teaching order as the question deck. Current filenames have no `_vN` suffix; history is retained in Git, with no backup copies. Markdown is content source, not the delivered answer format.
 
 Use **Start**, **Build**, **Confidence** throughout questions and answers. Do not print “Thread” in column headings. Retain stable internal module/activity/column/question references when slides move.
 

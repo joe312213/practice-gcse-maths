@@ -7,7 +7,7 @@ Read [AGENTS.md](AGENTS.md), [SLIDE_LAYOUT.md](content/SLIDE_LAYOUT.md) and [ANS
 - [Combined questions](GCSE_Maths_Revision_Starters.pptx): **67 slides**.
 - [Combined HTML answers](GCSE_Maths_Revision_Starters_answers.html): matching order, every assessment/practice answer and all **63 error-spotting corrections**.
 - Order: M01 multiplication (10) → M02 division (9) → M13 signed addition/subtraction (10) → **M10 equations (10)** → **M15 fraction addition/subtraction (10)** → M03 multiplication/division problems (9) → M04 ratio (9).
-- All seven topics have suffix-free question PowerPoints and HTML answers under `topics/`. Registry: `content/topic_registry.json`. Superseded files use `_prevN`; old previews use the same convention.
+- All seven topics have suffix-free question PowerPoints and HTML answers under `topics/`. Registry: `content/topic_registry.json`. Output history is retained in Git; do not create backup files.
 
 ## Completed in this continuation
 
@@ -50,3 +50,9 @@ Carry-placement follow-up: moved lattice carries close to their receiving grid b
 ## Fraction answer sizing and CSS consolidation
 
 Replaced the 110px-wide SVG answer thumbnails with CSS-sized stacked fraction text. Whole, fractional and mixed answers now share a readable 1.5rem base size (fraction digits .85em). Consolidated all answer CSS in `styles/answers.css`, removed Python CSS strings/topic overrides and inline SVG display sizing, and documented shared tokens and the refresh workflow. Refreshed all current HTML outputs; question decks were untouched.
+
+## Website review and backup cleanup — 1 October 2026
+
+Website conversion is pending discussion of [WEB_FORMAT_REVIEW.md](WEB_FORMAT_REVIEW.md), reviewing [web_format.md](web_format.md). Do not continue with M06 or begin conversion before that discussion. The reference T-Level repository still needs cloning and review before implementation.
+
+Removed 206 committed `_prevN` outputs/previews; all matched Git HEAD before removal. Current outputs and the uncommitted combined PowerPoint edits are preserved. Git is the only output history: no backup rotation. Active builds now read ratio/signed assessment answers from `content/assessment_answers.json` and require current saved topic decks, with no archived-deck fallback. Restore missing accepted decks from Git explicitly. Legacy publishing scripts are disabled. Assessment HTML equivalence, Python syntax, no-backup saving and unchanged current-file hashes were checked. Historical links to removed snapshots in older notes can be resolved through Git; those notes are not current output instructions.

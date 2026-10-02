@@ -12,6 +12,8 @@ For session status, current outputs and the next unfinished topic, read [HANDOFF
 
 **These instructions should be carefully updated according to new direction detailed in `web_format.md` and conversion to a website**
 
+Website transition is pending discussion of `WEB_FORMAT_REVIEW.md`; do not begin conversion yet. Existing teaching/content requirements remain applicable. The no-backup policy below applies immediately and supersedes historical notes in all linked documents.
+
 ## Content and review workflow
 
 - Maintain exact content in `content/`: questions, row labels, prompts, worked steps, diagram specifications, answers and visible method/error/check notes. Keep it in step with the slides.
@@ -68,7 +70,7 @@ Speaker notes and teacher keys do not replace visible student HTML answers. Keep
 - Check new or changed mathematics: answers, intermediate steps, signs, carries, units, ratio order, remainder interpretation and wrong-answer examples. Confirm all requested questions and answers are present.
 - Check projected readability, text fit and diagram accuracy. Never shrink text or remove questions to hide a layout problem. Number-line digits must be centred beneath ticks, with minus signs extending left; follow the layout specification.
 - Match verification to the change. New content needs mathematical and teaching checks; a small visual fix needs a focused visual check and preservation of unrelated content, not a full audit. Update the generator as well as the output so fixes survive regeneration.
-- Current outputs always have stable filenames without `_vN`: question decks are `.pptx`; answer files are `.html`. Before replacing an existing current output, archive it as `<stem>_prevN.<ext>` using the next unused number. Markdown remains content source, not the delivered answers format. All historical outputs use `_prevN`, including older slides, answer files and previews; no `_vN` filenames remain.
+- Current outputs always have stable filenames without `_vN`: question decks are `.pptx`; answer files are `.html`. Replace current outputs in place; use Git commits for history. Do not create `_prevN`, `_vN`, or other backup copies. Markdown remains content source, not the delivered answers format. Previous slide, answer and preview stacks have been removed; restore older versions from Git only when explicitly needed.
 - Use `python3 scripts/update_structure.py` for the current build: it preserves saved topic teaching slides, refreshes error slides and compiles the main files. `build_priority_topic.py` builds M10 and `build_fraction_topic.py` builds M15 from their structured sources; both compile all registered topics. `compile_starters.py` only combines saved outputs. Other original `build_*` and `add_*assessment.py` scripts are legacy generators; do not use them to publish current outputs or overwrite manual edits.
 - Deliver complete, readable files and link the current outputs. Only claim a file is generated when it exists. Intentional diagram placeholders do not excuse missing questions or unfinished slides.
 - Call a spade a spade: no inflated terminology, decorative filler or unnecessary permission requests. Use judgement for routine implementation while preserving the teaching decisions.

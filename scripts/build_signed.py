@@ -138,4 +138,6 @@ def make():
   assert count*size*1.05<=(h-.05)*72+2,(val,w,h,size,count)
  for prs,name in [(q,'Signed_addition_subtraction_M13_questions_prev6.pptx'),(a,'Signed_addition_subtraction_M13_answers_prev1.pptx')]:
   temp=Path('/private/tmp')/name;prs.save(temp);payload=temp.read_bytes();(OUT/name).write_bytes(payload);assert (OUT/name).read_bytes()==payload;print(name,len(prs.slides),'slides')
+if __name__=='__main__':
+ raise SystemExit('Retired generator: use the current build commands in HANDOFF.md; historical outputs are kept in Git.')
 if __name__=='__main__':make()

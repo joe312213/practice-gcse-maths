@@ -1,0 +1,38 @@
+{
+  "M04": [
+    {
+      "question": "1.  Share £35 between A and B in the ratio 2:5. How much does A receive?",
+      "answer": "Answer: £10\n7 parts = £35; 1 part = £5; A receives 2 × £5."
+    },
+    {
+      "question": "2.  Red and blue counters are in the ratio 3:4. There are 12 red counters. How many blue counters are there?",
+      "answer": "Answer: 16 blue counters\n3 parts = 12; 1 part = 4; blue = 4 × 4."
+    },
+    {
+      "question": "3.  Two ribbons have lengths in the ratio 2:7. The longer is 25 cm longer than the shorter. Find the shorter length.",
+      "answer": "Answer: 10 cm\n5 extra parts = 25 cm; 1 part = 5 cm; shorter = 2 × 5 cm."
+    },
+    {
+      "question": "4.  Adults and children are in the ratio 5:8. There are 39 people altogether. How many more children than adults are there?",
+      "answer": "Answer: 9 more children\n13 parts = 39; 1 part = 3; difference = (8 − 5) × 3."
+    }
+  ],
+  "M13": [
+    {
+      "question": "1.  −2 + 9",
+      "answer": "Answer: 7\n−2 + 2 + 7 = 7."
+    },
+    {
+      "question": "2.  6 − 11",
+      "answer": "Answer: −5\n6 − 6 − 5 = −5."
+    },
+    {
+      "question": "3.  −7 − (−10)",
+      "answer": "Answer: 3\n−7 + 10 = 3."
+    },
+    {
+      "question": "4.  5 + (−9) − (−6)",
+      "answer": "Answer: 2\n5 − 9 + 6 = −4 + 6 = 2."
+    }
+  ]
+}

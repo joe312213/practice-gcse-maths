@@ -510,6 +510,8 @@ def validate():
 
 
 if __name__=='__main__':
+ raise SystemExit('Retired generator: use the current build commands in HANDOFF.md; historical outputs are kept in Git.')
+if __name__=='__main__':
     make_multiplication(); make_division(); make_application(); validate()
     # Write to a local temporary file first, then verify the OneDrive copy.
     tmp=Path('/private/tmp/GCSE_Maths_Revision_Starters_prev4.pptx')

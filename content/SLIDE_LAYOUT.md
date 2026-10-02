@@ -34,7 +34,7 @@ Spot the errors uses the full-width three-column challenge format: **Start**, **
 
 Current built counts and order are recorded in the dated additions below and in `topic_registry.json`; omit unbuilt modules.
 
-Maintain matching topic files in `topics/<topic>/` and combined files at the project root. Current question PowerPoints and HTML answers have no version suffix. Archive superseded current files with `_prev1`, `_prev2`, etc.; retain older snapshots under `_prevN` as historical inputs. Generate HTML answers in the same topic/activity order, with fixed module/thread/question references.
+Maintain matching topic files in `topics/<topic>/` and combined files at the project root. Current question PowerPoints and HTML answers have no version suffix. Replace current outputs in place; retain history in Git, without backup copies. Generate HTML answers in the same topic/activity order, with fixed module/thread/question references.
 
 ## Student-style working on error slides
 

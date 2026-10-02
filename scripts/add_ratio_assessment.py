@@ -1,4 +1,5 @@
 """Create new ratio versions with a first-slide assessment; preserve existing slides."""
+raise SystemExit('Retired assessment migration: assessments are already in current decks; historical outputs are kept in Git.')
 from pathlib import Path
 from pptx import Presentation
 import build_ratio as b

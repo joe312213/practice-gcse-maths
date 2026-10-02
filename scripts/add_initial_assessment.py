@@ -1,6 +1,7 @@
 """Add the Initial Assessment slide as Slide 1 to GCSE_Maths_Revision_Starters_prev4.pptx.
 Preserves all existing 21 slides without modifying any of their content.
 """
+raise SystemExit('Retired assessment migration: assessments are already in current decks; historical outputs are kept in Git.')
 from pathlib import Path
 from pptx import Presentation
 from pptx.util import Inches, Pt

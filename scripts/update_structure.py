@@ -1,6 +1,6 @@
 """Preserve saved teaching slides; refresh assessments/error activities and compile outputs.
 Run from any directory: python3 practice/scripts/update_structure.py
-Current topic files take precedence over the legacy input snapshots on later runs.
+Current topic files are required; restore missing accepted decks from Git.
 """
 from pathlib import Path
 from copy import deepcopy
@@ -32,20 +32,14 @@ def remove(p,s):
   if p.part.related_part(el.rId)==s.part:
    p.part.drop_rel(el.rId);p.slides._sldIdLst.remove(el);return
 
-def archive(path):
- if path.exists():
-  n=1
-  while path.with_name(f'{path.stem}_prev{n}{path.suffix}').exists():n+=1
-  path.rename(path.with_name(f'{path.stem}_prev{n}{path.suffix}'))
-
 def save(p,path):
  buf=BytesIO();p.save(buf);payload=buf.getvalue()
- archive(path);path.write_bytes(payload)
+ path.write_bytes(payload)
  print(path.relative_to(ROOT),len(p.slides),'slides')
 
 def save_text(path,value):
  if path.exists() and path.read_text()==value:return
- archive(path);path.write_text(value)
+ path.write_text(value)
 
 def base(p,title,subtitle,ref):
  # Avoid python-pptx part-name collisions after deleting/reordering slides.
@@ -175,13 +169,8 @@ def answers(mid):
  if mid in IA:
   out.append(answer_layout.assessment_cell([f'<strong>Q{i+1}.</strong> '+inline(v) for i,v in enumerate(IA[mid])]))
  else:
-  ap=ROOT/('topics/ratio/Ratio_M04_answers_prev6.pptx' if mid=='M04' else 'topics/signed_numbers/Signed_addition_subtraction_M13_answers_prev1.pptx')
-  p=Presentation(ap)
-  items=[]
-  for sh in p.slides[0].shapes:
-   if sh.has_text_frame and sh.text and sh.top>Inches(1.4) and sh.top<Inches(8.4):items.append(inline(sh.text).replace('\n','<br>'))
-  assert len(items)==8
-  out.append(answer_layout.assessment_cell([f'<strong>Q{i//2+1}.</strong><p>'+items[i+1]+'</p>' for i in range(0,8,2)]))
+  assessments=json.loads((ROOT/'content/assessment_answers.json').read_text())
+  out.append(answer_layout.assessment_cell([f'<strong>Q{i+1}.</strong><p>'+inline(item['answer']).replace('\n','<br>')+'</p>' for i,item in enumerate(assessments[mid])]))
  if mid=='M13':
   source=(ROOT/'content/M13_signed_addition_and_subtraction.md').read_text()
   sections={int(n):body for n,body in re.findall(r'^## S(\d+)-A[^\n]*\n(.*?)(?=^## |\Z)',source,re.M|re.S)}
@@ -200,23 +189,13 @@ def page(mids):
 def main():
  from review_answer_patterns import review
  review(DATA)
- legacy=Presentation(ROOT/'GCSE_Maths_Revision_Starters_prev4.pptx')
- # Read the existing assessment text rather than replace its question content.
- ts=texts(legacy.slides[0]);start=ts.index('Multiplication')
- qs=[v for v in ts[start+3:] if not re.fullmatch(r'[1-4]\.',v)]
- assert len(qs)==12,qs
  decks={}
  for mid,(folder,stem,title) in TOPICS.items():
   directory=ROOT/'topics'/folder;directory.mkdir(exist_ok=True)
   path=directory/(stem+'_questions.pptx')
-  if path.exists():p=Presentation(path)
-  elif mid in ('M01','M02','M03'):
-   p=Presentation(ROOT/'GCSE_Maths_Revision_Starters_prev4.pptx');offset=(int(mid[-1])-1)*7+1
-   keep=list(p.slides)[offset:offset+7]
-   for s in list(p.slides):
-    if s not in keep:remove(p,s)
-   s=assessment(p,mid,qs[(int(mid[-1])-1)*4:int(mid[-1])*4]);insert_before(p,s,p.slides[0])
-  else:p=Presentation(ROOT/('topics/ratio/Ratio_M04_questions_prev9.pptx' if mid=='M04' else 'topics/signed_numbers/Signed_addition_subtraction_M13_questions_prev6.pptx'))
+  if not path.exists():
+   raise FileNotFoundError(f'Restore the accepted topic deck from Git before building: {path}')
+  p=Presentation(path)
   for s in list(p.slides):
    if any(mid+'-SE' in v for v in texts(s)):remove(p,s)
   target=next(s for s in p.slides if any('Independent practice 1' in v for v in texts(s)))

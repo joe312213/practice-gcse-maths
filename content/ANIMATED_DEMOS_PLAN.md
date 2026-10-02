@@ -23,4 +23,4 @@ Purpose: let the teacher reveal one meaningful written step at a time, while the
 
 Manually test one prototype in slideshow mode: click order, rewind/replay, both sides revealed together, hidden future steps and final state. Check the prototype after combining topic decks, and check printing/PDF/static export separately. Treat cross-application behaviour as unverified until tested; keep a static usable fallback.
 
-Once the prototype is accepted, roll out one skill at a time. Preserve manual edits, archive outputs with `_prevN`, keep current filenames suffix-free, and update SLIDE_LAYOUT.md plus HANDOFF.md with the approved behaviour and any export limitations. No broad test suite is needed for the planning stage.
+Once the prototype is accepted, roll out one skill at a time. Preserve manual edits, retain output history in Git without backup copies, keep current filenames suffix-free, and update SLIDE_LAYOUT.md plus HANDOFF.md with the approved behaviour and any export limitations. No broad test suite is needed for the planning stage.

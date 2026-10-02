@@ -206,4 +206,6 @@ def make():
   with zipfile.ZipFile(target) as z:assert z.testzip() is None
   print(name,len(p.slides),'slides',len(payload),'bytes')
  assert len(qprs.slides)==7 and len(aprs.slides)==12
+if __name__=='__main__':
+ raise SystemExit('Retired generator: use the current build commands in HANDOFF.md; historical outputs are kept in Git.')
 if __name__=='__main__':make()
