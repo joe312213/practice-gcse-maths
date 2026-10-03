@@ -2,7 +2,7 @@
 
 Authorised to begin by the user after successive reviews of web_format.md. Website delivery supersedes slide maintenance. Preserve current teaching assets and use Git for history. This is a phased conversion, not a claim that the complete site is implemented.
 
-The user deferred prototype review after the initial stage. See [the current checkpoint](../HANDOFF.md#checkpoint--review-deferred-by-the-user) for the decision register, exact restart steps and uncommitted-file status. Prototype behaviour has not yet been accepted by the user.
+Update 3 October: the user reviewed the prototype and its six feedback groups are implemented; see [the development log](dev-log/2026-10-03-equations-feedback.md). Review of the revised draft is pending. The earlier checkpoint below remains useful for unrelated decisions. The user initially deferred prototype review after the initial stage. See [the current checkpoint](../HANDOFF.md#checkpoint--review-deferred-by-the-user) for the decision register, exact restart steps and Git status. Prototype behaviour has not yet been accepted by the user.
 
 ## Current work plan
 
@@ -30,7 +30,7 @@ These are engineering interpretations, not additional user decisions. Keep them 
 - Promotion checks a type's own history. Trial answers are recorded at their actual level. Failure restores the previous recommendation and its history; no same-page retry unless five new consecutive unassisted successes follow the failure. At page end, a one/zero-question trial offers the specified choice; two or more correct trial answers confirm automatically.
 - Two consecutive submitted questions at the same manually selected lower level lower the recommendation. A manual upward choice changes the recommendation, records its origin and uses the low-score recommendation rule; it does not masquerade as automatic mastery.
 - Start has a recap recommendation instead of a lower-level offer; Confidence has no automatic higher level. Invalid input is not a submitted attempt. Only selected/started work is cleared when changing question; submitted feedback remains.
-- Separate learning sequence navigation from independent Practice sets. Assessment/scaffolded answers do not promote. M10 error spotting initially marks identification of the first incorrect row plus the corrected x value; do not claim automatic checking of freehand working.
+- Separate learning sequence navigation from independent Practice sets. Assessment/scaffolded answers do not promote. M10 error spotting now marks each independent error’s row, reason and corrected-step selection, plus the final x value; do not claim automatic checking of freehand working.
 - Topic aggregation and share codes are subsequent work. Display type-specific levels and scores honestly in the prototype rather than an invented composite percentage.
 
 ## Checks and status
@@ -54,7 +54,7 @@ Review the prototype's teaching flow and responsive layout before scaling the UI
 ### Known prototype limits
 
 - Only M10 is interactive; full site conversion remains incomplete. No nine-character share-code implementation or multi-page Practice-set runner yet.
-- Assessment is diagnostic practice, not automatic placement. Guided practice uses the two accepted questions per selected level. Error spotting requires first incorrect row plus final x; freehand methods are never automatically marked.
+- Assessment is diagnostic practice, not automatic placement. Guided practice uses the two accepted questions per selected level. Error spotting now requires row/reason/corrected-step selections for each error plus final x; freehand methods are never automatically marked.
 - First submitted answers remain immutable on that page; solutions are available for review. A fresh page permits another attempt. There is no four-hour repeat restriction inherited from the T-Level app.
 - New page types currently start at Start; inheritance from a previous page belongs to the future Practice-set runner. Per-type state and separate actual-level histories already exist.
 - The topic-wide aggregate bar is deliberately deferred; current display shows the active type's actual recommendation and weighted score.

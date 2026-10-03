@@ -16,6 +16,12 @@ The website will replace the slides as primary form of delivery. A slides export
 
 THe number of some types of questions from the slides will need expanding.
 
+## Standing UI and UX requirements
+
+[docs/UI_UX_RULES.md](docs/UI_UX_RULES.md) records the user’s subsequent UI/UX decisions and applies to every topic page. Keep it current alongside this specification. In particular, correct submissions advance automatically to the next unanswered question if available, and optional theme setup must not block practice or profile startup.
+
+CSS and JavaScript must be reusable, modular, clean, minimal and meaningfully commented wherever possible. The standing rules above define the implementation and review expectations.
+
 ## Features to adapt from the T-Level starters
 
 - progress tracking

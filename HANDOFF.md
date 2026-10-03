@@ -1,3 +1,40 @@
+# Equation feedback update — 3 October 2026
+
+The user reviewed the first equations draft and authorised six groups of changes. They are implemented and checked locally; review of the revised draft is still pending. This section supersedes the 2 October “review deferred” status and affected prototype descriptions below.
+
+Detailed dated feedback, implementation decisions and checks: [docs/dev-log/2026-10-03-equations-feedback.md](docs/dev-log/2026-10-03-equations-feedback.md).
+
+- Assessment clutter/repeat card removed; selectors use stable borders, no routine level labels and a 210px two-column minimum.
+- Level-specific guidance and annotated Play/Pause/Replay demonstrations; secondary Previous/Next/End controls. Common-factor recap examples are playable.
+- Paper mode collapses/restores working tools and starts unchecked in new sessions/attempts. Drafts survive collapse/reference use; changing the selected question still clears unsubmitted work.
+- Error spotting now marks row, reason and corrected step for each error, plus final answer. Separate row-number gutter; explicit authored errors replace faulty solution-route comparison. Added one new two-error Confidence example: 95 total items, original 94 preserved.
+- T-Level theme system reused (eight palettes and adjustments); smaller Not you control; footer About page with author, credits and agent-augmented development information.
+- **19 Node tests and updated browser smoke passed.** Browser measurements confirm stable unsubmitted-question card/answer positioning and 210px two-column selector widths; desktop/mobile/theme/playback/error/paper behaviours checked. Original teaching outputs remain unchanged.
+
+## Follow-up fixes — 3 October 2026
+
+Refresh/name startup failure fixed: optional theme setup can no longer block profile/equation startup, and name selection waits for readiness. Reproduced the original pair of symptoms with incomplete theme markup; cached-refresh/fault/delay regressions now pass without clearing saved progress. Progress copy is now “recent success at this level”.
+
+Correct submissions now advance to the next unanswered question (wrap/skip submitted), with correctness announcement and focus; incorrect submissions and completed pages stay put. Full browser checks include this behaviour. All 19 logic tests pass.
+
+**Standing requirements:** [docs/UI_UX_RULES.md](docs/UI_UX_RULES.md), linked from AGENTS.md and web_format.md, persists the complete user feedback for future work. Startup regression: `node scripts/browser-startup.mjs`, using the same isolated Chrome/preview setup as the main smoke script.
+
+The user also requires reusable, modular, clean, minimal and commented CSS/JavaScript. This is now explicit in AGENTS.md, web_format.md and the standing rules. Apply it to every subsequent fix/feature and improve affected code as it is touched; this documentation update does not claim a completed codebase refactor.
+
+## Maintainability and theme follow-up
+
+A focused refactor is warranted: readable formatting/comments first, then extract working-area and activity UI responsibilities from app.mjs, share duplicated escape/theme-preference logic, and consolidate CSS sections/overrides. Existing engine/profile boundaries are useful. Refactor not yet performed; see the dated dev log for assessment.
+
+Theme selection now has rendered-colour and real-pointer checks in `scripts/browser-theme.mjs` (passed for all eight themes and refresh). Reported failure was not reproduced in isolated Chrome. Versioned CSS/entry URLs on both pages address stale styling after the rebuild; verify the user's browser on ordinary refresh if the report persists.
+
+## Resume here
+
+Review the revised prototype at http://127.0.0.1:8766 (restart command below if needed). Confirm teaching wording/playback pacing and the explicitly stated per-error correction convention before enlarging the error bank. Continue the remaining conversion plan only after addressing review feedback. Broader scoring/Practice-set/storage decisions remain in the earlier decision register below.
+
+New authored source is `content/M10_web_teaching.json`; regenerate with the existing import command. New UI/marking/playback module is `website/teaching.mjs`; theme files and `website/about.html` are now part of the site. The base implementation is in commit `a668b03`; the current feedback changes and documentation edits are saved but **uncommitted**. No deployment occurred.
+
+---
+
 # Website handoff — 2 October 2026
 
 This section supersedes the historical slide handoff below. The user authorised website planning and initial actions. Website delivery is primary; no ongoing slide exports or backup stacks.
@@ -28,7 +65,7 @@ These are recorded for the next review/design session, not questions requiring a
 | Manual difficulty | Two consecutive submissions at the same lower level change the recommendation. Choosing a higher level changes the recommendation immediately and records manual origin. | Decide how to distinguish manual choice from demonstrated mastery in the future aggregate bar; check interaction with reassessment before expanding the progression UI. |
 | Topic progress / priorities | Only the active page type's recommendation and score are displayed. No aggregate bar or revision-priority list yet. | Define the three-stage bar calculation using plain ×2 and other types ×1, treatment of unattempted types, and attribution/ranking for mixed-topic pages. |
 | Initial assessment | Four accepted questions, no inline hints/reference, immediate individual feedback; no automatic placement. | Decide placement criteria, whether students should complete assessment before other sections, and whether freely navigating to the demo during an unfinished assessment is acceptable. |
-| Error-spotting marking | M10 requires the first incorrect row and correct final x. Both must be correct for the scored result; component feedback is visible. | Review against the proposed error-type multiple-choice/fill-in approach. Establish marking rules for lattice/division/ratio errors and any partial credit. Freehand working is never automatically marked. |
+| Error-spotting marking | Updated 3 October: each independent error requires row, reason and corrected-step selection; one final x entry. One new Confidence item has two errors. All components must be correct for the scored result. | Review the local correction convention documented in the dated log; establish formats for other topics and any partial credit. Freehand working is never automatically marked. |
 | Practice sets and codes | Not implemented. Stable subject-qualified question IDs exist; one topic learning sequence is available. | Define subject + nine-character configuration encoding, reproducibility under adaptation, bank revisions, compatibility with T-Level codes, and the up-to-three-page runner. Implement saved-level precedence and first-use inheritance there. |
 | Profiles and stored data | Browser-local names, typo suggestions, separate histories and persisted active pages; no authentication. Current track/page keys are page types within the single Maths/M10 prototype. | Before adding another topic, namespace these keys by subject/topic/type and migrate schema 1. Decide rename/delete/reset, export/import, history limits and handling corrupt/incompatible data. Never silently merge names. |
 | Working area / accessibility | Unsubmitted text/sketches clear when switching questions; typed and paper alternatives exist. Desktop reference panel and mobile modal are checked. | Review practical layout, scrolling and discard behaviour with the teacher; conduct screen-reader, high-zoom and real touch-device checks before rollout. A blank-working reminder is not method assessment. |
@@ -82,7 +119,7 @@ The smoke script clears the isolated test browser's Maths storage; do not attach
 
 ### Saved-work status and verification limits
 
-The conversion work is saved on disk but **not committed**. At this checkpoint Git shows modifications to `AGENTS.md`, `HANDOFF.md`, `WEB_FORMAT_REVIEW.md`, and new `content/M10_web_recap.json`, `docs/`, `website/`, `tests/`, `scripts/prepare_web_equations.py` and `scripts/browser-smoke.mjs`. Include these new files when a commit is requested; do not assume untracked means disposable. No live deployment was performed. Original PPTX/HTML outputs remain unchanged.
+Rechecked on 2 October 2026: the conversion work and previous checkpoint are now committed in `a668b03` — “initial work on website conversion. not fully checked”. The working tree was clean before this documentation refresh. This refresh updates only the handoff and its plan reference; it does not change application code or create a commit. No live deployment was performed. Original PPTX/HTML outputs remain preserved. User review is still pending; the commit is not evidence of acceptance or full verification.
 
 The recorded 16 tests and browser/visual checks passed during the implementation turn. This documentation-only checkpoint did not rerun them or change application code. The content audit compares text/basic shape geometry, not every style/media detail; only M10 source parity was checked. Browser checks cover an isolated Chrome instance, not all browsers or classroom devices. Full screen-reader/accessibility, other-topic migration and production deployment checks remain outstanding.
 

@@ -72,9 +72,9 @@ test('local profiles normalise names, suggest typos, remain isolated and preserv
  let writes=0;assert.throws(()=>load({getItem:()=>'{broken',setItem:()=>writes++}));assert.equal(writes,0);
  assert.equal(load({getItem:key=>key===KEY?JSON.stringify(s):null}).profiles.length,2);
 });
-test('94 stable source questions and full methods survive import; all answers parse',async()=>{
+test('94 preserved source questions plus one new two-error item; all answers parse',async()=>{
  const bank=JSON.parse(await readFile(new URL('../website/data/equations.json',import.meta.url)));
- assert.equal(bank.questions.length,94);assert.equal(new Set(bank.questions.map(q=>q.id)).size,94);
+ assert.equal(bank.questions.length,95);assert.equal(new Set(bank.questions.map(q=>q.id)).size,95);
  for(let l=0;l<3;l++)assert.equal(bank.questions.filter(q=>q.type==='plain'&&q.level===l).length,24);
  for(const q of bank.questions){assert.ok(q.balance.length>=3);assert.equal(markAnswer(q.answer,q.answer).correct,true);if(q.type==='errors')assert.ok(q.correct_balance&&q.correction);}
 });
@@ -87,10 +87,47 @@ test('assisted answers cannot initiate an early promotion from a previously high
  const t=newTrack();t.histories[0]=Array(10).fill(true);const p=newPage();
  for(let i=0;i<5;i++)answer(t,p,true,true);assert.equal(p.trial,null);assert.equal(t.level,0);
 });
-test('all nine error items have an identifiable first differing method row',async()=>{
+test('error metadata identifies actual mistakes, not a valid alternative method',async()=>{
+ const {questions}=JSON.parse(await readFile(new URL('../website/data/equations.json',import.meta.url)));
+ const q=questions.find(q=>q.id==='maths:M10-SE-C2-Q3');
+ assert.equal(q.errors[0].row,2); // dividing by 5 on row 2 is a valid first step
+ assert.equal(q.stepOptions.find(o=>o.id===q.errors[0].correction).text,'x + 2 = 9');
+ for(const item of questions.filter(q=>q.type==='errors')){
+  assert.ok(item.errors.length>=1);for(const e of item.errors){assert.ok(e.row>0&&e.row<item.balance.length);assert.ok(item.stepOptions.some(o=>o.id===e.correction));}
+ }
+});
+
+import {markErrors,createPlayer} from '../website/teaching.mjs';
+test('row, reason, corrected step and final answer all contribute to error marking',async()=>{
  const {questions}=JSON.parse(await readFile(new URL('../website/data/equations.json',import.meta.url)));
  for(const q of questions.filter(q=>q.type==='errors')){
-  const row=q.balance.findIndex((r,i)=>JSON.stringify(r)!==JSON.stringify(q.correct_balance[i]));
-  assert.ok(row>0, q.id);assert.notEqual(q.answer,q.wrong);
+  assert.equal(markErrors(q,q.errors,q.answer).correct,true,q.id);
+  assert.equal(markErrors(q,q.errors,q.wrong).correct,false,q.id);
+  assert.equal(markErrors(q,q.errors.map(e=>({...e,reason:'not-the-reason'})),q.answer).correct,false);
+  assert.equal(markErrors(q,q.errors.map(e=>({...e,row:0})),q.answer).correct,false);
  }
+ const q=questions.find(q=>q.errors?.length===2);
+ assert.equal(markErrors(q,q.errors.slice().reverse(),q.answer).correct,true);
+ assert.equal(markErrors(q,[q.errors[0],q.errors[0]],q.answer).correct,false);
+ assert.equal(markErrors(q,q.errors.slice(0,1),q.answer).valid,false);
+});
+test('playback runs to end, pauses/resumes, restarts and cancels disposed timers',()=>{
+ let seq=0,jobs=new Map(),last;
+ const player=createPlayer({length:4,onFrame:s=>last=s,schedule:fn=>{jobs.set(++seq,fn);return seq;},cancel:id=>jobs.delete(id)});
+ const tick=()=>{const [id,fn]=jobs.entries().next().value;jobs.delete(id);fn();};
+ player.play();assert.equal(last.step,1);assert.equal(last.playing,true);tick();assert.equal(last.step,2);
+ player.pause();assert.equal(jobs.size,0);player.play();assert.equal(last.step,2);tick();tick();assert.equal(last.step,4);assert.equal(last.playing,false);assert.equal(jobs.size,0);
+ player.play();assert.equal(last.step,1);player.go(3);assert.equal(jobs.size,0);player.play();player.dispose();assert.equal(jobs.size,0);
+ const saved=last;player.play();assert.equal(last,saved);
+});
+test('all demo/recap rows have authored reasons; Start guidance has fewer steps',async()=>{
+ const bank=JSON.parse(await readFile(new URL('../website/data/equations.json',import.meta.url)));
+ assert.ok(bank.teaching.guidance[0].steps.length<bank.teaching.guidance[2].steps.length);
+ for(let i=0;i<3;i++){
+  const q=bank.questions.find(q=>q.type==='demo'&&q.level===i);
+  assert.equal(q.balance.length,bank.teaching.demoAnnotations[i].length);
+  assert.equal(bank.recap[i].balance.length,bank.teaching.recapAnnotations[i].length);
+ }
+ assert.match(bank.teaching.demoAnnotations[2][1],/every term/);
+ assert.match(bank.teaching.recapAnnotations[2][1],/3 is a common factor/);
 });

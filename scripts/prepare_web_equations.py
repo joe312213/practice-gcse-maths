@@ -39,8 +39,17 @@ def main():
   for row in block['balance']:
    for side in ('l','r'):assert normal(row[side]) in text,row
 
- out={'schema':1,'revision':sha256((ROOT/'content/M10_equations.json').read_bytes()+(ROOT/'content/M10_web_recap.json').read_bytes()).hexdigest()[:16],'subject':'maths','topic':'M10','title':d['title'],'rows':d['rows'],'prompts':d['prompts'],'questions':items,'recap':recap}
+ teaching=json.loads((ROOT/'content/M10_web_teaching.json').read_text())
+ for q in items:
+  if q['type']=='errors':q.update(teaching['errorAnnotations'][q['id']])
+ for q in teaching['additionalQuestions']:
+  a,b,c,e=map(Fraction,q['coefficients']);x=Fraction(q['answer']);assert a*x+b==c*x+e,q['id']
+  items.append(q)
+ assert len({q['id'] for q in items})==len(items)
+ for level,q in enumerate(d['demo']):assert len(q['balance'])==len(teaching['demoAnnotations'][level])
+ for level,block in enumerate(recap):assert len(block['balance'])==len(teaching['recapAnnotations'][level])
+ out={'schema':1,'revision':sha256((ROOT/'content/M10_equations.json').read_bytes()+(ROOT/'content/M10_web_recap.json').read_bytes()+(ROOT/'content/M10_web_teaching.json').read_bytes()).hexdigest()[:16],'subject':'maths','topic':'M10','title':d['title'],'rows':d['rows'],'prompts':d['prompts'],'questions':items,'recap':recap,'teaching':{k:teaching[k] for k in ('guidance','demoAnnotations','recapAnnotations','errorReasons')}}
  target=ROOT/'website/data';target.mkdir(parents=True,exist_ok=True);(target/'equations.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
- (ROOT/'docs/CONTENT_AUDIT.json').write_text(json.dumps({'combined_sha256':sha256((ROOT/'GCSE_Maths_Revision_Starters.pptx').read_bytes()).hexdigest(),'topics':audit,'M10':{'imported':94,'plain':72,'source_questions_found_in_saved_deck':94,'coefficient_answers_verified':sum('coefficients' in q for q in items)},'limits':'Shape geometry/text compared; detailed styles/media and non-M10 source parity not yet audited.'},indent=2)+'\n')
- print('Imported 94 M10 items; 72 independent questions. All source question texts found in saved deck. Deck geometry differences:',[(r['topic'],r['text_geometry_differences']) for r in audit if r['text_geometry_differences']])
+ (ROOT/'docs/CONTENT_AUDIT.json').write_text(json.dumps({'combined_sha256':sha256((ROOT/'GCSE_Maths_Revision_Starters.pptx').read_bytes()).hexdigest(),'topics':audit,'M10':{'imported':94,'new_web_items':len(teaching['additionalQuestions']),'plain':72,'source_questions_found_in_saved_deck':94,'coefficient_answers_verified':sum('coefficients' in q for q in items)},'limits':'Shape geometry/text compared; detailed styles/media and non-M10 source parity not yet audited.'},indent=2)+'\n')
+ print('Imported 94 M10 items plus 1 new two-error example; 72 independent questions. All source question texts found in saved deck. Deck geometry differences:',[(r['topic'],r['text_geometry_differences']) for r in audit if r['text_geometry_differences']])
 if __name__=='__main__':main()

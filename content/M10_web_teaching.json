@@ -1,0 +1,415 @@
+{
+  "guidance": [
+    {
+      "aim": "Find the value of one x. Undo the operation attached to x, using the same operation on both sides.",
+      "steps": [
+        "Choose the opposite operation to undo what is happening to x.",
+        "Do it to both sides, then check your value in the original equation."
+      ]
+    },
+    {
+      "aim": "Leave the x-term on one side, then find the value of one x. Keep both sides equal at every step.",
+      "steps": [
+        "Collect like terms if needed. Undo the added or subtracted number on both sides.",
+        "Divide both sides by the number multiplying x, so that one x remains.",
+        "Substitute your value into the original equation to check it."
+      ]
+    },
+    {
+      "aim": "Gather the x-terms on one side, then find the value of one x. Choose operations that make the equation simpler.",
+      "steps": [
+        "Simplify each side. Expand every bracket term, or divide out a common factor when that is shorter.",
+        "Add or subtract the same x-term on both sides to leave x on just one side.",
+        "Undo the remaining constant, then divide by the coefficient to leave one x.",
+        "Check your value in the original equation, including its brackets."
+      ]
+    }
+  ],
+  "demoAnnotations": [
+    [
+      "We want x on its own. Here, 7 is being subtracted from x.",
+      "Add 7 to both sides to undo subtracting 7. The two sides stay equal.",
+      "The −7 and +7 cancel, leaving one x. On the right, 5 + 7 = 12."
+    ],
+    [
+      "First isolate the term 4x, then find the value of one x.",
+      "Subtract 3 from both sides to remove the +3 beside 4x.",
+      "This leaves 4x = 28: four lots of x have a total of 28.",
+      "Divide both sides by 4 because 4x means four times x.",
+      "One x remains. Its value is 28 ÷ 4 = 7."
+    ],
+    [
+      "There are x-terms on both sides. Expand first, then gather those terms on one side.",
+      "Multiply every term inside the bracket by 3: 3 × x + 3 × 2 = 3x + 6.",
+      "Subtract x from both sides. This removes the smaller x-term on the right.",
+      "On the left, 3x − x = 2x. The right side is now just 24.",
+      "Subtract 6 from both sides to leave the term 2x on its own.",
+      "Two lots of x equal 18. We still need the value of one x.",
+      "Divide both sides by 2 to change 2x into one x.",
+      "One x equals 9. Substitute 9 into the original brackets to check."
+    ]
+  ],
+  "recapAnnotations": [
+    [
+      "Undo the +7 to leave one x.",
+      "Subtract 7 from both sides to keep the equation balanced.",
+      "19 − 7 = 12, so x = 12."
+    ],
+    [
+      "Every term is divisible by 6. A common factor can simplify the equation.",
+      "6 is a common factor of both terms on the left: 6x + 12 = 6(x + 2).",
+      "Divide both whole sides by 6. This removes the outside multiplier.",
+      "30 ÷ 6 = 5, so x + 2 = 5.",
+      "Subtract 2 from both sides to leave one x.",
+      "5 − 2 = 3, so x = 3."
+    ],
+    [
+      "Both sides have a factor of 3. Dividing first is shorter than expanding here.",
+      "3 is a common factor, so divide both sides by 3 to simplify.",
+      "The bracket becomes x + 4, and 27 ÷ 3 = 9.",
+      "Subtract 4 from both sides to leave one x.",
+      "9 − 4 = 5, so x = 5."
+    ]
+  ],
+  "errorReasons": [
+    {
+      "id": "inverse",
+      "label": "Addition or subtraction was not undone using its inverse."
+    },
+    {
+      "id": "balance",
+      "label": "Different operations were applied to the two sides."
+    },
+    {
+      "id": "multiply",
+      "label": "A coefficient multiplies x; subtracting it does not undo it."
+    },
+    {
+      "id": "whole_side",
+      "label": "Division was not applied to every term on a side."
+    },
+    {
+      "id": "expand",
+      "label": "The multiplier was not applied to every bracket term."
+    },
+    {
+      "id": "arithmetic",
+      "label": "The arithmetic result is incorrect."
+    }
+  ],
+  "errorAnnotations": {
+    "maths:M10-SE-C1-Q1": {
+      "errors": [
+        {
+          "row": 1,
+          "reason": "inverse",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "+ 8 | + 8"
+        },
+        {
+          "id": "fix",
+          "text": "− 8 | − 8"
+        },
+        {
+          "id": "wrong2",
+          "text": "÷ 8 | ÷ 8"
+        }
+      ]
+    },
+    "maths:M10-SE-C1-Q2": {
+      "errors": [
+        {
+          "row": 1,
+          "reason": "inverse",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "− 5 | − 5"
+        },
+        {
+          "id": "fix",
+          "text": "+ 5 | + 5"
+        },
+        {
+          "id": "wrong2",
+          "text": "÷ 5 | ÷ 5"
+        }
+      ]
+    },
+    "maths:M10-SE-C1-Q3": {
+      "errors": [
+        {
+          "row": 1,
+          "reason": "multiply",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "− 6 | − 6"
+        },
+        {
+          "id": "fix",
+          "text": "÷ 6 | ÷ 6"
+        },
+        {
+          "id": "wrong2",
+          "text": "× 6 | × 6"
+        }
+      ]
+    },
+    "maths:M10-SE-C2-Q1": {
+      "errors": [
+        {
+          "row": 1,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "+ 6 | + 6"
+        },
+        {
+          "id": "fix",
+          "text": "− 6 | − 6"
+        },
+        {
+          "id": "wrong2",
+          "text": "− 6 | + 6"
+        }
+      ]
+    },
+    "maths:M10-SE-C2-Q2": {
+      "errors": [
+        {
+          "row": 1,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "− 8 | − 8"
+        },
+        {
+          "id": "fix",
+          "text": "+ 8 | + 8"
+        },
+        {
+          "id": "wrong2",
+          "text": "+ 8 | − 8"
+        }
+      ]
+    },
+    "maths:M10-SE-C2-Q3": {
+      "errors": [
+        {
+          "row": 2,
+          "reason": "whole_side",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "x + 10 = 9"
+        },
+        {
+          "id": "fix",
+          "text": "x + 2 = 9"
+        },
+        {
+          "id": "wrong2",
+          "text": "x + 5 = 9"
+        }
+      ]
+    },
+    "maths:M10-SE-C3-Q1": {
+      "errors": [
+        {
+          "row": 1,
+          "reason": "expand",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "2x + 5 = 30"
+        },
+        {
+          "id": "fix",
+          "text": "2x + 10 = 30"
+        },
+        {
+          "id": "wrong2",
+          "text": "x + 10 = 30"
+        }
+      ]
+    },
+    "maths:M10-SE-C3-Q2": {
+      "errors": [
+        {
+          "row": 1,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "+ 2x | − 2x"
+        },
+        {
+          "id": "fix",
+          "text": "− 2x | − 2x"
+        },
+        {
+          "id": "wrong2",
+          "text": "− 2x | + 2x"
+        }
+      ]
+    },
+    "maths:M10-SE-C3-Q3": {
+      "errors": [
+        {
+          "row": 1,
+          "reason": "expand",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "3x − 4 = x − 16"
+        },
+        {
+          "id": "fix",
+          "text": "3x − 12 = x − 16"
+        },
+        {
+          "id": "wrong2",
+          "text": "3x + 12 = x − 16"
+        }
+      ]
+    }
+  },
+  "additionalQuestions": [
+    {
+      "id": "maths:M10-SE2-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "q": "2(x + 3) = x + 16",
+      "answer": "10",
+      "wrong": "19",
+      "coefficients": [
+        "2",
+        "6",
+        "1",
+        "16"
+      ],
+      "balance": [
+        {
+          "l": "2(x + 3)",
+          "r": "x + 16"
+        },
+        {
+          "l": "2x + 3",
+          "r": "x + 16"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "x + 3",
+          "r": "16"
+        },
+        {
+          "l": "+ 3",
+          "r": "+ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "19"
+        }
+      ],
+      "correct_balance": [
+        {
+          "l": "2(x + 3)",
+          "r": "x + 16"
+        },
+        {
+          "l": "2x + 6",
+          "r": "x + 16"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "x + 6",
+          "r": "16"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "10"
+        }
+      ],
+      "correction": "Row 2: multiply both bracket terms by 2. Row 5: adding 3 does not undo the +3 shown above it; subtract 3 from both sides of that displayed line. To solve the original equation correctly, expand to 2x + 6 = x + 16, subtract x, then subtract 6: x = 10.",
+      "check": "2 × (10 + 3) = 10 + 16 = 26.",
+      "errors": [
+        {
+          "row": 1,
+          "reason": "expand",
+          "correction": "expandFix"
+        },
+        {
+          "row": 4,
+          "reason": "inverse",
+          "correction": "inverseFix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrongExpand",
+          "text": "2x + 3 = x + 16"
+        },
+        {
+          "id": "inverseFix",
+          "text": "− 3 | − 3"
+        },
+        {
+          "id": "expandFix",
+          "text": "2x + 6 = x + 16"
+        },
+        {
+          "id": "wrongInverse",
+          "text": "+ 3 | + 3"
+        }
+      ]
+    }
+  ]
+}

@@ -21,3 +21,7 @@ Source: https://github.com/jhudshcg/starters, commit `8906225f458372b7238544341e
 ## Prototype boundary
 
 M10 is the only interactive topic initially. No live publication, multi-subject deployment change, set-code compatibility promise, complete puzzle/timer/report feature or aggregate topic bar is implied. Other current topic assets remain available as teaching references. Full source preservation and teaching-quality review precede expansion.
+
+## Theme reuse — 3 October 2026
+
+Restored the temporary reference clone at the same pinned commit. Copied its token CSS and theme controller/control CSS into the website for the requested matching themes. Adaptations: Maths local-storage namespace, dynamically accurate toggle accessible name, and a small supporting-page preference loader. Eight palettes, adjustments, paired mode toggle and reset remain as in the reference. About credits the source project. No external dependencies were added.
