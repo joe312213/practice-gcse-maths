@@ -30,12 +30,17 @@ These are ongoing requirements, not one-off draft changes. Recorded from user fe
 
 ## Shared presentation
 
+- During framework migration, retain the current layout and design closely and match theme colours and gradients exactly, including opacity, gradient stops/directions and adjustment behaviour. Adapt framework defaults to the existing design. Capture baseline screenshots/computed styles and compare at each stage. Any accessibility conflict requiring visual changes must be documented and resolved with the user before changing the exact-match baseline.
+
 - Reuse the T-Level starter theme tokens and controls, with separate Maths storage keys.
 - Keep “Not you?” compact and secondary.
 - Every page has an About link in the footer. About provides author information, source credits and the agent-augmented development approach.
 - Keep mathematical meaning independent of colour, pointer input or animation; retain keyboard and typed-working support.
 
 ## CSS and JavaScript maintainability
+
+- Compose recurring utility combinations into one or a few semantic CSS classes named for their UI purpose, such as `question-option`, `answer-input` or `practice-panel`. Define shared rules and explicit variants once; avoid repeating long utility lists in component HTML or creating a separate class for every incidental variation. Reusable Svelte components and semantic CSS classes complement each other.
+- Whole-site accessibility is required. Use Bits UI primitives for applicable interactive components in the planned Svelte migration; retain native HTML controls where appropriate. Components must preserve accessible names, keyboard interaction, focus management and state announcements. Bits UI is a foundation, not a substitute for checking the assembled site, including contrast, zoom/reflow, reduced motion, touch targets and accessible alternatives to drawing.
 
 - Keep styling hooks semantic and markup minimal. Compose shared component styles and variants rather than repeating long lists of presentation classes across activity pages. Preserve semantic native HTML; class names alone do not provide accessibility.
 - Design activities for reuse in wider education apps: keep content, marking/progression and persistence contracts separate from framework-specific rendering. Components should receive explicit inputs and emit results/events rather than depending directly on global app state or localStorage.

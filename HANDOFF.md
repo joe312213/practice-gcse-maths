@@ -1,3 +1,19 @@
+# Framework migration planning checkpoint — 3 October 2026
+
+**Planning complete; stop here.** The latest user request is to complete documentation only. No framework packages, application changes, hooks, builds, commits or deployments were performed in this planning phase.
+
+**Additional visual constraint:** retain the current layout/design closely and match theme colours/gradients exactly throughout migration. Capture reproducible visual/computed-style baselines before replacing UI and compare each stage. Framework defaults must not alter the appearance; resolve any accessibility conflict with the user before changing the baseline.
+
+Read [docs/FRAMEWORK_MIGRATION_PLAN.md](docs/FRAMEWORK_MIGRATION_PLAN.md) for the complete implementation handoff: selected stack, responsibility boundaries, semantic CSS composition, Bits UI/accessibility matrix, static/live-dev build workflow, saved-data protection, migration phases, acceptance checks and bounded open details. This supersedes earlier tentative framework recommendations and the immediate resume instructions below.
+
+Selected direction: SvelteKit with static adapter and Vite; Tailwind/daisyUI with recurring utilities composed into semantic classes; Bits UI for applicable interactions; reusable activities backed by framework-independent learning logic and injectable storage. Existing themes/content/behaviour remain the baseline. The user has confirmed themes work.
+
+Current baseline observed: `e4eb519`. The earlier implementation/feedback is now committed there; older statements below that all feedback work is uncommitted are historical. This planning phase leaves documentation edits uncommitted and preserves pre-existing UI-rule/dev-log edits. The application is still the plain ES-module prototype; existing run commands apply.
+
+Next action, **only when implementation is requested**: phase 0 of the migration plan—inspect current changes and intended host stack if available, capture regression/storage/content baselines and select compatible package versions. Do not install dependencies or begin refactoring merely because the plan is complete. Open implementation checks concern host versions/base path, theme contrast across adjustments and manual device/screen-reader coverage; they do not block completion of this plan.
+
+---
+
 # Equation feedback update — 3 October 2026
 
 The user reviewed the first equations draft and authorised six groups of changes. They are implemented and checked locally; review of the revised draft is still pending. This section supersedes the 2 October “review deferred” status and affected prototype descriptions below.

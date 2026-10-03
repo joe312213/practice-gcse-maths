@@ -1,5 +1,7 @@
 # Maths website prototype
 
+**Migration planning complete, implementation pending.** See [the framework migration plan](../docs/FRAMEWORK_MIGRATION_PLAN.md) for the agreed SvelteKit/static, Tailwind/daisyUI and Bits UI direction. The npm commands there are future contracts; the current prototype still runs using the Python command below.
+
 From `practice/`:
 
 ```sh

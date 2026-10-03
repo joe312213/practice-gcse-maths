@@ -4,6 +4,10 @@ Authorised to begin by the user after successive reviews of web_format.md. Websi
 
 Update 3 October: the user reviewed the prototype and its six feedback groups are implemented; see [the development log](dev-log/2026-10-03-equations-feedback.md). Review of the revised draft is pending. The earlier checkpoint below remains useful for unrelated decisions. The user initially deferred prototype review after the initial stage. See [the current checkpoint](../HANDOFF.md#checkpoint--review-deferred-by-the-user) for the decision register, exact restart steps and Git status. Prototype behaviour has not yet been accepted by the user.
 
+## Framework migration planning — 3 October 2026
+
+Planning is complete in [FRAMEWORK_MIGRATION_PLAN.md](FRAMEWORK_MIGRATION_PLAN.md). It selects SvelteKit/static adapter, Tailwind/daisyUI semantic composition and Bits UI, with phased parity/accessibility checks. This intervenes before broader topic expansion. The current task is documentation only; implementation is pending a later instruction. The user confirmed themes work; that confirmation does not imply acceptance of every teaching detail.
+
 ## Current work plan
 
 1. Review a separate clone of https://github.com/jhudshcg/starters at commit 8906225f458372b7238544341e5f293cc67e685a. Record reusable approaches and differences; never modify or publish the reference site.

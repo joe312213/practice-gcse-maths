@@ -102,3 +102,17 @@ Theme investigation: current code changes all eight rendered page/card palettes 
 ## Framework/build discussion
 
 User confirmed themes now work. Added their requirements for semantic, minimal styling markup, composed component styles and transferable activity boundaries to the standing rules. Tailwind, daisyUI, Bits UI, Vite and a local Git-hook build are under discussion; no framework migration or hook installation has been authorised or performed. Proposed direction: Vite build tooling; evaluate Svelte with Bits UI and scoped semantic CSS; treat Tailwind/daisyUI as optional styling choices. Keep framework-independent learning logic and storage adapters. A local hook can run checks, but the production build should be reproducible from committed source rather than rely exclusively on a local hook.
+
+## Clarification: semantic class composition and accessibility
+
+User confirmed that recurrent utility combinations should be composed into one or a few CSS class names describing their UI purpose, keeping markup readable and avoiding repeated utility lists. Reusable components do not replace this CSS requirement. Whole-site accessibility is required, with Bits UI important to the planned framework approach. Recorded both as standing rules, including native semantics and assembled-site accessibility verification. No framework migration performed in this clarification step.
+
+## Framework migration planning completed
+
+At the user's explicit planning-only request, created `docs/FRAMEWORK_MIGRATION_PLAN.md` and linked it from AGENTS.md, web_format.md, WEBSITE_PLAN.md, website/README.md and the top of HANDOFF.md. Selected the discussed SvelteKit/static adapter + Vite, Tailwind/daisyUI semantic composition and Bits UI approach. Documented module/component responsibilities, storage/origin preservation, content/build handling, live-update workflow, optional-hook limits, accessibility acceptance, staged migration and remaining implementation checks.
+
+Observed baseline commit is now `e4eb519`; earlier uncommitted-implementation notes are historical. The user confirms themes work. No source/config/dependency changes, installation, hooks, builds, tests, commits or deployment were performed in this documentation phase. Validation is documentation/link/whitespace review, not a claim of implemented framework behaviour. Planning is complete; implementation awaits a later user instruction.
+
+## Migration visual continuity requirement
+
+User requires layout/design to remain visually similar to the current state and theme colours/gradients to match exactly. Added this to the migration plan, standing rules, AGENTS.md, product specification and handoff. Planned baseline screenshots/computed-style references, exact palette/gradient/adjustment comparisons and staged layout reviews. Framework defaults must adapt to the current site; any accessibility conflict requires a concrete user decision before visual changes. Documentation only; no application changes or visual tests performed in this step.

@@ -22,6 +22,12 @@ THe number of some types of questions from the slides will need expanding.
 
 CSS and JavaScript must be reusable, modular, clean, minimal and meaningfully commented wherever possible. The standing rules above define the implementation and review expectations.
 
+## Planned framework migration
+
+The completed [framework migration plan](docs/FRAMEWORK_MIGRATION_PLAN.md) specifies SvelteKit with static output and Vite live development, Tailwind/daisyUI with shared semantic CSS classes, Bits UI for applicable interactive controls, and framework-independent learning logic. Whole-site accessibility and preserved content/progress are acceptance requirements. This is a documented target; the 3 October planning-only phase does not implement it.
+
+Migration must preserve the current layout and design closely. Theme colours and gradients must match exactly, including their adjustment behaviour; framework defaults must be adapted to this baseline.
+
 ## Features to adapt from the T-Level starters
 
 - progress tracking
