@@ -11,7 +11,12 @@
     {#if adaptive}
       <div class="meta">Recommended · {LEVELS[track.level]}</div>
       <p class="progress-value">{score.toFixed(1)}%</p>
-      <progress max="100" value={score} aria-label="Recent success at this level"></progress>
+      <progress
+        class="progress-meter"
+        max="100"
+        value={score}
+        aria-label="Recent success at this level"
+      ></progress>
       <p class="progress-note">recent success at this level</p>
       {#if track.reassess}<p>Reassessment: {track.reassess} eligible answers remaining.</p>{/if}
       {#if page.trial}<p>

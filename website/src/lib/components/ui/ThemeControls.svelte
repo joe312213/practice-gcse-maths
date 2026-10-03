@@ -93,8 +93,11 @@
             oninput={(event) =>
               $theme.adjust(settings.saturation, Number(event.currentTarget.value))}
           />
-          <button type="button" id="theme-reset" onclick={() => $theme.reset()}
-            >Reset adjustments</button
+          <button
+            class="action-button"
+            type="button"
+            id="theme-reset"
+            onclick={() => $theme.reset()}>Reset adjustments</button
           >
         </div>
       </Popover.Content>

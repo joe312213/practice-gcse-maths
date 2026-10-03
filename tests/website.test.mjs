@@ -132,3 +132,16 @@ test('all demo/recap rows have authored reasons; Start guidance has fewer steps'
  assert.match(bank.teaching.demoAnnotations[2][1],/every term/);
  assert.match(bank.teaching.recapAnnotations[2][1],/3 is a common factor/);
 });
+
+
+test('changing playback speed reschedules one timer without skipping a step', () => {
+ let id = 0, jobs = new Map(), frame;
+ const player = createPlayer({ length: 3, onFrame: value => frame = value, schedule: (fn, delay) => { jobs.set(++id, { fn, delay }); return id; }, cancel: key => jobs.delete(key) });
+ player.play(); player.setDelay(1300);
+ assert.equal(jobs.size, 1); assert.equal([...jobs.values()][0].delay, 1300); assert.equal(frame.step, 1);
+ const [key, job] = jobs.entries().next().value; jobs.delete(key); job.fn();
+ assert.equal(frame.step, 2); assert.equal(jobs.size, 1);
+ player.pause(); player.setDelay(5200); assert.equal(jobs.size, 0);
+ player.play(); assert.equal(frame.step, 2); assert.equal([...jobs.values()][0].delay, 5200);
+ player.dispose(); assert.equal(jobs.size, 0);
+});

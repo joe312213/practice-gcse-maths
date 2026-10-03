@@ -293,16 +293,40 @@
   --page-glow-base: var(--page-glow-base-raw);
 }
 
-/* A small perceptual tint ties feedback to its palette without changing meaning.
-   Amber gets the smallest contribution so it never suggests correctness. */
+/* Blend status colours with the element’s normal surface and border.
+   Feedback redeclares these mixes locally so its own defaults are resolved. */
 @supports (color: color-mix(in oklab, red, blue)) {
-  :where(:root, .theme-swatch) {
-    --selection-bg: color-mix(in oklab, var(--selection-base) 94%, var(--main));
-    --selection-border: color-mix(in oklab, var(--selection-border-base) 94%, var(--main));
-    --correct-bg: color-mix(in oklab, var(--correct-base) 90%, var(--main));
-    --correct-border: color-mix(in oklab, var(--correct-border-base) 90%, var(--main));
-    --incorrect-bg: color-mix(in oklab, var(--incorrect-base) 86%, var(--main));
-    --incorrect-border: color-mix(in oklab, var(--incorrect-border-base) 86%, var(--main));
+  :where(:root, .theme-swatch, .feedback) {
+    --selection-bg: color-mix(
+      in oklab,
+      var(--selection-base) 92%,
+      var(--highlight-surface, var(--surface))
+    );
+    --selection-border: color-mix(
+      in oklab,
+      var(--selection-border-base) 92%,
+      var(--highlight-border, var(--control-border))
+    );
+    --correct-bg: color-mix(
+      in oklab,
+      var(--correct-base) 86%,
+      var(--highlight-surface, var(--surface))
+    );
+    --correct-border: color-mix(
+      in oklab,
+      var(--correct-border-base) 86%,
+      var(--highlight-border, var(--control-border))
+    );
+    --incorrect-bg: color-mix(
+      in oklab,
+      var(--incorrect-base) 82%,
+      var(--highlight-surface, var(--surface))
+    );
+    --incorrect-border: color-mix(
+      in oklab,
+      var(--incorrect-border-base) 82%,
+      var(--highlight-border, var(--control-border))
+    );
   }
 }
 

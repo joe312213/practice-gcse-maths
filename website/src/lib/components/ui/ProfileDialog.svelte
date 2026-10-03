@@ -48,7 +48,7 @@
         <label for="username">Your name</label>
         <input
           id="username"
-          class="answer-input"
+          class="text-field"
           bind:value={name}
           maxlength="40"
           autocomplete="off"
@@ -57,6 +57,7 @@
         <p id="profile-message" role="status">{message}</p>
         <div id="profile-matches">
           {#each matches as match}<button
+              class="action-button"
               type="button"
               data-name={match}
               onclick={() => {
@@ -65,8 +66,8 @@
               }}>Use {match}</button
             >{/each}
         </div>
-        <button type="submit">Continue</button>
-        <Dialog.Close id="profile-cancel">Cancel</Dialog.Close>
+        <button class="action-button" type="submit">Continue</button>
+        <Dialog.Close class="action-button" id="profile-cancel">Cancel</Dialog.Close>
       </form>
     </Dialog.Content>
   </Dialog.Portal>

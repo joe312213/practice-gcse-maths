@@ -1,34 +1,33 @@
-# Website conversion — 2 October 2026
+# Website roadmap and scoring interpretations
 
-Authorised to begin by the user after successive reviews of web_format.md. Website delivery supersedes slide maintenance. Preserve current teaching assets and use Git for history. This is a phased conversion, not a claim that the complete site is implemented.
+Product authority: [web_format.md](../web_format.md) and later [standing decisions](UI_UX_RULES.md). Current implementation/status belongs in [HANDOFF](../HANDOFF.md); dated evidence belongs in [DEV_LOG](../DEV_LOG.md). This is a roadmap, not permission to start every item.
 
-Update 3 October: the user reviewed the prototype and its six feedback groups are implemented; see [the development log](dev-log/2026-10-03-equations-feedback.md). Review of the revised draft is pending. The earlier checkpoint below remains useful for unrelated decisions. The user initially deferred prototype review after the initial stage. See [the current checkpoint](../HANDOFF.md#checkpoint--review-deferred-by-the-user) for the decision register, exact restart steps and Git status. Prototype behaviour has not yet been accepted by the user.
+## Future work
 
-## Framework migration planning — 3 October 2026
+1. Review the current equations teaching flow before scaling its UI. Audit M01 saved content before porting lattice diagrams/animation, then M02, M13, M15, M03 and M04 in the teaching sequence.
+2. Add up-to-three-page Practice sets, subject-qualified nine-character configuration codes, mixed-priority/problem-solving activities and reviewed bank expansion. Define code reproducibility, revision compatibility and saved-level precedence before implementation.
+3. Define topic aggregation (plain ×2, other page types ×1), unattempted-type treatment and mixed-topic priority attribution. Do not present an invented composite score meanwhile.
+4. Add profile export/import and management, timers/expiry, issue-report destination, selected puzzles and college configuration when requested. Subject/topic storage isolation is already implemented; no schema-1 migration is outstanding.
+5. Complete relevant teaching/accessibility/device checks before rollout. Hosting/integration and publication remain separate decisions. Custom-input animations and an extra challenge tier are V2; slide export is deferred.
 
-Planning is complete in [FRAMEWORK_MIGRATION_PLAN.md](FRAMEWORK_MIGRATION_PLAN.md). It selects SvelteKit/static adapter, Tailwind/daisyUI semantic composition and Bits UI, with phased parity/accessibility checks. This intervenes before broader topic expansion. The current task is documentation only; implementation is pending a later instruction. The user confirmed themes work; that confirmation does not imply acceptance of every teaching detail.
+## Practice set implementation checkpoint — 3 October 2026
 
-## Current work plan
+Implementation is authorised. Settled scope: up to three ordered pages; nine-character codes interpreted within the selected subject; code entries describe topic/activity/level collections rather than individual questions; per-question marking and existing progress rules remain. Saved topic/activity levels already override level inherited from a preceding page. Current available practice types are plain and errors; mixed-priority/problem-solving pages require additional content/logic and must not be advertised as available.
 
-1. Review a separate clone of https://github.com/jhudshcg/starters at commit 8906225f458372b7238544341e5f293cc67e685a. Record reusable approaches and differences; never modify or publish the reference site.
-2. Reconcile saved topic decks, combined deck and structured sources. Record evidence and preserve manual changes before importing.
-3. Update active instructions and define stable question identities, profile storage and executable progression examples.
-4. Build an equations (M10) vertical prototype: initial assessment, recap, click-driven balanced-equation demo, scaffolded practice, error spotting, adaptive independent practice, final-answer marking, drawing/typed working and local profiles.
-5. Check source preservation, mathematical correctness, scoring transitions, profile isolation, keyboard/mobile behaviour and rendered layouts. Record limitations and next actions.
+Pause before choosing the codec and session integration until the user settles:
 
-## Subsequent phases
+1. Reproduce the page recipe with personalised/adaptive questions, or exact questions/order? Recommended: recipe, consistent with existing adaptation.
+2. Does a saved topic/activity level also override an explicit code level, or does the code override it? Recommended: saved level wins and code supplies a fallback. This is distinct from the already-settled previous-page inheritance rule.
+3. After bank updates, do codes resolve stable recipe identities against current content or require a frozen release? Recommended: current content with permanent, non-recycled recipe identities; report unavailable recipes rather than silently substitute them.
 
-- Refine the prototype against teaching review, then migrate M01, M02, M13, M15, M03 and M04 using their existing method renderers and saved content.
-- Expand short banks with reviewed content; add mixed-priority/problem-solving Practice sets and permanent nine-character configuration codes. Do not claim unsupported banks or placeholder topics are usable.
-- Adapt themes, timers, issue reporting, priorities, puzzles and configurable college links from the reference. Add import/export and storage migrations before rollout.
-- Complete accessibility and device checks, content parity review and static hosting packaging. Publishing is separate from local implementation.
-- Custom-value animations and an extra challenge tier remain V2. PowerPoint export remains deferred.
+After decisions: implement a pure validated descriptor/codec module and round-trip/invalid-code tests, then a set-level session coordinator that reuses current page marking/progress, followed by create/open-code UI and page continuation. Keep this separate from the five-stage teaching navigation. No speculative codec bits or user-facing set controls have been added pending answers.
 
-## Implementation defaults to make reviewable
+## Scoring interpretations currently used
+
 
 These are engineering interpretations, not additional user decisions. Keep them isolated so they can be changed without rewriting content or UI.
 
-- Target storage scope is subject/topic/page-type/level, alongside assisted outcomes. The single-M10 prototype currently keys tracks by page type with separate level histories; introduce subject/topic keys and a schema migration before multi-topic expansion. Correct assisted attempts leave scoring history unchanged; incorrect attempts enter as failures. A question remains assisted for the whole page attempt once a hint/reference is used. Retries are learning feedback, not additional scored attempts.
+- Target storage scope is subject/topic/page-type/level, alongside assisted outcomes. Schema 2 already scopes topics by subject/topic, with page-type tracks and actual-level histories. Old-data migration was waived. Correct assisted attempts leave scoring history unchanged; incorrect attempts enter as failures. A question remains assisted for the whole page attempt once a hint/reference is used. Retries are learning feedback, not additional scored attempts.
 - Ten-question pages use the last ten eligible outcomes with oldest-to-newest weights 1,1,1,1,1,2,2,3,3,3. Zero-pad missing history; do not reset at page boundaries. Short pages use a matching-length rolling window: equal weights for 1–4; the newest three weighted twice for 5–9. Denominator includes missing positions. Page size is fixed by page type in the initial prototype.
 - Reassessment requires min(5, page length) eligible answers; for 1–2-question pages require at least three across pages. Persist lockout/trial state. Short-page success cannot bypass reassessment.
 - Promotion checks a type's own history. Trial answers are recorded at their actual level. Failure restores the previous recommendation and its history; no same-page retry unless five new consecutive unassisted successes follow the failure. At page end, a one/zero-question trial offers the specified choice; two or more correct trial answers confirm automatically.
@@ -37,31 +36,13 @@ These are engineering interpretations, not additional user decisions. Keep them 
 - Separate learning sequence navigation from independent Practice sets. Assessment/scaffolded answers do not promote. M10 error spotting now marks each independent error’s row, reason and corrected-step selection, plus the final x value; do not claim automatic checking of freehand working.
 - Topic aggregation and share codes are subsequent work. Display type-specific levels and scores honestly in the prototype rather than an invented composite percentage.
 
-## Checks and status
+## Teaching questions for a future review
 
-Completed audit: all 67 combined-deck slides match their corresponding saved topic slides in text and basic geometry, in registry order (10/9/10/10/10/9/9). M10 source parity is checked; other-topic source parity and detailed styles/media remain outstanding. No legacy output has been rewritten.
+These are recorded engineering interpretations, not urgent approval gates. Preserve current behaviour until reviewed:
 
-## Completed initial stage — 2 October 2026
-
-- [x] Reference source review, recorded in REFERENCE_REVIEW.md with exact commit.
-- [x] All 67 saved-topic/combined slides match in text, shape count/type, positions, dimensions and rotation. See CONTENT_AUDIT.json; detailed styles/media and the other topics' source parity remain outside this initial check.
-- [x] Website-first AGENTS instructions; preserved mathematical/teaching requirements and Git-only history.
-- [x] Imported all 94 M10 structured items with stable source IDs and full working. Checked all 94 question texts against the saved deck and 85 coefficient-based answers using exact rational arithmetic. Added the three saved recap examples and eight recap notes to `content/M10_web_recap.json`; importer verifies their text against the saved deck.
-- [x] Equations prototype at `website/`: five learning sections, three levels, step-controlled demos with static complete examples/recaps, individual marking, first-wrong-row error spotting, adaptive independent/error pages, local named profiles, hints/reference assistance, touch drawing, typed/paper working, light/dark themes, persisted completed and active attempts.
-- [x] 16 Node checks passed. CDP browser checks passed for complete promotion/replacement flow, saved-page reload, hint persistence after question switching, discarded text/sketches, pointer drawing, error correction, desktop sidebar/mobile modal, dark theme, profile separation, invalid input and reduced-motion behaviour. Basic keyboard navigation checked. No complete screen-reader or real-device classroom audit claimed.
-- [x] Inspected desktop demo/reference and mobile dark screenshots. Kept outputs under `/private/tmp/maths-*.png`, not in source history. Fixed method centre-line layout and avoided stale-bank caching during local iteration.
-
-### Exact next actions
-
-Review the prototype's teaching flow and responsive layout before scaling the UI across seven topics. Then add Practice-set navigation/codes, profile export/import and priority aggregation using the recorded reference decisions. Audit M01 deck/source parity next and port lattice rendering/step animation, preserving carry placement. Multi-subject selector, college configuration, timers, issue reporting, puzzles and larger content banks remain planned. No deployment has occurred.
-
-### Known prototype limits
-
-- Only M10 is interactive; full site conversion remains incomplete. No nine-character share-code implementation or multi-page Practice-set runner yet.
-- Assessment is diagnostic practice, not automatic placement. Guided practice uses the two accepted questions per selected level. Error spotting now requires row/reason/corrected-step selections for each error plus final x; freehand methods are never automatically marked.
-- First submitted answers remain immutable on that page; solutions are available for review. A fresh page permits another attempt. There is no four-hour repeat restriction inherited from the T-Level app.
-- New page types currently start at Start; inheritance from a previous page belongs to the future Practice-set runner. Per-type state and separate actual-level histories already exist.
-- The topic-wide aggregate bar is deliberately deferred; current display shows the active type's actual recommendation and weighted score.
-- Draft drawing/text is memory-only and is discarded on changing question/section/profile or reload. Assistance flags and submitted records survive. When reviewing the full method section from an active practice question, that question is marked assisted.
-- Bank revision changes discard incompatible active pages, preserve historical outcomes, and include both question and recap sources in the revision hash. Storage export/import, comprehensive malformed-state recovery and history pruning still need rollout work.
-- The prototype has no dependency installation or production bundling requirement. Deployment should introduce cache-consistent versioned assets; bank fetch currently requests fresh content.
+- Short-page rolling history versus page-only scoring; handling future page-length changes; reassessment at lengths 5–9.
+- Assisted correct trial answers currently neither fail the trial nor count toward confirmation. Opening a reference marks assistance even if the learner does not use it.
+- Submitted answers are immutable within a page; decide whether future unscored retries or repeat-question eligibility intervals help learning.
+- Distinguish manual level choice from demonstrated mastery in any future aggregate display.
+- Initial assessment currently gives immediate feedback and no automatic placement or enforced stage order. Placement criteria remain undefined.
+- Real host integration, profile rename/delete/reset, history retention and export/import are not implemented.

@@ -24,6 +24,7 @@
       <legend>Error {index + 1}</legend>
       <label for={`error-row-${index}`}>Row</label>
       <select
+        class="choice-field"
         id={`error-row-${index}`}
         data-error-row
         required
@@ -42,6 +43,7 @@
       </select>
       <label for={`error-reason-${index}`}>Reason</label>
       <select
+        class="choice-field"
         id={`error-reason-${index}`}
         data-error-reason
         required
@@ -55,6 +57,7 @@
       </select>
       <label for={`error-step-${index}`}>Corrected step</label>
       <select
+        class="choice-field"
         id={`error-step-${index}`}
         data-error-step
         required

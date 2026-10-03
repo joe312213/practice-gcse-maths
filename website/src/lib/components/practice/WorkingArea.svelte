@@ -1,6 +1,8 @@
 <script>
   import { onMount } from 'svelte';
+  import { dev } from '$app/env';
   let { number, paper, draft, onpaper, onworking } = $props();
+  let fieldStyle = $state('flush');
   let canvas;
   let strokes = [],
     active = null,
@@ -66,11 +68,21 @@
   }
 </script>
 
-<section class="card working">
+<section class="card working" class:working-inset={fieldStyle === 'inset'}>
   <h2>Working · question {number}</h2>
-  <label class="inline-radio"
+  {#if dev}
+    <label class="working-style-control"
+      >Field style (dev)
+      <select class="choice-field compact" bind:value={fieldStyle}>
+        <option value="flush">Full width · square</option>
+        <option value="inset">Small inset · rounded</option>
+      </select>
+    </label>
+  {/if}
+  <label class="paper-option"
     ><input
       type="checkbox"
+      class="paper-toggle"
       id="paper"
       checked={paper}
       aria-controls="working-tools"
@@ -91,15 +103,34 @@
       onpointerup={end}
       onpointercancel={end}
     ></canvas>
-    <button type="button" id="clear-working" onclick={clear}>Clear drawing</button>
+    <button
+      class="action-button compact icon"
+      type="button"
+      id="clear-working"
+      title="Clear drawing"
+      aria-label="Clear drawing"
+      onclick={clear}
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M3 14 14 3 21 10 10 21H7L3 17Z M8 9 15 16 M10 21H21" />
+      </svg>
+    </button>
     <label for="typed-working">Or type your working</label>
     <textarea
       id="typed-working"
-      class="answer-input"
+      class="working-field"
       rows="3"
       placeholder="Write your steps here…"
       value={draft.working}
       oninput={(event) => onworking({ working: event.currentTarget.value })}></textarea>
-    <small>Unsubmitted working clears when you change question.</small>
+    <small>Working clears on question change.</small>
   </div>
 </section>

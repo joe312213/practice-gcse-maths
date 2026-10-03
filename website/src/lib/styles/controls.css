@@ -1,0 +1,132 @@
+/* Shared semantic components compose daisyUI foundations once. Bits UI owns
+   dialog/popover behaviour; these classes only own appearance and variants. */
+.action-button,
+.question-option,
+.theme-icon,
+.theme-preview {
+  @apply btn;
+  height: auto;
+  min-height: 44px;
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  box-shadow: none;
+  text-shadow: none;
+  transform: none;
+  transition: none;
+  cursor: pointer;
+}
+.action-button:hover {
+  background: var(--surface-soft);
+}
+.action-button:disabled,
+.question-option:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.action-button.primary,
+.action-button[aria-current='step'] {
+  background: var(--main);
+  color: var(--main-text);
+  border-color: var(--main);
+}
+.action-button.compact {
+  min-height: 32px;
+  padding: 5px 9px;
+  font-size: 0.82rem;
+}
+.action-button.icon {
+  width: 32px;
+  padding: 6px;
+}
+.action-button.icon svg {
+  width: 18px;
+  height: 18px;
+}
+.action-button.quiet {
+  min-height: 30px;
+  padding: 3px 7px;
+  border-color: transparent;
+  background: transparent;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.text-field {
+  @apply input;
+}
+.working-field {
+  @apply textarea;
+}
+.choice-field {
+  @apply select;
+}
+.text-field,
+.working-field,
+.choice-field {
+  font: inherit;
+  height: auto;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background-color: var(--surface);
+  color: var(--text);
+  box-shadow: none;
+}
+.text-field,
+.working-field {
+  @apply w-full;
+  padding: 12px;
+}
+.choice-field {
+  width: auto;
+  max-width: 100%;
+  padding: 10px 32px 10px 12px;
+  cursor: pointer;
+}
+.choice-field.compact {
+  min-height: 32px;
+  padding-block: 4px;
+  font-size: 0.82rem;
+}
+.paper-toggle {
+  @apply checkbox checkbox-xs;
+  color: var(--main);
+  border-color: var(--control-border);
+  background: var(--surface);
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.progress-meter {
+  @apply progress;
+  width: 100%;
+  height: 13px;
+  accent-color: var(--main);
+  color: var(--main);
+}
+.card,
+.dialog-panel,
+.theme-menu {
+  @apply card;
+}
+.card {
+  --card-padding: 24px;
+  display: block;
+  background:
+    var(--card-image) padding-box,
+    var(--card-border-image) border-box;
+  border: var(--card-border-width) var(--card-border-style) var(--card-border-color);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--card-padding);
+  margin-bottom: 20px;
+}
+.dialog-panel,
+.theme-menu {
+  display: block;
+}

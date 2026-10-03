@@ -5,10 +5,11 @@
 @import 'tailwindcss/utilities.css' layer(utilities);
 @plugin 'daisyui' {
   themes: false;
-  include: button;
+  include: button, input, textarea, select, checkbox, card, progress;
   logs: false;
 }
 @import './theme-tokens.css';
 @import './theme-mapping.css';
+@import './controls.css';
 @import './components.css';
 @import './theme-controls.css';

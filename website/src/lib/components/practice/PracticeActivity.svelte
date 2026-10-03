@@ -2,7 +2,7 @@
   import { onMount, tick } from 'svelte';
   import { Dialog } from 'bits-ui';
   import { LEVELS } from '#lib/domain/engine.mjs';
-  import { MODES } from '#lib/application/session.mjs';
+  import { MODES } from '#lib/domain/stages.mjs';
   import QuestionList from './QuestionList.svelte';
   import AnswerForm from './AnswerForm.svelte';
   import Feedback from './Feedback.svelte';
@@ -12,7 +12,7 @@
   import Guidance from '../teaching/Guidance.svelte';
   import EquationWorking from '../teaching/EquationWorking.svelte';
   import DemoPlayer from '../teaching/DemoPlayer.svelte';
-  let { view, session } = $props();
+  let { view, session, onstage } = $props();
   let mobile = $state(false),
     container,
     referenceButton = $state();
@@ -46,7 +46,10 @@
         bank={view.bank}
         initialLevel={view.demoLevel}
         onlevel={session.setDemoLevel}
+        speed={view.demoSpeed}
+        onspeed={session.setDemoSpeed}
       /><button
+        class="action-button"
         type="button"
         id="close-reference"
         onclick={() => {
@@ -61,7 +64,7 @@
       {MODES.find((m) => m[0] === view.mode)[1].split(' · ')[1]} · {page.count}/{page.size} submitted
     </div>
     <div class="level-row">
-      <h2>
+      <h2 id="stage-title" tabindex="-1">
         {view.mode === 'assessment'
           ? 'What can you do already?'
           : view.mode === 'errors'
@@ -71,6 +74,7 @@
       {#if view.mode !== 'assessment'}
         <label
           >Challenge <select
+            class="choice-field"
             id="level"
             value={page.level}
             disabled={Boolean(page.trial || page.pendingChoice || page.complete)}
@@ -79,6 +83,7 @@
           ></label
         >
         <button
+          class="action-button"
           bind:this={referenceButton}
           type="button"
           id="reference"
@@ -128,7 +133,7 @@
     <Completion
       {page}
       mode={view.mode}
-      onreview={() => session.switchMode('demo')}
+      {onstage}
       onnext={session.nextPage}
       onpromotion={session.resolvePromotion}
     />
@@ -158,8 +163,14 @@
         <Dialog.Title>Method reference</Dialog.Title><Dialog.Description class="sr-only"
           >Review the method. This question is recorded as assisted.</Dialog.Description
         >
-        <DemoPlayer bank={view.bank} initialLevel={view.demoLevel} onlevel={session.setDemoLevel} />
-        <Dialog.Close id="dismiss-demo">Close reference</Dialog.Close>
+        <DemoPlayer
+          bank={view.bank}
+          initialLevel={view.demoLevel}
+          onlevel={session.setDemoLevel}
+          speed={view.demoSpeed}
+          onspeed={session.setDemoSpeed}
+        />
+        <Dialog.Close class="action-button" id="dismiss-demo">Close reference</Dialog.Close>
       </Dialog.Content>
     </Dialog.Portal>
   </Dialog.Root>

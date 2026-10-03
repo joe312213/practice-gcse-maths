@@ -53,3 +53,18 @@ test('new schema roundtrip preserves sessions, while corrupt storage never gets 
   const blocked = openProgress({ getItem: () => '{bad', setItem: () => writes++ }, text => warning = text);
   blocked.save(emptyStore());assert.equal(writes, 0);assert.match(warning, /without saving/);
 });
+
+
+test('demo speed is saved per profile, survives reload, and leaves learning history alone', () => {
+  const f = setup();
+  f.session.setDemoSpeed(1.5);
+  assert.equal(f.view.demoSpeed, 1.5);
+  assert.equal(f.view.page.count, 0);
+  const resumed = setup(JSON.parse(JSON.stringify(f.data)));
+  assert.equal(resumed.view.demoSpeed, 1.5);
+  resumed.session.chooseName('Other learner', true);
+  assert.equal(resumed.view.demoSpeed, 1);
+  resumed.session.setDemoSpeed(2);
+  resumed.session.chooseName('Student', true);
+  assert.equal(resumed.view.demoSpeed, 1.5);
+});

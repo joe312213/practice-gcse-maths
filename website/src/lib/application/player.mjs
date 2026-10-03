@@ -49,6 +49,13 @@ export function createPlayer({
       step = Math.max(1, Math.min(length, n));
       emit();
     },
+    setDelay(value) {
+      delay = value;
+      if (playing) {
+        clear();
+        timer = schedule(tick, delay);
+      }
+    },
     dispose() {
       clear();
       playing = false;

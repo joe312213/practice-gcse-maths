@@ -9,14 +9,6 @@ import {
 import { chooseProfile } from '../domain/profiles.mjs';
 import { markErrors } from '../domain/errors.mjs';
 
-export const MODES = [
-  ['assessment', '1 · Check your starting point'],
-  ['demo', '2 · Review the method'],
-  ['scaffolded', '3 · Guided practice'],
-  ['errors', '4 · Spot the error'],
-  ['plain', '5 · Independent practice'],
-];
-
 /** A portable session: inputs and persistence are injected; no DOM or Svelte dependencies.
  * Immutable view snapshots let rendering observe changes without owning stored state.
  */
@@ -125,6 +117,7 @@ export function createSession({
     return {
       bank,
       profile: profile ? { name: profile.name, key: profile.key } : null,
+      demoSpeed: profile?.settings?.demoSpeed ?? 1,
       mode,
       selected,
       reference,
@@ -201,6 +194,11 @@ export function createSession({
         assist();
         demoLevel = page().items[selected].level;
       }
+      publish(true);
+    },
+    setDemoSpeed(speed) {
+      if (!profile || ![0.5, 1, 1.5, 2].includes(speed)) return;
+      profile.settings = { ...profile.settings, demoSpeed: speed };
       publish(true);
     },
     setDemoLevel(level) {

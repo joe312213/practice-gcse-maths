@@ -21,7 +21,7 @@
   <label for="answer">{mode === 'errors' ? 'Final correct value' : 'Value'} of x</label>
   <input
     id="answer"
-    class="answer-input"
+    class="text-field"
     autocomplete="off"
     inputmode="text"
     placeholder="e.g. 7, −2 or 1/2"
@@ -34,9 +34,13 @@
   />
   <p id="input-message" role="alert">{inputError}</p>
   <div class="actions">
-    <button class="btn primary" type="submit" disabled={Boolean(response)}>Check answer</button
-    >{#if mode !== 'assessment' && !response}<button type="button" id="hint" onclick={onhint}
-        >Hint</button
+    <button class="action-button primary" type="submit" disabled={Boolean(response)}
+      >Check answer</button
+    >{#if mode !== 'assessment' && !response}<button
+        class="action-button"
+        type="button"
+        id="hint"
+        onclick={onhint}>Hint</button
       >{/if}
   </div>
   <p id="hint-text" hidden={!assisted}>
