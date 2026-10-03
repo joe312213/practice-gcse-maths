@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {weights,success,newTrack,newPage,submit,resolveChoice,manualLevel,markAnswer} from '../website/engine.mjs';
-import {emptyStore,chooseProfile,load,KEY} from '../website/profiles.mjs';
+import {weights,success,newTrack,newPage,submit,resolveChoice,manualLevel,markAnswer} from '../website/src/lib/domain/engine.mjs';
+import {emptyStore,chooseProfile,load,KEY} from '../website/src/lib/domain/profiles.mjs';
 const answer=(t,p,correct=true,assisted=false)=>submit(t,p,{id:`q${p.count}`,level:p.level,correct,assisted});
 test('specified weighted examples, zero padding and short-page denominators',()=>{
  assert.deepEqual(weights(),[1,1,1,1,1,2,2,3,3,3]);
@@ -66,14 +66,14 @@ test('exact numeric marking accepts equivalent forms and rejects code/zero denom
 });
 test('local profiles normalise names, suggest typos, remain isolated and preserve malformed storage',()=>{
  const s=emptyStore();assert.deepEqual(chooseProfile(s,'Jo'),{matches:[]});const jo=chooseProfile(s,'Jo',true).profile;
- jo.tracks.plain=newTrack(2);assert.equal(chooseProfile(s,' jo ').profile,jo);
+ jo.topics['maths:M10']={tracks:{plain:newTrack(2)},pages:{},history:[]};assert.equal(chooseProfile(s,' jo ').profile,jo);
  assert.deepEqual(chooseProfile(s,'Joe'),{matches:['Jo']});const sam=chooseProfile(s,'Sam',true).profile;
- assert.deepEqual(sam.tracks,{});assert.equal(s.last,'sam');
+ assert.deepEqual(sam.topics,{});assert.equal(s.last,'sam');
  let writes=0;assert.throws(()=>load({getItem:()=>'{broken',setItem:()=>writes++}));assert.equal(writes,0);
  assert.equal(load({getItem:key=>key===KEY?JSON.stringify(s):null}).profiles.length,2);
 });
 test('94 preserved source questions plus one new two-error item; all answers parse',async()=>{
- const bank=JSON.parse(await readFile(new URL('../website/data/equations.json',import.meta.url)));
+ const bank=JSON.parse(await readFile(new URL('../website/static/data/equations.json',import.meta.url)));
  assert.equal(bank.questions.length,95);assert.equal(new Set(bank.questions.map(q=>q.id)).size,95);
  for(let l=0;l<3;l++)assert.equal(bank.questions.filter(q=>q.type==='plain'&&q.level===l).length,24);
  for(const q of bank.questions){assert.ok(q.balance.length>=3);assert.equal(markAnswer(q.answer,q.answer).correct,true);if(q.type==='errors')assert.ok(q.correct_balance&&q.correction);}
@@ -88,7 +88,7 @@ test('assisted answers cannot initiate an early promotion from a previously high
  for(let i=0;i<5;i++)answer(t,p,true,true);assert.equal(p.trial,null);assert.equal(t.level,0);
 });
 test('error metadata identifies actual mistakes, not a valid alternative method',async()=>{
- const {questions}=JSON.parse(await readFile(new URL('../website/data/equations.json',import.meta.url)));
+ const {questions}=JSON.parse(await readFile(new URL('../website/static/data/equations.json',import.meta.url)));
  const q=questions.find(q=>q.id==='maths:M10-SE-C2-Q3');
  assert.equal(q.errors[0].row,2); // dividing by 5 on row 2 is a valid first step
  assert.equal(q.stepOptions.find(o=>o.id===q.errors[0].correction).text,'x + 2 = 9');
@@ -97,9 +97,10 @@ test('error metadata identifies actual mistakes, not a valid alternative method'
  }
 });
 
-import {markErrors,createPlayer} from '../website/teaching.mjs';
+import {markErrors} from '../website/src/lib/domain/errors.mjs';
+import {createPlayer} from '../website/src/lib/application/player.mjs';
 test('row, reason, corrected step and final answer all contribute to error marking',async()=>{
- const {questions}=JSON.parse(await readFile(new URL('../website/data/equations.json',import.meta.url)));
+ const {questions}=JSON.parse(await readFile(new URL('../website/static/data/equations.json',import.meta.url)));
  for(const q of questions.filter(q=>q.type==='errors')){
   assert.equal(markErrors(q,q.errors,q.answer).correct,true,q.id);
   assert.equal(markErrors(q,q.errors,q.wrong).correct,false,q.id);
@@ -121,7 +122,7 @@ test('playback runs to end, pauses/resumes, restarts and cancels disposed timers
  const saved=last;player.play();assert.equal(last,saved);
 });
 test('all demo/recap rows have authored reasons; Start guidance has fewer steps',async()=>{
- const bank=JSON.parse(await readFile(new URL('../website/data/equations.json',import.meta.url)));
+ const bank=JSON.parse(await readFile(new URL('../website/static/data/equations.json',import.meta.url)));
  assert.ok(bank.teaching.guidance[0].steps.length<bank.teaching.guidance[2].steps.length);
  for(let i=0;i<3;i++){
   const q=bank.questions.find(q=>q.type==='demo'&&q.level===i);

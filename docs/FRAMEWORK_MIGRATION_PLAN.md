@@ -1,6 +1,8 @@
 # Framework migration plan — 3 October 2026
 
-**Status: planning complete; implementation not started.** The user requested completion of the planning/documentation phase only. This plan selects the migration approach discussed in the conversation; it does not authorise package installation, code migration, Git hooks, commits or deployment in this phase.
+**Status: implementation authorised and in progress — 3 October 2026.** The latest user instruction supersedes the historical planning-only scope below. Preserve the intended appearance while replacing implementation hacks, including the opaque equals-sign mask with a structurally broken divider.
+
+Planning history: The user requested completion of the planning/documentation phase only. This plan selects the migration approach discussed in the conversation; it does not authorise package installation, code migration, Git hooks, commits or deployment in this phase.
 
 Read with [web_format.md](../web_format.md), [UI_UX_RULES.md](UI_UX_RULES.md) and [WEBSITE_PLAN.md](WEBSITE_PLAN.md). The product requirements and existing teaching/scoring decisions remain authoritative. This plan changes implementation architecture, not the scope of learning activities.
 

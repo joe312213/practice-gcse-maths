@@ -1,3 +1,7 @@
+# Migration underway — 3 October 2026
+
+The user has authorised implementation. The earlier planning-only stop below is historical. Replace implementation workarounds while preserving intended appearance; in particular, use real divider gaps around equals signs.
+
 # Framework migration planning checkpoint — 3 October 2026
 
 **Planning complete; stop here.** The latest user request is to complete documentation only. No framework packages, application changes, hooks, builds, commits or deployments were performed in this planning phase.

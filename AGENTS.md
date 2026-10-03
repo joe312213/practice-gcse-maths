@@ -29,7 +29,7 @@ The user authorised website planning and initial conversion on 2 October 2026. [
 
 Read and maintain [docs/UI_UX_RULES.md](docs/UI_UX_RULES.md) as the standing UI/UX requirements for every website change. It includes startup resilience, profile readiness, automatic advancement after correct answers and the 3 October feedback. Do not treat completed feedback as disposable implementation notes.
 
-The framework migration is planned in [docs/FRAMEWORK_MIGRATION_PLAN.md](docs/FRAMEWORK_MIGRATION_PLAN.md): SvelteKit static output, Tailwind/daisyUI semantic class composition and Bits UI interaction primitives. As of 3 October, planning is complete and implementation has not begun; the latest user instruction authorises documentation only. Follow the migration plan when implementation is subsequently requested.
+The framework migration is planned in [docs/FRAMEWORK_MIGRATION_PLAN.md](docs/FRAMEWORK_MIGRATION_PLAN.md): SvelteKit static output, Tailwind/daisyUI semantic class composition and Bits UI interaction primitives. The user authorised implementation on 3 October after completing planning. Preserve intended visual design, but replace implementation workarounds: equation dividers must have a real gap around equals signs, not an opaque background mask.
 
 ## Question quality and variety
 

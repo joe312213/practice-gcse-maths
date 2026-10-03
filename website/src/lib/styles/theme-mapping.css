@@ -1,0 +1,22 @@
+/* One bridge exposes the exact existing theme to daisyUI components. Original
+   palette tokens/formulas remain authoritative, including gradient surfaces. */
+:root {
+  --color-base-100: var(--surface);
+  --color-base-200: var(--surface-soft);
+  --color-base-300: var(--line);
+  --color-base-content: var(--text);
+  --color-primary: var(--main);
+  --color-primary-content: var(--main-text);
+  --color-secondary: var(--accent);
+  --color-secondary-content: var(--accent-text);
+  --color-success: var(--correct-bg);
+  --color-success-content: var(--correct-text);
+  --color-error: var(--incorrect-bg);
+  --color-error-content: var(--incorrect-text);
+  --radius-selector: 10px;
+  --radius-field: 8px;
+  --radius-box: var(--card-radius);
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}

@@ -37,6 +37,8 @@ These are ongoing requirements, not one-off draft changes. Recorded from user fe
 - Every page has an About link in the footer. About provides author information, source credits and the agent-augmented development approach.
 - Keep mathematical meaning independent of colour, pointer input or animation; retain keyboard and typed-working support.
 
+Visual continuity does not require preserving implementation hacks. Replace brittle masking/overlay tricks with structural solutions: equation dividers have separate line segments around equals signs, with no opaque patch obscuring the line. Check transparent and gradient backgrounds.
+
 ## CSS and JavaScript maintainability
 
 - Compose recurring utility combinations into one or a few semantic CSS classes named for their UI purpose, such as `question-option`, `answer-input` or `practice-panel`. Define shared rules and explicit variants once; avoid repeating long utility lists in component HTML or creating a separate class for every incidental variation. Reusable Svelte components and semantic CSS classes complement each other.
