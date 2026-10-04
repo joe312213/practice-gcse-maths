@@ -7,8 +7,12 @@ export async function checkPresentation(browser, base) {
   const page = await context.newPage();
   // Install before app startup so its injected timer captures the controlled clock.
   await page.clock.install();
-  const errors = [];
+  const errors = [],
+    consoleErrors = [];
   page.on('pageerror', (error) => errors.push(error.message));
+  page.on('console', (message) => {
+    if (message.type() === 'error') consoleErrors.push(message.text());
+  });
   try {
     await page.goto(base);
     await page.locator('#begin').click();
@@ -178,6 +182,8 @@ export async function checkPresentation(browser, base) {
       'Presentation checks passed: flex equations, play scrolling, speed persistence and shared reference settings.',
     );
   } catch (error) {
+    if (errors.length || consoleErrors.length)
+      console.error('Browser errors:', [...errors, ...consoleErrors]);
     await page.screenshot({ path: `${artifacts}/presentation-failure.png`, fullPage: true });
     throw error;
   } finally {

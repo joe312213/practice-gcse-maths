@@ -1,9 +1,13 @@
 <script>
+  import { Popover } from 'bits-ui';
+  import ProgressDialog from '#lib/components/ui/ProgressDialog.svelte';
   import { onMount, tick } from 'svelte';
   import { asset, resolve } from '$app/paths';
   import { openProgress, loadBank } from '#lib/adapters/storage.mjs';
   import { createSession } from '#lib/application/session.mjs';
   import { MODES } from '#lib/domain/stages.mjs';
+  import catalogue from '#lib/content/practice-pages.json';
+  import PracticeSets from '#lib/components/practice/PracticeSets.svelte';
   import NextStage from '#lib/components/practice/NextStage.svelte';
   import ThemeControls from '#lib/components/ui/ThemeControls.svelte';
   import ProfileDialog from '#lib/components/ui/ProfileDialog.svelte';
@@ -15,6 +19,11 @@
     warning = $state(''),
     profileOpen = $state(false);
   let profileTrigger = $state();
+  let menuTrigger = $state(null),
+    progressTrigger = $state();
+  let menuOpen = $state(false),
+    creatorOpen = $state(false),
+    progressOpen = $state(false);
   async function switchStage(mode) {
     session.switchMode(mode);
     await tick();
@@ -34,7 +43,7 @@
         const progress = openProgress(storage, (text) => (warning = text));
         const bank = await loadBank(asset('data/equations.json'));
         if (disposed) return;
-        session = createSession({ bank, data: progress.data, save: progress.save });
+        session = createSession({ bank, catalogue, data: progress.data, save: progress.save });
         unsubscribe = session.subscribe((value) => (view = value));
       } catch (cause) {
         error = `${cause.message} Refresh to try again.`;
@@ -60,6 +69,36 @@
       disabled={!session}
       onclick={() => (profileOpen = true)}>{view?.profile ? 'Not you?' : 'Choose name'}</button
     ><ThemeControls />
+    {#if view?.profile}
+      <button
+        class="action-button quiet"
+        bind:this={progressTrigger}
+        onclick={() => (progressOpen = true)}>Progress</button
+      >
+      <Popover.Root bind:open={menuOpen}>
+        <Popover.Trigger class="action-button quiet" bind:ref={menuTrigger}>Menu</Popover.Trigger>
+        <Popover.Portal
+          ><Popover.Content
+            class="theme-menu"
+            align="end"
+            sideOffset={8}
+            collisionPadding={16}
+            aria-label="Practice options"
+            onCloseAutoFocus={(event) => {
+              if (creatorOpen) event.preventDefault();
+            }}
+          >
+            <button
+              class="action-button"
+              onclick={() => {
+                menuOpen = false;
+                creatorOpen = true;
+              }}>Create Practice set</button
+            >
+          </Popover.Content></Popover.Portal
+        >
+      </Popover.Root>
+    {/if}
   </div>
 </header>
 <div id="storage-warning" role="alert">{warning}</div>
@@ -76,22 +115,28 @@
       >
     </section>
   {:else}
-    <section class="intro">
-      <div>
+    <PracticeSets {catalogue} {view} {session} bind:creatorOpen returnFocus={menuTrigger}>
+      {#snippet title()}
         <div class="eyebrow">Foundation maths · Algebra</div>
-        <h1>Solving equations</h1>
+        <h1>{view.bank.title}</h1>
         <p>Make a start, keep both sides balanced, and build your confidence.</p>
-      </div>
-    </section>
-    <nav aria-label="Topic learning steps">
-      {#each MODES as [id, label]}<button
-          class="action-button"
-          type="button"
-          data-mode={id}
-          aria-current={view.mode === id ? 'step' : undefined}
-          onclick={() => switchStage(id)}>{label}</button
-        >{/each}
-    </nav>
+      {/snippet}
+    </PracticeSets>
+    <ProgressDialog
+      bind:open={progressOpen}
+      progress={view.progress}
+      {catalogue}
+      returnFocus={progressTrigger}
+    />
+    {#if !view.practiceSet}<nav aria-label="Topic learning steps">
+        {#each MODES as [id, label]}<button
+            class="action-button"
+            type="button"
+            data-mode={id}
+            aria-current={view.mode === id ? 'step' : undefined}
+            onclick={() => switchStage(id)}>{label}</button
+          >{/each}
+      </nav>{/if}
     {#if view.mode === 'demo'}<section class="card full">
         <h2 id="stage-title" tabindex="-1">Keep the equation balanced</h2>
         <DemoPlayer

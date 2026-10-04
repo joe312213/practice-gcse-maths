@@ -77,7 +77,9 @@
             class="choice-field"
             id="level"
             value={page.level}
-            disabled={Boolean(page.trial || page.pendingChoice || page.complete)}
+            disabled={Boolean(
+              page.trial || page.pendingChoice || page.complete || view.practiceSet?.finished,
+            )}
             onchange={(event) => session.changeLevel(Number(event.currentTarget.value))}
             >{#each LEVELS as label, index}<option value={index}>{label}</option>{/each}</select
           ></label
@@ -115,23 +117,27 @@
           guidance={view.bank.teaching.guidance[question.level]}
         />{/if}
       {#if view.mode === 'errors'}<EquationWorking rows={question.balance} numbered />{/if}
-      <AnswerForm
-        {question}
-        bank={view.bank}
-        mode={view.mode}
-        {response}
-        draft={view.draft}
-        assisted={page.assisted[question.id]}
-        inputError={view.inputError}
-        onsubmit={submit}
-        ondraft={session.updateDraft}
-        onhint={session.hint}
-      />
+      <fieldset class="answer-controls" disabled={Boolean(view.practiceSet?.finished)}>
+        <AnswerForm
+          {question}
+          bank={view.bank}
+          mode={view.mode}
+          {response}
+          draft={view.draft}
+          assisted={page.assisted[question.id]}
+          inputError={view.inputError}
+          onsubmit={submit}
+          ondraft={session.updateDraft}
+          onhint={session.hint}
+        />
+      </fieldset>
       <Feedback {question} {response} mode={view.mode} bank={view.bank} />
       <p class="source-ref">{question.id}</p>
     </section>
     <Completion
       {page}
+      practiceSet={view.practiceSet}
+      onSetNext={() => session.goSetPage(view.practiceSet.index + 1)}
       mode={view.mode}
       {onstage}
       onnext={session.nextPage}

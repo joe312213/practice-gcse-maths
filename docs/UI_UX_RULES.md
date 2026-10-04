@@ -73,3 +73,10 @@ Run logic tests and browser checks appropriate to each change. Run logic tests w
 - Prefer concise pass/fail summaries. Read detailed logs/screenshots only for failures or a specific visual question. Avoid printing generated bundles, full files or repeated passing test output into the conversation.
 - Keep production code straightforward: validate real external boundaries and address observed failures, but avoid speculative fallbacks, compatibility layers, abstractions or tests without a concrete requirement. Maintainability means less unnecessary code as well as clear responsibilities.
 - Do not expand a narrow continuation/status request into a new acceptance programme. Record unavailable manual coverage once; do not repeatedly investigate it or turn it into a new approval gate.
+
+## Practice set codes
+
+- A Practice set contains 1–4 ordered pages, each referencing a topic, question-page type and authored page slot; it is separate from the five learning stages. Subject scopes the nine-character code externally. Whole-set challenge uses four possible values; a saved learner level for the topic/type overrides it. Timing values are untimed, 5, 10 or 15 minutes.
+- Slot 0 selects randomly; slot 1–15 selects directly or wraps with (slot - 1) % availableCount when out of range. An unavailable topic/type/level is reported, never silently replaced with a different activity. Page slots may be replaced/reused: authors own reasonable similarity. Do not add permanent-slot tombstones or parent-app UUID/version machinery. Questions may evolve; session variants are unindexed.
+
+- Practice set code entry stays visible beside the topic title (stacks on narrow screens). Creation is hidden behind Menu → Create Practice set by default. Keep Progress clearly available in the header. Its target is now a dedicated topic-grid page, superseding the current summary dialog; follow the progress-page requirements and unresolved decisions in [web_format.md](../web_format.md). Distinguish saved recommendations from demonstrated success.

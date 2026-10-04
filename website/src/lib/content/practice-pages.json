@@ -1,0 +1,148 @@
+{
+  "subject": "maths",
+  "topics": [
+    {
+      "code": 9,
+      "bank": "M10",
+      "title": "Solving equations",
+      "pages": [
+        {
+          "type": 0,
+          "level": 0,
+          "slots": [
+            [
+              "maths:M10-S04-C1-Q1",
+              "maths:M10-S04-C1-Q2",
+              "maths:M10-S04-C1-Q3",
+              "maths:M10-S04-C1-Q4",
+              "maths:M10-S04-C1-Q5",
+              "maths:M10-S04-C1-Q6"
+            ],
+            [
+              "maths:M10-S05-C1-Q1",
+              "maths:M10-S05-C1-Q2",
+              "maths:M10-S05-C1-Q3",
+              "maths:M10-S05-C1-Q4",
+              "maths:M10-S05-C1-Q5",
+              "maths:M10-S05-C1-Q6"
+            ],
+            [
+              "maths:M10-S06-C1-Q1",
+              "maths:M10-S06-C1-Q2",
+              "maths:M10-S06-C1-Q3",
+              "maths:M10-S06-C1-Q4",
+              "maths:M10-S06-C1-Q5",
+              "maths:M10-S06-C1-Q6"
+            ],
+            [
+              "maths:M10-S07-C1-Q1",
+              "maths:M10-S07-C1-Q2",
+              "maths:M10-S07-C1-Q3",
+              "maths:M10-S07-C1-Q4",
+              "maths:M10-S07-C1-Q5",
+              "maths:M10-S07-C1-Q6"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 0,
+          "slots": [["maths:M10-SE-C1-Q1", "maths:M10-SE-C1-Q2", "maths:M10-SE-C1-Q3"]]
+        },
+        {
+          "type": 0,
+          "level": 1,
+          "slots": [
+            [
+              "maths:M10-S04-C2-Q1",
+              "maths:M10-S04-C2-Q2",
+              "maths:M10-S04-C2-Q3",
+              "maths:M10-S04-C2-Q4",
+              "maths:M10-S04-C2-Q5",
+              "maths:M10-S04-C2-Q6"
+            ],
+            [
+              "maths:M10-S05-C2-Q1",
+              "maths:M10-S05-C2-Q2",
+              "maths:M10-S05-C2-Q3",
+              "maths:M10-S05-C2-Q4",
+              "maths:M10-S05-C2-Q5",
+              "maths:M10-S05-C2-Q6"
+            ],
+            [
+              "maths:M10-S06-C2-Q1",
+              "maths:M10-S06-C2-Q2",
+              "maths:M10-S06-C2-Q3",
+              "maths:M10-S06-C2-Q4",
+              "maths:M10-S06-C2-Q5",
+              "maths:M10-S06-C2-Q6"
+            ],
+            [
+              "maths:M10-S07-C2-Q1",
+              "maths:M10-S07-C2-Q2",
+              "maths:M10-S07-C2-Q3",
+              "maths:M10-S07-C2-Q4",
+              "maths:M10-S07-C2-Q5",
+              "maths:M10-S07-C2-Q6"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 1,
+          "slots": [["maths:M10-SE-C2-Q1", "maths:M10-SE-C2-Q2", "maths:M10-SE-C2-Q3"]]
+        },
+        {
+          "type": 0,
+          "level": 2,
+          "slots": [
+            [
+              "maths:M10-S04-C3-Q1",
+              "maths:M10-S04-C3-Q2",
+              "maths:M10-S04-C3-Q3",
+              "maths:M10-S04-C3-Q4",
+              "maths:M10-S04-C3-Q5",
+              "maths:M10-S04-C3-Q6"
+            ],
+            [
+              "maths:M10-S05-C3-Q1",
+              "maths:M10-S05-C3-Q2",
+              "maths:M10-S05-C3-Q3",
+              "maths:M10-S05-C3-Q4",
+              "maths:M10-S05-C3-Q5",
+              "maths:M10-S05-C3-Q6"
+            ],
+            [
+              "maths:M10-S06-C3-Q1",
+              "maths:M10-S06-C3-Q2",
+              "maths:M10-S06-C3-Q3",
+              "maths:M10-S06-C3-Q4",
+              "maths:M10-S06-C3-Q5",
+              "maths:M10-S06-C3-Q6"
+            ],
+            [
+              "maths:M10-S07-C3-Q1",
+              "maths:M10-S07-C3-Q2",
+              "maths:M10-S07-C3-Q3",
+              "maths:M10-S07-C3-Q4",
+              "maths:M10-S07-C3-Q5",
+              "maths:M10-S07-C3-Q6"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 2,
+          "slots": [
+            [
+              "maths:M10-SE-C3-Q1",
+              "maths:M10-SE-C3-Q2",
+              "maths:M10-SE-C3-Q3",
+              "maths:M10-SE2-C3-Q1"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

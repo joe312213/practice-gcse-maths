@@ -17,16 +17,16 @@ const selected = (files, cache = cached) => plan(files, cache).filter((job) => j
 test('unchanged successful inputs skip every job; docs and theme changes stay narrow', () => {
   assert.deepEqual(selected(initial), []);
   assert.deepEqual(selected({ ...initial, 'HANDOFF.md': 'b' }), ['docs']);
-  assert.deepEqual(selected({ ...initial, 'website/src/lib/styles/theme-tokens.css': 'b' }), ['colours']);
-  assert.deepEqual(selected({ ...initial, 'website/src/lib/styles/components.css': 'b' }), ['presentation', 'colours']);
+  assert.deepEqual(selected({ ...initial, 'website/src/lib/styles/theme-tokens.css': 'b' }), ['colours', 'practice-sets']);
+  assert.deepEqual(selected({ ...initial, 'website/src/lib/styles/components.css': 'b' }), ['presentation', 'colours', 'practice-sets']);
 });
 test('logic and demo changes use their actual verification families', () => {
-  assert.deepEqual(selected({ ...initial, 'website/src/lib/domain/engine.mjs': 'b' }), ['logic', 'bank', 'svelte']);
+  assert.deepEqual(selected({ ...initial, 'website/src/lib/domain/engine.mjs': 'b' }), ['logic', 'bank', 'svelte', 'practice-sets']);
   assert.deepEqual(selected({ ...initial, 'website/src/lib/components/teaching/ShowDemo.svelte': 'b' }), ['svelte', 'presentation']);
 });
 test('deleted/new files, failed jobs, changed policy and environment invalidate evidence', () => {
   const removed = { ...initial }; delete removed['website/src/lib/styles/components.css'];
-  assert.deepEqual(selected(removed), ['presentation', 'colours']);
+  assert.deepEqual(selected(removed), ['presentation', 'colours', 'practice-sets']);
   assert.ok(selected({ ...initial, 'tests/new.test.mjs': 'new' }).includes('logic'));
   const failed = { ...cached }; delete failed.colours;
   assert.deepEqual(selected(initial, failed), ['colours']);

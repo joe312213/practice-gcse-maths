@@ -7,6 +7,7 @@ import { checkStartup } from './browser/startup-checks.mjs';
 import { checkThemes } from './browser/theme-checks.mjs';
 import { checkPresentation } from './browser/presentation-checks.mjs';
 import AxeBuilder from '@axe-core/playwright';
+import { checkPracticeSets } from './browser/practice-set-checks.mjs';
 import { checkColours } from './browser/colour-checks.mjs';
 
 const server = process.env.BASE_URL
@@ -18,6 +19,7 @@ const server = process.env.BASE_URL
 const base = process.env.BASE_URL || server.url;
 const browser = await launchBrowser();
 const focused = {
+  '--practice-sets-only': checkPracticeSets,
   '--presentation-only': checkPresentation,
   '--colours-only': checkColours,
   '--startup-only': checkStartup,

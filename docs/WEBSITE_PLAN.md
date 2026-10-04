@@ -5,22 +5,16 @@ Product authority: [web_format.md](../web_format.md) and later [standing decisio
 ## Future work
 
 1. Review the current equations teaching flow before scaling its UI. Audit M01 saved content before porting lattice diagrams/animation, then M02, M13, M15, M03 and M04 in the teaching sequence.
-2. Add up-to-three-page Practice sets, subject-qualified nine-character configuration codes, mixed-priority/problem-solving activities and reviewed bank expansion. Define code reproducibility, revision compatibility and saved-level precedence before implementation.
+2. Expand the implemented one-to-four-page Practice sets with mixed-priority/problem-solving activities and reviewed banks. The 54-bit code contract below is implemented for current equations plain/error pages.
 3. Define topic aggregation (plain ×2, other page types ×1), unattempted-type treatment and mixed-topic priority attribution. Do not present an invented composite score meanwhile.
-4. Add profile export/import and management, timers/expiry, issue-report destination, selected puzzles and college configuration when requested. Subject/topic storage isolation is already implemented; no schema-1 migration is outstanding.
+4. Add profile export/import and management, issue-report destination, selected puzzles and college configuration when requested. Subject/topic storage isolation is already implemented; no schema-1 migration is outstanding.
 5. Complete relevant teaching/accessibility/device checks before rollout. Hosting/integration and publication remain separate decisions. Custom-input animations and an extra challenge tier are V2; slide export is deferred.
 
-## Practice set implementation checkpoint — 3 October 2026
+## Practice set implementation checkpoint — 4 October 2026
 
-Implementation is authorised. Settled scope: up to three ordered pages; nine-character codes interpreted within the selected subject; code entries describe topic/activity/level collections rather than individual questions; per-question marking and existing progress rules remain. Saved topic/activity levels already override level inherited from a preceding page. Current available practice types are plain and errors; mixed-priority/problem-solving pages require additional content/logic and must not be advertised as available.
+Initial implementation complete; code decisions settled. Whole-set timers/expiry and local resume are implemented. See DEV_LOG’s 4 October final-contract entry for rationale and superseded advice. Nine characters encode 54 bits: challenge 2, count-minus-one 2, timing 2, then four ordered topic/type/slot entries of 5/3/4 bits. Subject is selected outside the code. Slots are positions, not immutable identities: 0 random; 1–15 direct or modulo fallback when beyond the available count. Authors may replace/reuse slots and are responsible for reasonable continuity. Codes open current content. Saved topic/type learner levels override the whole-set challenge. Four challenge values are reserved; no Automatic level value is used. Variants remain session choices, not code fields.
 
-Pause before choosing the codec and session integration until the user settles:
-
-1. Reproduce the page recipe with personalised/adaptive questions, or exact questions/order? Recommended: recipe, consistent with existing adaptation.
-2. Does a saved topic/activity level also override an explicit code level, or does the code override it? Recommended: saved level wins and code supplies a fallback. This is distinct from the already-settled previous-page inheritance rule.
-3. After bank updates, do codes resolve stable recipe identities against current content or require a frozen release? Recommended: current content with permanent, non-recycled recipe identities; report unavailable recipes rather than silently substitute them.
-
-After decisions: implement a pure validated descriptor/codec module and round-trip/invalid-code tests, then a set-level session coordinator that reuses current page marking/progress, followed by create/open-code UI and page continuation. Keep this separate from the five-stage teaching navigation. No speculative codec bits or user-facing set controls have been added pending answers.
+This supersedes the three-page limit, per-page encoded challenge, frozen-release/UUID-registry proposals and the earlier prohibition on reusing authored page slots. Existing learner history is retained; unavailable topic/type/level combinations must be reported explicitly. Initial available pages are equations plain/error pages; other topics/types and Super challenge need authored content/logic before becoming selectable.
 
 ## Scoring interpretations currently used
 

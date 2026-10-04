@@ -12,7 +12,8 @@ const styles = /^website\/src\/lib\/styles\//;
 const theme = /^website\/src\/lib\/(theme\/|styles\/theme-)/;
 const runner = /^website\/scripts\/(verify-changed\.mjs|verification\/)/;
 const browser = /^website\/scripts\/browser(?:-checks\.mjs|\/support\.mjs)$/;
-const bank = /^(content\/M10.*\.json|scripts\/prepare_web_equations\.py|website\/static\/data\/)/;
+const bank =
+  /^(content\/M10.*\.json|scripts\/prepare_web_equations\.py|website\/static\/data\/|website\/src\/lib\/content\/practice-pages\.json)/;
 const matches = (patterns) => (path) => patterns.some((pattern) => pattern.test(path));
 
 export const jobs = [
@@ -84,6 +85,20 @@ export const jobs = [
     ]),
     build: true,
     command: ['scripts/browser-checks.mjs', '--startup-only'],
+  },
+  {
+    id: 'practice-sets',
+    inputs: matches([
+      interaction,
+      bank,
+      config,
+      browser,
+      styles,
+      /^website\/src\/lib\/domain\/(practice-code|engine|profiles)\.mjs$/,
+      /^website\/scripts\/browser\/practice-set-checks\.mjs$/,
+    ]),
+    build: true,
+    command: ['scripts/browser-checks.mjs', '--practice-sets-only'],
   },
   // Broad interaction checks do not depend on cosmetic CSS edits.
   {

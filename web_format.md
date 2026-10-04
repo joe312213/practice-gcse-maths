@@ -116,3 +116,47 @@ V1 should have some animation of methods. Custom inputs to mathod application an
 ## Site content and structure
 
 Similar to T-Level starters site, but maybe a bit simpler/more streamlined in look and feel.
+
+
+## Progress tracking page — requirements agreed 4 October 2026
+
+Progress tracking must have its **own page**, reached through the clear Progress link in the header. This replaces the current summary dialog as the intended main progress view; existing in-activity feedback remains useful alongside it.
+
+### Topic grid and detail
+
+- Display progress in a topic grid, with a row for each topic.
+- Each topic has a three-stage progress bar, with provision for the future fourth challenge level. Each stage represents a challenge level and shows the success rate at that level; do not reduce the display to only the current recommended level.
+- Show the date the topic was last practised.
+- Include total questions answered for each topic (requested as a probable addition; include in the proposed page design).
+- Tapping or hovering over a progress bar reveals a breakdown of success rate and questions answered by question type for that topic, retaining the challenge-level context. The same information must be available through keyboard focus/activation, consistent with the site's accessibility requirement.
+
+### Progress data portability
+
+- Provide working progress-data JSON export, JSON import and CSV export controls on this page.
+- Exported JSON must include the username alongside the progress data, so the learner identity travels with the data.
+- These must transfer actual progress data, not merely export Practice set codes or a screenshot. The precise JSON contract, CSV columns and import collision behaviour remain to be specified below; no external reporting standard has yet been selected.
+
+### Revision priority identification
+
+Highlight the topic row to identify revision priority using success, data sufficiency and recency:
+
+| Condition | Presentation |
+| --- | --- |
+| Success rate below 50% | Red |
+| Success rate at least 50% and below 75% | Amber |
+| Success rate at least 75% | Green |
+| Low/insufficient data | Grey, with “missing data - do some practice to assess revision priority” |
+| A long gap since last practice | An icy texture, with “stale data - practice now to check you still have the skills” |
+
+Use text/status information as well as colour or texture so the indicators remain understandable without colour perception or hover. Missing data must be recognisable as insufficient evidence, rather than presented simply as poor performance. Stale data prompts fresh practice to check retained skills; it is not itself evidence of failure.
+
+### Details still to decide before implementation
+
+- The amount and coverage of data required to leave the grey state, and the elapsed time that makes data stale.
+- Which challenge-level score determines the topic row's colour when level scores differ; how low success, insufficient data and staleness coexist or take precedence.
+- The exact topic/type aggregation and time window for this page. The existing plain-question ×2 / other-type ×1 proposal and activity scoring rules remain relevant, but treatment of unattempted types and different authored page lengths needs an explicit rule.
+- Counting rules for total/breakdown questions answered (e.g. retries, assisted answers and learning/assessment activities), and which qualifying activity updates last-practised dates.
+- JSON schema/version and export scope (chosen learner versus all local learners), import validation and merge/replace/name-collision behaviour, plus CSV detail/columns. The username-in-JSON requirement is already settled.
+- When to display the reserved fourth stage before fourth-level content exists.
+
+This section records requirements and open implementation details; it does not claim the page or data-transfer controls are implemented.

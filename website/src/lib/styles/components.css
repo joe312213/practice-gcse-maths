@@ -664,3 +664,52 @@ footer a {
 .balance .unwritten > span {
   visibility: hidden;
 }
+
+/* Practice sets reuse native labelled controls and shared semantic surfaces. */
+.practice-set-builder summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+.practice-set-builder fieldset {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-block: 16px;
+  padding: 12px;
+  min-width: 0;
+}
+.practice-set-entry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+}
+.practice-set-entry label {
+  margin: 0;
+}
+.practice-set-code #practice-code {
+  width: min(100%, 14em);
+}
+.practice-set-status code {
+  overflow-wrap: anywhere;
+}
+.answer-controls {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+/* Keep code entry beside the title on wide screens, in reading order on mobile. */
+.practice-set-code {
+  flex: 0 1 22rem;
+  min-width: 0;
+}
+.practice-set-code .actions {
+  flex-wrap: wrap;
+}
+.progress-summary dt {
+  font-weight: 700;
+}
+.progress-summary dd {
+  margin: 0 0 1rem;
+}
