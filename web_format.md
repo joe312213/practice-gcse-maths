@@ -150,6 +150,17 @@ Highlight the topic row to identify revision priority using success, data suffic
 
 Use text/status information as well as colour or texture so the indicators remain understandable without colour perception or hover. Missing data must be recognisable as insufficient evidence, rather than presented simply as poor performance. Stale data prompts fresh practice to check retained skills; it is not itself evidence of failure.
 
+### Recommended revision Practice sets and weekly records
+
+- The Progress page maintains a list of automatically compiled recommended revision Practice sets, persisted in the learner's progress data. Include the recommendations and their tracking records in progress JSON export/import, alongside username.
+- Each recommended set contains **four pages**, selected using topic revision priorities in this order: **missing/insufficient data first, then success-percentage priorities, then stale data**. Success-percentage selection should target weaker performance. This recommendation ordering is settled; it does not by itself settle how overlapping visual row indicators are displayed.
+- On opening a recommendation, identify it as **“Recommended practice set”**. Opening alone does **not** earn a completion reward or increase the weekly completed-set count.
+- On completing it, show encouragement such as **“Well done! Your focused practice will help your grades.”** This is completion feedback, correcting the earlier suggestion to show encouragement on opening.
+- Explicitly identify and flag recommended sets that were opened but not completed, with **“Did you find a problem with the practice set? What stopped you from completing it? Please let your teacher know.”** This prompts the learner to speak to their teacher; it does not imply an automatic teacher notification or reporting service.
+- Persist opening and completion separately, linked to the recommendation and its attempt. Refreshing or reopening the same completed attempt must not count it twice.
+- Maintain a weekly record of the number of recommended Practice sets completed, show this week's count and the learner's personal weekly record, and encourage self-competition with wording such as **“Can you beat your record this week?”** These are recommended-set completion counts, not a count of sets merely opened or ordinary practice sets.
+- Retain unfinished/completed tracking when maintaining the recommendation list, so refreshing recommendations does not erase follow-up information or weekly achievements.
+
 ### Details still to decide before implementation
 
 - The amount and coverage of data required to leave the grey state, and the elapsed time that makes data stale.
@@ -158,5 +169,7 @@ Use text/status information as well as colour or texture so the indicators remai
 - Counting rules for total/breakdown questions answered (e.g. retries, assisted answers and learning/assessment activities), and which qualifying activity updates last-practised dates.
 - JSON schema/version and export scope (chosen learner versus all local learners), import validation and merge/replace/name-collision behaviour, plus CSV detail/columns. The username-in-JSON requirement is already settled.
 - When to display the reserved fourth stage before fourth-level content exists.
+- Recommendation refresh timing, list length, ties within each priority category, and allocation of the four pages across eligible topics/question types (including when fewer than four distinct choices exist). Missing-data → success-percentage → stale-data ordering and four-page set size are already settled.
+- When an opened set qualifies for the unfinished-set follow-up (e.g. leaving it or returning later, rather than interrupting active practice); completion treatment for timed expiry/partial work; whether a fresh repeat attempt of the same recommendation earns another weekly completion; and the week boundary/timezone. Opening versus completion messages and no duplicate credit for the same completed attempt are already settled.
 
 This section records requirements and open implementation details; it does not claim the page or data-transfer controls are implemented.
