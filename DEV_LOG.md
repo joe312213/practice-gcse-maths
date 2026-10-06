@@ -292,3 +292,12 @@ Current authority: [web specification](web_format.md), [UI/UX rules](docs/UI_UX_
 ## 6 October 2026 — defer the publishing hook
 
 - At the user’s request, unset local `core.hooksPath` until publishing is ready. Kept the hook and deployment workflow for later activation; normal commits no longer run the production build.
+
+## 6 October 2026 — enable local production builds for GitHub Pages
+
+- Confirmed origin joe312213/practice-gcse-maths, configured the production base path, and re-enabled the tracked pre-commit hook. The actual hook successfully built and staged production assets. Existing push-to-main workflow already uploads website/build and deploys without a GitHub source build.
+- GitHub Pages activation remains pending: the CLI's active jhudshcg account lacks write access, while its stored joe312213 token is invalid. No commit, push or deployment was performed.
+
+## 6 October 2026 — GitHub Pages activated
+
+- Verified refreshed CLI authentication as joe312213 and enabled Pages with workflow publishing. Confirmed site URL https://joe312213.github.io/practice-gcse-maths/. No deployment runs exist yet; local production/configuration changes still need committing and pushing to main.

@@ -8,8 +8,8 @@ blocks the commit on failure, and stages the generated directory, including
 deleted assets. It does not stage source files: include all saved source changes
 that contribute to the build in the commit. Avoid partial commits with this workflow.
 
-The hook is currently disabled locally until publishing is ready. Configure
-`pages-base-path` first, then enable it once per clone from the repository root:
+The production URL prefix is configured as `/practice-gcse-maths`. The hook is
+active in the current checkout. Enable it once per new clone from the repository root:
 
 ```sh
 git config core.hooksPath .githooks
@@ -23,7 +23,8 @@ use `/REPO-NAME` for `https://OWNER.github.io/REPO-NAME/`, or an empty file for
 an account site or a custom domain hosted at its root. Update it before committing
 if the hosting path changes. Local development keeps its normal root URL.
 
-In the GitHub repository, set **Settings → Pages → Source → GitHub Actions**.
+GitHub Pages is enabled with **Settings → Pages → Source → GitHub Actions**
+for this repository. The site URL is https://joe312213.github.io/practice-gcse-maths/.
 The [deployment workflow](workflows/deploy-pages.yml) runs on pushes to `main`
 and uploads only the committed `website/build/`. It does not install dependencies
 or build source on GitHub. Manual deployment from `main` is also available.
