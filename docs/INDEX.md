@@ -2,7 +2,7 @@
 
 Entry point: [AGENTS](../AGENTS.md). Follow only the branch relevant to the task. Latest user instructions prevail; the user specification and subsequent standing decisions define behaviour. HANDOFF is the sole current resume plan; DEV_LOG is the dated development record. Historical references never override these.
 
-Directly authored `web_format.md` remains unchanged. Its old planning-only wording is superseded by later authorisation/data-waiver decisions recorded in DEV_LOG. Content Markdown and `old_agents.md` were also preserved unchanged during consolidation; historical workflow references inside them are not current build instructions.
+Directly authored `web_format.md` is protected; the progress requirements appended on 4 October were explicitly authorised by the user. Its old planning-only wording is superseded by later authorisation/data-waiver decisions recorded in DEV_LOG. Content Markdown and `old_agents.md` were also preserved unchanged during consolidation; historical workflow references inside them are not current build instructions.
 
 ## Current project documents
 

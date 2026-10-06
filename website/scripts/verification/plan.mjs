@@ -100,6 +100,21 @@ export const jobs = [
     build: true,
     command: ['scripts/browser-checks.mjs', '--practice-sets-only'],
   },
+  {
+    id: 'progress',
+    inputs: matches([
+      interaction,
+      bank,
+      config,
+      browser,
+      /^website\/src\/lib\/domain\/(progress|revision|progress-transfer|engine|profiles)\.mjs$/,
+      /^website\/src\/lib\/components\/progress\//,
+      /^website\/src\/lib\/styles\/progress\.css$/,
+      /^website\/scripts\/browser\/progress-checks\.mjs$/,
+    ]),
+    build: true,
+    command: ['scripts/browser-checks.mjs', '--progress-only'],
+  },
   // Broad interaction checks do not depend on cosmetic CSS edits.
   {
     id: 'integration',

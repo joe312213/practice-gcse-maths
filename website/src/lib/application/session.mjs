@@ -1,3 +1,5 @@
+import { backupStatus } from '../domain/progress.mjs';
+import { completeRecommendation } from '../domain/revision.mjs';
 import {
   newTrack,
   newPage,
@@ -212,15 +214,12 @@ export function createSession({
     return {
       bank,
       profile: profile ? { name: profile.name, key: profile.key } : null,
-      progress: Object.entries(profile?.topics ?? {}).map(([key, value]) => ({
-        key,
-        tracks: structuredClone(value.tracks),
-        submissions: value.history.length,
-      })),
+      backup: backupStatus(profile, now()),
       demoSpeed: profile?.settings?.demoSpeed ?? 1,
       practiceSet: activeSet()
         ? {
             code: activeSet().code,
+            recommendationId: activeSet().recommendationId,
             index: activeSet().index,
             config: structuredClone(activeSet().config),
             finished: activeSet().finished,
@@ -245,7 +244,14 @@ export function createSession({
     };
   }
   function publish(persist = false) {
-    if (persist) save(data);
+    if (persist) {
+      const run = activeSet();
+      const recommendation = profile?.revision?.recommendations.find(
+        (item) => item.id === run?.recommendationId,
+      );
+      if (recommendation) recommendation.savedAttempt = structuredClone(run);
+      save(data);
+    }
     const value = snapshot();
     for (const fn of listeners) fn(value);
   }
@@ -392,6 +398,7 @@ export function createSession({
             }
           : {}),
         question: q.id,
+        pageSize: p.size,
         revision: bank.revision,
         type: mode,
         level,
@@ -419,6 +426,8 @@ export function createSession({
       const run = activeSet();
       if (run && run.config.pages.every((_, index) => run.attempts[index]?.complete))
         run.finished = 'complete';
+      if (completeRecommendation(profile, run, now()))
+        message = 'Well done! Your focused practice will help your grades.';
       publish(true);
       return { advanced: next !== undefined, correct: result.correct };
     },
@@ -431,8 +440,32 @@ export function createSession({
       message = '';
       publish();
     },
-    startPracticeSet(raw) {
+    startPracticeSet(raw, recommendationId = null) {
       if (!profile || !catalogue) throw Error('Choose your name before opening a Practice set.');
+      const recommendation = recommendationId
+        ? profile.revision?.recommendations.find((item) => item.id === recommendationId)
+        : null;
+      if (recommendationId && (!recommendation || recommendation.code !== raw))
+        throw Error('Recommended set not found for this learner.');
+      if (recommendation && profile.practiceSet?.recommendationId === recommendationId) {
+        profile.practiceSet.active = true;
+        restoreSet();
+        ensurePage();
+        publish(true);
+        return;
+      }
+      if (recommendation?.savedAttempt) {
+        profile.practiceSet = structuredClone(recommendation.savedAttempt);
+        profile.practiceSet.active = true;
+        restoreSet();
+        ensurePage();
+        publish(true);
+        return;
+      }
+      if (recommendation?.completedAt != null)
+        throw Error(
+          'This recommended set is already complete. Choose the next recommendation on Progress.',
+        );
       const config = decodePracticeSet(raw);
       // Validate the whole recipe before replacing any current attempt.
       config.pages.forEach((entry) =>
@@ -441,6 +474,7 @@ export function createSession({
       const started = now();
       profile.practiceSet = {
         active: true,
+        recommendationId,
         code: encodePracticeSet(config),
         config,
         index: 0,
@@ -449,7 +483,8 @@ export function createSession({
         deadline: TIMINGS[config.timing] ? started + TIMINGS[config.timing] * 60000 : null,
         finished: null,
       };
-      message = '';
+      if (recommendation) recommendation.openedAt ??= started;
+      message = recommendation ? 'Recommended practice set' : '';
       enterSetPage();
       publish(true);
     },

@@ -79,12 +79,16 @@
 
 {#if run}
   <section class="card practice-set-status" aria-label="Current Practice set">
-    <h2>Practice set <code>{run.code}</code></h2>
+    <h2>
+      {run.recommendationId ? 'Recommended practice set' : 'Practice set'} <code>{run.code}</code>
+    </h2>
     <p>Page {run.index + 1} of {run.config.pages.length} · {view.bank.title}</p>
     {#if run.finished}<p role="status">
         {run.finished === 'expired'
           ? 'Time is up. Unanswered questions are not scored.'
-          : 'Practice set complete.'}
+          : run.recommendationId
+            ? 'Well done! Your focused practice will help your grades.'
+            : 'Practice set complete.'}
       </p>
     {:else if run.remaining !== null}<p role="timer" aria-live="off">
         Time remaining: {Math.floor(run.remaining / 60)}:{String(run.remaining % 60).padStart(

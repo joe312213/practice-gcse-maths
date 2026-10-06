@@ -184,3 +184,48 @@ Concise dated record of decisions, work, evidence and problems. Append new entri
 - Opened but unfinished recommendations must be identified and flagged with the requested question about problems/barriers and instruction to let the teacher know. No automatic teacher messaging is implied. Opening, completion and weekly records persist with learner progress and its JSON transfer; repeated refresh/reopening of one completed attempt cannot duplicate credit.
 - Recorded this week's completed recommended-set count, personal weekly record and “Can you beat your record this week?” self-competition. Refreshing the recommendation list must retain unfinished follow-up and completion history.
 - Still open: refresh/list/tie/page-allocation rules, follow-up timing, timed/partial completion criteria, credit for a fresh repeat attempt, and week boundaries. No implementation or invented thresholds in this documentation task.
+
+## 4 October 2026 — progress tracking implementation started
+
+- Using the moved repository at /Users/joehudson/Dev/Maths/practice. The old copy still exists; edits apply only to the new checkout. Earlier interruption left no progress-feature edits in this checkout.
+- Implementation defaults (adjustable policy, not earlier user decisions): dashboard uses ten weighted recent scored answers per type/level, missing evidence below five, stale at 28 days, UK Monday–Sunday weeks. Plain type weight ×2, others ×1; missing types are excluded from numeric averages but force the grey state. Row colour uses each type's recommended level; stale texture can coexist. Manual recommendation changes do not themselves create success evidence.
+- Counts/last practice use recorded first submissions, including assisted/assessment/guided answers; retries are not extra records. Success excludes assisted correct outcomes, as existing adaptation does. Three stages shown for current content; fourth appears when authored content exists.
+- Keep one pending four-page recommendation, preserving its recipe until completed; then generate another if priorities remain. Rank missing data, then rates below 75%, then stale. Cycle ranked eligible topic/type choices to fill four slots; current bank has only one topic. Fresh generated recommendations can earn credit, but a completed recommendation cannot earn a second credit. Completion means all four pages submitted, not all correct. Expired partial sets do not count. Returning to Progress with an opened incomplete recommendation shows the teacher follow-up.
+- JSON v1 transfers one named learner's history, tracks and revision records, not drawings or partial page attempts. CSV exports submitted-answer rows. Imports validate first and require explicit replacement confirmation on username collision; no silent merge. These defaults are recorded openly for review.
+- Page/domain/transfer source is now being installed; tests and browser verification remain to be completed. No deployment.
+
+## 4 October 2026 — scoring clarification and recommendation generation limits
+
+- User clarified: retain the established percentage scheme and all recorded outcomes by topic/type/level. Five scored answers is only a minimum initial evidence threshold. Supersedes the assistant's proposed fixed ten-answer dashboard window; use the existing page-size-dependent weighting/window, recording page size with future submission events. Existing history is not truncated.
+- On Progress page load, preserve and fill the list to three unfinished four-page recommendations. Supersedes the assistant's one-pending-set default. At 15 completed recommendations in the current week, stop automatic generation, retain existing pending work, congratulate the learner and offer explicit generation of more sets.
+- Requirements persisted in web_format.md under the existing authorisation to document progress requirements. Implementation is being revised to match; no claim of completed verification yet.
+
+## 4 October 2026 — progress implementation and verification checkpoint
+
+- Built the dedicated static Progress page, topic/level/type summaries, dated totals, colour/grey priority, stale texture and accessible Bits breakdown. Header uses a real page link. Removed the old summary dialog; existing in-activity scoring is retained.
+- Implemented selected-learner JSON transfer (username included), strict validation before mutation, explicit same-name replacement and CSV history export. Import deliberately restores history/levels/revision records, not partial page attempts or sketches; stated in UI and README. New answer records retain pageSize so summaries reuse the exact existing scoring scheme. Legacy records use saved/default page size because the original window was not recorded.
+- Implemented three pending recommendations on Progress load, separate resumable local attempts, priority ordering, completion-only credit/praise, unfinished follow-up, UK weekly totals/personal best, and automatic-generation cutoff at 15 with optional extras. These supersede the initial one-set/fixed-window proposals above.
+- 44 logic tests and all selected checks passed before final dead-code cleanup: bank, Svelte, static build, presentation, colours, startup, Practice sets, new Progress browser flow and activity integration. New Progress browser flow took 2.1s. Early verification caught a non-reactive save callback (fixed); test selectors needed updating for three recommendations and asynchronous navigation. A second formatter pass resolved a new browser-file formatting warning. No known application assertion remains failing.
+- Final cleanup removes the obsolete summary snapshot/styles; cached verification will cover its affected inputs. Manual screen-reader/device review and wider-topic content remain future work. No deployment; user .DS_Store changes untouched.
+
+## 4 October 2026 — persisted export date and ten-day reminder
+
+- User requested a locally persisted last-export event date and a reminder at ten days or longer to export to cloud storage. Added learner-scoped backup metadata and visible reminders on practice and Progress, with a direct link to the export controls.
+- Both JSON and CSV download triggers update the date/type; failed triggers do not. The browser cannot confirm cloud delivery, so UI says export started and asks the learner to save the file. JSON carries backup metadata through import. New learners start the reminder clock at first Progress visit or first recorded activity; older learners use their earliest activity if no export metadata exists.
+- Added exact-ten-day, JSON/CSV reset, import and learner-isolation logic coverage, plus browser reminder/date persistence checks. Verification pending for this final addition; preceding feature checks all passed.
+
+- Final export-reminder evidence: 45 logic tests and all mapped checks pass (format/docs/bank evidence, Svelte/static build, presentation, colours, startup, Practice sets, Progress and existing integration). Browser Progress flow (2.1s) verified overdue reminder, export timestamp persistence and clearing across reload, plus transfers/recommendations/weekly cap. Integration passed in 12.5s. No task processes left running; changes remain uncommitted.
+
+## 4 October 2026 — JSON-only backup reminders; CSV as a follow-up
+
+- User corrected the backup rule: only JSON export resets the persisted backup date/reminder. CSV export no longer updates it; previous CSV-only dates are ignored as backup evidence. This supersedes the earlier both-formats rule above.
+- CSV is offered only after a JSON download is triggered during the current page visit, with “Would you also like to save a CSV version to view in Excel?” Reload/import/learner change hides the offer again. JSON remains the primary restorable export.
+- Updated spec, reminder wording, logic/browser assertions and handoff. All selected checks passed, including 45 logic tests and browser checks confirming CSV stays hidden until JSON export and does not alter the backup date.
+
+
+## 6 October 2026 — project moved to Maths root
+
+- User moved project contents from `/Users/joehudson/Dev/Maths/practice` to `/Users/joehudson/Dev/Maths`, corrected `.agents/skills/`, discarded Pylance’s unsaved import rewrites and deleted the old folder. Earlier dated paths above describe the previous layout; open `Maths/` as the workspace root now.
+- Updated HANDOFF, the website run directory and five legacy topic README root references. Corrected eleven legacy README links to the existing root `content/` directory. Internal project-relative paths otherwise survive the move; no specification, Python or application changes were needed.
+- `.git` was previously inside the deleted folder and is absent from the new root. Git status fails; the normal verification command from `website/` fails during Git file discovery. An initial invocation from the project root also failed because the npm script belongs to `website/`. No Git metadata recovery or new repository initialisation was attempted.
+- Direct file-link verification across 22 development/legacy Markdown documents: 139 non-archive links resolve; eight historical links to retired `_prevN` PowerPoint/PDF artifacts remain unavailable. No application tests or legacy publishers ran. Restore original Git metadata before Git-dependent verification or history work.

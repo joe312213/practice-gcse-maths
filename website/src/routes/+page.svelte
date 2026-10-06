@@ -1,6 +1,5 @@
 <script>
   import { Popover } from 'bits-ui';
-  import ProgressDialog from '#lib/components/ui/ProgressDialog.svelte';
   import { onMount, tick } from 'svelte';
   import { asset, resolve } from '$app/paths';
   import { openProgress, loadBank } from '#lib/adapters/storage.mjs';
@@ -19,11 +18,9 @@
     warning = $state(''),
     profileOpen = $state(false);
   let profileTrigger = $state();
-  let menuTrigger = $state(null),
-    progressTrigger = $state();
+  let menuTrigger = $state(null);
   let menuOpen = $state(false),
-    creatorOpen = $state(false),
-    progressOpen = $state(false);
+    creatorOpen = $state(false);
   async function switchStage(mode) {
     session.switchMode(mode);
     await tick();
@@ -45,6 +42,22 @@
         if (disposed) return;
         session = createSession({ bank, catalogue, data: progress.data, save: progress.save });
         unsubscribe = session.subscribe((value) => (view = value));
+        const recommendationId = new URLSearchParams(window.location.search).get('recommendation');
+        if (recommendationId) {
+          const learner = progress.data.profiles.find((item) => item.key === progress.data.last);
+          const recommended = learner?.revision?.recommendations.find(
+            (item) => item.id === recommendationId,
+          );
+          try {
+            if (!recommended)
+              throw Error(
+                'Choose the learner who owns this recommendation from the Progress page.',
+              );
+            session.startPracticeSet(recommended.code, recommendationId);
+          } catch (cause) {
+            warning = cause.message;
+          }
+        }
       } catch (cause) {
         error = `${cause.message} Refresh to try again.`;
       }
@@ -70,11 +83,7 @@
       onclick={() => (profileOpen = true)}>{view?.profile ? 'Not you?' : 'Choose name'}</button
     ><ThemeControls />
     {#if view?.profile}
-      <button
-        class="action-button quiet"
-        bind:this={progressTrigger}
-        onclick={() => (progressOpen = true)}>Progress</button
-      >
+      <a class="action-button quiet" href={resolve('/progress.html')}>Progress</a>
       <Popover.Root bind:open={menuOpen}>
         <Popover.Trigger class="action-button quiet" bind:ref={menuTrigger}>Menu</Popover.Trigger>
         <Popover.Portal
@@ -102,6 +111,12 @@
   </div>
 </header>
 <div id="storage-warning" role="alert">{warning}</div>
+{#if view?.backup?.due}<p class="export-reminder" role="status">
+    It has been 10 days or longer without a JSON backup. <a
+      href={`${resolve('/progress.html')}#data-transfer`}
+      >Export your progress to your cloud storage.</a
+    >
+  </p>{/if}
 <main id="main" tabindex="-1">
   {#if error}<p role="alert">{error}</p>
   {:else if !view}<p>Loading equations…</p>
@@ -122,12 +137,6 @@
         <p>Make a start, keep both sides balanced, and build your confidence.</p>
       {/snippet}
     </PracticeSets>
-    <ProgressDialog
-      bind:open={progressOpen}
-      progress={view.progress}
-      {catalogue}
-      returnFocus={progressTrigger}
-    />
     {#if !view.practiceSet}<nav aria-label="Topic learning steps">
         {#each MODES as [id, label]}<button
             class="action-button"

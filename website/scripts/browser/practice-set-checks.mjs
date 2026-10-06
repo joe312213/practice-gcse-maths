@@ -73,21 +73,9 @@ export async function checkPracticeSets(browser, base) {
     await page.reload();
     await page.getByText('Practice set complete.', { exact: true }).waitFor();
     await page.getByRole('button', { name: 'Leave Practice set', exact: true }).click();
-    await page.getByRole('button', { name: 'Progress', exact: true }).click();
-    await page
-      .locator('#progress-summary')
-      .getByText('24 answers submitted', { exact: true })
-      .waitFor();
-    await page
-      .locator('#progress-summary')
-      .getByRole('button', { name: 'Close', exact: true })
-      .click();
-    assert.equal(
-      await page
-        .getByRole('button', { name: 'Progress', exact: true })
-        .evaluate((el) => el === document.activeElement),
-      true,
-    );
+    await page.getByRole('link', { name: 'Progress', exact: true }).click();
+    await page.getByText('24 questions answered', { exact: true }).waitFor();
+    await page.getByRole('link', { name: 'Back to practice', exact: true }).click();
     await page.locator('#practice-code').fill('bad');
     await page.getByRole('button', { name: 'Start Practice set', exact: true }).click();
     assert.match(await page.locator('#practice-set-error').innerText(), /nine-character/);

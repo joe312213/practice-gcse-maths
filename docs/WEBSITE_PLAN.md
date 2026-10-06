@@ -6,8 +6,8 @@ Product authority: [web_format.md](../web_format.md) and later [standing decisio
 
 1. Review the current equations teaching flow before scaling its UI. Audit M01 saved content before porting lattice diagrams/animation, then M02, M13, M15, M03 and M04 in the teaching sequence.
 2. Expand the implemented one-to-four-page Practice sets with mixed-priority/problem-solving activities and reviewed banks. The 54-bit code contract below is implemented for current equations plain/error pages.
-3. Define topic aggregation (plain ×2, other page types ×1), unattempted-type treatment and mixed-topic priority attribution. Do not present an invented composite score meanwhile.
-4. Add profile export/import and management, issue-report destination, selected puzzles and college configuration when requested. Subject/topic storage isolation is already implemented; no schema-1 migration is outstanding.
+3. Review the implemented topic aggregation/recency defaults documented in website/README. Current aggregation uses plain ×2, other types ×1, excluding absent scores while flagging insufficient evidence; mixed-topic question attribution remains future work.
+4. Add further profile management, issue-report destination, selected puzzles and college configuration when requested. Named-learner JSON export/import and CSV answer-history export are implemented. Subject/topic storage isolation is already implemented; no schema-1 migration is outstanding.
 5. Complete relevant teaching/accessibility/device checks before rollout. Hosting/integration and publication remain separate decisions. Custom-input animations and an extra challenge tier are V2; slide export is deferred.
 
 ## Practice set implementation checkpoint — 4 October 2026
@@ -39,4 +39,4 @@ These are recorded engineering interpretations, not urgent approval gates. Prese
 - Submitted answers are immutable within a page; decide whether future unscored retries or repeat-question eligibility intervals help learning.
 - Distinguish manual level choice from demonstrated mastery in any future aggregate display.
 - Initial assessment currently gives immediate feedback and no automatic placement or enforced stage order. Placement criteria remain undefined.
-- Real host integration, profile rename/delete/reset, history retention and export/import are not implemented.
+- Real host integration and profile rename/delete/reset remain unimplemented. Recorded history is retained; JSON progress export/import and CSV answer export are implemented.

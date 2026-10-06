@@ -707,9 +707,3 @@ footer a {
 .practice-set-code .actions {
   flex-wrap: wrap;
 }
-.progress-summary dt {
-  font-weight: 700;
-}
-.progress-summary dd {
-  margin: 0 0 1rem;
-}

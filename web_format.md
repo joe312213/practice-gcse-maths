@@ -173,3 +173,18 @@ Use text/status information as well as colour or texture so the indicators remai
 - When an opened set qualifies for the unfinished-set follow-up (e.g. leaving it or returning later, rather than interrupting active practice); completion treatment for timed expiry/partial work; whether a fresh repeat attempt of the same recommendation earns another weekly completion; and the week boundary/timezone. Opening versus completion messages and no duplicate credit for the same completed attempt are already settled.
 
 This section records requirements and open implementation details; it does not claim the page or data-transfer controls are implemented.
+
+
+### Progress implementation refinements — 4 October 2026
+
+- Keep the existing success-percentage scheme. Retain all recorded correct/incorrect answer events, identified by topic, question type and challenge level. Five scored answers is acceptable only as a minimum initial evidence measure; it is not a retention limit or a replacement percentage window.
+- Generate recommended revision Practice sets where needed on loading the Progress page, showing **three unfinished recommended sets at a time**. Keep existing recommendations/tracking and fill available places rather than replacing unfinished work on every load. Each set still contains four pages selected by the agreed priority order.
+- Once the learner has completed **15 recommended sets in a week**, generate no further sets automatically during that week. Existing unfinished sets remain available. Show an additional well-done message and an explicit **Generate more recommended sets** option for the learner to request more. This is a limit on automatic generation, not a prohibition on choosing more practice.
+- The agreed opening label, completion-only encouragement, unfinished-set follow-up and persisted weekly/self-competition records still apply.
+
+
+### Export reminder — 4 October 2026
+
+- Browser local storage records the date/time of the learner's last JSON progress export event.
+- After **10 days or longer** without a JSON export, remind/prompt the learner to export their data to their cloud storage. Keep this visible from practice as well as on the Progress page.
+- Only JSON export updates the saved backup date and resets the reminder. CSV does not. Show CSV as a secondary option after a JSON export, with “Would you also like to save a CSV version to view in Excel?” The offer is temporary for that page visit; importing data does not reveal it. This is a download reminder, not automatic cloud uploading or a claim that the browser can verify a cloud save.

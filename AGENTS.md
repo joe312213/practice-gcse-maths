@@ -30,4 +30,6 @@ Use the two project-local skills above when relevant; they live in `.agents/skil
 
 Keep responsibilities distinct: standing requirements in UI_UX_RULES; dated decisions/progress/issues in DEV_LOG; **only current state and next steps in HANDOFF**. Update HANDOFF at meaningful milestones during longer work, before a risky transition or pause, and at the end—not just when a session finishes. Record incomplete edits, running processes, last evidence, failures and exact next action so interruptions are recoverable. Never disguise an untested change as verified or overwrite historical results with present-tense claims.
 
+HANDOFF should normally include a short, ordered outline of the logical next work slices, not just a backlog or the immediate next command. State each slice's outcome, dependencies and decisions still needed; distinguish proposed later work from authorised work. Refresh the outline when priorities change.
+
 When adding/removing documentation, update INDEX; link rather than duplicate rules. Keep skill instructions narrow and concise.

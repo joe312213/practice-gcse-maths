@@ -3,11 +3,11 @@
 - [Questions](Ratio_M04_questions.pptx): 9 slides.
 - [HTML answers](Ratio_M04_answers.html): assessment, scaffolded practice, error corrections and independent answers.
 
-Sequence: assessment → worked demo → two scaffolded practices → spot the errors (nine worked mistakes) → four independent practices. Original accepted teaching slides are preserved. New error activities are ready for manual review. Exact SE content is in [SPOT_ERRORS.md](../../content/SPOT_ERRORS.md).
+Sequence: assessment → worked demo → two scaffolded practices → spot the errors (nine worked mistakes) → four independent practices. Original accepted teaching slides are preserved. New error activities are ready for manual review. Exact SE content is in [SPOT_ERRORS.md](../../../content/SPOT_ERRORS.md).
 
-Build with `python3 scripts/update_structure.py` from `practice/`. The builder requires the current topic deck, preserves teaching slides, refreshes SE from `content/spot_errors.json`, and compiles the main deck and HTML answers in teaching order. Edit SE in its structured source. Current filenames have no version suffix; history is retained in Git without backup copies. Historical `_prevN` files and PDFs have been removed; restore from Git if needed. Do not run legacy builders to publish current files.
+Historical build command: `python3 scripts/update_structure.py` from the project root (now `/Users/joehudson/Dev/Maths`). See [legacy tooling limits](../../README.md) before considering these old instructions. The builder requires the current topic deck, preserves teaching slides, refreshes SE from `content/spot_errors.json`, and compiles the main deck and HTML answers in teaching order. Edit SE in its structured source. Current filenames have no version suffix; history is retained in Git without backup copies. Historical `_prevN` files and PDFs have been removed; restore from Git if needed. Do not run legacy builders to publish current files.
 
-Question wording reviewed on 1 October 2026. See the [full spot-the-errors review](../../content/SPOT_ERRORS_REVIEW.md) for clarified contexts and unchanged numerical answers.
+Question wording reviewed on 1 October 2026. See the [full spot-the-errors review](../../../content/SPOT_ERRORS_REVIEW.md) for clarified contexts and unchanged numerical answers.
 
 ## Historical record (superseded)
 
@@ -17,7 +17,7 @@ Question wording reviewed on 1 October 2026. See the [full spot-the-errors revie
 
 - [Questions v7](Ratio_M04_questions_prev9.pptx) · [PDF](Ratio_M04_questions_prev9.pdf): eight slides—assessment followed by the seven-slide topic set.
 - [Answers v6](Ratio_M04_answers_prev6.pptx) · [PDF](Ratio_M04_answers_prev6.pdf): thirteen slides—assessment answers and six pairs of answer/diagnostic pages.
-- [Question source](../../content/M04_ratio.md), [answer source](../../content/answers/M04_answers.md), [question audit](../../content/M04_ratio_audit.md).
+- [Question source](../../../content/M04_ratio.md), [answer source](../../../content/answers/M04_answers.md), [question audit](../../../content/M04_ratio_audit.md).
 
 The revised question bank and arrow design were accepted. The user subsequently requested the assessment, now included. No requested ratio correction remains. Scale, costs and changed-ratio applications still need their separate module.
 

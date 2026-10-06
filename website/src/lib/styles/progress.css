@@ -1,0 +1,82 @@
+/* Revision states reuse semantic theme colours; texture supplements explicit stale text. */
+.topic-grid {
+  display: grid;
+  gap: 1rem;
+}
+.topic-progress {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) minmax(0, 2fr);
+  gap: 1.5rem;
+}
+.topic-progress[data-priority='red'] {
+  border-color: var(--incorrect-border);
+}
+.topic-progress[data-priority='amber'] {
+  border-color: var(--warning-border);
+}
+.topic-progress[data-priority='green'] {
+  border-color: var(--correct-border);
+}
+.topic-progress[data-priority='missing'] {
+  border-color: var(--muted);
+  border-style: dashed;
+}
+.topic-progress.stale {
+  background-image: repeating-linear-gradient(
+    125deg,
+    transparent 0 16px,
+    color-mix(in srgb, #b5e1ff 18%, transparent) 17px 19px,
+    transparent 20px 34px
+  );
+}
+.challenge-stages {
+  display: flex;
+  gap: 0.5rem;
+}
+.challenge-stage {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  padding: 0.65rem;
+  cursor: pointer;
+}
+.challenge-stage span {
+  display: block;
+}
+.challenge-stage .progress-meter {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.progress-breakdown {
+  max-width: min(28rem, calc(100vw - 32px));
+}
+.revision-recommendation {
+  margin-block: 1rem;
+}
+.revision-followup {
+  border-inline-start: 3px solid var(--muted);
+  padding-inline-start: 0.75rem;
+}
+#progress-import {
+  max-width: 100%;
+}
+@media (max-width: 767px) {
+  .topic-progress {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .challenge-stage {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.2rem;
+  }
+}
+
+.export-reminder {
+  padding: 1rem;
+  border-inline-start: 4px solid var(--warning-border);
+  margin: 1rem auto;
+  max-width: 1200px;
+}
