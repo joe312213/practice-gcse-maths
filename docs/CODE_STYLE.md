@@ -15,3 +15,17 @@ When fixing bugs, adding or changing features, or refactoring, ask: "How can I s
 - Respect the value of velocity. Expensive tests should only be run when needed. Separate test sets by the types of files that have been updated and their roles.
 - Test run decisions should be rule based and deterministic where possible.
 - Visual testing, or other high token burn testing should be run on a batch of code edits where possible and during rapid iteration allow the human to review visually as this is most often quicker than an agent check - saving time and tokens.
+
+## HTML and styling
+
+Format authored HTML and component markup for human reading, with sensible line breaks and indentation. Production output may be minified.
+
+Use semantic native HTML and avoid unnecessary wrapper elements. Prefer purposeful class names over long lists of framework utilities.
+
+Combine framework components for reusable markup and behaviour with semantic CSS classes for reusable appearance. Use utility composition features (such as Tailwind's @apply) where they make styling clearer. Coordinate these abstractions with any component styling libraries (such as daisyUI) and interaction/accessibility libraries (such as Bits UI). Preserve their required attributes, structure and state handling.
+
+A small number of utility classes alongside a semantic class is fine for occasional adjustments. Give meaningful, recurring component variants a shared semantic class or component prop. Keep each styling decision in one authoritative place, without introducing abstractions that add more complexity than they remove.
+
+Use plain CSS and shared theme variables when clearer than utility composition. Weigh that choice against the consistency and maintenance benefits of the frameworks in use, and avoid recreating behaviour they already provide.
+
+Keep class names statically discoverable where possible. Prefer built-in unused-code elimination and CSS generation before adding separate purging tools. Any optimisation must preserve dynamic states, themes and library-generated markup. Exclude generated output from source scanning.

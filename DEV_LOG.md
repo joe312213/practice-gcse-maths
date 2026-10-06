@@ -282,3 +282,13 @@ Current authority: [web specification](web_format.md), [UI/UX rules](docs/UI_UX_
 - Final selected format, documentation links, logic, bank, Svelte diagnostics, build, presentation, colours, startup, practice sets, progress and integration checks passed. Initial formatting from the repository root could not resolve the Svelte Prettier plugin; formatting from website/ succeeded.
 - Added T_LEVEL_REFACTOR_AGENT_GUIDE_V2.md at the user's request: a 345-word transfer brief emphasizing required Svelte/Tailwind/daisyUI/Bits UI roles and an incremental, evidence-based migration while leaving architectural judgment to the destination agent. Kept and indexed the original guide.
 - Empty docs/dev-log is a leftover from deleting its last dated log in commit 4bfc9d8 during consolidation into DEV_LOG.md. It has no current references and was left untouched.
+
+
+## 6 October 2026 — local production builds and Pages deployment
+
+- User chose a pre-commit local production build, with generated assets committed alongside source; a push to main deploys those assets through GitHub Pages without building on GitHub.
+- Added and activated the tracked pre-commit hook, removed the build-directory ignore, and added the deployment workflow and publishing instructions. Hook tests cover failure blocking and staging of new/deleted assets; the local production build and selected browser checks passed (local-server sandbox restriction required an authorised rerun). Documentation links and whitespace checks passed. Hosting path configuration awaits the repository name. No publication occurred.
+
+## 6 October 2026 — defer the publishing hook
+
+- At the user’s request, unset local `core.hooksPath` until publishing is ready. Kept the hook and deployment workflow for later activation; normal commits no longer run the production build.

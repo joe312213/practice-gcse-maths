@@ -14,6 +14,7 @@ Start with [HANDOFF.md](HANDOFF.md) for current state. [docs/INDEX.md](docs/INDE
 | Future features/scoring | [Roadmap and interpretations](docs/WEBSITE_PLAN.md) |
 | Content/questions/answers | [Teaching/source map](docs/INDEX.md#teaching-content), then the relevant topic and specifications |
 | Earlier decisions or failures | [DEV_LOG.md](DEV_LOG.md); use Git for full prior versions |
+| Publishing to GitHub | [Publishing instructions](.github/PUBLISHING.md), including applying repository topics |
 | Slides or source-deck audit | [Legacy resources](legacy/README.md); do not run old publishers during website work |
 
 ## Authority and preservation

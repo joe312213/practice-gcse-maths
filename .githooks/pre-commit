@@ -1,0 +1,23 @@
+#!/bin/sh
+# Purpose: Build and stage production assets before each commit.
+#
+# Main contents: Production build followed by generated-output staging.
+#
+# Used By: Git through core.hooksPath.
+#
+# Uses: .github/pages-base-path and website build.
+#
+# Libs: Git (repository/index), npm (production build).
+set -eu
+
+cd "$(git rev-parse --show-toplevel)"
+if [ ! -f .github/pages-base-path ]; then
+  echo 'Missing .github/pages-base-path; configure the Pages URL path first.' >&2
+  exit 1
+fi
+BASE_PATH=$(cat .github/pages-base-path)
+export BASE_PATH
+
+npm --prefix website run build
+test -f website/build/index.html
+git add -A -- website/build

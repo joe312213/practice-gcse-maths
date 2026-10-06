@@ -17,6 +17,8 @@ Directly authored `web_format.md` is protected; the progress requirements append
 
 ## Development workflows
 
+- [GitHub publishing and topics](../.github/PUBLISHING.md) — apply the configured repository topics when publishing.
+
 - [Code style requirements](CODE_STYLE.md) — implementation judgment, architectural discussion and proportionate testing.
 
 - [Code comments policy](CODE_COMMENTS.md) — applies to original source headers and function/body comments.

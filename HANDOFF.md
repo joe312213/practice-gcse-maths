@@ -20,6 +20,8 @@ Comment-policy retrofit is complete across 96 original website/tool/test, legacy
 
 Code style policy is now linked from AGENTS, INDEX and website/README, with a direct link to CODE_COMMENTS. DEV_LOG contains the condensed initial conversation as historical context before the October entries; INDEX points to that summary instead of the HTML export. `initial_chat2.html` remains in place for the user to remove. This documentation-only change does not require application/browser tests.
 
+Publishing setup: `.githooks/pre-commit` is executable but disabled: `core.hooksPath` was unset at the user’s request until publishing is ready. It builds locally and stages `website/build/`; `.github/workflows/deploy-pages.yml` deploys committed assets on pushes to main without a remote build. Build output is no longer ignored. Isolated hook checks passed (build failure blocks staging, new/deleted assets staged). Selected production build and browser checks passed after allowing the local server outside the sandbox; documentation links and whitespace checks passed. The Pages URL prefix is awaiting the user’s repository name; `.github/pages-base-path` must be created before re-enabling the hook. Ordinary commits currently do not build or stage production assets. No GitHub remote is configured and nothing has been published.
+
 ## Logical next work slices
 
 Suggested order, subject to user review; this outline is not automatic authorisation to implement every roadmap item.
@@ -33,7 +35,7 @@ Suggested order, subject to user review; this outline is not automatic authorisa
 ## Verification workflow and evidence
 
 - Default command from website/: `npm run verify:changed`. It selects checks from per-job content fingerprints, includes untracked/deleted inputs, retains successful evidence and reuses a verified current build. `-- --plan` previews; `-- --force` deliberately reruns everything mapped. First use establishes a baseline.
-- `npm run verify:watch` is opt-in, debounced and serial. No hook installed. Use one verification process at a time. Sandbox filesystem watching hit EMFILE; approved normal-environment smoke passed and stopped cleanly.
+- `npm run verify:watch` is opt-in, debounced and serial. The production pre-commit hook is retained but disabled at the user’s request until publishing is ready; verification watching remains opt-in. Use one verification process at a time. Sandbox filesystem watching hit EMFILE; approved normal-environment smoke passed and stopped cleanly.
 - The [.agents testing skill](.agents/skills/maths-efficient-development/SKILL.md) is rewritten and validated. [README](website/README.md#automated-change-selected-verification) documents selection, cache behaviour and limits. The map lives in website/scripts/verification/plan.mjs; update it for new feature families.
 - Baseline checks passed: 45 logic/dispatcher tests, docs, bank, Svelte, build, presentation, semantic colours, startup, Practice sets, Progress and activity integration. Controlled demo test is about 2.5s; integration about 13.5s. Confirmed unchanged runs select nothing and Markdown changes/watch events select docs only without rebuilding. Read named failure logs only; do not repeat passing checks or inspect screenshots without a specific visual question.
 - Ignored evidence/cache: website/test-results/verification/. Failed jobs retain no new success fingerprint. Build source/output hashes detect stale outputs. Historical/extended audits remain opt-in; local link checking does not validate anchors/external URLs or importer/source-deck parity.

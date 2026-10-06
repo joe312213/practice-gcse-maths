@@ -1,0 +1,4787 @@
+{
+  "schema": 1,
+  "revision": "8fedf7cbaee06dd3",
+  "subject": "maths",
+  "topic": "M10",
+  "title": "Solving equations",
+  "rows": [
+    "Simplify the Equation",
+    "Use Inverse Operations",
+    "Find the Unknown",
+    "Check by Substitution"
+  ],
+  "prompts": [
+    "Collect like terms or factorise if useful. Copy the equation with a line through the equals sign.",
+    "Write the same operation on both sides. Choose an operation that makes the equation simpler.",
+    "Continue until x is alone. Keep the left and right sides balanced.",
+    "Put your value into the original equation. Work out both sides and compare."
+  ],
+  "questions": [
+    {
+      "q": "x + 6 = 23",
+      "answer": "17",
+      "balance": [
+        {
+          "l": "x + 6",
+          "r": "23"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "17"
+        }
+      ],
+      "check": "At x = 17, left side = 23 and right side = 23.",
+      "wrong": "29",
+      "error_work": "x = 23 + 6 = 29",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "add",
+      "coefficients": [
+        "1",
+        "6",
+        "0",
+        "23"
+      ],
+      "id": "maths:M10-IA-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "assessment",
+      "level": 0
+    },
+    {
+      "q": "5x = 35",
+      "answer": "7",
+      "balance": [
+        {
+          "l": "5x",
+          "r": "35"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "check": "At x = 7, left side = 35 and right side = 35.",
+      "wrong": "30",
+      "error_work": "x = 35 − 5 = 30",
+      "error_note": "A coefficient multiplies x; undo it by dividing, not subtracting.",
+      "kind": "mul",
+      "coefficients": [
+        "5",
+        "0",
+        "0",
+        "35"
+      ],
+      "id": "maths:M10-IA-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "assessment",
+      "level": 0
+    },
+    {
+      "q": "3x − 4 = 23",
+      "answer": "9",
+      "balance": [
+        {
+          "l": "3x − 4",
+          "r": "23"
+        },
+        {
+          "l": "+ 4",
+          "r": "+ 4",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "27"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "9"
+        }
+      ],
+      "check": "At x = 9, left side = 23 and right side = 23.",
+      "wrong": "19/3",
+      "error_work": "3x = 23 − 4 = 19; x = 19/3",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "3",
+        "-4",
+        "0",
+        "23"
+      ],
+      "id": "maths:M10-IA-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "assessment",
+      "level": 1
+    },
+    {
+      "q": "2(x + 3) = x + 14",
+      "answer": "8",
+      "balance": [
+        {
+          "l": "2(x + 3)",
+          "r": "x + 14"
+        },
+        {
+          "l": "2x + 6",
+          "r": "x + 14"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "x + 6",
+          "r": "14"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "8"
+        },
+        {
+          "l": "÷ 1",
+          "r": "÷ 1",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "8"
+        }
+      ],
+      "check": "At x = 8, left side = 22 and right side = 22.",
+      "wrong": "8/3",
+      "error_work": "3x + 6 = 14; x = 8/3",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both_bracket",
+      "coefficients": [
+        "2",
+        "6",
+        "1",
+        "14"
+      ],
+      "id": "maths:M10-IA-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "assessment",
+      "level": 2
+    },
+    {
+      "q": "x − 7 = 5",
+      "answer": "12",
+      "balance": [
+        {
+          "l": "x − 7",
+          "r": "5"
+        },
+        {
+          "l": "+ 7",
+          "r": "+ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "12"
+        }
+      ],
+      "check": "At x = 12, left side = 5 and right side = 5.",
+      "wrong": "-2",
+      "error_work": "x = 5 − 7 = -2",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "sub",
+      "coefficients": [
+        "1",
+        "-7",
+        "0",
+        "5"
+      ],
+      "id": "maths:M10-S01-C1-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "demo",
+      "level": 0
+    },
+    {
+      "q": "4x + 3 = 31",
+      "answer": "7",
+      "balance": [
+        {
+          "l": "4x + 3",
+          "r": "31"
+        },
+        {
+          "l": "− 3",
+          "r": "− 3",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "28"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "check": "At x = 7, left side = 31 and right side = 31.",
+      "wrong": "8.5",
+      "error_work": "4x = 31 + 3 = 34; x = 8.5",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "4",
+        "3",
+        "0",
+        "31"
+      ],
+      "id": "maths:M10-S01-C2-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "demo",
+      "level": 1
+    },
+    {
+      "q": "3(x + 2) = x + 24",
+      "answer": "9",
+      "balance": [
+        {
+          "l": "3(x + 2)",
+          "r": "x + 24"
+        },
+        {
+          "l": "3x + 6",
+          "r": "x + 24"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "2x + 6",
+          "r": "24"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "18"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "9"
+        }
+      ],
+      "check": "At x = 9, left side = 33 and right side = 33.",
+      "wrong": "4.5",
+      "error_work": "4x + 6 = 24; x = 4.5",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both_bracket",
+      "coefficients": [
+        "3",
+        "6",
+        "1",
+        "24"
+      ],
+      "id": "maths:M10-S01-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "demo",
+      "level": 2
+    },
+    {
+      "q": "x − 8 = 15",
+      "answer": "23",
+      "balance": [
+        {
+          "l": "x − 8",
+          "r": "15"
+        },
+        {
+          "l": "+ 8",
+          "r": "+ 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "23"
+        }
+      ],
+      "check": "At x = 23, left side = 15 and right side = 15.",
+      "wrong": "7",
+      "error_work": "x = 15 − 8 = 7",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "sub",
+      "coefficients": [
+        "1",
+        "-8",
+        "0",
+        "15"
+      ],
+      "id": "maths:M10-S02-C1-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 0
+    },
+    {
+      "q": "5x + 7 = 37",
+      "answer": "6",
+      "balance": [
+        {
+          "l": "5x + 7",
+          "r": "37"
+        },
+        {
+          "l": "− 7",
+          "r": "− 7",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "30"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "6"
+        }
+      ],
+      "check": "At x = 6, left side = 37 and right side = 37.",
+      "wrong": "8.8",
+      "error_work": "5x = 37 + 7 = 44; x = 8.8",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "5",
+        "7",
+        "0",
+        "37"
+      ],
+      "id": "maths:M10-S02-C2-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 1
+    },
+    {
+      "q": "3(x + 4) = x + 20",
+      "answer": "4",
+      "balance": [
+        {
+          "l": "3(x + 4)",
+          "r": "x + 20"
+        },
+        {
+          "l": "3x + 12",
+          "r": "x + 20"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "2x + 12",
+          "r": "20"
+        },
+        {
+          "l": "− 12",
+          "r": "− 12",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "8"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "4"
+        }
+      ],
+      "check": "At x = 4, left side = 24 and right side = 24.",
+      "wrong": "2",
+      "error_work": "4x + 12 = 20; x = 2",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both_bracket",
+      "coefficients": [
+        "3",
+        "12",
+        "1",
+        "20"
+      ],
+      "id": "maths:M10-S02-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 2
+    },
+    {
+      "q": "6x = -18",
+      "answer": "-3",
+      "balance": [
+        {
+          "l": "6x",
+          "r": "-18"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-3"
+        }
+      ],
+      "check": "At x = -3, left side = -18 and right side = -18.",
+      "wrong": "-24",
+      "error_work": "x = -18 − 6 = -24",
+      "error_note": "A coefficient multiplies x; undo it by dividing, not subtracting.",
+      "kind": "mul",
+      "coefficients": [
+        "6",
+        "0",
+        "0",
+        "-18"
+      ],
+      "id": "maths:M10-S03-C1-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 0
+    },
+    {
+      "q": "4x − 9 = 23",
+      "answer": "8",
+      "balance": [
+        {
+          "l": "4x − 9",
+          "r": "23"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "32"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "8"
+        }
+      ],
+      "check": "At x = 8, left side = 23 and right side = 23.",
+      "wrong": "3.5",
+      "error_work": "4x = 23 − 9 = 14; x = 3.5",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "4",
+        "-9",
+        "0",
+        "23"
+      ],
+      "id": "maths:M10-S03-C2-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 1
+    },
+    {
+      "q": "5(x − 2) = 2x + 23",
+      "answer": "11",
+      "balance": [
+        {
+          "l": "5(x − 2)",
+          "r": "2x + 23"
+        },
+        {
+          "l": "5x − 10",
+          "r": "2x + 23"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "3x − 10",
+          "r": "23"
+        },
+        {
+          "l": "+ 10",
+          "r": "+ 10",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "33"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "11"
+        }
+      ],
+      "check": "At x = 11, left side = 45 and right side = 45.",
+      "wrong": "33/7",
+      "error_work": "7x − 10 = 23; x = 33/7",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both_bracket",
+      "coefficients": [
+        "5",
+        "-10",
+        "2",
+        "23"
+      ],
+      "id": "maths:M10-S03-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 2
+    },
+    {
+      "q": "x + 6 = -2",
+      "answer": "-8",
+      "balance": [
+        {
+          "l": "x + 6",
+          "r": "-2"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-8"
+        }
+      ],
+      "check": "At x = -8, left side = -2 and right side = -2.",
+      "wrong": "4",
+      "error_work": "x = -2 + 6 = 4",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "add",
+      "coefficients": [
+        "1",
+        "6",
+        "0",
+        "-2"
+      ],
+      "id": "maths:M10-S04-C1-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "8 = x − 6",
+      "answer": "14",
+      "balance": [
+        {
+          "l": "8",
+          "r": "x − 6"
+        },
+        {
+          "l": "x − 6",
+          "r": "8"
+        },
+        {
+          "l": "+ 6",
+          "r": "+ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "14"
+        }
+      ],
+      "check": "At x = 14, left side = 8 and right side = 8.",
+      "wrong": "2",
+      "error_work": "x = 8 − 6 = 2",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "sub",
+      "coefficients": [
+        "1",
+        "-6",
+        "0",
+        "8"
+      ],
+      "id": "maths:M10-S04-C1-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "x − 7 = 18",
+      "answer": "25",
+      "balance": [
+        {
+          "l": "x − 7",
+          "r": "18"
+        },
+        {
+          "l": "+ 7",
+          "r": "+ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "25"
+        }
+      ],
+      "check": "At x = 25, left side = 18 and right side = 18.",
+      "wrong": "11",
+      "error_work": "x = 18 − 7 = 11",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "sub",
+      "coefficients": [
+        "1",
+        "-7",
+        "0",
+        "18"
+      ],
+      "id": "maths:M10-S04-C1-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "x − 9 = -4",
+      "answer": "5",
+      "balance": [
+        {
+          "l": "x − 9",
+          "r": "-4"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5"
+        }
+      ],
+      "check": "At x = 5, left side = -4 and right side = -4.",
+      "wrong": "-13",
+      "error_work": "x = -4 − 9 = -13",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "sub",
+      "coefficients": [
+        "1",
+        "-9",
+        "0",
+        "-4"
+      ],
+      "id": "maths:M10-S04-C1-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "189 = 7x",
+      "answer": "27",
+      "balance": [
+        {
+          "l": "189",
+          "r": "7x"
+        },
+        {
+          "l": "7x",
+          "r": "189"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "27"
+        }
+      ],
+      "check": "At x = 27, left side = 189 and right side = 189.",
+      "wrong": "182",
+      "error_work": "x = 189 − 7 = 182",
+      "error_note": "A coefficient multiplies x; undo it by dividing, not subtracting.",
+      "kind": "mul",
+      "coefficients": [
+        "7",
+        "0",
+        "0",
+        "189"
+      ],
+      "id": "maths:M10-S04-C1-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "4x = 4",
+      "answer": "1",
+      "balance": [
+        {
+          "l": "4x",
+          "r": "4"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "1"
+        }
+      ],
+      "check": "At x = 1, left side = 4 and right side = 4.",
+      "wrong": "0",
+      "error_work": "x = 4 − 4 = 0",
+      "error_note": "A coefficient multiplies x; undo it by dividing, not subtracting.",
+      "kind": "mul",
+      "coefficients": [
+        "4",
+        "0",
+        "0",
+        "4"
+      ],
+      "id": "maths:M10-S04-C1-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "6x − 3 = 57",
+      "answer": "10",
+      "balance": [
+        {
+          "l": "6x − 3",
+          "r": "57"
+        },
+        {
+          "l": "+ 3",
+          "r": "+ 3",
+          "kind": "op"
+        },
+        {
+          "l": "6x",
+          "r": "60"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "10"
+        }
+      ],
+      "check": "At x = 10, left side = 57 and right side = 57.",
+      "wrong": "9",
+      "error_work": "6x = 57 − 3 = 54; x = 9",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "6",
+        "-3",
+        "0",
+        "57"
+      ],
+      "id": "maths:M10-S04-C2-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "8 + 7x = 71",
+      "answer": "9",
+      "balance": [
+        {
+          "l": "8 + 7x",
+          "r": "71"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "7x",
+          "r": "63"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "9"
+        }
+      ],
+      "check": "At x = 9, left side = 71 and right side = 71.",
+      "wrong": "79/7",
+      "error_work": "7x = 71 + 8 = 79; x = 79/7",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "reverse",
+      "coefficients": [
+        "7",
+        "8",
+        "0",
+        "71"
+      ],
+      "id": "maths:M10-S04-C2-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "7x + 6 = -29",
+      "answer": "-5",
+      "balance": [
+        {
+          "l": "7x + 6",
+          "r": "-29"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "7x",
+          "r": "-35"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-5"
+        }
+      ],
+      "check": "At x = -5, left side = -29 and right side = -29.",
+      "wrong": "-23/7",
+      "error_work": "7x = -29 + 6 = -23; x = -23/7",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "7",
+        "6",
+        "0",
+        "-29"
+      ],
+      "id": "maths:M10-S04-C2-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "-9 + 6x = 39",
+      "answer": "8",
+      "balance": [
+        {
+          "l": "-9 + 6x",
+          "r": "39"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "6x",
+          "r": "48"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "8"
+        }
+      ],
+      "check": "At x = 8, left side = 39 and right side = 39.",
+      "wrong": "5",
+      "error_work": "6x = 39 − 9 = 30; x = 5",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "reverse",
+      "coefficients": [
+        "6",
+        "-9",
+        "0",
+        "39"
+      ],
+      "id": "maths:M10-S04-C2-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "5x + x + 8 = 8",
+      "answer": "0",
+      "balance": [
+        {
+          "l": "5x + x + 8",
+          "r": "8"
+        },
+        {
+          "l": "6x + 8",
+          "r": "8"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "6x",
+          "r": "0"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "0"
+        }
+      ],
+      "check": "At x = 0, left side = 8 and right side = 8.",
+      "wrong": "8/3",
+      "error_work": "6x = 8 + 8 = 16; x = 8/3",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "collect",
+      "coefficients": [
+        "6",
+        "8",
+        "0",
+        "8"
+      ],
+      "id": "maths:M10-S04-C2-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "-3 + 2x = -11",
+      "answer": "-4",
+      "balance": [
+        {
+          "l": "-3 + 2x",
+          "r": "-11"
+        },
+        {
+          "l": "+ 3",
+          "r": "+ 3",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "-8"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-4"
+        }
+      ],
+      "check": "At x = -4, left side = -11 and right side = -11.",
+      "wrong": "-7",
+      "error_work": "2x = -11 − 3 = -14; x = -7",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "reverse",
+      "coefficients": [
+        "2",
+        "-3",
+        "0",
+        "-11"
+      ],
+      "id": "maths:M10-S04-C2-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "3(x − 3) = 2x − 11",
+      "answer": "-2",
+      "balance": [
+        {
+          "l": "3(x − 3)",
+          "r": "2x − 11"
+        },
+        {
+          "l": "3x − 9",
+          "r": "2x − 11"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "x − 9",
+          "r": "-11"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-2"
+        },
+        {
+          "l": "÷ 1",
+          "r": "÷ 1",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-2"
+        }
+      ],
+      "check": "At x = -2, left side = -15 and right side = -15.",
+      "wrong": "-0.4",
+      "error_work": "5x − 9 = -11; x = -0.4",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both_bracket",
+      "coefficients": [
+        "3",
+        "-9",
+        "2",
+        "-11"
+      ],
+      "id": "maths:M10-S04-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "5x + 10 = 20",
+      "answer": "2",
+      "balance": [
+        {
+          "l": "5x + 10",
+          "r": "20"
+        },
+        {
+          "l": "5(x + 2)",
+          "r": "20"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x + 2",
+          "r": "4"
+        },
+        {
+          "l": "− 2",
+          "r": "− 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "2"
+        }
+      ],
+      "check": "At x = 2, left side = 20 and right side = 20.",
+      "wrong": "-6",
+      "error_work": "x + 10 = 4; x = -6",
+      "error_note": "When dividing a whole side, divide every term. Factoring out the common factor makes this visible.",
+      "kind": "factor",
+      "coefficients": [
+        "5",
+        "10",
+        "0",
+        "20"
+      ],
+      "id": "maths:M10-S04-C3-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "3x + 12 = 9",
+      "answer": "-1",
+      "balance": [
+        {
+          "l": "3x + 12",
+          "r": "9"
+        },
+        {
+          "l": "3(x + 4)",
+          "r": "9"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x + 4",
+          "r": "3"
+        },
+        {
+          "l": "− 4",
+          "r": "− 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-1"
+        }
+      ],
+      "check": "At x = -1, left side = 9 and right side = 9.",
+      "wrong": "-9",
+      "error_work": "x + 12 = 3; x = -9",
+      "error_note": "When dividing a whole side, divide every term. Factoring out the common factor makes this visible.",
+      "kind": "factor",
+      "coefficients": [
+        "3",
+        "12",
+        "0",
+        "9"
+      ],
+      "id": "maths:M10-S04-C3-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "4x + 2 = x + 14",
+      "answer": "4",
+      "balance": [
+        {
+          "l": "4x + 2",
+          "r": "x + 14"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "3x + 2",
+          "r": "14"
+        },
+        {
+          "l": "− 2",
+          "r": "− 2",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "12"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "4"
+        }
+      ],
+      "check": "At x = 4, left side = 18 and right side = 18.",
+      "wrong": "2.4",
+      "error_work": "5x + 2 = 14; x = 2.4",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both",
+      "coefficients": [
+        "4",
+        "2",
+        "1",
+        "14"
+      ],
+      "id": "maths:M10-S04-C3-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "5(x − 3) = x + 69",
+      "answer": "21",
+      "balance": [
+        {
+          "l": "5(x − 3)",
+          "r": "x + 69"
+        },
+        {
+          "l": "5x − 15",
+          "r": "x + 69"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "4x − 15",
+          "r": "69"
+        },
+        {
+          "l": "+ 15",
+          "r": "+ 15",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "84"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "21"
+        }
+      ],
+      "check": "At x = 21, left side = 90 and right side = 90.",
+      "wrong": "14",
+      "error_work": "6x − 15 = 69; x = 14",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both_bracket",
+      "coefficients": [
+        "5",
+        "-15",
+        "1",
+        "69"
+      ],
+      "id": "maths:M10-S04-C3-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "6x + 12 = 126",
+      "answer": "19",
+      "balance": [
+        {
+          "l": "6x + 12",
+          "r": "126"
+        },
+        {
+          "l": "6(x + 2)",
+          "r": "126"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x + 2",
+          "r": "21"
+        },
+        {
+          "l": "− 2",
+          "r": "− 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "19"
+        }
+      ],
+      "check": "At x = 19, left side = 126 and right side = 126.",
+      "wrong": "9",
+      "error_work": "x + 12 = 21; x = 9",
+      "error_note": "When dividing a whole side, divide every term. Factoring out the common factor makes this visible.",
+      "kind": "factor",
+      "coefficients": [
+        "6",
+        "12",
+        "0",
+        "126"
+      ],
+      "id": "maths:M10-S04-C3-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "x + 8 = 28",
+      "answer": "20",
+      "balance": [
+        {
+          "l": "x + 8",
+          "r": "28"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "20"
+        }
+      ],
+      "check": "At x = 20, left side = 28 and right side = 28.",
+      "wrong": "36",
+      "error_work": "x = 28 + 8 = 36",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "add",
+      "coefficients": [
+        "1",
+        "8",
+        "0",
+        "28"
+      ],
+      "id": "maths:M10-S05-C1-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "-14 = x − 8",
+      "answer": "-6",
+      "balance": [
+        {
+          "l": "-14",
+          "r": "x − 8"
+        },
+        {
+          "l": "x − 8",
+          "r": "-14"
+        },
+        {
+          "l": "+ 8",
+          "r": "+ 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-6"
+        }
+      ],
+      "check": "At x = -6, left side = -14 and right side = -14.",
+      "wrong": "-22",
+      "error_work": "x = -14 − 8 = -22",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "sub",
+      "coefficients": [
+        "1",
+        "-8",
+        "0",
+        "-14"
+      ],
+      "id": "maths:M10-S05-C1-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "5x = 65",
+      "answer": "13",
+      "balance": [
+        {
+          "l": "5x",
+          "r": "65"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "13"
+        }
+      ],
+      "check": "At x = 13, left side = 65 and right side = 65.",
+      "wrong": "60",
+      "error_work": "x = 65 − 5 = 60",
+      "error_note": "A coefficient multiplies x; undo it by dividing, not subtracting.",
+      "kind": "mul",
+      "coefficients": [
+        "5",
+        "0",
+        "0",
+        "65"
+      ],
+      "id": "maths:M10-S05-C1-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "x ÷ 2 = 11",
+      "answer": "22",
+      "balance": [
+        {
+          "l": "x ÷ 2",
+          "r": "11"
+        },
+        {
+          "l": "× 2",
+          "r": "× 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "22"
+        }
+      ],
+      "check": "At x = 22, left side = 11 and right side = 11.",
+      "wrong": "5.5",
+      "error_work": "x = 11 ÷ 2 = 5.5",
+      "error_note": "Undo division by multiplying both sides.",
+      "kind": "div",
+      "coefficients": [
+        "0.5",
+        "0",
+        "0",
+        "11"
+      ],
+      "id": "maths:M10-S05-C1-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "27 = x + 9",
+      "answer": "18",
+      "balance": [
+        {
+          "l": "27",
+          "r": "x + 9"
+        },
+        {
+          "l": "x + 9",
+          "r": "27"
+        },
+        {
+          "l": "− 9",
+          "r": "− 9",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "18"
+        }
+      ],
+      "check": "At x = 18, left side = 27 and right side = 27.",
+      "wrong": "36",
+      "error_work": "x = 27 + 9 = 36",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "add",
+      "coefficients": [
+        "1",
+        "9",
+        "0",
+        "27"
+      ],
+      "id": "maths:M10-S05-C1-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "6x = 90",
+      "answer": "15",
+      "balance": [
+        {
+          "l": "6x",
+          "r": "90"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "15"
+        }
+      ],
+      "check": "At x = 15, left side = 90 and right side = 90.",
+      "wrong": "84",
+      "error_work": "x = 90 − 6 = 84",
+      "error_note": "A coefficient multiplies x; undo it by dividing, not subtracting.",
+      "kind": "mul",
+      "coefficients": [
+        "6",
+        "0",
+        "0",
+        "90"
+      ],
+      "id": "maths:M10-S05-C1-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "5x − 9 = -44",
+      "answer": "-7",
+      "balance": [
+        {
+          "l": "5x − 9",
+          "r": "-44"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "-35"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-7"
+        }
+      ],
+      "check": "At x = -7, left side = -44 and right side = -44.",
+      "wrong": "-10.6",
+      "error_work": "5x = -44 − 9 = -53; x = -10.6",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "5",
+        "-9",
+        "0",
+        "-44"
+      ],
+      "id": "maths:M10-S05-C2-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "4x + x + 6 = 121",
+      "answer": "23",
+      "balance": [
+        {
+          "l": "4x + x + 6",
+          "r": "121"
+        },
+        {
+          "l": "5x + 6",
+          "r": "121"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "115"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "23"
+        }
+      ],
+      "check": "At x = 23, left side = 121 and right side = 121.",
+      "wrong": "25.4",
+      "error_work": "5x = 121 + 6 = 127; x = 25.4",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "collect",
+      "coefficients": [
+        "5",
+        "6",
+        "0",
+        "121"
+      ],
+      "id": "maths:M10-S05-C2-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "5x + 8 = -7",
+      "answer": "-3",
+      "balance": [
+        {
+          "l": "5x + 8",
+          "r": "-7"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "-15"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-3"
+        }
+      ],
+      "check": "At x = -3, left side = -7 and right side = -7.",
+      "wrong": "0.2",
+      "error_work": "5x = -7 + 8 = 1; x = 0.2",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "5",
+        "8",
+        "0",
+        "-7"
+      ],
+      "id": "maths:M10-S05-C2-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "8 + 3x = 80",
+      "answer": "24",
+      "balance": [
+        {
+          "l": "8 + 3x",
+          "r": "80"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "72"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "24"
+        }
+      ],
+      "check": "At x = 24, left side = 80 and right side = 80.",
+      "wrong": "88/3",
+      "error_work": "3x = 80 + 8 = 88; x = 88/3",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "reverse",
+      "coefficients": [
+        "3",
+        "8",
+        "0",
+        "80"
+      ],
+      "id": "maths:M10-S05-C2-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "-5 + 3x = 73",
+      "answer": "26",
+      "balance": [
+        {
+          "l": "-5 + 3x",
+          "r": "73"
+        },
+        {
+          "l": "+ 5",
+          "r": "+ 5",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "78"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "26"
+        }
+      ],
+      "check": "At x = 26, left side = 73 and right side = 73.",
+      "wrong": "68/3",
+      "error_work": "3x = 73 − 5 = 68; x = 68/3",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "reverse",
+      "coefficients": [
+        "3",
+        "-5",
+        "0",
+        "73"
+      ],
+      "id": "maths:M10-S05-C2-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "4 + 2x = 18",
+      "answer": "7",
+      "balance": [
+        {
+          "l": "4 + 2x",
+          "r": "18"
+        },
+        {
+          "l": "− 4",
+          "r": "− 4",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "14"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "check": "At x = 7, left side = 18 and right side = 18.",
+      "wrong": "11",
+      "error_work": "2x = 18 + 4 = 22; x = 11",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "reverse",
+      "coefficients": [
+        "2",
+        "4",
+        "0",
+        "18"
+      ],
+      "id": "maths:M10-S05-C2-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "7(x − 5) = 2x + 50",
+      "answer": "17",
+      "balance": [
+        {
+          "l": "7(x − 5)",
+          "r": "2x + 50"
+        },
+        {
+          "l": "7x − 35",
+          "r": "2x + 50"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "5x − 35",
+          "r": "50"
+        },
+        {
+          "l": "+ 35",
+          "r": "+ 35",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "85"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "17"
+        }
+      ],
+      "check": "At x = 17, left side = 84 and right side = 84.",
+      "wrong": "85/9",
+      "error_work": "9x − 35 = 50; x = 85/9",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both_bracket",
+      "coefficients": [
+        "7",
+        "-35",
+        "2",
+        "50"
+      ],
+      "id": "maths:M10-S05-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "6(x + 2) = x + 92",
+      "answer": "16",
+      "balance": [
+        {
+          "l": "6(x + 2)",
+          "r": "x + 92"
+        },
+        {
+          "l": "6x + 12",
+          "r": "x + 92"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "5x + 12",
+          "r": "92"
+        },
+        {
+          "l": "− 12",
+          "r": "− 12",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "80"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "16"
+        }
+      ],
+      "check": "At x = 16, left side = 108 and right side = 108.",
+      "wrong": "80/7",
+      "error_work": "7x + 12 = 92; x = 80/7",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both_bracket",
+      "coefficients": [
+        "6",
+        "12",
+        "1",
+        "92"
+      ],
+      "id": "maths:M10-S05-C3-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "6(x − 5) = 3x − 12",
+      "answer": "6",
+      "balance": [
+        {
+          "l": "6(x − 5)",
+          "r": "3x − 12"
+        },
+        {
+          "l": "6x − 30",
+          "r": "3x − 12"
+        },
+        {
+          "l": "− 3x",
+          "r": "− 3x",
+          "kind": "op"
+        },
+        {
+          "l": "3x − 30",
+          "r": "-12"
+        },
+        {
+          "l": "+ 30",
+          "r": "+ 30",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "18"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "6"
+        }
+      ],
+      "check": "At x = 6, left side = 6 and right side = 6.",
+      "wrong": "2",
+      "error_work": "9x − 30 = -12; x = 2",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both_bracket",
+      "coefficients": [
+        "6",
+        "-30",
+        "3",
+        "-12"
+      ],
+      "id": "maths:M10-S05-C3-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "4x − 9 = 2x − 3",
+      "answer": "3",
+      "balance": [
+        {
+          "l": "4x − 9",
+          "r": "2x − 3"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "2x − 9",
+          "r": "-3"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "6"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "3"
+        }
+      ],
+      "check": "At x = 3, left side = 3 and right side = 3.",
+      "wrong": "1",
+      "error_work": "6x − 9 = -3; x = 1",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both",
+      "coefficients": [
+        "4",
+        "-9",
+        "2",
+        "-3"
+      ],
+      "id": "maths:M10-S05-C3-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "5(x − 7) = 4x − 23",
+      "answer": "12",
+      "balance": [
+        {
+          "l": "5(x − 7)",
+          "r": "4x − 23"
+        },
+        {
+          "l": "5x − 35",
+          "r": "4x − 23"
+        },
+        {
+          "l": "− 4x",
+          "r": "− 4x",
+          "kind": "op"
+        },
+        {
+          "l": "x − 35",
+          "r": "-23"
+        },
+        {
+          "l": "+ 35",
+          "r": "+ 35",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "12"
+        },
+        {
+          "l": "÷ 1",
+          "r": "÷ 1",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "12"
+        }
+      ],
+      "check": "At x = 12, left side = 25 and right side = 25.",
+      "wrong": "4/3",
+      "error_work": "9x − 35 = -23; x = 4/3",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both_bracket",
+      "coefficients": [
+        "5",
+        "-35",
+        "4",
+        "-23"
+      ],
+      "id": "maths:M10-S05-C3-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "3x + 15 = 108",
+      "answer": "31",
+      "balance": [
+        {
+          "l": "3x + 15",
+          "r": "108"
+        },
+        {
+          "l": "3(x + 5)",
+          "r": "108"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x + 5",
+          "r": "36"
+        },
+        {
+          "l": "− 5",
+          "r": "− 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "31"
+        }
+      ],
+      "check": "At x = 31, left side = 108 and right side = 108.",
+      "wrong": "21",
+      "error_work": "x + 15 = 36; x = 21",
+      "error_note": "When dividing a whole side, divide every term. Factoring out the common factor makes this visible.",
+      "kind": "factor",
+      "coefficients": [
+        "3",
+        "15",
+        "0",
+        "108"
+      ],
+      "id": "maths:M10-S05-C3-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "x − 8 = -10",
+      "answer": "-2",
+      "balance": [
+        {
+          "l": "x − 8",
+          "r": "-10"
+        },
+        {
+          "l": "+ 8",
+          "r": "+ 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-2"
+        }
+      ],
+      "check": "At x = -2, left side = -10 and right side = -10.",
+      "wrong": "-18",
+      "error_work": "x = -10 − 8 = -18",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "sub",
+      "coefficients": [
+        "1",
+        "-8",
+        "0",
+        "-10"
+      ],
+      "id": "maths:M10-S06-C1-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "x ÷ 3 = -1",
+      "answer": "-3",
+      "balance": [
+        {
+          "l": "x ÷ 3",
+          "r": "-1"
+        },
+        {
+          "l": "× 3",
+          "r": "× 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-3"
+        }
+      ],
+      "check": "At x = -3, left side = -1 and right side = -1.",
+      "wrong": "-1/3",
+      "error_work": "x = -1 ÷ 3 = -1/3",
+      "error_note": "Undo division by multiplying both sides.",
+      "kind": "div",
+      "coefficients": [
+        "1/3",
+        "0",
+        "0",
+        "-1"
+      ],
+      "id": "maths:M10-S06-C1-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "x ÷ 2 = 0",
+      "answer": "0",
+      "balance": [
+        {
+          "l": "x ÷ 2",
+          "r": "0"
+        },
+        {
+          "l": "× 2",
+          "r": "× 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "0"
+        }
+      ],
+      "check": "At x = 0, left side = 0 and right side = 0.",
+      "wrong": "0",
+      "error_work": "x = 0 ÷ 2 = 0",
+      "error_note": "Undo division by multiplying both sides.",
+      "kind": "div",
+      "coefficients": [
+        "0.5",
+        "0",
+        "0",
+        "0"
+      ],
+      "id": "maths:M10-S06-C1-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "x ÷ 2 = 2",
+      "answer": "4",
+      "balance": [
+        {
+          "l": "x ÷ 2",
+          "r": "2"
+        },
+        {
+          "l": "× 2",
+          "r": "× 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "4"
+        }
+      ],
+      "check": "At x = 4, left side = 2 and right side = 2.",
+      "wrong": "1",
+      "error_work": "x = 2 ÷ 2 = 1",
+      "error_note": "Undo division by multiplying both sides.",
+      "kind": "div",
+      "coefficients": [
+        "0.5",
+        "0",
+        "0",
+        "2"
+      ],
+      "id": "maths:M10-S06-C1-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "28 = x + 2",
+      "answer": "26",
+      "balance": [
+        {
+          "l": "28",
+          "r": "x + 2"
+        },
+        {
+          "l": "x + 2",
+          "r": "28"
+        },
+        {
+          "l": "− 2",
+          "r": "− 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "26"
+        }
+      ],
+      "check": "At x = 26, left side = 28 and right side = 28.",
+      "wrong": "30",
+      "error_work": "x = 28 + 2 = 30",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "add",
+      "coefficients": [
+        "1",
+        "2",
+        "0",
+        "28"
+      ],
+      "id": "maths:M10-S06-C1-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "x + 8 = 16",
+      "answer": "8",
+      "balance": [
+        {
+          "l": "x + 8",
+          "r": "16"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "8"
+        }
+      ],
+      "check": "At x = 8, left side = 16 and right side = 16.",
+      "wrong": "24",
+      "error_work": "x = 16 + 8 = 24",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "add",
+      "coefficients": [
+        "1",
+        "8",
+        "0",
+        "16"
+      ],
+      "id": "maths:M10-S06-C1-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "x + x − 9 = 33",
+      "answer": "21",
+      "balance": [
+        {
+          "l": "x + x − 9",
+          "r": "33"
+        },
+        {
+          "l": "2x − 9",
+          "r": "33"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "42"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "21"
+        }
+      ],
+      "check": "At x = 21, left side = 33 and right side = 33.",
+      "wrong": "12",
+      "error_work": "2x = 33 − 9 = 24; x = 12",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "collect",
+      "coefficients": [
+        "2",
+        "-9",
+        "0",
+        "33"
+      ],
+      "id": "maths:M10-S06-C2-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "2x + x − 9 = 21",
+      "answer": "10",
+      "balance": [
+        {
+          "l": "2x + x − 9",
+          "r": "21"
+        },
+        {
+          "l": "3x − 9",
+          "r": "21"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "30"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "10"
+        }
+      ],
+      "check": "At x = 10, left side = 21 and right side = 21.",
+      "wrong": "4",
+      "error_work": "3x = 21 − 9 = 12; x = 4",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "collect",
+      "coefficients": [
+        "3",
+        "-9",
+        "0",
+        "21"
+      ],
+      "id": "maths:M10-S06-C2-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "6x + x + 4 = 88",
+      "answer": "12",
+      "balance": [
+        {
+          "l": "6x + x + 4",
+          "r": "88"
+        },
+        {
+          "l": "7x + 4",
+          "r": "88"
+        },
+        {
+          "l": "− 4",
+          "r": "− 4",
+          "kind": "op"
+        },
+        {
+          "l": "7x",
+          "r": "84"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "12"
+        }
+      ],
+      "check": "At x = 12, left side = 88 and right side = 88.",
+      "wrong": "92/7",
+      "error_work": "7x = 88 + 4 = 92; x = 92/7",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "collect",
+      "coefficients": [
+        "7",
+        "4",
+        "0",
+        "88"
+      ],
+      "id": "maths:M10-S06-C2-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "8 + 6x = -22",
+      "answer": "-5",
+      "balance": [
+        {
+          "l": "8 + 6x",
+          "r": "-22"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "6x",
+          "r": "-30"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-5"
+        }
+      ],
+      "check": "At x = -5, left side = -22 and right side = -22.",
+      "wrong": "-7/3",
+      "error_work": "6x = -22 + 8 = -14; x = -7/3",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "reverse",
+      "coefficients": [
+        "6",
+        "8",
+        "0",
+        "-22"
+      ],
+      "id": "maths:M10-S06-C2-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "23 = 7x + 2",
+      "answer": "3",
+      "balance": [
+        {
+          "l": "23",
+          "r": "7x + 2"
+        },
+        {
+          "l": "7x + 2",
+          "r": "23"
+        },
+        {
+          "l": "− 2",
+          "r": "− 2",
+          "kind": "op"
+        },
+        {
+          "l": "7x",
+          "r": "21"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "3"
+        }
+      ],
+      "check": "At x = 3, left side = 23 and right side = 23.",
+      "wrong": "25/7",
+      "error_work": "7x = 23 + 2 = 25; x = 25/7",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "7",
+        "2",
+        "0",
+        "23"
+      ],
+      "id": "maths:M10-S06-C2-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "7x + 8 = 85",
+      "answer": "11",
+      "balance": [
+        {
+          "l": "7x + 8",
+          "r": "85"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "7x",
+          "r": "77"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "11"
+        }
+      ],
+      "check": "At x = 11, left side = 85 and right side = 85.",
+      "wrong": "93/7",
+      "error_work": "7x = 85 + 8 = 93; x = 93/7",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "7",
+        "8",
+        "0",
+        "85"
+      ],
+      "id": "maths:M10-S06-C2-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "6x + 4 = 3x + 79",
+      "answer": "25",
+      "balance": [
+        {
+          "l": "6x + 4",
+          "r": "3x + 79"
+        },
+        {
+          "l": "− 3x",
+          "r": "− 3x",
+          "kind": "op"
+        },
+        {
+          "l": "3x + 4",
+          "r": "79"
+        },
+        {
+          "l": "− 4",
+          "r": "− 4",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "75"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "25"
+        }
+      ],
+      "check": "At x = 25, left side = 154 and right side = 154.",
+      "wrong": "25/3",
+      "error_work": "9x + 4 = 79; x = 25/3",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both",
+      "coefficients": [
+        "6",
+        "4",
+        "3",
+        "79"
+      ],
+      "id": "maths:M10-S06-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "5(x + 6) = 165",
+      "answer": "27",
+      "balance": [
+        {
+          "l": "5(x + 6)",
+          "r": "165"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x + 6",
+          "r": "33"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "27"
+        }
+      ],
+      "check": "At x = 27, left side = 165 and right side = 165.",
+      "wrong": "31.8",
+      "error_work": "5x + 6 = 165; 5x = 159; x = 31.8",
+      "error_note": "The multiplier applies to every term in the bracket. Dividing both whole sides first is shorter here.",
+      "kind": "bracket",
+      "coefficients": [
+        "5",
+        "30",
+        "0",
+        "165"
+      ],
+      "id": "maths:M10-S06-C3-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "6x − 9 = 3x + 60",
+      "answer": "23",
+      "balance": [
+        {
+          "l": "6x − 9",
+          "r": "3x + 60"
+        },
+        {
+          "l": "− 3x",
+          "r": "− 3x",
+          "kind": "op"
+        },
+        {
+          "l": "3x − 9",
+          "r": "60"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "69"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "23"
+        }
+      ],
+      "check": "At x = 23, left side = 129 and right side = 129.",
+      "wrong": "23/3",
+      "error_work": "9x − 9 = 60; x = 23/3",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both",
+      "coefficients": [
+        "6",
+        "-9",
+        "3",
+        "60"
+      ],
+      "id": "maths:M10-S06-C3-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "2x − 6 = 12",
+      "answer": "9",
+      "balance": [
+        {
+          "l": "2x − 6",
+          "r": "12"
+        },
+        {
+          "l": "2(x − 3)",
+          "r": "12"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x − 3",
+          "r": "6"
+        },
+        {
+          "l": "+ 3",
+          "r": "+ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "9"
+        }
+      ],
+      "check": "At x = 9, left side = 12 and right side = 12.",
+      "wrong": "12",
+      "error_work": "x − 6 = 6; x = 12",
+      "error_note": "When dividing a whole side, divide every term. Factoring out the common factor makes this visible.",
+      "kind": "factor",
+      "coefficients": [
+        "2",
+        "-6",
+        "0",
+        "12"
+      ],
+      "id": "maths:M10-S06-C3-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "6(x − 3) = 90",
+      "answer": "18",
+      "balance": [
+        {
+          "l": "6(x − 3)",
+          "r": "90"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x − 3",
+          "r": "15"
+        },
+        {
+          "l": "+ 3",
+          "r": "+ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "18"
+        }
+      ],
+      "check": "At x = 18, left side = 90 and right side = 90.",
+      "wrong": "15.5",
+      "error_work": "6x − 3 = 90; 6x = 93; x = 15.5",
+      "error_note": "The multiplier applies to every term in the bracket. Dividing both whole sides first is shorter here.",
+      "kind": "bracket",
+      "coefficients": [
+        "6",
+        "-18",
+        "0",
+        "90"
+      ],
+      "id": "maths:M10-S06-C3-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "6x + 8 = 4x + 56",
+      "answer": "24",
+      "balance": [
+        {
+          "l": "6x + 8",
+          "r": "4x + 56"
+        },
+        {
+          "l": "− 4x",
+          "r": "− 4x",
+          "kind": "op"
+        },
+        {
+          "l": "2x + 8",
+          "r": "56"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "48"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "24"
+        }
+      ],
+      "check": "At x = 24, left side = 152 and right side = 152.",
+      "wrong": "4.8",
+      "error_work": "10x + 8 = 56; x = 4.8",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both",
+      "coefficients": [
+        "6",
+        "8",
+        "4",
+        "56"
+      ],
+      "id": "maths:M10-S06-C3-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "7x = 140",
+      "answer": "20",
+      "balance": [
+        {
+          "l": "7x",
+          "r": "140"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "20"
+        }
+      ],
+      "check": "At x = 20, left side = 140 and right side = 140.",
+      "wrong": "133",
+      "error_work": "x = 140 − 7 = 133",
+      "error_note": "A coefficient multiplies x; undo it by dividing, not subtracting.",
+      "kind": "mul",
+      "coefficients": [
+        "7",
+        "0",
+        "0",
+        "140"
+      ],
+      "id": "maths:M10-S07-C1-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "11 = x − 6",
+      "answer": "17",
+      "balance": [
+        {
+          "l": "11",
+          "r": "x − 6"
+        },
+        {
+          "l": "x − 6",
+          "r": "11"
+        },
+        {
+          "l": "+ 6",
+          "r": "+ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "17"
+        }
+      ],
+      "check": "At x = 17, left side = 11 and right side = 11.",
+      "wrong": "5",
+      "error_work": "x = 11 − 6 = 5",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "sub",
+      "coefficients": [
+        "1",
+        "-6",
+        "0",
+        "11"
+      ],
+      "id": "maths:M10-S07-C1-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "x ÷ 5 = 22",
+      "answer": "110",
+      "balance": [
+        {
+          "l": "x ÷ 5",
+          "r": "22"
+        },
+        {
+          "l": "× 5",
+          "r": "× 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "110"
+        }
+      ],
+      "check": "At x = 110, left side = 22 and right side = 22.",
+      "wrong": "4.4",
+      "error_work": "x = 22 ÷ 5 = 4.4",
+      "error_note": "Undo division by multiplying both sides.",
+      "kind": "div",
+      "coefficients": [
+        "0.2",
+        "0",
+        "0",
+        "22"
+      ],
+      "id": "maths:M10-S07-C1-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "2x = 2",
+      "answer": "1",
+      "balance": [
+        {
+          "l": "2x",
+          "r": "2"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "1"
+        }
+      ],
+      "check": "At x = 1, left side = 2 and right side = 2.",
+      "wrong": "0",
+      "error_work": "x = 2 − 2 = 0",
+      "error_note": "A coefficient multiplies x; undo it by dividing, not subtracting.",
+      "kind": "mul",
+      "coefficients": [
+        "2",
+        "0",
+        "0",
+        "2"
+      ],
+      "id": "maths:M10-S07-C1-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "x ÷ 2 = 5",
+      "answer": "10",
+      "balance": [
+        {
+          "l": "x ÷ 2",
+          "r": "5"
+        },
+        {
+          "l": "× 2",
+          "r": "× 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "10"
+        }
+      ],
+      "check": "At x = 10, left side = 5 and right side = 5.",
+      "wrong": "2.5",
+      "error_work": "x = 5 ÷ 2 = 2.5",
+      "error_note": "Undo division by multiplying both sides.",
+      "kind": "div",
+      "coefficients": [
+        "0.5",
+        "0",
+        "0",
+        "5"
+      ],
+      "id": "maths:M10-S07-C1-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "x + 7 = 1",
+      "answer": "-6",
+      "balance": [
+        {
+          "l": "x + 7",
+          "r": "1"
+        },
+        {
+          "l": "− 7",
+          "r": "− 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-6"
+        }
+      ],
+      "check": "At x = -6, left side = 1 and right side = 1.",
+      "wrong": "8",
+      "error_work": "x = 1 + 7 = 8",
+      "error_note": "The added/subtracted amount must be undone using its inverse.",
+      "kind": "add",
+      "coefficients": [
+        "1",
+        "7",
+        "0",
+        "1"
+      ],
+      "id": "maths:M10-S07-C1-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0
+    },
+    {
+      "q": "3x − 3 = 54",
+      "answer": "19",
+      "balance": [
+        {
+          "l": "3x − 3",
+          "r": "54"
+        },
+        {
+          "l": "+ 3",
+          "r": "+ 3",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "57"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "19"
+        }
+      ],
+      "check": "At x = 19, left side = 54 and right side = 54.",
+      "wrong": "17",
+      "error_work": "3x = 54 − 3 = 51; x = 17",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "3",
+        "-3",
+        "0",
+        "54"
+      ],
+      "id": "maths:M10-S07-C2-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "6x + x − 5 = 100",
+      "answer": "15",
+      "balance": [
+        {
+          "l": "6x + x − 5",
+          "r": "100"
+        },
+        {
+          "l": "7x − 5",
+          "r": "100"
+        },
+        {
+          "l": "+ 5",
+          "r": "+ 5",
+          "kind": "op"
+        },
+        {
+          "l": "7x",
+          "r": "105"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "15"
+        }
+      ],
+      "check": "At x = 15, left side = 100 and right side = 100.",
+      "wrong": "95/7",
+      "error_work": "7x = 100 − 5 = 95; x = 95/7",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "collect",
+      "coefficients": [
+        "7",
+        "-5",
+        "0",
+        "100"
+      ],
+      "id": "maths:M10-S07-C2-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "4x + 2 = 26",
+      "answer": "6",
+      "balance": [
+        {
+          "l": "4x + 2",
+          "r": "26"
+        },
+        {
+          "l": "− 2",
+          "r": "− 2",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "24"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "6"
+        }
+      ],
+      "check": "At x = 6, left side = 26 and right side = 26.",
+      "wrong": "7",
+      "error_work": "4x = 26 + 2 = 28; x = 7",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "two",
+      "coefficients": [
+        "4",
+        "2",
+        "0",
+        "26"
+      ],
+      "id": "maths:M10-S07-C2-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "x + x − 3 = -11",
+      "answer": "-4",
+      "balance": [
+        {
+          "l": "x + x − 3",
+          "r": "-11"
+        },
+        {
+          "l": "2x − 3",
+          "r": "-11"
+        },
+        {
+          "l": "+ 3",
+          "r": "+ 3",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "-8"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-4"
+        }
+      ],
+      "check": "At x = -4, left side = -11 and right side = -11.",
+      "wrong": "-7",
+      "error_work": "2x = -11 − 3 = -14; x = -7",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "collect",
+      "coefficients": [
+        "2",
+        "-3",
+        "0",
+        "-11"
+      ],
+      "id": "maths:M10-S07-C2-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "6 + 2x = -10",
+      "answer": "-8",
+      "balance": [
+        {
+          "l": "6 + 2x",
+          "r": "-10"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "-16"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-8"
+        }
+      ],
+      "check": "At x = -8, left side = -10 and right side = -10.",
+      "wrong": "-2",
+      "error_work": "2x = -10 + 6 = -4; x = -2",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "reverse",
+      "coefficients": [
+        "2",
+        "6",
+        "0",
+        "-10"
+      ],
+      "id": "maths:M10-S07-C2-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "5x + x − 9 = 69",
+      "answer": "13",
+      "balance": [
+        {
+          "l": "5x + x − 9",
+          "r": "69"
+        },
+        {
+          "l": "6x − 9",
+          "r": "69"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "6x",
+          "r": "78"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "13"
+        }
+      ],
+      "check": "At x = 13, left side = 69 and right side = 69.",
+      "wrong": "10",
+      "error_work": "6x = 69 − 9 = 60; x = 10",
+      "error_note": "Undo the constant with its inverse on both sides before dividing.",
+      "kind": "collect",
+      "coefficients": [
+        "6",
+        "-9",
+        "0",
+        "69"
+      ],
+      "id": "maths:M10-S07-C2-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1
+    },
+    {
+      "q": "4(x + 6) = 80",
+      "answer": "14",
+      "balance": [
+        {
+          "l": "4(x + 6)",
+          "r": "80"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x + 6",
+          "r": "20"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "14"
+        }
+      ],
+      "check": "At x = 14, left side = 80 and right side = 80.",
+      "wrong": "18.5",
+      "error_work": "4x + 6 = 80; 4x = 74; x = 18.5",
+      "error_note": "The multiplier applies to every term in the bracket. Dividing both whole sides first is shorter here.",
+      "kind": "bracket",
+      "coefficients": [
+        "4",
+        "24",
+        "0",
+        "80"
+      ],
+      "id": "maths:M10-S07-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "2x − 14 = -6",
+      "answer": "4",
+      "balance": [
+        {
+          "l": "2x − 14",
+          "r": "-6"
+        },
+        {
+          "l": "2(x − 7)",
+          "r": "-6"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x − 7",
+          "r": "-3"
+        },
+        {
+          "l": "+ 7",
+          "r": "+ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "4"
+        }
+      ],
+      "check": "At x = 4, left side = -6 and right side = -6.",
+      "wrong": "11",
+      "error_work": "x − 14 = -3; x = 11",
+      "error_note": "When dividing a whole side, divide every term. Factoring out the common factor makes this visible.",
+      "kind": "factor",
+      "coefficients": [
+        "2",
+        "-14",
+        "0",
+        "-6"
+      ],
+      "id": "maths:M10-S07-C3-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "4(x − 3) = -24",
+      "answer": "-3",
+      "balance": [
+        {
+          "l": "4(x − 3)",
+          "r": "-24"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x − 3",
+          "r": "-6"
+        },
+        {
+          "l": "+ 3",
+          "r": "+ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-3"
+        }
+      ],
+      "check": "At x = -3, left side = -24 and right side = -24.",
+      "wrong": "-5.25",
+      "error_work": "4x − 3 = -24; 4x = -21; x = -5.25",
+      "error_note": "The multiplier applies to every term in the bracket. Dividing both whole sides first is shorter here.",
+      "kind": "bracket",
+      "coefficients": [
+        "4",
+        "-12",
+        "0",
+        "-24"
+      ],
+      "id": "maths:M10-S07-C3-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "3x + 8 = x + 40",
+      "answer": "16",
+      "balance": [
+        {
+          "l": "3x + 8",
+          "r": "x + 40"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "2x + 8",
+          "r": "40"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "32"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "16"
+        }
+      ],
+      "check": "At x = 16, left side = 56 and right side = 56.",
+      "wrong": "8",
+      "error_work": "4x + 8 = 40; x = 8",
+      "error_note": "Remove an x-term by subtracting it from both sides; do not change just one side or add unlike terms.",
+      "kind": "both",
+      "coefficients": [
+        "3",
+        "8",
+        "1",
+        "40"
+      ],
+      "id": "maths:M10-S07-C3-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "5(x + 4) = -15",
+      "answer": "-7",
+      "balance": [
+        {
+          "l": "5(x + 4)",
+          "r": "-15"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x + 4",
+          "r": "-3"
+        },
+        {
+          "l": "− 4",
+          "r": "− 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-7"
+        }
+      ],
+      "check": "At x = -7, left side = -15 and right side = -15.",
+      "wrong": "-3.8",
+      "error_work": "5x + 4 = -15; 5x = -19; x = -3.8",
+      "error_note": "The multiplier applies to every term in the bracket. Dividing both whole sides first is shorter here.",
+      "kind": "bracket",
+      "coefficients": [
+        "5",
+        "20",
+        "0",
+        "-15"
+      ],
+      "id": "maths:M10-S07-C3-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "7(x + 6) = 91",
+      "answer": "7",
+      "balance": [
+        {
+          "l": "7(x + 6)",
+          "r": "91"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x + 6",
+          "r": "13"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "check": "At x = 7, left side = 91 and right side = 91.",
+      "wrong": "85/7",
+      "error_work": "7x + 6 = 91; 7x = 85; x = 85/7",
+      "error_note": "The multiplier applies to every term in the bracket. Dividing both whole sides first is shorter here.",
+      "kind": "bracket",
+      "coefficients": [
+        "7",
+        "42",
+        "0",
+        "91"
+      ],
+      "id": "maths:M10-S07-C3-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2
+    },
+    {
+      "q": "x + 8 = 19",
+      "answer": "11",
+      "wrong": "27",
+      "balance": [
+        {
+          "l": "x + 8",
+          "r": "19"
+        },
+        {
+          "l": "+ 8",
+          "r": "+ 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "27"
+        }
+      ],
+      "correction": "Adding 8 does not undo +8. Subtract 8 from both sides: x = 11.",
+      "check": "11 + 8 = 19.",
+      "correct_balance": [
+        {
+          "l": "x + 8",
+          "r": "19"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "11"
+        }
+      ],
+      "id": "maths:M10-SE-C1-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "errors": [
+        {
+          "row": 1,
+          "reason": "inverse",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "+ 8 | + 8"
+        },
+        {
+          "id": "fix",
+          "text": "− 8 | − 8"
+        },
+        {
+          "id": "wrong2",
+          "text": "÷ 8 | ÷ 8"
+        }
+      ]
+    },
+    {
+      "q": "x − 5 = 8",
+      "answer": "13",
+      "wrong": "3",
+      "balance": [
+        {
+          "l": "x − 5",
+          "r": "8"
+        },
+        {
+          "l": "− 5",
+          "r": "− 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "3"
+        }
+      ],
+      "correction": "Undo −5 by adding 5 to both sides: x = 13.",
+      "check": "13 − 5 = 8.",
+      "correct_balance": [
+        {
+          "l": "x − 5",
+          "r": "8"
+        },
+        {
+          "l": "+ 5",
+          "r": "+ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "13"
+        }
+      ],
+      "id": "maths:M10-SE-C1-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "errors": [
+        {
+          "row": 1,
+          "reason": "inverse",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "− 5 | − 5"
+        },
+        {
+          "id": "fix",
+          "text": "+ 5 | + 5"
+        },
+        {
+          "id": "wrong2",
+          "text": "÷ 5 | ÷ 5"
+        }
+      ]
+    },
+    {
+      "q": "6x = 24",
+      "answer": "4",
+      "wrong": "18",
+      "balance": [
+        {
+          "l": "6x",
+          "r": "24"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "18"
+        }
+      ],
+      "correction": "6x means 6 times x. Divide both sides by 6: x = 4.",
+      "check": "6 × 4 = 24.",
+      "correct_balance": [
+        {
+          "l": "6x",
+          "r": "24"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "4"
+        }
+      ],
+      "id": "maths:M10-SE-C1-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "errors": [
+        {
+          "row": 1,
+          "reason": "multiply",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "− 6 | − 6"
+        },
+        {
+          "id": "fix",
+          "text": "÷ 6 | ÷ 6"
+        },
+        {
+          "id": "wrong2",
+          "text": "× 6 | × 6"
+        }
+      ]
+    },
+    {
+      "q": "3x + 6 = 30",
+      "answer": "8",
+      "wrong": "12",
+      "balance": [
+        {
+          "l": "3x + 6",
+          "r": "30"
+        },
+        {
+          "l": "− 6",
+          "r": "+ 6",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "36"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "12"
+        }
+      ],
+      "correction": "The operations differ across the line. Subtract 6 from both sides: 3x = 24, so x = 8.",
+      "check": "3 × 8 + 6 = 30.",
+      "correct_balance": [
+        {
+          "l": "3x + 6",
+          "r": "30"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "24"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "8"
+        }
+      ],
+      "id": "maths:M10-SE-C2-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "errors": [
+        {
+          "row": 1,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "+ 6 | + 6"
+        },
+        {
+          "id": "fix",
+          "text": "− 6 | − 6"
+        },
+        {
+          "id": "wrong2",
+          "text": "− 6 | + 6"
+        }
+      ]
+    },
+    {
+      "q": "4x − 8 = 16",
+      "answer": "6",
+      "wrong": "2",
+      "balance": [
+        {
+          "l": "4x − 8",
+          "r": "16"
+        },
+        {
+          "l": "+ 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "8"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "2"
+        }
+      ],
+      "correction": "Add 8 to both sides: 4x = 24, then x = 6.",
+      "check": "4 × 6 − 8 = 16.",
+      "correct_balance": [
+        {
+          "l": "4x − 8",
+          "r": "16"
+        },
+        {
+          "l": "+ 8",
+          "r": "+ 8",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "24"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "6"
+        }
+      ],
+      "id": "maths:M10-SE-C2-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "errors": [
+        {
+          "row": 1,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "− 8 | − 8"
+        },
+        {
+          "id": "fix",
+          "text": "+ 8 | + 8"
+        },
+        {
+          "id": "wrong2",
+          "text": "+ 8 | − 8"
+        }
+      ]
+    },
+    {
+      "q": "5x + 10 = 45",
+      "answer": "7",
+      "wrong": "-1",
+      "balance": [
+        {
+          "l": "5x + 10",
+          "r": "45"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x + 10",
+          "r": "9"
+        },
+        {
+          "l": "− 10",
+          "r": "− 10",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "−1"
+        }
+      ],
+      "correction": "The entire left side must be divided: x + 2 = 9, so x = 7. Alternatively subtract 10 first.",
+      "check": "5 × 7 + 10 = 45.",
+      "correct_balance": [
+        {
+          "l": "5x + 10",
+          "r": "45"
+        },
+        {
+          "l": "− 10",
+          "r": "− 10",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "35"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "id": "maths:M10-SE-C2-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "errors": [
+        {
+          "row": 2,
+          "reason": "whole_side",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "x + 10 = 9"
+        },
+        {
+          "id": "fix",
+          "text": "x + 2 = 9"
+        },
+        {
+          "id": "wrong2",
+          "text": "x + 5 = 9"
+        }
+      ]
+    },
+    {
+      "q": "2(x + 5) = 30",
+      "answer": "10",
+      "wrong": "12.5",
+      "balance": [
+        {
+          "l": "2(x + 5)",
+          "r": "30"
+        },
+        {
+          "l": "2x + 5",
+          "r": "30"
+        },
+        {
+          "l": "− 5",
+          "r": "− 5",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "25"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "12.5"
+        }
+      ],
+      "correction": "Multiply both bracket terms by 2: 2x + 10 = 30. A shorter route is divide both sides by 2 first: x + 5 = 15, then x = 10.",
+      "check": "2 × (10 + 5) = 30.",
+      "correct_balance": [
+        {
+          "l": "2(x + 5)",
+          "r": "30"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x + 5",
+          "r": "15"
+        },
+        {
+          "l": "− 5",
+          "r": "− 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "10"
+        }
+      ],
+      "id": "maths:M10-SE-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "errors": [
+        {
+          "row": 1,
+          "reason": "expand",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "2x + 5 = 30"
+        },
+        {
+          "id": "fix",
+          "text": "2x + 10 = 30"
+        },
+        {
+          "id": "wrong2",
+          "text": "x + 10 = 30"
+        }
+      ]
+    },
+    {
+      "q": "4x + 3 = 2x + 33",
+      "answer": "15",
+      "wrong": "5",
+      "balance": [
+        {
+          "l": "4x + 3",
+          "r": "2x + 33"
+        },
+        {
+          "l": "+ 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "6x + 3",
+          "r": "33"
+        },
+        {
+          "l": "− 3",
+          "r": "− 3",
+          "kind": "op"
+        },
+        {
+          "l": "6x",
+          "r": "30"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5"
+        }
+      ],
+      "correction": "Subtract 2x from both sides: 2x + 3 = 33; 2x = 30; x = 15.",
+      "check": "4 × 15 + 3 = 2 × 15 + 33 = 63.",
+      "correct_balance": [
+        {
+          "l": "4x + 3",
+          "r": "2x + 33"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "2x + 3",
+          "r": "33"
+        },
+        {
+          "l": "− 3",
+          "r": "− 3",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "30"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "15"
+        }
+      ],
+      "id": "maths:M10-SE-C3-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "errors": [
+        {
+          "row": 1,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "+ 2x | − 2x"
+        },
+        {
+          "id": "fix",
+          "text": "− 2x | − 2x"
+        },
+        {
+          "id": "wrong2",
+          "text": "− 2x | + 2x"
+        }
+      ]
+    },
+    {
+      "q": "3(x − 4) = x − 16",
+      "answer": "-2",
+      "wrong": "-6",
+      "balance": [
+        {
+          "l": "3(x − 4)",
+          "r": "x − 16"
+        },
+        {
+          "l": "3x − 4",
+          "r": "x − 16"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "2x − 4",
+          "r": "−16"
+        },
+        {
+          "l": "+ 4",
+          "r": "+ 4",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "−12"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "−6"
+        }
+      ],
+      "correction": "Expand the whole bracket: 3x − 12 = x − 16. Subtract x, then add 12: 2x = −4, so x = −2.",
+      "check": "3 × (−2 − 4) = −2 − 16 = −18.",
+      "correct_balance": [
+        {
+          "l": "3(x − 4)",
+          "r": "x − 16"
+        },
+        {
+          "l": "3x − 12",
+          "r": "x − 16"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "2x − 12",
+          "r": "-16"
+        },
+        {
+          "l": "+ 12",
+          "r": "+ 12",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "-4"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-2"
+        }
+      ],
+      "id": "maths:M10-SE-C3-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "errors": [
+        {
+          "row": 1,
+          "reason": "expand",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "3x − 4 = x − 16"
+        },
+        {
+          "id": "fix",
+          "text": "3x − 12 = x − 16"
+        },
+        {
+          "id": "wrong2",
+          "text": "3x + 12 = x − 16"
+        }
+      ]
+    },
+    {
+      "id": "maths:M10-SE2-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "q": "2(x + 3) = x + 16",
+      "answer": "10",
+      "wrong": "19",
+      "coefficients": [
+        "2",
+        "6",
+        "1",
+        "16"
+      ],
+      "balance": [
+        {
+          "l": "2(x + 3)",
+          "r": "x + 16"
+        },
+        {
+          "l": "2x + 3",
+          "r": "x + 16"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "x + 3",
+          "r": "16"
+        },
+        {
+          "l": "+ 3",
+          "r": "+ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "19"
+        }
+      ],
+      "correct_balance": [
+        {
+          "l": "2(x + 3)",
+          "r": "x + 16"
+        },
+        {
+          "l": "2x + 6",
+          "r": "x + 16"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "x + 6",
+          "r": "16"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "10"
+        }
+      ],
+      "correction": "Row 2: multiply both bracket terms by 2. Row 5: adding 3 does not undo the +3 shown above it; subtract 3 from both sides of that displayed line. To solve the original equation correctly, expand to 2x + 6 = x + 16, subtract x, then subtract 6: x = 10.",
+      "check": "2 × (10 + 3) = 10 + 16 = 26.",
+      "errors": [
+        {
+          "row": 1,
+          "reason": "expand",
+          "correction": "expandFix"
+        },
+        {
+          "row": 4,
+          "reason": "inverse",
+          "correction": "inverseFix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrongExpand",
+          "text": "2x + 3 = x + 16"
+        },
+        {
+          "id": "inverseFix",
+          "text": "− 3 | − 3"
+        },
+        {
+          "id": "expandFix",
+          "text": "2x + 6 = x + 16"
+        },
+        {
+          "id": "wrongInverse",
+          "text": "+ 3 | + 3"
+        }
+      ]
+    }
+  ],
+  "recap": [
+    {
+      "title": "Keep the balance",
+      "balance": [
+        {
+          "l": "x + 7",
+          "r": "19"
+        },
+        {
+          "l": "− 7",
+          "r": "− 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "12"
+        }
+      ],
+      "notes": [
+        "Do the same operation to both whole sides.",
+        "Undo addition/subtraction before a remaining multiplication or division.",
+        "A negative divided by a positive is negative: −12 ÷ 3 = −4."
+      ]
+    },
+    {
+      "title": "Simplify or factorise",
+      "balance": [
+        {
+          "l": "6x + 12",
+          "r": "30"
+        },
+        {
+          "l": "6(x + 2)",
+          "r": "30"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x + 2",
+          "r": "5"
+        },
+        {
+          "l": "− 2",
+          "r": "− 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "3"
+        }
+      ],
+      "notes": [
+        "Collect like terms: 2x + 3x = 5x.",
+        "A common factor belongs to every term: 6x + 12 = 6(x + 2)."
+      ]
+    },
+    {
+      "title": "Choose a short first step",
+      "balance": [
+        {
+          "l": "3(x + 4)",
+          "r": "27"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x + 4",
+          "r": "9"
+        },
+        {
+          "l": "− 4",
+          "r": "− 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5"
+        }
+      ],
+      "notes": [
+        "Here, divide by 3 before expanding.",
+        "With x on both sides, subtract the smaller x-term first when convenient.",
+        "If expanding is needed, multiply every bracket term. Check in the original equation."
+      ]
+    }
+  ],
+  "teaching": {
+    "guidance": [
+      {
+        "aim": "Find the value of one x. Undo the operation attached to x, using the same operation on both sides.",
+        "steps": [
+          "Choose the opposite operation to undo what is happening to x.",
+          "Do it to both sides, then check your value in the original equation."
+        ]
+      },
+      {
+        "aim": "Leave the x-term on one side, then find the value of one x. Keep both sides equal at every step.",
+        "steps": [
+          "Collect like terms if needed. Undo the added or subtracted number on both sides.",
+          "Divide both sides by the number multiplying x, so that one x remains.",
+          "Substitute your value into the original equation to check it."
+        ]
+      },
+      {
+        "aim": "Gather the x-terms on one side, then find the value of one x. Choose operations that make the equation simpler.",
+        "steps": [
+          "Simplify each side. Expand every bracket term, or divide out a common factor when that is shorter.",
+          "Add or subtract the same x-term on both sides to leave x on just one side.",
+          "Undo the remaining constant, then divide by the coefficient to leave one x.",
+          "Check your value in the original equation, including its brackets."
+        ]
+      }
+    ],
+    "demoAnnotations": [
+      [
+        "We want x on its own. Here, 7 is being subtracted from x.",
+        "Add 7 to both sides to undo subtracting 7. The two sides stay equal.",
+        "The −7 and +7 cancel, leaving one x. On the right, 5 + 7 = 12."
+      ],
+      [
+        "First isolate the term 4x, then find the value of one x.",
+        "Subtract 3 from both sides to remove the +3 beside 4x.",
+        "This leaves 4x = 28: four lots of x have a total of 28.",
+        "Divide both sides by 4 because 4x means four times x.",
+        "One x remains. Its value is 28 ÷ 4 = 7."
+      ],
+      [
+        "There are x-terms on both sides. Expand first, then gather those terms on one side.",
+        "Multiply every term inside the bracket by 3: 3 × x + 3 × 2 = 3x + 6.",
+        "Subtract x from both sides. This removes the smaller x-term on the right.",
+        "On the left, 3x − x = 2x. The right side is now just 24.",
+        "Subtract 6 from both sides to leave the term 2x on its own.",
+        "Two lots of x equal 18. We still need the value of one x.",
+        "Divide both sides by 2 to change 2x into one x.",
+        "One x equals 9. Substitute 9 into the original brackets to check."
+      ]
+    ],
+    "recapAnnotations": [
+      [
+        "Undo the +7 to leave one x.",
+        "Subtract 7 from both sides to keep the equation balanced.",
+        "19 − 7 = 12, so x = 12."
+      ],
+      [
+        "Every term is divisible by 6. A common factor can simplify the equation.",
+        "6 is a common factor of both terms on the left: 6x + 12 = 6(x + 2).",
+        "Divide both whole sides by 6. This removes the outside multiplier.",
+        "30 ÷ 6 = 5, so x + 2 = 5.",
+        "Subtract 2 from both sides to leave one x.",
+        "5 − 2 = 3, so x = 3."
+      ],
+      [
+        "Both sides have a factor of 3. Dividing first is shorter than expanding here.",
+        "3 is a common factor, so divide both sides by 3 to simplify.",
+        "The bracket becomes x + 4, and 27 ÷ 3 = 9.",
+        "Subtract 4 from both sides to leave one x.",
+        "9 − 4 = 5, so x = 5."
+      ]
+    ],
+    "errorReasons": [
+      {
+        "id": "inverse",
+        "label": "Addition or subtraction was not undone using its inverse."
+      },
+      {
+        "id": "balance",
+        "label": "Different operations were applied to the two sides."
+      },
+      {
+        "id": "multiply",
+        "label": "A coefficient multiplies x; subtracting it does not undo it."
+      },
+      {
+        "id": "whole_side",
+        "label": "Division was not applied to every term on a side."
+      },
+      {
+        "id": "expand",
+        "label": "The multiplier was not applied to every bracket term."
+      },
+      {
+        "id": "arithmetic",
+        "label": "The arithmetic result is incorrect."
+      }
+    ]
+  }
+}
