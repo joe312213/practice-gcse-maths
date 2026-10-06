@@ -1,6 +1,26 @@
+/**
+ * Purpose: Mark structured error-spotting entries and the final numeric answer.
+ *
+ * Main contents:
+ * - markErrors
+ *
+ * Used By: tests/website.test.mjs, website/src/lib/application/session.mjs
+ *
+ * Uses: website/src/lib/domain/engine.mjs.
+ *
+ * Libs: none.
+ */
 import { markAnswer } from './engine.mjs';
 
 // A final answer alone cannot validate an error-spotting response.
+/**
+ * Mark row/reason/correction entries and final answer against the authored error specification.
+ * Parameter q: authored question.
+ * Parameter entries: learner row/reason/correction entries.
+ * Parameter raw: untrusted input text.
+ * Calls: markAnswer.
+ * @example markErrors(q, entries, raw);
+ */
 export function markErrors(q, entries, raw) {
   const answer = markAnswer(raw, q.answer);
   const valid =

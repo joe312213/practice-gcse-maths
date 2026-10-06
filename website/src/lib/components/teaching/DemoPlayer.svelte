@@ -1,3 +1,15 @@
+<!--
+  Purpose: Connect the challenge selector and teaching data to the shared demo presentation.
+
+  Main contents:
+  - chooseLevel
+
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte, website/src/routes/+page.svelte
+
+  Uses: website/src/lib/domain/engine.mjs, website/src/lib/application/equation-demo.mjs, website/src/lib/components/teaching/Guidance.svelte, website/src/lib/components/teaching/EquationWorking.svelte, website/src/lib/components/teaching/ShowDemo.svelte.
+
+  Libs: svelte (component lifecycle and state).
+-->
 <script>
   import { untrack } from 'svelte';
   import { LEVELS } from '#lib/domain/engine.mjs';
@@ -18,6 +30,10 @@
     bank.teaching[example === 'demo' ? 'demoAnnotations' : 'recapAnnotations'][level],
   );
   const frames = $derived(equationFrames(question.balance));
+  /**
+   * Publish the selected demonstration level to its parent.
+   * Parameter value: new value to apply or validate.
+   */
   function chooseLevel(value) {
     level = value;
     onlevel(value);

@@ -1,3 +1,21 @@
+/**
+ * Purpose: Run selected browser scenarios against a static build and coordinate browser/server cleanup.
+ *
+ * Main contents:
+ * - state
+ * - topic
+ * - active
+ * - chooseName
+ * - submitCorrect
+ * - accessibility
+ * - shot
+ *
+ * Used By: Verification command entry points.
+ *
+ * Uses: website/scripts/browser/progress-checks.mjs, website/scripts/browser/support.mjs, website/scripts/browser/visual-checks.mjs, website/scripts/browser/startup-checks.mjs, website/scripts/browser/theme-checks.mjs, website/scripts/browser/presentation-checks.mjs, website/scripts/browser/practice-set-checks.mjs, website/scripts/browser/colour-checks.mjs.
+ *
+ * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), node:url, @axe-core/playwright (accessibility checks).
+ */
 import { checkProgress } from './browser/progress-checks.mjs';
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
@@ -42,12 +60,31 @@ const page = await context.newPage();
 const errors = [];
 page.on('pageerror', (error) => errors.push(error.message));
 const bank = JSON.parse(await readFile(new URL('../static/data/equations.json', import.meta.url)));
+/**
+ * Read the browser's stored learner data for assertions.
+ * Used by: topic.
+ */
 const state = () => page.evaluate(() => JSON.parse(localStorage.getItem('maths-practice-v2')));
+/**
+ * Return the active learner's equation-topic record.
+ * Calls: state.
+ * Used by: active.
+ */
 const topic = async () => {
   const s = await state();
   return s.profiles.find((p) => p.key === s.last).topics['maths:M10'];
 };
+/**
+ * Return the stored page for the requested activity mode.
+ * Parameter mode: learning activity or theme mode, as used here.
+ * Calls: topic.
+ * Used by: submitCorrect.
+ */
 const active = async (mode) => (await topic()).pages[mode];
+/**
+ * Select or explicitly create the named local learner.
+ * Parameter name: learner name or requested field name.
+ */
 async function chooseName(name) {
   await page.locator('#profile-button').click();
   await page.locator('#username').fill(name);
@@ -56,6 +93,14 @@ async function chooseName(name) {
     await page.getByRole('button', { name: 'Continue', exact: true }).click();
   await page.locator('[data-mode="assessment"]').waitFor();
 }
+/**
+ * Fill the authored answer and error entries for the indexed browser question.
+ * Parameter mode: learning activity or theme mode, as used here.
+ * Parameter index: zero-based question/page position.
+ * Parameter wrongReason: whether to inject an incorrect diagnostic reason.
+ * Calls: active.
+ * @example submitCorrect(mode, index, wrongReason);
+ */
 async function submitCorrect(mode, index, wrongReason = false) {
   await page.locator(`[data-question="${index}"]`).click();
   const p = await active(mode),
@@ -96,6 +141,11 @@ async function submitCorrect(mode, index, wrongReason = false) {
     );
   }
 }
+/**
+ * Assert the current page passes the configured axe rules, identifying the scenario by label.
+ * Parameter label: scenario label for diagnostics/artifacts.
+ * Calls: writeFile.
+ */
 async function accessibility(label) {
   const results = await new AxeBuilder({ page })
     .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
@@ -107,6 +157,10 @@ async function accessibility(label) {
     `Accessibility: ${label}`,
   );
 }
+/**
+ * Save a full-page screenshot under the scenario label.
+ * Parameter label: scenario label for diagnostics/artifacts.
+ */
 async function shot(label) {
   await page.screenshot({ path: `${artifacts}/${label}.png`, fullPage: true });
 }

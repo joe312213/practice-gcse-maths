@@ -1,3 +1,16 @@
+<!--
+  Purpose: Compose the active question, teaching reference, answer form and working area with focus management.
+
+  Main contents:
+  - focusAnswer
+  - submit
+
+  Used By: website/src/routes/+page.svelte
+
+  Uses: website/src/lib/domain/engine.mjs, website/src/lib/domain/stages.mjs, website/src/lib/components/practice/QuestionList.svelte, website/src/lib/components/practice/AnswerForm.svelte, website/src/lib/components/practice/Feedback.svelte, website/src/lib/components/practice/Progress.svelte, website/src/lib/components/practice/WorkingArea.svelte, website/src/lib/components/practice/Completion.svelte, website/src/lib/components/teaching/Guidance.svelte, website/src/lib/components/teaching/EquationWorking.svelte, website/src/lib/components/teaching/DemoPlayer.svelte.
+
+  Libs: svelte (component lifecycle and state), bits-ui (dialog/popover interaction).
+-->
 <script>
   import { onMount, tick } from 'svelte';
   import { Dialog } from 'bits-ui';
@@ -21,15 +34,27 @@
   const response = $derived(page.responses[question.id]);
   onMount(() => {
     const media = matchMedia('(max-width: 767px)');
+    /**
+     * Apply the current responsive or input change to component state.
+     */
     const update = () => (mobile = media.matches);
     update();
     media.addEventListener('change', update);
     return () => media.removeEventListener('change', update);
   });
+  /**
+   * Wait for Svelte DOM updates and focus the first available answer field.
+   * Calls: tick.
+   * Used by: submit.
+   */
   async function focusAnswer() {
     await tick();
     container.querySelector('#error-row-0, #answer')?.focus();
   }
+  /**
+   * Submit the component's current form and update feedback/focus.
+   * Calls: tick, focusAnswer.
+   */
   async function submit() {
     const result = session.submitAnswer();
     await tick();

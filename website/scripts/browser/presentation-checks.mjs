@@ -1,7 +1,26 @@
+/**
+ * Purpose: Check responsive question layout, working-pad interaction and controlled demo playback.
+ *
+ * Main contents:
+ * - checkPresentation
+ *
+ * Used By: website/scripts/browser-checks.mjs
+ *
+ * Uses: website/scripts/browser/support.mjs.
+ *
+ * Libs: node:assert/strict (assertions).
+ */
 import assert from 'node:assert/strict';
 import { artifacts, createTestContext } from './support.mjs';
 
-/** Focused visual behaviour checks, runnable without the full activity suite. */
+/**
+ * Focused visual behaviour checks, runnable without the full activity suite.
+ * Exercise responsive layout, canvas release handling and deterministic demo timing.
+ * Parameter browser: Playwright browser instance.
+ * Parameter base: test server base URL.
+ * Calls: createTestContext, image.
+ * @example checkPresentation(browser, base);
+ */
 export async function checkPresentation(browser, base) {
   const context = await createTestContext(browser, { viewport: { width: 1280, height: 1000 } });
   const page = await context.newPage();
@@ -22,6 +41,83 @@ export async function checkPresentation(browser, base) {
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     await page.locator('[data-mode="plain"]').click();
     await page.locator('#level').selectOption('2');
+    const pad = page.locator('#working');
+    /**
+     * Return the working canvas PNG data URL for before/after stroke comparisons.
+     * Used by: checkPresentation.
+     */
+    const image = () => pad.evaluate((canvas) => canvas.toDataURL());
+    for (const loseCapture of [false, true]) {
+      await pad.evaluate((canvas) => canvas.scrollIntoView({ block: 'center' }));
+      const box = await pad.boundingBox();
+      const start = { x: box.x + 30, y: box.y + 30 };
+      await page.mouse.move(start.x, start.y);
+      await page.mouse.down();
+      await page.mouse.move(start.x + 40, start.y + 40);
+      if (loseCapture) {
+        // Model capture loss before an outside release (e.g. browser interruption).
+        await pad.evaluate((canvas) => {
+          canvas.addEventListener(
+            'pointermove',
+            (event) => {
+              canvas.releasePointerCapture(event.pointerId);
+            },
+            { once: true },
+          );
+        });
+        await page.mouse.move(start.x + 45, start.y + 45);
+      }
+      await page.mouse.move(box.x + box.width + 15, start.y + 50);
+      await page.mouse.up();
+      const released = await image();
+      await page.mouse.move(start.x + 80, start.y + 80);
+      await page.mouse.move(start.x + 100, start.y + 100);
+      assert.ok(
+        (await image()) === released,
+        `Hover after outside release must not draw (capture loss: ${loseCapture})`,
+      );
+      await page.mouse.down();
+      await page.mouse.move(start.x + 120, start.y + 120);
+      await page.mouse.up();
+      assert.ok((await image()) !== released, 'A fresh press starts a new stroke');
+      await page.locator('#clear-working').click();
+      await pad.scrollIntoViewIfNeeded();
+    }
+
+    // A re-entry with no pressed button ends the stroke before another move.
+    await pad.evaluate((canvas) => canvas.scrollIntoView({ block: 'center' }));
+    const entryBox = await pad.boundingBox();
+    await page.mouse.move(entryBox.x + 25, entryBox.y + 25);
+    await pad.evaluate((canvas) => {
+      canvas.addEventListener(
+        'pointerdown',
+        (event) => {
+          canvas.dataset.testPointer = String(event.pointerId);
+        },
+        { once: true },
+      );
+    });
+    await page.mouse.down();
+    await page.mouse.move(entryBox.x + 45, entryBox.y + 45);
+    const beforeEntry = await image();
+    await pad.evaluate((canvas) => {
+      const pointerId = Number(canvas.dataset.testPointer);
+      canvas.dispatchEvent(new PointerEvent('pointerenter', { pointerId, buttons: 0 }));
+      // Even a later pressed move cannot revive the ended stroke without a new down.
+      const bounds = canvas.getBoundingClientRect();
+      canvas.dispatchEvent(
+        new PointerEvent('pointermove', {
+          pointerId,
+          buttons: 1,
+          clientX: bounds.x + 100,
+          clientY: bounds.y + 100,
+        }),
+      );
+      delete canvas.dataset.testPointer;
+    });
+    assert.ok((await image()) === beforeEntry, 'Unpressed re-entry lifts the pen');
+    await page.mouse.up();
+    await page.locator('#clear-working').click();
     for (const width of [1280, 1000, 940, 920, 768, 600, 480, 390, 320]) {
       await page.setViewportSize({ width, height: 1000 });
       const layout = await page.locator('.question-list').evaluate((list) => {

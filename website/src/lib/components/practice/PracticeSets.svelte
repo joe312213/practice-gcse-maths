@@ -1,3 +1,17 @@
+<!--
+  Purpose: Create and open practice-set codes and navigate an active timed or untimed set.
+
+  Main contents:
+  - types
+  - action
+  - makeCode
+
+  Used By: website/src/routes/+page.svelte
+
+  Uses: website/src/lib/domain/practice-code.mjs.
+
+  Libs: bits-ui (dialog/popover interaction), svelte (component lifecycle and state).
+-->
 <script>
   import { Dialog } from 'bits-ui';
   import { onMount, tick, untrack } from 'svelte';
@@ -14,6 +28,10 @@
     code = $state(''),
     error = $state('');
   const run = $derived(view.practiceSet);
+  /**
+   * Return question types supported by the selected catalogue topic.
+   * Parameter topic: catalogue topic code.
+   */
   const types = (topic) =>
     PAGE_TYPES.filter((type) =>
       catalogue.topics
@@ -24,6 +42,11 @@
     const timer = setInterval(() => session.tick(), 1000);
     return () => clearInterval(timer);
   });
+  /**
+   * Run a practice-set action, then focus its heading; surface errors in the component.
+   * Parameter fn: callback invoked by this operation.
+   * Calls: tick.
+   */
   async function action(fn) {
     error = '';
     try {
@@ -34,6 +57,10 @@
       error = cause.message;
     }
   }
+  /**
+   * Encode the configured practice-set entries and open the resulting set.
+   * Calls: encodePracticeSet, tick.
+   */
   function makeCode() {
     error = '';
     try {

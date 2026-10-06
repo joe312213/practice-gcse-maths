@@ -1,4 +1,16 @@
-"""Verify ratio v5 maths, variety, Markdown/slide agreement and diagnostic examples."""
+"""Purpose: Verify ratio v5 maths, variety, Markdown/slide agreement and diagnostic examples.
+
+Main contents:
+- cells
+
+Used By: manual legacy command invocation.
+
+Uses: no local module imports.
+
+Libs: python-pptx (editable slides and deck inspection).
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 from pathlib import Path
 from fractions import Fraction
 from collections import defaultdict, Counter
@@ -7,7 +19,12 @@ import re
 from pptx import Presentation
 root=Path(__file__).resolve().parents[1]
 src=(root/'content/M04_ratio.md').read_text();ans=(root/'content/answers/M04_answers.md').read_text()
-def cells(line):return [x.strip() for x in line.strip('| ').split('|')]
+def cells(line):
+ """Split a Markdown row into cells for ratio source verification.
+
+ Parameters: line — optional outline colour.
+ """
+ return [x.strip() for x in line.strip('| ').split('|')]
 qs={};aa={};teacher={}
 for sn in range(4,8):
  section=src.split(f'### Slide {sn} —')[1].split(f'### Slide {sn+1} —')[0]

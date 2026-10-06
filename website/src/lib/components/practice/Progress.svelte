@@ -1,3 +1,15 @@
+<!--
+  Purpose: Show the current activity's recommended level, recent success and reassessment state.
+
+  Main contents:
+  - Component markup, input props and event bindings.
+
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte
+
+  Uses: website/src/lib/domain/engine.mjs.
+
+  Libs: none.
+-->
 <script>
   import { LEVELS, success } from '#lib/domain/engine.mjs';
   let { mode, page, track } = $props();

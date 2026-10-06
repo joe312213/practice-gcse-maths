@@ -1,5 +1,18 @@
-"""Preview a native vector progression arrow without rebuilding either deck.
+"""Purpose: Preview a native vector progression arrow without rebuilding either deck.
 The PNG is a raster preview of the same vector paths, not an edit of the user's image.
+
+Main contents:
+- rotate
+- bezier
+- pixel
+
+Used By: manual legacy command invocation.
+
+Uses: no local module imports.
+
+Libs: Pillow (font measurement/image rendering).
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
 """
 from pathlib import Path
 import math
@@ -13,9 +26,17 @@ WIDTH=145
 ANGLE=-30
 COLOR='#ff7417'
 def rotate(p):
+ """Rotate an arrow control point around its reference centre.
+
+ Parameters: p — coordinate pair.
+ """
  x,y=p[0]-700,p[1]-500;r=math.radians(ANGLE)
  return (x*math.cos(r)-y*math.sin(r)+700,x*math.sin(r)+y*math.cos(r)+500)
 def bezier(points,t):
+ """Evaluate the arrow shaft cubic Bezier curve at parameter t.
+
+ Parameters: points — Bezier control-point sequence; t — curve parameter from zero to one.
+ """
  u=1-t
  return tuple(u**3*points[0][i]+3*u*u*t*points[1][i]+3*u*t*t*points[2][i]+t**3*points[3][i] for i in range(2))
 shaft=[rotate(bezier(SHAFT,i/400)) for i in range(401)]
@@ -33,7 +54,12 @@ svg=f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="{left:.3f} {top:.3f} {w
 # Supersampling provides an accurate, smooth preview of the editable paths.
 scale=1800/w
 im=Image.new('RGB',(1800,round(h*scale)),'white');draw=ImageDraw.Draw(im)
-def pixel(p):return ((p[0]-left)*scale,(p[1]-top)*scale)
+def pixel(p):
+ """Map an arrow control point into preview-image pixel coordinates.
+
+ Parameters: p — coordinate pair.
+ """
+ return ((p[0]-left)*scale,(p[1]-top)*scale)
 width=round(WIDTH*scale)
 for path in [shaft,head]:
  pixelpath=[pixel(p) for p in path];draw.line(pixelpath,fill=COLOR,width=width,joint='curve')

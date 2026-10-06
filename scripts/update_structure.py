@@ -1,6 +1,32 @@
-"""Preserve saved teaching slides; refresh assessments/error activities and compile outputs.
+"""Purpose: Preserve saved teaching slides; refresh assessments/error activities and compile outputs.
 Run from any directory: python3 practice/scripts/update_structure.py
 Current topic files are required; restore missing accepted decks from Git.
+
+Main contents:
+- texts
+- remove
+- save
+- save_text
+- base
+- assessment
+- lattice_content
+- errors
+- insert_before
+- clone
+- inline
+- md
+- error_answers
+- answers
+- page
+- main
+
+Used By: scripts/build_fraction_topic.py, scripts/build_priority_topic.py, scripts/compile_starters.py, scripts/fix_lattice_carries.py, scripts/fix_saved_layout.py, scripts/refresh_answers.py, scripts/rename_columns.py.
+
+Uses: scripts/answer_layout.py, scripts/build_starters.py, scripts/compile_starters.py, scripts/rendering/__init__.py, scripts/rendering/estimates.py, scripts/review_answer_patterns.py, scripts/student_workings.py.
+
+Libs: Pillow (font measurement/image rendering), compile_starters, python-pptx (editable slides and deck inspection), review_answer_patterns.
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
 """
 from pathlib import Path
 from copy import deepcopy
@@ -26,23 +52,54 @@ TOPICS={
  'M13':('signed_numbers','Signed_addition_subtraction_M13','Signed numbers: addition and subtraction')}
 ORDER=['M01','M02','M13','M03','M04']
 
-def texts(s):return [sh.text for sh in s.shapes if sh.has_text_frame and sh.text]
+def texts(s):
+ """Collect text from a slide for stable-reference matching.
+
+ Parameters: s — PowerPoint slide.
+ Used by: main.
+ """
+ return [sh.text for sh in s.shapes if sh.has_text_frame and sh.text]
 def remove(p,s):
+ """Remove a slide and its presentation relationship.
+
+ Parameters: p — presentation or drawing surface; s — slide or source text as used by this helper.
+ Used by: main.
+ """
  for el in list(p.slides._sldIdLst):
   if p.part.related_part(el.rId)==s.part:
    p.part.drop_rel(el.rId);p.slides._sldIdLst.remove(el);return
 
 def save(p,path):
+ """Write a presentation to the supplied destination.
+
+ Parameters: p — presentation or drawing surface; path — output path.
+ Calls: p.save.
+ Used by: main.
+ """
  buf=BytesIO();p.save(buf);payload=buf.getvalue()
  path.write_bytes(payload)
  print(path.relative_to(ROOT),len(p.slides),'slides')
 
 def save_text(path,value):
+ """Write text to the supplied destination.
+
+ Parameters: path — output path; value — text or numeric value to render.
+ Used by: main.
+ """
  if path.exists() and path.read_text()==value:return
  path.write_text(value)
 
 def base(p,title,subtitle,ref):
  # Avoid python-pptx part-name collisions after deleting/reordering slides.
+ """Create a topic slide with its title, subtitle and stable reference.
+
+ Parameters: p — presentation or drawing surface; title — learner-facing title; subtitle — slide
+ subtitle; ref — stable slide reference.
+ Calls: b.box, b.text.
+ Used by: assessment, errors.
+
+ Example in the caller's context: base(p, title, subtitle, ref)
+ """
  for i,old in enumerate(p.slides):old.part._partname=PackURI(f"/ppt/slides/slide{1000+i}.xml")
  s=p.slides.add_slide(p.slide_layouts[6]);s.background.fill.solid();s.background.fill.fore_color.rgb=RGBColor.from_string(b.BG)
  b.box(s,0,0,16,.1,b.COLORS[0]);b.text(s,.42,.24,15.1,.5,title,29,bold=True)
@@ -51,6 +108,14 @@ def base(p,title,subtitle,ref):
  return s
 
 def assessment(p,mid,questions):
+ """Append the topic initial-assessment slide.
+
+ Parameters: p — presentation or drawing surface; mid — stable topic ID; questions — authored
+ question text.
+ Calls: base, b.box, b.text.
+
+ Example in the caller's context: assessment(p, mid, questions)
+ """
  s=base(p,TOPICS[mid][2]+' — initial assessment','Show your full written method. No calculators.',mid+'-IA')
  for i,q in enumerate(questions):
   x=.42+(i%2)*7.65;y=1.6+(i//2)*3.35
@@ -60,6 +125,14 @@ def assessment(p,mid,questions):
  return s
 
 def lattice_content(item):
+ """Compute lattice cells, diagonal totals and an explanation containing the authored deliberate error.
+
+ Parameters: item — structured question record.
+ Calls: estimates.multiplication.
+ Used by: errors.
+
+ Example in the caller's context: lattice_content(item)
+ """
  a,c=item['a'],item['b'];aa,cc=str(a),str(c);n,m=len(aa),len(cc)
  cells=[[int(x)*int(y) for x in aa] for y in cc]
  err=item['error'];explain=''
@@ -97,6 +170,14 @@ def lattice_content(item):
  return cells,steps,result,extra
 
 def errors(p,mid):
+ """Append authored error-spotting examples with stable question references.
+
+ Parameters: p — presentation or drawing surface; mid — stable topic ID.
+ Calls: base, b.box, b.text, lattice_content, student.draw.
+ Used by: main.
+
+ Example in the caller's context: errors(p, mid)
+ """
  s=base(p,TOPICS[mid][2]+' — spot the errors','Each student’s working contains a mistake. Find it, correct the working and give the right answer.',mid+'-SE')
  cw=15.16/3
  for t,col in enumerate(DATA[mid]):
@@ -110,12 +191,24 @@ def errors(p,mid):
  return s
 
 def insert_before(p,s,target):
+ """Move a slide before the requested slide reference.
+
+ Parameters: p — presentation or drawing surface; s — slide or source text as used by this helper;
+ target — destination presentation or target slide, as used here.
+ Used by: main.
+ """
  el=p.slides._sldIdLst[-1];p.slides._sldIdLst.remove(el)
  for i,old in enumerate(p.slides):
   if old==target:p.slides._sldIdLst.insert(i,el);return
  raise ValueError('Target slide missing')
 
 def clone(target,source):
+ """Copy editable shapes, background and notes to a new slide; reject unsupported media relationships.
+
+ Parameters: target — destination presentation or target slide, as used here; source — source slide.
+
+ Example in the caller's context: clone(target, source)
+ """
  s=target.slides.add_slide(target.slide_layouts[6])
  for sh in list(s.shapes):s.shapes._spTree.remove(sh._element)
  for sh in source.shapes:s.shapes._spTree.insert_element_before(deepcopy(sh._element),'p:extLst')
@@ -130,10 +223,22 @@ def clone(target,source):
 
 # Small dependency-free Markdown renderer for the existing answer sources.
 def inline(v):
+ """Escape text and render supported inline Markdown emphasis/code.
+
+ Parameters: v — numeric value.
+ Used by: md, error_answers, answers.
+ """
  v=html.escape(v);v=v.replace('&lt;br&gt;','<br>')
  v=re.sub(r'\*\*(.*?)\*\*',r'<strong>\1</strong>',v)
  return re.sub(r'`(.*?)`',r'<code>\1</code>',v)
 def md(value):
+ """Render supported Markdown headings, paragraphs and tables as answer HTML.
+
+ Parameters: value — text or numeric value to render.
+ Calls: inline, c.strip.
+
+ Example in the caller's context: md(value)
+ """
  out=[];table=False
  for line in value.splitlines():
   if line.startswith('|'):
@@ -150,6 +255,14 @@ def md(value):
  return '\n'.join(out)
 
 def error_answers(mid):
+ """Render correction, method and check blocks for authored error-spotting questions.
+
+ Parameters: mid — stable topic ID.
+ Calls: inline, answer_layout.corrected.
+ Used by: answers.
+
+ Example in the caller's context: error_answers(mid)
+ """
  out=[f'<h3>{mid}-SE — Spot the errors: corrections</h3><div class="three-columns">']
  for t,col in enumerate(DATA[mid]):
   out.append('<div><h4>'+b.LABELS[t]+'</h4>')
@@ -165,6 +278,15 @@ IA={
 'M03':['144 ÷ 6 = 24 cm','14 × 25 = 350 seats','145 ÷ 6 = 24 r 1: 24 full boxes, 1 egg left','130 ÷ 24 = 5 r 10: 6 coaches; 6 × £75 = £450']}
 
 def answers(mid):
+ """Render the topic answer sections as HTML.
+
+ Parameters: mid — stable topic ID.
+ Calls: answer_layout.opening, answer_layout.assessment_cell, inline, error_answers,
+ answer_layout.worked.
+ Used by: page.
+
+ Example in the caller's context: answers(mid)
+ """
  out=[answer_layout.opening(mid,TOPICS[mid][2])+f'<h3>{mid}-IA — Initial assessment</h3>']
  if mid in IA:
   out.append(answer_layout.assessment_cell([f'<strong>Q{i+1}.</strong> '+inline(v) for i,v in enumerate(IA[mid])]))
@@ -183,10 +305,21 @@ def answers(mid):
  out.append('</div></section>');return '\n'.join(out)
 
 def page(mids):
+ """Wrap requested topic answer sections in a complete HTML document.
+
+ Parameters: mids — ordered topic IDs.
+ Calls: answer_layout.stylesheet, answers.
+ Used by: main.
+ """
  nav=' · '.join(f'<a href="#{m}">{html.escape(TOPICS[m][2])}</a>' for m in mids)
  return '''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Maths starters — answers</title><style>'''+answer_layout.stylesheet()+'''</style><h1>Maths starters — answers</h1><p>Match the module, practice number, column and question. Correct the first wrong step, then redo the calculation. IA = initial assessment; SE = spot the errors. References stay fixed when slides move.</p><nav>'''+nav+'</nav>'+''.join(answers(m) for m in mids)+'</html>'
 
 def main():
+ """Run the update structure command using its configured input and output paths.
+ Calls: texts, remove, insert_before, errors, save, save_text, page.
+
+ Example in the caller's context: main()
+ """
  from review_answer_patterns import review
  review(DATA)
  decks={}

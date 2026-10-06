@@ -1,9 +1,28 @@
+/**
+ * Purpose: Exercise practice-set creation, codes, timers and page navigation in an isolated browser profile.
+ *
+ * Main contents:
+ * - checkPracticeSets
+ *
+ * Used By: website/scripts/browser-checks.mjs
+ *
+ * Uses: website/scripts/browser/support.mjs, website/src/lib/domain/practice-code.mjs.
+ *
+ * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), @axe-core/playwright (accessibility checks).
+ */
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import AxeBuilder from '@axe-core/playwright';
 import { createTestContext, artifacts } from './support.mjs';
 import { decodePracticeSet, encodePracticeSet } from '../../src/lib/domain/practice-code.mjs';
 
+/**
+ * Exercise code creation, navigation and timer expiry against the supplied base URL.
+ * Parameter browser: Playwright browser instance.
+ * Parameter base: test server base URL.
+ * Calls: readFile, createTestContext, decodePracticeSet, state, encodePracticeSet.
+ * @example checkPracticeSets(browser, base);
+ */
 export async function checkPracticeSets(browser, base) {
   const bank = JSON.parse(
     await readFile(new URL('../../static/data/equations.json', import.meta.url)),
@@ -46,6 +65,10 @@ export async function checkPracticeSets(browser, base) {
     assert.equal(decodePracticeSet(code).pages.length, 4);
     await page.locator('.practice-set-builder').waitFor({ state: 'hidden' });
     await page.getByRole('button', { name: 'Start Practice set', exact: true }).click();
+    /**
+     * Read the browser's stored learner data for assertions.
+     * Used by: checkPracticeSets.
+     */
     const state = () =>
       page.evaluate(() => {
         const data = JSON.parse(localStorage.getItem('maths-practice-v2'));

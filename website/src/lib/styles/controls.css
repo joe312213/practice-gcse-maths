@@ -1,5 +1,5 @@
-/* Shared semantic components compose daisyUI foundations once. Bits UI owns
-   dialog/popover behaviour; these classes only own appearance and variants. */
+/* Compose reusable themed controls and panel foundations without changing interaction behaviour.
+   Shared semantic components compose daisyUI foundations once. Bits UI owns dialog/popover behaviour; these classes only own appearance and variants. */
 .action-button,
 .question-option,
 .theme-icon,
@@ -21,8 +21,12 @@
   transition: none;
   cursor: pointer;
 }
-.action-button:hover {
-  background: var(--surface-soft);
+/* Surface controls share a subtle selected-colour tint, never transparency.
+   Other surface controls can opt in with hover-tint and --hover-surface. */
+.action-button:not(.primary):not(.quiet):not([aria-current='step']):hover:not(:disabled),
+.question-option:not(.active):not(.correct):not(.incorrect):hover:not(:disabled),
+.hover-tint:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--hover-surface, var(--surface)) 75%, var(--selection-base));
 }
 .action-button:disabled,
 .question-option:disabled {

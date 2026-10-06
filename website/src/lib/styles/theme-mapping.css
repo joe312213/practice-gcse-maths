@@ -1,5 +1,5 @@
-/* One bridge exposes the exact existing theme to daisyUI components. Original
-   palette tokens/formulas remain authoritative, including gradient surfaces. */
+/* Map existing semantic theme tokens to daisyUI without replacing the accepted palettes.
+   One bridge exposes the exact existing theme to daisyUI components. Original palette tokens/formulas remain authoritative, including gradient surfaces. */
 :root {
   --color-base-100: var(--surface);
   --color-base-200: var(--surface-soft);

@@ -1,3 +1,15 @@
+<!--
+  Purpose: Initialize the practice session and connect navigation, profile selection and activity components.
+
+  Main contents:
+  - switchStage
+
+  Used By: SvelteKit route loading.
+
+  Uses: website/src/lib/adapters/storage.mjs, website/src/lib/application/session.mjs, website/src/lib/domain/stages.mjs, website/src/lib/content/practice-pages.json, website/src/lib/components/practice/PracticeSets.svelte, website/src/lib/components/practice/NextStage.svelte, website/src/lib/components/ui/ThemeControls.svelte, website/src/lib/components/ui/ProfileDialog.svelte, website/src/lib/components/practice/PracticeActivity.svelte, website/src/lib/components/teaching/DemoPlayer.svelte.
+
+  Libs: bits-ui (dialog/popover interaction), svelte (component lifecycle and state), $app/paths (base-aware URLs).
+-->
 <script>
   import { Popover } from 'bits-ui';
   import { onMount, tick } from 'svelte';
@@ -21,14 +33,27 @@
   let menuTrigger = $state(null);
   let menuOpen = $state(false),
     creatorOpen = $state(false);
+  /**
+   * Switch the session activity, then focus the new stage heading.
+   * Parameter mode: learning activity or theme mode, as used here.
+   * Calls: tick.
+   */
   async function switchStage(mode) {
     session.switchMode(mode);
     await tick();
     document.getElementById('stage-title')?.focus();
   }
   onMount(() => {
+    /**
+     * Provide a no-op subscription cleanup until session initialization completes.
+     */
     let disposed = false,
       unsubscribe = () => {};
+    /**
+     * Initialize learner storage, load the bank and subscribe the route to session updates.
+     * Calls: openProgress, loadBank, asset, createSession.
+     * @example start();
+     */
     async function start() {
       try {
         let storage;

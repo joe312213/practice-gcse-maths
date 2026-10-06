@@ -2,7 +2,7 @@
 
 SvelteKit generates a static site; Svelte components use Bits UI for dialogs and the theme popover. Tailwind utilities are composed into semantic CSS classes, with selected daisyUI foundations adapted to the existing theme. Application/session logic, marking, storage and theme adapters have separate responsibilities.
 
-From `website/` inside the project root, `/Users/joehudson/Dev/Maths` (Node 22.12 or later):
+From `website/` inside the project root, `/Users/joehudson/Dev/Maths/practice` (Node 22.12 or later):
 
 ```sh
 npm ci
@@ -29,6 +29,8 @@ Progress uses local names, not authenticated accounts, under `maths-practice-v2`
 See [HANDOFF](../HANDOFF.md) and the [development log](../DEV_LOG.md) for progress and remaining checks. No site has been deployed. The superseded runtime has been removed. Use Vite for development, or serve the generated `build/` directory for a static preview; serving the source directory is not supported.
 
 ## Architecture boundaries
+
+Follow the [code style requirements](../docs/CODE_STYLE.md) for implementation and testing decisions, and the [code comments policy](../docs/CODE_COMMENTS.md) for original source files.
 
 - `src/lib/domain/`: pure numeric marking, progression, profiles and stage order.
 - `src/lib/application/`: injected session coordinator and disposable playback; owns reset/assistance/submission boundaries.

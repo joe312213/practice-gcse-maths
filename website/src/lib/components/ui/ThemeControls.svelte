@@ -1,3 +1,15 @@
+<!--
+  Purpose: Render palette, mode and adjustment controls backed by the layout's theme context.
+
+  Main contents:
+  - Component markup, input props and event bindings.
+
+  Used By: website/src/routes/+page.svelte, website/src/routes/progress.html/+page.svelte
+
+  Uses: website/src/lib/theme/preferences.mjs.
+
+  Libs: svelte (component lifecycle and state), bits-ui (dialog/popover interaction).
+-->
 <script>
   import { getContext } from 'svelte';
   import { Popover } from 'bits-ui';

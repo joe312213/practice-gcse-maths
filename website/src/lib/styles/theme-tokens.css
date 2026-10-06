@@ -1,4 +1,5 @@
-/* Edit theme colours and decoration here. See docs/theming.md. */
+/* Define accepted light/dark palettes and user-adjusted semantic colours and surfaces.
+   Edit theme colours and decoration here. See docs/theming.md. */
 :where(:root, .theme-swatch) {
   color-scheme: light;
   --theme-saturation: var(--theme-saturation-default);

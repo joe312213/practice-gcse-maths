@@ -1,4 +1,16 @@
-"""Create new ratio versions with a first-slide assessment; preserve existing slides."""
+"""Purpose: Create new ratio versions with a first-slide assessment; preserve existing slides.
+
+Main contents:
+- Module-level setup and legacy command flow.
+
+Used By: manual legacy command invocation.
+
+Uses: scripts/build_ratio.py.
+
+Libs: python-pptx (editable slides and deck inspection).
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 raise SystemExit('Retired assessment migration: assessments are already in current decks; historical outputs are kept in Git.')
 from pathlib import Path
 from pptx import Presentation

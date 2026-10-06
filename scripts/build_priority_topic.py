@@ -1,4 +1,31 @@
-"""Build one explicitly requested priority topic, then compile saved topics."""
+"""Purpose: Build one explicitly requested priority topic, then compile saved topics.
+
+Main contents:
+- headers
+- base
+- newdeck
+- equation_recap
+- assessment
+- demo
+- practice
+- errors
+- independent
+- card
+- compact_assessment_steps
+- method_columns
+- answer_body
+- content_md
+- validate
+- main
+
+Used By: scripts/build_fraction_topic.py, scripts/refresh_answers.py.
+
+Uses: scripts/build_ratio.py, scripts/compile_starters.py, scripts/rendering/equations.py, scripts/update_structure.py.
+
+Libs: Pillow (font measurement/image rendering), compile_starters, python-pptx (editable slides and deck inspection).
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 from pathlib import Path
 import json,sys,html,re
 from fractions import Fraction
@@ -12,12 +39,39 @@ ROOT=Path(__file__).resolve().parents[1]
 LABELS=['Start','Build','Confidence']
 b.LABELS=LABELS
 
-def headers(s,grid=False):return b.headers(s,grid)
-def base(p,d,sub,ref):return b.base(p,d['title'],sub,ref)
+def headers(s,grid=False):
+ """Draw the three challenge-column headers and return their layout origin and width.
+
+ Parameters: s — slide or source text as used by this helper; grid — whether to use the working-grid
+ geometry.
+ Calls: b.headers.
+ Used by: equation_recap, demo, practice, errors, independent.
+ """
+ return b.headers(s,grid)
+def base(p,d,sub,ref):
+ """Create a topic slide with its title, subtitle and stable reference.
+
+ Parameters: p — presentation or drawing surface; d — structured topic or working data; sub — slide
+ subtitle; ref — stable slide reference.
+ Calls: b.base.
+ Used by: equation_recap, assessment, demo, practice, errors, independent.
+ """
+ return b.base(p,d['title'],sub,ref)
 def newdeck():
+ """Create a blank widescreen PowerPoint presentation.
+ Used by: main.
+ """
  p=Presentation();p.slide_width=Inches(16);p.slide_height=Inches(9);return p
 
 def equation_recap(p,d):
+ """Append the equation technique recap with balanced worked examples.
+
+ Parameters: p — presentation or drawing surface; d — structured topic or working data.
+ Calls: base, headers, b.rect, b.text.
+ Used by: main.
+
+ Example in the caller's context: equation_recap(p, d)
+ """
  s=base(p,d,'Technique recap • Simplify first, then keep both sides equal.','M10-RECAP');left,cw=headers(s)
  blocks=[('Keep the balance',[dict(l='x + 7',r='19'),dict(l='− 7',r='− 7',kind='op'),dict(l='x',r='12')],
  'Do the same operation to both whole sides.\n\nUndo addition/subtraction before a remaining multiplication or division.\n\nA negative divided by a positive is negative: −12 ÷ 3 = −4.'),
@@ -31,11 +85,23 @@ def equation_recap(p,d):
   b.text(s,x+.15,5.12,cw-.34,3.03,tip,19)
 
 def assessment(p,d):
+ """Append the topic initial-assessment slide.
+
+ Parameters: p — presentation or drawing surface; d — structured topic or working data.
+ Calls: base, b.rect, b.text.
+ Used by: main.
+ """
  s=base(p,d,'Initial assessment • Solve all four. Show your working.','M10-IA')
  for i,e in enumerate(d['assessment']):
   x=.42+(i%2)*7.64;y=1.64+(i//2)*3.30;b.rect(s,x,y,7.48,3.08,'FFFFFF',b.LINE);b.text(s,x+.2,y+.3,7.05,1.1,f'{i+1}.  '+e['q'],29,True)
 
 def demo(p,d):
+ """Append the three-level worked-demo slide.
+
+ Parameters: p — presentation or drawing surface; d — structured topic or working data.
+ Calls: base, headers, b.rect, b.text.
+ Used by: main.
+ """
  s=base(p,d,'Worked demo • Follow the working down each side of the line.','M10-S01');left,cw=headers(s)
  for t,e in enumerate(d['demo']):
   x=left+t*cw;b.rect(s,x,1.76,cw-.035,6.6,'FFFFFF',b.LINE);b.text(s,x+.12,1.94,cw-.30,.5,e['q'],25,True)
@@ -43,6 +109,15 @@ def demo(p,d):
   b.text(s,x+.12,7.28,cw-.30,.95,e['check'],18)
 
 def practice(p,d,idx):
+ """Append one scaffolded practice slide from the structured topic data.
+
+ Parameters: p — presentation or drawing surface; d — structured topic or working data; idx —
+ zero-based practice-bank index.
+ Calls: base, headers, b.rect, b.text, b.line, b.progression.
+ Used by: main.
+
+ Example in the caller's context: practice(p, d, idx)
+ """
  s=base(p,d,f'Step-by-step practice {idx+1} • Copy the centre line and show each operation.','M10-S0'+str(idx+2));left,cw=headers(s,True)
  y=1.73;heights=[.65,1.05,2.05,1.15,1.68]
  for r,h in enumerate(heights):
@@ -55,6 +130,12 @@ def practice(p,d,idx):
  b.progression(s,True)
 
 def errors(p,d):
+ """Append authored error-spotting examples with stable question references.
+
+ Parameters: p — presentation or drawing surface; d — structured topic or working data.
+ Calls: base, headers, b.rect, b.text.
+ Used by: main.
+ """
  s=base(p,d,'Spot the errors • Find the first wrong step, correct it and finish.','M10-SE');left,cw=headers(s)
  for t,col in enumerate(d['errors']):
   x=left+t*cw
@@ -63,6 +144,13 @@ def errors(p,d):
    balance(e['balance'],s,x+.12,y+.55,cw-.30,.30,20,compact=True)
 
 def independent(p,d,idx):
+ """Append one three-level independent practice grid.
+
+ Parameters: p — presentation or drawing surface; d — structured topic or working data; idx —
+ zero-based practice-bank index.
+ Calls: base, headers, b.rect, b.text, b.progression.
+ Used by: main.
+ """
  s=base(p,d,f'Independent practice {idx+1} • Solve each equation and check by substitution.','M10-S0'+str(idx+4));left,cw=headers(s)
  for t,col in enumerate(d['banks'][idx]):
   for i,e in enumerate(col):
@@ -71,6 +159,14 @@ def independent(p,d,idx):
  b.progression(s)
 
 def card(e,heading,wrong=False):
+ """Render a worked-example card from structured question data.
+
+ Parameters: e — structured question/example; heading — answer-section heading; wrong — whether to
+ include deliberately incorrect working.
+ Used by: answer_body.
+
+ Example in the caller's context: card(e, heading, wrong)
+ """
  rows=e['balance'];out='<article><h4>'+html.escape(heading+' — '+e['q'])+'</h4>'
  if wrong:
   out+='<p><strong>Shown incorrect working</strong></p>'+balance(rows)
@@ -82,6 +178,11 @@ def card(e,heading,wrong=False):
  return out+'<p><strong>Check:</strong> '+html.escape(e['check'])+'</p></article>'
 
 def compact_assessment_steps(rows):
+ """Remove division-by-one operations and adjacent duplicate balance rows for assessment answers.
+
+ Parameters: rows — ordered equation or working rows.
+ Used by: answer_body.
+ """
  result=[]
  for row in rows:
   if row.get('kind')=='op' and row['l']==row['r']=='÷ 1':continue
@@ -90,11 +191,24 @@ def compact_assessment_steps(rows):
  return result
 
 def method_columns(examples):
+ """Build method, diagnostic-error and check cells for each example.
+
+ Parameters: examples — structured worked examples.
+ Used by: answer_body.
+ """
  return [{'Method':'<strong>Q'+str(q)+': '+html.escape(e['q'])+'</strong>'+balance(e['balance']),
           'If you got…':'x = '+e['wrong']+': '+html.escape(e['error_work']+' '+e['error_note']),
           'Check':html.escape(e['check'])} for q,e in examples]
 
 def answer_body(d):
+ """Render all equation answer sections as HTML.
+
+ Parameters: d — structured topic or working data.
+ Calls: compact_assessment_steps, method_columns, card.
+ Used by: main.
+
+ Example in the caller's context: answer_body(d)
+ """
  out=[u.answer_layout.opening('M10','Solving equations')+'<h3>M10-IA — Initial assessment</h3>']
  out.append(u.answer_layout.assessment_cell([f'<strong>Q{i+1}. x = {e["answer"]}</strong>'+balance(compact_assessment_steps(e['balance'])) for i,e in enumerate(d['assessment'])]))
  for j,col in enumerate(d['practice']):
@@ -116,6 +230,13 @@ def answer_body(d):
  return ''.join(out)+'</div></section>'
 
 def content_md(d):
+ """Render the structured equation bank into its human-readable Markdown specification.
+
+ Parameters: d — structured topic or working data.
+ Used by: main.
+
+ Example in the caller's context: content_md(d)
+ """
  out=['# M10 — Solving equations','', '**Status: Built for review under the user’s instruction.** Replaces the earlier patterned draft. Exact structured source: `M10_equations.json`.','', 'Method: vertical line through the equals sign; apply operations to both whole sides. Simplify like terms, factorise a common factor where helpful, divide out an outer multiplier before expanding when shorter, and remove the smaller x-term first when convenient. Check by substituting into the original equation.','']
  sets=[('IA',d['assessment']),('S01',d['demo']),('S02',d['practice'][0]),('S03',d['practice'][1])]
  sets += [(f'SE-{LABELS[t]}',col) for t,col in enumerate(d['errors'])]
@@ -128,6 +249,13 @@ def content_md(d):
 
 def validate(d):
  # Exact arithmetic checks for new content, not a regression suite for existing decks.
+ """Assert authored mathematical answers and content invariants before publishing outputs.
+
+ Parameters: d — structured topic or working data.
+ Used by: main.
+
+ Example in the caller's context: validate(d)
+ """
  for e in d['assessment']+d['demo']+sum(d['practice'],[])+[e for cols in d['banks'] for col in cols for e in col]:
   a,b0,c,d0=map(Fraction,e['coefficients']);x=Fraction(e['answer']);assert a*x+b0==c*x+d0,e['q']
  for cols in d['banks']:
@@ -149,6 +277,12 @@ def validate(d):
  print('New equations: exact solutions, distinct slide answers and text fit checked.')
 
 def main():
+ """Run the build priority topic command using its configured input and output paths.
+ Calls: newdeck, assessment, equation_recap, demo, practice, errors, independent, validate, u.save,
+ u.page, answer_body, u.save_text, content_md.
+
+ Example in the caller's context: main()
+ """
  d=json.loads((ROOT/'content/M10_equations.json').read_text());p=newdeck()
  assessment(p,d);equation_recap(p,d);demo(p,d)
  for i in range(2):practice(p,d,i)

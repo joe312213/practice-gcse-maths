@@ -1,3 +1,15 @@
+/**
+ * Purpose: Compare current layout with a historical checkout in temporary browser contexts.
+ *
+ * Main contents:
+ * - checkVisuals
+ *
+ * Used By: website/scripts/browser-checks.mjs
+ *
+ * Uses: website/scripts/browser/support.mjs.
+ *
+ * Libs: node:assert/strict (assertions), node:child_process (Git/build subprocesses), node:fs/promises (asynchronous file access), node:os (temporary directories), node:path (filesystem paths), node:url.
+ */
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
@@ -6,8 +18,15 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { artifacts, serveStatic } from './support.mjs';
 
-/** Reconstruct the reviewed prototype only in a disposable test directory.
- * Git is the source of history; no parallel legacy runtime is maintained. */
+/**
+ * Reconstruct the reviewed prototype only in a disposable test directory.
+Git is the source of history; no parallel legacy runtime is maintained.
+ * Build a historical reference in temporary storage and compare representative layout geometry.
+ * Parameter browser: Playwright browser instance.
+ * Parameter base: test server base URL.
+ * Calls: mkdtemp, join, tmpdir, fileURLToPath, mkdir, dirname, writeFile, execFileSync, serveStatic, rm.
+ * @example checkVisuals(browser, base);
+ */
 export async function checkVisuals(browser, base) {
   const directory = await mkdtemp(join(tmpdir(), 'maths-visual-'));
   let server;
@@ -65,6 +84,10 @@ export async function checkVisuals(browser, base) {
           await page.evaluate(() => window.scrollTo(0, 0));
           pair.push(
             await page.evaluate(() => {
+              /**
+               * Return a selected element's viewport geometry, or null when absent.
+               * Parameter selector: CSS selector to measure.
+               */
               const rect = (selector) => {
                 const element = document.querySelector(selector);
                 if (!element) return null;

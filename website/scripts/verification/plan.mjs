@@ -1,3 +1,20 @@
+/**
+ * Purpose: Map source families to verification jobs and fingerprint their inputs for cached selection.
+ *
+ * Main contents:
+ * - jobs
+ * - isBuildInput
+ * - isFormatInput
+ * - digest
+ * - fingerprint
+ * - plan
+ *
+ * Used By: tests/verification.test.mjs, website/scripts/verify-changed.mjs
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: node:crypto (fingerprints).
+ */
 import { createHash } from 'node:crypto';
 
 // Deliberately small dependency map. Broaden here when adding a new feature family.
@@ -14,11 +31,16 @@ const runner = /^website\/scripts\/(verify-changed\.mjs|verification\/)/;
 const browser = /^website\/scripts\/browser(?:-checks\.mjs|\/support\.mjs)$/;
 const bank =
   /^(content\/M10.*\.json|scripts\/prepare_web_equations\.py|website\/static\/data\/|website\/src\/lib\/content\/practice-pages\.json)/;
+/**
+ * Build a path predicate matching any supplied regular expression.
+ * Parameter patterns: path-matching regular expressions.
+ */
 const matches = (patterns) => (path) => patterns.some((pattern) => pattern.test(path));
 
 export const jobs = [
   {
     id: 'docs',
+    /** Select active Markdown paths for the documentation-link verification job. */
     inputs: (path) => path.endsWith('.md') && !/^(legacy|content)\//.test(path),
     command: ['scripts/verification/docs.mjs'],
   },
@@ -125,9 +147,27 @@ export const jobs = [
 ];
 
 export const isBuildInput = matches([source, config, /^website\/scripts\/validate-bank\.mjs$/]);
+/**
+ * Recognize maintained website source/config files covered by formatting checks.
+ * Parameter path: repository-relative or walked filesystem path.
+ */
 export const isFormatInput = (path) =>
   /^website\/(src\/|scripts\/|[^/]+$)/.test(path) && /\.(svelte|css|js|mjs|ts|json)$/.test(path);
+/**
+ * Return the SHA-256 hex digest of the supplied string.
+ * Parameter value: new value to apply or validate.
+ * Calls: createHash.
+ * Used by: fingerprint.
+ */
 export const digest = (value) => createHash('sha256').update(value).digest('hex');
+/**
+ * Hash included file fingerprints in stable path order with the policy salt.
+ * Parameter files: path-to-fingerprint map.
+ * Parameter include: predicate selecting relevant paths.
+ * Parameter salt: cache policy/version salt.
+ * Calls: digest.
+ * Used by: plan.
+ */
 export function fingerprint(files, include, salt = '') {
   return digest(
     JSON.stringify([
@@ -138,6 +178,14 @@ export function fingerprint(files, include, salt = '') {
     ]),
   );
 }
+/**
+ * Select verification jobs whose input fingerprints differ from the successful cache.
+ * Parameter files: path-to-fingerprint map.
+ * Parameter cached: successful job fingerprints.
+ * Parameter salt: cache policy/version salt.
+ * Parameter force: whether to select every job.
+ * Calls: fingerprint.
+ */
 export function plan(files, cached = {}, salt = '', force = false) {
   // Dispatcher changes invalidate the map itself, even if an input rule changed.
   const policy = fingerprint(files, (path) => runner.test(path), salt);

@@ -1,4 +1,21 @@
-"""Editable student-style working for SE cards; same diagrams embedded in HTML answers."""
+"""Purpose: Editable student-style working for SE cards; same diagrams embedded in HTML answers.
+
+Main contents:
+- Paper
+- bus
+- lattice
+- equations
+- column
+- draw
+
+Used By: scripts/update_structure.py.
+
+Uses: scripts/build_starters.py.
+
+Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck inspection).
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 import html
 from pptx.util import Inches,Pt
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
@@ -6,8 +23,22 @@ from pptx.dml.color import RGBColor
 import build_starters as b
 
 class Paper:
- def __init__(self,slide,x,y):self.slide=slide;self.x=x;self.y=y;self.svg=[]
+ def __init__(self,slide,x,y):
+  """Bind a slide and local drawing origin for matching editable/SVG student working.
+
+  Parameters: slide — editable PowerPoint slide; x — horizontal coordinate in inches; y — vertical
+  coordinate in inches.
+  """
+  self.slide=slide;self.x=x;self.y=y;self.svg=[]
  def text(self,x,y,w,h,value,size=20,bold=False,align='left'):
+  """Draw text with the supplied geometry and typography.
+
+  Parameters: x — horizontal coordinate in inches; y — vertical coordinate in inches; w — width in
+  inches; h — height in inches; value — text or numeric value to render; size — font size in points;
+  bold — whether to use bold text; align — text alignment.
+
+  Example in the caller's context: canvas.text(x, y, w, h, value, size, bold, align)
+  """
   sh=self.slide.shapes.add_textbox(Inches(self.x+x),Inches(self.y+y),Inches(w),Inches(h))
   from PIL import ImageFont
   font=ImageFont.truetype(b.font_bold if bold else b.font_regular,round(size*4))
@@ -23,12 +54,30 @@ class Paper:
    self.svg.append(f'<text x="{tx:.2f}" y="{y*72+size*.91+i*size*1.12:.2f}" font-family="Arial,sans-serif" font-size="{size}" font-weight="{700 if bold else 400}" text-anchor="'+{'left':'start','center':'middle','right':'end'}[align]+'">'+html.escape(line)+'</text>')
   return sh
  def line(self,x,y,xx,yy,width=1):
+  """Draw a line between the supplied endpoints.
+
+  Parameters: x — horizontal coordinate in inches; y — vertical coordinate in inches; xx — line end
+  x coordinate in inches; yy — line end y coordinate in inches; width — drawing width or stroke
+  width as declared.
+  Calls: b.diagram_line.
+  """
   b.diagram_line(self.slide,self.x+x,self.y+y,self.x+xx,self.y+yy,b.INK,width)
   self.svg.append(f'<line x1="{x*72}" y1="{y*72}" x2="{xx*72}" y2="{yy*72}" stroke="#182b3a" stroke-width="{width}"/>')
- def finish(self):return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 152" role="img" aria-label="Student working with a deliberate mistake">'+''.join(self.svg)+'</svg>'
+ def finish(self):
+  """Return the collected SVG with an accessible label.
+  """
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 152" role="img" aria-label="Student working with a deliberate mistake">'+''.join(self.svg)+'</svg>'
 
 def bus(p,x,y,d,scale=1):
- """Digits occupy genuine place-value columns; remainders are small prefixes."""
+ """Digits occupy genuine place-value columns; remainders are small prefixes.
+
+ Parameters: p — presentation or drawing surface; x — horizontal coordinate in inches; y — vertical
+ coordinate in inches; d — structured topic or working data; scale — drawing scale multiplier.
+ Calls: p.line, p.text.
+ Used by: draw.
+
+ Example in the caller's context: bus(p, x, y, d, scale)
+ """
  digits=d['digits'];q=d['quotient'];step=.46*scale;gx=x+.47*scale;gy=y+.36*scale
  p.line(gx-.06*scale,gy,gx+len(digits)*step+.03*scale,gy,1.3)
  p.line(gx-.06*scale,gy,gx-.06*scale,gy+.39*scale,1.3)
@@ -45,6 +94,14 @@ def bus(p,x,y,d,scale=1):
   p.text(gx+len(digits)*step+.10*scale,gy-.33*scale,.8*scale,.30*scale,'r '+str(d['remainder']),18*scale)
 
 def lattice(p,item):
+ """Draw lattice multiplication cells, diagonal totals and carries.
+
+ Parameters: p — presentation or drawing surface; item — structured question record.
+ Calls: p.text, p.line.
+ Used by: draw.
+
+ Example in the caller's context: lattice(p, item)
+ """
  a,c=str(item['a']),str(item['b']);n,m=len(a),len(c);cell=.47;gx=.51;gy=.73
  for j,d in enumerate(a):p.text(gx+j*cell,gy-.29,cell,.29,d,20,align='center')
  for i,d in enumerate(c):p.text(gx+n*cell+.07,gy+i*cell+.12,.30,.29,d,20,align='center')
@@ -72,9 +129,25 @@ def lattice(p,item):
  p.text(2.5,1.24,2.25,.42,f"{int(item['_result']):,}",25)
 
 def equations(p,lines,x,y,width=4.6,size=21,step=.34):
+ """Draw a sequence of student working lines at a fixed vertical step.
+
+ Parameters: p — presentation or drawing surface; lines — ordered working text lines; x — horizontal
+ coordinate in inches; y — vertical coordinate in inches; width — drawing width or stroke width as
+ declared; size — font size in points; step — vertical line spacing in inches.
+ Calls: p.text.
+ Used by: draw.
+ """
  for i,line in enumerate(lines):p.text(x,y+i*step,width,.34,line,size)
 
 def column(p,x,y,rows,width=.85,size=19):
+ """Draw column arithmetic with aligned digits and multiplication carries where needed.
+
+ Parameters: p — presentation or drawing surface; x — horizontal coordinate in inches; y — vertical
+ coordinate in inches; rows — ordered equation or working rows; width — drawing width or stroke
+ width as declared; size — font size in points.
+ Calls: p.text, p.line.
+ Used by: draw.
+ """
  if rows[1].startswith('×'):
   carry=int(rows[0][-1])*int(rows[1][-1])//10
   if carry:p.text(x+width-.40,y-.13,.18,.19,carry,10,align='center')
@@ -83,6 +156,14 @@ def column(p,x,y,rows,width=.85,size=19):
   if i in (1,len(rows)-2,len(rows)-1):p.line(x,y+(i+1)*.25-.005,x+width,y+(i+1)*.25-.005)
 
 def draw(slide,x,y,mid,item):
+ """Render a deliberately incorrect worked example in both editable slide shapes and SVG.
+
+ Parameters: slide — editable PowerPoint slide; x — horizontal coordinate in inches; y — vertical
+ coordinate in inches; mid — stable topic ID; item — structured question record.
+ Calls: lattice, bus, p.text, equations, column, p.finish.
+
+ Example in the caller's context: draw(slide, x, y, mid, item)
+ """
  p=Paper(slide,x,y)
  if mid=='M01':lattice(p,item)
  elif mid=='M02':

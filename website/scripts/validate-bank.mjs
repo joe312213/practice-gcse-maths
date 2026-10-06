@@ -1,3 +1,15 @@
+/**
+ * Purpose: Validate the published equation bank against authored IDs, answers and teaching annotations.
+ *
+ * Main contents:
+ * - Module initialization and configuration.
+ *
+ * Used By: Verification command entry points.
+ *
+ * Uses: website/src/lib/domain/engine.mjs.
+ *
+ * Libs: node:fs/promises (asynchronous file access), node:assert/strict (assertions).
+ */
 import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { markAnswer } from '../src/lib/domain/engine.mjs';

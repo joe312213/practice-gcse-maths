@@ -1,5 +1,28 @@
-"""Build the standalone M04 ratio question and answer decks from Markdown.
+"""Purpose: Build the standalone M04 ratio question and answer decks from Markdown.
 Does not read or overwrite the consolidated deck. Requires python-pptx and Pillow.
+
+Main contents:
+- splitcells
+- section
+- source_questions
+- answer_section
+- rect
+- text
+- line
+- base
+- headers
+- progression
+- bars
+- worked_grid
+- make
+
+Used By: scripts/add_ratio_assessment.py, scripts/build_fraction_topic.py, scripts/build_priority_topic.py, scripts/build_signed.py.
+
+Uses: no local module imports.
+
+Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck inspection).
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
 """
 from pathlib import Path
 import re, hashlib, zipfile, math, json
@@ -20,13 +43,30 @@ ROWS=['Keywords & Calculation','Written Method','Ballpark Check & Math','Final A
 PROMPTS=['Identify the keywords. Write down the calculation(s) you need to do.','Set up and use the written method for your calculation(s).','Check your answer using rough ballpark calculations. Does it make sense?','Write your final answer to the question. Include the correct units.']
 # Source text and answer tables are read rather than re-created during layout.
 src=SRC.read_text();answer_src=ANS.read_text()
-def splitcells(line):return [x.strip() for x in line.strip().strip('|').split('|')]
+def splitcells(line):
+ """Split a Markdown table row into trimmed cell strings.
+
+ Parameters: line — optional outline colour.
+ Used by: source_questions, answer_section, worked_grid.
+ """
+ return [x.strip() for x in line.strip().strip('|').split('|')]
 def section(text,sn):
+ """Extract the requested numbered section from authored Markdown.
+
+ Parameters: text — source Markdown/text; sn — one-based source slide number.
+ Used by: source_questions, worked_grid.
+ """
  start=re.search(r'^#{2,3} Slide '+str(sn)+r' — ',text,re.M).start()
  rest=text[start:];end=re.search(r'\n#{2,3} (?:Slide |Checks)',rest)
  return rest[:end.start()] if end else rest
 
 def source_questions(sn):
+ """Read the questions for the numbered ratio slide.
+
+ Parameters: sn — one-based source slide number.
+ Calls: section, splitcells.
+ Used by: worked_grid, make.
+ """
  s=section(src,sn)
  if sn==1:return splitcells(re.search(r'^\| The Full Question.*$',s,re.M).group())[1:]
  if sn<4:
@@ -34,18 +74,39 @@ def source_questions(sn):
  return [splitcells(x)[1:] for x in s.split('Teacher answers')[0].splitlines() if re.match(r'^\| [1-6] \|',x)]
 
 def answer_section(sn):
+ """Read the numbered ratio answer block and its diagnostic notes.
+
+ Parameters: sn — one-based source slide number.
+ Calls: splitcells.
+ Used by: worked_grid, make.
+ """
  s=re.search(r'^## M04-S'+f'{sn:02}'+r'-A[^\n]*\n(.*?)(?=^## M04-|\Z)',answer_src,re.M|re.S).group(1)
  answers=[splitcells(x)[1:] for x in s.splitlines() if re.match(r'^\| [1-6] \|',x)]
  notes={splitcells(x)[0]:splitcells(x)[1:] for x in s.splitlines() if any(x.startswith('| '+k+' |') for k in ['Method','If you got…','Check'])}
  return answers,notes
 
 def rect(s,x,y,w,h,fill,line=None):
+ """Draw a rectangle with the requested fill and optional outline.
+
+ Parameters: s — slide or source text as used by this helper; x — horizontal coordinate in inches; y
+ — vertical coordinate in inches; w — width in inches; h — height in inches; fill — fill colour hex
+ string; line — optional outline colour.
+ Used by: base, headers, bars, worked_grid, make.
+ """
  sh=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(y),Inches(w),Inches(h));sh.fill.solid();sh.fill.fore_color.rgb=RGBColor.from_string(fill)
  if line:sh.line.color.rgb=RGBColor.from_string(line);sh.line.width=Pt(.6)
  else:sh.line.fill.background()
  return sh
 checks=[]
 def text(s,x,y,w,h,val,size=18,bold=False,color=INK):
+ """Draw text with the supplied geometry and typography.
+
+ Parameters: s — slide or source text as used by this helper; x — horizontal coordinate in inches; y
+ — vertical coordinate in inches; w — width in inches; h — height in inches; val — text value to
+ render; size — font size in points; bold — whether to use bold text; color — text/stroke colour hex
+ string.
+ Used by: base, headers, bars, worked_grid, make.
+ """
  sh=s.shapes.add_textbox(Inches(x),Inches(y),Inches(w),Inches(h));tf=sh.text_frame;tf.word_wrap=True
  tf.margin_left=tf.margin_right=Inches(.06);tf.margin_top=tf.margin_bottom=Inches(.025)
  for i,line in enumerate(val.split('\n')):
@@ -54,15 +115,36 @@ def text(s,x,y,w,h,val,size=18,bold=False,color=INK):
  return sh
 
 def line(s,x,y,xx,yy,color=INK):
+ """Draw a line between the supplied endpoints.
+
+ Parameters: s — slide or source text as used by this helper; x — horizontal coordinate in inches; y
+ — vertical coordinate in inches; xx — line end x coordinate in inches; yy — line end y coordinate
+ in inches; color — text/stroke colour hex string.
+ Used by: bars.
+ """
  sh=s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,Inches(x),Inches(y),Inches(xx),Inches(yy));sh.line.color.rgb=RGBColor.from_string(color);sh.line.width=Pt(1.2)
 
 def base(prs,title,sub,ref):
+ """Create a topic slide with its title, subtitle and stable reference.
+
+ Parameters: prs — destination presentation; title — learner-facing title; sub — slide subtitle; ref
+ — stable slide reference.
+ Calls: rect, text.
+ Used by: worked_grid, make.
+ """
  s=prs.slides.add_slide(prs.slide_layouts[6]);s.background.fill.solid();s.background.fill.fore_color.rgb=RGBColor.from_string(BG)
  rect(s,0,0,16,.08,COL[0]);text(s,.35,.18,15.3,.5,title,28,True);text(s,.35,.77,15.3,.38,sub,15,color=MUTED)
  text(s,.35,8.72,11.8,.23,'GCSE Maths revision • No calculator • Show your working.',11,color=MUTED);text(s,12.2,8.72,3.4,.23,ref,11,color=MUTED)
  return s
 
 def headers(s,grid=False):
+ """Draw the three challenge-column headers and return their layout origin and width.
+
+ Parameters: s — slide or source text as used by this helper; grid — whether to use the working-grid
+ geometry.
+ Calls: rect, text.
+ Used by: worked_grid, make.
+ """
  left=2.32 if grid else .35;cw=(15.65-left)/3
  for t in range(3):
   x=left+t*cw;rect(s,x,1.22,cw-.025,.46,COL[t]);text(s,x+.03,1.255,cw-.09,.36,LABELS[t],19,True,'FFFFFF')
@@ -71,12 +153,31 @@ def headers(s,grid=False):
 
 def progression(s,grid=False):
  # Approved reference geometry, rotated 30 degrees anticlockwise; preserve aspect ratio.
+ """Draw the editable curved progression arrow beneath the practice columns.
+
+ Parameters: s — slide or source text as used by this helper; grid — whether to use the working-grid
+ geometry.
+ Calls: rotate, bezier, pt.
+ Used by: worked_grid, make.
+
+ Example in the caller's context: progression(s, grid)
+ """
  shaft=[(110,160),(285,800),(770,865),(1275,550)]
  head=[(890,545),(1275,550),(1080,865)]
  def rotate(p):
+  """Rotate an arrow control point around its reference centre.
+
+  Parameters: p — coordinate pair.
+  Used by: progression, pt.
+  """
   x,y=p[0]-700,p[1]-500;r=math.radians(-30)
   return (x*math.cos(r)-y*math.sin(r)+700,x*math.sin(r)+y*math.cos(r)+500)
  def bezier(t):
+  """Evaluate the arrow shaft cubic Bezier curve at parameter t.
+
+  Parameters: t — curve parameter from zero to one.
+  Used by: progression.
+  """
   u=1-t
   return tuple(u**3*shaft[0][i]+3*u*u*t*shaft[1][i]+3*u*t*t*shaft[2][i]+t**3*shaft[3][i] for i in range(2))
  points=[rotate(bezier(i/400)) for i in range(401)]+[rotate(p) for p in head]
@@ -84,6 +185,12 @@ def progression(s,grid=False):
  xmin=min(p[0] for p in points)-pad;ymin=min(p[1] for p in points)-pad
  width=max(p[0] for p in points)-xmin+pad;height=max(p[1] for p in points)-ymin+pad
  def pt(p):
+  """Convert a rotated arrow point into DrawingML path coordinates.
+
+  Parameters: p — coordinate pair.
+  Calls: rotate.
+  Used by: progression.
+  """
   x,y=rotate(p)
   return f'<a:pt x="{round((x-xmin)/width*100000)}" y="{round((y-ymin)/height*100000)}"/>'
  path1='<a:moveTo>'+pt(shaft[0])+'</a:moveTo><a:cubicBezTo>'+''.join(pt(p) for p in shaft[1:])+'</a:cubicBezTo>'
@@ -109,6 +216,18 @@ def progression(s,grid=False):
 
 def bars(s,x,y,w,h,a,b,names,known,kind,part,t):
  # Native shapes with matching labelled bar lengths and an explicit known-quantity bracket.
+ """Draw labelled ratio-part bars for the given known quantity and unknown.
+
+ Parameters: s — slide or source text as used by this helper; x — horizontal coordinate in inches; y
+ — vertical coordinate in inches; w — width in inches; h — height in inches; a — first operand or
+ coefficient; b — second operand or constant; names — ratio-part labels; known — known ratio
+ quantity; kind — question or operation variant; part — value of one ratio part; t — challenge index
+ or Bezier parameter as used here.
+ Calls: text, rect, line.
+ Used by: worked_grid.
+
+ Example in the caller's context: bars(s, x, y, w, h, a, b, names, known, kind, part, t)
+ """
  group=s.shapes.add_group_shape();group.name=f'Ratio bars {names[0]}:{names[1]} = {a}:{b}, {kind}'
  labelw=1.0;bx=x+labelw;cell=min(.43,(w-labelw-.2)/max(a,b));bh=.23;rowgap=.41
  for j,(name,n) in enumerate(zip(names,[a,b])):
@@ -129,6 +248,16 @@ DIAGRAMS={1:[(2,3,['A','B'],'£120 altogether','total','1 part = £24'),(3,5,['R
 demo={splitcells(x)[0]:splitcells(x)[1:] for x in section(src,1).splitlines() if x.startswith('| ') and not x.startswith('| ---')}
 
 def worked_grid(prs,sn,answer=False):
+ """Append a ratio worked-method or answer grid.
+
+ Parameters: prs — destination presentation; sn — one-based source slide number; answer — whether to
+ render the answer variant.
+ Calls: base, headers, rect, text, source_questions, splitcells, bars, progression, section,
+ answer_section.
+ Used by: make.
+
+ Example in the caller's context: worked_grid(prs, sn, answer)
+ """
  title='Ratio: sharing and missing amounts' if not answer else 'Ratio: answers and worked method'
  sub='Worked demo • Follow each step down your column.' if sn==1 else ('Answers to step-by-step practice '+str(sn-1) if answer else 'Step-by-step practice '+str(sn-1)+' • Complete each step in your booklet or webapp.')
  s=base(prs,title,sub,f'M04-S{sn:02}'+('-A' if answer else ''));left,cw=headers(s,True);y=1.71;qh=1.52
@@ -157,6 +286,12 @@ def worked_grid(prs,sn,answer=False):
  return s
 
 def make():
+ """Build the topic outputs from the authored inputs and save the legacy resources.
+ Calls: worked_grid, base, headers, source_questions, rect, text, progression, answer_section,
+ p.save.
+
+ Example in the caller's context: make()
+ """
  qprs=Presentation();aprs=Presentation()
  for p in [qprs,aprs]:p.slide_width=Inches(16);p.slide_height=Inches(9);p.core_properties.author='Maths teaching resources'
  qprs.core_properties.title='Ratio — sharing and missing amounts';aprs.core_properties.title='Ratio — answers and method checks'

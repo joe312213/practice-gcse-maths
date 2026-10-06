@@ -1,3 +1,18 @@
+/**
+ * Purpose: Provide isolated browser contexts and a temporary static server for browser verification.
+ *
+ * Main contents:
+ * - artifacts
+ * - launchBrowser
+ * - serveStatic
+ * - createTestContext
+ *
+ * Used By: website/scripts/browser-checks.mjs, website/scripts/browser/colour-checks.mjs, website/scripts/browser/practice-set-checks.mjs, website/scripts/browser/presentation-checks.mjs, website/scripts/browser/progress-checks.mjs, website/scripts/browser/startup-checks.mjs, website/scripts/browser/theme-checks.mjs, website/scripts/browser/visual-checks.mjs
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: @playwright/test (browser automation), node:fs (file access), node:fs/promises (asynchronous file access), node:http (local test server), node:url, node:path (filesystem paths).
+ */
 import { chromium } from '@playwright/test';
 import { existsSync } from 'node:fs';
 import { readFile, stat, mkdir } from 'node:fs/promises';
@@ -7,8 +22,12 @@ import { resolve, relative, extname, join } from 'node:path';
 
 export const artifacts = fileURLToPath(new URL('../../test-results/browser/', import.meta.url));
 
-/** Prefer an explicitly selected browser, then a local Chrome, then Playwright's
- * installed Chromium. Every launch uses a fresh isolated browser profile. */
+/**
+ * Prefer an explicitly selected browser, then a local Chrome, then Playwright's
+installed Chromium. Every launch uses a fresh isolated browser profile.
+ * Launch Chromium using configured or locally available browser binaries.
+ * Calls: existsSync, mkdir.
+ */
 export async function launchBrowser() {
   const macChrome = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
   const executablePath = process.env.CHROME_PATH || (existsSync(macChrome) ? macChrome : undefined);
@@ -16,8 +35,15 @@ export async function launchBrowser() {
   return chromium.launch({ executablePath, headless: true });
 }
 
-/** A real static server (no SPA fallback) catches missing prerendered routes.
- * An ephemeral port keeps tests independent of the user's development server. */
+/**
+ * A real static server (no SPA fallback) catches missing prerendered routes.
+An ephemeral port keeps tests independent of the user's development server.
+ * Serve the given build directory beneath an optional URL base path; return shutdown controls.
+ * Parameter directory: filesystem directory.
+ * Parameter basePath: URL prefix for static hosting.
+ * Calls: resolve, createServer.
+ * @example const server = await serveStatic("build", "/maths");
+ */
 export async function serveStatic(directory, basePath = '') {
   const root = resolve(directory);
   const types = {
@@ -51,11 +77,17 @@ export async function serveStatic(directory, basePath = '') {
   });
   return {
     url: `http://127.0.0.1:${server.address().port}${basePath}/`,
+    /** Stop the local HTTP server and resolve when it has closed; used by runner cleanup. */
     close: () => new Promise((resolve) => server.close(resolve)),
   };
 }
 
-/** Fixed pseudo-randomness gives every browser scenario reproducible question sets. */
+/**
+ * Fixed pseudo-randomness gives every browser scenario reproducible question sets.
+ * Create an isolated browser context and install deterministic randomness.
+ * Parameter browser: Playwright browser instance.
+ * Parameter options: browser-context options.
+ */
 export async function createTestContext(browser, options = {}) {
   const context = await browser.newContext(options);
   await context.addInitScript(() => {

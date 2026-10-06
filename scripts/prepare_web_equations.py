@@ -1,4 +1,16 @@
-"""Import accepted M10 structured content, checking against saved decks; no deck writes."""
+"""Purpose: Import accepted M10 structured content, checking against saved decks; no deck writes.
+
+Main contents:
+- normal
+- slide_text
+- main
+
+Used By: manual website-bank import command.
+
+Uses: no local module imports.
+
+Libs: python-pptx (editable slides and deck inspection).
+"""
 from pathlib import Path
 from fractions import Fraction
 from hashlib import sha256
@@ -6,20 +18,50 @@ import json,re
 from pptx import Presentation
 ROOT=Path(__file__).resolve().parents[1]
 LEGACY=ROOT/'legacy'  # Saved teaching decks are audit inputs, never regenerated here.
-def normal(s):return re.sub(r'\s+','',s).replace('−','-').replace('×','*')
-def slide_text(s):return '\n'.join(sh.text for sh in s.shapes if sh.has_text_frame)
+def normal(s):
+ """Normalize whitespace and mathematical operator glyphs for source/deck comparison.
+
+ Parameters: s — input text.
+ Used by: main, add.
+ """
+ return re.sub(r'\s+','',s).replace('−','-').replace('×','*')
+def slide_text(s):
+ """Join text from all text-bearing shapes on a slide.
+
+ Parameters: s — PowerPoint slide.
+ Used by: main.
+ """
+ return '\n'.join(sh.text for sh in s.shapes if sh.has_text_frame)
 def main():
+ """Run the prepare web equations command using its configured input and output paths.
+ Calls: shape_data, normal, slide_text, add.
+
+ Example in the caller's context: main()
+ """
  registry=json.loads((ROOT/'content/topic_registry.json').read_text());combined=Presentation(LEGACY/'GCSE_Maths_Revision_Starters.pptx');offset=0;audit=[]
  for t in registry:
   path=LEGACY/'topics'/t['folder']/(t['stem']+'_questions.pptx');p=Presentation(path)
   differences=[]
-  def shape_data(s):return [(int(sh.shape_type),sh.left,sh.top,sh.width,sh.height,sh.rotation,sh.text if sh.has_text_frame else '') for sh in s.shapes]
+  def shape_data(s):
+   """Extract shape type, geometry, rotation and text for deck comparison.
+
+   Parameters: s — PowerPoint slide.
+   Used by: main.
+   """
+   return [(int(sh.shape_type),sh.left,sh.top,sh.width,sh.height,sh.rotation,sh.text if sh.has_text_frame else '') for sh in s.shapes]
   for i,s in enumerate(p.slides):
    if shape_data(s)!=shape_data(combined.slides[offset+i]):differences.append(i+1)
   audit.append({'topic':t['id'],'slides':len(p.slides),'text_geometry_differences':differences,'sha256':sha256(path.read_bytes()).hexdigest()});offset+=len(p.slides)
  assert offset==len(combined.slides)
  d=json.loads((ROOT/'content/M10_equations.json').read_text());deck=Presentation(LEGACY/'topics/equations/Solving_equations_M10_questions.pptx');text=normal('\n'.join(slide_text(s) for s in deck.slides));items=[]
  def add(q,id,kind,level):
+  """Validate one source question against the saved deck and append its web-bank entry.
+
+  Parameters: q — source question; id — stable question reference; kind — question or operation
+  variant; level — zero-based challenge level.
+  Calls: normal.
+  Used by: main.
+  """
   assert normal(q['q']) in text,(id,q['q'])
   if 'coefficients' in q:
    a,b,c,e=map(Fraction,q['coefficients']);x=Fraction(q['answer']);assert a*x+b==c*x+e,id

@@ -1,3 +1,15 @@
+<!--
+  Purpose: Present authorship, source credits and the local-progress explanation.
+
+  Main contents:
+  - Component markup, input props and event bindings.
+
+  Used By: SvelteKit route loading.
+
+  Uses: no local module imports.
+
+  Libs: $app/paths (base-aware URLs).
+-->
 <script>
   import { resolve } from '$app/paths';
 </script>

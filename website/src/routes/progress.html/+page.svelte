@@ -1,3 +1,16 @@
+<!--
+  Purpose: Load the current learner's topic overview, revision recommendations and transfer controls.
+
+  Main contents:
+  - refresh
+  - label
+
+  Used By: SvelteKit route loading.
+
+  Uses: website/src/lib/content/practice-pages.json, website/src/lib/adapters/storage.mjs, website/src/lib/domain/progress.mjs, website/src/lib/domain/revision.mjs, website/src/lib/components/progress/TopicProgress.svelte, website/src/lib/components/progress/ProgressTransfer.svelte, website/src/lib/components/ui/ThemeControls.svelte, website/src/lib/domain/practice-code.mjs.
+
+  Libs: svelte (component lifecycle and state), $app/paths (base-aware URLs).
+-->
 <script>
   import { onMount } from 'svelte';
   import { resolve } from '$app/paths';
@@ -21,6 +34,12 @@
     recommendations = $state.raw([]),
     warning = $state('');
   let save = $state.raw(() => {});
+  /**
+   * Refresh the current learner's summaries, recommendations and backup baseline, then persist.
+   * Parameter requested: explicit request to generate recommendations beyond the automatic limit.
+   * Calls: backupStatus, maintainRecommendations, topicProgress, weeklyProgress.
+   * @example refresh(requested);
+   */
   function refresh(requested = false) {
     profile = store.profiles.find((item) => item.key === store.last) ?? null;
     if (!profile) return;
@@ -48,6 +67,10 @@
     save = adapter.save;
     refresh();
   });
+  /**
+   * Format a recommendation reason with its catalogue topic and question-type labels.
+   * Parameter reason: recommendation topic/type/reason record.
+   */
   const label = (reason) =>
     `${catalogue.topics.find((item) => item.code === reason.topic)?.title ?? reason.topic} · ${PAGE_TYPES.find((item) => item.id === reason.type)?.label ?? reason.type}: ${reason.reason}`;
 </script>
@@ -56,7 +79,9 @@
 <a class="skip" href="#main">Skip to progress</a>
 <header>
   <a class="brand" href={resolve('/')}>Maths<span> / practice</span></a>
-  <div class="header-actions"><a href={resolve('/')}>Back to practice</a><ThemeControls /></div>
+  <div class="header-actions">
+    <a class="action-button quiet" href={resolve('/')}>Back to practice</a><ThemeControls />
+  </div>
 </header>
 <main id="main" tabindex="-1">
   <h1>Your progress</h1>

@@ -9,7 +9,7 @@ Start with [HANDOFF.md](HANDOFF.md) for current state. [docs/INDEX.md](docs/INDE
 | Work | Read next |
 | --- | --- |
 | Product/behaviour | [User specification](web_format.md), then relevant [standing decisions](docs/UI_UX_RULES.md) |
-| Implementation | [Website architecture/run guide](website/README.md) and [framework development skill](.agents/skills/maths-framework-development/SKILL.md) |
+| Implementation | [Code style requirements](docs/CODE_STYLE.md), [website architecture/run guide](website/README.md) and [framework development skill](.agents/skills/maths-framework-development/SKILL.md) |
 | Verification or a longer task | [Efficient development/testing skill](.agents/skills/maths-efficient-development/SKILL.md) |
 | Future features/scoring | [Roadmap and interpretations](docs/WEBSITE_PLAN.md) |
 | Content/questions/answers | [Teaching/source map](docs/INDEX.md#teaching-content), then the relevant topic and specifications |

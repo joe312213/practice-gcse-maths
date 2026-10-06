@@ -17,6 +17,13 @@ Directly authored `web_format.md` is protected; the progress requirements append
 
 ## Development workflows
 
+- [Code style requirements](CODE_STYLE.md) — implementation judgment, architectural discussion and proportionate testing.
+
+- [Code comments policy](CODE_COMMENTS.md) — applies to original source headers and function/body comments.
+
+- [T-Level refactoring brief v2](T_LEVEL_REFACTOR_AGENT_GUIDE_V2.md) — concise current transfer brief.
+- [Original detailed T-Level refactoring guide](T_LEVEL_REFACTOR_AGENT_GUIDE.md) — earlier expanded guidance.
+
 - [.agents/skills/maths-efficient-development/SKILL.md](../.agents/skills/maths-efficient-development/SKILL.md)
 - [.agents/skills/maths-framework-development/SKILL.md](../.agents/skills/maths-framework-development/SKILL.md)
 - [tests/fixtures/README.md](../tests/fixtures/README.md)
@@ -76,7 +83,7 @@ REFERENCE_REVIEW retains source attribution and reuse findings. The legacy guide
 
 - [Saved-deck/content audit](CONTENT_AUDIT.json) — text/basic geometry; not a complete style/media audit.
 - [Topic registry](../content/topic_registry.json), [content directory](../content/) and [structured M10 bank source](../content/M10_equations.json) — active source files and stable identities.
-- [Original conversation export](../initial_chat2.html) — historical context, not current instructions.
+- [Initial design conversation — condensed historical context](../DEV_LOG.md#by-20-september-2026--initial-design-conversation-historical-context) — retained design intent from the original conversation export; current specifications take precedence.
 - [Legacy resources](../legacy/) — saved teaching outputs; linked topic READMEs provide individual resource links.
 
 Earlier WEB_FORMAT_REVIEW and separate equation/migration logs were consolidated into DEV_LOG, standing decisions, the roadmap and current handoff. Full previous versions remain in Git; no second archive of obsolete instructions is maintained. This index lists all maintained project Markdown documents except itself; generated dependency/build/test artifacts are excluded. Update it when adding or retiring documentation.

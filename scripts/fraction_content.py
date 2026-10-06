@@ -1,12 +1,41 @@
-"""Explicit, reproducible M15 question content, using exact rational arithmetic."""
+"""Purpose: Explicit, reproducible M15 question content, using exact rational arithmetic.
+
+Main contents:
+- raw
+- example
+- make
+
+Used By: manual legacy command invocation.
+
+Uses: scripts/rendering/fractions.py.
+
+Libs: Python standard library only.
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 from pathlib import Path
 from fractions import Fraction as F
 from math import lcm
 import random,json
 from rendering.fractions import token,mixed
 ROOT=Path(__file__).resolve().parents[1]
-def raw(n,d):return '{'+str(n)+'/'+str(d)+'}'
+def raw(n,d):
+ """Encode a numerator and denominator in the fraction renderer token syntax.
+
+ Parameters: n — number or numerator; d — structured topic or working data.
+ Used by: example.
+ """
+ return '{'+str(n)+'/'+str(d)+'}'
 def example(a,b,sign='+',show_mixed=False):
+ """Compute exact fraction addition/subtraction with common-denominator working and checks.
+
+ Parameters: a — first operand or coefficient; b — second operand or constant; sign — addition or
+ subtraction symbol; show_mixed — whether to include a mixed-number answer.
+ Calls: raw.
+ Used by: make.
+
+ Example in the caller's context: example(F(1, 3), F(1, 6))
+ """
  a,b=F(a),F(b);v=a+b if sign=='+' else a-b;den=lcm(a.denominator,b.denominator);an=a.numerator*(den//a.denominator);bn=b.numerator*(den//b.denominator);num=an+bn if sign=='+' else an-bn
  fmt=mixed if show_mixed else token;q=fmt(a)+' '+sign+' '+fmt(b);lines=[q]
  if show_mixed and (a>1 or b>1):lines.append('= '+token(a)+' '+sign+' '+token(b))
@@ -16,6 +45,11 @@ def example(a,b,sign='+',show_mixed=False):
  if raw(num,den)!=mixed(v):lines.append('= '+mixed(v))
  return dict(q=q,a=str(a),b=str(b),sign=sign,answer=mixed(v),value=str(v),lines=lines,check=('Addition should make the answer larger than either positive fraction.' if sign=='+' else 'Subtracting a positive fraction should make the answer smaller.'),method='Use equal-sized parts; change numerator and denominator together, then add or subtract only the numerators. Simplify the result.')
 def make():
+ """Construct deterministic fraction assessment, demo, practice and error-question banks.
+ Calls: example.
+
+ Example in the caller's context: make()
+ """
  ia=[example(F(2,7),F(3,7)),example(F(7,9),F(2,9),'−'),example(F(1,3),F(1,6)),example(F(4,3),F(3,4),'−',True)]
  demo=[example(F(3,8),F(1,8)),example(F(5,6),F(1,3),'−'),example(F(4,3),F(3,4),'−',True)]
  practice=[[example(F(2,9),F(5,9)),example(F(3,4),F(1,8),'−'),example(F(7,5),F(2,3),'+',True)], [example(F(7,10),F(3,10),'−'),example(F(2,3),F(5,9)),example(F(9,4),F(5,6),'−',True)]]

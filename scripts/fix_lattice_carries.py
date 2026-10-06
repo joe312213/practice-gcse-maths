@@ -1,9 +1,29 @@
-"""Reposition saved lattice carries without rebuilding accepted teaching content."""
+"""Purpose: Reposition saved lattice carries without rebuilding accepted teaching content.
+
+Main contents:
+- patch_group
+- main
+
+Used By: manual legacy command invocation.
+
+Uses: scripts/compile_starters.py, scripts/update_structure.py.
+
+Libs: compile_starters, python-pptx (editable slides and deck inspection).
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 import re,json
 from pptx.util import Inches
 import update_structure as u
 
 def patch_group(group):
+ """Reposition carry digits in a saved lattice group and report whether it changed.
+
+ Parameters: group — saved shape group.
+ Used by: main.
+
+ Example in the caller's context: patch_group(group)
+ """
  rects=[s for s in group.shapes if s.shape_type==1 and abs(s.width-s.height)<1000 and s.width>Inches(.1)]
  if not rects:return 0
  gx=min(s.left for s in rects);gy=min(s.top for s in rects);bottom=max(s.top+s.height for s in rects);cell=rects[0].width;count=0
@@ -20,6 +40,11 @@ def patch_group(group):
  return count
 
 def main():
+ """Run the fix lattice carries command using its configured input and output paths.
+ Calls: u.Presentation, patch_group, u.texts, u.remove, u.insert_before, u.errors, u.save.
+
+ Example in the caller's context: main()
+ """
  for topic in json.loads((u.ROOT/'content/topic_registry.json').read_text()):
   path=u.ROOT/'topics'/topic['folder']/(topic['stem']+'_questions.pptx');p=u.Presentation(path);count=0
   for slide in p.slides:

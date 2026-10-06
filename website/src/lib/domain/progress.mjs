@@ -1,8 +1,33 @@
+/**
+ * Purpose: Aggregate topic success, UK weekly completion records and JSON backup status.
+ *
+ * Main contents:
+ * - PROGRESS_POLICY
+ * - topicProgress
+ * - weekKey
+ * - weeklyProgress
+ * - EXPORT_REMINDER_DAYS
+ * - backupStatus
+ * - recordExport
+ *
+ * Used By: tests/progress.test.mjs, website/src/lib/application/session.mjs, website/src/lib/components/progress/ProgressTransfer.svelte, website/src/lib/domain/revision.mjs, website/src/routes/progress.html/+page.svelte
+ *
+ * Uses: website/src/lib/domain/engine.mjs, website/src/lib/domain/practice-code.mjs.
+ *
+ * Libs: none.
+ */
 import { success } from './engine.mjs';
 import { PAGE_TYPES } from './practice-code.mjs';
 
 // Share the existing page-size-dependent success scheme; evidence counts never truncate history.
 export const PROGRESS_POLICY = { minimum: 5, staleDays: 28, timezone: 'Europe/London' };
+/**
+ * Aggregate available catalogue topics by challenge level and recommended-level revision priority.
+ * Parameter profile: learner record.
+ * Parameter catalogue: authored topic/page catalogue.
+ * Parameter now: current time in milliseconds or injected clock, as declared.
+ * @example const rows = topicProgress(profile, catalogue, Date.now());
+ */
 export function topicProgress(profile, catalogue, now = Date.now()) {
   return catalogue.topics.map((topic) => {
     const key = `${catalogue.subject}:${topic.bank}`;
@@ -10,6 +35,13 @@ export function topicProgress(profile, catalogue, now = Date.now()) {
     const history = saved?.history ?? [];
     const levels = [...new Set(topic.pages.map((page) => page.level))].sort();
     const types = PAGE_TYPES.filter((type) => topic.pages.some((page) => page.type === type.id));
+    /**
+     * Calculate one question type/level's answer count, weighted success and stale/missing status.
+     * Parameter type: question-type code or activity ID.
+     * Parameter level: zero-based challenge level.
+     * Calls: success.
+     * @example detail(type, level);
+     */
     const detail = (type, level) => {
       const records = history.filter((item) => item.type === type.mode && item.level === level);
       const eligible = records.filter((item) => !item.assisted || !item.correct);
@@ -41,6 +73,10 @@ export function topicProgress(profile, catalogue, now = Date.now()) {
         .filter((type) => topic.pages.some((page) => page.type === type.id && page.level === level))
         .map((type) => detail(type, level));
       const measured = breakdown.filter((item) => item.rate !== null);
+      /**
+       * Give plain practice twice the aggregation weight of other question types.
+       * Parameter item: question-type evidence record.
+       */
       const weight = (item) => (item.mode === 'plain' ? 2 : 1);
       const rate = measured.length
         ? measured.reduce((sum, item) => sum + item.rate * weight(item), 0) /
@@ -71,7 +107,14 @@ export function topicProgress(profile, catalogue, now = Date.now()) {
   });
 }
 
-/** Stable local calendar weeks, including UK daylight-saving boundaries. */
+/**
+ * Stable local calendar weeks, including UK daylight-saving boundaries.
+ * Return the Monday date for a timestamp's UK calendar week.
+ * Parameter timestamp: milliseconds since Unix epoch.
+ * Calls: get.
+ * Used by: weeklyProgress.
+ * @example weekKey(Date.UTC(2026, 9, 6)); // "2026-10-05".
+ */
 export function weekKey(timestamp) {
   const parts = new Intl.DateTimeFormat('en-GB', {
     timeZone: PROGRESS_POLICY.timezone,
@@ -79,11 +122,22 @@ export function weekKey(timestamp) {
     month: '2-digit',
     day: '2-digit',
   }).formatToParts(timestamp);
+  /**
+   * Read a numeric date part from the localized formatter result.
+   * Parameter name: learner name or requested field name.
+   * Used by: weekKey.
+   */
   const get = (name) => Number(parts.find((part) => part.type === name).value);
   const date = new Date(Date.UTC(get('year'), get('month') - 1, get('day')));
   date.setUTCDate(date.getUTCDate() - ((date.getUTCDay() + 6) % 7));
   return date.toISOString().slice(0, 10);
 }
+/**
+ * Count completed recommendations by UK week and return this week's total and personal best.
+ * Parameter profile: learner record.
+ * Parameter now: current time in milliseconds or injected clock, as declared.
+ * Calls: weekKey.
+ */
 export function weeklyProgress(profile, now = Date.now()) {
   const weeks = {};
   for (const item of profile.revision?.recommendations ?? []) {
@@ -95,7 +149,14 @@ export function weeklyProgress(profile, now = Date.now()) {
 }
 
 export const EXPORT_REMINDER_DAYS = 10;
-/** Old learners use their first recorded activity; new learners start a persisted clock. */
+/**
+ * Old learners use their first recorded activity; new learners start a persisted clock.
+ * Derive the learner's last JSON backup and whether the reminder interval has elapsed.
+ * Parameter profile: learner record.
+ * Parameter now: current time in milliseconds or injected clock, as declared.
+ * Used by: recordExport.
+ * @example if (backupStatus(profile)?.due) showBackupReminder();
+ */
 export function backupStatus(profile, now = Date.now()) {
   if (!profile) return null;
   const first = Object.values(profile.topics)
@@ -111,6 +172,13 @@ export function backupStatus(profile, now = Date.now()) {
     due: now - (lastExportAt ?? since) >= EXPORT_REMINDER_DAYS * 86400000,
   };
 }
+/**
+ * Record a JSON download trigger; ignore CSV for backup-reminder timing.
+ * Parameter profile: learner record.
+ * Parameter kind: JSON or CSV export format.
+ * Parameter now: current time in milliseconds or injected clock, as declared.
+ * Calls: backupStatus.
+ */
 export function recordExport(profile, kind, now = Date.now()) {
   if (kind !== 'json') return;
   profile.backup = {

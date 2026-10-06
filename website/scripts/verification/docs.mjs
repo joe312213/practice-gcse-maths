@@ -1,3 +1,15 @@
+/**
+ * Purpose: Check local links in active Markdown documents discovered through Git.
+ *
+ * Main contents:
+ * - Module initialization and configuration.
+ *
+ * Used By: Verification command entry points.
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: node:fs/promises (asynchronous file access), node:child_process (Git/build subprocesses), node:path (filesystem paths).
+ */
 import { readFile, access } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { resolve, dirname } from 'node:path';

@@ -1,5 +1,5 @@
-/* Single source for every generated answer page. Embedded at build time so
-   exported HTML stays portable. Change shared tokens here, not in generators. */
+/* Style the preserved teaching-answer HTML pages and their printable worked diagrams.
+   Single source for every generated answer page. Embedded at build time so exported HTML stays portable. Change shared tokens here, not in generators. */
 :root {
   --text: #182b3a;
   --page-bg: #f7f8fa;

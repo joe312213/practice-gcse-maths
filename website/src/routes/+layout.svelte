@@ -1,3 +1,15 @@
+<!--
+  Purpose: Load shared styles and provide browser-initialized theme state to every route.
+
+  Main contents:
+  - Component markup, input props and event bindings.
+
+  Used By: SvelteKit route loading.
+
+  Uses: website/src/lib/theme/preferences.mjs, website/src/lib/styles/app.css.
+
+  Libs: svelte (component lifecycle and state), svelte/store.
+-->
 <script>
   import { onMount, setContext } from 'svelte';
   import { writable } from 'svelte/store';

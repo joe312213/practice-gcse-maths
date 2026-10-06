@@ -1,4 +1,25 @@
-"""Build M13 review decks from Markdown; keep practice answers separate."""
+"""Purpose: Build M13 review decks from Markdown; keep practice answers separate.
+
+Main contents:
+- section
+- table
+- newdeck
+- base
+- line
+- numberline
+- question_grid
+- assessment
+- recap
+- make
+
+Used By: manual legacy command invocation.
+
+Uses: scripts/build_ratio.py.
+
+Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck inspection).
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 from pathlib import Path
 import re,sys,hashlib
 from io import BytesIO
@@ -14,9 +35,20 @@ ROOT=Path(__file__).resolve().parents[1]
 SRC=ROOT/'content/M13_signed_addition_and_subtraction.md'
 src=SRC.read_text();OUT=ROOT/'topics/signed_numbers';OUT.mkdir(exist_ok=True,parents=True)
 def section(sn,answer=False):
+ """Extract the requested numbered section from authored Markdown.
+
+ Parameters: sn — one-based source slide number; answer — whether to render the answer variant.
+ Used by: question_grid, make.
+ """
  pat=rf'^## S{sn:02}'+('-A' if answer else '')+r' — [^\n]+\n(.*?)(?=^## |\Z)'
  return re.search(pat,src,re.M|re.S)[1]
 def table(sec):
+ """Read three-column practice rows from a Markdown section.
+
+ Parameters: sec — Markdown section.
+ Calls: b.splitcells.
+ Used by: question_grid, make.
+ """
  rows={}
  for line in sec.splitlines():
   if line.startswith('| '):
@@ -24,16 +56,53 @@ def table(sec):
    if len(cells)==4 and cells[0] not in ('Step','Label','Q','---'):rows[cells[0]]=cells[1:]
  return rows
 def newdeck():
+ """Create a blank widescreen PowerPoint presentation.
+ Used by: make.
+ """
  p=Presentation();p.slide_width=Inches(16);p.slide_height=Inches(9);return p
 TITLE='Signed numbers: addition and subtraction'
-def base(p,subtitle,ref):return b.base(p,TITLE,subtitle,ref)
+def base(p,subtitle,ref):
+ """Create a topic slide with its title, subtitle and stable reference.
+
+ Parameters: p — presentation or drawing surface; subtitle — slide subtitle; ref — stable slide
+ reference.
+ Calls: b.base.
+ Used by: question_grid, assessment, recap, make.
+ """
+ return b.base(p,TITLE,subtitle,ref)
 def line(s,x,y,xx,yy,c=b.INK,arrow=False):
+ """Draw a line between the supplied endpoints.
+
+ Parameters: s — slide or source text as used by this helper; x — horizontal coordinate in inches; y
+ — vertical coordinate in inches; xx — line end x coordinate in inches; yy — line end y coordinate
+ in inches; c — coefficient or drawing colour as used here; arrow — whether the line needs an
+ arrowhead.
+ Calls: b.line.
+ Used by: numberline.
+ """
  b.line(s,x,y,xx,yy,c)
  sh=s.shapes[-1];sh.line.width=Pt(2 if arrow else 1)
  if arrow:sh._element.spPr.find('{http://schemas.openxmlformats.org/drawingml/2006/main}ln').append(parse_xml('<a:tailEnd '+nsdecls('a')+' type="triangle"/>'))
 def numberline(s,x,y,w,lo,hi,jumps,t):
  # Editable axis, ticks, coloured starts/endpoints and stepped jumps.
- def xx(n):return x+.18+(n-lo)/(hi-lo)*(w-.36)
+ """Draw labelled number positions and the specified signed jumps.
+
+ Parameters: s — slide or source text as used by this helper; x — horizontal coordinate in inches; y
+ — vertical coordinate in inches; w — width in inches; lo — lower number-line bound; hi — upper
+ number-line bound; jumps — signed number-line jumps; t — challenge index or Bezier parameter as
+ used here.
+ Calls: line, xx, b.text.
+ Used by: question_grid.
+
+ Example in the caller's context: numberline(s, x, y, w, lo, hi, jumps, t)
+ """
+ def xx(n):
+  """Map a number to its horizontal position on the number line.
+
+  Parameters: n — number or numerator.
+  Used by: numberline.
+  """
+  return x+.18+(n-lo)/(hi-lo)*(w-.36)
  line(s,xx(lo),y,xx(hi),y)
  for n in range(lo,hi+1):
   a=xx(n);line(s,a,y-.04,a,y+.04)
@@ -49,6 +118,14 @@ def numberline(s,x,y,w,lo,hi,jumps,t):
   line(s,xx(start),y-.06,xx(start),yy,b.COL[t]);line(s,xx(start),yy,xx(end),yy,b.COL[t],True);line(s,xx(end),yy,xx(end),y-.06,b.COL[t])
   b.text(s,x,y-.99+j*.29,w,.27,label,12,True,b.COL[t])
 def question_grid(p,sn):
+ """Build a worked or scaffolded signed-number question grid.
+
+ Parameters: p — presentation or drawing surface; sn — one-based source slide number.
+ Calls: table, section, base, b.text, b.headers, b.rect, numberline, b.progression.
+ Used by: make.
+
+ Example in the caller's context: question_grid(p, sn)
+ """
  rows=table(section(sn));demo=sn==1
  s=base(p,'Worked demo • Follow each calculation.' if demo else f'Step-by-step practice {sn-1} • Show your working.',f'M13-S{sn:02}')
  if demo:
@@ -71,6 +148,14 @@ def question_grid(p,sn):
  s.notes_slide.notes_text_frame.text=section(sn)
 
 def assessment(p,answers=False):
+ """Append the topic initial-assessment slide.
+
+ Parameters: p — presentation or drawing surface; answers — whether to show assessment answers.
+ Calls: b.splitcells, base, b.rect, b.text.
+ Used by: make.
+
+ Example in the caller's context: assessment(p, answers)
+ """
  sec=re.search(r'^## Initial assessment.*?\n(.*?)(?=^## |\Z)',src,re.S|re.M)[1]
  rows=[b.splitcells(l) for l in sec.splitlines() if re.match(r'^\| [1-4] \|',l)]
  s=base(p,'Initial assessment'+(' — answers' if answers else ' • Work out all four questions. Show your working.'),'M13-IA'+('-A' if answers else ''))
@@ -81,6 +166,14 @@ def assessment(p,answers=False):
  s.notes_slide.notes_text_frame.text='Initial assessment; no hints or answers on question slide.'
 
 def recap(p):
+ """Append the topic rules/technique recap slide.
+
+ Parameters: p — presentation or drawing surface.
+ Calls: base, b.splitcells, b.rect, b.text.
+ Used by: make.
+
+ Example in the caller's context: recap(p)
+ """
  s=base(p,'Rules recap • Start at the first number.','M13-RULES')
  block=re.search(r'^## Rules recap.*?\n(.*?)(?=^## |\Z)',src,re.M|re.S)[1]
  rules=[b.splitcells(l) for l in block.splitlines() if l.startswith('| ') and not l.startswith('| Rule') and not l.startswith('| ---')]
@@ -98,6 +191,12 @@ def recap(p):
  return s
 
 def make():
+ """Build the topic outputs from the authored inputs and save the legacy resources.
+ Calls: newdeck, assessment, recap, question_grid, base, b.headers, table, section, b.rect, b.text,
+ b.progression.
+
+ Example in the caller's context: make()
+ """
  q=newdeck();a=newdeck();assessment(q);recap(q);assessment(a,True)
  for sn in range(1,4):question_grid(q,sn)
  for sn in range(4,8):

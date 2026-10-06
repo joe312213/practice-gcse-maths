@@ -1,3 +1,15 @@
+<!--
+  Purpose: Choose or create a local learner profile with explicit similar-name confirmation.
+
+  Main contents:
+  - submit
+
+  Used By: website/src/routes/+page.svelte
+
+  Uses: no local module imports.
+
+  Libs: bits-ui (dialog/popover interaction).
+-->
 <script>
   import { Dialog } from 'bits-ui';
   let { open = $bindable(false), chooseName, returnFocus } = $props();
@@ -13,6 +25,10 @@
       matches = [];
     }
   });
+  /**
+   * Submit the component's current form and update feedback/focus.
+   * Parameter event: DOM event supplied by the bound handler.
+   */
   function submit(event) {
     event.preventDefault();
     try {

@@ -1,3 +1,17 @@
+<!--
+  Purpose: Export or validate and import learner progress, with JSON backup reminders and replacement confirmation.
+
+  Main contents:
+  - download
+  - readFile
+  - applyImport
+
+  Used By: website/src/routes/progress.html/+page.svelte
+
+  Uses: website/src/lib/domain/progress.mjs, website/src/lib/domain/progress-transfer.mjs.
+
+  Libs: none.
+-->
 <script>
   import { backupStatus, recordExport } from '#lib/domain/progress.mjs';
   let backup = $state.raw(null);
@@ -17,6 +31,12 @@
     replace = $state(false),
     message = $state('');
   const collision = $derived(pending && store.profiles.some((item) => item.key === pending.key));
+  /**
+   * Trigger JSON/CSV export; record a backup date only for JSON downloads.
+   * Parameter kind: JSON or CSV export format.
+   * Calls: exportProgress, exportCsv, recordExport, backupStatus.
+   * @example download(kind);
+   */
   function download(kind) {
     try {
       const json = kind === 'json';
@@ -44,6 +64,11 @@
       message = `Export failed: ${error.message}`;
     }
   }
+  /**
+   * Read a selected JSON file into a validated pending learner import without mutating storage.
+   * Parameter event: DOM event supplied by the bound handler.
+   * Calls: parseProgress.
+   */
   async function readFile(event) {
     pending = null;
     replace = false;
@@ -58,6 +83,10 @@
     }
     event.target.value = '';
   }
+  /**
+   * Apply the confirmed pending import, save it and refresh the parent view.
+   * Calls: importProgress.
+   */
   function applyImport() {
     try {
       importProgress(store, pending, replace);

@@ -1,4 +1,5 @@
-/* Revision states reuse semantic theme colours; texture supplements explicit stale text. */
+/* Lay out topic progress, challenge breakdowns and revision/backup prompts.
+   Revision states reuse semantic theme colours; texture supplements explicit stale text. */
 .topic-grid {
   display: grid;
   gap: 1rem;

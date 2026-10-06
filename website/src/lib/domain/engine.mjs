@@ -1,16 +1,55 @@
+/**
+ * Purpose: Implement exact answer parsing and weighted adaptive challenge progression.
+ *
+ * Main contents:
+ * - LEVELS
+ * - weights
+ * - success
+ * - newTrack
+ * - newPage
+ * - manualLevel
+ * - submit
+ * - resolveChoice
+ * - rational
+ * - markAnswer
+ * - profileKey
+ * - distance
+ *
+ * Used By: tests/progress.test.mjs, tests/website.test.mjs, website/scripts/validate-bank.mjs, website/src/lib/application/session.mjs, website/src/lib/components/practice/PracticeActivity.svelte, website/src/lib/components/practice/Progress.svelte, website/src/lib/components/practice/QuestionList.svelte, website/src/lib/components/teaching/DemoPlayer.svelte, website/src/lib/domain/errors.mjs, website/src/lib/domain/profiles.mjs, website/src/lib/domain/progress-transfer.mjs, website/src/lib/domain/progress.mjs
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: none.
+ */
 // Maths progression is independent of DOM/content, so transitions can be checked directly.
 export const LEVELS = ['Start', 'Build', 'Confidence'];
+/**
+ * Return scoring weights for a supported page size from one to ten.
+ * Parameter size: question-page length.
+ * Used by: success.
+ */
 export function weights(size = 10) {
   if (!Number.isInteger(size) || size < 1 || size > 10) throw Error('Page length must be 1–10.');
   return Array.from({ length: size }, (_, i) =>
     size === 10 ? (i >= 7 ? 3 : i >= 5 ? 2 : 1) : size >= 5 && i >= size - 3 ? 2 : 1,
   );
 }
+/**
+ * Compute weighted recent success, padding insufficient history with unsuccessful outcomes.
+ * Parameter history: ordered correctness outcomes.
+ * Parameter size: question-page length.
+ * Calls: weights.
+ * Used by: submit.
+ */
 export function success(history = [], size = 10) {
   const w = weights(size),
     values = [...Array(size).fill(false), ...history].slice(-size);
   return (100 * w.reduce((s, n, i) => s + n * Number(values[i]), 0)) / w.reduce((a, b) => a + b, 0);
 }
+/**
+ * Create adaptive history and reassessment state at the requested level.
+ * Parameter level: zero-based challenge level.
+ */
 export function newTrack(level = 0) {
   return {
     level,
@@ -21,6 +60,11 @@ export function newTrack(level = 0) {
     shortStreak: 0,
   };
 }
+/**
+ * Create an unanswered page with the requested size and level.
+ * Parameter size: question-page length.
+ * Parameter level: zero-based challenge level.
+ */
 export function newPage(size = 10, level = 0) {
   return {
     size,
@@ -36,6 +80,12 @@ export function newPage(size = 10, level = 0) {
     complete: false,
   };
 }
+/**
+ * Validate and apply a manual level choice, resetting trial/reassessment state as needed.
+ * Parameter track: mutable adaptive track.
+ * Parameter page: mutable question-page state.
+ * Parameter level: zero-based challenge level.
+ */
 export function manualLevel(track, page, level) {
   if (!Number.isInteger(level) || level < 0 || level > 2) throw Error('Unknown challenge level.');
   if (page.trial || page.pendingChoice) throw Error('Finish the current challenge trial first.');
@@ -47,6 +97,17 @@ export function manualLevel(track, page, level) {
     track.manual = true;
   }
 }
+/**
+ * Record one eligible outcome and apply reassessment, promotion or demotion rules without double counting.
+ * Parameter track: mutable adaptive track.
+ * Parameter page: mutable question-page state.
+ * Parameter id: stable question/job identifier.
+ * Parameter level: zero-based challenge level.
+ * Parameter correct: whether the outcome is correct.
+ * Parameter assisted: whether help was used.
+ * Calls: success.
+ * @example submit(track, page, { id, level, correct, assisted });
+ */
 export function submit(track, page, { id, level, correct, assisted = false }) {
   if (page.complete || Object.hasOwn(page.results, id)) return { duplicate: true };
   if (level !== page.level) throw Error('Question level does not match the current page.');
@@ -135,6 +196,12 @@ export function submit(track, page, { id, level, correct, assisted = false }) {
   }
   return { rate, eligible, level: page.level, notice: page.notice };
 }
+/**
+ * Resolve the pending level trial without recording another question outcome.
+ * Parameter track: mutable adaptive track.
+ * Parameter page: mutable question-page state.
+ * Parameter accept: learner acceptance of the offered promotion.
+ */
 export function resolveChoice(track, page, accept) {
   if (!page.pendingChoice) return;
   track.level = accept ? page.trial.to : page.trial.from;
@@ -149,6 +216,13 @@ export function resolveChoice(track, page, accept) {
 
 // Restricted exact rational grammar, never eval or Function. Handles x=, decimals,
 // simple fractions and mixed numbers without floating-point tolerance.
+/**
+ * Parse integer, decimal, fraction or mixed-number input into exact integer numerator/denominator values.
+ * Parameter raw: untrusted input text.
+ * Calls: decimal.
+ * Used by: markAnswer.
+ * @example rational("1 1/2"); // Same value as 1.5.
+ */
 export function rational(raw) {
   const value = String(raw)
     .trim()
@@ -161,6 +235,11 @@ export function rational(raw) {
     if (!d) return null;
     return [(mixed[1] === '-' ? -1n : 1n) * (BigInt(mixed[2]) * d + BigInt(mixed[3])), d];
   }
+  /**
+   * Parse decimal text into an exact rational pair, returning null for invalid syntax.
+   * Parameter s: numeric input text.
+   * Used by: rational.
+   */
   const decimal = (s) => {
     if (!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(s)) return null;
     const sign = s[0] === '-' ? -1n : 1n;
@@ -175,13 +254,30 @@ export function rational(raw) {
   if (!a || !b || b[0] === 0n) return null;
   return [a[0] * b[1], a[1] * b[0]];
 }
+/**
+ * Compare parsed learner and expected answers by exact cross multiplication.
+ * Parameter raw: untrusted input text.
+ * Parameter expected: authored expected answer.
+ * Calls: rational.
+ */
 export function markAnswer(raw, expected) {
   const a = rational(raw),
     b = rational(expected);
   return { valid: Boolean(a && b), correct: Boolean(a && b && a[0] * b[1] === b[0] * a[1]) };
 }
+/**
+ * Normalize a learner name into a stable case-insensitive local identity key.
+ * Parameter name: learner name or requested field name.
+ * Used by: distance.
+ */
 export const profileKey = (name) =>
   String(name).normalize('NFKC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('en-GB');
+/**
+ * Compute edit distance between normalized learner names for similar-name suggestions.
+ * Parameter a: first normalized name or operand.
+ * Parameter b: second normalized name or operand.
+ * Calls: profileKey.
+ */
 export function distance(a, b) {
   a = profileKey(a);
   b = profileKey(b);

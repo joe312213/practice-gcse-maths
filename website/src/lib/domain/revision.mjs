@@ -1,8 +1,32 @@
+/**
+ * Purpose: Maintain pending revision recommendations and credit completed recommended sets once.
+ *
+ * Main contents:
+ * - REVISION_POLICY
+ * - maintainRecommendations
+ * - completeRecommendation
+ *
+ * Used By: tests/progress.test.mjs, website/src/lib/application/session.mjs, website/src/routes/progress.html/+page.svelte
+ *
+ * Uses: website/src/lib/domain/progress.mjs, website/src/lib/domain/practice-code.mjs.
+ *
+ * Libs: none.
+ */
 import { topicProgress, weeklyProgress } from './progress.mjs';
 import { encodePracticeSet } from './practice-code.mjs';
 export const REVISION_POLICY = { pending: 3, weeklyAutomaticLimit: 15 };
 
-/** Fill empty recommendation places on Progress load; never discard unfinished/completed records. */
+/**
+ * Fill empty recommendation places on Progress load; never discard unfinished/completed records.
+ * Fill pending revision slots from ranked evidence unless the automatic weekly limit is reached.
+ * Parameter profile: learner record.
+ * Parameter catalogue: authored topic/page catalogue.
+ * Parameter now: current time in milliseconds or injected clock, as declared.
+ * Parameter uuid: injected identifier factory.
+ * Parameter requested: explicit request to generate recommendations beyond the automatic limit.
+ * Calls: weeklyProgress, topicProgress, encodePracticeSet.
+ * @example maintainRecommendations(profile, catalogue, Date.now(), makeId, true);
+ */
 export function maintainRecommendations(
   profile,
   catalogue,
@@ -59,9 +83,19 @@ export function maintainRecommendations(
   }
   return list;
 }
+/**
+ * Rank missing evidence first, then weak success, then stale evidence.
+ * Parameter item: question-type evidence record.
+ */
 function priority(item) {
   return item.missing ? 0 : item.rate < 75 ? 1 : 2;
 }
+/**
+ * Credit a fully completed recommendation once; ignore expired or ordinary sets.
+ * Parameter profile: learner record.
+ * Parameter run: practice-set attempt.
+ * Parameter now: current time in milliseconds or injected clock, as declared.
+ */
 export function completeRecommendation(profile, run, now) {
   if (!run?.recommendationId || run.finished !== 'complete') return false;
   const item = profile.revision?.recommendations.find((item) => item.id === run.recommendationId);

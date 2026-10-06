@@ -1,3 +1,15 @@
+<!--
+  Purpose: Render numbered question-selection buttons with answer and selection states.
+
+  Main contents:
+  - Component markup, input props and event bindings.
+
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte
+
+  Uses: website/src/lib/domain/engine.mjs.
+
+  Libs: none.
+-->
 <script>
   import { LEVELS } from '#lib/domain/engine.mjs';
   let { bank, page, selected, onselect } = $props();

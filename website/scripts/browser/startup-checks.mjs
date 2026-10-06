@@ -1,7 +1,26 @@
+/**
+ * Purpose: Inject startup faults to verify usable recovery from theme, storage and bank failures.
+ *
+ * Main contents:
+ * - checkStartup
+ *
+ * Used By: website/scripts/browser-checks.mjs
+ *
+ * Uses: website/scripts/browser/support.mjs.
+ *
+ * Libs: node:assert/strict (assertions).
+ */
 import assert from 'node:assert/strict';
 import { createTestContext } from './support.mjs';
 
-/** Faults run in isolated contexts, never in a learner's saved browser profile. */
+/**
+ * Faults run in isolated contexts, never in a learner's saved browser profile.
+ * Exercise bank, storage and theme failure scenarios in separate browser contexts.
+ * Parameter browser: Playwright browser instance.
+ * Parameter base: test server base URL.
+ * Calls: createTestContext.
+ * @example checkStartup(browser, base);
+ */
 export async function checkStartup(browser, base) {
   for (const fault of [
     'delayed-bank',

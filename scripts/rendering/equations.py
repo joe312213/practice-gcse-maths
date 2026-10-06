@@ -1,7 +1,30 @@
-"""Vertical-line balance working; compact mode keeps operations beside each step."""
+"""Purpose: Vertical-line balance working; compact mode keeps operations beside each step.
+
+Main contents:
+- draw
+
+Used By: scripts/build_priority_topic.py.
+
+Uses: scripts/rendering/canvas.py.
+
+Libs: Python standard library only.
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 from .canvas import Canvas
 
 def draw(rows,slide=None,x=0,y=0,w=4.6,step=.43,size=21,compact=False):
+ """Render balance rows beside a vertical divider, optionally placing operations inline in compact
+ mode.
+
+ Parameters: rows — ordered equation or working rows; slide — editable PowerPoint slide; x —
+ horizontal coordinate in inches; y — vertical coordinate in inches; w — width in inches; step —
+ vertical line spacing in inches; size — font size in points; compact — whether to place operations
+ inline.
+ Calls: c.line, c.text, c.rect, c.finish.
+
+ Example in the caller's context: draw(rows, slide, x, y, w, step, size, compact)
+ """
  equations=[r for r in rows if r.get('kind')!='op'];h=(len(equations) if compact else len(rows))*step+.10;c=Canvas(w,h,slide,x,y);mid=w/2
  c.line(mid,.02,mid,h-.06,'8193A0',1.2);index=0
  for row in rows:

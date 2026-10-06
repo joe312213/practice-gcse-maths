@@ -1,3 +1,15 @@
+<!--
+  Purpose: Present answer feedback and available correction explanations.
+
+  Main contents:
+  - Component markup, input props and event bindings.
+
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte
+
+  Uses: website/src/lib/components/teaching/EquationWorking.svelte.
+
+  Libs: none.
+-->
 <script>
   import EquationWorking from '../teaching/EquationWorking.svelte';
   let { question, response, mode, bank } = $props();

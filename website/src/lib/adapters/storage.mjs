@@ -1,6 +1,26 @@
+/**
+ * Purpose: Load and save learner progress safely and fetch the validated question bank.
+ *
+ * Main contents:
+ * - openProgress
+ * - loadBank
+ *
+ * Used By: tests/session.test.mjs, website/src/routes/+page.svelte, website/src/routes/progress.html/+page.svelte
+ *
+ * Uses: website/src/lib/domain/profiles.mjs.
+ *
+ * Libs: none.
+ */
 import { KEY, emptyStore, load } from '../domain/profiles.mjs';
 
-/** Preserve unreadable stores: in-memory practice must never overwrite their contents. */
+/**
+ * Preserve unreadable stores: in-memory practice must never overwrite their contents.
+ * Load learner data and return a guarded persistence adapter; preserve unreadable stored data.
+ * Parameter storage: Storage-compatible adapter.
+ * Parameter onWarning: warning callback.
+ * Calls: load, emptyStore.
+ * @example const progress = openProgress(localStorage, showWarning);
+ */
 export function openProgress(storage, onWarning = () => {}) {
   let writable = true;
   let data;
@@ -13,6 +33,10 @@ export function openProgress(storage, onWarning = () => {}) {
   }
   return {
     data,
+    /**
+     * Persist a learner store only if the original data was readable; report write failures.
+     * Parameter value: new value to apply or validate.
+     */
     save(value) {
       if (!writable) return;
       try {
@@ -26,6 +50,11 @@ export function openProgress(storage, onWarning = () => {}) {
   };
 }
 
+/**
+ * Fetch a bank URL and reject failed responses or invalid bank shape.
+ * Parameter url: question-bank URL.
+ * Parameter fetcher: injected fetch implementation.
+ */
 export async function loadBank(url, fetcher = fetch) {
   const response = await fetcher(url, { cache: 'no-store' });
   if (!response.ok) throw Error('The equation bank could not be loaded.');

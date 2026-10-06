@@ -1,4 +1,16 @@
-"""Apply approved progression arrows to plain grids and maintain the lattice templates."""
+"""Purpose: Apply approved progression arrows to plain grids and maintain the lattice templates.
+
+Main contents:
+- apply
+
+Used By: manual legacy command invocation.
+
+Uses: scripts/compile_starters.py, scripts/update_structure.py.
+
+Libs: compile_starters, python-pptx (editable slides and deck inspection).
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 from copy import deepcopy
 from pathlib import Path
 import json
@@ -7,6 +19,11 @@ import update_structure as u
 ROOT=Path(__file__).resolve().parents[1]
 
 def apply():
+ """Update saved progression-arrow placement and lattice layout from the accepted reference deck.
+ Calls: u.Presentation, u.texts, u.qn, u.remove, u.base, u.insert_before, u.save.
+
+ Example in the caller's context: apply()
+ """
  registry=json.loads((ROOT/'content/topic_registry.json').read_text())
  ref=u.Presentation(ROOT/'topics/signed_numbers/Signed_addition_subtraction_M13_questions.pptx')
  reference=next(s for s in ref.slides if any('Step-by-step practice 2' in t for t in u.texts(s)))

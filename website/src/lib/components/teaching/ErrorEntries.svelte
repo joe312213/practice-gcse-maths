@@ -1,5 +1,23 @@
+<!--
+  Purpose: Collect the wrong row, reason and correction for each authored error.
+
+  Main contents:
+  - update
+
+  Used By: website/src/lib/components/practice/AnswerForm.svelte
+
+  Uses: no local module imports.
+
+  Libs: none.
+-->
 <script>
   let { question, reasons, entries, disabled = false, onchange } = $props();
+  /**
+   * Replace one error entry field while retaining the other row/reason/correction values.
+   * Parameter index: zero-based question/page position.
+   * Parameter field: error-entry field name.
+   * Parameter value: new value to apply or validate.
+   */
   function update(index, field, value) {
     const next = question.errors.map((_, i) => ({
       row: null,

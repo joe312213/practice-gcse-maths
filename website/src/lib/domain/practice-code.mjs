@@ -1,3 +1,21 @@
+/**
+ * Purpose: Encode and decode nine-character practice-set codes and resolve their authored pages.
+ *
+ * Main contents:
+ * - SET_LEVELS
+ * - TIMINGS
+ * - PAGE_TYPES
+ * - encodePracticeSet
+ * - decodePracticeSet
+ * - resolvePracticePage
+ * - setSecondsRemaining
+ *
+ * Used By: tests/practice-set.test.mjs, tests/progress.test.mjs, website/scripts/browser/practice-set-checks.mjs, website/src/lib/application/session.mjs, website/src/lib/components/practice/PracticeSets.svelte, website/src/lib/components/progress/TopicProgress.svelte, website/src/lib/domain/progress-transfer.mjs, website/src/lib/domain/progress.mjs, website/src/lib/domain/revision.mjs, website/src/routes/progress.html/+page.svelte
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: none.
+ */
 // Fixed 54-bit format; the selected subject supplies the code's namespace.
 // Header: challenge(2), pageCount-1(2), timing(2). Four entries: topic(5), type(3), slot(4).
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
@@ -9,9 +27,23 @@ export const PAGE_TYPES = [
   { id: 2, mode: 'mixed', label: 'Mixed priority' },
   { id: 3, mode: 'problem', label: 'Problem solving' },
 ];
+/**
+ * Check whether a value is an integer in the inclusive zero-to-max range.
+ * Parameter value: new value to apply or validate.
+ * Parameter max: inclusive upper integer bound.
+ * Used by: encodePracticeSet.
+ */
 function integer(value, max) {
   return Number.isInteger(value) && value >= 0 && value <= max;
 }
+/**
+ * Pack level, timing and up to four catalogue entries into a nine-character code.
+ * Parameter level: zero-based challenge level.
+ * Parameter timing: encoded practice-set duration.
+ * Parameter pages: catalogue page entries.
+ * Calls: integer.
+ * @example encodePracticeSet({ level: 0, timing: 0, pages: [{ topic: 9, type: 0, slot: 1 }] });
+ */
 export function encodePracticeSet({ level, timing, pages }) {
   if (
     !integer(level, 3) ||
@@ -33,6 +65,11 @@ export function encodePracticeSet({ level, timing, pages }) {
     (_, i) => alphabet[Number((bits >> BigInt(48 - i * 6)) & 63n)],
   ).join('');
 }
+/**
+ * Validate and unpack a nine-character code into level, timing and page entries.
+ * Parameter raw: untrusted input text.
+ * @example decodePracticeSet(encodePracticeSet(recipe));
+ */
 export function decodePracticeSet(raw) {
   const code = String(raw).trim();
   if (!/^[A-Za-z0-9_-]{9}$/.test(code))
@@ -52,7 +89,16 @@ export function decodePracticeSet(raw) {
   return { level: header >> 4, timing: header & 3, pages: entries.slice(0, count) };
 }
 
-/** Slots are author-managed positions, deliberately reusable; no identity tombstones. */
+/**
+ * Slots are author-managed positions, deliberately reusable; no identity tombstones.
+ * Resolve a catalogue entry and level to available authored bank questions.
+ * Parameter catalogue: authored topic/page catalogue.
+ * Parameter banks: loaded question banks.
+ * Parameter entry: encoded catalogue page address.
+ * Parameter level: zero-based challenge level.
+ * Parameter random: injected random-number source.
+ * @example resolvePracticePage(catalogue, banks, { topic: 9, type: 0, slot: 1 }, 0);
+ */
 export function resolvePracticePage(catalogue, banks, entry, level, random = Math.random) {
   const topic = catalogue.topics.find((topic) => topic.code === entry.topic);
   const type = PAGE_TYPES.find((type) => type.id === entry.type);
@@ -80,6 +126,11 @@ export function resolvePracticePage(catalogue, banks, entry, level, random = Mat
     throw Error('This authored page has invalid question references.');
   return { bank, mode: type.mode, ids, slot: index + 1 };
 }
+/**
+ * Return nonnegative remaining whole seconds, or null for an untimed set.
+ * Parameter set: timed practice-set record.
+ * Parameter now: current time in milliseconds or injected clock, as declared.
+ */
 export function setSecondsRemaining(set, now) {
   return set?.deadline ? Math.max(0, Math.ceil((set.deadline - now) / 1000)) : null;
 }

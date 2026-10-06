@@ -1,7 +1,32 @@
+/**
+ * Purpose: Exercise progress breakdowns, backup transfer and revision recommendations at mobile width.
+ *
+ * Main contents:
+ * - checkProgress
+ *
+ * Used By: website/scripts/browser-checks.mjs
+ *
+ * Uses: website/scripts/browser/support.mjs.
+ *
+ * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), @axe-core/playwright (accessibility checks), ).
+      .setInputFiles({ name: , ).setInputFiles({
+      name: , , exact: true }).isDisabled(),
+      true,
+    );
+    await page.getByRole(, , exact: true }).click();
+    await page.getByText(.
+ */
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import AxeBuilder from '@axe-core/playwright';
 import { createTestContext, artifacts } from './support.mjs';
+/**
+ * Exercise progress panels, transfers and recommendation persistence at mobile width.
+ * Parameter browser: Playwright browser instance.
+ * Parameter base: test server base URL.
+ * Calls: createTestContext, readFile.
+ * @example checkProgress(browser, base);
+ */
 export async function checkProgress(browser, base) {
   const context = await createTestContext(browser, { viewport: { width: 390, height: 844 } });
   const page = await context.newPage();
@@ -18,11 +43,37 @@ export async function checkProgress(browser, base) {
     await page.getByRole('heading', { name: 'Your progress', exact: true }).waitFor();
     await page.getByText('0 questions answered', { exact: true }).waitFor();
     assert.equal(
+      await page
+        .getByRole('link', { name: 'Back to practice', exact: true })
+        .evaluate(
+          (element) =>
+            getComputedStyle(element).color ===
+            getComputedStyle(document.querySelector('.theme-icon')).color,
+        ),
+      true,
+      'Back link uses the themed header control colour',
+    );
+    assert.equal(
       await page.evaluate(() => document.documentElement.scrollWidth > innerWidth),
       false,
     );
-    await page.locator('.challenge-stage').first().click();
+    await page.locator('.challenge-stage').first().hover();
     await page.getByRole('heading', { name: 'Start · Solving equations', exact: true }).waitFor();
+    await page.locator('.progress-breakdown[data-state="open"]').waitFor();
+    const panel = await page.locator('.progress-breakdown').evaluate((element) => {
+      const style = getComputedStyle(element);
+      const bounds = element.getBoundingClientRect();
+      return {
+        background: style.backgroundColor,
+        padding: parseFloat(style.paddingTop),
+        border: parseFloat(style.borderTopWidth),
+        zIndex: Number(style.zIndex),
+        fits: bounds.left >= 0 && bounds.right <= innerWidth,
+      };
+    });
+    assert.notEqual(panel.background, 'rgba(0, 0, 0, 0)', 'Breakdown needs a visible surface');
+    assert.ok(panel.padding > 0 && panel.border > 0 && panel.zIndex > 0, JSON.stringify(panel));
+    assert.ok(panel.fits, 'Breakdown stays inside the viewport');
     const audit = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
       .analyze();

@@ -1,3 +1,15 @@
+<!--
+  Purpose: Render balanced equation rows and their staged reveal state.
+
+  Main contents:
+  - Component markup, input props and event bindings.
+
+  Used By: website/src/lib/components/practice/Feedback.svelte, website/src/lib/components/practice/PracticeActivity.svelte, website/src/lib/components/teaching/DemoPlayer.svelte
+
+  Uses: no local module imports.
+
+  Libs: none.
+-->
 <script>
   let {
     rows,

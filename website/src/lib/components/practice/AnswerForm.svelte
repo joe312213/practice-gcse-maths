@@ -1,3 +1,15 @@
+<!--
+  Purpose: Render the current answer input and submit action, including pending promotion choices.
+
+  Main contents:
+  - Component markup, input props and event bindings.
+
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte
+
+  Uses: website/src/lib/components/teaching/ErrorEntries.svelte.
+
+  Libs: none.
+-->
 <script>
   import ErrorEntries from '../teaching/ErrorEntries.svelte';
   let { question, bank, mode, response, draft, assisted, inputError, onsubmit, ondraft, onhint } =

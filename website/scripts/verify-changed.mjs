@@ -1,3 +1,17 @@
+/**
+ * Purpose: Run affected verification jobs serially, retaining passing fingerprints and named failure logs.
+ *
+ * Main contents:
+ * - snapshot
+ * - outputHash
+ * - command
+ *
+ * Used By: Verification command entry points.
+ *
+ * Uses: website/scripts/verification/plan.mjs.
+ *
+ * Libs: node:fs/promises (asynchronous file access), node:child_process (Git/build subprocesses), node:url, node:path (filesystem paths).
+ */
 import { readFile, writeFile, mkdir, readdir, stat } from 'node:fs/promises';
 import { execFileSync, spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -31,6 +45,11 @@ const salt = JSON.stringify([
   chrome?.mtimeMs,
 ]);
 
+/**
+ * Fingerprint tracked and untracked relevant source files discovered by Git.
+ * Calls: execFileSync, digest, readFile, resolve.
+ * @example snapshot();
+ */
 async function snapshot() {
   const names = execFileSync(
     'git',
@@ -55,8 +74,20 @@ async function snapshot() {
   }
   return result;
 }
+/**
+ * Fingerprint build output recursively to detect stale or externally changed artifacts.
+ * Parameter directory: filesystem directory.
+ * Calls: visit, fingerprint.
+ * @example outputHash(directory);
+ */
 async function outputHash(directory) {
   const files = {};
+  /**
+   * Visit children recursively and collect their file data.
+   * Parameter path: repository-relative or walked filesystem path.
+   * Calls: readdir, resolve, relative, digest, readFile.
+   * Used by: outputHash.
+   */
   async function visit(path) {
     for (const entry of await readdir(path, { withFileTypes: true })) {
       const child = resolve(path, entry.name);
@@ -72,6 +103,13 @@ async function outputHash(directory) {
   }
   return fingerprint(files, () => true);
 }
+/**
+ * Run one verification command, capture its named log and fail on nonzero exit.
+ * Parameter id: stable question/job identifier.
+ * Parameter argv: Node command arguments.
+ * Calls: resolve, writeFile.
+ * @example command(id, argv);
+ */
 async function command(id, argv) {
   const log = resolve(directory, `${id}.log`);
   const start = Date.now();
@@ -122,6 +160,10 @@ console.log(
   `Selected: ${[...(formatFiles.length ? ['format'] : []), ...(buildNeeded ? ['build'] : []), ...selected.map((job) => job.id)].join(', ') || 'none — relevant inputs unchanged'}`,
 );
 if (!args.has('--plan')) {
+  /**
+   * Write the successful verification cache to its JSON state file.
+   * Calls: writeFile.
+   */
   async function save() {
     await writeFile(stateFile, JSON.stringify(cache, null, 2) + '\n');
   }

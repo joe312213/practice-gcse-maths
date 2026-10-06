@@ -1,4 +1,5 @@
-/* Shared layout and semantic controls: preserve the reviewed prototype geometry. */
+/* Define shared page layout, question cards, teaching diagrams and responsive working fields.
+   Shared layout and semantic controls: preserve the reviewed prototype geometry. */
 :root {
   --ink: var(--text);
   --brand: var(--main);

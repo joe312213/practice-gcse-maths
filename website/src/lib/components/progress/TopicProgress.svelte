@@ -1,8 +1,24 @@
+<!--
+  Purpose: Present topic revision priority and per-level, per-question-type success breakdowns.
+
+  Main contents:
+  - date
+
+  Used By: website/src/routes/progress.html/+page.svelte
+
+  Uses: website/src/lib/domain/practice-code.mjs.
+
+  Libs: bits-ui (dialog/popover interaction).
+-->
 <script>
   import { Popover } from 'bits-ui';
   import { SET_LEVELS } from '#lib/domain/practice-code.mjs';
   let { row } = $props();
   let openLevel = $state(null);
+  /**
+   * Format a timestamp in UK date format, or the unpractised label for null.
+   * Parameter value: new value to apply or validate.
+   */
   const date = (value) =>
     value === null ? 'Not yet practised' : new Date(value).toLocaleDateString('en-GB');
 </script>

@@ -1,7 +1,28 @@
-"""Finished lattice multiplication: exact cells, diagonal digits and separate carries."""
+"""Purpose: Finished lattice multiplication: exact cells, diagonal digits and separate carries.
+
+Main contents:
+- draw
+
+Used By: scripts/answer_layout.py, scripts/rendering/applications.py.
+
+Uses: scripts/rendering/canvas.py.
+
+Libs: Python standard library only.
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 from .canvas import Canvas
 
 def draw(a,b,slide=None,x=0,y=0,cell=.64):
+ """Render exact lattice cells, answer diagonals and carries as SVG and optional slide shapes.
+
+ Parameters: a — first operand or coefficient; b — second operand or constant; slide — editable
+ PowerPoint slide; x — horizontal coordinate in inches; y — vertical coordinate in inches; cell —
+ lattice cell size in inches.
+ Calls: c.text, c.line, c.finish.
+
+ Example in the caller's context: draw(a, b, slide, x, y, cell)
+ """
  aa,bb=str(a),str(b);n,m=len(aa),len(bb);w=max(3,n*cell+1.1);h=m*cell+1.38;c=Canvas(w,h,slide,x,y);gx=.46;gy=.46
  for j,d in enumerate(aa):c.text(gx+j*cell,gy-.35,cell,.3,d,22,'center',bold=True)
  for i,d in enumerate(bb):c.text(gx+n*cell+.08,gy+i*cell+.18,.36,.3,d,22,'center',bold=True)

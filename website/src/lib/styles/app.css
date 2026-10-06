@@ -1,5 +1,5 @@
-/* Utilities are composed into semantic classes. Omit Preflight to preserve native
-   typography/geometry; daisyUI supplies selected foundations, not a new theme. */
+/* Compose the website stylesheet in a fixed order while retaining the accepted native geometry.
+   Utilities are composed into semantic classes. Omit Preflight to preserve native typography/geometry; daisyUI supplies selected foundations, not a new theme. */
 @layer theme, base, components, utilities;
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/utilities.css' layer(utilities);

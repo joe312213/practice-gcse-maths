@@ -34,6 +34,8 @@ These are ongoing requirements, not one-off draft changes. Recorded from user fe
 
 ## Shared presentation
 
+- Hover on an ordinary surface button must retain an opaque surface, lightly tinted with the theme's selected colour: 75% normal surface + 25% `--selection-base`. Never substitute the page background, transparency or `--surface-soft` for this hover state. Shared `.action-button` styling applies this to enabled ordinary buttons; other surface controls opt in with `.hover-tint` and may set `--hover-surface` to their normal background. Keep text/borders stable. Primary, current-step and quiet actions retain their distinct treatments; do not attach `.hover-tint` to selected, marked or disabled controls. Use the same semantic rule across all palettes and light/dark modes, including user-adjusted colours.
+
 - During framework migration, retain the current layout and design closely and match theme colours and gradients exactly, including opacity, gradient stops/directions and adjustment behaviour. Adapt framework defaults to the existing design. Capture baseline screenshots/computed styles and compare at each stage. Default themes must satisfy accessibility contrast requirements. The user explicitly accepts unrestricted saturation/lightness adjustments to personal preference, even when an adjusted combination reduces contrast. Such adjustment results are informational, not defects or approval gates; do not constrain them or reopen this settled decision.
 
 - Status highlights blend with each element’s normal surface and border rather than uniformly with the dominant theme colour. Question buttons use surface/control-border; feedback uses soft/brand. Keep semantic text colours unchanged. The latest user-edited mix percentages are authoritative.

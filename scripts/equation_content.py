@@ -1,18 +1,86 @@
-"""Create the explicit M10 source bank using exact linear arithmetic."""
+"""Purpose: Create the explicit M10 source bank using exact linear arithmetic.
+
+Main contents:
+- n
+- signed
+- ax
+- affine
+- eq
+- op
+- make
+- build
+
+Used By: manual legacy command invocation.
+
+Uses: no local module imports.
+
+Libs: Python standard library only.
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 from pathlib import Path
 from fractions import Fraction as F
 from collections import Counter
 import random,json
 ROOT=Path(__file__).resolve().parents[1]
 def n(x):
+ """Format an exact rational as an integer, terminating decimal or fraction.
+
+ Parameters: x — horizontal coordinate in inches.
+ Used by: signed, ax, make.
+ """
  x=F(x)
  return str(x.numerator) if x.denominator==1 else str(float(x)) if x.denominator in (2,4,5,8,10) else f'{x.numerator}/{x.denominator}'
-def signed(v):return (' + '+n(v)) if v>0 else (' − '+n(-v)) if v<0 else ''
-def ax(a):return 'x' if a==1 else '−x' if a==-1 else n(a)+'x'
-def affine(a,b):return ax(a)+signed(b)
-def eq(l,r):return dict(l=str(l),r=str(r))
-def op(v):return dict(l=v,r=v,kind='op')
+def signed(v):
+ """Format a signed additive term, omitting zero.
+
+ Parameters: v — numeric value.
+ Calls: n.
+ Used by: affine, make.
+ """
+ return (' + '+n(v)) if v>0 else (' − '+n(-v)) if v<0 else ''
+def ax(a):
+ """Format an x coefficient, suppressing unit magnitude.
+
+ Parameters: a — first operand or coefficient.
+ Calls: n.
+ Used by: affine, make.
+ """
+ return 'x' if a==1 else '−x' if a==-1 else n(a)+'x'
+def affine(a,b):
+ """Format ax + b with normalized signs.
+
+ Parameters: a — first operand or coefficient; b — second operand or constant.
+ Calls: ax, signed.
+ Used by: make.
+ """
+ return ax(a)+signed(b)
+def eq(l,r):
+ """Create a balanced equation row from left and right text.
+
+ Parameters: l — left-hand equation text; r — right-hand equation text.
+ Used by: make, build.
+ """
+ return dict(l=str(l),r=str(r))
+def op(v):
+ """Create an operation row applying the same operation to both sides.
+
+ Parameters: v — numeric value.
+ Used by: make, build.
+ """
+ return dict(l=v,r=v,kind='op')
 def make(kind,s,a=3,b=4,c=1,flip=False):
+ """Construct a linear equation with known solution and explicit balanced working for the selected
+ operation kind.
+
+ Parameters: kind — question or operation variant; s — slide or source text as used by this helper;
+ a — first operand or coefficient; b — second operand or constant; c — coefficient or drawing colour
+ as used here; flip — whether to swap equation sides.
+ Calls: signed, eq, n, op, ax, affine.
+ Used by: build.
+
+ Example in the caller's context: make(kind, s, a, b, c, flip)
+ """
  s=F(s);balance=[]
  if kind in ('add','sub'):
   b=abs(b)*(1 if kind=='add' else -1);rhs=s+b;lhs='x'+signed(b)
@@ -60,6 +128,11 @@ def make(kind,s,a=3,b=4,c=1,flip=False):
  return dict(q=lhs0+' = '+rhs0,answer=n(s),balance=balance,check=f'At x = {n(s)}, left side = {n(left)} and right side = {n(right)}.',wrong=n(wrong),error_work=bad,error_note=reason,kind=kind,coefficients=[n(lc),n(lb),n(rc),n(rb)])
 
 def build():
+ """Create reproducible equation examples and write the structured source bank.
+ Calls: make, eq, op.
+
+ Example in the caller's context: build()
+ """
  rng=random.Random(10012026)
  # Mix solutions rather than keeping the consecutive answer sequences in the old draft.
  pool=list(range(-8,28));rng.shuffle(pool);pool2=pool[:];rng.shuffle(pool2);solutions=[pool[:18],pool[18:],pool2[:18],pool2[18:]]

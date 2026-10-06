@@ -1,16 +1,62 @@
+/**
+ * Purpose: Validate portable learner records and serialize JSON backups or spreadsheet-safe CSV history.
+ *
+ * Main contents:
+ * - exportProgress
+ * - parseProgress
+ * - importProgress
+ * - exportCsv
+ *
+ * Used By: tests/progress.test.mjs, website/src/lib/components/progress/ProgressTransfer.svelte
+ *
+ * Uses: website/src/lib/domain/engine.mjs, website/src/lib/domain/practice-code.mjs.
+ *
+ * Libs: none.
+ */
 import { newTrack, profileKey } from './engine.mjs';
 import { decodePracticeSet } from './practice-code.mjs';
 
 const format = 'maths-practice-progress';
+/**
+ * Reject an invalid imported value with the standard non-destructive import error.
+ * Parameter condition: required validation condition.
+ * Used by: parseProgress.
+ */
 function requireValue(condition) {
   if (!condition) throw Error('Invalid progress file. No saved data has been changed.');
 }
+/**
+ * Recognize non-array object values used in import validation.
+ * Parameter value: new value to apply or validate.
+ * Used by: parseProgress.
+ */
 const object = (value) => value && typeof value === 'object' && !Array.isArray(value);
+/**
+ * Recognize finite nonnegative numeric values used in import validation.
+ * Parameter value: new value to apply or validate.
+ * Used by: parseProgress.
+ */
 const number = (value) => Number.isFinite(value) && value >= 0;
+/**
+ * Recognize string values used in import validation.
+ * Parameter value: new value to apply or validate.
+ * Used by: parseProgress.
+ */
 const text = (value) => typeof value === 'string';
+/**
+ * Recognize supported challenge-level integers in an imported record.
+ * Parameter value: new value to apply or validate.
+ * Used by: parseProgress.
+ */
 const level = (value) => Number.isInteger(value) && value >= 0 && value < 4;
 
-/** Versioned learner progress, not executable state or incomplete answer drafts. */
+/**
+ * Versioned learner progress, not executable state or incomplete answer drafts.
+ * Serialize a learner's history, levels and revision records as a versioned JSON envelope.
+ * Parameter profile: learner record.
+ * Parameter now: current time in milliseconds or injected clock, as declared.
+ * @example const json = exportProgress(profile);
+ */
 export function exportProgress(profile, now = Date.now()) {
   return JSON.stringify(
     {
@@ -35,6 +81,12 @@ export function exportProgress(profile, now = Date.now()) {
     2,
   );
 }
+/**
+ * Validate an untrusted JSON envelope and return a normalized learner record.
+ * Parameter raw: untrusted input text.
+ * Calls: requireValue, text, object, profileKey, level, newTrack, number, decodePracticeSet.
+ * @example const learner = parseProgress(exportProgress(profile));
+ */
 export function parseProgress(raw) {
   let value;
   try {
@@ -181,6 +233,12 @@ export function parseProgress(raw) {
     };
   return profile;
 }
+/**
+ * Insert or explicitly replace a learner record and make it current.
+ * Parameter store: schema-2 learner store.
+ * Parameter profile: learner record.
+ * Parameter replace: explicit permission to replace a matching learner.
+ */
 export function importProgress(store, profile, replace = false) {
   const index = store.profiles.findIndex((item) => item.key === profile.key);
   if (index >= 0 && !replace)
@@ -189,8 +247,17 @@ export function importProgress(store, profile, replace = false) {
   else store.profiles.push(structuredClone(profile));
   store.last = profile.key;
 }
+/**
+ * Serialize answer history with quoted fields and neutralized spreadsheet formula prefixes.
+ * Parameter profile: learner record.
+ * @example const csv = exportCsv(profile);
+ */
 export function exportCsv(profile) {
   // Quote every field and neutralise spreadsheet formula prefixes in user-controlled text.
+  /**
+   * Quote one CSV field and neutralize leading spreadsheet formula characters.
+   * Parameter value: new value to apply or validate.
+   */
   const cell = (value) => {
     let str = String(value ?? '');
     if (/^[\s]*[=+@-]/.test(str)) str = `'${str}`;

@@ -1,4 +1,5 @@
-/* Theme controls adapted from the T-Level starters reference, commit 8906225. */
+/* Style palette previews, theme adjustments and reusable popover surfaces.
+   Theme controls adapted from the T-Level starters reference, commit 8906225. */
 #theme-toggle {
   display: grid;
   place-items: center;
@@ -46,7 +47,7 @@
   fill: var(--main);
   stroke: var(--main);
 }
-#theme-menu {
+.theme-menu {
   margin: 0;
   width: min(24rem, calc(100vw - 2rem));
   max-height: min(var(--bits-popover-content-available-height), calc(100dvh - 2rem));
@@ -155,6 +156,6 @@
   }
 }
 
-#theme-menu {
+.theme-menu {
   z-index: 35;
 }

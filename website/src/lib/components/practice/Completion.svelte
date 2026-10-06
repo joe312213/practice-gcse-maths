@@ -1,3 +1,15 @@
+<!--
+  Purpose: Present completed-page results and the next-page action.
+
+  Main contents:
+  - Component markup, input props and event bindings.
+
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte
+
+  Uses: website/src/lib/components/practice/NextStage.svelte.
+
+  Libs: none.
+-->
 <script>
   import NextStage from './NextStage.svelte';
   let { page, mode, onstage, onnext, onpromotion, practiceSet = null, onSetNext } = $props();

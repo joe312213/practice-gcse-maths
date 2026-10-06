@@ -1,5 +1,17 @@
-"""Lightweight final-result inventory for the error-spotting question bank.
+"""Purpose: Lightweight final-result inventory for the error-spotting question bank.
 Only final answers count: intermediate working and repeated operand digits do not.
+
+Main contents:
+- normalise
+- review
+
+Used By: scripts/update_structure.py.
+
+Uses: no local module imports.
+
+Libs: Python standard library only.
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
 """
 from collections import Counter,defaultdict
 from fractions import Fraction
@@ -9,6 +21,12 @@ ROOT=Path(__file__).resolve().parents[1]
 ORDER=['M01','M02','M13','M03','M04']
 
 def normalise(value,item):
+ """Normalize a displayed answer to an exact fraction, using the question divisor for remainder
+ notation.
+
+ Parameters: value — text or numeric value to render; item — structured question record.
+ Used by: review.
+ """
  value=str(value).replace('−','-').replace(',','').replace('£','').strip()
  if 'r' in value:
   q,r=re.split(r'\s*r\s*',value)
@@ -16,6 +34,13 @@ def normalise(value,item):
  return Fraction(value)
 
 def review(data):
+ """Collect final correct and incorrect answers and write their repetition-pattern review.
+
+ Parameters: data — structured question bank.
+ Calls: normalise.
+
+ Example in the caller's context: review(data)
+ """
  all_values=defaultdict(list);lines=['# Error-spotting answer-pattern review — 1 October 2026','',
  'Reviewed final correct and deliberately incorrect results for all 45 SE questions. Compare numerical values regardless of units/currency; preserve signs and the value of any remainder. Do not count intermediate calculations as separate final answers.','',
  'Before: ratio returned 10 three times; signed arithmetic returned −3 four times and reused −8 as a wrong answer; some correct results were also wrong answers elsewhere on the same slide. The problem-solving bill repeated the division example 132 ÷ 8.','',

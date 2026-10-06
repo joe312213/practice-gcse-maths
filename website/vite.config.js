@@ -1,3 +1,15 @@
+/**
+ * Purpose: Configure SvelteKit and Tailwind compilation for the static website.
+ *
+ * Main contents:
+ * - Module initialization and configuration.
+ *
+ * Used By: Vite build/development commands.
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: vite (build/dev configuration), @sveltejs/kit/vite (SvelteKit compilation), @sveltejs/adapter-static (static output), @tailwindcss/vite (Tailwind compilation).
+ */
 import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import adapter from '@sveltejs/adapter-static';

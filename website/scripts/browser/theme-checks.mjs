@@ -1,3 +1,15 @@
+/**
+ * Purpose: Compare rendered themes with the frozen reference and optionally audit user adjustments.
+ *
+ * Main contents:
+ * - checkThemes
+ *
+ * Used By: website/scripts/browser-checks.mjs
+ *
+ * Uses: website/scripts/browser/support.mjs.
+ *
+ * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), @axe-core/playwright (accessibility checks).
+ */
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
 import AxeBuilder from '@axe-core/playwright';
@@ -6,6 +18,10 @@ import { artifacts } from './support.mjs';
 // Status fills have intentionally diverged from the historical palette;
 // colour-checks.mjs owns their current element-relative contract.
 // Resolve token formulas through real CSS properties, not source-string comparisons.
+/**
+ * Read rendered theme colours and geometry in the page context.
+ * @example renderedTheme();
+ */
 function renderedTheme() {
   const body = getComputedStyle(document.body),
     card = getComputedStyle(document.querySelector('.card'));
@@ -29,6 +45,14 @@ function renderedTheme() {
   };
 }
 
+/**
+ * Compare current defaults with the frozen reference; optionally inspect adjustment extremes.
+ * Parameter browser: Playwright browser instance.
+ * Parameter page: mutable question-page state.
+ * Parameter extended: whether to include historical adjustment audits.
+ * Calls: readFile, writeFile.
+ * @example checkThemes(browser, page, { extended });
+ */
 export async function checkThemes(browser, page, { extended = false } = {}) {
   const reference = await browser.newPage();
   const contrast = [];

@@ -1,13 +1,34 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import { equationFrames } from '../website/src/lib/application/equation-demo.mjs';
+/**
+ * Purpose: Verify equation reveal frames and method-independent playback ordering.
+ *
+ * Main contents:
+ * - Module initialization and configuration.
+ *
+ * Used By: Node test runner.
+ *
+ * Uses: website/src/lib/application/equation-demo.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
+import test from "node:test";
+import assert from "node:assert/strict";
+import { equationFrames } from "../website/src/lib/application/equation-demo.mjs";
 
-test('equation playback draws the line, then left, equals and right; operations skip equals', () => {
-  const frames = equationFrames([{ kind: 'equation' }, { kind: 'op' }, { kind: 'equation' }]);
+test("equation playback draws the line, then left, equals and right; operations skip equals", () => {
+  const frames = equationFrames([
+    { kind: "equation" },
+    { kind: "op" },
+    { kind: "equation" },
+  ]);
   assert.deepEqual(frames, [
     { step: 1, part: 0 },
-    { step: 1, part: 1 }, { step: 1, part: 2 }, { step: 1, part: 3 },
-    { step: 2, part: 1 }, { step: 2, part: 3 },
-    { step: 3, part: 1 }, { step: 3, part: 2 }, { step: 3, part: 3 },
+    { step: 1, part: 1 },
+    { step: 1, part: 2 },
+    { step: 1, part: 3 },
+    { step: 2, part: 1 },
+    { step: 2, part: 3 },
+    { step: 3, part: 1 },
+    { step: 3, part: 2 },
+    { step: 3, part: 3 },
   ]);
 });

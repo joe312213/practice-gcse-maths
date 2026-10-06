@@ -1,14 +1,48 @@
-"""Shared student HTML layout and deterministic worked-example rendering."""
+"""Purpose: Shared student HTML layout and deterministic worked-example rendering.
+
+Main contents:
+- stylesheet
+- opening
+- worked
+- corrected
+- method_title
+- clean_method_source
+- assessment_cell
+- method_table
+
+Used By: scripts/update_structure.py.
+
+Uses: scripts/rendering/__init__.py, scripts/rendering/applications.py, scripts/rendering/bus_stop.py, scripts/rendering/estimates.py, scripts/rendering/lattice.py, scripts/rendering/ratio.py, scripts/rendering/signed_numbers.py.
+
+Libs: Python standard library only.
+
+Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+"""
 import html,re
 from rendering import lattice,bus_stop,estimates,applications,signed_numbers,ratio
 from pathlib import Path
 
 def stylesheet():
+ """Read the legacy shared answer stylesheet from its historical path.
+ """
  return (Path(__file__).resolve().parents[1]/'styles/answers.css').read_text()
 
 def opening(mid,title):
+ """Open an HTML topic section with its stable anchor and navigation rail.
+
+ Parameters: mid — stable topic ID; title — learner-facing title.
+ """
  return f'<section id="{mid}" class="topic"><aside class="topic-rail"><span>{html.escape(title)}</span></aside><div class="topic-content"><h2>{mid} — {html.escape(title)}</h2>'
 def worked(mid,body,markdown,sn):
+ """Render a worked-method section with topic-specific diagrams where supported.
+
+ Parameters: mid — stable topic ID; body — answer/method source body; markdown — Markdown-rendering
+ callback; sn — one-based source slide number.
+ Calls: clean_method_source, applications.draw, b.replace, estimates.multiplication, lattice.draw,
+ estimates.division, bus_stop.draw.
+
+ Example in the caller's context: worked(mid, body, markdown, sn)
+ """
  body=clean_method_source(body,sn)
  if mid=='M03' and '### Worked method continuation' in body:
   first='630 pens' in body
@@ -36,6 +70,13 @@ def worked(mid,body,markdown,sn):
 
 
 def corrected(mid,e):
+ """Render corrected working and a reasonableness check for an error-spotting example.
+
+ Parameters: mid — stable topic ID; e — structured question/example.
+ Calls: lattice.draw, bus_stop.draw, b.replace, signed_numbers.draw, ratio.draw, applications.draw.
+
+ Example in the caller's context: corrected(mid, e)
+ """
  if mid=='M01':visual=lattice.draw(e['a'],e['b'])
  elif mid=='M02':
   a,b=re.findall(r'[\d,]+',e['question'])[:2];visual=bus_stop.draw(int(a.replace(',','')),int(b.replace(',','')),decimal='.' in e['correct_result'])
@@ -47,9 +88,20 @@ def corrected(mid,e):
 
 
 def method_title(sn):
+ """Name the method/error section for a scaffolded or independent practice slide.
+
+ Parameters: sn — one-based source slide number.
+ Used by: clean_method_source, method_table.
+ """
  return 'Method and error check — '+('scaffolded practice '+str(sn-1) if sn<4 else 'practice '+str(sn-3))
 
 def clean_method_source(body,sn):
+ """Remove editorial layout instructions while retaining the authored method content.
+
+ Parameters: body — answer/method source body; sn — one-based source slide number.
+ Calls: method_title.
+ Used by: worked.
+ """
  body=re.sub(r'^(?:Full-answer page:|Show this on a second answer page|Each column identifies the question).*\n?', '', body,flags=re.M)
  pattern=r'^### (?:Method, errors and checks|Method and error page|Diagnostic page[^\n]*)$'
  title='### '+method_title(sn)
@@ -58,9 +110,18 @@ def clean_method_source(body,sn):
  return body
 
 def assessment_cell(items):
+ """Wrap assessment answers in the shared HTML table layout.
+
+ Parameters: items — answer content items.
+ """
  return '<table class="assessment"><tbody><tr><td><div class="assessment-items">'+''.join('<div class="assessment-item">'+item+'</div>' for item in items)+'</div></td></tr></tbody></table>'
 
 def method_table(sn,columns):
+ """Render Start, Build and Confidence method/error/check columns.
+
+ Parameters: sn — one-based source slide number; columns — three challenge-column content records.
+ Calls: method_title.
+ """
  out='<h4>'+method_title(sn)+'</h4><div class="table"><table class="method-table"><thead><tr><th>Label</th>'+''.join('<th>'+label+'</th>' for label in ('Start','Build','Confidence'))+'</tr></thead><tbody>'
  for key in ('Method','If you got…','Check'):
   out+='<tr><th scope="row">'+key+'</th>'+''.join('<td>'+col[key]+'</td>' for col in columns)+'</tr>'
