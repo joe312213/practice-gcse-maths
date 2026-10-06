@@ -2,7 +2,7 @@
 
 ## Current state and next action
 
-Latest investigation: editing `website/build/about.html` was overwritten by the pre-commit production build from `website/src/routes/about.html/+page.svelte`. Disabled local `core.hooksPath` again to prevent further loss. Recovered edited copies from unreachable Git blobs and VS Code local history into `/private/tmp/maths-about-recovery/`; newest VS Code saved copy is `history-oaf7.html` (includes “Requests and suggestions are welcome” and “Progress tracking feature”). Recovered text has now been transferred into the Svelte source and checked against the saved copy (ignoring whitespace). No rebuild performed. Hook remains disabled; earlier hook-enabled notes below are superseded.
+Latest investigation: editing `website/build/about.html` was overwritten by the pre-commit production build from `website/src/routes/about.html/+page.svelte`. Disabled local `core.hooksPath` again to prevent further loss. Recovered edited copies from unreachable Git blobs and VS Code local history into `/private/tmp/maths-about-recovery/`; newest VS Code saved copy is `history-oaf7.html` (includes “Requests and suggestions are welcome” and “Progress tracking feature”). Recovered text has now been transferred into the Svelte source and checked against the saved copy (ignoring whitespace). No rebuild performed. The user subsequently requested re-enabling the hook: local core.hooksPath is now .githooks, and the hook is executable with its base-path configuration present. No build was run during reactivation.
 
 Work now uses `/Users/joehudson/Dev/Maths/practice-gcse-maths` again. The user restored Git metadata from a backup, reviewed and committed the recovered current files, and confirmed the development server works from `website/`.
 
