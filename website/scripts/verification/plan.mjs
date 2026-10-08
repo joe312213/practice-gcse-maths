@@ -19,6 +19,7 @@ import { createHash } from 'node:crypto';
 
 // Deliberately small dependency map. Broaden here when adding a new feature family.
 const config = /^website\/(package(?:-lock)?\.json|[^/]+\.(?:js|json))$/;
+const puzzles = /^website\/vendor\/puzzles\//;
 const source = /^website\/(src|static)\//;
 const runtime = /^website\/src\/(lib\/(application|domain|adapters)\/|routes\/)/;
 const interaction =
@@ -30,7 +31,7 @@ const theme = /^website\/src\/lib\/(theme\/|styles\/theme-)/;
 const runner = /^website\/scripts\/(verify-changed\.mjs|verification\/)/;
 const browser = /^website\/scripts\/browser(?:-checks\.mjs|\/support\.mjs)$/;
 const bank =
-  /^(content\/M10.*\.json|scripts\/prepare_web_equations\.py|website\/static\/data\/|website\/src\/lib\/content\/practice-pages\.json)/;
+  /^(content\/(?:M(?:01|02|10).*\.(?:json|md)|spot_errors\.json)|scripts\/prepare_web_(?:equations|arithmetic)\.py|website\/static\/data\/|website\/src\/lib\/content\/practice-pages\.json)/;
 /**
  * Build a path predicate matching any supplied regular expression.
  * Parameter patterns: path-matching regular expressions.
@@ -38,6 +39,26 @@ const bank =
 const matches = (patterns) => (path) => patterns.some((pattern) => pattern.test(path));
 
 export const jobs = [
+  {
+    id: 'puzzle-library',
+    inputs: matches([puzzles, config]),
+    command: ['--test', 'vendor/puzzles/tests/*.test.js'],
+  },
+  {
+    id: 'new-topics',
+    inputs: matches([
+      puzzles,
+      runtime,
+      components,
+      styles,
+      bank,
+      config,
+      browser,
+      /^website\/scripts\/browser\/new-topics-checks\.mjs$/,
+    ]),
+    build: true,
+    command: ['scripts/browser-checks.mjs', '--new-topics-only'],
+  },
   {
     id: 'docs',
     /** Select active Markdown paths for the documentation-link verification job. */
@@ -72,7 +93,7 @@ export const jobs = [
     inputs: matches([
       components,
       layout,
-      /^website\/src\/lib\/application\/(player|equation-demo)\.mjs$/,
+      /^website\/src\/lib\/application\/(player|equation-demo|arithmetic-demo|drawing-assist)\.mjs$/,
       /^website\/src\/routes\//,
       bank,
       config,
@@ -146,7 +167,12 @@ export const jobs = [
   },
 ];
 
-export const isBuildInput = matches([source, config, /^website\/scripts\/validate-bank\.mjs$/]);
+export const isBuildInput = matches([
+  source,
+  puzzles,
+  config,
+  /^website\/scripts\/validate-bank\.mjs$/,
+]);
 /**
  * Recognize maintained website source/config files covered by formatting checks.
  * Parameter path: repository-relative or walked filesystem path.

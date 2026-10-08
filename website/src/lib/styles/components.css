@@ -89,8 +89,9 @@ p {
 }
 .intro {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: end;
+  align-items: start;
   gap: 20px;
   margin: 15px 0 28px;
 }
@@ -221,11 +222,15 @@ nav button {
 /* Only writing surfaces extend through the card padding; text stays inset. */
 .working canvas,
 .working .working-field {
+  --working-width: calc(100% + 2 * (var(--card-padding) - var(--working-inset)));
   display: block;
-  width: calc(100% + 2 * (var(--card-padding) - var(--working-inset)));
+  width: var(--working-width);
   margin-inline: calc(var(--working-inset) - var(--card-padding));
-  max-width: none;
+  max-width: var(--working-width);
   border-radius: var(--working-radius);
+}
+.working .working-field {
+  resize: vertical;
 }
 .working-inset {
   --working-inset: 8px;
@@ -430,9 +435,6 @@ footer {
   header {
     align-items: start;
     flex-direction: column;
-  }
-  .intro {
-    display: block;
   }
   .layout,
   .layout.with-reference {
@@ -688,7 +690,9 @@ footer a {
   margin: 0;
 }
 .practice-set-code #practice-code {
-  width: min(100%, 14em);
+  width: 15rem;
+  flex: 0 1 15rem;
+  min-width: 0;
 }
 .practice-set-status code {
   overflow-wrap: anywhere;
@@ -700,11 +704,92 @@ footer a {
   min-width: 0;
 }
 
-/* Keep code entry beside the title on wide screens, in reading order on mobile. */
-.practice-set-code {
-  flex: 0 1 22rem;
+/* Stack search and topic selection at the top right of the topic header. */
+.intro-title {
+  flex: 1 1 18rem;
   min-width: 0;
 }
-.practice-set-code .actions {
+.intro-controls {
+  flex: 0 1 auto;
+  width: max-content;
+  max-width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  margin-left: auto;
+}
+.practice-set-code {
+  min-width: 0;
+}
+.practice-set-input {
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  align-items: center;
+  gap: 8px;
+}
+.practice-set-input button {
+  flex: none;
+}
+.practice-set-code > button {
+  margin-top: 8px;
+}
+
+/* Method-owned working uses the same paper surface as the learner canvas. */
+.error-working-image {
+  width: 100%;
+  background: #fff;
+}
+.topic-selector {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+.topic-selector select {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+}
+.drawing-assist {
+  display: flex;
   flex-wrap: wrap;
+  align-items: end;
+  gap: 0.5rem;
+  margin-block: 0.5rem;
+}
+.drawing-assist label {
+  flex: 1;
+  min-width: 7rem;
+}
+.drawing-assist small {
+  flex-basis: 100%;
+}
+
+/* A separate handle changes canvas height without turning the gesture into a pen stroke. */
+.canvas-resize {
+  display: block;
+  width: 40px;
+  min-height: 16px;
+  padding: 2px 5px;
+  margin: 0 auto 6px;
+  border: 1px solid var(--line);
+  border-top: 0;
+  border-radius: 0 0 6px 6px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: ns-resize;
+  touch-action: none;
+}
+.canvas-resize svg {
+  display: block;
+  width: 100%;
+  height: 8px;
+}
+.canvas-resize:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }

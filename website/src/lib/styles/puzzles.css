@@ -1,0 +1,66 @@
+/* Map the portable puzzle controls onto the app's existing semantic theme. */
+main .puzzle-controls {
+  --puzzle-font: inherit;
+  --puzzle-surface: var(--surface);
+  --puzzle-surface-soft: var(--surface-soft);
+  --puzzle-text: var(--text);
+  --puzzle-muted: var(--muted);
+  --puzzle-control-border: var(--line);
+  --puzzle-selection-bg: var(--selection-bg);
+  --puzzle-selection-text: var(--selection-text);
+  --puzzle-selection-border: var(--selection-border);
+  --puzzle-surface-hover: var(--surface-soft);
+  --puzzle-main: var(--main);
+  --puzzle-accent: var(--accent);
+  --puzzle-warning-bg: var(--surface-soft);
+  --puzzle-warning-text: var(--text);
+  --puzzle-correct-bg: var(--correct-bg);
+  --puzzle-correct-border: var(--correct-border);
+  --puzzle-correct-text: var(--correct-text);
+}
+/* Keep turn information readable without a full-width coloured status bar. */
+main .puzzle-controls .go-status {
+  background: transparent;
+  color: var(--text);
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Type artwork comes from the shared library; selection colours belong to this app. */
+.puzzle-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+  gap: 10px;
+  margin-block: 24px;
+}
+.puzzle-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 6px;
+  padding: 12px 8px;
+  white-space: normal;
+  text-align: center;
+}
+.puzzle-type-art {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 3rem;
+  border-radius: 6px;
+  background: #ebe4f5;
+  color: #533d73;
+  font: 700 1.3rem monospace;
+}
+.puzzle-type small {
+  font-size: 0.8rem;
+}
+
+.puzzle-type:nth-child(3n + 2) .puzzle-type-art {
+  background: #e2eddf;
+  color: #355630;
+}
+.puzzle-type:nth-child(3n) .puzzle-type-art {
+  background: #fae8be;
+  color: #69480b;
+}

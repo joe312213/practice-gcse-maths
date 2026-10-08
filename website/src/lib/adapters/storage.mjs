@@ -57,9 +57,9 @@ export function openProgress(storage, onWarning = () => {}) {
  */
 export async function loadBank(url, fetcher = fetch) {
   const response = await fetcher(url, { cache: 'no-store' });
-  if (!response.ok) throw Error('The equation bank could not be loaded.');
+  if (!response.ok) throw Error('The question bank could not be loaded.');
   const bank = await response.json();
   if (!Array.isArray(bank.questions) || !bank.revision)
-    throw Error('The equation bank is invalid.');
+    throw Error('The question bank is invalid.');
   return bank;
 }

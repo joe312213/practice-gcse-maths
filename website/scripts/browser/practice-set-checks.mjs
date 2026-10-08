@@ -24,9 +24,12 @@ import { decodePracticeSet, encodePracticeSet } from '../../src/lib/domain/pract
  * @example checkPracticeSets(browser, base);
  */
 export async function checkPracticeSets(browser, base) {
-  const bank = JSON.parse(
-    await readFile(new URL('../../static/data/equations.json', import.meta.url)),
+  const banks = await Promise.all(
+    ['equations', 'multiplication', 'division'].map(async (name) =>
+      JSON.parse(await readFile(new URL(`../../static/data/${name}.json`, import.meta.url))),
+    ),
   );
+  const questions = banks.flatMap((bank) => bank.questions);
   const context = await createTestContext(browser, { viewport: { width: 1100, height: 1000 } });
   const page = await context.newPage();
   await page.clock.install();
@@ -64,7 +67,7 @@ export async function checkPracticeSets(browser, base) {
     const code = await page.locator('#practice-code').inputValue();
     assert.equal(decodePracticeSet(code).pages.length, 4);
     await page.locator('.practice-set-builder').waitFor({ state: 'hidden' });
-    await page.getByRole('button', { name: 'Start Practice set', exact: true }).click();
+    await page.getByRole('button', { name: 'Go', exact: true }).click();
     /**
      * Read the browser's stored learner data for assertions.
      * Used by: checkPracticeSets.
@@ -82,9 +85,7 @@ export async function checkPracticeSets(browser, base) {
           await page.locator('.question-option[aria-current="true"]').getAttribute('data-question'),
         );
         const id = run.attempts[index].items[currentIndex].id;
-        await page
-          .locator('#answer')
-          .fill(bank.questions.find((question) => question.id === id).answer);
+        await page.locator('#answer').fill(questions.find((question) => question.id === id).answer);
         await page.getByRole('button', { name: 'Check answer', exact: true }).click();
         run = await state();
       }
@@ -99,8 +100,39 @@ export async function checkPracticeSets(browser, base) {
     await page.getByRole('link', { name: 'Progress', exact: true }).click();
     await page.getByText('24 questions answered', { exact: true }).waitFor();
     await page.getByRole('link', { name: 'Back to practice', exact: true }).click();
+    const input = page.getByPlaceholder('practice code or search', { exact: true });
+    await input.fill('multiplication');
+    await page.getByRole('button', { name: 'Go', exact: true }).click();
+    assert.deepEqual(
+      (await state()).config.pages.map((p) => p.topic),
+      [0],
+    );
+    await page.getByRole('button', { name: 'Leave Practice set', exact: true }).click();
+    await input.fill('lattice');
+    await input.press('Enter');
+    assert.deepEqual(
+      (await state()).config.pages.map((p) => p.topic),
+      [0],
+    );
+    await page.getByRole('button', { name: 'Leave Practice set', exact: true }).click();
+    await input.fill('equations');
+    await input.press('Enter');
+    assert.deepEqual(
+      (await state()).config.pages.map((p) => p.topic),
+      [9],
+    );
+    await page.getByRole('button', { name: 'Leave Practice set', exact: true }).click();
+    const [field, go] = await Promise.all([
+      input.boundingBox(),
+      page.getByRole('button', { name: 'Go', exact: true }).boundingBox(),
+    ]);
+    assert.ok(
+      go.x >= field.x + field.width &&
+        Math.abs(go.y + go.height / 2 - field.y - field.height / 2) < 2,
+      'Go stays beside the search field on mobile',
+    );
     await page.locator('#practice-code').fill('bad');
-    await page.getByRole('button', { name: 'Start Practice set', exact: true }).click();
+    await page.getByRole('button', { name: 'Go', exact: true }).click();
     assert.match(await page.locator('#practice-set-error').innerText(), /nine-character/);
     const timed = encodePracticeSet({
       level: 0,
@@ -109,7 +141,7 @@ export async function checkPracticeSets(browser, base) {
     });
     await page.clock.pauseAt(new Date());
     await page.locator('#practice-code').fill(timed);
-    await page.getByRole('button', { name: 'Start Practice set', exact: true }).click();
+    await page.getByRole('button', { name: 'Go', exact: true }).click();
     assert.equal((await state()).attempts[0].authoredSlot, 3);
     await page.clock.fastForward(300001);
     assert.equal((await state()).finished, 'expired');

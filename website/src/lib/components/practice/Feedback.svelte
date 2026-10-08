@@ -11,6 +11,7 @@
   Libs: none.
 -->
 <script>
+  import ArithmeticWorking from '../teaching/ArithmeticWorking.svelte';
   import EquationWorking from '../teaching/EquationWorking.svelte';
   let { question, response, mode, bank } = $props();
 </script>
@@ -25,7 +26,7 @@
   >
     <strong>{response.correct ? 'Correct.' : 'Not quite yet.'}</strong>{#if response.assisted}
       <span>Assisted practice.</span>{/if}
-    {#if mode === 'errors'}
+    {#if mode === 'errors' && !question.errorOptions}
       <ul>
         {#each response.details ?? [] as detail, index}<li>
             Error {index + 1}: {detail.rowCorrect ? 'row correct' : 'check the row'}; {detail.reasonCorrect
@@ -41,15 +42,18 @@
     {/if}
     <details>
       <summary>Answer, method and check</summary>
-      <p><strong>Answer:</strong> x = {question.answer}</p>
-      {#if mode === 'errors'}<ul>
+      <p><strong>Answer:</strong> {bank.method ? '' : 'x = '}{question.answer}</p>
+      {#if mode === 'errors' && !question.errorOptions}<ul>
           {#each question.errors as error}<li>
               Row {error.row + 1}: {bank.teaching.errorReasons.find((r) => r.id === error.reason)
                 .label} Corrected step: {question.stepOptions.find((s) => s.id === error.correction)
                 .text}.
             </li>{/each}
         </ul>{/if}
-      <EquationWorking rows={question.correct_balance ?? question.balance} />
+      <!-- Each method owns its correction drawing. -->
+      {#if bank.method}<ArithmeticWorking {question} />{:else}<EquationWorking
+          rows={question.correct_balance ?? question.balance}
+        />{/if}
       {#if question.correction}<p>{question.correction}</p>{/if}
       {#if !response.correct && question.error_note}<p>
           <strong>If you got {question.wrong}:</strong>

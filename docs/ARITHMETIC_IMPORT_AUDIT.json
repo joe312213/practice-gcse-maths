@@ -1,0 +1,18 @@
+[
+  {
+    "topic": "M01",
+    "questions": 94,
+    "deck_sha256": "967026f5b4561b1cfbc5de52abda3311f54e179dc5e784bd69f7bfe4d2335b02",
+    "answers_sha256": "9e94644fbb3ab5f090e9a7830efefdc938bc01cb6afc2ad3bff6479208cc4c5c",
+    "source_questions_found_in_saved_deck": true,
+    "error_diagrams_preserved": 9
+  },
+  {
+    "topic": "M02",
+    "questions": 94,
+    "deck_sha256": "13fcf6eabb3fe283e0deefe74cd0a25af5b5eb3e3b6fcad20c93997e6a8ed182",
+    "answers_sha256": "733dea498a4aa7e68a54d1b553dc00ba8af4f71c828e2cfb5e58d0413ec00a9a",
+    "source_questions_found_in_saved_deck": true,
+    "error_diagrams_preserved": 9
+  }
+]

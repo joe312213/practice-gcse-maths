@@ -7,6 +7,7 @@
  * - PAGE_TYPES
  * - encodePracticeSet
  * - decodePracticeSet
+ * - practiceInputCode
  * - resolvePracticePage
  * - setSecondsRemaining
  *
@@ -87,6 +88,43 @@ export function decodePracticeSet(raw) {
   if (entries.slice(count).some((page) => page.topic || page.type || page.slot))
     throw Error('This code has data beyond its stated page count.');
   return { level: header >> 4, timing: header & 3, pages: entries.slice(0, count) };
+}
+
+/**
+ * Resolve topic/tag text to one untimed independent page per topic, or retain a case-sensitive code.
+ * Words within a search must all match; comma-separated searches can combine topics.
+ * Known topic names take precedence over code syntax (for example, “equations” has nine letters).
+ * Saved learner challenge levels are applied by startPracticeSet, as for any other code.
+ * @example practiceInputCode(catalogue, 'lattice');
+ * @example practiceInputCode(catalogue, 'multiplication, division');
+ */
+export function practiceInputCode(catalogue, raw) {
+  const input = String(raw).trim();
+  const words = (text) => text.toLowerCase().match(/[a-z0-9]+/g) ?? [];
+  const searches = input
+    .split(',')
+    .map(words)
+    .filter((terms) => terms.length);
+  const topics = catalogue.topics.filter((topic) => {
+    const tags = words([topic.title, topic.bank, ...(topic.tags ?? [])].join(' '));
+    return (
+      topic.pages.some((page) => page.type === 0 && page.level === 0 && page.slots.length) &&
+      searches.some((terms) => terms.every((term) => tags.some((tag) => tag.startsWith(term))))
+    );
+  });
+  if (topics.length) {
+    if (topics.length > 4)
+      throw Error('That search covers more than four topics. Try a more specific search.');
+    return encodePracticeSet({
+      level: 0,
+      timing: 0,
+      pages: topics.map((topic) => ({ topic: topic.code, type: 0, slot: 0 })),
+    });
+  }
+  if (/^[A-Za-z0-9_-]{9}$/.test(input)) return input;
+  throw Error(
+    'No matching topic found. Try lattice, multiplication, division or equations, or enter a nine-character practice code.',
+  );
 }
 
 /**

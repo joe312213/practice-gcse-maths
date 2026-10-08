@@ -41,7 +41,7 @@ export async function checkProgress(browser, base) {
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     await page.getByRole('link', { name: 'Progress', exact: true }).click();
     await page.getByRole('heading', { name: 'Your progress', exact: true }).waitFor();
-    await page.getByText('0 questions answered', { exact: true }).waitFor();
+    await page.getByText('0 questions answered', { exact: true }).first().waitFor();
     assert.equal(
       await page
         .getByRole('link', { name: 'Back to practice', exact: true })
@@ -58,7 +58,9 @@ export async function checkProgress(browser, base) {
       false,
     );
     await page.locator('.challenge-stage').first().hover();
-    await page.getByRole('heading', { name: 'Start · Solving equations', exact: true }).waitFor();
+    await page
+      .getByRole('heading', { name: 'Start · Lattice multiplication', exact: true })
+      .waitFor();
     await page.locator('.progress-breakdown[data-state="open"]').waitFor();
     const panel = await page.locator('.progress-breakdown').evaluate((element) => {
       const style = getComputedStyle(element);

@@ -39,6 +39,54 @@ export async function checkPresentation(browser, base) {
     await page.getByRole('button', { name: 'Continue', exact: true }).click();
     if (await page.locator('#profile-message').isVisible())
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    const topicSelector = page.getByLabel('Topic', { exact: true });
+    const originalTopic = await topicSelector.inputValue();
+    const topics = await topicSelector
+      .locator('option')
+      .evaluateAll((options) => options.map((option) => option.value));
+    for (const width of [320, 375, 600, 720, 800, 1024, 1280, 1600]) {
+      await page.setViewportSize({ width, height: 1000 });
+      for (const topic of topics) {
+        await topicSelector.selectOption(topic);
+        const layout = await page.locator('.intro').evaluate((intro) => {
+          const bounds = intro.getBoundingClientRect();
+          const input = intro.querySelector('#practice-code');
+          const go = intro.querySelector('button[type="submit"]').getBoundingClientRect();
+          const select = intro.querySelector('select').getBoundingClientRect();
+          const title = intro.querySelector('.intro-title').getBoundingClientRect();
+          const controls = intro.querySelector('.intro-controls').getBoundingClientRect();
+          return {
+            sameRow: Math.abs(title.top - controls.top) < 1,
+            right: bounds.right,
+            left: bounds.left,
+            goRight: go.right,
+            selectRight: select.right,
+            inputLeft: input.getBoundingClientRect().left,
+            inputWidth: input.getBoundingClientRect().width,
+            preferredWidth: 15 * parseFloat(getComputedStyle(document.documentElement).fontSize),
+          };
+        });
+        assert.ok(
+          Math.abs(layout.goRight - layout.right) < 1,
+          `Go respects gutter: ${width}/${topic}`,
+        );
+        assert.ok(
+          Math.abs(layout.selectRight - layout.right) < 1,
+          `Topic respects gutter: ${width}/${topic}`,
+        );
+        assert.ok(layout.inputLeft >= layout.left - 1, `Search fits header: ${width}/${topic}`);
+        if (width >= 720)
+          assert.ok(layout.sameRow, `Header text wraps beside controls at ${width}/${topic}`);
+        if (width <= 375)
+          assert.ok(!layout.sameRow, `Header controls stack on small screens: ${width}/${topic}`);
+        assert.ok(
+          layout.inputWidth <= layout.preferredWidth + 1,
+          `Search stays compact: ${width}/${topic}`,
+        );
+      }
+    }
+    await page.setViewportSize({ width: 1280, height: 1000 });
+    await topicSelector.selectOption(originalTopic);
     await page.locator('[data-mode="plain"]').click();
     await page.locator('#level').selectOption('2');
     const pad = page.locator('#working');
@@ -155,6 +203,12 @@ export async function checkPresentation(browser, base) {
         const right = bounds.right - parseFloat(style.borderRightWidth);
         const heading = card.querySelector('h2').getBoundingClientRect();
         if (Math.abs(heading.left - left - parseFloat(style.paddingLeft)) > 1) return false;
+        // Native resize writes an inline width; even an oversized value must remain contained.
+        const notes = tools.querySelector('textarea');
+        notes.style.width = '2000px';
+        const notesFit = notes.getBoundingClientRect().right <= right + 1;
+        notes.style.removeProperty('width');
+        if (!notesFit || getComputedStyle(notes).resize !== 'vertical') return false;
         return [...tools.querySelectorAll('canvas, textarea')].every((field) => {
           const rect = field.getBoundingClientRect();
           return Math.abs(rect.left - left) < 1 && Math.abs(rect.right - right) < 1;

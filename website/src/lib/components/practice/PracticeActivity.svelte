@@ -24,7 +24,8 @@
   import Completion from './Completion.svelte';
   import Guidance from '../teaching/Guidance.svelte';
   import EquationWorking from '../teaching/EquationWorking.svelte';
-  import DemoPlayer from '../teaching/DemoPlayer.svelte';
+  import DemoPlayer from '../teaching/MethodDemo.svelte';
+  import { asset } from '$app/paths';
   let { view, session, onstage } = $props();
   let mobile = $state(false),
     container,
@@ -122,7 +123,7 @@
       {view.mode === 'assessment'
         ? 'Try all four without hints. This helps you decide where to begin.'
         : view.mode === 'errors'
-          ? 'Inspect the written method. Identify each independent mistake, then solve the original equation.'
+          ? 'Inspect the written method. Identify the mistake, correct it, then answer the original question.'
           : 'Show your working. Submit each answer when you are ready.'}
     </p>
     <QuestionList
@@ -141,7 +142,11 @@
       {#if view.mode === 'scaffolded'}<Guidance
           guidance={view.bank.teaching.guidance[question.level]}
         />{/if}
-      {#if view.mode === 'errors'}<EquationWorking rows={question.balance} numbered />{/if}
+      {#if view.mode === 'errors'}{#if question.errorImage}<img
+            class="error-working-image"
+            src={asset(question.errorImage)}
+            alt={`Student working for ${question.q}, with a deliberate mistake. Stated answer: ${question.wrong}.`}
+          />{:else}<EquationWorking rows={question.balance} numbered />{/if}{/if}
       <fieldset class="answer-controls" disabled={Boolean(view.practiceSet?.finished)}>
         <AnswerForm
           {question}
@@ -173,6 +178,7 @@
     <Progress mode={view.mode} {page} track={view.track} />
     {#key view.draftKey}<WorkingArea
         number={view.selected + 1}
+        topic={view.bank.topic}
         paper={view.paper}
         draft={view.draft}
         onpaper={session.setPaper}

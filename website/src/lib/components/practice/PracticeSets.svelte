@@ -17,11 +17,20 @@
   import { onMount, tick, untrack } from 'svelte';
   import {
     encodePracticeSet,
+    practiceInputCode,
     PAGE_TYPES,
     SET_LEVELS,
     TIMINGS,
   } from '#lib/domain/practice-code.mjs';
-  let { catalogue, view, session, title, creatorOpen = $bindable(false), returnFocus } = $props();
+  let {
+    catalogue,
+    view,
+    session,
+    title,
+    topicSelector,
+    creatorOpen = $bindable(false),
+    returnFocus,
+  } = $props();
   let entries = $state(untrack(() => [{ topic: catalogue.topics[0].code, type: 0, slot: 0 }]));
   let level = $state(0),
     timing = $state(0),
@@ -74,34 +83,40 @@
 </script>
 
 <section class="intro">
-  <div>{@render title()}</div>
-  <form
-    class="practice-set-code"
-    onsubmit={(event) => {
-      event.preventDefault();
-      action(() => session.startPracticeSet(code));
-    }}
-  >
-    <label for="practice-code">Practice set code (Maths)</label>
-    <div class="actions">
-      <input
-        class="text-field"
-        id="practice-code"
-        bind:value={code}
-        maxlength="9"
-        spellcheck="false"
-        autocapitalize="off"
-        autocomplete="off"
-        required
-      />
-      <button class="action-button primary" type="submit">Start Practice set</button>
+  <div class="intro-title">{@render title()}</div>
+  <div class="intro-controls">
+    <form
+      class="practice-set-code"
+      onsubmit={(event) => {
+        event.preventDefault();
+        action(() => session.startPracticeSet(practiceInputCode(catalogue, code)));
+      }}
+    >
+      <label for="practice-code" class="sr-only">Practice code or topic search</label>
+      <div class="practice-set-input">
+        <input
+          class="text-field"
+          id="practice-code"
+          bind:value={code}
+          maxlength="120"
+          placeholder="practice code or search"
+          aria-invalid={error ? 'true' : undefined}
+          aria-describedby={error ? 'practice-set-error' : undefined}
+          spellcheck="false"
+          autocapitalize="off"
+          autocomplete="off"
+          required
+        />
+        <button class="action-button" type="submit">Go</button>
+      </div>
       {#if view.savedSet}<button
           class="action-button"
           type="button"
           onclick={() => action(session.resumePracticeSet)}>Resume saved set</button
         >{/if}
-    </div>
-  </form>
+    </form>
+    {@render topicSelector()}
+  </div>
 </section>
 
 {#if run}

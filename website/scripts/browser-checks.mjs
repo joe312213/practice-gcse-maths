@@ -16,6 +16,7 @@
  *
  * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), node:url, @axe-core/playwright (accessibility checks).
  */
+import { checkNewTopics } from './browser/new-topics-checks.mjs';
 import { checkProgress } from './browser/progress-checks.mjs';
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
@@ -38,6 +39,7 @@ const server = process.env.BASE_URL
 const base = process.env.BASE_URL || server.url;
 const browser = await launchBrowser();
 const focused = {
+  '--new-topics-only': checkNewTopics,
   '--progress-only': checkProgress,
   '--practice-sets-only': checkPracticeSets,
   '--presentation-only': checkPresentation,

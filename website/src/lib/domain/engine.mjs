@@ -224,11 +224,12 @@ export function resolveChoice(track, page, accept) {
  * @example rational("1 1/2"); // Same value as 1.5.
  */
 export function rational(raw) {
-  const value = String(raw)
+  let value = String(raw)
     .trim()
     .replace(/−/g, '-')
     .replace(/^x\s*=\s*/i, '');
   if (value.length > 80) return null;
+  if (/^[+-]?\d{1,3}(,\d{3})+(?:\.\d+)?$/.test(value)) value = value.replaceAll(',', '');
   const mixed = /^([+-]?)(\d+)\s+(\d+)\/(\d+)$/.exec(value);
   if (mixed) {
     const d = BigInt(mixed[4]);
@@ -261,6 +262,18 @@ export function rational(raw) {
  * Calls: rational.
  */
 export function markAnswer(raw, expected) {
+  const remainder = /^(\d+)\s*r\s*(\d+)$/i.exec(String(expected).trim());
+  if (remainder) {
+    const entered = /^(\d+)\s*(?:r|remainder)\s*(\d+)$/i.exec(String(raw).trim());
+    return {
+      valid: Boolean(entered),
+      correct: Boolean(
+        entered &&
+        BigInt(entered[1]) === BigInt(remainder[1]) &&
+        BigInt(entered[2]) === BigInt(remainder[2]),
+      ),
+    };
+  }
   const a = rational(raw),
     b = rational(expected);
   return { valid: Boolean(a && b), correct: Boolean(a && b && a[0] * b[1] === b[0] * a[1]) };

@@ -18,6 +18,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import {
   encodePracticeSet,
+  practiceInputCode,
   decodePracticeSet,
   resolvePracticePage,
 } from "../website/src/lib/domain/practice-code.mjs";
@@ -33,6 +34,7 @@ const catalogue = JSON.parse(
     new URL("../website/src/lib/content/practice-pages.json", import.meta.url),
   ),
 );
+catalogue.topics = catalogue.topics.filter((topic) => topic.bank === "M10");
 /**
  * Create a catalogue-address fixture from topic, type and slot codes.
  * Parameter type: question-type code or activity ID.
@@ -267,4 +269,19 @@ test("invalid/unavailable codes preserve the current run; profiles and free prac
   assert.equal(f.view.practiceSet.code, code);
   f.session.chooseName("Other Student", true);
   assert.equal(f.view.practiceSet, null);
+});
+
+
+test("practice input resolves topic aliases before code syntax, including equations", async () => {
+  const all = JSON.parse(await readFile(new URL("../website/src/lib/content/practice-pages.json", import.meta.url)));
+  for (const [text, topic] of [["lattice", 0], ["MULTIPLICATION", 0], ["grid", 0], ["multiply", 0], ["bus-stop division", 1], ["divide", 1], ["equations", 9], ["algebra", 9]]) {
+    const result = decodePracticeSet(practiceInputCode(all, text));
+    assert.deepEqual(result, { level: 0, timing: 0, pages: [{ topic, type: 0, slot: 0 }] });
+  }
+  const mixed = decodePracticeSet(practiceInputCode(all, "lattice, multiplication, division"));
+  assert.deepEqual(mixed.pages.map(p => p.topic), [0, 1]);
+  const code = encodePracticeSet(recipe());
+  assert.equal(practiceInputCode(all, `  ${code}  `), code);
+  assert.throws(() => practiceInputCode(all, "no such topic"), /No matching topic/);
+  assert.throws(() => practiceInputCode(all, "   "), /No matching topic/);
 });

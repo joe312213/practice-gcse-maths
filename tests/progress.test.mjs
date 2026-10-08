@@ -40,6 +40,7 @@ const catalogue = JSON.parse(
     new URL("../website/src/lib/content/practice-pages.json", import.meta.url),
   ),
 );
+catalogue.topics = catalogue.topics.filter((topic) => topic.bank === "M10");
 const bank = JSON.parse(
   await readFile(
     new URL("../website/static/data/equations.json", import.meta.url),

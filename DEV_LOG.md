@@ -301,3 +301,57 @@ Current authority: [web specification](web_format.md), [UI/UX rules](docs/UI_UX_
 ## 6 October 2026 — GitHub Pages activated
 
 - Verified refreshed CLI authentication as joe312213 and enabled Pages with workflow publishing. Confirmed site URL https://joe312213.github.io/practice-gcse-maths/. No deployment runs exist yet; local production/configuration changes still need committing and pushing to main.
+
+## 8 October 2026 — Drawing assistance, three student topics and shared puzzles
+
+Implemented the user's request for method-specific drawing assistance, the updated T-Level puzzles module, and initial coverage of lattice multiplication, bus stop division and equations. The user clarified that the primary student journey is topic-led: initial assessment → method learning/demo → scaffolded practice → spot-the-errors practice → independent practice. Practice sets remain secondary and may mix methods/types. Navigation labels and optional code entry now express that distinction; the standing rule is in UI_UX_RULES.
+
+Grid/Frame tools collect dimensions beneath the canvas. Guide geometry reserves writing space; guide replacement retains ink, and blank guides are excluded from the working count. Guides are transient, collapse with the existing paper option, and clear with the question. Arithmetic method adapters use the existing ShowDemo controller; lattice frames reveal cells/diagonal carries and division frames preserve quotient zeros, remainders and decimal placement. Remainder-format marking and properly grouped numeric answers are supported without eval or floating-point tolerance.
+
+Imported M01/M02 via the new read-only `prepare_web_arithmetic.py`: 94 questions each, stable source IDs, questions checked against saved decks, assessment questions read from those decks, and 18 original spot-error SVGs/corrections retained from saved answer HTML. Source hashes and audit coverage are in ARITHMETIC_IMPORT_AUDIT.json. Arithmetic error activities require a correction choice plus a final answer. The original 95-item equation bank, protected specification, authored topic Markdown and legacy files remain unchanged. Topic selection, mixed-topic coded sets, Progress and recommendations now consume all three banks. Existing schema-2 history remains intact.
+
+Downloaded the updated https://github.com/jhudshcg/starters source at `69560b227aaedefe72457241a53205ee93b7e024`. Its `packages/puzzles` directory is copied unchanged into `website/vendor/puzzles`; exact tree comparison passed. A local npm dependency supplies its declared mathjs 15.2.0 dependency. `/puzzles.html` loads the catalogue on that route only, mounts/disposes the package's own controls, and supplies type/challenge selection, checking, hints, solutions, next variation and source attribution. Theme tokens map to the package style contract. All nine families are exposed; working/marks are transient and explicitly separate from topic progress/exports. Upstream difficulty labels are retained, not recalibrated.
+
+Verification initially exposed equations-only test fixture assumptions and stale loading text; focused fixtures now explicitly scope their catalogue and new tests exercise the three real banks. The arithmetic validator initially used floating-point multiplication for decimal checks; it now checks exact fractions. Browser test server binding was blocked by the sandbox and succeeded with permission. Svelte diagnostics reported a circular `esrap` public type export. A proposed 2.3.6 pin was declined; investigation found the original cached 2.4.0 archive had correct declarations and matched the locked SHA-512, while the installed copy differed. Restored the original 2.4.0 package locally; after normal build/sync/diagnostics its tree still matched the archive. No downgrade or permanent patch was needed; cause of the installed-file alteration is unknown. About source was whitespace-formatted only to satisfy the formatter baseline; authored wording is retained.
+
+Final selected verification passed: formatting/docs, 50 logic tests, bank/catalogue validation, portable puzzle-library tests, zero-error/zero-warning Svelte diagnostics, production build, new-topic/puzzle mobile scenario, presentation/default colours, startup faults, Practice sets, Progress and activity integration. The new browser scenario covers guide retention, both demos, answer history, original error images, correct/blank puzzle checks, hint reset, solutions and mounting all nine types without page overflow. Manual touch/stylus/assistive-technology review and classroom puzzle calibration remain unclaimed. No commit, push or deployment performed.
+
+
+## 8 October 2026 — Compact search entry and resizable sketch canvas
+
+Replaced the visible Optional Practice set label and large submit button with an accessible hidden label, exact placeholder `practice code or search`, and compact Go button kept immediately to the field's right. Removed the nine-character input limit so free text works; underlying case-sensitive codes are unchanged. Topic title/ID/tag word-prefix search accepts lattice/multiplication, grid/multiply, bus stop/divide and equations/algebra aliases. Words in one query all match the same topic; commas combine topics. Each match contributes one random independent-practice page to an untimed set, with the existing saved challenge override. Known text matches precede code syntax to handle the nine-letter word “equations”. No match gives suggestions without replacing the activity. Arithmetic bank regeneration now preserves catalogue search tags.
+
+Added a separate touch/pen/mouse resize grip below the canvas, keyboard Up/Down adjustment and Home reset. Default height remains 230px; range is 120–800px. Bitmap height changes at the existing vertical scale and stored strokes/guides are repainted. Shrinking hides rather than deletes lower working; expansion restores it. Paper collapse keeps the chosen height and question changes reset it. The resize pointer lifecycle is separate from drawing and ends on cancellation/capture loss/window blur.
+
+All selected verification passed: formatting, production build, docs, 51 logic tests, bank/catalogue, Svelte diagnostics (zero errors/warnings), new-topic browser scenario with pointer/keyboard resize and bitmap recovery, presentation/default colours, startup, mobile Practice set/search, Progress and activity integration. Browser checks needed the existing local-server permission. Existing development server remains at http://127.0.0.1:8766/; no commit or deployment performed.
+
+
+## 8 October 2026 — Header control placement and smaller canvas grip
+
+Moved code/search to the top right of the topic header beneath the main navigation, with the topic selector directly below it. The Go button uses the standard action-button size. Both controls remain responsive and retain their existing accessible labels and behaviour. Reduced the canvas grip from 64×24px to 40×16px. Selected formatting/build, logic, Svelte diagnostics, new-topic/resize, presentation, colours, startup, Practice sets/search, Progress and integration checks passed; no new tests were added for this layout-only change. Development site remains running; no commit or deployment performed.
+
+
+## 8 October 2026 — Compact search width on all screen sizes
+
+Reduced the search field to a preferred 15rem width and made its row/header controls use their content width rather than fill the mobile container. The row stays right-aligned and may shrink when necessary to avoid overflow. Selected formatting, build, docs, new-topic interactions, presentation, colours and mobile Practice set/search checks passed. Development server remains running; no deployment.
+
+
+## 8 October 2026 — Consistent topic-header right gutter
+
+Fixed intrinsic grid sizing that allowed the controls to extend beyond their allocated flex width. The title now has a named, shrinkable flex item; the controls use an explicit minmax(0, 1fr) track, keeping both rows within the header without compensating margins or clipping. Compact search width and standard Go size remain. Presentation regression checks passed for all three topics at seven viewport widths (320–1600px), asserting both controls share the header’s right gutter and search stays compact. Selected verification results are recorded in HANDOFF.
+
+
+## 8 October 2026 — Notes containment and medium-width header
+
+Capped writing surfaces at their calculated card width and restricted the notes textarea to vertical resizing, preserving edge-to-edge and inset variants. Replaced the header’s fixed 767px stacking rule with flex wrapping and an 18rem preferred title basis: medium widths wrap the title/description beside the controls, while phones stack them. Selected formatting, production build, new-topic, presentation, colour and Practice set checks passed. Presentation covers eight header widths including 720px side-by-side and phone stacking, plus oversized textarea width containment across nine viewports. No deployment performed.
+
+
+## 8 October 2026 — Puzzle icon selection and development loading fix
+
+Replaced the puzzle-type dropdown with wrapping illustrated buttons using the unchanged shared graphics/captions, following the cached T-Level source’s `js/puzzle-cards.js` pattern. The initial screen has no selected type or challenge field; choosing a type exposes its challenge selector and puzzle. Buttons expose their selection state and keyboard activation. The existing new-topic scenario now exercises this selection flow and challenge switching, along with all nine families. Its first run exposed a missing test navigation wait, which was corrected.
+
+The user also reported “Puzzles could not load”. The running Vite log proved the dynamic vendor catalogue was outside SvelteKit’s serving allow-list. Added only `vendor/puzzles` to the Vite development allow-list; the live development browser scenario then passed, including all nine puzzle families. Production bundling had previously passed because it does not use this serving restriction. No package contents changed.
+
+The user supplied a visual example and requested hiding the grid after choosing. Tiles now use the reference’s lavender/green/gold artwork backgrounds; selecting a family hides the grid, names the family in the heading and focuses it. “Choose another puzzle” reopens the grid and restores focus to that family. Browser coverage checks hiding, keyboard entry and return focus as well as all nine families.
+
+The Go reference screenshot prompted a dedicated Svelte composition using the package’s supported render/bind APIs, with no vendor edits: strategy/next-move hints above the board, coordinate/source/rules below, and unhighlighted turn text. Go challenge labels now include the same kyu ranges as T-Level. Regression checks cover both hint controls, attribution placement, turn styling, a played move, Undo, checking and solution replay. Svelte diagnostics identified non-reactive component references in the wrapper; those were made reactive. The user then requested hiding maths puzzles; the Classic maths tile is excluded, leaving eight selectable types, while library content is preserved.

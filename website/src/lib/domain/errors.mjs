@@ -23,6 +23,16 @@ import { markAnswer } from './engine.mjs';
  */
 export function markErrors(q, entries, raw) {
   const answer = markAnswer(raw, q.answer);
+  if (q.errorOptions) {
+    const choice = entries[0]?.correction;
+    const valid = answer.valid && q.errorOptions.some((option) => option.id === choice);
+    return {
+      valid,
+      correct: valid && answer.correct && choice === q.correctionId,
+      answerCorrect: answer.correct,
+      unique: true,
+    };
+  }
   const valid =
     answer.valid &&
     entries.length === q.errors.length &&

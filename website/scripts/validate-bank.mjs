@@ -27,13 +27,39 @@ const { resolvePracticePage } = await import('../src/lib/domain/practice-code.mj
 const catalogue = JSON.parse(
   await readFile(new URL('../src/lib/content/practice-pages.json', import.meta.url)),
 );
+const banks = [
+  bank,
+  ...(await Promise.all(
+    ['multiplication', 'division'].map(async (name) =>
+      JSON.parse(await readFile(new URL(`../static/data/${name}.json`, import.meta.url))),
+    ),
+  )),
+];
+for (const arithmetic of banks.slice(1)) {
+  assert.equal(arithmetic.questions.length, 94);
+  assert.equal(new Set(arithmetic.questions.map((q) => q.id)).size, 94);
+  for (const q of arithmetic.questions) {
+    assert.ok(markAnswer(q.answer, q.answer).correct, q.id);
+    const parts = q.answer.split(' r ');
+    if (parts.length === 2) {
+      assert.equal(Number(parts[0]) * q.b + Number(parts[1]), q.a, q.id);
+      assert.ok(Number(parts[1]) > 0 && Number(parts[1]) < q.b, q.id);
+    } else {
+      assert.ok(
+        markAnswer(q.answer, arithmetic.method === 'lattice' ? String(q.a * q.b) : `${q.a}/${q.b}`)
+          .correct,
+        q.id,
+      );
+    }
+  }
+}
 for (const topic of catalogue.topics)
   for (const page of topic.pages) {
     assert.ok(page.slots.length > 0 && page.slots.length <= 15);
     for (let slot = 1; slot <= page.slots.length; slot++)
       resolvePracticePage(
         catalogue,
-        [bank],
+        banks,
         { topic: topic.code, type: page.type, slot },
         page.level,
       );

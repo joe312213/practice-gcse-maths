@@ -23,7 +23,7 @@
   import ThemeControls from '#lib/components/ui/ThemeControls.svelte';
   import ProfileDialog from '#lib/components/ui/ProfileDialog.svelte';
   import PracticeActivity from '#lib/components/practice/PracticeActivity.svelte';
-  import DemoPlayer from '#lib/components/teaching/DemoPlayer.svelte';
+  import DemoPlayer from '#lib/components/teaching/MethodDemo.svelte';
   let view = $state.raw(null),
     session = $state.raw(null),
     error = $state(''),
@@ -63,9 +63,23 @@
           /* The adapter will provide unsaved practice. */
         }
         const progress = openProgress(storage, (text) => (warning = text));
-        const bank = await loadBank(asset('data/equations.json'));
+        const banks = await Promise.all(
+          ['equations', 'multiplication', 'division'].map((name) =>
+            loadBank(asset(`data/${name}.json`)),
+          ),
+        );
+        const learnerTopic = progress.data.profiles.find(
+          (p) => p.key === progress.data.last,
+        )?.lastTopic;
+        const bank = banks.find((b) => b.topic === learnerTopic) ?? banks[0];
         if (disposed) return;
-        session = createSession({ bank, catalogue, data: progress.data, save: progress.save });
+        session = createSession({
+          bank,
+          banks,
+          catalogue,
+          data: progress.data,
+          save: progress.save,
+        });
         unsubscribe = session.subscribe((value) => (view = value));
         const recommendationId = new URLSearchParams(window.location.search).get('recommendation');
         if (recommendationId) {
@@ -95,7 +109,7 @@
   });
 </script>
 
-<svelte:head><title>Maths practice · Solving equations</title></svelte:head>
+<svelte:head><title>Maths practice · {view?.bank.title ?? 'Foundation maths'}</title></svelte:head>
 <a class="skip" href="#main">Skip to practice</a>
 <header>
   <a class="brand" href={resolve('/')}>Maths<span> / practice</span></a>
@@ -107,6 +121,7 @@
       disabled={!session}
       onclick={() => (profileOpen = true)}>{view?.profile ? 'Not you?' : 'Choose name'}</button
     ><ThemeControls />
+    <a class="action-button quiet" href={resolve('/puzzles.html')}>Puzzles</a>
     {#if view?.profile}
       <a class="action-button quiet" href={resolve('/progress.html')}>Progress</a>
       <Popover.Root bind:open={menuOpen}>
@@ -144,22 +159,42 @@
   </p>{/if}
 <main id="main" tabindex="-1">
   {#if error}<p role="alert">{error}</p>
-  {:else if !view}<p>Loading equations…</p>
+  {:else if !view}<p>Loading maths practice…</p>
   {:else if !view.profile}
     <section class="card full">
       <div class="eyebrow">Foundation maths</div>
       <h1>A little practice.<br />A stronger method.</h1>
-      <p>Work through equations at your pace, with clear examples and feedback on each answer.</p>
+      <p>
+        Practise multiplication, division and equations at your pace, with clear examples and
+        feedback on each answer.
+      </p>
       <button id="begin" class="action-button primary" onclick={() => (profileOpen = true)}
         >Choose your name to begin</button
       >
     </section>
   {:else}
     <PracticeSets {catalogue} {view} {session} bind:creatorOpen returnFocus={menuTrigger}>
+      {#snippet topicSelector()}
+        <label class="topic-selector"
+          >Topic
+          <select
+            class="choice-field"
+            aria-label="Topic"
+            value={view.bank.topic}
+            onchange={(event) => session.switchTopic(event.currentTarget.value)}
+          >
+            {#each catalogue.topics as topic}<option value={topic.bank}>{topic.title}</option
+              >{/each}
+          </select>
+        </label>
+      {/snippet}
       {#snippet title()}
-        <div class="eyebrow">Foundation maths · Algebra</div>
+        <div class="eyebrow">Foundation maths</div>
         <h1>{view.bank.title}</h1>
-        <p>Make a start, keep both sides balanced, and build your confidence.</p>
+        <p>
+          Work through this topic in order: assess, learn, practise with support, spot errors, then
+          practise independently.
+        </p>
       {/snippet}
     </PracticeSets>
     {#if !view.practiceSet}<nav aria-label="Topic learning steps">
@@ -172,7 +207,9 @@
           >{/each}
       </nav>{/if}
     {#if view.mode === 'demo'}<section class="card full">
-        <h2 id="stage-title" tabindex="-1">Keep the equation balanced</h2>
+        <h2 id="stage-title" tabindex="-1">
+          {view.bank.method ? view.bank.title : 'Keep the equation balanced'}
+        </h2>
         <DemoPlayer
           bank={view.bank}
           initialLevel={view.demoLevel}
@@ -186,7 +223,7 @@
   {/if}
 </main>
 <footer>
-  Equations preview · Progress stays in this browser · Show your method, then check your answer. <a
+  Maths practice · Progress stays in this browser · Show your method, then check your answer. <a
     href={resolve('/about.html')}>About</a
   >
 </footer>

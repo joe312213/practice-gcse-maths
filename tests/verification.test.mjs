@@ -42,30 +42,31 @@ test("unchanged successful inputs skip every job; docs and theme changes stay na
   assert.deepEqual(selected({ ...initial, "HANDOFF.md": "b" }), ["docs"]);
   assert.deepEqual(
     selected({ ...initial, "website/src/lib/styles/theme-tokens.css": "b" }),
-    ["colours", "practice-sets"],
+    ["new-topics", "colours", "practice-sets"],
   );
   assert.deepEqual(
     selected({ ...initial, "website/src/lib/styles/components.css": "b" }),
-    ["presentation", "colours", "practice-sets"],
+    ["new-topics", "presentation", "colours", "practice-sets"],
   );
 });
 test("logic and demo changes use their actual verification families", () => {
   assert.deepEqual(
     selected({ ...initial, "website/src/lib/domain/engine.mjs": "b" }),
-    ["logic", "bank", "svelte", "practice-sets", "progress"],
+    ["new-topics", "logic", "bank", "svelte", "practice-sets", "progress"],
   );
   assert.deepEqual(
     selected({
       ...initial,
       "website/src/lib/components/teaching/ShowDemo.svelte": "b",
     }),
-    ["svelte", "presentation"],
+    ["new-topics", "svelte", "presentation"],
   );
 });
 test("deleted/new files, failed jobs, changed policy and environment invalidate evidence", () => {
   const removed = { ...initial };
   delete removed["website/src/lib/styles/components.css"];
   assert.deepEqual(selected(removed), [
+    "new-topics",
     "presentation",
     "colours",
     "practice-sets",

@@ -56,7 +56,7 @@ export function createSession({
   uuid = () => crypto.randomUUID(),
   now = Date.now,
 }) {
-  const homeBank = bank;
+  let homeBank = bank;
   let profile = data.profiles.find((p) => p.key === data.last);
   let mode = 'assessment',
     selected = 0,
@@ -234,10 +234,12 @@ export function createSession({
     draftKey++;
     inputError = '';
   }
-  // Revision checks affect only this subject/topic; other activities remain isolated.
+  // Invalidate outdated page attempts only; all recorded answer history is retained.
   for (const p of data.profiles)
-    for (const [key, attempt] of Object.entries(p.topics[scope()]?.pages ?? {})) {
-      if (attempt.revision !== bank.revision) delete p.topics[scope()].pages[key];
+    for (const loaded of banks) {
+      const saved = p.topics[`${loaded.subject}:${loaded.topic}`];
+      for (const [key, attempt] of Object.entries(saved?.pages ?? {}))
+        if (attempt.revision !== loaded.revision) delete saved.pages[key];
     }
   /**
    * Create an activity attempt from its authored definition or sampled question pool.
@@ -420,6 +422,7 @@ export function createSession({
       const result = chooseProfile(data, name, create);
       if (!result.profile) return result;
       profile = result.profile;
+      homeBank = banks.find((item) => item.topic === profile.lastTopic) ?? banks[0];
       bank = homeBank;
       mode = 'assessment';
       selected = 0;
@@ -437,6 +440,20 @@ export function createSession({
      * Parameter next: requested learning activity.
      * Calls: activeSet, assist, resetDraft, ensurePage, publish.
      */
+    switchTopic(topicId) {
+      const next = banks.find((item) => item.topic === topicId);
+      if (!next) throw Error('This topic is unavailable.');
+      if (activeSet()) activeSet().active = false;
+      bank = homeBank = next;
+      profile.lastTopic = topicId;
+      mode = 'assessment';
+      selected = 0;
+      reference = false;
+      message = '';
+      resetDraft();
+      ensurePage();
+      publish(true);
+    },
     switchMode(next) {
       if (activeSet()) activeSet().active = false;
       bank = homeBank;
@@ -524,8 +541,7 @@ export function createSession({
      */
     hint() {
       assist();
-      message =
-        'Keep both sides balanced: use the same inverse operation on each side. This answer will be recorded as assisted.';
+      message = `${bank.method ? bank.teaching.guidance[current().level].steps[1] : 'Keep both sides balanced: use the same inverse operation on each side.'} This answer will be recorded as assisted.`;
       publish(true);
     },
     /**
@@ -561,7 +577,9 @@ export function createSession({
       if (p.responses[q.id]) return { duplicate: true };
       const numeric = markAnswer(draft.answer, q.answer);
       if (!numeric.valid) {
-        inputError = 'Enter a number, decimal or fraction (for example −3, 2.5 or 5/2).';
+        inputError = q.answer.includes(' r ')
+          ? 'Enter a whole-number answer and remainder, for example 24 r 1.'
+          : 'Enter a number, decimal or fraction (for example −3, 2.5 or 5/2).';
         publish();
         return { invalid: true };
       }

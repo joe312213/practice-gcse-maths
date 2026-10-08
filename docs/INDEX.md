@@ -89,3 +89,14 @@ REFERENCE_REVIEW retains source attribution and reuse findings. The legacy guide
 - [Legacy resources](../legacy/) — saved teaching outputs; linked topic READMEs provide individual resource links.
 
 Earlier WEB_FORMAT_REVIEW and separate equation/migration logs were consolidated into DEV_LOG, standing decisions, the roadmap and current handoff. Full previous versions remain in Git; no second archive of obsolete instructions is maintained. This index lists all maintained project Markdown documents except itself; generated dependency/build/test artifacts are excluded. Update it when adding or retiring documentation.
+
+
+## Imported puzzle package
+
+Pinned upstream documentation, retained unchanged (see [integration and update instructions](../website/README.md#shared-puzzles-integration)):
+
+- [Package README](../website/vendor/puzzles/README.md)
+- [Integration API](../website/vendor/puzzles/API.md)
+- [Package architecture](../website/vendor/puzzles/ARCHITECTURE.md)
+- [Styles and markup](../website/vendor/puzzles/styles/README.md)
+- [Arithmetic import evidence](ARITHMETIC_IMPORT_AUDIT.json)

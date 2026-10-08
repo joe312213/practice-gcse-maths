@@ -20,6 +20,12 @@ export default defineConfig({
     tailwindcss(),
     sveltekit({ adapter: adapter(), paths: { base: process.env.BASE_PATH || '' } }),
   ],
-  server: { host: '127.0.0.1', port: 8766, strictPort: true },
+  server: {
+    host: '127.0.0.1',
+    port: 8766,
+    strictPort: true,
+    // The local puzzle package is symlinked outside SvelteKit's default serving paths.
+    fs: { allow: ['./vendor/puzzles'] },
+  },
   preview: { host: '127.0.0.1', port: 8766, strictPort: true },
 });

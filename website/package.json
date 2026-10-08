@@ -38,5 +38,8 @@
   },
   "imports": {
     "#lib/*": "./src/lib/*"
+  },
+  "dependencies": {
+    "@subject-apps/puzzles": "file:vendor/puzzles"
   }
 }

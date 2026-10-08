@@ -38,13 +38,14 @@
     </p>
     <h2>How it is developed</h2>
     <p>
-      This is an agent-augmented development project: I set the teaching direction and reviewed a sample of
-      the material, with OpenAI Codex assisting with implementation, content preparation and checks.
-      Automated maths and behaviour tests are used alongside manual browser and visual checks.
+      This is an agent-augmented development project: I set the teaching direction and reviewed a
+      sample of the material, with OpenAI Codex assisting with implementation, content preparation
+      and checks. Automated maths and behaviour tests are used alongside manual browser and visual
+      checks.
     </p>
     <p>
-      The site is still being developed. Checks support review; they do not imply that every
-      topic or feature is finished. There are currently many missing topics and planned features,
+      The site is still being developed. Checks support review; they do not imply that every topic
+      or feature is finished. There are currently many missing topics and planned features,
       hopefully coming soon. Requests and suggestions are welcome.
     </p>
     <h2>Progress tracking feature</h2>
