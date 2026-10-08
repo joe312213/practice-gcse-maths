@@ -29,9 +29,9 @@
       Created by Joe Hudson to help Foundation GCSE Maths students practise accurate methods and
       build confidence through short, regular activities.
     </p>
-    <h2>Credits</h2>
+    <h2>Related Apps</h2>
     <p>
-      The theme palettes and controls are adapted from <a
+      The theme palettes, controls and puzzles are adapted from <a
         href="https://jhudshcg.github.io/starters/">T-Level starters site</a
       >. Its <a href="https://github.com/jhudshcg/starters">source code</a> also informed the approach
       to practice, feedback and saved progress.

@@ -214,31 +214,21 @@ nav button {
   white-space: nowrap;
 }
 .working {
-  --working-inset: 0px;
-  --working-radius: 0px;
   position: sticky;
   top: 12px;
 }
 /* Only writing surfaces extend through the card padding; text stays inset. */
 .working canvas,
 .working .working-field {
-  --working-width: calc(100% + 2 * (var(--card-padding) - var(--working-inset)));
+  --working-width: calc(100% + 2 * var(--card-padding));
   display: block;
   width: var(--working-width);
-  margin-inline: calc(var(--working-inset) - var(--card-padding));
+  margin-inline: calc(-1 * var(--card-padding));
   max-width: var(--working-width);
-  border-radius: var(--working-radius);
+  border-radius: 0;
 }
 .working .working-field {
   resize: vertical;
-}
-.working-inset {
-  --working-inset: 8px;
-  --working-radius: 10px;
-}
-.working-style-control {
-  font-size: 0.8rem;
-  font-weight: 400;
 }
 .working canvas {
   height: 230px;

@@ -355,3 +355,15 @@ The user also reported “Puzzles could not load”. The running Vite log proved
 The user supplied a visual example and requested hiding the grid after choosing. Tiles now use the reference’s lavender/green/gold artwork backgrounds; selecting a family hides the grid, names the family in the heading and focuses it. “Choose another puzzle” reopens the grid and restores focus to that family. Browser coverage checks hiding, keyboard entry and return focus as well as all nine families.
 
 The Go reference screenshot prompted a dedicated Svelte composition using the package’s supported render/bind APIs, with no vendor edits: strategy/next-move hints above the board, coordinate/source/rules below, and unhighlighted turn text. Go challenge labels now include the same kyu ranges as T-Level. Regression checks cover both hint controls, attribution placement, turn styling, a played move, Undo, checking and solution replay. Svelte diagnostics identified non-reactive component references in the wrapper; those were made reactive. The user then requested hiding maths puzzles; the Classic maths tile is excluded, leaving eight selectable types, while library content is preserved.
+
+
+## 8 October 2026 — Remove development field-style selector
+
+Removed the Field style (dev) selector, its state/import, the unused inset CSS variant and its obsolete browser assertion. Both writing surfaces now always use the existing full-card-width square-corner style, with the width cap and vertical-only textarea resize retained. Existing responsive full-width checks remain.
+
+
+## 8 October 2026 — Hamburger menu trigger
+
+Replaced the visible Menu text with a three-line SVG icon, retaining the Menu accessible name and tooltip, a 44px target and the existing Bits UI popover/focus behaviour.
+
+The user also selected Rose as the default theme. Updated initial HTML palette and theme-preference fallback; saved choices still take precedence.

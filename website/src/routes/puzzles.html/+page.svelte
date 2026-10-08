@@ -81,9 +81,7 @@
     <h1 id="puzzle-heading" tabindex="-1">
       {puzzleTypes.find((family) => family.id === type)?.name ?? 'Puzzles'}
     </h1>
-    <p>
-      Try a different kind of thinking. Puzzle marks are separate from your topic progress.
-    </p>
+    <p>Try a different kind of thinking. Puzzle marks are separate from your topic progress.</p>
     {#if !type}
       <nav class="puzzle-types" aria-label="Puzzle types">
         {#each selectableTypes as family}

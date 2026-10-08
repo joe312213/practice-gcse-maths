@@ -27,7 +27,7 @@ const PREFIX = 'maths-starters-';
  * @example const preferences = readTheme(localStorage);
  */
 export function readTheme(storage) {
-  const preferences = { mode: 'light', palette: 'sage', tweaks: {} };
+  const preferences = { mode: 'light', palette: 'rose', tweaks: {} };
   try {
     preferences.mode = storage.getItem(PREFIX + 'theme') === 'dark' ? 'dark' : 'light';
     const palette = storage.getItem(PREFIX + 'palette');

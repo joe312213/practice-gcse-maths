@@ -222,21 +222,6 @@ export async function checkPresentation(browser, base) {
       if ([940, 390].includes(width))
         await page.screenshot({ path: `${artifacts}/flex-questions-${width}.png`, fullPage: true });
     }
-    await page.locator('.working').evaluate((card) => card.classList.add('working-inset'));
-    const insetStyle = await page.locator('.working').evaluate((card) => {
-      const bounds = card.getBoundingClientRect();
-      const style = getComputedStyle(card);
-      return [...card.querySelectorAll('canvas, textarea')].every((field) => {
-        const rect = field.getBoundingClientRect();
-        return (
-          Math.abs(rect.left - bounds.left - parseFloat(style.borderLeftWidth) - 8) < 1 &&
-          Math.abs(bounds.right - parseFloat(style.borderRightWidth) - rect.right - 8) < 1 &&
-          getComputedStyle(field).borderRadius === '10px'
-        );
-      });
-    });
-    assert.ok(insetStyle, 'Inset variant has 8px margins and rounded corners');
-    await page.locator('.working').evaluate((card) => card.classList.remove('working-inset'));
     // Exercise a future longer expression without adding it to authored content.
     await page.setViewportSize({ width: 1000, height: 1000 });
     const extended = await page.locator('.question-list').evaluate((list) => {

@@ -125,7 +125,22 @@
     {#if view?.profile}
       <a class="action-button quiet" href={resolve('/progress.html')}>Progress</a>
       <Popover.Root bind:open={menuOpen}>
-        <Popover.Trigger class="action-button quiet" bind:ref={menuTrigger}>Menu</Popover.Trigger>
+        <Popover.Trigger
+          class="action-button quiet menu-toggle"
+          bind:ref={menuTrigger}
+          aria-label="Menu"
+          title="Menu"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+              d="M4 6h16M4 12h16M4 18h16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </Popover.Trigger>
         <Popover.Portal
           ><Popover.Content
             class="theme-menu"

@@ -106,6 +106,15 @@
   vertical-align: middle;
   flex-shrink: 0;
 }
+.action-button.menu-toggle {
+  width: 44px;
+  min-height: 44px;
+  padding: 9px;
+}
+.menu-toggle svg {
+  width: 24px;
+  height: 24px;
+}
 .progress-meter {
   @apply progress;
   width: 100%;

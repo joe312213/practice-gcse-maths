@@ -9,14 +9,12 @@
 
   Uses: drawing-assist.mjs; onworking/onpaper update the parent session.
 
-  Libs: Svelte onMount; SvelteKit development flag.
+  Libs: Svelte onMount.
 -->
 <script>
   import { onMount } from 'svelte';
-  import { dev } from '$app/env';
   import { drawingTools, guideLines } from '#lib/application/drawing-assist.mjs';
   let { number, topic, paper, draft, onpaper, onworking } = $props();
-  let fieldStyle = $state('flush');
   let canvasHeight = $state(230),
     resizeDrag = null;
   const tool = $derived(drawingTools[topic]);
@@ -181,17 +179,8 @@
   }}
 />
 
-<section class="card working" class:working-inset={fieldStyle === 'inset'}>
+<section class="card working">
   <h2>Working · question {number}</h2>
-  {#if dev}
-    <label class="working-style-control"
-      >Field style (dev)
-      <select class="choice-field compact" bind:value={fieldStyle}>
-        <option value="flush">Full width · square</option>
-        <option value="inset">Small inset · rounded</option>
-      </select>
-    </label>
-  {/if}
   <label class="paper-option"
     ><input
       type="checkbox"
