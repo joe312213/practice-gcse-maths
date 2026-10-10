@@ -520,3 +520,19 @@ Reduced normal topic-card border contrast by blending 65% theme surface with 35%
 ## 10 October 2026 — topic-card sorting backlog
 
 Recorded the user's requested alphabetical and revision-priority sorting options in the roadmap and linked them from HANDOFF. Backlog only; current prerequisite ordering is unchanged.
+
+## 10 October 2026 — raise adjacent progress summary
+
+Applied the requested -1.5em logical top margin to progress at widths ≥768px, where it sits beside stage navigation. Stage-button spacing and stacked/mobile progress remain unchanged. UI taste updated. Selected build/format, docs, Svelte, responsive presentation, colours, startup, Practice-set, Progress and integration checks passed. No publication.
+
+## 10 October 2026 — progress offset refinement
+
+Increased the adjacent progress offset to -2.5em at the user’s request, superseding -1.5em. UI taste and HANDOFF updated. Selected format/build, docs, topic/drawing, presentation, colour and Practice-set checks passed.
+
+## 10 October 2026 — timer-display preference backlog
+
+Recorded next-session user selection for displaying a timer on scaffolded practice, spot the error and independent practice. Added to roadmap and HANDOFF; timer meaning/default/persistence remain open. No implementation or timing-rule change.
+
+## 10 October 2026 — method-description highlighting backlog
+
+Extended next-session demo highlighting to include the textual method-description step corresponding to the currently animated portion. Recorded in roadmap and HANDOFF; not implemented.

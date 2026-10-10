@@ -120,7 +120,7 @@
     </div>
     <p class="muted">
       {view.mode === 'assessment'
-        ? `Try all ${page.size} without hints. This helps you decide where to begin.`
+        ? `Try all ${page.size} without hints. This helps you decide where to begin and messure future progress.`
         : view.mode === 'errors'
           ? 'Inspect the written method. Identify the mistake, correct it, then answer the original question.'
           : 'Show your working. Submit each answer when you are ready.'}

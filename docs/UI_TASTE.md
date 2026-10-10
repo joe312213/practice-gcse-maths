@@ -31,7 +31,7 @@ Keep chevron geometry in one shared CSS definition, with one depth variable and 
 | Relationship | Current choice |
 | --- | --- |
 | Intro → actual stage buttons | Fixed **2rem** for every stage; the stage header owns the gap, with no competing intro bottom margin |
-| Vertical alignment | Top-align buttons and progress; do not centre buttons against variable-height progress |
+| Vertical alignment | Keep stage buttons top-aligned with their fixed gap. At widths ≥768px, raise the adjacent progress summary by **2.5em** using its own logical top margin; do not shift the navigation or narrow-screen progress |
 | Stages beside progress | From **768px**, stages take available width beside a bounded progress column, separated by **2rem** |
 | Progress alignment | Compact block at the right gutter, **left-aligned content**; spare space belongs before the block, not after its visible contents |
 | Small-screen progress | Below **678px**, a horizontal strip, wrapping only when necessary |
