@@ -19,7 +19,7 @@
 {#if next}
   <div class="stage-actions">
     <button type="button" class="action-button primary" {id} onclick={() => onadvance(next[0])}>
-      Next: {next[1].split(' · ')[1]}
+      Next: {next[1]}
     </button>
   </div>
 {/if}

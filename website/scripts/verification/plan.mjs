@@ -21,6 +21,7 @@ import { createHash } from 'node:crypto';
 const config = /^website\/(package(?:-lock)?\.json|[^/]+\.(?:js|json))$/;
 const puzzles = /^website\/vendor\/puzzles\//;
 const source = /^website\/(src|static)\//;
+const topicRoutes = /^website\/src\/lib\/content\/topic-routes\.mjs$/;
 const runtime = /^website\/src\/(lib\/(application|domain|adapters)\/|routes\/)/;
 const interaction =
   /^website\/src\/(lib\/(application\/session\.mjs|adapters\/|components\/(practice|ui)\/)|routes\/)/;
@@ -31,7 +32,7 @@ const theme = /^website\/src\/lib\/(theme\/|styles\/theme-)/;
 const runner = /^website\/scripts\/(verify-changed\.mjs|verification\/)/;
 const browser = /^website\/scripts\/browser(?:-checks\.mjs|\/support\.mjs)$/;
 const bank =
-  /^(content\/(?:M(?:01|02|10).*\.(?:json|md)|spot_errors\.json)|scripts\/prepare_web_(?:equations|arithmetic)\.py|website\/static\/data\/|website\/src\/lib\/content\/practice-pages\.json)/;
+  /^(content\/(?:M(?:01|02|10).*\.(?:json|md)|web_assessments\.json|spot_errors\.json)|scripts\/prepare_web_(?:equations|arithmetic)\.py|website\/static\/data\/|website\/src\/lib\/content\/practice-pages\.json)/;
 /**
  * Build a path predicate matching any supplied regular expression.
  * Parameter patterns: path-matching regular expressions.
@@ -52,6 +53,7 @@ export const jobs = [
       components,
       styles,
       bank,
+      topicRoutes,
       config,
       browser,
       /^website\/scripts\/browser\/new-topics-checks\.mjs$/,
@@ -69,13 +71,14 @@ export const jobs = [
   // and safer than maintaining individual function-to-test associations.
   {
     id: 'logic',
-    inputs: matches([runtime, /^tests\/.*\.test\.mjs$/, bank, runner, config]),
+    inputs: matches([topicRoutes, runtime, /^tests\/.*\.test\.mjs$/, bank, runner, config]),
     command: ['--test', '../tests/*.test.mjs'],
   },
   {
     id: 'bank',
     inputs: matches([
       bank,
+      topicRoutes,
       /^website\/scripts\/validate-bank\.mjs$/,
       /^website\/src\/lib\/domain\/engine\.mjs$/,
       config,
@@ -93,9 +96,10 @@ export const jobs = [
     inputs: matches([
       components,
       layout,
-      /^website\/src\/lib\/application\/(player|equation-demo|arithmetic-demo|drawing-assist)\.mjs$/,
+      /^website\/src\/lib\/application\/(player|demo-guide|demo-motion|equation-demo|arithmetic-demo|drawing-assist|drawing)\.mjs$/,
       /^website\/src\/routes\//,
       bank,
+      topicRoutes,
       config,
       browser,
       /^website\/scripts\/browser\/presentation-checks\.mjs$/,
@@ -122,6 +126,7 @@ export const jobs = [
       /^website\/src\/lib\/(adapters|theme)\//,
       /^website\/src\/routes\//,
       bank,
+      topicRoutes,
       config,
       browser,
       /^website\/scripts\/browser\/startup-checks\.mjs$/,
@@ -134,6 +139,7 @@ export const jobs = [
     inputs: matches([
       interaction,
       bank,
+      topicRoutes,
       config,
       browser,
       styles,
@@ -148,6 +154,7 @@ export const jobs = [
     inputs: matches([
       interaction,
       bank,
+      topicRoutes,
       config,
       browser,
       /^website\/src\/lib\/domain\/(progress|revision|progress-transfer|engine|profiles)\.mjs$/,

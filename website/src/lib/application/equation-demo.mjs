@@ -1,3 +1,4 @@
+import { guideFrames } from './demo-guide.mjs';
 /**
  * Purpose: Translate equation rows into ordered reveal frames for the shared demo player.
  *
@@ -18,7 +19,7 @@
  */
 export function equationFrames(rows) {
   return [
-    { step: 1, part: 0 },
+    ...guideFrames({ part: 0 }),
     ...rows.flatMap((row, index) =>
       (row.kind === 'op' ? [1, 3] : [1, 2, 3]).map((part) => ({ step: index + 1, part })),
     ),

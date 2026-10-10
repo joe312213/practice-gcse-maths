@@ -1,0 +1,1 @@
+var e=[{bank:`M01`,slug:`lattice-multiplication`,file:`multiplication`},{bank:`M02`,slug:`bus-stop-division`,file:`division`},{bank:`M10`,slug:`solving-equations`,file:`equations`}];function t(t){let n=e.find(e=>e.bank===t);if(!n)throw Error(`This topic is unavailable.`);return`/fm/${n.slug}/`}export{t as n,e as t};

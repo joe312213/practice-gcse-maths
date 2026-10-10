@@ -36,7 +36,7 @@ export async function checkPracticeSets(browser, base) {
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
   try {
-    await page.goto(base);
+    await page.goto(`${base}fm/solving-equations/`);
     await page.locator('#begin').click();
     await page.locator('#username').fill('Practice Set Student');
     await page.getByRole('button', { name: 'Continue', exact: true }).click();
@@ -99,7 +99,8 @@ export async function checkPracticeSets(browser, base) {
     await page.getByRole('button', { name: 'Leave Practice set', exact: true }).click();
     await page.getByRole('link', { name: 'Progress', exact: true }).click();
     await page.getByText('24 questions answered', { exact: true }).waitFor();
-    await page.getByRole('link', { name: 'Back to practice', exact: true }).click();
+    await page.getByRole('link', { name: 'Back to topics', exact: true }).click();
+    await page.locator('.topic-card').filter({ hasText: 'Solving equations' }).click();
     const input = page.getByPlaceholder('practice code or search', { exact: true });
     await input.fill('multiplication');
     await page.getByRole('button', { name: 'Go', exact: true }).click();

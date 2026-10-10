@@ -11,6 +11,7 @@ Directly authored `web_format.md` is protected; the progress requirements append
 - [DEV_LOG.md](../DEV_LOG.md)
 - [web_format.md](../web_format.md)
 - [docs/UI_UX_RULES.md](../docs/UI_UX_RULES.md)
+- [UI taste](UI_TASTE.md) — visual judgment, spacing, alignment and recurring user preferences.
 - [docs/WEBSITE_PLAN.md](../docs/WEBSITE_PLAN.md)
 - [website/README.md](../website/README.md)
 - [docs/FRAMEWORK_MIGRATION_PLAN.md](../docs/FRAMEWORK_MIGRATION_PLAN.md)
@@ -99,4 +100,7 @@ Pinned upstream documentation, retained unchanged (see [integration and update i
 - [Integration API](../website/vendor/puzzles/API.md)
 - [Package architecture](../website/vendor/puzzles/ARCHITECTURE.md)
 - [Styles and markup](../website/vendor/puzzles/styles/README.md)
+- [Arithmetic web refinements](../content/M01_M02_web_support.json) — authored question replacements, hints, method notes and correction choices, applied after auditing preserved sources.
 - [Arithmetic import evidence](ARITHMETIC_IMPORT_AUDIT.json)
+
+- [Additional web assessment questions](../content/web_assessments.json) — two new assessment items per topic, imported separately from preserved slide sources.

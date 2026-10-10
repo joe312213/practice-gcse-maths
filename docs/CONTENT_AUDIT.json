@@ -46,10 +46,10 @@
   ],
   "M10": {
     "imported": 94,
-    "new_web_items": 1,
+    "new_web_items": 3,
     "plain": 72,
     "source_questions_found_in_saved_deck": 94,
-    "coefficient_answers_verified": 86
+    "coefficient_answers_verified": 88
   },
   "limits": "Shape geometry/text compared; detailed styles/media and non-M10 source parity not yet audited."
 }

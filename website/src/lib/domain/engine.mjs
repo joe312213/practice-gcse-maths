@@ -22,6 +22,9 @@
  * Libs: none.
  */
 // Maths progression is independent of DOM/content, so transitions can be checked directly.
+export const MAX_PAGE_SIZE = 12;
+/** Independent success always uses the latest ten eligible answers, regardless of page length. */
+export const scoringWindow = (mode, pageSize) => (mode === 'plain' ? 10 : Math.min(pageSize, 10));
 export const LEVELS = ['Start', 'Build', 'Confidence'];
 /**
  * Return scoring weights for a supported page size from one to ten.
@@ -108,7 +111,11 @@ export function manualLevel(track, page, level) {
  * Calls: success.
  * @example submit(track, page, { id, level, correct, assisted });
  */
-export function submit(track, page, { id, level, correct, assisted = false }) {
+export function submit(
+  track,
+  page,
+  { id, level, correct, assisted = false, window = Math.min(page.size, 10) },
+) {
   if (page.complete || Object.hasOwn(page.results, id)) return { duplicate: true };
   if (level !== page.level) throw Error('Question level does not match the current page.');
   const eligible = !assisted || !correct;
@@ -151,7 +158,7 @@ export function submit(track, page, { id, level, correct, assisted = false }) {
   const atRecommended = page.level === track.level;
   if (!page.trial && atRecommended)
     track.shortStreak = correct && !assisted ? track.shortStreak + 1 : 0;
-  const rate = success(track.histories[track.level], page.size);
+  const rate = success(track.histories[track.level], window);
   const allPerfect = Object.values(page.results).every(
     (r) => r.correct && !r.assisted && r.level === track.level,
   );

@@ -72,7 +72,7 @@ export async function checkStartup(browser, base) {
           await route.continue();
         });
       }
-      await page.goto(base);
+      await page.goto(`${base}fm/solving-equations/`);
       if (fault === 'delayed-bank') {
         await page.getByText('Loading maths practice…', { exact: true }).waitFor();
         assert.equal(await page.locator('#profile-button').isDisabled(), true);

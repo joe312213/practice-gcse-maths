@@ -25,7 +25,7 @@ export async function checkColours(browser, base) {
   const context = await createTestContext(browser);
   const page = await context.newPage();
   try {
-    await page.goto(base);
+    await page.goto(`${base}fm/solving-equations/`);
     await page.locator('#begin').waitFor();
     const failures = await page.evaluate(() => {
       const actual = document.createElement('div');

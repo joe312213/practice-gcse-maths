@@ -11,16 +11,13 @@
   Libs: $app/paths (base-aware URLs).
 -->
 <script>
+  import SiteHeader from '#lib/components/ui/SiteHeader.svelte';
+  import SiteFooter from '#lib/components/ui/SiteFooter.svelte';
   import { resolve } from '$app/paths';
 </script>
 
 <svelte:head><title>About · Maths practice</title></svelte:head>
-<a class="skip" href="#main">Skip to content</a>
-<header>
-  <a class="brand" href={resolve('/')}>Maths<span> / practice</span></a><a href={resolve('/')}
-    >Back to practice</a
-  >
-</header>
+<SiteHeader section="content" back></SiteHeader>
 <main id="main" class="full" tabindex="-1">
   <h1>About Maths practice</h1>
   <section class="card">
@@ -55,7 +52,6 @@
     </p>
   </section>
 </main>
-<footer>
+<SiteFooter>
   <a href={resolve('/')}>Return to Maths practice</a>
-  <a href={resolve('/about.html')} aria-current="page">About</a>
-</footer>
+</SiteFooter>

@@ -43,6 +43,7 @@
     <details>
       <summary>Answer, method and check</summary>
       <p><strong>Answer:</strong> {bank.method ? '' : 'x = '}{question.answer}</p>
+      {#if question.method_note}<p>{question.method_note}</p>{/if}
       {#if mode === 'errors' && !question.errorOptions}<ul>
           {#each question.errors as error}<li>
               Row {error.row + 1}: {bank.teaching.errorReasons.find((r) => r.id === error.reason)
@@ -55,7 +56,8 @@
           rows={question.correct_balance ?? question.balance}
         />{/if}
       {#if question.correction}<p>{question.correction}</p>{/if}
-      {#if !response.correct && question.error_note}<p>
+      {#if !response.correct && question.error_note && question.error_note !== question.correction}<p
+        >
           <strong>If you got {question.wrong}:</strong>
           {question.error_note}
         </p>{/if}

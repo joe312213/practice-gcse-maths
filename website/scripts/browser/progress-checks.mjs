@@ -33,18 +33,21 @@ export async function checkProgress(browser, base) {
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
   try {
-    await page.goto(base);
+    await page.clock.install({ time: new Date(2026, 9, 10, 12) });
+    await page.goto(`${base}fm/solving-equations/`);
     await page.locator('#begin').click();
     await page.locator('#username').fill('Progress Student');
     await page.getByRole('button', { name: 'Continue', exact: true }).click();
     if (await page.locator('#profile-message').isVisible())
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    await page.clock.runFor(65000);
     await page.getByRole('link', { name: 'Progress', exact: true }).click();
     await page.getByRole('heading', { name: 'Your progress', exact: true }).waitFor();
     await page.getByText('0 questions answered', { exact: true }).first().waitFor();
+    await page.getByText('1.1 minutes', { exact: true }).waitFor();
     assert.equal(
       await page
-        .getByRole('link', { name: 'Back to practice', exact: true })
+        .getByRole('link', { name: 'Back to topics', exact: true })
         .evaluate(
           (element) =>
             getComputedStyle(element).color ===
@@ -80,6 +83,19 @@ export async function checkProgress(browser, base) {
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
       .analyze();
     assert.deepEqual(audit.violations, []);
+    await page.keyboard.press('Escape');
+    await page.locator('.challenge-stage').nth(3).hover();
+    await page.getByRole('heading', { name: 'Start · Bus stop division', exact: true }).waitFor();
+    assert.equal(
+      await page.locator('.progress-breakdown').count(),
+      1,
+      'Only one topic breakdown can be open',
+    );
+    await page.mouse.move(0, 0);
+    await page.locator('.progress-breakdown').waitFor({ state: 'detached' });
+    await page.locator('.challenge-stage').first().focus();
+    await page.keyboard.press('Enter');
+    await page.locator('.progress-breakdown').waitFor();
     await page.keyboard.press('Escape');
     await page.evaluate(() => {
       const data = JSON.parse(localStorage.getItem('maths-practice-v2'));

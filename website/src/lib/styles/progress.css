@@ -53,7 +53,9 @@
   margin: 0.5rem 0;
 }
 .progress-breakdown {
-  max-width: min(28rem, calc(100vw - 32px));
+  width: min(28rem, calc(100vw - 32px));
+  max-height: min(32rem, calc(100dvh - 32px));
+  overflow-y: auto;
 }
 .revision-recommendation {
   margin-block: 1rem;

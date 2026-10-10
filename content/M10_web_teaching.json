@@ -409,7 +409,8 @@
           "id": "wrongInverse",
           "text": "+ 3 | + 3"
         }
-      ]
+      ],
+      "hint": "What would the left side look like after expanding the brackets? Does it help? Then check whether the later operation undoes the constant shown above it."
     }
   ]
 }

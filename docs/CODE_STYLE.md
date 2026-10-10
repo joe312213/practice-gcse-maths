@@ -4,6 +4,7 @@
 - Minimizing code, while maintaining feature and functionality requirements is the goal, but not at the expense of code readability.
 - Favour solutions that result in modular, reusable code - without over-generalizing solutions. If a modular, reusable approach would result in less code, use it. If a modular, reusable approach would result in more readable and maintainable code, use it.
 - Extra time and effort put into sound and maintainable implementation decisions now, is multiples of that time saved later by avoiding rewrites and sifting through hastily made slop ('more haste, less speed').
+- Algorithm and architecture choices should be both computational and storage efficiency, alongside maintainability.
 - Comment code according to the [comments policy](CODE_COMMENTS.md).
 - For key architectural decisions, stop and discuss first, presenting your top options and some pros and cons of each.
 
@@ -21,6 +22,8 @@ When fixing bugs, adding or changing features, or refactoring, ask: "How can I s
 Format authored HTML and component markup for human reading, with sensible line breaks and indentation. Production output may be minified.
 
 Use semantic native HTML and avoid unnecessary wrapper elements. Prefer purposeful class names over long lists of framework utilities.
+
+If style and/or layout is commonly used it must have a single source of truth in the source.
 
 Combine framework components for reusable markup and behaviour with semantic CSS classes for reusable appearance. Use utility composition features (such as Tailwind's @apply) where they make styling clearer. Coordinate these abstractions with any component styling libraries (such as daisyUI) and interaction/accessibility libraries (such as Bits UI). Preserve their required attributes, structure and state handling.
 

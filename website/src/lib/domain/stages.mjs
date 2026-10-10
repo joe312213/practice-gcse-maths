@@ -13,11 +13,11 @@
  */
 // Shared learning-path order; activity components do not own routing.
 export const MODES = [
-  ['assessment', '1 · Initial assessment'],
-  ['demo', '2 · Learn the method'],
-  ['scaffolded', '3 · Scaffolded practice'],
-  ['errors', '4 · Spot the error'],
-  ['plain', '5 · Independent practice'],
+  ['assessment', 'Initial assessment'],
+  ['demo', 'Learn the method'],
+  ['scaffolded', 'Scaffolded practice'],
+  ['errors', 'Spot the error'],
+  ['plain', 'Independent practice'],
 ];
 
 /**

@@ -29,6 +29,8 @@ def main():
     catalogue_path = ROOT / 'website/src/lib/content/practice-pages.json'
     catalogue = json.loads(catalogue_path.read_text())
     errors = json.loads((ROOT / 'content/spot_errors.json').read_text())
+    support = json.loads((ROOT / 'content/M01_M02_web_support.json').read_text())
+    extra_assessments = json.loads((ROOT / 'content/web_assessments.json').read_text())
     audit = []
     for topic, folder, stem, source, method in [
         ('M01', 'multiplication', 'Lattice_multiplication_M01', 'M01_lattice_multiplication.md', 'lattice'),
@@ -41,11 +43,23 @@ def main():
         markdown = (ROOT / 'content' / source).read_text()
         saved_answers = (ROOT / f'legacy/topics/{folder}/{stem}_answers.html').read_text()
         questions = []
-        def add(q, ident, kind, level, **extra):
+        replacements = []
+        def add(q, ident, kind, level, audit_source=True, **extra):
+            if audit_source:
+                assert re.sub(r'\s|,', '', q.split(' (')[0]) in all_text, (ident, q)
+            # Audit the preserved source first, then apply authorised web-only refinements.
+            revised = support.get(f'maths:{ident}', {}).get('q', q)
+            if revised != q:
+                replacements.append(dict(id=f'maths:{ident}', source=q, website=revised))
+            q = revised
             a, op, b = operands(q.split(' (')[0])
-            assert re.sub(r'\s|,', '', q.split(' (')[0]) in all_text, (ident, q)
             answer = str(a*b) if op == '×' else (f'{a//b} r {a%b}' if level == 1 and a%b else str(Decimal(a)/Decimal(b)).rstrip('0').rstrip('.') if a%b else str(a//b))
-            check = f'{answer} ÷ {b} = {a}' if op == '×' else f'{a//b} × {b} + {a%b} = {a}'
+            if op == '×':
+                check = f'{answer} ÷ {b} = {a}'
+            elif '.' in answer:
+                check = f'{answer} × {b} = {a}'
+            else:
+                check = f'{a//b} × {b} + {a%b} = {a}'
             item = dict(id=f'maths:{ident}', subject='maths', topic=topic, type=kind, level=level, q=q, a=a, b=b, answer=answer, check=check, method=method, **extra)
             questions.append(item)
             return item
@@ -80,6 +94,11 @@ def main():
                 assert (int(parts[0])*item['b']+int(parts[1]) == item['a'] if len(parts)==2 else Decimal(expected) == (Decimal(item['a'])*item['b'] if method=='lattice' else Decimal(item['a'])/item['b'])), ident
                 item['answer'] = error['correct_result'].replace(',', '')
                 item['check'] = error['check']
+        # New web assessments are authored separately; never claim saved-deck provenance.
+        for index, extra in enumerate(extra_assessments[topic], 5):
+            add(extra['q'], f'{topic}-IA-Q{index}', 'assessment', extra['level'], audit_source=False, **{k:v for k,v in extra.items() if k not in ('q','level')})
+        for item in questions:
+            item.update(support.get(item['id'], {}))
         table = sections[0]
         method_rows = re.findall(r'^\| [1-4]\. (.*?) \| (.*?) \|', table, re.M)
         prompts = [clean(text.replace('<br>', ' ')) for _, text in method_rows]
@@ -93,12 +112,12 @@ def main():
             pages.append(dict(type=1, level=level, slots=[[q['id'] for q in questions if q['type']=='errors' and q['level']==level]]))
         tags = next((t.get('tags', []) for t in catalogue['topics'] if t['bank'] == topic), [])
         catalogue['topics'] = [t for t in catalogue['topics'] if t['bank'] != topic]
-        catalogue['topics'].append(dict(code=int(topic[1:])-1, bank=topic, title=bank['title'], tags=tags, pages=pages))
-        audit.append(dict(topic=topic, questions=len(questions), deck_sha256=sha256(deck_path.read_bytes()).hexdigest(), answers_sha256=sha256(saved_answers.encode()).hexdigest(), source_questions_found_in_saved_deck=True, error_diagrams_preserved=9))
+        catalogue['topics'].append(dict(code=int(topic[1:])-1, bank=topic, title=bank['title'], pages=pages, tags=tags))
+        audit.append(dict(topic=topic, questions=len(questions), deck_sha256=sha256(deck_path.read_bytes()).hexdigest(), answers_sha256=sha256(saved_answers.encode()).hexdigest(), source_questions_found_in_saved_deck=True, web_replacements=replacements, new_web_assessments=2, error_diagrams_preserved=9))
     catalogue['topics'].sort(key=lambda t:t['code'])
     catalogue_path.write_text(json.dumps(catalogue, ensure_ascii=False, indent=2)+'\n')
     (ROOT / 'docs/ARITHMETIC_IMPORT_AUDIT.json').write_text(json.dumps(audit, indent=2)+'\n')
-    print('Imported and deck-audited 94 questions per arithmetic topic; preserved 18 saved error diagrams.')
+    print('Imported and deck-audited 96 questions per arithmetic topic (94 audited source items + 2 web assessments); preserved 18 saved error diagrams.')
 
 if __name__ == '__main__':
     main()

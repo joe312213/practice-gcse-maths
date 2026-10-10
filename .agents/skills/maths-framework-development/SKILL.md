@@ -3,7 +3,7 @@ name: maths-framework-development
 description: Implement this project's SvelteKit static UI using semantic CSS composition, reusable JavaScript boundaries and accessible controls. Use when changing website components, styles or application logic.
 ---
 
-Read the relevant [standing UI rules](../../../docs/UI_UX_RULES.md) and [architecture/run guide](../../../website/README.md#architecture-boundaries); do not duplicate them in new component-specific policy files.
+For visual/layout changes, read [UI taste](../../../docs/UI_TASTE.md). Read the relevant [standing UI rules](../../../docs/UI_UX_RULES.md) and [architecture/run guide](../../../website/README.md#architecture-boundaries); do not duplicate them in new component-specific policy files.
 
 - Put marking/progression in pure domain modules, interaction orchestration in the injected session, browser persistence in adapters and presentation in Svelte components. Pass data/callbacks explicitly. Keep cohesive responsibilities together rather than creating generic frameworks or trivial wrapper layers.
 - Use readable JavaScript and existing Svelte conventions. Comment non-obvious reset/lifecycle/accessibility decisions. Cancel listeners/timers when disposed; keep personal/browser state out of prerender module evaluation.

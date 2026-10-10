@@ -12,9 +12,24 @@
 -->
 <script>
   import { Popover } from 'bits-ui';
+  import { topicPath } from '#lib/content/topic-routes.mjs';
+  import { resolve } from '$app/paths';
+  import { onDestroy } from 'svelte';
   import { SET_LEVELS } from '#lib/domain/practice-code.mjs';
-  let { row } = $props();
-  let openLevel = $state(null);
+  let { row, openBreakdown = $bindable(null) } = $props();
+  let closeTimer;
+  let hovering = false;
+  const key = (level) => `${row.key}:${level}`;
+  function cancelClose() {
+    clearTimeout(closeTimer);
+  }
+  function leave(level) {
+    cancelClose();
+    closeTimer = setTimeout(() => {
+      if (openBreakdown === key(level)) openBreakdown = null;
+    }, 180);
+  }
+  onDestroy(cancelClose);
   /**
    * Format a timestamp in UK date format, or the unpractised label for null.
    * Parameter value: new value to apply or validate.
@@ -25,21 +40,42 @@
 
 <article class="card topic-progress" class:stale={row.stale} data-priority={row.status}>
   <div>
-    <h2>{row.topic.title}</h2>
+    <h2><a href={resolve(topicPath(row.topic.bank))}>{row.topic.title}</a></h2>
     <p>Last practised: {date(row.last)}</p>
     <p>{row.total} questions answered</p>
+    {#if row.baseline}<p class="assessment-baseline">
+        <strong>Initial assessment:</strong>
+        {row.baseline.correct}/{row.baseline.answered} correct · {date(row.baseline.at)}{row
+          .baseline.complete
+          ? ''
+          : ` · incomplete (${row.baseline.size} questions in total)`}
+      </p>{:else}<p>Initial assessment: not yet recorded.</p>{/if}
   </div>
   <div>
     <div class="challenge-stages" aria-label={`${row.topic.title} success by challenge level`}>
       {#each row.stages as stage}
         <Popover.Root
-          open={openLevel === stage.level}
-          onOpenChange={(open) => (openLevel = open ? stage.level : null)}
+          open={openBreakdown === key(stage.level)}
+          onOpenChange={(open) => {
+            if (open) openBreakdown = key(stage.level);
+            else if (openBreakdown === key(stage.level)) openBreakdown = null;
+          }}
         >
           <Popover.Trigger
             class="challenge-stage"
             onpointerenter={(event) => {
-              if (event.pointerType === 'mouse') openLevel = stage.level;
+              if (event.pointerType === 'mouse') {
+                cancelClose();
+                hovering = true;
+                openBreakdown = key(stage.level);
+              }
+            }}
+            onpointerleave={(event) => {
+              if (event.pointerType === 'mouse') leave(stage.level);
+            }}
+            onkeydown={() => {
+              hovering = false;
+              cancelClose();
             }}
           >
             <span>{SET_LEVELS[stage.level]}</span>
@@ -53,7 +89,17 @@
           </Popover.Trigger>
           <Popover.Portal
             ><Popover.Content
-              class="theme-menu progress-breakdown"
+              class="popover-panel progress-breakdown"
+              onpointerenter={cancelClose}
+              onpointerleave={(event) => {
+                if (event.pointerType === 'mouse') leave(stage.level);
+              }}
+              onOpenAutoFocus={(event) => {
+                if (hovering) event.preventDefault();
+              }}
+              onCloseAutoFocus={(event) => {
+                if (hovering) event.preventDefault();
+              }}
               sideOffset={8}
               collisionPadding={16}
               aria-label={`${SET_LEVELS[stage.level]} question type breakdown`}

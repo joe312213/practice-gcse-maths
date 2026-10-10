@@ -148,10 +148,10 @@ async function submitCorrect(mode, index, wrongReason = false) {
  * Parameter label: scenario label for diagnostics/artifacts.
  * Calls: writeFile.
  */
-async function accessibility(label) {
-  const results = await new AxeBuilder({ page })
-    .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
-    .analyze();
+async function accessibility(label, scope) {
+  const audit = new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']);
+  if (scope) audit.include(scope);
+  const results = await audit.analyze();
   await writeFile(`${artifacts}/axe-${label}.json`, JSON.stringify(results.violations, null, 2));
   assert.deepEqual(
     results.violations.map((v) => ({ id: v.id, nodes: v.nodes.map((n) => n.target) })),
@@ -167,13 +167,13 @@ async function shot(label) {
   await page.screenshot({ path: `${artifacts}/${label}.png`, fullPage: true });
 }
 try {
-  await page.goto(base);
+  await page.goto(`${base}fm/solving-equations/`);
   await page.locator('#begin').waitFor();
   await chooseName('Migration Student');
   assert.equal(await page.locator('#hint, #reference, .progress-card').count(), 0);
   await accessibility('assessment');
   await shot('assessment');
-  for (const i of [2, 3, 0, 1]) await submitCorrect('assessment', i);
+  for (const i of [2, 3, 0, 1, 4, 5]) await submitCorrect('assessment', i);
   assert.equal(await page.locator('#new-page, .summary').count(), 0);
   await page.locator('#assessment-next').click();
   assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title');
@@ -217,14 +217,8 @@ try {
   await page.locator('#level').selectOption('2');
   assert.equal(await page.locator('.guidance li').count(), 4);
   await page.locator('#typed-working').fill('draft working');
-  await page.locator('#paper').check();
-  assert.equal(await page.locator('#working-tools').isVisible(), false);
-  await page.locator('#paper').uncheck();
   assert.equal(await page.locator('#typed-working').inputValue(), 'draft working');
-  await page.locator('#paper').check();
   await page.reload();
-  await page.locator('#paper').waitFor();
-  assert.equal(await page.locator('#paper').isChecked(), false);
   await page.locator('[data-mode="scaffolded"]').click();
   for (let i = 0; i < (await active('scaffolded')).size; i++) await submitCorrect('scaffolded', i);
   await page.locator('#next-stage').click();
@@ -232,14 +226,14 @@ try {
   assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title');
   await page.locator('[data-mode="plain"]').click();
   const positions = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 12; i++) {
     await page.locator(`[data-question="${i}"]`).click();
     positions.push(
       await page.locator('#answer').evaluate((el) => el.getBoundingClientRect().top + scrollY),
     );
   }
   assert.ok(Math.max(...positions) - Math.min(...positions) < 0.5, 'Answer position stable');
-  for (let i = 0; i < 10; i++) await submitCorrect('plain', i);
+  for (let i = 0; i < 12; i++) await submitCorrect('plain', i);
   assert.equal((await topic()).tracks.plain.level, 1);
   assert.equal(await page.locator('#next-stage').count(), 0);
   await page.reload();
@@ -247,8 +241,16 @@ try {
   assert.equal((await active('plain')).complete, true);
   await page.locator('#new-page').click();
   await page.locator('#hint').click();
+  const hintedId = (await active('plain')).items[0].id;
+  const hinted = bank.questions.find((q) => q.id === hintedId);
+  assert.equal(await page.locator('#question-hint').textContent(), hinted.hint);
+  assert.equal(await page.locator('#hint').getAttribute('aria-expanded'), 'true');
+  await page.locator('#hint').click();
+  assert.equal(await page.locator('#question-hint').isVisible(), false);
+  assert.equal((await active('plain')).assisted[hintedId], true);
   const before = (await topic()).tracks.plain.histories[1].length;
   await submitCorrect('plain', 0);
+  assert.equal(await page.locator('#question-hint').isVisible(), false);
   assert.equal((await topic()).tracks.plain.histories[1].length, before);
   await page.locator('#reference').click();
   assert.equal(await page.locator('.reference').count(), 1);
@@ -325,8 +327,6 @@ try {
     ),
     true,
   );
-  await page.locator('#paper').check();
-  await page.locator('#paper').uncheck();
   assert.equal(
     await canvas.evaluate((el) =>
       el
@@ -361,14 +361,16 @@ try {
   await page.reload();
   await page.locator('#theme-picker').click();
   assert.equal(await page.locator('#theme-saturation').inputValue(), '70');
-  await accessibility('theme-mobile');
+  // Audit the popup and uncovered page separately: occlusion changes apparent target size.
+  await accessibility('theme-mobile', '#theme-menu');
   await shot('theme-mobile');
   await page.keyboard.press('Escape');
+  await accessibility('theme-mobile-page');
   await page.locator('footer a').click();
   await page.getByRole('heading', { name: 'About Maths practice' }).waitFor();
   assert.equal(await page.evaluate(() => document.documentElement.dataset.palette), 'blue');
   await accessibility('about');
-  await page.goto(base);
+  await page.goto(`${base}fm/solving-equations/`);
   await chooseName('Another Student');
   assert.equal((await topic()).history.length, 0);
   await page.locator('[data-mode="plain"]').click();

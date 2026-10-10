@@ -12,6 +12,10 @@
   Libs: svelte (component lifecycle and state), $app/paths (base-aware URLs).
 -->
 <script>
+  import PracticeHistory from '#lib/components/progress/PracticeHistory.svelte';
+  import { topicPath } from '#lib/content/topic-routes.mjs';
+  import SiteHeader from '#lib/components/ui/SiteHeader.svelte';
+  import SiteFooter from '#lib/components/ui/SiteFooter.svelte';
   import { onMount } from 'svelte';
   import { resolve } from '$app/paths';
   import catalogue from '#lib/content/practice-pages.json';
@@ -25,7 +29,7 @@
   import { maintainRecommendations, REVISION_POLICY } from '#lib/domain/revision.mjs';
   import TopicProgress from '#lib/components/progress/TopicProgress.svelte';
   import ProgressTransfer from '#lib/components/progress/ProgressTransfer.svelte';
-  import ThemeControls from '#lib/components/ui/ThemeControls.svelte';
+
   import { PAGE_TYPES } from '#lib/domain/practice-code.mjs';
   let store = $state.raw(null),
     profile = $state.raw(null),
@@ -34,6 +38,7 @@
     recommendations = $state.raw([]),
     warning = $state('');
   let save = $state.raw(() => {});
+  let openBreakdown = $state(null);
   /**
    * Refresh the current learner's summaries, recommendations and backup baseline, then persist.
    * Parameter requested: explicit request to generate recommendations beyond the automatic limit.
@@ -76,13 +81,7 @@
 </script>
 
 <svelte:head><title>Your progress · Maths practice</title></svelte:head>
-<a class="skip" href="#main">Skip to progress</a>
-<header>
-  <a class="brand" href={resolve('/')}>Maths<span> / practice</span></a>
-  <div class="header-actions">
-    <a class="action-button quiet" href={resolve('/')}>Back to practice</a><ThemeControls />
-  </div>
-</header>
+<SiteHeader section="progress" back></SiteHeader>
 <main id="main" tabindex="-1">
   <h1>Your progress</h1>
   {#if warning}<p role="alert">{warning}</p>{/if}
@@ -91,15 +90,17 @@
     {#if profile}
       <p>Progress for <strong>{profile.name}</strong> · saved on this browser.</p>
       <section aria-label="Progress by topic" class="topic-grid">
-        {#each rows as row}<TopicProgress {row} />{/each}
+        {#each rows as row}<TopicProgress {row} bind:openBreakdown />{/each}
       </section>
       <p class="muted">
-        Recent success uses the existing question-page scoring window and weighting at each level.
-        All submitted outcomes are retained; the minimum evidence threshold is not a storage limit.
-        Plain questions count twice in the topic average. Missing data means fewer than {PROGRESS_POLICY.minimum}
+        Independent recent success uses the latest 10 eligible answers at each level, regardless of
+        page length. Other question types retain their shorter scoring windows. All submitted
+        outcomes are retained; the minimum evidence threshold is not a storage limit. Plain
+        questions count twice in the topic average. Missing data means fewer than {PROGRESS_POLICY.minimum}
         scored answers in a question type at its recommended level. Stale means {PROGRESS_POLICY.staleDays}
         days without practice in that type and level.
       </p>
+      <PracticeHistory {profile} topics={rows} />
       <section class="card" aria-labelledby="revision-title">
         <h2 id="revision-title">Recommended revision Practice sets</h2>
         <p>
@@ -138,7 +139,7 @@
               </p>{/if}
             <a
               class="action-button primary"
-              href={`${resolve('/')}?recommendation=${encodeURIComponent(item.id)}`}
+              href={`${resolve(topicPath('M10'))}?recommendation=${encodeURIComponent(item.id)}`}
               >{item.openedAt === null ? 'Open recommended set' : 'Continue recommended set'}</a
             >
           </article>
@@ -165,8 +166,4 @@
     <ProgressTransfer {profile} {store} {save} onchange={() => refresh()} />
   {/if}
 </main>
-<footer>
-  Progress stays on this browser. Export JSON to take it with you. <a href={resolve('/about.html')}
-    >About</a
-  >
-</footer>
+<SiteFooter>Progress stays on this browser. Export JSON to take it with you.</SiteFooter>

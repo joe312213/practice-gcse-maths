@@ -33,7 +33,7 @@ export async function checkPresentation(browser, base) {
     if (message.type() === 'error') consoleErrors.push(message.text());
   });
   try {
-    await page.goto(base);
+    await page.goto(`${base}fm/solving-equations/`);
     await page.locator('#begin').click();
     await page.locator('#username').fill('Presentation Student');
     await page.getByRole('button', { name: 'Continue', exact: true }).click();
@@ -48,6 +48,17 @@ export async function checkPresentation(browser, base) {
       await page.setViewportSize({ width, height: 1000 });
       for (const topic of topics) {
         await topicSelector.selectOption(topic);
+        await page.locator('.intro').waitFor();
+        if (width === 800 && topic === 'M01')
+          await page.screenshot({ path: `${artifacts}/assessment-spacing.png`, fullPage: true });
+        const stageGap = await page
+          .locator('.intro')
+          .evaluate(
+            (intro) =>
+              document.querySelector('.learning-header').getBoundingClientRect().top -
+              intro.getBoundingClientRect().bottom,
+          );
+        assert.ok(stageGap >= 33 && stageGap <= 35, `Intro/stage breathing room at ${width}px`);
         const layout = await page.locator('.intro').evaluate((intro) => {
           const bounds = intro.getBoundingClientRect();
           const input = intro.querySelector('#practice-code');
@@ -166,8 +177,14 @@ export async function checkPresentation(browser, base) {
     assert.ok((await image()) === beforeEntry, 'Unpressed re-entry lifts the pen');
     await page.mouse.up();
     await page.locator('#clear-working').click();
-    for (const width of [1280, 1000, 940, 920, 768, 600, 480, 390, 320]) {
+    for (const width of [1280, 1000, 940, 920, 769, 768, 767, 600, 480, 390, 320]) {
       await page.setViewportSize({ width, height: 1000 });
+      if (width >= 767 && width <= 769) {
+        const columns = await page
+          .locator('.question-workspace')
+          .evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(' ').length);
+        assert.equal(columns, 2, `Question/working remain side by side at ${width}px`);
+      }
       const layout = await page.locator('.question-list').evaluate((list) => {
         const cards = [...list.querySelectorAll('.question-option')];
         const boxes = cards.map((card) => card.getBoundingClientRect());
@@ -195,14 +212,19 @@ export async function checkPresentation(browser, base) {
           overflow: document.documentElement.scrollWidth > innerWidth,
         };
       });
+      const insets = await page.locator('#active-question').evaluate((question) =>
+        ['#active-question-title', '.active-question-content'].map((selector) => {
+          const style = getComputedStyle(question.querySelector(selector));
+          return parseFloat(style.marginInlineStart) / parseFloat(style.fontSize);
+        }),
+      );
+      assert.deepEqual(insets, [1, 2], `Separate title/content insets at ${width}px`);
       const workingFits = await page.locator('#working-tools').evaluate((tools) => {
-        const card = tools.closest('.card');
+        const card = tools.closest('.working');
         const bounds = card.getBoundingClientRect();
         const style = getComputedStyle(card);
         const left = bounds.left + parseFloat(style.borderLeftWidth);
         const right = bounds.right - parseFloat(style.borderRightWidth);
-        const heading = card.querySelector('h2').getBoundingClientRect();
-        if (Math.abs(heading.left - left - parseFloat(style.paddingLeft)) > 1) return false;
         // Native resize writes an inline width; even an oversized value must remain contained.
         const notes = tools.querySelector('textarea');
         notes.style.width = '2000px';
@@ -217,6 +239,9 @@ export async function checkPresentation(browser, base) {
       assert.ok(workingFits, `Drawing and typed working fill the card at ${width}px`);
       assert.equal(layout.intact, true, `Equations stay intact inside cards at ${width}px`);
       assert.equal(layout.overflow, false, `No page overflow at ${width}px`);
+      assert.ok(layout.rows.every((row) => row.length <= 3));
+      if (width >= 1000) assert.equal(layout.rows[0].length, 3);
+      if (width <= 390) assert.equal(layout.rows[0].length, 1);
       for (const row of layout.rows)
         if (row.length === 2) assert.ok(row.every((size) => size >= 210));
       if ([940, 390].includes(width))
@@ -245,8 +270,8 @@ export async function checkPresentation(browser, base) {
       };
     });
     assert.ok(
-      extended.full && extended.compact && extended.centred && extended.paired,
-      'Long button is intrinsic-width and centred in its own row; shorter cards remain paired',
+      extended.centred && extended.paired,
+      'Long expressions stay centred; shorter cards can still share rows',
     );
     await page.screenshot({ path: `${artifacts}/flex-mixed-widths.png`, fullPage: true });
     console.log(
@@ -262,6 +287,17 @@ export async function checkPresentation(browser, base) {
     const equalsInk = firstRow.locator('.equals span');
     const rightInk = firstRow.locator('.rhs span');
     assert.equal(await leftInk.isVisible(), false, 'Line precedes all writing');
+    await page.clock.runFor(1300);
+    await page.getByRole('button', { name: 'Pause', exact: true }).click();
+    const dividerMotion = await page.locator('.demo-working .equation-divider').evaluate((col) => {
+      const animation = col.getAnimations()[0];
+      return { state: animation?.playState, frames: animation?.effect.getKeyframes() };
+    });
+    assert.equal(dividerMotion.state, 'paused', 'Pausing also holds native guide animation');
+    assert.notEqual(dividerMotion.frames[0].backgroundSize, dividerMotion.frames[1].backgroundSize);
+    await page.locator('#demo-play').click();
+    await page.clock.runFor(3 * 1300);
+    assert.equal(await leftInk.isVisible(), false, 'Finish drawing the divider before writing');
     await page.clock.runFor(1300);
     assert.ok(await leftInk.isVisible());
     assert.equal(await equalsInk.isVisible(), false, 'Left precedes equals');
@@ -284,13 +320,13 @@ export async function checkPresentation(browser, base) {
       const rect = document.querySelector('.demo-stage').getBoundingClientRect();
       return rect.top >= 0 && rect.bottom <= innerHeight;
     });
-    await page.clock.runFor(1300);
+    await page.clock.runFor(2600);
     assert.equal(await page.locator('.demo-working tr[data-step]').count(), 2);
     await page.getByRole('button', { name: 'Pause', exact: true }).click();
     await page.locator('[data-demo-level="2"]').click();
     await page.locator('#demo-play').click();
     // Confidence may begin with two equation rows (three reveals each).
-    await page.clock.runFor(2600);
+    await page.clock.runFor(3900);
     assert.ok((await page.locator('.demo-working tr[data-step]').count()) >= 3);
     const row = await page.locator('.demo-working tr[data-step]').last().boundingBox();
     assert.ok(row.y >= 0 && row.y + row.height <= 845, 'Playback follows the current step');
@@ -312,6 +348,66 @@ export async function checkPresentation(browser, base) {
       'Reference shares the profile setting',
     );
     await page.keyboard.press('Escape');
+    for (const width of [390, 768, 1024]) {
+      await page.setViewportSize({ width, height: 1000 });
+      for (const mode of ['assessment', 'demo', 'scaffolded', 'errors', 'plain']) {
+        await page.locator(`[data-mode="${mode}"]`).click();
+        const geometry = await page.locator('.learning-header').evaluate((header) => {
+          const nav = header.querySelector('nav');
+          return {
+            ratio: nav.getBoundingClientRect().width / header.getBoundingClientRect().width,
+            gap:
+              nav.getBoundingClientRect().top -
+              document.querySelector('.intro').getBoundingClientRect().bottom,
+            earlier: nav.querySelectorAll('.earlier-stage').length,
+            overflow: document.documentElement.scrollWidth > innerWidth,
+            buttonsFit: [...nav.querySelectorAll('button')].every(
+              (button) => button.scrollWidth <= button.clientWidth + 1,
+            ),
+          };
+        });
+        assert.ok(
+          geometry.gap >= 33 && geometry.gap <= 35,
+          `${mode} has the same stage gap at ${width}px`,
+        );
+        assert.equal(
+          geometry.earlier,
+          ['assessment', 'demo', 'scaffolded', 'errors', 'plain'].indexOf(mode),
+        );
+        assert.equal(geometry.overflow, false, `${mode} header fits at ${width}px`);
+        assert.equal(geometry.buttonsFit, true, `${mode} stage labels fit at ${width}px`);
+        if (width >= 768)
+          assert.ok(geometry.ratio >= 0.6, `${mode} cannot squeeze stage navigation`);
+        if (width === 768 && mode === 'scaffolded')
+          await page.screenshot({ path: `${artifacts}/scaffolded-header.png`, fullPage: true });
+      }
+    }
+    for (const topic of ['M01', 'M02']) {
+      await topicSelector.selectOption(topic);
+      await page.locator('[data-mode="demo"]').click();
+      await page.locator('[data-demo-speed]').selectOption('1');
+      await page.locator('#demo-play').click();
+      assert.equal(await page.locator('.arithmetic-working svg text').count(), 0);
+      await page.clock.runFor(650);
+      await page.getByRole('button', { name: 'Pause', exact: true }).click();
+      const strokes = await page.locator('.method-guide').evaluateAll((paths) =>
+        paths.flatMap((path) =>
+          path.getAnimations().map((animation) => ({
+            state: animation.playState,
+            frames: animation.effect.getKeyframes(),
+          })),
+        ),
+      );
+      assert.ok(strokes.length > 0, `${topic} draws its guide with native stroke animation`);
+      assert.ok(strokes.every((stroke) => stroke.state === 'paused'));
+      assert.ok(
+        strokes.some(
+          (stroke) => stroke.frames[0].strokeDashoffset !== stroke.frames[1].strokeDashoffset,
+        ),
+      );
+      await page.locator('#demo-all').click();
+      assert.ok((await page.locator('.arithmetic-working svg text').count()) > 0);
+    }
     assert.deepEqual(errors, []);
     console.log(
       'Presentation checks passed: flex equations, play scrolling, speed persistence and shared reference settings.',

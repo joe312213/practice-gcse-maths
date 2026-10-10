@@ -1,0 +1,1339 @@
+{
+  "maths:M01-IA-Q1": {
+    "hint": "For the 4 × 6 cell, where should the tens and units of the product go?",
+    "method_note": "The 4 × 6 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "438",
+    "error_note": "Check the 4 × 6 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
+  },
+  "maths:M01-IA-Q2": {
+    "hint": "For the 8 × 4 cell, where should the tens and units of the product go?",
+    "method_note": "The 8 × 4 cell is 32: 3 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "263",
+    "error_note": "Check the 8 × 4 cell. Its product is 32; reversing its halves changes the place value. Put 3 above and 2 below the diagonal."
+  },
+  "maths:M01-IA-Q3": {
+    "hint": "In 476 × 82, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 8 + 4 + 1 = 13. Write 3 and carry 1 into the hundreds diagonal.",
+    "wrong": "38932",
+    "error_note": "Check the carry from the tens diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-IA-Q4": {
+    "hint": "In the lattice for 6,038 × 591, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The hundreds diagonal totals 0 + 7 + 7 + 0 + 0 = 14. Write 4 and carry 1 into the thousands diagonal.",
+    "wrong": "3567458",
+    "error_note": "Check the carry from the hundreds diagonal: 14 means write 4 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S01-C1-Q1": {
+    "hint": "For the 4 × 6 cell, where should the tens and units of the product go?",
+    "method_note": "The 4 × 6 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "438",
+    "error_note": "Check the 4 × 6 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
+  },
+  "maths:M01-S01-C2-Q1": {
+    "hint": "In 34 × 12, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 4 + 6 + 0 = 10. Write 0 and carry 1 into the hundreds diagonal.",
+    "wrong": "308",
+    "error_note": "Check the carry from the tens diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S01-C3-Q1": {
+    "hint": "In 4,312 × 156, check the hundreds diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The hundreds diagonal totals 2 + 5 + 1 + 8 + 0 = 16. Write 6 and carry 1 into the thousands diagonal.",
+    "wrong": "671672",
+    "error_note": "Check the carry from the hundreds diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S02-C1-Q1": {
+    "hint": "For the 5 × 7 cell, where should the tens and units of the product go?",
+    "method_note": "The 5 × 7 cell is 35: 3 in the tens half and 5 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "551",
+    "error_note": "Check the 5 × 7 cell. Its product is 35; reversing its halves changes the place value. Put 3 above and 5 below the diagonal."
+  },
+  "maths:M01-S02-C2-Q1": {
+    "hint": "For the 4 × 5 cell, where should the tens and units of the product go?",
+    "method_note": "The 4 × 5 cell is 20: 2 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "342",
+    "error_note": "Check the 4 × 5 cell. Its product is 20; reversing its halves changes the place value. Put 2 above and 0 below the diagonal."
+  },
+  "maths:M01-S02-C3-Q1": {
+    "hint": "In 1,245 × 326, check the hundreds diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The hundreds diagonal totals 5 + 8 + 1 + 2 + 2 = 18. Write 8 and carry 1 into the thousands diagonal.",
+    "wrong": "404870",
+    "error_note": "Check the carry from the hundreds diagonal: 18 means write 8 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S03-C1-Q1": {
+    "hint": "For the 8 × 5 cell, where should the tens and units of the product go?",
+    "method_note": "The 8 × 5 cell is 40: 4 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "60",
+    "error_note": "Check the 8 × 5 cell. Its product is 40; reversing its halves changes the place value. Put 4 above and 0 below the diagonal."
+  },
+  "maths:M01-S03-C2-Q1": {
+    "hint": "In 63 × 28, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 6 + 8 + 2 = 16. Write 6 and carry 1 into the hundreds diagonal.",
+    "wrong": "1664",
+    "error_note": "Check the carry from the tens diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S03-C3-Q1": {
+    "hint": "In the lattice for 3,142 × 2045, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The hundreds diagonal totals 0 + 6 + 0 + 5 + 2 = 13. Write 3 and carry 1 into the thousands diagonal.",
+    "wrong": "6424390",
+    "error_note": "Check the carry from the hundreds diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S04-C1-Q1": {
+    "hint": "For the 3 × 4 cell, where should the tens and units of the product go?",
+    "method_note": "The 3 × 4 cell is 12: 1 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "218",
+    "error_note": "Check the 3 × 4 cell. Its product is 12; reversing its halves changes the place value. Put 1 above and 2 below the diagonal."
+  },
+  "maths:M01-S04-C2-Q1": {
+    "hint": "For the 4 × 3 cell, where should the tens and units of the product go?",
+    "method_note": "The 4 × 3 cell is 12: 1 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "636",
+    "error_note": "Check the 4 × 3 cell. Its product is 12; reversing its halves changes the place value. Put 1 above and 2 below the diagonal."
+  },
+  "maths:M01-S04-C3-Q1": {
+    "hint": "In 342 × 15, check the hundreds diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The hundreds diagonal totals 4 + 0 + 5 + 2 = 11. Write 1 and carry 1 into the thousands diagonal.",
+    "wrong": "4130",
+    "error_note": "Check the carry from the hundreds diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S04-C1-Q2": {
+    "hint": "For the 6 × 8 cell, where should the tens and units of the product go?",
+    "method_note": "The 6 × 8 cell is 48: 4 in the tens half and 8 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "848",
+    "error_note": "Check the 6 × 8 cell. Its product is 48; reversing its halves changes the place value. Put 4 above and 8 below the diagonal."
+  },
+  "maths:M01-S04-C2-Q2": {
+    "hint": "In 26 × 34, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 8 + 8 + 2 = 18. Write 8 and carry 1 into the hundreds diagonal.",
+    "wrong": "784",
+    "error_note": "Check the carry from the tens diagonal: 18 means write 8 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S04-C3-Q2": {
+    "hint": "For the 6 × 4 cell, where should the tens and units of the product go?",
+    "method_note": "The 6 × 4 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "16488",
+    "error_note": "Check the 6 × 4 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
+  },
+  "maths:M01-S04-C1-Q3": {
+    "hint": "For the 5 × 3 cell, where should the tens and units of the product go?",
+    "method_note": "The 5 × 3 cell is 15: 1 in the tens half and 5 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "171",
+    "error_note": "Check the 5 × 3 cell. Its product is 15; reversing its halves changes the place value. Put 1 above and 5 below the diagonal."
+  },
+  "maths:M01-S04-C2-Q3": {
+    "q": "57 × 26",
+    "hint": "For the 7 × 6 cell, where should the tens and units of the product go?",
+    "method_note": "The 7 × 6 cell is 42: 4 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "1464",
+    "error_note": "Check the 7 × 6 cell. Its product is 42; reversing its halves changes the place value. Put 4 above and 2 below the diagonal."
+  },
+  "maths:M01-S04-C3-Q3": {
+    "q": "4,876 × 357",
+    "hint": "In 4,876 × 357, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 0 + 9 + 4 = 13. Write 3 and carry 1 into the hundreds diagonal.",
+    "wrong": "1740632",
+    "error_note": "Check the carry from the tens diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S04-C1-Q4": {
+    "hint": "For the 7 × 6 cell, where should the tens and units of the product go?",
+    "method_note": "The 7 × 6 cell is 42: 4 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "252",
+    "error_note": "Check the 7 × 6 cell. Its product is 42; reversing its halves changes the place value. Put 4 above and 2 below the diagonal."
+  },
+  "maths:M01-S04-C2-Q4": {
+    "hint": "For the 6 × 4 cell, where should the tens and units of the product go?",
+    "method_note": "The 6 × 4 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "4383",
+    "error_note": "Check the 6 × 4 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
+  },
+  "maths:M01-S04-C3-Q4": {
+    "q": "6,785 × 347",
+    "hint": "In 6,785 × 347, check the hundreds diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The hundreds diagonal totals 5 + 2 + 2 + 9 + 5 = 23. Write 3 and carry 2 into the thousands diagonal.",
+    "wrong": "2352395",
+    "error_note": "Check the carry from the hundreds diagonal: 23 means write 3 and add 2 to the next diagonal. Leaving that carry out loses 2,000."
+  },
+  "maths:M01-S04-C1-Q5": {
+    "hint": "For the 8 × 7 cell, where should the tens and units of the product go?",
+    "method_note": "The 8 × 7 cell is 56: 5 in the tens half and 6 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "671",
+    "error_note": "Check the 8 × 7 cell. Its product is 56; reversing its halves changes the place value. Put 5 above and 6 below the diagonal."
+  },
+  "maths:M01-S04-C2-Q5": {
+    "hint": "In 75 × 16, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 5 + 2 + 3 = 10. Write 0 and carry 1 into the hundreds diagonal.",
+    "wrong": "1100",
+    "error_note": "Check the carry from the tens diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S04-C3-Q5": {
+    "hint": "In the lattice for 4,316 × 1,024, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The thousands diagonal totals 6 + 0 + 0 + 6 + 0 + 6 + 1 = 19. Write 9 and carry 1 into the ten-thousands diagonal.",
+    "wrong": "4409584",
+    "error_note": "Check the carry from the thousands diagonal: 19 means write 9 and add 1 to the next diagonal. Leaving that carry out loses 10,000."
+  },
+  "maths:M01-S04-C1-Q6": {
+    "hint": "For the 9 × 9 cell, where should the tens and units of the product go?",
+    "method_note": "The 9 × 9 cell is 81: 8 in the tens half and 1 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "225",
+    "error_note": "Check the 9 × 9 cell. Its product is 81; reversing its halves changes the place value. Put 8 above and 1 below the diagonal."
+  },
+  "maths:M01-S04-C2-Q6": {
+    "hint": "For the 8 × 7 cell, where should the tens and units of the product go?",
+    "method_note": "The 8 × 7 cell is 56: 5 in the tens half and 6 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "4764",
+    "error_note": "Check the 8 × 7 cell. Its product is 56; reversing its halves changes the place value. Put 5 above and 6 below the diagonal."
+  },
+  "maths:M01-S04-C3-Q6": {
+    "hint": "In the lattice for 7,029 × 2,316, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The tens diagonal totals 9 + 2 + 5 = 16. Write 6 and carry 1 into the hundreds diagonal.",
+    "wrong": "16279064",
+    "error_note": "Check the carry from the tens diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S05-C1-Q1": {
+    "hint": "For the 4 × 6 cell, where should the tens and units of the product go?",
+    "method_note": "The 4 × 6 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "162",
+    "error_note": "Check the 4 × 6 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
+  },
+  "maths:M01-S05-C2-Q1": {
+    "hint": "In 23 × 14, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 3 + 8 + 1 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+    "wrong": "222",
+    "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S05-C3-Q1": {
+    "hint": "For the 5 × 3 cell, where should the tens and units of the product go?",
+    "method_note": "The 5 × 3 cell is 15: 1 in the tens half and 5 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "9811",
+    "error_note": "Check the 5 × 3 cell. Its product is 15; reversing its halves changes the place value. Put 1 above and 5 below the diagonal."
+  },
+  "maths:M01-S05-C1-Q2": {
+    "hint": "For the 7 × 4 cell, where should the tens and units of the product go?",
+    "method_note": "The 7 × 4 cell is 28: 2 in the tens half and 8 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "282",
+    "error_note": "Check the 7 × 4 cell. Its product is 28; reversing its halves changes the place value. Put 2 above and 8 below the diagonal."
+  },
+  "maths:M01-S05-C2-Q2": {
+    "hint": "In 46 × 25, check the hundreds diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The hundreds diagonal totals 8 + 1 + 2 = 11. Write 1 and carry 1 into the thousands diagonal.",
+    "wrong": "150",
+    "error_note": "Check the carry from the hundreds diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S05-C3-Q2": {
+    "hint": "In the lattice for 708 × 46, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The thousands diagonal totals 8 + 0 + 4 = 12. Write 2 and carry 1 into the ten-thousands diagonal.",
+    "wrong": "22568",
+    "error_note": "Check the carry from the thousands diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 10,000."
+  },
+  "maths:M01-S05-C1-Q3": {
+    "hint": "For the 8 × 3 cell, where should the tens and units of the product go?",
+    "method_note": "The tens diagonal totals 8 + 2 = 10. Write 0 and carry 1 into the hundreds diagonal.",
+    "wrong": "104",
+    "error_note": "Check the carry from the tens diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S05-C2-Q3": {
+    "hint": "In 37 × 42, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 8 + 6 + 1 = 15. Write 5 and carry 1 into the hundreds diagonal.",
+    "wrong": "1454",
+    "error_note": "Check the carry from the tens diagonal: 15 means write 5 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S05-C3-Q3": {
+    "hint": "In 1,326 × 243, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 4 + 6 + 1 = 11. Write 1 and carry 1 into the hundreds diagonal.",
+    "wrong": "322118",
+    "error_note": "Check the carry from the tens diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S05-C1-Q4": {
+    "hint": "For the 9 × 7 cell, where should the tens and units of the product go?",
+    "method_note": "The 9 × 7 cell is 63: 6 in the tens half and 3 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "246",
+    "error_note": "Check the 9 × 7 cell. Its product is 63; reversing its halves changes the place value. Put 6 above and 3 below the diagonal."
+  },
+  "maths:M01-S05-C2-Q4": {
+    "hint": "In 58 × 36, check the hundreds diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The hundreds diagonal totals 5 + 2 + 3 = 10. Write 0 and carry 1 into the thousands diagonal.",
+    "wrong": "1088",
+    "error_note": "Check the carry from the hundreds diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S05-C3-Q4": {
+    "hint": "In the lattice for 3,048 × 512, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The tens diagonal totals 8 + 8 + 1 = 17. Write 7 and carry 1 into the hundreds diagonal.",
+    "wrong": "1560476",
+    "error_note": "Check the carry from the tens diagonal: 17 means write 7 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S05-C1-Q5": {
+    "hint": "For the 8 × 5 cell, where should the tens and units of the product go?",
+    "method_note": "The 8 × 5 cell is 40: 4 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "70",
+    "error_note": "Check the 8 × 5 cell. Its product is 40; reversing its halves changes the place value. Put 4 above and 0 below the diagonal."
+  },
+  "maths:M01-S05-C2-Q5": {
+    "hint": "In 64 × 27, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 8 + 2 + 2 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+    "wrong": "1628",
+    "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S05-C3-Q5": {
+    "hint": "In the lattice for 5,607 × 1,204, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The thousands diagonal totals 7 + 0 + 1 + 0 + 0 + 0 + 2 = 10. Write 0 and carry 1 into the ten-thousands diagonal.",
+    "wrong": "6740828",
+    "error_note": "Check the carry from the thousands diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 10,000."
+  },
+  "maths:M01-S05-C1-Q6": {
+    "hint": "For the 7 × 8 cell, where should the tens and units of the product go?",
+    "method_note": "The 7 × 8 cell is 56: 5 in the tens half and 6 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "682",
+    "error_note": "Check the 7 × 8 cell. Its product is 56; reversing its halves changes the place value. Put 5 above and 6 below the diagonal."
+  },
+  "maths:M01-S05-C2-Q6": {
+    "hint": "In 79 × 53, check the hundreds diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The hundreds diagonal totals 5 + 4 + 2 = 11. Write 1 and carry 1 into the thousands diagonal.",
+    "wrong": "3187",
+    "error_note": "Check the carry from the hundreds diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S05-C3-Q6": {
+    "hint": "In the lattice for 8,214 × 3,067, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The tens diagonal totals 4 + 7 + 2 = 13. Write 3 and carry 1 into the hundreds diagonal.",
+    "wrong": "25192238",
+    "error_note": "Check the carry from the tens diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S06-C1-Q1": {
+    "hint": "For the 6 × 7 cell, where should the tens and units of the product go?",
+    "method_note": "The tens diagonal totals 8 + 4 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+    "wrong": "222",
+    "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S06-C2-Q1": {
+    "hint": "For the 5 × 4 cell, where should the tens and units of the product go?",
+    "method_note": "The 5 × 4 cell is 20: 2 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "822",
+    "error_note": "Check the 5 × 4 cell. Its product is 20; reversing its halves changes the place value. Put 2 above and 0 below the diagonal."
+  },
+  "maths:M01-S06-C3-Q1": {
+    "hint": "In 536 × 34, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 8 + 2 + 2 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+    "wrong": "18124",
+    "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S06-C1-Q2": {
+    "hint": "For the 9 × 8 cell, where should the tens and units of the product go?",
+    "method_note": "The tens diagonal totals 6 + 7 = 13. Write 3 and carry 1 into the hundreds diagonal.",
+    "wrong": "132",
+    "error_note": "Check the carry from the tens diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S06-C2-Q2": {
+    "hint": "In 62 × 17, check the hundreds diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The hundreds diagonal totals 6 + 0 + 4 = 10. Write 0 and carry 1 into the thousands diagonal.",
+    "wrong": "54",
+    "error_note": "Check the carry from the hundreds diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S06-C3-Q2": {
+    "hint": "In the lattice for 809 × 27, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The tens diagonal totals 8 + 0 + 6 = 14. Write 4 and carry 1 into the hundreds diagonal.",
+    "wrong": "21743",
+    "error_note": "Check the carry from the tens diagonal: 14 means write 4 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S06-C1-Q3": {
+    "hint": "For the 6 × 4 cell, where should the tens and units of the product go?",
+    "method_note": "The 6 × 4 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "440",
+    "error_note": "Check the 6 × 4 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
+  },
+  "maths:M01-S06-C2-Q3": {
+    "hint": "In 48 × 39, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 4 + 6 + 7 = 17. Write 7 and carry 1 into the hundreds diagonal.",
+    "wrong": "1772",
+    "error_note": "Check the carry from the tens diagonal: 17 means write 7 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S06-C3-Q3": {
+    "hint": "In the lattice for 2,047 × 368, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The hundreds diagonal totals 1 + 4 + 4 + 0 + 3 = 12. Write 2 and carry 1 into the thousands diagonal.",
+    "wrong": "752296",
+    "error_note": "Check the carry from the hundreds diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S06-C1-Q4": {
+    "hint": "For the 8 × 6 cell, where should the tens and units of the product go?",
+    "method_note": "The 8 × 6 cell is 48: 4 in the tens half and 8 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "504",
+    "error_note": "Check the 8 × 6 cell. Its product is 48; reversing its halves changes the place value. Put 4 above and 8 below the diagonal."
+  },
+  "maths:M01-S06-C2-Q4": {
+    "hint": "In 76 × 28, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 2 + 6 + 4 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+    "wrong": "2028",
+    "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S06-C3-Q4": {
+    "hint": "In 4,158 × 427, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 6 + 5 + 5 = 16. Write 6 and carry 1 into the hundreds diagonal.",
+    "wrong": "1775366",
+    "error_note": "Check the carry from the tens diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S06-C1-Q5": {
+    "hint": "For the 9 × 5 cell, where should the tens and units of the product go?",
+    "method_note": "The 9 × 5 cell is 45: 4 in the tens half and 5 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "555",
+    "error_note": "Check the 9 × 5 cell. Its product is 45; reversing its halves changes the place value. Put 4 above and 5 below the diagonal."
+  },
+  "maths:M01-S06-C2-Q5": {
+    "hint": "For the 5 × 6 cell, where should the tens and units of the product go?",
+    "method_note": "The 5 × 6 cell is 30: 3 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "2214",
+    "error_note": "Check the 5 × 6 cell. Its product is 30; reversing its halves changes the place value. Put 3 above and 0 below the diagonal."
+  },
+  "maths:M01-S06-C3-Q5": {
+    "hint": "In the lattice for 6,309 × 2,058, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The tens diagonal totals 5 + 0 + 7 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+    "wrong": "12983822",
+    "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S06-C1-Q6": {
+    "hint": "For the 8 × 9 cell, where should the tens and units of the product go?",
+    "method_note": "The 8 × 9 cell is 72: 7 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "333",
+    "error_note": "Check the 8 × 9 cell. Its product is 72; reversing its halves changes the place value. Put 7 above and 2 below the diagonal."
+  },
+  "maths:M01-S06-C2-Q6": {
+    "hint": "In 89 × 65, check the hundreds diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The hundreds diagonal totals 8 + 5 + 4 = 17. Write 7 and carry 1 into the thousands diagonal.",
+    "wrong": "4785",
+    "error_note": "Check the carry from the hundreds diagonal: 17 means write 7 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S06-C3-Q6": {
+    "hint": "In 9,274 × 4,163, check the hundreds diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The hundreds diagonal totals 4 + 2 + 2 + 6 + 2 = 16. Write 6 and carry 1 into the thousands diagonal.",
+    "wrong": "38606662",
+    "error_note": "Check the carry from the hundreds diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S07-C1-Q1": {
+    "hint": "For the 8 × 5 cell, where should the tens and units of the product go?",
+    "method_note": "The 8 × 5 cell is 40: 4 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "154",
+    "error_note": "Check the 8 × 5 cell. Its product is 40; reversing its halves changes the place value. Put 4 above and 0 below the diagonal."
+  },
+  "maths:M01-S07-C2-Q1": {
+    "hint": "For the 7 × 5 cell, where should the tens and units of the product go?",
+    "method_note": "The 7 × 5 cell is 35: 3 in the tens half and 5 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "963",
+    "error_note": "Check the 7 × 5 cell. Its product is 35; reversing its halves changes the place value. Put 3 above and 5 below the diagonal."
+  },
+  "maths:M01-S07-C3-Q1": {
+    "hint": "In 647 × 45, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 8 + 0 + 3 = 11. Write 1 and carry 1 into the hundreds diagonal.",
+    "wrong": "29015",
+    "error_note": "Check the carry from the tens diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S07-C1-Q2": {
+    "hint": "For the 6 × 9 cell, where should the tens and units of the product go?",
+    "method_note": "The tens diagonal totals 5 + 5 = 10. Write 0 and carry 1 into the hundreds diagonal.",
+    "wrong": "404",
+    "error_note": "Check the carry from the tens diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S07-C2-Q2": {
+    "hint": "In 43 × 26, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 6 + 4 + 1 = 11. Write 1 and carry 1 into the hundreds diagonal.",
+    "wrong": "1018",
+    "error_note": "Check the carry from the tens diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S07-C3-Q2": {
+    "hint": "In the lattice for 902 × 38, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The thousands diagonal totals 7 + 0 + 7 = 14. Write 4 and carry 1 into the ten-thousands diagonal.",
+    "wrong": "24276",
+    "error_note": "Check the carry from the thousands diagonal: 14 means write 4 and add 1 to the next diagonal. Leaving that carry out loses 10,000."
+  },
+  "maths:M01-S07-C1-Q3": {
+    "hint": "For the 7 × 8 cell, where should the tens and units of the product go?",
+    "method_note": "The tens diagonal totals 8 + 5 = 13. Write 3 and carry 1 into the hundreds diagonal.",
+    "wrong": "436",
+    "error_note": "Check the carry from the tens diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S07-C2-Q3": {
+    "hint": "In 69 × 48, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 6 + 8 + 7 = 21. Write 1 and carry 2 into the hundreds diagonal.",
+    "wrong": "3112",
+    "error_note": "Check the carry from the tens diagonal: 21 means write 1 and add 2 to the next diagonal. Leaving that carry out loses 200."
+  },
+  "maths:M01-S07-C3-Q3": {
+    "hint": "In 3,156 × 489, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 8 + 5 + 5 = 18. Write 8 and carry 1 into the hundreds diagonal.",
+    "wrong": "1543184",
+    "error_note": "Check the carry from the tens diagonal: 18 means write 8 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S07-C1-Q4": {
+    "hint": "For the 9 × 6 cell, where should the tens and units of the product go?",
+    "method_note": "The 9 × 6 cell is 54: 5 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "285",
+    "error_note": "Check the 9 × 6 cell. Its product is 54; reversing its halves changes the place value. Put 5 above and 4 below the diagonal."
+  },
+  "maths:M01-S07-C2-Q4": {
+    "hint": "In 85 × 37, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 5 + 6 + 3 = 14. Write 4 and carry 1 into the hundreds diagonal.",
+    "wrong": "3045",
+    "error_note": "Check the carry from the tens diagonal: 14 means write 4 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S07-C3-Q4": {
+    "hint": "In the lattice for 5,027 × 596, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The hundreds diagonal totals 5 + 8 + 6 + 0 + 1 = 20. Write 0 and carry 2 into the thousands diagonal.",
+    "wrong": "2994092",
+    "error_note": "Check the carry from the hundreds diagonal: 20 means write 0 and add 2 to the next diagonal. Leaving that carry out loses 2,000."
+  },
+  "maths:M01-S07-C1-Q5": {
+    "hint": "For the 8 × 4 cell, where should the tens and units of the product go?",
+    "method_note": "The 8 × 4 cell is 32: 3 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "238",
+    "error_note": "Check the 8 × 4 cell. Its product is 32; reversing its halves changes the place value. Put 3 above and 2 below the diagonal."
+  },
+  "maths:M01-S07-C2-Q5": {
+    "hint": "In 74 × 59, check the hundreds diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The hundreds diagonal totals 5 + 2 + 6 = 13. Write 3 and carry 1 into the thousands diagonal.",
+    "wrong": "3366",
+    "error_note": "Check the carry from the hundreds diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
+  },
+  "maths:M01-S07-C3-Q5": {
+    "hint": "In 7,418 × 3,264, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 8 + 4 + 3 = 15. Write 5 and carry 1 into the hundreds diagonal.",
+    "wrong": "24212252",
+    "error_note": "Check the carry from the tens diagonal: 15 means write 5 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S07-C1-Q6": {
+    "hint": "For the 9 × 7 cell, where should the tens and units of the product go?",
+    "method_note": "The 9 × 7 cell is 63: 6 in the tens half and 3 in the units half. Read the final digits down the left edge and along the bottom.",
+    "wrong": "409",
+    "error_note": "Check the 9 × 7 cell. Its product is 63; reversing its halves changes the place value. Put 6 above and 3 below the diagonal."
+  },
+  "maths:M01-S07-C2-Q6": {
+    "hint": "In 96 × 68, check the tens diagonal. What should you do if its total is greater than 9?",
+    "method_note": "The tens diagonal totals 6 + 2 + 4 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+    "wrong": "6428",
+    "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-S07-C3-Q6": {
+    "hint": "In the lattice for 8,639 × 5,076, what belongs in both halves of a cell multiplied by 0?",
+    "method_note": "The tens diagonal totals 3 + 8 + 5 = 16. Write 6 and carry 1 into the hundreds diagonal.",
+    "wrong": "43851464",
+    "error_note": "Check the carry from the tens diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 100."
+  },
+  "maths:M01-SE-C1-Q1": {
+    "hint": "Check the 4 × 6 cell. Do its two halves represent that product?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Change the 4 × 6 cell to 2 tens and 4 units."
+      },
+      {
+        "id": "1",
+        "text": "Change the 4 × 6 cell to 4 tens and 2 units."
+      },
+      {
+        "id": "2",
+        "text": "Keep the 4 × 6 cell and reverse the final answer digits."
+      }
+    ]
+  },
+  "maths:M01-SE-C1-Q2": {
+    "hint": "The middle diagonal totals more than 9. Where should its carry go?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Write the carry as an extra answer digit."
+      },
+      {
+        "id": "1",
+        "text": "Add the carry from the tens diagonal into the hundreds diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Add the carry back into the units diagonal."
+      }
+    ]
+  },
+  "maths:M01-SE-C1-Q3": {
+    "hint": "Compare the small carry digit with the digits of the final answer. Do they have the same job?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Keep the small carry as a separate answer digit."
+      },
+      {
+        "id": "1",
+        "text": "Ignore the small carry after writing it."
+      },
+      {
+        "id": "2",
+        "text": "Add the small carry into the next diagonal once."
+      }
+    ]
+  },
+  "maths:M01-SE-C2-Q1": {
+    "hint": "In the 4 × 6 cell, which diagonal contains the tens part of the product?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Put the 2 from the 4 × 6 cell into the tens diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Put both digits of the 4 × 6 cell into the units diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Put the 4 from the 4 × 6 cell into the tens diagonal."
+      }
+    ]
+  },
+  "maths:M01-SE-C2-Q2": {
+    "hint": "Follow the carry out of the tens diagonal. Was it included in the next total?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Add the carry to the units diagonal instead."
+      },
+      {
+        "id": "1",
+        "text": "Add the carry from the tens diagonal into the hundreds diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Write the carry as an extra digit between the diagonal totals."
+      }
+    ]
+  },
+  "maths:M01-SE-C2-Q3": {
+    "hint": "Is the small carry part of the written answer, or part of the next diagonal total?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Copy the carry into the answer as a separate digit."
+      },
+      {
+        "id": "1",
+        "text": "Remove the carry without using it in another total."
+      },
+      {
+        "id": "2",
+        "text": "Use the carry in the next diagonal total, without adding an extra answer digit."
+      }
+    ]
+  },
+  "maths:M01-SE-C3-Q1": {
+    "hint": "Look at the 4 × 6 cell: do the two halves belong to the same diagonal?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Move the 2 from the 4 × 6 cell into the tens diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Move the 4 from the 4 × 6 cell into the tens diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Keep both digits of the 4 × 6 cell in the units diagonal."
+      }
+    ]
+  },
+  "maths:M01-SE-C3-Q2": {
+    "hint": "Check the tens diagonal total and follow any carry into the next diagonal.",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Discard the carry after writing the tens digit."
+      },
+      {
+        "id": "1",
+        "text": "Include the carry from the tens diagonal in the hundreds total."
+      },
+      {
+        "id": "2",
+        "text": "Add the carry into the tens diagonal a second time."
+      }
+    ]
+  },
+  "maths:M01-SE-C3-Q3": {
+    "hint": "Check the 6 × 5 cell before changing any diagonal totals.",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Change the 6 × 5 cell to 0 tens and 3 units."
+      },
+      {
+        "id": "1",
+        "text": "Keep the 6 × 5 cell and add 1 to the final units digit."
+      },
+      {
+        "id": "2",
+        "text": "Change the 6 × 5 cell to 3 tens and 0 units."
+      }
+    ]
+  },
+  "maths:M02-IA-Q1": {
+    "hint": "After 6 ÷ 4, how does the remainder change the next digit, 4?",
+    "method_note": "Carry remainder 2 before the next digit, 4, to make 24. Then 24 ÷ 4 = 6 remainder 0.",
+    "wrong": "211",
+    "error_note": "Do not divide the next digit 4 on its own. The carried 2 makes it 24, so use 24 ÷ 4."
+  },
+  "maths:M02-IA-Q2": {
+    "hint": "After 13 ÷ 8, how does the remainder change the next digit, 2?",
+    "method_note": "Carry remainder 5 before the next digit, 2, to make 52. Then 52 ÷ 8 = 6 remainder 4.",
+    "wrong": "10 r 2",
+    "error_note": "Do not divide the next digit 2 on its own. The carried 5 makes it 52, so use 52 ÷ 8."
+  },
+  "maths:M02-IA-Q3": {
+    "hint": "After 16 ÷ 6, how does the remainder change the next digit, 5?",
+    "method_note": "Carry remainder 4 before the next digit, 5, to make 45. Then 45 ÷ 6 = 7 remainder 3.",
+    "wrong": "20 r 5",
+    "error_note": "Do not divide the next digit 5 on its own. The carried 4 makes it 45, so use 45 ÷ 6."
+  },
+  "maths:M02-IA-Q4": {
+    "hint": "After 61 ÷ 12, how does the remainder change the next digit, 5?",
+    "method_note": "The whole-number division gives 51 remainder 3. The remainder represents 3/12 = 0.25, so the complete answer is 51.25.",
+    "wrong": "51.3",
+    "error_note": "The remainder 3 means 3/12, not decimal digits to copy after a point. Divide it by 12 to get 0.25."
+  },
+  "maths:M02-S01-C1-Q1": {
+    "hint": "In 63 ÷ 3, start with 6 ÷ 3. Where should that answer digit go above 63?",
+    "method_note": "The quotient digits represent 2 tens, 1 units. Write them in order to make 21.",
+    "wrong": "3",
+    "error_note": "The quotient digits are place values, not numbers to add together: 20 + 1 = 21."
+  },
+  "maths:M02-S01-C2-Q1": {
+    "hint": "After 14 ÷ 6, how does the remainder change the next digit, 5?",
+    "method_note": "Carry remainder 2 before the next digit, 5, to make 25. Then 25 ÷ 6 = 4 remainder 1.",
+    "wrong": "20 r 5",
+    "error_note": "Do not divide the next digit 5 on its own. The carried 2 makes it 25, so use 25 ÷ 6."
+  },
+  "maths:M02-S01-C3-Q1": {
+    "hint": "In 4,834 ÷ 16, what happens when you reach 3, which is smaller than 16? How will you keep its place in the answer?",
+    "method_note": "The whole-number division gives 302 remainder 2. The remainder represents 2/16 = 0.125, so the complete answer is 302.125.",
+    "wrong": "302.2",
+    "error_note": "The remainder 2 means 2/16, not decimal digits to copy after a point. Divide it by 16 to get 0.125."
+  },
+  "maths:M02-S02-C1-Q1": {
+    "hint": "In 88 ÷ 4, start with 8 ÷ 4. Where should that answer digit go above 88?",
+    "method_note": "The quotient digits represent 2 tens, 2 units. Write them in order to make 22.",
+    "wrong": "4",
+    "error_note": "The quotient digits are place values, not numbers to add together: 20 + 2 = 22."
+  },
+  "maths:M02-S02-C2-Q1": {
+    "hint": "After 13 ÷ 4, how does the remainder change the next digit, 0?",
+    "method_note": "Carry remainder 1 before the next digit, 0, to make 10. Then 10 ÷ 4 = 2 remainder 2.",
+    "wrong": "32.2",
+    "error_note": "The remainder 2 means 2/4, not 2/10. This question asks for a remainder answer: 32 r 2. Its decimal equivalent would be 32.5."
+  },
+  "maths:M02-S02-C3-Q1": {
+    "hint": "In 5,122 ÷ 16, what happens when you reach 2, which is smaller than 16? How will you keep its place in the answer?",
+    "method_note": "The whole-number division gives 320 remainder 2. The remainder represents 2/16 = 0.125, so the complete answer is 320.125.",
+    "wrong": "32.125",
+    "error_note": "Keep the units zero in 320.125. After 32 ÷ 16, the next whole-number digit is 2: 2 ÷ 16 gives 0 remainder 2. Write that zero before continuing into decimals."
+  },
+  "maths:M02-S03-C1-Q1": {
+    "hint": "In 66 ÷ 3, start with 6 ÷ 3. Where should that answer digit go above 66?",
+    "method_note": "The quotient digits represent 2 tens, 2 units. Write them in order to make 22.",
+    "wrong": "4",
+    "error_note": "The quotient digits are place values, not numbers to add together: 20 + 2 = 22."
+  },
+  "maths:M02-S03-C2-Q1": {
+    "hint": "After 22 ÷ 6, how does the remainder change the next digit, 7?",
+    "method_note": "Carry remainder 4 before the next digit, 7, to make 47. Then 47 ÷ 6 = 7 remainder 5.",
+    "wrong": "31 r 1",
+    "error_note": "Do not divide the next digit 7 on its own. The carried 4 makes it 47, so use 47 ÷ 6."
+  },
+  "maths:M02-S03-C3-Q1": {
+    "hint": "When you reach the remainder 2, what happens when you bring down a zero and try 20 ÷ 25?",
+    "method_note": "The whole-number division gives 153 remainder 2. The remainder represents 2/25 = 0.08, so the complete answer is 153.08.",
+    "wrong": "153.8",
+    "error_note": "After remainder 2, 20 ÷ 25 gives 0 remainder 20; then 200 ÷ 25 = 8. Keep the tenths zero: 153.08, not 153.8."
+  },
+  "maths:M02-S04-C1-Q1": {
+    "hint": "In 48 ÷ 4, start with 4 ÷ 4. Where should that answer digit go above 48?",
+    "method_note": "The quotient digits represent 1 tens, 2 units. Write them in order to make 12.",
+    "wrong": "3",
+    "error_note": "The quotient digits are place values, not numbers to add together: 10 + 2 = 12."
+  },
+  "maths:M02-S04-C2-Q1": {
+    "hint": "After 7 ÷ 3, how does the remainder change the next digit, 2?",
+    "method_note": "Carry remainder 1 before the next digit, 2, to make 12. Then 12 ÷ 3 = 4 remainder 0.",
+    "wrong": "20 r 2",
+    "error_note": "Do not divide the next digit 2 on its own. The carried 1 makes it 12, so use 12 ÷ 3."
+  },
+  "maths:M02-S04-C3-Q1": {
+    "hint": "After 5 ÷ 4, how does the remainder change the next digit, 1?",
+    "method_note": "The whole-number division gives 128 remainder 2. The remainder represents 2/4 = 0.5, so the complete answer is 128.5.",
+    "wrong": "128.2",
+    "error_note": "The remainder 2 means 2/4, not decimal digits to copy after a point. Divide it by 4 to get 0.5."
+  },
+  "maths:M02-S04-C1-Q2": {
+    "hint": "In 69 ÷ 3, start with 6 ÷ 3. Where should that answer digit go above 69?",
+    "method_note": "The quotient digits represent 2 tens, 3 units. Write them in order to make 23.",
+    "wrong": "5",
+    "error_note": "The quotient digits are place values, not numbers to add together: 20 + 3 = 23."
+  },
+  "maths:M02-S04-C2-Q2": {
+    "hint": "After 13 ÷ 5, how does the remainder change the next digit, 5?",
+    "method_note": "Carry remainder 3 before the next digit, 5, to make 35. Then 35 ÷ 5 = 7 remainder 0.",
+    "wrong": "21",
+    "error_note": "Do not divide the next digit 5 on its own. The carried 3 makes it 35, so use 35 ÷ 5."
+  },
+  "maths:M02-S04-C3-Q2": {
+    "hint": "After 7 ÷ 2, how does the remainder change the next digit, 8?",
+    "method_note": "The whole-number division gives 392 remainder 1. The remainder represents 1/2 = 0.5, so the complete answer is 392.5.",
+    "wrong": "392.1",
+    "error_note": "The remainder 1 means 1/2, not decimal digits to copy after a point. Divide it by 2 to get 0.5."
+  },
+  "maths:M02-S04-C1-Q3": {
+    "hint": "In 84 ÷ 2, start with 8 ÷ 2. Where should that answer digit go above 84?",
+    "method_note": "The quotient digits represent 4 tens, 2 units. Write them in order to make 42.",
+    "wrong": "6",
+    "error_note": "The quotient digits are place values, not numbers to add together: 40 + 2 = 42."
+  },
+  "maths:M02-S04-C2-Q3": {
+    "hint": "After 17 ÷ 4, how does the remainder change the next digit, 2?",
+    "method_note": "Carry remainder 1 before the next digit, 2, to make 12. Then 12 ÷ 4 = 3 remainder 0.",
+    "wrong": "40 r 2",
+    "error_note": "Do not divide the next digit 2 on its own. The carried 1 makes it 12, so use 12 ÷ 4."
+  },
+  "maths:M02-S04-C3-Q3": {
+    "hint": "After 14 ÷ 12, how does the remainder change the next digit, 2?",
+    "method_note": "Carry remainder 2 before the next digit, 2, to make 22. Then 22 ÷ 12 = 1 remainder 10.",
+    "wrong": "102 r 4",
+    "error_note": "Do not divide the next digit 2 on its own. The carried 2 makes it 22, so use 22 ÷ 12."
+  },
+  "maths:M02-S04-C1-Q4": {
+    "hint": "In 96 ÷ 3, start with 9 ÷ 3. Where should that answer digit go above 96?",
+    "method_note": "The quotient digits represent 3 tens, 2 units. Write them in order to make 32.",
+    "wrong": "5",
+    "error_note": "The quotient digits are place values, not numbers to add together: 30 + 2 = 32."
+  },
+  "maths:M02-S04-C2-Q4": {
+    "hint": "After 21 ÷ 6, how does the remainder change the next digit, 8?",
+    "method_note": "Carry remainder 3 before the next digit, 8, to make 38. Then 38 ÷ 6 = 6 remainder 2.",
+    "wrong": "31 r 2",
+    "error_note": "Do not divide the next digit 8 on its own. The carried 3 makes it 38, so use 38 ÷ 6."
+  },
+  "maths:M02-S04-C3-Q4": {
+    "hint": "After 38 ÷ 24, how does the remainder change the next digit, 1?",
+    "method_note": "Carry remainder 14 before the next digit, 1, to make 141. Then 141 ÷ 24 = 5 remainder 21.",
+    "wrong": "100 r 16",
+    "error_note": "Do not divide the next digit 1 on its own. The carried 14 makes it 141, so use 141 ÷ 24."
+  },
+  "maths:M02-S04-C1-Q5": {
+    "hint": "In 55 ÷ 5, start with 5 ÷ 5. Where should that answer digit go above 55?",
+    "method_note": "The quotient digits represent 1 tens, 1 units. Write them in order to make 11.",
+    "wrong": "2",
+    "error_note": "The quotient digits are place values, not numbers to add together: 10 + 1 = 11."
+  },
+  "maths:M02-S04-C2-Q5": {
+    "hint": "After 34 ÷ 7, how does the remainder change the next digit, 1?",
+    "method_note": "Carry remainder 6 before the next digit, 1, to make 61. Then 61 ÷ 7 = 8 remainder 5.",
+    "wrong": "40 r 1",
+    "error_note": "Do not divide the next digit 1 on its own. The carried 6 makes it 61, so use 61 ÷ 7."
+  },
+  "maths:M02-S04-C3-Q5": {
+    "hint": "After 45 ÷ 16, how does the remainder change the next digit, 1?",
+    "method_note": "The whole-number division gives 282 remainder 4. The remainder represents 4/16 = 0.25, so the complete answer is 282.25.",
+    "wrong": "282.4",
+    "error_note": "The remainder 4 means 4/16, not decimal digits to copy after a point. Divide it by 16 to get 0.25."
+  },
+  "maths:M02-S04-C1-Q6": {
+    "hint": "In 88 ÷ 8, start with 8 ÷ 8. Where should that answer digit go above 88?",
+    "method_note": "The quotient digits represent 1 tens, 1 units. Write them in order to make 11.",
+    "wrong": "2",
+    "error_note": "The quotient digits are place values, not numbers to add together: 10 + 1 = 11."
+  },
+  "maths:M02-S04-C2-Q6": {
+    "hint": "After 50 ÷ 8, how does the remainder change the next digit, 2?",
+    "method_note": "Carry remainder 2 before the next digit, 2, to make 22. Then 22 ÷ 8 = 2 remainder 6.",
+    "wrong": "60 r 2",
+    "error_note": "Do not divide the next digit 2 on its own. The carried 2 makes it 22, so use 22 ÷ 8."
+  },
+  "maths:M02-S04-C3-Q6": {
+    "hint": "After 81 ÷ 25, how does the remainder change the next digit, 4?",
+    "method_note": "The whole-number division gives 325 remainder 18. The remainder represents 18/25 = 0.72, so the complete answer is 325.72.",
+    "wrong": "325.18",
+    "error_note": "The remainder 18 means 18/25, not decimal digits to copy after a point. Divide it by 25 to get 0.72."
+  },
+  "maths:M02-S05-C1-Q1": {
+    "hint": "In 46 ÷ 2, start with 4 ÷ 2. Where should that answer digit go above 46?",
+    "method_note": "The quotient digits represent 2 tens, 3 units. Write them in order to make 23.",
+    "wrong": "5",
+    "error_note": "The quotient digits are place values, not numbers to add together: 20 + 3 = 23."
+  },
+  "maths:M02-S05-C2-Q1": {
+    "hint": "After 8 ÷ 3, how does the remainder change the next digit, 4?",
+    "method_note": "Carry remainder 2 before the next digit, 4, to make 24. Then 24 ÷ 3 = 8 remainder 0.",
+    "wrong": "21 r 1",
+    "error_note": "Do not divide the next digit 4 on its own. The carried 2 makes it 24, so use 24 ÷ 3."
+  },
+  "maths:M02-S05-C3-Q1": {
+    "hint": "After 6 ÷ 4, how does the remainder change the next digit, 2?",
+    "method_note": "The whole-number division gives 156 remainder 3. The remainder represents 3/4 = 0.75, so the complete answer is 156.75.",
+    "wrong": "156.3",
+    "error_note": "The remainder 3 means 3/4, not decimal digits to copy after a point. Divide it by 4 to get 0.75."
+  },
+  "maths:M02-S05-C1-Q2": {
+    "hint": "In 93 ÷ 3, start with 9 ÷ 3. Where should that answer digit go above 93?",
+    "method_note": "The quotient digits represent 3 tens, 1 units. Write them in order to make 31.",
+    "wrong": "4",
+    "error_note": "The quotient digits are place values, not numbers to add together: 30 + 1 = 31."
+  },
+  "maths:M02-S05-C2-Q2": {
+    "hint": "After 15 ÷ 4, how does the remainder change the next digit, 6?",
+    "method_note": "Carry remainder 3 before the next digit, 6, to make 36. Then 36 ÷ 4 = 9 remainder 0.",
+    "wrong": "31 r 2",
+    "error_note": "Do not divide the next digit 6 on its own. The carried 3 makes it 36, so use 36 ÷ 4."
+  },
+  "maths:M02-S05-C3-Q2": {
+    "q": "943 ÷ 8",
+    "hint": "After 9 ÷ 8, how does the remainder change the next digit, 4?",
+    "method_note": "The whole-number division gives 117 remainder 7. The remainder represents 7/8 = 0.875, so the complete answer is 117.875.",
+    "wrong": "117.7",
+    "error_note": "The remainder 7 means 7/8, not decimal digits to copy after a point. Divide it by 8 to get 0.875."
+  },
+  "maths:M02-S05-C1-Q3": {
+    "q": "86 ÷ 2",
+    "hint": "In 86 ÷ 2, start with 8 ÷ 2. Where should that answer digit go above 86?",
+    "method_note": "The quotient digits represent 4 tens, 3 units. Write them in order to make 43.",
+    "wrong": "7",
+    "error_note": "The quotient digits are place values, not numbers to add together: 40 + 3 = 43."
+  },
+  "maths:M02-S05-C2-Q3": {
+    "hint": "After 23 ÷ 6, how does the remainder change the next digit, 5?",
+    "method_note": "Carry remainder 5 before the next digit, 5, to make 55. Then 55 ÷ 6 = 9 remainder 1.",
+    "wrong": "30 r 5",
+    "error_note": "Do not divide the next digit 5 on its own. The carried 5 makes it 55, so use 55 ÷ 6."
+  },
+  "maths:M02-S05-C3-Q3": {
+    "hint": "After 21 ÷ 12, how does the remainder change the next digit, 3?",
+    "method_note": "Carry remainder 9 before the next digit, 3, to make 93. Then 93 ÷ 12 = 7 remainder 9.",
+    "wrong": "103",
+    "error_note": "Do not divide the next digit 3 on its own. The carried 9 makes it 93, so use 93 ÷ 12."
+  },
+  "maths:M02-S05-C1-Q4": {
+    "hint": "In 884 ÷ 4, start with 8 ÷ 4. Where should that answer digit go above 884?",
+    "method_note": "The quotient digits represent 2 hundreds, 2 tens, 1 units. Write them in order to make 221.",
+    "wrong": "5",
+    "error_note": "The quotient digits are place values, not numbers to add together: 200 + 20 + 1 = 221."
+  },
+  "maths:M02-S05-C2-Q4": {
+    "hint": "After 32 ÷ 7, how does the remainder change the next digit, 6?",
+    "method_note": "Carry remainder 4 before the next digit, 6, to make 46. Then 46 ÷ 7 = 6 remainder 4.",
+    "wrong": "40 r 6",
+    "error_note": "Do not divide the next digit 6 on its own. The carried 4 makes it 46, so use 46 ÷ 7."
+  },
+  "maths:M02-S05-C3-Q4": {
+    "hint": "After 46 ÷ 32, how does the remainder change the next digit, 0?",
+    "method_note": "Carry remainder 14 before the next digit, 0, to make 140. Then 140 ÷ 32 = 4 remainder 12.",
+    "wrong": "100 r 8",
+    "error_note": "Do not divide the next digit 0 on its own. The carried 14 makes it 140, so use 140 ÷ 32."
+  },
+  "maths:M02-S05-C1-Q5": {
+    "hint": "In 555 ÷ 5, start with 5 ÷ 5. Where should that answer digit go above 555?",
+    "method_note": "The quotient digits represent 1 hundreds, 1 tens, 1 units. Write them in order to make 111.",
+    "wrong": "3",
+    "error_note": "The quotient digits are place values, not numbers to add together: 100 + 10 + 1 = 111."
+  },
+  "maths:M02-S05-C2-Q5": {
+    "hint": "After 45 ÷ 8, how does the remainder change the next digit, 8?",
+    "method_note": "Carry remainder 5 before the next digit, 8, to make 58. Then 58 ÷ 8 = 7 remainder 2.",
+    "wrong": "51",
+    "error_note": "Do not divide the next digit 8 on its own. The carried 5 makes it 58, so use 58 ÷ 8."
+  },
+  "maths:M02-S05-C3-Q5": {
+    "hint": "After 57 ÷ 16, how does the remainder change the next digit, 2?",
+    "method_note": "The whole-number division gives 358 remainder 1. The remainder represents 1/16 = 0.0625, so the complete answer is 358.0625.",
+    "wrong": "358.625",
+    "error_note": "Remainder 1 makes 10 ÷ 16 = 0 remainder 10, so the tenths digit is 0. Continue with 100 ÷ 16 and keep that zero in 358.0625."
+  },
+  "maths:M02-S05-C1-Q6": {
+    "hint": "In 639 ÷ 3, start with 6 ÷ 3. Where should that answer digit go above 639?",
+    "method_note": "The quotient digits represent 2 hundreds, 1 tens, 3 units. Write them in order to make 213.",
+    "wrong": "6",
+    "error_note": "The quotient digits are place values, not numbers to add together: 200 + 10 + 3 = 213."
+  },
+  "maths:M02-S05-C2-Q6": {
+    "hint": "After 61 ÷ 9, how does the remainder change the next digit, 7?",
+    "method_note": "Carry remainder 7 before the next digit, 7, to make 77. Then 77 ÷ 9 = 8 remainder 5.",
+    "wrong": "60 r 7",
+    "error_note": "Do not divide the next digit 7 on its own. The carried 7 makes it 77, so use 77 ÷ 9."
+  },
+  "maths:M02-S05-C3-Q6": {
+    "hint": "After 90 ÷ 40, how does the remainder change the next digit, 3?",
+    "method_note": "The whole-number division gives 225 remainder 31. The remainder represents 31/40 = 0.775, so the complete answer is 225.775.",
+    "wrong": "225.31",
+    "error_note": "The remainder 31 means 31/40, not decimal digits to copy after a point. Divide it by 40 to get 0.775."
+  },
+  "maths:M02-S06-C1-Q1": {
+    "hint": "In 82 ÷ 2, start with 8 ÷ 2. Where should that answer digit go above 82?",
+    "method_note": "The quotient digits represent 4 tens, 1 units. Write them in order to make 41.",
+    "wrong": "5",
+    "error_note": "The quotient digits are place values, not numbers to add together: 40 + 1 = 41."
+  },
+  "maths:M02-S06-C2-Q1": {
+    "hint": "After 9 ÷ 4, how does the remainder change the next digit, 5?",
+    "method_note": "Carry remainder 1 before the next digit, 5, to make 15. Then 15 ÷ 4 = 3 remainder 3.",
+    "wrong": "21 r 1",
+    "error_note": "Do not divide the next digit 5 on its own. The carried 1 makes it 15, so use 15 ÷ 4."
+  },
+  "maths:M02-S06-C3-Q1": {
+    "hint": "After 7 ÷ 4, how does the remainder change the next digit, 3?",
+    "method_note": "The whole-number division gives 184 remainder 2. The remainder represents 2/4 = 0.5, so the complete answer is 184.5.",
+    "wrong": "184.2",
+    "error_note": "The remainder 2 means 2/4, not decimal digits to copy after a point. Divide it by 4 to get 0.5."
+  },
+  "maths:M02-S06-C1-Q2": {
+    "hint": "In 963 ÷ 3, start with 9 ÷ 3. Where should that answer digit go above 963?",
+    "method_note": "The quotient digits represent 3 hundreds, 2 tens, 1 units. Write them in order to make 321.",
+    "wrong": "6",
+    "error_note": "The quotient digits are place values, not numbers to add together: 300 + 20 + 1 = 321."
+  },
+  "maths:M02-S06-C2-Q2": {
+    "hint": "After 18 ÷ 5, how does the remainder change the next digit, 4?",
+    "method_note": "Carry remainder 3 before the next digit, 4, to make 34. Then 34 ÷ 5 = 6 remainder 4.",
+    "wrong": "30 r 4",
+    "error_note": "Do not divide the next digit 4 on its own. The carried 3 makes it 34, so use 34 ÷ 5."
+  },
+  "maths:M02-S06-C3-Q2": {
+    "q": "859 ÷ 5",
+    "hint": "After 8 ÷ 5, how does the remainder change the next digit, 5?",
+    "method_note": "The whole-number division gives 171 remainder 4. The remainder represents 4/5 = 0.8, so the complete answer is 171.8.",
+    "wrong": "171.4",
+    "error_note": "The remainder 4 means 4/5, not decimal digits to copy after a point. Divide it by 5 to get 0.8."
+  },
+  "maths:M02-S06-C1-Q3": {
+    "hint": "In 848 ÷ 4, start with 8 ÷ 4. Where should that answer digit go above 848?",
+    "method_note": "The quotient digits represent 2 hundreds, 1 tens, 2 units. Write them in order to make 212.",
+    "wrong": "5",
+    "error_note": "The quotient digits are place values, not numbers to add together: 200 + 10 + 2 = 212."
+  },
+  "maths:M02-S06-C2-Q3": {
+    "hint": "After 26 ÷ 8, how does the remainder change the next digit, 7?",
+    "method_note": "Carry remainder 2 before the next digit, 7, to make 27. Then 27 ÷ 8 = 3 remainder 3.",
+    "wrong": "30 r 7",
+    "error_note": "Do not divide the next digit 7 on its own. The carried 2 makes it 27, so use 27 ÷ 8."
+  },
+  "maths:M02-S06-C3-Q3": {
+    "hint": "After 32 ÷ 24, how does the remainder change the next digit, 6?",
+    "method_note": "Carry remainder 8 before the next digit, 6, to make 86. Then 86 ÷ 24 = 3 remainder 14.",
+    "wrong": "102 r 16",
+    "error_note": "Do not divide the next digit 6 on its own. The carried 8 makes it 86, so use 86 ÷ 24."
+  },
+  "maths:M02-S06-C1-Q4": {
+    "q": "966 ÷ 3",
+    "hint": "In 966 ÷ 3, start with 9 ÷ 3. Where should that answer digit go above 966?",
+    "method_note": "The quotient digits represent 3 hundreds, 2 tens, 2 units. Write them in order to make 322.",
+    "wrong": "7",
+    "error_note": "The quotient digits are place values, not numbers to add together: 300 + 20 + 2 = 322."
+  },
+  "maths:M02-S06-C2-Q4": {
+    "hint": "After 39 ÷ 6, how does the remainder change the next digit, 7?",
+    "method_note": "Carry remainder 3 before the next digit, 7, to make 37. Then 37 ÷ 6 = 6 remainder 1.",
+    "wrong": "61 r 1",
+    "error_note": "Do not divide the next digit 7 on its own. The carried 3 makes it 37, so use 37 ÷ 6."
+  },
+  "maths:M02-S06-C3-Q4": {
+    "hint": "After 51 ÷ 15, how does the remainder change the next digit, 7?",
+    "method_note": "Carry remainder 6 before the next digit, 7, to make 67. Then 67 ÷ 15 = 4 remainder 7.",
+    "wrong": "305",
+    "error_note": "Do not divide the next digit 7 on its own. The carried 6 makes it 67, so use 67 ÷ 15."
+  },
+  "maths:M02-S06-C1-Q5": {
+    "q": "848 ÷ 2",
+    "hint": "In 848 ÷ 2, start with 8 ÷ 2. Where should that answer digit go above 848?",
+    "method_note": "The quotient digits represent 4 hundreds, 2 tens, 4 units. Write them in order to make 424.",
+    "wrong": "10",
+    "error_note": "The quotient digits are place values, not numbers to add together: 400 + 20 + 4 = 424."
+  },
+  "maths:M02-S06-C2-Q5": {
+    "hint": "After 52 ÷ 7, how does the remainder change the next digit, 3?",
+    "method_note": "Carry remainder 3 before the next digit, 3, to make 33. Then 33 ÷ 7 = 4 remainder 5.",
+    "wrong": "70 r 3",
+    "error_note": "Do not divide the next digit 3 on its own. The carried 3 makes it 33, so use 33 ÷ 7."
+  },
+  "maths:M02-S06-C3-Q5": {
+    "hint": "After 68 ÷ 25, how does the remainder change the next digit, 4?",
+    "method_note": "The whole-number division gives 273 remainder 18. The remainder represents 18/25 = 0.72, so the complete answer is 273.72.",
+    "wrong": "273.18",
+    "error_note": "The remainder 18 means 18/25, not decimal digits to copy after a point. Divide it by 25 to get 0.72."
+  },
+  "maths:M02-S06-C1-Q6": {
+    "hint": "In 606 ÷ 3, what happens when you reach 0, which is smaller than 3? How will you keep its place in the answer?",
+    "method_note": "At the tens position, 0 ÷ 3 gives 0 remainder 0. Write the quotient zero before continuing.",
+    "wrong": "22",
+    "error_note": "Keep the zero in 202. Omitting it moves the later digits into the wrong place-value columns."
+  },
+  "maths:M02-S06-C2-Q6": {
+    "hint": "After 74 ÷ 9, how does the remainder change the next digit, 8?",
+    "method_note": "Carry remainder 2 before the next digit, 8, to make 28. Then 28 ÷ 9 = 3 remainder 1.",
+    "wrong": "80 r 8",
+    "error_note": "Do not divide the next digit 8 on its own. The carried 2 makes it 28, so use 28 ÷ 9."
+  },
+  "maths:M02-S06-C3-Q6": {
+    "hint": "After 72 ÷ 20, how does the remainder change the next digit, 4?",
+    "method_note": "The whole-number division gives 362 remainder 9. The remainder represents 9/20 = 0.45, so the complete answer is 362.45.",
+    "wrong": "362.9",
+    "error_note": "The remainder 9 means 9/20, not decimal digits to copy after a point. Divide it by 20 to get 0.45."
+  },
+  "maths:M02-S07-C1-Q1": {
+    "hint": "In 62 ÷ 2, start with 6 ÷ 2. Where should that answer digit go above 62?",
+    "method_note": "The quotient digits represent 3 tens, 1 units. Write them in order to make 31.",
+    "wrong": "4",
+    "error_note": "The quotient digits are place values, not numbers to add together: 30 + 1 = 31."
+  },
+  "maths:M02-S07-C2-Q1": {
+    "hint": "After 10 ÷ 4, how does the remainder change the next digit, 8?",
+    "method_note": "Carry remainder 2 before the next digit, 8, to make 28. Then 28 ÷ 4 = 7 remainder 0.",
+    "wrong": "22",
+    "error_note": "Do not divide the next digit 8 on its own. The carried 2 makes it 28, so use 28 ÷ 4."
+  },
+  "maths:M02-S07-C3-Q1": {
+    "hint": "In 849 ÷ 4, start with 8 ÷ 4. Where should that answer digit go above 849?",
+    "method_note": "The whole-number division gives 212 remainder 1. The remainder represents 1/4 = 0.25, so the complete answer is 212.25.",
+    "wrong": "212.1",
+    "error_note": "The remainder 1 means 1/4, not decimal digits to copy after a point. Divide it by 4 to get 0.25."
+  },
+  "maths:M02-S07-C1-Q2": {
+    "hint": "In 936 ÷ 3, start with 9 ÷ 3. Where should that answer digit go above 936?",
+    "method_note": "The quotient digits represent 3 hundreds, 1 tens, 2 units. Write them in order to make 312.",
+    "wrong": "6",
+    "error_note": "The quotient digits are place values, not numbers to add together: 300 + 10 + 2 = 312."
+  },
+  "maths:M02-S07-C2-Q2": {
+    "hint": "In 245 ÷ 6, what happens when you reach 5, which is smaller than 6? How will you keep its place in the answer?",
+    "method_note": "At the units position, 5 ÷ 6 gives 0 remainder 5. Write the quotient zero before continuing.",
+    "wrong": "4 r 5",
+    "error_note": "Keep the zero in 40. Omitting it moves the later digits into the wrong place-value columns."
+  },
+  "maths:M02-S07-C3-Q2": {
+    "q": "967 ÷ 16",
+    "hint": "In 967 ÷ 16, what happens when you reach 7, which is smaller than 16? How will you keep its place in the answer?",
+    "method_note": "The whole-number division gives 60 remainder 7. The remainder represents 7/16 = 0.4375, so the complete answer is 60.4375.",
+    "wrong": "60.7",
+    "error_note": "The remainder 7 means 7/16, not decimal digits to copy after a point. Divide it by 16 to get 0.4375."
+  },
+  "maths:M02-S07-C1-Q3": {
+    "hint": "In 448 ÷ 4, start with 4 ÷ 4. Where should that answer digit go above 448?",
+    "method_note": "The quotient digits represent 1 hundreds, 1 tens, 2 units. Write them in order to make 112.",
+    "wrong": "4",
+    "error_note": "The quotient digits are place values, not numbers to add together: 100 + 10 + 2 = 112."
+  },
+  "maths:M02-S07-C2-Q3": {
+    "hint": "After 31 ÷ 7, how does the remainder change the next digit, 4?",
+    "method_note": "Carry remainder 3 before the next digit, 4, to make 34. Then 34 ÷ 7 = 4 remainder 6.",
+    "wrong": "40 r 4",
+    "error_note": "Do not divide the next digit 4 on its own. The carried 3 makes it 34, so use 34 ÷ 7."
+  },
+  "maths:M02-S07-C3-Q3": {
+    "hint": "After 43 ÷ 18, how does the remainder change the next digit, 7?",
+    "method_note": "Carry remainder 7 before the next digit, 7, to make 77. Then 77 ÷ 18 = 4 remainder 5.",
+    "wrong": "204 r 2",
+    "error_note": "Do not divide the next digit 7 on its own. The carried 7 makes it 77, so use 77 ÷ 18."
+  },
+  "maths:M02-S07-C1-Q4": {
+    "hint": "In 505 ÷ 5, what happens when you reach 0, which is smaller than 5? How will you keep its place in the answer?",
+    "method_note": "At the tens position, 0 ÷ 5 gives 0 remainder 0. Write the quotient zero before continuing.",
+    "wrong": "11",
+    "error_note": "Keep the zero in 101. Omitting it moves the later digits into the wrong place-value columns."
+  },
+  "maths:M02-S07-C2-Q4": {
+    "hint": "After 46 ÷ 8, how does the remainder change the next digit, 7?",
+    "method_note": "Carry remainder 6 before the next digit, 7, to make 67. Then 67 ÷ 8 = 8 remainder 3.",
+    "wrong": "50 r 7",
+    "error_note": "Do not divide the next digit 7 on its own. The carried 6 makes it 67, so use 67 ÷ 8."
+  },
+  "maths:M02-S07-C3-Q4": {
+    "hint": "After 62 ÷ 48, how does the remainder change the next digit, 8?",
+    "method_note": "Carry remainder 14 before the next digit, 8, to make 148. Then 148 ÷ 48 = 3 remainder 4.",
+    "wrong": "101 r 40",
+    "error_note": "Do not divide the next digit 8 on its own. The carried 14 makes it 148, so use 148 ÷ 48."
+  },
+  "maths:M02-S07-C1-Q5": {
+    "q": "684 ÷ 2",
+    "hint": "In 684 ÷ 2, start with 6 ÷ 2. Where should that answer digit go above 684?",
+    "method_note": "The quotient digits represent 3 hundreds, 4 tens, 2 units. Write them in order to make 342.",
+    "wrong": "9",
+    "error_note": "The quotient digits are place values, not numbers to add together: 300 + 40 + 2 = 342."
+  },
+  "maths:M02-S07-C2-Q5": {
+    "hint": "After 58 ÷ 9, how does the remainder change the next digit, 6?",
+    "method_note": "Carry remainder 4 before the next digit, 6, to make 46. Then 46 ÷ 9 = 5 remainder 1.",
+    "wrong": "60 r 6",
+    "error_note": "Do not divide the next digit 6 on its own. The carried 4 makes it 46, so use 46 ÷ 9."
+  },
+  "maths:M02-S07-C3-Q5": {
+    "hint": "After 79 ÷ 16, how does the remainder change the next digit, 5?",
+    "method_note": "The whole-number division gives 497 remainder 5. The remainder represents 5/16 = 0.3125, so the complete answer is 497.3125.",
+    "wrong": "497.5",
+    "error_note": "The remainder 5 means 5/16, not decimal digits to copy after a point. Divide it by 16 to get 0.3125."
+  },
+  "maths:M02-S07-C1-Q6": {
+    "q": "693 ÷ 3",
+    "hint": "In 693 ÷ 3, start with 6 ÷ 3. Where should that answer digit go above 693?",
+    "method_note": "The quotient digits represent 2 hundreds, 3 tens, 1 units. Write them in order to make 231.",
+    "wrong": "6",
+    "error_note": "The quotient digits are place values, not numbers to add together: 200 + 30 + 1 = 231."
+  },
+  "maths:M02-S07-C2-Q6": {
+    "hint": "In 703 ÷ 5, what happens when you reach 3, which is smaller than 5? How will you keep its place in the answer?",
+    "method_note": "At the units position, 3 ÷ 5 gives 0 remainder 3. Write the quotient zero before continuing.",
+    "wrong": "14 r 3",
+    "error_note": "Keep the zero in 140. Omitting it moves the later digits into the wrong place-value columns."
+  },
+  "maths:M02-S07-C3-Q6": {
+    "hint": "After 86 ÷ 50, how does the remainder change the next digit, 2?",
+    "method_note": "The whole-number division gives 172 remainder 23. The remainder represents 23/50 = 0.46, so the complete answer is 172.46.",
+    "wrong": "172.23",
+    "error_note": "The remainder 23 means 23/50, not decimal digits to copy after a point. Divide it by 50 to get 0.46."
+  },
+  "maths:M02-SE-C1-Q1": {
+    "hint": "Check the last division, 4 ÷ 4. What does it contribute to the quotient?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Write 1 above the final 4."
+      },
+      {
+        "id": "1",
+        "text": "Write 0 above the final 4."
+      },
+      {
+        "id": "2",
+        "text": "Write 4 above the final 4."
+      }
+    ]
+  },
+  "maths:M02-SE-C1-Q2": {
+    "hint": "In 505 ÷ 5, what happens to the tens position when you divide its 0?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Remove the tens position from the quotient."
+      },
+      {
+        "id": "1",
+        "text": "Keep a zero in the tens position of the quotient."
+      },
+      {
+        "id": "2",
+        "text": "Put the zero after the units digit of the quotient."
+      }
+    ]
+  },
+  "maths:M02-SE-C1-Q3": {
+    "hint": "Check 6 ÷ 3 in the units column independently of the first digit.",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Copy the first quotient digit above 6."
+      },
+      {
+        "id": "1",
+        "text": "Use 6 as the quotient digit above 6."
+      },
+      {
+        "id": "2",
+        "text": "Use 2 as the quotient digit above 6."
+      }
+    ]
+  },
+  "maths:M02-SE-C2-Q1": {
+    "hint": "After 14 ÷ 6, how does the remainder change the next digit, 5?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Carry the remainder 2 before the 5 to make 25."
+      },
+      {
+        "id": "1",
+        "text": "Divide the final 5 by 6 without carrying."
+      },
+      {
+        "id": "2",
+        "text": "Add the remainder 2 to the digit 5 to make 7."
+      }
+    ]
+  },
+  "maths:M02-SE-C2-Q2": {
+    "hint": "The remainder is 4 out of how many? How could you continue the division?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Copy the remainder 4 directly into the tenths position."
+      },
+      {
+        "id": "1",
+        "text": "Append a zero and divide 40 by 8 to find the tenths digit."
+      },
+      {
+        "id": "2",
+        "text": "Divide the remainder 4 by 10 to find the decimal part."
+      }
+    ]
+  },
+  "maths:M02-SE-C2-Q3": {
+    "hint": "Check 24 ÷ 6. Can a remainder be as large as the divisor?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Use 3 for 24 ÷ 6 and keep remainder 6."
+      },
+      {
+        "id": "1",
+        "text": "Use 4 for 24 ÷ 6, then omit the quotient position above 5."
+      },
+      {
+        "id": "2",
+        "text": "Use 4 for 24 ÷ 6, then keep a zero above the final 5."
+      }
+    ]
+  },
+  "maths:M02-SE-C3-Q1": {
+    "hint": "After 12 ÷ 12, what quotient digit belongs above the 4?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Keep a zero above the 4 before continuing to 48 ÷ 12."
+      },
+      {
+        "id": "1",
+        "text": "Skip the quotient position above the 4."
+      },
+      {
+        "id": "2",
+        "text": "Write the carried 4 as a quotient digit above the 4."
+      }
+    ]
+  },
+  "maths:M02-SE-C3-Q2": {
+    "hint": "Before adding a decimal point, have you finished dividing all three whole-number digits of 615?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Put the decimal point after the first nonzero quotient digit."
+      },
+      {
+        "id": "1",
+        "text": "Put the decimal point after the quotient digit above the final 5."
+      },
+      {
+        "id": "2",
+        "text": "Put the decimal point before the first nonzero quotient digit."
+      }
+    ]
+  },
+  "maths:M02-SE-C3-Q3": {
+    "hint": "After 48 ÷ 16, how will the next digit, 3, keep its place in the quotient?",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Skip the quotient position above 3."
+      },
+      {
+        "id": "1",
+        "text": "Move the missing zero to the end of the decimal answer."
+      },
+      {
+        "id": "2",
+        "text": "Keep a zero in the tens position before continuing to 34 ÷ 16."
+      }
+    ]
+  }
+}

@@ -10,9 +10,11 @@
  *
  * Libs: none.
  */
+import { createWorkingCache } from '../adapters/working-cache.mjs';
 import { backupStatus } from '../domain/progress.mjs';
 import { completeRecommendation } from '../domain/revision.mjs';
 import {
+  scoringWindow,
   newTrack,
   newPage,
   submit,
@@ -55,6 +57,7 @@ export function createSession({
   random = Math.random,
   uuid = () => crypto.randomUUID(),
   now = Date.now,
+  workingCache = createWorkingCache(null),
 }) {
   let homeBank = bank;
   let profile = data.profiles.find((p) => p.key === data.last);
@@ -62,7 +65,7 @@ export function createSession({
     selected = 0,
     reference = false,
     demoLevel = 0;
-  let paper = false,
+  let hintVisible = false,
     draftKey = 0,
     draft = freshDraft(),
     message = '',
@@ -190,7 +193,6 @@ export function createSession({
     if (!page()) createPage(definition);
     selected = 0;
     reference = false;
-    paper = false;
     resetDraft();
     timeExpired();
   }
@@ -229,8 +231,14 @@ export function createSession({
    * Calls: freshDraft.
    * Used by: enterSetPage, chooseName, switchMode, select, changeLevel, submitAnswer, nextPage, leavePracticeSet.
    */
+  const workingKey = () =>
+    profile && current() && mode !== 'demo'
+      ? JSON.stringify([profile.key, scope(), page().attempt, current().id])
+      : null;
   function resetDraft() {
-    draft = freshDraft();
+    const key = workingKey();
+    draft = { ...freshDraft(), ...(key ? workingCache.load(key) : null) };
+    hintVisible = false;
     draftKey++;
     inputError = '';
   }
@@ -253,11 +261,11 @@ export function createSession({
       size = definition
         ? definition.ids.length
         : mode === 'plain'
-          ? 10
+          ? 12
           : mode === 'errors'
             ? 3
             : mode === 'assessment'
-              ? 4
+              ? pool('assessment').length
               : 2;
     const p = {
       ...newPage(size, t.level),
@@ -270,6 +278,7 @@ export function createSession({
       ...(definition ? { authoredSlot: definition.slot } : {}),
     };
     const candidates = pool(mode, mode === 'assessment' ? undefined : p.level);
+    if (mode === 'assessment') candidates.sort((a, b) => a.level - b.level);
     const recent = new Set(
       topic()
         .history.slice(-30)
@@ -295,7 +304,7 @@ export function createSession({
       level: q.level,
     }));
     storePage(p);
-    paper = false;
+    resetDraft();
     save(data);
   }
   /**
@@ -351,6 +360,7 @@ export function createSession({
   function snapshot() {
     return {
       bank,
+      timingDeadline: activeSet()?.deadline ?? null,
       profile: profile ? { name: profile.name, key: profile.key } : null,
       backup: backupStatus(profile, now()),
       demoSpeed: profile?.settings?.demoSpeed ?? 1,
@@ -372,7 +382,7 @@ export function createSession({
       selected,
       reference,
       demoLevel,
-      paper,
+      hintVisible,
       draftKey,
       draft: structuredClone(draft),
       message,
@@ -385,7 +395,7 @@ export function createSession({
    * Optionally persist session state, then notify view subscribers.
    * Parameter persist: whether to save as well as publish.
    * Calls: activeSet, snapshot.
-   * Used by: chooseName, switchMode, select, changeLevel, setReference, setDemoSpeed, setDemoLevel, hint, setPaper, updateDraft, submitAnswer, nextPage, startPracticeSet, goSetPage, leavePracticeSet, resumePracticeSet, tick, resolvePromotion.
+   * Used by: chooseName, switchMode, select, changeLevel, setReference, setDemoSpeed, setDemoLevel, hint, updateDraft, submitAnswer, nextPage, startPracticeSet, goSetPage, leavePracticeSet, resumePracticeSet, tick, resolvePromotion.
    */
   function publish(persist = false) {
     if (persist) {
@@ -401,6 +411,7 @@ export function createSession({
   }
   restoreSet();
   ensurePage();
+  resetDraft();
   return {
     /**
      * Register a state listener, publish its initial value and return an unsubscribe function.
@@ -427,7 +438,6 @@ export function createSession({
       mode = 'assessment';
       selected = 0;
       reference = false;
-      paper = false;
       message = '';
       resetDraft();
       restoreSet();
@@ -540,18 +550,10 @@ export function createSession({
      * Calls: assist, publish.
      */
     hint() {
-      assist();
-      message = `${bank.method ? bank.teaching.guidance[current().level].steps[1] : 'Keep both sides balanced: use the same inverse operation on each side.'} This answer will be recorded as assisted.`;
+      hintVisible = !hintVisible;
+      // Hiding a hint must not undo the recorded assistance for this question.
+      if (hintVisible) assist();
       publish(true);
-    },
-    /**
-     * Toggle paper-working mode in the current view.
-     * Parameter value: new value to apply or validate.
-     * Calls: publish.
-     */
-    setPaper(value) {
-      paper = value;
-      publish();
     },
     /**
      * Merge the supplied answer/working patch into the transient draft.
@@ -560,6 +562,14 @@ export function createSession({
      */
     updateDraft(patch) {
       Object.assign(draft, patch);
+      const key = workingKey();
+      if (
+        key &&
+        Object.keys(patch).some((name) =>
+          ['working', 'strokes', 'points', 'guides', 'canvasHeight'].includes(name),
+        )
+      )
+        workingCache.save(key, draft);
       publish();
     },
     /**
@@ -604,7 +614,13 @@ export function createSession({
       };
       p.responses[q.id] = response;
       if (['plain', 'errors'].includes(mode))
-        submit(track(), p, { id: q.id, level, correct: result.correct, assisted });
+        submit(track(), p, {
+          id: q.id,
+          level,
+          correct: result.correct,
+          assisted,
+          window: scoringWindow(mode, p.size),
+        });
       else {
         p.count++;
         p.complete = p.count === p.size;
@@ -629,7 +645,7 @@ export function createSession({
       });
       if (before !== p.level && !p.complete) replaceRemaining(p.level > before);
       message =
-        !paper && draft.points < 8 && !draft.working.trim()
+        draft.points < 8 && !draft.working.trim()
           ? 'Remember to show your working. You can draw, type or use paper.'
           : '';
       const next = result.correct

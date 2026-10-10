@@ -36,6 +36,10 @@
     each correction, use the working immediately above the selected row. Then solve the original
     equation for the final answer.
   </p>
+  {#if question.errors.length > 1}<p>
+      Treat each error box separately: use the line as printed, without carrying your earlier
+      correction into the next box. In your full solution, correct both errors together.
+    </p>{/if}
   {#each question.errors as _, index}
     {@const entry = entries[index] ?? {}}
     <fieldset class="error-entry">

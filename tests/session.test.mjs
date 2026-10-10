@@ -74,7 +74,7 @@ test("session composes with injected persistence and emits isolated view snapsho
   const f = setup();
   f.view.page.items.length = 0;
   f.session.updateDraft({ working: "typed method" });
-  assert.equal(f.view.page.items.length, 4);
+  assert.equal(f.view.page.items.length, 6);
   assert.equal(
     f.data.profiles[0].topics["maths:M10"].pages.assessment.count,
     0,
@@ -82,30 +82,26 @@ test("session composes with injected persistence and emits isolated view snapsho
 });
 test("correct advances, wraps, clears drafts and cannot score a submitted item twice", () => {
   const f = setup();
-  f.session.select(3);
+  f.session.select(f.view.page.size - 1);
   f.session.updateDraft({ working: "method", points: 10 });
   assert.equal(correct(f).advanced, true);
   assert.equal(f.view.selected, 0);
   assert.equal(f.view.draft.working, "");
-  f.session.select(3);
+  f.session.select(f.view.page.size - 1);
   assert.equal(f.session.submitAnswer().duplicate, true);
   assert.equal(f.view.page.count, 1);
   assert.equal(f.data.profiles[0].topics["maths:M10"].history.length, 1);
 });
-test("invalid and wrong answers stay; paper collapse preserves drafts but new pages reset it", () => {
+test("invalid and wrong answers stay and preserve working drafts", () => {
   const f = setup();
   f.session.updateDraft({ answer: "1/0", working: "draft" });
   assert.equal(f.session.submitAnswer().invalid, true);
   assert.equal(f.view.page.count, 0);
-  f.session.setPaper(true);
-  f.session.setPaper(false);
   assert.equal(f.view.draft.working, "draft");
   f.session.updateDraft({ answer: "99999" });
   f.session.submitAnswer();
   assert.equal(f.view.selected, 0);
-  f.session.setPaper(true);
   f.session.nextPage();
-  assert.equal(f.view.paper, false);
 });
 test("subjects/topics isolate progress without a migration or app-global dependency", () => {
   const f = setup();
@@ -120,6 +116,30 @@ test("subjects/topics isolate progress without a migration or app-global depende
     f.data.profiles[0].topics["other:M10"].pages.assessment.count,
     0,
   );
+});
+test("hints toggle locally, reset on navigation and retain assistance through reload and scoring", () => {
+  const f = setup();
+  f.session.switchMode("plain");
+  const id = f.view.page.items[0].id;
+  f.session.hint();
+  assert.equal(f.view.hintVisible, true);
+  assert.equal(f.view.page.assisted[id], true);
+  f.session.hint();
+  assert.equal(f.view.hintVisible, false);
+  assert.equal(f.view.page.assisted[id], true);
+  f.session.hint();
+  f.session.select(1);
+  assert.equal(f.view.hintVisible, false);
+  f.session.select(0);
+  assert.equal(f.view.page.assisted[id], true);
+  const resumed = setup(f.data);
+  resumed.session.switchMode("plain");
+  assert.equal(resumed.view.hintVisible, false);
+  assert.equal(resumed.view.page.assisted[id], true);
+  correct(resumed);
+  const history = resumed.data.profiles[0].topics["maths:M10"].history;
+  assert.equal(history.at(-1).assisted, true);
+  assert.equal(resumed.view.track.histories[0].length, 0);
 });
 test("new schema roundtrip preserves sessions, while corrupt storage never gets overwritten", () => {
   const f = setup();

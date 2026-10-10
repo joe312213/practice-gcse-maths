@@ -14,6 +14,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import {
+  scoringWindow,
   weights,
   success,
   newTrack,
@@ -223,14 +224,14 @@ test("local profiles normalise names, suggest typos, remain isolated and preserv
     2,
   );
 });
-test("94 preserved source questions plus one new two-error item; all answers parse", async () => {
+test("94 preserved source questions plus three web additions; all answers parse", async () => {
   const bank = JSON.parse(
     await readFile(
       new URL("../website/static/data/equations.json", import.meta.url),
     ),
   );
-  assert.equal(bank.questions.length, 95);
-  assert.equal(new Set(bank.questions.map((q) => q.id)).size, 95);
+  assert.equal(bank.questions.length, 97);
+  assert.equal(new Set(bank.questions.map((q) => q.id)).size, 97);
   for (let l = 0; l < 3; l++)
     assert.equal(
       bank.questions.filter((q) => q.type === "plain" && q.level === l).length,
@@ -425,4 +426,20 @@ test("changing playback speed reschedules one timer without skipping a step", ()
   assert.equal([...jobs.values()][0].delay, 5200);
   player.dispose();
   assert.equal(jobs.size, 0);
+});
+
+
+test('independent scores retain the same ten-answer window for 9, 10 and 12-question pages', () => {
+  const results = [];
+  for (const size of [9, 10, 12]) {
+    const track = newTrack(2), page = newPage(size, 2);
+    let result;
+    for (let i = 0; i < 9; i++) result = submit(track, page, { id: String(i), level: 2, correct: i % 3 !== 0, window: scoringWindow("plain", size) });
+    results.push(result.rate);
+    for (let i = 9; i < size; i++) submit(track, page, { id: String(i), level: 2, correct: true, window: scoringWindow("plain", size) });
+    assert.equal(page.complete, true);
+    assert.equal(track.histories[2].length, Math.min(size, 10));
+  }
+  assert.equal(results[0], results[1]);
+  assert.equal(results[1], results[2]);
 });

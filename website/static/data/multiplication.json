@@ -28,7 +28,11 @@
       "b": 6,
       "answer": "258",
       "check": "258 ÷ 6 = 43",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 4 × 6 cell, where should the tens and units of the product go?",
+      "method_note": "The 4 × 6 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "438",
+      "error_note": "Check the 4 × 6 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
     },
     {
       "id": "maths:M01-IA-Q2",
@@ -41,7 +45,11 @@
       "b": 4,
       "answer": "272",
       "check": "272 ÷ 4 = 68",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 8 × 4 cell, where should the tens and units of the product go?",
+      "method_note": "The 8 × 4 cell is 32: 3 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "263",
+      "error_note": "Check the 8 × 4 cell. Its product is 32; reversing its halves changes the place value. Put 3 above and 2 below the diagonal."
     },
     {
       "id": "maths:M01-IA-Q3",
@@ -54,7 +62,11 @@
       "b": 82,
       "answer": "39032",
       "check": "39032 ÷ 82 = 476",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 476 × 82, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 8 + 4 + 1 = 13. Write 3 and carry 1 into the hundreds diagonal.",
+      "wrong": "38932",
+      "error_note": "Check the carry from the tens diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-IA-Q4",
@@ -67,7 +79,11 @@
       "b": 591,
       "answer": "3568458",
       "check": "3568458 ÷ 591 = 6038",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 6,038 × 591, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The hundreds diagonal totals 0 + 7 + 7 + 0 + 0 = 14. Write 4 and carry 1 into the thousands diagonal.",
+      "wrong": "3567458",
+      "error_note": "Check the carry from the hundreds diagonal: 14 means write 4 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S01-C1-Q1",
@@ -80,7 +96,11 @@
       "b": 6,
       "answer": "258",
       "check": "258 ÷ 6 = 43",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 4 × 6 cell, where should the tens and units of the product go?",
+      "method_note": "The 4 × 6 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "438",
+      "error_note": "Check the 4 × 6 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
     },
     {
       "id": "maths:M01-S01-C2-Q1",
@@ -93,7 +113,11 @@
       "b": 12,
       "answer": "408",
       "check": "408 ÷ 12 = 34",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 34 × 12, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 4 + 6 + 0 = 10. Write 0 and carry 1 into the hundreds diagonal.",
+      "wrong": "308",
+      "error_note": "Check the carry from the tens diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S01-C3-Q1",
@@ -106,7 +130,11 @@
       "b": 156,
       "answer": "672672",
       "check": "672672 ÷ 156 = 4312",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 4,312 × 156, check the hundreds diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The hundreds diagonal totals 2 + 5 + 1 + 8 + 0 = 16. Write 6 and carry 1 into the thousands diagonal.",
+      "wrong": "671672",
+      "error_note": "Check the carry from the hundreds diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S02-C1-Q1",
@@ -119,7 +147,11 @@
       "b": 7,
       "answer": "371",
       "check": "371 ÷ 7 = 53",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 5 × 7 cell, where should the tens and units of the product go?",
+      "method_note": "The 5 × 7 cell is 35: 3 in the tens half and 5 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "551",
+      "error_note": "Check the 5 × 7 cell. Its product is 35; reversing its halves changes the place value. Put 3 above and 5 below the diagonal."
     },
     {
       "id": "maths:M01-S02-C2-Q1",
@@ -132,7 +164,11 @@
       "b": 15,
       "answer": "360",
       "check": "360 ÷ 15 = 24",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 4 × 5 cell, where should the tens and units of the product go?",
+      "method_note": "The 4 × 5 cell is 20: 2 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "342",
+      "error_note": "Check the 4 × 5 cell. Its product is 20; reversing its halves changes the place value. Put 2 above and 0 below the diagonal."
     },
     {
       "id": "maths:M01-S02-C3-Q1",
@@ -145,7 +181,11 @@
       "b": 326,
       "answer": "405870",
       "check": "405870 ÷ 326 = 1245",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 1,245 × 326, check the hundreds diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The hundreds diagonal totals 5 + 8 + 1 + 2 + 2 = 18. Write 8 and carry 1 into the thousands diagonal.",
+      "wrong": "404870",
+      "error_note": "Check the carry from the hundreds diagonal: 18 means write 8 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S03-C1-Q1",
@@ -158,7 +198,11 @@
       "b": 5,
       "answer": "420",
       "check": "420 ÷ 5 = 84",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 8 × 5 cell, where should the tens and units of the product go?",
+      "method_note": "The 8 × 5 cell is 40: 4 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "60",
+      "error_note": "Check the 8 × 5 cell. Its product is 40; reversing its halves changes the place value. Put 4 above and 0 below the diagonal."
     },
     {
       "id": "maths:M01-S03-C2-Q1",
@@ -171,7 +215,11 @@
       "b": 28,
       "answer": "1764",
       "check": "1764 ÷ 28 = 63",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 63 × 28, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 6 + 8 + 2 = 16. Write 6 and carry 1 into the hundreds diagonal.",
+      "wrong": "1664",
+      "error_note": "Check the carry from the tens diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S03-C3-Q1",
@@ -184,7 +232,11 @@
       "b": 2045,
       "answer": "6425390",
       "check": "6425390 ÷ 2045 = 3142",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 3,142 × 2045, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The hundreds diagonal totals 0 + 6 + 0 + 5 + 2 = 13. Write 3 and carry 1 into the thousands diagonal.",
+      "wrong": "6424390",
+      "error_note": "Check the carry from the hundreds diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S04-C1-Q1",
@@ -197,7 +249,11 @@
       "b": 4,
       "answer": "128",
       "check": "128 ÷ 4 = 32",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 3 × 4 cell, where should the tens and units of the product go?",
+      "method_note": "The 3 × 4 cell is 12: 1 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "218",
+      "error_note": "Check the 3 × 4 cell. Its product is 12; reversing its halves changes the place value. Put 1 above and 2 below the diagonal."
     },
     {
       "id": "maths:M01-S04-C2-Q1",
@@ -210,7 +266,11 @@
       "b": 13,
       "answer": "546",
       "check": "546 ÷ 13 = 42",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 4 × 3 cell, where should the tens and units of the product go?",
+      "method_note": "The 4 × 3 cell is 12: 1 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "636",
+      "error_note": "Check the 4 × 3 cell. Its product is 12; reversing its halves changes the place value. Put 1 above and 2 below the diagonal."
     },
     {
       "id": "maths:M01-S04-C3-Q1",
@@ -223,7 +283,11 @@
       "b": 15,
       "answer": "5130",
       "check": "5130 ÷ 15 = 342",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 342 × 15, check the hundreds diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The hundreds diagonal totals 4 + 0 + 5 + 2 = 11. Write 1 and carry 1 into the thousands diagonal.",
+      "wrong": "4130",
+      "error_note": "Check the carry from the hundreds diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S04-C1-Q2",
@@ -236,7 +300,11 @@
       "b": 8,
       "answer": "488",
       "check": "488 ÷ 8 = 61",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 6 × 8 cell, where should the tens and units of the product go?",
+      "method_note": "The 6 × 8 cell is 48: 4 in the tens half and 8 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "848",
+      "error_note": "Check the 6 × 8 cell. Its product is 48; reversing its halves changes the place value. Put 4 above and 8 below the diagonal."
     },
     {
       "id": "maths:M01-S04-C2-Q2",
@@ -249,7 +317,11 @@
       "b": 34,
       "answer": "884",
       "check": "884 ÷ 34 = 26",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 26 × 34, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 8 + 8 + 2 = 18. Write 8 and carry 1 into the hundreds diagonal.",
+      "wrong": "784",
+      "error_note": "Check the carry from the tens diagonal: 18 means write 8 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S04-C3-Q2",
@@ -262,7 +334,11 @@
       "b": 24,
       "answer": "14688",
       "check": "14688 ÷ 24 = 612",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 6 × 4 cell, where should the tens and units of the product go?",
+      "method_note": "The 6 × 4 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "16488",
+      "error_note": "Check the 6 × 4 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
     },
     {
       "id": "maths:M01-S04-C1-Q3",
@@ -275,7 +351,11 @@
       "b": 3,
       "answer": "135",
       "check": "135 ÷ 3 = 45",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 5 × 3 cell, where should the tens and units of the product go?",
+      "method_note": "The 5 × 3 cell is 15: 1 in the tens half and 5 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "171",
+      "error_note": "Check the 5 × 3 cell. Its product is 15; reversing its halves changes the place value. Put 1 above and 5 below the diagonal."
     },
     {
       "id": "maths:M01-S04-C2-Q3",
@@ -283,12 +363,16 @@
       "topic": "M01",
       "type": "plain",
       "level": 1,
-      "q": "51 × 22",
-      "a": 51,
-      "b": 22,
-      "answer": "1122",
-      "check": "1122 ÷ 22 = 51",
-      "method": "lattice"
+      "q": "57 × 26",
+      "a": 57,
+      "b": 26,
+      "answer": "1482",
+      "check": "1482 ÷ 26 = 57",
+      "method": "lattice",
+      "hint": "For the 7 × 6 cell, where should the tens and units of the product go?",
+      "method_note": "The 7 × 6 cell is 42: 4 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "1464",
+      "error_note": "Check the 7 × 6 cell. Its product is 42; reversing its halves changes the place value. Put 4 above and 2 below the diagonal."
     },
     {
       "id": "maths:M01-S04-C3-Q3",
@@ -296,12 +380,16 @@
       "topic": "M01",
       "type": "plain",
       "level": 2,
-      "q": "1,234 × 125",
-      "a": 1234,
-      "b": 125,
-      "answer": "154250",
-      "check": "154250 ÷ 125 = 1234",
-      "method": "lattice"
+      "q": "4,876 × 357",
+      "a": 4876,
+      "b": 357,
+      "answer": "1740732",
+      "check": "1740732 ÷ 357 = 4876",
+      "method": "lattice",
+      "hint": "In 4,876 × 357, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 0 + 9 + 4 = 13. Write 3 and carry 1 into the hundreds diagonal.",
+      "wrong": "1740632",
+      "error_note": "Check the carry from the tens diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S04-C1-Q4",
@@ -314,7 +402,11 @@
       "b": 6,
       "answer": "432",
       "check": "432 ÷ 6 = 72",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 7 × 6 cell, where should the tens and units of the product go?",
+      "method_note": "The 7 × 6 cell is 42: 4 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "252",
+      "error_note": "Check the 7 × 6 cell. Its product is 42; reversing its halves changes the place value. Put 4 above and 2 below the diagonal."
     },
     {
       "id": "maths:M01-S04-C2-Q4",
@@ -327,7 +419,11 @@
       "b": 41,
       "answer": "2583",
       "check": "2583 ÷ 41 = 63",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 6 × 4 cell, where should the tens and units of the product go?",
+      "method_note": "The 6 × 4 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "4383",
+      "error_note": "Check the 6 × 4 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
     },
     {
       "id": "maths:M01-S04-C3-Q4",
@@ -335,12 +431,16 @@
       "topic": "M01",
       "type": "plain",
       "level": 2,
-      "q": "2,105 × 304",
-      "a": 2105,
-      "b": 304,
-      "answer": "639920",
-      "check": "639920 ÷ 304 = 2105",
-      "method": "lattice"
+      "q": "6,785 × 347",
+      "a": 6785,
+      "b": 347,
+      "answer": "2354395",
+      "check": "2354395 ÷ 347 = 6785",
+      "method": "lattice",
+      "hint": "In 6,785 × 347, check the hundreds diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The hundreds diagonal totals 5 + 2 + 2 + 9 + 5 = 23. Write 3 and carry 2 into the thousands diagonal.",
+      "wrong": "2352395",
+      "error_note": "Check the carry from the hundreds diagonal: 23 means write 3 and add 2 to the next diagonal. Leaving that carry out loses 2,000."
     },
     {
       "id": "maths:M01-S04-C1-Q5",
@@ -353,7 +453,11 @@
       "b": 7,
       "answer": "581",
       "check": "581 ÷ 7 = 83",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 8 × 7 cell, where should the tens and units of the product go?",
+      "method_note": "The 8 × 7 cell is 56: 5 in the tens half and 6 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "671",
+      "error_note": "Check the 8 × 7 cell. Its product is 56; reversing its halves changes the place value. Put 5 above and 6 below the diagonal."
     },
     {
       "id": "maths:M01-S04-C2-Q5",
@@ -366,7 +470,11 @@
       "b": 16,
       "answer": "1200",
       "check": "1200 ÷ 16 = 75",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 75 × 16, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 5 + 2 + 3 = 10. Write 0 and carry 1 into the hundreds diagonal.",
+      "wrong": "1100",
+      "error_note": "Check the carry from the tens diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S04-C3-Q5",
@@ -379,7 +487,11 @@
       "b": 1024,
       "answer": "4419584",
       "check": "4419584 ÷ 1024 = 4316",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 4,316 × 1,024, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The thousands diagonal totals 6 + 0 + 0 + 6 + 0 + 6 + 1 = 19. Write 9 and carry 1 into the ten-thousands diagonal.",
+      "wrong": "4409584",
+      "error_note": "Check the carry from the thousands diagonal: 19 means write 9 and add 1 to the next diagonal. Leaving that carry out loses 10,000."
     },
     {
       "id": "maths:M01-S04-C1-Q6",
@@ -392,7 +504,11 @@
       "b": 9,
       "answer": "855",
       "check": "855 ÷ 9 = 95",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 9 × 9 cell, where should the tens and units of the product go?",
+      "method_note": "The 9 × 9 cell is 81: 8 in the tens half and 1 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "225",
+      "error_note": "Check the 9 × 9 cell. Its product is 81; reversing its halves changes the place value. Put 8 above and 1 below the diagonal."
     },
     {
       "id": "maths:M01-S04-C2-Q6",
@@ -405,7 +521,11 @@
       "b": 57,
       "answer": "4674",
       "check": "4674 ÷ 57 = 82",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 8 × 7 cell, where should the tens and units of the product go?",
+      "method_note": "The 8 × 7 cell is 56: 5 in the tens half and 6 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "4764",
+      "error_note": "Check the 8 × 7 cell. Its product is 56; reversing its halves changes the place value. Put 5 above and 6 below the diagonal."
     },
     {
       "id": "maths:M01-S04-C3-Q6",
@@ -418,7 +538,11 @@
       "b": 2316,
       "answer": "16279164",
       "check": "16279164 ÷ 2316 = 7029",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 7,029 × 2,316, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The tens diagonal totals 9 + 2 + 5 = 16. Write 6 and carry 1 into the hundreds diagonal.",
+      "wrong": "16279064",
+      "error_note": "Check the carry from the tens diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S05-C1-Q1",
@@ -431,7 +555,11 @@
       "b": 6,
       "answer": "144",
       "check": "144 ÷ 6 = 24",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 4 × 6 cell, where should the tens and units of the product go?",
+      "method_note": "The 4 × 6 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "162",
+      "error_note": "Check the 4 × 6 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
     },
     {
       "id": "maths:M01-S05-C2-Q1",
@@ -444,7 +572,11 @@
       "b": 14,
       "answer": "322",
       "check": "322 ÷ 14 = 23",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 23 × 14, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 3 + 8 + 1 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+      "wrong": "222",
+      "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S05-C3-Q1",
@@ -457,7 +589,11 @@
       "b": 23,
       "answer": "9775",
       "check": "9775 ÷ 23 = 425",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 5 × 3 cell, where should the tens and units of the product go?",
+      "method_note": "The 5 × 3 cell is 15: 1 in the tens half and 5 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "9811",
+      "error_note": "Check the 5 × 3 cell. Its product is 15; reversing its halves changes the place value. Put 1 above and 5 below the diagonal."
     },
     {
       "id": "maths:M01-S05-C1-Q2",
@@ -470,7 +606,11 @@
       "b": 4,
       "answer": "228",
       "check": "228 ÷ 4 = 57",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 7 × 4 cell, where should the tens and units of the product go?",
+      "method_note": "The 7 × 4 cell is 28: 2 in the tens half and 8 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "282",
+      "error_note": "Check the 7 × 4 cell. Its product is 28; reversing its halves changes the place value. Put 2 above and 8 below the diagonal."
     },
     {
       "id": "maths:M01-S05-C2-Q2",
@@ -483,7 +623,11 @@
       "b": 25,
       "answer": "1150",
       "check": "1150 ÷ 25 = 46",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 46 × 25, check the hundreds diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The hundreds diagonal totals 8 + 1 + 2 = 11. Write 1 and carry 1 into the thousands diagonal.",
+      "wrong": "150",
+      "error_note": "Check the carry from the hundreds diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S05-C3-Q2",
@@ -496,7 +640,11 @@
       "b": 46,
       "answer": "32568",
       "check": "32568 ÷ 46 = 708",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 708 × 46, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The thousands diagonal totals 8 + 0 + 4 = 12. Write 2 and carry 1 into the ten-thousands diagonal.",
+      "wrong": "22568",
+      "error_note": "Check the carry from the thousands diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 10,000."
     },
     {
       "id": "maths:M01-S05-C1-Q3",
@@ -509,7 +657,11 @@
       "b": 3,
       "answer": "204",
       "check": "204 ÷ 3 = 68",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 8 × 3 cell, where should the tens and units of the product go?",
+      "method_note": "The tens diagonal totals 8 + 2 = 10. Write 0 and carry 1 into the hundreds diagonal.",
+      "wrong": "104",
+      "error_note": "Check the carry from the tens diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S05-C2-Q3",
@@ -522,7 +674,11 @@
       "b": 42,
       "answer": "1554",
       "check": "1554 ÷ 42 = 37",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 37 × 42, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 8 + 6 + 1 = 15. Write 5 and carry 1 into the hundreds diagonal.",
+      "wrong": "1454",
+      "error_note": "Check the carry from the tens diagonal: 15 means write 5 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S05-C3-Q3",
@@ -535,7 +691,11 @@
       "b": 243,
       "answer": "322218",
       "check": "322218 ÷ 243 = 1326",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 1,326 × 243, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 4 + 6 + 1 = 11. Write 1 and carry 1 into the hundreds diagonal.",
+      "wrong": "322118",
+      "error_note": "Check the carry from the tens diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S05-C1-Q4",
@@ -548,7 +708,11 @@
       "b": 7,
       "answer": "273",
       "check": "273 ÷ 7 = 39",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 9 × 7 cell, where should the tens and units of the product go?",
+      "method_note": "The 9 × 7 cell is 63: 6 in the tens half and 3 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "246",
+      "error_note": "Check the 9 × 7 cell. Its product is 63; reversing its halves changes the place value. Put 6 above and 3 below the diagonal."
     },
     {
       "id": "maths:M01-S05-C2-Q4",
@@ -561,7 +725,11 @@
       "b": 36,
       "answer": "2088",
       "check": "2088 ÷ 36 = 58",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 58 × 36, check the hundreds diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The hundreds diagonal totals 5 + 2 + 3 = 10. Write 0 and carry 1 into the thousands diagonal.",
+      "wrong": "1088",
+      "error_note": "Check the carry from the hundreds diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S05-C3-Q4",
@@ -574,7 +742,11 @@
       "b": 512,
       "answer": "1560576",
       "check": "1560576 ÷ 512 = 3048",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 3,048 × 512, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The tens diagonal totals 8 + 8 + 1 = 17. Write 7 and carry 1 into the hundreds diagonal.",
+      "wrong": "1560476",
+      "error_note": "Check the carry from the tens diagonal: 17 means write 7 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S05-C1-Q5",
@@ -587,7 +759,11 @@
       "b": 5,
       "answer": "430",
       "check": "430 ÷ 5 = 86",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 8 × 5 cell, where should the tens and units of the product go?",
+      "method_note": "The 8 × 5 cell is 40: 4 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "70",
+      "error_note": "Check the 8 × 5 cell. Its product is 40; reversing its halves changes the place value. Put 4 above and 0 below the diagonal."
     },
     {
       "id": "maths:M01-S05-C2-Q5",
@@ -600,7 +776,11 @@
       "b": 27,
       "answer": "1728",
       "check": "1728 ÷ 27 = 64",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 64 × 27, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 8 + 2 + 2 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+      "wrong": "1628",
+      "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S05-C3-Q5",
@@ -613,7 +793,11 @@
       "b": 1204,
       "answer": "6750828",
       "check": "6750828 ÷ 1204 = 5607",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 5,607 × 1,204, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The thousands diagonal totals 7 + 0 + 1 + 0 + 0 + 0 + 2 = 10. Write 0 and carry 1 into the ten-thousands diagonal.",
+      "wrong": "6740828",
+      "error_note": "Check the carry from the thousands diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 10,000."
     },
     {
       "id": "maths:M01-S05-C1-Q6",
@@ -626,7 +810,11 @@
       "b": 8,
       "answer": "592",
       "check": "592 ÷ 8 = 74",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 7 × 8 cell, where should the tens and units of the product go?",
+      "method_note": "The 7 × 8 cell is 56: 5 in the tens half and 6 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "682",
+      "error_note": "Check the 7 × 8 cell. Its product is 56; reversing its halves changes the place value. Put 5 above and 6 below the diagonal."
     },
     {
       "id": "maths:M01-S05-C2-Q6",
@@ -639,7 +827,11 @@
       "b": 53,
       "answer": "4187",
       "check": "4187 ÷ 53 = 79",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 79 × 53, check the hundreds diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The hundreds diagonal totals 5 + 4 + 2 = 11. Write 1 and carry 1 into the thousands diagonal.",
+      "wrong": "3187",
+      "error_note": "Check the carry from the hundreds diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S05-C3-Q6",
@@ -652,7 +844,11 @@
       "b": 3067,
       "answer": "25192338",
       "check": "25192338 ÷ 3067 = 8214",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 8,214 × 3,067, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The tens diagonal totals 4 + 7 + 2 = 13. Write 3 and carry 1 into the hundreds diagonal.",
+      "wrong": "25192238",
+      "error_note": "Check the carry from the tens diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S06-C1-Q1",
@@ -665,7 +861,11 @@
       "b": 7,
       "answer": "322",
       "check": "322 ÷ 7 = 46",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 6 × 7 cell, where should the tens and units of the product go?",
+      "method_note": "The tens diagonal totals 8 + 4 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+      "wrong": "222",
+      "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S06-C2-Q1",
@@ -678,7 +878,11 @@
       "b": 24,
       "answer": "840",
       "check": "840 ÷ 24 = 35",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 5 × 4 cell, where should the tens and units of the product go?",
+      "method_note": "The 5 × 4 cell is 20: 2 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "822",
+      "error_note": "Check the 5 × 4 cell. Its product is 20; reversing its halves changes the place value. Put 2 above and 0 below the diagonal."
     },
     {
       "id": "maths:M01-S06-C3-Q1",
@@ -691,7 +895,11 @@
       "b": 34,
       "answer": "18224",
       "check": "18224 ÷ 34 = 536",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 536 × 34, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 8 + 2 + 2 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+      "wrong": "18124",
+      "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S06-C1-Q2",
@@ -704,7 +912,11 @@
       "b": 8,
       "answer": "232",
       "check": "232 ÷ 8 = 29",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 9 × 8 cell, where should the tens and units of the product go?",
+      "method_note": "The tens diagonal totals 6 + 7 = 13. Write 3 and carry 1 into the hundreds diagonal.",
+      "wrong": "132",
+      "error_note": "Check the carry from the tens diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S06-C2-Q2",
@@ -717,7 +929,11 @@
       "b": 17,
       "answer": "1054",
       "check": "1054 ÷ 17 = 62",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 62 × 17, check the hundreds diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The hundreds diagonal totals 6 + 0 + 4 = 10. Write 0 and carry 1 into the thousands diagonal.",
+      "wrong": "54",
+      "error_note": "Check the carry from the hundreds diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S06-C3-Q2",
@@ -730,7 +946,11 @@
       "b": 27,
       "answer": "21843",
       "check": "21843 ÷ 27 = 809",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 809 × 27, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The tens diagonal totals 8 + 0 + 6 = 14. Write 4 and carry 1 into the hundreds diagonal.",
+      "wrong": "21743",
+      "error_note": "Check the carry from the tens diagonal: 14 means write 4 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S06-C1-Q3",
@@ -743,7 +963,11 @@
       "b": 4,
       "answer": "260",
       "check": "260 ÷ 4 = 65",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 6 × 4 cell, where should the tens and units of the product go?",
+      "method_note": "The 6 × 4 cell is 24: 2 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "440",
+      "error_note": "Check the 6 × 4 cell. Its product is 24; reversing its halves changes the place value. Put 2 above and 4 below the diagonal."
     },
     {
       "id": "maths:M01-S06-C2-Q3",
@@ -756,7 +980,11 @@
       "b": 39,
       "answer": "1872",
       "check": "1872 ÷ 39 = 48",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 48 × 39, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 4 + 6 + 7 = 17. Write 7 and carry 1 into the hundreds diagonal.",
+      "wrong": "1772",
+      "error_note": "Check the carry from the tens diagonal: 17 means write 7 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S06-C3-Q3",
@@ -769,7 +997,11 @@
       "b": 368,
       "answer": "753296",
       "check": "753296 ÷ 368 = 2047",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 2,047 × 368, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The hundreds diagonal totals 1 + 4 + 4 + 0 + 3 = 12. Write 2 and carry 1 into the thousands diagonal.",
+      "wrong": "752296",
+      "error_note": "Check the carry from the hundreds diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S06-C1-Q4",
@@ -782,7 +1014,11 @@
       "b": 6,
       "answer": "468",
       "check": "468 ÷ 6 = 78",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 8 × 6 cell, where should the tens and units of the product go?",
+      "method_note": "The 8 × 6 cell is 48: 4 in the tens half and 8 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "504",
+      "error_note": "Check the 8 × 6 cell. Its product is 48; reversing its halves changes the place value. Put 4 above and 8 below the diagonal."
     },
     {
       "id": "maths:M01-S06-C2-Q4",
@@ -795,7 +1031,11 @@
       "b": 28,
       "answer": "2128",
       "check": "2128 ÷ 28 = 76",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 76 × 28, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 2 + 6 + 4 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+      "wrong": "2028",
+      "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S06-C3-Q4",
@@ -808,7 +1048,11 @@
       "b": 427,
       "answer": "1775466",
       "check": "1775466 ÷ 427 = 4158",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 4,158 × 427, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 6 + 5 + 5 = 16. Write 6 and carry 1 into the hundreds diagonal.",
+      "wrong": "1775366",
+      "error_note": "Check the carry from the tens diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S06-C1-Q5",
@@ -821,7 +1065,11 @@
       "b": 5,
       "answer": "465",
       "check": "465 ÷ 5 = 93",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 9 × 5 cell, where should the tens and units of the product go?",
+      "method_note": "The 9 × 5 cell is 45: 4 in the tens half and 5 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "555",
+      "error_note": "Check the 9 × 5 cell. Its product is 45; reversing its halves changes the place value. Put 4 above and 5 below the diagonal."
     },
     {
       "id": "maths:M01-S06-C2-Q5",
@@ -834,7 +1082,11 @@
       "b": 46,
       "answer": "2484",
       "check": "2484 ÷ 46 = 54",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 5 × 6 cell, where should the tens and units of the product go?",
+      "method_note": "The 5 × 6 cell is 30: 3 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "2214",
+      "error_note": "Check the 5 × 6 cell. Its product is 30; reversing its halves changes the place value. Put 3 above and 0 below the diagonal."
     },
     {
       "id": "maths:M01-S06-C3-Q5",
@@ -847,7 +1099,11 @@
       "b": 2058,
       "answer": "12983922",
       "check": "12983922 ÷ 2058 = 6309",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 6,309 × 2,058, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The tens diagonal totals 5 + 0 + 7 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+      "wrong": "12983822",
+      "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S06-C1-Q6",
@@ -860,7 +1116,11 @@
       "b": 9,
       "answer": "783",
       "check": "783 ÷ 9 = 87",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 8 × 9 cell, where should the tens and units of the product go?",
+      "method_note": "The 8 × 9 cell is 72: 7 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "333",
+      "error_note": "Check the 8 × 9 cell. Its product is 72; reversing its halves changes the place value. Put 7 above and 2 below the diagonal."
     },
     {
       "id": "maths:M01-S06-C2-Q6",
@@ -873,7 +1133,11 @@
       "b": 65,
       "answer": "5785",
       "check": "5785 ÷ 65 = 89",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 89 × 65, check the hundreds diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The hundreds diagonal totals 8 + 5 + 4 = 17. Write 7 and carry 1 into the thousands diagonal.",
+      "wrong": "4785",
+      "error_note": "Check the carry from the hundreds diagonal: 17 means write 7 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S06-C3-Q6",
@@ -886,7 +1150,11 @@
       "b": 4163,
       "answer": "38607662",
       "check": "38607662 ÷ 4163 = 9274",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 9,274 × 4,163, check the hundreds diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The hundreds diagonal totals 4 + 2 + 2 + 6 + 2 = 16. Write 6 and carry 1 into the thousands diagonal.",
+      "wrong": "38606662",
+      "error_note": "Check the carry from the hundreds diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S07-C1-Q1",
@@ -899,7 +1167,11 @@
       "b": 5,
       "answer": "190",
       "check": "190 ÷ 5 = 38",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 8 × 5 cell, where should the tens and units of the product go?",
+      "method_note": "The 8 × 5 cell is 40: 4 in the tens half and 0 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "154",
+      "error_note": "Check the 8 × 5 cell. Its product is 40; reversing its halves changes the place value. Put 4 above and 0 below the diagonal."
     },
     {
       "id": "maths:M01-S07-C2-Q1",
@@ -912,7 +1184,11 @@
       "b": 35,
       "answer": "945",
       "check": "945 ÷ 35 = 27",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 7 × 5 cell, where should the tens and units of the product go?",
+      "method_note": "The 7 × 5 cell is 35: 3 in the tens half and 5 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "963",
+      "error_note": "Check the 7 × 5 cell. Its product is 35; reversing its halves changes the place value. Put 3 above and 5 below the diagonal."
     },
     {
       "id": "maths:M01-S07-C3-Q1",
@@ -925,7 +1201,11 @@
       "b": 45,
       "answer": "29115",
       "check": "29115 ÷ 45 = 647",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 647 × 45, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 8 + 0 + 3 = 11. Write 1 and carry 1 into the hundreds diagonal.",
+      "wrong": "29015",
+      "error_note": "Check the carry from the tens diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S07-C1-Q2",
@@ -938,7 +1218,11 @@
       "b": 9,
       "answer": "504",
       "check": "504 ÷ 9 = 56",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 6 × 9 cell, where should the tens and units of the product go?",
+      "method_note": "The tens diagonal totals 5 + 5 = 10. Write 0 and carry 1 into the hundreds diagonal.",
+      "wrong": "404",
+      "error_note": "Check the carry from the tens diagonal: 10 means write 0 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S07-C2-Q2",
@@ -951,7 +1235,11 @@
       "b": 26,
       "answer": "1118",
       "check": "1118 ÷ 26 = 43",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 43 × 26, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 6 + 4 + 1 = 11. Write 1 and carry 1 into the hundreds diagonal.",
+      "wrong": "1018",
+      "error_note": "Check the carry from the tens diagonal: 11 means write 1 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S07-C3-Q2",
@@ -964,7 +1252,11 @@
       "b": 38,
       "answer": "34276",
       "check": "34276 ÷ 38 = 902",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 902 × 38, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The thousands diagonal totals 7 + 0 + 7 = 14. Write 4 and carry 1 into the ten-thousands diagonal.",
+      "wrong": "24276",
+      "error_note": "Check the carry from the thousands diagonal: 14 means write 4 and add 1 to the next diagonal. Leaving that carry out loses 10,000."
     },
     {
       "id": "maths:M01-S07-C1-Q3",
@@ -977,7 +1269,11 @@
       "b": 8,
       "answer": "536",
       "check": "536 ÷ 8 = 67",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 7 × 8 cell, where should the tens and units of the product go?",
+      "method_note": "The tens diagonal totals 8 + 5 = 13. Write 3 and carry 1 into the hundreds diagonal.",
+      "wrong": "436",
+      "error_note": "Check the carry from the tens diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S07-C2-Q3",
@@ -990,7 +1286,11 @@
       "b": 48,
       "answer": "3312",
       "check": "3312 ÷ 48 = 69",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 69 × 48, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 6 + 8 + 7 = 21. Write 1 and carry 2 into the hundreds diagonal.",
+      "wrong": "3112",
+      "error_note": "Check the carry from the tens diagonal: 21 means write 1 and add 2 to the next diagonal. Leaving that carry out loses 200."
     },
     {
       "id": "maths:M01-S07-C3-Q3",
@@ -1003,7 +1303,11 @@
       "b": 489,
       "answer": "1543284",
       "check": "1543284 ÷ 489 = 3156",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 3,156 × 489, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 8 + 5 + 5 = 18. Write 8 and carry 1 into the hundreds diagonal.",
+      "wrong": "1543184",
+      "error_note": "Check the carry from the tens diagonal: 18 means write 8 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S07-C1-Q4",
@@ -1016,7 +1320,11 @@
       "b": 6,
       "answer": "294",
       "check": "294 ÷ 6 = 49",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 9 × 6 cell, where should the tens and units of the product go?",
+      "method_note": "The 9 × 6 cell is 54: 5 in the tens half and 4 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "285",
+      "error_note": "Check the 9 × 6 cell. Its product is 54; reversing its halves changes the place value. Put 5 above and 4 below the diagonal."
     },
     {
       "id": "maths:M01-S07-C2-Q4",
@@ -1029,7 +1337,11 @@
       "b": 37,
       "answer": "3145",
       "check": "3145 ÷ 37 = 85",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 85 × 37, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 5 + 6 + 3 = 14. Write 4 and carry 1 into the hundreds diagonal.",
+      "wrong": "3045",
+      "error_note": "Check the carry from the tens diagonal: 14 means write 4 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S07-C3-Q4",
@@ -1042,7 +1354,11 @@
       "b": 596,
       "answer": "2996092",
       "check": "2996092 ÷ 596 = 5027",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 5,027 × 596, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The hundreds diagonal totals 5 + 8 + 6 + 0 + 1 = 20. Write 0 and carry 2 into the thousands diagonal.",
+      "wrong": "2994092",
+      "error_note": "Check the carry from the hundreds diagonal: 20 means write 0 and add 2 to the next diagonal. Leaving that carry out loses 2,000."
     },
     {
       "id": "maths:M01-S07-C1-Q5",
@@ -1055,7 +1371,11 @@
       "b": 4,
       "answer": "328",
       "check": "328 ÷ 4 = 82",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 8 × 4 cell, where should the tens and units of the product go?",
+      "method_note": "The 8 × 4 cell is 32: 3 in the tens half and 2 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "238",
+      "error_note": "Check the 8 × 4 cell. Its product is 32; reversing its halves changes the place value. Put 3 above and 2 below the diagonal."
     },
     {
       "id": "maths:M01-S07-C2-Q5",
@@ -1068,7 +1388,11 @@
       "b": 59,
       "answer": "4366",
       "check": "4366 ÷ 59 = 74",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 74 × 59, check the hundreds diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The hundreds diagonal totals 5 + 2 + 6 = 13. Write 3 and carry 1 into the thousands diagonal.",
+      "wrong": "3366",
+      "error_note": "Check the carry from the hundreds diagonal: 13 means write 3 and add 1 to the next diagonal. Leaving that carry out loses 1,000."
     },
     {
       "id": "maths:M01-S07-C3-Q5",
@@ -1081,7 +1405,11 @@
       "b": 3264,
       "answer": "24212352",
       "check": "24212352 ÷ 3264 = 7418",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 7,418 × 3,264, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 8 + 4 + 3 = 15. Write 5 and carry 1 into the hundreds diagonal.",
+      "wrong": "24212252",
+      "error_note": "Check the carry from the tens diagonal: 15 means write 5 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S07-C1-Q6",
@@ -1094,7 +1422,11 @@
       "b": 7,
       "answer": "679",
       "check": "679 ÷ 7 = 97",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "For the 9 × 7 cell, where should the tens and units of the product go?",
+      "method_note": "The 9 × 7 cell is 63: 6 in the tens half and 3 in the units half. Read the final digits down the left edge and along the bottom.",
+      "wrong": "409",
+      "error_note": "Check the 9 × 7 cell. Its product is 63; reversing its halves changes the place value. Put 6 above and 3 below the diagonal."
     },
     {
       "id": "maths:M01-S07-C2-Q6",
@@ -1107,7 +1439,11 @@
       "b": 68,
       "answer": "6528",
       "check": "6528 ÷ 68 = 96",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In 96 × 68, check the tens diagonal. What should you do if its total is greater than 9?",
+      "method_note": "The tens diagonal totals 6 + 2 + 4 = 12. Write 2 and carry 1 into the hundreds diagonal.",
+      "wrong": "6428",
+      "error_note": "Check the carry from the tens diagonal: 12 means write 2 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-S07-C3-Q6",
@@ -1120,7 +1456,11 @@
       "b": 5076,
       "answer": "43851564",
       "check": "43851564 ÷ 5076 = 8639",
-      "method": "lattice"
+      "method": "lattice",
+      "hint": "In the lattice for 8,639 × 5,076, what belongs in both halves of a cell multiplied by 0?",
+      "method_note": "The tens diagonal totals 3 + 8 + 5 = 16. Write 6 and carry 1 into the hundreds diagonal.",
+      "wrong": "43851464",
+      "error_note": "Check the carry from the tens diagonal: 16 means write 6 and add 1 to the next diagonal. Leaving that carry out loses 100."
     },
     {
       "id": "maths:M01-SE-C1-Q1",
@@ -1138,21 +1478,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "The top-left cell should be 4 × 6 = 24, not 14. Correct answer: 258."
+          "text": "Change the 4 × 6 cell to 2 tens and 4 units."
         },
         {
           "id": "1",
-          "text": "Include the carry from the previous diagonal in the next total. Correct answer: 623."
+          "text": "Change the 4 × 6 cell to 4 tens and 2 units."
         },
         {
           "id": "2",
-          "text": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 532."
+          "text": "Keep the 4 × 6 cell and reverse the final answer digits."
         }
       ],
       "correctionId": "0",
       "correction": "The top-left cell should be 4 × 6 = 24, not 14. Correct answer: 258.",
       "wrong": "158",
-      "error_note": "The top-left cell should be 4 × 6 = 24, not 14. Correct answer: 258."
+      "error_note": "The top-left cell should be 4 × 6 = 24, not 14. Correct answer: 258.",
+      "hint": "Check the 4 × 6 cell. Do its two halves represent that product?"
     },
     {
       "id": "maths:M01-SE-C1-Q2",
@@ -1170,21 +1511,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "The top-left cell should be 4 × 6 = 24, not 14. Correct answer: 258."
+          "text": "Write the carry as an extra answer digit."
         },
         {
           "id": "1",
-          "text": "Include the carry from the previous diagonal in the next total. Correct answer: 623."
+          "text": "Add the carry from the tens diagonal into the hundreds diagonal."
         },
         {
           "id": "2",
-          "text": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 532."
+          "text": "Add the carry back into the units diagonal."
         }
       ],
       "correctionId": "1",
       "correction": "Include the carry from the previous diagonal in the next total. Correct answer: 623.",
       "wrong": "523",
-      "error_note": "Include the carry from the previous diagonal in the next total. Correct answer: 623."
+      "error_note": "Include the carry from the previous diagonal in the next total. Correct answer: 623.",
+      "hint": "The middle diagonal totals more than 9. Where should its carry go?"
     },
     {
       "id": "maths:M01-SE-C1-Q3",
@@ -1202,21 +1544,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "The top-left cell should be 4 × 6 = 24, not 14. Correct answer: 258."
+          "text": "Keep the small carry as a separate answer digit."
         },
         {
           "id": "1",
-          "text": "Include the carry from the previous diagonal in the next total. Correct answer: 623."
+          "text": "Ignore the small carry after writing it."
         },
         {
           "id": "2",
-          "text": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 532."
+          "text": "Add the small carry into the next diagonal once."
         }
       ],
       "correctionId": "2",
       "correction": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 532.",
       "wrong": "5132",
-      "error_note": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 532."
+      "error_note": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 532.",
+      "hint": "Compare the small carry digit with the digits of the final answer. Do they have the same job?"
     },
     {
       "id": "maths:M01-SE-C2-Q1",
@@ -1234,21 +1577,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 544."
+          "text": "Put the 2 from the 4 × 6 cell into the tens diagonal."
         },
         {
           "id": "1",
-          "text": "Include the carry from the previous diagonal in the next total. Correct answer: 1,222."
+          "text": "Put both digits of the 4 × 6 cell into the units diagonal."
         },
         {
           "id": "2",
-          "text": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 1,632."
+          "text": "Put the 4 from the 4 × 6 cell into the tens diagonal."
         }
       ],
       "correctionId": "0",
       "correction": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 544.",
       "wrong": "526",
-      "error_note": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 544."
+      "error_note": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 544.",
+      "hint": "In the 4 × 6 cell, which diagonal contains the tens part of the product?"
     },
     {
       "id": "maths:M01-SE-C2-Q2",
@@ -1266,21 +1610,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 544."
+          "text": "Add the carry to the units diagonal instead."
         },
         {
           "id": "1",
-          "text": "Include the carry from the previous diagonal in the next total. Correct answer: 1,222."
+          "text": "Add the carry from the tens diagonal into the hundreds diagonal."
         },
         {
           "id": "2",
-          "text": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 1,632."
+          "text": "Write the carry as an extra digit between the diagonal totals."
         }
       ],
       "correctionId": "1",
       "correction": "Include the carry from the previous diagonal in the next total. Correct answer: 1,222.",
       "wrong": "1122",
-      "error_note": "Include the carry from the previous diagonal in the next total. Correct answer: 1,222."
+      "error_note": "Include the carry from the previous diagonal in the next total. Correct answer: 1,222.",
+      "hint": "Follow the carry out of the tens diagonal. Was it included in the next total?"
     },
     {
       "id": "maths:M01-SE-C2-Q3",
@@ -1298,21 +1643,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 544."
+          "text": "Copy the carry into the answer as a separate digit."
         },
         {
           "id": "1",
-          "text": "Include the carry from the previous diagonal in the next total. Correct answer: 1,222."
+          "text": "Remove the carry without using it in another total."
         },
         {
           "id": "2",
-          "text": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 1,632."
+          "text": "Use the carry in the next diagonal total, without adding an extra answer digit."
         }
       ],
       "correctionId": "2",
       "correction": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 1,632.",
       "wrong": "16132",
-      "error_note": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 1,632."
+      "error_note": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 1,632.",
+      "hint": "Is the small carry part of the written answer, or part of the next diagonal total?"
     },
     {
       "id": "maths:M01-SE-C3-Q1",
@@ -1330,21 +1676,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 13,104."
+          "text": "Move the 2 from the 4 × 6 cell into the tens diagonal."
         },
         {
           "id": "1",
-          "text": "Include the carry from the previous diagonal in the next total. Correct answer: 39,032."
+          "text": "Move the 4 from the 4 × 6 cell into the tens diagonal."
         },
         {
           "id": "2",
-          "text": "The top-left cell should be 6 × 5 = 30, not 20. Correct answer: 37,642."
+          "text": "Keep both digits of the 4 × 6 cell in the units diagonal."
         }
       ],
       "correctionId": "0",
       "correction": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 13,104.",
       "wrong": "13086",
-      "error_note": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 13,104."
+      "error_note": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 13,104.",
+      "hint": "Look at the 4 × 6 cell: do the two halves belong to the same diagonal?"
     },
     {
       "id": "maths:M01-SE-C3-Q2",
@@ -1362,21 +1709,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 13,104."
+          "text": "Discard the carry after writing the tens digit."
         },
         {
           "id": "1",
-          "text": "Include the carry from the previous diagonal in the next total. Correct answer: 39,032."
+          "text": "Include the carry from the tens diagonal in the hundreds total."
         },
         {
           "id": "2",
-          "text": "The top-left cell should be 6 × 5 = 30, not 20. Correct answer: 37,642."
+          "text": "Add the carry into the tens diagonal a second time."
         }
       ],
       "correctionId": "1",
       "correction": "Include the carry from the previous diagonal in the next total. Correct answer: 39,032.",
       "wrong": "38932",
-      "error_note": "Include the carry from the previous diagonal in the next total. Correct answer: 39,032."
+      "error_note": "Include the carry from the previous diagonal in the next total. Correct answer: 39,032.",
+      "hint": "Check the tens diagonal total and follow any carry into the next diagonal."
     },
     {
       "id": "maths:M01-SE-C3-Q3",
@@ -1394,21 +1742,52 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 13,104."
+          "text": "Change the 6 × 5 cell to 0 tens and 3 units."
         },
         {
           "id": "1",
-          "text": "Include the carry from the previous diagonal in the next total. Correct answer: 39,032."
+          "text": "Keep the 6 × 5 cell and add 1 to the final units digit."
         },
         {
           "id": "2",
-          "text": "The top-left cell should be 6 × 5 = 30, not 20. Correct answer: 37,642."
+          "text": "Change the 6 × 5 cell to 3 tens and 0 units."
         }
       ],
       "correctionId": "2",
       "correction": "The top-left cell should be 6 × 5 = 30, not 20. Correct answer: 37,642.",
       "wrong": "27642",
-      "error_note": "The top-left cell should be 6 × 5 = 30, not 20. Correct answer: 37,642."
+      "error_note": "The top-left cell should be 6 × 5 = 30, not 20. Correct answer: 37,642.",
+      "hint": "Check the 6 × 5 cell before changing any diagonal totals."
+    },
+    {
+      "id": "maths:M01-IA-Q5",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "assessment",
+      "level": 0,
+      "q": "57 × 8",
+      "a": 57,
+      "b": 8,
+      "answer": "456",
+      "check": "456 ÷ 8 = 57",
+      "method": "lattice",
+      "hint": "What happens when the units diagonal totals more than 9?",
+      "method_note": "7 × 8 = 56 contributes 6 units and 5 tens. Combine that carry with 5 × 8 tens to get 456."
+    },
+    {
+      "id": "maths:M01-IA-Q6",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "assessment",
+      "level": 2,
+      "q": "3,746 × 258",
+      "a": 3746,
+      "b": 258,
+      "answer": "966468",
+      "check": "966468 ÷ 258 = 3746",
+      "method": "lattice",
+      "hint": "Check the diagonal totals one at a time. Where must a carry move next?",
+      "method_note": "Record both digits of every cell product. Add diagonals from bottom right, carrying into the next diagonal. The partial products 749,200 + 187,300 + 29,968 total 966,468."
     }
   ],
   "teaching": {
@@ -1442,5 +1821,5 @@
       }
     ]
   },
-  "revision": "1af7aa4461822b92"
+  "revision": "f89bb468b2ee4a1a"
 }

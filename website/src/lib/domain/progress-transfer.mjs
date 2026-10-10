@@ -13,7 +13,7 @@
  *
  * Libs: none.
  */
-import { newTrack, profileKey } from './engine.mjs';
+import { newTrack, profileKey, MAX_PAGE_SIZE } from './engine.mjs';
 import { decodePracticeSet } from './practice-code.mjs';
 
 const format = 'maths-practice-progress';
@@ -61,14 +61,15 @@ export function exportProgress(profile, now = Date.now()) {
   return JSON.stringify(
     {
       format,
-      version: 1,
+      version: 2,
+      practiceMeasuredFrom: profile.practiceMeasuredFrom,
       exportedAt: now,
       username: profile.name,
       backup: { since: profile.backup?.since ?? now, lastExportAt: now, lastExportType: 'json' },
       topics: Object.fromEntries(
         Object.entries(profile.topics).map(([key, value]) => [
           key,
-          { tracks: value.tracks, history: value.history },
+          { tracks: value.tracks, history: value.history, practice: value.practice },
         ]),
       ),
       revision: {
@@ -95,12 +96,21 @@ export function parseProgress(raw) {
     throw Error('This is not a valid JSON progress file.');
   }
   requireValue(
-    value?.format === format && value.version === 1 && text(value.username) && object(value.topics),
+    value?.format === format &&
+      [1, 2].includes(value.version) &&
+      text(value.username) &&
+      object(value.topics),
   );
   const name = value.username.trim(),
     key = profileKey(name);
   requireValue(key.length > 0 && key.length <= 40);
   const profile = { name, key, topics: {}, revision: { recommendations: [] } };
+  if (value.practiceMeasuredFrom !== undefined) {
+    requireValue(
+      number(value.practiceMeasuredFrom) && value.practiceMeasuredFrom <= 8640000000000000,
+    );
+    profile.practiceMeasuredFrom = value.practiceMeasuredFrom;
+  }
   for (const [topic, saved] of Object.entries(value.topics)) {
     requireValue(
       /^[a-zA-Z0-9_-]+:[a-zA-Z0-9_-]+$/.test(topic) &&
@@ -165,8 +175,33 @@ export function parseProgress(raw) {
           requireValue(Number.isInteger(record[field]) && record[field] >= 0);
           clean[field] = record[field];
         }
-      if (clean.pageSize !== undefined) requireValue(clean.pageSize >= 1 && clean.pageSize <= 10);
+      if (clean.pageSize !== undefined)
+        requireValue(clean.pageSize >= 1 && clean.pageSize <= MAX_PAGE_SIZE);
       result.history.push(clean);
+    }
+    if (saved.practice !== undefined) {
+      requireValue(Array.isArray(saved.practice));
+      const ids = new Set();
+      result.practice = saved.practice.map((record) => {
+        requireValue(
+          object(record) &&
+            text(record.id) &&
+            record.id.length > 0 &&
+            text(record.attempt) &&
+            ['assessment', 'demo', 'scaffolded', 'plain', 'errors'].includes(record.type) &&
+            number(record.at) &&
+            record.at <= 8640000000000000 &&
+            record.at % 3600000 === 0 &&
+            Number.isInteger(record.milliseconds) &&
+            record.milliseconds > 0 &&
+            record.milliseconds <= 3600000,
+        );
+        const id = `${record.id}:${record.at}`;
+        requireValue(!ids.has(id));
+        ids.add(id);
+        const { id: visit, at, attempt, type, milliseconds } = record;
+        return { id: visit, at, attempt, type, milliseconds };
+      });
     }
     profile.topics[topic] = result;
   }

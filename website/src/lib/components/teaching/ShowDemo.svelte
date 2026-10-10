@@ -13,15 +13,18 @@
   Libs: svelte (component lifecycle and state).
 -->
 <script>
-  import { onMount, tick, untrack } from 'svelte';
+  import { onMount, tick } from 'svelte';
+  import { createDemoMotion } from '#lib/application/demo-motion.mjs';
   import { createPlayer } from '#lib/application/player.mjs';
 
   // Each frame has a logical step plus caller-owned drawing data. Renderers mark
   // the current drawing target with data-demo-current; no equation layout is assumed.
   let { frames, steps, heading, children, completion, speed = 1, onspeed = () => {} } = $props();
-  let cursor = $state(untrack(() => frames.findLastIndex((frame) => frame.step === 1)));
+  let cursor = $state(0);
   let playing = $state(false);
   let player;
+  let motion;
+  let disposed = false;
   let stage;
   const speedId = $props.id();
   const frame = $derived(frames[cursor]);
@@ -31,6 +34,7 @@
     // Read speed even before player mounts, so the effect subscribes to changes.
     const delay = 650 / speed;
     player?.setDelay(delay);
+    motion?.setSpeed(speed);
   });
   /**
    * Wait for the revealed frame and scroll its current step into view.
@@ -64,18 +68,34 @@
     player.go(frames.findLastIndex((frame) => frame.step === step) + 1);
   }
   onMount(() => {
+    motion = createDemoMotion(stage);
     player = createPlayer({
       length: frames.length,
       delay: 650 / speed,
       /** Player frame callback: update cursor/playing from next and follow an advancing step after rendering. */
-      onFrame: (next) => {
+      onFrame: async (next) => {
+        const changed = next.step - 1 !== cursor;
         const advancing = playing && next.step > cursor + 1;
+        const before = changed ? motion.snapshot() : null;
         cursor = next.step - 1;
         playing = next.playing;
-        if (advancing) followStep();
+        if (!changed) {
+          if (playing) motion.resume();
+          else motion.pause();
+        } else {
+          motion.cancel();
+          await tick();
+          if (disposed) return;
+          if (advancing) motion.reveal(before, speed);
+          if (advancing) followStep();
+        }
       },
     });
-    return () => player.dispose();
+    return () => {
+      disposed = true;
+      player.dispose();
+      motion.cancel();
+    };
   });
 </script>
 

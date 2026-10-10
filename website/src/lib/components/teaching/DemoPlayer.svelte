@@ -65,10 +65,15 @@
         </p>
       {/snippet}
       {#snippet children(frame)}
+        {#if frame.guideProgress !== undefined}<p>
+            Draw a line down the middle to keep both sides aligned, as you would on paper in an
+            exam.
+          </p>{/if}
         <EquationWorking
           rows={question.balance}
           limit={frame.step}
           part={frame.part}
+          guideProgress={frame.guideProgress ?? 1}
           staged
           {annotations}
         />

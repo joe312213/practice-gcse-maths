@@ -41,7 +41,7 @@
     <Popover.Portal>
       <Popover.Content
         id="theme-menu"
-        class="theme-menu"
+        class="popover-panel"
         sideOffset={8}
         align="end"
         collisionPadding={16}

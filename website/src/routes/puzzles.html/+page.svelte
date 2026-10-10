@@ -6,12 +6,14 @@
   Libs: Svelte lifecycle and SvelteKit URLs.
 -->
 <script>
+  import SiteHeader from '#lib/components/ui/SiteHeader.svelte';
+  import SiteFooter from '#lib/components/ui/SiteFooter.svelte';
   import { onMount, tick } from 'svelte';
   import { resolve } from '$app/paths';
   import { puzzleTypes, challengeBands } from '@subject-apps/puzzles/metadata';
   import { puzzleTypeArt } from '@subject-apps/puzzles/graphics';
   import PuzzlePlayer from '#lib/components/puzzles/PuzzlePlayer.svelte';
-  import ThemeControls from '#lib/components/ui/ThemeControls.svelte';
+
   import '@subject-apps/puzzles/styles';
   import '#lib/styles/puzzles.css';
   let catalogue = $state.raw([]),
@@ -66,16 +68,9 @@
 </script>
 
 <svelte:head><title>Maths practice · Puzzles</title></svelte:head>
-<a class="skip" href="#main">Skip to puzzles</a>
-<header>
-  <a class="brand" href={resolve('/')}>Maths<span> / puzzles</span></a>
-  <div class="header-actions">
-    <a class="action-button quiet" href={resolve('/')}>Back to practice</a><a
-      class="action-button quiet"
-      href={resolve('/progress.html')}>Progress</a
-    ><ThemeControls />
-  </div>
-</header>
+<SiteHeader section="puzzles" back
+  ><a class="action-button quiet" href={resolve('/progress.html')}>Progress</a></SiteHeader
+>
 <main id="main" tabindex="-1">
   <section class="card full">
     <h1 id="puzzle-heading" tabindex="-1">
@@ -136,3 +131,5 @@
     {:else}<p>No puzzles at this challenge for this type. Choose another challenge.</p>{/if}
   </section>
 </main>
+
+<SiteFooter />

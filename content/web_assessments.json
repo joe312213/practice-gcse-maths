@@ -1,0 +1,127 @@
+{
+  "M01": [
+    {
+      "q": "57 × 8",
+      "level": 0,
+      "hint": "What happens when the units diagonal totals more than 9?",
+      "method_note": "7 × 8 = 56 contributes 6 units and 5 tens. Combine that carry with 5 × 8 tens to get 456."
+    },
+    {
+      "q": "3,746 × 258",
+      "level": 2,
+      "hint": "Check the diagonal totals one at a time. Where must a carry move next?",
+      "method_note": "Record both digits of every cell product. Add diagonals from bottom right, carrying into the next diagonal. The partial products 749,200 + 187,300 + 29,968 total 966,468."
+    }
+  ],
+  "M02": [
+    {
+      "q": "96 ÷ 4",
+      "level": 0,
+      "hint": "After dividing 9 by 4, what number does its remainder make with the next digit?",
+      "method_note": "9 ÷ 4 = 2 remainder 1. Carry 1 to make 16; 16 ÷ 4 = 4. The quotient is 24."
+    },
+    {
+      "q": "857 ÷ 8",
+      "level": 2,
+      "hint": "What quotient digit is needed when you reach 5 ÷ 8? How can you continue after the whole-number digits?",
+      "method_note": "8 ÷ 8 = 1; 5 ÷ 8 = 0 remainder 5; 57 ÷ 8 = 7 remainder 1. Continue with decimal zeros: 10 ÷ 8 = 1 remainder 2, 20 ÷ 8 = 2 remainder 4, then 40 ÷ 8 = 5. The answer is 107.125."
+    }
+  ],
+  "M10": [
+    {
+      "q": "5x − 7 = 28",
+      "level": 1,
+      "answer": "7",
+      "coefficients": [
+        "5",
+        "-7",
+        "0",
+        "28"
+      ],
+      "kind": "two",
+      "balance": [
+        {
+          "l": "5x − 7",
+          "r": "28"
+        },
+        {
+          "l": "+ 7",
+          "r": "+ 7",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "35"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "check": "At x = 7, 5 × 7 − 7 = 28.",
+      "hint": "What operation undoes subtracting 7? What term would remain with x?",
+      "method_note": "Add 7 to both sides to get 5x = 35, then divide both sides by 5.",
+      "wrong": "4.2",
+      "error_note": "Subtracting 7 again would give 5x = 21. Undo −7 by adding 7 to both sides."
+    },
+    {
+      "q": "3(x − 2) = x + 10",
+      "level": 2,
+      "answer": "8",
+      "coefficients": [
+        "3",
+        "-6",
+        "1",
+        "10"
+      ],
+      "kind": "both",
+      "balance": [
+        {
+          "l": "3(x − 2)",
+          "r": "x + 10"
+        },
+        {
+          "l": "3x − 6",
+          "r": "x + 10"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "2x − 6",
+          "r": "10"
+        },
+        {
+          "l": "+ 6",
+          "r": "+ 6",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "16"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "8"
+        }
+      ],
+      "check": "At x = 8, 3(8 − 2) = 18 and 8 + 10 = 18.",
+      "hint": "What would the left side look like after expanding the brackets? Does it help?",
+      "method_note": "Expand to 3x − 6 = x + 10. Subtract x from both sides, add 6, then divide by 2.",
+      "wrong": "6",
+      "error_note": "Expanding as 3x − 2 misses the multiplication of −2 by 3. The expanded left side is 3x − 6."
+    }
+  ]
+}

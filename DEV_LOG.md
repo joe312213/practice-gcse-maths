@@ -367,3 +367,156 @@ Removed the Field style (dev) selector, its state/import, the unused inset CSS v
 Replaced the visible Menu text with a three-line SVG icon, retaining the Menu accessible name and tooltip, a 44px target and the existing Bits UI popover/focus behaviour.
 
 The user also selected Rose as the default theme. Updated initial HTML palette and theme-preference fallback; saved choices still take precedence.
+
+## 10 October 2026 — live question, hint and answer-note review
+
+Review only, using maths-problem-development: inspected all 283 live M01/M02/M10 questions, teaching text, error choices and feedback/hint rendering. Arithmetic answers were recomputed exactly; equation answers with coefficients were checked by substitution, with the remaining nine error-question answers checked manually. No incorrect final answers found. This was not a visual audit of the saved error diagrams, a puzzle review or a review of unimported topic drafts. No question, source deck or application code changed.
+
+Candidates, in priority order:
+
+1. All 18 arithmetic error questions expose final answers in correction choices, reusing corrections from neighbouring questions as distractors (`scripts/prepare_web_arithmetic.py`). Use plausible corrections to this question's working without final answers. Preserve full explanations for post-answer feedback.
+2. Hints are topic-wide templates (`website/src/lib/application/session.mjs`, hint action), not question-specific. They appear in the global toast; the text beside Hint only explains assisted scoring. Repeated presses do not hide the hint. Use a small question-specific prompt near the button, with separate visibility and permanent assistance tracking. Examples: 227 ÷ 6 — “After 22 ÷ 6, how does the remainder change the next digit, 7?”; 3(x − 4) = x − 16 — “What must 3 multiply inside the bracket?”
+3. M10-S06-C1-Q3, x ÷ 2 = 0: `wrong` equals the correct answer 0. An incorrect method can accidentally yield the right result. Retain zero if useful, but remove this misleading wrong-answer note; assessing the operation requires a method response.
+4. Ordinary arithmetic questions have worked diagrams and checks but no diagnostic notes: only 9/94 questions per arithmetic bank have notes, all error questions. Existing source answer notes provide useful candidates, e.g. M02-S03-C3-Q1, 3,827 ÷ 25 = 153.08: explain why 20 ÷ 25 requires a tenths zero, targeting 153.8.
+5. Decimal division checks use integer quotient × divisor + remainder. True, but they do not verify the displayed decimal conversion. M02-S02-C3-Q1: supplement 320 × 16 + 2 = 5,122 with 2/16 = 0.125 and/or 320.125 × 16 = 5,122.
+6. Confidence division has repeated halving questions: M02-S04/S05/S06/S07-C3-Q2 are 785/943/859/967 ÷ 2. Consider retaining one bridge question and replacing/reclassifying the repeats to exercise carrying with less immediate divisors, while respecting terminating-decimal requirements. Start has 8/24 independent answers equal to 11 or 111; reduce repeated-digit patterns while retaining accessible no-carry practice.
+7. Some lattice questions test size more than carrying: M01-S04-C2-Q3 (51 × 22) has no diagonal carry; M01-S04-C3-Q4 (2,105 × 304) has many zero/unit-factor cells. Retain selected zero-place-value examples; consider stronger carrying examples elsewhere. Large four-digit products remain an explicit project requirement.
+8. Equation notes repeat category wording instead of identifying the actual numbers/signs. Example M10-S03-C1-Q1, 6x = −18: explain dividing both sides by 6 and why the result is negative. M10 Confidence factor questions such as S04-C3-Q2 (5x + 10 = 20) can be solved by ordinary Build-level steps; explicitly ask for/explain the common-factor route if that is what should be assessed.
+9. Equation error corrections sometimes switch method in the full worked answer (M10-SE-C2-Q3 and SE-C3-Q1), despite asking learners to repair a particular step. Show the repaired route first, then the alternative. M10-SE2-C3-Q1 intentionally marks a later correction against the displayed erroneous line (subtract 3), while repairing the original equation requires subtract 6; clarify this distinction in the task prompt.
+
+These are proposed improvements, not authorisation to replace accepted questions. Next implementation should prioritise answer leakage and hints, then diagnostic feedback, then an agreed challenge rebalance. Existing unrelated CODE_STYLE and skill changes were left untouched.
+
+Review-record verification: the default runner was first invoked from the root (no matching script), then correctly from website/. It selected broader checks, passed formatting/build, and stopped at a browser server bind denied by the sandbox (EPERM). Browser execution is unnecessary for this source review and was not escalated. Generated build changes from this invocation were reverted to the previously clean build state. The documentation link check was run separately.
+
+## 10 October 2026 — question-review improvements implemented
+
+The user authorised all review candidates and requested exploratory bracket hints: “What would the left side look like after expanding the brackets? Does it help?”
+
+- All 283 questions now have authored hints. The Hint button expands/collapses nearby text, with accessible state; visibility resets on navigation and remains separate from persisted assistance. Hiding/revisiting/reloading does not restore unassisted scoring.
+- All ordinary arithmetic questions now have specific method and likely-error notes. Decimal checks multiply the complete decimal quotient back by the divisor. Source notes about missing integer/tenths zeros were incorporated. Arithmetic error choices now contain three plausible repairs to the same calculation, without final answers; correct choice IDs and saved wrong diagrams are preserved. Repeated correction text is not shown twice.
+- M10 notes use the actual operations/numbers/signs. The zero division question retains its answer but no longer calls it a wrong answer; its note explains why an incorrect operation can accidentally produce zero. Six common-factor questions explicitly request the factor method. Full error solutions follow the repaired route before mentioning alternatives, and the two-error instructions distinguish local printed-line repairs from correcting the full solution. Redundant final division-by-one steps were removed where x was already isolated.
+- Eleven web-only arithmetic revisions retain their stable IDs: multiplication S04-C2-Q3 becomes 57 × 26, S04-C3-Q3 becomes 4,876 × 357, S04-C3-Q4 becomes 6,785 × 347; division S05/S06/S07-C3-Q2 become 943 ÷ 8, 859 ÷ 5, 967 ÷ 16. Five repeated Start patterns become 86 ÷ 2, 966 ÷ 3, 848 ÷ 2, 684 ÷ 2, 693 ÷ 3. One Confidence halving bridge and purposeful zero examples remain.
+- Authored arithmetic support lives in `content/M01_M02_web_support.json`, applied after auditing legacy source expressions. The import audit records all source/website replacements. Both importers ran successfully; saved decks and all 18 error SVGs remain unchanged. Existing revision handling refreshes outdated attempts while preserving submitted history and tracks; no schema migration was added.
+- The first full selected verification passed formatting/build, bank checks, 52 logic tests, Svelte diagnostics and browser scenarios (arithmetic/puzzles, presentation, colours, startup, Practice sets, Progress and activities). Browser tests needed local-server permission after the sandbox denied binding. Final wording cleanup and documentation are awaiting the final selected rerun at this checkpoint. No commit, push or deployment performed.
+
+Final verification: `npm run verify:changed` passed after the content/feedback cleanup (format/build, new-topics, docs, 52 logic tests, bank, Svelte/diagnostics, presentation, startup, Practice sets, Progress and integration). Earlier unchanged colour evidence was reused. Saved decks, error SVGs and catalogue are unchanged. A whitespace review found only the pre-existing CODE_STYLE trailing space; that unrelated authored change was left untouched. No processes from verification remain running.
+
+## 10 October 2026 — layout, progress and drawing fixes; storage discussion
+
+User requested a shared-template audit, overlapping progress-popup fix, shareable topic links, baseline confirmation, retained question working, drawing tools/colours, issue reporting and progress/time history. User explicitly selected the T-Level timing algorithm, then asked to discuss alternative storage options. No persistence schema has been changed while that decision is pending.
+
+Independent implementation: SiteHeader/SiteFooter now own common brand/navigation/theme/report markup across routes; generic popovers share one panel style instead of borrowing a theme-specific class. Shared notification CSS removes duplicate declarations. Progress panels use a grid-wide open identity, delayed hover dismissal and preserved keyboard/touch controls. Stable topic URLs survive learner selection and have a copy action. Initial assessment is derived from existing history as the first complete assessment (or explicitly incomplete evidence), separately from practice scoring.
+
+Drawing uses a shared renderer and theme-independent stroke colour IDs, an X clear action, a separate eraser with five times pen area, and four inks whose HSL lightness inverts in dark mode. Erasing removes ink to the canvas background, including over guides. The issue dialog follows the T-Level preview/copy/email-draft pattern. These changes are undergoing selected verification; working persistence and timing/history presentation remain unfinished pending storage decisions.
+
+
+## 10 October 2026 — JSON progress and session working agreed
+
+User chose to retain JSON storage and clarified that drawings need only last a session/about three hours. Implemented an expiring sessionStorage working cache, separate from durable progress. Retained schema-2 local progress; added measured active time in per-topic visit/hour buckets and JSON export v2 with v1 import support. Integrated the T-Level two-minute idle/five-second poll/hidden-pause rules; transient clocks never charge absence after reload. Added weekly minutes and per-level success views, with explicit unknown historic timing and a separate initial assessment baseline. SQLite remains deferred; no backend/storage engine migration is authorised or needed for this slice.
+
+Independent shared header/footer/report controls, share links, popup dismissal, drawing tools/colours/theme inversion are implemented. Browser restoration tests exposed Chromium edge-rasterisation differences between canvas instances; tests now assert restored ink/erasure/guide pixels with exact logical-stroke tests separately. Removing an unnecessary stroke-end repaint preserves pointer-release bitmap behaviour. Verification is still in progress; no final pass claimed here yet.
+
+
+Final verification: `npm run verify:changed` passed, with cached selected coverage of 59 logic tests, format/build, Svelte diagnostics (zero errors/warnings), drawing/topic restoration, presentation, default colours, startup faults, Practice sets, Progress/accessibility and activity integration. The installed browser test clock confirmed 65 seconds of unfinished practice appears as 1.1 minutes on Progress. The weekly table is a labelled, focusable scroll region for keyboard users on small screens; its Svelte noninteractive-tabindex exception is explicitly documented, and the automated accessibility check passes. No verification process remains running. No commit, push or deployment was performed. Manual touch/stylus/screen-reader review remains unclaimed.
+
+
+## 10 October 2026 — softer drawing surface and tool selection
+
+User requested a more subtle selected-pen highlight and reduced canvas contrast. Changed the shared selection outline from solid two-pixel text colour to a one-pixel muted outline, preserving keyboard focus. Canvas backgrounds are now off-white `#f2f2f2` and dark grey `#202020`. Updated the existing browser expectation. `npm run verify:changed` passed all selected checks: formatting/build, drawing/topic, docs, presentation, colours and Practice sets. No commit or deployment performed.
+
+
+## 10 October 2026 — topic homepage and clean subject/topic URLs
+
+User approved Build-level card examples and lowercase Foundation Maths routes. Implemented the topic homepage, server-built previews from existing banks, shared TopicPractice and explicit prerendered `/fm/[topic]/` directory pages. Removed ShareTopic and its styles, updated dropdown/Progress/recommendation links, and retained forwarding for already-shared query links. No progress ID or storage schema changes.
+
+The first Practice-set browser run exposed that an active mixed-topic set could be replaced by the URL's topic on reload. Active sets now carry their existing shareable code in `?set=...`; reload resumes the matching saved set, while a plain topic link reliably opens its topic. Set links also work through name selection. All selected verification subsequently passed: formatting/build, bank, 59 logic tests, puzzle library, Svelte (zero diagnostics), homepage/examples/accessibility/static routes/Back/reload, drawing/topic flows, presentation, colours, startup, Practice sets, Progress and activity integration. No verification process remains running; no commit, push or deployment was performed.
+
+
+## 10 October 2026 — compact, minimal topic cards
+
+Removed the example/Build label and practice call to action from the topic cards, leaving the title and question only. Gave the homepage its own compact wrapping card layout, with 20rem preferred widths and full-width cards on screens 480px and below. Progress layout remains separately defined. `npm run verify:changed` passed all selected checks: format/build, docs, logic, Svelte, topic cards, presentation, colours, startup, Practice sets, Progress and integration. No commit or deployment performed.
+
+
+## 10 October 2026 — narrower multi-card rows and layout discussion
+
+Reduced topic-card width to two-thirds when multiple cards fit, using a card-container query; preserved single-card/mobile widths. `npm run verify:changed` passed all selected checks (format/build, topics, docs, presentation, colours, Practice sets). No commit or deployment performed. Worked-method previews and the topic-page sketch (wider question area, integrated working, progress above) remain under discussion, as does a twelve-question independent page. Inspection confirms 24 independent questions per level/topic, a ten-answer adaptive history cap and weights that currently reject sizes above ten. No question count or scoring change made.
+
+## 10 October 2026 — revised workspace, worked topic cards and six-question assessment
+
+Implemented the user's approved twelve-question independent pages while retaining the last ten eligible answers for scoring/adaptation. Added six-question assessments with two questions per level, preserving original question IDs, full history and completed four-question baselines. Two new authored assessment questions per topic live in `content/web_assessments.json`; both importers audit saved sources before applying these additions. Generated banks now contain 96 arithmetic questions each and 97 equations; saved slide resources were untouched.
+
+Topic cards now show a Build demo question and compact worked solution using shared renderers. The topic panel spans the available width with up to three question columns, compact progress above, and selected question/answer alongside embedded working (stacked on small screens). Footer links have more space. Practice-set slots retain their authored lengths.
+
+Verification: both importers passed source audits; `npm run verify:changed` passed all selected/cached jobs, including 61 logic tests, bank validation, formatting/build, Svelte diagnostics and all browser scenarios. The first runs identified generated-catalogue formatting and two outdated baseline/navigation test expectations; corrected before the passing run. Desktop homepage/topic and mobile topic screenshots were inspected. No commit, push or deployment performed.
+
+## 10 October 2026 — chevron navigation and centred working
+
+Replaced numbered stage buttons with joined right-facing chevrons. Moved shared Progress into the topic header, allocating about two thirds to stages and one third to progress at viewport widths ≥768px. Smaller screens stack/wrap. Centred and bounded the question/working columns with a smaller gap; removed the working heading and added a pointer-transparent canvas prompt which disappears on ink or guides and returns after clear.
+
+Selected verification passed (build, 61 logic tests, Svelte and browser scenarios); desktop rendering inspected. Initial browser execution needed local-server permission. The drawing check caught a structured-clone failure from proxied guide state; raw reactive guide state fixed it and the rerun passed. No commit or deployment.
+
+## 10 October 2026 — simplified working controls and straight stage end caps
+
+Removed the paper checkbox/collapse behaviour and unused session state/styles. Drawing and typed working remain visible. Removed the textarea heading, kept its accessible name, and set “Or type your working here...” as its placeholder. Initial assessment has a straight left edge; Independent practice has a straight right edge.
+
+Selected checks passed, including 61 logic tests, build, Svelte diagnostics, responsive presentation, drawing restoration and integration. An intermediate malformed responsive selector was caught by the 320px overflow check and corrected. No commit or deployment.
+
+## 10 October 2026 — softer stage end corners
+
+Reduced Initial assessment left padding to 0.6rem and rounded the outside corners of the first/last stage buttons to the standard 10px. Internal chevron joins remain. Selected verification passed: format/build, docs, topic/drawing, presentation, colours and Practice sets. No publication.
+
+## 10 October 2026 — monotonic responsive workspace width
+
+The 767→768px reversal came from card padding jumping from 18px to 24px and crossing the workspace container threshold. Replaced that jump with a continuous clamp and removed redundant mobile block-layout rules. Added a 2em active-question content inset, excluding the title. Added explicit 767/768/769px regression assertions. Selected verification passed, including responsive checks down to 320px, build, Svelte diagnostics and drawing/activity integration. No publication.
+
+## 10 October 2026 — compact right-anchored progress
+
+Kept progress content left aligned while anchoring its compact block to the right. Reduced the meter to 7rem. Replaced the fixed one-third progress track with a fluid bounded column, allowing stages more width near 768px without another breakpoint. Selected format/build, topic/drawing, responsive presentation, colour and Practice-set checks passed. No publication.
+
+## 10 October 2026 — compact progress, hint note and stable header menu
+
+Progress uses a compact right-anchored grid with “Level: [level]” and “recent success”, switching to a horizontal wrapping strip below 678px. Reduced active-question inset to 1em. The assisted note is 70% size and hides with the hint; scoring assistance remains recorded. Reserved header space keeps the hamburger top-right while other actions wrap. Desktop rendering inspected; all selected checks passed, including build, Svelte, responsive/drawing checks and integration. Documentation changed during one verification run, so the runner stopped and the remaining checks were rerun successfully. No publication.
+
+## 10 October 2026 — corrected stage gaps and question title
+
+Added 1em left margin to the active-question title. Reduced intro bottom spacing, set a 2rem gap between stages and progress, and replaced the reserved progress track with a content-sized track at the right gutter. The user's clarified meter sizes are 4rem below 1024px and 6rem at/above. Desktop rendering inspected; final selected build/format, docs, topic/drawing, presentation, colour and Practice-set checks passed. No publication.
+
+## 10 October 2026 — UI taste and corrected spacing interpretation
+
+The user rejected the over-tight intro/stage gap and requested persistent visual guidance. Added UI_TASTE.md and linked it from INDEX, UI rules and the framework skill. Restored a single 1.5rem gap owned by the stage header; assessment no longer reserves an empty progress column. Inspected the lattice assessment screenshot and added responsive gap assertions.
+
+The user then corrected an implementation error: the title needs 1em left margin and remaining answer-column content 2em. I had collapsed these distinct requirements into one shared rule. Separated the rules and added computed-margin assertions at all presentation widths. Consolidated chevron depth and end variations in the shared stylesheet; existing semantic navigation remains the sole markup source. Final selected format/build, docs, topic/drawing, presentation, colour and Practice-set checks passed. No publication.
+
+## 10 October 2026 — guide construction and native demo ink animation
+
+Added shared guide-construction frames before arithmetic/equation writing. Lattice shows grid/diagonals being drawn, division draws its bus-stop bracket, equations draw the central line. Short first-step prompts connect construction to paper/exam working. Shared native Web Animations interpolate SVG strokes, divider height and text clipping; existing pause/resume/speed/replay/disposal coordinate them. Reduced motion keeps the instructional sequence without interpolation. No dependency added; static solutions remain complete. Text reveals in its existing font rather than tracing handwritten glyphs.
+
+During this work the user reported collapsed scaffolded navigation. Root cause was my earlier unbounded intrinsic progress track: the scaffolded explanation consumed the row. Bounded the shared track and moved non-scoring explanation into the activity panel. No copied or stage-specific chevron implementation. Added layout coverage for all five stages at phone/tablet/desktop widths and inspected corrected scaffolded output at 768px.
+
+Final selected verification passed, including 61 logic tests, banks, build/format, puzzle library, Svelte diagnostics, docs, native animation/pause assertions for all three guides, responsive layout and all selected browser integration scenarios. No publication.
+
+## 10 October 2026 — digit-by-digit lattice and consistent stage spacing
+
+Split lattice operand writing into individual digits, top left-to-right then side top-to-bottom. Cell products write tens and units in separate frames, proceeding across rows. Existing diagonal-addition order is retained. Fixed actual stage-button top spacing at 2rem by top-aligning the shared row; previous centre alignment allowed taller progress blocks to shift the buttons. Added subtle tint for stages before the active stage and removed topic-card gradients in favour of the theme surface.
+
+Updated UI taste and standing rules. Added frame-order and browser digit-count checks, plus equal actual stage gaps and earlier-stage counts across all five stages at three widths. Final selected verification passed (62 logic tests, build, Svelte, responsive/drawing and all selected browser scenarios); homepage inspected. Initial integration axe audit reported the small visible portion of a button behind the theme popup as a target-size failure. The popup is now audited while open and the complete page after closure, retaining coverage of both surfaces; both passed. No publication.
+
+## 10 October 2026 — session-close UI consolidation and next-session priorities
+
+Distilled the current visual choices into UI_TASTE.md and reconciled UI_UX_RULES so outdated paper-collapse, two-column-only, fixed-third and earlier meter rules no longer compete with current guidance. Condensed HANDOFF to current state, evidence and ordered next work; corrected stale README descriptions. Historical decisions remain in this log/Git.
+
+At the user's request, recorded next-session work: refine demos with number/digit highlighting to show the operands and current operations throughout the working, then plan personal cloud sync. No highlighting implementation, provider choice, cloud provisioning or storage migration was performed.
+
+The user found flat topic cards too white, so restored a restrained gradient mixing 4–10% theme main colour into the surface. Reduced multi-card width to 13rem so all three fit at 768px. Added an exact-width browser assertion and inspected the resulting screenshot. Final selected format/build, docs, topic/drawing, responsive presentation, colour and Practice-set checks passed. No publication.
+
+## 10 October 2026 — natural topic-card heights and quiet borders
+
+Stopped flex-row stretching so each topic card keeps its content height. Added a 2px solid border using shared neutral control-border colour with a small main-theme tint; retained the subtle card gradient and three-card fit at 768px. Recorded masonry as the desired direction for a larger topic collection; no packing library or new layout engine added. Selected format/build, docs, topic/drawing, presentation, colour and Practice-set checks passed; inspected the 768px result. No publication.
+
+## 10 October 2026 — softer topic-card borders
+
+Reduced normal topic-card border contrast by blending 65% theme surface with 35% control-border, retaining 2px width. Recorded the lower-contrast preference in UI taste. Selected format/build, docs, topic/drawing, presentation, colour and Practice-set checks passed. No publication.
+
+## 10 October 2026 — topic-card sorting backlog
+
+Recorded the user's requested alphabetical and revision-priority sorting options in the roadmap and linked them from HANDOFF. Backlog only; current prerequisite ordering is unchanged.

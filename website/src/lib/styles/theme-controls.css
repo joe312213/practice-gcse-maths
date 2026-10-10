@@ -47,7 +47,7 @@
   fill: var(--main);
   stroke: var(--main);
 }
-.theme-menu {
+.popover-panel {
   margin: 0;
   width: min(24rem, calc(100vw - 2rem));
   max-height: min(var(--bits-popover-content-available-height), calc(100dvh - 2rem));
@@ -156,6 +156,6 @@
   }
 }
 
-.theme-menu {
+.popover-panel {
   z-index: 35;
 }

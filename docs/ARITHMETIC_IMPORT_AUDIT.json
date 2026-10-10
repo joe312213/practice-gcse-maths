@@ -1,18 +1,79 @@
 [
   {
     "topic": "M01",
-    "questions": 94,
+    "questions": 96,
     "deck_sha256": "967026f5b4561b1cfbc5de52abda3311f54e179dc5e784bd69f7bfe4d2335b02",
     "answers_sha256": "9e94644fbb3ab5f090e9a7830efefdc938bc01cb6afc2ad3bff6479208cc4c5c",
     "source_questions_found_in_saved_deck": true,
+    "web_replacements": [
+      {
+        "id": "maths:M01-S04-C2-Q3",
+        "source": "51 \u00d7 22",
+        "website": "57 \u00d7 26"
+      },
+      {
+        "id": "maths:M01-S04-C3-Q3",
+        "source": "1,234 \u00d7 125",
+        "website": "4,876 \u00d7 357"
+      },
+      {
+        "id": "maths:M01-S04-C3-Q4",
+        "source": "2,105 \u00d7 304",
+        "website": "6,785 \u00d7 347"
+      }
+    ],
+    "new_web_assessments": 2,
     "error_diagrams_preserved": 9
   },
   {
     "topic": "M02",
-    "questions": 94,
+    "questions": 96,
     "deck_sha256": "13fcf6eabb3fe283e0deefe74cd0a25af5b5eb3e3b6fcad20c93997e6a8ed182",
     "answers_sha256": "733dea498a4aa7e68a54d1b553dc00ba8af4f71c828e2cfb5e58d0413ec00a9a",
     "source_questions_found_in_saved_deck": true,
+    "web_replacements": [
+      {
+        "id": "maths:M02-S05-C3-Q2",
+        "source": "943 \u00f7 2",
+        "website": "943 \u00f7 8"
+      },
+      {
+        "id": "maths:M02-S05-C1-Q3",
+        "source": "66 \u00f7 6",
+        "website": "86 \u00f7 2"
+      },
+      {
+        "id": "maths:M02-S06-C3-Q2",
+        "source": "859 \u00f7 2",
+        "website": "859 \u00f7 5"
+      },
+      {
+        "id": "maths:M02-S06-C1-Q4",
+        "source": "777 \u00f7 7",
+        "website": "966 \u00f7 3"
+      },
+      {
+        "id": "maths:M02-S06-C1-Q5",
+        "source": "888 \u00f7 8",
+        "website": "848 \u00f7 2"
+      },
+      {
+        "id": "maths:M02-S07-C3-Q2",
+        "source": "967 \u00f7 2",
+        "website": "967 \u00f7 16"
+      },
+      {
+        "id": "maths:M02-S07-C1-Q5",
+        "source": "666 \u00f7 6",
+        "website": "684 \u00f7 2"
+      },
+      {
+        "id": "maths:M02-S07-C1-Q6",
+        "source": "999 \u00f7 9",
+        "website": "693 \u00f7 3"
+      }
+    ],
+    "new_web_assessments": 2,
     "error_diagrams_preserved": 9
   }
 ]

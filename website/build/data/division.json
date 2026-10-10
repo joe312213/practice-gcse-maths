@@ -28,7 +28,11 @@
       "b": 4,
       "answer": "216",
       "check": "216 × 4 + 0 = 864",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 6 ÷ 4, how does the remainder change the next digit, 4?",
+      "method_note": "Carry remainder 2 before the next digit, 4, to make 24. Then 24 ÷ 4 = 6 remainder 0.",
+      "wrong": "211",
+      "error_note": "Do not divide the next digit 4 on its own. The carried 2 makes it 24, so use 24 ÷ 4."
     },
     {
       "id": "maths:M02-IA-Q2",
@@ -41,7 +45,11 @@
       "b": 8,
       "answer": "16 r 4",
       "check": "16 × 8 + 4 = 132",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 13 ÷ 8, how does the remainder change the next digit, 2?",
+      "method_note": "Carry remainder 5 before the next digit, 2, to make 52. Then 52 ÷ 8 = 6 remainder 4.",
+      "wrong": "10 r 2",
+      "error_note": "Do not divide the next digit 2 on its own. The carried 5 makes it 52, so use 52 ÷ 8."
     },
     {
       "id": "maths:M02-IA-Q3",
@@ -54,7 +62,11 @@
       "b": 6,
       "answer": "27 r 3",
       "check": "27 × 6 + 3 = 165",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 16 ÷ 6, how does the remainder change the next digit, 5?",
+      "method_note": "Carry remainder 4 before the next digit, 5, to make 45. Then 45 ÷ 6 = 7 remainder 3.",
+      "wrong": "20 r 5",
+      "error_note": "Do not divide the next digit 5 on its own. The carried 4 makes it 45, so use 45 ÷ 6."
     },
     {
       "id": "maths:M02-IA-Q4",
@@ -66,8 +78,12 @@
       "a": 615,
       "b": 12,
       "answer": "51.25",
-      "check": "51 × 12 + 3 = 615",
-      "method": "bus"
+      "check": "51.25 × 12 = 615",
+      "method": "bus",
+      "hint": "After 61 ÷ 12, how does the remainder change the next digit, 5?",
+      "method_note": "The whole-number division gives 51 remainder 3. The remainder represents 3/12 = 0.25, so the complete answer is 51.25.",
+      "wrong": "51.3",
+      "error_note": "The remainder 3 means 3/12, not decimal digits to copy after a point. Divide it by 12 to get 0.25."
     },
     {
       "id": "maths:M02-S01-C1-Q1",
@@ -80,7 +96,11 @@
       "b": 3,
       "answer": "21",
       "check": "21 × 3 + 0 = 63",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 63 ÷ 3, start with 6 ÷ 3. Where should that answer digit go above 63?",
+      "method_note": "The quotient digits represent 2 tens, 1 units. Write them in order to make 21.",
+      "wrong": "3",
+      "error_note": "The quotient digits are place values, not numbers to add together: 20 + 1 = 21."
     },
     {
       "id": "maths:M02-S01-C2-Q1",
@@ -93,7 +113,11 @@
       "b": 6,
       "answer": "24 r 1",
       "check": "24 × 6 + 1 = 145",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 14 ÷ 6, how does the remainder change the next digit, 5?",
+      "method_note": "Carry remainder 2 before the next digit, 5, to make 25. Then 25 ÷ 6 = 4 remainder 1.",
+      "wrong": "20 r 5",
+      "error_note": "Do not divide the next digit 5 on its own. The carried 2 makes it 25, so use 25 ÷ 6."
     },
     {
       "id": "maths:M02-S01-C3-Q1",
@@ -105,8 +129,12 @@
       "a": 4834,
       "b": 16,
       "answer": "302.125",
-      "check": "302 × 16 + 2 = 4834",
-      "method": "bus"
+      "check": "302.125 × 16 = 4834",
+      "method": "bus",
+      "hint": "In 4,834 ÷ 16, what happens when you reach 3, which is smaller than 16? How will you keep its place in the answer?",
+      "method_note": "The whole-number division gives 302 remainder 2. The remainder represents 2/16 = 0.125, so the complete answer is 302.125.",
+      "wrong": "302.2",
+      "error_note": "The remainder 2 means 2/16, not decimal digits to copy after a point. Divide it by 16 to get 0.125."
     },
     {
       "id": "maths:M02-S02-C1-Q1",
@@ -119,7 +147,11 @@
       "b": 4,
       "answer": "22",
       "check": "22 × 4 + 0 = 88",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 88 ÷ 4, start with 8 ÷ 4. Where should that answer digit go above 88?",
+      "method_note": "The quotient digits represent 2 tens, 2 units. Write them in order to make 22.",
+      "wrong": "4",
+      "error_note": "The quotient digits are place values, not numbers to add together: 20 + 2 = 22."
     },
     {
       "id": "maths:M02-S02-C2-Q1",
@@ -132,7 +164,11 @@
       "b": 4,
       "answer": "32 r 2",
       "check": "32 × 4 + 2 = 130",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 13 ÷ 4, how does the remainder change the next digit, 0?",
+      "method_note": "Carry remainder 1 before the next digit, 0, to make 10. Then 10 ÷ 4 = 2 remainder 2.",
+      "wrong": "32.2",
+      "error_note": "The remainder 2 means 2/4, not 2/10. This question asks for a remainder answer: 32 r 2. Its decimal equivalent would be 32.5."
     },
     {
       "id": "maths:M02-S02-C3-Q1",
@@ -144,8 +180,12 @@
       "a": 5122,
       "b": 16,
       "answer": "320.125",
-      "check": "320 × 16 + 2 = 5122",
-      "method": "bus"
+      "check": "320.125 × 16 = 5122",
+      "method": "bus",
+      "hint": "In 5,122 ÷ 16, what happens when you reach 2, which is smaller than 16? How will you keep its place in the answer?",
+      "method_note": "The whole-number division gives 320 remainder 2. The remainder represents 2/16 = 0.125, so the complete answer is 320.125.",
+      "wrong": "32.125",
+      "error_note": "Keep the units zero in 320.125. After 32 ÷ 16, the next whole-number digit is 2: 2 ÷ 16 gives 0 remainder 2. Write that zero before continuing into decimals."
     },
     {
       "id": "maths:M02-S03-C1-Q1",
@@ -158,7 +198,11 @@
       "b": 3,
       "answer": "22",
       "check": "22 × 3 + 0 = 66",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 66 ÷ 3, start with 6 ÷ 3. Where should that answer digit go above 66?",
+      "method_note": "The quotient digits represent 2 tens, 2 units. Write them in order to make 22.",
+      "wrong": "4",
+      "error_note": "The quotient digits are place values, not numbers to add together: 20 + 2 = 22."
     },
     {
       "id": "maths:M02-S03-C2-Q1",
@@ -171,7 +215,11 @@
       "b": 6,
       "answer": "37 r 5",
       "check": "37 × 6 + 5 = 227",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 22 ÷ 6, how does the remainder change the next digit, 7?",
+      "method_note": "Carry remainder 4 before the next digit, 7, to make 47. Then 47 ÷ 6 = 7 remainder 5.",
+      "wrong": "31 r 1",
+      "error_note": "Do not divide the next digit 7 on its own. The carried 4 makes it 47, so use 47 ÷ 6."
     },
     {
       "id": "maths:M02-S03-C3-Q1",
@@ -183,8 +231,12 @@
       "a": 3827,
       "b": 25,
       "answer": "153.08",
-      "check": "153 × 25 + 2 = 3827",
-      "method": "bus"
+      "check": "153.08 × 25 = 3827",
+      "method": "bus",
+      "hint": "When you reach the remainder 2, what happens when you bring down a zero and try 20 ÷ 25?",
+      "method_note": "The whole-number division gives 153 remainder 2. The remainder represents 2/25 = 0.08, so the complete answer is 153.08.",
+      "wrong": "153.8",
+      "error_note": "After remainder 2, 20 ÷ 25 gives 0 remainder 20; then 200 ÷ 25 = 8. Keep the tenths zero: 153.08, not 153.8."
     },
     {
       "id": "maths:M02-S04-C1-Q1",
@@ -197,7 +249,11 @@
       "b": 4,
       "answer": "12",
       "check": "12 × 4 + 0 = 48",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 48 ÷ 4, start with 4 ÷ 4. Where should that answer digit go above 48?",
+      "method_note": "The quotient digits represent 1 tens, 2 units. Write them in order to make 12.",
+      "wrong": "3",
+      "error_note": "The quotient digits are place values, not numbers to add together: 10 + 2 = 12."
     },
     {
       "id": "maths:M02-S04-C2-Q1",
@@ -210,7 +266,11 @@
       "b": 3,
       "answer": "24",
       "check": "24 × 3 + 0 = 72",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 7 ÷ 3, how does the remainder change the next digit, 2?",
+      "method_note": "Carry remainder 1 before the next digit, 2, to make 12. Then 12 ÷ 3 = 4 remainder 0.",
+      "wrong": "20 r 2",
+      "error_note": "Do not divide the next digit 2 on its own. The carried 1 makes it 12, so use 12 ÷ 3."
     },
     {
       "id": "maths:M02-S04-C3-Q1",
@@ -222,8 +282,12 @@
       "a": 514,
       "b": 4,
       "answer": "128.5",
-      "check": "128 × 4 + 2 = 514",
-      "method": "bus"
+      "check": "128.5 × 4 = 514",
+      "method": "bus",
+      "hint": "After 5 ÷ 4, how does the remainder change the next digit, 1?",
+      "method_note": "The whole-number division gives 128 remainder 2. The remainder represents 2/4 = 0.5, so the complete answer is 128.5.",
+      "wrong": "128.2",
+      "error_note": "The remainder 2 means 2/4, not decimal digits to copy after a point. Divide it by 4 to get 0.5."
     },
     {
       "id": "maths:M02-S04-C1-Q2",
@@ -236,7 +300,11 @@
       "b": 3,
       "answer": "23",
       "check": "23 × 3 + 0 = 69",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 69 ÷ 3, start with 6 ÷ 3. Where should that answer digit go above 69?",
+      "method_note": "The quotient digits represent 2 tens, 3 units. Write them in order to make 23.",
+      "wrong": "5",
+      "error_note": "The quotient digits are place values, not numbers to add together: 20 + 3 = 23."
     },
     {
       "id": "maths:M02-S04-C2-Q2",
@@ -249,7 +317,11 @@
       "b": 5,
       "answer": "27",
       "check": "27 × 5 + 0 = 135",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 13 ÷ 5, how does the remainder change the next digit, 5?",
+      "method_note": "Carry remainder 3 before the next digit, 5, to make 35. Then 35 ÷ 5 = 7 remainder 0.",
+      "wrong": "21",
+      "error_note": "Do not divide the next digit 5 on its own. The carried 3 makes it 35, so use 35 ÷ 5."
     },
     {
       "id": "maths:M02-S04-C3-Q2",
@@ -261,8 +333,12 @@
       "a": 785,
       "b": 2,
       "answer": "392.5",
-      "check": "392 × 2 + 1 = 785",
-      "method": "bus"
+      "check": "392.5 × 2 = 785",
+      "method": "bus",
+      "hint": "After 7 ÷ 2, how does the remainder change the next digit, 8?",
+      "method_note": "The whole-number division gives 392 remainder 1. The remainder represents 1/2 = 0.5, so the complete answer is 392.5.",
+      "wrong": "392.1",
+      "error_note": "The remainder 1 means 1/2, not decimal digits to copy after a point. Divide it by 2 to get 0.5."
     },
     {
       "id": "maths:M02-S04-C1-Q3",
@@ -275,7 +351,11 @@
       "b": 2,
       "answer": "42",
       "check": "42 × 2 + 0 = 84",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 84 ÷ 2, start with 8 ÷ 2. Where should that answer digit go above 84?",
+      "method_note": "The quotient digits represent 4 tens, 2 units. Write them in order to make 42.",
+      "wrong": "6",
+      "error_note": "The quotient digits are place values, not numbers to add together: 40 + 2 = 42."
     },
     {
       "id": "maths:M02-S04-C2-Q3",
@@ -288,7 +368,11 @@
       "b": 4,
       "answer": "43",
       "check": "43 × 4 + 0 = 172",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 17 ÷ 4, how does the remainder change the next digit, 2?",
+      "method_note": "Carry remainder 1 before the next digit, 2, to make 12. Then 12 ÷ 4 = 3 remainder 0.",
+      "wrong": "40 r 2",
+      "error_note": "Do not divide the next digit 2 on its own. The carried 1 makes it 12, so use 12 ÷ 4."
     },
     {
       "id": "maths:M02-S04-C3-Q3",
@@ -301,7 +385,11 @@
       "b": 12,
       "answer": "119",
       "check": "119 × 12 + 0 = 1428",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 14 ÷ 12, how does the remainder change the next digit, 2?",
+      "method_note": "Carry remainder 2 before the next digit, 2, to make 22. Then 22 ÷ 12 = 1 remainder 10.",
+      "wrong": "102 r 4",
+      "error_note": "Do not divide the next digit 2 on its own. The carried 2 makes it 22, so use 22 ÷ 12."
     },
     {
       "id": "maths:M02-S04-C1-Q4",
@@ -314,7 +402,11 @@
       "b": 3,
       "answer": "32",
       "check": "32 × 3 + 0 = 96",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 96 ÷ 3, start with 9 ÷ 3. Where should that answer digit go above 96?",
+      "method_note": "The quotient digits represent 3 tens, 2 units. Write them in order to make 32.",
+      "wrong": "5",
+      "error_note": "The quotient digits are place values, not numbers to add together: 30 + 2 = 32."
     },
     {
       "id": "maths:M02-S04-C2-Q4",
@@ -327,7 +419,11 @@
       "b": 6,
       "answer": "36 r 2",
       "check": "36 × 6 + 2 = 218",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 21 ÷ 6, how does the remainder change the next digit, 8?",
+      "method_note": "Carry remainder 3 before the next digit, 8, to make 38. Then 38 ÷ 6 = 6 remainder 2.",
+      "wrong": "31 r 2",
+      "error_note": "Do not divide the next digit 8 on its own. The carried 3 makes it 38, so use 38 ÷ 6."
     },
     {
       "id": "maths:M02-S04-C3-Q4",
@@ -340,7 +436,11 @@
       "b": 24,
       "answer": "159",
       "check": "159 × 24 + 0 = 3816",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 38 ÷ 24, how does the remainder change the next digit, 1?",
+      "method_note": "Carry remainder 14 before the next digit, 1, to make 141. Then 141 ÷ 24 = 5 remainder 21.",
+      "wrong": "100 r 16",
+      "error_note": "Do not divide the next digit 1 on its own. The carried 14 makes it 141, so use 141 ÷ 24."
     },
     {
       "id": "maths:M02-S04-C1-Q5",
@@ -353,7 +453,11 @@
       "b": 5,
       "answer": "11",
       "check": "11 × 5 + 0 = 55",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 55 ÷ 5, start with 5 ÷ 5. Where should that answer digit go above 55?",
+      "method_note": "The quotient digits represent 1 tens, 1 units. Write them in order to make 11.",
+      "wrong": "2",
+      "error_note": "The quotient digits are place values, not numbers to add together: 10 + 1 = 11."
     },
     {
       "id": "maths:M02-S04-C2-Q5",
@@ -366,7 +470,11 @@
       "b": 7,
       "answer": "48 r 5",
       "check": "48 × 7 + 5 = 341",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 34 ÷ 7, how does the remainder change the next digit, 1?",
+      "method_note": "Carry remainder 6 before the next digit, 1, to make 61. Then 61 ÷ 7 = 8 remainder 5.",
+      "wrong": "40 r 1",
+      "error_note": "Do not divide the next digit 1 on its own. The carried 6 makes it 61, so use 61 ÷ 7."
     },
     {
       "id": "maths:M02-S04-C3-Q5",
@@ -378,8 +486,12 @@
       "a": 4516,
       "b": 16,
       "answer": "282.25",
-      "check": "282 × 16 + 4 = 4516",
-      "method": "bus"
+      "check": "282.25 × 16 = 4516",
+      "method": "bus",
+      "hint": "After 45 ÷ 16, how does the remainder change the next digit, 1?",
+      "method_note": "The whole-number division gives 282 remainder 4. The remainder represents 4/16 = 0.25, so the complete answer is 282.25.",
+      "wrong": "282.4",
+      "error_note": "The remainder 4 means 4/16, not decimal digits to copy after a point. Divide it by 16 to get 0.25."
     },
     {
       "id": "maths:M02-S04-C1-Q6",
@@ -392,7 +504,11 @@
       "b": 8,
       "answer": "11",
       "check": "11 × 8 + 0 = 88",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 88 ÷ 8, start with 8 ÷ 8. Where should that answer digit go above 88?",
+      "method_note": "The quotient digits represent 1 tens, 1 units. Write them in order to make 11.",
+      "wrong": "2",
+      "error_note": "The quotient digits are place values, not numbers to add together: 10 + 1 = 11."
     },
     {
       "id": "maths:M02-S04-C2-Q6",
@@ -405,7 +521,11 @@
       "b": 8,
       "answer": "62 r 6",
       "check": "62 × 8 + 6 = 502",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 50 ÷ 8, how does the remainder change the next digit, 2?",
+      "method_note": "Carry remainder 2 before the next digit, 2, to make 22. Then 22 ÷ 8 = 2 remainder 6.",
+      "wrong": "60 r 2",
+      "error_note": "Do not divide the next digit 2 on its own. The carried 2 makes it 22, so use 22 ÷ 8."
     },
     {
       "id": "maths:M02-S04-C3-Q6",
@@ -417,8 +537,12 @@
       "a": 8143,
       "b": 25,
       "answer": "325.72",
-      "check": "325 × 25 + 18 = 8143",
-      "method": "bus"
+      "check": "325.72 × 25 = 8143",
+      "method": "bus",
+      "hint": "After 81 ÷ 25, how does the remainder change the next digit, 4?",
+      "method_note": "The whole-number division gives 325 remainder 18. The remainder represents 18/25 = 0.72, so the complete answer is 325.72.",
+      "wrong": "325.18",
+      "error_note": "The remainder 18 means 18/25, not decimal digits to copy after a point. Divide it by 25 to get 0.72."
     },
     {
       "id": "maths:M02-S05-C1-Q1",
@@ -431,7 +555,11 @@
       "b": 2,
       "answer": "23",
       "check": "23 × 2 + 0 = 46",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 46 ÷ 2, start with 4 ÷ 2. Where should that answer digit go above 46?",
+      "method_note": "The quotient digits represent 2 tens, 3 units. Write them in order to make 23.",
+      "wrong": "5",
+      "error_note": "The quotient digits are place values, not numbers to add together: 20 + 3 = 23."
     },
     {
       "id": "maths:M02-S05-C2-Q1",
@@ -444,7 +572,11 @@
       "b": 3,
       "answer": "28",
       "check": "28 × 3 + 0 = 84",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 8 ÷ 3, how does the remainder change the next digit, 4?",
+      "method_note": "Carry remainder 2 before the next digit, 4, to make 24. Then 24 ÷ 3 = 8 remainder 0.",
+      "wrong": "21 r 1",
+      "error_note": "Do not divide the next digit 4 on its own. The carried 2 makes it 24, so use 24 ÷ 3."
     },
     {
       "id": "maths:M02-S05-C3-Q1",
@@ -456,8 +588,12 @@
       "a": 627,
       "b": 4,
       "answer": "156.75",
-      "check": "156 × 4 + 3 = 627",
-      "method": "bus"
+      "check": "156.75 × 4 = 627",
+      "method": "bus",
+      "hint": "After 6 ÷ 4, how does the remainder change the next digit, 2?",
+      "method_note": "The whole-number division gives 156 remainder 3. The remainder represents 3/4 = 0.75, so the complete answer is 156.75.",
+      "wrong": "156.3",
+      "error_note": "The remainder 3 means 3/4, not decimal digits to copy after a point. Divide it by 4 to get 0.75."
     },
     {
       "id": "maths:M02-S05-C1-Q2",
@@ -470,7 +606,11 @@
       "b": 3,
       "answer": "31",
       "check": "31 × 3 + 0 = 93",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 93 ÷ 3, start with 9 ÷ 3. Where should that answer digit go above 93?",
+      "method_note": "The quotient digits represent 3 tens, 1 units. Write them in order to make 31.",
+      "wrong": "4",
+      "error_note": "The quotient digits are place values, not numbers to add together: 30 + 1 = 31."
     },
     {
       "id": "maths:M02-S05-C2-Q2",
@@ -483,7 +623,11 @@
       "b": 4,
       "answer": "39",
       "check": "39 × 4 + 0 = 156",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 15 ÷ 4, how does the remainder change the next digit, 6?",
+      "method_note": "Carry remainder 3 before the next digit, 6, to make 36. Then 36 ÷ 4 = 9 remainder 0.",
+      "wrong": "31 r 2",
+      "error_note": "Do not divide the next digit 6 on its own. The carried 3 makes it 36, so use 36 ÷ 4."
     },
     {
       "id": "maths:M02-S05-C3-Q2",
@@ -491,12 +635,16 @@
       "topic": "M02",
       "type": "plain",
       "level": 2,
-      "q": "943 ÷ 2",
+      "q": "943 ÷ 8",
       "a": 943,
-      "b": 2,
-      "answer": "471.5",
-      "check": "471 × 2 + 1 = 943",
-      "method": "bus"
+      "b": 8,
+      "answer": "117.875",
+      "check": "117.875 × 8 = 943",
+      "method": "bus",
+      "hint": "After 9 ÷ 8, how does the remainder change the next digit, 4?",
+      "method_note": "The whole-number division gives 117 remainder 7. The remainder represents 7/8 = 0.875, so the complete answer is 117.875.",
+      "wrong": "117.7",
+      "error_note": "The remainder 7 means 7/8, not decimal digits to copy after a point. Divide it by 8 to get 0.875."
     },
     {
       "id": "maths:M02-S05-C1-Q3",
@@ -504,12 +652,16 @@
       "topic": "M02",
       "type": "plain",
       "level": 0,
-      "q": "66 ÷ 6",
-      "a": 66,
-      "b": 6,
-      "answer": "11",
-      "check": "11 × 6 + 0 = 66",
-      "method": "bus"
+      "q": "86 ÷ 2",
+      "a": 86,
+      "b": 2,
+      "answer": "43",
+      "check": "43 × 2 + 0 = 86",
+      "method": "bus",
+      "hint": "In 86 ÷ 2, start with 8 ÷ 2. Where should that answer digit go above 86?",
+      "method_note": "The quotient digits represent 4 tens, 3 units. Write them in order to make 43.",
+      "wrong": "7",
+      "error_note": "The quotient digits are place values, not numbers to add together: 40 + 3 = 43."
     },
     {
       "id": "maths:M02-S05-C2-Q3",
@@ -522,7 +674,11 @@
       "b": 6,
       "answer": "39 r 1",
       "check": "39 × 6 + 1 = 235",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 23 ÷ 6, how does the remainder change the next digit, 5?",
+      "method_note": "Carry remainder 5 before the next digit, 5, to make 55. Then 55 ÷ 6 = 9 remainder 1.",
+      "wrong": "30 r 5",
+      "error_note": "Do not divide the next digit 5 on its own. The carried 5 makes it 55, so use 55 ÷ 6."
     },
     {
       "id": "maths:M02-S05-C3-Q3",
@@ -535,7 +691,11 @@
       "b": 12,
       "answer": "178",
       "check": "178 × 12 + 0 = 2136",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 21 ÷ 12, how does the remainder change the next digit, 3?",
+      "method_note": "Carry remainder 9 before the next digit, 3, to make 93. Then 93 ÷ 12 = 7 remainder 9.",
+      "wrong": "103",
+      "error_note": "Do not divide the next digit 3 on its own. The carried 9 makes it 93, so use 93 ÷ 12."
     },
     {
       "id": "maths:M02-S05-C1-Q4",
@@ -548,7 +708,11 @@
       "b": 4,
       "answer": "221",
       "check": "221 × 4 + 0 = 884",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 884 ÷ 4, start with 8 ÷ 4. Where should that answer digit go above 884?",
+      "method_note": "The quotient digits represent 2 hundreds, 2 tens, 1 units. Write them in order to make 221.",
+      "wrong": "5",
+      "error_note": "The quotient digits are place values, not numbers to add together: 200 + 20 + 1 = 221."
     },
     {
       "id": "maths:M02-S05-C2-Q4",
@@ -561,7 +725,11 @@
       "b": 7,
       "answer": "46 r 4",
       "check": "46 × 7 + 4 = 326",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 32 ÷ 7, how does the remainder change the next digit, 6?",
+      "method_note": "Carry remainder 4 before the next digit, 6, to make 46. Then 46 ÷ 7 = 6 remainder 4.",
+      "wrong": "40 r 6",
+      "error_note": "Do not divide the next digit 6 on its own. The carried 4 makes it 46, so use 46 ÷ 7."
     },
     {
       "id": "maths:M02-S05-C3-Q4",
@@ -574,7 +742,11 @@
       "b": 32,
       "answer": "144",
       "check": "144 × 32 + 0 = 4608",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 46 ÷ 32, how does the remainder change the next digit, 0?",
+      "method_note": "Carry remainder 14 before the next digit, 0, to make 140. Then 140 ÷ 32 = 4 remainder 12.",
+      "wrong": "100 r 8",
+      "error_note": "Do not divide the next digit 0 on its own. The carried 14 makes it 140, so use 140 ÷ 32."
     },
     {
       "id": "maths:M02-S05-C1-Q5",
@@ -587,7 +759,11 @@
       "b": 5,
       "answer": "111",
       "check": "111 × 5 + 0 = 555",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 555 ÷ 5, start with 5 ÷ 5. Where should that answer digit go above 555?",
+      "method_note": "The quotient digits represent 1 hundreds, 1 tens, 1 units. Write them in order to make 111.",
+      "wrong": "3",
+      "error_note": "The quotient digits are place values, not numbers to add together: 100 + 10 + 1 = 111."
     },
     {
       "id": "maths:M02-S05-C2-Q5",
@@ -600,7 +776,11 @@
       "b": 8,
       "answer": "57 r 2",
       "check": "57 × 8 + 2 = 458",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 45 ÷ 8, how does the remainder change the next digit, 8?",
+      "method_note": "Carry remainder 5 before the next digit, 8, to make 58. Then 58 ÷ 8 = 7 remainder 2.",
+      "wrong": "51",
+      "error_note": "Do not divide the next digit 8 on its own. The carried 5 makes it 58, so use 58 ÷ 8."
     },
     {
       "id": "maths:M02-S05-C3-Q5",
@@ -612,8 +792,12 @@
       "a": 5729,
       "b": 16,
       "answer": "358.0625",
-      "check": "358 × 16 + 1 = 5729",
-      "method": "bus"
+      "check": "358.0625 × 16 = 5729",
+      "method": "bus",
+      "hint": "After 57 ÷ 16, how does the remainder change the next digit, 2?",
+      "method_note": "The whole-number division gives 358 remainder 1. The remainder represents 1/16 = 0.0625, so the complete answer is 358.0625.",
+      "wrong": "358.625",
+      "error_note": "Remainder 1 makes 10 ÷ 16 = 0 remainder 10, so the tenths digit is 0. Continue with 100 ÷ 16 and keep that zero in 358.0625."
     },
     {
       "id": "maths:M02-S05-C1-Q6",
@@ -626,7 +810,11 @@
       "b": 3,
       "answer": "213",
       "check": "213 × 3 + 0 = 639",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 639 ÷ 3, start with 6 ÷ 3. Where should that answer digit go above 639?",
+      "method_note": "The quotient digits represent 2 hundreds, 1 tens, 3 units. Write them in order to make 213.",
+      "wrong": "6",
+      "error_note": "The quotient digits are place values, not numbers to add together: 200 + 10 + 3 = 213."
     },
     {
       "id": "maths:M02-S05-C2-Q6",
@@ -639,7 +827,11 @@
       "b": 9,
       "answer": "68 r 5",
       "check": "68 × 9 + 5 = 617",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 61 ÷ 9, how does the remainder change the next digit, 7?",
+      "method_note": "Carry remainder 7 before the next digit, 7, to make 77. Then 77 ÷ 9 = 8 remainder 5.",
+      "wrong": "60 r 7",
+      "error_note": "Do not divide the next digit 7 on its own. The carried 7 makes it 77, so use 77 ÷ 9."
     },
     {
       "id": "maths:M02-S05-C3-Q6",
@@ -651,8 +843,12 @@
       "a": 9031,
       "b": 40,
       "answer": "225.775",
-      "check": "225 × 40 + 31 = 9031",
-      "method": "bus"
+      "check": "225.775 × 40 = 9031",
+      "method": "bus",
+      "hint": "After 90 ÷ 40, how does the remainder change the next digit, 3?",
+      "method_note": "The whole-number division gives 225 remainder 31. The remainder represents 31/40 = 0.775, so the complete answer is 225.775.",
+      "wrong": "225.31",
+      "error_note": "The remainder 31 means 31/40, not decimal digits to copy after a point. Divide it by 40 to get 0.775."
     },
     {
       "id": "maths:M02-S06-C1-Q1",
@@ -665,7 +861,11 @@
       "b": 2,
       "answer": "41",
       "check": "41 × 2 + 0 = 82",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 82 ÷ 2, start with 8 ÷ 2. Where should that answer digit go above 82?",
+      "method_note": "The quotient digits represent 4 tens, 1 units. Write them in order to make 41.",
+      "wrong": "5",
+      "error_note": "The quotient digits are place values, not numbers to add together: 40 + 1 = 41."
     },
     {
       "id": "maths:M02-S06-C2-Q1",
@@ -678,7 +878,11 @@
       "b": 4,
       "answer": "23 r 3",
       "check": "23 × 4 + 3 = 95",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 9 ÷ 4, how does the remainder change the next digit, 5?",
+      "method_note": "Carry remainder 1 before the next digit, 5, to make 15. Then 15 ÷ 4 = 3 remainder 3.",
+      "wrong": "21 r 1",
+      "error_note": "Do not divide the next digit 5 on its own. The carried 1 makes it 15, so use 15 ÷ 4."
     },
     {
       "id": "maths:M02-S06-C3-Q1",
@@ -690,8 +894,12 @@
       "a": 738,
       "b": 4,
       "answer": "184.5",
-      "check": "184 × 4 + 2 = 738",
-      "method": "bus"
+      "check": "184.5 × 4 = 738",
+      "method": "bus",
+      "hint": "After 7 ÷ 4, how does the remainder change the next digit, 3?",
+      "method_note": "The whole-number division gives 184 remainder 2. The remainder represents 2/4 = 0.5, so the complete answer is 184.5.",
+      "wrong": "184.2",
+      "error_note": "The remainder 2 means 2/4, not decimal digits to copy after a point. Divide it by 4 to get 0.5."
     },
     {
       "id": "maths:M02-S06-C1-Q2",
@@ -704,7 +912,11 @@
       "b": 3,
       "answer": "321",
       "check": "321 × 3 + 0 = 963",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 963 ÷ 3, start with 9 ÷ 3. Where should that answer digit go above 963?",
+      "method_note": "The quotient digits represent 3 hundreds, 2 tens, 1 units. Write them in order to make 321.",
+      "wrong": "6",
+      "error_note": "The quotient digits are place values, not numbers to add together: 300 + 20 + 1 = 321."
     },
     {
       "id": "maths:M02-S06-C2-Q2",
@@ -717,7 +929,11 @@
       "b": 5,
       "answer": "36 r 4",
       "check": "36 × 5 + 4 = 184",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 18 ÷ 5, how does the remainder change the next digit, 4?",
+      "method_note": "Carry remainder 3 before the next digit, 4, to make 34. Then 34 ÷ 5 = 6 remainder 4.",
+      "wrong": "30 r 4",
+      "error_note": "Do not divide the next digit 4 on its own. The carried 3 makes it 34, so use 34 ÷ 5."
     },
     {
       "id": "maths:M02-S06-C3-Q2",
@@ -725,12 +941,16 @@
       "topic": "M02",
       "type": "plain",
       "level": 2,
-      "q": "859 ÷ 2",
+      "q": "859 ÷ 5",
       "a": 859,
-      "b": 2,
-      "answer": "429.5",
-      "check": "429 × 2 + 1 = 859",
-      "method": "bus"
+      "b": 5,
+      "answer": "171.8",
+      "check": "171.8 × 5 = 859",
+      "method": "bus",
+      "hint": "After 8 ÷ 5, how does the remainder change the next digit, 5?",
+      "method_note": "The whole-number division gives 171 remainder 4. The remainder represents 4/5 = 0.8, so the complete answer is 171.8.",
+      "wrong": "171.4",
+      "error_note": "The remainder 4 means 4/5, not decimal digits to copy after a point. Divide it by 5 to get 0.8."
     },
     {
       "id": "maths:M02-S06-C1-Q3",
@@ -743,7 +963,11 @@
       "b": 4,
       "answer": "212",
       "check": "212 × 4 + 0 = 848",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 848 ÷ 4, start with 8 ÷ 4. Where should that answer digit go above 848?",
+      "method_note": "The quotient digits represent 2 hundreds, 1 tens, 2 units. Write them in order to make 212.",
+      "wrong": "5",
+      "error_note": "The quotient digits are place values, not numbers to add together: 200 + 10 + 2 = 212."
     },
     {
       "id": "maths:M02-S06-C2-Q3",
@@ -756,7 +980,11 @@
       "b": 8,
       "answer": "33 r 3",
       "check": "33 × 8 + 3 = 267",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 26 ÷ 8, how does the remainder change the next digit, 7?",
+      "method_note": "Carry remainder 2 before the next digit, 7, to make 27. Then 27 ÷ 8 = 3 remainder 3.",
+      "wrong": "30 r 7",
+      "error_note": "Do not divide the next digit 7 on its own. The carried 2 makes it 27, so use 27 ÷ 8."
     },
     {
       "id": "maths:M02-S06-C3-Q3",
@@ -769,7 +997,11 @@
       "b": 24,
       "answer": "136",
       "check": "136 × 24 + 0 = 3264",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 32 ÷ 24, how does the remainder change the next digit, 6?",
+      "method_note": "Carry remainder 8 before the next digit, 6, to make 86. Then 86 ÷ 24 = 3 remainder 14.",
+      "wrong": "102 r 16",
+      "error_note": "Do not divide the next digit 6 on its own. The carried 8 makes it 86, so use 86 ÷ 24."
     },
     {
       "id": "maths:M02-S06-C1-Q4",
@@ -777,12 +1009,16 @@
       "topic": "M02",
       "type": "plain",
       "level": 0,
-      "q": "777 ÷ 7",
-      "a": 777,
-      "b": 7,
-      "answer": "111",
-      "check": "111 × 7 + 0 = 777",
-      "method": "bus"
+      "q": "966 ÷ 3",
+      "a": 966,
+      "b": 3,
+      "answer": "322",
+      "check": "322 × 3 + 0 = 966",
+      "method": "bus",
+      "hint": "In 966 ÷ 3, start with 9 ÷ 3. Where should that answer digit go above 966?",
+      "method_note": "The quotient digits represent 3 hundreds, 2 tens, 2 units. Write them in order to make 322.",
+      "wrong": "7",
+      "error_note": "The quotient digits are place values, not numbers to add together: 300 + 20 + 2 = 322."
     },
     {
       "id": "maths:M02-S06-C2-Q4",
@@ -795,7 +1031,11 @@
       "b": 6,
       "answer": "66 r 1",
       "check": "66 × 6 + 1 = 397",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 39 ÷ 6, how does the remainder change the next digit, 7?",
+      "method_note": "Carry remainder 3 before the next digit, 7, to make 37. Then 37 ÷ 6 = 6 remainder 1.",
+      "wrong": "61 r 1",
+      "error_note": "Do not divide the next digit 7 on its own. The carried 3 makes it 37, so use 37 ÷ 6."
     },
     {
       "id": "maths:M02-S06-C3-Q4",
@@ -808,7 +1048,11 @@
       "b": 15,
       "answer": "345",
       "check": "345 × 15 + 0 = 5175",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 51 ÷ 15, how does the remainder change the next digit, 7?",
+      "method_note": "Carry remainder 6 before the next digit, 7, to make 67. Then 67 ÷ 15 = 4 remainder 7.",
+      "wrong": "305",
+      "error_note": "Do not divide the next digit 7 on its own. The carried 6 makes it 67, so use 67 ÷ 15."
     },
     {
       "id": "maths:M02-S06-C1-Q5",
@@ -816,12 +1060,16 @@
       "topic": "M02",
       "type": "plain",
       "level": 0,
-      "q": "888 ÷ 8",
-      "a": 888,
-      "b": 8,
-      "answer": "111",
-      "check": "111 × 8 + 0 = 888",
-      "method": "bus"
+      "q": "848 ÷ 2",
+      "a": 848,
+      "b": 2,
+      "answer": "424",
+      "check": "424 × 2 + 0 = 848",
+      "method": "bus",
+      "hint": "In 848 ÷ 2, start with 8 ÷ 2. Where should that answer digit go above 848?",
+      "method_note": "The quotient digits represent 4 hundreds, 2 tens, 4 units. Write them in order to make 424.",
+      "wrong": "10",
+      "error_note": "The quotient digits are place values, not numbers to add together: 400 + 20 + 4 = 424."
     },
     {
       "id": "maths:M02-S06-C2-Q5",
@@ -834,7 +1082,11 @@
       "b": 7,
       "answer": "74 r 5",
       "check": "74 × 7 + 5 = 523",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 52 ÷ 7, how does the remainder change the next digit, 3?",
+      "method_note": "Carry remainder 3 before the next digit, 3, to make 33. Then 33 ÷ 7 = 4 remainder 5.",
+      "wrong": "70 r 3",
+      "error_note": "Do not divide the next digit 3 on its own. The carried 3 makes it 33, so use 33 ÷ 7."
     },
     {
       "id": "maths:M02-S06-C3-Q5",
@@ -846,8 +1098,12 @@
       "a": 6843,
       "b": 25,
       "answer": "273.72",
-      "check": "273 × 25 + 18 = 6843",
-      "method": "bus"
+      "check": "273.72 × 25 = 6843",
+      "method": "bus",
+      "hint": "After 68 ÷ 25, how does the remainder change the next digit, 4?",
+      "method_note": "The whole-number division gives 273 remainder 18. The remainder represents 18/25 = 0.72, so the complete answer is 273.72.",
+      "wrong": "273.18",
+      "error_note": "The remainder 18 means 18/25, not decimal digits to copy after a point. Divide it by 25 to get 0.72."
     },
     {
       "id": "maths:M02-S06-C1-Q6",
@@ -860,7 +1116,11 @@
       "b": 3,
       "answer": "202",
       "check": "202 × 3 + 0 = 606",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 606 ÷ 3, what happens when you reach 0, which is smaller than 3? How will you keep its place in the answer?",
+      "method_note": "At the tens position, 0 ÷ 3 gives 0 remainder 0. Write the quotient zero before continuing.",
+      "wrong": "22",
+      "error_note": "Keep the zero in 202. Omitting it moves the later digits into the wrong place-value columns."
     },
     {
       "id": "maths:M02-S06-C2-Q6",
@@ -873,7 +1133,11 @@
       "b": 9,
       "answer": "83 r 1",
       "check": "83 × 9 + 1 = 748",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 74 ÷ 9, how does the remainder change the next digit, 8?",
+      "method_note": "Carry remainder 2 before the next digit, 8, to make 28. Then 28 ÷ 9 = 3 remainder 1.",
+      "wrong": "80 r 8",
+      "error_note": "Do not divide the next digit 8 on its own. The carried 2 makes it 28, so use 28 ÷ 9."
     },
     {
       "id": "maths:M02-S06-C3-Q6",
@@ -885,8 +1149,12 @@
       "a": 7249,
       "b": 20,
       "answer": "362.45",
-      "check": "362 × 20 + 9 = 7249",
-      "method": "bus"
+      "check": "362.45 × 20 = 7249",
+      "method": "bus",
+      "hint": "After 72 ÷ 20, how does the remainder change the next digit, 4?",
+      "method_note": "The whole-number division gives 362 remainder 9. The remainder represents 9/20 = 0.45, so the complete answer is 362.45.",
+      "wrong": "362.9",
+      "error_note": "The remainder 9 means 9/20, not decimal digits to copy after a point. Divide it by 20 to get 0.45."
     },
     {
       "id": "maths:M02-S07-C1-Q1",
@@ -899,7 +1167,11 @@
       "b": 2,
       "answer": "31",
       "check": "31 × 2 + 0 = 62",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 62 ÷ 2, start with 6 ÷ 2. Where should that answer digit go above 62?",
+      "method_note": "The quotient digits represent 3 tens, 1 units. Write them in order to make 31.",
+      "wrong": "4",
+      "error_note": "The quotient digits are place values, not numbers to add together: 30 + 1 = 31."
     },
     {
       "id": "maths:M02-S07-C2-Q1",
@@ -912,7 +1184,11 @@
       "b": 4,
       "answer": "27",
       "check": "27 × 4 + 0 = 108",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 10 ÷ 4, how does the remainder change the next digit, 8?",
+      "method_note": "Carry remainder 2 before the next digit, 8, to make 28. Then 28 ÷ 4 = 7 remainder 0.",
+      "wrong": "22",
+      "error_note": "Do not divide the next digit 8 on its own. The carried 2 makes it 28, so use 28 ÷ 4."
     },
     {
       "id": "maths:M02-S07-C3-Q1",
@@ -924,8 +1200,12 @@
       "a": 849,
       "b": 4,
       "answer": "212.25",
-      "check": "212 × 4 + 1 = 849",
-      "method": "bus"
+      "check": "212.25 × 4 = 849",
+      "method": "bus",
+      "hint": "In 849 ÷ 4, start with 8 ÷ 4. Where should that answer digit go above 849?",
+      "method_note": "The whole-number division gives 212 remainder 1. The remainder represents 1/4 = 0.25, so the complete answer is 212.25.",
+      "wrong": "212.1",
+      "error_note": "The remainder 1 means 1/4, not decimal digits to copy after a point. Divide it by 4 to get 0.25."
     },
     {
       "id": "maths:M02-S07-C1-Q2",
@@ -938,7 +1218,11 @@
       "b": 3,
       "answer": "312",
       "check": "312 × 3 + 0 = 936",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 936 ÷ 3, start with 9 ÷ 3. Where should that answer digit go above 936?",
+      "method_note": "The quotient digits represent 3 hundreds, 1 tens, 2 units. Write them in order to make 312.",
+      "wrong": "6",
+      "error_note": "The quotient digits are place values, not numbers to add together: 300 + 10 + 2 = 312."
     },
     {
       "id": "maths:M02-S07-C2-Q2",
@@ -951,7 +1235,11 @@
       "b": 6,
       "answer": "40 r 5",
       "check": "40 × 6 + 5 = 245",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 245 ÷ 6, what happens when you reach 5, which is smaller than 6? How will you keep its place in the answer?",
+      "method_note": "At the units position, 5 ÷ 6 gives 0 remainder 5. Write the quotient zero before continuing.",
+      "wrong": "4 r 5",
+      "error_note": "Keep the zero in 40. Omitting it moves the later digits into the wrong place-value columns."
     },
     {
       "id": "maths:M02-S07-C3-Q2",
@@ -959,12 +1247,16 @@
       "topic": "M02",
       "type": "plain",
       "level": 2,
-      "q": "967 ÷ 2",
+      "q": "967 ÷ 16",
       "a": 967,
-      "b": 2,
-      "answer": "483.5",
-      "check": "483 × 2 + 1 = 967",
-      "method": "bus"
+      "b": 16,
+      "answer": "60.4375",
+      "check": "60.4375 × 16 = 967",
+      "method": "bus",
+      "hint": "In 967 ÷ 16, what happens when you reach 7, which is smaller than 16? How will you keep its place in the answer?",
+      "method_note": "The whole-number division gives 60 remainder 7. The remainder represents 7/16 = 0.4375, so the complete answer is 60.4375.",
+      "wrong": "60.7",
+      "error_note": "The remainder 7 means 7/16, not decimal digits to copy after a point. Divide it by 16 to get 0.4375."
     },
     {
       "id": "maths:M02-S07-C1-Q3",
@@ -977,7 +1269,11 @@
       "b": 4,
       "answer": "112",
       "check": "112 × 4 + 0 = 448",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 448 ÷ 4, start with 4 ÷ 4. Where should that answer digit go above 448?",
+      "method_note": "The quotient digits represent 1 hundreds, 1 tens, 2 units. Write them in order to make 112.",
+      "wrong": "4",
+      "error_note": "The quotient digits are place values, not numbers to add together: 100 + 10 + 2 = 112."
     },
     {
       "id": "maths:M02-S07-C2-Q3",
@@ -990,7 +1286,11 @@
       "b": 7,
       "answer": "44 r 6",
       "check": "44 × 7 + 6 = 314",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 31 ÷ 7, how does the remainder change the next digit, 4?",
+      "method_note": "Carry remainder 3 before the next digit, 4, to make 34. Then 34 ÷ 7 = 4 remainder 6.",
+      "wrong": "40 r 4",
+      "error_note": "Do not divide the next digit 4 on its own. The carried 3 makes it 34, so use 34 ÷ 7."
     },
     {
       "id": "maths:M02-S07-C3-Q3",
@@ -1003,7 +1303,11 @@
       "b": 18,
       "answer": "243",
       "check": "243 × 18 + 0 = 4374",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 43 ÷ 18, how does the remainder change the next digit, 7?",
+      "method_note": "Carry remainder 7 before the next digit, 7, to make 77. Then 77 ÷ 18 = 4 remainder 5.",
+      "wrong": "204 r 2",
+      "error_note": "Do not divide the next digit 7 on its own. The carried 7 makes it 77, so use 77 ÷ 18."
     },
     {
       "id": "maths:M02-S07-C1-Q4",
@@ -1016,7 +1320,11 @@
       "b": 5,
       "answer": "101",
       "check": "101 × 5 + 0 = 505",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 505 ÷ 5, what happens when you reach 0, which is smaller than 5? How will you keep its place in the answer?",
+      "method_note": "At the tens position, 0 ÷ 5 gives 0 remainder 0. Write the quotient zero before continuing.",
+      "wrong": "11",
+      "error_note": "Keep the zero in 101. Omitting it moves the later digits into the wrong place-value columns."
     },
     {
       "id": "maths:M02-S07-C2-Q4",
@@ -1029,7 +1337,11 @@
       "b": 8,
       "answer": "58 r 3",
       "check": "58 × 8 + 3 = 467",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 46 ÷ 8, how does the remainder change the next digit, 7?",
+      "method_note": "Carry remainder 6 before the next digit, 7, to make 67. Then 67 ÷ 8 = 8 remainder 3.",
+      "wrong": "50 r 7",
+      "error_note": "Do not divide the next digit 7 on its own. The carried 6 makes it 67, so use 67 ÷ 8."
     },
     {
       "id": "maths:M02-S07-C3-Q4",
@@ -1042,7 +1354,11 @@
       "b": 48,
       "answer": "131",
       "check": "131 × 48 + 0 = 6288",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 62 ÷ 48, how does the remainder change the next digit, 8?",
+      "method_note": "Carry remainder 14 before the next digit, 8, to make 148. Then 148 ÷ 48 = 3 remainder 4.",
+      "wrong": "101 r 40",
+      "error_note": "Do not divide the next digit 8 on its own. The carried 14 makes it 148, so use 148 ÷ 48."
     },
     {
       "id": "maths:M02-S07-C1-Q5",
@@ -1050,12 +1366,16 @@
       "topic": "M02",
       "type": "plain",
       "level": 0,
-      "q": "666 ÷ 6",
-      "a": 666,
-      "b": 6,
-      "answer": "111",
-      "check": "111 × 6 + 0 = 666",
-      "method": "bus"
+      "q": "684 ÷ 2",
+      "a": 684,
+      "b": 2,
+      "answer": "342",
+      "check": "342 × 2 + 0 = 684",
+      "method": "bus",
+      "hint": "In 684 ÷ 2, start with 6 ÷ 2. Where should that answer digit go above 684?",
+      "method_note": "The quotient digits represent 3 hundreds, 4 tens, 2 units. Write them in order to make 342.",
+      "wrong": "9",
+      "error_note": "The quotient digits are place values, not numbers to add together: 300 + 40 + 2 = 342."
     },
     {
       "id": "maths:M02-S07-C2-Q5",
@@ -1068,7 +1388,11 @@
       "b": 9,
       "answer": "65 r 1",
       "check": "65 × 9 + 1 = 586",
-      "method": "bus"
+      "method": "bus",
+      "hint": "After 58 ÷ 9, how does the remainder change the next digit, 6?",
+      "method_note": "Carry remainder 4 before the next digit, 6, to make 46. Then 46 ÷ 9 = 5 remainder 1.",
+      "wrong": "60 r 6",
+      "error_note": "Do not divide the next digit 6 on its own. The carried 4 makes it 46, so use 46 ÷ 9."
     },
     {
       "id": "maths:M02-S07-C3-Q5",
@@ -1080,8 +1404,12 @@
       "a": 7957,
       "b": 16,
       "answer": "497.3125",
-      "check": "497 × 16 + 5 = 7957",
-      "method": "bus"
+      "check": "497.3125 × 16 = 7957",
+      "method": "bus",
+      "hint": "After 79 ÷ 16, how does the remainder change the next digit, 5?",
+      "method_note": "The whole-number division gives 497 remainder 5. The remainder represents 5/16 = 0.3125, so the complete answer is 497.3125.",
+      "wrong": "497.5",
+      "error_note": "The remainder 5 means 5/16, not decimal digits to copy after a point. Divide it by 16 to get 0.3125."
     },
     {
       "id": "maths:M02-S07-C1-Q6",
@@ -1089,12 +1417,16 @@
       "topic": "M02",
       "type": "plain",
       "level": 0,
-      "q": "999 ÷ 9",
-      "a": 999,
-      "b": 9,
-      "answer": "111",
-      "check": "111 × 9 + 0 = 999",
-      "method": "bus"
+      "q": "693 ÷ 3",
+      "a": 693,
+      "b": 3,
+      "answer": "231",
+      "check": "231 × 3 + 0 = 693",
+      "method": "bus",
+      "hint": "In 693 ÷ 3, start with 6 ÷ 3. Where should that answer digit go above 693?",
+      "method_note": "The quotient digits represent 2 hundreds, 3 tens, 1 units. Write them in order to make 231.",
+      "wrong": "6",
+      "error_note": "The quotient digits are place values, not numbers to add together: 200 + 30 + 1 = 231."
     },
     {
       "id": "maths:M02-S07-C2-Q6",
@@ -1107,7 +1439,11 @@
       "b": 5,
       "answer": "140 r 3",
       "check": "140 × 5 + 3 = 703",
-      "method": "bus"
+      "method": "bus",
+      "hint": "In 703 ÷ 5, what happens when you reach 3, which is smaller than 5? How will you keep its place in the answer?",
+      "method_note": "At the units position, 3 ÷ 5 gives 0 remainder 3. Write the quotient zero before continuing.",
+      "wrong": "14 r 3",
+      "error_note": "Keep the zero in 140. Omitting it moves the later digits into the wrong place-value columns."
     },
     {
       "id": "maths:M02-S07-C3-Q6",
@@ -1119,8 +1455,12 @@
       "a": 8623,
       "b": 50,
       "answer": "172.46",
-      "check": "172 × 50 + 23 = 8623",
-      "method": "bus"
+      "check": "172.46 × 50 = 8623",
+      "method": "bus",
+      "hint": "After 86 ÷ 50, how does the remainder change the next digit, 2?",
+      "method_note": "The whole-number division gives 172 remainder 23. The remainder represents 23/50 = 0.46, so the complete answer is 172.46.",
+      "wrong": "172.23",
+      "error_note": "The remainder 23 means 23/50, not decimal digits to copy after a point. Divide it by 50 to get 0.46."
     },
     {
       "id": "maths:M02-SE-C1-Q1",
@@ -1138,21 +1478,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "4 ÷ 4 = 1, so the quotient is 21."
+          "text": "Write 1 above the final 4."
         },
         {
           "id": "1",
-          "text": "Keep the place-value zero: 101."
+          "text": "Write 0 above the final 4."
         },
         {
           "id": "2",
-          "text": "6 ÷ 3 = 2, so the quotient is 32."
+          "text": "Write 4 above the final 4."
         }
       ],
       "correctionId": "0",
       "correction": "4 ÷ 4 = 1, so the quotient is 21.",
       "wrong": "20",
-      "error_note": "4 ÷ 4 = 1, so the quotient is 21."
+      "error_note": "4 ÷ 4 = 1, so the quotient is 21.",
+      "hint": "Check the last division, 4 ÷ 4. What does it contribute to the quotient?"
     },
     {
       "id": "maths:M02-SE-C1-Q2",
@@ -1170,21 +1511,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "4 ÷ 4 = 1, so the quotient is 21."
+          "text": "Remove the tens position from the quotient."
         },
         {
           "id": "1",
-          "text": "Keep the place-value zero: 101."
+          "text": "Keep a zero in the tens position of the quotient."
         },
         {
           "id": "2",
-          "text": "6 ÷ 3 = 2, so the quotient is 32."
+          "text": "Put the zero after the units digit of the quotient."
         }
       ],
       "correctionId": "1",
       "correction": "Keep the place-value zero: 101.",
       "wrong": "11",
-      "error_note": "Keep the place-value zero: 101."
+      "error_note": "Keep the place-value zero: 101.",
+      "hint": "In 505 ÷ 5, what happens to the tens position when you divide its 0?"
     },
     {
       "id": "maths:M02-SE-C1-Q3",
@@ -1202,21 +1544,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "4 ÷ 4 = 1, so the quotient is 21."
+          "text": "Copy the first quotient digit above 6."
         },
         {
           "id": "1",
-          "text": "Keep the place-value zero: 101."
+          "text": "Use 6 as the quotient digit above 6."
         },
         {
           "id": "2",
-          "text": "6 ÷ 3 = 2, so the quotient is 32."
+          "text": "Use 2 as the quotient digit above 6."
         }
       ],
       "correctionId": "2",
       "correction": "6 ÷ 3 = 2, so the quotient is 32.",
       "wrong": "33",
-      "error_note": "6 ÷ 3 = 2, so the quotient is 32."
+      "error_note": "6 ÷ 3 = 2, so the quotient is 32.",
+      "hint": "Check 6 ÷ 3 in the units column independently of the first digit."
     },
     {
       "id": "maths:M02-SE-C2-Q1",
@@ -1234,21 +1577,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "Carry remainder 2 before the 5: 25 ÷ 6 = 4 r 1. Answer: 24 r 1."
+          "text": "Carry the remainder 2 before the 5 to make 25."
         },
         {
           "id": "1",
-          "text": "The remainder is 4/8, not 4/10. Continue: 40 ÷ 8 = 5. Answer: 16.5."
+          "text": "Divide the final 5 by 6 without carrying."
         },
         {
           "id": "2",
-          "text": "A remainder must be less than 6. 24 ÷ 6 = 4; then 5 ÷ 6 = 0 r 5. Answer: 40 r 5."
+          "text": "Add the remainder 2 to the digit 5 to make 7."
         }
       ],
       "correctionId": "0",
       "correction": "Carry remainder 2 before the 5: 25 ÷ 6 = 4 r 1. Answer: 24 r 1.",
       "wrong": "20 r 5",
-      "error_note": "Carry remainder 2 before the 5: 25 ÷ 6 = 4 r 1. Answer: 24 r 1."
+      "error_note": "Carry remainder 2 before the 5: 25 ÷ 6 = 4 r 1. Answer: 24 r 1.",
+      "hint": "After 14 ÷ 6, how does the remainder change the next digit, 5?"
     },
     {
       "id": "maths:M02-SE-C2-Q2",
@@ -1266,21 +1610,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "Carry remainder 2 before the 5: 25 ÷ 6 = 4 r 1. Answer: 24 r 1."
+          "text": "Copy the remainder 4 directly into the tenths position."
         },
         {
           "id": "1",
-          "text": "The remainder is 4/8, not 4/10. Continue: 40 ÷ 8 = 5. Answer: 16.5."
+          "text": "Append a zero and divide 40 by 8 to find the tenths digit."
         },
         {
           "id": "2",
-          "text": "A remainder must be less than 6. 24 ÷ 6 = 4; then 5 ÷ 6 = 0 r 5. Answer: 40 r 5."
+          "text": "Divide the remainder 4 by 10 to find the decimal part."
         }
       ],
       "correctionId": "1",
       "correction": "The remainder is 4/8, not 4/10. Continue: 40 ÷ 8 = 5. Answer: 16.5.",
       "wrong": "16.4",
-      "error_note": "The remainder is 4/8, not 4/10. Continue: 40 ÷ 8 = 5. Answer: 16.5."
+      "error_note": "The remainder is 4/8, not 4/10. Continue: 40 ÷ 8 = 5. Answer: 16.5.",
+      "hint": "The remainder is 4 out of how many? How could you continue the division?"
     },
     {
       "id": "maths:M02-SE-C2-Q3",
@@ -1298,21 +1643,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "Carry remainder 2 before the 5: 25 ÷ 6 = 4 r 1. Answer: 24 r 1."
+          "text": "Use 3 for 24 ÷ 6 and keep remainder 6."
         },
         {
           "id": "1",
-          "text": "The remainder is 4/8, not 4/10. Continue: 40 ÷ 8 = 5. Answer: 16.5."
+          "text": "Use 4 for 24 ÷ 6, then omit the quotient position above 5."
         },
         {
           "id": "2",
-          "text": "A remainder must be less than 6. 24 ÷ 6 = 4; then 5 ÷ 6 = 0 r 5. Answer: 40 r 5."
+          "text": "Use 4 for 24 ÷ 6, then keep a zero above the final 5."
         }
       ],
       "correctionId": "2",
       "correction": "A remainder must be less than 6. 24 ÷ 6 = 4; then 5 ÷ 6 = 0 r 5. Answer: 40 r 5.",
       "wrong": "310 r 5",
-      "error_note": "A remainder must be less than 6. 24 ÷ 6 = 4; then 5 ÷ 6 = 0 r 5. Answer: 40 r 5."
+      "error_note": "A remainder must be less than 6. 24 ÷ 6 = 4; then 5 ÷ 6 = 0 r 5. Answer: 40 r 5.",
+      "hint": "Check 24 ÷ 6. Can a remainder be as large as the divisor?"
     },
     {
       "id": "maths:M02-SE-C3-Q1",
@@ -1330,21 +1676,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "Keep the zero above the 4: 104."
+          "text": "Keep a zero above the 4 before continuing to 48 ÷ 12."
         },
         {
           "id": "1",
-          "text": "The first two quotient digits are whole-number digits. Answer: 51.25."
+          "text": "Skip the quotient position above the 4."
         },
         {
           "id": "2",
-          "text": "Keep the zero in the whole-number quotient: 302.125."
+          "text": "Write the carried 4 as a quotient digit above the 4."
         }
       ],
       "correctionId": "0",
       "correction": "Keep the zero above the 4: 104.",
       "wrong": "14",
-      "error_note": "Keep the zero above the 4: 104."
+      "error_note": "Keep the zero above the 4: 104.",
+      "hint": "After 12 ÷ 12, what quotient digit belongs above the 4?"
     },
     {
       "id": "maths:M02-SE-C3-Q2",
@@ -1362,21 +1709,22 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "Keep the zero above the 4: 104."
+          "text": "Put the decimal point after the first nonzero quotient digit."
         },
         {
           "id": "1",
-          "text": "The first two quotient digits are whole-number digits. Answer: 51.25."
+          "text": "Put the decimal point after the quotient digit above the final 5."
         },
         {
           "id": "2",
-          "text": "Keep the zero in the whole-number quotient: 302.125."
+          "text": "Put the decimal point before the first nonzero quotient digit."
         }
       ],
       "correctionId": "1",
       "correction": "The first two quotient digits are whole-number digits. Answer: 51.25.",
       "wrong": "5.125",
-      "error_note": "The first two quotient digits are whole-number digits. Answer: 51.25."
+      "error_note": "The first two quotient digits are whole-number digits. Answer: 51.25.",
+      "hint": "Before adding a decimal point, have you finished dividing all three whole-number digits of 615?"
     },
     {
       "id": "maths:M02-SE-C3-Q3",
@@ -1394,21 +1742,52 @@
       "errorOptions": [
         {
           "id": "0",
-          "text": "Keep the zero above the 4: 104."
+          "text": "Skip the quotient position above 3."
         },
         {
           "id": "1",
-          "text": "The first two quotient digits are whole-number digits. Answer: 51.25."
+          "text": "Move the missing zero to the end of the decimal answer."
         },
         {
           "id": "2",
-          "text": "Keep the zero in the whole-number quotient: 302.125."
+          "text": "Keep a zero in the tens position before continuing to 34 ÷ 16."
         }
       ],
       "correctionId": "2",
       "correction": "Keep the zero in the whole-number quotient: 302.125.",
       "wrong": "32.125",
-      "error_note": "Keep the zero in the whole-number quotient: 302.125."
+      "error_note": "Keep the zero in the whole-number quotient: 302.125.",
+      "hint": "After 48 ÷ 16, how will the next digit, 3, keep its place in the quotient?"
+    },
+    {
+      "id": "maths:M02-IA-Q5",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "assessment",
+      "level": 0,
+      "q": "96 ÷ 4",
+      "a": 96,
+      "b": 4,
+      "answer": "24",
+      "check": "24 × 4 + 0 = 96",
+      "method": "bus",
+      "hint": "After dividing 9 by 4, what number does its remainder make with the next digit?",
+      "method_note": "9 ÷ 4 = 2 remainder 1. Carry 1 to make 16; 16 ÷ 4 = 4. The quotient is 24."
+    },
+    {
+      "id": "maths:M02-IA-Q6",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "assessment",
+      "level": 2,
+      "q": "857 ÷ 8",
+      "a": 857,
+      "b": 8,
+      "answer": "107.125",
+      "check": "107.125 × 8 = 857",
+      "method": "bus",
+      "hint": "What quotient digit is needed when you reach 5 ÷ 8? How can you continue after the whole-number digits?",
+      "method_note": "8 ÷ 8 = 1; 5 ÷ 8 = 0 remainder 5; 57 ÷ 8 = 7 remainder 1. Continue with decimal zeros: 10 ÷ 8 = 1 remainder 2, 20 ÷ 8 = 2 remainder 4, then 40 ÷ 8 = 5. The answer is 107.125."
     }
   ],
   "teaching": {
@@ -1442,5 +1821,5 @@
       }
     ]
   },
-  "revision": "ca351125be6e40ab"
+  "revision": "d4cfcf20e9ce937a"
 }

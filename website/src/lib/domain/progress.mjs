@@ -16,7 +16,7 @@
  *
  * Libs: none.
  */
-import { success } from './engine.mjs';
+import { success, scoringWindow } from './engine.mjs';
 import { PAGE_TYPES } from './practice-code.mjs';
 
 // Share the existing page-size-dependent success scheme; evidence counts never truncate history.
@@ -33,6 +33,24 @@ export function topicProgress(profile, catalogue, now = Date.now()) {
     const key = `${catalogue.subject}:${topic.bank}`;
     const saved = profile.topics[key];
     const history = saved?.history ?? [];
+    const assessment = history
+      .filter((item) => item.type === 'assessment')
+      .sort((a, b) => a.at - b.at);
+    const attempts = [...new Set(assessment.map((item) => item.attempt))].map((id) =>
+      assessment.filter((item) => item.attempt === id),
+    );
+    // The first complete assessment is the baseline; show partial evidence explicitly until then.
+    const initial =
+      attempts.find((items) => items.length >= (items[0]?.pageSize ?? 4)) ?? attempts[0] ?? [];
+    const baseline = initial.length
+      ? {
+          answered: initial.length,
+          correct: initial.filter((item) => item.correct).length,
+          at: initial.at(-1).at,
+          size: initial[0].pageSize ?? 4,
+          complete: initial.length >= (initial[0].pageSize ?? 4),
+        }
+      : null;
     const levels = [...new Set(topic.pages.map((page) => page.level))].sort();
     const types = PAGE_TYPES.filter((type) => topic.pages.some((page) => page.type === type.id));
     /**
@@ -54,7 +72,7 @@ export function topicProgress(profile, catalogue, now = Date.now()) {
         records.at(-1)?.pageSize ??
         saved?.pages[type.mode]?.size ??
         (type.mode === 'errors' ? 3 : 10);
-      const rate = count ? success(outcomes, size) : null;
+      const rate = count ? success(outcomes, scoringWindow(type.mode, size)) : null;
       const last = records.length ? Math.max(...records.map((item) => item.at)) : null;
       const stale = last !== null && now - last >= PROGRESS_POLICY.staleDays * 86400000;
       return {
@@ -98,6 +116,7 @@ export function topicProgress(profile, catalogue, now = Date.now()) {
       stages,
       current,
       total: history.length,
+      baseline,
       last,
       rate,
       missing,

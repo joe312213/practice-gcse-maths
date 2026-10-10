@@ -1,3 +1,4 @@
+import { guideFrames } from './demo-guide.mjs';
 /**
  * Purpose: Compute place-value working and ordered reveal frames for arithmetic methods.
  *
@@ -26,7 +27,14 @@ export function latticeModel(a, b) {
     carry = Math.floor(total / 10);
     return { sum, incoming, total, digit: total % 10, carry };
   });
-  return { top, right, cells, diagonals };
+  const width = top.length * 70,
+    height = right.length * 70;
+  const guides = [
+    ...Array.from({ length: right.length + 1 }, (_, row) => `M60,${50 + row * 70} h${width}`),
+    ...Array.from({ length: top.length + 1 }, (_, col) => `M${60 + col * 70},50 v${height}`),
+    ...cells.map(({ row, col }) => `M${60 + col * 70},${120 + row * 70} l70,-70`),
+  ];
+  return { top, right, cells, diagonals, guides };
 }
 
 /** Divide each place in order; decimal questions append zeros until their exact answer ends. */
@@ -48,10 +56,13 @@ export function divisionModel(question) {
 
 /** Build method-owned frames for the shared four-step playback controller. */
 export function arithmeticFrames(question) {
-  const frames = [{ step: 1, count: 0 }];
+  const frames = guideFrames({ count: 0 });
   if (question.method === 'lattice') {
     const model = latticeModel(question.a, question.b);
-    model.cells.forEach((_, index) => frames.push({ step: 2, count: index + 1 }));
+    // Write operands across the top, then down the side; each cell follows row order.
+    for (let count = 1; count <= model.top.length + model.right.length; count++)
+      frames.push({ step: 1, count });
+    for (let count = 1; count <= model.cells.length * 2; count++) frames.push({ step: 2, count });
     model.diagonals.forEach((_, index) => frames.push({ step: 3, count: index + 1 }));
   } else {
     const model = divisionModel(question);

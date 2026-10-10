@@ -360,3 +360,23 @@ test("export reminders become due at ten days, persist per learner and reset onl
   assert.equal(backupStatus(legacy, now).due, true);
   assert.equal(backupStatus(learner(), now).due, false);
 });
+
+test('initial assessment is reported separately without seeding practice success', () => {
+  const profile = { topics: { 'maths:M10': { tracks: {}, pages: {}, history: Array.from({ length: 4 }, (_, i) => ({ attempt: 'baseline', type: 'assessment', level: i < 2 ? 0 : i - 1, correct: i < 3, assisted: false, at: 100 + i })) } } };
+  const row = topicProgress(profile, catalogue, 200).find((item) => item.topic.bank === 'M10');
+  assert.deepEqual(row.baseline, { answered: 4, correct: 3, at: 103, size: 4, complete: true });
+  assert.equal(row.rate, null);
+  assert.equal(row.missing, true);
+});
+
+
+test('six-question assessment stays partial at four; old four-question baseline stays complete', () => {
+  const p = learner();
+  const history = p.topics['maths:M10'].history;
+  for (let i = 0; i < 4; i++) history.push({ attempt: 'new', question: String(i), type: 'assessment', level: 0, correct: true, assisted: false, pageSize: 6, at: now + i });
+  assert.equal(topicProgress(p, catalogue, now)[0].baseline.complete, false);
+  for (let i = 4; i < 6; i++) history.push({ ...history[0], question: String(i), at: now + i });
+  assert.equal(topicProgress(p, catalogue, now)[0].baseline.complete, true);
+  history.forEach(item => { item.pageSize = 12; item.type = 'plain'; });
+  assert.equal(parseProgress(exportProgress(p, now)).topics['maths:M10'].history[0].pageSize, 12);
+});

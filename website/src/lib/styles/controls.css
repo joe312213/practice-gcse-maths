@@ -98,14 +98,6 @@
   padding-block: 4px;
   font-size: 0.82rem;
 }
-.paper-toggle {
-  @apply checkbox checkbox-xs;
-  color: var(--main);
-  border-color: var(--control-border);
-  background: var(--surface);
-  vertical-align: middle;
-  flex-shrink: 0;
-}
 .action-button.menu-toggle {
   width: 44px;
   min-height: 44px;
@@ -124,11 +116,11 @@
 }
 .card,
 .dialog-panel,
-.theme-menu {
+.popover-panel {
   @apply card;
 }
 .card {
-  --card-padding: 24px;
+  --card-padding: clamp(18px, 2.35vw, 24px);
   display: block;
   background:
     var(--card-image) padding-box,
@@ -140,6 +132,6 @@
   margin-bottom: 20px;
 }
 .dialog-panel,
-.theme-menu {
+.popover-panel {
   display: block;
 }

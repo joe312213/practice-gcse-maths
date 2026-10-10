@@ -18,11 +18,13 @@
     annotations = [],
     staged = false,
     part = 3,
+    guideProgress = 1,
   } = $props();
 </script>
 
 <table
   class="balance"
+  style:--guide-height={`${guideProgress * 100}%`}
   class:numbered
   class:annotated={annotations.length > 0}
   aria-label={numbered ? 'Incorrect working, numbered by row' : 'Equation working'}

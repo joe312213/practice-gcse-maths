@@ -19,7 +19,6 @@
   import QuestionList from './QuestionList.svelte';
   import AnswerForm from './AnswerForm.svelte';
   import Feedback from './Feedback.svelte';
-  import Progress from './Progress.svelte';
   import WorkingArea from './WorkingArea.svelte';
   import Completion from './Completion.svelte';
   import Guidance from '../teaching/Guidance.svelte';
@@ -87,7 +86,7 @@
   {/if}
   <section class="card question-panel">
     <div class="meta">
-      {MODES.find((m) => m[0] === view.mode)[1].split(' · ')[1]} · {page.count}/{page.size} submitted
+      {MODES.find((m) => m[0] === view.mode)[1]} · {page.count}/{page.size} submitted
     </div>
     <div class="level-row">
       <h2 id="stage-title" tabindex="-1">
@@ -121,11 +120,14 @@
     </div>
     <p class="muted">
       {view.mode === 'assessment'
-        ? 'Try all four without hints. This helps you decide where to begin.'
+        ? `Try all ${page.size} without hints. This helps you decide where to begin.`
         : view.mode === 'errors'
           ? 'Inspect the written method. Identify the mistake, correct it, then answer the original question.'
           : 'Show your working. Submit each answer when you are ready.'}
     </p>
+    {#if view.mode === 'scaffolded'}<p class="muted">
+        These answers help you practise and do not change your independent challenge level.
+      </p>{/if}
     <QuestionList
       bank={view.bank}
       {page}
@@ -136,34 +138,46 @@
       }}
     />
     <hr />
-    <section id="active-question" aria-labelledby="active-question-title">
-      <h3 id="active-question-title">Question {view.selected + 1}</h3>
-      <p class="selected-equation">{question.q}</p>
-      {#if view.mode === 'scaffolded'}<Guidance
-          guidance={view.bank.teaching.guidance[question.level]}
-        />{/if}
-      {#if view.mode === 'errors'}{#if question.errorImage}<img
-            class="error-working-image"
-            src={asset(question.errorImage)}
-            alt={`Student working for ${question.q}, with a deliberate mistake. Stated answer: ${question.wrong}.`}
-          />{:else}<EquationWorking rows={question.balance} numbered />{/if}{/if}
-      <fieldset class="answer-controls" disabled={Boolean(view.practiceSet?.finished)}>
-        <AnswerForm
-          {question}
-          bank={view.bank}
-          mode={view.mode}
-          {response}
+    <div class="question-workspace">
+      <section id="active-question" aria-labelledby="active-question-title">
+        <h3 id="active-question-title">Question {view.selected + 1}</h3>
+        <div class="active-question-content">
+          <p class="selected-equation">{question.q}</p>
+          {#if question.instruction}<p>{question.instruction}</p>{/if}
+          {#if view.mode === 'scaffolded'}<Guidance
+              guidance={view.bank.teaching.guidance[question.level]}
+            />{/if}
+          {#if view.mode === 'errors'}{#if question.errorImage}<img
+                class="error-working-image"
+                src={asset(question.errorImage)}
+                alt={`Student working for ${question.q}, with a deliberate mistake. Stated answer: ${question.wrong}.`}
+              />{:else}<EquationWorking rows={question.balance} numbered />{/if}{/if}
+          <fieldset class="answer-controls" disabled={Boolean(view.practiceSet?.finished)}>
+            <AnswerForm
+              {question}
+              bank={view.bank}
+              mode={view.mode}
+              {response}
+              draft={view.draft}
+              assisted={page.assisted[question.id]}
+              hintVisible={view.hintVisible}
+              inputError={view.inputError}
+              onsubmit={submit}
+              ondraft={session.updateDraft}
+              onhint={session.hint}
+            />
+          </fieldset>
+          <Feedback {question} {response} mode={view.mode} bank={view.bank} />
+          <p class="source-ref">{question.id}</p>
+        </div>
+      </section>
+      {#key view.draftKey}<WorkingArea
+          embedded
+          topic={view.bank.topic}
           draft={view.draft}
-          assisted={page.assisted[question.id]}
-          inputError={view.inputError}
-          onsubmit={submit}
-          ondraft={session.updateDraft}
-          onhint={session.hint}
-        />
-      </fieldset>
-      <Feedback {question} {response} mode={view.mode} bank={view.bank} />
-      <p class="source-ref">{question.id}</p>
-    </section>
+          onworking={session.updateDraft}
+        />{/key}
+    </div>
     <Completion
       {page}
       practiceSet={view.practiceSet}
@@ -174,17 +188,6 @@
       onpromotion={session.resolvePromotion}
     />
   </section>
-  <aside>
-    <Progress mode={view.mode} {page} track={view.track} />
-    {#key view.draftKey}<WorkingArea
-        number={view.selected + 1}
-        topic={view.bank.topic}
-        paper={view.paper}
-        draft={view.draft}
-        onpaper={session.setPaper}
-        onworking={session.updateDraft}
-      />{/key}
-  </aside>
 </div>
 {#if mobile}
   <Dialog.Root open={view.reference} onOpenChange={(open) => session.setReference(open)}>

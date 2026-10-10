@@ -1,26 +1,30 @@
 <!--
-  Purpose: Collect drawing and typed working for one question, retaining strokes while tools are collapsed.
+  Purpose: Collect drawing and typed working for one question.
 
   Main contents:
   - Canvas rendering and single-pointer stroke lifecycle.
-  - Paper toggle, typed working, method guides and a pointer/keyboard canvas resize handle.
+  - Typed working, method guides and a pointer/keyboard canvas resize handle.
 
   Used By: PracticeActivity.svelte, which supplies the draft and update callbacks.
 
-  Uses: drawing-assist.mjs; onworking/onpaper update the parent session.
+  Uses: drawing-assist.mjs; onworking update the parent session.
 
   Libs: Svelte onMount.
 -->
 <script>
   import { onMount } from 'svelte';
+  import { drawStroke, INK_COLOURS, inkColour } from '#lib/application/drawing.mjs';
   import { drawingTools, guideLines } from '#lib/application/drawing-assist.mjs';
-  let { number, topic, paper, draft, onpaper, onworking } = $props();
+  let { topic, draft, onworking, embedded = false } = $props();
   let canvasHeight = $state(230),
     resizeDrag = null;
   const tool = $derived(drawingTools[topic]);
   let assistOpen = $state(false),
     dimensions = $state({ columns: 2, rows: 2 });
-  let guides = [];
+  let guides = $state.raw([]);
+  let pen = $state('pen'),
+    colour = $state('black'),
+    dark = $state(false);
   /** Replace only the blank guide, preserving the learner’s ink and working count. */
   function insertGuide() {
     end();
@@ -33,7 +37,7 @@
   let strokes = [],
     active = null,
     activePointer = null,
-    points = 0;
+    points = $state(0);
   /** Return the canvas 2D context; used by draw and clear. No parameters or local calls. */
   function context() {
     return canvas.getContext('2d');
@@ -45,34 +49,36 @@
    * @example draw([[20, 30], [40, 50]])
    */
   function draw(stroke) {
-    const ctx = context();
-    ctx.strokeStyle = '#20352f';
-    ctx.fillStyle = '#20352f';
-    ctx.lineWidth = 3;
-    ctx.lineCap = 'round';
-    if (stroke.length === 1) {
-      ctx.beginPath();
-      ctx.arc(...stroke[0], 2, 0, Math.PI * 2);
-      ctx.fill();
-      return;
-    }
-    ctx.beginPath();
-    ctx.moveTo(...stroke[0]);
-    for (const point of stroke.slice(1)) ctx.lineTo(...point);
-    ctx.stroke();
+    drawStroke(context(), stroke, dark);
+  }
+  function drawGuide(line) {
+    draw({ points: line, tool: 'pen', colour: 'black' });
   }
   onMount(() => {
+    canvasHeight = draft.canvasHeight ?? 230;
+    canvas.height = canvasHeight * 2;
     strokes = structuredClone(draft.strokes);
     points = draft.points;
     guides = structuredClone(draft.guides ?? []);
-    guides.forEach(draw);
-    strokes.forEach(draw);
+    guides.forEach(drawGuide);
+    dark = document.documentElement.dataset.theme === 'dark';
+    repaint();
+    const observer = new MutationObserver(() => {
+      dark = document.documentElement.dataset.theme === 'dark';
+      repaint();
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
+    return () => observer.disconnect();
   });
   /** Redraw stored ink and guides after a bitmap resize; cropped ink remains recoverable. */
   function repaint() {
     context().clearRect(0, 0, canvas.width, canvas.height);
-    guides.forEach(draw);
+    guides.forEach(drawGuide);
     strokes.forEach(draw);
+    if (active) draw(active);
   }
   /** Extend/crop the canvas at the original two bitmap pixels per CSS pixel, without stretching ink. */
   function resize(height) {
@@ -80,6 +86,7 @@
     canvasHeight = Math.max(120, Math.min(800, Math.round(height)));
     canvas.height = canvasHeight * 2;
     repaint();
+    onworking({ canvasHeight });
   }
   /** Capture a resize gesture separately from drawing, including touch and pen pointers. */
   function beginResize(event) {
@@ -129,8 +136,8 @@
     if (event.button !== 0 || active) return;
     canvas.setPointerCapture(event.pointerId);
     activePointer = event.pointerId;
-    active = [point(event)];
-    points++;
+    active = { points: [point(event)], tool: pen, colour };
+    if (pen === 'pen') points++;
     draw(active);
   }
   /** Handle pointerenter; call end when the returning pointer has no primary button pressed. */
@@ -142,9 +149,9 @@
   function move(event) {
     if (!active || event.pointerId !== activePointer) return;
     const next = point(event);
-    draw([active.at(-1), next]);
-    active.push(next);
-    points++;
+    draw({ ...active, points: [active.points.at(-1), next] });
+    active.points.push(next);
+    if (active.tool === 'pen') points++;
   }
   /**
    * Commit the stroke through onworking and release capture; ignore unrelated pointer events.
@@ -179,35 +186,27 @@
   }}
 />
 
-<section class="card working">
-  <h2>Working · question {number}</h2>
-  <label class="paper-option"
-    ><input
-      type="checkbox"
-      class="paper-toggle"
-      id="paper"
-      checked={paper}
-      aria-controls="working-tools"
-      aria-expanded={!paper}
-      onchange={(event) => onpaper(event.currentTarget.checked)}
-    /> I’m working on paper</label
-  >
-  <!-- Keep the same canvas mounted during collapse, so strokes are never lost. -->
-  <div id="working-tools" hidden={paper}>
-    <canvas
-      bind:this={canvas}
-      id="working"
-      width="700"
-      height="460"
-      style:height={`${canvasHeight}px`}
-      aria-label="Drawing space; typed working is available below"
-      onpointerdown={begin}
-      onpointermove={move}
-      onpointerenter={enter}
-      onpointerup={end}
-      onpointercancel={end}
-      onlostpointercapture={end}
-    ></canvas>
+<section class="working" class:card={!embedded} class:embedded>
+  <div id="working-tools">
+    <div class="drawing-surface">
+      {#if points === 0 && guides.length === 0}<span class="canvas-prompt" aria-hidden="true"
+          >Working</span
+        >{/if}
+      <canvas
+        bind:this={canvas}
+        id="working"
+        width="700"
+        height="460"
+        style:height={`${canvasHeight}px`}
+        aria-label="Drawing space; typed working is available below"
+        onpointerdown={begin}
+        onpointermove={move}
+        onpointerenter={enter}
+        onpointerup={end}
+        onpointercancel={end}
+        onlostpointercapture={end}
+      ></canvas>
+    </div>
     <button
       class="canvas-resize"
       type="button"
@@ -246,9 +245,42 @@
         stroke-linejoin="round"
         aria-hidden="true"
       >
-        <path d="M3 14 14 3 21 10 10 21H7L3 17Z M8 9 15 16 M10 21H21" />
+        <path d="M5 5 19 19 M19 5 5 19" />
       </svg>
     </button>
+    <button
+      class="action-button compact icon"
+      type="button"
+      aria-label="Eraser"
+      title="Eraser · five times the pen area"
+      aria-pressed={pen === 'eraser'}
+      onclick={() => {
+        end();
+        pen = pen === 'eraser' ? 'pen' : 'eraser';
+      }}
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        aria-hidden="true"><path d="M3 14 14 3 21 10 10 21H7L3 17Z M8 9 15 16 M10 21H21" /></svg
+      >
+    </button>
+    <div class="ink-colours" role="group" aria-label="Pen colour">
+      {#each INK_COLOURS as ink}<button
+          class="action-button compact ink-choice"
+          type="button"
+          aria-label={`${ink.label} pen`}
+          title={`${ink.label} pen`}
+          aria-pressed={pen === 'pen' && colour === ink.id}
+          onclick={() => {
+            end();
+            pen = 'pen';
+            colour = ink.id;
+          }}><span style:background={inkColour(ink.id, dark)}></span></button
+        >{/each}
+    </div>
     {#if tool}
       <button
         type="button"
@@ -284,14 +316,13 @@
         </form>
       {/if}
     {/if}
-    <label for="typed-working">Or type your working</label>
     <textarea
       id="typed-working"
       class="working-field"
       rows="3"
-      placeholder="Write your steps here…"
+      aria-label="Typed working"
+      placeholder="Or type your working here..."
       value={draft.working}
       oninput={(event) => onworking({ working: event.currentTarget.value })}></textarea>
-    <small>Working clears on question change.</small>
   </div>
 </section>

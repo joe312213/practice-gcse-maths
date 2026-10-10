@@ -12,8 +12,19 @@
 -->
 <script>
   import ErrorEntries from '../teaching/ErrorEntries.svelte';
-  let { question, bank, mode, response, draft, assisted, inputError, onsubmit, ondraft, onhint } =
-    $props();
+  let {
+    question,
+    bank,
+    mode,
+    response,
+    draft,
+    assisted,
+    hintVisible,
+    inputError,
+    onsubmit,
+    ondraft,
+    onhint,
+  } = $props();
 </script>
 
 <form
@@ -74,10 +85,13 @@
         class="action-button"
         type="button"
         id="hint"
-        onclick={onhint}>Hint</button
+        aria-expanded={hintVisible}
+        aria-controls="question-hint"
+        onclick={onhint}>{hintVisible ? 'Hide hint' : 'Hint'}</button
       >{/if}
   </div>
-  <p id="hint-text" hidden={!assisted}>
+  <p id="question-hint" hidden={!hintVisible}>{question.hint}</p>
+  <p id="hint-text" hidden={!assisted || !hintVisible}>
     This question is assisted. Correct answers help you practise but do not increase your success
     score.
   </p>
