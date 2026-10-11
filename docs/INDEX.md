@@ -11,7 +11,7 @@ Directly authored `web_format.md` is protected; the progress requirements append
 - [DEV_LOG.md](../DEV_LOG.md)
 - [web_format.md](../web_format.md)
 - [docs/UI_UX_RULES.md](../docs/UI_UX_RULES.md)
-- [UI taste](UI_TASTE.md) — visual judgment, spacing, alignment and recurring user preferences.
+- [UI taste](UI_TASTE.md) — visual judgment, spacing, alignment and recurring user preferences; [dimensions and spacing](UI_TASTE.md#dimensions-and-spacing); [breakpoint register and conventions](UI_TASTE.md#breakpoint-register).
 - [docs/WEBSITE_PLAN.md](../docs/WEBSITE_PLAN.md)
 - [website/README.md](../website/README.md)
 - [docs/FRAMEWORK_MIGRATION_PLAN.md](../docs/FRAMEWORK_MIGRATION_PLAN.md)
@@ -20,7 +20,7 @@ Directly authored `web_format.md` is protected; the progress requirements append
 
 - [GitHub publishing and topics](../.github/PUBLISHING.md) — apply the configured repository topics when publishing.
 
-- [Code style requirements](CODE_STYLE.md) — implementation judgment, architectural discussion and proportionate testing.
+- [Code style requirements](CODE_STYLE.md) — implementation judgment, architectural discussion, proportionate testing and the [CSS review checklist](CODE_STYLE.md#css-review-checklist).
 
 - [Code comments policy](CODE_COMMENTS.md) — applies to original source headers and function/body comments.
 
@@ -29,11 +29,13 @@ Directly authored `web_format.md` is protected; the progress requirements append
 
 - [.agents/skills/maths-efficient-development/SKILL.md](../.agents/skills/maths-efficient-development/SKILL.md)
 - [.agents/skills/maths-framework-development/SKILL.md](../.agents/skills/maths-framework-development/SKILL.md)
+- [Project refactor checks](../.agents/skills/project-refactor-checks/SKILL.md)
+- [Maths problem development](../.agents/skills/math-problem-development/SKILL.md)
 - [tests/fixtures/README.md](../tests/fixtures/README.md)
 
 ## Teaching content
 
-Read TOPIC_PLAN and TEACHING_SPECIFICATIONS when authoring/importing content, then the relevant topic/answer source. Mathematical requirements remain active; slide geometry/export instructions apply only to legacy work. Preserve accepted questions, methods and manual edits; review answer-pattern variety and source parity before importing.
+Start with the [current content guidance and source map](../website/README.md#teaching-content-and-imports). Reviewed website questions, hints, methods and feedback take precedence for implemented topics; older examples must not undo those refinements. TOPIC_PLAN and TEACHING_SPECIFICATIONS retain prerequisite order and applicable teaching guidance, but their slide workflows, old review states and examples are historical where superseded. Slides primarily inspire level and style. Review and refine each new topic for the website, retaining provenance, stable IDs and the original resources.
 
 - [content/TOPIC_PLAN.md](../content/TOPIC_PLAN.md)
 - [content/TEACHING_SPECIFICATIONS.md](../content/TEACHING_SPECIFICATIONS.md)
@@ -63,6 +65,11 @@ Read TOPIC_PLAN and TEACHING_SPECIFICATIONS when authoring/importing content, th
 - [content/answers/M03_answers.md](../content/answers/M03_answers.md)
 - [content/answers/M04_answers.md](../content/answers/M04_answers.md)
 - [content/answers/README.md](../content/answers/README.md)
+
+- [Arithmetic web refinements](../content/M01_M02_web_support.json) — authored question replacements, hints, method notes and correction choices, applied after auditing preserved sources.
+- [Arithmetic import evidence](ARITHMETIC_IMPORT_AUDIT.json)
+
+- [Additional web assessment questions](../content/web_assessments.json) — two new assessment items per topic, imported separately from preserved slide sources.
 
 ## Reference and legacy documents
 
@@ -100,7 +107,3 @@ Pinned upstream documentation, retained unchanged (see [integration and update i
 - [Integration API](../website/vendor/puzzles/API.md)
 - [Package architecture](../website/vendor/puzzles/ARCHITECTURE.md)
 - [Styles and markup](../website/vendor/puzzles/styles/README.md)
-- [Arithmetic web refinements](../content/M01_M02_web_support.json) — authored question replacements, hints, method notes and correction choices, applied after auditing preserved sources.
-- [Arithmetic import evidence](ARITHMETIC_IMPORT_AUDIT.json)
-
-- [Additional web assessment questions](../content/web_assessments.json) — two new assessment items per topic, imported separately from preserved slide sources.

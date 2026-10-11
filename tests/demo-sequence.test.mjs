@@ -22,7 +22,11 @@ test("equation playback draws the line, then left, equals and right; operations 
     { kind: "equation" },
   ]);
   assert.deepEqual(frames, [
-    ...[0, 0.25, 0.5, 0.75, 1].map((guideProgress) => ({ step: 1, part: 0, guideProgress })),
+    ...[0, 0.25, 0.5, 0.75, 1].map((guideProgress) => ({
+      step: 1,
+      part: 0,
+      guideProgress,
+    })),
     { step: 1, part: 1 },
     { step: 1, part: 2 },
     { step: 1, part: 3 },
@@ -36,6 +40,14 @@ test("equation playback draws the line, then left, equals and right; operations 
 
 test("lattice writes operand digits and cell tens/units separately in row order", () => {
   const frames = arithmeticFrames({ method: "lattice", a: 34, b: 12 });
-  assert.deepEqual(frames.filter((frame) => frame.step === 1 && frame.guideProgress === undefined).map((frame) => frame.count), [1, 2, 3, 4]);
-  assert.deepEqual(frames.filter((frame) => frame.step === 2).map((frame) => frame.count), [1, 2, 3, 4, 5, 6, 7, 8]);
+  assert.deepEqual(
+    frames
+      .filter((frame) => frame.step === 1 && frame.guideProgress === undefined)
+      .map((frame) => frame.count),
+    [1, 2, 3, 4],
+  );
+  assert.deepEqual(
+    frames.filter((frame) => frame.step === 2).map((frame) => frame.count),
+    [1, 2, 3, 4, 5, 6, 7, 8],
+  );
 });

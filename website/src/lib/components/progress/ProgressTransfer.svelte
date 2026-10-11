@@ -35,7 +35,7 @@
    * Trigger JSON/CSV export; record a backup date only for JSON downloads.
    * Parameter kind: JSON or CSV export format.
    * Calls: exportProgress, exportCsv, recordExport, backupStatus.
-   * @example download(kind);
+   * @example download("json"); // Export a restorable backup and record the reminder date.
    */
   function download(kind) {
     try {

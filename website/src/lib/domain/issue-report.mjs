@@ -1,4 +1,18 @@
-/** Build reviewable issue text and an email draft URL. Adapted from T-Level starters issue-report.js. */
+/**
+ * Purpose: Prepare reviewable report text and email draft URLs, adapted from T-Level starters issue-report.js.
+ *
+ * Main contents:
+ * - makeReport; emailURL.
+ *
+ * Used By: IssueReport.svelte.
+ *
+ * Uses: No local modules.
+ *
+ * Libs: None.
+ */
+/**
+ * Format context, issue kind and learner description into a subject/body. Called by IssueReport; no sending or storage.
+ */
 export function makeReport(context, kind, description) {
   const subject = `Maths practice ${kind === 'content' ? 'content issue' : 'bug'}`;
   const body = [
@@ -12,6 +26,9 @@ export function makeReport(context, kind, description) {
   ].join('\n');
   return { subject, body };
 }
+/**
+ * Encode report subject/body as a mailto draft, normalising line endings. Called by IssueReport.submit.
+ */
 export function emailURL({ subject, body }) {
   return `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.replace(/\r?\n/g, '\r\n'))}`;
 }

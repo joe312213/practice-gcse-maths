@@ -19,7 +19,7 @@ import { createTestContext } from './support.mjs';
  * Parameter browser: Playwright browser instance.
  * Parameter base: test server base URL.
  * Calls: createTestContext.
- * @example checkStartup(browser, base);
+ * @example await checkStartup(browser, "http://127.0.0.1:8766/"); // Check a running static preview.
  */
 export async function checkStartup(browser, base) {
   for (const fault of [

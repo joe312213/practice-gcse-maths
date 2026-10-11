@@ -5,9 +5,9 @@
   - focusAnswer
   - submit
 
-  Used By: website/src/routes/+page.svelte
+  Used By: website/src/lib/components/practice/TopicPractice.svelte
 
-  Uses: website/src/lib/domain/engine.mjs, website/src/lib/domain/stages.mjs, website/src/lib/components/practice/QuestionList.svelte, website/src/lib/components/practice/AnswerForm.svelte, website/src/lib/components/practice/Feedback.svelte, website/src/lib/components/practice/Progress.svelte, website/src/lib/components/practice/WorkingArea.svelte, website/src/lib/components/practice/Completion.svelte, website/src/lib/components/teaching/Guidance.svelte, website/src/lib/components/teaching/EquationWorking.svelte, website/src/lib/components/teaching/DemoPlayer.svelte.
+  Uses: website/src/lib/domain/engine.mjs, website/src/lib/domain/stages.mjs, website/src/lib/components/practice/QuestionList.svelte, website/src/lib/components/practice/AnswerForm.svelte, website/src/lib/components/practice/Feedback.svelte, website/src/lib/components/practice/WorkingArea.svelte, website/src/lib/components/practice/Completion.svelte, website/src/lib/components/teaching/Guidance.svelte, website/src/lib/components/teaching/EquationWorking.svelte, website/src/lib/components/teaching/MethodDemo.svelte.
 
   Libs: svelte (component lifecycle and state), bits-ui (dialog/popover interaction).
 -->
@@ -33,9 +33,13 @@
   const question = $derived(view.bank.questions.find((q) => q.id === page.items[view.selected].id));
   const response = $derived(page.responses[question.id]);
   onMount(() => {
-    const media = matchMedia('(max-width: 767px)');
+    // Match the shared CSS boundary: a narrow viewport presents the reference as a dialog.
+    const mediumWidth = getComputedStyle(document.documentElement)
+      .getPropertyValue('--breakpoint-viewport-medium')
+      .trim();
+    const media = matchMedia(`(width < ${mediumWidth})`);
     /**
-     * Apply the current responsive or input change to component state.
+     * Switch the method reference between dialog and inline presentation at the shared boundary.
      */
     const update = () => (mobile = media.matches);
     update();
@@ -84,7 +88,7 @@
       >
     </aside>
   {/if}
-  <section class="card question-panel">
+  <section class="card stage-panel question-panel">
     <div class="meta">
       {MODES.find((m) => m[0] === view.mode)[1]} · {page.count}/{page.size} submitted
     </div>
@@ -98,7 +102,7 @@
       </h2>
       {#if view.mode !== 'assessment'}
         <label
-          >Challenge <select
+          >Level <select
             class="choice-field"
             id="level"
             value={page.level}
@@ -110,17 +114,18 @@
           ></label
         >
         <button
-          class="action-button"
+          class="action-button quiet"
           bind:this={referenceButton}
           type="button"
           id="reference"
-          onclick={() => session.setReference(!view.reference)}>Method reference</button
+          aria-expanded={view.reference}
+          onclick={() => session.setReference(!view.reference)}>Check method</button
         >
       {/if}
     </div>
     <p class="muted">
       {view.mode === 'assessment'
-        ? `Try all ${page.size} without hints. This helps you decide where to begin and messure future progress.`
+        ? `Try all ${page.size} without hints. This helps you decide where to begin and measure future progress.`
         : view.mode === 'errors'
           ? 'Inspect the written method. Identify the mistake, correct it, then answer the original question.'
           : 'Show your working. Submit each answer when you are ready.'}
@@ -130,6 +135,7 @@
       </p>{/if}
     <QuestionList
       bank={view.bank}
+      assessment={view.mode === 'assessment'}
       {page}
       selected={view.selected}
       onselect={(index) => {

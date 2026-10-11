@@ -1,7 +1,25 @@
-/** Native browser ink animation shared by all demo renderers; no animation dependency. */
+/**
+ * Purpose: Interpolate newly revealed demo ink through native browser animations, preserving static rendering and reduced motion.
+ *
+ * Main contents:
+ * - createDemoMotion and its snapshot, playback and cleanup controls.
+ *
+ * Used By: ShowDemo.svelte.
+ *
+ * Uses: No local modules.
+ *
+ * Libs: None; uses Web Animations and browser style/media APIs.
+ */
+/**
+ * Create ink animation controls for renderer root. Called by ShowDemo; dispose with cancel on unmount.
+ * @example const motion = createDemoMotion(root); const before = motion.snapshot(); // Reveal after the renderer updates.
+ */
 export function createDemoMotion(root) {
   const animations = new Set();
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  /**
+   * Capture rendered ink state by element. Called before frame updates and by reveal.
+   */
   function snapshot() {
     return new Map(
       [
@@ -25,6 +43,9 @@ export function createDemoMotion(root) {
       }),
     );
   }
+  /**
+   * Cancel all live native animations. Called by reveal, manual navigation and component cleanup.
+   */
   function cancel() {
     for (const animation of animations) animation.cancel();
     animations.clear();

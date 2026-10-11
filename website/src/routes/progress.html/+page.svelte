@@ -43,7 +43,7 @@
    * Refresh the current learner's summaries, recommendations and backup baseline, then persist.
    * Parameter requested: explicit request to generate recommendations beyond the automatic limit.
    * Calls: backupStatus, maintainRecommendations, topicProgress, weeklyProgress.
-   * @example refresh(requested);
+   * @example refresh(true); // Explicitly request more recommendations after the current set.
    */
   function refresh(requested = false) {
     profile = store.profiles.find((item) => item.key === store.last) ?? null;

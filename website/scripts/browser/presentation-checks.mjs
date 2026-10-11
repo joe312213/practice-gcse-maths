@@ -19,7 +19,7 @@ import { artifacts, createTestContext } from './support.mjs';
  * Parameter browser: Playwright browser instance.
  * Parameter base: test server base URL.
  * Calls: createTestContext, image.
- * @example checkPresentation(browser, base);
+ * @example await checkPresentation(browser, "http://127.0.0.1:8766/"); // Check a running static preview.
  */
 export async function checkPresentation(browser, base) {
   const context = await createTestContext(browser, { viewport: { width: 1280, height: 1000 } });
@@ -40,25 +40,43 @@ export async function checkPresentation(browser, base) {
     if (await page.locator('#profile-message').isVisible())
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     const topicSelector = page.getByLabel('Topic', { exact: true });
-    const originalTopic = await topicSelector.inputValue();
+    const originalTopic = 'M10';
     const topics = await topicSelector
-      .locator('option')
+      .locator('option:not([disabled])')
       .evaluateAll((options) => options.map((option) => option.value));
-    for (const width of [320, 375, 600, 720, 800, 1024, 1280, 1600]) {
+    for (const width of [320, 360, 375, 439, 440, 441, 600, 720, 800, 1024, 1280, 1600]) {
       await page.setViewportSize({ width, height: 1000 });
+      await page.clock.runFor(32);
       for (const topic of topics) {
         await topicSelector.selectOption(topic);
         await page.locator('.intro').waitFor();
+        await page.locator('.question-list li').first().waitFor();
+        if (width >= 720 || (width === 600 && topic === 'M01')) {
+          const rows = await page.locator('.question-list li').evaluateAll((items) => {
+            const first = items[0].getBoundingClientRect();
+            return items.filter(
+              (item) => Math.abs(item.getBoundingClientRect().top - first.top) < 1,
+            ).length;
+          });
+          assert.equal(
+            rows,
+            3,
+            `${topic} assessment uses three columns when content fits at ${width}px`,
+          );
+        }
+        if ([439, 440, 600, 768, 800].includes(width) && topic === 'M01')
+          await page.screenshot({ path: `${artifacts}/topic-header-${width}.png`, fullPage: true });
         if (width === 800 && topic === 'M01')
           await page.screenshot({ path: `${artifacts}/assessment-spacing.png`, fullPage: true });
         const stageGap = await page
           .locator('.intro')
           .evaluate(
             (intro) =>
-              document.querySelector('.learning-header').getBoundingClientRect().top -
-              intro.getBoundingClientRect().bottom,
+              (document.querySelector('.learning-header').getBoundingClientRect().top -
+                intro.getBoundingClientRect().bottom) /
+              parseFloat(getComputedStyle(document.documentElement).fontSize),
           );
-        assert.ok(stageGap >= 33 && stageGap <= 35, `Intro/stage breathing room at ${width}px`);
+        assert.ok(Math.abs(stageGap - 2) < 0.05, `Intro/stage breathing room at ${width}px`);
         const layout = await page.locator('.intro').evaluate((intro) => {
           const bounds = intro.getBoundingClientRect();
           const input = intro.querySelector('#practice-code');
@@ -66,6 +84,9 @@ export async function checkPresentation(browser, base) {
           const select = intro.querySelector('select').getBoundingClientRect();
           const title = intro.querySelector('.intro-title').getBoundingClientRect();
           const controls = intro.querySelector('.intro-controls').getBoundingClientRect();
+          const inputStyle = getComputedStyle(input);
+          const textMeasure = document.createElement('canvas').getContext('2d');
+          textMeasure.font = `${inputStyle.fontWeight} ${inputStyle.fontSize} ${inputStyle.fontFamily}`;
           return {
             sameRow: Math.abs(title.top - controls.top) < 1,
             right: bounds.right,
@@ -75,6 +96,14 @@ export async function checkPresentation(browser, base) {
             inputLeft: input.getBoundingClientRect().left,
             inputWidth: input.getBoundingClientRect().width,
             preferredWidth: 15 * parseFloat(getComputedStyle(document.documentElement).fontSize),
+            columnGap: controls.left - title.right,
+            titleSize: parseFloat(getComputedStyle(intro.querySelector('h1')).fontSize),
+            subjectSize: parseFloat(getComputedStyle(intro.querySelector('.eyebrow')).fontSize),
+            promptFits:
+              textMeasure.measureText(input.placeholder).width <=
+              input.clientWidth -
+                parseFloat(inputStyle.paddingLeft) -
+                parseFloat(inputStyle.paddingRight),
           };
         });
         assert.ok(
@@ -86,9 +115,68 @@ export async function checkPresentation(browser, base) {
           `Topic respects gutter: ${width}/${topic}`,
         );
         assert.ok(layout.inputLeft >= layout.left - 1, `Search fits header: ${width}/${topic}`);
-        if (width >= 720)
+        assert.ok(layout.promptFits, `Complete search prompt fits at ${width}/${topic}`);
+        assert.equal(
+          await page.locator('header').getByRole('link', { name: 'Puzzles', exact: true }).count(),
+          0,
+        );
+        assert.equal(
+          await page
+            .locator('header')
+            .getByRole('link', { name: 'Back to topics', exact: true })
+            .count(),
+          0,
+        );
+        assert.equal(
+          await page
+            .locator('.intro-title')
+            .getByRole('link', { name: 'Foundation maths', exact: true })
+            .getAttribute('href'),
+          '/',
+        );
+        const menuLayout = await page.locator('header').evaluate((header) => {
+          const menu = header.querySelector('.menu-toggle').getBoundingClientRect();
+          const picker = header.querySelector('#theme-picker').getBoundingClientRect();
+          const toggle = header.querySelector('#theme-toggle').getBoundingClientRect();
+          const brand = header.querySelector('.brand').getBoundingClientRect();
+          const main = document.querySelector('main');
+          return {
+            menuRight: menu.right,
+            atTop:
+              Math.abs(
+                menu.top -
+                  header.getBoundingClientRect().top -
+                  parseFloat(getComputedStyle(header).paddingTop),
+              ) < 1,
+            contentRight:
+              main.getBoundingClientRect().right - parseFloat(getComputedStyle(main).paddingRight),
+            ordered:
+              brand.right <= picker.left &&
+              picker.right <= toggle.left &&
+              toggle.right <= menu.left,
+            aligned: Math.abs(picker.top - menu.top) < 1 && Math.abs(toggle.top - menu.top) < 1,
+          };
+        });
+        assert.ok(
+          Math.abs(menuLayout.menuRight - menuLayout.contentRight) < 1,
+          `Menu shares the page gutter: ${width}/${topic}`,
+        );
+        assert.ok(
+          menuLayout.ordered && menuLayout.aligned && menuLayout.atTop,
+          `Theme controls stay beside menu: ${width}/${topic}`,
+        );
+        assert.equal(await topicSelector.inputValue(), '', 'Topic action resets after navigation');
+        assert.equal(await topicSelector.locator('option:checked').textContent(), 'Topic');
+        assert.ok(layout.titleSize >= 28, 'Topic heading starts at the chosen 28px scale');
+        assert.ok(
+          Math.abs(layout.subjectSize - 12.48) < 0.05,
+          'Preserve the subject eyebrow scale',
+        );
+        if (width >= 440) {
           assert.ok(layout.sameRow, `Header text wraps beside controls at ${width}/${topic}`);
-        if (width <= 375)
+          assert.ok(layout.columnGap >= 28 - 1, `Header columns have breathing room at ${width}`);
+        }
+        if (width < 440)
           assert.ok(!layout.sameRow, `Header controls stack on small screens: ${width}/${topic}`);
         assert.ok(
           layout.inputWidth <= layout.preferredWidth + 1,
@@ -179,6 +267,8 @@ export async function checkPresentation(browser, base) {
     await page.locator('#clear-working').click();
     for (const width of [1280, 1000, 940, 920, 769, 768, 767, 600, 480, 390, 320]) {
       await page.setViewportSize({ width, height: 1000 });
+      await page.clock.runFor(32);
+      await page.waitForFunction(() => document.documentElement.scrollWidth <= innerWidth);
       if (width >= 767 && width <= 769) {
         const columns = await page
           .locator('.question-workspace')
@@ -199,8 +289,11 @@ export async function checkPresentation(browser, base) {
           range.selectNodeContents(text);
           const rects = [...range.getClientRects()];
           const bounds = card.getBoundingClientRect();
+          const number = document.createRange();
+          number.selectNodeContents(card.querySelector('.num'));
           return (
             rects.length === 1 &&
+            number.getBoundingClientRect().bottom < rects[0].top &&
             rects[0].left >= bounds.left &&
             rects[0].right <= bounds.right &&
             Math.abs((rects[0].left + rects[0].right - bounds.left - bounds.right) / 2) < 1
@@ -241,13 +334,127 @@ export async function checkPresentation(browser, base) {
       assert.equal(layout.overflow, false, `No page overflow at ${width}px`);
       assert.ok(layout.rows.every((row) => row.length <= 3));
       if (width >= 1000) assert.equal(layout.rows[0].length, 3);
-      if (width <= 390) assert.equal(layout.rows[0].length, 1);
       for (const row of layout.rows)
-        if (row.length === 2) assert.ok(row.every((size) => size >= 210));
+        assert.ok(
+          Math.max(...row) - Math.min(...row) < 1,
+          `Equal button widths per row at ${width}px`,
+        );
       if ([940, 390].includes(width))
         await page.screenshot({ path: `${artifacts}/flex-questions-${width}.png`, fullPage: true });
     }
-    // Exercise a future longer expression without adding it to authored content.
+    // Phone cards use the available viewport width; short questions pair without shrinking maths.
+    await topicSelector.selectOption('M01');
+    await page.locator('[data-mode="plain"]').click();
+    await page.locator('#level').selectOption('0');
+    for (const width of [360, 390, 440, 767, 768]) {
+      await page.setViewportSize({ width, height: 956 });
+      const mobile = await page.locator('.question-panel').evaluate((panel) => {
+        const bounds = panel.getBoundingClientRect();
+        const style = getComputedStyle(panel);
+        const rows = new Map();
+        for (const button of panel.querySelectorAll('.question-option')) {
+          const box = button.getBoundingClientRect();
+          const top = Math.round(box.top);
+          rows.set(top, [...(rows.get(top) ?? []), box.width]);
+        }
+        return {
+          left: bounds.left,
+          right: bounds.right,
+          sideBorder: parseFloat(style.borderLeftWidth) + parseFloat(style.borderRightWidth),
+          topBorder: parseFloat(style.borderTopWidth),
+          bottomBorder: parseFloat(style.borderBottomWidth),
+          rows: [...rows.values()],
+          background: style.backgroundImage,
+          overflow: document.documentElement.scrollWidth > innerWidth,
+        };
+      });
+      if (width < 768) {
+        assert.ok(Math.abs(mobile.left) < 1 && Math.abs(mobile.right - width) < 1);
+        assert.equal(mobile.sideBorder, 0);
+        assert.ok(mobile.topBorder > 0 && mobile.bottomBorder > 0);
+        assert.ok(
+          mobile.background.includes('90deg'),
+          'Phone card border gradient runs horizontally',
+        );
+      } else {
+        assert.ok(mobile.left > 0 && mobile.right < width && mobile.sideBorder > 0);
+      }
+      assert.ok(
+        mobile.rows.every((row) => row.length === 2 && Math.max(...row) - Math.min(...row) < 1),
+        `Short questions pair equally at ${width}px`,
+      );
+      assert.equal(mobile.overflow, false);
+      if ([360, 390, 768].includes(width))
+        await page.screenshot({
+          path: `${artifacts}/mobile-questions-${width}.png`,
+          fullPage: true,
+        });
+    }
+    await page.locator('#level').selectOption('2');
+    for (const width of [360, 394, 768]) {
+      await page.setViewportSize({ width, height: 956 });
+      await page.clock.runFor(32);
+      assert.equal(await page.getByRole('combobox', { name: 'Level', exact: true }).count(), 1);
+      // Read both controls in one layout snapshot; regrouping can move the whole panel.
+      const { method, level } = await page.locator('.level-row').evaluate((row) => ({
+        method: row.querySelector('#reference').getBoundingClientRect().toJSON(),
+        level: row.querySelector('#level').getBoundingClientRect().toJSON(),
+      }));
+      assert.ok(
+        method.x >= level.x + level.width &&
+          Math.abs(method.y + method.height / 2 - level.y - level.height / 2) < 4,
+        `Check method stays beside Level at ${width}px: ${JSON.stringify({ method, level })}`,
+      );
+      const confidence = await page.locator('.question-list').evaluate((list) => {
+        const buttons = [...list.querySelectorAll('.question-option')];
+        const boxes = buttons.map((button) => button.getBoundingClientRect());
+        return {
+          fourByFour: buttons.filter((button) => /\d,\d{3} × \d,\d{3}/.test(button.textContent))
+            .length,
+          paired: boxes.every((box) => {
+            const row = boxes.filter((other) => Math.abs(other.top - box.top) < 1);
+            return row.length === 2 && row.every((other) => Math.abs(other.width - box.width) < 1);
+          }),
+          clear: buttons.every((button) => {
+            const content = button.querySelector('.question-content').getBoundingClientRect();
+            const number = button.querySelector('.num').getBoundingClientRect();
+            // Exercise a result marker without changing learner state.
+            button.querySelector('.question-outcome').textContent = '✓';
+            const outcome = button.querySelector('.question-outcome').getBoundingClientRect();
+            const bounds = button.getBoundingClientRect();
+            const range = document.createRange();
+            range.selectNodeContents(button.querySelector('.equation'));
+            const text = range.getBoundingClientRect();
+            return (
+              number.bottom <= content.top &&
+              content.bottom <= outcome.top &&
+              text.left > bounds.left &&
+              text.right < bounds.right &&
+              Math.abs(text.left + text.right - bounds.left - bounds.right) < 2
+            );
+          }),
+          overflow: document.documentElement.scrollWidth > innerWidth,
+        };
+      });
+      assert.ok(confidence.fourByFour > 0, 'Confidence sample includes 4×4-digit questions');
+      assert.ok(
+        confidence.paired && confidence.clear && !confidence.overflow,
+        `Confidence pairs, corner labels and centred maths at ${width}px: ${JSON.stringify(confidence)}`,
+      );
+      await page.locator('.question-outcome').evaluateAll((markers) =>
+        markers.forEach((marker) => {
+          marker.textContent = '';
+        }),
+      );
+      await page.screenshot({
+        path: `${artifacts}/confidence-questions-${width}.png`,
+        fullPage: true,
+      });
+    }
+    await topicSelector.selectOption(originalTopic);
+    await page.locator('[data-mode="plain"]').click();
+    await page.locator('#level').selectOption('2');
+    // A longer expression can share an equal-width pair if both still fit.
     await page.setViewportSize({ width: 1000, height: 1000 });
     const extended = await page.locator('.question-list').evaluate((list) => {
       const first = list.querySelector('.question-option');
@@ -264,22 +471,38 @@ export async function checkPresentation(browser, base) {
       const container = list.getBoundingClientRect();
       return {
         full: Math.abs(row.width - container.width) < 1,
-        compact: boxes[0].width < row.width - 10,
+        fills: Math.abs(boxes[0].width - row.width) < 1,
+        equalRows: boxes.every((box) =>
+          boxes
+            .filter((other) => Math.abs(other.top - box.top) < 1)
+            .every((other) => Math.abs(other.width - box.width) < 1),
+        ),
         centred: Math.abs((boxes[0].left + boxes[0].right - row.left - row.right) / 2) < 1,
         paired,
       };
     });
     assert.ok(
-      extended.centred && extended.paired,
-      'Long expressions stay centred; shorter cards can still share rows',
+      extended.fills && extended.centred && extended.paired && extended.equalRows,
+      `Long expressions stay centred; shorter cards can still share rows: ${JSON.stringify(extended)}`,
     );
     await page.screenshot({ path: `${artifacts}/flex-mixed-widths.png`, fullPage: true });
     console.log(
-      'Flex layout: intact bank expressions at nine widths; longer expression expands to a full row.',
+      'Flex layout: intact bank expressions, equal row widths and short-question pairs down to 360px.',
     );
     await page.setViewportSize({ width: 390, height: 844 });
     await page.locator('[data-mode="demo"]').click();
-    await page.clock.pauseAt(new Date());
+    assert.deepEqual(
+      await page.locator('.demo-controls').evaluate((element) => {
+        const style = getComputedStyle(element);
+        return { gap: style.gap, display: style.display, position: style.position };
+      }),
+      { gap: '10px', display: 'flex', position: 'static' },
+      'Demo controls retain their spacing below the animated working',
+    );
+    assert.equal(await page.locator('.balance tr.reveal').count(), 0);
+
+    // Pause ahead of the browser clock; screenshot work can leave it ahead of host time.
+    await page.clock.pauseAt(new Date(await page.evaluate(() => Date.now() + 1000)));
     await page.locator('[data-demo-speed]').selectOption('0.5');
     await page.locator('#demo-play').click();
     const firstRow = page.locator('.demo-working tr').first();
@@ -312,26 +535,140 @@ export async function checkPresentation(browser, base) {
     await page.clock.runFor(1300);
     assert.ok(await rightInk.isVisible());
     await page.locator('#demo-all').click();
-    assert.equal(await page.locator('.demo-working .unwritten').count(), 0);
+    assert.equal(await page.locator('.demo-working .balance .unwritten').count(), 0);
     await page.locator('[data-demo-speed]').selectOption('2');
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.locator('#demo-play').click();
     await page.waitForFunction(() => {
       const rect = document.querySelector('.demo-stage').getBoundingClientRect();
-      return rect.top >= 0 && rect.bottom <= innerHeight;
+      return rect.top >= 0 && rect.top < innerHeight;
     });
     await page.clock.runFor(2600);
     assert.equal(await page.locator('.demo-working tr[data-step]').count(), 2);
     await page.getByRole('button', { name: 'Pause', exact: true }).click();
     await page.locator('[data-demo-level="2"]').click();
     await page.locator('#demo-play').click();
+    const readingPosition = await page.evaluate(() => scrollY);
     // Confidence may begin with two equation rows (three reveals each).
     await page.clock.runFor(3900);
     assert.ok((await page.locator('.demo-working tr[data-step]').count()) >= 3);
-    const row = await page.locator('.demo-working tr[data-step]').last().boundingBox();
-    assert.ok(row.y >= 0 && row.y + row.height <= 845, 'Playback follows the current step');
+    assert.equal(
+      await page.evaluate(() => scrollY),
+      readingPosition,
+      'Playback preserves the reading position',
+    );
     await page.getByRole('button', { name: 'Pause', exact: true }).click();
     await page.screenshot({ path: `${artifacts}/demo-speed-mobile.png`, fullPage: true });
+    // Demos start compact, then grow below the question without automatic scrolling.
+    for (const width of [360, 768]) {
+      await page.setViewportSize({ width, height: 956 });
+      for (const topic of ['M01', 'M02', 'M10']) {
+        await topicSelector.selectOption(topic);
+        await page.locator('[data-mode="demo"]').click();
+        await page.locator('[data-demo-level="2"]').click();
+        await page.locator('[data-demo-speed]').selectOption('2');
+        assert.equal(
+          await page.locator('.demo-working').count(),
+          0,
+          'No empty drawing area before playback',
+        );
+        const controlsBefore = await page
+          .locator('.demo-controls')
+          .evaluate((el) => el.getBoundingClientRect().top + scrollY);
+        if (topic === 'M01' && width === 360)
+          await page.screenshot({ path: `${artifacts}/method-ready-360.png`, fullPage: true });
+        await page.locator('#demo-play').click();
+        const controlsAfter = await page
+          .locator('.demo-controls')
+          .evaluate((el) => el.getBoundingClientRect().top + scrollY);
+        assert.ok(controlsAfter > controlsBefore, 'Controls move down when working appears');
+        const start = await page.evaluate(() => scrollY);
+        const descriptions = page.locator(
+          topic === 'M10' ? '.demo-working .step-note' : '.demo-stage .steps li',
+        );
+        const count = await descriptions.count();
+        assert.ok(count > 0);
+        for (let elapsed = 0; elapsed < 20000; elapsed += 650) {
+          await page.clock.runFor(650);
+          assert.equal(
+            await page.evaluate(() => scrollY),
+            start,
+            `${topic} playback does not scroll at ${width}px`,
+          );
+          const highlighting = await page.locator('.demo-stage').evaluate((stage) => {
+            const notes = [...stage.querySelectorAll('.steps li, .step-note')];
+            return {
+              count: notes.length,
+              active: notes.flatMap((note, index) =>
+                note.getAttribute('aria-current') === 'step' ? [index + 1] : [],
+              ),
+              step: Number(stage.querySelector('.demo-status').textContent.match(/Step (\d+)/)[1]),
+            };
+          });
+          assert.equal(highlighting.count, topic === 'M10' ? highlighting.step : count);
+          assert.deepEqual(
+            highlighting.active,
+            [highlighting.step],
+            'Highlight follows the current logical step',
+          );
+        }
+        const geometry = await page.locator('.demo-stage').evaluate((stage) => {
+          const question = stage.querySelector('.selected-equation').getBoundingClientRect();
+          const working = stage.querySelector('.demo-working').getBoundingClientRect();
+          const controls = stage.querySelector('.demo-controls').getBoundingClientRect();
+          const descriptions = [...stage.querySelectorAll('.steps li, .step-note')];
+          return {
+            ordered: question.bottom <= working.top && working.bottom <= controls.top,
+            sizes: descriptions.map((item) => getComputedStyle(item).fontSize),
+            visible: descriptions.every((item) => getComputedStyle(item).visibility === 'visible'),
+            overflow: document.documentElement.scrollWidth > innerWidth,
+          };
+        });
+        assert.ok(geometry.ordered && geometry.visible && !geometry.overflow);
+        assert.ok(
+          geometry.sizes.every((size) => size === (width < 768 ? '14px' : '16px')),
+          `${topic} description sizes at ${width}px: ${geometry.sizes}`,
+        );
+        if (topic !== 'M10') {
+          assert.equal(
+            await page.locator('.demo-working ol').count(),
+            1,
+            'Calculation notes remain below the diagram',
+          );
+          assert.equal(
+            await page.locator('.demo-working p').count(),
+            1,
+            'The final answer remains below the calculation notes',
+          );
+        }
+        if (topic !== 'M10') {
+          const note = await page.locator('.demo-working ol li').first().innerText();
+          assert.match(
+            note,
+            topic === 'M01'
+              ? /^\d+ \+ carry \d+ = \d+: write \d/
+              : /^\d+ ÷ \d+ = \d+, remainder \d+/,
+          );
+          assert.doesNotMatch(
+            await page.locator('.demo-working').innerText(),
+            /Draw the grid|Draw the bus-stop|Tens go above/,
+          );
+        }
+        // Timers are virtual; settle native ink interpolation for a complete end-state capture.
+        await page
+          .locator('.demo-stage')
+          .evaluate((stage) =>
+            stage.getAnimations({ subtree: true }).forEach((animation) => animation.finish()),
+          );
+        await page.screenshot({
+          path: `${artifacts}/method-layout-${topic}-${width}.png`,
+          fullPage: true,
+        });
+      }
+    }
+    await topicSelector.selectOption(originalTopic);
+    await page.locator('[data-mode="demo"]').click();
+    await page.setViewportSize({ width: 390, height: 844 });
     await page.clock.resume();
     await page.reload();
     await page.locator('[data-mode="demo"]').click();
@@ -348,40 +685,241 @@ export async function checkPresentation(browser, base) {
       'Reference shares the profile setting',
     );
     await page.keyboard.press('Escape');
-    for (const width of [390, 768, 1024]) {
+    for (const width of [
+      320, 360, 390, 439, 440, 441, 480, 510, 540, 677, 678, 679, 767, 768, 769, 1023, 1024, 1025,
+      1149, 1150, 1151, 1600,
+    ]) {
       await page.setViewportSize({ width, height: 1000 });
+      await page.clock.runFor(32);
       for (const mode of ['assessment', 'demo', 'scaffolded', 'errors', 'plain']) {
         await page.locator(`[data-mode="${mode}"]`).click();
+        // ResizeObserver groups rows before their final flex sizing is measured.
+        await page.waitForFunction(() => document.querySelector('.learning-steps.sized'));
+        await page.clock.runFor(32);
         const geometry = await page.locator('.learning-header').evaluate((header) => {
           const nav = header.querySelector('nav');
+          const navBounds = nav.getBoundingClientRect();
           return {
+            width: navBounds.width,
+            rowsInsideGutter: [...nav.querySelectorAll('.stage-row')].every(
+              (row) =>
+                Math.abs(row.firstElementChild.getBoundingClientRect().left - navBounds.left) < 1 &&
+                row.lastElementChild.getBoundingClientRect().right <= navBounds.right + 1,
+            ),
+            fillsFirstRow:
+              Math.abs(
+                nav.querySelector('.stage-row').lastElementChild.getBoundingClientRect().right -
+                  navBounds.right,
+              ) < 1,
+            naturalLaterRows: [...nav.querySelectorAll('.stage-row')].slice(1).every((row) => {
+              const buttons = [...row.querySelectorAll('button')];
+              const sizes = buttons.map((button) => {
+                const label = button.querySelector('.stage-label');
+                const probe = label.cloneNode(true);
+                probe.style.cssText = 'position:absolute;white-space:nowrap;width:max-content';
+                button.append(probe);
+                const style = getComputedStyle(button);
+                const natural =
+                  probe.getBoundingClientRect().width +
+                  ['paddingLeft', 'paddingRight', 'borderLeftWidth', 'borderRightWidth'].reduce(
+                    (sum, property) => sum + parseFloat(style[property]),
+                    0,
+                  );
+                probe.remove();
+                return {
+                  natural,
+                  actual: button.getBoundingClientRect().width,
+                  margin: parseFloat(style.marginLeft),
+                };
+              });
+              const roomForNaturalWidths =
+                sizes.reduce((sum, size) => sum + size.natural + size.margin, 0) <=
+                navBounds.width - parseFloat(getComputedStyle(row).paddingLeft);
+              return sizes.every(
+                ({ actual, natural }) =>
+                  actual <= natural + 1 &&
+                  (!roomForNaturalWidths || Math.abs(actual - natural) < 1),
+              );
+            }),
+            labelLines: [...nav.querySelectorAll('.stage-label')].map((label) => {
+              const tops = new Set(
+                [...label.querySelectorAll('span')].flatMap((phrase) =>
+                  [...phrase.getClientRects()].map((rect) => Math.round(rect.top)),
+                ),
+              );
+              return tops.size;
+            }),
+            joins: [...nav.querySelectorAll('button')].every((button) => {
+              if (!button.previousElementSibling) return true;
+              const previous = button.previousElementSibling.getBoundingClientRect();
+              const current = button.getBoundingClientRect();
+              if (Math.abs(previous.top - current.top) > 1) return true;
+              const depth = parseFloat(getComputedStyle(button).clipPath.split(',').at(-1));
+              // Read the resolved notch coordinate from the final polygon point.
+              return Math.abs(previous.right - current.left - depth) < 0.1;
+            }),
+            progress: header.querySelector('.progress-card')
+              ? {
+                  display: getComputedStyle(header.querySelector('.progress-card')).display,
+                  meter: getComputedStyle(header.querySelector('.progress-card'))
+                    .getPropertyValue('--meter-width')
+                    .trim(),
+                  columns: getComputedStyle(header).gridTemplateColumns.split(' ').length,
+                }
+              : null,
             ratio: nav.getBoundingClientRect().width / header.getBoundingClientRect().width,
-            gap:
-              nav.getBoundingClientRect().top -
-              document.querySelector('.intro').getBoundingClientRect().bottom,
+            gapRem:
+              (nav.getBoundingClientRect().top -
+                document.querySelector('.intro').getBoundingClientRect().bottom) /
+              parseFloat(getComputedStyle(document.documentElement).fontSize),
+            labelSize: getComputedStyle(nav.querySelector('button')).fontSize,
             earlier: nav.querySelectorAll('.earlier-stage').length,
             overflow: document.documentElement.scrollWidth > innerWidth,
-            buttonsFit: [...nav.querySelectorAll('button')].every(
-              (button) => button.scrollWidth <= button.clientWidth + 1,
-            ),
+            buttonsFit: [...nav.querySelectorAll('button')].every((button) => {
+              const style = getComputedStyle(button);
+              const range = document.createRange();
+              range.selectNodeContents(button);
+              const bounds = button.getBoundingClientRect();
+              return (
+                button.scrollWidth <= button.clientWidth + 1 &&
+                [...range.getClientRects()].every(
+                  (text) =>
+                    text.left >= bounds.left + parseFloat(style.paddingLeft) - 1 &&
+                    text.right <= bounds.right - parseFloat(style.paddingRight) + 1,
+                )
+              );
+            }),
           };
         });
         assert.ok(
-          geometry.gap >= 33 && geometry.gap <= 35,
+          geometry.fillsFirstRow,
+          `${mode} first row fills its available width at ${width}px`,
+        );
+        assert.ok(geometry.naturalLaterRows, `${mode} later rows use natural widths at ${width}px`);
+        assert.ok(
+          geometry.rowsInsideGutter,
+          `${mode} chevron forks stay inside the gutters at ${width}px`,
+        );
+        if (width >= 768) assert.ok(geometry.width <= 780, 'Desktop navigation is capped at 780px');
+        assert.ok(
+          geometry.labelLines.every((lines) => lines <= 2),
+          `${mode} stage labels need at most two lines at ${width}px`,
+        );
+        if (width === 1600)
+          assert.ok(
+            geometry.labelLines.every((lines) => lines === 1),
+            'Labels use one line when space permits',
+          );
+        assert.ok(
+          Math.abs(geometry.gapRem - 2) < 0.05,
           `${mode} has the same stage gap at ${width}px`,
         );
         assert.equal(
           geometry.earlier,
           ['assessment', 'demo', 'scaffolded', 'errors', 'plain'].indexOf(mode),
         );
+        assert.ok(geometry.joins, `${mode} chevron joins have no background gap at ${width}px`);
+        if ([390, 480, 510, 540, 768].includes(width) && ['assessment', 'plain'].includes(mode))
+          await page.locator('.learning-steps').screenshot({
+            path: `${artifacts}/chevron-joins-${mode}-${width}.png`,
+          });
+        assert.equal(geometry.labelSize, '15px', `${mode} stage labels retain the chosen size`);
         assert.equal(geometry.overflow, false, `${mode} header fits at ${width}px`);
+        const panel = await page.locator('.stage-panel').evaluate((element) => {
+          const bounds = element.getBoundingClientRect();
+          const style = getComputedStyle(element);
+          return {
+            left: bounds.left,
+            right: bounds.right,
+            sides: parseFloat(style.borderLeftWidth) + parseFloat(style.borderRightWidth),
+            top: parseFloat(style.borderTopWidth),
+            bottom: parseFloat(style.borderBottomWidth),
+            radius: parseFloat(style.borderTopLeftRadius),
+            background: style.backgroundImage,
+          };
+        });
+        if (width < 768) {
+          assert.ok(
+            Math.abs(panel.left) < 1 && Math.abs(panel.right - width) < 1,
+            `${mode} fills viewport at ${width}px`,
+          );
+          assert.equal(panel.sides, 0);
+          assert.equal(panel.radius, 0);
+          assert.ok(panel.top > 0 && panel.bottom > 0 && panel.background.includes('90deg'));
+        } else {
+          assert.ok(
+            panel.left > 0 && panel.right < width && panel.sides > 0 && panel.radius > 0,
+            `${mode} restores inset card at ${width}px`,
+          );
+        }
+        if (geometry.progress) {
+          assert.equal(geometry.progress.display, width < 678 ? 'flex' : 'grid');
+          assert.equal(geometry.progress.meter, width < 1024 ? '4rem' : '6rem');
+          assert.equal(geometry.progress.columns, width < 768 ? 1 : 2);
+        }
+
         assert.equal(geometry.buttonsFit, true, `${mode} stage labels fit at ${width}px`);
-        if (width >= 768)
+        if (width >= 768 && width < 1600)
           assert.ok(geometry.ratio >= 0.6, `${mode} cannot squeeze stage navigation`);
         if (width === 768 && mode === 'scaffolded')
           await page.screenshot({ path: `${artifacts}/scaffolded-header.png`, fullPage: true });
       }
     }
+    const focusedStage = page.locator('[data-mode="plain"]');
+    await focusedStage.focus();
+    for (const width of [360, 1600]) {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.clock.runFor(32);
+      // Focus restoration follows the observer's regrouping and Svelte's DOM update.
+      await page.waitForFunction(() => document.activeElement?.matches('[data-mode="plain"]'));
+      assert.ok(
+        await focusedStage.evaluate((button) => button === document.activeElement),
+        'Regrouping rows preserves keyboard focus',
+      );
+    }
+    await page.locator('[data-mode="plain"]').click();
+    await page.setViewportSize({ width: 767, height: 1000 });
+    await page.locator('#reference').click();
+    for (const width of [767, 768, 769, 1149, 1150, 1151, 767]) {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.clock.runFor(32);
+      const dialog = page.getByRole('dialog', { name: 'Method reference' });
+      if (width < 768) await dialog.waitFor();
+      else {
+        await page.locator('.layout.with-reference').waitFor();
+        assert.equal(await dialog.count(), 0);
+        const columns = await page
+          .locator('.layout')
+          .evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length);
+        assert.equal(columns, width < 1150 ? 1 : 2, `Reference columns at ${width}px`);
+      }
+    }
+    await page.keyboard.press('Escape');
+    // Fractional panel widths verify the half-open container boundaries without viewport rounding.
+    await page.setViewportSize({ width: 1280, height: 1000 });
+    const panel = page.locator('.question-panel');
+    for (const width of [479.5, 480, 480.5, 649.5, 650, 650.5, 779.5, 780, 780.5]) {
+      const layout = await panel.evaluate((element, width) => {
+        element.style.width = `${width}px`;
+        element.style.boxSizing = 'content-box';
+        return {
+          columns: getComputedStyle(element.querySelector('.question-list'))
+            .getPropertyValue('--question-columns')
+            .trim(),
+          workspace: getComputedStyle(
+            element.querySelector('.question-workspace'),
+          ).gridTemplateColumns.split(' ').length,
+          overflow: document.documentElement.scrollWidth > innerWidth,
+        };
+      }, width);
+      assert.equal(layout.columns, width >= 780 ? '3' : '2');
+      assert.equal(layout.workspace, width < 650 ? 1 : 2);
+      assert.equal(layout.overflow, false);
+    }
+    await panel.evaluate((element) => {
+      element.style.removeProperty('width');
+      element.style.removeProperty('box-sizing');
+    });
     for (const topic of ['M01', 'M02']) {
       await topicSelector.selectOption(topic);
       await page.locator('[data-mode="demo"]').click();

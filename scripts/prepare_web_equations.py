@@ -1,100 +1,103 @@
-"""Purpose: Import accepted M10 structured content, checking against saved decks; no deck writes.
+"""Purpose: Reconstruct M10 reference candidates from historical JSON sources, never replace the live bank.
 
 Main contents:
-- normal
-- slide_text
+- verify_answer
+- prepare_bank
 - main
 
-Used By: manual website-bank import command.
+Used By: optional manual reference reconstruction; never routine website builds.
 
-Uses: no local module imports.
+Uses: content/M10*.json, web_assessments.json, bank_candidates.py.
 
-Libs: python-pptx (editable slides and deck inspection).
+Libs: Python standard library for exact fractions, hashing and JSON. No PowerPoint dependency.
 """
 from pathlib import Path
 from fractions import Fraction
 from hashlib import sha256
-import json,re
-from pptx import Presentation
-ROOT=Path(__file__).resolve().parents[1]
-LEGACY=ROOT/'legacy'  # Saved teaching decks are audit inputs, never regenerated here.
-def normal(s):
- """Normalize whitespace and mathematical operator glyphs for source/deck comparison.
+import json
+from bank_candidates import write_candidates
 
- Parameters: s — input text.
- Used by: main, add.
- """
- return re.sub(r'\s+','',s).replace('−','-').replace('×','*')
-def slide_text(s):
- """Join text from all text-bearing shapes on a slide.
+ROOT = Path(__file__).resolve().parents[1]
 
- Parameters: s — PowerPoint slide.
- Used by: main.
- """
- return '\n'.join(sh.text for sh in s.shapes if sh.has_text_frame)
+
+def verify_answer(question):
+    """Check a question's exact solution against its coefficients, when provided.
+
+    Called by prepare_bank for original and additional questions.
+    Example: verify_answer({'coefficients': [2, 1, 0, 5], 'answer': '2'})
+    """
+    if 'coefficients' not in question:
+        return
+    left_coefficient, left_constant, right_coefficient, right_constant = map(
+        Fraction, question['coefficients']
+    )
+    answer = Fraction(question['answer'])
+    assert left_coefficient * answer + left_constant == right_coefficient * answer + right_constant, question
+
+
+def prepare_bank():
+    """Build and validate an M10 candidate from historical source JSON, with no writes.
+
+    Calls verify_answer; used by main. Current bank refinements may supersede this candidate.
+    Example: candidate = prepare_bank(); print(len(candidate['questions']))  # 97
+    """
+    sources = ['M10_equations.json', 'M10_web_recap.json', 'M10_web_teaching.json', 'web_assessments.json']
+    source, recap, teaching, assessments = [
+        json.loads((ROOT / 'content' / name).read_text()) for name in sources
+    ]
+    questions = []
+
+    def add(question, identifier, kind, level):
+        """Validate and append one source question with its stable bank ID/type/level.
+
+        Calls verify_answer; used by prepare_bank's source-section loops.
+        """
+        verify_answer(question)
+        questions.append({**question, 'id': f'maths:{identifier}', 'subject': 'maths',
+                          'topic': 'M10', 'type': kind, 'level': level})
+
+    for index, question in enumerate(source['assessment']):
+        add(question, f'M10-IA-Q{index + 1}', 'assessment', [0, 0, 1, 2][index])
+    for level, question in enumerate(source['demo']):
+        add(question, f'M10-S01-C{level + 1}-Q1', 'demo', level)
+    for section, row in enumerate(source['practice'], 2):
+        for level, question in enumerate(row):
+            add(question, f'M10-S{section:02}-C{level + 1}-Q1', 'scaffolded', level)
+    for section, columns in enumerate(source['banks'], 4):
+        for level, column in enumerate(columns):
+            for index, question in enumerate(column):
+                add(question, f'M10-S{section:02}-C{level + 1}-Q{index + 1}', 'plain', level)
+    for level, column in enumerate(source['errors']):
+        for index, question in enumerate(column):
+            add(question, f'M10-SE-C{level + 1}-Q{index + 1}', 'errors', level)
+    assert len(questions) == 94 and len({question['id'] for question in questions}) == 94
+    for index, question in enumerate(assessments['M10'], 5):
+        add(question, f'M10-IA-Q{index}', 'assessment', question['level'])
+    for question in questions:
+        if question['type'] == 'errors':
+            question.update(teaching['errorAnnotations'][question['id']])
+    for question in teaching['additionalQuestions']:
+        verify_answer(question)
+        questions.append(question)
+    assert len({question['id'] for question in questions}) == len(questions)
+    for level, question in enumerate(source['demo']):
+        assert len(question['balance']) == len(teaching['demoAnnotations'][level])
+    for level, block in enumerate(recap):
+        assert len(block['balance']) == len(teaching['recapAnnotations'][level])
+    revision = sha256(b''.join((ROOT / 'content' / name).read_bytes() for name in sources)).hexdigest()[:16]
+    return {
+        'schema': 1, 'revision': revision, 'subject': 'maths', 'topic': 'M10',
+        'title': source['title'], 'rows': source['rows'], 'prompts': source['prompts'],
+        'questions': questions, 'recap': recap,
+        'teaching': {key: teaching[key] for key in ('guidance', 'demoAnnotations', 'recapAnnotations', 'errorReasons')},
+    }
+
+
 def main():
- """Run the prepare web equations command using its configured input and output paths.
- Calls: shape_data, normal, slide_text, add.
+    """Prepare the reference bank, then call write_candidates to output it for review only."""
+    bank = prepare_bank()
+    write_candidates({'website/static/data/equations.json': json.dumps(bank, ensure_ascii=False, indent=2) + '\n'})
 
- Example in the caller's context: main()
- """
- registry=json.loads((ROOT/'content/topic_registry.json').read_text());combined=Presentation(LEGACY/'GCSE_Maths_Revision_Starters.pptx');offset=0;audit=[]
- for t in registry:
-  path=LEGACY/'topics'/t['folder']/(t['stem']+'_questions.pptx');p=Presentation(path)
-  differences=[]
-  def shape_data(s):
-   """Extract shape type, geometry, rotation and text for deck comparison.
 
-   Parameters: s — PowerPoint slide.
-   Used by: main.
-   """
-   return [(int(sh.shape_type),sh.left,sh.top,sh.width,sh.height,sh.rotation,sh.text if sh.has_text_frame else '') for sh in s.shapes]
-  for i,s in enumerate(p.slides):
-   if shape_data(s)!=shape_data(combined.slides[offset+i]):differences.append(i+1)
-  audit.append({'topic':t['id'],'slides':len(p.slides),'text_geometry_differences':differences,'sha256':sha256(path.read_bytes()).hexdigest()});offset+=len(p.slides)
- assert offset==len(combined.slides)
- d=json.loads((ROOT/'content/M10_equations.json').read_text());deck=Presentation(LEGACY/'topics/equations/Solving_equations_M10_questions.pptx');text=normal('\n'.join(slide_text(s) for s in deck.slides));items=[]
- def add(q,id,kind,level,audit_source=True):
-  """Validate one source question against the saved deck and append its web-bank entry.
-
-  Parameters: q — source question; id — stable question reference; kind — question or operation
-  variant; level — zero-based challenge level.
-  Calls: normal.
-  Used by: main.
-  """
-  if audit_source:assert normal(q['q']) in text,(id,q['q'])
-  if 'coefficients' in q:
-   a,b,c,e=map(Fraction,q['coefficients']);x=Fraction(q['answer']);assert a*x+b==c*x+e,id
-  items.append({**q,'id':'maths:'+id,'subject':'maths','topic':'M10','type':kind,'level':level})
- for i,q in enumerate(d['assessment']):add(q,f'M10-IA-Q{i+1}','assessment',[0,0,1,2][i])
- for l,q in enumerate(d['demo']):add(q,f'M10-S01-C{l+1}-Q1','demo',l)
- for s,row in enumerate(d['practice'],2):
-  for l,q in enumerate(row):add(q,f'M10-S{s:02}-C{l+1}-Q1','scaffolded',l)
- for s,cols in enumerate(d['banks'],4):
-  for l,col in enumerate(cols):
-   for i,q in enumerate(col):add(q,f'M10-S{s:02}-C{l+1}-Q{i+1}','plain',l)
- for l,col in enumerate(d['errors']):
-  for i,q in enumerate(col):add(q,f'M10-SE-C{l+1}-Q{i+1}','errors',l)
- assert len(items)==94 and len({q['id'] for q in items})==94
- extra_assessments=json.loads((ROOT/'content/web_assessments.json').read_text())['M10']
- for i,q in enumerate(extra_assessments,5):add(q,f'M10-IA-Q{i}','assessment',q['level'],audit_source=False)
- recap=json.loads((ROOT/'content/M10_web_recap.json').read_text())
- for block in recap:
-  for note in [block['title'],*block['notes']]:assert normal(note) in text,note
-  for row in block['balance']:
-   for side in ('l','r'):assert normal(row[side]) in text,row
-
- teaching=json.loads((ROOT/'content/M10_web_teaching.json').read_text())
- for q in items:
-  if q['type']=='errors':q.update(teaching['errorAnnotations'][q['id']])
- for q in teaching['additionalQuestions']:
-  a,b,c,e=map(Fraction,q['coefficients']);x=Fraction(q['answer']);assert a*x+b==c*x+e,q['id']
-  items.append(q)
- assert len({q['id'] for q in items})==len(items)
- for level,q in enumerate(d['demo']):assert len(q['balance'])==len(teaching['demoAnnotations'][level])
- for level,block in enumerate(recap):assert len(block['balance'])==len(teaching['recapAnnotations'][level])
- out={'schema':1,'revision':sha256((ROOT/'content/M10_equations.json').read_bytes()+(ROOT/'content/M10_web_recap.json').read_bytes()+(ROOT/'content/M10_web_teaching.json').read_bytes()+(ROOT/'content/web_assessments.json').read_bytes()).hexdigest()[:16],'subject':'maths','topic':'M10','title':d['title'],'rows':d['rows'],'prompts':d['prompts'],'questions':items,'recap':recap,'teaching':{k:teaching[k] for k in ('guidance','demoAnnotations','recapAnnotations','errorReasons')}}
- target=ROOT/'website/static/data';target.mkdir(parents=True,exist_ok=True);(target/'equations.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
- (ROOT/'docs/CONTENT_AUDIT.json').write_text(json.dumps({'combined_sha256':sha256((LEGACY/'GCSE_Maths_Revision_Starters.pptx').read_bytes()).hexdigest(),'topics':audit,'M10':{'imported':94,'new_web_items':len(teaching['additionalQuestions'])+len(extra_assessments),'plain':72,'source_questions_found_in_saved_deck':94,'coefficient_answers_verified':sum('coefficients' in q for q in items)},'limits':'Shape geometry/text compared; detailed styles/media and non-M10 source parity not yet audited.'},indent=2)+'\n')
- print('Imported 94 M10 items plus 1 new two-error example and 2 web assessments; 72 independent questions. All source question texts found in saved deck. Deck geometry differences:',[(r['topic'],r['text_geometry_differences']) for r in audit if r['text_geometry_differences']])
-if __name__=='__main__':main()
+if __name__ == '__main__':
+    main()

@@ -53,8 +53,8 @@
   margin: 0.5rem 0;
 }
 .progress-breakdown {
-  width: min(28rem, calc(100vw - 32px));
-  max-height: min(32rem, calc(100dvh - 32px));
+  width: min(28rem, calc(100vw - 2 * var(--overlay-edge-clearance)));
+  max-height: min(32rem, calc(100dvh - 2 * var(--overlay-edge-clearance)));
   overflow-y: auto;
 }
 .revision-recommendation {
@@ -67,7 +67,8 @@
 #progress-import {
   max-width: 100%;
 }
-@media (max-width: 767px) {
+/* Stack topic details and compact challenge tiles on smaller viewports. */
+@variant max-viewport-medium {
   .topic-progress {
     grid-template-columns: minmax(0, 1fr);
   }

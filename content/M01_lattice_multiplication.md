@@ -1,3 +1,5 @@
+> **Source status:** Preserve the teaching guidance and historical source below. For implemented topics, the [reviewed website content and authored refinements](../website/README.md#teaching-content-and-imports) take precedence over older examples and slide-specific instructions. Slides primarily inform level and style; review and refine content for each topic’s website implementation.
+
 # M01 — Lattice Multiplication
 
 **Status: Accepted teaching content — captured from the v3 source.**

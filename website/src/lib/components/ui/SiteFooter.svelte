@@ -1,4 +1,15 @@
-<!-- Shared footer links and reporting action; each route may retain its own explanatory copy. -->
+<!--
+  Purpose: Share About and issue-report links while accepting route-specific footer text.
+
+  Main contents:
+  - SiteFooter.
+
+  Used By: Homepage, TopicPractice, Progress, Puzzles and About routes.
+
+  Uses: IssueReport.svelte.
+
+  Libs: Svelte (props/snippets); $app/paths (base-aware links).
+-->
 <script>
   import { resolve } from '$app/paths';
   import IssueReport from './IssueReport.svelte';

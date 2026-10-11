@@ -1,3 +1,5 @@
+> **Source status:** Preserve the teaching guidance and historical source below. For implemented topics, the [reviewed website content and authored refinements](../website/README.md#teaching-content-and-imports) take precedence over older examples and slide-specific instructions. Slides primarily inform level and style; review and refine content for each topic’s website implementation.
+
 # Detailed teaching specifications
 
 These requirements are retained from AGENTS.md. Read the relevant section when working on its topic, alongside that topic's exact content Markdown. They preserve accepted teaching choices; they are not a request to rebuild accepted question banks.

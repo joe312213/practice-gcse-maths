@@ -1,8 +1,35 @@
-<!-- Shared brand, skip link, theme controls and route-specific header actions. -->
+<!--
+  Purpose: Share the brand, skip link, theme controls, a universal menu and route-specific header actions.
+
+  Main contents:
+  - SiteHeader with shared navigation and optional page-specific menu items.
+
+  Used By: Homepage, TopicPractice, Progress, Puzzles and About routes.
+
+  Uses: ThemeControls.svelte.
+
+  Libs: Bits UI (popover); Svelte (props/snippets); $app/paths (base-aware links).
+-->
 <script>
   import { resolve } from '$app/paths';
+  import { Popover } from 'bits-ui';
   import ThemeControls from './ThemeControls.svelte';
-  let { section = 'practice', back = false, before, children } = $props();
+  let {
+    section = 'practice',
+    back = false,
+    before,
+    children,
+    menuItems,
+    menuOpen = $bindable(false),
+    menuTrigger = $bindable(null),
+    onMenuCloseAutoFocus,
+  } = $props();
+  const links = [
+    { href: '/', label: 'Topics' },
+    { href: '/progress.html', label: 'Progress' },
+    { href: '/puzzles.html', label: 'Puzzles' },
+    { href: '/about.html', label: 'About' },
+  ];
 </script>
 
 <a class="skip" href="#main">Skip to {section}</a>
@@ -13,7 +40,49 @@
   <div class="header-actions">
     {#if back}<a class="action-button quiet" href={resolve('/')}>Back to topics</a>{/if}
     {@render before?.()}
-    <ThemeControls />
     {@render children?.()}
+  </div>
+  <div class="header-tools">
+    <ThemeControls />
+    <Popover.Root bind:open={menuOpen}>
+      <Popover.Trigger
+        class="action-button quiet menu-toggle"
+        bind:ref={menuTrigger}
+        aria-label="Menu"
+        title="Menu"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path
+            d="M4 6h16M4 12h16M4 18h16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content
+          class="popover-panel site-menu"
+          align="end"
+          sideOffset={8}
+          collisionPadding={16}
+          role="dialog"
+          aria-label="Site menu"
+          onCloseAutoFocus={onMenuCloseAutoFocus}
+        >
+          <nav class="site-menu-links" aria-label="Site pages">
+            {#each links as link}
+              <a
+                class="action-button quiet"
+                href={resolve(link.href)}
+                onclick={() => (menuOpen = false)}>{link.label}</a
+              >
+            {/each}
+          </nav>
+          {@render menuItems?.()}
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   </div>
 </header>

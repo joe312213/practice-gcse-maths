@@ -5,7 +5,7 @@
  * - openProgress
  * - loadBank
  *
- * Used By: tests/session.test.mjs, website/src/routes/+page.svelte, website/src/routes/progress.html/+page.svelte
+ * Used By: tests/session.test.mjs, website/src/lib/components/practice/TopicPractice.svelte, website/src/routes/progress.html/+page.svelte
  *
  * Uses: website/src/lib/domain/profiles.mjs.
  *
@@ -35,7 +35,7 @@ export function openProgress(storage, onWarning = () => {}) {
     data,
     /**
      * Persist a learner store only if the original data was readable; report write failures.
-     * Parameter value: new value to apply or validate.
+     * Parameter value: complete schema-2 learner store to serialize.
      */
     save(value) {
       if (!writable) return;

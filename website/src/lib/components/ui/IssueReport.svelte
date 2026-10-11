@@ -1,4 +1,15 @@
-<!-- Reviewable report draft, following the T-Level report workflow; sending belongs to the email app. -->
+<!--
+  Purpose: Let learners review and copy an issue report or open an email draft; never send reports automatically.
+
+  Main contents:
+  - prepare; submit; report dialog.
+
+  Used By: SiteFooter.svelte.
+
+  Uses: domain/issue-report.mjs.
+
+  Libs: Bits UI (accessible dialog); Svelte (state and derived report).
+-->
 <script>
   import { Dialog } from 'bits-ui';
   import { makeReport, emailURL } from '#lib/domain/issue-report.mjs';
@@ -10,6 +21,9 @@
     status = $state(''),
     preview;
   const report = $derived(makeReport(context, kind, description));
+  /**
+   * Capture page/question context and reset the draft when the dialog opens.
+   */
   function prepare() {
     context = {
       page: location.href,
@@ -22,6 +36,10 @@
     status = '';
     kind = 'bug';
   }
+  /**
+   * Handle the form event by copying a reviewed report or opening an email draft.
+   * Calls emailURL for email; selects the preview if clipboard access fails.
+   */
   async function submit(event) {
     event.preventDefault();
     if (!description.trim()) {

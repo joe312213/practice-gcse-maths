@@ -21,7 +21,7 @@ export const REVISION_POLICY = { pending: 3, weeklyAutomaticLimit: 15 };
  * Fill pending revision slots from ranked evidence unless the automatic weekly limit is reached.
  * Parameter profile: learner record.
  * Parameter catalogue: authored topic/page catalogue.
- * Parameter now: current time in milliseconds or injected clock, as declared.
+ * Parameter now: current epoch milliseconds.
  * Parameter uuid: injected identifier factory.
  * Parameter requested: explicit request to generate recommendations beyond the automatic limit.
  * Calls: weeklyProgress, topicProgress, encodePracticeSet.
@@ -94,7 +94,7 @@ function priority(item) {
  * Credit a fully completed recommendation once; ignore expired or ordinary sets.
  * Parameter profile: learner record.
  * Parameter run: practice-set attempt.
- * Parameter now: current time in milliseconds or injected clock, as declared.
+ * Parameter now: current epoch milliseconds.
  */
 export function completeRecommendation(profile, run, now) {
   if (!run?.recommendationId || run.finished !== 'complete') return false;

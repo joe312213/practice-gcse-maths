@@ -10,6 +10,8 @@
 
 When fixing bugs, adding or changing features, or refactoring, ask: "How can I simplify the code? How can I make it more maintainable or clearer? Are there opportunities to reduce the number of lines of code here?"
 
+When updating code, you should be clear on what documentation files cover that code, and maintain documentation alignment. If documentation requires updating, follow documentation policy, report it and add the action to the [dev log](../DEV_LOG.md).
+
 ## Testing
 
 - Apply the same discernment, attention to detail and clarity to the test plan and test cases as you should to feature implementation and architecture.
@@ -32,3 +34,15 @@ A small number of utility classes alongside a semantic class is fine for occasio
 Use plain CSS and shared theme variables when clearer than utility composition. Weigh that choice against the consistency and maintenance benefits of the frameworks in use, and avoid recreating behaviour they already provide.
 
 Keep class names statically discoverable where possible. Prefer built-in unused-code elimination and CSS generation before adding separate purging tools. Any optimisation must preserve dynamic states, themes and library-generated markup. Exclude generated output from source scanning.
+
+### CSS review checklist
+
+- **Trace unusual values.** Determine whether each represents an independent constraint, a shared dimension or a derived result. Naming a variable alone does not justify its value.
+- **Express dependencies.** Use named inputs and CSS math rather than separately maintained results—for example, menu reservation should be control width plus clearance, not an unexplained `54px`. Share values by meaning, not numerical coincidence. Keep component-specific variables beside their rules and common dimensions in existing shared styles.
+- **Consolidate similar uses.** Review repeated and nearby values together. Prefer consistent, reusable layout and sizing rules; one-off values need a clear content-fit or visual reason. Take particular care at **8px and below**, where 1px differences can matter. Do not apply the breakpoint register's 20px tolerance to ordinary spacing.
+- **Choose units by purpose.** Use `rem` for dimensions that should follow root text size, `em` for local typography, and fixed pixels where fixed geometry is intentional. Consider intrinsic sizing before imposing text-fitting widths.
+- **Check ownership across files.** Look for the same dimension independently defined in CSS, component markup and JavaScript—for example, canvas display height and bitmap height.
+- **Follow the [breakpoint register](UI_TASTE.md#breakpoint-register).** Use named variants, the agreed `<`/`>=` convention and purpose comments. Compare nearby thresholds within the same measurement scope.
+- **Verify the reason for exceptions.** Check relevant content, text sizes and layout boundaries. Record what the evidence establishes; “already existed” or “tests pass” is insufficient justification by itself. Missing historical rationale should prompt investigation, not permanently exempt a value from consolidation.
+
+Application-specific dimension ownership and visual decisions remain in [UI taste](UI_TASTE.md#dimensions-and-spacing).

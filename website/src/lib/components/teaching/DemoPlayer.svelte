@@ -32,7 +32,7 @@
   const frames = $derived(equationFrames(question.balance));
   /**
    * Publish the selected demonstration level to its parent.
-   * Parameter value: new value to apply or validate.
+   * Parameter value: zero-based challenge level (0–2).
    */
   function chooseLevel(value) {
     level = value;
@@ -65,10 +65,6 @@
         </p>
       {/snippet}
       {#snippet children(frame)}
-        {#if frame.guideProgress !== undefined}<p>
-            Draw a line down the middle to keep both sides aligned, as you would on paper in an
-            exam.
-          </p>{/if}
         <EquationWorking
           rows={question.balance}
           limit={frame.step}

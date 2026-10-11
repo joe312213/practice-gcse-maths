@@ -6,11 +6,12 @@
 
   Used By: SvelteKit route loading.
 
-  Uses: website/src/lib/adapters/storage.mjs, website/src/lib/application/session.mjs, website/src/lib/domain/stages.mjs, website/src/lib/content/practice-pages.json, website/src/lib/components/practice/PracticeSets.svelte, website/src/lib/components/practice/NextStage.svelte, website/src/lib/components/ui/ThemeControls.svelte, website/src/lib/components/ui/ProfileDialog.svelte, website/src/lib/components/practice/PracticeActivity.svelte, website/src/lib/components/teaching/DemoPlayer.svelte.
+  Uses: storage, working-cache and practice-time adapters; session.mjs; LearningSteps.svelte; topic-routes.mjs and practice-pages.json; SiteHeader, SiteFooter, ProfileDialog, Progress, PracticeSets, NextStage, PracticeActivity and MethodDemo.
 
   Libs: bits-ui (dialog/popover interaction), svelte (component lifecycle and state), $app/paths (base-aware URLs).
 -->
 <script>
+  import { Select } from 'bits-ui';
   import { bindPracticeTimer } from '#lib/adapters/practice-time.mjs';
   import { createWorkingCache } from '#lib/adapters/working-cache.mjs';
   import { foundationTopics, topicPath } from '#lib/content/topic-routes.mjs';
@@ -19,12 +20,11 @@
   let { topicId } = $props();
   import SiteHeader from '#lib/components/ui/SiteHeader.svelte';
   import SiteFooter from '#lib/components/ui/SiteFooter.svelte';
-  import { Popover } from 'bits-ui';
   import { onMount, tick } from 'svelte';
   import { asset, resolve } from '$app/paths';
   import { openProgress, loadBank } from '#lib/adapters/storage.mjs';
   import { createSession } from '#lib/application/session.mjs';
-  import { MODES } from '#lib/domain/stages.mjs';
+  import LearningSteps from './LearningSteps.svelte';
   import catalogue from '#lib/content/practice-pages.json';
   import PracticeSets from '#lib/components/practice/PracticeSets.svelte';
   import NextStage from '#lib/components/practice/NextStage.svelte';
@@ -39,10 +39,12 @@
     warning = $state(''),
     profileOpen = $state(false);
   let profileTrigger = $state();
+  /** Switch to bank id through the session, then navigate to its public URL. Calls topicPath, resolve and goto. */
   async function selectTopic(id) {
     session.switchTopic(id);
     await goto(resolve(topicPath(id)));
   }
+  /** Select/create learner name and open the URL topic/set. Called by ProfileDialog; create confirms a new name. */
   function chooseName(name, create) {
     const setCode = new URLSearchParams(location.search).get('set');
     const result = session.chooseName(name, create);
@@ -52,6 +54,7 @@
     }
     return result;
   }
+  /** Resume the matching saved code or start a set; show validation failures without replacing the page. */
   function openSet(code) {
     try {
       if (view.savedSet?.code === code) session.resumePracticeSet();
@@ -73,7 +76,7 @@
     creatorOpen = $state(false);
   /**
    * Switch the session activity, then focus the new stage heading.
-   * Parameter mode: learning activity or theme mode, as used here.
+   * Parameter mode: activity ID, such as assessment, scaffolded, errors or plain.
    * Calls: tick.
    */
   async function switchStage(mode) {
@@ -92,7 +95,7 @@
     /**
      * Initialize learner storage, load the bank and subscribe the route to session updates.
      * Calls: openProgress, loadBank, asset, createSession.
-     * @example start();
+     * @example await start(); // Load banks and bind the session after browser mount.
      */
     async function start() {
       try {
@@ -171,7 +174,13 @@
 </script>
 
 <svelte:head><title>Maths practice · {view?.bank.title ?? 'Foundation maths'}</title></svelte:head>
-<SiteHeader back>
+<SiteHeader
+  bind:menuOpen
+  bind:menuTrigger
+  onMenuCloseAutoFocus={(event) => {
+    if (creatorOpen) event.preventDefault();
+  }}
+>
   {#snippet before()}<span id="welcome"
       >{view?.profile ? `Welcome back, ${view.profile.name}!` : ''}</span
     ><button
@@ -182,48 +191,20 @@
       onclick={() => (profileOpen = true)}>{view?.profile ? 'Not you?' : 'Choose name'}</button
     >{/snippet}
 
-  <a class="action-button quiet" href={resolve('/puzzles.html')}>Puzzles</a>
   {#if view?.profile}
     <a class="action-button quiet" href={resolve('/progress.html')}>Progress</a>
-    <Popover.Root bind:open={menuOpen}>
-      <Popover.Trigger
-        class="action-button quiet menu-toggle"
-        bind:ref={menuTrigger}
-        aria-label="Menu"
-        title="Menu"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path
-            d="M4 6h16M4 12h16M4 18h16"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-          />
-        </svg>
-      </Popover.Trigger>
-      <Popover.Portal
-        ><Popover.Content
-          class="popover-panel"
-          align="end"
-          sideOffset={8}
-          collisionPadding={16}
-          aria-label="Practice options"
-          onCloseAutoFocus={(event) => {
-            if (creatorOpen) event.preventDefault();
-          }}
-        >
-          <button
-            class="action-button"
-            onclick={() => {
-              menuOpen = false;
-              creatorOpen = true;
-            }}>Create Practice set</button
-          >
-        </Popover.Content></Popover.Portal
-      >
-    </Popover.Root>
   {/if}
+  {#snippet menuItems()}
+    {#if view?.profile}
+      <button
+        class="action-button"
+        onclick={() => {
+          menuOpen = false;
+          creatorOpen = true;
+        }}>Create Practice set</button
+      >
+    {/if}
+  {/snippet}
 </SiteHeader>
 <div id="storage-warning" role="alert">{warning}</div>
 {#if view?.backup?.due}<p class="export-reminder" role="status">
@@ -237,7 +218,7 @@
   {:else if !view}<p>Loading maths practice…</p>
   {:else if !view.profile}
     <section class="card full">
-      <div class="eyebrow">Foundation maths</div>
+      <p class="eyebrow"><a class="subject-link" href={resolve('/')}>Foundation maths</a></p>
       <h1>{view.bank.title}</h1>
       <p>
         Practise multiplication, division and equations at your pace, with clear examples and
@@ -250,22 +231,29 @@
   {:else}
     <PracticeSets {catalogue} {view} {session} bind:creatorOpen returnFocus={menuTrigger}>
       {#snippet topicSelector()}
-        <label class="topic-selector"
-          >Topic
-          <select
-            class="choice-field"
-            aria-label="Topic"
-            value={view.bank.topic}
-            onchange={(event) => selectTopic(event.currentTarget.value)}
-          >
-            {#each catalogue.topics as topic}<option value={topic.bank}>{topic.title}</option
-              >{/each}
-          </select>
-        </label>
+        <Select.Root type="single" value={view.bank.topic} onValueChange={selectTopic}>
+          <Select.Trigger class="choice-field topic-selector" aria-label="Topic">Topic</Select.Trigger>
+          <Select.Portal>
+            <Select.Content class="popover-panel topic-options" align="end" sideOffset={4} collisionPadding={16}>
+              <Select.Viewport>
+                {#each catalogue.topics as topic}
+                  <Select.Item class="topic-option" value={topic.bank} label={topic.title}>
+                    {#snippet children({ selected })}
+                      <span class="topic-option-tick" aria-hidden="true">{selected ? '✓' : ''}</span>
+                      {topic.title}
+                    {/snippet}
+                  </Select.Item>
+                {/each}
+              </Select.Viewport>
+            </Select.Content>
+          </Select.Portal>
+        </Select.Root>
       {/snippet}
       {#snippet title()}
-        <div class="eyebrow">Foundation maths</div>
+        <p class="eyebrow"><a class="subject-link" href={resolve('/')}>Foundation maths</a></p>
         <h1>{view.bank.title}</h1>
+      {/snippet}
+      {#snippet description()}
         <p>
           Work through this topic in order: assess, learn, practise with support, spot errors, then
           practise independently.
@@ -273,23 +261,14 @@
       {/snippet}
     </PracticeSets>
     <div class="learning-header">
-      {#if !view.practiceSet}<nav class="learning-steps" aria-label="Topic learning steps">
-          {#each MODES as [id, label], index}<button
-              class="action-button"
-              type="button"
-              data-mode={id}
-              class:earlier-stage={index < MODES.findIndex(([mode]) => mode === view.mode)}
-              aria-current={view.mode === id ? 'step' : undefined}
-              onclick={() => switchStage(id)}>{label}</button
-            >{/each}
-        </nav>{/if}
+      {#if !view.practiceSet}<LearningSteps mode={view.mode} onselect={switchStage} />{/if}
       {#if view.page && view.mode !== 'demo'}<Progress
           mode={view.mode}
           page={view.page}
           track={view.track}
         />{/if}
     </div>
-    {#if view.mode === 'demo'}<section class="card full">
+    {#if view.mode === 'demo'}<section class="card stage-panel">
         <h2 id="stage-title" tabindex="-1">
           {view.bank.method ? view.bank.title : 'Keep the equation balanced'}
         </h2>

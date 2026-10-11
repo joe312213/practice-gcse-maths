@@ -1,15 +1,21 @@
 /* Compose reusable themed controls and panel foundations without changing interaction behaviour.
    Shared semantic components compose daisyUI foundations once. Bits UI owns dialog/popover behaviour; these classes only own appearance and variants. */
+:root {
+  /* Shared control dimensions; compact variants retain their smaller footprint. */
+  --control-size: 44px;
+  --control-size-compact: 32px;
+  --control-gap: 10px;
+}
 .action-button,
 .question-option,
 .theme-icon,
 .theme-preview {
   @apply btn;
   height: auto;
-  min-height: 44px;
+  min-height: var(--control-size);
   padding: 10px 15px;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: var(--radius-selector);
   background: var(--surface);
   color: var(--text);
   font: inherit;
@@ -40,12 +46,12 @@
   border-color: var(--main);
 }
 .action-button.compact {
-  min-height: 32px;
+  min-height: var(--control-size-compact);
   padding: 5px 9px;
   font-size: 0.82rem;
 }
 .action-button.icon {
-  width: 32px;
+  width: var(--control-size-compact);
   padding: 6px;
 }
 .action-button.icon svg {
@@ -75,9 +81,9 @@
 .choice-field {
   font: inherit;
   height: auto;
-  min-height: 44px;
+  min-height: var(--control-size);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--radius-field);
   background-color: var(--surface);
   color: var(--text);
   box-shadow: none;
@@ -90,17 +96,18 @@
 .choice-field {
   width: auto;
   max-width: 100%;
+  /* The right inset reserves the native select arrow, independently of control height. */
   padding: 10px 32px 10px 12px;
   cursor: pointer;
 }
 .choice-field.compact {
-  min-height: 32px;
+  min-height: var(--control-size-compact);
   padding-block: 4px;
   font-size: 0.82rem;
 }
 .action-button.menu-toggle {
-  width: 44px;
-  min-height: 44px;
+  width: var(--control-size);
+  min-height: var(--control-size);
   padding: 9px;
 }
 .menu-toggle svg {

@@ -1,14 +1,13 @@
 <!--
-  Purpose: Render method-specific frames with shared playback controls and step-following scroll.
+  Purpose: Render method-specific frames with shared playback controls and a stable reading position.
 
   Main contents:
-  - followStep
   - play
   - go
 
-  Used By: website/src/lib/components/teaching/DemoPlayer.svelte
+  Used By: DemoPlayer.svelte and ArithmeticDemo.svelte
 
-  Uses: website/src/lib/application/player.mjs.
+  Uses: application/player.mjs and application/demo-motion.mjs.
 
   Libs: svelte (component lifecycle and state).
 -->
@@ -17,10 +16,19 @@
   import { createDemoMotion } from '#lib/application/demo-motion.mjs';
   import { createPlayer } from '#lib/application/player.mjs';
 
-  // Each frame has a logical step plus caller-owned drawing data. Renderers mark
-  // the current drawing target with data-demo-current; no equation layout is assumed.
-  let { frames, steps, heading, children, completion, speed = 1, onspeed = () => {} } = $props();
+  // Each frame has a logical step plus caller-owned drawing data; no equation layout is assumed.
+  let {
+    frames,
+    steps,
+    introduction,
+    heading,
+    children,
+    completion,
+    speed = 1,
+    onspeed = () => {},
+  } = $props();
   let cursor = $state(0);
+  let started = $state(false);
   let playing = $state(false);
   let player;
   let motion;
@@ -37,17 +45,7 @@
     motion?.setSpeed(speed);
   });
   /**
-   * Wait for the revealed frame and scroll its current step into view.
-   * Calls: tick.
-   */
-  async function followStep() {
-    await tick();
-    stage
-      ?.querySelector('[data-demo-current]')
-      ?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
-  }
-  /**
-   * Toggle playback and scroll its controls into view after Svelte updates.
+   * Toggle playback and position the reading area once, without following later frames.
    * Calls: tick.
    */
   async function play() {
@@ -55,6 +53,7 @@
       player.pause();
       return;
     }
+    started = true;
     player.play();
     await tick();
     stage.scrollIntoView({ block: 'start', behavior: 'instant' });
@@ -64,6 +63,7 @@
    * Parameter step: one-based teaching step.
    */
   function go(step) {
+    started = true;
     step = Math.min(steps, step);
     player.go(frames.findLastIndex((frame) => frame.step === step) + 1);
   }
@@ -72,7 +72,7 @@
     player = createPlayer({
       length: frames.length,
       delay: 650 / speed,
-      /** Player frame callback: update cursor/playing from next and follow an advancing step after rendering. */
+      /** Player frame callback: update cursor/playing and animate advancing ink after rendering. */
       onFrame: async (next) => {
         const changed = next.step - 1 !== cursor;
         const advancing = playing && next.step > cursor + 1;
@@ -87,7 +87,6 @@
           await tick();
           if (disposed) return;
           if (advancing) motion.reveal(before, speed);
-          if (advancing) followStep();
         }
       },
     });
@@ -100,7 +99,9 @@
 </script>
 
 <section class="demo-stage" bind:this={stage} aria-label="Worked solution playback">
+  {@render introduction?.(step)}
   {@render heading()}
+  {#if started}<div class="demo-working">{@render children(frame)}</div>{/if}
   <div class="demo-controls">
     <button type="button" class="action-button primary" id="demo-play" onclick={play}
       >{playing ? 'Pause' : finished ? 'Replay' : 'Play'}</button
@@ -145,6 +146,5 @@
   </div>
   <!-- Visual progress stays readable without announcing every playback frame. -->
   <p class="demo-status">Step {step} of {steps}{playing ? ' · playing' : ''}</p>
-  <div class="demo-working">{@render children(frame)}</div>
   {#if finished}{@render completion?.()}{/if}
 </section>

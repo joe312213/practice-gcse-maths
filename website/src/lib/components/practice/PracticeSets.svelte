@@ -27,6 +27,7 @@
     view,
     session,
     title,
+    description,
     topicSelector,
     creatorOpen = $bindable(false),
     returnFocus,
@@ -67,7 +68,7 @@
     }
   }
   /**
-   * Encode the configured practice-set entries and open the resulting set.
+   * Encode the configured entries, close the creator and focus the filled code field; starting is a separate action.
    * Calls: encodePracticeSet, tick.
    */
   function makeCode() {
@@ -99,7 +100,7 @@
           id="practice-code"
           bind:value={code}
           maxlength="120"
-          placeholder="practice code or search"
+          placeholder="code or search"
           aria-invalid={error ? 'true' : undefined}
           aria-describedby={error ? 'practice-set-error' : undefined}
           spellcheck="false"
@@ -117,6 +118,7 @@
     </form>
     {@render topicSelector()}
   </div>
+  <div class="intro-description">{@render description()}</div>
 </section>
 
 {#if run}

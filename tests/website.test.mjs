@@ -428,15 +428,27 @@ test("changing playback speed reschedules one timer without skipping a step", ()
   assert.equal(jobs.size, 0);
 });
 
-
-test('independent scores retain the same ten-answer window for 9, 10 and 12-question pages', () => {
+test("independent scores retain the same ten-answer window for 9, 10 and 12-question pages", () => {
   const results = [];
   for (const size of [9, 10, 12]) {
-    const track = newTrack(2), page = newPage(size, 2);
+    const track = newTrack(2),
+      page = newPage(size, 2);
     let result;
-    for (let i = 0; i < 9; i++) result = submit(track, page, { id: String(i), level: 2, correct: i % 3 !== 0, window: scoringWindow("plain", size) });
+    for (let i = 0; i < 9; i++)
+      result = submit(track, page, {
+        id: String(i),
+        level: 2,
+        correct: i % 3 !== 0,
+        window: scoringWindow("plain", size),
+      });
     results.push(result.rate);
-    for (let i = 9; i < size; i++) submit(track, page, { id: String(i), level: 2, correct: true, window: scoringWindow("plain", size) });
+    for (let i = 9; i < size; i++)
+      submit(track, page, {
+        id: String(i),
+        level: 2,
+        correct: true,
+        window: scoringWindow("plain", size),
+      });
     assert.equal(page.complete, true);
     assert.equal(track.histories[2].length, Math.min(size, 10));
   }

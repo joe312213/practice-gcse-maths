@@ -271,17 +271,44 @@ test("invalid/unavailable codes preserve the current run; profiles and free prac
   assert.equal(f.view.practiceSet, null);
 });
 
-
 test("practice input resolves topic aliases before code syntax, including equations", async () => {
-  const all = JSON.parse(await readFile(new URL("../website/src/lib/content/practice-pages.json", import.meta.url)));
-  for (const [text, topic] of [["lattice", 0], ["MULTIPLICATION", 0], ["grid", 0], ["multiply", 0], ["bus-stop division", 1], ["divide", 1], ["equations", 9], ["algebra", 9]]) {
+  const all = JSON.parse(
+    await readFile(
+      new URL(
+        "../website/src/lib/content/practice-pages.json",
+        import.meta.url,
+      ),
+    ),
+  );
+  for (const [text, topic] of [
+    ["lattice", 0],
+    ["MULTIPLICATION", 0],
+    ["grid", 0],
+    ["multiply", 0],
+    ["bus-stop division", 1],
+    ["divide", 1],
+    ["equations", 9],
+    ["algebra", 9],
+  ]) {
     const result = decodePracticeSet(practiceInputCode(all, text));
-    assert.deepEqual(result, { level: 0, timing: 0, pages: [{ topic, type: 0, slot: 0 }] });
+    assert.deepEqual(result, {
+      level: 0,
+      timing: 0,
+      pages: [{ topic, type: 0, slot: 0 }],
+    });
   }
-  const mixed = decodePracticeSet(practiceInputCode(all, "lattice, multiplication, division"));
-  assert.deepEqual(mixed.pages.map(p => p.topic), [0, 1]);
+  const mixed = decodePracticeSet(
+    practiceInputCode(all, "lattice, multiplication, division"),
+  );
+  assert.deepEqual(
+    mixed.pages.map((p) => p.topic),
+    [0, 1],
+  );
   const code = encodePracticeSet(recipe());
   assert.equal(practiceInputCode(all, `  ${code}  `), code);
-  assert.throws(() => practiceInputCode(all, "no such topic"), /No matching topic/);
+  assert.throws(
+    () => practiceInputCode(all, "no such topic"),
+    /No matching topic/,
+  );
   assert.throws(() => practiceInputCode(all, "   "), /No matching topic/);
 });

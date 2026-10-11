@@ -51,5 +51,5 @@
     "source_questions_found_in_saved_deck": 94,
     "coefficient_answers_verified": 88
   },
-  "limits": "Shape geometry/text compared; detailed styles/media and non-M10 source parity not yet audited."
+  "limits": "This report compares saved-deck shape geometry/text and M10 source parity; it does not audit detailed styles/media or other topics' source parity. M01/M02 source-parity evidence is recorded separately in docs/ARITHMETIC_IMPORT_AUDIT.json."
 }

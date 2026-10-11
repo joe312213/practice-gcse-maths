@@ -1,4 +1,6 @@
-> Current production requirement (30 September 2026): deliver questions as PowerPoint and separate answers as HTML, using stable filenames without `_vN`. Maintain all built topics individually under `topics/` and compile matching main files. Topic order and IA → recap/demo → scaffolded practice → SE → independent practice follow AGENTS.md and SLIDE_LAYOUT.md. Older slide-based answer layout notes below are historical; retain their answer/method/error/check content in HTML. Current outputs and build instructions are in HANDOFF.md.
+> **Historical slide context:** Production instructions, output paths, review states and examples below record the slide-era work. Use the [current website content guidance](../website/README.md#current-content-and-historical-references) for implemented topics and new topic development. Retain applicable mathematical/prerequisite guidance; reviewed website questions, hints and feedback supersede stale examples.
+
+> Historical slide production requirement (30 September 2026): deliver questions as PowerPoint and separate answers as HTML, using stable filenames without `_vN`. Maintain all built topics individually under `topics/` and compile matching main files. Topic order and IA → recap/demo → scaffolded practice → SE → independent practice follow AGENTS.md and SLIDE_LAYOUT.md. Older slide-based answer layout notes below are historical; retain their answer/method/error/check content in HTML. Current outputs and build instructions are in HANDOFF.md.
 
 # Topic plan
 
@@ -26,7 +28,7 @@ All topics’ answers must be collected in one separate HTML answer file. Preser
 | User's area | Proposed module sets | Current Markdown state |
 | --- | --- | --- |
 | Signed-number arithmetic | Addition/subtraction; multiplication/division and order of operations | Full new drafts: [M13](M13_signed_addition_and_subtraction.md), [M14](M14_signed_multiplication_division_and_order.md), including separate answer slides. |
-| Fraction arithmetic: +, −, ×, ÷ | Addition and subtraction; multiplication; division | Planned below; full question banks not yet drafted. |
+| Fraction arithmetic: +, −, ×, ÷ | Addition and subtraction; multiplication; division | Addition/subtraction (M15) later built for slide review; see the dated sequence below. Multiplication/division remain planned. |
 | Percentages | Amounts and percentage change; reverse percentages | Full drafts: [M06](M06_percentages_of_amounts_and_percentage_change.md), [M07](M07_reverse_percentages.md). |
 | Ratio | Mix totals, known amounts and differences within columns; vary what must be found; then a separate set of ratio problems | Full draft of core work: [M04](M04_ratio.md). Application set planned below. |
 | Area and volume, including missing lengths | Area calculations; volume calculations; missing lengths from area/volume | Full draft for missing lengths: [M08](M08_missing_lengths_from_area_and_volume.md). Forward calculations planned below. |

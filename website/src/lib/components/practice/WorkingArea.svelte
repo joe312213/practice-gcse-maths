@@ -7,16 +7,23 @@
 
   Used By: PracticeActivity.svelte, which supplies the draft and update callbacks.
 
-  Uses: drawing-assist.mjs; onworking update the parent session.
+  Uses: drawing-assist.mjs, drawing.mjs and domain/working.mjs; onworking updates the parent session.
 
   Libs: Svelte onMount.
 -->
 <script>
   import { onMount } from 'svelte';
+  import {
+    DEFAULT_WORKING_HEIGHT,
+    WORKING_BITMAP_WIDTH,
+    WORKING_BITMAP_SCALE,
+  } from '#lib/domain/working.mjs';
   import { drawStroke, INK_COLOURS, inkColour } from '#lib/application/drawing.mjs';
   import { drawingTools, guideLines } from '#lib/application/drawing-assist.mjs';
   let { topic, draft, onworking, embedded = false } = $props();
-  let canvasHeight = $state(230),
+  // Preserve two bitmap pixels per CSS pixel when resizing stored working.
+  const bitmapScale = WORKING_BITMAP_SCALE;
+  let canvasHeight = $state(DEFAULT_WORKING_HEIGHT),
     resizeDrag = null;
   const tool = $derived(drawingTools[topic]);
   let assistOpen = $state(false),
@@ -28,7 +35,8 @@
   /** Replace only the blank guide, preserving the learner’s ink and working count. */
   function insertGuide() {
     end();
-    guides = guideLines(topic, dimensions);
+    const { width, height } = canvas.getBoundingClientRect();
+    guides = guideLines(topic, dimensions, { width, height });
     repaint();
     onworking({ guides });
     assistOpen = false;
@@ -43,10 +51,10 @@
     return canvas.getContext('2d');
   }
   /**
-   * Paint a stroke of canvas-coordinate [x, y] points; called by mount, begin and move.
-   * Uses context; one point paints a dot, multiple points paint connected segments.
-   * @example draw([[20, 30]])
-   * @example draw([[20, 30], [40, 50]])
+   * Paint a stroke object containing canvas-coordinate points, tool and colour; called by repaint, begin and move.
+   * Calls context and drawStroke; one point paints a dot, multiple points paint connected segments.
+   * @example draw({ points: [[20, 30]], tool: "pen", colour: "black" })
+   * @example draw({ points: [[20, 30], [40, 50]], tool: "eraser" })
    */
   function draw(stroke) {
     drawStroke(context(), stroke, dark);
@@ -55,8 +63,8 @@
     draw({ points: line, tool: 'pen', colour: 'black' });
   }
   onMount(() => {
-    canvasHeight = draft.canvasHeight ?? 230;
-    canvas.height = canvasHeight * 2;
+    canvasHeight = draft.canvasHeight ?? DEFAULT_WORKING_HEIGHT;
+    canvas.height = canvasHeight * bitmapScale;
     strokes = structuredClone(draft.strokes);
     points = draft.points;
     guides = structuredClone(draft.guides ?? []);
@@ -84,7 +92,7 @@
   function resize(height) {
     end();
     canvasHeight = Math.max(120, Math.min(800, Math.round(height)));
-    canvas.height = canvasHeight * 2;
+    canvas.height = canvasHeight * bitmapScale;
     repaint();
     onworking({ canvasHeight });
   }
@@ -117,7 +125,11 @@
   function resizeKey(event) {
     if (!['ArrowUp', 'ArrowDown', 'Home'].includes(event.key)) return;
     event.preventDefault();
-    resize(event.key === 'Home' ? 230 : canvasHeight + (event.key === 'ArrowDown' ? 20 : -20));
+    resize(
+      event.key === 'Home'
+        ? DEFAULT_WORKING_HEIGHT
+        : canvasHeight + (event.key === 'ArrowDown' ? 20 : -20),
+    );
   }
   /** Convert a pointer event's viewport coordinates to canvas coordinates; used by begin/move. */
   function point(event) {
@@ -195,8 +207,8 @@
       <canvas
         bind:this={canvas}
         id="working"
-        width="700"
-        height="460"
+        width={WORKING_BITMAP_WIDTH}
+        height={DEFAULT_WORKING_HEIGHT * bitmapScale}
         style:height={`${canvasHeight}px`}
         aria-label="Drawing space; typed working is available below"
         onpointerdown={begin}

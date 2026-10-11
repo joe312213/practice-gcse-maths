@@ -8,6 +8,7 @@
   include: button, input, textarea, select, checkbox, card, progress;
   logs: false;
 }
+@import './breakpoints.css';
 @import './theme-tokens.css';
 @import './theme-mapping.css';
 @import './controls.css';

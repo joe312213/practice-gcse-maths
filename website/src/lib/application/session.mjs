@@ -4,9 +4,9 @@
  * Main contents:
  * - createSession
  *
- * Used By: tests/practice-set.test.mjs, tests/progress.test.mjs, tests/session.test.mjs, website/src/routes/+page.svelte
+ * Used By: tests/practice-set.test.mjs, tests/progress.test.mjs, tests/session.test.mjs, website/src/lib/components/practice/TopicPractice.svelte
  *
- * Uses: website/src/lib/domain/progress.mjs, website/src/lib/domain/revision.mjs, website/src/lib/domain/engine.mjs, website/src/lib/domain/profiles.mjs, website/src/lib/domain/errors.mjs, website/src/lib/domain/practice-code.mjs.
+ * Uses: website/src/lib/adapters/working-cache.mjs, website/src/lib/domain/progress.mjs, website/src/lib/domain/revision.mjs, website/src/lib/domain/engine.mjs, website/src/lib/domain/profiles.mjs, website/src/lib/domain/errors.mjs, website/src/lib/domain/practice-code.mjs.
  *
  * Libs: none.
  */
@@ -35,7 +35,7 @@ import {
 
 /**
  * A portable session: inputs and persistence are injected; no DOM or Svelte dependencies.
-Immutable view snapshots let rendering observe changes without owning stored state.
+ * Immutable view snapshots let rendering observe changes without owning stored state.
  * Create the practice action API from banks, learner data, persistence and injected clock/randomness.
  * Parameter bank: active question bank.
  * Parameter banks: loaded question banks.
@@ -44,7 +44,7 @@ Immutable view snapshots let rendering observe changes without owning stored sta
  * Parameter save: injected persistence callback.
  * Parameter random: injected random-number source.
  * Parameter uuid: injected identifier factory.
- * Parameter now: current time in milliseconds or injected clock, as declared.
+ * Parameter now: injected function returning current epoch milliseconds.
  * Calls: freshDraft, scope, restoreSet, ensurePage.
  * @example const session = createSession({ bank, data, save }); session.chooseName("Student", true);
  */
@@ -73,7 +73,7 @@ export function createSession({
   const listeners = new Set();
   /**
    * Find an authored question by stable ID in the active bank.
-   * Parameter id: stable question/job identifier.
+   * Parameter id: stable question ID.
    * Used by: current.
    */
   const question = (id) => bank.questions.find((q) => q.id === id);
@@ -120,7 +120,7 @@ export function createSession({
         : undefined;
   /**
    * Store an attempt in the active set or the current topic's activity pages.
-   * Parameter value: new value to apply or validate.
+   * Parameter value: page attempt to retain in the active set or ordinary activity.
    * Calls: activeSet, topic.
    * Used by: createPage.
    */
@@ -129,7 +129,7 @@ export function createSession({
     else topic().pages[mode] = value;
   }
   /**
-   * Resolve a set's random/recommended/fixed challenge level for its catalogue entry.
+   * Use the saved topic/type level, falling back to the code's starting level.
    * Parameter entry: encoded catalogue page address.
    * Parameter config: decoded practice-set configuration.
    * Used by: enterSetPage, goSetPage.
@@ -176,7 +176,7 @@ export function createSession({
    * Select the bank, activity and attempt for the current practice-set entry.
    * Calls: activeSet, effectiveLevel, resolvePracticePage, topic, newTrack, page, createPage, resetDraft, timeExpired.
    * Used by: restoreSet, startPracticeSet, goSetPage.
-   * @example enterSetPage();
+   * @example enterSetPage(); // After changing run.index, restore its attempt or create it once.
    */
   function enterSetPage() {
     const run = activeSet(),
@@ -227,14 +227,17 @@ export function createSession({
     return { answer: '', errors: [], working: '', strokes: [], points: 0 };
   }
   /**
-   * Clear the transient question draft and advance its component reset key.
-   * Calls: freshDraft.
-   * Used by: enterSetPage, chooseName, switchMode, select, changeLevel, submitAnswer, nextPage, leavePracticeSet.
+   * Identify temporary working by learner, topic, page attempt and question.
+   * Used by: resetDraft and updateDraft.
    */
   const workingKey = () =>
     profile && current() && mode !== 'demo'
       ? JSON.stringify([profile.key, scope(), page().attempt, current().id])
       : null;
+  /**
+   * Restore cached drawing/typed working, reset answer entry and advance the component key.
+   * Calls: workingKey, freshDraft, workingCache.load; used when the selected question changes.
+   */
   function resetDraft() {
     const key = workingKey();
     draft = { ...freshDraft(), ...(key ? workingCache.load(key) : null) };
@@ -254,7 +257,7 @@ export function createSession({
    * Parameter definition: authored page definition or null for sampling.
    * Calls: activeSet, setPageDefinition, track, newPage, pool, topic, storePage.
    * Used by: enterSetPage, ensurePage, nextPage.
-   * @example createPage(definition);
+   * @example createPage(); // Create the current ordinary activity page and persist it.
    */
   function createPage(definition = activeSet() ? setPageDefinition(track().level) : null) {
     const t = track(),
@@ -308,6 +311,16 @@ export function createSession({
     save(data);
   }
   /**
+   * Reset selection/reference/message and restore the first question's working after a mode/bank change.
+   * Calls resetDraft; used by chooseName, switchTopic, switchMode and leavePracticeSet.
+   */
+  function resetActivity() {
+    selected = 0;
+    reference = false;
+    message = '';
+    resetDraft();
+  }
+  /**
    * Create a missing activity page for the selected learner, except in demo mode.
    * Calls: page, createPage.
    * Used by: createSession, chooseName, switchMode, startPracticeSet, leavePracticeSet, resumePracticeSet.
@@ -320,7 +333,7 @@ export function createSession({
    * Parameter promoted: whether the level changed through promotion.
    * Calls: page, activeSet, setPageDefinition, pool.
    * Used by: changeLevel, submitAnswer.
-   * @example replaceRemaining(promoted);
+   * @example replaceRemaining(true); // Keep submitted answers; refill unmarked slots at the promoted level.
    */
   function replaceRemaining(promoted = false) {
     const p = page();
@@ -355,7 +368,7 @@ export function createSession({
    * Return the presentation state without exposing the mutable store directly.
    * Calls: backupStatus, activeSet, setSecondsRemaining, page, track.
    * Used by: publish, subscribe.
-   * @example snapshot();
+   * @example const view = snapshot(); view.draft.answer = "2"; // Does not alter the session draft.
    */
   function snapshot() {
     return {
@@ -425,9 +438,9 @@ export function createSession({
     },
     /**
      * Select or explicitly create the named local learner.
-     * Parameter name: learner name or requested field name.
+     * Parameter name: learner display name before normalization.
      * Parameter create: whether learner creation was confirmed.
-     * Calls: chooseProfile, resetDraft, restoreSet, ensurePage, publish.
+     * Calls: chooseProfile, resetActivity, restoreSet, ensurePage, publish.
      */
     chooseName(name, create = false) {
       const result = chooseProfile(data, name, create);
@@ -436,19 +449,16 @@ export function createSession({
       homeBank = banks.find((item) => item.topic === profile.lastTopic) ?? banks[0];
       bank = homeBank;
       mode = 'assessment';
-      selected = 0;
-      reference = false;
-      message = '';
-      resetDraft();
+      resetActivity();
       restoreSet();
       ensurePage();
       publish(true);
       return result;
     },
     /**
-     * Leave any set and enter the requested learning activity in the home bank.
-     * Parameter next: requested learning activity.
-     * Calls: activeSet, assist, resetDraft, ensurePage, publish.
+     * Leave any set and enter assessment for the requested topic, remembering the learner's selection.
+     * Parameter topicId: bank topic ID, e.g. M10.
+     * Calls: activeSet, resetActivity, ensurePage, publish; used by topic selection.
      */
     switchTopic(topicId) {
       const next = banks.find((item) => item.topic === topicId);
@@ -457,27 +467,26 @@ export function createSession({
       bank = homeBank = next;
       profile.lastTopic = topicId;
       mode = 'assessment';
-      selected = 0;
-      reference = false;
-      message = '';
-      resetDraft();
+      resetActivity();
       ensurePage();
       publish(true);
     },
+    /**
+     * Leave any set and enter the requested stage in the home bank, recording demo assistance first.
+     * Parameter next: assessment, demo, scaffolded, errors or plain.
+     * Calls: activeSet, assist, resetActivity, ensurePage, publish; used by stage navigation.
+     */
     switchMode(next) {
       if (activeSet()) activeSet().active = false;
       bank = homeBank;
       if (next === 'demo' && !['assessment', 'demo'].includes(mode)) assist();
       mode = next;
-      selected = 0;
-      reference = false;
-      message = '';
-      resetDraft();
+      resetActivity();
       ensurePage();
       publish(true);
     },
     /**
-     * Select a question index and clear the previous transient draft.
+     * Select a question index, reset answer entry and restore its cached working.
      * Parameter index: zero-based question/page position.
      * Calls: resetDraft, assist, publish.
      */
@@ -493,7 +502,7 @@ export function createSession({
      * Apply a manual challenge change unless a set is finished or expired.
      * Parameter level: zero-based challenge level.
      * Calls: timeExpired, activeSet, publish, setPageDefinition, page, manualLevel, track, replaceRemaining, resetDraft.
-     * @example changeLevel(level);
+     * @example session.changeLevel(1); // Select Build and refill unanswered slots.
      */
     changeLevel(level) {
       if (timeExpired() || activeSet()?.finished) {
@@ -575,7 +584,7 @@ export function createSession({
     /**
      * Validate and mark the current draft, record the outcome and advance the page when appropriate.
      * Calls: timeExpired, activeSet, publish, page, current, markAnswer, markErrors, submit, track, topic, replaceRemaining, resetDraft, assist, completeRecommendation.
-     * @example submitAnswer();
+     * @example session.updateDraft({ answer: "2" }); session.submitAnswer(); // Mark the selected question.
      */
     submitAnswer() {
       if (timeExpired() || activeSet()?.finished) {
@@ -686,7 +695,7 @@ export function createSession({
      * Parameter raw: untrusted input text.
      * Parameter recommendationId: owning revision recommendation ID, if any.
      * Calls: restoreSet, ensurePage, publish, decodePracticeSet, encodePracticeSet, enterSetPage.
-     * @example startPracticeSet(raw, recommendationId);
+     * @example session.startPracticeSet(code); // Resolve and start an entered practice code.
      */
     startPracticeSet(raw, recommendationId = null) {
       if (!profile || !catalogue) throw Error('Choose your name before opening a Practice set.');
@@ -740,7 +749,7 @@ export function createSession({
      * Select a valid page index within the active set and restore its attempt.
      * Parameter index: zero-based question/page position.
      * Calls: activeSet, page, resolvePracticePage, effectiveLevel, enterSetPage, publish.
-     * @example goSetPage(index);
+     * @example session.goSetPage(1); // Enter the second set page when navigation permits.
      */
     goSetPage(index) {
       const run = activeSet();
@@ -756,16 +765,13 @@ export function createSession({
     },
     /**
      * Return to ordinary assessment while retaining the saved set.
-     * Calls: activeSet, resetDraft, ensurePage, publish.
+     * Calls: activeSet, resetActivity, ensurePage, publish.
      */
     leavePracticeSet() {
       if (activeSet()) activeSet().active = false;
       bank = homeBank;
       mode = 'assessment';
-      selected = 0;
-      reference = false;
-      message = '';
-      resetDraft();
+      resetActivity();
       ensurePage();
       publish(true);
     },

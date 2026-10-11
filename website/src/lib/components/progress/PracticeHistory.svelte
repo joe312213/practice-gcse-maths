@@ -1,17 +1,28 @@
+<!--
+  Purpose: Show measured practice time and weekly success by topic, activity and challenge level.
+
+  Main contents:
+  - Topic/type filters; current/previous week summary; weekly table.
+
+  Used By: progress.html/+page.svelte.
+
+  Uses: domain/practice-history.mjs and practice-code.mjs.
+
+  Libs: Svelte (reactive filters and derived rows).
+-->
 <script>
-  import { practiceHistory } from '#lib/domain/practice-history.mjs';
+  import { practiceHistory, practiceWeeks } from '#lib/domain/practice-history.mjs';
   import { SET_LEVELS } from '#lib/domain/practice-code.mjs';
-  import { weekKey } from '#lib/domain/progress.mjs';
   let { profile, topics } = $props();
   let scope = $state(''),
     mode = $state('plain');
-  const weeks = $derived(practiceHistory(profile, scope, mode));
-  const current = $derived(weeks.find((row) => row.week === weekKey(Date.now())));
-  const previous = $derived(
-    weeks.find(
-      (row) => row.week === weekKey(Date.parse(`${current.week}T12:00:00Z`) - 7 * 86400000),
-    ),
-  );
+  const history = $derived.by(() => {
+    const now = Date.now();
+    return { weeks: practiceHistory(profile, scope, mode, now), ...practiceWeeks(now) };
+  });
+  const weeks = $derived(history.weeks);
+  const current = $derived(weeks.find((row) => row.week === history.current));
+  const previous = $derived(weeks.find((row) => row.week === history.previous));
   const minutes = (ms) => (ms / 60000).toFixed(1);
 </script>
 

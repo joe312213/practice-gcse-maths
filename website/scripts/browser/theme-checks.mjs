@@ -20,7 +20,7 @@ import { artifacts } from './support.mjs';
 // Resolve token formulas through real CSS properties, not source-string comparisons.
 /**
  * Read rendered theme colours and geometry in the page context.
- * @example renderedTheme();
+ * @example await page.evaluate(renderedTheme); // Capture current rendered colours for comparison.
  */
 function renderedTheme() {
   const body = getComputedStyle(document.body),
@@ -51,7 +51,7 @@ function renderedTheme() {
  * Parameter page: mutable question-page state.
  * Parameter extended: whether to include historical adjustment audits.
  * Calls: readFile, writeFile.
- * @example checkThemes(browser, page, { extended });
+ * @example await checkThemes(browser, page, { extended: false }); // Check the current page across theme choices.
  */
 export async function checkThemes(browser, page, { extended = false } = {}) {
   const reference = await browser.newPage();

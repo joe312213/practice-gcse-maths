@@ -185,8 +185,8 @@ Teacher answers and working:
 
 ## Standalone files
 
-- [Question deck v2](../topics/ratio/Ratio_M04_questions_prev7.pptx)
-- [Answer deck v2](../topics/ratio/Ratio_M04_answers_prev5.pptx)
+- Question deck v2: `Ratio_M04_questions_prev7.pptx` (historical filename; recover from Git). [Saved resources](../legacy/topics/ratio/README.md).
+- Answer deck v2: `Ratio_M04_answers_prev5.pptx` (historical filename; recover from Git). [Saved resources](../legacy/topics/ratio/README.md).
 
 - Ratio repetition checked after simplifying and ignoring reversal: no repeated ratio within a six-question column; at most two per slide and three across the independent banks.
 

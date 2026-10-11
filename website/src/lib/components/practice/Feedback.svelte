@@ -6,7 +6,7 @@
 
   Used By: website/src/lib/components/practice/PracticeActivity.svelte
 
-  Uses: website/src/lib/components/teaching/EquationWorking.svelte.
+  Uses: website/src/lib/components/teaching/EquationWorking.svelte and ArithmeticWorking.svelte.
 
   Libs: none.
 -->

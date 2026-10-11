@@ -48,7 +48,7 @@ const salt = JSON.stringify([
 /**
  * Fingerprint tracked and untracked relevant source files discovered by Git.
  * Calls: execFileSync, digest, readFile, resolve.
- * @example snapshot();
+ * @example const files = await snapshot(); // Relative file paths mapped to content hashes.
  */
 async function snapshot() {
   const names = execFileSync(
@@ -78,7 +78,7 @@ async function snapshot() {
  * Fingerprint build output recursively to detect stale or externally changed artifacts.
  * Parameter directory: filesystem directory.
  * Calls: visit, fingerprint.
- * @example outputHash(directory);
+ * @example await outputHash(buildDirectory); // Null if the build is absent.
  */
 async function outputHash(directory) {
   const files = {};
@@ -105,10 +105,10 @@ async function outputHash(directory) {
 }
 /**
  * Run one verification command, capture its named log and fail on nonzero exit.
- * Parameter id: stable question/job identifier.
+ * Parameter id: verification job name, used for its log filename.
  * Parameter argv: Node command arguments.
  * Calls: resolve, writeFile.
- * @example command(id, argv);
+ * @example await command("bank", ["scripts/validate-bank.mjs"]); // Capture bank.log and reject failures.
  */
 async function command(id, argv) {
   const log = resolve(directory, `${id}.log`);

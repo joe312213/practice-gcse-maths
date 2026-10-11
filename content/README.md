@@ -1,6 +1,8 @@
-> Current production requirement (30 September 2026): deliver questions as PowerPoint and separate answers as HTML, using stable filenames without `_vN`. Maintain all built topics individually under `topics/` and compile matching main files. Topic order and IA → recap/demo → scaffolded practice → SE → independent practice follow AGENTS.md and SLIDE_LAYOUT.md. Older slide-based answer layout notes below are historical; retain their answer/method/error/check content in HTML. Current outputs and build instructions are in HANDOFF.md.
+> **Historical slide context:** Production instructions, output paths, review states and examples below record the slide-era work. Use the [current website content guidance](../website/README.md#current-content-and-historical-references) for implemented topics and new topic development. Retain applicable mathematical/prerequisite guidance; reviewed website questions, hints and feedback supersede stale examples.
 
-Current teaching order is in [TOPIC_PLAN.md](TOPIC_PLAN.md#teaching-sequence--foundations-before-applications). Follow prerequisites, not module numbers or deck creation dates. Later notes below include historical review states; use topic READMEs for current output versions.
+> Historical slide production requirement (30 September 2026): deliver questions as PowerPoint and separate answers as HTML, using stable filenames without `_vN`. Maintain all built topics individually under `topics/` and compile matching main files. Topic order and IA → recap/demo → scaffolded practice → SE → independent practice follow AGENTS.md and SLIDE_LAYOUT.md. Older slide-based answer layout notes below are historical; retain their answer/method/error/check content in HTML. Current outputs and build instructions are in HANDOFF.md.
+
+Current teaching order is in [TOPIC_PLAN.md](TOPIC_PLAN.md#teaching-sequence--priority-and-prerequisites-1-october-2026). Follow prerequisites, not module numbers or deck creation dates. Later notes below include historical review states; use topic READMEs for current output versions.
 
 # Content and review
 

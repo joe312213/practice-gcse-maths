@@ -104,12 +104,12 @@ export function manualLevel(track, page, level) {
  * Record one eligible outcome and apply reassessment, promotion or demotion rules without double counting.
  * Parameter track: mutable adaptive track.
  * Parameter page: mutable question-page state.
- * Parameter id: stable question/job identifier.
+ * Parameter id: stable question ID.
  * Parameter level: zero-based challenge level.
  * Parameter correct: whether the outcome is correct.
  * Parameter assisted: whether help was used.
  * Calls: success.
- * @example submit(track, page, { id, level, correct, assisted });
+ * @example submit(track, page, { id: "maths:M10-S04-C1-Q1", level: 0, correct: true }); // One unassisted outcome.
  */
 export function submit(
   track,
@@ -287,7 +287,7 @@ export function markAnswer(raw, expected) {
 }
 /**
  * Normalize a learner name into a stable case-insensitive local identity key.
- * Parameter name: learner name or requested field name.
+ * Parameter name: learner display name before normalization.
  * Used by: distance.
  */
 export const profileKey = (name) =>

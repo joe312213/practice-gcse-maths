@@ -12,10 +12,10 @@
 -->
 <script>
   import { LEVELS } from '#lib/domain/engine.mjs';
-  let { bank, page, selected, onselect } = $props();
+  let { bank, page, selected, onselect, assessment = false } = $props();
 </script>
 
-<ol class="question-list" aria-label="Choose the question to answer">
+<ol class="question-list" class:assessment aria-label="Choose the question to answer">
   {#each page.items as item, index (item.id)}
     {@const question = bank.questions.find((q) => q.id === item.id)}
     {@const response = page.responses[item.id]}

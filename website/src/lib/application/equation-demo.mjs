@@ -1,4 +1,3 @@
-import { guideFrames } from './demo-guide.mjs';
 /**
  * Purpose: Translate equation rows into ordered reveal frames for the shared demo player.
  *
@@ -7,10 +6,11 @@ import { guideFrames } from './demo-guide.mjs';
  *
  * Used By: tests/demo-sequence.test.mjs, website/src/lib/components/teaching/DemoPlayer.svelte
  *
- * Uses: no local module imports.
+ * Uses: demo-guide.mjs (guideFrames).
  *
  * Libs: none.
  */
+import { guideFrames } from './demo-guide.mjs';
 // Draw the divider first, then write each side in reading order.
 // Operations have no equals sign, so omit that reveal rather than adding a pause.
 /**

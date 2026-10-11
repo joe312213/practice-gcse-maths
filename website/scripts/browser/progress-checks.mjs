@@ -8,13 +8,7 @@
  *
  * Uses: website/scripts/browser/support.mjs.
  *
- * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), @axe-core/playwright (accessibility checks), ).
-      .setInputFiles({ name: , ).setInputFiles({
-      name: , , exact: true }).isDisabled(),
-      true,
-    );
-    await page.getByRole(, , exact: true }).click();
-    await page.getByText(.
+ * Libs: node:assert/strict (assertions), node:fs/promises (download reads), @axe-core/playwright (accessibility checks).
  */
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -25,7 +19,7 @@ import { createTestContext, artifacts } from './support.mjs';
  * Parameter browser: Playwright browser instance.
  * Parameter base: test server base URL.
  * Calls: createTestContext, readFile.
- * @example checkProgress(browser, base);
+ * @example await checkProgress(browser, "http://127.0.0.1:8766/"); // Check a running static preview.
  */
 export async function checkProgress(browser, base) {
   const context = await createTestContext(browser, { viewport: { width: 390, height: 844 } });
@@ -171,6 +165,8 @@ export async function checkProgress(browser, base) {
       return data.profiles[0].revision.recommendations[0].id;
     });
     await page.reload();
+    // Recommendation links render after the saved profile is restored on mount.
+    await page.getByRole('link', { name: 'Continue recommended set', exact: true }).waitFor();
     assert.equal(
       await page.getByRole('link', { name: 'Continue recommended set', exact: true }).count(),
       1,

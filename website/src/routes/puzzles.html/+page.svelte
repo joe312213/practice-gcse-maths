@@ -1,9 +1,14 @@
 <!--
   Purpose: Offer the shared puzzles catalogue as a separate maths activity.
-  Main contents: Type/challenge selection, variation navigation and source attribution.
+
+  Main contents:
+  - Type/challenge selection, variation navigation and source attribution.
+
   Used By: SvelteKit route loading.
-  Uses: PuzzlePlayer, ThemeControls and the pinned puzzle package.
-  Libs: Svelte lifecycle and SvelteKit URLs.
+
+  Uses: PuzzlePlayer, SiteHeader, SiteFooter and puzzle theme styles.
+
+  Libs: Svelte lifecycle, SvelteKit URLs and the pinned puzzle package catalogue, metadata, graphics and styles.
 -->
 <script>
   import SiteHeader from '#lib/components/ui/SiteHeader.svelte';

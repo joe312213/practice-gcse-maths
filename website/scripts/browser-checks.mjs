@@ -78,14 +78,14 @@ const topic = async () => {
 };
 /**
  * Return the stored page for the requested activity mode.
- * Parameter mode: learning activity or theme mode, as used here.
+ * Parameter mode: activity ID, such as assessment, scaffolded, errors or plain.
  * Calls: topic.
  * Used by: submitCorrect.
  */
 const active = async (mode) => (await topic()).pages[mode];
 /**
  * Select or explicitly create the named local learner.
- * Parameter name: learner name or requested field name.
+ * Parameter name: learner display name before normalization.
  */
 async function chooseName(name) {
   await page.locator('#profile-button').click();
@@ -97,11 +97,11 @@ async function chooseName(name) {
 }
 /**
  * Fill the authored answer and error entries for the indexed browser question.
- * Parameter mode: learning activity or theme mode, as used here.
+ * Parameter mode: activity ID, such as assessment, scaffolded, errors or plain.
  * Parameter index: zero-based question/page position.
  * Parameter wrongReason: whether to inject an incorrect diagnostic reason.
  * Calls: active.
- * @example submitCorrect(mode, index, wrongReason);
+ * @example await submitCorrect("errors", 0, true); // Correct final answer with an intentionally wrong reason.
  */
 async function submitCorrect(mode, index, wrongReason = false) {
   await page.locator(`[data-question="${index}"]`).click();
@@ -290,19 +290,16 @@ try {
         el.getBoundingClientRect(),
       );
       return {
-        pairedWidths: boxes
-          .filter((box) =>
-            boxes.some((other) => other !== box && Math.abs(other.top - box.top) < 1),
-          )
-          .map((box) => box.width),
+        equalRows: boxes.every((box) =>
+          boxes
+            .filter((other) => Math.abs(other.top - box.top) < 1)
+            .every((other) => Math.abs(other.width - box.width) < 1),
+        ),
         overflow: document.documentElement.scrollWidth > innerWidth,
       };
     });
     assert.equal(sizes.overflow, false, `No overflow at ${width}`);
-    assert.ok(
-      sizes.pairedWidths.every((width) => width >= 210),
-      'Two-card rows retain the minimum width',
-    );
+    assert.ok(sizes.equalRows, `Question buttons share equal widths per row at ${width}`);
   }
   await page.setViewportSize({ width: 390, height: 844 });
   await page.locator('#reference').click();

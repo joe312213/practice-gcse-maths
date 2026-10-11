@@ -1,6 +1,14 @@
 <!--
   Purpose: Compose the shared Go board with parent-owned hints and source links.
-  Used by: PuzzlePlayer. Uses: portable render, boards and evaluation APIs.
+
+  Main contents:
+  - Board rendering, binding disposal and assistance callbacks.
+
+  Used By: PuzzlePlayer.
+
+  Uses: No local modules.
+
+  Libs: Svelte tick for DOM updates; @subject-apps/puzzles render, boards and evaluation APIs for Go controls and checking.
 -->
 <script>
   import { tick } from 'svelte';

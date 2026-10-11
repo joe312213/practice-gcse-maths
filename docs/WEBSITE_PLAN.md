@@ -6,10 +6,20 @@ Product authority: [web_format.md](../web_format.md) and later [standing decisio
 
 Recorded at the user's request on 10 October 2026. These are the agreed next discussion/work slices, not features already delivered or authorisation to provision a cloud service during this session.
 
-1. **Refine demo operation highlighting.** Build on the existing drawn guides and digit-by-digit playback. Highlight the numbers/digits participating in the current operation at relevant points in the working: operands, cell products, carries/remainders, or both sides of an equation as appropriate. Make the mathematical relationship clear, rather than merely highlighting newly appearing text. Also highlight the corresponding textual method-description step for the duration of its animation portion, keeping it synchronised with playback, pause and step navigation. Agree the visual treatment and per-method sequence; preserve pause/replay/speed, reduced motion and non-colour cues. Use the shared frame/rendering boundaries.
+1. **Refine demo operation highlighting.** Build on the existing drawn guides and digit-by-digit playback. Highlight the numbers/digits participating in the current operation at relevant points in the working: operands, cell products, carries/remainders, or both sides of an equation as appropriate. Make the mathematical relationship clear, rather than merely highlighting newly appearing text. The corresponding textual description is now highlighted during playback (11 October refinement): numbered steps for arithmetic, row explanations for equations. Preserve this synchronisation through pause and step navigation while adding operation highlighting. Agree the visual treatment and per-method sequence; preserve pause/replay/speed, reduced motion and non-colour cues. Use the shared frame/rendering boundaries.
 2. **Plan personal cloud-based sync.** Clarify the intended personal account/provider and devices, manual versus automatic sync, authentication/permissions, offline behaviour and how to merge conflicting progress/history/time without duplicates or data loss. Decide the sync scope and backup/recovery path before implementation. Current local schema-2 JSON remains authoritative until a design is agreed; drawings are intentionally short-lived and excluded from durable backups. No provider, backend, storage migration or SQLite transition has been selected.
 
 3. **User-selectable timer display on the last three stages.** Add a learner choice for showing the timer during scaffolded practice, spot the error and independent practice. Clarify the displayed timer (for example elapsed practice time versus a countdown), default visibility and whether the choice is remembered before implementing. This is a display preference request; do not infer changes to existing active-time tracking or Practice-set timing rules.
+
+## Next content round — multiplication Confidence correction
+
+Reported and confirmed on 11 October 2026; **document now, fix in the next content update round**. Every multiplication Confidence question must use **4-digit × 3-digit, 3-digit × 4-digit, or 4-digit × 4-digit** operands. The current M01 bank includes eleven 3-digit × 2-digit questions: eight independent-practice questions (`maths:M01-S04-C3-Q1/Q2` through `maths:M01-S07-C3-Q1/Q2`) and three error-spotting questions (`maths:M01-SE-C3-Q1`, `Q2`, `Q3`). For example, `342 × 15` and `234 × 56` are currently labelled Confidence.
+
+Replace those questions with appropriately challenging products in the permitted digit ranges; review carries as well as operand length. Update answers, hints, method/check notes and plausible errors together, preserving stable IDs and page-slot references. Audit every Confidence activity type and strengthen bank validation for this requirement. Current bank content remains unchanged until that round.
+
+## Agreed working-cache lifetime — implementation deferred
+
+Increase the temporary drawing/typed-working cache lifetime from three to **48 hours after the last edit**. The user requested documentation first and code later. Keep sessionStorage and exclusion from durable progress/backups; closing the tab can still end the cache. Update the TTL and expiry-boundary tests together in that later slice.
 
 ## Topic-card sorting backlog
 
@@ -17,29 +27,27 @@ Requested on 10 October 2026: add topic-card sorting by **alphabetical order** a
 
 ## Future work
 
-1. Refine the implemented M01/M02/M10 teaching flow before further expansion. Later topics still require saved-source audits; follow the prerequisite teaching sequence.
-2. Expand the implemented one-to-four-page Practice sets with mixed-priority/problem-solving activities and reviewed banks. The 54-bit code contract below is implemented for current equations plain/error pages.
+1. Refine the implemented M01/M02/M10 teaching flow before further expansion. For each later topic, inspect saved resources for provenance, level and style, then review and refine its website content; follow the prerequisite teaching sequence and [current content guidance](../website/README.md#current-content-and-historical-references).
+2. Expand the implemented one-to-four-page Practice sets with mixed-priority/problem-solving activities and reviewed banks. The [54-bit code contract](../website/README.md#practice-sets-codes-and-authored-pages) is implemented for M01/M02/M10 plain/error pages.
 3. Review the implemented topic aggregation/recency defaults documented in website/README. Current aggregation uses plain ×2, other types ×1, excluding absent scores while flagging insufficient evidence; mixed-topic question attribution remains future work.
-4. Add further profile management, issue-report destination, selected puzzles and college configuration when requested. Named-learner JSON export/import and CSV answer-history export are implemented. Subject/topic storage isolation is already implemented; no schema-1 migration is outstanding.
+4. Add further profile management, issue-report destination and college configuration when requested. Named-learner JSON export/import and CSV answer-history export are implemented. Subject/topic storage isolation is already implemented; no schema-1 migration is outstanding.
 5. Complete relevant teaching/accessibility/device checks before rollout. Hosting/integration and publication remain separate decisions. Custom-input animations and an extra challenge tier are V2; slide export is deferred.
 
 ## Practice set implementation checkpoint — 4 October 2026
 
-Initial implementation complete; code decisions settled. Whole-set timers/expiry and local resume are implemented. See DEV_LOG’s 4 October final-contract entry for rationale and superseded advice. Nine characters encode 54 bits: challenge 2, count-minus-one 2, timing 2, then four ordered topic/type/slot entries of 5/3/4 bits. Subject is selected outside the code. Slots are positions, not immutable identities: 0 random; 1–15 direct or modulo fallback when beyond the available count. Authors may replace/reuse slots and are responsible for reasonable continuity. Codes open current content. Saved topic/type learner levels override the whole-set challenge. Four challenge values are reserved; no Automatic level value is used. Variants remain session choices, not code fields.
-
-This supersedes the three-page limit, per-page encoded challenge, frozen-release/UUID-registry proposals and the earlier prohibition on reusing authored page slots. Existing learner history is retained; unavailable topic/type/level combinations must be reported explicitly. Initial available pages are equations plain/error pages; other topics/types and Super challenge need authored content/logic before becoming selectable.
+The implemented [Practice set contract and authoring guide](../website/README.md#practice-sets-codes-and-authored-pages) owns code fields, slot reuse/resolution, timing and resume behaviour. The 4 October DEV_LOG final-contract entry records why it superseded the three-page limit, per-page challenge, frozen-release/UUID registry and non-reusable slot proposals. Four challenge values are reserved, with no Automatic value; variants remain session choices. Mixed-priority/problem-solving pages and Super challenge require reviewed content/logic before becoming selectable.
 
 ## Scoring interpretations currently used
 
-
-These are engineering interpretations, not additional user decisions. Keep them isolated so they can be changed without rewriting content or UI.
+This section records scoring decisions and implementation interpretations. Explicit user decisions take precedence; other interpretations remain reviewable without rewriting teaching content or UI.
 
 - Target storage scope is subject/topic/page-type/level, alongside assisted outcomes. Schema 2 already scopes topics by subject/topic, with page-type tracks and actual-level histories. Old-data migration was waived. Correct assisted attempts leave scoring history unchanged; incorrect attempts enter as failures. A question remains assisted for the whole page attempt once a hint/reference is used. Retries are learning feedback, not additional scored attempts.
-- Independent practice uses the last ten eligible outcomes with oldest-to-newest weights 1,1,1,1,1,2,2,3,3,3. Zero-pad missing history; do not reset at page boundaries. Short pages use a matching-length rolling window: equal weights for 1–4; the newest three weighted twice for 5–9. Denominator includes missing positions. Ordinary independent pages now contain twelve questions; this does not change their ten-answer scoring window.
+- Independent practice uses the last ten eligible outcomes with oldest-to-newest weights 1,1,1,1,1,2,2,3,3,3. Zero-pad missing history; do not reset at page boundaries. For page types that typically have few than ten questions, use a rolling window that matches the typical number of questions on that page type: equal weights for 1–4 questions; the newest three weighted twice for typical 5–9 question pages. Denominator includes missing positions. Ordinary independent pages now contain twelve questions; this does not change their ten-answer scoring window.
+- **Implementation gap confirmed 10 October:** “typical number” means a fixed scoring-window length for each page type, even when an individual page differs. Current `scoringWindow(mode, pageSize)` instead uses the actual page length for non-independent activities, capped at ten. Independent practice already uses ten. Agree the fixed lengths for the other page types and review the code/test changes in step 3; no scoring change is authorised by this documentation edit.
 - Reassessment requires min(5, page length) eligible answers; for 1–2-question pages require at least three across pages. Persist lockout/trial state. Short-page success cannot bypass reassessment.
 - Promotion checks a type's own history. Trial answers are recorded at their actual level. Failure restores the previous recommendation and its history; no same-page retry unless five new consecutive unassisted successes follow the failure. At page end, a one/zero-question trial offers the specified choice; two or more correct trial answers confirm automatically.
 - Two consecutive submitted questions at the same manually selected lower level lower the recommendation. A manual upward choice changes the recommendation, records its origin and uses the low-score recommendation rule; it does not masquerade as automatic mastery.
-- Start has a recap recommendation instead of a lower-level offer; Confidence has no automatic higher level. Invalid input is not a submitted attempt. Only selected/started work is cleared when changing question; submitted feedback remains.
+- Start has a recap recommendation instead of a lower-level offer; Confidence has no automatic higher level. Invalid input is not a submitted attempt. Drawing and typed working restore per question from the temporary cache; unsubmitted answer entry resets when changing question and submitted feedback remains.
 - Separate learning sequence navigation from independent Practice sets. Assessment/scaffolded answers do not promote. M10 error spotting now marks each independent error’s row, reason and corrected-step selection, plus the final x value; do not claim automatic checking of freehand working.
 - Topic aggregation and share codes are implemented; their current contracts are documented in website/README. Distinguish displayed recommendations from demonstrated mastery.
 
@@ -47,7 +55,7 @@ These are engineering interpretations, not additional user decisions. Keep them 
 
 These are recorded engineering interpretations, not urgent approval gates. Preserve current behaviour until reviewed:
 
-- Short-page rolling history versus page-only scoring; handling future page-length changes; reassessment at lengths 5–9.
+- Set the fixed typical scoring-window length for each non-independent page type, independent of individual page length; review reassessment at lengths 5–9 separately.
 - Assisted correct trial answers currently neither fail the trial nor count toward confirmation. Opening a reference marks assistance even if the learner does not use it.
 - Submitted answers are immutable within a page; decide whether future unscored retries or repeat-question eligibility intervals help learning.
 - Distinguish manual level choice from demonstrated mastery in any future aggregate display.

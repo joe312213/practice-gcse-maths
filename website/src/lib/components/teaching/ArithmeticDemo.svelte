@@ -1,8 +1,13 @@
 <!--
   Purpose: Connect arithmetic teaching to the shared playback controller.
-  Main contents: Challenge selection, guidance and staged method drawing.
+
+  Main contents:
+  - Challenge selection, guidance and staged method drawing.
+
   Used By: MethodDemo.
+
   Uses: ArithmeticWorking, Guidance, ShowDemo, arithmetic-demo and engine.
+
   Libs: Svelte state and derivation.
 -->
 <script>
@@ -28,9 +33,11 @@
         onclick={() => onlevel(level)}>{label}</button
       >{/each}
   </div>
-  <Guidance guidance={bank.teaching.guidance[initialLevel]} />
   {#key question}
     <ShowDemo {frames} steps={4} {speed} {onspeed}>
+      {#snippet introduction(step)}
+        <Guidance guidance={bank.teaching.guidance[initialLevel]} activeStep={step} />
+      {/snippet}
       {#snippet heading()}<p class="selected-equation">{question.q}</p>{/snippet}
       {#snippet children(frame)}<ArithmeticWorking {question} {frame} />{/snippet}
       {#snippet completion()}<p><strong>Check:</strong> {question.check}</p>{/snippet}

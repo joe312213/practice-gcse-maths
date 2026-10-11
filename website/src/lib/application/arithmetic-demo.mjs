@@ -1,12 +1,16 @@
-import { guideFrames } from './demo-guide.mjs';
 /**
  * Purpose: Compute place-value working and ordered reveal frames for arithmetic methods.
  *
- * Main contents: latticeModel, divisionModel, arithmeticFrames.
+ * Main contents:
+ * - latticeModel, divisionModel, arithmeticFrames.
+ *
  * Used By: ArithmeticWorking, ArithmeticDemo and arithmetic tests.
- * Uses: no local modules.
+ *
+ * Uses: demo-guide.mjs (guideFrames).
+ *
  * Libs: none.
  */
+import { guideFrames } from './demo-guide.mjs';
 /** Compute cell products and diagonal carries, beginning at the bottom right. */
 export function latticeModel(a, b) {
   const top = [...String(a)].map(Number),

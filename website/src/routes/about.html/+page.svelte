@@ -6,7 +6,7 @@
 
   Used By: SvelteKit route loading.
 
-  Uses: no local module imports.
+  Uses: SiteHeader.svelte and SiteFooter.svelte.
 
   Libs: $app/paths (base-aware URLs).
 -->

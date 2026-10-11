@@ -35,14 +35,12 @@
     <col /><col class="equation-divider" /><col />
   </colgroup>
   <tbody>
-    {#each rows.slice(0, staged ? rows.length : limit) as row, index}
+    {#each rows.slice(0, limit) as row, index}
       {@const visible = index < limit - 1 ? 3 : index === limit - 1 ? part : 0}
-      <tr
-        data-step={index < limit ? index : undefined}
-        data-demo-current={staged && index === limit - 1 ? '' : undefined}
-        class:op={row.kind === 'op'}
-      >
-        {#if annotations.length}<td class="step-note" class:unwritten={visible < 1}
+      <tr data-step={index < limit ? index : undefined} class:op={row.kind === 'op'}>
+        {#if annotations.length}<td
+            class="step-note"
+            aria-current={staged && index === limit - 1 ? 'step' : undefined}
             ><span>{annotations[index] ?? ''}</span></td
           >{/if}
         {#if numbered}<th class="row-number" scope="row"

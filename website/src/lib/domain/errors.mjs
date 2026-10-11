@@ -19,7 +19,7 @@ import { markAnswer } from './engine.mjs';
  * Parameter entries: learner row/reason/correction entries.
  * Parameter raw: untrusted input text.
  * Calls: markAnswer.
- * @example markErrors(q, entries, raw);
+ * @example markErrors({ answer: "2", errorOptions: [{ id: "a" }], correctionId: "a" }, [{ correction: "a" }], "2"); // correct: true
  */
 export function markErrors(q, entries, raw) {
   const answer = markAnswer(raw, q.answer);

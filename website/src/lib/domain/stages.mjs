@@ -5,7 +5,7 @@
  * - MODES
  * - nextStage
  *
- * Used By: website/src/lib/components/practice/NextStage.svelte, website/src/lib/components/practice/PracticeActivity.svelte, website/src/routes/+page.svelte
+ * Used By: website/src/lib/components/practice/NextStage.svelte, website/src/lib/components/practice/PracticeActivity.svelte, website/src/lib/components/practice/TopicPractice.svelte
  *
  * Uses: no local module imports.
  *
@@ -22,7 +22,7 @@ export const MODES = [
 
 /**
  * Return the next prerequisite stage after the supplied mode, or null at the end.
- * Parameter mode: learning activity or theme mode, as used here.
+ * Parameter mode: activity ID, such as assessment, scaffolded, errors or plain.
  */
 export function nextStage(mode) {
   const index = MODES.findIndex(([id]) => id === mode);

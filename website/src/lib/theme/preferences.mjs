@@ -70,7 +70,7 @@ export function createThemeController(storage, root, onWarning = () => {}) {
    * Apply theme variables and optionally persist the current preferences.
    * Parameter persist: whether to save as well as publish.
    * Used by: createThemeController, select, toggle, adjust, reset.
-   * @example apply(persist);
+   * @example apply(true); // Notify theme subscribers and save this preference.
    */
   function apply(persist = false) {
     const { mode, palette } = preferences;
@@ -107,7 +107,7 @@ export function createThemeController(storage, root, onWarning = () => {}) {
     },
     /**
      * Apply and persist the requested light/dark mode and palette.
-     * Parameter mode: learning activity or theme mode, as used here.
+     * Parameter mode: light or dark.
      * Parameter palette: named theme palette.
      * Calls: apply.
      */

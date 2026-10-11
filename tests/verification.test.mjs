@@ -12,7 +12,7 @@
  */
 import test from "node:test";
 import assert from "node:assert/strict";
-import { plan } from "../website/scripts/verification/plan.mjs";
+import { plan, isFormatInput } from "../website/scripts/verification/plan.mjs";
 
 const initial = {
   "HANDOFF.md": "a",
@@ -46,13 +46,21 @@ test("unchanged successful inputs skip every job; docs and theme changes stay na
   );
   assert.deepEqual(
     selected({ ...initial, "website/src/lib/styles/components.css": "b" }),
-    ["new-topics", "presentation", "colours", "practice-sets"],
+    ["new-topics", "presentation", "colours", "practice-sets", "progress"],
   );
 });
 test("logic and demo changes use their actual verification families", () => {
   assert.deepEqual(
     selected({ ...initial, "website/src/lib/domain/engine.mjs": "b" }),
-    ["new-topics", "logic", "bank", "svelte", "practice-sets", "progress"],
+    [
+      "new-topics",
+      "logic",
+      "bank",
+      "svelte",
+      "practice-sets",
+      "progress",
+      "integration",
+    ],
   );
   assert.deepEqual(
     selected({
@@ -70,6 +78,7 @@ test("deleted/new files, failed jobs, changed policy and environment invalidate 
     "presentation",
     "colours",
     "practice-sets",
+    "progress",
   ]);
   assert.ok(
     selected({ ...initial, "tests/new.test.mjs": "new" }).includes("logic"),
@@ -83,4 +92,32 @@ test("deleted/new files, failed jobs, changed policy and environment invalidate 
     plan(initial).length,
   );
   assert.ok(plan(initial, cached, "new runtime").every((job) => job.run));
+});
+
+test("moved startup and history/session dependencies select their browser checks", () => {
+  const cases = [
+    ["website/src/lib/styles/breakpoints.css", "presentation"],
+    ["website/src/lib/styles/breakpoints.css", "startup"],
+    ["website/src/lib/styles/breakpoints.css", "progress"],
+    ["website/src/lib/components/practice/TopicPractice.svelte", "startup"],
+    ["website/src/lib/components/ui/ThemeControls.svelte", "startup"],
+    ["website/src/lib/components/ui/SiteHeader.svelte", "startup"],
+    ["website/src/lib/domain/practice-history.mjs", "progress"],
+    ["website/src/lib/domain/practice-time.mjs", "progress"],
+    ["website/src/lib/domain/practice-code.mjs", "progress"],
+    ["website/src/lib/domain/errors.mjs", "integration"],
+    ["website/src/lib/domain/profiles.mjs", "integration"],
+  ];
+  for (const [path, required] of cases) {
+    const files = { ...initial, [path]: "before" };
+    const cache = Object.fromEntries(
+      plan(files).map((job) => [job.id, job.hash]),
+    );
+    assert.ok(
+      selected({ ...files, [path]: "after" }, cache).includes(required),
+      `${path} must select ${required}`,
+    );
+  }
+  assert.equal(isFormatInput("tests/working-cache.test.mjs"), true);
+  assert.equal(isFormatInput("website/vendor/puzzles/tests/go.test.js"), false);
 });

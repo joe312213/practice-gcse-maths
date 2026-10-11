@@ -32,7 +32,7 @@
   onDestroy(cancelClose);
   /**
    * Format a timestamp in UK date format, or the unpractised label for null.
-   * Parameter value: new value to apply or validate.
+   * Parameter value: epoch milliseconds, or null when no practice is recorded.
    */
   const date = (value) =>
     value === null ? 'Not yet practised' : new Date(value).toLocaleDateString('en-GB');

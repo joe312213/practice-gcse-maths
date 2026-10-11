@@ -1,3 +1,5 @@
+> **Source status:** Preserve the teaching guidance and historical source below. For implemented topics, the [reviewed website content and authored refinements](../website/README.md#teaching-content-and-imports) take precedence over older examples and slide-specific instructions. Slides primarily inform level and style; review and refine content for each topic’s website implementation.
+
 # M10 — Solving equations
 
 **Status: Built for review under the user’s instruction.** Replaces the earlier patterned draft. Exact structured source: `M10_equations.json`.

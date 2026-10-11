@@ -46,7 +46,7 @@ function run() {
 /**
  * Debounce a relevant filesystem event into the next verification run.
  * Parameter _: unused filesystem event kind.
- * Parameter name: learner name or requested field name.
+ * Parameter name: changed filesystem entry, supplied by the watcher.
  */
 function changed(_, name) {
   if (!name || !/\.(md|json|js|mjs|ts|css|svelte|py|html|svg)$/.test(String(name))) return;

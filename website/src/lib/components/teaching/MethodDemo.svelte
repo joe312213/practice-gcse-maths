@@ -1,8 +1,13 @@
 <!--
   Purpose: Select the topic-owned demonstration without coupling playback to a method.
-  Main contents: Equation and arithmetic adapter selection.
+
+  Main contents:
+  - Equation and arithmetic adapter selection.
+
   Used By: Practice route and PracticeActivity.
+
   Uses: DemoPlayer and ArithmeticDemo.
+
   Libs: none.
 -->
 <script>

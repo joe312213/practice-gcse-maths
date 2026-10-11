@@ -1,6 +1,6 @@
 # M01 — current topic files
 
-- [Questions](Lattice_multiplication_M01_questions.pptx): 9 slides.
+- [Questions](Lattice_multiplication_M01_questions.pptx): 10 slides.
 - [HTML answers](Lattice_multiplication_M01_answers.html): assessment, scaffolded practice, error corrections and independent answers.
 
 Sequence: assessment → worked demo → two scaffolded practices → spot the errors (nine worked mistakes) → four independent practices. Original accepted teaching slides are preserved. New error activities are ready for manual review. Exact SE content is in [SPOT_ERRORS.md](../../../content/SPOT_ERRORS.md).

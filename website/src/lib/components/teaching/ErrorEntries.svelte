@@ -14,9 +14,9 @@
   let { question, reasons, entries, disabled = false, onchange } = $props();
   /**
    * Replace one error entry field while retaining the other row/reason/correction values.
-   * Parameter index: zero-based question/page position.
+   * Parameter index: zero-based error-entry position.
    * Parameter field: error-entry field name.
-   * Parameter value: new value to apply or validate.
+   * Parameter value: selected row number, reason ID or correction text for field.
    */
   function update(index, field, value) {
     const next = question.errors.map((_, i) => ({

@@ -25,7 +25,7 @@ Git is the source of history; no parallel legacy runtime is maintained.
  * Parameter browser: Playwright browser instance.
  * Parameter base: test server base URL.
  * Calls: mkdtemp, join, tmpdir, fileURLToPath, mkdir, dirname, writeFile, execFileSync, serveStatic, rm.
- * @example checkVisuals(browser, base);
+ * @example await checkVisuals(browser, "http://127.0.0.1:8766/"); // Check a running static preview.
  */
 export async function checkVisuals(browser, base) {
   const directory = await mkdtemp(join(tmpdir(), 'maths-visual-'));

@@ -27,25 +27,25 @@ function requireValue(condition) {
 }
 /**
  * Recognize non-array object values used in import validation.
- * Parameter value: new value to apply or validate.
+ * Parameter value: untrusted field read from the imported JSON.
  * Used by: parseProgress.
  */
 const object = (value) => value && typeof value === 'object' && !Array.isArray(value);
 /**
  * Recognize finite nonnegative numeric values used in import validation.
- * Parameter value: new value to apply or validate.
+ * Parameter value: untrusted field read from the imported JSON.
  * Used by: parseProgress.
  */
 const number = (value) => Number.isFinite(value) && value >= 0;
 /**
  * Recognize string values used in import validation.
- * Parameter value: new value to apply or validate.
+ * Parameter value: untrusted field read from the imported JSON.
  * Used by: parseProgress.
  */
 const text = (value) => typeof value === 'string';
 /**
  * Recognize supported challenge-level integers in an imported record.
- * Parameter value: new value to apply or validate.
+ * Parameter value: untrusted field read from the imported JSON.
  * Used by: parseProgress.
  */
 const level = (value) => Number.isInteger(value) && value >= 0 && value < 4;
@@ -54,7 +54,7 @@ const level = (value) => Number.isInteger(value) && value >= 0 && value < 4;
  * Versioned learner progress, not executable state or incomplete answer drafts.
  * Serialize a learner's history, levels and revision records as a versioned JSON envelope.
  * Parameter profile: learner record.
- * Parameter now: current time in milliseconds or injected clock, as declared.
+ * Parameter now: current epoch milliseconds.
  * @example const json = exportProgress(profile);
  */
 export function exportProgress(profile, now = Date.now()) {
@@ -291,7 +291,7 @@ export function exportCsv(profile) {
   // Quote every field and neutralise spreadsheet formula prefixes in user-controlled text.
   /**
    * Quote one CSV field and neutralize leading spreadsheet formula characters.
-   * Parameter value: new value to apply or validate.
+   * Parameter value: one history/export field to serialize as CSV.
    */
   const cell = (value) => {
     let str = String(value ?? '');

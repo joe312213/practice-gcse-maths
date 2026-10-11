@@ -25,14 +25,15 @@ const topicRoutes = /^website\/src\/lib\/content\/topic-routes\.mjs$/;
 const runtime = /^website\/src\/(lib\/(application|domain|adapters)\/|routes\/)/;
 const interaction =
   /^website\/src\/(lib\/(application\/session\.mjs|adapters\/|components\/(practice|ui)\/)|routes\/)/;
-const layout = /^website\/src\/lib\/styles\/(components|controls|app)\.css$/;
+const layout = /^website\/src\/lib\/styles\/(components|controls|app|breakpoints)\.css$/;
+const breakpoints = /^website\/src\/lib\/styles\/breakpoints\.css$/;
 const components = /^website\/src\/lib\/components\//;
 const styles = /^website\/src\/lib\/styles\//;
 const theme = /^website\/src\/lib\/(theme\/|styles\/theme-)/;
 const runner = /^website\/scripts\/(verify-changed\.mjs|verification\/)/;
 const browser = /^website\/scripts\/browser(?:-checks\.mjs|\/support\.mjs)$/;
 const bank =
-  /^(content\/(?:M(?:01|02|10).*\.(?:json|md)|web_assessments\.json|spot_errors\.json)|scripts\/prepare_web_(?:equations|arithmetic)\.py|website\/static\/data\/|website\/src\/lib\/content\/practice-pages\.json)/;
+  /^(content\/(?:M(?:01|02|10).*\.(?:json|md)|web_assessments\.json|spot_errors\.json)|scripts\/(?:prepare_web_(?:equations|arithmetic)|bank_candidates)\.py|website\/static\/data\/|website\/src\/lib\/content\/practice-pages\.json)/;
 /**
  * Build a path predicate matching any supplied regular expression.
  * Parameter patterns: path-matching regular expressions.
@@ -96,6 +97,7 @@ export const jobs = [
     inputs: matches([
       components,
       layout,
+      /^website\/src\/lib\/domain\/working\.mjs$/,
       /^website\/src\/lib\/application\/(player|demo-guide|demo-motion|equation-demo|arithmetic-demo|drawing-assist|drawing)\.mjs$/,
       /^website\/src\/routes\//,
       bank,
@@ -123,7 +125,9 @@ export const jobs = [
   {
     id: 'startup',
     inputs: matches([
+      breakpoints,
       /^website\/src\/lib\/(adapters|theme)\//,
+      /^website\/src\/lib\/components\/(practice\/TopicPractice|ui\/(SiteHeader|ThemeControls))\.svelte$/,
       /^website\/src\/routes\//,
       bank,
       topicRoutes,
@@ -152,12 +156,13 @@ export const jobs = [
   {
     id: 'progress',
     inputs: matches([
+      layout,
       interaction,
       bank,
       topicRoutes,
       config,
       browser,
-      /^website\/src\/lib\/domain\/(progress|revision|progress-transfer|engine|profiles)\.mjs$/,
+      /^website\/src\/lib\/domain\/(progress|revision|progress-transfer|practice-history|practice-time|practice-code|engine|profiles)\.mjs$/,
       /^website\/src\/lib\/components\/progress\//,
       /^website\/src\/lib\/styles\/progress\.css$/,
       /^website\/scripts\/browser\/progress-checks\.mjs$/,
@@ -168,7 +173,13 @@ export const jobs = [
   // Broad interaction checks do not depend on cosmetic CSS edits.
   {
     id: 'integration',
-    inputs: matches([interaction, bank, config, browser]),
+    inputs: matches([
+      interaction,
+      /^website\/src\/lib\/domain\/(engine|errors|profiles|practice-code|revision|progress)\.mjs$/,
+      bank,
+      config,
+      browser,
+    ]),
     build: true,
     command: ['scripts/browser-checks.mjs', '--activities-only'],
   },
@@ -185,10 +196,11 @@ export const isBuildInput = matches([
  * Parameter path: repository-relative or walked filesystem path.
  */
 export const isFormatInput = (path) =>
-  /^website\/(src\/|scripts\/|[^/]+$)/.test(path) && /\.(svelte|css|js|mjs|ts|json)$/.test(path);
+  /^tests\/.*\.test\.mjs$/.test(path) ||
+  (/^website\/(src\/|scripts\/|[^/]+$)/.test(path) && /\.(svelte|css|js|mjs|ts|json)$/.test(path));
 /**
  * Return the SHA-256 hex digest of the supplied string.
- * Parameter value: new value to apply or validate.
+ * Parameter value: file bytes or text to fingerprint.
  * Calls: createHash.
  * Used by: fingerprint.
  */

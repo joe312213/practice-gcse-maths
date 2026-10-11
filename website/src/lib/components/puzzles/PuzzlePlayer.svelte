@@ -1,9 +1,14 @@
 <!--
   Purpose: Own explicit puzzle checking and assistance around the portable puzzle control.
-  Main contents: Mount/dispose boundary, check, hint and solution actions.
+
+  Main contents:
+  - Mount/dispose boundary, check, hint and solution actions.
+
   Used By: puzzles route.
-  Uses: @subject-apps/puzzles/player.
-  Libs: Svelte lifecycle.
+
+  Uses: GoPuzzle.
+
+  Libs: Svelte lifecycle; @subject-apps/puzzles/player for portable puzzle controls.
 -->
 <script>
   import { onMount } from 'svelte';

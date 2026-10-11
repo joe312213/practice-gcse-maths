@@ -1,9 +1,37 @@
-/** Weekly views derive from durable answers and measured time; no stored percentages or inferred old timing. */
+/**
+ * Purpose: Derive UK weekly time and success from durable records without storing percentages or inventing historical timing.
+ *
+ * Main contents:
+ * - practiceWeeks; practiceHistory.
+ *
+ * Used By: PracticeHistory.svelte and practice-time tests.
+ *
+ * Uses: progress.mjs (weekKey).
+ *
+ * Libs: None.
+ */
 import { weekKey } from './progress.mjs';
+/**
+ * Return this and last Monday's UK date keys for an epoch-millisecond timestamp.
+ * Calls weekKey; used by practiceHistory and PracticeHistory.svelte.
+ * @example practiceWeeks(Date.UTC(2026, 9, 10)); // { current: '2026-10-05', previous: '2026-09-28' }
+ */
+export function practiceWeeks(now = Date.now()) {
+  const current = weekKey(now);
+  // Noon UTC avoids ambiguity around UK clock changes.
+  const previous = new Date(Date.parse(`${current}T12:00:00Z`) - 7 * 86400000)
+    .toISOString()
+    .slice(0, 10);
+  return { current, previous };
+}
+/**
+ * Aggregate profile records for optional topic scope and activity mode at now.
+ * Calls weekKey; used by PracticeHistory.svelte. Empty current/previous weeks remain visible.
+ * @example const weeks = practiceHistory(profile, "maths:M10", "plain", now);
+ */
 export function practiceHistory(profile, scope = '', mode = 'plain', now = Date.now()) {
   const weeks = new Map();
-  const row = (at) => {
-    const key = weekKey(at);
+  const row = (key) => {
     if (!weeks.has(key))
       weeks.set(key, {
         week: key,
@@ -13,15 +41,13 @@ export function practiceHistory(profile, scope = '', mode = 'plain', now = Date.
       });
     return weeks.get(key);
   };
-  // Noon UTC on the previous Monday avoids ambiguity around UK clock changes.
-  const current = weekKey(now);
-  const previous = Date.parse(`${current}T12:00:00Z`) - 7 * 86400000;
-  row(now);
+  const { current, previous } = practiceWeeks(now);
+  row(current);
   row(previous);
   for (const [key, topic] of Object.entries(profile.topics)) {
     if (scope && scope !== key) continue;
     for (const item of topic.history) {
-      const week = row(item.at);
+      const week = row(weekKey(item.at));
       week.answered++;
       if (item.type === mode && (!item.correct || !item.assisted)) {
         const level = week.levels[item.level];
@@ -29,7 +55,8 @@ export function practiceHistory(profile, scope = '', mode = 'plain', now = Date.
         if (item.correct) level.correct++;
       }
     }
-    for (const item of topic.practice ?? []) row(item.at).milliseconds += item.milliseconds;
+    for (const item of topic.practice ?? [])
+      row(weekKey(item.at)).milliseconds += item.milliseconds;
   }
   return [...weeks.values()].sort((a, b) => b.week.localeCompare(a.week));
 }

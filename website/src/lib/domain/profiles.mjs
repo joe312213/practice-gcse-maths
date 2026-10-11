@@ -44,7 +44,7 @@ export function load(storage) {
 /**
  * Find a normalized learner name or return confirmation/suggestions before creating it.
  * Parameter store: schema-2 learner store.
- * Parameter name: learner name or requested field name.
+ * Parameter name: learner display name before normalization.
  * Parameter create: whether learner creation was confirmed.
  * Calls: profileKey.
  * @example chooseProfile(store, "Student", true);

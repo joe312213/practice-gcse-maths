@@ -4,7 +4,7 @@
   Main contents:
   - submit
 
-  Used By: website/src/routes/+page.svelte
+  Used By: website/src/lib/components/practice/TopicPractice.svelte
 
   Uses: no local module imports.
 

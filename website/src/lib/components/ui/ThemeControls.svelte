@@ -4,7 +4,7 @@
   Main contents:
   - Component markup, input props and event bindings.
 
-  Used By: website/src/routes/+page.svelte, website/src/routes/progress.html/+page.svelte
+  Used By: website/src/lib/components/ui/SiteHeader.svelte
 
   Uses: website/src/lib/theme/preferences.mjs.
 

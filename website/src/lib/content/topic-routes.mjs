@@ -1,8 +1,14 @@
 /**
  * Purpose: Stable public topic addresses, separate from saved question/progress IDs.
- * Main contents: foundationTopics, topicPath.
+ *
+ * Main contents:
+ * - foundationTopics, topicPath.
+ *
  * Used By: homepage, topic route, practice and progress links.
- * Uses: question-bank file names and IDs; no library dependencies.
+ *
+ * Uses: question-bank file names and IDs.
+ *
+ * Libs: none.
  */
 export const foundationTopics = [
   { bank: 'M01', slug: 'lattice-multiplication', file: 'multiplication' },

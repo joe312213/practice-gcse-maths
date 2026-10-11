@@ -25,3 +25,5 @@ This policy is applied to original source files, not any imported libs/packages 
 Short function comments, as doc strings, containing function purpose, params details, what functions this calls, the main functions (if any) that call this function. Then, for non-trivial functions, 1-2 usage examples.
 
 Where individual blocks or lines of code implement subtle or complex logic/behaviour, this should be commented with 1 line, or if justified 2 lines at most.
+
+Responsive media/container queries and width variants need a one-line purpose comment at each use. Threshold definitions, rationale and conventions belong in the shared [breakpoint register](UI_TASTE.md#breakpoint-register).

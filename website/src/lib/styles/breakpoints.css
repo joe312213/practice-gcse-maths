@@ -1,0 +1,19 @@
+/* Shared width thresholds. Rationale, consumers and boundary conventions:
+   docs/UI_TASTE.md#breakpoint-register. Use named @variant rules in authored CSS.
+   Unprefixed variants mean >=; max- variants mean <. @ variants measure containers.
+   Static tokens also let browser matchMedia consumers read the same pixel values. */
+@theme static {
+  /* Shared viewport scale: compact controls, main layout, then longer progress meters. */
+  --breakpoint-viewport-small: 440px;
+  --breakpoint-viewport-medium: 768px;
+  --breakpoint-viewport-large: 1024px;
+
+  /* Progress switches from a wrapping strip to its compact grid. */
+  --breakpoint-viewport-progress-grid: 678px;
+  /* An open method reference can sit beside the question panel. */
+  --breakpoint-viewport-reference-columns: 1150px;
+
+  /* Available question-panel width determines question columns and working placement. */
+  --container-question-three-columns: 780px;
+  --container-question-working-columns: 650px;
+}

@@ -97,7 +97,7 @@ export function createPlayer({
     },
     /**
      * Replace the playback delay and reschedule an active timer.
-     * Parameter value: new value to apply or validate.
+     * Parameter value: milliseconds between playback steps.
      * Calls: clear.
      */
     setDelay(value) {

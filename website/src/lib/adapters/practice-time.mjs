@@ -1,5 +1,14 @@
-/** Bind the T-Level active clock to the current topic and save credited time in hourly JSON buckets.
- * Only the clock is transient; no elapsed absence can be recovered as practice after a reload.
+/**
+ * Purpose: Bind active practice timing to session changes and browser lifecycle; save credited time in hourly buckets.
+ *
+ * Main contents:
+ * - createPracticeTimer; bindPracticeTimer.
+ *
+ * Used By: TopicPractice.svelte and practice-time tests.
+ *
+ * Uses: domain/practice-time.mjs.
+ *
+ * Libs: None; browser objects, clock, identifiers and persistence are injected.
  */
 import {
   engagePractice,
@@ -9,6 +18,12 @@ import {
   INTERACTION_POLL_MS,
 } from '../domain/practice-time.mjs';
 const HOUR = 3600000;
+/**
+ * Coordinate session views with hourly practice records.
+ * Parameters: data/save hold durable progress; now/uuid are injected clock and identity functions.
+ * Calls domain clock operations; used by bindPracticeTimer and timing tests.
+ * @example const timer = createPracticeTimer({ data, save }); timer.select(view);
+ */
 export function createPracticeTimer({
   data,
   save,
@@ -18,6 +33,10 @@ export function createPracticeTimer({
   let target = null,
     clock = null,
     visit = null;
+  /**
+   * Apply operation to the current clock and save newly credited milliseconds in their UTC-hour buckets.
+   * Called by timer controls; never assigns an idle gap to a later week.
+   */
   function flush(operation) {
     if (!clock) return;
     const before = clock.practiceClock.milliseconds;
@@ -92,6 +111,12 @@ export function createPracticeTimer({
     },
   };
 }
+/**
+ * Subscribe session timing to injected document/window interaction and lifecycle events.
+ * Options are forwarded to createPracticeTimer. Returns cleanup for timers, listeners and subscription.
+ * Used by TopicPractice onMount.
+ * @example const stop = bindPracticeTimer(session, { data, save }, document, window);
+ */
 export function bindPracticeTimer(session, options, document, window) {
   const timer = createPracticeTimer(options);
   const unsubscribe = session.subscribe((view) => timer.select(view, !document.hidden));

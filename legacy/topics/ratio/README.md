@@ -13,10 +13,10 @@ Question wording reviewed on 1 October 2026. See the [full spot-the-errors revie
 
 # Ratio — M04
 
-## Current files
+## Files at that historical checkpoint
 
-- [Questions v7](Ratio_M04_questions_prev9.pptx) · [PDF](Ratio_M04_questions_prev9.pdf): eight slides—assessment followed by the seven-slide topic set.
-- [Answers v6](Ratio_M04_answers_prev6.pptx) · [PDF](Ratio_M04_answers_prev6.pdf): thirteen slides—assessment answers and six pairs of answer/diagnostic pages.
+- Questions v7 (`Ratio_M04_questions_prev9.pptx`, historical filename; recover from Git) · PDF (`Ratio_M04_questions_prev9.pdf`, historical filename; recover from Git): eight slides—assessment followed by the seven-slide topic set.
+- Answers v6 (`Ratio_M04_answers_prev6.pptx`, historical filename; recover from Git) · PDF (`Ratio_M04_answers_prev6.pdf`, historical filename; recover from Git): thirteen slides—assessment answers and six pairs of answer/diagnostic pages.
 - [Question source](../../../content/M04_ratio.md), [answer source](../../../content/answers/M04_answers.md), [question audit](../../../content/M04_ratio_audit.md).
 
 The revised question bank and arrow design were accepted. The user subsequently requested the assessment, now included. No requested ratio correction remains. Scale, costs and changed-ratio applications still need their separate module.

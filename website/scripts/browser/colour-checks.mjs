@@ -19,7 +19,7 @@ import { createTestContext } from './support.mjs';
  * Parameter browser: Playwright browser instance.
  * Parameter base: test server base URL.
  * Calls: createTestContext.
- * @example checkColours(browser, base);
+ * @example await checkColours(browser, "http://127.0.0.1:8766/"); // Check a running static preview.
  */
 export async function checkColours(browser, base) {
   const context = await createTestContext(browser);
@@ -48,6 +48,24 @@ export async function checkColours(browser, base) {
         for (const palette of ['sage', 'blue', 'rose', 'apricot']) {
           document.documentElement.dataset.theme = mode;
           document.documentElement.dataset.palette = palette;
+          actual.style.background = 'var(--drawing-background)';
+          expected.style.background = 'var(--surface)';
+          baseline.style.background = mode === 'dark' ? '#202020' : '#f2f2f2';
+          const paper = rgba(getComputedStyle(actual).backgroundColor);
+          const surface = rgba(getComputedStyle(expected).backgroundColor);
+          const neutral = rgba(getComputedStyle(baseline).backgroundColor);
+          if (!paper.some((channel, i) => i < 3 && channel !== neutral[i]))
+            failures.push(`${mode}:${palette} paper must pick up the surface tint`);
+          for (let i = 0; i < 3; i++) {
+            const shift = paper[i] - neutral[i];
+            const direction = surface[i] - neutral[i];
+            if (shift * direction < 0 || Math.abs(shift) > Math.abs(direction) * 0.25 + 1)
+              failures.push(
+                `${mode}:${palette} paper tint must stay subtle and follow the surface`,
+              );
+          }
+          for (const probe of [actual, expected, baseline])
+            probe.style.removeProperty('background');
           for (const [classes, state, feedback] of [
             ['question-option active', 'selection', false],
             ['question-option correct', 'correct', false],

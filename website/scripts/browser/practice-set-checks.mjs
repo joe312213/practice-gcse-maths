@@ -21,7 +21,7 @@ import { decodePracticeSet, encodePracticeSet } from '../../src/lib/domain/pract
  * Parameter browser: Playwright browser instance.
  * Parameter base: test server base URL.
  * Calls: readFile, createTestContext, decodePracticeSet, state, encodePracticeSet.
- * @example checkPracticeSets(browser, base);
+ * @example await checkPracticeSets(browser, "http://127.0.0.1:8766/"); // Check a running static preview.
  */
 export async function checkPracticeSets(browser, base) {
   const banks = await Promise.all(
@@ -101,7 +101,7 @@ export async function checkPracticeSets(browser, base) {
     await page.getByText('24 questions answered', { exact: true }).waitFor();
     await page.getByRole('link', { name: 'Back to topics', exact: true }).click();
     await page.locator('.topic-card').filter({ hasText: 'Solving equations' }).click();
-    const input = page.getByPlaceholder('practice code or search', { exact: true });
+    const input = page.getByRole('textbox', { name: 'Practice code or topic search', exact: true });
     await input.fill('multiplication');
     await page.getByRole('button', { name: 'Go', exact: true }).click();
     assert.deepEqual(

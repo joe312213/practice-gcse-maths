@@ -1,8 +1,13 @@
 <!--
   Purpose: Render readable place-value arithmetic working with staged cells, digits and carries.
-  Main contents: Lattice and bus stop diagrams with text explanations.
+
+  Main contents:
+  - Lattice and bus stop diagrams with text explanations.
+
   Used By: ArithmeticDemo and Feedback.
+
   Uses: arithmetic-demo.mjs.
+
   Libs: Svelte reactive derivation.
 -->
 <script>
@@ -15,7 +20,7 @@
   const division = $derived(question.method === 'bus' ? divisionModel(question) : null);
 </script>
 
-<div class="arithmetic-working" data-demo-current>
+<div class="arithmetic-working">
   {#if lattice}
     {@const n = lattice.top.length}
     {@const m = lattice.right.length}
@@ -67,21 +72,14 @@
         {/if}
       {/each}
     </svg>
-    {#if !compact}
-      {#if frame.step === 1}<p>
-          Draw the grid and its diagonals first, as you would on paper in an exam. Then put the
-          first number across the top and the second down the right.
-        </p>
-      {:else if frame.step === 2}<p>Tens go above the diagonal; units below. Keep tens zeros.</p>
-      {:else}
-        <ol aria-label="Diagonal totals from bottom right">
-          {#each lattice.diagonals.slice(0, frame.step === 3 ? frame.count : undefined) as d}<li>
-              {d.sum} + carry {d.incoming} = {d.total}: write {d.digit}{d.carry
-                ? `, carry ${d.carry}`
-                : ''}.
-            </li>{/each}
-        </ol>
-      {/if}
+    {#if !compact && frame.step >= 3}
+      <ol aria-label="Diagonal totals from bottom right">
+        {#each lattice.diagonals.slice(0, frame.step === 3 ? frame.count : undefined) as d}<li>
+            {d.sum} + carry {d.incoming} = {d.total}: write {d.digit}{d.carry
+              ? `, carry ${d.carry}`
+              : ''}.
+          </li>{/each}
+      </ol>
     {/if}
   {:else if division}
     <svg
@@ -111,12 +109,8 @@
         {/if}
       {/each}
     </svg>
-    {#if frame.step === 1}<p>
-        Draw the bus-stop bracket first, as you would on paper in an exam. Dividend inside; divisor
-        outside on the left. Write each answer digit above its matching digit.
-      </p>{/if}
-    {#if !compact}<ol>
-        {#each division.places.slice(0, frame.step === 1 ? 0 : frame.count) as p}
+    {#if !compact && frame.step > 1}<ol>
+        {#each division.places.slice(0, frame.count) as p}
           <li>
             {p.digit === '.'
               ? 'Align decimal points and append zeros.'

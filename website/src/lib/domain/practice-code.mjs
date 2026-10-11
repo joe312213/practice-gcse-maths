@@ -30,7 +30,7 @@ export const PAGE_TYPES = [
 ];
 /**
  * Check whether a value is an integer in the inclusive zero-to-max range.
- * Parameter value: new value to apply or validate.
+ * Parameter value: proposed numeric code field.
  * Parameter max: inclusive upper integer bound.
  * Used by: encodePracticeSet.
  */
@@ -167,7 +167,7 @@ export function resolvePracticePage(catalogue, banks, entry, level, random = Mat
 /**
  * Return nonnegative remaining whole seconds, or null for an untimed set.
  * Parameter set: timed practice-set record.
- * Parameter now: current time in milliseconds or injected clock, as declared.
+ * Parameter now: current epoch milliseconds.
  */
 export function setSecondsRemaining(set, now) {
   return set?.deadline ? Math.max(0, Math.ceil((set.deadline - now) / 1000)) : null;

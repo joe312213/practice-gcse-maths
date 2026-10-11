@@ -1,15 +1,22 @@
 /* Define shared page layout, question cards, teaching diagrams and responsive working fields.
-   Shared layout and semantic controls: preserve the reviewed prototype geometry. */
+   Shared layout and semantic controls: preserve the reviewed prototype geometry.
+   Width variants and rationale: docs/UI_TASTE.md#breakpoint-register. */
 :root {
   --ink: var(--text);
   --brand: var(--main);
   --soft: var(--surface-soft);
   --radius: var(--card-radius);
+  /* Common page gutters keep content and the fixed header menu aligned. */
+  --page-gutter: 4vw;
+  --page-padding-block: 24px;
+  --paragraph-max-width: 38rem;
+  /* Fixed edge clearance for dialogs and progress breakdowns. */
+  --overlay-edge-clearance: 16px;
   font-family:
     system-ui,
     -apple-system,
     sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.55;
 }
 * {
@@ -25,26 +32,36 @@ main,
 footer {
   max-width: 1440px;
   margin: auto;
-  padding: 24px 4vw;
+  padding: var(--page-padding-block) var(--page-gutter);
 }
+/* Mobile header: brand and tools on top; account/navigation actions wrap below. */
 header {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 20px var(--control-gap);
   border-bottom: 1px solid var(--line);
 }
-/* Reserve the menu's top-right position while the other header actions wrap. */
-header:has(.menu-toggle) {
-  padding-right: calc(4vw + 54px);
+.header-tools {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: var(--control-gap);
 }
-header .menu-toggle {
-  position: absolute;
-  top: 24px;
-  right: 4vw;
+header .header-actions {
+  grid-column: 1 / -1;
+  gap: 7px;
+}
+main {
+  padding-block: 18px;
 }
 .brand {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  min-width: 0;
   font-weight: 800;
   font-size: 1.35rem;
   color: var(--ink);
@@ -58,7 +75,7 @@ header .menu-toggle {
 .actions,
 .level-row {
   @apply flex items-center flex-wrap;
-  gap: 10px;
+  gap: var(--control-gap);
 }
 [data-demo-level][aria-pressed='true'] {
   outline: 2px solid var(--brand);
@@ -98,19 +115,22 @@ p {
   font-weight: 700;
 }
 .intro {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  /* Transfer 12px from the controls' maximum width to the column gap. */
+  --intro-extra-clearance: 0.75rem;
+  --intro-controls-max-width: calc(22rem - var(--intro-extra-clearance));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
-  gap: 20px;
+  gap: 1rem;
   margin: 15px 0 0;
 }
-.intro-title p:last-child {
+.intro-title h1 {
   margin-bottom: 0;
 }
 .intro p {
   color: var(--muted);
-  max-width: 650px;
+  /* Reading width follows root text size; it is independent of layout breakpoints. */
+  max-width: var(--paragraph-max-width);
 }
 nav {
   display: flex;
@@ -130,6 +150,16 @@ nav button {
 .layout.with-reference {
   grid-template-columns: minmax(230px, 0.65fr) minmax(0, 2fr);
 }
+/* Every learning stage reaches the page edges on phones; text keeps its inner padding. */
+.stage-panel {
+  width: calc(100% + 2 * var(--page-gutter));
+  margin-inline: calc(-1 * var(--page-gutter));
+  border-inline-width: 0;
+  border-radius: 0;
+  background:
+    var(--card-image) padding-box,
+    var(--card-border-image-horizontal) border-box;
+}
 .question-panel {
   container-type: inline-size;
 }
@@ -137,22 +167,23 @@ nav button {
 .question-list {
   --question-gap: 10px;
   --question-columns: 2;
-  --question-min-width: 210px;
   --question-padding-left: 10px;
   --question-padding-right: 4px;
-  --question-number-width: 17px;
-  --question-ink-gap: 3px;
-  /* Equal clearance keeps equations centred in the button, clear of the number.
-     The result marker sits below the equation, so it needs no empty text column. */
-  --question-clearance: max(
-    calc(var(--question-padding-left) + var(--question-number-width) + var(--question-ink-gap)),
-    var(--question-padding-right)
-  );
+  /* Fixed number slot selected in the 16px/18px visual comparison. */
+  --question-number-width: 16px;
+  /* Corner labels reserve vertical space, leaving room for paired 4×4 products at 360px. */
+  --question-content-padding-inline: 8px;
+  --question-content-padding-block: 1.5rem;
+  --question-marker-inset: 4px;
   @apply flex flex-wrap;
   gap: var(--question-gap);
   margin: 20px 0;
   padding: 0;
   list-style: none;
+}
+/* Assessment aims for three slots; intrinsic expression widths still wrap whole questions. */
+.question-list.assessment {
+  --question-columns: 3;
 }
 .question-list li {
   display: flex;
@@ -167,17 +198,11 @@ nav button {
   display: block;
   text-align: center;
   min-height: 78px;
-  /* Paired buttons fill half a row; a lone longer button grows only to its ink. */
-  min-inline-size: min(
-    100cqi,
-    max(
-      var(--question-min-width),
-      (100cqi - (var(--question-columns) - 1) * var(--question-gap)) / var(--question-columns)
-    )
-  );
-  width: max-content;
+  /* Intrinsic maths width decides wrapping; each button fills its equal flex-row slot. */
+  min-inline-size: max-content;
+  width: 100%;
   max-width: 100%;
-  padding: 9px var(--question-clearance);
+  padding: var(--question-content-padding-block) var(--question-content-padding-inline);
   border: 2px solid var(--control-border);
   line-height: 1.45;
 }
@@ -187,7 +212,7 @@ nav button {
 .question-outcome {
   position: absolute;
   right: var(--question-padding-right);
-  bottom: 4px;
+  bottom: var(--question-marker-inset);
   font-size: 0.8rem;
 }
 .question-option .level-tag {
@@ -207,13 +232,12 @@ nav button {
   font-size: 0.8rem;
   position: absolute;
   left: var(--question-padding-left);
-  top: 50%;
-  transform: translateY(-50%);
+  top: var(--question-marker-inset);
   min-width: var(--question-number-width);
   text-align: left;
 }
 .question-option .equation {
-  font-size: 1.2rem;
+  font-size: 1.08rem;
   white-space: nowrap;
 }
 .question-option.correct {
@@ -227,7 +251,7 @@ nav button {
   color: var(--incorrect-text);
 }
 .selected-equation {
-  font-size: 1.8rem;
+  font-size: 1.55rem;
   font-weight: 650;
   margin: 15px 0;
   line-height: 1.4;
@@ -252,7 +276,6 @@ nav button {
   resize: vertical;
 }
 .working canvas {
-  height: 230px;
   border: 1px solid var(--line);
   background: var(--drawing-background);
   touch-action: none;
@@ -319,19 +342,6 @@ small,
   font-size: 1rem;
   color: var(--muted);
 }
-.balance tr.reveal {
-  animation: appear 0.35s ease-out;
-}
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .steps {
   padding-left: 25px;
 }
@@ -352,7 +362,7 @@ small,
   left: 50%;
   transform: translate(-50%, -50%);
   width: max-content;
-  max-height: calc(100dvh - 32px);
+  max-height: calc(100dvh - 2 * var(--overlay-edge-clearance));
   overflow: auto;
   z-index: 30;
   max-width: min(600px, 94vw);
@@ -425,32 +435,51 @@ footer {
   font-size: 0.8rem;
   color: var(--muted);
 }
-@media (max-width: 1150px) {
+/* Stack the reference above questions when two useful columns no longer fit. */
+@variant max-viewport-reference-columns {
   .layout.with-reference {
     grid-template-columns: minmax(0, 1fr);
   }
   .layout.with-reference > .reference {
     grid-column: 1/-1;
   }
-  .working {
-    position: static;
-  }
 }
-@media (max-width: 767px) {
+/* Restore inset cards and a single header row when the viewport has room. */
+@variant viewport-medium {
   header {
-    align-items: start;
-    flex-direction: column;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 20px;
+  }
+  header .header-actions {
+    grid-column: 2;
+    grid-row: 1;
+    gap: var(--control-gap);
+  }
+  .header-tools {
+    grid-column: 3;
+  }
+  main {
+    padding-block: var(--page-padding-block);
+  }
+  .stage-panel {
+    width: auto;
+    margin-inline: 0;
+    border-inline-width: var(--card-border-width);
+    border-radius: var(--card-radius);
+    background:
+      var(--card-image) padding-box,
+      var(--card-border-image) border-box;
   }
   .question-option .equation {
-    font-size: 1.08rem;
+    font-size: 1.2rem;
   }
   .selected-equation {
-    font-size: 1.55rem;
+    font-size: 1.8rem;
   }
-
-  main {
-    padding: 18px 4vw;
-  }
+}
+/* Keep native navigation controls and equation cells compact on phones. */
+@variant max-viewport-medium {
   nav button {
     padding: 9px;
   }
@@ -458,6 +487,7 @@ footer {
     padding: 6px 10px;
   }
 }
+/* Honour reduced motion for animations and automatic scrolling. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -466,6 +496,7 @@ footer {
     scroll-behavior: auto !important;
   }
 }
+/* Print question content without interactive navigation and drawing controls. */
 @media print {
   header,
   nav,
@@ -537,12 +568,16 @@ footer {
 }
 .demo-working .balance {
   width: 100%;
+  margin-block: 10px;
 }
 .demo-controls {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: var(--control-gap);
   flex-wrap: wrap;
+  padding: 5px 0;
+  background: var(--surface);
+  border-radius: 8px;
 }
 .secondary-controls {
   display: flex;
@@ -561,6 +596,34 @@ footer {
 }
 .demo-body .guidance p {
   font-weight: 550;
+}
+.demo-body {
+  --method-description-size: 0.875rem;
+}
+/* Disable anchoring on the scroller itself, including footer shifts when a demo completes. */
+:root:has(.demo-stage),
+.dialog-panel:has(.demo-stage) {
+  overflow-anchor: none;
+}
+.demo-body .steps,
+.demo-body .balance .step-note,
+.demo-body .arithmetic-working p,
+.demo-body .arithmetic-working li {
+  font-size: var(--method-description-size);
+}
+.demo-body .steps li {
+  padding: 4px 6px;
+}
+.demo-stage :is(.steps li, .step-note)[aria-current='step'] {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+  box-shadow: inset 3px 0 var(--selection-border);
+}
+/* Wider screens can show method descriptions at the normal root text size. */
+@variant viewport-medium {
+  .demo-body {
+    --method-description-size: 1rem;
+  }
 }
 .error-entry {
   min-width: 0;
@@ -591,7 +654,8 @@ footer a {
   border-top: 1px solid var(--line);
   padding-top: 16px;
 }
-@media (max-width: 767px) {
+/* Keep equation annotations and account controls compact on smaller viewports. */
+@variant max-viewport-medium {
   .balance {
     font-size: 1.1rem;
   }
@@ -601,13 +665,11 @@ footer a {
   .balance.numbered td.lhs {
     padding-left: 10px;
   }
-  .header-actions {
-    gap: 7px;
-  }
   #welcome {
     font-size: 0.85rem;
   }
 }
+/* Keep card boundaries and active-question focus visible in forced-colour modes. */
 @media (forced-colors: active) {
   .card {
     border: 1px solid CanvasText;
@@ -640,19 +702,6 @@ footer a {
   font-size: 0.82rem;
   font-weight: 400;
 }
-.demo-controls {
-  position: sticky;
-  top: 8px;
-  z-index: 2;
-  padding: 5px 0;
-  background: var(--surface);
-  border-radius: 8px;
-  gap: 10px;
-}
-.demo-working .balance {
-  margin-block: 10px;
-}
-
 .demo-working .balance td > span {
   display: inline-block;
 }
@@ -663,10 +712,6 @@ footer a {
 }
 
 /* Practice sets reuse native labelled controls and shared semantic surfaces. */
-.practice-set-builder summary {
-  cursor: pointer;
-  font-weight: 650;
-}
 .practice-set-builder fieldset {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -684,8 +729,9 @@ footer a {
   margin: 0;
 }
 .practice-set-code #practice-code {
-  width: 15rem;
-  flex: 0 1 15rem;
+  width: 100%;
+  max-width: 15rem;
+  flex: 0 1 auto;
   min-width: 0;
 }
 .practice-set-status code {
@@ -700,17 +746,25 @@ footer a {
 
 /* Stack search and topic selection at the top right of the topic header. */
 .intro-title {
-  flex: 1 1 18rem;
   min-width: 0;
 }
+.intro-title h1 {
+  font-size: clamp(1.75rem, 4vw, 3.2rem);
+}
+.intro-description {
+  grid-column: 1 / -1;
+}
+.intro-description p {
+  margin: 0;
+  font-size: 0.875rem;
+}
 .intro-controls {
-  flex: 0 1 auto;
-  width: max-content;
-  max-width: 100%;
+  width: 100%;
+  max-width: var(--intro-controls-max-width);
   min-width: 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 10px;
+  gap: var(--control-gap);
   margin-left: auto;
 }
 .practice-set-code {
@@ -718,14 +772,49 @@ footer a {
 }
 .practice-set-input {
   display: flex;
-  width: max-content;
+  width: 100%;
   max-width: 100%;
   margin-left: auto;
   align-items: center;
+  justify-content: flex-end;
   gap: 8px;
 }
 .practice-set-input button {
   flex: none;
+  min-width: var(--control-size);
+  padding-inline: 0.5rem;
+}
+.intro-controls .text-field,
+.intro-controls .choice-field,
+.intro-controls .action-button {
+  font-size: 0.875rem;
+}
+.intro-controls .text-field {
+  /* Compact inline padding leaves room for the short prompt beside Go. */
+  padding: 0.5rem 0.375rem;
+}
+.subject-link {
+  color: inherit;
+  text-decoration: none;
+}
+.subject-link:hover {
+  text-decoration: underline;
+}
+/* Medium phones can place compact topic controls beside the introduction. */
+@variant viewport-small {
+  .intro {
+    column-gap: calc(1rem + var(--intro-extra-clearance));
+    grid-template-columns: minmax(min-content, 3fr) minmax(0, 4fr);
+  }
+}
+/* Wider layouts restore normal description text and bound the controls column. */
+@variant viewport-medium {
+  .intro {
+    grid-template-columns: minmax(min-content, 1fr) minmax(0, var(--intro-controls-max-width));
+  }
+  .intro-description p {
+    font-size: 1rem;
+  }
 }
 .practice-set-code > button {
   margin-top: 8px;
@@ -737,16 +826,41 @@ footer a {
   background: #fff;
 }
 .topic-selector {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
-}
-.topic-selector select {
-  flex: 0 1 auto;
+  /* Short trigger label needs 3em less width; the option list sizes independently. */
+  width: calc(100% - 3em);
+  justify-self: end;
   min-width: 0;
   max-width: 100%;
+  text-align: left;
+}
+.topic-options {
+  width: max-content;
+  max-width: var(--bits-select-content-available-width);
+  max-height: var(--bits-select-content-available-height);
+  overflow-y: auto;
+  padding: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-selector);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.875rem;
+  z-index: 50;
+}
+.topic-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  border-radius: var(--radius-selector);
+  cursor: pointer;
+}
+.topic-option[data-highlighted] {
+  background: var(--main);
+  color: var(--main-text);
+}
+.topic-option-tick {
+  width: 1em;
+  flex: none;
 }
 .drawing-assist {
   display: flex;
@@ -788,12 +902,13 @@ footer a {
   outline-offset: 2px;
 }
 
-/* Drawing colours invert lightness with theme mode, independently of the chosen page palette. */
+/* A little surface tint keeps the paper in harmony with warm and cool page palettes. */
 :root {
-  --drawing-background: #f2f2f2;
+  --drawing-paper: #f2f2f2;
+  --drawing-background: color-mix(in srgb, var(--drawing-paper) 80%, var(--surface));
 }
 :root[data-theme='dark'] {
-  --drawing-background: #202020;
+  --drawing-paper: #202020;
 }
 .ink-colours {
   display: inline-flex;
@@ -832,58 +947,54 @@ footer a {
 }
 
 .topic-cards {
-  container-type: inline-size;
+  /* Compact cards fit in pairs on phones; their shared gap also determines the width cap. */
+  --topic-card-width: 9.375rem;
+  --topic-card-gap: 1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: start;
-  gap: 1rem;
+  justify-content: center;
+  gap: var(--topic-card-gap);
 }
 .topic-card {
+  min-width: 140px;
   border: 2px solid color-mix(in srgb, var(--surface) 65%, var(--control-border));
   background: linear-gradient(
     145deg,
     color-mix(in srgb, var(--surface) 96%, var(--main)),
     color-mix(in srgb, var(--surface) 90%, var(--main))
   );
-  flex: 0 1 20rem;
-  min-width: 0;
+  --card-padding: 0.75rem;
+  flex: 0 0 min(var(--topic-card-width), calc((100% - var(--topic-card-gap)) / 2));
   display: block;
   color: var(--text);
   text-decoration: none;
 }
 .topic-card h3 {
   margin-top: 0;
+  font-size: 1rem;
+  line-height: 1.35;
 }
 .topic-card:hover {
   border-color: var(--accent);
 }
 .topic-example {
   margin-bottom: 0;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 600;
 }
 
-@container (min-width: 28rem) {
-  .topic-card {
-    flex-basis: 13rem;
+/* Larger phones have room for 180px previews; the shared width cap still preserves pairs. */
+@variant viewport-small {
+  .topic-cards {
+    --topic-card-width: 11.25rem;
   }
 }
 
-@media (max-width: 480px) {
-  .topic-card {
-    flex-basis: 100%;
-  }
-}
-
-/* The panel's available width, including an open reference, controls the question grid. */
-@container (min-width: 780px) {
+/* A sufficiently wide question panel can display three question columns. */
+@variant @question-three-columns {
   .question-list {
     --question-columns: 3;
-  }
-}
-@container (max-width: 480px) {
-  .question-list {
-    --question-columns: 1;
   }
 }
 .question-workspace {
@@ -912,7 +1023,8 @@ footer a {
   --card-padding: 0px;
   position: static;
 }
-@container (max-width: 650px) {
+/* Stack answers and working when their shared panel is too narrow for both. */
+@variant @max-question-working-columns {
   .question-workspace {
     grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
@@ -962,14 +1074,26 @@ footer a {
   margin-inline-start: 1.5rem;
 }
 .topic-solution {
+  container-type: inline-size;
   margin-top: 1rem;
 }
 .topic-solution .balance {
-  font-size: 0.9rem;
+  /* Like SVG viewBox diagrams, scale all working geometry with the preview width. */
+  font-size: 10cqi;
   width: 100%;
+  margin-block: 0.625em;
+}
+.topic-solution .balance tr.op {
+  font-size: inherit;
+}
+.topic-solution .balance .equals {
+  width: 1em;
+}
+.topic-solution .balance .equation-divider {
+  background-size: 0.1em var(--guide-height, 100%);
 }
 .topic-solution .balance td {
-  padding: 0.25rem 0.2rem;
+  padding: 0.25em 0.2em;
 }
 .topic-solution .arithmetic-working p {
   font-size: 0.9rem;
@@ -984,19 +1108,42 @@ footer a {
 }
 .learning-steps {
   --chevron-depth: 0.6rem;
+  --chevron-divider-width: 2px;
+  --chevron-border-width: 1px;
   display: flex;
-  flex-wrap: nowrap;
-  gap: 0;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.3rem;
   margin: 0;
 }
+.stage-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Cancel the first segment's negative notch margin on each wrapped row. */
+.stage-row:not(:first-child) {
+  padding-inline-start: var(--chevron-depth);
+}
+/* The helper groups by minimum phrase width; flexbox fits the complete labels within each row. */
+.learning-steps.sized .stage-row {
+  flex-wrap: nowrap;
+}
+.stage-row:first-child .action-button {
+  flex-grow: 1;
+}
 .learning-steps .action-button {
-  flex: 1 1 0;
-  min-width: 0;
+  position: relative;
+  /* Natural widths may shrink to two label lines within their measured row. */
+  flex: 0 1 auto;
+  min-width: min-content;
   min-height: 4.5rem;
-  margin: 0 0 0 -0.55rem;
-  padding: 0.6rem 0.8rem 0.6rem 1.1rem;
+  /* Match the adjoining notch exactly; a positive seam exposes the page background. */
+  margin: 0 0 0 calc(-1 * var(--chevron-depth));
+  padding: 0.6rem calc(var(--chevron-depth) + 0.5rem);
   border-radius: 0;
-  font-size: 0.85rem;
+  border-width: var(--chevron-border-width);
+  /* 15px labels at the agreed 16px root, scaling with root text size. */
+  font-size: 0.9375rem;
   line-height: 1.3;
   clip-path: polygon(
     0 0,
@@ -1007,13 +1154,46 @@ footer a {
     var(--chevron-depth) 50%
   );
 }
+.stage-label > span {
+  white-space: nowrap;
+}
+/* Paint both diagonal edges, including the exposed notch when navigation wraps. */
+.learning-steps .action-button:not(.first-stage)::before,
+.learning-steps .action-button:not(.last-stage)::after {
+  content: '';
+  position: absolute;
+  /* Absolute positioning starts inside the border; align this polygon with the outer clip. */
+  inset: calc(-1 * var(--chevron-border-width));
+  pointer-events: none;
+  background: var(--line);
+}
+.learning-steps .action-button:not(.first-stage)::before {
+  clip-path: polygon(
+    0 0,
+    var(--chevron-border-width) 0,
+    calc(var(--chevron-depth) + var(--chevron-border-width)) 50%,
+    var(--chevron-border-width) 100%,
+    0 100%,
+    var(--chevron-depth) 50%
+  );
+}
+.learning-steps .action-button:not(.last-stage)::after {
+  clip-path: polygon(
+    calc(100% - var(--chevron-depth) - var(--chevron-divider-width)) 0,
+    calc(100% - var(--chevron-depth)) 0,
+    100% 50%,
+    calc(100% - var(--chevron-depth)) 100%,
+    calc(100% - var(--chevron-depth) - var(--chevron-divider-width)) 100%,
+    calc(100% - var(--chevron-divider-width)) 50%
+  );
+}
 .learning-steps .earlier-stage {
   background: color-mix(in srgb, var(--surface) 92%, var(--main));
 }
-.learning-steps .action-button:first-child {
+.learning-steps .action-button.first-stage {
   margin-left: 0;
   padding-left: 0.6rem;
-  border-radius: 10px 0 0 10px;
+  border-radius: var(--radius-selector) 0 0 var(--radius-selector);
   clip-path: polygon(
     0 0,
     calc(100% - var(--chevron-depth)) 0,
@@ -1022,8 +1202,8 @@ footer a {
     0 100%
   );
 }
-.learning-steps .action-button:last-child {
-  border-radius: 0 10px 10px 0;
+.learning-steps .action-button.last-stage {
+  border-radius: 0 var(--radius-selector) var(--radius-selector) 0;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, var(--chevron-depth) 50%);
 }
 .learning-steps .action-button:focus-visible {
@@ -1036,7 +1216,13 @@ footer a {
   max-width: 100%;
   text-align: left;
 }
-@media (min-width: 768px) {
+/* Place compact progress beside the stage navigation when the viewport has room. */
+@variant viewport-medium {
+  /* Cap stage navigation at 780px without narrowing the mobile first row. */
+  .learning-steps {
+    width: 100%;
+    max-width: 48.75rem;
+  }
   .learning-header:has(.progress-card) {
     grid-template-columns: minmax(0, 1fr) minmax(0, clamp(10rem, 20vw, 16rem));
   }
@@ -1045,26 +1231,19 @@ footer a {
     margin-block-start: -2.5em;
   }
 }
-@media (min-width: 1024px) {
+/* Use longer progress meters where the wider header can accommodate them. */
+@variant viewport-large {
   .progress-card {
     --meter-width: 6rem;
   }
 }
-@media (width < 678px) {
+/* Keep progress compact beneath navigation by using a wrapping horizontal strip. */
+@variant max-viewport-progress-grid {
   .learning-header .progress-card {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     gap: 0.35rem 0.75rem;
-  }
-}
-@media (max-width: 479px) {
-  .learning-steps {
-    flex-wrap: wrap;
-    row-gap: 0.3rem;
-  }
-  .learning-steps .action-button {
-    flex-basis: 30%;
   }
 }
 .drawing-surface {
@@ -1080,4 +1259,14 @@ footer a {
 
 .working .working-field {
   margin-top: 1rem;
+}
+
+/* One navigation menu is shared by every route, with optional contextual actions. */
+.site-menu,
+.site-menu-links {
+  display: grid;
+  gap: var(--control-gap);
+}
+.site-menu-links {
+  margin: 0;
 }

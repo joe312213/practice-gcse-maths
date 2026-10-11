@@ -1,3 +1,15 @@
+<!--
+  Purpose: Show prerequisite-ordered topic previews and forward old query links to topic routes.
+
+  Main contents:
+  - Topic cards; legacy-link forwarding.
+
+  Used By: SvelteKit root route.
+
+  Uses: topic-routes.mjs; ArithmeticWorking, EquationWorking, SiteHeader and SiteFooter.
+
+  Libs: Svelte (mount lifecycle); $app/navigation and $app/paths (base-aware navigation).
+-->
 <script>
   import ArithmeticWorking from '#lib/components/teaching/ArithmeticWorking.svelte';
   import EquationWorking from '#lib/components/teaching/EquationWorking.svelte';

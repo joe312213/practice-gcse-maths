@@ -361,22 +361,105 @@ test("export reminders become due at ten days, persist per learner and reset onl
   assert.equal(backupStatus(learner(), now).due, false);
 });
 
-test('initial assessment is reported separately without seeding practice success', () => {
-  const profile = { topics: { 'maths:M10': { tracks: {}, pages: {}, history: Array.from({ length: 4 }, (_, i) => ({ attempt: 'baseline', type: 'assessment', level: i < 2 ? 0 : i - 1, correct: i < 3, assisted: false, at: 100 + i })) } } };
-  const row = topicProgress(profile, catalogue, 200).find((item) => item.topic.bank === 'M10');
-  assert.deepEqual(row.baseline, { answered: 4, correct: 3, at: 103, size: 4, complete: true });
+test("initial assessment is reported separately without seeding practice success", () => {
+  const profile = {
+    topics: {
+      "maths:M10": {
+        tracks: {},
+        pages: {},
+        history: Array.from({ length: 4 }, (_, i) => ({
+          attempt: "baseline",
+          type: "assessment",
+          level: i < 2 ? 0 : i - 1,
+          correct: i < 3,
+          assisted: false,
+          at: 100 + i,
+        })),
+      },
+    },
+  };
+  const row = topicProgress(profile, catalogue, 200).find(
+    (item) => item.topic.bank === "M10",
+  );
+  assert.deepEqual(row.baseline, {
+    answered: 4,
+    correct: 3,
+    at: 103,
+    size: 4,
+    complete: true,
+  });
   assert.equal(row.rate, null);
   assert.equal(row.missing, true);
 });
 
-
-test('six-question assessment stays partial at four; old four-question baseline stays complete', () => {
+test("six-question assessment stays partial at four; old four-question baseline stays complete", () => {
   const p = learner();
-  const history = p.topics['maths:M10'].history;
-  for (let i = 0; i < 4; i++) history.push({ attempt: 'new', question: String(i), type: 'assessment', level: 0, correct: true, assisted: false, pageSize: 6, at: now + i });
+  const history = p.topics["maths:M10"].history;
+  for (let i = 0; i < 4; i++)
+    history.push({
+      attempt: "new",
+      question: String(i),
+      type: "assessment",
+      level: 0,
+      correct: true,
+      assisted: false,
+      pageSize: 6,
+      at: now + i,
+    });
   assert.equal(topicProgress(p, catalogue, now)[0].baseline.complete, false);
-  for (let i = 4; i < 6; i++) history.push({ ...history[0], question: String(i), at: now + i });
+  for (let i = 4; i < 6; i++)
+    history.push({ ...history[0], question: String(i), at: now + i });
   assert.equal(topicProgress(p, catalogue, now)[0].baseline.complete, true);
-  history.forEach(item => { item.pageSize = 12; item.type = 'plain'; });
-  assert.equal(parseProgress(exportProgress(p, now)).topics['maths:M10'].history[0].pageSize, 12);
+  history.forEach((item) => {
+    item.pageSize = 12;
+    item.type = "plain";
+  });
+  assert.equal(
+    parseProgress(exportProgress(p, now)).topics["maths:M10"].history[0]
+      .pageSize,
+    12,
+  );
+});
+
+test("a saved backup start avoids reading answer history", () => {
+  const profile = {
+    backup: { since: 123 },
+    topics: {
+      example: {
+        get history() {
+          throw Error("Saved start should bypass history");
+        },
+      },
+    },
+  };
+  assert.equal(backupStatus(profile, 456).since, 123);
+});
+
+test("baseline grouping retains chronological attempt order and skips incomplete attempts", () => {
+  const p = learner();
+  const records = [
+    { attempt: "partial", at: 1, correct: false },
+    { attempt: "later", at: 5, correct: false },
+    { attempt: "first-complete", at: 3, correct: true },
+    { attempt: "first-complete", at: 2, correct: true },
+    { attempt: "later", at: 4, correct: false },
+  ].map((item) => ({ ...item, type: "assessment", level: 0, pageSize: 2 }));
+  p.topics[`maths:${catalogue.topics[0].bank}`] = {
+    history: records,
+    tracks: {},
+    pages: {},
+  };
+  const before = structuredClone(records);
+  assert.deepEqual(topicProgress(p, catalogue, now)[0].baseline, {
+    answered: 2,
+    correct: 2,
+    at: 3,
+    size: 2,
+    complete: true,
+  });
+  assert.deepEqual(
+    records,
+    before,
+    "aggregation cannot reorder durable history",
+  );
 });
