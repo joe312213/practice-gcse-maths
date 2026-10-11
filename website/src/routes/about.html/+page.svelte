@@ -35,10 +35,9 @@
     </p>
     <h2>How it is developed</h2>
     <p>
-      This is an agent-augmented development project: I set the teaching direction and reviewed a
-      sample of the material, with OpenAI Codex assisting with implementation, content preparation
-      and checks. Automated maths and behaviour tests are used alongside manual browser and visual
-      checks.
+      This is an agent-augmented development project: I develop specifications and harness related processes, UI design, review and update generated code, set the teaching direction, create and review a
+      sample of teaching content. The AI helps with planning, reviewing specs and mostly takes care of code implementation with close human-in-the-loop feedback and review, content preparation
+      and testing. Automated maths and behaviour tests are used alongside manual browser and visual checks.
     </p>
     <p>
       The site is still being developed. Checks support review; they do not imply that every topic
