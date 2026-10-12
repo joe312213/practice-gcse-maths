@@ -290,11 +290,10 @@
   {:else if !view.profile}
     <section class="card page-panel full">
       <p class="eyebrow"><a class="subject-link" href={resolve('/')}>Foundation maths</a></p>
-      <h1>{view.bank.title}</h1>
-      <p>
-        Practise multiplication, division and equations at your pace, with clear examples and
-        feedback on each answer.
-      </p>
+      <h1 class:draft-title={view.bank.draft}>
+        {view.bank.title}{#if view.bank.draft}<span class="draft-stamp">Draft</span>{/if}
+      </h1>
+      <p>Practise maths at your pace, with clear examples and feedback on each answer.</p>
       <button id="begin" class="action-button primary" onclick={() => (profileOpen = true)}
         >Choose your name to begin</button
       >
@@ -374,7 +373,9 @@
       {/snippet}
       {#snippet title()}
         <p class="eyebrow"><a class="subject-link" href={resolve('/')}>Foundation maths</a></p>
-        <h1>{view.bank.title}</h1>
+        <h1 class:draft-title={view.bank.draft}>
+          {view.bank.title}{#if view.bank.draft}<span class="draft-stamp">Draft</span>{/if}
+        </h1>
       {/snippet}
       {#snippet description()}
         <p>

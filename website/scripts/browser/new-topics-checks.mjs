@@ -10,6 +10,7 @@
  *
  * Libs: Node assertions, Playwright through shared support.
  */
+import { checkDraftTopics } from './draft-topics-checks.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import AxeBuilder from '@axe-core/playwright';
@@ -18,6 +19,7 @@ import puzzles from '../../vendor/puzzles/catalogue.js';
 import { createTestContext, artifacts, selectTopic } from './support.mjs';
 
 export async function checkNewTopics(browser, base) {
+  await checkDraftTopics(browser, base);
   const context = await createTestContext(browser, { viewport: { width: 390, height: 844 } });
   const page = await context.newPage(),
     errors = [];
@@ -55,18 +57,27 @@ export async function checkNewTopics(browser, base) {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(base);
     await page.getByRole('heading', { name: 'Choose a topic', exact: true }).waitFor();
-    assert.equal(await page.locator('.topic-card').count(), 3);
+    assert.equal(await page.locator('.topic-card').count(), foundationTopics.length);
     assert.equal(await page.getByRole('button', { name: 'Copy topic link' }).count(), 0);
     for (const topic of foundationTopics) {
       const bank = JSON.parse(
         await readFile(new URL(`../../static/data/${topic.file}.json`, import.meta.url)),
       );
       const card = page.locator('.topic-card').filter({ hasText: bank.title });
+      if (topic.bank === 'M15') assert.ok(await card.locator('.topic-example .fraction').count());
+      else
+        assert.equal(
+          await card.locator('.topic-example').innerText(),
+          bank.questions.find((q) => q.type === 'demo' && q.level === 1).q,
+        );
       assert.equal(
-        await card.locator('.topic-example').innerText(),
-        bank.questions.find((q) => q.type === 'demo' && q.level === 1).q,
+        await card
+          .locator(
+            '.topic-solution svg, .topic-solution table, .topic-solution .calculation-working',
+          )
+          .count(),
+        1,
       );
-      assert.equal(await card.locator('.topic-solution svg, .topic-solution table').count(), 1);
       const response = await context.request.get(`${base}${topicPath(topic.bank).slice(1)}`);
       assert.equal(response.status(), 200, 'Every topic exists on the static server');
     }
@@ -130,12 +141,13 @@ export async function checkNewTopics(browser, base) {
         'Equation spacing scales with its ink',
       );
       assert.ok(
-        layout.rows.every((row) => row.centred),
-        `Each topic row is centred at ${width}px`,
+        layout.widths.every((value) => Math.abs(value - layout.widths[0]) < 1),
+        'Masonry columns have equal widths',
       );
-      if (width >= 768) assert.equal(layout.rows.length, 1);
-      if (width >= 360)
-        assert.ok(layout.widths.every((value) => Math.abs(value - (width < 440 ? 150 : 180)) < 1));
+      const columns = await page
+        .locator('.topic-cards')
+        .evaluate((el) => getComputedStyle(el).columnWidth);
+      assert.notEqual(columns, 'auto', 'Native masonry columns are active');
       if ([360, 440, 480, 768, 1100].includes(width))
         await page.screenshot({ path: `${artifacts}/topic-home-${width}.png`, fullPage: true });
     }

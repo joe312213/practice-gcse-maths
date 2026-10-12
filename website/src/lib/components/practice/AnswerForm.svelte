@@ -55,7 +55,11 @@
       onchange={(errors) => ondraft({ errors })}
     />{/if}
   <label for="answer"
-    >{bank.method ? 'Answer' : `${mode === 'errors' ? 'Final correct value' : 'Value'} of x`}</label
+    >{bank.method
+      ? 'Answer'
+      : `${mode === 'errors' ? 'Final correct value' : 'Value'} of x`}{question.answerUnit
+      ? ` (${question.answerUnit})`
+      : ''}</label
   >
   <input
     id="answer"

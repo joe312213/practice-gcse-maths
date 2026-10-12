@@ -92,6 +92,13 @@ for (const arithmetic of banks.slice(1)) {
     }
   }
 }
+for (const name of ['signed-numbers', 'fractions', 'percentages', 'problems']) {
+  const draft = JSON.parse(await readFile(new URL(`../static/data/${name}.json`, import.meta.url)));
+  assert.equal(draft.questions.length, 171);
+  assert.ok(draft.draft);
+  for (const q of draft.questions) assert.ok(markAnswer(q.answer, q.answer).correct, q.id);
+  banks.push(draft);
+}
 for (const topic of catalogue.topics)
   for (const page of topic.pages) {
     assert.ok(page.slots.length > 0 && page.slots.length <= 15);

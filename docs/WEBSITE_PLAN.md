@@ -73,3 +73,14 @@ These are recorded engineering interpretations, not urgent approval gates. Prese
 - Distinguish manual level choice from demonstrated mastery in any future aggregate display.
 - Initial assessment currently gives immediate feedback and no automatic placement or enforced stage order. Placement criteria remain undefined.
 - Real host integration and profile rename/delete/reset remain unimplemented. Recorded history is retained; JSON progress export/import and CSV answer export are implemented.
+
+## Arithmetic problem-solving options
+
+Requested 12 October 2026. The authorised first slice is the Draft [M03 multiplication/division problems topic](../content/specs/M03.md), based on historical teaching material, with contextual rounding and linked calculations.
+
+Two later options need a teaching/navigation decision before implementation:
+
+- **Mixed arithmetic problems topic:** varied situations requiring students to choose among addition, subtraction, multiplication, division, percentages and ratio, including linked operations. Prerequisites should govern availability/order; do not signal the operation by grouping all questions of one type together.
+- **Application stage within topics:** contextual problems using that topic after numerical practice, with its own full pages, challenge bands, feedback and progress treatment. Decide whether it replaces or adds a stage, how timers and completion work, and whether mastered mixed questions belong in a separate topic too.
+
+These options may coexist, but avoid duplicating identical practice or fragmenting progress. Neither a new stage nor a general arithmetic topic is implemented or authorised by this note. Preserve existing stage IDs and saved progress when a later design is agreed.

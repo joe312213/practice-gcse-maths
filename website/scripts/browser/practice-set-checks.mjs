@@ -108,7 +108,7 @@ export async function checkPracticeSets(browser, base) {
     await page.getByRole('button', { name: 'Go', exact: true }).click();
     assert.deepEqual(
       (await state()).config.pages.map((p) => p.topic),
-      [0],
+      [0, 6],
     );
     await page.getByRole('button', { name: 'Leave Practice set', exact: true }).click();
     await input.fill('lattice');

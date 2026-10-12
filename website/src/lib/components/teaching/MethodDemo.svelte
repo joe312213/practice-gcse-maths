@@ -11,11 +11,18 @@
   Libs: none.
 -->
 <script>
+  import CalculationDemo from './CalculationDemo.svelte';
   import DemoPlayer from './DemoPlayer.svelte';
   import ArithmeticDemo from './ArithmeticDemo.svelte';
   let { bank, ...props } = $props();
 </script>
 
 {#key bank.topic}
-  {#if bank.method}<ArithmeticDemo {bank} {...props} />{:else}<DemoPlayer {bank} {...props} />{/if}
+  {#if bank.method === 'calculation'}<CalculationDemo
+      {bank}
+      {...props}
+    />{:else if bank.method}<ArithmeticDemo {bank} {...props} />{:else}<DemoPlayer
+      {bank}
+      {...props}
+    />{/if}
 {/key}

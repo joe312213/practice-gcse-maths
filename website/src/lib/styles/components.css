@@ -507,6 +507,9 @@ footer {
 }
 /* Keep native navigation controls and equation cells compact on phones. */
 @variant max-viewport-medium {
+  header {
+    padding-bottom: 12px;
+  }
   nav button {
     padding: 9px;
   }
@@ -972,14 +975,11 @@ footer a {
 }
 
 .topic-cards {
-  /* Compact cards fit in pairs on phones; their shared gap also determines the width cap. */
+  /* Native columns pack variable-height cards; DOM/keyboard order runs down each column. */
   --topic-card-width: 9.375rem;
   --topic-card-gap: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: start;
-  justify-content: center;
-  gap: var(--topic-card-gap);
+  column-width: var(--topic-card-width);
+  column-gap: var(--topic-card-gap);
 }
 .topic-card {
   min-width: 140px;
@@ -990,8 +990,11 @@ footer a {
     color-mix(in srgb, var(--surface) 90%, var(--main))
   );
   --card-padding: 0.75rem;
-  flex: 0 0 min(var(--topic-card-width), calc((100% - var(--topic-card-gap)) / 2));
-  display: block;
+  display: inline-block;
+  width: 100%;
+  margin-block-end: var(--topic-card-gap);
+  break-inside: avoid;
+  position: relative;
   color: var(--text);
   text-decoration: none;
 }
@@ -1212,4 +1215,43 @@ footer a {
     max-width: calc(100% - 0.4rem);
     margin-inline: 0.2rem;
   }
+}
+
+/* Draft status sits outside normal flow, without changing card/title geometry. */
+.draft-title {
+  position: relative;
+}
+.draft-stamp {
+  position: absolute;
+  inset-inline-end: 0.35rem;
+  top: -0.8rem;
+  padding: 0.08rem 0.3rem;
+  border: 2px solid currentColor;
+  border-radius: 0.15rem;
+  color: var(--brand);
+  background: var(--surface);
+  font-family: inherit;
+  font-size: 0.65rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(-7deg);
+  pointer-events: none;
+}
+.selected-equation.word-question {
+  white-space: normal;
+  overflow-wrap: break-word;
+  font-size: 1.15rem;
+}
+.question-content .equation.word-question {
+  white-space: normal;
+  font-size: 1rem;
+}
+
+.question-list li.word-problem {
+  min-inline-size: min(100%, 14rem);
+}
+.word-problem .question-option {
+  min-inline-size: 0;
 }

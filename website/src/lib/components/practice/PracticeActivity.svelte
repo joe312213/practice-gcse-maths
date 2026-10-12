@@ -12,6 +12,8 @@
   Libs: svelte (component lifecycle and state), bits-ui (dialog/popover interaction).
 -->
 <script>
+  import MathText from '../teaching/MathText.svelte';
+  import CalculationWorking from '../teaching/CalculationWorking.svelte';
   import { onMount, tick } from 'svelte';
   import { Dialog } from 'bits-ui';
   import { LEVELS } from '#lib/domain/engine.mjs';
@@ -163,12 +165,17 @@
       <section id="active-question" aria-labelledby="active-question-title">
         <h3 id="active-question-title">Question {view.selected + 1}</h3>
         <div class="active-question-content">
-          <p class="selected-equation">{question.q}</p>
+          <p class="selected-equation" class:word-question={question.prose}>
+            <MathText text={question.q} />
+          </p>
           {#if question.instruction}<p>{question.instruction}</p>{/if}
           {#if view.mode === 'scaffolded'}<Guidance
               guidance={view.bank.teaching.guidance[question.level]}
             />{/if}
-          {#if view.mode === 'errors'}{#if question.errorImage}<img
+          {#if view.mode === 'errors'}{#if question.errorSteps}<CalculationWorking
+                {question}
+                steps={question.errorSteps}
+              />{:else if question.errorImage}<img
                 class="error-working-image"
                 src={asset(question.errorImage)}
                 alt={`Student working for ${question.q}, with a deliberate mistake. Stated answer: ${question.wrong}.`}

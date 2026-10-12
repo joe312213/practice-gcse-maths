@@ -11,6 +11,7 @@
   Libs: none.
 -->
 <script>
+  import MathText from '../teaching/MathText.svelte';
   import { LEVELS } from '#lib/domain/engine.mjs';
   let { bank, page, selected, onselect, assessment = false } = $props();
 </script>
@@ -19,7 +20,7 @@
   {#each page.items as item, index (item.id)}
     {@const question = bank.questions.find((q) => q.id === item.id)}
     {@const response = page.responses[item.id]}
-    <li>
+    <li class:word-problem={question.prose}>
       <button
         type="button"
         data-question={index}
@@ -34,9 +35,9 @@
       >
         <span class="num" aria-hidden="true">{index + 1}</span>
         <span class="question-content"
-          ><span class="equation">{question.q}</span>{#if item.promoted}<span class="level-tag"
-              >Now {LEVELS[item.level]}</span
-            >{/if}</span
+          ><span class="equation" class:word-question={question.prose}
+            ><MathText text={question.q} /></span
+          >{#if item.promoted}<span class="level-tag">Now {LEVELS[item.level]}</span>{/if}</span
         >
         <span class="question-outcome" aria-hidden="true"
           >{response ? (response.correct ? '✓' : '✕') : ''}</span

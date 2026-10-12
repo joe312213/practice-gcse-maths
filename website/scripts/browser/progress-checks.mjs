@@ -24,7 +24,8 @@ import { progressFilename } from '../../src/lib/domain/profiles.mjs';
  */
 export async function checkProgress(browser, base) {
   const context = await createTestContext(browser, { viewport: { width: 390, height: 844 } });
-  const page = await context.newPage();
+  let page = await context.newPage();
+  let freshContext;
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
   try {
@@ -481,16 +482,30 @@ export async function checkProgress(browser, base) {
       (filename) => sessionStorage.setItem('test-progress-file', filename),
       learnerFile,
     );
-    // A learner arriving on a new computer can open their file without first creating a browser profile.
-    await page.getByRole('heading', { name: 'Your progress', exact: true }).waitFor();
-    await page.evaluate(() => localStorage.removeItem('maths-practice-v2'));
-    await page.reload();
-    await page.evaluate(async () => {
+    // A genuinely separate browser store models a new computer. Clearing a live store can
+    // race with outstanding autosaves and recreate the old learner before the import.
+    const portable = await page.evaluate(async (filename) => {
       const root = await navigator.storage.getDirectory();
       const folder = await root.getDirectoryHandle('Maths');
-      const handle = await folder.getFileHandle(sessionStorage.getItem('test-progress-file'));
-      window.showOpenFilePicker = async () => [handle];
-    });
+      return (await (await folder.getFileHandle(filename)).getFile()).text();
+    }, learnerFile);
+    freshContext = await createTestContext(browser, { viewport: { width: 390, height: 844 } });
+    page = await freshContext.newPage();
+    page.on('pageerror', (error) => errors.push(error.message));
+    await page.clock.install({ time: new Date(2026, 9, 10, 12) });
+    await page.goto(`${base}progress.html`);
+    await page.getByRole('button', { name: 'Open progress file', exact: true }).waitFor();
+    await page.evaluate(
+      async ({ filename, raw }) => {
+        const root = await navigator.storage.getDirectory();
+        const handle = await root.getFileHandle(filename, { create: true });
+        const writer = await handle.createWritable();
+        await writer.write(raw);
+        await writer.close();
+        window.showOpenFilePicker = async () => [handle];
+      },
+      { filename: learnerFile, raw: portable },
+    );
     await page.getByRole('button', { name: 'Open progress file', exact: true }).click();
     await page.getByRole('button', { name: 'Confirm import', exact: true }).click();
     await page.getByText(/Progress imported/).waitFor();
@@ -555,6 +570,7 @@ export async function checkProgress(browser, base) {
     await page.screenshot({ path: `${artifacts}/progress-failure.png`, fullPage: true });
     throw error;
   } finally {
+    await freshContext?.close();
     await context.close();
   }
 }

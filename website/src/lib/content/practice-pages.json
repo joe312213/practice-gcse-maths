@@ -276,6 +276,490 @@
       "tags": ["divide", "dividing", "short division"]
     },
     {
+      "code": 6,
+      "bank": "M03",
+      "title": "Multiplication and division problems",
+      "pages": [
+        {
+          "type": 0,
+          "level": 0,
+          "slots": [
+            [
+              "maths:M03-S04-C1-Q1",
+              "maths:M03-S04-C1-Q2",
+              "maths:M03-S04-C1-Q3",
+              "maths:M03-S04-C1-Q4",
+              "maths:M03-S04-C1-Q5",
+              "maths:M03-S04-C1-Q6"
+            ],
+            [
+              "maths:M03-S05-C1-Q1",
+              "maths:M03-S05-C1-Q2",
+              "maths:M03-S05-C1-Q3",
+              "maths:M03-S05-C1-Q4",
+              "maths:M03-S05-C1-Q5",
+              "maths:M03-S05-C1-Q6"
+            ],
+            [
+              "maths:M03-S06-C1-Q1",
+              "maths:M03-S06-C1-Q2",
+              "maths:M03-S06-C1-Q3",
+              "maths:M03-S06-C1-Q4",
+              "maths:M03-S06-C1-Q5",
+              "maths:M03-S06-C1-Q6"
+            ],
+            [
+              "maths:M03-S07-C1-Q1",
+              "maths:M03-S07-C1-Q2",
+              "maths:M03-S07-C1-Q3",
+              "maths:M03-S07-C1-Q4",
+              "maths:M03-S07-C1-Q5",
+              "maths:M03-S07-C1-Q6"
+            ],
+            [
+              "maths:M03-WEB-PLAIN-C1-Q1",
+              "maths:M03-WEB-PLAIN-C1-Q2",
+              "maths:M03-WEB-PLAIN-C1-Q3",
+              "maths:M03-WEB-PLAIN-C1-Q4",
+              "maths:M03-WEB-PLAIN-C1-Q5",
+              "maths:M03-WEB-PLAIN-C1-Q6"
+            ],
+            [
+              "maths:M03-WEB-PLAIN-C1-Q7",
+              "maths:M03-WEB-PLAIN-C1-Q8",
+              "maths:M03-WEB-PLAIN-C1-Q9",
+              "maths:M03-WEB-PLAIN-C1-Q10",
+              "maths:M03-WEB-PLAIN-C1-Q11",
+              "maths:M03-WEB-PLAIN-C1-Q12"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 0,
+          "slots": [
+            [
+              "maths:M03-SE-C1-Q1",
+              "maths:M03-SE-C1-Q2",
+              "maths:M03-SE-C1-Q3",
+              "maths:M03-WEB-ERRORS-C1-Q4"
+            ],
+            [
+              "maths:M03-WEB-ERRORS-C1-Q5",
+              "maths:M03-WEB-ERRORS-C1-Q6",
+              "maths:M03-WEB-ERRORS-C1-Q7",
+              "maths:M03-WEB-ERRORS-C1-Q8"
+            ],
+            [
+              "maths:M03-WEB-ERRORS-C1-Q9",
+              "maths:M03-WEB-ERRORS-C1-Q10",
+              "maths:M03-WEB-ERRORS-C1-Q11",
+              "maths:M03-WEB-ERRORS-C1-Q12"
+            ]
+          ]
+        },
+        {
+          "type": 0,
+          "level": 1,
+          "slots": [
+            [
+              "maths:M03-S04-C2-Q1",
+              "maths:M03-S04-C2-Q2",
+              "maths:M03-S04-C2-Q3",
+              "maths:M03-S04-C2-Q4",
+              "maths:M03-S04-C2-Q5",
+              "maths:M03-S04-C2-Q6"
+            ],
+            [
+              "maths:M03-S05-C2-Q1",
+              "maths:M03-S05-C2-Q2",
+              "maths:M03-S05-C2-Q3",
+              "maths:M03-S05-C2-Q4",
+              "maths:M03-S05-C2-Q5",
+              "maths:M03-S05-C2-Q6"
+            ],
+            [
+              "maths:M03-S06-C2-Q1",
+              "maths:M03-S06-C2-Q2",
+              "maths:M03-S06-C2-Q3",
+              "maths:M03-S06-C2-Q4",
+              "maths:M03-S06-C2-Q5",
+              "maths:M03-S06-C2-Q6"
+            ],
+            [
+              "maths:M03-S07-C2-Q1",
+              "maths:M03-S07-C2-Q2",
+              "maths:M03-S07-C2-Q3",
+              "maths:M03-S07-C2-Q4",
+              "maths:M03-S07-C2-Q5",
+              "maths:M03-S07-C2-Q6"
+            ],
+            [
+              "maths:M03-WEB-PLAIN-C2-Q1",
+              "maths:M03-WEB-PLAIN-C2-Q2",
+              "maths:M03-WEB-PLAIN-C2-Q3",
+              "maths:M03-WEB-PLAIN-C2-Q4",
+              "maths:M03-WEB-PLAIN-C2-Q5",
+              "maths:M03-WEB-PLAIN-C2-Q6"
+            ],
+            [
+              "maths:M03-WEB-PLAIN-C2-Q7",
+              "maths:M03-WEB-PLAIN-C2-Q8",
+              "maths:M03-WEB-PLAIN-C2-Q9",
+              "maths:M03-WEB-PLAIN-C2-Q10",
+              "maths:M03-WEB-PLAIN-C2-Q11",
+              "maths:M03-WEB-PLAIN-C2-Q12"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 1,
+          "slots": [
+            [
+              "maths:M03-SE-C2-Q1",
+              "maths:M03-SE-C2-Q2",
+              "maths:M03-SE-C2-Q3",
+              "maths:M03-WEB-ERRORS-C2-Q4"
+            ],
+            [
+              "maths:M03-WEB-ERRORS-C2-Q5",
+              "maths:M03-WEB-ERRORS-C2-Q6",
+              "maths:M03-WEB-ERRORS-C2-Q7",
+              "maths:M03-WEB-ERRORS-C2-Q8"
+            ],
+            [
+              "maths:M03-WEB-ERRORS-C2-Q9",
+              "maths:M03-WEB-ERRORS-C2-Q10",
+              "maths:M03-WEB-ERRORS-C2-Q11",
+              "maths:M03-WEB-ERRORS-C2-Q12"
+            ]
+          ]
+        },
+        {
+          "type": 0,
+          "level": 2,
+          "slots": [
+            [
+              "maths:M03-S04-C3-Q1",
+              "maths:M03-S04-C3-Q2",
+              "maths:M03-S04-C3-Q3",
+              "maths:M03-S04-C3-Q4",
+              "maths:M03-S04-C3-Q5",
+              "maths:M03-S04-C3-Q6"
+            ],
+            [
+              "maths:M03-S05-C3-Q1",
+              "maths:M03-S05-C3-Q2",
+              "maths:M03-S05-C3-Q3",
+              "maths:M03-S05-C3-Q4",
+              "maths:M03-S05-C3-Q5",
+              "maths:M03-S05-C3-Q6"
+            ],
+            [
+              "maths:M03-S06-C3-Q1",
+              "maths:M03-S06-C3-Q2",
+              "maths:M03-S06-C3-Q3",
+              "maths:M03-S06-C3-Q4",
+              "maths:M03-S06-C3-Q5",
+              "maths:M03-S06-C3-Q6"
+            ],
+            [
+              "maths:M03-S07-C3-Q1",
+              "maths:M03-S07-C3-Q2",
+              "maths:M03-S07-C3-Q3",
+              "maths:M03-S07-C3-Q4",
+              "maths:M03-S07-C3-Q5",
+              "maths:M03-S07-C3-Q6"
+            ],
+            [
+              "maths:M03-WEB-PLAIN-C3-Q1",
+              "maths:M03-WEB-PLAIN-C3-Q2",
+              "maths:M03-WEB-PLAIN-C3-Q3",
+              "maths:M03-WEB-PLAIN-C3-Q4",
+              "maths:M03-WEB-PLAIN-C3-Q5",
+              "maths:M03-WEB-PLAIN-C3-Q6"
+            ],
+            [
+              "maths:M03-WEB-PLAIN-C3-Q7",
+              "maths:M03-WEB-PLAIN-C3-Q8",
+              "maths:M03-WEB-PLAIN-C3-Q9",
+              "maths:M03-WEB-PLAIN-C3-Q10",
+              "maths:M03-WEB-PLAIN-C3-Q11",
+              "maths:M03-WEB-PLAIN-C3-Q12"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 2,
+          "slots": [
+            [
+              "maths:M03-SE-C3-Q1",
+              "maths:M03-SE-C3-Q2",
+              "maths:M03-SE-C3-Q3",
+              "maths:M03-WEB-ERRORS-C3-Q4"
+            ],
+            [
+              "maths:M03-WEB-ERRORS-C3-Q5",
+              "maths:M03-WEB-ERRORS-C3-Q6",
+              "maths:M03-WEB-ERRORS-C3-Q7",
+              "maths:M03-WEB-ERRORS-C3-Q8"
+            ],
+            [
+              "maths:M03-WEB-ERRORS-C3-Q9",
+              "maths:M03-WEB-ERRORS-C3-Q10",
+              "maths:M03-WEB-ERRORS-C3-Q11",
+              "maths:M03-WEB-ERRORS-C3-Q12"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "bank": "M13",
+      "title": "Signed addition and subtraction",
+      "draft": true,
+      "tags": ["negative", "signed", "addition", "subtraction"],
+      "pages": [
+        {
+          "type": 0,
+          "level": 0,
+          "slots": [
+            [
+              "maths:M13-WEB-PLAIN-C1-Q1",
+              "maths:M13-WEB-PLAIN-C1-Q2",
+              "maths:M13-WEB-PLAIN-C1-Q3",
+              "maths:M13-WEB-PLAIN-C1-Q4",
+              "maths:M13-WEB-PLAIN-C1-Q5",
+              "maths:M13-WEB-PLAIN-C1-Q6"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C1-Q7",
+              "maths:M13-WEB-PLAIN-C1-Q8",
+              "maths:M13-WEB-PLAIN-C1-Q9",
+              "maths:M13-WEB-PLAIN-C1-Q10",
+              "maths:M13-WEB-PLAIN-C1-Q11",
+              "maths:M13-WEB-PLAIN-C1-Q12"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C1-Q13",
+              "maths:M13-WEB-PLAIN-C1-Q14",
+              "maths:M13-WEB-PLAIN-C1-Q15",
+              "maths:M13-WEB-PLAIN-C1-Q16",
+              "maths:M13-WEB-PLAIN-C1-Q17",
+              "maths:M13-WEB-PLAIN-C1-Q18"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C1-Q19",
+              "maths:M13-WEB-PLAIN-C1-Q20",
+              "maths:M13-WEB-PLAIN-C1-Q21",
+              "maths:M13-WEB-PLAIN-C1-Q22",
+              "maths:M13-WEB-PLAIN-C1-Q23",
+              "maths:M13-WEB-PLAIN-C1-Q24"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C1-Q25",
+              "maths:M13-WEB-PLAIN-C1-Q26",
+              "maths:M13-WEB-PLAIN-C1-Q27",
+              "maths:M13-WEB-PLAIN-C1-Q28",
+              "maths:M13-WEB-PLAIN-C1-Q29",
+              "maths:M13-WEB-PLAIN-C1-Q30"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C1-Q31",
+              "maths:M13-WEB-PLAIN-C1-Q32",
+              "maths:M13-WEB-PLAIN-C1-Q33",
+              "maths:M13-WEB-PLAIN-C1-Q34",
+              "maths:M13-WEB-PLAIN-C1-Q35",
+              "maths:M13-WEB-PLAIN-C1-Q36"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 0,
+          "slots": [
+            [
+              "maths:M13-WEB-ERRORS-C1-Q1",
+              "maths:M13-WEB-ERRORS-C1-Q2",
+              "maths:M13-WEB-ERRORS-C1-Q3",
+              "maths:M13-WEB-ERRORS-C1-Q4"
+            ],
+            [
+              "maths:M13-WEB-ERRORS-C1-Q5",
+              "maths:M13-WEB-ERRORS-C1-Q6",
+              "maths:M13-WEB-ERRORS-C1-Q7",
+              "maths:M13-WEB-ERRORS-C1-Q8"
+            ],
+            [
+              "maths:M13-WEB-ERRORS-C1-Q9",
+              "maths:M13-WEB-ERRORS-C1-Q10",
+              "maths:M13-WEB-ERRORS-C1-Q11",
+              "maths:M13-WEB-ERRORS-C1-Q12"
+            ]
+          ]
+        },
+        {
+          "type": 0,
+          "level": 1,
+          "slots": [
+            [
+              "maths:M13-WEB-PLAIN-C2-Q1",
+              "maths:M13-WEB-PLAIN-C2-Q2",
+              "maths:M13-WEB-PLAIN-C2-Q3",
+              "maths:M13-WEB-PLAIN-C2-Q4",
+              "maths:M13-WEB-PLAIN-C2-Q5",
+              "maths:M13-WEB-PLAIN-C2-Q6"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C2-Q7",
+              "maths:M13-WEB-PLAIN-C2-Q8",
+              "maths:M13-WEB-PLAIN-C2-Q9",
+              "maths:M13-WEB-PLAIN-C2-Q10",
+              "maths:M13-WEB-PLAIN-C2-Q11",
+              "maths:M13-WEB-PLAIN-C2-Q12"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C2-Q13",
+              "maths:M13-WEB-PLAIN-C2-Q14",
+              "maths:M13-WEB-PLAIN-C2-Q15",
+              "maths:M13-WEB-PLAIN-C2-Q16",
+              "maths:M13-WEB-PLAIN-C2-Q17",
+              "maths:M13-WEB-PLAIN-C2-Q18"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C2-Q19",
+              "maths:M13-WEB-PLAIN-C2-Q20",
+              "maths:M13-WEB-PLAIN-C2-Q21",
+              "maths:M13-WEB-PLAIN-C2-Q22",
+              "maths:M13-WEB-PLAIN-C2-Q23",
+              "maths:M13-WEB-PLAIN-C2-Q24"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C2-Q25",
+              "maths:M13-WEB-PLAIN-C2-Q26",
+              "maths:M13-WEB-PLAIN-C2-Q27",
+              "maths:M13-WEB-PLAIN-C2-Q28",
+              "maths:M13-WEB-PLAIN-C2-Q29",
+              "maths:M13-WEB-PLAIN-C2-Q30"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C2-Q31",
+              "maths:M13-WEB-PLAIN-C2-Q32",
+              "maths:M13-WEB-PLAIN-C2-Q33",
+              "maths:M13-WEB-PLAIN-C2-Q34",
+              "maths:M13-WEB-PLAIN-C2-Q35",
+              "maths:M13-WEB-PLAIN-C2-Q36"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 1,
+          "slots": [
+            [
+              "maths:M13-WEB-ERRORS-C2-Q1",
+              "maths:M13-WEB-ERRORS-C2-Q2",
+              "maths:M13-WEB-ERRORS-C2-Q3",
+              "maths:M13-WEB-ERRORS-C2-Q4"
+            ],
+            [
+              "maths:M13-WEB-ERRORS-C2-Q5",
+              "maths:M13-WEB-ERRORS-C2-Q6",
+              "maths:M13-WEB-ERRORS-C2-Q7",
+              "maths:M13-WEB-ERRORS-C2-Q8"
+            ],
+            [
+              "maths:M13-WEB-ERRORS-C2-Q9",
+              "maths:M13-WEB-ERRORS-C2-Q10",
+              "maths:M13-WEB-ERRORS-C2-Q11",
+              "maths:M13-WEB-ERRORS-C2-Q12"
+            ]
+          ]
+        },
+        {
+          "type": 0,
+          "level": 2,
+          "slots": [
+            [
+              "maths:M13-WEB-PLAIN-C3-Q1",
+              "maths:M13-WEB-PLAIN-C3-Q2",
+              "maths:M13-WEB-PLAIN-C3-Q3",
+              "maths:M13-WEB-PLAIN-C3-Q4",
+              "maths:M13-WEB-PLAIN-C3-Q5",
+              "maths:M13-WEB-PLAIN-C3-Q6"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C3-Q7",
+              "maths:M13-WEB-PLAIN-C3-Q8",
+              "maths:M13-WEB-PLAIN-C3-Q9",
+              "maths:M13-WEB-PLAIN-C3-Q10",
+              "maths:M13-WEB-PLAIN-C3-Q11",
+              "maths:M13-WEB-PLAIN-C3-Q12"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C3-Q13",
+              "maths:M13-WEB-PLAIN-C3-Q14",
+              "maths:M13-WEB-PLAIN-C3-Q15",
+              "maths:M13-WEB-PLAIN-C3-Q16",
+              "maths:M13-WEB-PLAIN-C3-Q17",
+              "maths:M13-WEB-PLAIN-C3-Q18"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C3-Q19",
+              "maths:M13-WEB-PLAIN-C3-Q20",
+              "maths:M13-WEB-PLAIN-C3-Q21",
+              "maths:M13-WEB-PLAIN-C3-Q22",
+              "maths:M13-WEB-PLAIN-C3-Q23",
+              "maths:M13-WEB-PLAIN-C3-Q24"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C3-Q25",
+              "maths:M13-WEB-PLAIN-C3-Q26",
+              "maths:M13-WEB-PLAIN-C3-Q27",
+              "maths:M13-WEB-PLAIN-C3-Q28",
+              "maths:M13-WEB-PLAIN-C3-Q29",
+              "maths:M13-WEB-PLAIN-C3-Q30"
+            ],
+            [
+              "maths:M13-WEB-PLAIN-C3-Q31",
+              "maths:M13-WEB-PLAIN-C3-Q32",
+              "maths:M13-WEB-PLAIN-C3-Q33",
+              "maths:M13-WEB-PLAIN-C3-Q34",
+              "maths:M13-WEB-PLAIN-C3-Q35",
+              "maths:M13-WEB-PLAIN-C3-Q36"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 2,
+          "slots": [
+            [
+              "maths:M13-WEB-ERRORS-C3-Q1",
+              "maths:M13-WEB-ERRORS-C3-Q2",
+              "maths:M13-WEB-ERRORS-C3-Q3",
+              "maths:M13-WEB-ERRORS-C3-Q4"
+            ],
+            [
+              "maths:M13-WEB-ERRORS-C3-Q5",
+              "maths:M13-WEB-ERRORS-C3-Q6",
+              "maths:M13-WEB-ERRORS-C3-Q7",
+              "maths:M13-WEB-ERRORS-C3-Q8"
+            ],
+            [
+              "maths:M13-WEB-ERRORS-C3-Q9",
+              "maths:M13-WEB-ERRORS-C3-Q10",
+              "maths:M13-WEB-ERRORS-C3-Q11",
+              "maths:M13-WEB-ERRORS-C3-Q12"
+            ]
+          ]
+        }
+      ]
+    },
+    {
       "code": 9,
       "bank": "M10",
       "title": "Solving equations",
@@ -418,6 +902,492 @@
         }
       ],
       "tags": ["equation", "algebra", "solve", "balance"]
+    },
+    {
+      "code": 4,
+      "bank": "M15",
+      "title": "Fraction addition and subtraction",
+      "draft": true,
+      "tags": ["fractions", "addition", "subtraction", "mixed"],
+      "pages": [
+        {
+          "type": 0,
+          "level": 0,
+          "slots": [
+            [
+              "maths:M15-WEB-PLAIN-C1-Q1",
+              "maths:M15-WEB-PLAIN-C1-Q2",
+              "maths:M15-WEB-PLAIN-C1-Q3",
+              "maths:M15-WEB-PLAIN-C1-Q4",
+              "maths:M15-WEB-PLAIN-C1-Q5",
+              "maths:M15-WEB-PLAIN-C1-Q6"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C1-Q7",
+              "maths:M15-WEB-PLAIN-C1-Q8",
+              "maths:M15-WEB-PLAIN-C1-Q9",
+              "maths:M15-WEB-PLAIN-C1-Q10",
+              "maths:M15-WEB-PLAIN-C1-Q11",
+              "maths:M15-WEB-PLAIN-C1-Q12"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C1-Q13",
+              "maths:M15-WEB-PLAIN-C1-Q14",
+              "maths:M15-WEB-PLAIN-C1-Q15",
+              "maths:M15-WEB-PLAIN-C1-Q16",
+              "maths:M15-WEB-PLAIN-C1-Q17",
+              "maths:M15-WEB-PLAIN-C1-Q18"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C1-Q19",
+              "maths:M15-WEB-PLAIN-C1-Q20",
+              "maths:M15-WEB-PLAIN-C1-Q21",
+              "maths:M15-WEB-PLAIN-C1-Q22",
+              "maths:M15-WEB-PLAIN-C1-Q23",
+              "maths:M15-WEB-PLAIN-C1-Q24"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C1-Q25",
+              "maths:M15-WEB-PLAIN-C1-Q26",
+              "maths:M15-WEB-PLAIN-C1-Q27",
+              "maths:M15-WEB-PLAIN-C1-Q28",
+              "maths:M15-WEB-PLAIN-C1-Q29",
+              "maths:M15-WEB-PLAIN-C1-Q30"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C1-Q31",
+              "maths:M15-WEB-PLAIN-C1-Q32",
+              "maths:M15-WEB-PLAIN-C1-Q33",
+              "maths:M15-WEB-PLAIN-C1-Q34",
+              "maths:M15-WEB-PLAIN-C1-Q35",
+              "maths:M15-WEB-PLAIN-C1-Q36"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 0,
+          "slots": [
+            [
+              "maths:M15-WEB-ERRORS-C1-Q1",
+              "maths:M15-WEB-ERRORS-C1-Q2",
+              "maths:M15-WEB-ERRORS-C1-Q3",
+              "maths:M15-WEB-ERRORS-C1-Q4"
+            ],
+            [
+              "maths:M15-WEB-ERRORS-C1-Q5",
+              "maths:M15-WEB-ERRORS-C1-Q6",
+              "maths:M15-WEB-ERRORS-C1-Q7",
+              "maths:M15-WEB-ERRORS-C1-Q8"
+            ],
+            [
+              "maths:M15-WEB-ERRORS-C1-Q9",
+              "maths:M15-WEB-ERRORS-C1-Q10",
+              "maths:M15-WEB-ERRORS-C1-Q11",
+              "maths:M15-WEB-ERRORS-C1-Q12"
+            ]
+          ]
+        },
+        {
+          "type": 0,
+          "level": 1,
+          "slots": [
+            [
+              "maths:M15-WEB-PLAIN-C2-Q1",
+              "maths:M15-WEB-PLAIN-C2-Q2",
+              "maths:M15-WEB-PLAIN-C2-Q3",
+              "maths:M15-WEB-PLAIN-C2-Q4",
+              "maths:M15-WEB-PLAIN-C2-Q5",
+              "maths:M15-WEB-PLAIN-C2-Q6"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C2-Q7",
+              "maths:M15-WEB-PLAIN-C2-Q8",
+              "maths:M15-WEB-PLAIN-C2-Q9",
+              "maths:M15-WEB-PLAIN-C2-Q10",
+              "maths:M15-WEB-PLAIN-C2-Q11",
+              "maths:M15-WEB-PLAIN-C2-Q12"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C2-Q13",
+              "maths:M15-WEB-PLAIN-C2-Q14",
+              "maths:M15-WEB-PLAIN-C2-Q15",
+              "maths:M15-WEB-PLAIN-C2-Q16",
+              "maths:M15-WEB-PLAIN-C2-Q17",
+              "maths:M15-WEB-PLAIN-C2-Q18"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C2-Q19",
+              "maths:M15-WEB-PLAIN-C2-Q20",
+              "maths:M15-WEB-PLAIN-C2-Q21",
+              "maths:M15-WEB-PLAIN-C2-Q22",
+              "maths:M15-WEB-PLAIN-C2-Q23",
+              "maths:M15-WEB-PLAIN-C2-Q24"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C2-Q25",
+              "maths:M15-WEB-PLAIN-C2-Q26",
+              "maths:M15-WEB-PLAIN-C2-Q27",
+              "maths:M15-WEB-PLAIN-C2-Q28",
+              "maths:M15-WEB-PLAIN-C2-Q29",
+              "maths:M15-WEB-PLAIN-C2-Q30"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C2-Q31",
+              "maths:M15-WEB-PLAIN-C2-Q32",
+              "maths:M15-WEB-PLAIN-C2-Q33",
+              "maths:M15-WEB-PLAIN-C2-Q34",
+              "maths:M15-WEB-PLAIN-C2-Q35",
+              "maths:M15-WEB-PLAIN-C2-Q36"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 1,
+          "slots": [
+            [
+              "maths:M15-WEB-ERRORS-C2-Q1",
+              "maths:M15-WEB-ERRORS-C2-Q2",
+              "maths:M15-WEB-ERRORS-C2-Q3",
+              "maths:M15-WEB-ERRORS-C2-Q4"
+            ],
+            [
+              "maths:M15-WEB-ERRORS-C2-Q5",
+              "maths:M15-WEB-ERRORS-C2-Q6",
+              "maths:M15-WEB-ERRORS-C2-Q7",
+              "maths:M15-WEB-ERRORS-C2-Q8"
+            ],
+            [
+              "maths:M15-WEB-ERRORS-C2-Q9",
+              "maths:M15-WEB-ERRORS-C2-Q10",
+              "maths:M15-WEB-ERRORS-C2-Q11",
+              "maths:M15-WEB-ERRORS-C2-Q12"
+            ]
+          ]
+        },
+        {
+          "type": 0,
+          "level": 2,
+          "slots": [
+            [
+              "maths:M15-WEB-PLAIN-C3-Q1",
+              "maths:M15-WEB-PLAIN-C3-Q2",
+              "maths:M15-WEB-PLAIN-C3-Q3",
+              "maths:M15-WEB-PLAIN-C3-Q4",
+              "maths:M15-WEB-PLAIN-C3-Q5",
+              "maths:M15-WEB-PLAIN-C3-Q6"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C3-Q7",
+              "maths:M15-WEB-PLAIN-C3-Q8",
+              "maths:M15-WEB-PLAIN-C3-Q9",
+              "maths:M15-WEB-PLAIN-C3-Q10",
+              "maths:M15-WEB-PLAIN-C3-Q11",
+              "maths:M15-WEB-PLAIN-C3-Q12"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C3-Q13",
+              "maths:M15-WEB-PLAIN-C3-Q14",
+              "maths:M15-WEB-PLAIN-C3-Q15",
+              "maths:M15-WEB-PLAIN-C3-Q16",
+              "maths:M15-WEB-PLAIN-C3-Q17",
+              "maths:M15-WEB-PLAIN-C3-Q18"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C3-Q19",
+              "maths:M15-WEB-PLAIN-C3-Q20",
+              "maths:M15-WEB-PLAIN-C3-Q21",
+              "maths:M15-WEB-PLAIN-C3-Q22",
+              "maths:M15-WEB-PLAIN-C3-Q23",
+              "maths:M15-WEB-PLAIN-C3-Q24"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C3-Q25",
+              "maths:M15-WEB-PLAIN-C3-Q26",
+              "maths:M15-WEB-PLAIN-C3-Q27",
+              "maths:M15-WEB-PLAIN-C3-Q28",
+              "maths:M15-WEB-PLAIN-C3-Q29",
+              "maths:M15-WEB-PLAIN-C3-Q30"
+            ],
+            [
+              "maths:M15-WEB-PLAIN-C3-Q31",
+              "maths:M15-WEB-PLAIN-C3-Q32",
+              "maths:M15-WEB-PLAIN-C3-Q33",
+              "maths:M15-WEB-PLAIN-C3-Q34",
+              "maths:M15-WEB-PLAIN-C3-Q35",
+              "maths:M15-WEB-PLAIN-C3-Q36"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 2,
+          "slots": [
+            [
+              "maths:M15-WEB-ERRORS-C3-Q1",
+              "maths:M15-WEB-ERRORS-C3-Q2",
+              "maths:M15-WEB-ERRORS-C3-Q3",
+              "maths:M15-WEB-ERRORS-C3-Q4"
+            ],
+            [
+              "maths:M15-WEB-ERRORS-C3-Q5",
+              "maths:M15-WEB-ERRORS-C3-Q6",
+              "maths:M15-WEB-ERRORS-C3-Q7",
+              "maths:M15-WEB-ERRORS-C3-Q8"
+            ],
+            [
+              "maths:M15-WEB-ERRORS-C3-Q9",
+              "maths:M15-WEB-ERRORS-C3-Q10",
+              "maths:M15-WEB-ERRORS-C3-Q11",
+              "maths:M15-WEB-ERRORS-C3-Q12"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": 5,
+      "bank": "M06",
+      "title": "Percentages and percentage change",
+      "draft": true,
+      "tags": ["percent", "percentage", "increase", "decrease"],
+      "pages": [
+        {
+          "type": 0,
+          "level": 0,
+          "slots": [
+            [
+              "maths:M06-WEB-PLAIN-C1-Q1",
+              "maths:M06-WEB-PLAIN-C1-Q2",
+              "maths:M06-WEB-PLAIN-C1-Q3",
+              "maths:M06-WEB-PLAIN-C1-Q4",
+              "maths:M06-WEB-PLAIN-C1-Q5",
+              "maths:M06-WEB-PLAIN-C1-Q6"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C1-Q7",
+              "maths:M06-WEB-PLAIN-C1-Q8",
+              "maths:M06-WEB-PLAIN-C1-Q9",
+              "maths:M06-WEB-PLAIN-C1-Q10",
+              "maths:M06-WEB-PLAIN-C1-Q11",
+              "maths:M06-WEB-PLAIN-C1-Q12"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C1-Q13",
+              "maths:M06-WEB-PLAIN-C1-Q14",
+              "maths:M06-WEB-PLAIN-C1-Q15",
+              "maths:M06-WEB-PLAIN-C1-Q16",
+              "maths:M06-WEB-PLAIN-C1-Q17",
+              "maths:M06-WEB-PLAIN-C1-Q18"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C1-Q19",
+              "maths:M06-WEB-PLAIN-C1-Q20",
+              "maths:M06-WEB-PLAIN-C1-Q21",
+              "maths:M06-WEB-PLAIN-C1-Q22",
+              "maths:M06-WEB-PLAIN-C1-Q23",
+              "maths:M06-WEB-PLAIN-C1-Q24"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C1-Q25",
+              "maths:M06-WEB-PLAIN-C1-Q26",
+              "maths:M06-WEB-PLAIN-C1-Q27",
+              "maths:M06-WEB-PLAIN-C1-Q28",
+              "maths:M06-WEB-PLAIN-C1-Q29",
+              "maths:M06-WEB-PLAIN-C1-Q30"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C1-Q31",
+              "maths:M06-WEB-PLAIN-C1-Q32",
+              "maths:M06-WEB-PLAIN-C1-Q33",
+              "maths:M06-WEB-PLAIN-C1-Q34",
+              "maths:M06-WEB-PLAIN-C1-Q35",
+              "maths:M06-WEB-PLAIN-C1-Q36"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 0,
+          "slots": [
+            [
+              "maths:M06-WEB-ERRORS-C1-Q1",
+              "maths:M06-WEB-ERRORS-C1-Q2",
+              "maths:M06-WEB-ERRORS-C1-Q3",
+              "maths:M06-WEB-ERRORS-C1-Q4"
+            ],
+            [
+              "maths:M06-WEB-ERRORS-C1-Q5",
+              "maths:M06-WEB-ERRORS-C1-Q6",
+              "maths:M06-WEB-ERRORS-C1-Q7",
+              "maths:M06-WEB-ERRORS-C1-Q8"
+            ],
+            [
+              "maths:M06-WEB-ERRORS-C1-Q9",
+              "maths:M06-WEB-ERRORS-C1-Q10",
+              "maths:M06-WEB-ERRORS-C1-Q11",
+              "maths:M06-WEB-ERRORS-C1-Q12"
+            ]
+          ]
+        },
+        {
+          "type": 0,
+          "level": 1,
+          "slots": [
+            [
+              "maths:M06-WEB-PLAIN-C2-Q1",
+              "maths:M06-WEB-PLAIN-C2-Q2",
+              "maths:M06-WEB-PLAIN-C2-Q3",
+              "maths:M06-WEB-PLAIN-C2-Q4",
+              "maths:M06-WEB-PLAIN-C2-Q5",
+              "maths:M06-WEB-PLAIN-C2-Q6"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C2-Q7",
+              "maths:M06-WEB-PLAIN-C2-Q8",
+              "maths:M06-WEB-PLAIN-C2-Q9",
+              "maths:M06-WEB-PLAIN-C2-Q10",
+              "maths:M06-WEB-PLAIN-C2-Q11",
+              "maths:M06-WEB-PLAIN-C2-Q12"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C2-Q13",
+              "maths:M06-WEB-PLAIN-C2-Q14",
+              "maths:M06-WEB-PLAIN-C2-Q15",
+              "maths:M06-WEB-PLAIN-C2-Q16",
+              "maths:M06-WEB-PLAIN-C2-Q17",
+              "maths:M06-WEB-PLAIN-C2-Q18"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C2-Q19",
+              "maths:M06-WEB-PLAIN-C2-Q20",
+              "maths:M06-WEB-PLAIN-C2-Q21",
+              "maths:M06-WEB-PLAIN-C2-Q22",
+              "maths:M06-WEB-PLAIN-C2-Q23",
+              "maths:M06-WEB-PLAIN-C2-Q24"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C2-Q25",
+              "maths:M06-WEB-PLAIN-C2-Q26",
+              "maths:M06-WEB-PLAIN-C2-Q27",
+              "maths:M06-WEB-PLAIN-C2-Q28",
+              "maths:M06-WEB-PLAIN-C2-Q29",
+              "maths:M06-WEB-PLAIN-C2-Q30"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C2-Q31",
+              "maths:M06-WEB-PLAIN-C2-Q32",
+              "maths:M06-WEB-PLAIN-C2-Q33",
+              "maths:M06-WEB-PLAIN-C2-Q34",
+              "maths:M06-WEB-PLAIN-C2-Q35",
+              "maths:M06-WEB-PLAIN-C2-Q36"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 1,
+          "slots": [
+            [
+              "maths:M06-WEB-ERRORS-C2-Q1",
+              "maths:M06-WEB-ERRORS-C2-Q2",
+              "maths:M06-WEB-ERRORS-C2-Q3",
+              "maths:M06-WEB-ERRORS-C2-Q4"
+            ],
+            [
+              "maths:M06-WEB-ERRORS-C2-Q5",
+              "maths:M06-WEB-ERRORS-C2-Q6",
+              "maths:M06-WEB-ERRORS-C2-Q7",
+              "maths:M06-WEB-ERRORS-C2-Q8"
+            ],
+            [
+              "maths:M06-WEB-ERRORS-C2-Q9",
+              "maths:M06-WEB-ERRORS-C2-Q10",
+              "maths:M06-WEB-ERRORS-C2-Q11",
+              "maths:M06-WEB-ERRORS-C2-Q12"
+            ]
+          ]
+        },
+        {
+          "type": 0,
+          "level": 2,
+          "slots": [
+            [
+              "maths:M06-WEB-PLAIN-C3-Q1",
+              "maths:M06-WEB-PLAIN-C3-Q2",
+              "maths:M06-WEB-PLAIN-C3-Q3",
+              "maths:M06-WEB-PLAIN-C3-Q4",
+              "maths:M06-WEB-PLAIN-C3-Q5",
+              "maths:M06-WEB-PLAIN-C3-Q6"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C3-Q7",
+              "maths:M06-WEB-PLAIN-C3-Q8",
+              "maths:M06-WEB-PLAIN-C3-Q9",
+              "maths:M06-WEB-PLAIN-C3-Q10",
+              "maths:M06-WEB-PLAIN-C3-Q11",
+              "maths:M06-WEB-PLAIN-C3-Q12"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C3-Q13",
+              "maths:M06-WEB-PLAIN-C3-Q14",
+              "maths:M06-WEB-PLAIN-C3-Q15",
+              "maths:M06-WEB-PLAIN-C3-Q16",
+              "maths:M06-WEB-PLAIN-C3-Q17",
+              "maths:M06-WEB-PLAIN-C3-Q18"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C3-Q19",
+              "maths:M06-WEB-PLAIN-C3-Q20",
+              "maths:M06-WEB-PLAIN-C3-Q21",
+              "maths:M06-WEB-PLAIN-C3-Q22",
+              "maths:M06-WEB-PLAIN-C3-Q23",
+              "maths:M06-WEB-PLAIN-C3-Q24"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C3-Q25",
+              "maths:M06-WEB-PLAIN-C3-Q26",
+              "maths:M06-WEB-PLAIN-C3-Q27",
+              "maths:M06-WEB-PLAIN-C3-Q28",
+              "maths:M06-WEB-PLAIN-C3-Q29",
+              "maths:M06-WEB-PLAIN-C3-Q30"
+            ],
+            [
+              "maths:M06-WEB-PLAIN-C3-Q31",
+              "maths:M06-WEB-PLAIN-C3-Q32",
+              "maths:M06-WEB-PLAIN-C3-Q33",
+              "maths:M06-WEB-PLAIN-C3-Q34",
+              "maths:M06-WEB-PLAIN-C3-Q35",
+              "maths:M06-WEB-PLAIN-C3-Q36"
+            ]
+          ]
+        },
+        {
+          "type": 1,
+          "level": 2,
+          "slots": [
+            [
+              "maths:M06-WEB-ERRORS-C3-Q1",
+              "maths:M06-WEB-ERRORS-C3-Q2",
+              "maths:M06-WEB-ERRORS-C3-Q3",
+              "maths:M06-WEB-ERRORS-C3-Q4"
+            ],
+            [
+              "maths:M06-WEB-ERRORS-C3-Q5",
+              "maths:M06-WEB-ERRORS-C3-Q6",
+              "maths:M06-WEB-ERRORS-C3-Q7",
+              "maths:M06-WEB-ERRORS-C3-Q8"
+            ],
+            [
+              "maths:M06-WEB-ERRORS-C3-Q9",
+              "maths:M06-WEB-ERRORS-C3-Q10",
+              "maths:M06-WEB-ERRORS-C3-Q11",
+              "maths:M06-WEB-ERRORS-C3-Q12"
+            ]
+          ]
+        }
+      ]
     }
   ]
 }

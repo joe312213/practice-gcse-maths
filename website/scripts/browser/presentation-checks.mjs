@@ -42,7 +42,7 @@ export async function checkPresentation(browser, base) {
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     const topicSelector = page.getByLabel('Topic', { exact: true });
     const originalTopic = 'M10';
-    const topics = foundationTopics.map((topic) => topic.bank);
+    const topics = foundationTopics.filter((topic) => !topic.draft).map((topic) => topic.bank);
     for (const width of [
       320, 360, 375, 439, 440, 441, 600, 684, 720, 744, 767, 800, 1024, 1280, 1600,
     ]) {
@@ -638,18 +638,19 @@ export async function checkPresentation(browser, base) {
     await page.getByRole('button', { name: 'Pause', exact: true }).click();
     await page.locator('[data-demo-level="2"]').click();
     await page.locator('#demo-play').click();
-    const readingPosition = await page.evaluate(() => scrollY);
+
     // Confidence may begin with two equation rows (three reveals each).
     await page.clock.runFor(3900);
     assert.ok((await page.locator('.demo-working tr[data-step]').count()) >= 3);
-    assert.equal(
-      await page.evaluate(() => scrollY),
-      readingPosition,
-      'Playback preserves the reading position',
+    assert.ok(
+      await page
+        .locator('[data-demo-working-end]')
+        .evaluate((el) => el.getBoundingClientRect().bottom <= innerHeight + 1),
+      'Newest equation row stays visible',
     );
     await page.getByRole('button', { name: 'Pause', exact: true }).click();
     await page.screenshot({ path: `${artifacts}/demo-speed-mobile.png`, fullPage: true });
-    // Demos start compact, then grow below the question without automatic scrolling.
+    // Demos start compact; growing working remains visible through minimal scrolling.
     for (const width of [360, 768]) {
       await page.setViewportSize({ width, height: 956 });
       for (const topic of ['M01', 'M02', 'M10']) {
@@ -672,7 +673,7 @@ export async function checkPresentation(browser, base) {
           .locator('.demo-controls')
           .evaluate((el) => el.getBoundingClientRect().top + scrollY);
         assert.ok(controlsAfter > controlsBefore, 'Controls move down when working appears');
-        const start = await page.evaluate(() => scrollY);
+
         const descriptions = page.locator(
           topic === 'M10' ? '.demo-working .step-note' : '.demo-stage .steps li',
         );
@@ -740,10 +741,12 @@ export async function checkPresentation(browser, base) {
             }
             phases.add(phase);
           }
-          assert.equal(
-            await page.evaluate(() => scrollY),
-            start,
-            `${topic} playback does not scroll at ${width}px`,
+          assert.ok(
+            await page
+              .locator('[data-demo-completion-end], [data-demo-working-end]')
+              .last()
+              .evaluate((el) => el.getBoundingClientRect().bottom <= innerHeight + 1),
+            `${topic} latest working stays visible at ${width}px`,
           );
           const highlighting = await page.locator('.demo-stage').evaluate((stage) => {
             const notes = [...stage.querySelectorAll('.steps li, .step-note')];

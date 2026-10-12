@@ -38,6 +38,11 @@ Directly authored `web_format.md` is protected; the progress requirements append
 
 ## Teaching content
 
+- [M03 website draft specification](../content/specs/M03.md)
+- [M13 website draft specification](../content/specs/M13.md)
+- [M15 website draft specification](../content/specs/M15.md)
+- [M06 website draft specification](../content/specs/M06.md)
+
 - [content/PRACTICE_PAGES.md](../content/PRACTICE_PAGES.md)
 
 Start with the [current content guidance and source map](../website/README.md#teaching-content-and-imports). Reviewed website questions, hints, methods and feedback take precedence for implemented topics; older examples must not undo those refinements. TOPIC_PLAN and TEACHING_SPECIFICATIONS retain prerequisite order and applicable teaching guidance, but their slide workflows, old review states and examples are historical where superseded. Slides primarily inspire level and style. Review and refine each new topic for the website, retaining provenance, stable IDs and the original resources.

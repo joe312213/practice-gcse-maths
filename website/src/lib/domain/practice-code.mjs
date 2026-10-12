@@ -123,7 +123,7 @@ export function practiceInputCode(catalogue, raw) {
   }
   if (/^[A-Za-z0-9_-]{9}$/.test(input)) return input;
   throw Error(
-    'No matching topic found. Try lattice, multiplication, division or equations, or enter a nine-character practice code.',
+    'No matching topic found. Try a topic name, or enter a nine-character practice code.',
   );
 }
 

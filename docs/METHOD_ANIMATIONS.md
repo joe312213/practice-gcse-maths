@@ -18,13 +18,18 @@ Each topic specification owns a **Method animation** section: ordered operations
 - [Bus-stop division](../content/M02_bus_stop_division.md#method-animation)
 - [Solving equations](../content/M10_solving_equations.md#method-animation)
 
+- [Multiplication/division problems draft](../content/specs/M03.md#method-animation)
+- [Signed numbers draft](../content/specs/M13.md#method-animation)
+- [Fractions draft](../content/specs/M15.md#method-animation)
+- [Percentages draft](../content/specs/M06.md#method-animation)
+
 ## Implementation boundaries
 
 - `arithmetic-demo.mjs` and `equation-demo.mjs` create deterministic ordered frames from method data. Arithmetic uses the existing logical `step`/`count`, plus explicit operation `phase`, cell identity and carry target where required. Logical steps still drive guidance and Previous/Next; operation phases drive highlights and fine-grained playback.
 - `ArithmeticWorking` and `EquationWorking` render a complete state for any frame. Drawing coordinates stay with the renderer; mathematical ordering stays with the model. No DOM inspection decides the next mathematical operation.
 - `ShowDemo` and the shared player own timing, pause, speed, replay, step navigation and disposal. Highlight changes use the same frame cursor as ink; no separate highlight timer. `demo-motion` interpolates newly written ink only.
 - Reuse semantic theme colours for a restrained fill and outline. Keep numerals legible over highlighted regions. The region/outline and numerical explanation supplement colour; static feedback and topic previews remain complete and unhighlighted.
-- Reduced motion removes interpolation, not instructional frames or explanations. Pausing retains the current highlight. Speed changes affect time only. Replay resets both ink and highlights. Manual logical-step navigation presents a coherent completed step. No frame scrolls or moves keyboard focus.
+- Reduced motion removes interpolation, not instructional frames or explanations. Pausing retains the current highlight. Speed changes affect time only. Replay resets both ink and highlights. Manual logical-step navigation presents a coherent completed step. When new working extends below the visible area, the shared player scrolls by the minimum needed to reveal its bottom edge, including in scrollable method references. Fully visible frames and paused playback do not scroll. Keyboard focus stays unchanged; use immediate minimal movement without a smooth-scroll queue, including reduced motion.
 
 ## Repeatable review and evidence
 
@@ -32,4 +37,4 @@ For a new method or a changed sequence, review its operation table before coding
 
 Pure sequence checks establish calculation → write → transfer order and validate carries against the next place. Browser checks establish that the prescribed region and new ink appear in those frames, earlier results remain visible, future results are absent, and final rendering is complete. Capture representative input, result and carry frames at phone width; inspect them for ambiguous highlight extent, contrast, cramped digits or clipping.
 
-Reuse existing playback checks for pause/resume, speed, replay, stepping, reduced motion, method references and stable scroll. Run change-selected verification; do not add a separate animation engine or an unrelated test programme. Record evidence and any unverified limitation in HANDOFF/DEV_LOG. A new topic is not animation-complete merely because it plays without errors.
+Reuse existing playback checks for pause/resume, speed, replay, stepping, reduced motion, method references and minimum-needed scrolling. Run change-selected verification; do not add a separate animation engine or an unrelated test programme. Record evidence and any unverified limitation in HANDOFF/DEV_LOG. A new topic is not animation-complete merely because it plays without errors.

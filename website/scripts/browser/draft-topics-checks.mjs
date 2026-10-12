@@ -1,0 +1,165 @@
+/** Exercise the draft methods in the real app, including exact marking and persisted page navigation. */
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { foundationTopics, topicPath } from '../../src/lib/content/topic-routes.mjs';
+import { createTestContext, artifacts } from './support.mjs';
+export async function checkDraftTopics(browser, base) {
+  const context = await createTestContext(browser, { viewport: { width: 390, height: 900 } });
+  const page = await context.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.clock.install();
+  try {
+    for (const topic of foundationTopics.filter((t) => t.draft)) {
+      const bank = JSON.parse(
+        await readFile(new URL(`../../static/data/${topic.file}.json`, import.meta.url)),
+      );
+      await page.goto(`${base}${topicPath(topic.bank).slice(1)}`);
+      await page.locator('#begin, [data-mode="assessment"]').first().waitFor();
+      if (await page.locator('#begin').isVisible()) {
+        await page.locator('#begin').click();
+        await page.locator('#username').fill('Draft Reviewer');
+        await page.getByRole('button', { name: 'Continue', exact: true }).click();
+        if (await page.locator('#profile-message').isVisible())
+          await page.getByRole('button', { name: 'Continue', exact: true }).click();
+      }
+      await page.locator('[data-mode="assessment"]').waitFor();
+      assert.equal(await page.locator('h1 .draft-stamp').textContent(), 'Draft');
+      await page.locator('[data-mode="assessment"]').click();
+      assert.equal(await page.locator('[data-question]').count(), 6);
+      const saved = () =>
+        page.evaluate(
+          (id) =>
+            JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].topics[`maths:${id}`],
+          topic.bank,
+        );
+      if (topic.bank === 'M15') {
+        assert.equal(await page.locator('#active-question .fraction').count(), 2);
+        assert.ok(
+          !(await page.locator('#active-question .selected-equation').textContent()).includes('{'),
+        );
+      }
+      if (topic.bank === 'M15')
+        await page
+          .locator('#active-question')
+          .screenshot({ path: `${artifacts}/fraction-active-question.png` });
+      const attempt = (await saved()).pages.assessment;
+      assert.deepEqual(
+        attempt.items.map((q) => q.level),
+        [0, 0, 1, 1, 2, 2],
+      );
+      await page
+        .locator('#answer')
+        .fill(bank.questions.find((q) => q.id === attempt.items[0].id).answer);
+      await page.getByRole('button', { name: 'Check answer', exact: true }).click();
+      assert.equal((await saved()).pages.assessment.count, 1);
+      if (topic.bank === 'M15') {
+        await page.locator('[data-question]').first().click();
+        await page.locator('.feedback summary').click();
+        assert.equal(
+          await page.locator('.feedback details > p').first().locator('.fraction').count(),
+          1,
+        );
+        await page.locator('.feedback').screenshot({ path: `${artifacts}/fraction-feedback.png` });
+      }
+      await page.locator('[data-mode="demo"]').click();
+      for (const level of [0, 1, 2]) {
+        await page.locator(`[data-demo-level="${level}"]`).click();
+        await page.locator('#demo-play').click();
+        await page.clock.runFor(700);
+        assert.ok(await page.locator('.demo-working .method-active').count());
+        if (await page.locator('#demo-all').isEnabled()) await page.locator('#demo-all').click();
+        assert.equal(
+          await page.locator('.demo-working .calculation-step').count(),
+          bank.questions.find((q) => q.type === 'demo' && q.level === level).steps.length,
+        );
+        assert.equal(await page.locator('.demo-working svg').count(), topic.bank === 'M03' ? 0 : 1);
+      }
+      for (const mode of ['scaffolded', 'errors', 'plain']) {
+        await page.locator(`[data-mode="${mode}"]`).click();
+        assert.equal(
+          await page.locator('[data-question]').count(),
+          { scaffolded: 2, errors: 4, plain: 12 }[mode],
+        );
+        const first = (await saved()).pages[mode];
+        const next = page.getByRole('button', { name: 'Next page of questions', exact: true });
+        await next.click();
+        const second = (await saved()).pages[mode];
+        assert.notEqual(second.attempt, first.attempt);
+        await page.getByRole('button', { name: 'Previous page of questions', exact: true }).click();
+        assert.equal((await saved()).pages[mode].attempt, first.attempt);
+        for (const width of [320, 768, 1280]) {
+          await page.setViewportSize({ width, height: 1000 });
+          await page.clock.runFor(32);
+          await page.waitForFunction(() => document.documentElement.scrollWidth <= innerWidth);
+          assert.equal(
+            await page.evaluate(() => document.documentElement.scrollWidth > innerWidth),
+            false,
+            `${topic.bank}/${mode}/${width}: ${JSON.stringify(
+              await page.evaluate(() =>
+                [...document.querySelectorAll('main *')]
+                  .filter((e) => e.getBoundingClientRect().right > innerWidth + 1)
+                  .slice(0, 8)
+                  .map((e) => ({
+                    tag: e.tagName,
+                    cls: e.className,
+                    width: e.getBoundingClientRect().width,
+                    text: e.textContent.slice(0, 60),
+                  })),
+              ),
+            )}`,
+          );
+        }
+        if (mode === 'errors') {
+          const q = bank.questions.find((q) => q.id === first.items[0].id);
+          await page.locator('#error-correction').selectOption(q.correctionId);
+          await page.locator('#answer').fill(q.answer);
+          await page.getByRole('button', { name: 'Check answer', exact: true }).click();
+          assert.equal((await saved()).pages.errors.responses[q.id].correct, true);
+        }
+      }
+      if (topic.bank === 'M15') {
+        await page.setViewportSize({ width: 390, height: 440 });
+        await page.locator('[data-mode="demo"]').click();
+        await page.locator('[data-demo-level="2"]').click();
+        await page.locator('#demo-play').click();
+        let totalScroll = 0;
+        for (let i = 0; i < 7; i++) {
+          const before = await page.evaluate(() => scrollY);
+          await page.clock.runFor(650);
+          const geometry = await page
+            .locator('[data-demo-completion-end], [data-demo-working-end]')
+            .last()
+            .evaluate((el) => ({
+              bottom: el.getBoundingClientRect().bottom,
+              y: scrollY,
+              height: innerHeight,
+            }));
+          const delta = geometry.y - before;
+          const needed = Math.max(0, geometry.bottom + delta - geometry.height);
+          assert.ok(Math.abs(delta - needed) <= 2, 'Scroll only by the newly clipped amount');
+          assert.ok(geometry.bottom <= geometry.height + 1, 'Latest fraction working is visible');
+          totalScroll += delta;
+        }
+        assert.ok(totalScroll > 0, 'Long fraction demo actually requires and receives scrolling');
+        // Pausing or a finished playback must not pull a learner back after they scroll away.
+        if (await page.getByRole('button', { name: 'Pause', exact: true }).count())
+          await page.locator('#demo-play').click();
+        await page.evaluate(() => scrollBy(0, -100));
+        const paused = await page.evaluate(() => scrollY);
+        await page.clock.runFor(1300);
+        assert.equal(await page.evaluate(() => scrollY), paused);
+      }
+      await page.reload();
+      await page.locator('[data-mode="plain"]').waitFor();
+      assert.equal((await saved()).pages.assessment.count, 1);
+      await page.setViewportSize({ width: 390, height: 1000 });
+      await page.locator('[data-mode="demo"]').click();
+      if (await page.locator('#demo-all').isEnabled()) await page.locator('#demo-all').click();
+      await page.screenshot({ path: `${artifacts}/draft-${topic.bank}.png`, fullPage: true });
+    }
+    assert.deepEqual(errors, []);
+  } finally {
+    await context.close();
+  }
+}

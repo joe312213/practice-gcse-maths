@@ -294,7 +294,11 @@ test("practice input resolves topic aliases before code syntax, including equati
     assert.deepEqual(result, {
       level: 0,
       timing: 0,
-      pages: [{ topic, type: 0, slot: 0 }],
+      pages: (text === "MULTIPLICATION" ? [0, 6] : [topic]).map((topic) => ({
+        topic,
+        type: 0,
+        slot: 0,
+      })),
     });
   }
   const mixed = decodePracticeSet(
@@ -302,7 +306,7 @@ test("practice input resolves topic aliases before code syntax, including equati
   );
   assert.deepEqual(
     mixed.pages.map((p) => p.topic),
-    [0, 1],
+    [0, 1, 6],
   );
   const code = encodePracticeSet(recipe());
   assert.equal(practiceInputCode(all, `  ${code}  `), code);

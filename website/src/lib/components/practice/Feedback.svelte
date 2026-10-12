@@ -11,6 +11,8 @@
   Libs: none.
 -->
 <script>
+  import CalculationWorking from '../teaching/CalculationWorking.svelte';
+  import MathText from '../teaching/MathText.svelte';
   import ArithmeticWorking from '../teaching/ArithmeticWorking.svelte';
   import EquationWorking from '../teaching/EquationWorking.svelte';
   let { question, response, mode, bank } = $props();
@@ -42,8 +44,13 @@
     {/if}
     <details>
       <summary>Answer, method and check</summary>
-      <p><strong>Answer:</strong> {bank.method ? '' : 'x = '}{question.answer}</p>
-      {#if question.method_note}<p>{question.method_note}</p>{/if}
+      <p>
+        <strong>Answer:</strong>
+        {bank.method ? '' : 'x = '}{question.answerUnit === '£' ? '£' : ''}<MathText
+          text={question.model?.kind === 'fractions' ? `{${question.answer}}` : question.answer}
+        />{question.answerUnit && question.answerUnit !== '£' ? ` ${question.answerUnit}` : ''}
+      </p>
+      {#if question.method_note && bank.method !== 'calculation'}<p>{question.method_note}</p>{/if}
       {#if mode === 'errors' && !question.errorOptions}<ul>
           {#each question.errors as error}<li>
               Row {error.row + 1}: {bank.teaching.errorReasons.find((r) => r.id === error.reason)
@@ -52,16 +59,22 @@
             </li>{/each}
         </ul>{/if}
       <!-- Each method owns its correction drawing. -->
-      {#if bank.method}<ArithmeticWorking {question} />{:else}<EquationWorking
+      {#if bank.method === 'calculation'}<CalculationWorking
+          {question}
+        />{:else if bank.method}<ArithmeticWorking {question} />{:else}<EquationWorking
           rows={question.correct_balance ?? question.balance}
         />{/if}
       {#if question.correction}<p>{question.correction}</p>{/if}
       {#if !response.correct && question.error_note && question.error_note !== question.correction}<p
         >
-          <strong>If you got {question.wrong}:</strong>
+          <strong
+            >If you got <MathText
+              text={question.model?.kind === 'fractions' ? `{${question.wrong}}` : question.wrong}
+            />:</strong
+          >
           {question.error_note}
         </p>{/if}
-      <p><strong>Check:</strong> {question.check}</p>
+      <p><strong>Check:</strong> <MathText text={question.check} /></p>
     </details>
   </div>
 {/if}

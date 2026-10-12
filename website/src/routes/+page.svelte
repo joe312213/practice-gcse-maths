@@ -11,6 +11,8 @@
   Libs: Svelte (mount lifecycle); $app/navigation and $app/paths (base-aware navigation).
 -->
 <script>
+  import CalculationWorking from '#lib/components/teaching/CalculationWorking.svelte';
+  import MathText from '#lib/components/teaching/MathText.svelte';
   import ArithmeticWorking from '#lib/components/teaching/ArithmeticWorking.svelte';
   import EquationWorking from '#lib/components/teaching/EquationWorking.svelte';
   import { onMount } from 'svelte';
@@ -46,10 +48,17 @@
     <h2 id="foundation-title">Foundation Maths <span class="muted">· FM</span></h2>
     <div class="topic-cards">
       {#each data.topics as topic}<a class="card topic-card" href={resolve(topic.path)}>
+          {#if topic.draft}<span class="draft-stamp">Draft</span>{/if}
           <h3>{topic.title}</h3>
-          <p class="topic-example">{topic.example.q}</p>
+          <p class="topic-example"><MathText text={topic.example.q} /></p>
           <div class="topic-solution">
-            {#if topic.example.method}<ArithmeticWorking question={topic.example} compact />
+            {#if topic.example.method === 'calculation'}<CalculationWorking
+                question={topic.example}
+                compact
+              />{:else if topic.example.method}<ArithmeticWorking
+                question={topic.example}
+                compact
+              />
             {:else}<EquationWorking rows={topic.example.balance.slice(1)} />{/if}
           </div>
         </a>{/each}

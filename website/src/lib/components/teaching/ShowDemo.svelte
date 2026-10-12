@@ -45,7 +45,7 @@
     motion?.setSpeed(speed);
   });
   /**
-   * Toggle playback and position the reading area once, without following later frames.
+   * Toggle playback, positioning a fresh demonstration once and revealing clipped new working.
    * Calls: tick.
    */
   async function play() {
@@ -53,10 +53,13 @@
       player.pause();
       return;
     }
+    const fresh = !started || finished;
     started = true;
     player.play();
     await tick();
-    stage.scrollIntoView({ block: 'start', behavior: 'instant' });
+    if (disposed) return;
+    if (fresh) stage.scrollIntoView({ block: 'start', behavior: 'instant' });
+    revealLatest();
   }
   /**
    * Translate the requested teaching step into its last reveal-frame index.
@@ -66,6 +69,26 @@
     started = true;
     step = Math.min(steps, step);
     player.go(frames.findLastIndex((frame) => frame.step === step) + 1);
+  }
+  /** Keep the new bottom edge visible, including inside a scrollable method-reference dialog.
+   * Native nearest scrolling moves only the necessary ancestors; no focus or smooth-scroll queue.
+   */
+  function revealLatest() {
+    const target =
+      stage.querySelector('[data-demo-completion-end]') ??
+      stage.querySelector('[data-demo-working-end]');
+    if (!target) return;
+    let bottom = window.visualViewport
+      ? window.visualViewport.offsetTop + window.visualViewport.height
+      : window.innerHeight;
+    for (let parent = target.parentElement; parent; parent = parent.parentElement) {
+      if (/(auto|scroll|hidden)/.test(getComputedStyle(parent).overflowY)) {
+        const rect = parent.getBoundingClientRect();
+        bottom = Math.min(bottom, rect.top + parent.clientTop + parent.clientHeight);
+      }
+    }
+    if (target.getBoundingClientRect().bottom > bottom + 1)
+      target.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
   }
   onMount(() => {
     motion = createDemoMotion(stage);
@@ -87,6 +110,7 @@
           await tick();
           if (disposed) return;
           if (advancing) motion.reveal(before, speed);
+          revealLatest();
         }
       },
     });
@@ -101,7 +125,10 @@
 <section class="demo-stage" bind:this={stage} aria-label="Worked solution playback">
   {@render introduction?.(step)}
   {@render heading()}
-  {#if started}<div class="demo-working">{@render children(frame)}</div>{/if}
+  {#if started}<div class="demo-working">
+      {@render children(frame)}
+      <div data-demo-working-end aria-hidden="true"></div>
+    </div>{/if}
   <div class="demo-controls">
     <button type="button" class="action-button primary" id="demo-play" onclick={play}
       >{playing ? 'Pause' : finished ? 'Replay' : 'Play'}</button
@@ -146,5 +173,6 @@
   </div>
   <!-- Visual progress stays readable without announcing every playback frame. -->
   <p class="demo-status">Step {step} of {steps}{playing ? ' · playing' : ''}</p>
-  {#if finished}{@render completion?.()}{/if}
+  {#if finished}{@render completion?.()}
+    <div data-demo-completion-end aria-hidden="true"></div>{/if}
 </section>
