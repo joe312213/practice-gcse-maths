@@ -6,13 +6,12 @@
 
   Used By: website/src/lib/components/practice/PracticeActivity.svelte
 
-  Uses: website/src/lib/components/practice/NextStage.svelte.
+  Uses: caller-owned retry, promotion and Practice-set navigation callbacks.
 
   Libs: none.
 -->
 <script>
-  import NextStage from './NextStage.svelte';
-  let { page, mode, onstage, onnext, onpromotion, practiceSet = null, onSetNext } = $props();
+  let { page, mode, onnext, onpromotion, practiceSet = null, onSetNext } = $props();
 </script>
 
 {#if page.complete}
@@ -21,12 +20,10 @@
     <p class="assessment-complete" role="status">
       Assessment complete · {correct} of {page.size} correct.
     </p>
-    <NextStage {mode} onadvance={onstage} id="assessment-next" />
   {:else}
     <section class="card summary">
       <h2>Page complete</h2>
       <p>{correct} of {page.size} correct on first submission.</p>
-      {#if !practiceSet}<NextStage {mode} onadvance={onstage} />{/if}
       {#if page.pendingChoice}<p>Would you like to try harder questions of this type next time?</p>
         <button
           class="action-button"
@@ -45,7 +42,7 @@
           <button class="action-button primary" onclick={onSetNext}>Next Practice set page</button>
         {/if}
       {:else}<button class="action-button" type="button" id="new-page" onclick={onnext}
-          >Practise another page</button
+          >Practise this page again</button
         >{/if}
     </section>
   {/if}

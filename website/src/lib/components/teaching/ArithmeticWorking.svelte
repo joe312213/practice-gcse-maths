@@ -17,10 +17,26 @@
   const lattice = $derived(
     question.method === 'lattice' ? latticeModel(question.a, question.b) : null,
   );
+  const activeCell = $derived(frame.cell ?? -1);
+  const activeDiagonal = $derived(frame.step === 3 ? frame.count - 1 : -1);
   const division = $derived(question.method === 'bus' ? divisionModel(question) : null);
 </script>
 
-<div class="arithmetic-working">
+{#snippet digitValue(value, x, y, focused = false, small = false, inRegion = false)}
+  <g data-method-highlight={focused ? 'digit' : undefined}>
+    {#if focused}<rect
+        class="method-focus"
+        x={x - (small ? 11 : 17)}
+        y={y - (small ? 17 : 29)}
+        width={small ? 22 : 34}
+        height={small ? 23 : 38}
+        rx="4"
+      />{/if}
+    <text {x} {y} class:carry={small} class:focused={focused || inRegion}>{value}</text>
+  </g>
+{/snippet}
+
+<div class="arithmetic-working" data-method-phase={frame.phase}>
   {#if lattice}
     {@const n = lattice.top.length}
     {@const m = lattice.right.length}
@@ -29,6 +45,23 @@
       role="img"
       aria-label={`Lattice for ${question.q}`}
     >
+      {#if frame.phase === 'sum'}
+        {#each lattice.cells as cell}
+          {@const x = 60 + cell.col * 70}
+          {@const y = 50 + cell.row * 70}
+          {@const diagonal = n + m - 2 - cell.row - cell.col}
+          {#if diagonal === activeDiagonal}<polygon
+              class="method-focus"
+              data-method-highlight="diagonal"
+              points={`${x + 70},${y} ${x + 70},${y + 70} ${x},${y + 70}`}
+            />{/if}
+          {#if diagonal + 1 === activeDiagonal}<polygon
+              class="method-focus"
+              data-method-highlight="diagonal"
+              points={`${x},${y} ${x + 70},${y} ${x},${y + 70}`}
+            />{/if}
+        {/each}
+      {/if}
       {#each lattice.guides as path, index}
         <path
           class="method-guide"
@@ -43,35 +76,82 @@
       {/each}
       {#if guideProgress === 1}
         {#each lattice.top as digit, col}
-          {#if frame.step > 1 || col < frame.count}<text x={95 + col * 70} y="32">{digit}</text
-            >{/if}
+          {#if frame.step > 1 || col < frame.count}{@render digitValue(
+              digit,
+              95 + col * 70,
+              32,
+              (frame.step === 1 && col === frame.count - 1) ||
+                (frame.step === 2 && lattice.cells[activeCell]?.col === col),
+            )}{/if}
         {/each}
         {#each lattice.right as digit, row}
-          {#if frame.step > 1 || n + row < frame.count}<text x={85 + n * 70} y={88 + row * 70}
-              >{digit}</text
-            >{/if}
+          {#if frame.step > 1 || n + row < frame.count}{@render digitValue(
+              digit,
+              85 + n * 70,
+              88 + row * 70,
+              (frame.step === 1 && n + row === frame.count - 1) ||
+                (frame.step === 2 && lattice.cells[activeCell]?.row === row),
+            )}{/if}
         {/each}
       {/if}
       {#each lattice.cells as cell, index}
         {@const x = 60 + cell.col * 70}
         {@const y = 50 + cell.row * 70}
         {#if frame.step > 2 || (frame.step === 2 && index * 2 < frame.count)}
-          <text x={x + 19} y={y + 29}>{Math.floor(cell.value / 10)}</text>
+          {@render digitValue(
+            Math.floor(cell.value / 10),
+            x + 19,
+            y + 29,
+            index === activeCell && frame.phase === 'tens',
+            false,
+            frame.phase === 'sum' && n + m - 1 - cell.row - cell.col === activeDiagonal,
+          )}
         {/if}
         {#if frame.step > 2 || (frame.step === 2 && index * 2 + 1 < frame.count)}
-          <text x={x + 51} y={y + 60}>{cell.value % 10}</text>
+          {@render digitValue(
+            cell.value % 10,
+            x + 51,
+            y + 60,
+            index === activeCell && frame.phase === 'units',
+            false,
+            frame.phase === 'sum' && n + m - 2 - cell.row - cell.col === activeDiagonal,
+          )}
         {/if}
       {/each}
       {#each lattice.diagonals as diagonal, k}
-        {#if frame.step > 3 || (frame.step === 3 && k < frame.count)}
-          {@const x = k < n ? 95 + (n - 1 - k) * 70 : 25}
-          {@const y = k < n ? 90 + m * 70 : 95 + (m - 1 - (k - n)) * 70}
-          <text {x} {y}>{diagonal.digit}</text>
-          {#if diagonal.incoming}<text x={x + 18} y={y - 23} class="carry">{diagonal.incoming}</text
-            >{/if}
+        {@const x = k < n ? 95 + (n - 1 - k) * 70 : 25}
+        {@const y = k < n ? 90 + m * 70 : 95 + (m - 1 - (k - n)) * 70}
+        {#if frame.step > 3 || (frame.step === 3 && (k < activeDiagonal || (k === activeDiagonal && frame.phase !== 'sum')))}
+          {@render digitValue(
+            diagonal.digit,
+            x,
+            y,
+            k === activeDiagonal && frame.phase === 'write',
+          )}
+        {/if}
+        {#if diagonal.incoming && (frame.step > 3 || (frame.step === 3 && (k <= activeDiagonal || (k === activeDiagonal + 1 && frame.phase === 'carry'))))}
+          {@render digitValue(
+            diagonal.incoming,
+            x + 18,
+            y - 23,
+            (k === activeDiagonal && frame.phase === 'sum') ||
+              (k === activeDiagonal + 1 && frame.phase === 'carry'),
+            true,
+          )}
         {/if}
       {/each}
     </svg>
+    {#if !compact && frame.step === 2 && activeCell >= 0}
+      <p class="method-calculation">
+        {lattice.top[lattice.cells[activeCell].col]} × {lattice.right[
+          lattice.cells[activeCell].row
+        ]} = {lattice.cells[activeCell].value}: {frame.phase === 'multiply'
+          ? 'multiply the highlighted digits.'
+          : frame.phase === 'tens'
+            ? 'write the tens above the diagonal.'
+            : 'write the units below the diagonal.'}
+      </p>
+    {/if}
     {#if !compact && frame.step >= 3}
       <ol aria-label="Diagonal totals from bottom right">
         {#each lattice.diagonals.slice(0, frame.step === 3 ? frame.count : undefined) as d}<li>
@@ -97,15 +177,50 @@
         stroke="currentColor"
         stroke-width="2"
       />
-      {#if guideProgress === 1}<text x="35" y="112">{question.b}</text>{/if}
+      {#if guideProgress === 1}{@render digitValue(
+          question.b,
+          35,
+          112,
+          frame.phase === 'divide',
+        )}{/if}
       {#each division.places as place, index}
-        {#if guideProgress === 1 && (index < division.integerLength || (frame.step >= 3 && index < frame.count))}
-          <text x={100 + index * 55} y="112">{place.digit}</text>
+        {@const previous = division.places.findLastIndex((p, i) => i < index && p.digit !== '.')}
+        {@const carried =
+          place.incoming &&
+          (previous < frame.count - 1 || (previous === frame.count - 1 && frame.phase === 'carry'))}
+        {@const decimalSetup =
+          frame.phase === 'carry' &&
+          frame.target > frame.count &&
+          index >= frame.count &&
+          index <= frame.target}
+        {#if guideProgress === 1 && (index < division.integerLength || (frame.step >= 3 && index < frame.count) || carried || decimalSetup)}
+          {@render digitValue(
+            place.digit,
+            100 + index * 55,
+            112,
+            (index === frame.count - 1 && ['divide', 'decimal'].includes(frame.phase)) ||
+              decimalSetup,
+          )}
         {/if}
-        {#if frame.step > 1 && index < frame.count}
-          <text x={100 + index * 55} y="49">{place.quotient}</text>
-          {#if place.incoming}<text x={80 + index * 55} y="88" class="carry">{place.incoming}</text
-            >{/if}
+        {#if frame.step > 1 && (index < frame.count - 1 || (index === frame.count - 1 && frame.phase !== 'divide') || (decimalSetup && place.digit === '.'))}
+          {@render digitValue(
+            place.quotient,
+            100 + index * 55,
+            49,
+            (index === frame.count - 1 && ['write', 'decimal'].includes(frame.phase)) ||
+              (decimalSetup && place.digit === '.'),
+          )}
+        {/if}
+        {#if carried && frame.step > 1}
+          {@render digitValue(
+            place.incoming,
+            80 + index * 55,
+            88,
+            (index === frame.count - 1 && ['divide', 'decimal'].includes(frame.phase)) ||
+              decimalSetup ||
+              (index === frame.target && frame.phase === 'carry'),
+            true,
+          )}
         {/if}
       {/each}
     </svg>
@@ -133,6 +248,15 @@
     fill: currentColor;
     text-anchor: middle;
     font-size: 27px;
+  }
+  .method-focus {
+    fill: var(--selection-bg);
+    stroke: var(--selection-border);
+    stroke-width: 1.5px;
+    vector-effect: non-scaling-stroke;
+  }
+  text.focused {
+    fill: var(--selection-text);
   }
   text.carry {
     font-size: 15px;

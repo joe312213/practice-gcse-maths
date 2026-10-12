@@ -9,11 +9,14 @@ Directly authored `web_format.md` is protected; the progress requirements append
 - [AGENTS.md](../AGENTS.md)
 - [HANDOFF.md](../HANDOFF.md)
 - [DEV_LOG.md](../DEV_LOG.md)
+- [Third-party notices](../THIRD_PARTY_NOTICES.md) — GNU Go/Emscripten attribution, licences and corresponding source.
 - [web_format.md](../web_format.md)
 - [docs/UI_UX_RULES.md](../docs/UI_UX_RULES.md)
 - [UI taste](UI_TASTE.md) — visual judgment, spacing, alignment and recurring user preferences; [dimensions and spacing](UI_TASTE.md#dimensions-and-spacing); [breakpoint register and conventions](UI_TASTE.md#breakpoint-register).
+- [Puzzle patches](puzzles_patches.md) — portable changes, app companions and replay/verification instructions for upstream updates.
+- [Method animation contract](METHOD_ANIMATIONS.md) — operation/reveal sequencing, highlights and verification for current and future teaching animations.
 - [docs/WEBSITE_PLAN.md](../docs/WEBSITE_PLAN.md)
-- [website/README.md](../website/README.md)
+- [website/README.md](../website/README.md) — includes the [FAQ route and shared panels](../website/README.md#faq-and-shared-page-presentation)
 - [docs/FRAMEWORK_MIGRATION_PLAN.md](../docs/FRAMEWORK_MIGRATION_PLAN.md)
 
 ## Development workflows
@@ -34,6 +37,8 @@ Directly authored `web_format.md` is protected; the progress requirements append
 - [tests/fixtures/README.md](../tests/fixtures/README.md)
 
 ## Teaching content
+
+- [content/PRACTICE_PAGES.md](../content/PRACTICE_PAGES.md)
 
 Start with the [current content guidance and source map](../website/README.md#teaching-content-and-imports). Reviewed website questions, hints, methods and feedback take precedence for implemented topics; older examples must not undo those refinements. TOPIC_PLAN and TEACHING_SPECIFICATIONS retain prerequisite order and applicable teaching guidance, but their slide workflows, old review states and examples are historical where superseded. Slides primarily inspire level and style. Review and refine each new topic for the website, retaining provenance, stable IDs and the original resources.
 

@@ -6,6 +6,20 @@
 
 The user accepted this content before the Markdown-first workflow. This is a reference transcription of `scripts/build_starters.py`, not a reread of the online-only PowerPoint. Manual changes in the saved deck must be preserved when it becomes readable. Existing assessment content is recorded in README.md. No slide files were changed for this transcription.
 
+## Method animation
+
+This section specifies the website method, at every level and in method references. Follow the [shared animation contract](../docs/METHOD_ANIMATIONS.md) for deterministic frames, timing, accessibility and verification. Historical slide examples below remain source references; use the reviewed website model for implemented examples.
+
+| Operation | Inspect / calculate | Write and highlight | Dependency / next action |
+| --- | --- | --- | --- |
+| Set up | Draw the grid and its diagonals | Top operand digits left to right, then side digits top to bottom, one at a time | Finish the guide before products |
+| Multiply a cell | Highlight its top and side operands; explain their numerical product | Tens in the upper triangle, then units in the lower triangle, as separate frames | Traverse cells across each row, then down |
+| Sum a diagonal | Highlight all contributing half-cells and digits, plus the incoming carry; explain the total | Highlight and write the units digit at the bottom/left end of that diagonal | Start at bottom right and move towards upper left |
+| Transfer a carry | Keep the just-calculated total available | If nonzero, highlight and write the carry in the next diagonal's carry position | Complete transfer before highlighting/summing the next diagonal |
+| Read the answer | Retain completed products, answer digits and carries | Present the final equation | Agree with the model and authored answer |
+
+Half-cell membership, answer positions and carry destinations must use the same place-value model. Keep tens zeros and intermediate answer zeros; omit only an unnecessary leading answer zero. A zero carry has no transfer frame. Check all level examples, a multi-diagonal carry and a zero/no-carry case; inspect sum, answer and carry frames independently. A result must never appear before its sum.
+
 ## Slide 1 — Lattice Multiplication
 
 Worked demo  •  Follow each step down your column. Small orange numbers show carries.

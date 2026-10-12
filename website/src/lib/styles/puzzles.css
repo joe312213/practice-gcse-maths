@@ -64,3 +64,35 @@ main .puzzle-controls .go-status {
   background: #fae8be;
   color: #69480b;
 }
+
+.puzzle-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.puzzle-title-row h1 {
+  min-width: 0;
+  flex: 1;
+}
+.puzzle-title-row a {
+  flex-shrink: 0;
+  font-size: 0.82rem;
+}
+
+/* Centre the human board and its controls as one app-owned playing area. */
+.human-go {
+  text-align: center;
+}
+.human-go :is(.actions, .level-row) {
+  justify-content: center;
+}
+.human-go :is(.go-board, p, summary, .go-clocks) {
+  margin-inline: auto;
+}
+.human-go summary {
+  width: fit-content;
+}
+.human-go .go-clocks {
+  max-width: 32rem;
+}

@@ -11,8 +11,13 @@
  * Libs: node:test (test runner), node:assert/strict (assertions).
  */
 import test from "node:test";
+import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
-import { arithmeticFrames } from "../website/src/lib/application/arithmetic-demo.mjs";
+import {
+  arithmeticFrames,
+  latticeModel,
+  divisionModel,
+} from "../website/src/lib/application/arithmetic-demo.mjs";
 import { equationFrames } from "../website/src/lib/application/equation-demo.mjs";
 
 test("equation playback draws the line, then left, equals and right; operations skip equals", () => {
@@ -47,7 +52,91 @@ test("lattice writes operand digits and cell tens/units separately in row order"
     [1, 2, 3, 4],
   );
   assert.deepEqual(
-    frames.filter((frame) => frame.step === 2).map((frame) => frame.count),
+    frames
+      .filter((frame) => frame.step === 2 && frame.phase !== "multiply")
+      .map((frame) => frame.count),
     [1, 2, 3, 4, 5, 6, 7, 8],
   );
+});
+
+test("lattice sums each diagonal before writing its digit and carrying to the next", () => {
+  for (const [a, b] of [
+    ...JSON.parse(
+      readFileSync(
+        new URL("../website/static/data/multiplication.json", import.meta.url),
+      ),
+    )
+      .questions.filter((q) => q.type === "demo")
+      .map((q) => [q.a, q.b]),
+    [57, 8],
+    [76, 48],
+    [6874, 759],
+  ]) {
+    const model = latticeModel(a, b);
+    const frames = arithmeticFrames({ method: "lattice", a, b });
+    for (const [i, cell] of model.cells.entries()) {
+      assert.deepEqual(
+        frames.filter((f) => f.cell === i).map((f) => f.phase),
+        ["multiply", "tens", "units"],
+      );
+      assert.equal(cell.value, model.top[cell.col] * model.right[cell.row]);
+    }
+    let carry = 0,
+      value = 0;
+    for (const [i, d] of model.diagonals.entries()) {
+      assert.equal(d.incoming, carry);
+      assert.equal(d.total, d.sum + carry);
+      const phases = frames
+        .filter((f) => f.step === 3 && f.count === i + 1)
+        .map((f) => f.phase);
+      assert.deepEqual(
+        phases,
+        d.carry ? ["sum", "write", "carry"] : ["sum", "write"],
+      );
+      carry = d.carry;
+      value += d.digit * 10 ** i;
+    }
+    assert.equal(value, a * b);
+    assert.equal(carry, 0);
+  }
+});
+
+test("division calculates before writing, then transfers a remainder to the next numeric place", () => {
+  for (const question of [
+    ...JSON.parse(
+      readFileSync(
+        new URL("../website/static/data/division.json", import.meta.url),
+      ),
+    ).questions.filter((q) => q.type === "demo"),
+    { method: "bus", a: 609, b: 3, answer: "203" },
+    { method: "bus", a: 374, b: 7, answer: "53 r 3" },
+    { method: "bus", a: 1575, b: 12, answer: "131.25" },
+  ]) {
+    const model = divisionModel(question),
+      frames = arithmeticFrames(question);
+    for (const [i, place] of model.places.entries()) {
+      const operation = frames.filter((f) => f.phase && f.count === i + 1);
+      if (place.digit === ".")
+        assert.deepEqual(
+          operation.map((f) => f.phase),
+          ["decimal"],
+        );
+      else {
+        assert.equal(
+          place.value,
+          question.b * place.quotient + place.remainder,
+        );
+        assert.deepEqual(
+          operation.slice(0, 2).map((f) => f.phase),
+          ["divide", "write"],
+        );
+        const carry = operation.find((f) => f.phase === "carry");
+        if (carry) {
+          assert.ok(carry.target > i);
+          assert.notEqual(model.places[carry.target].digit, ".");
+          assert.equal(model.places[carry.target].incoming, place.remainder);
+        }
+      }
+    }
+  }
 });

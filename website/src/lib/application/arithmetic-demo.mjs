@@ -66,13 +66,32 @@ export function arithmeticFrames(question) {
     // Write operands across the top, then down the side; each cell follows row order.
     for (let count = 1; count <= model.top.length + model.right.length; count++)
       frames.push({ step: 1, count });
-    for (let count = 1; count <= model.cells.length * 2; count++) frames.push({ step: 2, count });
-    model.diagonals.forEach((_, index) => frames.push({ step: 3, count: index + 1 }));
+    model.cells.forEach((_, cell) => {
+      for (const [offset, phase] of ['multiply', 'tens', 'units'].entries())
+        frames.push({ step: 2, count: cell * 2 + offset, cell, phase });
+    });
+    model.diagonals.forEach((diagonal, index) => {
+      for (const phase of ['sum', 'write', ...(diagonal.carry ? ['carry'] : [])])
+        frames.push({ step: 3, count: index + 1, phase });
+    });
   } else {
     const model = divisionModel(question);
-    model.places.forEach((_, index) =>
-      frames.push({ step: index < model.integerLength ? 2 : 3, count: index + 1 }),
-    );
+    model.places.forEach((place, index) => {
+      for (const phase of [
+        ...(place.digit === '.' ? ['decimal'] : ['divide', 'write']),
+        ...(place.remainder && index < model.places.length - 1 ? ['carry'] : []),
+      ])
+        frames.push({
+          step: index < model.integerLength ? 2 : 3,
+          count: index + 1,
+          phase,
+          // A carried remainder crosses a decimal marker to the next numeric place.
+          target:
+            phase === 'carry'
+              ? model.places.findIndex((next, i) => i > index && next.digit !== '.')
+              : index,
+        });
+    });
     if (!model.places.some((p) => p.digit === '.'))
       frames.push({ step: 3, count: model.places.length });
   }

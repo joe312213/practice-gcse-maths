@@ -11,7 +11,8 @@
  * Libs: node:assert/strict (assertions).
  */
 import assert from 'node:assert/strict';
-import { artifacts, createTestContext } from './support.mjs';
+import { foundationTopics } from '../../src/lib/content/topic-routes.mjs';
+import { artifacts, createTestContext, selectTopic } from './support.mjs';
 
 /**
  * Focused visual behaviour checks, runnable without the full activity suite.
@@ -41,14 +42,14 @@ export async function checkPresentation(browser, base) {
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     const topicSelector = page.getByLabel('Topic', { exact: true });
     const originalTopic = 'M10';
-    const topics = await topicSelector
-      .locator('option:not([disabled])')
-      .evaluateAll((options) => options.map((option) => option.value));
-    for (const width of [320, 360, 375, 439, 440, 441, 600, 720, 800, 1024, 1280, 1600]) {
+    const topics = foundationTopics.map((topic) => topic.bank);
+    for (const width of [
+      320, 360, 375, 439, 440, 441, 600, 684, 720, 744, 767, 800, 1024, 1280, 1600,
+    ]) {
       await page.setViewportSize({ width, height: 1000 });
       await page.clock.runFor(32);
       for (const topic of topics) {
-        await topicSelector.selectOption(topic);
+        await selectTopic(page, topic);
         await page.locator('.intro').waitFor();
         await page.locator('.question-list li').first().waitFor();
         if (width >= 720 || (width === 600 && topic === 'M01')) {
@@ -81,7 +82,7 @@ export async function checkPresentation(browser, base) {
           const bounds = intro.getBoundingClientRect();
           const input = intro.querySelector('#practice-code');
           const go = intro.querySelector('button[type="submit"]').getBoundingClientRect();
-          const select = intro.querySelector('select').getBoundingClientRect();
+          const select = intro.querySelector('.topic-selector').getBoundingClientRect();
           const title = intro.querySelector('.intro-title').getBoundingClientRect();
           const controls = intro.querySelector('.intro-controls').getBoundingClientRect();
           const inputStyle = getComputedStyle(input);
@@ -134,6 +135,68 @@ export async function checkPresentation(browser, base) {
             .getAttribute('href'),
           '/',
         );
+        if ([684, 744].includes(width) && topic === 'M01') {
+          const welcome = await page.locator('#welcome').innerText();
+          await page.locator('#welcome').evaluate((el) => (el.textContent = 'Welcome back, test!'));
+          await page.clock.runFor(32);
+          assert.ok(
+            await page.locator('header').evaluate((header) => {
+              const brand = header.querySelector('.brand').getBoundingClientRect(),
+                actions = header.querySelector('.header-actions').getBoundingClientRect();
+              return Math.abs(brand.top + brand.height / 2 - actions.top - actions.height / 2) < 1;
+            }),
+            'A short account name fits on one header line below 768px',
+          );
+          await page
+            .locator('header')
+            .screenshot({ path: `${artifacts}/header-intrinsic-${width}.png` });
+          await page.locator('#welcome').evaluate((el, text) => (el.textContent = text), welcome);
+          await page.clock.runFor(32);
+        }
+        const headerFlow = await page.locator('header').evaluate((header) => {
+          const style = getComputedStyle(header),
+            brand = header.querySelector('.brand').getBoundingClientRect(),
+            actions = header.querySelector('.header-actions').getBoundingClientRect(),
+            tools = header.querySelector('.header-tools').getBoundingClientRect();
+          const available =
+            header.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+          const needed =
+            brand.width +
+            actions.width +
+            tools.width +
+            32 +
+            parseFloat(style.getPropertyValue('--control-gap')) +
+            5;
+          const progress = header
+            .querySelector('a[href$="/progress.html"]')
+            .getBoundingClientRect();
+          return {
+            natural:
+              needed > available ||
+              Math.abs(brand.top + brand.height / 2 - actions.top - actions.height / 2) < 1,
+            margin: getComputedStyle(header.querySelector('.header-actions')).marginLeft === '32px',
+            progress: Math.abs(progress.right - actions.right) < 1,
+            rightEdge: header.classList.contains('header-single-row')
+              ? Math.abs(
+                  tools.left -
+                    progress.right -
+                    parseFloat(style.columnGap || 0) -
+                    parseFloat(getComputedStyle(header.querySelector('.header-tools')).marginLeft),
+                ) < 1
+              : Math.abs(
+                  actions.right -
+                    header.getBoundingClientRect().right +
+                    parseFloat(style.paddingRight),
+                ) < 1,
+            logoGap:
+              !header.classList.contains('header-single-row') ||
+              Math.abs(actions.left - brand.right - 32) < 1,
+            mainNotCentred: getComputedStyle(document.querySelector('main')).textAlign !== 'center',
+            footerCentred:
+              getComputedStyle(document.querySelector('footer')).textAlign === 'center',
+          };
+        });
+        assert.ok(Object.values(headerFlow).every(Boolean), JSON.stringify(headerFlow));
         const menuLayout = await page.locator('header').evaluate((header) => {
           const menu = header.querySelector('.menu-toggle').getBoundingClientRect();
           const picker = header.querySelector('#theme-picker').getBoundingClientRect();
@@ -165,8 +228,7 @@ export async function checkPresentation(browser, base) {
           menuLayout.ordered && menuLayout.aligned && menuLayout.atTop,
           `Theme controls stay beside menu: ${width}/${topic}`,
         );
-        assert.equal(await topicSelector.inputValue(), '', 'Topic action resets after navigation');
-        assert.equal(await topicSelector.locator('option:checked').textContent(), 'Topic');
+        assert.equal(await topicSelector.textContent(), 'Topic');
         assert.ok(layout.titleSize >= 28, 'Topic heading starts at the chosen 28px scale');
         assert.ok(
           Math.abs(layout.subjectSize - 12.48) < 0.05,
@@ -185,7 +247,7 @@ export async function checkPresentation(browser, base) {
       }
     }
     await page.setViewportSize({ width: 1280, height: 1000 });
-    await topicSelector.selectOption(originalTopic);
+    await selectTopic(page, originalTopic);
     await page.locator('[data-mode="plain"]').click();
     await page.locator('#level').selectOption('2');
     const pad = page.locator('#working');
@@ -343,7 +405,7 @@ export async function checkPresentation(browser, base) {
         await page.screenshot({ path: `${artifacts}/flex-questions-${width}.png`, fullPage: true });
     }
     // Phone cards use the available viewport width; short questions pair without shrinking maths.
-    await topicSelector.selectOption('M01');
+    await selectTopic(page, 'M01');
     await page.locator('[data-mode="plain"]').click();
     await page.locator('#level').selectOption('0');
     for (const width of [360, 390, 440, 767, 768]) {
@@ -394,6 +456,8 @@ export async function checkPresentation(browser, base) {
     for (const width of [360, 394, 768]) {
       await page.setViewportSize({ width, height: 956 });
       await page.clock.runFor(32);
+      // ResizeObserver regrouping is native; a virtual-clock step does not guarantee its delivery.
+      await page.waitForFunction(() => document.documentElement.scrollWidth <= innerWidth);
       assert.equal(await page.getByRole('combobox', { name: 'Level', exact: true }).count(), 1);
       // Read both controls in one layout snapshot; regrouping can move the whole panel.
       const { method, level } = await page.locator('.level-row').evaluate((row) => ({
@@ -434,6 +498,16 @@ export async function checkPresentation(browser, base) {
             );
           }),
           overflow: document.documentElement.scrollWidth > innerWidth,
+          outside: [...document.querySelectorAll('body *')]
+            .filter((node) => {
+              const box = node.getBoundingClientRect();
+              return box.width && box.right > innerWidth + 1;
+            })
+            .map((node) => ({
+              tag: node.tagName,
+              class: node.className,
+              right: node.getBoundingClientRect().right,
+            })),
         };
       });
       assert.ok(confidence.fourByFour > 0, 'Confidence sample includes 4×4-digit questions');
@@ -451,7 +525,7 @@ export async function checkPresentation(browser, base) {
         fullPage: true,
       });
     }
-    await topicSelector.selectOption(originalTopic);
+    await selectTopic(page, originalTopic);
     await page.locator('[data-mode="plain"]').click();
     await page.locator('#level').selectOption('2');
     // A longer expression can share an equal-width pair if both still fit.
@@ -486,6 +560,22 @@ export async function checkPresentation(browser, base) {
       `Long expressions stay centred; shorter cards can still share rows: ${JSON.stringify(extended)}`,
     );
     await page.screenshot({ path: `${artifacts}/flex-mixed-widths.png`, fullPage: true });
+    await page.setViewportSize({ width: 1280, height: 1000 });
+    await page.locator('[data-mode="errors"]').click();
+    assert.equal(await page.locator('.question-option').count(), 4);
+    const partial = await page.locator('.question-list').evaluate((list) => {
+      const boxes = [...list.querySelectorAll('li')].map((item) => item.getBoundingClientRect());
+      const bounds = list.getBoundingClientRect(),
+        last = boxes.at(-1);
+      return {
+        count: boxes.filter((box) => Math.abs(box.top - last.top) < 1).length,
+        centred: Math.abs(last.left + last.right - bounds.left - bounds.right) < 1,
+        natural: last.width < bounds.width / 2,
+      };
+    });
+    assert.ok(partial.count === 1 && partial.centred && partial.natural, JSON.stringify(partial));
+    await page.screenshot({ path: `${artifacts}/error-questions-four.png`, fullPage: true });
+    await page.locator('[data-mode="plain"]').click();
     console.log(
       'Flex layout: intact bank expressions, equal row widths and short-question pairs down to 360px.',
     );
@@ -563,7 +653,7 @@ export async function checkPresentation(browser, base) {
     for (const width of [360, 768]) {
       await page.setViewportSize({ width, height: 956 });
       for (const topic of ['M01', 'M02', 'M10']) {
-        await topicSelector.selectOption(topic);
+        await selectTopic(page, topic);
         await page.locator('[data-mode="demo"]').click();
         await page.locator('[data-demo-level="2"]').click();
         await page.locator('[data-demo-speed]').selectOption('2');
@@ -588,8 +678,68 @@ export async function checkPresentation(browser, base) {
         );
         const count = await descriptions.count();
         assert.ok(count > 0);
-        for (let elapsed = 0; elapsed < 20000; elapsed += 650) {
-          await page.clock.runFor(650);
+        const phases = new Set();
+        let previousInk = null;
+        for (let elapsed = 0; elapsed < 40000; elapsed += 325) {
+          await page.clock.runFor(325);
+          const phase =
+            topic === 'M10'
+              ? null
+              : await page
+                  .locator('.demo-working .arithmetic-working')
+                  .getAttribute('data-method-phase');
+          if (topic === 'M01') {
+            const ink = await page.locator('.demo-working svg text').count();
+            if (['sum', 'write', 'carry'].includes(phase) && previousInk !== null)
+              assert.equal(
+                ink - previousInk,
+                phase === 'sum' ? 0 : 1,
+                `${phase}: sum before writing, then carry before the next sum`,
+              );
+            previousInk = ink;
+          }
+          if (topic === 'M10')
+            assert.ok(
+              await page
+                .locator('.demo-working .balance')
+                .evaluate((table) =>
+                  [...table.querySelectorAll('tr:last-child :is(.lhs, .rhs)')].every(
+                    (cell) =>
+                      cell.classList.contains('unwritten') !==
+                      cell.classList.contains('method-active'),
+                  ),
+                ),
+            );
+          if (phase) {
+            assert.ok(
+              await page.locator('.demo-working [data-method-highlight]').count(),
+              `${topic}/${phase} has an operation highlight`,
+            );
+            if (
+              width === 360 &&
+              !phases.has(phase) &&
+              ['sum', 'write', 'carry', 'divide'].includes(phase)
+            ) {
+              await page.locator('.demo-working').screenshot({
+                path: `${artifacts}/method-highlight-${topic}-${phase}.png`,
+                animations: 'disabled',
+              });
+            }
+            if (
+              width === 360 &&
+              topic === 'M01' &&
+              phase === 'sum' &&
+              !phases.has('wide-diagonal') &&
+              (await page.locator('[data-method-highlight="diagonal"]').count()) >= 3
+            ) {
+              await page.locator('.demo-working').screenshot({
+                path: `${artifacts}/method-highlight-M01-diagonal.png`,
+                animations: 'disabled',
+              });
+              phases.add('wide-diagonal');
+            }
+            phases.add(phase);
+          }
           assert.equal(
             await page.evaluate(() => scrollY),
             start,
@@ -612,6 +762,11 @@ export async function checkPresentation(browser, base) {
             'Highlight follows the current logical step',
           );
         }
+        if (topic === 'M01')
+          for (const phase of ['multiply', 'tens', 'units', 'sum', 'write', 'carry'])
+            assert.ok(phases.has(phase), phase);
+        if (topic === 'M02')
+          for (const phase of ['divide', 'write', 'carry']) assert.ok(phases.has(phase), phase);
         const geometry = await page.locator('.demo-stage').evaluate((stage) => {
           const question = stage.querySelector('.selected-equation').getBoundingClientRect();
           const working = stage.querySelector('.demo-working').getBoundingClientRect();
@@ -666,7 +821,7 @@ export async function checkPresentation(browser, base) {
         });
       }
     }
-    await topicSelector.selectOption(originalTopic);
+    await selectTopic(page, originalTopic);
     await page.locator('[data-mode="demo"]').click();
     await page.setViewportSize({ width: 390, height: 844 });
     await page.clock.resume();
@@ -870,12 +1025,14 @@ export async function checkPresentation(browser, base) {
     for (const width of [360, 1600]) {
       await page.setViewportSize({ width, height: 1000 });
       await page.clock.runFor(32);
-      // Focus restoration follows the observer's regrouping and Svelte's DOM update.
-      await page.waitForFunction(() => document.activeElement?.matches('[data-mode="plain"]'));
-      assert.ok(
-        await focusedStage.evaluate((button) => button === document.activeElement),
-        'Regrouping rows preserves keyboard focus',
-      );
+      // Wait for the new row layout and restored focus in the same DOM snapshot.
+      await page.waitForFunction((width) => {
+        const rows = document.querySelectorAll('.learning-steps .stage-row').length;
+        return (
+          (width === 360 ? rows > 1 : rows === 1) &&
+          document.activeElement?.matches('[data-mode="plain"]')
+        );
+      }, width);
     }
     await page.locator('[data-mode="plain"]').click();
     await page.setViewportSize({ width: 767, height: 1000 });
@@ -921,7 +1078,7 @@ export async function checkPresentation(browser, base) {
       element.style.removeProperty('box-sizing');
     });
     for (const topic of ['M01', 'M02']) {
-      await topicSelector.selectOption(topic);
+      await selectTopic(page, topic);
       await page.locator('[data-mode="demo"]').click();
       await page.locator('[data-demo-speed]').selectOption('1');
       await page.locator('#demo-play').click();

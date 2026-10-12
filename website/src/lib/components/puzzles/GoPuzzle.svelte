@@ -70,6 +70,15 @@
       root.removeEventListener('click', toggleHint);
     };
   });
+  export function getState() {
+    return $state.snapshot({ answers, result, hint, solution });
+  }
+  export function setState(state) {
+    answers = state.answers;
+    result = state.result;
+    hint = state.hint;
+    solution = state.solution;
+  }
   export function evaluate() {
     return evaluatePuzzle(variation, answers);
   }

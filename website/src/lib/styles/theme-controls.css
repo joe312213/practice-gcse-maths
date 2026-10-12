@@ -23,7 +23,7 @@
 .theme-controls {
   display: flex;
   align-items: center;
-  gap: 0.15rem;
+  gap: var(--theme-tools-gap);
   flex-shrink: 0;
 }
 #theme-picker {

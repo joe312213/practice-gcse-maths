@@ -13,14 +13,14 @@
 <script>
   import SiteHeader from '#lib/components/ui/SiteHeader.svelte';
   import SiteFooter from '#lib/components/ui/SiteFooter.svelte';
-  import { resolve } from '$app/paths';
+  import { resolve, asset } from '$app/paths';
 </script>
 
 <svelte:head><title>About · Maths practice</title></svelte:head>
 <SiteHeader section="content" back></SiteHeader>
 <main id="main" class="full" tabindex="-1">
   <h1>About Maths practice</h1>
-  <section class="card">
+  <section class="card page-panel">
     <h2>Author and purpose</h2>
     <p>
       Created by Joe Hudson to help Foundation GCSE Maths students practise accurate methods and
@@ -33,11 +33,24 @@
       >. Its <a href="https://github.com/jhudshcg/starters">source code</a> also informed the approach
       to practice, feedback and saved progress.
     </p>
+    <h2>Go score estimates</h2>
+    <p>
+      Optional estimates use GNU Go 3.8, copyright the Free Software Foundation and contributors,
+      under GPL version 3 or later. <a href={asset('/engines/gnugo/COPYING')}>Licence</a> ·
+      <a href={asset('/engines/gnugo/gnugo-3.8.tar.gz')}>GNU Go source</a> ·
+      <a href={asset('/engines/gnugo/bridge.c')}>Browser bridge</a> ·
+      <a href={asset('/engines/gnugo/worker.js')}>Worker source</a> ·
+      <a href={asset('/engines/gnugo/build.sh')}>Build script</a> ·
+      <a href={asset('/engines/gnugo/EMSCRIPTEN_LICENSE')}>Emscripten licence</a>.
+    </p>
     <h2>How it is developed</h2>
     <p>
-      This is an agent-augmented development project: I develop specifications and harness related processes, UI design, review and update generated code, set the teaching direction, create and review a
-      sample of teaching content. The AI helps with planning, reviewing specs and mostly takes care of code implementation with close human-in-the-loop feedback and review, content preparation
-      and testing. Automated maths and behaviour tests are used alongside manual browser and visual checks.
+      This is an agent-augmented development project: I develop specifications and harness related
+      processes, UI design, review and update generated code, set the teaching direction, create and
+      review a sample of teaching content. The AI helps with planning, reviewing specs and mostly
+      takes care of code implementation with close human-in-the-loop feedback and review, content
+      preparation and testing. Automated maths and behaviour tests are used alongside manual browser
+      and visual checks.
     </p>
     <p>
       The site is still being developed. Checks support review; they do not imply that every topic

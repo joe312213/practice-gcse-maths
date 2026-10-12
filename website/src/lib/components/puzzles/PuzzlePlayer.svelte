@@ -14,7 +14,7 @@
   import { onMount } from 'svelte';
   import { mountPuzzle } from '@subject-apps/puzzles/player';
   import GoPuzzle from './GoPuzzle.svelte';
-  let { variation, source } = $props();
+  let { variation, source, initialState = null } = $props();
   const isGo = $derived(variation.parts.every((part) => part.kind === 'go'));
   let root = $state(),
     control = $state.raw();
@@ -24,7 +24,17 @@
     solution = $state(false),
     message = $state('');
   onMount(() => {
-    if (isGo) return;
+    if (initialState) {
+      result = initialState.result;
+      assisted = initialState.assisted;
+      hint = initialState.hint;
+      solution = initialState.solution;
+      message = initialState.message;
+    }
+    if (isGo) {
+      if (initialState) control.setState(initialState.board);
+      return;
+    }
     control = mountPuzzle(root, variation, {
       onAssist: () => (assisted = true),
       onChange: () => {
@@ -33,8 +43,24 @@
       },
       onMessage: (text) => (message = text),
     });
+    if (initialState) {
+      control.setState(initialState.board);
+      control.setResult(initialState.result);
+      control.showHint(hint);
+      control.showSolution(solution);
+    }
     return () => control.destroy();
   });
+  export function getState() {
+    return $state.snapshot({
+      board: control?.getState(),
+      result,
+      assisted,
+      hint,
+      solution,
+      message,
+    });
+  }
   /** Explicitly check the current board without revealing or replacing the student's answer. */
   function check() {
     const checked = control.evaluate();
@@ -59,7 +85,9 @@
   <div class="puzzle-controls" bind:this={root}></div>
 {/if}
 <div class="actions">
-  <button class="action-button primary" type="button" onclick={check}>Check puzzle</button>
+  {#if !isGo}<button class="action-button primary" type="button" onclick={check}
+      >Check puzzle</button
+    >{/if}
   {#if !isGo}<button
       class="action-button"
       type="button"

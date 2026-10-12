@@ -46,13 +46,30 @@
         {#if numbered}<th class="row-number" scope="row"
             ><span class="sr-only">Row </span>{index + 1}</th
           >{/if}
-        <td class="lhs" class:unwritten={visible < 1}><span>{row.l}</span></td>
+        <td
+          class="lhs"
+          class:unwritten={visible < 1}
+          class:method-active={staged && index === limit - 1 && part >= 1}><span>{row.l}</span></td
+        >
         <!-- The column paints one continuous line behind the transparent equation cells. -->
         <td class="equals" class:unwritten={visible < 2} class:operation={row.kind === 'op'}
           ><span>{row.kind === 'op' ? '' : '='}</span></td
         >
-        <td class="rhs" class:unwritten={visible < 3}><span>{row.r}</span></td>
+        <td
+          class="rhs"
+          class:unwritten={visible < 3}
+          class:method-active={staged && index === limit - 1 && part >= 3}><span>{row.r}</span></td
+        >
       </tr>
     {/each}
   </tbody>
 </table>
+
+<style>
+  .method-active > span {
+    background: var(--selection-bg);
+    color: var(--selection-text);
+    outline: 1px solid var(--selection-border);
+    border-radius: var(--radius-field);
+  }
+</style>

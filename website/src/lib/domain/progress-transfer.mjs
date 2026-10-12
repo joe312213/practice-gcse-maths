@@ -13,6 +13,7 @@
  *
  * Libs: none.
  */
+import { validLearnerId } from './profiles.mjs';
 import { newTrack, profileKey, MAX_PAGE_SIZE } from './engine.mjs';
 import { decodePracticeSet } from './practice-code.mjs';
 
@@ -65,6 +66,8 @@ export function exportProgress(profile, now = Date.now()) {
       practiceMeasuredFrom: profile.practiceMeasuredFrom,
       exportedAt: now,
       username: profile.name,
+      learnerId: profile.id,
+      progressUpdatedAt: profile.progressUpdatedAt,
       backup: { since: profile.backup?.since ?? now, lastExportAt: now, lastExportType: 'json' },
       topics: Object.fromEntries(
         Object.entries(profile.topics).map(([key, value]) => [
@@ -81,6 +84,13 @@ export function exportProgress(profile, now = Date.now()) {
     null,
     2,
   );
+}
+/** Stable transferable state for local change tracking; backup/export bookkeeping is excluded. */
+export function progressContent(profile) {
+  const { exportedAt, backup, progressUpdatedAt, ...content } = JSON.parse(
+    exportProgress(profile, 0),
+  );
+  return JSON.stringify(content);
 }
 /**
  * Validate an untrusted JSON envelope and return a normalized learner record.
@@ -105,6 +115,14 @@ export function parseProgress(raw) {
     key = profileKey(name);
   requireValue(key.length > 0 && key.length <= 40);
   const profile = { name, key, topics: {}, revision: { recommendations: [] } };
+  if (value.progressUpdatedAt !== undefined) {
+    requireValue(number(value.progressUpdatedAt) && value.progressUpdatedAt <= 8640000000000000);
+    profile.progressUpdatedAt = value.progressUpdatedAt;
+  }
+  if (value.learnerId !== undefined) {
+    requireValue(validLearnerId(value.learnerId));
+    profile.id = value.learnerId.toLowerCase();
+  }
   if (value.practiceMeasuredFrom !== undefined) {
     requireValue(
       number(value.practiceMeasuredFrom) && value.practiceMeasuredFrom <= 8640000000000000,
@@ -275,9 +293,15 @@ export function parseProgress(raw) {
  * Parameter replace: explicit permission to replace a matching learner.
  */
 export function importProgress(store, profile, replace = false) {
-  const index = store.profiles.findIndex((item) => item.key === profile.key);
+  const byId = profile.id ? store.profiles.findIndex((item) => item.id === profile.id) : -1;
+  const byName = store.profiles.findIndex((item) => item.key === profile.key);
+  if (byId >= 0 && byName >= 0 && byId !== byName)
+    throw Error('Another learner already uses this name. No progress has been replaced.');
+  const index = byId >= 0 ? byId : byName;
   if (index >= 0 && !replace)
     throw Error('This learner already has saved progress. Confirm replacement first.');
+  // Legacy files gain the confirmed existing identity, or a fresh one on first import.
+  profile = { ...profile, id: profile.id ?? store.profiles[index]?.id ?? crypto.randomUUID() };
   if (index >= 0) store.profiles[index] = structuredClone(profile);
   else store.profiles.push(structuredClone(profile));
   store.last = profile.key;

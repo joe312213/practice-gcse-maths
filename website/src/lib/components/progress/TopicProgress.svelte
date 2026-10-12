@@ -11,12 +11,14 @@
   Libs: bits-ui (dialog/popover interaction).
 -->
 <script>
+  import ChevronSteps from '#lib/components/ui/ChevronSteps.svelte';
   import { Popover } from 'bits-ui';
   import { topicPath } from '#lib/content/topic-routes.mjs';
   import { resolve } from '$app/paths';
   import { onDestroy } from 'svelte';
   import { SET_LEVELS } from '#lib/domain/practice-code.mjs';
   let { row, openBreakdown = $bindable(null) } = $props();
+  const stages = $derived(row.stages.map((stage) => ({ ...stage, id: stage.level })));
   let closeTimer;
   let hovering = false;
   const key = (level) => `${row.key}:${level}`;
@@ -38,7 +40,7 @@
     value === null ? 'Not yet practised' : new Date(value).toLocaleDateString('en-GB');
 </script>
 
-<article class="card topic-progress" class:stale={row.stale} data-priority={row.status}>
+<article class="card page-panel topic-progress" class:stale={row.stale} data-priority={row.status}>
   <div>
     <h2><a href={resolve(topicPath(row.topic.bank))}>{row.topic.title}</a></h2>
     <p>Last practised: {date(row.last)}</p>
@@ -52,8 +54,13 @@
       </p>{:else}<p>Initial assessment: not yet recorded.</p>{/if}
   </div>
   <div>
-    <div class="challenge-stages" aria-label={`${row.topic.title} success by challenge level`}>
-      {#each row.stages as stage}
+    <ChevronSteps
+      items={stages}
+      class="challenge-stages"
+      wrap={false}
+      label={`${row.topic.title} success by challenge level`}
+    >
+      {#snippet segment(stage, attributes)}
         <Popover.Root
           open={openBreakdown === key(stage.level)}
           onOpenChange={(open) => {
@@ -62,7 +69,8 @@
           }}
         >
           <Popover.Trigger
-            class="challenge-stage"
+            {...attributes}
+            class={`action-button challenge-stage ${attributes.class}`}
             onpointerenter={(event) => {
               if (event.pointerType === 'mouse') {
                 cancelClose();
@@ -115,8 +123,8 @@
             </Popover.Content></Popover.Portal
           >
         </Popover.Root>
-      {/each}
-    </div>
+      {/snippet}
+    </ChevronSteps>
     {#if row.missing}<p>Missing data - do some practice to assess revision priority</p>
     {:else}<p>
         {row.rate.toFixed(1)}% at recommended levels · {row.status === 'red'

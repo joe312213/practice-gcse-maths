@@ -17,9 +17,11 @@
 </script>
 
 <footer>
-  {@render children?.()}
+  <p>Developed by Joe Hudson 2026</p>
+  {#if children}<p>{@render children()}</p>{/if}
   <div class="footer-links">
     <a href={resolve('/about.html')}>About</a>
+    <a href={resolve('/help.html')}>FAQ &amp; troubleshooting</a>
     <IssueReport {question} {topic} />
   </div>
 </footer>

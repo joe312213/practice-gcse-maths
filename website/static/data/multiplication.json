@@ -1788,6 +1788,1737 @@
       "method": "lattice",
       "hint": "Check the diagonal totals one at a time. Where must a carry move next?",
       "method_note": "Record both digits of every cell product. Add diagonals from bottom right, carrying into the next diagonal. The partial products 749,200 + 187,300 + 29,968 total 966,468."
+    },
+    {
+      "id": "maths:M01-SE-C1-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 0,
+      "q": "57 × 8",
+      "a": 57,
+      "b": 8,
+      "answer": "456",
+      "check": "Partition check: 50 × 8 + 7 × 8 = 400 + 56 = 456.",
+      "method": "lattice",
+      "errorImage": "data/working/M01-SE-C1-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Change the 5 × 8 cell to 4 tens and 0 units."
+        },
+        {
+          "id": "1",
+          "text": "Change the 5 × 8 cell to 0 tens and 4 units."
+        },
+        {
+          "id": "2",
+          "text": "Keep the 5 × 8 cell and remove every carry when adding diagonals."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "The top-left cell should be 5 × 8 = 40, not 30. Recalculate the diagonals, including each carry. Correct answer: 456.",
+      "wrong": "356",
+      "error_note": "The top-left cell should be 5 × 8 = 40, not 30. Recalculate the diagonals, including each carry. Correct answer: 456.",
+      "hint": "Check the 5 × 8 cell. What product do its two halves represent?"
+    },
+    {
+      "id": "maths:M01-SE-C2-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 1,
+      "q": "76 × 48",
+      "a": 76,
+      "b": 48,
+      "answer": "3648",
+      "check": "Partition check: 76 × 40 + 76 × 8 = 3,040 + 608 = 3,648.",
+      "method": "lattice",
+      "errorImage": "data/working/M01-SE-C2-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Change the 7 × 4 cell to 2 tens and 8 units."
+        },
+        {
+          "id": "1",
+          "text": "Change the 7 × 4 cell to 8 tens and 2 units."
+        },
+        {
+          "id": "2",
+          "text": "Keep the 7 × 4 cell and remove every carry when adding diagonals."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "The top-left cell should be 7 × 4 = 28, not 18. Recalculate the diagonals, including each carry. Correct answer: 3,648.",
+      "wrong": "2648",
+      "error_note": "The top-left cell should be 7 × 4 = 28, not 18. Recalculate the diagonals, including each carry. Correct answer: 3,648.",
+      "hint": "Check the 7 × 4 cell. What product do its two halves represent?"
+    },
+    {
+      "id": "maths:M01-SE-C3-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 2,
+      "q": "6,874 × 759",
+      "a": 6874,
+      "b": 759,
+      "answer": "5217366",
+      "check": "Partition check: 6,874 × 750 + 6,874 × 9 = 5,155,500 + 61,866 = 5,217,366.",
+      "method": "lattice",
+      "errorImage": "data/working/M01-SE-C3-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Change the 6 × 7 cell to 4 tens and 2 units."
+        },
+        {
+          "id": "1",
+          "text": "Change the 6 × 7 cell to 2 tens and 4 units."
+        },
+        {
+          "id": "2",
+          "text": "Keep the 6 × 7 cell and remove every carry when adding diagonals."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "The top-left cell should be 6 × 7 = 42, not 32. Recalculate the diagonals, including each carry. Correct answer: 5,217,366.",
+      "wrong": "4217366",
+      "error_note": "The top-left cell should be 6 × 7 = 42, not 32. Recalculate the diagonals, including each carry. Correct answer: 5,217,366.",
+      "hint": "Check the 6 × 7 cell. What product do its two halves represent?"
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "36 × 7",
+      "a": 36,
+      "b": 7,
+      "answer": "252",
+      "check": "252 ÷ 7 = 36",
+      "method": "lattice",
+      "hint": "Check the 6 × 7 cell. Which half holds its tens digit?",
+      "method_note": "The 6 × 7 cell holds 4 tens and 2 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "262",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "58 × 8",
+      "a": 58,
+      "b": 8,
+      "answer": "464",
+      "check": "464 ÷ 8 = 58",
+      "method": "lattice",
+      "hint": "Check the 8 × 8 cell. Which half holds its tens digit?",
+      "method_note": "The 8 × 8 cell holds 6 tens and 4 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "474",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "79 × 4",
+      "a": 79,
+      "b": 4,
+      "answer": "316",
+      "check": "316 ÷ 4 = 79",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 79 × 4. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 11, plus 0 carried in: total 11. Write 1 and carry 1 to the next diagonal.",
+      "wrong": "216",
+      "error_note": "The total 11 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "64 × 9",
+      "a": 64,
+      "b": 9,
+      "answer": "576",
+      "check": "576 ÷ 9 = 64",
+      "method": "lattice",
+      "hint": "Check the 4 × 9 cell. Which half holds its tens digit?",
+      "method_note": "The 4 × 9 cell holds 3 tens and 6 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "586",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q5",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "47 × 6",
+      "a": 47,
+      "b": 6,
+      "answer": "282",
+      "check": "282 ÷ 6 = 47",
+      "method": "lattice",
+      "hint": "Check the 7 × 6 cell. Which half holds its tens digit?",
+      "method_note": "The 7 × 6 cell holds 4 tens and 2 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "292",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q6",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "85 × 7",
+      "a": 85,
+      "b": 7,
+      "answer": "595",
+      "check": "595 ÷ 7 = 85",
+      "method": "lattice",
+      "hint": "Check the 5 × 7 cell. Which half holds its tens digit?",
+      "method_note": "The 5 × 7 cell holds 3 tens and 5 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "605",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q7",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "92 × 6",
+      "a": 92,
+      "b": 6,
+      "answer": "552",
+      "check": "552 ÷ 6 = 92",
+      "method": "lattice",
+      "hint": "Check the 2 × 6 cell. Which half holds its tens digit?",
+      "method_note": "The 2 × 6 cell holds 1 tens and 2 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "562",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q8",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "73 × 8",
+      "a": 73,
+      "b": 8,
+      "answer": "584",
+      "check": "584 ÷ 8 = 73",
+      "method": "lattice",
+      "hint": "Check the 3 × 8 cell. Which half holds its tens digit?",
+      "method_note": "The 3 × 8 cell holds 2 tens and 4 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "594",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q9",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "59 × 6",
+      "a": 59,
+      "b": 6,
+      "answer": "354",
+      "check": "354 ÷ 6 = 59",
+      "method": "lattice",
+      "hint": "Check the 9 × 6 cell. Which half holds its tens digit?",
+      "method_note": "The 9 × 6 cell holds 5 tens and 4 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "364",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q10",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "28 × 7",
+      "a": 28,
+      "b": 7,
+      "answer": "196",
+      "check": "196 ÷ 7 = 28",
+      "method": "lattice",
+      "hint": "Check the 8 × 7 cell. Which half holds its tens digit?",
+      "method_note": "The 8 × 7 cell holds 5 tens and 6 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "206",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q11",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "66 × 9",
+      "a": 66,
+      "b": 9,
+      "answer": "594",
+      "check": "594 ÷ 9 = 66",
+      "method": "lattice",
+      "hint": "Check the 6 × 9 cell. Which half holds its tens digit?",
+      "method_note": "The 6 × 9 cell holds 5 tens and 4 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "604",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-PL-C1-Q12",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 0,
+      "q": "84 × 5",
+      "a": 84,
+      "b": 5,
+      "answer": "420",
+      "check": "420 ÷ 5 = 84",
+      "method": "lattice",
+      "hint": "Check the 4 × 5 cell. Which half holds its tens digit?",
+      "method_note": "The 4 × 5 cell holds 2 tens and 0 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "430",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-SC-C1-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "43 × 8",
+      "a": 43,
+      "b": 8,
+      "answer": "344",
+      "check": "344 ÷ 8 = 43",
+      "method": "lattice",
+      "hint": "Check the 3 × 8 cell. Which half holds its tens digit?",
+      "method_note": "The 3 × 8 cell holds 2 tens and 4 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "354",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-SC-C1-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "76 × 7",
+      "a": 76,
+      "b": 7,
+      "answer": "532",
+      "check": "532 ÷ 7 = 76",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 76 × 7. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+      "wrong": "432",
+      "error_note": "The total 13 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-SC-C1-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "54 × 9",
+      "a": 54,
+      "b": 9,
+      "answer": "486",
+      "check": "486 ÷ 9 = 54",
+      "method": "lattice",
+      "hint": "Check the 4 × 9 cell. Which half holds its tens digit?",
+      "method_note": "The 4 × 9 cell holds 3 tens and 6 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "496",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-SC-C1-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "89 × 4",
+      "a": 89,
+      "b": 4,
+      "answer": "356",
+      "check": "356 ÷ 4 = 89",
+      "method": "lattice",
+      "hint": "Check the 9 × 4 cell. Which half holds its tens digit?",
+      "method_note": "The 9 × 4 cell holds 3 tens and 6 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "366",
+      "error_note": "Keep the tens and units halves in their own diagonals; check the result by dividing back."
+    },
+    {
+      "id": "maths:M01-P3-ER-C1-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 0,
+      "q": "48 × 7",
+      "a": 48,
+      "b": 7,
+      "answer": "336",
+      "check": "336 ÷ 7 = 48",
+      "method": "lattice",
+      "hint": "Check the 8 × 7 cell and the place of each digit.",
+      "method_note": "The 10s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+      "wrong": "346",
+      "error_note": "Write 5 in the tens half and 6 in the units half of the 8 × 7 cell. Correct answer: 336.",
+      "errorImage": "data/working/M01-P3-ER-C1-Q1.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Write 6 in the tens half and 6 in the units half of that cell."
+        },
+        {
+          "id": "1",
+          "text": "Put the whole product 56 in the units half of that cell."
+        },
+        {
+          "id": "2",
+          "text": "Write 5 in the tens half and 6 in the units half of the 8 × 7 cell."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Write 5 in the tens half and 6 in the units half of the 8 × 7 cell. Correct answer: 336."
+    },
+    {
+      "id": "maths:M01-P3-ER-C1-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 0,
+      "q": "69 × 8",
+      "a": 69,
+      "b": 8,
+      "answer": "552",
+      "check": "552 ÷ 8 = 69",
+      "method": "lattice",
+      "hint": "Check the 9 × 8 cell and the place of each digit.",
+      "method_note": "The 10s diagonal contains a sum of 15, plus 0 carried in: total 15. Write 5 and carry 1 to the next diagonal.",
+      "wrong": "507",
+      "error_note": "Write 7 in the tens half and 2 in the units half of the 9 × 8 cell. Correct answer: 552.",
+      "errorImage": "data/working/M01-P3-ER-C1-Q2.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Put the whole product 72 in the units half of that cell."
+        },
+        {
+          "id": "1",
+          "text": "Write 7 in the tens half and 2 in the units half of the 9 × 8 cell."
+        },
+        {
+          "id": "2",
+          "text": "Write 2 in the tens half and 7 in the units half of that cell."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Write 7 in the tens half and 2 in the units half of the 9 × 8 cell. Correct answer: 552."
+    },
+    {
+      "id": "maths:M01-P3-ER-C1-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 0,
+      "q": "57 × 9",
+      "a": 57,
+      "b": 9,
+      "answer": "513",
+      "check": "513 ÷ 9 = 57",
+      "method": "lattice",
+      "hint": "The 10s diagonal totals 11. Which part is carried?",
+      "method_note": "The 10s diagonal contains a sum of 11, plus 0 carried in: total 11. Write 1 and carry 1 to the next diagonal.",
+      "wrong": "413",
+      "error_note": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 513.",
+      "errorImage": "data/working/M01-P3-ER-C1-Q3.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Carry 1 from the 10s diagonal to the 100s diagonal."
+        },
+        {
+          "id": "1",
+          "text": "Keep the whole total in the 10s answer position."
+        },
+        {
+          "id": "2",
+          "text": "Carry 2 into the next diagonal."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 513."
+    },
+    {
+      "id": "maths:M01-P3-ER-C1-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 0,
+      "q": "86 × 7",
+      "a": 86,
+      "b": 7,
+      "answer": "602",
+      "check": "602 ÷ 7 = 86",
+      "method": "lattice",
+      "hint": "The 10s diagonal totals 10. Which part is carried?",
+      "method_note": "The 10s diagonal contains a sum of 10, plus 0 carried in: total 10. Write 0 and carry 1 to the next diagonal.",
+      "wrong": "702",
+      "error_note": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 602.",
+      "errorImage": "data/working/M01-P3-ER-C1-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Keep the whole total in the 10s answer position."
+        },
+        {
+          "id": "1",
+          "text": "Carry 2 into the next diagonal."
+        },
+        {
+          "id": "2",
+          "text": "Carry 1 from the 10s diagonal to the 100s diagonal."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 602."
+    },
+    {
+      "id": "maths:M01-P3-ER-C1-Q5",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 0,
+      "q": "62 × 9",
+      "a": 62,
+      "b": 9,
+      "answer": "558",
+      "check": "558 ÷ 9 = 62",
+      "method": "lattice",
+      "hint": "Check the addition written for the 1s diagonal.",
+      "method_note": "The 2 × 9 cell holds 1 tens and 8 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "559",
+      "error_note": "Recalculate that diagonal: 8 + 0 = 8. Correct answer: 558.",
+      "errorImage": "data/working/M01-P3-ER-C1-Q5.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore every tens half when summing that diagonal."
+        },
+        {
+          "id": "1",
+          "text": "Recalculate that diagonal: 8 + 0 = 8."
+        },
+        {
+          "id": "2",
+          "text": "Add another carry of 1 to that diagonal."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Recalculate that diagonal: 8 + 0 = 8. Correct answer: 558."
+    },
+    {
+      "id": "maths:M01-P3-ER-C1-Q6",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 0,
+      "q": "75 × 8",
+      "a": 75,
+      "b": 8,
+      "answer": "600",
+      "check": "600 ÷ 8 = 75",
+      "method": "lattice",
+      "hint": "Do the two halves of the bottom-right cell have the same place value?",
+      "method_note": "The 10s diagonal contains a sum of 10, plus 0 carried in: total 10. Write 0 and carry 1 to the next diagonal.",
+      "wrong": "564",
+      "error_note": "Place the 4 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 600.",
+      "errorImage": "data/working/M01-P3-ER-C1-Q6.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Place the 4 from the tens half of the bottom-right cell in the tens diagonal."
+        },
+        {
+          "id": "1",
+          "text": "Place both halves of the bottom-right cell in the units diagonal."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the tens half of the bottom-right cell."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Place the 4 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 600."
+    },
+    {
+      "id": "maths:M01-P3-ER-C1-Q7",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 0,
+      "q": "70 × 6",
+      "a": 70,
+      "b": 6,
+      "answer": "420",
+      "check": "420 ÷ 6 = 70",
+      "method": "lattice",
+      "hint": "Check the 0 × 6 cell and the place of each digit.",
+      "method_note": "The 0 × 6 cell holds 0 tens and 0 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "426",
+      "error_note": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell. Correct answer: 420.",
+      "errorImage": "data/working/M01-P3-ER-C1-Q7.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Write 0 in the tens half and 6 in the units half of that cell."
+        },
+        {
+          "id": "1",
+          "text": "Put the whole product 0 in the units half of that cell."
+        },
+        {
+          "id": "2",
+          "text": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell. Correct answer: 420."
+    },
+    {
+      "id": "maths:M01-P3-ER-C1-Q8",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 0,
+      "q": "98 × 7",
+      "a": 98,
+      "b": 7,
+      "answer": "686",
+      "check": "686 ÷ 7 = 98",
+      "method": "lattice",
+      "hint": "Which diagonal supplies the units digit of the answer?",
+      "method_note": "The 8 × 7 cell holds 5 tens and 6 units. Add the diagonals from bottom right, retaining any zero answer places.",
+      "wrong": "6860",
+      "error_note": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 686.",
+      "errorImage": "data/working/M01-P3-ER-C1-Q8.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Read the diagonal digits in reverse order."
+        },
+        {
+          "id": "1",
+          "text": "Read the diagonal digits once, ending with the units digit; do not append a zero."
+        },
+        {
+          "id": "2",
+          "text": "Append two zeros to the diagonal digits."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 686."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "48 × 67",
+      "a": 48,
+      "b": 67,
+      "answer": "3216",
+      "check": "3216 ÷ 67 = 48",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 48 × 67. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 21, plus 0 carried in: total 21. Write 1 and carry 2 to the next diagonal.",
+      "wrong": "3016",
+      "error_note": "The total 21 needs a carry of 2. Missing it reduces the result by 200."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "59 × 76",
+      "a": 59,
+      "b": 76,
+      "answer": "4484",
+      "check": "4484 ÷ 76 = 59",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 100s in 59 × 76. Can its total fit in one digit?",
+      "method_note": "The 100s diagonal contains a sum of 14, plus 0 carried in: total 14. Write 4 and carry 1 to the next diagonal.",
+      "wrong": "3484",
+      "error_note": "The total 14 needs a carry of 1. Missing it reduces the result by 1,000."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "84 × 39",
+      "a": 84,
+      "b": 39,
+      "answer": "3276",
+      "check": "3276 ÷ 39 = 84",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 100s in 84 × 39. Can its total fit in one digit?",
+      "method_note": "The 100s diagonal contains a sum of 12, plus 0 carried in: total 12. Write 2 and carry 1 to the next diagonal.",
+      "wrong": "2276",
+      "error_note": "The total 12 needs a carry of 1. Missing it reduces the result by 1,000."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "67 × 58",
+      "a": 67,
+      "b": 58,
+      "answer": "3886",
+      "check": "3886 ÷ 58 = 67",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 67 × 58. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+      "wrong": "3786",
+      "error_note": "The total 18 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q5",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "93 × 47",
+      "a": 93,
+      "b": 47,
+      "answer": "4371",
+      "check": "4371 ÷ 47 = 93",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 100s in 93 × 47. Can its total fit in one digit?",
+      "method_note": "The 100s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+      "wrong": "3371",
+      "error_note": "The total 13 needs a carry of 1. Missing it reduces the result by 1,000."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q6",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "78 × 64",
+      "a": 78,
+      "b": 64,
+      "answer": "4992",
+      "check": "4992 ÷ 64 = 78",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 78 × 64. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 19, plus 0 carried in: total 19. Write 9 and carry 1 to the next diagonal.",
+      "wrong": "4892",
+      "error_note": "The total 19 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q7",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "86 × 79",
+      "a": 86,
+      "b": 79,
+      "answer": "6794",
+      "check": "6794 ÷ 79 = 86",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 100s in 86 × 79. Can its total fit in one digit?",
+      "method_note": "The 100s diagonal contains a sum of 17, plus 0 carried in: total 17. Write 7 and carry 1 to the next diagonal.",
+      "wrong": "5794",
+      "error_note": "The total 17 needs a carry of 1. Missing it reduces the result by 1,000."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q8",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "57 × 86",
+      "a": 57,
+      "b": 86,
+      "answer": "4902",
+      "check": "4902 ÷ 86 = 57",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 57 × 86. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 10, plus 0 carried in: total 10. Write 0 and carry 1 to the next diagonal.",
+      "wrong": "4802",
+      "error_note": "The total 10 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q9",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "69 × 87",
+      "a": 69,
+      "b": 87,
+      "answer": "6003",
+      "check": "6003 ÷ 87 = 69",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 69 × 87. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 10, plus 0 carried in: total 10. Write 0 and carry 1 to the next diagonal.",
+      "wrong": "5903",
+      "error_note": "The total 10 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q10",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "94 × 68",
+      "a": 94,
+      "b": 68,
+      "answer": "6392",
+      "check": "6392 ÷ 68 = 94",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 100s in 94 × 68. Can its total fit in one digit?",
+      "method_note": "The 100s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+      "wrong": "5392",
+      "error_note": "The total 13 needs a carry of 1. Missing it reduces the result by 1,000."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q11",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "76 × 89",
+      "a": 76,
+      "b": 89,
+      "answer": "6764",
+      "check": "6764 ÷ 89 = 76",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 76 × 89. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 16, plus 0 carried in: total 16. Write 6 and carry 1 to the next diagonal.",
+      "wrong": "6664",
+      "error_note": "The total 16 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C2-Q12",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 1,
+      "q": "88 × 57",
+      "a": 88,
+      "b": 57,
+      "answer": "5016",
+      "check": "5016 ÷ 57 = 88",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 88 × 57. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 11, plus 0 carried in: total 11. Write 1 and carry 1 to the next diagonal.",
+      "wrong": "4916",
+      "error_note": "The total 11 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-SC-C2-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "64 × 78",
+      "a": 64,
+      "b": 78,
+      "answer": "4992",
+      "check": "4992 ÷ 78 = 64",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 64 × 78. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 19, plus 0 carried in: total 19. Write 9 and carry 1 to the next diagonal.",
+      "wrong": "4892",
+      "error_note": "The total 19 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-SC-C2-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "97 × 56",
+      "a": 97,
+      "b": 56,
+      "answer": "5432",
+      "check": "5432 ÷ 56 = 97",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 97 × 56. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+      "wrong": "5332",
+      "error_note": "The total 13 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-SC-C2-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "85 × 69",
+      "a": 85,
+      "b": 69,
+      "answer": "5865",
+      "check": "5865 ÷ 69 = 85",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 100s in 85 × 69. Can its total fit in one digit?",
+      "method_note": "The 100s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+      "wrong": "4865",
+      "error_note": "The total 18 needs a carry of 1. Missing it reduces the result by 1,000."
+    },
+    {
+      "id": "maths:M01-P3-SC-C2-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "79 × 87",
+      "a": 79,
+      "b": 87,
+      "answer": "6873",
+      "check": "6873 ÷ 87 = 79",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 79 × 87. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 17, plus 0 carried in: total 17. Write 7 and carry 1 to the next diagonal.",
+      "wrong": "6773",
+      "error_note": "The total 17 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-ER-C2-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 1,
+      "q": "58 × 79",
+      "a": 58,
+      "b": 79,
+      "answer": "4582",
+      "check": "4582 ÷ 79 = 58",
+      "method": "lattice",
+      "hint": "Check the 8 × 9 cell and the place of each digit.",
+      "method_note": "The 10s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+      "wrong": "4592",
+      "error_note": "Write 7 in the tens half and 2 in the units half of the 8 × 9 cell. Correct answer: 4582.",
+      "errorImage": "data/working/M01-P3-ER-C2-Q1.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Write 8 in the tens half and 2 in the units half of that cell."
+        },
+        {
+          "id": "1",
+          "text": "Put the whole product 72 in the units half of that cell."
+        },
+        {
+          "id": "2",
+          "text": "Write 7 in the tens half and 2 in the units half of the 8 × 9 cell."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Write 7 in the tens half and 2 in the units half of the 8 × 9 cell. Correct answer: 4582."
+    },
+    {
+      "id": "maths:M01-P3-ER-C2-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 1,
+      "q": "96 × 47",
+      "a": 96,
+      "b": 47,
+      "answer": "4512",
+      "check": "4512 ÷ 47 = 96",
+      "method": "lattice",
+      "hint": "Check the 6 × 7 cell and the place of each digit.",
+      "method_note": "The 10s diagonal contains a sum of 11, plus 0 carried in: total 11. Write 1 and carry 1 to the next diagonal.",
+      "wrong": "4494",
+      "error_note": "Write 4 in the tens half and 2 in the units half of the 6 × 7 cell. Correct answer: 4512.",
+      "errorImage": "data/working/M01-P3-ER-C2-Q2.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Put the whole product 42 in the units half of that cell."
+        },
+        {
+          "id": "1",
+          "text": "Write 4 in the tens half and 2 in the units half of the 6 × 7 cell."
+        },
+        {
+          "id": "2",
+          "text": "Write 2 in the tens half and 4 in the units half of that cell."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Write 4 in the tens half and 2 in the units half of the 6 × 7 cell. Correct answer: 4512."
+    },
+    {
+      "id": "maths:M01-P3-ER-C2-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 1,
+      "q": "87 × 69",
+      "a": 87,
+      "b": 69,
+      "answer": "6003",
+      "check": "6003 ÷ 69 = 87",
+      "method": "lattice",
+      "hint": "The 10s diagonal totals 10. Which part is carried?",
+      "method_note": "The 10s diagonal contains a sum of 10, plus 0 carried in: total 10. Write 0 and carry 1 to the next diagonal.",
+      "wrong": "5903",
+      "error_note": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 6003.",
+      "errorImage": "data/working/M01-P3-ER-C2-Q3.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Carry 1 from the 10s diagonal to the 100s diagonal."
+        },
+        {
+          "id": "1",
+          "text": "Keep the whole total in the 10s answer position."
+        },
+        {
+          "id": "2",
+          "text": "Carry 2 into the next diagonal."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 6003."
+    },
+    {
+      "id": "maths:M01-P3-ER-C2-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 1,
+      "q": "68 × 95",
+      "a": 68,
+      "b": 95,
+      "answer": "6460",
+      "check": "6460 ÷ 95 = 68",
+      "method": "lattice",
+      "hint": "The 100s diagonal totals 14. Which part is carried?",
+      "method_note": "The 100s diagonal contains a sum of 14, plus 0 carried in: total 14. Write 4 and carry 1 to the next diagonal.",
+      "wrong": "7460",
+      "error_note": "Carry 1 from the 100s diagonal to the 1000s diagonal. Correct answer: 6460.",
+      "errorImage": "data/working/M01-P3-ER-C2-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Keep the whole total in the 100s answer position."
+        },
+        {
+          "id": "1",
+          "text": "Carry 2 into the next diagonal."
+        },
+        {
+          "id": "2",
+          "text": "Carry 1 from the 100s diagonal to the 1000s diagonal."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Carry 1 from the 100s diagonal to the 1000s diagonal. Correct answer: 6460."
+    },
+    {
+      "id": "maths:M01-P3-ER-C2-Q5",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 1,
+      "q": "73 × 86",
+      "a": 73,
+      "b": 86,
+      "answer": "6278",
+      "check": "6278 ÷ 86 = 73",
+      "method": "lattice",
+      "hint": "Check the addition written for the 100s diagonal.",
+      "method_note": "The 100s diagonal contains a sum of 12, plus 0 carried in: total 12. Write 2 and carry 1 to the next diagonal.",
+      "wrong": "6378",
+      "error_note": "Recalculate that diagonal: 12 + 0 = 12. Correct answer: 6278.",
+      "errorImage": "data/working/M01-P3-ER-C2-Q5.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore every tens half when summing that diagonal."
+        },
+        {
+          "id": "1",
+          "text": "Recalculate that diagonal: 12 + 0 = 12."
+        },
+        {
+          "id": "2",
+          "text": "Add another carry of 1 to that diagonal."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Recalculate that diagonal: 12 + 0 = 12. Correct answer: 6278."
+    },
+    {
+      "id": "maths:M01-P3-ER-C2-Q6",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 1,
+      "q": "92 × 78",
+      "a": 92,
+      "b": 78,
+      "answer": "7176",
+      "check": "7176 ÷ 78 = 92",
+      "method": "lattice",
+      "hint": "Do the two halves of the bottom-right cell have the same place value?",
+      "method_note": "The 100s diagonal contains a sum of 11, plus 0 carried in: total 11. Write 1 and carry 1 to the next diagonal.",
+      "wrong": "7167",
+      "error_note": "Place the 1 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 7176.",
+      "errorImage": "data/working/M01-P3-ER-C2-Q6.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Place the 1 from the tens half of the bottom-right cell in the tens diagonal."
+        },
+        {
+          "id": "1",
+          "text": "Place both halves of the bottom-right cell in the units diagonal."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the tens half of the bottom-right cell."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Place the 1 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 7176."
+    },
+    {
+      "id": "maths:M01-P3-ER-C2-Q7",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 1,
+      "q": "80 × 67",
+      "a": 80,
+      "b": 67,
+      "answer": "5360",
+      "check": "5360 ÷ 67 = 80",
+      "method": "lattice",
+      "hint": "Check the 0 × 6 cell and the place of each digit.",
+      "method_note": "The 100s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+      "wrong": "5420",
+      "error_note": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell. Correct answer: 5360.",
+      "errorImage": "data/working/M01-P3-ER-C2-Q7.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Write 0 in the tens half and 6 in the units half of that cell."
+        },
+        {
+          "id": "1",
+          "text": "Put the whole product 0 in the units half of that cell."
+        },
+        {
+          "id": "2",
+          "text": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell. Correct answer: 5360."
+    },
+    {
+      "id": "maths:M01-P3-ER-C2-Q8",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 1,
+      "q": "89 × 76",
+      "a": 89,
+      "b": 76,
+      "answer": "6764",
+      "check": "6764 ÷ 76 = 89",
+      "method": "lattice",
+      "hint": "Which diagonal supplies the units digit of the answer?",
+      "method_note": "The 10s diagonal contains a sum of 16, plus 0 carried in: total 16. Write 6 and carry 1 to the next diagonal.",
+      "wrong": "67640",
+      "error_note": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 6764.",
+      "errorImage": "data/working/M01-P3-ER-C2-Q8.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Read the diagonal digits in reverse order."
+        },
+        {
+          "id": "1",
+          "text": "Read the diagonal digits once, ending with the units digit; do not append a zero."
+        },
+        {
+          "id": "2",
+          "text": "Append two zeros to the diagonal digits."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 6764."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "6,874 × 759",
+      "a": 6874,
+      "b": 759,
+      "answer": "5217366",
+      "check": "5217366 ÷ 759 = 6874",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 100s in 6,874 × 759. Can its total fit in one digit?",
+      "method_note": "The 100s diagonal contains a sum of 23, plus 0 carried in: total 23. Write 3 and carry 2 to the next diagonal.",
+      "wrong": "5215366",
+      "error_note": "The total 23 needs a carry of 2. Missing it reduces the result by 2,000."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "9,483 × 8,976",
+      "a": 9483,
+      "b": 8976,
+      "answer": "85119408",
+      "check": "85119408 ÷ 8976 = 9483",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 9,483 × 8,976. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 10, plus 0 carried in: total 10. Write 0 and carry 1 to the next diagonal.",
+      "wrong": "85119308",
+      "error_note": "The total 10 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "836 × 7,495",
+      "a": 836,
+      "b": 7495,
+      "answer": "6265820",
+      "check": "6265820 ÷ 7495 = 836",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 836 × 7,495. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 12, plus 0 carried in: total 12. Write 2 and carry 1 to the next diagonal.",
+      "wrong": "6265720",
+      "error_note": "The total 12 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "7,596 × 847",
+      "a": 7596,
+      "b": 847,
+      "answer": "6433812",
+      "check": "6433812 ÷ 847 = 7596",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 7,596 × 847. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 11, plus 0 carried in: total 11. Write 1 and carry 1 to the next diagonal.",
+      "wrong": "6433712",
+      "error_note": "The total 11 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q5",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "8,679 × 9,687",
+      "a": 8679,
+      "b": 9687,
+      "answer": "84073473",
+      "check": "84073473 ÷ 9687 = 8679",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 8,679 × 9,687. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 17, plus 0 carried in: total 17. Write 7 and carry 1 to the next diagonal.",
+      "wrong": "84073373",
+      "error_note": "The total 17 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q6",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "978 × 6,854",
+      "a": 978,
+      "b": 6854,
+      "answer": "6703212",
+      "check": "6703212 ÷ 6854 = 978",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 978 × 6,854. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 11, plus 0 carried in: total 11. Write 1 and carry 1 to the next diagonal.",
+      "wrong": "6703112",
+      "error_note": "The total 11 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q7",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "5,867 × 796",
+      "a": 5867,
+      "b": 796,
+      "answer": "4670132",
+      "check": "4670132 ÷ 796 = 5867",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 5,867 × 796. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+      "wrong": "4670032",
+      "error_note": "The total 13 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q8",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "6,978 × 8,596",
+      "a": 6978,
+      "b": 8596,
+      "answer": "59982888",
+      "check": "59982888 ÷ 8596 = 6978",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 100s in 6,978 × 8,596. Can its total fit in one digit?",
+      "method_note": "The 100s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+      "wrong": "59981888",
+      "error_note": "The total 18 needs a carry of 1. Missing it reduces the result by 1,000."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q9",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "847 × 9,678",
+      "a": 847,
+      "b": 9678,
+      "answer": "8197266",
+      "check": "8197266 ÷ 9678 = 847",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 847 × 9,678. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 16, plus 0 carried in: total 16. Write 6 and carry 1 to the next diagonal.",
+      "wrong": "8197166",
+      "error_note": "The total 16 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q10",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "9,786 × 687",
+      "a": 9786,
+      "b": 687,
+      "answer": "6722982",
+      "check": "6722982 ÷ 687 = 9786",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 9,786 × 687. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+      "wrong": "6722882",
+      "error_note": "The total 18 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q11",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "7,984 × 8,769",
+      "a": 7984,
+      "b": 8769,
+      "answer": "70011696",
+      "check": "70011696 ÷ 8769 = 7984",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 100s in 7,984 × 8,769. Can its total fit in one digit?",
+      "method_note": "The 100s diagonal contains a sum of 26, plus 0 carried in: total 26. Write 6 and carry 2 to the next diagonal.",
+      "wrong": "70009696",
+      "error_note": "The total 26 needs a carry of 2. Missing it reduces the result by 2,000."
+    },
+    {
+      "id": "maths:M01-P3-PL-C3-Q12",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "level": 2,
+      "q": "968 × 7,856",
+      "a": 968,
+      "b": 7856,
+      "answer": "7604608",
+      "check": "7604608 ÷ 7856 = 968",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 968 × 7,856. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 10, plus 0 carried in: total 10. Write 0 and carry 1 to the next diagonal.",
+      "wrong": "7604508",
+      "error_note": "The total 10 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-SC-C3-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "7,869 × 958",
+      "a": 7869,
+      "b": 958,
+      "answer": "7538502",
+      "check": "7538502 ÷ 958 = 7869",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 7,869 × 958. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 20, plus 0 carried in: total 20. Write 0 and carry 2 to the next diagonal.",
+      "wrong": "7538302",
+      "error_note": "The total 20 needs a carry of 2. Missing it reduces the result by 200."
+    },
+    {
+      "id": "maths:M01-P3-SC-C3-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "8,764 × 6,978",
+      "a": 8764,
+      "b": 6978,
+      "answer": "61155192",
+      "check": "61155192 ÷ 6978 = 8764",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 8,764 × 6,978. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 19, plus 0 carried in: total 19. Write 9 and carry 1 to the next diagonal.",
+      "wrong": "61155092",
+      "error_note": "The total 19 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-SC-C3-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "897 × 7,689",
+      "a": 897,
+      "b": 7689,
+      "answer": "6897033",
+      "check": "6897033 ÷ 7689 = 897",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 897 × 7,689. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+      "wrong": "6896933",
+      "error_note": "The total 13 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-SC-C3-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "9,687 × 879",
+      "a": 9687,
+      "b": 879,
+      "answer": "8514873",
+      "check": "8514873 ÷ 879 = 9687",
+      "method": "lattice",
+      "hint": "Look at the diagonal for the 10s in 9,687 × 879. Can its total fit in one digit?",
+      "method_note": "The 10s diagonal contains a sum of 17, plus 0 carried in: total 17. Write 7 and carry 1 to the next diagonal.",
+      "wrong": "8514773",
+      "error_note": "The total 17 needs a carry of 1. Missing it reduces the result by 100."
+    },
+    {
+      "id": "maths:M01-P3-ER-C3-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 2,
+      "q": "8,796 × 768",
+      "a": 8796,
+      "b": 768,
+      "answer": "6755328",
+      "check": "6755328 ÷ 768 = 8796",
+      "method": "lattice",
+      "hint": "Check the 6 × 8 cell and the place of each digit.",
+      "method_note": "The 10s diagonal contains a sum of 12, plus 0 carried in: total 12. Write 2 and carry 1 to the next diagonal.",
+      "wrong": "6755338",
+      "error_note": "Write 4 in the tens half and 8 in the units half of the 6 × 8 cell. Correct answer: 6755328.",
+      "errorImage": "data/working/M01-P3-ER-C3-Q1.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Write 5 in the tens half and 8 in the units half of that cell."
+        },
+        {
+          "id": "1",
+          "text": "Put the whole product 48 in the units half of that cell."
+        },
+        {
+          "id": "2",
+          "text": "Write 4 in the tens half and 8 in the units half of the 6 × 8 cell."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Write 4 in the tens half and 8 in the units half of the 6 × 8 cell. Correct answer: 6755328."
+    },
+    {
+      "id": "maths:M01-P3-ER-C3-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 2,
+      "q": "9,874 × 8,697",
+      "a": 9874,
+      "b": 8697,
+      "answer": "85874178",
+      "check": "85874178 ÷ 8697 = 9874",
+      "method": "lattice",
+      "hint": "Check the 4 × 7 cell and the place of each digit.",
+      "method_note": "The 10s diagonal contains a sum of 17, plus 0 carried in: total 17. Write 7 and carry 1 to the next diagonal.",
+      "wrong": "85874232",
+      "error_note": "Write 2 in the tens half and 8 in the units half of the 4 × 7 cell. Correct answer: 85874178.",
+      "errorImage": "data/working/M01-P3-ER-C3-Q2.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Put the whole product 28 in the units half of that cell."
+        },
+        {
+          "id": "1",
+          "text": "Write 2 in the tens half and 8 in the units half of the 4 × 7 cell."
+        },
+        {
+          "id": "2",
+          "text": "Write 8 in the tens half and 2 in the units half of that cell."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Write 2 in the tens half and 8 in the units half of the 4 × 7 cell. Correct answer: 85874178."
+    },
+    {
+      "id": "maths:M01-P3-ER-C3-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 2,
+      "q": "786 × 9,587",
+      "a": 786,
+      "b": 9587,
+      "answer": "7535382",
+      "check": "7535382 ÷ 9587 = 786",
+      "method": "lattice",
+      "hint": "The 10s diagonal totals 18. Which part is carried?",
+      "method_note": "The 10s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+      "wrong": "7535282",
+      "error_note": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 7535382.",
+      "errorImage": "data/working/M01-P3-ER-C3-Q3.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Carry 1 from the 10s diagonal to the 100s diagonal."
+        },
+        {
+          "id": "1",
+          "text": "Keep the whole total in the 10s answer position."
+        },
+        {
+          "id": "2",
+          "text": "Carry 2 into the next diagonal."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 7535382."
+    },
+    {
+      "id": "maths:M01-P3-ER-C3-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 2,
+      "q": "6,974 × 987",
+      "a": 6974,
+      "b": 987,
+      "answer": "6883338",
+      "check": "6883338 ÷ 987 = 6974",
+      "method": "lattice",
+      "hint": "The 10s diagonal totals 13. Which part is carried?",
+      "method_note": "The 10s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+      "wrong": "6883438",
+      "error_note": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 6883338.",
+      "errorImage": "data/working/M01-P3-ER-C3-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Keep the whole total in the 10s answer position."
+        },
+        {
+          "id": "1",
+          "text": "Carry 2 into the next diagonal."
+        },
+        {
+          "id": "2",
+          "text": "Carry 1 from the 10s diagonal to the 100s diagonal."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 6883338."
+    },
+    {
+      "id": "maths:M01-P3-ER-C3-Q5",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 2,
+      "q": "8,697 × 7,986",
+      "a": 8697,
+      "b": 7986,
+      "answer": "69454242",
+      "check": "69454242 ÷ 7986 = 8697",
+      "method": "lattice",
+      "hint": "Check the addition written for the 10s diagonal.",
+      "method_note": "The 10s diagonal contains a sum of 14, plus 0 carried in: total 14. Write 4 and carry 1 to the next diagonal.",
+      "wrong": "69454252",
+      "error_note": "Recalculate that diagonal: 14 + 0 = 14. Correct answer: 69454242.",
+      "errorImage": "data/working/M01-P3-ER-C3-Q5.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore every tens half when summing that diagonal."
+        },
+        {
+          "id": "1",
+          "text": "Recalculate that diagonal: 14 + 0 = 14."
+        },
+        {
+          "id": "2",
+          "text": "Add another carry of 1 to that diagonal."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Recalculate that diagonal: 14 + 0 = 14. Correct answer: 69454242."
+    },
+    {
+      "id": "maths:M01-P3-ER-C3-Q6",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 2,
+      "q": "958 × 8,679",
+      "a": 958,
+      "b": 8679,
+      "answer": "8314482",
+      "check": "8314482 ÷ 8679 = 958",
+      "method": "lattice",
+      "hint": "Do the two halves of the bottom-right cell have the same place value?",
+      "method_note": "The 10s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+      "wrong": "8314419",
+      "error_note": "Place the 7 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 8314482.",
+      "errorImage": "data/working/M01-P3-ER-C3-Q6.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Place the 7 from the tens half of the bottom-right cell in the tens diagonal."
+        },
+        {
+          "id": "1",
+          "text": "Place both halves of the bottom-right cell in the units diagonal."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the tens half of the bottom-right cell."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Place the 7 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 8314482."
+    },
+    {
+      "id": "maths:M01-P3-ER-C3-Q7",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 2,
+      "q": "7,086 × 879",
+      "a": 7086,
+      "b": 879,
+      "answer": "6228594",
+      "check": "6228594 ÷ 879 = 7086",
+      "method": "lattice",
+      "hint": "Check the 0 × 8 cell and the place of each digit.",
+      "method_note": "The 100s diagonal contains a sum of 25, plus 0 carried in: total 25. Write 5 and carry 2 to the next diagonal.",
+      "wrong": "6308594",
+      "error_note": "Write 0 in the tens half and 0 in the units half of the 0 × 8 cell. Correct answer: 6228594.",
+      "errorImage": "data/working/M01-P3-ER-C3-Q7.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Write 0 in the tens half and 8 in the units half of that cell."
+        },
+        {
+          "id": "1",
+          "text": "Put the whole product 0 in the units half of that cell."
+        },
+        {
+          "id": "2",
+          "text": "Write 0 in the tens half and 0 in the units half of the 0 × 8 cell."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Write 0 in the tens half and 0 in the units half of the 0 × 8 cell. Correct answer: 6228594."
+    },
+    {
+      "id": "maths:M01-P3-ER-C3-Q8",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "level": 2,
+      "q": "9,687 × 7,586",
+      "a": 9687,
+      "b": 7586,
+      "answer": "73485582",
+      "check": "73485582 ÷ 7586 = 9687",
+      "method": "lattice",
+      "hint": "Which diagonal supplies the units digit of the answer?",
+      "method_note": "The 10s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+      "wrong": "734855820",
+      "error_note": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 73485582.",
+      "errorImage": "data/working/M01-P3-ER-C3-Q8.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Read the diagonal digits in reverse order."
+        },
+        {
+          "id": "1",
+          "text": "Read the diagonal digits once, ending with the units digit; do not append a zero."
+        },
+        {
+          "id": "2",
+          "text": "Append two zeros to the diagonal digits."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 73485582."
     }
   ],
   "teaching": {

@@ -1,0 +1,1 @@
+var e=e=>Math.max(1,Math.ceil(e*1.5)),t=(e,t)=>Math.max(0,e-t);function n(e){let t=Math.ceil(Math.max(0,e)/1e3);return`${Math.floor(t/60)}:${String(t%60).padStart(2,`0`)}`}export{e as n,t as r,n as t};

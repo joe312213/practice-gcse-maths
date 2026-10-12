@@ -1788,6 +1788,1737 @@
       "method": "bus",
       "hint": "What quotient digit is needed when you reach 5 ÷ 8? How can you continue after the whole-number digits?",
       "method_note": "8 ÷ 8 = 1; 5 ÷ 8 = 0 remainder 5; 57 ÷ 8 = 7 remainder 1. Continue with decimal zeros: 10 ÷ 8 = 1 remainder 2, 20 ÷ 8 = 2 remainder 4, then 40 ÷ 8 = 5. The answer is 107.125."
+    },
+    {
+      "id": "maths:M02-SE-C1-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 0,
+      "q": "609 ÷ 3",
+      "a": 609,
+      "b": 3,
+      "answer": "203",
+      "check": "203 × 3 = 609.",
+      "method": "bus",
+      "errorImage": "data/working/M02-SE-C1-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Write 0 above the middle 0."
+        },
+        {
+          "id": "1",
+          "text": "Write 3 above the middle 0."
+        },
+        {
+          "id": "2",
+          "text": "Move the final 3 above the middle 0."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Keep a zero above the middle 0 to hold the tens place. The quotient is 203.",
+      "wrong": "23",
+      "error_note": "Keep a zero above the middle 0 to hold the tens place. The quotient is 203.",
+      "hint": "What digit should hold the tens place in 609 ÷ 3?"
+    },
+    {
+      "id": "maths:M02-SE-C2-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 1,
+      "q": "374 ÷ 7",
+      "a": 374,
+      "b": 7,
+      "answer": "53 r 3",
+      "check": "53 × 7 + 3 = 374.",
+      "method": "bus",
+      "errorImage": "data/working/M02-SE-C2-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Carry remainder 2 before the 4, then divide 24 by 7."
+        },
+        {
+          "id": "1",
+          "text": "Carry remainder 5 before the 4, then divide 54 by 7."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the remainder from 37 ÷ 7 and divide 4 by 7."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "37 ÷ 7 = 5 r 2. Carry the 2 before the 4: 24 ÷ 7 = 3 r 3. The answer is 53 r 3.",
+      "wrong": "50 r 4",
+      "error_note": "37 ÷ 7 = 5 r 2. Carry the 2 before the 4: 24 ÷ 7 = 3 r 3. The answer is 53 r 3.",
+      "hint": "After dividing 37 by 7, what needs to travel to the final 4?"
+    },
+    {
+      "id": "maths:M02-SE-C3-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 2,
+      "q": "1,575 ÷ 12 (decimal answer)",
+      "a": 1575,
+      "b": 12,
+      "answer": "131.25",
+      "check": "131.25 × 12 = 1,575.",
+      "method": "bus",
+      "errorImage": "data/working/M02-SE-C3-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Continue with 30 ÷ 12, then carry its remainder to the next decimal place."
+        },
+        {
+          "id": "1",
+          "text": "Write the remainder 3 directly after the decimal point."
+        },
+        {
+          "id": "2",
+          "text": "Round the remainder up and add 1 to the whole-number quotient."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "The remainder is 3/12, not 3/10. Continue: 30 ÷ 12 = 2 r 6, then 60 ÷ 12 = 5. The answer is 131.25.",
+      "wrong": "131.3",
+      "error_note": "The remainder is 3/12, not 3/10. Continue: 30 ÷ 12 = 2 r 6, then 60 ÷ 12 = 5. The answer is 131.25.",
+      "hint": "The remainder is 3 out of 12. How could you continue the bus stop after adding a decimal point and a zero?"
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q1",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "666 ÷ 6",
+      "a": 666,
+      "b": 6,
+      "answer": "111",
+      "check": "111 × 6 = 666.",
+      "method": "bus",
+      "hint": "In 666 ÷ 6, keep each quotient digit above its dividend digit. What happens when you reach 6 ÷ 6?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 111, with remainder 0.",
+      "wrong": "112",
+      "error_note": "Check by multiplying back: 112 × 6 = 672, which is not 666."
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q2",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "777 ÷ 7",
+      "a": 777,
+      "b": 7,
+      "answer": "111",
+      "check": "111 × 7 = 777.",
+      "method": "bus",
+      "hint": "In 777 ÷ 7, keep each quotient digit above its dividend digit. What happens when you reach 7 ÷ 7?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 111, with remainder 0.",
+      "wrong": "112",
+      "error_note": "Check by multiplying back: 112 × 7 = 784, which is not 777."
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q3",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "888 ÷ 8",
+      "a": 888,
+      "b": 8,
+      "answer": "111",
+      "check": "111 × 8 = 888.",
+      "method": "bus",
+      "hint": "In 888 ÷ 8, keep each quotient digit above its dividend digit. What happens when you reach 8 ÷ 8?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 111, with remainder 0.",
+      "wrong": "112",
+      "error_note": "Check by multiplying back: 112 × 8 = 896, which is not 888."
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "999 ÷ 9",
+      "a": 999,
+      "b": 9,
+      "answer": "111",
+      "check": "111 × 9 = 999.",
+      "method": "bus",
+      "hint": "In 999 ÷ 9, keep each quotient digit above its dividend digit. What happens when you reach 9 ÷ 9?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 111, with remainder 0.",
+      "wrong": "112",
+      "error_note": "Check by multiplying back: 112 × 9 = 1008, which is not 999."
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q5",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "844 ÷ 4",
+      "a": 844,
+      "b": 4,
+      "answer": "211",
+      "check": "211 × 4 = 844.",
+      "method": "bus",
+      "hint": "In 844 ÷ 4, keep each quotient digit above its dividend digit. What happens when you reach 8 ÷ 4?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 211, with remainder 0.",
+      "wrong": "212",
+      "error_note": "Check by multiplying back: 212 × 4 = 848, which is not 844."
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q6",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "488 ÷ 4",
+      "a": 488,
+      "b": 4,
+      "answer": "122",
+      "check": "122 × 4 = 488.",
+      "method": "bus",
+      "hint": "In 488 ÷ 4, keep each quotient digit above its dividend digit. What happens when you reach 4 ÷ 4?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 122, with remainder 0.",
+      "wrong": "123",
+      "error_note": "Check by multiplying back: 123 × 4 = 492, which is not 488."
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q7",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "486 ÷ 2",
+      "a": 486,
+      "b": 2,
+      "answer": "243",
+      "check": "243 × 2 = 486.",
+      "method": "bus",
+      "hint": "In 486 ÷ 2, keep each quotient digit above its dividend digit. What happens when you reach 4 ÷ 2?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 243, with remainder 0.",
+      "wrong": "244",
+      "error_note": "Check by multiplying back: 244 × 2 = 488, which is not 486."
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q8",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "682 ÷ 2",
+      "a": 682,
+      "b": 2,
+      "answer": "341",
+      "check": "341 × 2 = 682.",
+      "method": "bus",
+      "hint": "In 682 ÷ 2, keep each quotient digit above its dividend digit. What happens when you reach 6 ÷ 2?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 341, with remainder 0.",
+      "wrong": "342",
+      "error_note": "Check by multiplying back: 342 × 2 = 684, which is not 682."
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q9",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "846 ÷ 2",
+      "a": 846,
+      "b": 2,
+      "answer": "423",
+      "check": "423 × 2 = 846.",
+      "method": "bus",
+      "hint": "In 846 ÷ 2, keep each quotient digit above its dividend digit. What happens when you reach 8 ÷ 2?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 423, with remainder 0.",
+      "wrong": "424",
+      "error_note": "Check by multiplying back: 424 × 2 = 848, which is not 846."
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q10",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "868 ÷ 2",
+      "a": 868,
+      "b": 2,
+      "answer": "434",
+      "check": "434 × 2 = 868.",
+      "method": "bus",
+      "hint": "In 868 ÷ 2, keep each quotient digit above its dividend digit. What happens when you reach 8 ÷ 2?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 434, with remainder 0.",
+      "wrong": "435",
+      "error_note": "Check by multiplying back: 435 × 2 = 870, which is not 868."
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q11",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "909 ÷ 3",
+      "a": 909,
+      "b": 3,
+      "answer": "303",
+      "check": "303 × 3 = 909.",
+      "method": "bus",
+      "hint": "In 909 ÷ 3, keep each quotient digit above its dividend digit. What happens when you reach 9 ÷ 3?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 303, with remainder 0.",
+      "wrong": "304",
+      "error_note": "Check by multiplying back: 304 × 3 = 912, which is not 909."
+    },
+    {
+      "id": "maths:M02-P3-PL-C1-Q12",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 0,
+      "q": "660 ÷ 6",
+      "a": 660,
+      "b": 6,
+      "answer": "110",
+      "check": "110 × 6 = 660.",
+      "method": "bus",
+      "hint": "In 660 ÷ 6, keep each quotient digit above its dividend digit. What happens when you reach 6 ÷ 6?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 110, with remainder 0.",
+      "wrong": "111",
+      "error_note": "Check by multiplying back: 111 × 6 = 666, which is not 660."
+    },
+    {
+      "id": "maths:M02-P3-SC-C1-Q1",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "804 ÷ 4",
+      "a": 804,
+      "b": 4,
+      "answer": "201",
+      "check": "201 × 4 = 804.",
+      "method": "bus",
+      "hint": "In 804 ÷ 4, keep each quotient digit above its dividend digit. What happens when you reach 8 ÷ 4?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 201, with remainder 0.",
+      "wrong": "202",
+      "error_note": "Check by multiplying back: 202 × 4 = 808, which is not 804."
+    },
+    {
+      "id": "maths:M02-P3-SC-C1-Q2",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "468 ÷ 2",
+      "a": 468,
+      "b": 2,
+      "answer": "234",
+      "check": "234 × 2 = 468.",
+      "method": "bus",
+      "hint": "In 468 ÷ 2, keep each quotient digit above its dividend digit. What happens when you reach 4 ÷ 2?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 234, with remainder 0.",
+      "wrong": "235",
+      "error_note": "Check by multiplying back: 235 × 2 = 470, which is not 468."
+    },
+    {
+      "id": "maths:M02-P3-SC-C1-Q3",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "636 ÷ 3",
+      "a": 636,
+      "b": 3,
+      "answer": "212",
+      "check": "212 × 3 = 636.",
+      "method": "bus",
+      "hint": "In 636 ÷ 3, keep each quotient digit above its dividend digit. What happens when you reach 6 ÷ 3?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 212, with remainder 0.",
+      "wrong": "213",
+      "error_note": "Check by multiplying back: 213 × 3 = 639, which is not 636."
+    },
+    {
+      "id": "maths:M02-P3-SC-C1-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "770 ÷ 7",
+      "a": 770,
+      "b": 7,
+      "answer": "110",
+      "check": "110 × 7 = 770.",
+      "method": "bus",
+      "hint": "In 770 ÷ 7, keep each quotient digit above its dividend digit. What happens when you reach 7 ÷ 7?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 110, with remainder 0.",
+      "wrong": "111",
+      "error_note": "Check by multiplying back: 111 × 7 = 777, which is not 770."
+    },
+    {
+      "id": "maths:M02-P3-ER-C1-Q1",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 0,
+      "q": "688 ÷ 2",
+      "a": 688,
+      "b": 2,
+      "answer": "344",
+      "check": "344 × 2 = 688.",
+      "method": "bus",
+      "hint": "Multiply the last quotient digit by 2 and add its remainder.",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 344, with remainder 0.",
+      "wrong": "345",
+      "error_note": "Use 2 × 4 + 0 = 8 for the last division step. Correct answer: 344.",
+      "errorImage": "data/working/M02-P3-ER-C1-Q1.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore the divisor 2 when reading the answer."
+        },
+        {
+          "id": "1",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "2",
+          "text": "Use 2 × 4 + 0 = 8 for the last division step."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Use 2 × 4 + 0 = 8 for the last division step. Correct answer: 344."
+    },
+    {
+      "id": "maths:M02-P3-ER-C1-Q2",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 0,
+      "q": "808 ÷ 4",
+      "a": 808,
+      "b": 4,
+      "answer": "202",
+      "check": "202 × 4 = 808.",
+      "method": "bus",
+      "hint": "Check whether every dividend place has its quotient place.",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 202, with remainder 0.",
+      "wrong": "22",
+      "error_note": "Keep a zero in the quotient for the place where the divisor does not fit. Correct answer: 202.",
+      "errorImage": "data/working/M02-P3-ER-C1-Q2.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "1",
+          "text": "Keep a zero in the quotient for the place where the divisor does not fit."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the divisor 4 when reading the answer."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Keep a zero in the quotient for the place where the divisor does not fit. Correct answer: 202."
+    },
+    {
+      "id": "maths:M02-P3-ER-C1-Q3",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 0,
+      "q": "864 ÷ 2",
+      "a": 864,
+      "b": 2,
+      "answer": "432",
+      "check": "432 × 2 = 864.",
+      "method": "bus",
+      "hint": "Which quotient digit represents the hundreds?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 432, with remainder 0.",
+      "wrong": "234",
+      "error_note": "Read quotient digits from left to right, keeping their place values. Correct answer: 432.",
+      "errorImage": "data/working/M02-P3-ER-C1-Q3.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Read quotient digits from left to right, keeping their place values."
+        },
+        {
+          "id": "1",
+          "text": "Ignore the divisor 2 when reading the answer."
+        },
+        {
+          "id": "2",
+          "text": "Move the first quotient digit one place to the left."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Read quotient digits from left to right, keeping their place values. Correct answer: 432."
+    },
+    {
+      "id": "maths:M02-P3-ER-C1-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 0,
+      "q": "444 ÷ 4",
+      "a": 444,
+      "b": 4,
+      "answer": "111",
+      "check": "111 × 4 = 444.",
+      "method": "bus",
+      "hint": "Can another group of 4 be made from the stated remainder?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 111, with remainder 0.",
+      "wrong": "110 r 4",
+      "error_note": "The remainder must be less than 4; increase the last quotient digit by one and subtract 4 from the remainder. Correct answer: 111.",
+      "errorImage": "data/working/M02-P3-ER-C1-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore the divisor 4 when reading the answer."
+        },
+        {
+          "id": "1",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "2",
+          "text": "The remainder must be less than 4; increase the last quotient digit by one and subtract 4 from the remainder."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "The remainder must be less than 4; increase the last quotient digit by one and subtract 4 from the remainder. Correct answer: 111."
+    },
+    {
+      "id": "maths:M02-P3-ER-C1-Q5",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 0,
+      "q": "608 ÷ 2",
+      "a": 608,
+      "b": 2,
+      "answer": "304",
+      "check": "304 × 2 = 608.",
+      "method": "bus",
+      "hint": "How many groups can be made from zero?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 304, with remainder 0.",
+      "wrong": "314",
+      "error_note": "Write 0 above that place: zero divided by 2 is zero. Correct answer: 304.",
+      "errorImage": "data/working/M02-P3-ER-C1-Q5.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "1",
+          "text": "Write 0 above that place: zero divided by 2 is zero."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the divisor 2 when reading the answer."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Write 0 above that place: zero divided by 2 is zero. Correct answer: 304."
+    },
+    {
+      "id": "maths:M02-P3-ER-C1-Q6",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 0,
+      "q": "707 ÷ 7",
+      "a": 707,
+      "b": 7,
+      "answer": "101",
+      "check": "101 × 7 = 707.",
+      "method": "bus",
+      "hint": "Multiply the last quotient digit by 7 and add its remainder.",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 101, with remainder 0.",
+      "wrong": "102",
+      "error_note": "Use 7 × 1 + 0 = 7 for the last division step. Correct answer: 101.",
+      "errorImage": "data/working/M02-P3-ER-C1-Q6.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Use 7 × 1 + 0 = 7 for the last division step."
+        },
+        {
+          "id": "1",
+          "text": "Ignore the divisor 7 when reading the answer."
+        },
+        {
+          "id": "2",
+          "text": "Move the first quotient digit one place to the left."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Use 7 × 1 + 0 = 7 for the last division step. Correct answer: 101."
+    },
+    {
+      "id": "maths:M02-P3-ER-C1-Q7",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 0,
+      "q": "408 ÷ 4",
+      "a": 408,
+      "b": 4,
+      "answer": "102",
+      "check": "102 × 4 = 408.",
+      "method": "bus",
+      "hint": "Which digit of the quotient belongs above the units digit of the dividend?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 102, with remainder 0.",
+      "wrong": "1020",
+      "error_note": "Align the final quotient digit with the units digit of the dividend; do not append a zero. Correct answer: 102.",
+      "errorImage": "data/working/M02-P3-ER-C1-Q7.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore the divisor 4 when reading the answer."
+        },
+        {
+          "id": "1",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "2",
+          "text": "Align the final quotient digit with the units digit of the dividend; do not append a zero."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Align the final quotient digit with the units digit of the dividend; do not append a zero. Correct answer: 102."
+    },
+    {
+      "id": "maths:M02-P3-ER-C1-Q8",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 0,
+      "q": "822 ÷ 2",
+      "a": 822,
+      "b": 2,
+      "answer": "411",
+      "check": "411 × 2 = 822.",
+      "method": "bus",
+      "hint": "Has the final dividend digit been divided?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 411, with remainder 0.",
+      "wrong": "412",
+      "error_note": "Divide the units digit by 2 as well; do not just copy it. Correct answer: 411.",
+      "errorImage": "data/working/M02-P3-ER-C1-Q8.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "1",
+          "text": "Divide the units digit by 2 as well; do not just copy it."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the divisor 2 when reading the answer."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Divide the units digit by 2 as well; do not just copy it. Correct answer: 411."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q1",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "157 ÷ 6",
+      "a": 157,
+      "b": 6,
+      "answer": "26 r 1",
+      "check": "26 × 6 + 1 = 157; 1 < 6.",
+      "method": "bus",
+      "hint": "In 157 ÷ 6, keep each quotient digit above its dividend digit. What happens when you reach 15 ÷ 6?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 26, with remainder 1.",
+      "wrong": "27",
+      "error_note": "Check by multiplying back: 27 × 6 = 162, which is not 157 minus the remainder 1."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q2",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "269 ÷ 7",
+      "a": 269,
+      "b": 7,
+      "answer": "38 r 3",
+      "check": "38 × 7 + 3 = 269; 3 < 7.",
+      "method": "bus",
+      "hint": "In 269 ÷ 7, keep each quotient digit above its dividend digit. What happens when you reach 26 ÷ 7?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 38, with remainder 3.",
+      "wrong": "39",
+      "error_note": "Check by multiplying back: 39 × 7 = 273, which is not 269 minus the remainder 3."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q3",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "386 ÷ 8",
+      "a": 386,
+      "b": 8,
+      "answer": "48 r 2",
+      "check": "48 × 8 + 2 = 386; 2 < 8.",
+      "method": "bus",
+      "hint": "In 386 ÷ 8, keep each quotient digit above its dividend digit. What happens when you reach 38 ÷ 8?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 48, with remainder 2.",
+      "wrong": "49",
+      "error_note": "Check by multiplying back: 49 × 8 = 392, which is not 386 minus the remainder 2."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "478 ÷ 9",
+      "a": 478,
+      "b": 9,
+      "answer": "53 r 1",
+      "check": "53 × 9 + 1 = 478; 1 < 9.",
+      "method": "bus",
+      "hint": "In 478 ÷ 9, keep each quotient digit above its dividend digit. What happens when you reach 47 ÷ 9?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 53, with remainder 1.",
+      "wrong": "54",
+      "error_note": "Check by multiplying back: 54 × 9 = 486, which is not 478 minus the remainder 1."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q5",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "593 ÷ 7",
+      "a": 593,
+      "b": 7,
+      "answer": "84 r 5",
+      "check": "84 × 7 + 5 = 593; 5 < 7.",
+      "method": "bus",
+      "hint": "In 593 ÷ 7, keep each quotient digit above its dividend digit. What happens when you reach 59 ÷ 7?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 84, with remainder 5.",
+      "wrong": "85",
+      "error_note": "Check by multiplying back: 85 × 7 = 595, which is not 593 minus the remainder 5."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q6",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "641 ÷ 8",
+      "a": 641,
+      "b": 8,
+      "answer": "80 r 1",
+      "check": "80 × 8 + 1 = 641; 1 < 8.",
+      "method": "bus",
+      "hint": "In 641 ÷ 8, keep each quotient digit above its dividend digit. What happens when you reach 64 ÷ 8?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 80, with remainder 1.",
+      "wrong": "81",
+      "error_note": "Check by multiplying back: 81 × 8 = 648, which is not 641 minus the remainder 1."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q7",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "758 ÷ 6",
+      "a": 758,
+      "b": 6,
+      "answer": "126 r 2",
+      "check": "126 × 6 + 2 = 758; 2 < 6.",
+      "method": "bus",
+      "hint": "In 758 ÷ 6, keep each quotient digit above its dividend digit. What happens when you reach 15 ÷ 6?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 126, with remainder 2.",
+      "wrong": "127",
+      "error_note": "Check by multiplying back: 127 × 6 = 762, which is not 758 minus the remainder 2."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q8",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "827 ÷ 9",
+      "a": 827,
+      "b": 9,
+      "answer": "91 r 8",
+      "check": "91 × 9 + 8 = 827; 8 < 9.",
+      "method": "bus",
+      "hint": "In 827 ÷ 9, keep each quotient digit above its dividend digit. What happens when you reach 82 ÷ 9?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 91, with remainder 8.",
+      "wrong": "92",
+      "error_note": "Check by multiplying back: 92 × 9 = 828, which is not 827 minus the remainder 8."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q9",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "943 ÷ 8",
+      "a": 943,
+      "b": 8,
+      "answer": "117 r 7",
+      "check": "117 × 8 + 7 = 943; 7 < 8.",
+      "method": "bus",
+      "hint": "In 943 ÷ 8, keep each quotient digit above its dividend digit. What happens when you reach 14 ÷ 8?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 117, with remainder 7.",
+      "wrong": "118",
+      "error_note": "Check by multiplying back: 118 × 8 = 944, which is not 943 minus the remainder 7."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q10",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "675 ÷ 7",
+      "a": 675,
+      "b": 7,
+      "answer": "96 r 3",
+      "check": "96 × 7 + 3 = 675; 3 < 7.",
+      "method": "bus",
+      "hint": "In 675 ÷ 7, keep each quotient digit above its dividend digit. What happens when you reach 67 ÷ 7?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 96, with remainder 3.",
+      "wrong": "97",
+      "error_note": "Check by multiplying back: 97 × 7 = 679, which is not 675 minus the remainder 3."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q11",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "568 ÷ 9",
+      "a": 568,
+      "b": 9,
+      "answer": "63 r 1",
+      "check": "63 × 9 + 1 = 568; 1 < 9.",
+      "method": "bus",
+      "hint": "In 568 ÷ 9, keep each quotient digit above its dividend digit. What happens when you reach 56 ÷ 9?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 63, with remainder 1.",
+      "wrong": "64",
+      "error_note": "Check by multiplying back: 64 × 9 = 576, which is not 568 minus the remainder 1."
+    },
+    {
+      "id": "maths:M02-P3-PL-C2-Q12",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 1,
+      "q": "734 ÷ 6",
+      "a": 734,
+      "b": 6,
+      "answer": "122 r 2",
+      "check": "122 × 6 + 2 = 734; 2 < 6.",
+      "method": "bus",
+      "hint": "In 734 ÷ 6, keep each quotient digit above its dividend digit. What happens when you reach 13 ÷ 6?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 122, with remainder 2.",
+      "wrong": "123",
+      "error_note": "Check by multiplying back: 123 × 6 = 738, which is not 734 minus the remainder 2."
+    },
+    {
+      "id": "maths:M02-P3-SC-C2-Q1",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "287 ÷ 6",
+      "a": 287,
+      "b": 6,
+      "answer": "47 r 5",
+      "check": "47 × 6 + 5 = 287; 5 < 6.",
+      "method": "bus",
+      "hint": "In 287 ÷ 6, keep each quotient digit above its dividend digit. What happens when you reach 28 ÷ 6?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 47, with remainder 5.",
+      "wrong": "48",
+      "error_note": "Check by multiplying back: 48 × 6 = 288, which is not 287 minus the remainder 5."
+    },
+    {
+      "id": "maths:M02-P3-SC-C2-Q2",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "359 ÷ 8",
+      "a": 359,
+      "b": 8,
+      "answer": "44 r 7",
+      "check": "44 × 8 + 7 = 359; 7 < 8.",
+      "method": "bus",
+      "hint": "In 359 ÷ 8, keep each quotient digit above its dividend digit. What happens when you reach 35 ÷ 8?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 44, with remainder 7.",
+      "wrong": "45",
+      "error_note": "Check by multiplying back: 45 × 8 = 360, which is not 359 minus the remainder 7."
+    },
+    {
+      "id": "maths:M02-P3-SC-C2-Q3",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "467 ÷ 9",
+      "a": 467,
+      "b": 9,
+      "answer": "51 r 8",
+      "check": "51 × 9 + 8 = 467; 8 < 9.",
+      "method": "bus",
+      "hint": "In 467 ÷ 9, keep each quotient digit above its dividend digit. What happens when you reach 46 ÷ 9?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 51, with remainder 8.",
+      "wrong": "52",
+      "error_note": "Check by multiplying back: 52 × 9 = 468, which is not 467 minus the remainder 8."
+    },
+    {
+      "id": "maths:M02-P3-SC-C2-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "629 ÷ 7",
+      "a": 629,
+      "b": 7,
+      "answer": "89 r 6",
+      "check": "89 × 7 + 6 = 629; 6 < 7.",
+      "method": "bus",
+      "hint": "In 629 ÷ 7, keep each quotient digit above its dividend digit. What happens when you reach 62 ÷ 7?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 89, with remainder 6.",
+      "wrong": "90",
+      "error_note": "Check by multiplying back: 90 × 7 = 630, which is not 629 minus the remainder 6."
+    },
+    {
+      "id": "maths:M02-P3-ER-C2-Q1",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 1,
+      "q": "317 ÷ 6",
+      "a": 317,
+      "b": 6,
+      "answer": "52 r 5",
+      "check": "52 × 6 + 5 = 317; 5 < 6.",
+      "method": "bus",
+      "hint": "Multiply the last quotient digit by 6 and add its remainder.",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 52, with remainder 5.",
+      "wrong": "53",
+      "error_note": "Use 6 × 2 + 5 = 17 for the last division step. Correct answer: 52 r 5.",
+      "errorImage": "data/working/M02-P3-ER-C2-Q1.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore the divisor 6 when reading the answer."
+        },
+        {
+          "id": "1",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "2",
+          "text": "Use 6 × 2 + 5 = 17 for the last division step."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Use 6 × 2 + 5 = 17 for the last division step. Correct answer: 52 r 5."
+    },
+    {
+      "id": "maths:M02-P3-ER-C2-Q2",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 1,
+      "q": "428 ÷ 7",
+      "a": 428,
+      "b": 7,
+      "answer": "61 r 1",
+      "check": "61 × 7 + 1 = 428; 1 < 7.",
+      "method": "bus",
+      "hint": "Multiply the last quotient digit by 7 and add its remainder.",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 61, with remainder 1.",
+      "wrong": "62",
+      "error_note": "Use 7 × 1 + 1 = 8 for the last division step. Correct answer: 61 r 1.",
+      "errorImage": "data/working/M02-P3-ER-C2-Q2.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "1",
+          "text": "Use 7 × 1 + 1 = 8 for the last division step."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the divisor 7 when reading the answer."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Use 7 × 1 + 1 = 8 for the last division step. Correct answer: 61 r 1."
+    },
+    {
+      "id": "maths:M02-P3-ER-C2-Q3",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 1,
+      "q": "536 ÷ 8",
+      "a": 536,
+      "b": 8,
+      "answer": "67",
+      "check": "67 × 8 = 536.",
+      "method": "bus",
+      "hint": "After dividing 5, is there a remainder to carry?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 67, with remainder 0.",
+      "wrong": "4 r 4",
+      "error_note": "Carry 5 into the next digit to make 53, then divide by 8. Correct answer: 67.",
+      "errorImage": "data/working/M02-P3-ER-C2-Q3.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Carry 5 into the next digit to make 53, then divide by 8."
+        },
+        {
+          "id": "1",
+          "text": "Ignore the divisor 8 when reading the answer."
+        },
+        {
+          "id": "2",
+          "text": "Move the first quotient digit one place to the left."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Carry 5 into the next digit to make 53, then divide by 8. Correct answer: 67."
+    },
+    {
+      "id": "maths:M02-P3-ER-C2-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 1,
+      "q": "649 ÷ 9",
+      "a": 649,
+      "b": 9,
+      "answer": "72 r 1",
+      "check": "72 × 9 + 1 = 649; 1 < 9.",
+      "method": "bus",
+      "hint": "Can another group of 9 be made from the stated remainder?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 72, with remainder 1.",
+      "wrong": "71 r 10",
+      "error_note": "The remainder must be less than 9; increase the last quotient digit by one and subtract 9 from the remainder. Correct answer: 72 r 1.",
+      "errorImage": "data/working/M02-P3-ER-C2-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore the divisor 9 when reading the answer."
+        },
+        {
+          "id": "1",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "2",
+          "text": "The remainder must be less than 9; increase the last quotient digit by one and subtract 9 from the remainder."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "The remainder must be less than 9; increase the last quotient digit by one and subtract 9 from the remainder. Correct answer: 72 r 1."
+    },
+    {
+      "id": "maths:M02-P3-ER-C2-Q5",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 1,
+      "q": "723 ÷ 7",
+      "a": 723,
+      "b": 7,
+      "answer": "103 r 2",
+      "check": "103 × 7 + 2 = 723; 2 < 7.",
+      "method": "bus",
+      "hint": "Does the quotient alone multiply back to 723?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 103, with remainder 2.",
+      "wrong": "103",
+      "error_note": "Include the final remainder of 2 after the whole-number quotient. Correct answer: 103 r 2.",
+      "errorImage": "data/working/M02-P3-ER-C2-Q5.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "1",
+          "text": "Include the final remainder of 2 after the whole-number quotient."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the divisor 7 when reading the answer."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Include the final remainder of 2 after the whole-number quotient. Correct answer: 103 r 2."
+    },
+    {
+      "id": "maths:M02-P3-ER-C2-Q6",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 1,
+      "q": "853 ÷ 8",
+      "a": 853,
+      "b": 8,
+      "answer": "106 r 5",
+      "check": "106 × 8 + 5 = 853; 5 < 8.",
+      "method": "bus",
+      "hint": "Does the quotient alone multiply back to 853?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 106, with remainder 5.",
+      "wrong": "107",
+      "error_note": "Include the final remainder of 5 after the whole-number quotient. Correct answer: 106 r 5.",
+      "errorImage": "data/working/M02-P3-ER-C2-Q6.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Include the final remainder of 5 after the whole-number quotient."
+        },
+        {
+          "id": "1",
+          "text": "Ignore the divisor 8 when reading the answer."
+        },
+        {
+          "id": "2",
+          "text": "Move the first quotient digit one place to the left."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Include the final remainder of 5 after the whole-number quotient. Correct answer: 106 r 5."
+    },
+    {
+      "id": "maths:M02-P3-ER-C2-Q7",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 1,
+      "q": "974 ÷ 9",
+      "a": 974,
+      "b": 9,
+      "answer": "108 r 2",
+      "check": "108 × 9 + 2 = 974; 2 < 9.",
+      "method": "bus",
+      "hint": "After dividing 7, is there a remainder to carry?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 108, with remainder 2.",
+      "wrong": "101 r 2",
+      "error_note": "Carry 7 into the next digit to make 74, then divide by 9. Correct answer: 108 r 2.",
+      "errorImage": "data/working/M02-P3-ER-C2-Q7.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore the divisor 9 when reading the answer."
+        },
+        {
+          "id": "1",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "2",
+          "text": "Carry 7 into the next digit to make 74, then divide by 9."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Carry 7 into the next digit to make 74, then divide by 9. Correct answer: 108 r 2."
+    },
+    {
+      "id": "maths:M02-P3-ER-C2-Q8",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 1,
+      "q": "687 ÷ 6",
+      "a": 687,
+      "b": 6,
+      "answer": "114 r 3",
+      "check": "114 × 6 + 3 = 687; 3 < 6.",
+      "method": "bus",
+      "hint": "Which digit of the quotient belongs above the units digit of the dividend?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 114, with remainder 3.",
+      "wrong": "1140",
+      "error_note": "Align the final quotient digit with the units digit of the dividend; do not append a zero. Correct answer: 114 r 3.",
+      "errorImage": "data/working/M02-P3-ER-C2-Q8.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "1",
+          "text": "Align the final quotient digit with the units digit of the dividend; do not append a zero."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the divisor 6 when reading the answer."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Align the final quotient digit with the units digit of the dividend; do not append a zero. Correct answer: 114 r 3."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q1",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "7,464 ÷ 24",
+      "a": 7464,
+      "b": 24,
+      "answer": "311",
+      "check": "311 × 24 = 7464.",
+      "method": "bus",
+      "hint": "In 7,464 ÷ 24, keep each quotient digit above its dividend digit. What happens when you reach 74 ÷ 24?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 311, with remainder 0.",
+      "wrong": "312",
+      "error_note": "Check by multiplying back: 312 × 24 = 7488, which is not 7464."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q2",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "8,532 ÷ 12",
+      "a": 8532,
+      "b": 12,
+      "answer": "711",
+      "check": "711 × 12 = 8532.",
+      "method": "bus",
+      "hint": "In 8,532 ÷ 12, keep each quotient digit above its dividend digit. What happens when you reach 85 ÷ 12?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 711, with remainder 0.",
+      "wrong": "712",
+      "error_note": "Check by multiplying back: 712 × 12 = 8544, which is not 8532."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q3",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "9,672 ÷ 24",
+      "a": 9672,
+      "b": 24,
+      "answer": "403",
+      "check": "403 × 24 = 9672.",
+      "method": "bus",
+      "hint": "In 9,672 ÷ 24, keep each quotient digit above its dividend digit. What happens when you reach 96 ÷ 24?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 403, with remainder 0.",
+      "wrong": "404",
+      "error_note": "Check by multiplying back: 404 × 24 = 9696, which is not 9672."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "6,832 ÷ 16",
+      "a": 6832,
+      "b": 16,
+      "answer": "427",
+      "check": "427 × 16 = 6832.",
+      "method": "bus",
+      "hint": "In 6,832 ÷ 16, keep each quotient digit above its dividend digit. What happens when you reach 68 ÷ 16?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 427, with remainder 0.",
+      "wrong": "428",
+      "error_note": "Check by multiplying back: 428 × 16 = 6848, which is not 6832."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q5",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "7,928 ÷ 32",
+      "a": 7928,
+      "b": 32,
+      "answer": "247.75",
+      "check": "247.75 × 32 = 7928.",
+      "method": "bus",
+      "hint": "In 7,928 ÷ 32, keep each quotient digit above its dividend digit. What happens when you reach 79 ÷ 32?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 247, with remainder 24. Continue with zeros after the decimal point: the remaining fraction is 24/32.",
+      "wrong": "248",
+      "error_note": "Check by multiplying back: 248 × 32 = 7936, which is not 7928 minus the remainder 24."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q6",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "8,646 ÷ 12",
+      "a": 8646,
+      "b": 12,
+      "answer": "720.5",
+      "check": "720.5 × 12 = 8646.",
+      "method": "bus",
+      "hint": "In 8,646 ÷ 12, keep each quotient digit above its dividend digit. What happens when you reach 86 ÷ 12?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 720, with remainder 6. Continue with zeros after the decimal point: the remaining fraction is 6/12.",
+      "wrong": "721",
+      "error_note": "Check by multiplying back: 721 × 12 = 8652, which is not 8646 minus the remainder 6."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q7",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "7,356 ÷ 24",
+      "a": 7356,
+      "b": 24,
+      "answer": "306.5",
+      "check": "306.5 × 24 = 7356.",
+      "method": "bus",
+      "hint": "In 7,356 ÷ 24, keep each quotient digit above its dividend digit. What happens when you reach 73 ÷ 24?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 306, with remainder 12. Continue with zeros after the decimal point: the remaining fraction is 12/24.",
+      "wrong": "307",
+      "error_note": "Check by multiplying back: 307 × 24 = 7368, which is not 7356 minus the remainder 12."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q8",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "9,256 ÷ 16",
+      "a": 9256,
+      "b": 16,
+      "answer": "578.5",
+      "check": "578.5 × 16 = 9256.",
+      "method": "bus",
+      "hint": "In 9,256 ÷ 16, keep each quotient digit above its dividend digit. What happens when you reach 92 ÷ 16?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 578, with remainder 8. Continue with zeros after the decimal point: the remaining fraction is 8/16.",
+      "wrong": "579",
+      "error_note": "Check by multiplying back: 579 × 16 = 9264, which is not 9256 minus the remainder 8."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q9",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "6,845 ÷ 25",
+      "a": 6845,
+      "b": 25,
+      "answer": "273.8",
+      "check": "273.8 × 25 = 6845.",
+      "method": "bus",
+      "hint": "In 6,845 ÷ 25, keep each quotient digit above its dividend digit. What happens when you reach 68 ÷ 25?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 273, with remainder 20. Continue with zeros after the decimal point: the remaining fraction is 20/25.",
+      "wrong": "274",
+      "error_note": "Check by multiplying back: 274 × 25 = 6850, which is not 6845 minus the remainder 20."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q10",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "9,735 ÷ 40",
+      "a": 9735,
+      "b": 40,
+      "answer": "243.375",
+      "check": "243.375 × 40 = 9735.",
+      "method": "bus",
+      "hint": "In 9,735 ÷ 40, keep each quotient digit above its dividend digit. What happens when you reach 97 ÷ 40?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 243, with remainder 15. Continue with zeros after the decimal point: the remaining fraction is 15/40.",
+      "wrong": "244",
+      "error_note": "Check by multiplying back: 244 × 40 = 9760, which is not 9735 minus the remainder 15."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q11",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "8,766 ÷ 48",
+      "a": 8766,
+      "b": 48,
+      "answer": "182.625",
+      "check": "182.625 × 48 = 8766.",
+      "method": "bus",
+      "hint": "In 8,766 ÷ 48, keep each quotient digit above its dividend digit. What happens when you reach 87 ÷ 48?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 182, with remainder 30. Continue with zeros after the decimal point: the remaining fraction is 30/48.",
+      "wrong": "183",
+      "error_note": "Check by multiplying back: 183 × 48 = 8784, which is not 8766 minus the remainder 30."
+    },
+    {
+      "id": "maths:M02-P3-PL-C3-Q12",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "level": 2,
+      "q": "9,564 ÷ 12",
+      "a": 9564,
+      "b": 12,
+      "answer": "797",
+      "check": "797 × 12 = 9564.",
+      "method": "bus",
+      "hint": "In 9,564 ÷ 12, keep each quotient digit above its dividend digit. What happens when you reach 95 ÷ 12?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 797, with remainder 0.",
+      "wrong": "798",
+      "error_note": "Check by multiplying back: 798 × 12 = 9576, which is not 9564."
+    },
+    {
+      "id": "maths:M02-P3-SC-C3-Q1",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "7,856 ÷ 16",
+      "a": 7856,
+      "b": 16,
+      "answer": "491",
+      "check": "491 × 16 = 7856.",
+      "method": "bus",
+      "hint": "In 7,856 ÷ 16, keep each quotient digit above its dividend digit. What happens when you reach 78 ÷ 16?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 491, with remainder 0.",
+      "wrong": "492",
+      "error_note": "Check by multiplying back: 492 × 16 = 7872, which is not 7856."
+    },
+    {
+      "id": "maths:M02-P3-SC-C3-Q2",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "9,348 ÷ 24",
+      "a": 9348,
+      "b": 24,
+      "answer": "389.5",
+      "check": "389.5 × 24 = 9348.",
+      "method": "bus",
+      "hint": "In 9,348 ÷ 24, keep each quotient digit above its dividend digit. What happens when you reach 93 ÷ 24?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 389, with remainder 12. Continue with zeros after the decimal point: the remaining fraction is 12/24.",
+      "wrong": "390",
+      "error_note": "Check by multiplying back: 390 × 24 = 9360, which is not 9348 minus the remainder 12."
+    },
+    {
+      "id": "maths:M02-P3-SC-C3-Q3",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "6,875 ÷ 32",
+      "a": 6875,
+      "b": 32,
+      "answer": "214.84375",
+      "check": "214.84375 × 32 = 6875.",
+      "method": "bus",
+      "hint": "In 6,875 ÷ 32, keep each quotient digit above its dividend digit. What happens when you reach 68 ÷ 32?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 214, with remainder 27. Continue with zeros after the decimal point: the remaining fraction is 27/32.",
+      "wrong": "215",
+      "error_note": "Check by multiplying back: 215 × 32 = 6880, which is not 6875 minus the remainder 27."
+    },
+    {
+      "id": "maths:M02-P3-SC-C3-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "8,967 ÷ 25",
+      "a": 8967,
+      "b": 25,
+      "answer": "358.68",
+      "check": "358.68 × 25 = 8967.",
+      "method": "bus",
+      "hint": "In 8,967 ÷ 25, keep each quotient digit above its dividend digit. What happens when you reach 89 ÷ 25?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 358, with remainder 17. Continue with zeros after the decimal point: the remaining fraction is 17/25.",
+      "wrong": "359",
+      "error_note": "Check by multiplying back: 359 × 25 = 8975, which is not 8967 minus the remainder 17."
+    },
+    {
+      "id": "maths:M02-P3-ER-C3-Q1",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 2,
+      "q": "7,452 ÷ 24",
+      "a": 7452,
+      "b": 24,
+      "answer": "310.5",
+      "check": "310.5 × 24 = 7452.",
+      "method": "bus",
+      "hint": "Multiply the last quotient digit by 24 and add its remainder.",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 310, with remainder 12. Continue with zeros after the decimal point: the remaining fraction is 12/24.",
+      "wrong": "311",
+      "error_note": "Use 24 × 0 + 12 = 12 for the last division step. Correct answer: 310.5.",
+      "errorImage": "data/working/M02-P3-ER-C3-Q1.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore the divisor 24 when reading the answer."
+        },
+        {
+          "id": "1",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "2",
+          "text": "Use 24 × 0 + 12 = 12 for the last division step."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Use 24 × 0 + 12 = 12 for the last division step. Correct answer: 310.5."
+    },
+    {
+      "id": "maths:M02-P3-ER-C3-Q2",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 2,
+      "q": "8,516 ÷ 16",
+      "a": 8516,
+      "b": 16,
+      "answer": "532.25",
+      "check": "532.25 × 16 = 8516.",
+      "method": "bus",
+      "hint": "Multiply the last quotient digit by 16 and add its remainder.",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 532, with remainder 4. Continue with zeros after the decimal point: the remaining fraction is 4/16.",
+      "wrong": "533",
+      "error_note": "Use 16 × 2 + 4 = 36 for the last division step. Correct answer: 532.25.",
+      "errorImage": "data/working/M02-P3-ER-C3-Q2.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "1",
+          "text": "Use 16 × 2 + 4 = 36 for the last division step."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the divisor 16 when reading the answer."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Use 16 × 2 + 4 = 36 for the last division step. Correct answer: 532.25."
+    },
+    {
+      "id": "maths:M02-P3-ER-C3-Q3",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 2,
+      "q": "9,636 ÷ 12",
+      "a": 9636,
+      "b": 12,
+      "answer": "803",
+      "check": "803 × 12 = 9636.",
+      "method": "bus",
+      "hint": "After dividing 9, is there a remainder to carry?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 803, with remainder 0.",
+      "wrong": "53.0",
+      "error_note": "Carry 9 into the next digit to make 96, then divide by 12. Correct answer: 803.",
+      "errorImage": "data/working/M02-P3-ER-C3-Q3.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Carry 9 into the next digit to make 96, then divide by 12."
+        },
+        {
+          "id": "1",
+          "text": "Ignore the divisor 12 when reading the answer."
+        },
+        {
+          "id": "2",
+          "text": "Move the first quotient digit one place to the left."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Carry 9 into the next digit to make 96, then divide by 12. Correct answer: 803."
+    },
+    {
+      "id": "maths:M02-P3-ER-C3-Q4",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 2,
+      "q": "6,848 ÷ 32",
+      "a": 6848,
+      "b": 32,
+      "answer": "214",
+      "check": "214 × 32 = 6848.",
+      "method": "bus",
+      "hint": "Can another group of 32 be made from the stated remainder?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 214, with remainder 0.",
+      "wrong": "213 r 32",
+      "error_note": "The remainder must be less than 32; increase the last quotient digit by one and subtract 32 from the remainder. Correct answer: 214.",
+      "errorImage": "data/working/M02-P3-ER-C3-Q4.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore the divisor 32 when reading the answer."
+        },
+        {
+          "id": "1",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "2",
+          "text": "The remainder must be less than 32; increase the last quotient digit by one and subtract 32 from the remainder."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "The remainder must be less than 32; increase the last quotient digit by one and subtract 32 from the remainder. Correct answer: 214."
+    },
+    {
+      "id": "maths:M02-P3-ER-C3-Q5",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 2,
+      "q": "7,945 ÷ 25",
+      "a": 7945,
+      "b": 25,
+      "answer": "317.8",
+      "check": "317.8 × 25 = 7945.",
+      "method": "bus",
+      "hint": "What fraction of one whole does a remainder of 20 represent?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 317, with remainder 20. Continue with zeros after the decimal point: the remaining fraction is 20/25.",
+      "wrong": "317.20",
+      "error_note": "Divide the remainder by 25; it represents 20/25, not copied decimal digits. Correct answer: 317.8.",
+      "errorImage": "data/working/M02-P3-ER-C3-Q5.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "1",
+          "text": "Divide the remainder by 25; it represents 20/25, not copied decimal digits."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the divisor 25 when reading the answer."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Divide the remainder by 25; it represents 20/25, not copied decimal digits. Correct answer: 317.8."
+    },
+    {
+      "id": "maths:M02-P3-ER-C3-Q6",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 2,
+      "q": "8,756 ÷ 40",
+      "a": 8756,
+      "b": 40,
+      "answer": "218.9",
+      "check": "218.9 × 40 = 8756.",
+      "method": "bus",
+      "hint": "Check the positions of the two decimal points.",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 218, with remainder 36. Continue with zeros after the decimal point: the remaining fraction is 36/40.",
+      "wrong": "2189.0",
+      "error_note": "Keep the dividend and quotient decimal points in the same column. Correct answer: 218.9.",
+      "errorImage": "data/working/M02-P3-ER-C3-Q6.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Keep the dividend and quotient decimal points in the same column."
+        },
+        {
+          "id": "1",
+          "text": "Ignore the divisor 40 when reading the answer."
+        },
+        {
+          "id": "2",
+          "text": "Move the first quotient digit one place to the left."
+        }
+      ],
+      "correctionId": "0",
+      "correction": "Keep the dividend and quotient decimal points in the same column. Correct answer: 218.9."
+    },
+    {
+      "id": "maths:M02-P3-ER-C3-Q7",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 2,
+      "q": "9,384 ÷ 48",
+      "a": 9384,
+      "b": 48,
+      "answer": "195.5",
+      "check": "195.5 × 48 = 9384.",
+      "method": "bus",
+      "hint": "After dividing 9, is there a remainder to carry?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 195, with remainder 24. Continue with zeros after the decimal point: the remaining fraction is 24/48.",
+      "wrong": "26.75",
+      "error_note": "Carry 9 into the next digit to make 93, then divide by 48. Correct answer: 195.5.",
+      "errorImage": "data/working/M02-P3-ER-C3-Q7.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Ignore the divisor 48 when reading the answer."
+        },
+        {
+          "id": "1",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "2",
+          "text": "Carry 9 into the next digit to make 93, then divide by 48."
+        }
+      ],
+      "correctionId": "2",
+      "correction": "Carry 9 into the next digit to make 93, then divide by 48. Correct answer: 195.5."
+    },
+    {
+      "id": "maths:M02-P3-ER-C3-Q8",
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "level": 2,
+      "q": "7,686 ÷ 12",
+      "a": 7686,
+      "b": 12,
+      "answer": "640.5",
+      "check": "640.5 × 12 = 7686.",
+      "method": "bus",
+      "hint": "How could you divide the remaining 6 by 12 exactly?",
+      "method_note": "Check every digit using divisor × quotient digit + remainder. The whole-number quotient is 640, with remainder 6. Continue with zeros after the decimal point: the remaining fraction is 6/12.",
+      "wrong": "641",
+      "error_note": "Continue the remainder 6 into decimal places; do not round the exact answer. Correct answer: 640.5.",
+      "errorImage": "data/working/M02-P3-ER-C3-Q8.svg",
+      "errorOptions": [
+        {
+          "id": "0",
+          "text": "Move the first quotient digit one place to the left."
+        },
+        {
+          "id": "1",
+          "text": "Continue the remainder 6 into decimal places; do not round the exact answer."
+        },
+        {
+          "id": "2",
+          "text": "Ignore the divisor 12 when reading the answer."
+        }
+      ],
+      "correctionId": "1",
+      "correction": "Continue the remainder 6 into decimal places; do not round the exact answer. Correct answer: 640.5."
     }
   ],
   "teaching": {

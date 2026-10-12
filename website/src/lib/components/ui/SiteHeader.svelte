@@ -14,6 +14,10 @@
   import { resolve } from '$app/paths';
   import { Popover } from 'bits-ui';
   import ThemeControls from './ThemeControls.svelte';
+  import { onMount } from 'svelte';
+  import { bindHeaderLayout } from '#lib/adapters/header-layout.mjs';
+  let header;
+  onMount(() => bindHeaderLayout(header));
   let {
     section = 'practice',
     back = false,
@@ -33,14 +37,16 @@
 </script>
 
 <a class="skip" href="#main">Skip to {section}</a>
-<header>
-  <a class="brand" href={resolve('/')}
-    >Maths<span> / {section === 'puzzles' ? 'puzzles' : 'practice'}</span></a
-  >
+<header bind:this={header}>
+  <a class="brand" href={resolve('/')}>Maths{' '}<span>practice</span></a>
   <div class="header-actions">
-    {#if back}<a class="action-button quiet" href={resolve('/')}>Back to topics</a>{/if}
-    {@render before?.()}
-    {@render children?.()}
+    {#if back || before}
+      <div class="header-actions-left">
+        {#if back}<a class="action-button quiet" href={resolve('/')}>Back to topics</a>{/if}
+        {@render before?.()}
+      </div>
+    {/if}
+    {#if children}<div class="header-actions-right">{@render children()}</div>{/if}
   </div>
   <div class="header-tools">
     <ThemeControls />

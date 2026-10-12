@@ -17,3 +17,6 @@
   --container-question-three-columns: 780px;
   --container-question-working-columns: 650px;
 }
+
+/* Human Go explicitly includes the shared 440px boundary, as requested on 12 October. */
+@custom-variant viewport-go-mobile (@media (width <= 440px));

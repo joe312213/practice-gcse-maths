@@ -13,6 +13,8 @@
  *
  * Libs: @playwright/test (browser automation), node:fs (file access), node:fs/promises (asynchronous file access), node:http (local test server), node:url, node:path (filesystem paths).
  */
+import { topicPath } from '../../src/lib/content/topic-routes.mjs';
+import catalogue from '../../src/lib/content/practice-pages.json' with { type: 'json' };
 import { chromium } from '@playwright/test';
 import { existsSync } from 'node:fs';
 import { readFile, stat, mkdir } from 'node:fs/promises';
@@ -100,4 +102,14 @@ export async function createTestContext(browser, options = {}) {
     };
   });
   return context;
+}
+
+/** Choose a topic through the visible Bits UI selector, including its selected-item state. */
+export async function selectTopic(page, bank) {
+  const topic = catalogue.topics.find((topic) => topic.bank === bank);
+  await page.getByLabel('Topic', { exact: true }).click();
+  await page.getByRole('option', { name: topic.title, exact: true }).click();
+  await page.waitForURL((url) => url.pathname.endsWith(topicPath(bank)));
+  await page.locator('.learning-header').waitFor();
+  await page.getByRole('heading', { name: topic.title, exact: true, level: 1 }).waitFor();
 }

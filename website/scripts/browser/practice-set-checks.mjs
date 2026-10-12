@@ -54,6 +54,8 @@ export async function checkPracticeSets(browser, base) {
     for (let i = 1; i <= 4; i++)
       await page.getByLabel(`Page ${i} slot`, { exact: true }).selectOption(String(i));
     await page.setViewportSize({ width: 390, height: 844 });
+    // ResizeObserver regrouping and Svelte layout finish after the viewport command.
+    await page.waitForFunction(() => document.documentElement.scrollWidth <= innerWidth);
     assert.equal(
       await page.evaluate(() => document.documentElement.scrollWidth > innerWidth),
       false,
@@ -140,7 +142,7 @@ export async function checkPracticeSets(browser, base) {
       timing: 1,
       pages: [{ topic: 9, type: 0, slot: 15 }],
     });
-    await page.clock.pauseAt(new Date());
+    await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
     await page.locator('#practice-code').fill(timed);
     await page.getByRole('button', { name: 'Go', exact: true }).click();
     assert.equal((await state()).attempts[0].authoredSlot, 3);

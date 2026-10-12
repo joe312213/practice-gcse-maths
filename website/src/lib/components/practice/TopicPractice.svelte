@@ -6,13 +6,20 @@
 
   Used By: SvelteKit route loading.
 
-  Uses: storage, working-cache and practice-time adapters; session.mjs; LearningSteps.svelte; topic-routes.mjs and practice-pages.json; SiteHeader, SiteFooter, ProfileDialog, Progress, PracticeSets, NextStage, PracticeActivity and MethodDemo.
+  Uses: storage, working-cache and practice-time adapters; session.mjs; LearningSteps.svelte; topic-routes.mjs and practice-pages.json; SiteHeader, SiteFooter, ProfileDialog, Progress, PracticeSets, PracticeActivity and MethodDemo.
 
   Libs: bits-ui (dialog/popover interaction), svelte (component lifecycle and state), $app/paths (base-aware URLs).
 -->
 <script>
   import { Select } from 'bits-ui';
   import { bindPracticeTimer } from '#lib/adapters/practice-time.mjs';
+  import { bindProgressAutosave } from '#lib/adapters/progress-autosave.mjs';
+  import { importProgress } from '#lib/domain/progress-transfer.mjs';
+  import {
+    learnerFileLink,
+    readProgressFile,
+    withProgressFileLock,
+  } from '#lib/adapters/progress-file.mjs';
   import { createWorkingCache } from '#lib/adapters/working-cache.mjs';
   import { foundationTopics, topicPath } from '#lib/content/topic-routes.mjs';
   import { goto, replaceState } from '$app/navigation';
@@ -27,8 +34,8 @@
   import LearningSteps from './LearningSteps.svelte';
   import catalogue from '#lib/content/practice-pages.json';
   import PracticeSets from '#lib/components/practice/PracticeSets.svelte';
-  import NextStage from '#lib/components/practice/NextStage.svelte';
 
+  import OneDriveReminder from '#lib/components/progress/OneDriveReminder.svelte';
   import ProfileDialog from '#lib/components/ui/ProfileDialog.svelte';
   import Progress from '#lib/components/practice/Progress.svelte';
   import PracticeActivity from '#lib/components/practice/PracticeActivity.svelte';
@@ -38,6 +45,14 @@
     error = $state(''),
     warning = $state(''),
     profileOpen = $state(false);
+  let progressAdapter = $state.raw(null);
+  let fileStatus = $state.raw({});
+  let newerFile = $state.raw(null),
+    fileReviewBusy = $state(false),
+    useFile = $state.raw(null);
+  const currentLearner = $derived(
+    progressAdapter?.data.profiles.find((item) => item.key === view?.profile?.key),
+  );
   let profileTrigger = $state();
   /** Switch to bank id through the session, then navigate to its public URL. Calls topicPath, resolve and goto. */
   async function selectTopic(id) {
@@ -91,7 +106,8 @@
     let disposed = false,
       ready = false,
       unsubscribe = () => {},
-      stopTiming = () => {};
+      stopTiming = () => {},
+      stopSync = () => {};
     /**
      * Initialize learner storage, load the bank and subscribe the route to session updates.
      * Calls: openProgress, loadBank, asset, createSession.
@@ -106,6 +122,19 @@
           /* The adapter will provide unsaved practice. */
         }
         const progress = openProgress(storage, (text) => (warning = text));
+        progressAdapter = progress;
+        const initialUpdated = new Map(
+          progress.data.profiles.map((profile) => [
+            profile.id,
+            profile.progressUpdatedAt ??
+              Math.max(
+                0,
+                ...Object.values(profile.topics).flatMap((topic) =>
+                  (topic.history ?? []).map((record) => record.at),
+                ),
+              ),
+          ]),
+        );
         const banks = await Promise.all(
           foundationTopics.map(({ file }) => loadBank(asset(`data/${file}.json`))),
         );
@@ -160,6 +189,47 @@
         }
         ready = true;
         syncSetUrl(view);
+        stopSync = bindProgressAutosave(
+          session,
+          {
+            data: progress.data,
+            save: progress.save,
+            initialUpdated,
+            newer: (id, value) => {
+              if (!disposed) newerFile = { id, ...value };
+            },
+            status: (id, value) => {
+              if (!disposed) fileStatus = { ...fileStatus, [id]: value };
+            },
+          },
+          document,
+          window,
+        );
+        useFile = async () => {
+          const chosen = newerFile;
+          fileReviewBusy = true;
+          try {
+            await withProgressFileLock({ id: chosen.id }, async () => {
+              const file = await readProgressFile(chosen.link.handle);
+              if (file.fingerprint !== chosen.link.fingerprint)
+                throw Error('The file changed again. Review the latest version on Progress.');
+              const next = structuredClone(progress.data);
+              importProgress(next, chosen.imported, true);
+              await learnerFileLink(chosen.imported, chosen.link);
+              if (!progress.save(next))
+                throw Error(
+                  'This browser could not store the file progress. Keep this tab open and try again.',
+                );
+              // Cleanup must retain the newly imported store, not write the old snapshot back.
+              Object.assign(progress.data, next);
+            });
+            location.reload();
+          } catch (cause) {
+            warning = cause.message;
+          } finally {
+            fileReviewBusy = false;
+          }
+        };
       } catch (cause) {
         error = `${cause.message} Refresh to try again.`;
       }
@@ -168,6 +238,7 @@
     return () => {
       disposed = true;
       stopTiming();
+      stopSync();
       unsubscribe();
     };
   });
@@ -181,7 +252,7 @@
     if (creatorOpen) event.preventDefault();
   }}
 >
-  {#snippet before()}<span id="welcome"
+  {#snippet before()}<span id="welcome" class="welcome"
       >{view?.profile ? `Welcome back, ${view.profile.name}!` : ''}</span
     ><button
       bind:this={profileTrigger}
@@ -210,14 +281,14 @@
 {#if view?.backup?.due}<p class="export-reminder" role="status">
     It has been 10 days or longer without a JSON backup. <a
       href={`${resolve('/progress.html')}#data-transfer`}
-      >Export your progress to your cloud storage.</a
+      >Save your progress in your OneDrive folder.</a
     >
   </p>{/if}
 <main id="main" tabindex="-1">
   {#if error}<p role="alert">{error}</p>
   {:else if !view}<p>Loading maths practice…</p>
   {:else if !view.profile}
-    <section class="card full">
+    <section class="card page-panel full">
       <p class="eyebrow"><a class="subject-link" href={resolve('/')}>Foundation maths</a></p>
       <h1>{view.bank.title}</h1>
       <p>
@@ -229,17 +300,69 @@
       >
     </section>
   {:else}
+    {#if currentLearner}<OneDriveReminder
+        profile={currentLearner}
+        onsaved={() => progressAdapter.save(progressAdapter.data)}
+      />{/if}
+    {#if newerFile?.id === view.profile.id && !newerFile.dismissed}
+      <aside class="card page-panel" aria-label="Newer file progress">
+        <p>Your OneDrive file has newer progress. Use it on this computer?</p>
+        <p>
+          This replaces browser progress, including unfinished pages. Drawings aren’t included in
+          the file.
+        </p>
+        <div class="actions">
+          <button class="action-button primary" disabled={fileReviewBusy} onclick={useFile}
+            >Use file progress</button
+          >
+          <button
+            class="action-button"
+            disabled={fileReviewBusy}
+            onclick={() => {
+              newerFile = { ...newerFile, dismissed: true };
+              fileStatus = {
+                ...fileStatus,
+                [view.profile.id]: {
+                  state: 'error',
+                  message:
+                    'Browser progress kept. File saving is paused until you review the file on Progress.',
+                },
+              };
+            }}>Keep browser progress</button
+          >
+        </div>
+      </aside>
+    {:else if fileStatus[view.profile.id]}
+      <p class="onedrive-save-result" role="status">
+        {newerFile?.id === view.profile.id && newerFile.dismissed
+          ? 'Browser progress kept. File saving is paused until you review the file on Progress.'
+          : fileStatus[view.profile.id].message}
+        {#if ['error', 'review'].includes(fileStatus[view.profile.id].state)}
+          <a href={`${resolve('/progress.html')}#data-transfer`}
+            >Review file access or save a backup</a
+          >
+        {/if}
+      </p>
+    {/if}
     <PracticeSets {catalogue} {view} {session} bind:creatorOpen returnFocus={menuTrigger}>
       {#snippet topicSelector()}
         <Select.Root type="single" value={view.bank.topic} onValueChange={selectTopic}>
-          <Select.Trigger class="choice-field topic-selector" aria-label="Topic">Topic</Select.Trigger>
+          <Select.Trigger class="choice-field topic-selector" aria-label="Topic"
+            >Topic</Select.Trigger
+          >
           <Select.Portal>
-            <Select.Content class="popover-panel topic-options" align="end" sideOffset={4} collisionPadding={16}>
+            <Select.Content
+              class="popover-panel topic-options"
+              align="end"
+              sideOffset={4}
+              collisionPadding={16}
+            >
               <Select.Viewport>
                 {#each catalogue.topics as topic}
                   <Select.Item class="topic-option" value={topic.bank} label={topic.title}>
                     {#snippet children({ selected })}
-                      <span class="topic-option-tick" aria-hidden="true">{selected ? '✓' : ''}</span>
+                      <span class="topic-option-tick" aria-hidden="true">{selected ? '✓' : ''}</span
+                      >
                       {topic.title}
                     {/snippet}
                   </Select.Item>
@@ -279,17 +402,14 @@
           speed={view.demoSpeed}
           onspeed={session.setDemoSpeed}
         />
-        <NextStage mode="demo" onadvance={switchStage} />
       </section>
-    {:else}<PracticeActivity {view} {session} onstage={switchStage} />{/if}
+    {:else}<PracticeActivity {view} {session} />{/if}
   {/if}
 </main>
 <SiteFooter
   question={view?.bank.questions.find((q) => q.id === view?.page?.items[view.selected]?.id)}
   topic={view?.bank.title ?? ''}
->
-  Maths practice · Progress stays in this browser · Show your method, then check your answer.
-</SiteFooter>
+/>
 <div id="toast" role="status" aria-live="polite">{view?.message ?? ''}</div>
 {#if session}<ProfileDialog
     bind:open={profileOpen}

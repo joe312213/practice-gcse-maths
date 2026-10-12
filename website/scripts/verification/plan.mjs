@@ -19,7 +19,7 @@ import { createHash } from 'node:crypto';
 
 // Deliberately small dependency map. Broaden here when adding a new feature family.
 const config = /^website\/(package(?:-lock)?\.json|[^/]+\.(?:js|json))$/;
-const puzzles = /^website\/vendor\/puzzles\//;
+const puzzles = /^website\/(vendor\/puzzles|static\/engines\/gnugo)\//;
 const source = /^website\/(src|static)\//;
 const topicRoutes = /^website\/src\/lib\/content\/topic-routes\.mjs$/;
 const runtime = /^website\/src\/(lib\/(application|domain|adapters)\/|routes\/)/;
@@ -98,6 +98,7 @@ export const jobs = [
       components,
       layout,
       /^website\/src\/lib\/domain\/working\.mjs$/,
+      /^website\/src\/lib\/adapters\/header-layout\.mjs$/,
       /^website\/src\/lib\/application\/(player|demo-guide|demo-motion|equation-demo|arithmetic-demo|drawing-assist|drawing)\.mjs$/,
       /^website\/src\/routes\//,
       bank,

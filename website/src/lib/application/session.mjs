@@ -10,6 +10,7 @@
  *
  * Libs: none.
  */
+import { topicPages, TOPIC_PAGE_SIZES, assessmentPage } from '../domain/topic-pages.mjs';
 import { createWorkingCache } from '../adapters/working-cache.mjs';
 import { backupStatus } from '../domain/progress.mjs';
 import { completeRecommendation } from '../domain/revision.mjs';
@@ -250,62 +251,52 @@ export function createSession({
     for (const loaded of banks) {
       const saved = p.topics[`${loaded.subject}:${loaded.topic}`];
       for (const [key, attempt] of Object.entries(saved?.pages ?? {}))
-        if (attempt.revision !== loaded.revision) delete saved.pages[key];
+        if (attempt.revision !== loaded.revision) {
+          delete saved.pages[key];
+          if (saved.pageHistory) delete saved.pageHistory[key];
+          if (saved.practicePages) delete saved.practicePages[key];
+        }
+      for (const [key, levels] of Object.entries(saved?.practicePages ?? {}))
+        if (
+          Object.values(levels).some((group) =>
+            group.attempts.some((attempt) => attempt && attempt.revision !== loaded.revision),
+          )
+        )
+          delete saved.practicePages[key];
+      for (const [key, visits] of Object.entries(saved?.pageHistory ?? {}))
+        if (
+          [...visits.previous, ...visits.next].some(
+            (attempt) => attempt.revision !== loaded.revision,
+          )
+        )
+          delete saved.pageHistory[key];
     }
   /**
-   * Create an activity attempt from its authored definition or sampled question pool.
+   * Create an authored practice attempt or a balanced random assessment.
    * Parameter definition: authored page definition or null for sampling.
    * Calls: activeSet, setPageDefinition, track, newPage, pool, topic, storePage.
    * Used by: enterSetPage, ensurePage, nextPage.
-   * @example createPage(); // Create the current ordinary activity page and persist it.
+   * @example createPage(); // Create the initial assessment and persist it.
    */
   function createPage(definition = activeSet() ? setPageDefinition(track().level) : null) {
-    const t = track(),
-      size = definition
-        ? definition.ids.length
-        : mode === 'plain'
-          ? 12
-          : mode === 'errors'
-            ? 3
-            : mode === 'assessment'
-              ? pool('assessment').length
-              : 2;
+    const level = definition?.level ?? track().level;
+    const candidates = definition ? definition.ids.map(question) : assessmentPage(bank, random);
+    const size = candidates.length;
     const p = {
-      ...newPage(size, t.level),
-      startLevel: t.level,
+      ...newPage(size, level),
+      startLevel: level,
       revision: bank.revision,
       attempt: uuid(),
       items: [],
       assisted: {},
       responses: {},
-      ...(definition ? { authoredSlot: definition.slot } : {}),
+      ...(definition?.ordinary
+        ? { navigationLevel: level, navigationIndex: definition.index }
+        : definition
+          ? { authoredSlot: definition.slot }
+          : {}),
     };
-    const candidates = pool(mode, mode === 'assessment' ? undefined : p.level);
-    if (mode === 'assessment') candidates.sort((a, b) => a.level - b.level);
-    const recent = new Set(
-      topic()
-        .history.slice(-30)
-        .map((h) => h.question),
-    );
-    const available = [...candidates].sort(
-      (a, b) => Number(recent.has(a.id)) - Number(recent.has(b.id)),
-    );
-    for (let i = available.length - 1; i > 0; i--) {
-      const j = Math.floor(random() * (i + 1));
-      if (recent.has(available[i].id) === recent.has(available[j].id))
-        [available[i], available[j]] = [available[j], available[i]];
-    }
-    if (candidates.length < size) throw Error('Not enough unused questions at this level.');
-    p.items = (
-      definition
-        ? definition.ids.map(question)
-        : mode === 'assessment'
-          ? candidates
-          : available.slice(0, size)
-    ).map((q) => ({
-      id: q.id,
-      level: q.level,
-    }));
+    p.items = candidates.map((q) => ({ id: q.id, level: q.level }));
     storePage(p);
     resetDraft();
     save(data);
@@ -326,7 +317,11 @@ export function createSession({
    * Used by: createSession, chooseName, switchMode, startPracticeSet, leavePracticeSet, resumePracticeSet.
    */
   function ensurePage() {
-    if (profile && mode !== 'demo' && !page()) createPage();
+    if (!profile || mode === 'demo') return;
+    if (!activeSet() && TOPIC_PAGE_SIZES[mode]) {
+      if (page()) rememberOrdinaryPage();
+      else openOrdinaryPage(track().level);
+    } else if (!page()) createPage();
   }
   /**
    * Refill unanswered question slots after a level change while retaining existing responses.
@@ -364,6 +359,42 @@ export function createSession({
     const q = current();
     if (q && !page().responses[q.id]) page().assisted[q.id] = true;
   }
+  /** Keep the active page authoritative after JSON reload, where object aliases are lost.
+   * Legacy saved pages retain their questions/answers as the first page of their starting level.
+   * Older unbounded pageHistory records remain intact; no learner results are deleted.
+   */
+  function rememberOrdinaryPage() {
+    const p = page();
+    p.navigationLevel ??= p.startLevel ?? p.level;
+    p.navigationIndex ??= 0;
+    const modes = (topic().practicePages ??= {});
+    const levels = (modes[mode] ??= {});
+    const group = (levels[p.navigationLevel] ??= { index: 0, attempts: [] });
+    group.index = p.navigationIndex;
+    group.attempts[group.index] = p;
+    return group;
+  }
+  /** Open one defined page within a chosen level, restoring its saved attempt when present. */
+  function openOrdinaryPage(level, index, restart = false) {
+    const definitions = topicPages(bank, mode, level);
+    const group = topic().practicePages?.[mode]?.[level];
+    index ??= group?.index ?? 0;
+    if (!definitions[index]) return;
+    selected = 0;
+    if (!restart && group?.attempts[index]) storePage(group.attempts[index]);
+    else createPage({ ids: definitions[index], level, index, ordinary: true });
+    rememberOrdinaryPage();
+    resetActivity();
+  }
+  /** Page navigation is bounded by the authored pages of this stage and starting level. */
+  function movePage(direction) {
+    if (!profile || activeSet() || !TOPIC_PAGE_SIZES[mode]) return;
+    const p = page();
+    if (p.pendingChoice) return;
+    rememberOrdinaryPage();
+    openOrdinaryPage(p.navigationLevel, p.navigationIndex + direction);
+    publish(true);
+  }
   /**
    * Return the presentation state without exposing the mutable store directly.
    * Calls: backupStatus, activeSet, setSecondsRemaining, page, track.
@@ -374,7 +405,7 @@ export function createSession({
     return {
       bank,
       timingDeadline: activeSet()?.deadline ?? null,
-      profile: profile ? { name: profile.name, key: profile.key } : null,
+      profile: profile ? { id: profile.id, name: profile.name, key: profile.key } : null,
       backup: backupStatus(profile, now()),
       demoSpeed: profile?.settings?.demoSpeed ?? 1,
       practiceSet: activeSet()
@@ -393,6 +424,14 @@ export function createSession({
         : null,
       mode,
       selected,
+      pageNavigation:
+        profile && !activeSet() && TOPIC_PAGE_SIZES[mode]
+          ? {
+              index: page().navigationIndex ?? 0,
+              level: page().navigationLevel ?? page().startLevel,
+              total: topicPages(bank, mode, page().navigationLevel ?? page().startLevel).length,
+            }
+          : null,
       reference,
       demoLevel,
       hintVisible,
@@ -506,6 +545,17 @@ export function createSession({
      */
     changeLevel(level) {
       if (timeExpired() || activeSet()?.finished) {
+        publish(true);
+        return;
+      }
+      if (!activeSet() && TOPIC_PAGE_SIZES[mode]) {
+        if (page().trial || page().pendingChoice)
+          throw Error('Finish the current challenge trial first.');
+        if (!Number.isInteger(level) || level < 0 || level > 2)
+          throw Error('Unknown challenge level.');
+        rememberOrdinaryPage();
+        if (['plain', 'errors'].includes(mode)) manualLevel(track(), newPage(1, level), level);
+        openOrdinaryPage(level);
         publish(true);
         return;
       }
@@ -682,13 +732,25 @@ export function createSession({
      * Calls: activeSet, resetDraft, createPage, publish.
      */
     nextPage() {
-      if (activeSet()) return;
-      selected = 0;
-      reference = false;
-      resetDraft();
-      createPage();
-      message = '';
-      publish();
+      movePage(1);
+    },
+    /** Explicitly retry a completed defined page; submitted answer history stays intact. */
+    restartPage() {
+      if (
+        !profile ||
+        activeSet() ||
+        !TOPIC_PAGE_SIZES[mode] ||
+        !page().complete ||
+        page().pendingChoice
+      )
+        return;
+      const p = page();
+      openOrdinaryPage(p.navigationLevel, p.navigationIndex, true);
+      publish(true);
+    },
+    /** Restore the preceding ordinary page with its original attempt and responses. */
+    previousPage() {
+      movePage(-1);
     },
     /**
      * Validate a code and initialize or resume its learner-owned practice-set attempt.

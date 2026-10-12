@@ -175,7 +175,7 @@ try {
   await shot('assessment');
   for (const i of [2, 3, 0, 1, 4, 5]) await submitCorrect('assessment', i);
   assert.equal(await page.locator('#new-page, .summary').count(), 0);
-  await page.locator('#assessment-next').click();
+  await page.locator('[data-mode="demo"]').click();
   assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title');
   assert.equal(await page.locator('.guidance li').count(), 2);
   await page.locator('#demo-play').click();
@@ -212,7 +212,7 @@ try {
   assert.ok(noteBesideStep, 'Explanation sits to the left of its equation step');
   await accessibility('demo');
   await shot('demo');
-  await page.locator('#next-stage').click();
+  await page.locator('[data-mode="scaffolded"]').click();
   assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title');
   await page.locator('#level').selectOption('2');
   assert.equal(await page.locator('.guidance li').count(), 4);
@@ -221,7 +221,7 @@ try {
   await page.reload();
   await page.locator('[data-mode="scaffolded"]').click();
   for (let i = 0; i < (await active('scaffolded')).size; i++) await submitCorrect('scaffolded', i);
-  await page.locator('#next-stage').click();
+  await page.locator('[data-mode="errors"]').click();
   assert.equal(await page.locator('[data-mode="errors"]').getAttribute('aria-current'), 'step');
   assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title');
   await page.locator('[data-mode="plain"]').click();
@@ -239,7 +239,7 @@ try {
   await page.reload();
   await page.locator('[data-mode="plain"]').click();
   assert.equal((await active('plain')).complete, true);
-  await page.locator('#new-page').click();
+  await page.locator('#level').selectOption('1');
   await page.locator('#hint').click();
   const hintedId = (await active('plain')).items[0].id;
   const hinted = bank.questions.find((q) => q.id === hintedId);
@@ -268,7 +268,7 @@ try {
       if (!p.responses[p.items[i].id]) await submitCorrect('errors', i);
     if (await page.locator('#accept-promotion').count())
       await page.locator('#accept-promotion').click();
-    await page.locator('#new-page').click();
+    await page.getByRole('button', { name: 'Next page of questions', exact: true }).click();
   }
   assert.ok(two >= 0);
   await page.locator(`[data-question="${two}"]`).click();
@@ -279,7 +279,7 @@ try {
   const errorPage = await active('errors');
   for (let i = 0; i < errorPage.size; i++)
     if (!errorPage.responses[errorPage.items[i].id]) await submitCorrect('errors', i);
-  await page.locator('#next-stage').click();
+  await page.locator('[data-mode="plain"]').click();
   assert.equal(await page.locator('[data-mode="plain"]').getAttribute('aria-current'), 'step');
   assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title');
   for (const width of [1380, 1000, 768, 600, 390, 320]) {
@@ -363,10 +363,15 @@ try {
   await shot('theme-mobile');
   await page.keyboard.press('Escape');
   await accessibility('theme-mobile-page');
-  await page.locator('footer a').click();
+  await page.locator('footer').getByRole('link', { name: 'About', exact: true }).click();
   await page.getByRole('heading', { name: 'About Maths practice' }).waitFor();
   assert.equal(await page.evaluate(() => document.documentElement.dataset.palette), 'blue');
   await accessibility('about');
+  await page.getByRole('link', { name: 'FAQ & troubleshooting', exact: true }).click();
+  await page.getByRole('heading', { name: 'FAQ & troubleshooting', exact: true }).waitFor();
+  await accessibility('help');
+  await page.goBack();
+  await page.getByRole('heading', { name: 'About Maths practice' }).waitFor();
   await page.goto(`${base}fm/solving-equations/`);
   await chooseName('Another Student');
   assert.equal((await topic()).history.length, 0);

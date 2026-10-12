@@ -62,7 +62,6 @@
     class="text-field"
     autocomplete="off"
     inputmode="text"
-    placeholder={question.answer.includes(' r ') ? 'e.g. 24 r 1' : 'e.g. 7, −2 or 1/2'}
     value={response?.raw ?? draft.answer}
     disabled={Boolean(response)}
     required

@@ -224,18 +224,18 @@ test("local profiles normalise names, suggest typos, remain isolated and preserv
     2,
   );
 });
-test("94 preserved source questions plus three web additions; all answers parse", async () => {
+test("Three full pages per stage/level preserve authored questions; all answers parse", async () => {
   const bank = JSON.parse(
     await readFile(
       new URL("../website/static/data/equations.json", import.meta.url),
     ),
   );
-  assert.equal(bank.questions.length, 97);
-  assert.equal(new Set(bank.questions.map((q) => q.id)).size, 97);
+  assert.equal(bank.questions.length, 171);
+  assert.equal(new Set(bank.questions.map((q) => q.id)).size, 171);
   for (let l = 0; l < 3; l++)
     assert.equal(
       bank.questions.filter((q) => q.type === "plain" && q.level === l).length,
-      24,
+      36,
     );
   for (const q of bank.questions) {
     assert.ok(q.balance.length >= 3);

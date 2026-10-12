@@ -31,26 +31,36 @@
   );
 }
 .challenge-stages {
-  display: flex;
-  gap: 0.5rem;
+  /* Only the two outside ends retain padding; meters reach the clipped joins. */
+  --chevron-padding-start: 0px;
+  --chevron-padding-end: 0px;
+  --chevron-last-padding-end: calc(var(--chevron-depth) + 0.5rem);
+  --chevron-first-padding-start: var(--chevron-last-padding-end);
 }
-.challenge-stage {
+.challenge-stages .challenge-stage {
+  display: block;
   flex: 1;
   min-width: 0;
-  border: 1px solid var(--line);
-  border-radius: 8px;
   background: var(--surface-soft);
-  color: var(--ink);
-  padding: 0.65rem;
-  cursor: pointer;
+  overflow-wrap: anywhere;
 }
 .challenge-stage span {
   display: block;
 }
 .challenge-stage .progress-meter {
+  --radius-box: 0px;
+  border-radius: 0;
   display: block;
   width: 100%;
   margin: 0.5rem 0;
+}
+.challenge-stage.first-stage .progress-meter {
+  border-start-start-radius: var(--radius-selector);
+  border-end-start-radius: var(--radius-selector);
+}
+.challenge-stage.last-stage .progress-meter {
+  border-start-end-radius: var(--radius-selector);
+  border-end-end-radius: var(--radius-selector);
 }
 .progress-breakdown {
   width: min(28rem, calc(100vw - 2 * var(--overlay-edge-clearance)));
@@ -72,9 +82,8 @@
   .topic-progress {
     grid-template-columns: minmax(0, 1fr);
   }
-  .challenge-stage {
+  .challenge-stages .challenge-stage {
     font-size: 0.85rem;
-    padding: 0.5rem 0.2rem;
   }
 }
 

@@ -9,6 +9,6 @@
  *
  * Libs: None.
  */
-export const DEFAULT_WORKING_HEIGHT = 246;
+export const DEFAULT_WORKING_HEIGHT = 262;
 export const WORKING_BITMAP_WIDTH = 700;
 export const WORKING_BITMAP_SCALE = 2;

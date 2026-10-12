@@ -28,7 +28,7 @@ const bank = JSON.parse(
  * Parameter content: question-bank fixture.
  * Calls: emptyStore, createSession.
  */
-function setup(data = emptyStore(), content = bank) {
+function setup(data = emptyStore(), content = bank, random = () => 0) {
   let view,
     writes = 0;
   const session = createSession({
@@ -36,8 +36,7 @@ function setup(data = emptyStore(), content = bank) {
     data /** Fixture persistence callback; record a write or leave the store in memory. */,
     save: () =>
       writes++ /** Fixture random source; return a deterministic selection value. */,
-    random: () =>
-      0 /** Fixture identifier source; return the configured attempt ID. */,
+    random,
     uuid: () =>
       "test-attempt" /** Fixture clock; return the configured time in milliseconds. */,
     now: () => 1,
@@ -79,6 +78,16 @@ test("session composes with injected persistence and emits isolated view snapsho
     f.data.profiles[0].topics["maths:M10"].pages.assessment.count,
     0,
   );
+});
+
+test("an assessment draw is saved once and survives refresh with a different random source", () => {
+  const f = setup(emptyStore(), bank, () => 0.15);
+  correct(f);
+  const saved = JSON.parse(JSON.stringify(f.view.page));
+  const resumed = setup(JSON.parse(JSON.stringify(f.data)), bank, () => 0.85);
+  assert.deepEqual(JSON.parse(JSON.stringify(resumed.view.page)), saved);
+  const other = setup(emptyStore(), bank, () => 0.85);
+  assert.notDeepEqual(other.view.page.items, saved.items);
 });
 test("correct advances, wraps, clears drafts and cannot score a submitted item twice", () => {
   const f = setup();
@@ -184,4 +193,84 @@ test("demo speed is saved per profile, survives reload, and leaves learning hist
   resumed.session.setDemoSpeed(2);
   resumed.session.chooseName("Student", true);
   assert.equal(resumed.view.demoSpeed, 1.5);
+});
+
+test("new error pages have four distinct questions without replacing a saved three-question page", () => {
+  const f = setup();
+  f.session.switchMode("errors");
+  assert.equal(f.view.page.size, 4);
+  assert.equal(new Set(f.view.page.items.map((item) => item.id)).size, 4);
+  const saved = f.data.profiles[0].topics["maths:M10"].pages.errors;
+  saved.size = 3;
+  saved.items = saved.items.slice(0, 3);
+  const before = structuredClone(saved);
+  const resumed = setup(f.data);
+  resumed.session.switchMode("errors");
+  assert.deepEqual(resumed.view.page, before);
+});
+
+test("ordinary page navigation restores saved attempts and responses without rescoring", () => {
+  const f = setup();
+  f.session.switchMode("plain");
+  assert.equal(f.view.pageNavigation.index, 0);
+  correct(f);
+  const first = structuredClone(f.view.page);
+  const historyCount = f.data.profiles[0].topics["maths:M10"].history.length;
+  f.session.nextPage();
+  assert.equal(f.view.page.count, 0);
+  assert.equal(f.view.selected, 0);
+  assert.equal(f.view.pageNavigation.index, 1);
+  f.session.select(3);
+  correct(f);
+  const second = structuredClone(f.view.page);
+  f.session.previousPage();
+  assert.deepEqual(f.view.page, first);
+  f.session.select(0);
+  assert.equal(f.session.submitAnswer().duplicate, true);
+  assert.equal(
+    f.data.profiles[0].topics["maths:M10"].history.length,
+    historyCount + 1,
+  );
+  // Reload with a page ahead: Next must restore it rather than discard its responses.
+  const resumed = setup(JSON.parse(JSON.stringify(f.data)));
+  resumed.session.switchMode("plain");
+  resumed.session.nextPage();
+  assert.deepEqual(resumed.view.page, JSON.parse(JSON.stringify(second)));
+  resumed.session.previousPage();
+  assert.deepEqual(resumed.view.page, JSON.parse(JSON.stringify(first)));
+  resumed.session.switchMode("errors");
+  assert.equal(resumed.view.pageNavigation.index, 0);
+  resumed.session.switchMode("plain");
+  resumed.session.nextPage();
+  assert.deepEqual(resumed.view.page, JSON.parse(JSON.stringify(second)));
+  resumed.session.chooseName("Other student", true);
+  resumed.session.switchMode("plain");
+  assert.equal(resumed.view.pageNavigation.index, 0);
+});
+
+test("three-page navigation stops at boundaries and remembers a separate page per level and stage", () => {
+  const f = setup();
+  for (const mode of ["plain", "scaffolded", "errors"]) {
+    f.session.switchMode(mode);
+    assert.equal(f.view.pageNavigation.total, 3);
+    const first = structuredClone(f.view.page.items);
+    f.session.previousPage();
+    assert.deepEqual(f.view.page.items, first);
+    f.session.nextPage();
+    f.session.nextPage();
+    assert.equal(f.view.pageNavigation.index, 2);
+    const third = structuredClone(f.view.page.items);
+    assert.ok(third.every((item) => !first.some((old) => old.id === item.id)));
+    f.session.nextPage();
+    assert.deepEqual(f.view.page.items, third);
+    f.session.changeLevel(1);
+    assert.equal(f.view.pageNavigation.index, 0);
+    assert.ok(f.view.page.items.every((item) => item.level === 1));
+    f.session.nextPage();
+    f.session.changeLevel(0);
+    assert.equal(f.view.pageNavigation.index, 2);
+    assert.deepEqual(f.view.page.items, third);
+    f.session.changeLevel(1);
+    assert.equal(f.view.pageNavigation.index, 1);
+  }
 });

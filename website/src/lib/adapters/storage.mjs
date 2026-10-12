@@ -11,7 +11,8 @@
  *
  * Libs: none.
  */
-import { KEY, emptyStore, load } from '../domain/profiles.mjs';
+import { KEY, emptyStore, load, ensureLearnerIds } from '../domain/profiles.mjs';
+import { progressContent } from '../domain/progress-transfer.mjs';
 
 /**
  * Preserve unreadable stores: in-memory practice must never overwrite their contents.
@@ -26,11 +27,21 @@ export function openProgress(storage, onWarning = () => {}) {
   let data;
   try {
     data = load(storage);
+    if (ensureLearnerIds(data)) {
+      try {
+        storage.setItem(KEY, JSON.stringify(data));
+      } catch {
+        onWarning(
+          'Learner IDs could not be saved in this browser. Save a progress file to keep them.',
+        );
+      }
+    }
   } catch (error) {
     writable = false;
     data = emptyStore();
     onWarning(`${error.message} Practice can continue without saving.`);
   }
+  const contents = new Map(data.profiles.map((profile) => [profile.id, progressContent(profile)]));
   return {
     data,
     /**
@@ -38,13 +49,23 @@ export function openProgress(storage, onWarning = () => {}) {
      * Parameter value: complete schema-2 learner store to serialize.
      */
     save(value) {
-      if (!writable) return;
+      for (const profile of value.profiles) {
+        const content = progressContent(profile);
+        if (contents.get(profile.id) !== content) {
+          // Monotonic even for two updates in one millisecond or a clock adjustment.
+          profile.progressUpdatedAt = Math.max(Date.now(), (profile.progressUpdatedAt ?? 0) + 1);
+          contents.set(profile.id, content);
+        }
+      }
+      if (!writable) return false;
       try {
         storage.setItem(KEY, JSON.stringify(value));
+        return true;
       } catch {
         onWarning(
           'This browser could not save your progress. Keep this tab open; your current work is still available here.',
         );
+        return false;
       }
     },
   };

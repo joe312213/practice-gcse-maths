@@ -12,6 +12,7 @@
 -->
 <script>
   import { Dialog } from 'bits-ui';
+  import { resolve } from '$app/paths';
   let { open = $bindable(false), chooseName, returnFocus } = $props();
   let name = $state(''),
     pending = $state(null),
@@ -59,7 +60,9 @@
       }}
     >
       <Dialog.Title>Your practice, your progress</Dialog.Title>
-      <Dialog.Description>Choose a name to keep your progress on this device.</Dialog.Description>
+      <Dialog.Description
+        >Choose a name for your browser’s working copy of progress.</Dialog.Description
+      >
       <form id="profile-form" onsubmit={submit}>
         <label for="username">Your name</label>
         <input
@@ -85,6 +88,11 @@
         <button class="action-button" type="submit">Continue</button>
         <Dialog.Close class="action-button" id="profile-cancel">Cancel</Dialog.Close>
       </form>
+      <p>
+        Recommended: keep your progress file in your college’s synced OneDrive folder. Returning on
+        another computer? <a href={resolve('/progress.html')}>Open your progress file</a> before practising.
+        New students can set up their file on Progress after choosing a name.
+      </p>
     </Dialog.Content>
   </Dialog.Portal>
 </Dialog.Root>

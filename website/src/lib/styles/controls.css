@@ -5,6 +5,7 @@
   --control-size: 44px;
   --control-size-compact: 32px;
   --control-gap: 10px;
+  --theme-tools-gap: 0.15rem;
 }
 .action-button,
 .question-option,
@@ -23,6 +24,7 @@
   line-height: inherit;
   box-shadow: none;
   text-shadow: none;
+  text-decoration: none;
   transform: none;
   transition: none;
   cursor: pointer;
@@ -104,6 +106,14 @@
   min-height: var(--control-size-compact);
   padding-block: 4px;
   font-size: 0.82rem;
+}
+/* Native selected-option/filename sizing, with intrinsic browser sizing as the fallback. */
+select:not([multiple]),
+input[type='file'] {
+  field-sizing: content;
+  width: auto;
+  max-width: 100%;
+  justify-self: start;
 }
 .action-button.menu-toggle {
   width: var(--control-size);

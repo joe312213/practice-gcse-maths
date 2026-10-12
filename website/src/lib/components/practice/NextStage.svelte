@@ -11,15 +11,18 @@
   Libs: none.
 -->
 <script>
-  import { nextStage } from '#lib/domain/stages.mjs';
+  import PageNavigation from '../ui/PageNavigation.svelte';
+  import { MODES, nextStage } from '#lib/domain/stages.mjs';
   let { mode, onadvance, id = 'next-stage' } = $props();
+  const previous = $derived(MODES[MODES.findIndex(([id]) => id === mode) - 1]);
   const next = $derived(nextStage(mode));
 </script>
 
-{#if next}
-  <div class="stage-actions">
-    <button type="button" class="action-button primary" {id} onclick={() => onadvance(next[0])}>
-      Next: {next[1]}
-    </button>
-  </div>
-{/if}
+<PageNavigation
+  label="Learning stage navigation"
+  previousLabel={previous ? `Previous: ${previous[1]}` : 'Previous stage'}
+  nextLabel={next ? `Next: ${next[1]}` : 'Next stage'}
+  onprevious={previous ? () => onadvance(previous[0]) : undefined}
+  onnext={next ? () => onadvance(next[0]) : undefined}
+  nextId={id}
+/>

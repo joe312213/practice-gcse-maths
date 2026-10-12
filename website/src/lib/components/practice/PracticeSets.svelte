@@ -13,6 +13,7 @@
   Libs: bits-ui (dialog/popover interaction), svelte (component lifecycle and state).
 -->
 <script>
+  import PageNavigation from '../ui/PageNavigation.svelte';
   import { Dialog } from 'bits-ui';
   import { onMount, tick, untrack } from 'svelte';
   import {
@@ -140,20 +141,21 @@
           '0',
         )}
       </p>{/if}
+    <PageNavigation
+      label="Practice set page navigation"
+      previousLabel="Previous page"
+      nextLabel="Next Practice set page"
+      nextId="next-set-page"
+      previousDisabled={run.index === 0}
+      nextDisabled={run.index === run.config.pages.length - 1 ||
+        (run.finished
+          ? run.index + 1 >= run.completed.length
+          : !view.page.complete || view.page.pendingChoice)}
+      onprevious={() => action(() => session.goSetPage(run.index - 1))}
+      onnext={() => action(() => session.goSetPage(run.index + 1))}
+      >{run.code} · {run.index + 1}/{run.config.pages.length}</PageNavigation
+    >
     <div class="actions">
-      {#if run.index > 0}<button
-          class="action-button compact"
-          onclick={() => action(() => session.goSetPage(run.index - 1))}>Previous page</button
-        >{/if}
-      {#if run.index < run.config.pages.length - 1}<button
-          class="action-button primary"
-          id="next-set-page"
-          disabled={run.finished
-            ? run.index + 1 >= run.completed.length
-            : !view.page.complete || view.page.pendingChoice}
-          onclick={() => action(() => session.goSetPage(run.index + 1))}
-          >Next Practice set page</button
-        >{/if}
       <button class="action-button compact" onclick={() => action(session.leavePracticeSet)}
         >Leave Practice set</button
       >

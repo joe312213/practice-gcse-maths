@@ -16,6 +16,8 @@
   import { Dialog } from 'bits-ui';
   import { LEVELS } from '#lib/domain/engine.mjs';
   import { MODES } from '#lib/domain/stages.mjs';
+  import PracticeCountdown from './PracticeCountdown.svelte';
+  import PageNavigation from '../ui/PageNavigation.svelte';
   import QuestionList from './QuestionList.svelte';
   import AnswerForm from './AnswerForm.svelte';
   import Feedback from './Feedback.svelte';
@@ -25,7 +27,7 @@
   import EquationWorking from '../teaching/EquationWorking.svelte';
   import DemoPlayer from '../teaching/MethodDemo.svelte';
   import { asset } from '$app/paths';
-  let { view, session, onstage } = $props();
+  let { view, session } = $props();
   let mobile = $state(false),
     container,
     referenceButton = $state();
@@ -89,38 +91,51 @@
     </aside>
   {/if}
   <section class="card stage-panel question-panel">
-    <div class="meta">
-      {MODES.find((m) => m[0] === view.mode)[1]} · {page.count}/{page.size} submitted
-    </div>
-    <div class="level-row">
-      <h2 id="stage-title" tabindex="-1">
-        {view.mode === 'assessment'
-          ? 'What can you do already?'
-          : view.mode === 'errors'
-            ? 'Find and correct the errors'
-            : 'Choose a question'}
-      </h2>
-      {#if view.mode !== 'assessment'}
-        <label
-          >Level <select
-            class="choice-field"
-            id="level"
-            value={page.level}
-            disabled={Boolean(
-              page.trial || page.pendingChoice || page.complete || view.practiceSet?.finished,
-            )}
-            onchange={(event) => session.changeLevel(Number(event.currentTarget.value))}
-            >{#each LEVELS as label, index}<option value={index}>{label}</option>{/each}</select
-          ></label
-        >
-        <button
-          class="action-button quiet"
-          bind:this={referenceButton}
-          type="button"
-          id="reference"
-          aria-expanded={view.reference}
-          onclick={() => session.setReference(!view.reference)}>Check method</button
-        >
+    <div class="practice-question-header">
+      <div class="practice-question-heading">
+        <div class="meta">
+          {MODES.find((m) => m[0] === view.mode)[1]} · {page.count}/{page.size} submitted
+        </div>
+        <div class="level-row">
+          <h2 id="stage-title" tabindex="-1">
+            {view.mode === 'assessment'
+              ? 'What can you do already?'
+              : view.mode === 'errors'
+                ? 'Find and correct the errors'
+                : 'Choose a question'}
+          </h2>
+          {#if view.mode !== 'assessment'}
+            <label
+              >Level <select
+                class="choice-field"
+                id="level"
+                value={view.pageNavigation?.level ?? page.level}
+                disabled={Boolean(
+                  page.trial ||
+                  page.pendingChoice ||
+                  (view.practiceSet && page.complete) ||
+                  view.practiceSet?.finished,
+                )}
+                onchange={(event) => session.changeLevel(Number(event.currentTarget.value))}
+                >{#each LEVELS as label, index}<option value={index}>{label}</option>{/each}</select
+              ></label
+            >
+            <button
+              class="action-button quiet"
+              bind:this={referenceButton}
+              type="button"
+              id="reference"
+              aria-expanded={view.reference}
+              onclick={() => session.setReference(!view.reference)}>Check method</button
+            >
+          {/if}
+        </div>
+      </div>
+      {#if ['errors', 'plain'].includes(view.mode) && view.practiceSet?.remaining == null}
+        {#key page.attempt}<PracticeCountdown
+            questions={page.size}
+            complete={page.complete}
+          />{/key}
       {/if}
     </div>
     <p class="muted">
@@ -174,7 +189,6 @@
             />
           </fieldset>
           <Feedback {question} {response} mode={view.mode} bank={view.bank} />
-          <p class="source-ref">{question.id}</p>
         </div>
       </section>
       {#key view.draftKey}<WorkingArea
@@ -184,13 +198,31 @@
           onworking={session.updateDraft}
         />{/key}
     </div>
+    {#if !view.practiceSet && view.mode !== 'assessment'}
+      <PageNavigation
+        label="Practice page navigation"
+        previousLabel="Previous page of questions"
+        nextLabel="Next page of questions"
+        previousDisabled={view.pageNavigation.index === 0 || Boolean(page.pendingChoice)}
+        nextDisabled={view.pageNavigation.index === view.pageNavigation.total - 1 ||
+          Boolean(page.pendingChoice)}
+        onprevious={() => {
+          session.previousPage();
+          focusAnswer();
+        }}
+        onnext={() => {
+          session.nextPage();
+          focusAnswer();
+        }}>{question.id}</PageNavigation
+      >
+    {/if}
+    <p class="source-ref question-code">{question.id}</p>
     <Completion
       {page}
       practiceSet={view.practiceSet}
       onSetNext={() => session.goSetPage(view.practiceSet.index + 1)}
       mode={view.mode}
-      {onstage}
-      onnext={session.nextPage}
+      onnext={session.restartPage}
       onpromotion={session.resolvePromotion}
     />
   </section>
@@ -221,3 +253,16 @@
     </Dialog.Portal>
   </Dialog.Root>
 {/if}
+
+<style>
+  .practice-question-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.5rem 1rem;
+  }
+  .practice-question-heading {
+    flex: 1 1 16rem;
+    min-width: 0;
+  }
+</style>

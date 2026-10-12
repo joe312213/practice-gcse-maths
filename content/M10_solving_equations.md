@@ -6,6 +6,19 @@
 
 Method: vertical line through the equals sign; apply operations to both whole sides. Simplify like terms, factorise a common factor where helpful, divide out an outer multiplier before expanding when shorter, and remove the smaller x-term first when convenient. Check by substituting into the original equation.
 
+## Method animation
+
+This section specifies every website equation example and recap. Follow the [shared animation contract](../docs/METHOD_ANIMATIONS.md) for playback and evidence. Authored balanced working determines the operations; animation must not choose a different algebraic method.
+
+| Operation | Inspect / calculate | Write and highlight | Dependency / next action |
+| --- | --- | --- | --- |
+| Set up | Draw the vertical balance line | Reveal the initial left expression, equals sign, then right expression | Establish the equation before transforming it |
+| Transform both sides | Explain the inverse operation or simplification | Highlight/reveal the operation on the left, then the same operation on the right; retain the left operation while the right appears | Apply to both whole sides before showing the simplified equation |
+| Show the new equation | Retain the paired operations and previous equation | Reveal the resulting left expression, equals sign and right expression in order, highlighting the active side | Complete this balanced transformation before the next |
+| Finish and check | Retain the full sequence | Show the solved value and authored substitution check where supplied | Agree with the original equation and accepted answer |
+
+Never imply that an operation applies to only one side. Preserve brackets, signs, fractions and whole-side scope. Cover all level examples and recaps, including simplification, outer multipliers and variables on both sides where authored. Check that future operations are absent, paired operations stay visible, and the completed solution matches the static renderer.
+
 ## IA
 
 ### Q1: x + 6 = 23

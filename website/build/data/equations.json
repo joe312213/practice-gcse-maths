@@ -4853,6 +4853,4378 @@
         }
       ],
       "hint": "What would the left side look like after expanding the brackets? Does it help? Then check whether the later operation undoes the constant shown above it."
+    },
+    {
+      "id": "maths:M10-SE-C1-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "q": "x − 9 = 14",
+      "answer": "23",
+      "wrong": "5",
+      "balance": [
+        {
+          "l": "x − 9",
+          "r": "14"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5"
+        }
+      ],
+      "correct_balance": [
+        {
+          "l": "x − 9",
+          "r": "14"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "23"
+        }
+      ],
+      "correction": "Adding 9 to both sides is correct, but 14 + 9 is 23, not 5. The correct final line is x = 23.",
+      "check": "23 − 9 = 14.",
+      "hint": "After adding 9 to both sides, should x be greater or less than 14?",
+      "errors": [
+        {
+          "row": 2,
+          "reason": "arithmetic",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "x = 5"
+        },
+        {
+          "id": "fix",
+          "text": "x = 23"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 24"
+        }
+      ]
+    },
+    {
+      "id": "maths:M10-SE-C2-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "q": "4x + 7 = 31",
+      "answer": "6",
+      "wrong": "8",
+      "balance": [
+        {
+          "l": "4x + 7",
+          "r": "31"
+        },
+        {
+          "l": "− 7",
+          "r": "− 7",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "24"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "8"
+        }
+      ],
+      "correct_balance": [
+        {
+          "l": "4x + 7",
+          "r": "31"
+        },
+        {
+          "l": "− 7",
+          "r": "− 7",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "24"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "6"
+        }
+      ],
+      "correction": "Subtracting 7 and then dividing by 4 are correct. The final calculation is 24 ÷ 4 = 6, not 8, so x = 6.",
+      "check": "4 × 6 + 7 = 24 + 7 = 31.",
+      "hint": "Check the final division using a multiplication fact: which number multiplied by 4 gives 24?",
+      "errors": [
+        {
+          "row": 4,
+          "reason": "arithmetic",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "x = 8"
+        },
+        {
+          "id": "fix",
+          "text": "x = 6"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 20"
+        }
+      ]
+    },
+    {
+      "id": "maths:M10-SE-C3-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "q": "5(x + 3) = 2x + 36",
+      "answer": "7",
+      "wrong": "11",
+      "balance": [
+        {
+          "l": "5(x + 3)",
+          "r": "2x + 36"
+        },
+        {
+          "l": "5x + 3",
+          "r": "2x + 36"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "3x + 3",
+          "r": "36"
+        },
+        {
+          "l": "− 3",
+          "r": "− 3",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "33"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "11"
+        }
+      ],
+      "correct_balance": [
+        {
+          "l": "5(x + 3)",
+          "r": "2x + 36"
+        },
+        {
+          "l": "5x + 15",
+          "r": "2x + 36"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "3x + 15",
+          "r": "36"
+        },
+        {
+          "l": "− 15",
+          "r": "− 15",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "21"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "correction": "Multiply both terms inside the bracket by 5: 5x + 15 = 2x + 36. Subtract 2x, then 15: 3x = 21, so x = 7.",
+      "check": "5 × (7 + 3) = 50 and 2 × 7 + 36 = 50.",
+      "hint": "Which terms inside (x + 3) are multiplied by the 5?",
+      "errors": [
+        {
+          "row": 1,
+          "reason": "expand",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "5x + 3 | 2x + 36"
+        },
+        {
+          "id": "fix",
+          "text": "5x + 15 | 2x + 36"
+        },
+        {
+          "id": "wrong2",
+          "text": "x + 15 | 2x + 36"
+        }
+      ]
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "x + 17 = 8",
+      "answer": "-9",
+      "balance": [
+        {
+          "l": "x + 17",
+          "r": "8"
+        },
+        {
+          "l": "− 17",
+          "r": "− 17",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-9"
+        }
+      ],
+      "coefficients": [
+        "1",
+        "17",
+        "0",
+        "8"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant 17 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -9. Substitute into the original equation to check.",
+      "check": "At x = -9, left side = 8 and right side = 8.",
+      "wrong": "25",
+      "error_note": "Check the inverse operations and both sides: x = 25 gives 42 on the left but 8 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "x − 13 = -4",
+      "answer": "9",
+      "balance": [
+        {
+          "l": "x − 13",
+          "r": "-4"
+        },
+        {
+          "l": "+ 13",
+          "r": "+ 13",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "9"
+        }
+      ],
+      "coefficients": [
+        "1",
+        "-13",
+        "0",
+        "-4"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant -13 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 9. Substitute into the original equation to check.",
+      "check": "At x = 9, left side = -4 and right side = -4.",
+      "wrong": "-17",
+      "error_note": "Check the inverse operations and both sides: x = -17 gives -30 on the left but -4 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "7x = 84",
+      "answer": "12",
+      "balance": [
+        {
+          "l": "7x",
+          "r": "84"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "12"
+        }
+      ],
+      "coefficients": [
+        "7",
+        "0",
+        "0",
+        "84"
+      ],
+      "kind": "linear",
+      "hint": "Which operation undoes multiplication by 7?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 12. Substitute into the original equation to check.",
+      "check": "At x = 12, left side = 84 and right side = 84.",
+      "wrong": "77",
+      "error_note": "Check the inverse operations and both sides: x = 77 gives 539 on the left but 84 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "x / 6 = 9",
+      "answer": "54",
+      "balance": [
+        {
+          "l": "x / 6",
+          "r": "9"
+        },
+        {
+          "l": "× 6",
+          "r": "× 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "54"
+        }
+      ],
+      "coefficients": [
+        "1/6",
+        "0",
+        "0",
+        "9"
+      ],
+      "kind": "division",
+      "hint": "Which operation undoes division by 6?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 54. Substitute into the original equation to check.",
+      "check": "At x = 54, left side = 9 and right side = 9.",
+      "wrong": "53/6",
+      "error_note": "Check the inverse operations and both sides: x = 53/6 gives 53/36 on the left but 9 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "18 = x + 7",
+      "answer": "11",
+      "balance": [
+        {
+          "l": "18",
+          "r": "x + 7"
+        },
+        {
+          "l": "− 7",
+          "r": "− 7",
+          "kind": "op"
+        },
+        {
+          "l": "11",
+          "r": "x"
+        }
+      ],
+      "coefficients": [
+        "1",
+        "7",
+        "0",
+        "18"
+      ],
+      "kind": "reversed",
+      "hint": "Undo the constant 7 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 11. Substitute into the original equation to check.",
+      "check": "At x = 11, left side = 18 and right side = 18.",
+      "wrong": "25",
+      "error_note": "Check the inverse operations and both sides: x = 25 gives 32 on the left but 18 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "-3x = 24",
+      "answer": "-8",
+      "balance": [
+        {
+          "l": "-3x",
+          "r": "24"
+        },
+        {
+          "l": "÷ -3",
+          "r": "÷ -3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-8"
+        }
+      ],
+      "coefficients": [
+        "-3",
+        "0",
+        "0",
+        "24"
+      ],
+      "kind": "linear",
+      "hint": "Which operation undoes multiplication by -3?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -8. Substitute into the original equation to check.",
+      "check": "At x = -8, left side = 24 and right side = 24.",
+      "wrong": "27",
+      "error_note": "Check the inverse operations and both sides: x = 27 gives -81 on the left but 24 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q7",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "x / 4 = -6",
+      "answer": "-24",
+      "balance": [
+        {
+          "l": "x / 4",
+          "r": "-6"
+        },
+        {
+          "l": "× 4",
+          "r": "× 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-24"
+        }
+      ],
+      "coefficients": [
+        "0.25",
+        "0",
+        "0",
+        "-6"
+      ],
+      "kind": "division",
+      "hint": "Which operation undoes division by 4?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -24. Substitute into the original equation to check.",
+      "check": "At x = -24, left side = -6 and right side = -6.",
+      "wrong": "-6.25",
+      "error_note": "Check the inverse operations and both sides: x = -6.25 gives -25/16 on the left but -6 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q8",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "5x = 17",
+      "answer": "3.4",
+      "balance": [
+        {
+          "l": "5x",
+          "r": "17"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "3.4"
+        }
+      ],
+      "coefficients": [
+        "5",
+        "0",
+        "0",
+        "17"
+      ],
+      "kind": "linear",
+      "hint": "Which operation undoes multiplication by 5?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 3.4. Substitute into the original equation to check.",
+      "check": "At x = 3.4, left side = 17 and right side = 17.",
+      "wrong": "12",
+      "error_note": "Check the inverse operations and both sides: x = 12 gives 60 on the left but 17 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q9",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "x + 8 = -3",
+      "answer": "-11",
+      "balance": [
+        {
+          "l": "x + 8",
+          "r": "-3"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-11"
+        }
+      ],
+      "coefficients": [
+        "1",
+        "8",
+        "0",
+        "-3"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant 8 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -11. Substitute into the original equation to check.",
+      "check": "At x = -11, left side = -3 and right side = -3.",
+      "wrong": "5",
+      "error_note": "Check the inverse operations and both sides: x = 5 gives 13 on the left but -3 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q10",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "x − 7 = -12",
+      "answer": "-5",
+      "balance": [
+        {
+          "l": "x − 7",
+          "r": "-12"
+        },
+        {
+          "l": "+ 7",
+          "r": "+ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-5"
+        }
+      ],
+      "coefficients": [
+        "1",
+        "-7",
+        "0",
+        "-12"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant -7 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -5. Substitute into the original equation to check.",
+      "check": "At x = -5, left side = -12 and right side = -12.",
+      "wrong": "-19",
+      "error_note": "Check the inverse operations and both sides: x = -19 gives -26 on the left but -12 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q11",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "12 = x / 3",
+      "answer": "36",
+      "balance": [
+        {
+          "l": "12",
+          "r": "x / 3"
+        },
+        {
+          "l": "× 3",
+          "r": "× 3",
+          "kind": "op"
+        },
+        {
+          "l": "36",
+          "r": "x"
+        }
+      ],
+      "coefficients": [
+        "1/3",
+        "0",
+        "0",
+        "12"
+      ],
+      "kind": "reversed",
+      "hint": "Which operation undoes multiplication by 1/3?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 36. Substitute into the original equation to check.",
+      "check": "At x = 36, left side = 12 and right side = 12.",
+      "wrong": "35/3",
+      "error_note": "Check the inverse operations and both sides: x = 35/3 gives 35/9 on the left but 12 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C1-Q12",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 0,
+      "q": "9x = -18",
+      "answer": "-2",
+      "balance": [
+        {
+          "l": "9x",
+          "r": "-18"
+        },
+        {
+          "l": "÷ 9",
+          "r": "÷ 9",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-2"
+        }
+      ],
+      "coefficients": [
+        "9",
+        "0",
+        "0",
+        "-18"
+      ],
+      "kind": "linear",
+      "hint": "Which operation undoes multiplication by 9?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -2. Substitute into the original equation to check.",
+      "check": "At x = -2, left side = -18 and right side = -18.",
+      "wrong": "-27",
+      "error_note": "Check the inverse operations and both sides: x = -27 gives -243 on the left but -18 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C1-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "x − 16 = 9",
+      "answer": "25",
+      "balance": [
+        {
+          "l": "x − 16",
+          "r": "9"
+        },
+        {
+          "l": "+ 16",
+          "r": "+ 16",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "25"
+        }
+      ],
+      "coefficients": [
+        "1",
+        "-16",
+        "0",
+        "9"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant -16 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 25. Substitute into the original equation to check.",
+      "check": "At x = 25, left side = 9 and right side = 9.",
+      "wrong": "-7",
+      "error_note": "Check the inverse operations and both sides: x = -7 gives -23 on the left but 9 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C1-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "8x = 28",
+      "answer": "3.5",
+      "balance": [
+        {
+          "l": "8x",
+          "r": "28"
+        },
+        {
+          "l": "÷ 8",
+          "r": "÷ 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "3.5"
+        }
+      ],
+      "coefficients": [
+        "8",
+        "0",
+        "0",
+        "28"
+      ],
+      "kind": "linear",
+      "hint": "Which operation undoes multiplication by 8?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 3.5. Substitute into the original equation to check.",
+      "check": "At x = 3.5, left side = 28 and right side = 28.",
+      "wrong": "20",
+      "error_note": "Check the inverse operations and both sides: x = 20 gives 160 on the left but 28 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C1-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "x / 7 = -4",
+      "answer": "-28",
+      "balance": [
+        {
+          "l": "x / 7",
+          "r": "-4"
+        },
+        {
+          "l": "× 7",
+          "r": "× 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-28"
+        }
+      ],
+      "coefficients": [
+        "1/7",
+        "0",
+        "0",
+        "-4"
+      ],
+      "kind": "division",
+      "hint": "Which operation undoes division by 7?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -28. Substitute into the original equation to check.",
+      "check": "At x = -28, left side = -4 and right side = -4.",
+      "wrong": "-29/7",
+      "error_note": "Check the inverse operations and both sides: x = -29/7 gives -29/49 on the left but -4 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C1-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 0,
+      "q": "5 = x + 12",
+      "answer": "-7",
+      "balance": [
+        {
+          "l": "5",
+          "r": "x + 12"
+        },
+        {
+          "l": "− 12",
+          "r": "− 12",
+          "kind": "op"
+        },
+        {
+          "l": "-7",
+          "r": "x"
+        }
+      ],
+      "coefficients": [
+        "1",
+        "12",
+        "0",
+        "5"
+      ],
+      "kind": "reversed",
+      "hint": "Undo the constant 12 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -7. Substitute into the original equation to check.",
+      "check": "At x = -7, left side = 5 and right side = 5.",
+      "wrong": "17",
+      "error_note": "Check the inverse operations and both sides: x = 17 gives 29 on the left but 5 on the right."
+    },
+    {
+      "id": "maths:M10-P3-ER-C1-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "q": "x + 14 = 6",
+      "answer": "-8",
+      "balance": [
+        {
+          "l": "x + 14",
+          "r": "6"
+        },
+        {
+          "l": "x",
+          "r": "20"
+        },
+        {
+          "l": "x",
+          "r": "20"
+        }
+      ],
+      "coefficients": [
+        "1",
+        "14",
+        "0",
+        "6"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -8. Substitute into the original equation to check.",
+      "check": "At x = -8, left side = 6 and right side = 6.",
+      "wrong": "20",
+      "error_note": "Undo 14 with its inverse on both sides; the constant side becomes -8.",
+      "correct_balance": [
+        {
+          "l": "x + 14",
+          "r": "6"
+        },
+        {
+          "l": "− 14",
+          "r": "− 14",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-8"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "inverse",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "x = 20"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = -6"
+        },
+        {
+          "id": "fix",
+          "text": "x = -8"
+        }
+      ],
+      "correction": "Undo 14 with its inverse on both sides; the constant side becomes -8. Correct solution: x = -8."
+    },
+    {
+      "id": "maths:M10-P3-ER-C1-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "q": "x − 18 = -7",
+      "answer": "11",
+      "balance": [
+        {
+          "l": "x − 18",
+          "r": "-7"
+        },
+        {
+          "l": "x",
+          "r": "-25"
+        },
+        {
+          "l": "x",
+          "r": "-25"
+        }
+      ],
+      "coefficients": [
+        "1",
+        "-18",
+        "0",
+        "-7"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 11. Substitute into the original equation to check.",
+      "check": "At x = 11, left side = -7 and right side = -7.",
+      "wrong": "-25",
+      "error_note": "Undo -18 with its inverse on both sides; the constant side becomes 11.",
+      "correct_balance": [
+        {
+          "l": "x − 18",
+          "r": "-7"
+        },
+        {
+          "l": "+ 18",
+          "r": "+ 18",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "11"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "inverse",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong2",
+          "text": "x = 13"
+        },
+        {
+          "id": "fix",
+          "text": "x = 11"
+        },
+        {
+          "id": "wrong1",
+          "text": "x = -25"
+        }
+      ],
+      "correction": "Undo -18 with its inverse on both sides; the constant side becomes 11. Correct solution: x = 11."
+    },
+    {
+      "id": "maths:M10-P3-ER-C1-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "q": "6x = 42",
+      "answer": "7",
+      "balance": [
+        {
+          "l": "6x",
+          "r": "42"
+        },
+        {
+          "l": "x",
+          "r": "36"
+        },
+        {
+          "l": "x",
+          "r": "36"
+        }
+      ],
+      "coefficients": [
+        "6",
+        "0",
+        "0",
+        "42"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 7. Substitute into the original equation to check.",
+      "check": "At x = 7, left side = 42 and right side = 42.",
+      "wrong": "36",
+      "error_note": "The coefficient 6 multiplies x. Divide both sides by 6 rather than subtract it.",
+      "correct_balance": [
+        {
+          "l": "6x",
+          "r": "42"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "multiply",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "fix",
+          "text": "x = 7"
+        },
+        {
+          "id": "wrong1",
+          "text": "x = 36"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 9"
+        }
+      ],
+      "correction": "The coefficient 6 multiplies x. Divide both sides by 6 rather than subtract it. Correct solution: x = 7."
+    },
+    {
+      "id": "maths:M10-P3-ER-C1-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "q": "-4x = 20",
+      "answer": "-5",
+      "balance": [
+        {
+          "l": "-4x",
+          "r": "20"
+        },
+        {
+          "l": "x",
+          "r": "24"
+        },
+        {
+          "l": "x",
+          "r": "24"
+        }
+      ],
+      "coefficients": [
+        "-4",
+        "0",
+        "0",
+        "20"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -5. Substitute into the original equation to check.",
+      "check": "At x = -5, left side = 20 and right side = 20.",
+      "wrong": "24",
+      "error_note": "The coefficient -4 multiplies x. Divide both sides by -4 rather than subtract it.",
+      "correct_balance": [
+        {
+          "l": "-4x",
+          "r": "20"
+        },
+        {
+          "l": "÷ -4",
+          "r": "÷ -4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-5"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "multiply",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "x = 24"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = -3"
+        },
+        {
+          "id": "fix",
+          "text": "x = -5"
+        }
+      ],
+      "correction": "The coefficient -4 multiplies x. Divide both sides by -4 rather than subtract it. Correct solution: x = -5."
+    },
+    {
+      "id": "maths:M10-P3-ER-C1-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "q": "x / 5 = 8",
+      "answer": "40",
+      "balance": [
+        {
+          "l": "x / 5",
+          "r": "8"
+        },
+        {
+          "l": "x",
+          "r": "8"
+        },
+        {
+          "l": "x",
+          "r": "8"
+        }
+      ],
+      "coefficients": [
+        "0.2",
+        "0",
+        "0",
+        "8"
+      ],
+      "kind": "division",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 40. Substitute into the original equation to check.",
+      "check": "At x = 40, left side = 8 and right side = 8.",
+      "wrong": "8",
+      "error_note": "Apply the same operation to both sides; the corrected step is x = 40.",
+      "correct_balance": [
+        {
+          "l": "x / 5",
+          "r": "8"
+        },
+        {
+          "l": "× 5",
+          "r": "× 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "40"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong2",
+          "text": "x = 42"
+        },
+        {
+          "id": "fix",
+          "text": "x = 40"
+        },
+        {
+          "id": "wrong1",
+          "text": "x = 8"
+        }
+      ],
+      "correction": "Apply the same operation to both sides; the corrected step is x = 40. Correct solution: x = 40."
+    },
+    {
+      "id": "maths:M10-P3-ER-C1-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "q": "x + 9 = -8",
+      "answer": "-17",
+      "balance": [
+        {
+          "l": "x + 9",
+          "r": "-8"
+        },
+        {
+          "l": "x",
+          "r": "-16"
+        },
+        {
+          "l": "x",
+          "r": "-16"
+        }
+      ],
+      "coefficients": [
+        "1",
+        "9",
+        "0",
+        "-8"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -17. Substitute into the original equation to check.",
+      "check": "At x = -17, left side = -8 and right side = -8.",
+      "wrong": "-16",
+      "error_note": "Recalculate the constant side: -8 − (9) = -17.",
+      "correct_balance": [
+        {
+          "l": "x + 9",
+          "r": "-8"
+        },
+        {
+          "l": "− 9",
+          "r": "− 9",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-17"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "arithmetic",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "fix",
+          "text": "x = -17"
+        },
+        {
+          "id": "wrong1",
+          "text": "x = -16"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = -15"
+        }
+      ],
+      "correction": "Recalculate the constant side: -8 − (9) = -17. Correct solution: x = -17."
+    },
+    {
+      "id": "maths:M10-P3-ER-C1-Q7",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "q": "x − 15 = -3",
+      "answer": "12",
+      "balance": [
+        {
+          "l": "x − 15",
+          "r": "-3"
+        },
+        {
+          "l": "x",
+          "r": "-3"
+        },
+        {
+          "l": "x",
+          "r": "-3"
+        }
+      ],
+      "coefficients": [
+        "1",
+        "-15",
+        "0",
+        "-3"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 12. Substitute into the original equation to check.",
+      "check": "At x = 12, left side = -3 and right side = -3.",
+      "wrong": "-3",
+      "error_note": "Apply the same operation to both sides; the corrected step is x = 12.",
+      "correct_balance": [
+        {
+          "l": "x − 15",
+          "r": "-3"
+        },
+        {
+          "l": "+ 15",
+          "r": "+ 15",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "12"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "x = -3"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 14"
+        },
+        {
+          "id": "fix",
+          "text": "x = 12"
+        }
+      ],
+      "correction": "Apply the same operation to both sides; the corrected step is x = 12. Correct solution: x = 12."
+    },
+    {
+      "id": "maths:M10-P3-ER-C1-Q8",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 0,
+      "q": "x / 8 = -3",
+      "answer": "-24",
+      "balance": [
+        {
+          "l": "x / 8",
+          "r": "-3"
+        },
+        {
+          "l": "x",
+          "r": "-3"
+        },
+        {
+          "l": "x",
+          "r": "-3"
+        }
+      ],
+      "coefficients": [
+        "0.125",
+        "0",
+        "0",
+        "-3"
+      ],
+      "kind": "division",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -24. Substitute into the original equation to check.",
+      "check": "At x = -24, left side = -3 and right side = -3.",
+      "wrong": "-3",
+      "error_note": "Apply the same operation to both sides; the corrected step is x = -24.",
+      "correct_balance": [
+        {
+          "l": "x / 8",
+          "r": "-3"
+        },
+        {
+          "l": "× 8",
+          "r": "× 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-24"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong2",
+          "text": "x = -22"
+        },
+        {
+          "id": "fix",
+          "text": "x = -24"
+        },
+        {
+          "id": "wrong1",
+          "text": "x = -3"
+        }
+      ],
+      "correction": "Apply the same operation to both sides; the corrected step is x = -24. Correct solution: x = -24."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "4x + 9 = 37",
+      "answer": "7",
+      "balance": [
+        {
+          "l": "4x + 9",
+          "r": "37"
+        },
+        {
+          "l": "− 9",
+          "r": "− 9",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "28"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "coefficients": [
+        "4",
+        "9",
+        "0",
+        "37"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant 9 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 7. Substitute into the original equation to check.",
+      "check": "At x = 7, left side = 37 and right side = 37.",
+      "wrong": "11.5",
+      "error_note": "Check the inverse operations and both sides: x = 11.5 gives 55 on the left but 37 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "7x − 12 = 23",
+      "answer": "5",
+      "balance": [
+        {
+          "l": "7x − 12",
+          "r": "23"
+        },
+        {
+          "l": "+ 12",
+          "r": "+ 12",
+          "kind": "op"
+        },
+        {
+          "l": "7x",
+          "r": "35"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5"
+        }
+      ],
+      "coefficients": [
+        "7",
+        "-12",
+        "0",
+        "23"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant -12 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 5. Substitute into the original equation to check.",
+      "check": "At x = 5, left side = 23 and right side = 23.",
+      "wrong": "11/7",
+      "error_note": "Check the inverse operations and both sides: x = 11/7 gives -1 on the left but 23 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "5x + 8 = -12",
+      "answer": "-4",
+      "balance": [
+        {
+          "l": "5x + 8",
+          "r": "-12"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "-20"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-4"
+        }
+      ],
+      "coefficients": [
+        "5",
+        "8",
+        "0",
+        "-12"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant 8 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -4. Substitute into the original equation to check.",
+      "check": "At x = -4, left side = -12 and right side = -12.",
+      "wrong": "-0.8",
+      "error_note": "Check the inverse operations and both sides: x = -0.8 gives 4 on the left but -12 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "6x − 11 = 7",
+      "answer": "3",
+      "balance": [
+        {
+          "l": "6x − 11",
+          "r": "7"
+        },
+        {
+          "l": "+ 11",
+          "r": "+ 11",
+          "kind": "op"
+        },
+        {
+          "l": "6x",
+          "r": "18"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "3"
+        }
+      ],
+      "coefficients": [
+        "6",
+        "-11",
+        "0",
+        "7"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant -11 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 3. Substitute into the original equation to check.",
+      "check": "At x = 3, left side = 7 and right side = 7.",
+      "wrong": "-2/3",
+      "error_note": "Check the inverse operations and both sides: x = -2/3 gives -15 on the left but 7 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "x / 3 + 7 = 12",
+      "answer": "15",
+      "balance": [
+        {
+          "l": "x / 3 + 7",
+          "r": "12"
+        },
+        {
+          "l": "− 7",
+          "r": "− 7",
+          "kind": "op"
+        },
+        {
+          "l": "x / 3",
+          "r": "5"
+        },
+        {
+          "l": "× 3",
+          "r": "× 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "15"
+        }
+      ],
+      "coefficients": [
+        "1/3",
+        "7",
+        "0",
+        "12"
+      ],
+      "kind": "division",
+      "hint": "Undo the constant 7 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 15. Substitute into the original equation to check.",
+      "check": "At x = 15, left side = 12 and right side = 12.",
+      "wrong": "57",
+      "error_note": "Check the inverse operations and both sides: x = 57 gives 26 on the left but 12 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "x / 5 − 4 = 3",
+      "answer": "35",
+      "balance": [
+        {
+          "l": "x / 5 − 4",
+          "r": "3"
+        },
+        {
+          "l": "+ 4",
+          "r": "+ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x / 5",
+          "r": "7"
+        },
+        {
+          "l": "× 5",
+          "r": "× 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "35"
+        }
+      ],
+      "coefficients": [
+        "0.2",
+        "-4",
+        "0",
+        "3"
+      ],
+      "kind": "division",
+      "hint": "Undo the constant -4 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 35. Substitute into the original equation to check.",
+      "check": "At x = 35, left side = 3 and right side = 3.",
+      "wrong": "-5",
+      "error_note": "Check the inverse operations and both sides: x = -5 gives -5 on the left but 3 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q7",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "-3x + 8 = 23",
+      "answer": "-5",
+      "balance": [
+        {
+          "l": "-3x + 8",
+          "r": "23"
+        },
+        {
+          "l": "− 8",
+          "r": "− 8",
+          "kind": "op"
+        },
+        {
+          "l": "-3x",
+          "r": "15"
+        },
+        {
+          "l": "÷ -3",
+          "r": "÷ -3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-5"
+        }
+      ],
+      "coefficients": [
+        "-3",
+        "8",
+        "0",
+        "23"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant 8 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -5. Substitute into the original equation to check.",
+      "check": "At x = -5, left side = 23 and right side = 23.",
+      "wrong": "-31/3",
+      "error_note": "Check the inverse operations and both sides: x = -31/3 gives 39 on the left but 23 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q8",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "8x + 5 = 17",
+      "answer": "1.5",
+      "balance": [
+        {
+          "l": "8x + 5",
+          "r": "17"
+        },
+        {
+          "l": "− 5",
+          "r": "− 5",
+          "kind": "op"
+        },
+        {
+          "l": "8x",
+          "r": "12"
+        },
+        {
+          "l": "÷ 8",
+          "r": "÷ 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "1.5"
+        }
+      ],
+      "coefficients": [
+        "8",
+        "5",
+        "0",
+        "17"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant 5 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 1.5. Substitute into the original equation to check.",
+      "check": "At x = 1.5, left side = 17 and right side = 17.",
+      "wrong": "2.75",
+      "error_note": "Check the inverse operations and both sides: x = 2.75 gives 27 on the left but 17 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q9",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "9x − 7 = -25",
+      "answer": "-2",
+      "balance": [
+        {
+          "l": "9x − 7",
+          "r": "-25"
+        },
+        {
+          "l": "+ 7",
+          "r": "+ 7",
+          "kind": "op"
+        },
+        {
+          "l": "9x",
+          "r": "-18"
+        },
+        {
+          "l": "÷ 9",
+          "r": "÷ 9",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-2"
+        }
+      ],
+      "coefficients": [
+        "9",
+        "-7",
+        "0",
+        "-25"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant -7 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -2. Substitute into the original equation to check.",
+      "check": "At x = -2, left side = -25 and right side = -25.",
+      "wrong": "-32/9",
+      "error_note": "Check the inverse operations and both sides: x = -32/9 gives -39 on the left but -25 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q10",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "x / 4 + 6 = 1",
+      "answer": "-20",
+      "balance": [
+        {
+          "l": "x / 4 + 6",
+          "r": "1"
+        },
+        {
+          "l": "− 6",
+          "r": "− 6",
+          "kind": "op"
+        },
+        {
+          "l": "x / 4",
+          "r": "-5"
+        },
+        {
+          "l": "× 4",
+          "r": "× 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-20"
+        }
+      ],
+      "coefficients": [
+        "0.25",
+        "6",
+        "0",
+        "1"
+      ],
+      "kind": "division",
+      "hint": "Undo the constant 6 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -20. Substitute into the original equation to check.",
+      "check": "At x = -20, left side = 1 and right side = 1.",
+      "wrong": "28",
+      "error_note": "Check the inverse operations and both sides: x = 28 gives 13 on the left but 1 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q11",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "6x + 13 = 4",
+      "answer": "-1.5",
+      "balance": [
+        {
+          "l": "6x + 13",
+          "r": "4"
+        },
+        {
+          "l": "− 13",
+          "r": "− 13",
+          "kind": "op"
+        },
+        {
+          "l": "6x",
+          "r": "-9"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-1.5"
+        }
+      ],
+      "coefficients": [
+        "6",
+        "13",
+        "0",
+        "4"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant 13 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -1.5. Substitute into the original equation to check.",
+      "check": "At x = -1.5, left side = 4 and right side = 4.",
+      "wrong": "17/6",
+      "error_note": "Check the inverse operations and both sides: x = 17/6 gives 30 on the left but 4 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C2-Q12",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 1,
+      "q": "x / 7 − 2 = -6",
+      "answer": "-28",
+      "balance": [
+        {
+          "l": "x / 7 − 2",
+          "r": "-6"
+        },
+        {
+          "l": "+ 2",
+          "r": "+ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x / 7",
+          "r": "-4"
+        },
+        {
+          "l": "× 7",
+          "r": "× 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-28"
+        }
+      ],
+      "coefficients": [
+        "1/7",
+        "-2",
+        "0",
+        "-6"
+      ],
+      "kind": "division",
+      "hint": "Undo the constant -2 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -28. Substitute into the original equation to check.",
+      "check": "At x = -28, left side = -6 and right side = -6.",
+      "wrong": "-56",
+      "error_note": "Check the inverse operations and both sides: x = -56 gives -10 on the left but -6 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C2-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "7x + 9 = 44",
+      "answer": "5",
+      "balance": [
+        {
+          "l": "7x + 9",
+          "r": "44"
+        },
+        {
+          "l": "− 9",
+          "r": "− 9",
+          "kind": "op"
+        },
+        {
+          "l": "7x",
+          "r": "35"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5"
+        }
+      ],
+      "coefficients": [
+        "7",
+        "9",
+        "0",
+        "44"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant 9 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 5. Substitute into the original equation to check.",
+      "check": "At x = 5, left side = 44 and right side = 44.",
+      "wrong": "53/7",
+      "error_note": "Check the inverse operations and both sides: x = 53/7 gives 62 on the left but 44 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C2-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "x / 6 + 4 = -1",
+      "answer": "-30",
+      "balance": [
+        {
+          "l": "x / 6 + 4",
+          "r": "-1"
+        },
+        {
+          "l": "− 4",
+          "r": "− 4",
+          "kind": "op"
+        },
+        {
+          "l": "x / 6",
+          "r": "-5"
+        },
+        {
+          "l": "× 6",
+          "r": "× 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-30"
+        }
+      ],
+      "coefficients": [
+        "1/6",
+        "4",
+        "0",
+        "-1"
+      ],
+      "kind": "division",
+      "hint": "Undo the constant 4 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -30. Substitute into the original equation to check.",
+      "check": "At x = -30, left side = -1 and right side = -1.",
+      "wrong": "18",
+      "error_note": "Check the inverse operations and both sides: x = 18 gives 7 on the left but -1 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C2-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "-5x − 7 = 18",
+      "answer": "-5",
+      "balance": [
+        {
+          "l": "-5x − 7",
+          "r": "18"
+        },
+        {
+          "l": "+ 7",
+          "r": "+ 7",
+          "kind": "op"
+        },
+        {
+          "l": "-5x",
+          "r": "25"
+        },
+        {
+          "l": "÷ -5",
+          "r": "÷ -5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-5"
+        }
+      ],
+      "coefficients": [
+        "-5",
+        "-7",
+        "0",
+        "18"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant -7 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -5. Substitute into the original equation to check.",
+      "check": "At x = -5, left side = 18 and right side = 18.",
+      "wrong": "-2.2",
+      "error_note": "Check the inverse operations and both sides: x = -2.2 gives 4 on the left but 18 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C2-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 1,
+      "q": "8x − 9 = 11",
+      "answer": "2.5",
+      "balance": [
+        {
+          "l": "8x − 9",
+          "r": "11"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "8x",
+          "r": "20"
+        },
+        {
+          "l": "÷ 8",
+          "r": "÷ 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "2.5"
+        }
+      ],
+      "coefficients": [
+        "8",
+        "-9",
+        "0",
+        "11"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant -9 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 2.5. Substitute into the original equation to check.",
+      "check": "At x = 2.5, left side = 11 and right side = 11.",
+      "wrong": "0.25",
+      "error_note": "Check the inverse operations and both sides: x = 0.25 gives -7 on the left but 11 on the right."
+    },
+    {
+      "id": "maths:M10-P3-ER-C2-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "q": "5x + 11 = 36",
+      "answer": "5",
+      "balance": [
+        {
+          "l": "5x + 11",
+          "r": "36"
+        },
+        {
+          "l": "5x",
+          "r": "47"
+        },
+        {
+          "l": "x",
+          "r": "9.4"
+        }
+      ],
+      "coefficients": [
+        "5",
+        "11",
+        "0",
+        "36"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 5. Substitute into the original equation to check.",
+      "check": "At x = 5, left side = 36 and right side = 36.",
+      "wrong": "9.4",
+      "error_note": "Undo 11 with its inverse on both sides; the constant side becomes 25.",
+      "correct_balance": [
+        {
+          "l": "5x + 11",
+          "r": "36"
+        },
+        {
+          "l": "− 11",
+          "r": "− 11",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "25"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "inverse",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "5x = 47"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 7"
+        },
+        {
+          "id": "fix",
+          "text": "5x = 25"
+        }
+      ],
+      "correction": "Undo 11 with its inverse on both sides; the constant side becomes 25. Correct solution: x = 5."
+    },
+    {
+      "id": "maths:M10-P3-ER-C2-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "q": "4x − 9 = 19",
+      "answer": "7",
+      "balance": [
+        {
+          "l": "4x − 9",
+          "r": "19"
+        },
+        {
+          "l": "x − 9",
+          "r": "4.75"
+        },
+        {
+          "l": "x",
+          "r": "13.75"
+        }
+      ],
+      "coefficients": [
+        "4",
+        "-9",
+        "0",
+        "19"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 7. Substitute into the original equation to check.",
+      "check": "At x = 7, left side = 19 and right side = 19.",
+      "wrong": "13.75",
+      "error_note": "Divide every term by 4, including the constant -9.",
+      "correct_balance": [
+        {
+          "l": "4x − 9",
+          "r": "19"
+        },
+        {
+          "l": "+ 9",
+          "r": "+ 9",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "28"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "whole_side",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong2",
+          "text": "x = 9"
+        },
+        {
+          "id": "fix",
+          "text": "x − 2.25 = 4.75"
+        },
+        {
+          "id": "wrong1",
+          "text": "x − 9 = 4.75"
+        }
+      ],
+      "correction": "Divide every term by 4, including the constant -9. Correct solution: x = 7."
+    },
+    {
+      "id": "maths:M10-P3-ER-C2-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "q": "6x + 7 = 43",
+      "answer": "6",
+      "balance": [
+        {
+          "l": "6x + 7",
+          "r": "43"
+        },
+        {
+          "l": "6x",
+          "r": "36"
+        },
+        {
+          "l": "x",
+          "r": "30"
+        }
+      ],
+      "coefficients": [
+        "6",
+        "7",
+        "0",
+        "43"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 3. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 6. Substitute into the original equation to check.",
+      "check": "At x = 6, left side = 43 and right side = 43.",
+      "wrong": "30",
+      "error_note": "The coefficient 6 multiplies x. Divide both sides by 6 rather than subtract it.",
+      "correct_balance": [
+        {
+          "l": "6x + 7",
+          "r": "43"
+        },
+        {
+          "l": "− 7",
+          "r": "− 7",
+          "kind": "op"
+        },
+        {
+          "l": "6x",
+          "r": "36"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "6"
+        }
+      ],
+      "errors": [
+        {
+          "row": 2,
+          "reason": "multiply",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "fix",
+          "text": "x = 6"
+        },
+        {
+          "id": "wrong1",
+          "text": "x = 30"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 8"
+        }
+      ],
+      "correction": "The coefficient 6 multiplies x. Divide both sides by 6 rather than subtract it. Correct solution: x = 6."
+    },
+    {
+      "id": "maths:M10-P3-ER-C2-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "q": "8x + 12 = 28",
+      "answer": "2",
+      "balance": [
+        {
+          "l": "8x + 12",
+          "r": "28"
+        },
+        {
+          "l": "x + 12",
+          "r": "3.5"
+        },
+        {
+          "l": "x",
+          "r": "-8.5"
+        }
+      ],
+      "coefficients": [
+        "8",
+        "12",
+        "0",
+        "28"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 2. Substitute into the original equation to check.",
+      "check": "At x = 2, left side = 28 and right side = 28.",
+      "wrong": "-8.5",
+      "error_note": "Divide every term by 8, including the constant 12.",
+      "correct_balance": [
+        {
+          "l": "8x + 12",
+          "r": "28"
+        },
+        {
+          "l": "− 12",
+          "r": "− 12",
+          "kind": "op"
+        },
+        {
+          "l": "8x",
+          "r": "16"
+        },
+        {
+          "l": "÷ 8",
+          "r": "÷ 8",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "2"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "whole_side",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "x + 12 = 3.5"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 4"
+        },
+        {
+          "id": "fix",
+          "text": "x + 1.5 = 3.5"
+        }
+      ],
+      "correction": "Divide every term by 8, including the constant 12. Correct solution: x = 2."
+    },
+    {
+      "id": "maths:M10-P3-ER-C2-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "q": "x / 4 + 5 = 11",
+      "answer": "24",
+      "balance": [
+        {
+          "l": "x / 4 + 5",
+          "r": "11"
+        },
+        {
+          "l": "x / 4",
+          "r": "11"
+        },
+        {
+          "l": "x",
+          "r": "44"
+        }
+      ],
+      "coefficients": [
+        "0.25",
+        "5",
+        "0",
+        "11"
+      ],
+      "kind": "division",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 24. Substitute into the original equation to check.",
+      "check": "At x = 24, left side = 11 and right side = 11.",
+      "wrong": "44",
+      "error_note": "Apply the same operation to both sides; the corrected step is x / 4 = 6.",
+      "correct_balance": [
+        {
+          "l": "x / 4 + 5",
+          "r": "11"
+        },
+        {
+          "l": "− 5",
+          "r": "− 5",
+          "kind": "op"
+        },
+        {
+          "l": "x / 4",
+          "r": "6"
+        },
+        {
+          "l": "× 4",
+          "r": "× 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "24"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong2",
+          "text": "x = 26"
+        },
+        {
+          "id": "fix",
+          "text": "x / 4 = 6"
+        },
+        {
+          "id": "wrong1",
+          "text": "x / 4 = 11"
+        }
+      ],
+      "correction": "Apply the same operation to both sides; the corrected step is x / 4 = 6. Correct solution: x = 24."
+    },
+    {
+      "id": "maths:M10-P3-ER-C2-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "q": "-3x + 7 = 22",
+      "answer": "-5",
+      "balance": [
+        {
+          "l": "-3x + 7",
+          "r": "22"
+        },
+        {
+          "l": "-3x",
+          "r": "16"
+        },
+        {
+          "l": "x",
+          "r": "-16/3"
+        }
+      ],
+      "coefficients": [
+        "-3",
+        "7",
+        "0",
+        "22"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -5. Substitute into the original equation to check.",
+      "check": "At x = -5, left side = 22 and right side = 22.",
+      "wrong": "-16/3",
+      "error_note": "Recalculate the constant side: 22 − (7) = 15.",
+      "correct_balance": [
+        {
+          "l": "-3x + 7",
+          "r": "22"
+        },
+        {
+          "l": "− 7",
+          "r": "− 7",
+          "kind": "op"
+        },
+        {
+          "l": "-3x",
+          "r": "15"
+        },
+        {
+          "l": "÷ -3",
+          "r": "÷ -3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-5"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "arithmetic",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "fix",
+          "text": "-3x = 15"
+        },
+        {
+          "id": "wrong1",
+          "text": "-3x = 16"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = -3"
+        }
+      ],
+      "correction": "Recalculate the constant side: 22 − (7) = 15. Correct solution: x = -5."
+    },
+    {
+      "id": "maths:M10-P3-ER-C2-Q7",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "q": "7x − 13 = 8",
+      "answer": "3",
+      "balance": [
+        {
+          "l": "7x − 13",
+          "r": "8"
+        },
+        {
+          "l": "7x",
+          "r": "8"
+        },
+        {
+          "l": "x",
+          "r": "8/7"
+        }
+      ],
+      "coefficients": [
+        "7",
+        "-13",
+        "0",
+        "8"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 3. Substitute into the original equation to check.",
+      "check": "At x = 3, left side = 8 and right side = 8.",
+      "wrong": "8/7",
+      "error_note": "Apply the same operation to both sides; the corrected step is 7x = 21.",
+      "correct_balance": [
+        {
+          "l": "7x − 13",
+          "r": "8"
+        },
+        {
+          "l": "+ 13",
+          "r": "+ 13",
+          "kind": "op"
+        },
+        {
+          "l": "7x",
+          "r": "21"
+        },
+        {
+          "l": "÷ 7",
+          "r": "÷ 7",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "3"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "7x = 8"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 5"
+        },
+        {
+          "id": "fix",
+          "text": "7x = 21"
+        }
+      ],
+      "correction": "Apply the same operation to both sides; the corrected step is 7x = 21. Correct solution: x = 3."
+    },
+    {
+      "id": "maths:M10-P3-ER-C2-Q8",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 1,
+      "q": "x / 6 − 3 = 5",
+      "answer": "48",
+      "balance": [
+        {
+          "l": "x / 6 − 3",
+          "r": "5"
+        },
+        {
+          "l": "x / 6",
+          "r": "9"
+        },
+        {
+          "l": "x",
+          "r": "54"
+        }
+      ],
+      "coefficients": [
+        "1/6",
+        "-3",
+        "0",
+        "5"
+      ],
+      "kind": "division",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 48. Substitute into the original equation to check.",
+      "check": "At x = 48, left side = 5 and right side = 5.",
+      "wrong": "54",
+      "error_note": "Recalculate the constant side: 5 − (-3) = 8.",
+      "correct_balance": [
+        {
+          "l": "x / 6 − 3",
+          "r": "5"
+        },
+        {
+          "l": "+ 3",
+          "r": "+ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x / 6",
+          "r": "8"
+        },
+        {
+          "l": "× 6",
+          "r": "× 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "48"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "arithmetic",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong2",
+          "text": "x = 50"
+        },
+        {
+          "id": "fix",
+          "text": "x / 6 = 8"
+        },
+        {
+          "id": "wrong1",
+          "text": "x / 6 = 9"
+        }
+      ],
+      "correction": "Recalculate the constant side: 5 − (-3) = 8. Correct solution: x = 48."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "5(x + 3) = 2x + 39",
+      "answer": "8",
+      "balance": [
+        {
+          "l": "5(x + 3)",
+          "r": "2x + 39"
+        },
+        {
+          "l": "5x + 15",
+          "r": "2x + 39"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "3x + 15",
+          "r": "39"
+        },
+        {
+          "l": "− 15",
+          "r": "− 15",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "24"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "8"
+        }
+      ],
+      "coefficients": [
+        "5",
+        "15",
+        "2",
+        "39"
+      ],
+      "kind": "both_bracket",
+      "hint": "Expand the bracket by multiplying both terms by 5.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 3x + 15 = 39. The simplified equation gives x = 8. Substitute into the original equation to check.",
+      "check": "At x = 8, left side = 55 and right side = 55.",
+      "wrong": "18",
+      "error_note": "Check the inverse operations and both sides: x = 18 gives 105 on the left but 75 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "4(x − 6) = x − 3",
+      "answer": "7",
+      "balance": [
+        {
+          "l": "4(x − 6)",
+          "r": "x − 3"
+        },
+        {
+          "l": "4x − 24",
+          "r": "x − 3"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "3x − 24",
+          "r": "-3"
+        },
+        {
+          "l": "+ 24",
+          "r": "+ 24",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "21"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "coefficients": [
+        "4",
+        "-24",
+        "1",
+        "-3"
+      ],
+      "kind": "both_bracket",
+      "hint": "Expand the bracket by multiplying both terms by 4.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 3x − 24 = -3. The simplified equation gives x = 7. Substitute into the original equation to check.",
+      "check": "At x = 7, left side = 4 and right side = 4.",
+      "wrong": "-9",
+      "error_note": "Check the inverse operations and both sides: x = -9 gives -60 on the left but -12 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "7(x + 2) = 3x + 38",
+      "answer": "6",
+      "balance": [
+        {
+          "l": "7(x + 2)",
+          "r": "3x + 38"
+        },
+        {
+          "l": "7x + 14",
+          "r": "3x + 38"
+        },
+        {
+          "l": "− 3x",
+          "r": "− 3x",
+          "kind": "op"
+        },
+        {
+          "l": "4x + 14",
+          "r": "38"
+        },
+        {
+          "l": "− 14",
+          "r": "− 14",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "24"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "6"
+        }
+      ],
+      "coefficients": [
+        "7",
+        "14",
+        "3",
+        "38"
+      ],
+      "kind": "both_bracket",
+      "hint": "Expand the bracket by multiplying both terms by 7.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 4x + 14 = 38. The simplified equation gives x = 6. Substitute into the original equation to check.",
+      "check": "At x = 6, left side = 56 and right side = 56.",
+      "wrong": "13",
+      "error_note": "Check the inverse operations and both sides: x = 13 gives 105 on the left but 77 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "3(x − 5) = 5x − 7",
+      "answer": "-4",
+      "balance": [
+        {
+          "l": "3(x − 5)",
+          "r": "5x − 7"
+        },
+        {
+          "l": "3x − 15",
+          "r": "5x − 7"
+        },
+        {
+          "l": "− 5x",
+          "r": "− 5x",
+          "kind": "op"
+        },
+        {
+          "l": "-2x − 15",
+          "r": "-7"
+        },
+        {
+          "l": "+ 15",
+          "r": "+ 15",
+          "kind": "op"
+        },
+        {
+          "l": "-2x",
+          "r": "8"
+        },
+        {
+          "l": "÷ -2",
+          "r": "÷ -2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-4"
+        }
+      ],
+      "coefficients": [
+        "3",
+        "-15",
+        "5",
+        "-7"
+      ],
+      "kind": "both_bracket",
+      "hint": "Expand the bracket by multiplying both terms by 3.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: -2x − 15 = -7. The simplified equation gives x = -4. Substitute into the original equation to check.",
+      "check": "At x = -4, left side = -27 and right side = -27.",
+      "wrong": "11",
+      "error_note": "Check the inverse operations and both sides: x = 11 gives 18 on the left but 48 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "8x + 11 = 3x − 9",
+      "answer": "-4",
+      "balance": [
+        {
+          "l": "8x + 11",
+          "r": "3x − 9"
+        },
+        {
+          "l": "− 3x",
+          "r": "− 3x",
+          "kind": "op"
+        },
+        {
+          "l": "5x + 11",
+          "r": "-9"
+        },
+        {
+          "l": "− 11",
+          "r": "− 11",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "-20"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-4"
+        }
+      ],
+      "coefficients": [
+        "8",
+        "11",
+        "3",
+        "-9"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant 11 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 5x + 11 = -9. The simplified equation gives x = -4. Substitute into the original equation to check.",
+      "check": "At x = -4, left side = -21 and right side = -21.",
+      "wrong": "0.4",
+      "error_note": "Check the inverse operations and both sides: x = 0.4 gives 14.2 on the left but -7.8 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "6x − 17 = 2x + 5",
+      "answer": "5.5",
+      "balance": [
+        {
+          "l": "6x − 17",
+          "r": "2x + 5"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "4x − 17",
+          "r": "5"
+        },
+        {
+          "l": "+ 17",
+          "r": "+ 17",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "22"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5.5"
+        }
+      ],
+      "coefficients": [
+        "6",
+        "-17",
+        "2",
+        "5"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant -17 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 4x − 17 = 5. The simplified equation gives x = 5.5. Substitute into the original equation to check.",
+      "check": "At x = 5.5, left side = 16 and right side = 16.",
+      "wrong": "-3",
+      "error_note": "Check the inverse operations and both sides: x = -3 gives -35 on the left but -1 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q7",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "6(x − 4) = 2x + 10",
+      "answer": "8.5",
+      "balance": [
+        {
+          "l": "6(x − 4)",
+          "r": "2x + 10"
+        },
+        {
+          "l": "6x − 24",
+          "r": "2x + 10"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "4x − 24",
+          "r": "10"
+        },
+        {
+          "l": "+ 24",
+          "r": "+ 24",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "34"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "8.5"
+        }
+      ],
+      "coefficients": [
+        "6",
+        "-24",
+        "2",
+        "10"
+      ],
+      "kind": "both_bracket",
+      "hint": "Expand the bracket by multiplying both terms by 6.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 4x − 24 = 10. The simplified equation gives x = 8.5. Substitute into the original equation to check.",
+      "check": "At x = 8.5, left side = 27 and right side = 27.",
+      "wrong": "-3.5",
+      "error_note": "Check the inverse operations and both sides: x = -3.5 gives -45 on the left but 3 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q8",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "5(x − 7) = 3x − 43",
+      "answer": "-4",
+      "balance": [
+        {
+          "l": "5(x − 7)",
+          "r": "3x − 43"
+        },
+        {
+          "l": "5x − 35",
+          "r": "3x − 43"
+        },
+        {
+          "l": "− 3x",
+          "r": "− 3x",
+          "kind": "op"
+        },
+        {
+          "l": "2x − 35",
+          "r": "-43"
+        },
+        {
+          "l": "+ 35",
+          "r": "+ 35",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "-8"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-4"
+        }
+      ],
+      "coefficients": [
+        "5",
+        "-35",
+        "3",
+        "-43"
+      ],
+      "kind": "both_bracket",
+      "hint": "Expand the bracket by multiplying both terms by 5.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 2x − 35 = -43. The simplified equation gives x = -4. Substitute into the original equation to check.",
+      "check": "At x = -4, left side = -55 and right side = -55.",
+      "wrong": "-39",
+      "error_note": "Check the inverse operations and both sides: x = -39 gives -230 on the left but -160 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q9",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "9x − 8 = 4x + 7",
+      "answer": "3",
+      "balance": [
+        {
+          "l": "9x − 8",
+          "r": "4x + 7"
+        },
+        {
+          "l": "− 4x",
+          "r": "− 4x",
+          "kind": "op"
+        },
+        {
+          "l": "5x − 8",
+          "r": "7"
+        },
+        {
+          "l": "+ 8",
+          "r": "+ 8",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "15"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "3"
+        }
+      ],
+      "coefficients": [
+        "9",
+        "-8",
+        "4",
+        "7"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant -8 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 5x − 8 = 7. The simplified equation gives x = 3. Substitute into the original equation to check.",
+      "check": "At x = 3, left side = 19 and right side = 19.",
+      "wrong": "-0.2",
+      "error_note": "Check the inverse operations and both sides: x = -0.2 gives -9.8 on the left but 6.2 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q10",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "8(x + 3) = 2x − 6",
+      "answer": "-5",
+      "balance": [
+        {
+          "l": "8(x + 3)",
+          "r": "2x − 6"
+        },
+        {
+          "l": "8x + 24",
+          "r": "2x − 6"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "6x + 24",
+          "r": "-6"
+        },
+        {
+          "l": "− 24",
+          "r": "− 24",
+          "kind": "op"
+        },
+        {
+          "l": "6x",
+          "r": "-30"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-5"
+        }
+      ],
+      "coefficients": [
+        "8",
+        "24",
+        "2",
+        "-6"
+      ],
+      "kind": "both_bracket",
+      "hint": "Expand the bracket by multiplying both terms by 8.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 6x + 24 = -6. The simplified equation gives x = -5. Substitute into the original equation to check.",
+      "check": "At x = -5, left side = -16 and right side = -16.",
+      "wrong": "3",
+      "error_note": "Check the inverse operations and both sides: x = 3 gives 48 on the left but 0 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q11",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "4x + 19 = 7x − 2",
+      "answer": "7",
+      "balance": [
+        {
+          "l": "4x + 19",
+          "r": "7x − 2"
+        },
+        {
+          "l": "− 7x",
+          "r": "− 7x",
+          "kind": "op"
+        },
+        {
+          "l": "-3x + 19",
+          "r": "-2"
+        },
+        {
+          "l": "− 19",
+          "r": "− 19",
+          "kind": "op"
+        },
+        {
+          "l": "-3x",
+          "r": "-21"
+        },
+        {
+          "l": "÷ -3",
+          "r": "÷ -3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "coefficients": [
+        "4",
+        "19",
+        "7",
+        "-2"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant 19 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: -3x + 19 = -2. The simplified equation gives x = 7. Substitute into the original equation to check.",
+      "check": "At x = 7, left side = 47 and right side = 47.",
+      "wrong": "-17/3",
+      "error_note": "Check the inverse operations and both sides: x = -17/3 gives -11/3 on the left but -125/3 on the right."
+    },
+    {
+      "id": "maths:M10-P3-PL-C3-Q12",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "plain",
+      "level": 2,
+      "q": "7(x − 5) = 4x − 20",
+      "answer": "5",
+      "balance": [
+        {
+          "l": "7(x − 5)",
+          "r": "4x − 20"
+        },
+        {
+          "l": "7x − 35",
+          "r": "4x − 20"
+        },
+        {
+          "l": "− 4x",
+          "r": "− 4x",
+          "kind": "op"
+        },
+        {
+          "l": "3x − 35",
+          "r": "-20"
+        },
+        {
+          "l": "+ 35",
+          "r": "+ 35",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "15"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5"
+        }
+      ],
+      "coefficients": [
+        "7",
+        "-35",
+        "4",
+        "-20"
+      ],
+      "kind": "both_bracket",
+      "hint": "Expand the bracket by multiplying both terms by 7.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 3x − 35 = -20. The simplified equation gives x = 5. Substitute into the original equation to check.",
+      "check": "At x = 5, left side = 0 and right side = 0.",
+      "wrong": "-55/3",
+      "error_note": "Check the inverse operations and both sides: x = -55/3 gives -490/3 on the left but -280/3 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "4(x + 7) = 2x + 42",
+      "answer": "7",
+      "balance": [
+        {
+          "l": "4(x + 7)",
+          "r": "2x + 42"
+        },
+        {
+          "l": "4x + 28",
+          "r": "2x + 42"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "2x + 28",
+          "r": "42"
+        },
+        {
+          "l": "− 28",
+          "r": "− 28",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "14"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "coefficients": [
+        "4",
+        "28",
+        "2",
+        "42"
+      ],
+      "kind": "both_bracket",
+      "hint": "Expand the bracket by multiplying both terms by 4.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 2x + 28 = 42. The simplified equation gives x = 7. Substitute into the original equation to check.",
+      "check": "At x = 7, left side = 56 and right side = 56.",
+      "wrong": "35",
+      "error_note": "Check the inverse operations and both sides: x = 35 gives 168 on the left but 112 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C3-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "6(x − 3) = 4x − 7",
+      "answer": "5.5",
+      "balance": [
+        {
+          "l": "6(x − 3)",
+          "r": "4x − 7"
+        },
+        {
+          "l": "6x − 18",
+          "r": "4x − 7"
+        },
+        {
+          "l": "− 4x",
+          "r": "− 4x",
+          "kind": "op"
+        },
+        {
+          "l": "2x − 18",
+          "r": "-7"
+        },
+        {
+          "l": "+ 18",
+          "r": "+ 18",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "11"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5.5"
+        }
+      ],
+      "coefficients": [
+        "6",
+        "-18",
+        "4",
+        "-7"
+      ],
+      "kind": "both_bracket",
+      "hint": "Expand the bracket by multiplying both terms by 6.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 2x − 18 = -7. The simplified equation gives x = 5.5. Substitute into the original equation to check.",
+      "check": "At x = 5.5, left side = 15 and right side = 15.",
+      "wrong": "-12.5",
+      "error_note": "Check the inverse operations and both sides: x = -12.5 gives -93 on the left but -57 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C3-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "9x + 5 = 3x − 13",
+      "answer": "-3",
+      "balance": [
+        {
+          "l": "9x + 5",
+          "r": "3x − 13"
+        },
+        {
+          "l": "− 3x",
+          "r": "− 3x",
+          "kind": "op"
+        },
+        {
+          "l": "6x + 5",
+          "r": "-13"
+        },
+        {
+          "l": "− 5",
+          "r": "− 5",
+          "kind": "op"
+        },
+        {
+          "l": "6x",
+          "r": "-18"
+        },
+        {
+          "l": "÷ 6",
+          "r": "÷ 6",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-3"
+        }
+      ],
+      "coefficients": [
+        "9",
+        "5",
+        "3",
+        "-13"
+      ],
+      "kind": "linear",
+      "hint": "Undo the constant 5 on both sides before dealing with the coefficient.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 6x + 5 = -13. The simplified equation gives x = -3. Substitute into the original equation to check.",
+      "check": "At x = -3, left side = -22 and right side = -22.",
+      "wrong": "-4/3",
+      "error_note": "Check the inverse operations and both sides: x = -4/3 gives -7 on the left but -17 on the right."
+    },
+    {
+      "id": "maths:M10-P3-SC-C3-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "scaffolded",
+      "level": 2,
+      "q": "5(x − 4) = 2x − 11",
+      "answer": "3",
+      "balance": [
+        {
+          "l": "5(x − 4)",
+          "r": "2x − 11"
+        },
+        {
+          "l": "5x − 20",
+          "r": "2x − 11"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "3x − 20",
+          "r": "-11"
+        },
+        {
+          "l": "+ 20",
+          "r": "+ 20",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "9"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "3"
+        }
+      ],
+      "coefficients": [
+        "5",
+        "-20",
+        "2",
+        "-11"
+      ],
+      "kind": "both_bracket",
+      "hint": "Expand the bracket by multiplying both terms by 5.",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 3x − 20 = -11. The simplified equation gives x = 3. Substitute into the original equation to check.",
+      "check": "At x = 3, left side = -5 and right side = -5.",
+      "wrong": "-31/3",
+      "error_note": "Check the inverse operations and both sides: x = -31/3 gives -215/3 on the left but -95/3 on the right."
+    },
+    {
+      "id": "maths:M10-P3-ER-C3-Q1",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "q": "3(x + 7) = x + 33",
+      "answer": "6",
+      "balance": [
+        {
+          "l": "3(x + 7)",
+          "r": "x + 33"
+        },
+        {
+          "l": "3x + 7",
+          "r": "x + 33"
+        },
+        {
+          "l": "2x + 7",
+          "r": "33"
+        },
+        {
+          "l": "2x",
+          "r": "26"
+        },
+        {
+          "l": "x",
+          "r": "13"
+        }
+      ],
+      "coefficients": [
+        "3",
+        "21",
+        "1",
+        "33"
+      ],
+      "kind": "both_bracket",
+      "hint": "Compare the original equation with line 2. Did both bracket terms change?",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 2x + 21 = 33. The simplified equation gives x = 6. Substitute into the original equation to check.",
+      "check": "At x = 6, left side = 39 and right side = 39.",
+      "wrong": "13",
+      "error_note": "Multiply both terms by 3: 3(x + 7) becomes 3x + 21.",
+      "correct_balance": [
+        {
+          "l": "3(x + 7)",
+          "r": "x + 33"
+        },
+        {
+          "l": "3x + 21",
+          "r": "x + 33"
+        },
+        {
+          "l": "− x",
+          "r": "− x",
+          "kind": "op"
+        },
+        {
+          "l": "2x + 21",
+          "r": "33"
+        },
+        {
+          "l": "− 21",
+          "r": "− 21",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "12"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "6"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "expand",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "3x + 7 = x + 33"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 8"
+        },
+        {
+          "id": "fix",
+          "text": "3x + 21 = x + 33"
+        }
+      ],
+      "correction": "Multiply both terms by 3: 3(x + 7) becomes 3x + 21. Correct solution: x = 6."
+    },
+    {
+      "id": "maths:M10-P3-ER-C3-Q2",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "q": "4(x − 5) = 2x − 6",
+      "answer": "7",
+      "balance": [
+        {
+          "l": "4(x − 5)",
+          "r": "2x − 6"
+        },
+        {
+          "l": "4x − 5",
+          "r": "2x − 6"
+        },
+        {
+          "l": "2x − 5",
+          "r": "-6"
+        },
+        {
+          "l": "2x",
+          "r": "-1"
+        },
+        {
+          "l": "x",
+          "r": "-0.5"
+        }
+      ],
+      "coefficients": [
+        "4",
+        "-20",
+        "2",
+        "-6"
+      ],
+      "kind": "both_bracket",
+      "hint": "Compare the original equation with line 2. Did both bracket terms change?",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 2x − 20 = -6. The simplified equation gives x = 7. Substitute into the original equation to check.",
+      "check": "At x = 7, left side = 8 and right side = 8.",
+      "wrong": "-0.5",
+      "error_note": "Multiply both terms by 4: 4(x − 5) becomes 4x − 20.",
+      "correct_balance": [
+        {
+          "l": "4(x − 5)",
+          "r": "2x − 6"
+        },
+        {
+          "l": "4x − 20",
+          "r": "2x − 6"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "2x − 20",
+          "r": "-6"
+        },
+        {
+          "l": "+ 20",
+          "r": "+ 20",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "14"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "7"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "expand",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong2",
+          "text": "x = 9"
+        },
+        {
+          "id": "fix",
+          "text": "4x − 20 = 2x − 6"
+        },
+        {
+          "id": "wrong1",
+          "text": "4x − 5 = 2x − 6"
+        }
+      ],
+      "correction": "Multiply both terms by 4: 4(x − 5) becomes 4x − 20. Correct solution: x = 7."
+    },
+    {
+      "id": "maths:M10-P3-ER-C3-Q3",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "q": "7x + 9 = 3x + 29",
+      "answer": "5",
+      "balance": [
+        {
+          "l": "7x + 9",
+          "r": "3x + 29"
+        },
+        {
+          "l": "4x + 9",
+          "r": "29"
+        },
+        {
+          "l": "4x",
+          "r": "38"
+        },
+        {
+          "l": "x",
+          "r": "9.5"
+        }
+      ],
+      "coefficients": [
+        "7",
+        "9",
+        "3",
+        "29"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 3. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 4x + 9 = 29. The simplified equation gives x = 5. Substitute into the original equation to check.",
+      "check": "At x = 5, left side = 44 and right side = 44.",
+      "wrong": "9.5",
+      "error_note": "Undo 9 with its inverse on both sides; the constant side becomes 20.",
+      "correct_balance": [
+        {
+          "l": "7x + 9",
+          "r": "3x + 29"
+        },
+        {
+          "l": "− 3x",
+          "r": "− 3x",
+          "kind": "op"
+        },
+        {
+          "l": "4x + 9",
+          "r": "29"
+        },
+        {
+          "l": "− 9",
+          "r": "− 9",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "20"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5"
+        }
+      ],
+      "errors": [
+        {
+          "row": 2,
+          "reason": "inverse",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "fix",
+          "text": "4x = 20"
+        },
+        {
+          "id": "wrong1",
+          "text": "4x = 38"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 7"
+        }
+      ],
+      "correction": "Undo 9 with its inverse on both sides; the constant side becomes 20. Correct solution: x = 5."
+    },
+    {
+      "id": "maths:M10-P3-ER-C3-Q4",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "q": "6x − 11 = 2x + 9",
+      "answer": "5",
+      "balance": [
+        {
+          "l": "6x − 11",
+          "r": "2x + 9"
+        },
+        {
+          "l": "4x − 11",
+          "r": "9"
+        },
+        {
+          "l": "4x",
+          "r": "21"
+        },
+        {
+          "l": "x",
+          "r": "5.25"
+        }
+      ],
+      "coefficients": [
+        "6",
+        "-11",
+        "2",
+        "9"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 3. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 4x − 11 = 9. The simplified equation gives x = 5. Substitute into the original equation to check.",
+      "check": "At x = 5, left side = 19 and right side = 19.",
+      "wrong": "5.25",
+      "error_note": "Recalculate the constant side: 9 − (-11) = 20.",
+      "correct_balance": [
+        {
+          "l": "6x − 11",
+          "r": "2x + 9"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "4x − 11",
+          "r": "9"
+        },
+        {
+          "l": "+ 11",
+          "r": "+ 11",
+          "kind": "op"
+        },
+        {
+          "l": "4x",
+          "r": "20"
+        },
+        {
+          "l": "÷ 4",
+          "r": "÷ 4",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "5"
+        }
+      ],
+      "errors": [
+        {
+          "row": 2,
+          "reason": "arithmetic",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "4x = 21"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 7"
+        },
+        {
+          "id": "fix",
+          "text": "4x = 20"
+        }
+      ],
+      "correction": "Recalculate the constant side: 9 − (-11) = 20. Correct solution: x = 5."
+    },
+    {
+      "id": "maths:M10-P3-ER-C3-Q5",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "q": "5(x + 4) = 2x + 29",
+      "answer": "3",
+      "balance": [
+        {
+          "l": "5(x + 4)",
+          "r": "2x + 29"
+        },
+        {
+          "l": "5x + 4",
+          "r": "2x + 29"
+        },
+        {
+          "l": "3x + 4",
+          "r": "29"
+        },
+        {
+          "l": "3x",
+          "r": "25"
+        },
+        {
+          "l": "x",
+          "r": "25/3"
+        }
+      ],
+      "coefficients": [
+        "5",
+        "20",
+        "2",
+        "29"
+      ],
+      "kind": "both_bracket",
+      "hint": "Compare the original equation with line 2. Did both bracket terms change?",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 3x + 20 = 29. The simplified equation gives x = 3. Substitute into the original equation to check.",
+      "check": "At x = 3, left side = 35 and right side = 35.",
+      "wrong": "25/3",
+      "error_note": "Multiply both terms by 5: 5(x + 4) becomes 5x + 20.",
+      "correct_balance": [
+        {
+          "l": "5(x + 4)",
+          "r": "2x + 29"
+        },
+        {
+          "l": "5x + 20",
+          "r": "2x + 29"
+        },
+        {
+          "l": "− 2x",
+          "r": "− 2x",
+          "kind": "op"
+        },
+        {
+          "l": "3x + 20",
+          "r": "29"
+        },
+        {
+          "l": "− 20",
+          "r": "− 20",
+          "kind": "op"
+        },
+        {
+          "l": "3x",
+          "r": "9"
+        },
+        {
+          "l": "÷ 3",
+          "r": "÷ 3",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "3"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "expand",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong2",
+          "text": "x = 5"
+        },
+        {
+          "id": "fix",
+          "text": "5x + 20 = 2x + 29"
+        },
+        {
+          "id": "wrong1",
+          "text": "5x + 4 = 2x + 29"
+        }
+      ],
+      "correction": "Multiply both terms by 5: 5(x + 4) becomes 5x + 20. Correct solution: x = 3."
+    },
+    {
+      "id": "maths:M10-P3-ER-C3-Q6",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "q": "8x + 13 = 3x − 7",
+      "answer": "-4",
+      "balance": [
+        {
+          "l": "8x + 13",
+          "r": "3x − 7"
+        },
+        {
+          "l": "5x + 13",
+          "r": "-7"
+        },
+        {
+          "l": "5x",
+          "r": "-7"
+        },
+        {
+          "l": "x",
+          "r": "-1.4"
+        }
+      ],
+      "coefficients": [
+        "8",
+        "13",
+        "3",
+        "-7"
+      ],
+      "kind": "linear",
+      "hint": "Compare the original equation with line 3. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 5x + 13 = -7. The simplified equation gives x = -4. Substitute into the original equation to check.",
+      "check": "At x = -4, left side = -19 and right side = -19.",
+      "wrong": "-1.4",
+      "error_note": "Apply the same operation to both sides; the corrected step is 5x = -20.",
+      "correct_balance": [
+        {
+          "l": "8x + 13",
+          "r": "3x − 7"
+        },
+        {
+          "l": "− 3x",
+          "r": "− 3x",
+          "kind": "op"
+        },
+        {
+          "l": "5x + 13",
+          "r": "-7"
+        },
+        {
+          "l": "− 13",
+          "r": "− 13",
+          "kind": "op"
+        },
+        {
+          "l": "5x",
+          "r": "-20"
+        },
+        {
+          "l": "÷ 5",
+          "r": "÷ 5",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "-4"
+        }
+      ],
+      "errors": [
+        {
+          "row": 2,
+          "reason": "balance",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "fix",
+          "text": "5x = -20"
+        },
+        {
+          "id": "wrong1",
+          "text": "5x = -7"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = -2"
+        }
+      ],
+      "correction": "Apply the same operation to both sides; the corrected step is 5x = -20. Correct solution: x = -4."
+    },
+    {
+      "id": "maths:M10-P3-ER-C3-Q7",
+      "subject": "maths",
+      "topic": "M10",
+      "type": "errors",
+      "level": 2,
+      "q": "6(x − 5) = 4x − 21",
+      "answer": "4.5",
+      "balance": [
+        {
+          "l": "6(x − 5)",
+          "r": "4x − 21"
+        },
+        {
+          "l": "x − 30",
+          "r": "2/3x − 3.5"
+        },
+        {
+          "l": "x / 3 − 30",
+          "r": "-3.5"
+        },
+        {
+          "l": "x / 3",
+          "r": "26.5"
+        },
+        {
+          "l": "x",
+          "r": "79.5"
+        }
+      ],
+      "coefficients": [
+        "6",
+        "-30",
+        "4",
+        "-21"
+      ],
+      "kind": "both_bracket",
+      "hint": "Compare the original equation with line 2. Would substituting the same x keep the two sides equal?",
+      "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 2x − 30 = -21. The simplified equation gives x = 4.5. Substitute into the original equation to check.",
+      "check": "At x = 4.5, left side = -3 and right side = -3.",
+      "wrong": "79.5",
+      "error_note": "Divide every term by 6, including the constant -30.",
+      "correct_balance": [
+        {
+          "l": "6(x − 5)",
+          "r": "4x − 21"
+        },
+        {
+          "l": "6x − 30",
+          "r": "4x − 21"
+        },
+        {
+          "l": "− 4x",
+          "r": "− 4x",
+          "kind": "op"
+        },
+        {
+          "l": "2x − 30",
+          "r": "-21"
+        },
+        {
+          "l": "+ 30",
+          "r": "+ 30",
+          "kind": "op"
+        },
+        {
+          "l": "2x",
+          "r": "9"
+        },
+        {
+          "l": "÷ 2",
+          "r": "÷ 2",
+          "kind": "op"
+        },
+        {
+          "l": "x",
+          "r": "4.5"
+        }
+      ],
+      "errors": [
+        {
+          "row": 1,
+          "reason": "whole_side",
+          "correction": "fix"
+        }
+      ],
+      "stepOptions": [
+        {
+          "id": "wrong1",
+          "text": "x − 30 = 2/3x − 3.5"
+        },
+        {
+          "id": "wrong2",
+          "text": "x = 6.5"
+        },
+        {
+          "id": "fix",
+          "text": "x − 5 = 2/3x − 3.5"
+        }
+      ],
+      "correction": "Divide every term by 6, including the constant -30. Correct solution: x = 4.5."
     }
   ],
   "recap": [

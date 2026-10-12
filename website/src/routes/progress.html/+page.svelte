@@ -20,12 +20,7 @@
   import { resolve } from '$app/paths';
   import catalogue from '#lib/content/practice-pages.json';
   import { openProgress } from '#lib/adapters/storage.mjs';
-  import {
-    topicProgress,
-    weeklyProgress,
-    backupStatus,
-    PROGRESS_POLICY,
-  } from '#lib/domain/progress.mjs';
+  import { topicProgress, weeklyProgress, backupStatus } from '#lib/domain/progress.mjs';
   import { maintainRecommendations, REVISION_POLICY } from '#lib/domain/revision.mjs';
   import TopicProgress from '#lib/components/progress/TopicProgress.svelte';
   import ProgressTransfer from '#lib/components/progress/ProgressTransfer.svelte';
@@ -38,6 +33,7 @@
     recommendations = $state.raw([]),
     warning = $state('');
   let save = $state.raw(() => {});
+  let initialUpdatedAt = $state(0);
   let openBreakdown = $state(null);
   /**
    * Refresh the current learner's summaries, recommendations and backup baseline, then persist.
@@ -70,6 +66,15 @@
     const adapter = openProgress(storage, (text) => (warning = text));
     store = adapter.data;
     save = adapter.save;
+    const learner = store.profiles.find((item) => item.key === store.last);
+    initialUpdatedAt =
+      learner?.progressUpdatedAt ??
+      Math.max(
+        0,
+        ...Object.values(learner?.topics ?? {}).flatMap((topic) =>
+          (topic.history ?? []).map((record) => record.at),
+        ),
+      );
     refresh();
   });
   /**
@@ -88,20 +93,15 @@
   {#if !store}<p>Loading progress…</p>
   {:else}
     {#if profile}
-      <p>Progress for <strong>{profile.name}</strong> · saved on this browser.</p>
+      <p>Progress for <strong>{profile.name}</strong> · working copy in this browser.</p>
+      <p>
+        Recommended: <a href="#data-transfer">save your progress in your synced OneDrive folder</a>.
+      </p>
       <section aria-label="Progress by topic" class="topic-grid">
         {#each rows as row}<TopicProgress {row} bind:openBreakdown />{/each}
       </section>
-      <p class="muted">
-        Independent recent success uses the latest 10 eligible answers at each level, regardless of
-        page length. Other question types retain their shorter scoring windows. All submitted
-        outcomes are retained; the minimum evidence threshold is not a storage limit. Plain
-        questions count twice in the topic average. Missing data means fewer than {PROGRESS_POLICY.minimum}
-        scored answers in a question type at its recommended level. Stale means {PROGRESS_POLICY.staleDays}
-        days without practice in that type and level.
-      </p>
       <PracticeHistory {profile} topics={rows} />
-      <section class="card" aria-labelledby="revision-title">
+      <section class="card page-panel" aria-labelledby="revision-title">
         <h2 id="revision-title">Recommended revision Practice sets</h2>
         <p>
           <strong>{weekly.current}</strong> recommended sets completed this week · Personal weekly
@@ -123,10 +123,6 @@
             Continue any remaining sets below, or choose to generate more when a space is available.
           </p>
         {/if}
-        <p class="muted">
-          Weeks run Monday–Sunday, UK time. Complete all four pages to count; answers need not all
-          be correct.
-        </p>
         {#each recommendations.filter((item) => item.completedAt === null) as item}
           <article class="revision-recommendation">
             <h3>Recommended practice set</h3>
@@ -163,7 +159,7 @@
         Choose your name on the <a href={resolve('/')}>practice page</a>, or import your progress
         below.
       </p>{/if}
-    <ProgressTransfer {profile} {store} {save} onchange={() => refresh()} />
+    <ProgressTransfer {profile} {store} {save} {initialUpdatedAt} onchange={() => refresh()} />
   {/if}
 </main>
-<SiteFooter>Progress stays on this browser. Export JSON to take it with you.</SiteFooter>
+<SiteFooter />

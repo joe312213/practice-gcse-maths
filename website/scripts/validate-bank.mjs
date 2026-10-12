@@ -14,13 +14,13 @@ import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { markAnswer } from '../src/lib/domain/engine.mjs';
 const bank = JSON.parse(await readFile(new URL('../static/data/equations.json', import.meta.url)));
-assert.equal(bank.questions.length, 97);
-assert.equal(new Set(bank.questions.map((q) => q.id)).size, 97);
+assert.equal(bank.questions.length, 171);
+assert.equal(new Set(bank.questions.map((q) => q.id)).size, 171);
 assert.equal(bank.recap.length, 3);
 assert.ok(bank.revision);
 for (const question of bank.questions)
   assert.ok(markAnswer(question.answer, question.answer).correct, question.id);
-console.log('Equation bank validated: 97 unique items and three recaps.');
+console.log('Equation bank validated: 171 unique items and three recaps.');
 
 // Authored Practice set slots must reference real questions of the matching type/level.
 const { resolvePracticePage } = await import('../src/lib/domain/practice-code.mjs');
@@ -62,6 +62,11 @@ for (const topic of banks) {
   }
 }
 for (const topic of banks) {
+  for (const level of [0, 1, 2])
+    assert.ok(
+      topic.questions.filter((q) => q.type === 'errors' && q.level === level).length === 12,
+      `${topic.topic}: twelve error questions at level ${level}`,
+    );
   const assessment = topic.questions.filter((q) => q.type === 'assessment');
   assert.equal(assessment.length, 6);
   assert.deepEqual(
@@ -70,8 +75,8 @@ for (const topic of banks) {
   );
 }
 for (const arithmetic of banks.slice(1)) {
-  assert.equal(arithmetic.questions.length, 96);
-  assert.equal(new Set(arithmetic.questions.map((q) => q.id)).size, 96);
+  assert.equal(arithmetic.questions.length, 171);
+  assert.equal(new Set(arithmetic.questions.map((q) => q.id)).size, 171);
   for (const q of arithmetic.questions) {
     assert.ok(markAnswer(q.answer, q.answer).correct, q.id);
     const parts = q.answer.split(' r ');
