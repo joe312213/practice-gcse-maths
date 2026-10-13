@@ -11,6 +11,9 @@
  * Libs: node:assert/strict (assertions).
  */
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { expect } from '@playwright/test';
+import { checkHandwriting } from './handwriting-checks.mjs';
 import { foundationTopics } from '../../src/lib/content/topic-routes.mjs';
 import { artifacts, createTestContext, selectTopic } from './support.mjs';
 
@@ -23,6 +26,7 @@ import { artifacts, createTestContext, selectTopic } from './support.mjs';
  * @example await checkPresentation(browser, "http://127.0.0.1:8766/"); // Check a running static preview.
  */
 export async function checkPresentation(browser, base) {
+  await checkHandwriting(browser, base);
   const context = await createTestContext(browser, { viewport: { width: 1280, height: 1000 } });
   const page = await context.newPage();
   // Install before app startup so its injected timer captures the controlled clock.
@@ -41,8 +45,29 @@ export async function checkPresentation(browser, base) {
     if (await page.locator('#profile-message').isVisible())
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     const topicSelector = page.getByLabel('Topic', { exact: true });
+    await topicSelector.click();
+    const selectorLabels = await page
+      .locator('.topic-option')
+      .evaluateAll((items) => items.map((item) => item.textContent.replace('✓', '').trim()));
+    assert.deepEqual(
+      selectorLabels,
+      [...selectorLabels].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })),
+      'Topic switcher is alphabetically ordered',
+    );
+    await page.keyboard.press('Escape');
     const originalTopic = 'M10';
-    const topics = foundationTopics.filter((topic) => !topic.draft).map((topic) => topic.bank);
+    // These column assertions exercise short symbolic methods; calculation/prose topics
+    // have their own responsive checks and legitimately use fewer columns.
+    const topics = (
+      await Promise.all(
+        foundationTopics.map(async (topic) => {
+          const bank = JSON.parse(
+            await readFile(new URL(`../../static/data/${topic.file}.json`, import.meta.url)),
+          );
+          return bank.method === 'calculation' ? null : topic.bank;
+        }),
+      )
+    ).filter(Boolean);
     for (const width of [
       320, 360, 375, 439, 440, 441, 600, 684, 720, 744, 767, 800, 1024, 1280, 1600,
     ]) {
@@ -90,6 +115,11 @@ export async function checkPresentation(browser, base) {
           textMeasure.font = `${inputStyle.fontWeight} ${inputStyle.fontSize} ${inputStyle.fontFamily}`;
           return {
             sameRow: Math.abs(title.top - controls.top) < 1,
+            controlsFirst: controls.bottom <= title.top,
+            controlsShareRow: Math.abs(go.top - select.top) < 1,
+            subjectGap:
+              intro.querySelector('.eyebrow').getBoundingClientRect().top - controls.bottom,
+            selectorWidth: select.width,
             right: bounds.right,
             left: bounds.left,
             goRight: go.right,
@@ -108,7 +138,9 @@ export async function checkPresentation(browser, base) {
           };
         });
         assert.ok(
-          Math.abs(layout.goRight - layout.right) < 1,
+          width < 440
+            ? layout.goRight <= layout.right + 1
+            : Math.abs(layout.goRight - layout.right) < 1,
           `Go respects gutter: ${width}/${topic}`,
         );
         assert.ok(
@@ -238,8 +270,19 @@ export async function checkPresentation(browser, base) {
           assert.ok(layout.sameRow, `Header text wraps beside controls at ${width}/${topic}`);
           assert.ok(layout.columnGap >= 28 - 1, `Header columns have breathing room at ${width}`);
         }
-        if (width < 440)
-          assert.ok(!layout.sameRow, `Header controls stack on small screens: ${width}/${topic}`);
+        if (width < 440) {
+          assert.equal(layout.controlsShareRow, width >= 360, `Controls wrap at ${width}px`);
+          assert.ok(layout.inputWidth >= 160, `Search retains a useful minimum at ${width}px`);
+          assert.ok(
+            Math.abs(layout.subjectGap - 26) < 1,
+            `Default subject gap restored at ${width}px`,
+          );
+          assert.ok(
+            layout.controlsFirst,
+            `Header controls precede subject/title on small screens: ${width}/${topic}`,
+          );
+        }
+        assert.ok(layout.selectorWidth < 120, `Topic selector is content-sized at ${width}px`);
         assert.ok(
           layout.inputWidth <= layout.preferredWidth + 1,
           `Search stays compact: ${width}/${topic}`,
@@ -330,6 +373,21 @@ export async function checkPresentation(browser, base) {
     for (const width of [1280, 1000, 940, 920, 769, 768, 767, 600, 480, 390, 320]) {
       await page.setViewportSize({ width, height: 1000 });
       await page.clock.runFor(32);
+      // Native ResizeObserver delivery is separate from the installed animation clock.
+      // Wait for actual ink containment after changing the viewport, not only document width.
+      await page.waitForFunction(() =>
+        [...document.querySelectorAll('.question-option')].every((card) => {
+          const range = document.createRange();
+          range.selectNodeContents(card.querySelector('.equation'));
+          const ink = range.getBoundingClientRect(),
+            bounds = card.getBoundingClientRect();
+          return (
+            ink.left >= bounds.left &&
+            ink.right <= bounds.right &&
+            Math.abs(ink.left + ink.right - bounds.left - bounds.right) < 2
+          );
+        }),
+      );
       await page.waitForFunction(() => document.documentElement.scrollWidth <= innerWidth);
       if (width >= 767 && width <= 769) {
         const columns = await page
@@ -345,7 +403,7 @@ export async function checkPresentation(browser, base) {
           const top = Math.round(box.top);
           rows.set(top, [...(rows.get(top) ?? []), box.width]);
         }
-        const intact = cards.every((card) => {
+        const measures = cards.map((card) => {
           const text = card.querySelector('.equation');
           const range = document.createRange();
           range.selectNodeContents(text);
@@ -362,7 +420,26 @@ export async function checkPresentation(browser, base) {
           );
         });
         return {
-          intact,
+          intact: measures.every(Boolean),
+          failures: measures
+            .map((ok, index) => {
+              if (ok) return null;
+              const card = cards[index],
+                range = document.createRange();
+              range.selectNodeContents(card.querySelector('.equation'));
+              const number = card.querySelector('.num').getBoundingClientRect();
+              return {
+                text: card.textContent,
+                item: card.parentElement.outerHTML.slice(0, 180),
+                listWidth: list.clientWidth,
+                basis: getComputedStyle(card.parentElement).flexBasis,
+                card: card.getBoundingClientRect().toJSON(),
+                rects: [...range.getClientRects()].map((r) => r.toJSON()),
+                number: number.toJSON(),
+                font: getComputedStyle(card.querySelector('.equation')).fontSize,
+              };
+            })
+            .filter(Boolean),
           rows: [...rows.values()],
           overflow: document.documentElement.scrollWidth > innerWidth,
         };
@@ -392,7 +469,11 @@ export async function checkPresentation(browser, base) {
         });
       });
       assert.ok(workingFits, `Drawing and typed working fill the card at ${width}px`);
-      assert.equal(layout.intact, true, `Equations stay intact inside cards at ${width}px`);
+      assert.equal(
+        layout.intact,
+        true,
+        `Equations stay intact inside cards at ${width}px: ${JSON.stringify(layout.failures)}`,
+      );
       assert.equal(layout.overflow, false, `No page overflow at ${width}px`);
       assert.ok(layout.rows.every((row) => row.length <= 3));
       if (width >= 1000) assert.equal(layout.rows[0].length, 3);
@@ -459,15 +540,20 @@ export async function checkPresentation(browser, base) {
       // ResizeObserver regrouping is native; a virtual-clock step does not guarantee its delivery.
       await page.waitForFunction(() => document.documentElement.scrollWidth <= innerWidth);
       assert.equal(await page.getByRole('combobox', { name: 'Level', exact: true }).count(), 1);
-      // Read both controls in one layout snapshot; regrouping can move the whole panel.
-      const { method, level } = await page.locator('.level-row').evaluate((row) => ({
-        method: row.querySelector('#reference').getBoundingClientRect().toJSON(),
-        level: row.querySelector('#level').getBoundingClientRect().toJSON(),
-      }));
+      const header = await page.locator('.practice-question-header').evaluate((row) => {
+        const heading = row.querySelector('.practice-question-heading').getBoundingClientRect();
+        const tools = row.querySelector('.practice-question-tools').getBoundingClientRect();
+        const method = row.querySelector('#reference').getBoundingClientRect();
+        const timer = row.querySelector('.practice-countdown').getBoundingClientRect();
+        return {
+          ratio: heading.width / tools.width,
+          beside: heading.right <= tools.left,
+          above: method.bottom <= timer.top,
+        };
+      });
       assert.ok(
-        method.x >= level.x + level.width &&
-          Math.abs(method.y + method.height / 2 - level.y - level.height / 2) < 4,
-        `Check method stays beside Level at ${width}px: ${JSON.stringify({ method, level })}`,
+        Math.abs(header.ratio - 1.5) < 0.05 && header.beside && header.above,
+        `60:40 header with method above timer: ${width}`,
       );
       const confidence = await page.locator('.question-list').evaluate((list) => {
         const buttons = [...list.querySelectorAll('.question-option')];
@@ -528,11 +614,49 @@ export async function checkPresentation(browser, base) {
     await selectTopic(page, originalTopic);
     await page.locator('[data-mode="plain"]').click();
     await page.locator('#level').selectOption('2');
+    await page.setViewportSize({ width: 360, height: 1000 });
+    await page.clock.runFor(50);
+    assert.equal(await page.locator('.question-prefix').innerText(), 'Solve the equation');
+    assert.equal(await page.locator('label[for="answer"]').innerText(), 'Answer');
+    // ResizeObserver delivery follows browser layout, not just the mocked animation clock.
+    await expect
+      .poll(
+        async () => {
+          await page.clock.runFor(32);
+          return page.locator('.question-option .equation').evaluateAll((nodes) =>
+            nodes.every((node) => {
+              const size = parseFloat(getComputedStyle(node).fontSize);
+              return size >= 14 && size <= 17.29;
+            }),
+          );
+        },
+        { timeout: 3000, message: 'Question fitting settles after the mobile resize' },
+      )
+      .toBe(true);
+    const sizes = await page
+      .locator('.question-option .equation')
+      .evaluateAll((nodes) => nodes.map((node) => parseFloat(getComputedStyle(node).fontSize)));
+    assert.ok(
+      sizes.every((size) => size >= 14 && size <= 17.29),
+      JSON.stringify(sizes),
+    );
+    await page
+      .locator('.practice-question-header')
+      .screenshot({ path: `${artifacts}/equation-header-360.png` });
+    await page
+      .locator('.question-list')
+      .screenshot({ path: `${artifacts}/equation-questions-360.png` });
     // A longer expression can share an equal-width pair if both still fit.
     await page.setViewportSize({ width: 1000, height: 1000 });
+    await page
+      .locator('.question-option .equation')
+      .first()
+      .evaluate((el) => {
+        el.textContent = '12(x + 10) − 8 = 3(x − 4) + 24';
+      });
+    await page.clock.runFor(50);
     const extended = await page.locator('.question-list').evaluate((list) => {
       const first = list.querySelector('.question-option');
-      first.querySelector('.equation').textContent = '12(x + 10) − 8 = 3(x − 4) + 24';
       const boxes = [...list.querySelectorAll('.question-option')].map((el) =>
         el.getBoundingClientRect(),
       );
@@ -570,7 +694,7 @@ export async function checkPresentation(browser, base) {
       return {
         count: boxes.filter((box) => Math.abs(box.top - last.top) < 1).length,
         centred: Math.abs(last.left + last.right - bounds.left - bounds.right) < 1,
-        natural: last.width < bounds.width / 2,
+        natural: Math.abs(last.width - boxes[0].width) < 1,
       };
     });
     assert.ok(partial.count === 1 && partial.centred && partial.natural, JSON.stringify(partial));
@@ -586,7 +710,7 @@ export async function checkPresentation(browser, base) {
         const style = getComputedStyle(element);
         return { gap: style.gap, display: style.display, position: style.position };
       }),
-      { gap: '10px', display: 'flex', position: 'static' },
+      { gap: '4px', display: 'flex', position: 'static' },
       'Demo controls retain their spacing below the animated working',
     );
     assert.equal(await page.locator('.balance tr.reveal').count(), 0);
@@ -600,7 +724,7 @@ export async function checkPresentation(browser, base) {
     const equalsInk = firstRow.locator('.equals span');
     const rightInk = firstRow.locator('.rhs span');
     assert.equal(await leftInk.isVisible(), false, 'Line precedes all writing');
-    await page.clock.runFor(1300);
+    await page.clock.runFor(434);
     await page.getByRole('button', { name: 'Pause', exact: true }).click();
     const dividerMotion = await page.locator('.demo-working .equation-divider').evaluate((col) => {
       const animation = col.getAnimations()[0];
@@ -609,10 +733,37 @@ export async function checkPresentation(browser, base) {
     assert.equal(dividerMotion.state, 'paused', 'Pausing also holds native guide animation');
     assert.notEqual(dividerMotion.frames[0].backgroundSize, dividerMotion.frames[1].backgroundSize);
     await page.locator('#demo-play').click();
-    await page.clock.runFor(3 * 1300);
+    await page.clock.runFor(3 * 434);
     assert.equal(await leftInk.isVisible(), false, 'Finish drawing the divider before writing');
-    await page.clock.runFor(1300);
+    await page.clock.runFor(434);
     assert.ok(await leftInk.isVisible());
+    assert.ok(
+      await leftInk.locator('[data-stroke]').count(),
+      'Equation working uses actual Pacifico pen paths',
+    );
+    await page.getByRole('button', { name: 'Pause', exact: true }).click();
+    const inkMotion = await leftInk.evaluate((element) => {
+      const animations = [...element.querySelectorAll('[data-stroke]')].flatMap((path) =>
+        path.getAnimations(),
+      );
+      const highlight = getComputedStyle(element);
+      return {
+        states: animations.map((a) => a.playState),
+        frames: animations[0]?.effect.getKeyframes(),
+        outline: highlight.outlineStyle,
+        padding: highlight.paddingInline,
+      };
+    });
+    assert.ok(inkMotion.states.length && inkMotion.states.every((state) => state === 'paused'));
+    assert.notEqual(inkMotion.frames[0].strokeDashoffset, inkMotion.frames[1].strokeDashoffset);
+    assert.equal(inkMotion.outline, 'none', JSON.stringify(inkMotion));
+    assert.equal(inkMotion.padding, '2px');
+    assert.equal(
+      await page.locator('.step-note [data-written-ink]').count(),
+      0,
+      'Explanations retain normal text',
+    );
+    await page.locator('#demo-play').click();
     assert.equal(await equalsInk.isVisible(), false, 'Left precedes equals');
     assert.equal(await rightInk.isVisible(), false, 'Left precedes right');
     await page.clock.runFor(1300);
@@ -633,7 +784,7 @@ export async function checkPresentation(browser, base) {
       const rect = document.querySelector('.demo-stage').getBoundingClientRect();
       return rect.top >= 0 && rect.top < innerHeight;
     });
-    await page.clock.runFor(2600);
+    await page.clock.runFor(1600);
     assert.equal(await page.locator('.demo-working tr[data-step]').count(), 2);
     await page.getByRole('button', { name: 'Pause', exact: true }).click();
     await page.locator('[data-demo-level="2"]').click();
@@ -658,6 +809,34 @@ export async function checkPresentation(browser, base) {
         await page.locator('[data-mode="demo"]').click();
         await page.locator('[data-demo-level="2"]').click();
         await page.locator('[data-demo-speed]').selectOption('2');
+        if (width === 360) {
+          const fit = await page.locator('.demo-controls').evaluate((element) => {
+            const boxes = [...element.querySelectorAll('button, select')].map((node) =>
+              node.getBoundingClientRect(),
+            );
+            return {
+              centres: boxes.map((box) => box.y + box.height / 2),
+              right: Math.max(...boxes.map((box) => box.right)),
+              edge: element.getBoundingClientRect().right,
+              centred:
+                Math.abs(
+                  (Math.min(...boxes.map((box) => box.left)) +
+                    Math.max(...boxes.map((box) => box.right))) /
+                    2 -
+                    (element.getBoundingClientRect().left + element.getBoundingClientRect().right) /
+                      2,
+                ) < 1,
+              speedLabel: getComputedStyle(element.querySelector('.demo-speed > span')).clipPath,
+            };
+          });
+          assert.ok(
+            Math.max(...fit.centres) - Math.min(...fit.centres) < 1,
+            'All playback controls share one row at 360px',
+          );
+          assert.ok(fit.right <= fit.edge + 1);
+          assert.ok(fit.centred, 'Playback controls are centred as a group');
+          assert.equal(fit.speedLabel, 'inset(50%)', 'Speed remains screen-reader-only');
+        }
         assert.equal(
           await page.locator('.demo-working').count(),
           0,
@@ -770,6 +949,54 @@ export async function checkPresentation(browser, base) {
             assert.ok(phases.has(phase), phase);
         if (topic === 'M02')
           for (const phase of ['divide', 'write', 'carry']) assert.ok(phases.has(phase), phase);
+        const positioned = await page
+          .locator('.arithmetic-working [data-written-ink]')
+          .evaluateAll((nodes) =>
+            nodes
+              .filter((svg) => svg.previousElementSibling?.tagName === 'text')
+              .map((svg) => {
+                const source = svg.previousElementSibling.getBoundingClientRect();
+                const ink = svg.querySelector('g').getBoundingClientRect();
+                return {
+                  text: svg.getAttribute('aria-label'),
+                  top: ink.top,
+                  bottom: ink.bottom,
+                  sourceTop: source.top,
+                  sourceBottom: source.bottom,
+                };
+              }),
+          );
+        assert.ok(
+          positioned.every(
+            (ink) => ink.top >= ink.sourceTop - 3 && ink.bottom <= ink.sourceBottom + 3,
+          ),
+          JSON.stringify(positioned),
+        );
+        if (topic === 'M01') {
+          const carries = await page.locator('.demo-working text.carry').evaluateAll((items) =>
+            items.map((item) => ({
+              x: Number(item.getAttribute('x')),
+              y: Number(item.getAttribute('y')),
+            })),
+          );
+          assert.ok(
+            carries.some((carry) => carry.x < 60),
+            'Confidence example exercises left-edge carries',
+          );
+          for (const carry of carries.filter((carry) => carry.x < 60))
+            assert.ok(
+              (carry.y - 50) % 70 > 50,
+              'Left carries sit in the trailing/lower part of their diagonal',
+            );
+          assert.ok(
+            carries.some((carry) => carry.x > 60 && carry.y === 277),
+            'Bottom carries keep their grid-relative baseline',
+          );
+          if (width === 360)
+            await page
+              .locator('.demo-stage')
+              .screenshot({ path: `${artifacts}/lattice-trailing-carries.png` });
+        }
         const geometry = await page.locator('.demo-stage').evaluate((stage) => {
           const question = stage.querySelector('.selected-equation').getBoundingClientRect();
           const working = stage.querySelector('.demo-working').getBoundingClientRect();
@@ -963,11 +1190,7 @@ export async function checkPresentation(browser, base) {
           geometry.labelLines.every((lines) => lines <= 2),
           `${mode} stage labels need at most two lines at ${width}px`,
         );
-        if (width === 1600)
-          assert.ok(
-            geometry.labelLines.every((lines) => lines === 1),
-            'Labels use one line when space permits',
-          );
+        // Six stages share the capped navigation width; two-line labels are intentional.
         assert.ok(
           Math.abs(geometry.gapRem - 2) < 0.05,
           `${mode} has the same stage gap at ${width}px`,
@@ -1011,7 +1234,23 @@ export async function checkPresentation(browser, base) {
           );
         }
         if (geometry.progress) {
-          assert.equal(geometry.progress.display, width < 678 ? 'flex' : 'grid');
+          assert.equal(geometry.progress.display, 'grid');
+          const progressRows = await page.locator('.progress-card').evaluate((card) => {
+            const box = (selector) => card.querySelector(selector).getBoundingClientRect();
+            const first = ['h2', '.progress-meter', '.progress-value'].map(box);
+            return {
+              aligned: first.every(
+                (rect) => Math.abs(rect.y + rect.height / 2 - first[0].y - first[0].height / 2) < 1,
+              ),
+              levelBelow:
+                box('.progress-level').top >= Math.max(...first.map((rect) => rect.bottom)),
+              recent: card.textContent.includes('recent success'),
+            };
+          });
+          assert.ok(
+            progressRows.aligned && progressRows.levelBelow && !progressRows.recent,
+            JSON.stringify(progressRows),
+          );
           assert.equal(geometry.progress.meter, width < 1024 ? '4rem' : '6rem');
           assert.equal(geometry.progress.columns, width < 768 ? 1 : 2);
         }
@@ -1086,7 +1325,7 @@ export async function checkPresentation(browser, base) {
       await page.locator('[data-demo-speed]').selectOption('1');
       await page.locator('#demo-play').click();
       assert.equal(await page.locator('.arithmetic-working svg text').count(), 0);
-      await page.clock.runFor(650);
+      await page.clock.runFor(217);
       await page.getByRole('button', { name: 'Pause', exact: true }).click();
       const strokes = await page.locator('.method-guide').evaluateAll((paths) =>
         paths.flatMap((path) =>
@@ -1106,6 +1345,31 @@ export async function checkPresentation(browser, base) {
       await page.locator('#demo-all').click();
       assert.ok((await page.locator('.arithmetic-working svg text').count()) > 0);
     }
+    await selectTopic(page, 'M10');
+    await page.locator('[data-mode="demo"]').click();
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.locator('#demo-play').click();
+    await page.clock.runFor(6 * 650);
+    assert.ok(await page.locator('.demo-working [data-stroke]').count());
+    assert.equal(
+      await page
+        .locator('.demo-working')
+        .evaluate((root) => root.getAnimations({ subtree: true }).length),
+      0,
+      'Reduced motion reveals completed handwriting per frame',
+    );
+    await page.locator('#demo-all').click();
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    // A font fetch failure must leave the mathematical lesson and controls usable.
+    await page.route('**/handwriting/pacifico-maths.json', (route) =>
+      route.fulfill({ status: 503, body: '' }),
+    );
+    await page.locator('[data-demo-level="1"]').click();
+    await page.locator('#demo-play').click();
+    await page.locator('#demo-all').click();
+    assert.equal(await page.locator('.demo-working [data-written-ink]').count(), 0);
+    assert.ok((await page.locator('.demo-working .balance').innerText()).includes('='));
+    await page.unroute('**/handwriting/pacifico-maths.json');
     assert.deepEqual(errors, []);
     console.log(
       'Presentation checks passed: flex equations, play scrolling, speed persistence and shared reference settings.',

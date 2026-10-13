@@ -69,7 +69,7 @@ export function createPracticeTimer({
   return {
     select(view, visible = true) {
       const profile = data.profiles.find((item) => item.key === view.profile?.key);
-      const scope = `${view.bank.subject}:${view.bank.topic}`;
+      const scope = `${(view.sourceBank ?? view.bank).subject}:${(view.sourceBank ?? view.bank).topic}`;
       const attempt = view.page?.attempt ?? 'demo';
       const key =
         profile && !view.page?.complete && !view.practiceSet?.finished

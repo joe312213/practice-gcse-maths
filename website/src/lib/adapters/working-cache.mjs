@@ -12,7 +12,7 @@
  */
 import { DEFAULT_WORKING_HEIGHT } from '../domain/working.mjs';
 
-export const WORKING_TTL = 3 * 60 * 60 * 1000;
+export const WORKING_TTL = 48 * 60 * 60 * 1000;
 const prefix = 'maths-working-v1:';
 /**
  * Create isolated, expiring working records with an in-memory fallback.
@@ -112,4 +112,25 @@ export function createWorkingCache(storage, warn = () => {}, now = Date.now) {
       }
     },
   };
+}
+
+/** Move temporary working after a rename, or remove it after an explicit reset/delete. Expiry is unchanged. */
+export function rekeyWorking(storage, oldKey, newKey = null) {
+  if (oldKey === newKey) return;
+  const keys = Array.from({ length: storage.length }, (_, i) => storage.key(i));
+  for (const key of keys) {
+    if (!key?.startsWith(prefix)) continue;
+    let identity;
+    try {
+      identity = JSON.parse(key.slice(prefix.length));
+    } catch {
+      continue;
+    }
+    if (!Array.isArray(identity) || identity[0] !== oldKey) continue;
+    if (newKey !== null) {
+      identity[0] = newKey;
+      storage.setItem(prefix + JSON.stringify(identity), storage.getItem(key));
+    }
+    storage.removeItem(key);
+  }
 }

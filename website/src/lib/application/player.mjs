@@ -18,6 +18,7 @@
  * Parameter schedule: timer scheduling dependency.
  * Parameter cancel: timer cancellation dependency.
  * Parameter delay: frame delay in milliseconds.
+ * Parameter pace: optional speed multiplier for the current one-based frame.
  * @example const player = createPlayer({ length: frames.length, onFrame }); player.play();
  */
 export function createPlayer({
@@ -26,6 +27,7 @@ export function createPlayer({
   schedule = setTimeout,
   cancel = clearTimeout,
   delay = 2600,
+  pace = () => 1,
 }) {
   let step = 1,
     playing = false,
@@ -57,7 +59,7 @@ export function createPlayer({
     step = Math.min(length, step + 1);
     if (step === length) playing = false;
     emit();
-    if (playing) timer = schedule(tick, delay);
+    if (playing) timer = schedule(tick, delay / pace(step));
   };
   return {
     /**
@@ -71,7 +73,7 @@ export function createPlayer({
       paused = false;
       playing = true;
       emit();
-      timer = schedule(tick, delay);
+      timer = schedule(tick, delay / pace(step));
     },
     /**
      * Cancel the timer and preserve the current frame for resumption.
@@ -104,7 +106,7 @@ export function createPlayer({
       delay = value;
       if (playing) {
         clear();
-        timer = schedule(tick, delay);
+        timer = schedule(tick, delay / pace(step));
       }
     },
     /**

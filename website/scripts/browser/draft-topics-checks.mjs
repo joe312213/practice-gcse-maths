@@ -1,4 +1,4 @@
-/** Exercise the draft methods in the real app, including exact marking and persisted page navigation. */
+/** Exercise the calculation methods in the real app, including exact marking and persisted page navigation. */
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { foundationTopics, topicPath } from '../../src/lib/content/topic-routes.mjs';
@@ -10,12 +10,20 @@ export async function checkDraftTopics(browser, base) {
   page.on('pageerror', (e) => errors.push(e.message));
   await page.clock.install();
   try {
-    for (const topic of foundationTopics.filter((t) => t.draft)) {
+    for (const topic of foundationTopics) {
       const bank = JSON.parse(
         await readFile(new URL(`../../static/data/${topic.file}.json`, import.meta.url)),
       );
+      if (bank.method !== 'calculation') continue;
       await page.goto(`${base}${topicPath(topic.bank).slice(1)}`);
-      await page.locator('#begin, [data-mode="assessment"]').first().waitFor();
+      try {
+        await page.locator('#begin, [data-mode="assessment"]').first().waitFor();
+      } catch (cause) {
+        throw new Error(
+          `${topic.bank} startup: ${errors.join('; ')} ${await page.locator('body').innerText()}`,
+          { cause },
+        );
+      }
       if (await page.locator('#begin').isVisible()) {
         await page.locator('#begin').click();
         await page.locator('#username').fill('Draft Reviewer');
@@ -24,7 +32,15 @@ export async function checkDraftTopics(browser, base) {
           await page.getByRole('button', { name: 'Continue', exact: true }).click();
       }
       await page.locator('[data-mode="assessment"]').waitFor();
-      assert.equal(await page.locator('h1 .draft-stamp').textContent(), 'Draft');
+      assert.equal(await page.locator('h1 .draft-stamp').count(), 0);
+      assert.equal(
+        await page.locator('.learning-steps [data-mode]').count(),
+        topic.bank === 'M03' ? 5 : 6,
+      );
+      assert.equal(
+        await page.locator('[data-mode="problem"]').count(),
+        topic.bank === 'M03' ? 0 : 1,
+      );
       await page.locator('[data-mode="assessment"]').click();
       assert.equal(await page.locator('[data-question]').count(), 6);
       const saved = () =>
@@ -63,24 +79,63 @@ export async function checkDraftTopics(browser, base) {
         await page.locator('.feedback').screenshot({ path: `${artifacts}/fraction-feedback.png` });
       }
       await page.locator('[data-mode="demo"]').click();
+      if (topic.bank === 'M12')
+        assert.match(
+          await page.locator('.demo-body').innerText(),
+          /In exams, include the correct units/,
+        );
       for (const level of [0, 1, 2]) {
         await page.locator(`[data-demo-level="${level}"]`).click();
         await page.locator('#demo-play').click();
         await page.clock.runFor(700);
         assert.ok(await page.locator('.demo-working .method-active').count());
+        assert.ok(
+          await page.locator('.calculation-working [data-written-ink] [data-stroke]').count(),
+        );
+        assert.equal(await page.locator('.step-caption [data-written-ink]').count(), 0);
+        assert.equal(await page.locator('.demo-working [data-missing]').count(), 0);
         if (await page.locator('#demo-all').isEnabled()) await page.locator('#demo-all').click();
         assert.equal(
           await page.locator('.demo-working .calculation-step').count(),
           bank.questions.find((q) => q.type === 'demo' && q.level === level).steps.length,
         );
-        assert.equal(await page.locator('.demo-working svg').count(), topic.bank === 'M03' ? 0 : 1);
+        assert.equal(
+          await page.locator('.demo-working svg:not([data-written-ink])').count(),
+          topic.bank === 'M03' ? 0 : 1,
+        );
       }
-      for (const mode of ['scaffolded', 'errors', 'plain']) {
+      const practiceModes =
+        topic.bank === 'M03'
+          ? ['scaffolded', 'errors', 'plain']
+          : ['scaffolded', 'errors', 'plain', 'problem'];
+      for (const mode of practiceModes) {
         await page.locator(`[data-mode="${mode}"]`).click();
         assert.equal(
           await page.locator('[data-question]').count(),
-          { scaffolded: 2, errors: 4, plain: 12 }[mode],
+          { scaffolded: 4, errors: 4, plain: 12, problem: 6 }[mode],
         );
+        if (topic.bank === 'M03' && mode === 'plain') {
+          const tips = page.getByText('How to solve tips', { exact: true });
+          await tips.click();
+          assert.equal(await page.locator('.problem-tips[open]').count(), 1);
+          await tips.click();
+        }
+        if (topic.bank === 'M04' && mode === 'scaffolded') {
+          await page.locator('#level').selectOption('2');
+          assert.match(
+            await page.locator('#active-question .guidance').innerText(),
+            /further calculation/,
+          );
+          const current = (await saved()).pages[mode];
+          const question = bank.questions.find((q) => q.id === current.items[0].id);
+          assert.ok(question.model.operations.length > 2);
+          await page.locator('#answer').fill(question.answer);
+          await page.getByRole('button', { name: 'Check answer', exact: true }).click();
+          // Successful submissions advance; return to the answered question for its feedback.
+          await page.locator('[data-question]').first().click();
+          await page.locator('.feedback summary').click();
+          assert.match(await page.locator('.feedback .calculation-step').last().innerText(), /£/);
+        }
         const first = (await saved()).pages[mode];
         const next = page.getByRole('button', { name: 'Next page of questions', exact: true });
         await next.click();
@@ -158,6 +213,59 @@ export async function checkDraftTopics(browser, base) {
       if (await page.locator('#demo-all').isEnabled()) await page.locator('#demo-all').click();
       await page.screenshot({ path: `${artifacts}/draft-${topic.bank}.png`, fullPage: true });
     }
+    // Configurable combined practice keeps source attribution and assistance in the real UI.
+    await page.goto(`${base}fm/combined-problems/`);
+    await page.getByRole('heading', { name: 'Choose your combined practice' }).waitFor();
+    const sourceChoices = page
+      .getByRole('group', { name: 'Topics to include' })
+      .getByRole('checkbox');
+    for (const choice of await sourceChoices.all()) await choice.uncheck();
+    await page
+      .getByRole('checkbox', { name: 'Signed addition and subtraction', exact: true })
+      .check();
+    await page
+      .getByRole('checkbox', { name: 'Fraction addition and subtraction', exact: true })
+      .check();
+    await page.getByRole('button', { name: 'Start combined practice' }).click();
+    await page.locator('[data-question]').first().waitFor();
+    assert.equal(await page.locator('[data-question]').count(), 6);
+    await page.getByText('How to solve tips', { exact: true }).click();
+    assert.ok(await page.locator('.problem-tips[open]').isVisible());
+    await page.locator('.problem-tips #demo-play').click();
+    await page.clock.runFor(700);
+    if (await page.locator('.problem-tips #demo-all').isEnabled())
+      await page.locator('.problem-tips #demo-all').click();
+    assert.ok(await page.locator('.problem-tips .calculation-step').count());
+    const combined = await page.evaluate(
+      () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].practiceSet,
+    );
+    const selectedId = combined.attempts[0].items[0].id;
+    const sourceTopic = foundationTopics.find((t) => selectedId.startsWith(`maths:${t.bank}-`));
+    const sourceBank = JSON.parse(
+      await readFile(new URL(`../../static/data/${sourceTopic.file}.json`, import.meta.url)),
+    );
+    await page
+      .locator('#answer')
+      .fill(sourceBank.questions.find((q) => q.id === selectedId).answer);
+    await page.getByRole('button', { name: 'Check answer', exact: true }).click();
+    const record = await page.evaluate(
+      (topic) =>
+        JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].topics[
+          `maths:${topic}`
+        ].history.at(-1),
+      sourceTopic.bank,
+    );
+    assert.equal(record.question, selectedId);
+    assert.equal(record.assisted, true);
+    assert.equal(record.type, 'problem');
+    await page.reload();
+    await page.locator('[data-question]').first().waitFor();
+    const resumed = await page.evaluate(
+      () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].practiceSet,
+    );
+    assert.deepEqual(resumed.attempts[0].items, combined.attempts[0].items);
+    assert.equal(resumed.attempts[0].count, 1);
+
     assert.deepEqual(errors, []);
   } finally {
     await context.close();

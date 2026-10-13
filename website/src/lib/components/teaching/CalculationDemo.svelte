@@ -32,7 +32,11 @@
         }}>{label}</button
       >{/each}
   </div>
+  {#if bank.calculator}<p class="muted">
+      Calculator allowed. Keep intermediate values unrounded.
+    </p>{/if}
   <Guidance guidance={bank.teaching.guidance[level]} />
+  {#if bank.teaching.answerNote}<p class="muted">{bank.teaching.answerNote}</p>{/if}
   <label for={id}>Example</label>
   <select class="choice-field" {id} data-demo-example bind:value={example}
     ><option value="demo">Worked example</option><option value="recap"
@@ -44,7 +48,8 @@
       {#snippet heading()}<p class="selected-equation" class:word-question={question.prose}>
           <MathText text={question.q} />
         </p>{/snippet}
-      {#snippet children(frame)}<CalculationDiagram {question} {frame} /><CalculationWorking
+      {#snippet children(frame, font)}<CalculationDiagram {question} {frame} /><CalculationWorking
+          {font}
           {question}
           {frame}
         />{/snippet}

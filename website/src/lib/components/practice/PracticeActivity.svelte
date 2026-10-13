@@ -14,6 +14,7 @@
 <script>
   import MathText from '../teaching/MathText.svelte';
   import CalculationWorking from '../teaching/CalculationWorking.svelte';
+  import ProblemTips from '../teaching/ProblemTips.svelte';
   import { onMount, tick } from 'svelte';
   import { Dialog } from 'bits-ui';
   import { LEVELS } from '#lib/domain/engine.mjs';
@@ -34,9 +35,17 @@
     container,
     referenceButton = $state();
   const page = $derived(view.page);
+  const hasProblemTips = $derived(
+    view.mode === 'problem' || (view.bank.problemSolvingTopic && view.mode === 'plain'),
+  );
   const question = $derived(view.bank.questions.find((q) => q.id === page.items[view.selected].id));
   const response = $derived(page.responses[question.id]);
+  let assessmentNow = $state(Date.now());
+  const canReassess = $derived(view.assessment && assessmentNow >= view.assessment.availableAt);
   onMount(() => {
+    const assessmentClock = setInterval(() => {
+      assessmentNow = Date.now();
+    }, 60000);
     // Match the shared CSS boundary: a narrow viewport presents the reference as a dialog.
     const mediumWidth = getComputedStyle(document.documentElement)
       .getPropertyValue('--breakpoint-viewport-medium')
@@ -48,7 +57,10 @@
     const update = () => (mobile = media.matches);
     update();
     media.addEventListener('change', update);
-    return () => media.removeEventListener('change', update);
+    return () => {
+      clearInterval(assessmentClock);
+      media.removeEventListener('change', update);
+    };
   });
   /**
    * Wait for Svelte DOM updates and focus the first available answer field.
@@ -76,7 +88,7 @@
     <aside class="card reference">
       <h2>Method reference</h2>
       <DemoPlayer
-        bank={view.bank}
+        bank={view.sourceBank}
         initialLevel={view.demoLevel}
         onlevel={session.setDemoLevel}
         speed={view.demoSpeed}
@@ -93,10 +105,11 @@
     </aside>
   {/if}
   <section class="card stage-panel question-panel">
-    <div class="practice-question-header">
+    <div class="practice-question-header" class:assessment-header={view.mode === 'assessment'}>
       <div class="practice-question-heading">
         <div class="meta">
-          {MODES.find((m) => m[0] === view.mode)[1]} · {page.count}/{page.size} submitted
+          {MODES.find((m) => m[0] === view.mode)?.[1] ?? 'Mixed revision'} · {page.count}/{page.size}
+          submitted
         </div>
         <div class="level-row">
           <h2 id="stage-title" tabindex="-1">
@@ -113,6 +126,7 @@
                 id="level"
                 value={view.pageNavigation?.level ?? page.level}
                 disabled={Boolean(
+                  view.bank.combined ||
                   page.trial ||
                   page.pendingChoice ||
                   (view.practiceSet && page.complete) ||
@@ -122,24 +136,46 @@
                 >{#each LEVELS as label, index}<option value={index}>{label}</option>{/each}</select
               ></label
             >
-            <button
+          {/if}
+        </div>
+      </div>
+      {#if view.mode !== 'assessment'}
+        <div class="practice-question-tools">
+          {#if !hasProblemTips}<button
               class="action-button quiet"
               bind:this={referenceButton}
               type="button"
               id="reference"
               aria-expanded={view.reference}
               onclick={() => session.setReference(!view.reference)}>Check method</button
-            >
+            >{/if}
+          {#if ['errors', 'plain', 'problem', 'mixed'].includes(view.mode) && view.practiceSet?.remaining == null}
+            {#key page.attempt}<PracticeCountdown
+                questions={page.size}
+                complete={page.complete}
+              />{/key}
           {/if}
         </div>
-      </div>
-      {#if ['errors', 'plain'].includes(view.mode) && view.practiceSet?.remaining == null}
-        {#key page.attempt}<PracticeCountdown
-            questions={page.size}
-            complete={page.complete}
-          />{/key}
       {/if}
     </div>
+    {#if view.mode === 'assessment' && page.complete && view.assessment}
+      <div class="assessment-result">
+        <p>
+          <strong
+            >Assessment complete · {view.assessment.correct} of {view.assessment.size} correct.</strong
+          >
+        </p>
+        <button
+          class="action-button quiet reassess-link"
+          class:ready={canReassess}
+          disabled={!canReassess}
+          onclick={() => session.reassess()}>Reassess</button
+        >
+        {#if !canReassess}<span class="muted"
+            >Available {new Date(view.assessment.availableAt).toLocaleDateString('en-GB')}</span
+          >{/if}
+      </div>
+    {/if}
     <p class="muted">
       {view.mode === 'assessment'
         ? `Try all ${page.size} without hints. This helps you decide where to begin and measure future progress.`
@@ -150,6 +186,16 @@
     {#if view.mode === 'scaffolded'}<p class="muted">
         These answers help you practise and do not change your independent challenge level.
       </p>{/if}
+    {#if hasProblemTips}
+      <ProblemTips
+        teaching={view.sourceBank.problemTeaching}
+        level={question.level}
+        open={view.tips}
+        onopen={session.setProblemTips}
+        speed={view.demoSpeed}
+        onspeed={session.setDemoSpeed}
+      />
+    {/if}
     <QuestionList
       bank={view.bank}
       assessment={view.mode === 'assessment'}
@@ -165,6 +211,11 @@
       <section id="active-question" aria-labelledby="active-question-title">
         <h3 id="active-question-title">Question {view.selected + 1}</h3>
         <div class="active-question-content">
+          {#if question.questionPrefix ?? view.sourceBank.questionPrefix}
+            <p class="question-prefix">
+              {question.questionPrefix ?? view.sourceBank.questionPrefix}
+            </p>
+          {/if}
           <p class="selected-equation" class:word-question={question.prose}>
             <MathText text={question.q} />
           </p>
@@ -180,10 +231,13 @@
                 src={asset(question.errorImage)}
                 alt={`Student working for ${question.q}, with a deliberate mistake. Stated answer: ${question.wrong}.`}
               />{:else}<EquationWorking rows={question.balance} numbered />{/if}{/if}
-          <fieldset class="answer-controls" disabled={Boolean(view.practiceSet?.finished)}>
+          <fieldset
+            class="answer-controls"
+            disabled={Boolean(view.practiceSet?.finished || page.complete)}
+          >
             <AnswerForm
               {question}
-              bank={view.bank}
+              bank={view.sourceBank}
               mode={view.mode}
               {response}
               draft={view.draft}
@@ -195,7 +249,7 @@
               onhint={session.hint}
             />
           </fieldset>
-          <Feedback {question} {response} mode={view.mode} bank={view.bank} />
+          <Feedback {question} {response} mode={view.mode} bank={view.sourceBank} />
         </div>
       </section>
       {#key view.draftKey}<WorkingArea
@@ -249,7 +303,7 @@
           >Review the method. This question is recorded as assisted.</Dialog.Description
         >
         <DemoPlayer
-          bank={view.bank}
+          bank={view.sourceBank}
           initialLevel={view.demoLevel}
           onlevel={session.setDemoLevel}
           speed={view.demoSpeed}
@@ -262,14 +316,47 @@
 {/if}
 
 <style>
+  .reassess-link {
+    color: var(--muted);
+  }
+  .reassess-link.ready {
+    color: var(--ink);
+    font-weight: 700;
+  }
   .practice-question-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 0.5rem 1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: start;
+    gap: 0.5rem;
+  }
+  .assessment-header {
+    grid-template-columns: minmax(0, 1fr);
   }
   .practice-question-heading {
-    flex: 1 1 16rem;
     min-width: 0;
+  }
+  .practice-question-heading h2 {
+    font-size: clamp(1rem, 5cqw, 1.5rem);
+  }
+  .practice-question-heading label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+  }
+  .practice-question-tools {
+    display: grid;
+    justify-items: end;
+    gap: 0.75rem;
+    min-width: 0;
+    font-size: 0.875rem;
+  }
+  .practice-question-tools > button {
+    font-size: inherit;
+    padding-inline: 0;
+  }
+  .question-prefix {
+    margin-bottom: 0.25rem;
   }
 </style>

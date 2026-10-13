@@ -90,6 +90,49 @@ export function maintainRecommendations(
 function priority(item) {
   return item.missing ? 0 : item.rate < 75 ? 1 : 2;
 }
+
+// Teaching defaults, not measured population statistics. Learner evidence gradually replaces them.
+const initialPriority = {
+  M10: 0.95,
+  M13: 0.9,
+  M15: 0.85,
+  M04: 0.8,
+  M06: 0.7,
+  M03: 0.6,
+  M02: 0.5,
+  M01: 0.4,
+};
+
+/** Blend the existing missing/weak/stale revision policy with a teaching prior over twenty eligible answers. */
+export function topicPriority(row) {
+  const prior = initialPriority[row.topic.bank] ?? 0.65;
+  const count = row.current.reduce((sum, item) => sum + item.count, 0);
+  const evidence = Math.min(1, count / 20);
+  const urgency = row.current.length
+    ? Math.max(
+        ...row.current.map(
+          (item) => (3 - priority(item) - (item.rate ?? 0) / 100 + (item.stale ? 0.25 : 0)) / 3,
+        ),
+      )
+    : prior;
+  return prior * (1 - evidence) + urgency * evidence;
+}
+
+/** Match every entered term anywhere in the title; sort without changing the source/prerequisite order. */
+export function discoverTopics(topics, query, order, rows = []) {
+  const terms = query.toLocaleLowerCase('en-GB').trim().split(/\s+/).filter(Boolean);
+  const scores = new Map(rows.map((row) => [row.topic.bank, topicPriority(row)]));
+  return topics
+    .filter((topic) => terms.every((term) => topic.title.toLocaleLowerCase('en-GB').includes(term)))
+    .sort(
+      (a, b) =>
+        (order === 'a-z'
+          ? 0
+          : (scores.get(b.bank) ?? initialPriority[b.bank] ?? 0.65) -
+            (scores.get(a.bank) ?? initialPriority[a.bank] ?? 0.65)) ||
+        a.title.localeCompare(b.title, 'en-GB'),
+    );
+}
 /**
  * Credit a fully completed recommendation once; ignore expired or ordinary sets.
  * Parameter profile: learner record.

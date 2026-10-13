@@ -33,7 +33,14 @@
   import { createSession } from '#lib/application/session.mjs';
   import LearningSteps from './LearningSteps.svelte';
   import catalogue from '#lib/content/practice-pages.json';
+  // Sorting this copy keeps teaching priority and encoded catalogue addresses unchanged.
+  const selectorTopics = [...catalogue.topics].sort((a, b) =>
+    a.title.localeCompare(b.title, 'en', { sensitivity: 'base' }),
+  );
   import PracticeSets from '#lib/components/practice/PracticeSets.svelte';
+  import CombinedPractice from './CombinedPractice.svelte';
+  const combined = $derived(topicId === 'combined');
+  let initialTopics = $state([]);
 
   import OneDriveReminder from '#lib/components/progress/OneDriveReminder.svelte';
   import ProfileDialog from '#lib/components/ui/ProfileDialog.svelte';
@@ -56,7 +63,6 @@
   let profileTrigger = $state();
   /** Switch to bank id through the session, then navigate to its public URL. Calls topicPath, resolve and goto. */
   async function selectTopic(id) {
-    session.switchTopic(id);
     await goto(resolve(topicPath(id)));
   }
   /** Select/create learner name and open the URL topic/set. Called by ProfileDialog; create confirms a new name. */
@@ -64,16 +70,23 @@
     const setCode = new URLSearchParams(location.search).get('set');
     const result = session.chooseName(name, create);
     if (result.profile) {
-      session.switchTopic(topicId);
+      session.switchTopic(combined ? 'M01' : topicId);
       if (setCode) openSet(setCode);
     }
     return result;
   }
   /** Resume the matching saved code or start a set; show validation failures without replacing the page. */
+  const matchesTopics = (saved) =>
+    !initialTopics.length ||
+    (saved?.topics?.length === initialTopics.length &&
+      initialTopics.every((topic) => saved.topics.includes(topic)));
   function openSet(code) {
     try {
-      if (view.savedSet?.code === code) session.resumePracticeSet();
-      else session.startPracticeSet(code);
+      if (view.savedSet?.code === code && matchesTopics(view.savedSet)) session.resumePracticeSet();
+      else
+        session.startPracticeSet(code, null, {
+          topics: initialTopics.length ? initialTopics : undefined,
+        });
     } catch (cause) {
       warning = cause.message;
     }
@@ -138,7 +151,10 @@
         const banks = await Promise.all(
           foundationTopics.map(({ file }) => loadBank(asset(`data/${file}.json`))),
         );
-        const bank = banks.find((b) => b.topic === topicId);
+        const bank = combined ? banks[0] : banks.find((b) => b.topic === topicId);
+        initialTopics = (new URLSearchParams(location.search).get('topics') ?? '')
+          .split(',')
+          .filter((id) => banks.some((b) => b.topic === id));
         if (disposed) return;
         let temporaryStorage;
         try {
@@ -166,8 +182,8 @@
           window,
         );
         if (view.profile) {
-          if (!setCode || view.practiceSet?.code !== setCode) {
-            session.switchTopic(topicId);
+          if (!setCode || view.practiceSet?.code !== setCode || !matchesTopics(view.practiceSet)) {
+            session.switchTopic(combined ? 'M01' : topicId);
             if (setCode) openSet(setCode);
           }
         }
@@ -291,7 +307,9 @@
     <section class="card page-panel full">
       <p class="eyebrow"><a class="subject-link" href={resolve('/')}>Foundation maths</a></p>
       <h1 class:draft-title={view.bank.draft}>
-        {view.bank.title}{#if view.bank.draft}<span class="draft-stamp">Draft</span>{/if}
+        {combined && !view.practiceSet
+          ? 'Combined problems'
+          : view.bank.title}{#if view.bank.draft}<span class="draft-stamp">Draft</span>{/if}
       </h1>
       <p>Practise maths at your pace, with clear examples and feedback on each answer.</p>
       <button id="begin" class="action-button primary" onclick={() => (profileOpen = true)}
@@ -357,7 +375,7 @@
               collisionPadding={16}
             >
               <Select.Viewport>
-                {#each catalogue.topics as topic}
+                {#each selectorTopics as topic}
                   <Select.Item class="topic-option" value={topic.bank} label={topic.title}>
                     {#snippet children({ selected })}
                       <span class="topic-option-tick" aria-hidden="true">{selected ? '✓' : ''}</span
@@ -374,37 +392,48 @@
       {#snippet title()}
         <p class="eyebrow"><a class="subject-link" href={resolve('/')}>Foundation maths</a></p>
         <h1 class:draft-title={view.bank.draft}>
-          {view.bank.title}{#if view.bank.draft}<span class="draft-stamp">Draft</span>{/if}
+          {combined && !view.practiceSet
+            ? 'Combined problems'
+            : view.bank.title}{#if view.bank.draft}<span class="draft-stamp">Draft</span>{/if}
         </h1>
       {/snippet}
       {#snippet description()}
         <p>
           Work through this topic in order: assess, learn, practise with support, spot errors, then
-          practise independently.
+          {view.bank.problemSolvingTopic
+            ? 'solve problems independently.'
+            : 'practise independently and solve problems.'}
         </p>
       {/snippet}
     </PracticeSets>
-    <div class="learning-header">
-      {#if !view.practiceSet}<LearningSteps mode={view.mode} onselect={switchStage} />{/if}
-      {#if view.page && view.mode !== 'demo'}<Progress
-          mode={view.mode}
-          page={view.page}
-          track={view.track}
-        />{/if}
-    </div>
-    {#if view.mode === 'demo'}<section class="card stage-panel">
-        <h2 id="stage-title" tabindex="-1">
-          {view.bank.method ? view.bank.title : 'Keep the equation balanced'}
-        </h2>
-        <DemoPlayer
-          bank={view.bank}
-          initialLevel={view.demoLevel}
-          onlevel={session.setDemoLevel}
-          speed={view.demoSpeed}
-          onspeed={session.setDemoSpeed}
-        />
-      </section>
-    {:else}<PracticeActivity {view} {session} />{/if}
+    {#if combined && !view.practiceSet}<CombinedPractice {catalogue} {session} {initialTopics} />
+    {:else}
+      <div class="learning-header">
+        {#if !view.practiceSet}<LearningSteps
+            bank={view.bank}
+            mode={view.mode}
+            onselect={switchStage}
+          />{/if}
+        {#if view.page && view.mode !== 'demo' && !view.bank.combined}<Progress
+            mode={view.mode}
+            page={view.page}
+            track={view.track}
+          />{/if}
+      </div>
+      {#if view.mode === 'demo'}<section class="card stage-panel">
+          <h2 id="stage-title" tabindex="-1">
+            {view.bank.method ? view.bank.title : 'Keep the equation balanced'}
+          </h2>
+          <DemoPlayer
+            bank={view.bank}
+            initialLevel={view.demoLevel}
+            onlevel={session.setDemoLevel}
+            speed={view.demoSpeed}
+            onspeed={session.setDemoSpeed}
+          />
+        </section>
+      {:else}<PracticeActivity {view} {session} />{/if}
+    {/if}
   {/if}
 </main>
 <SiteFooter

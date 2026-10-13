@@ -562,6 +562,49 @@ export async function checkProgress(browser, base) {
       await page.getByRole('link', { name: 'Open recommended set', exact: true }).count(),
       3,
     );
+    const beforeRename = await page.evaluate(
+      () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0],
+    );
+    await page.locator('#rename-profile').fill('Renamed Learner');
+    await page.getByRole('button', { name: 'Rename profile', exact: true }).click();
+    await page.getByText('Name updated. Progress kept.', { exact: true }).waitFor();
+    const renamed = await page.evaluate(
+      () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0],
+    );
+    assert.equal(renamed.id, beforeRename.id);
+    assert.deepEqual(renamed.topics, beforeRename.topics);
+    await page.getByRole('button', { name: 'Reset progress', exact: true }).click();
+    const reset = page.getByRole('dialog');
+    assert.equal(await reset.getByRole('button', { name: 'Confirm reset' }).isEnabled(), false);
+    await reset.getByLabel('Type Renamed Learner to confirm').fill('Renamed Learner');
+    await reset.getByRole('button', { name: 'Confirm reset' }).click();
+    await reset.waitFor({ state: 'hidden' });
+    const cleared = await page.evaluate(
+      () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0],
+    );
+    assert.deepEqual(cleared.topics, {});
+    assert.equal(cleared.id, beforeRename.id);
+    await page.getByRole('button', { name: 'Delete profile', exact: true }).click();
+    await page.getByRole('dialog').getByRole('button', { name: 'Cancel', exact: true }).click();
+    assert.equal(
+      await page.evaluate(
+        () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles.length,
+      ),
+      1,
+    );
+    await page.getByRole('button', { name: 'Delete profile', exact: true }).click();
+    await page
+      .getByRole('dialog')
+      .getByLabel('Type Renamed Learner to confirm')
+      .fill('Renamed Learner');
+    await page.getByRole('dialog').getByRole('button', { name: 'Confirm deletion' }).click();
+    await page.getByRole('heading', { name: 'Manage your profile' }).waitFor({ state: 'hidden' });
+    assert.equal(
+      await page.evaluate(
+        () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles.length,
+      ),
+      0,
+    );
     assert.deepEqual(errors, []);
     console.log(
       'Progress: mobile topic details, accessibility, JSON/CSV downloads, validated import, recommended opening and unfinished persistence pass.',

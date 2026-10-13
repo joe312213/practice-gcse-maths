@@ -230,14 +230,14 @@ test("Three full pages per stage/level preserve authored questions; all answers 
       new URL("../website/static/data/equations.json", import.meta.url),
     ),
   );
-  assert.equal(bank.questions.length, 171);
-  assert.equal(new Set(bank.questions.map((q) => q.id)).size, 171);
+  assert.equal(bank.questions.length, 243);
+  assert.equal(new Set(bank.questions.map((q) => q.id)).size, 243);
   for (let l = 0; l < 3; l++)
     assert.equal(
       bank.questions.filter((q) => q.type === "plain" && q.level === l).length,
       36,
     );
-  for (const q of bank.questions) {
+  for (const q of bank.questions.filter((q) => q.type !== "problem")) {
     assert.ok(q.balance.length >= 3);
     assert.equal(markAnswer(q.answer, q.answer).correct, true);
     if (q.type === "errors") assert.ok(q.correct_balance && q.correction);
@@ -454,4 +454,13 @@ test("independent scores retain the same ten-answer window for 9, 10 and 12-ques
   }
   assert.equal(results[0], results[1]);
   assert.equal(results[1], results[2]);
+});
+
+test("fixed activity scoring windows ignore individual page length", () => {
+  for (const size of [1, 2, 4, 6, 9, 12]) {
+    assert.equal(scoringWindow("scaffolded", size), 4);
+    assert.equal(scoringWindow("errors", size), 4);
+    assert.equal(scoringWindow("problem", size), 6);
+    assert.equal(scoringWindow("assessment", size), 6);
+  }
 });

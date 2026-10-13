@@ -6,10 +6,12 @@
  *
  * Used By: ShowDemo.svelte.
  *
- * Uses: No local modules.
+ * Uses: handwriting.mjs for shared ordered pen strokes.
  *
  * Libs: None; uses Web Animations and browser style/media APIs.
  */
+import { animateStrokes } from './handwriting.mjs';
+
 /**
  * Create ink animation controls for renderer root. Called by ShowDemo; dispose with cancel on unmount.
  * @example const motion = createDemoMotion(root); const before = motion.snapshot(); // Reveal after the renderer updates.
@@ -24,7 +26,7 @@ export function createDemoMotion(root) {
     return new Map(
       [
         ...root.querySelectorAll(
-          '.method-guide, .equation-divider, .balance td > span, .arithmetic-working text',
+          '.method-guide, .equation-divider, [data-written-ink] [data-stroke]',
         ),
       ].map((element) => {
         const style = getComputedStyle(element);
@@ -32,13 +34,9 @@ export function createDemoMotion(root) {
           ? 'strokeDashoffset'
           : element.matches('.equation-divider')
             ? 'backgroundSize'
-            : 'clipPath';
+            : 'ink';
         const value =
-          property === 'clipPath'
-            ? style.visibility === 'hidden'
-              ? null
-              : 'inset(0 0 0 0)'
-            : style[property];
+          property === 'ink' ? (style.visibility === 'hidden' ? null : 'visible') : style[property];
         return [element, { property, value }];
       }),
     );
@@ -54,20 +52,46 @@ export function createDemoMotion(root) {
     snapshot,
     cancel,
     /** Interpolate only newly revealed ink; final layout and semantics remain in the renderer. */
-    reveal(before, speed) {
+    reveal(before, speed, duration = 650) {
       cancel();
       if (reduced.matches) return;
+      const strokes = [];
+      const own = (animation) => {
+        animation.playbackRate = speed;
+        animations.add(animation);
+        animation.onfinish = () => {
+          animation.cancel();
+          animations.delete(animation);
+        };
+      };
       for (const [element, { property, value }] of snapshot()) {
         const previous = before.get(element)?.value;
         if (value === null || previous === value) continue;
-        const from = previous ?? (property === 'clipPath' ? 'inset(0 100% 0 0)' : value);
-        const animation = element.animate([{ [property]: from }, { [property]: value }], {
-          duration: 650,
-          easing: 'linear',
-        });
-        animation.playbackRate = speed;
+        if (property === 'ink') strokes.push(element);
+        else
+          own(
+            element.animate([{ [property]: previous ?? value }, { [property]: value }], {
+              duration,
+              easing: 'linear',
+            }),
+          );
+      }
+      animateStrokes(strokes, duration).forEach(own);
+    },
+    /** Hold the final highlight for 3s, then fade only its background (never the written ink). */
+    fadeHighlights() {
+      const targets = root.querySelectorAll(
+        '.balance .method-active > span, .calculation-working .method-active, .method-focus, .step-note[aria-current="step"], .steps li[aria-current="step"]',
+      );
+      for (const target of targets) {
+        const property = target.matches('.method-focus') ? 'fill' : 'backgroundColor';
+        const animation = target.animate(
+          [{ [property]: getComputedStyle(target)[property] }, { [property]: 'transparent' }],
+          { delay: 3000, duration: reduced.matches ? 0 : 1000, fill: 'forwards', easing: 'linear' },
+        );
+        animation.id = 'method-highlight-fade';
+        // Retain the finished effect until replay, navigation or disposal cancels it.
         animations.add(animation);
-        animation.onfinish = () => animations.delete(animation);
       }
     },
     pause() {
@@ -77,7 +101,8 @@ export function createDemoMotion(root) {
       for (const animation of animations) animation.play();
     },
     setSpeed(speed) {
-      for (const animation of animations) animation.updatePlaybackRate(speed);
+      for (const animation of animations)
+        if (animation.id !== 'method-highlight-fade') animation.updatePlaybackRate(speed);
     },
   };
 }

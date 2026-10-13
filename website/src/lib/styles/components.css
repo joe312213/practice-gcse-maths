@@ -153,6 +153,7 @@ p {
   font-weight: 700;
 }
 .intro {
+  grid-template-areas: 'controls' 'title' 'description';
   /* Transfer 12px from the controls' maximum width to the column gap. */
   --intro-extra-clearance: 0.75rem;
   --intro-controls-max-width: calc(22rem - var(--intro-extra-clearance));
@@ -201,18 +202,19 @@ nav button {
 .question-panel {
   container-type: inline-size;
 }
-/* Question layout tuning: intrinsic widths decide wrapping without JS thresholds. */
+/* Preferred columns stay CSS-owned; the shared action measures bounded font fitting. */
 .question-list {
   --question-gap: 10px;
   --question-columns: 2;
+  --question-layout-columns: var(--question-columns);
   --question-padding-left: 10px;
   --question-padding-right: 4px;
   /* Fixed number slot selected in the 16px/18px visual comparison. */
   --question-number-width: 16px;
   /* Corner labels reserve vertical space, leaving room for paired 4×4 products at 360px. */
-  --question-content-padding-inline: 8px;
-  --question-content-padding-block: 1.5rem;
-  --question-marker-inset: 4px;
+  --question-content-padding-inline: 10px;
+  --question-content-padding-block: calc(1rem + 2px);
+  --question-marker-inset: 2px;
   @apply flex flex-wrap;
   justify-content: center;
   gap: var(--question-gap);
@@ -227,18 +229,25 @@ nav button {
 .question-list li {
   display: flex;
   justify-content: center;
-  flex: 0 1
-    calc((100% - (var(--question-columns) - 1) * var(--question-gap)) / var(--question-columns));
-  min-inline-size: max-content;
+  flex: 0 0
+    calc(
+      (100% - (var(--question-layout-columns) - 1) * var(--question-gap)) /
+        var(--question-layout-columns)
+    );
+  min-inline-size: 0;
   max-inline-size: 100%;
+}
+.question-list li.wide-question {
+  flex-basis: 100%;
 }
 .question-option {
   position: relative;
   display: block;
   text-align: center;
-  min-height: 78px;
-  /* Intrinsic maths width decides wrapping; each button fills its equal flex-row slot. */
-  min-inline-size: max-content;
+  /* Preserve a 30px text/border floor; future padding changes also change row height. */
+  min-height: max(var(--control-size), calc(30px + 2 * var(--question-content-padding-block)));
+  /* Buttons fill equal row slots; the shared fitting action handles long previews. */
+  min-inline-size: 0;
   width: 100%;
   max-width: 100%;
   padding: var(--question-content-padding-block) var(--question-content-padding-inline);
@@ -249,6 +258,7 @@ nav button {
   display: block;
 }
 .question-outcome {
+  line-height: 1;
   position: absolute;
   right: var(--question-padding-right);
   bottom: var(--question-marker-inset);
@@ -268,15 +278,19 @@ nav button {
 }
 .question-option .num {
   color: var(--muted);
-  font-size: 0.8rem;
+  opacity: 0.9;
+  font-size: 0.72rem;
+  /* Preserve the original number line box when reducing its glyph size. */
+  line-height: 0.8rem;
   position: absolute;
   left: var(--question-padding-left);
-  top: var(--question-marker-inset);
+  /* Original 4px number inset plus the user’s final 1px downward refinement. */
+  top: 5px;
   min-width: var(--question-number-width);
   text-align: left;
 }
 .question-option .equation {
-  font-size: 1.08rem;
+  font-size: var(--question-fit-font, 1.08rem);
   white-space: nowrap;
 }
 .question-option.correct {
@@ -499,7 +513,7 @@ footer {
       var(--card-border-image) border-box;
   }
   .question-option .equation {
-    font-size: 1.2rem;
+    font-size: var(--question-fit-font, 1.2rem);
   }
   .selected-equation {
     font-size: 1.8rem;
@@ -587,7 +601,7 @@ footer {
 .balance td.step-note {
   font-size: 0.85rem;
   text-align: left;
-  padding: 5px 8px 5px 0;
+  padding: 5px 0;
   vertical-align: middle;
   color: var(--muted);
   line-height: 1.35;
@@ -596,23 +610,12 @@ footer {
   max-width: 100%;
   overflow-x: auto;
 }
+.demo-working .balance.annotated td.lhs {
+  padding-left: 0;
+}
 .demo-working .balance {
   width: 100%;
   margin-block: 10px;
-}
-.demo-controls {
-  display: flex;
-  align-items: center;
-  gap: var(--control-gap);
-  flex-wrap: wrap;
-  padding: 5px 0;
-  background: var(--surface);
-  border-radius: 8px;
-}
-.secondary-controls {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
 }
 .demo-status {
   font-size: 0.85rem;
@@ -643,11 +646,6 @@ footer {
 }
 .demo-body .steps li {
   padding: 4px 6px;
-}
-.demo-stage :is(.steps li, .step-note)[aria-current='step'] {
-  background: var(--selection-bg);
-  color: var(--selection-text);
-  box-shadow: inset 3px 0 var(--selection-border);
 }
 /* Wider screens can show method descriptions at the normal root text size. */
 @variant viewport-medium {
@@ -720,16 +718,6 @@ footer a {
   margin: 18px 0;
 }
 
-.demo-stage {
-  scroll-margin-block: 12px;
-}
-.demo-speed {
-  @apply inline-flex items-center;
-  gap: 6px;
-  margin: 0;
-  font-size: 0.82rem;
-  font-weight: 400;
-}
 .demo-working .balance td > span {
   display: inline-block;
 }
@@ -774,12 +762,14 @@ footer a {
 
 /* Stack search and topic selection at the top right of the topic header. */
 .intro-title {
+  grid-area: title;
   min-width: 0;
 }
 .intro-title h1 {
   font-size: clamp(1.75rem, 4vw, 3.2rem);
 }
 .intro-description {
+  grid-area: description;
   grid-column: 1 / -1;
 }
 .intro-description p {
@@ -787,6 +777,7 @@ footer a {
   font-size: 0.875rem;
 }
 .intro-controls {
+  grid-area: controls;
   width: 100%;
   max-width: var(--intro-controls-max-width);
   min-width: 0;
@@ -828,9 +819,28 @@ footer a {
 .subject-link:hover {
   text-decoration: underline;
 }
+/* Share a phone row; wrap the whole search/Go group before its prompt is cramped. */
+@variant max-viewport-small {
+  .intro-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: flex-end;
+  }
+  .intro-controls .practice-set-code {
+    flex: 1 1 0;
+    /* 10rem search + the existing Go target and input gap. */
+    min-width: min(100%, calc(10rem + var(--control-size) + 8px));
+  }
+  .intro-controls .topic-selector {
+    flex: none;
+  }
+}
+
 /* Medium phones can place compact topic controls beside the introduction. */
 @variant viewport-small {
   .intro {
+    grid-template-areas: 'title controls' 'description description';
     column-gap: calc(1rem + var(--intro-extra-clearance));
     grid-template-columns: minmax(min-content, 3fr) minmax(0, 4fr);
   }
@@ -854,8 +864,7 @@ footer a {
   background: #fff;
 }
 .topic-selector {
-  /* Short trigger label needs 3em less width; the option list sizes independently. */
-  width: calc(100% - 3em);
+  /* Trigger width comes from the shared choice-field rule; align its right edge. */
   justify-self: end;
   min-width: 0;
   max-width: 100%;
@@ -975,11 +984,63 @@ footer a {
 }
 
 .topic-cards {
-  /* Native columns pack variable-height cards; DOM/keyboard order runs down each column. */
+  /* CSS owns track sizing; topicMasonry packs cards into the shortest available column. */
   --topic-card-width: 9.375rem;
   --topic-card-gap: 1rem;
-  column-width: var(--topic-card-width);
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--topic-card-width)), 1fr));
   column-gap: var(--topic-card-gap);
+  align-items: start;
+}
+.topic-cards.masonry-ready > .topic-card-slot {
+  position: absolute;
+}
+.topic-discovery {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 1rem;
+}
+.topic-discovery-heading {
+  container-type: inline-size;
+}
+.topic-discovery-heading h1 {
+  font-size: min(2rem, 10cqw);
+  white-space: nowrap;
+}
+.topic-sort {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  padding: 0;
+  border: 0;
+  font-size: 0.8rem;
+}
+.topic-sort label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 0;
+  cursor: pointer;
+}
+.topic-discovery-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-width: 0;
+}
+.topic-discovery-controls input[type='search'] {
+  flex: 1 1 8rem;
+  min-width: 0;
+  width: 100%;
+}
+.topic-card-slot {
+  /* Reserve clearance for rotated stamp ink above each card. */
+  display: inline-block;
+  width: 100%;
+  padding-block-start: var(--topic-card-gap);
+  break-inside: avoid;
 }
 .topic-card {
   min-width: 140px;
@@ -992,7 +1053,7 @@ footer a {
   --card-padding: 0.75rem;
   display: inline-block;
   width: 100%;
-  margin-block-end: var(--topic-card-gap);
+  margin: 0;
   break-inside: avoid;
   position: relative;
   color: var(--text);
@@ -1044,6 +1105,10 @@ footer a {
 .active-question-content {
   margin-inline-start: 2em;
 }
+.active-question-content > .selected-equation {
+  /* Reduce the standard 15px question margin by the requested half rem. */
+  margin-block-end: calc(15px - 0.5rem);
+}
 .question-workspace #answer {
   max-width: 15rem;
 }
@@ -1061,15 +1126,16 @@ footer a {
 .progress-card {
   display: grid;
   --meter-width: 4rem;
-  grid-template-columns: minmax(0, 1fr) var(--meter-width);
+  grid-template-columns: max-content var(--meter-width) max-content;
   align-items: center;
-  gap: 0.5rem 1rem;
+  gap: 0.35rem 0.5rem;
   margin-bottom: 1rem;
   font-size: 0.9rem;
 }
 .progress-card > * {
   grid-column: 1 / -1;
 }
+.progress-card h2,
 .progress-card .progress-value,
 .progress-card .progress-meter {
   grid-column: auto;
@@ -1103,10 +1169,14 @@ footer a {
 .topic-solution {
   container-type: inline-size;
   margin-top: 1rem;
+  text-align: center;
+}
+.topic-solution .calculation-working.compact .calculation-line {
+  font-size: clamp(0.8rem, 11cqi, 0.95rem);
 }
 .topic-solution .balance {
   /* Like SVG viewBox diagrams, scale all working geometry with the preview width. */
-  font-size: 10cqi;
+  font-size: 11.5cqi;
   width: 100%;
   margin-block: 0.625em;
 }
@@ -1146,7 +1216,7 @@ footer a {
   margin: 0;
   justify-self: end;
   width: max-content;
-  max-width: 100%;
+  max-width: min(100%, 20rem);
   text-align: left;
 }
 /* Place compact progress beside the stage navigation when the viewport has room. */
@@ -1157,7 +1227,7 @@ footer a {
     max-width: 48.75rem;
   }
   .learning-header:has(.progress-card) {
-    grid-template-columns: minmax(0, 1fr) minmax(0, clamp(10rem, 20vw, 16rem));
+    grid-template-columns: minmax(0, 1fr) max-content;
   }
   .learning-header .progress-card {
     grid-column: 2;
@@ -1170,13 +1240,10 @@ footer a {
     --meter-width: 6rem;
   }
 }
-/* Keep progress compact beneath navigation by using a wrapping horizontal strip. */
+/* Keep the two-line progress summary against the mobile text gutter. */
 @variant max-viewport-progress-grid {
   .learning-header .progress-card {
-    display: flex;
-    flex-wrap: wrap;
     width: 100%;
-    gap: 0.35rem 0.75rem;
   }
 }
 .drawing-surface {
@@ -1250,7 +1317,7 @@ footer a {
 }
 
 .question-list li.word-problem {
-  min-inline-size: min(100%, 14rem);
+  min-inline-size: 0;
 }
 .word-problem .question-option {
   min-inline-size: 0;

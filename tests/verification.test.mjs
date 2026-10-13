@@ -42,11 +42,18 @@ test("unchanged successful inputs skip every job; docs and theme changes stay na
   assert.deepEqual(selected({ ...initial, "HANDOFF.md": "b" }), ["docs"]);
   assert.deepEqual(
     selected({ ...initial, "website/src/lib/styles/theme-tokens.css": "b" }),
-    ["new-topics", "colours", "practice-sets"],
+    ["new-topics", "method-playback", "colours", "practice-sets"],
   );
   assert.deepEqual(
     selected({ ...initial, "website/src/lib/styles/components.css": "b" }),
-    ["new-topics", "presentation", "colours", "practice-sets", "progress"],
+    [
+      "new-topics",
+      "presentation",
+      "method-playback",
+      "colours",
+      "practice-sets",
+      "progress",
+    ],
   );
 });
 test("logic and demo changes use their actual verification families", () => {
@@ -67,7 +74,7 @@ test("logic and demo changes use their actual verification families", () => {
       ...initial,
       "website/src/lib/components/teaching/ShowDemo.svelte": "b",
     }),
-    ["new-topics", "svelte", "presentation"],
+    ["new-topics", "svelte", "presentation", "method-playback"],
   );
 });
 test("deleted/new files, failed jobs, changed policy and environment invalidate evidence", () => {
@@ -76,6 +83,7 @@ test("deleted/new files, failed jobs, changed policy and environment invalidate 
   assert.deepEqual(selected(removed), [
     "new-topics",
     "presentation",
+    "method-playback",
     "colours",
     "practice-sets",
     "progress",
@@ -120,4 +128,27 @@ test("moved startup and history/session dependencies select their browser checks
   }
   assert.equal(isFormatInput("tests/working-cache.test.mjs"), true);
   assert.equal(isFormatInput("website/vendor/puzzles/tests/go.test.js"), false);
+});
+
+test("playback cosmetics select only the focused playback browser job", () => {
+  assert.deepEqual(
+    selected({
+      ...initial,
+      "website/src/lib/styles/method-playback.css": "new",
+    }),
+    ["method-playback"],
+  );
+  assert.deepEqual(
+    selected({
+      ...initial,
+      "website/scripts/browser/method-playback-checks.mjs": "new",
+    }),
+    ["method-playback"],
+  );
+  assert.ok(
+    selected({
+      ...initial,
+      "website/src/lib/application/session.mjs": "changed",
+    }).includes("startup"),
+  );
 });

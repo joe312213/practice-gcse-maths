@@ -1,3 +1,4 @@
+import { combinedBank, combinedQuestions } from './combined-practice.mjs';
 /**
  * Purpose: Encode and decode nine-character practice-set codes and resolve their authored pages.
  *
@@ -137,12 +138,19 @@ export function practiceInputCode(catalogue, raw) {
  * Parameter random: injected random-number source.
  * @example resolvePracticePage(catalogue, banks, { topic: 9, type: 0, slot: 1 }, 0);
  */
-export function resolvePracticePage(catalogue, banks, entry, level, random = Math.random) {
+export function resolvePracticePage(
+  catalogue,
+  banks,
+  entry,
+  level,
+  random = Math.random,
+  options = {},
+) {
   const topic = catalogue.topics.find((topic) => topic.code === entry.topic);
   const type = PAGE_TYPES.find((type) => type.id === entry.type);
-  const bank = banks.find(
-    (bank) => bank.subject === catalogue.subject && bank.topic === topic?.bank,
-  );
+  const bank = topic?.aggregate
+    ? combinedBank(banks)
+    : banks.find((bank) => bank.subject === catalogue.subject && bank.topic === topic?.bank);
   const slots = topic?.pages.find(
     (page) => page.type === entry.type && page.level === level,
   )?.slots;
@@ -152,13 +160,22 @@ export function resolvePracticePage(catalogue, banks, entry, level, random = Mat
     );
   const index =
     entry.slot === 0 ? Math.floor(random() * slots.length) : (entry.slot - 1) % slots.length;
-  const ids = slots[index];
+  const ids =
+    topic.aggregate && entry.slot === 0
+      ? combinedQuestions(banks, catalogue, level, type.mode, options, random)
+      : slots[index];
   if (
     !ids?.length ||
     ids.length > 10 ||
     new Set(ids).size !== ids.length ||
     ids.some(
-      (id) => !bank.questions.some((q) => q.id === id && q.type === type.mode && q.level === level),
+      (id) =>
+        !bank.questions.some(
+          (q) =>
+            q.id === id &&
+            q.type === (type.mode === 'mixed' ? 'plain' : type.mode) &&
+            q.level === level,
+        ),
     )
   )
     throw Error('This authored page has invalid question references.');

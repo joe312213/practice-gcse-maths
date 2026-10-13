@@ -183,7 +183,7 @@ export function parseProgress(raw) {
       const clean = {};
       for (const field of ['question', 'attempt', 'type', 'level', 'correct', 'assisted', 'at'])
         clean[field] = record[field];
-      for (const field of ['revision', 'practiceCode'])
+      for (const field of ['revision', 'practiceCode', 'raw'])
         if (record[field] !== undefined) {
           requireValue(text(record[field]));
           clean[field] = record[field];
@@ -206,7 +206,9 @@ export function parseProgress(raw) {
             text(record.id) &&
             record.id.length > 0 &&
             text(record.attempt) &&
-            ['assessment', 'demo', 'scaffolded', 'plain', 'errors'].includes(record.type) &&
+            ['assessment', 'demo', 'scaffolded', 'plain', 'errors', 'problem', 'mixed'].includes(
+              record.type,
+            ) &&
             number(record.at) &&
             record.at <= 8640000000000000 &&
             record.at % 3600000 === 0 &&

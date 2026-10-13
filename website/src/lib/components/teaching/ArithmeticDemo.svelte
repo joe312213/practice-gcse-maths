@@ -39,7 +39,7 @@
         <Guidance guidance={bank.teaching.guidance[initialLevel]} activeStep={step} />
       {/snippet}
       {#snippet heading()}<p class="selected-equation">{question.q}</p>{/snippet}
-      {#snippet children(frame)}<ArithmeticWorking {question} {frame} />{/snippet}
+      {#snippet children(frame, font)}<ArithmeticWorking {font} {question} {frame} />{/snippet}
       {#snippet completion()}<p><strong>Check:</strong> {question.check}</p>{/snippet}
     </ShowDemo>
   {/key}

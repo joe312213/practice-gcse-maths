@@ -14,9 +14,41 @@ import { checkDraftTopics } from './draft-topics-checks.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import AxeBuilder from '@axe-core/playwright';
+import { expect } from '@playwright/test';
 import { foundationTopics, topicPath } from '../../src/lib/content/topic-routes.mjs';
 import puzzles from '../../vendor/puzzles/catalogue.js';
 import { createTestContext, artifacts, selectTopic } from './support.mjs';
+
+/** Check actual card bounds, including packing order, non-overlap and footer clearance. */
+async function checkMasonry(page) {
+  await expect
+    .poll(
+      async () => {
+        await page.clock.runFor(32);
+        return page.locator('.topic-cards').evaluate((container) => {
+          if (!container.classList.contains('masonry-ready')) return ['Layout not ready'];
+          const bounds = container.getBoundingClientRect();
+          const boxes = [...container.children].map((item) => item.getBoundingClientRect());
+          const columns = [...new Set(boxes.map((box) => box.left))].sort((a, b) => a - b);
+          const bottoms = columns.map(() => bounds.top);
+          const errors = [];
+          for (const [index, box] of boxes.entries()) {
+            if (box.left < bounds.left - 1 || box.right > bounds.right + 1)
+              errors.push(`Card ${index} has not fitted the resized container`);
+            const next = bottoms.indexOf(Math.min(...bottoms));
+            if (Math.abs(box.left - columns[next]) > 1 || Math.abs(box.top - bottoms[next]) > 1)
+              errors.push(`Card ${index} did not use the highest available leftmost slot`);
+            bottoms[next] = box.bottom;
+          }
+          if (Math.abs(bounds.bottom - Math.max(bounds.top, ...bottoms)) > 1)
+            errors.push('Container does not enclose its cards');
+          return errors;
+        });
+      },
+      { timeout: 3000 },
+    )
+    .toEqual([]);
+}
 
 export async function checkNewTopics(browser, base) {
   await checkDraftTopics(browser, base);
@@ -57,7 +89,35 @@ export async function checkNewTopics(browser, base) {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(base);
     await page.getByRole('heading', { name: 'Choose a topic', exact: true }).waitFor();
-    assert.equal(await page.locator('.topic-card').count(), foundationTopics.length);
+    assert.equal(await page.locator('.topic-card').count(), foundationTopics.length + 1);
+    assert.equal(await page.locator('.draft-stamp').count(), 0);
+    const journeyWorking = page
+      .locator('.topic-card')
+      .filter({ hasText: 'Speed, distance and time' })
+      .locator('.topic-solution');
+    assert.match(await journeyWorking.innerText(), /km\/min/);
+    assert.match(await journeyWorking.innerText(), /80 km\/h/);
+    const priceWorking = page
+      .locator('.topic-card')
+      .filter({ hasText: 'Reverse percentages' })
+      .locator('.topic-solution');
+    assert.match(await priceWorking.innerText(), /£368/);
+    await checkMasonry(page);
+    await page.getByLabel('Search topic titles').fill('fract add');
+    assert.equal(await page.locator('.topic-card').count(), 1);
+    await checkMasonry(page);
+    await page.getByLabel('Search topic titles').fill('no matching topic');
+    assert.equal(await page.locator('.topic-card').count(), 0);
+    await checkMasonry(page);
+    await page.getByLabel('Search topic titles').fill('');
+    await page.getByRole('radio', { name: 'a-z', exact: true }).check();
+    const titles = await page.locator('.topic-card h3').allTextContents();
+    assert.deepEqual(
+      titles,
+      [...titles].sort((a, b) => a.localeCompare(b, 'en-GB')),
+    );
+    await checkMasonry(page);
+    await page.getByRole('radio', { name: 'priority', exact: true }).check();
     assert.equal(await page.getByRole('button', { name: 'Copy topic link' }).count(), 0);
     for (const topic of foundationTopics) {
       const bank = JSON.parse(
@@ -88,6 +148,7 @@ export async function checkNewTopics(browser, base) {
     assert.deepEqual((await new AxeBuilder({ page }).analyze()).violations, []);
     for (const width of [320, 360, 390, 439, 440, 441, 480, 600, 768, 1100]) {
       await page.setViewportSize({ width, height: 900 });
+      await checkMasonry(page);
       const layout = await page.locator('.topic-cards').evaluate((container) => {
         const bounds = container.getBoundingClientRect();
         const cards = [...container.querySelectorAll('.topic-card')];
@@ -101,17 +162,61 @@ export async function checkNewTopics(browser, base) {
           ]);
         }
         return {
+          stampsContained: [...container.querySelectorAll('.draft-stamp')].every((stamp) => {
+            const ink = stamp.getBoundingClientRect();
+            const slot = stamp.closest('.topic-card-slot').getBoundingClientRect();
+            return (
+              ink.top >= slot.top &&
+              ink.bottom <= slot.bottom &&
+              ink.left >= slot.left &&
+              ink.right <= slot.right
+            );
+          }),
           widths: cards.map((card) => card.getBoundingClientRect().width),
           rows: [...rows.values()].map((row) => ({
             count: row.length,
             centred: Math.abs(row[0].left + row.at(-1).right - bounds.left - bounds.right) < 1,
           })),
           fits: cards.every((card) => card.scrollWidth <= card.clientWidth + 1),
+          workingFits: [...container.querySelectorAll('.topic-solution .calculation-line')].every(
+            (line) => {
+              const range = document.createRange();
+              range.selectNodeContents(line);
+              const ink = range.getBoundingClientRect();
+              const panel = line.closest('.topic-solution').getBoundingClientRect();
+              return (
+                getComputedStyle(line).textAlign === 'center' &&
+                ink.left >= panel.left - 1 &&
+                ink.right <= panel.right + 1
+              );
+            },
+          ),
           overflow: document.documentElement.scrollWidth > innerWidth,
         };
       });
       assert.equal(layout.overflow, false);
+      const headingFits = await page.locator('.topic-discovery h1').evaluate((heading) => {
+        const range = document.createRange();
+        range.selectNodeContents(heading);
+        return (
+          range.getClientRects().length === 1 &&
+          range.getBoundingClientRect().width <= heading.clientWidth + 1
+        );
+      });
+      assert.ok(headingFits, `Choose a topic fits one line at ${width}px`);
+      assert.ok(layout.stampsContained, `Draft ink stays inside its column item at ${width}px`);
       assert.ok(layout.fits, `Topic content fits at ${width}px`);
+      assert.ok(layout.workingFits, `Centred calculation working fits at ${width}px`);
+      const sortSpacing = await page.locator('.topic-sort').evaluate((sort) => ({
+        gap: parseFloat(getComputedStyle(sort).rowGap),
+        labelMargins: [...sort.querySelectorAll('label')].map(
+          (label) =>
+            parseFloat(getComputedStyle(label).marginTop) +
+            parseFloat(getComputedStyle(label).marginBottom),
+        ),
+      }));
+      assert.equal(sortSpacing.gap, 4);
+      assert.ok(sortSpacing.labelMargins.every((margin) => margin === 0));
       assert.ok(
         layout.widths.every((value) => value >= 140),
         'Topic cards respect the 140px minimum',
@@ -128,7 +233,7 @@ export async function checkNewTopics(browser, base) {
         };
       });
       assert.ok(
-        Math.abs(equationScale.ratio - 0.1) < 0.001,
+        Math.abs(equationScale.ratio - 0.115) < 0.001,
         'Equation ink scales proportionally with preview width',
       );
       assert.equal(
@@ -144,10 +249,15 @@ export async function checkNewTopics(browser, base) {
         layout.widths.every((value) => Math.abs(value - layout.widths[0]) < 1),
         'Masonry columns have equal widths',
       );
-      const columns = await page
-        .locator('.topic-cards')
-        .evaluate((el) => getComputedStyle(el).columnWidth);
-      assert.notEqual(columns, 'auto', 'Native masonry columns are active');
+      const equalitySpacing = await page
+        .locator('.topic-solution .calculation-equals')
+        .evaluateAll((signs) =>
+          signs.every((sign) => {
+            const style = getComputedStyle(sign);
+            return parseFloat(style.paddingLeft) >= 3 && parseFloat(style.paddingRight) >= 3;
+          }),
+        );
+      assert.ok(equalitySpacing, 'Calculation equals signs have visible space on both sides');
       if ([360, 440, 480, 768, 1100].includes(width))
         await page.screenshot({ path: `${artifacts}/topic-home-${width}.png`, fullPage: true });
     }
@@ -510,6 +620,13 @@ export async function checkNewTopics(browser, base) {
           'rgba(0, 0, 0, 0)',
         );
         const go = puzzles.find((q) => q.type === 'go' && q.challenge === 1).variations[0].parts[0];
+        const beforeOccupied = await page.locator('.go-moves').textContent();
+        await page.locator('.go-point:not([aria-label$="empty"])').first().click();
+        assert.equal(
+          await page.getByText('Choose an empty intersection.', { exact: true }).count(),
+          0,
+        );
+        assert.equal(await page.locator('.go-moves').textContent(), beforeOccupied);
         const move = JSON.parse(go.answer).moves[0];
         await page.locator(`.go-point[data-value="${move}"]`).click();
         await page.locator('.go-moves').filter({ hasText: '1.' }).waitFor();
@@ -691,8 +808,25 @@ export async function checkNewTopics(browser, base) {
       assert.equal(await page.locator('.go-point').count(), Number(size) ** 2);
     }
     assert.equal(await page.locator('.go-axis-label').count(), 76);
-    for (const width of [320, 390, 439, 440, 441]) {
+    for (const width of [320, 360, 390, 439, 440, 441]) {
       await page.setViewportSize({ width, height: 956 });
+      if (width === 360) {
+        const controls = await page.locator('.go-play-controls button').evaluateAll((buttons) =>
+          buttons.map((button) => ({
+            label: button.textContent.trim(),
+            y: button.getBoundingClientRect().y,
+            height: button.getBoundingClientRect().height,
+          })),
+        );
+        assert.deepEqual(
+          controls.map((button) => button.label),
+          ['Count', 'Pass', 'Undo', 'Redo'],
+        );
+        assert.ok(
+          controls.every((button) => Math.abs(button.y - controls[0].y) < 1 && button.height >= 44),
+          JSON.stringify(controls),
+        );
+      }
       const geometry = await page.locator('.go-board').evaluate((board) => {
         const bounds = board.getBoundingClientRect(),
           panel = board.closest('.page-panel');

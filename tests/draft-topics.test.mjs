@@ -22,12 +22,21 @@ function expected(m) {
   if (m.kind === "application") {
     let [n, d] = rational(String(m.start));
     for (const [op, operand] of m.operations) {
-      const b = BigInt(operand);
-      if (op === "multiply") n *= b;
-      else if (op === "divide") d *= b;
-      else if (op === "add") n += b * d;
-      else if (op === "subtract") n -= b * d;
-      else {
+      const [bn, bd] = rational(String(operand));
+      const b = bn;
+      if (op === "multiply") {
+        n *= bn;
+        d *= bd;
+      } else if (op === "divide") {
+        d *= bn;
+        n *= bd;
+      } else if (op === "add") {
+        n = n * bd + bn * d;
+        d *= bd;
+      } else if (op === "subtract") {
+        n = n * bd - bn * d;
+        d *= bd;
+      } else {
         assert.equal(d, 1n);
         if (op === "floor") n /= b;
         else if (op === "ceil") n = (n + b - 1n) / b;
@@ -55,14 +64,14 @@ function expected(m) {
   return `${n * (100n * pd + (m.task === "increase" ? pn : -pn))}/${d * pd * 100n}`;
 }
 for (const bank of banks)
-  test(`${bank.topic}: complete draft pages and checked mathematical answers`, () => {
-    assert.equal(bank.draft, true);
-    assert.equal(bank.questions.length, 171);
-    assert.equal(new Set(bank.questions.map((q) => q.id)).size, 171);
+  test(`${bank.topic}: complete accepted pages and checked mathematical answers`, () => {
+    assert.equal(Boolean(bank.draft), false);
+    assert.equal(bank.questions.length, 243);
+    assert.equal(new Set(bank.questions.map((q) => q.id)).size, 243);
     for (const level of [0, 1, 2])
       for (const [mode, size] of Object.entries({
         plain: 12,
-        scaffolded: 2,
+        scaffolded: 4,
         errors: 4,
       })) {
         const pages = topicPages(bank, mode, level);

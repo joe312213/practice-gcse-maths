@@ -152,3 +152,9 @@ input[type='file'] {
 .popover-panel {
   display: block;
 }
+
+/* Bits UI select triggers follow the same content-sized rule as native selects. */
+button.choice-field {
+  width: max-content;
+  min-width: 0;
+}

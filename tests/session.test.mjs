@@ -274,3 +274,116 @@ test("three-page navigation stops at boundaries and remembers a separate page pe
     assert.equal(f.view.pageNavigation.index, 1);
   }
 });
+
+test("completed assessment stays locked across reload and transfer until explicit reassessment after seven days", async () => {
+  const { REASSESS_DELAY } =
+    await import("../website/src/lib/domain/assessment.mjs");
+  const { exportProgress, parseProgress } =
+    await import("../website/src/lib/domain/progress-transfer.mjs");
+  let now = 1000,
+    view;
+  const data = emptyStore();
+  let api = createSession({ bank, data, save() {}, now: () => now });
+  api.subscribe((v) => (view = v));
+  api.chooseName("Assessment learner", true);
+  for (const item of view.page.items) {
+    api.select(view.page.items.findIndex((q) => q.id === item.id));
+    api.updateDraft({
+      answer: bank.questions.find((q) => q.id === item.id).answer,
+    });
+    api.submitAnswer();
+  }
+  const attempt = view.page.attempt;
+  assert.equal(view.page.complete, true);
+  assert.equal(api.reassess(), false);
+  const transferred = parseProgress(exportProgress(data.profiles[0], now));
+  const imported = {
+    schema: 2,
+    last: transferred.key,
+    profiles: [transferred],
+  };
+  api = createSession({ bank, data: imported, save() {}, now: () => now });
+  api.subscribe((v) => (view = v));
+  assert.equal(view.page.attempt, attempt);
+  assert.equal(view.page.complete, true);
+  assert.equal(view.assessment.correct, 6);
+  assert.ok(
+    imported.profiles[0].topics["maths:M10"].history.every(
+      (r) => typeof r.raw === "string",
+    ),
+  );
+  now += REASSESS_DELAY - 1;
+  assert.equal(api.reassess(), false);
+  now++;
+  assert.equal(api.reassess(), true);
+  assert.notEqual(view.page.attempt, attempt);
+  assert.equal(view.page.count, 0);
+  assert.equal(imported.profiles[0].topics["maths:M10"].history.length, 6);
+});
+
+test("refresh restores each ordinary stage and its saved page without rescoring", () => {
+  const f = setup();
+  for (const mode of [
+    "plain",
+    "scaffolded",
+    "errors",
+    "problem",
+    "demo",
+    "assessment",
+  ]) {
+    f.session.switchMode(mode);
+    if (mode === "plain") {
+      correct(f);
+      f.session.nextPage();
+    }
+    const before = structuredClone(f.view.page);
+    const history = structuredClone(
+      f.data.profiles[0].topics["maths:M10"].history,
+    );
+    const data = structuredClone(f.data);
+    const resumed = createSession({
+      bank,
+      data,
+      save() {},
+      random: () => 0.99,
+    });
+    let view;
+    resumed.subscribe((v) => (view = v));
+    assert.equal(view.mode, mode);
+    assert.deepEqual(view.page, before);
+    // The route calls switchTopic during startup too; this must retain the stage.
+    resumed.switchTopic("M10");
+    assert.equal(view.mode, mode);
+    assert.deepEqual(view.page, before);
+    assert.deepEqual(data.profiles[0].topics["maths:M10"].history, history);
+  }
+});
+
+test("saved chevrons are isolated by learner/topic and invalid stages fall back safely", async () => {
+  const division = JSON.parse(
+    await readFile(
+      new URL("../website/static/data/division.json", import.meta.url),
+    ),
+  );
+  const data = emptyStore();
+  const api = createSession({ bank, banks: [bank, division], data, save() {} });
+  let view;
+  api.subscribe((v) => (view = v));
+  api.chooseName("First learner", true);
+  api.switchMode("errors");
+  api.switchTopic(division.topic);
+  assert.equal(view.mode, "assessment");
+  api.switchMode("demo");
+  api.switchTopic(bank.topic);
+  assert.equal(view.mode, "errors");
+  api.chooseName("Second learner", true);
+  assert.equal(view.mode, "assessment");
+  api.switchMode("plain");
+  api.chooseName("First learner");
+  assert.equal(view.mode, "errors");
+  api.switchTopic(division.topic);
+  assert.equal(view.mode, "demo");
+  data.profiles[0].topics["maths:M10"].lastMode = "unknown";
+  api.switchTopic(bank.topic);
+  assert.equal(view.mode, "assessment");
+});

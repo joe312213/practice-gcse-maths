@@ -1,5 +1,5 @@
 /** Authored bank order defines distinct full pages within each topic, stage and level. */
-export const TOPIC_PAGE_SIZES = { plain: 12, scaffolded: 2, errors: 4 };
+export const TOPIC_PAGE_SIZES = { plain: 12, scaffolded: 4, errors: 4, problem: 6 };
 
 export function topicPages(bank, mode, level) {
   const size = TOPIC_PAGE_SIZES[mode];

@@ -1096,3 +1096,333 @@ Final selected verification passed. One Progress test initially expected superse
 - Reduced header bottom padding from 24px to 12px below the existing 768px boundary, preserving intrinsic header wrapping and alignment. No new width breakpoint.
 - Resolved verification findings: new Practice-set slots initially exceeded their ten-item limit (ordinary topic pages remain 12; encoded independent slots now six); a one-step demo can already be finished before a test presses End; broad “multiplication” searches correctly include M03 and required updated expectations. Formatting was corrected. The Progress fresh-computer import fixture now uses a separate browser context rather than clearing live storage while pending autosaves can repopulate it; production storage behaviour was not changed for this fixture.
 - Evidence: selected verification passed format, production build, new-topics, docs, 104 logic tests, bank validation, Svelte/diagnostics, presentation, colours, startup, Practice sets, Progress and integration across this batch. The final scrolling/header run passed all selected checks, with unaffected evidence cached. Responsive screenshots of new topics, active fractions and fraction feedback were inspected. This is not a teacher acceptance review of every question or physical-device testing. No commit, publication or deployment was requested or performed.
+
+## 12 October 2026 — ordered implementation programme authorised
+
+- User authorised working through the outstanding feature list in order, documenting each slice. Recorded the programme in HANDOFF and updated roadmap/standing requirements before code changes. The working tree was clean at entry, superseding the earlier handoff's uncommitted-batch note.
+- Selected both sixth-stage topic applications and combined 1–4-operation problems with reveal/hide, challenge-matched How to solve tips. Prioritised ratios then percentages, followed by calculator-paper content.
+- Requested partial-title search, compact 60%/40% heading/controls, priority/a-z sorting blending teaching difficulty with observed revision data, and an iPhone Draft-stamp clipping fix.
+- Requested handwriting-stroke library investigation including JS sizes/adoption issues; agreed that any implementation belongs behind a shared animation helper. No library selected yet. No code or tests changed at this documentation milestone.
+
+### Slice 1 — Draft content review
+
+Reviewed the four specifications, level samples, error choices and shared diagrams. Corrected nine historical M03 repair choices that disclosed final answers; kept the full explanations in submitted feedback. Same-denominator fraction hints now focus on counting equal parts; mixed-number strips now mark whole boundaries. Percentage feedback now explains the mistake rather than giving it as an instruction, with explicit inverse checks for amounts/new amounts. Normalised signed inverse-check minus signs. IDs, models, accepted answers and Draft status are preserved. Independent bank recalculation and browser verification are pending for this slice. This is an agent review, not teacher acceptance.
+
+### Follow-up decisions — assessment and deferred colleges
+
+User selected four-question scaffolded pages/window. Initial assessment should be completed once, remain locked showing the score, and offer explicit Reassess only seven days after completion (muted/disabled before; stronger/enabled afterwards). Retain every assessment attempt. Other proposed windows accepted. Issue reports retain the existing composed email with blank recipient. College configuration is later documentation-only work: central hosting, college accounts, teacher-configured links and shared college-code URLs. No college infrastructure in this batch.
+
+### Slice 2 — multiplication Confidence correction
+
+Replaced all eleven undersized Confidence questions with 4×3, 3×4 or 4×4 digit products involving carries. Updated answers, checks, specific hints, carry explanations and the three affected website error SVGs/options; retained IDs/page slots and preserved legacy decks. Build validation now enforces the operand-size requirement across Confidence activity types. Verification is running.
+
+### Slice 3 — 48-hour working cache
+
+Changed the session-only drawing/typed-working TTL to 48 hours after an edit. Reads do not extend expiry; existing short-lived entries keep their recorded expiry until edited. Added an explicit 48-hour assertion alongside existing exact-boundary/renewal tests. Durable progress and backups still exclude working. Verification pending.
+
+### Slice 4 — topic discovery and Draft stamps
+
+Added all-term partial-title search and priority/a-z sorting in a 3:2 heading/control grid. Priority blends explicit teaching priors with the existing missing/weak/stale calculation over twenty eligible answers; it does not claim population statistics. Sort choice is stored for the current learner. Compact native controls wrap within their cell. An indivisible padded column wrapper contains the rotated Draft stamp, addressing Safari column fragmentation without changing the stamp. Added search/sort logic tests and browser containment checks, including 440px.
+
+First content verification: build and new-topic browser checks passed. Logic found a duplicate replacement multiplication task; corrected it. The initial browser launch was sandbox-blocked at localhost and rerun with approved permission. Further verification pending after slices 3–4.
+
+### Slice 5 — fixed scoring and assessment lifecycle
+
+Implemented fixed windows (independent/mixed 10, scaffolded/errors 4, problem solving/assessment 6). Expanded every existing scaffolded bank to three four-question pages per level using existing reviewed independent examples with new scaffold IDs/provenance; existing saved page attempts remain intact. Reassessment thresholds still depend on page size; assessment/scaffolded answers do not promote independent levels.
+
+Completed initial assessments now retain their score and disable Reassess for seven days; explicit Reassess alone starts a fresh draw. Completed attempts can be restored from durable history after JSON transfer. Raw submitted answers are now retained in answer history/export; historical records without raw values remain readable. Added exact lock-boundary/transfer/history tests. Verification pending for this slice.
+
+Slices 1–4: the second run passed format/build, new-topic browser checks (including search, sorting and stamp containment), docs, logic, bank and Svelte diagnostics before slice 5 edits; remaining browser families were running. Chrome evidence does not establish physical iPhone Safari acceptance.
+
+### Slices 1–5 verification milestone
+
+All selected checks passed, including 108 logic tests and all browser families. Updated the old three-question error-page test to expect 75% under the now-fixed four-answer window. An earlier run detected source changes during presentation and correctly refused to cache stale evidence; the final run completed on stable inputs. No process remains running. User also selected a configurable Combined problems topic page in addition to the Practice-set builder entry; both will share selection/resolution and actual-topic attribution.
+
+### Slices 6–7 — problem solving and combined practice in progress
+
+Added sixth-stage problem banks (54 applications per existing topic), level-matched shared tips/playback and source-topic Practice-set slots. Added combined problem/mixed revision resolution, a builder entry and a configurable Combined problems route. Answers and active time use the actual source topic; mixed pages do not automatically promote across topics. Exact chosen IDs persist in saved attempts. The existing nine-character code contract is retained; selected-topic URLs add a topics query. New mathematics, assistance and source-attribution tests are in place. Implementation is not yet verified.
+
+## 12 October 2026 — lattice and topic-selector refinements (current priority)
+
+User clarified the non-calculator lattice check: round both factors to one significant figure and multiply for a ballpark estimate; do not teach inverse division as the check. Move left-edge carries lower towards the trailing end of their diagonal using grid-relative coordinates; preserve the accepted bottom-edge placement. Keep “Choose a topic” on one line by fitting its size to its available width. Search placeholder is “search”; sorting uses small native radio labels “priority” and “a-z” in the existing 60:40 heading/control row. These refinements take priority within the ongoing implementation batch.
+
+### Slices 6–7 and lattice refinements — verified milestone
+
+Added the sixth problem-solving stage, level-matched reveal/hide tips, combined mixed/problem pages in the builder and a configurable Combined problems topic page. Source question IDs and topic attribution persist across resume; assistance is recorded and combined work does not automatically promote multiple topics. Lattice checks now use rounded-factor estimates, including application examples; left-edge carries anchor near their diagonal’s lower endpoint. The 60:40 selector has a single-line fitted heading, “search” and small sorting radios.
+
+`npm run verify:changed` passed format/build, new-topics, docs, logic/bank, Svelte diagnostics, presentation, colours, startup, Practice sets, Progress and integration. New problem logic checks cover arithmetic, assistance and cross-topic attribution. Two legacy progress fixtures needed problem-stage evidence; the presentation assertion expecting every label on one line at desktop was updated because six labels share the accepted 780px cap (two lines remain the limit). Inspected the 440px selector and the exact 4,312 × 156 Confidence diagram: left carry is lower and bottom carry unchanged. Physical iPhone Safari remains unverified. Further combined-page browser coverage accompanies the next topic slice.
+
+### Slice 8 — ratios and calculator practice; verification in progress
+
+Registered Draft M04 ratios before M06 percentages, then M07 reverse percentages and M12 speed/distance/time. M06 remains the reviewed existing topic with its added application stage. New banks each have 243 items, three recaps, level-matched application help and stable source provenance. Diagrams use labelled equal ratio parts, original/known percentage bars and journey information. Calculator permission is visible for M07/M12; rounded results use ≈. Historical authored source files remain untouched.
+
+New-topic browser checks and all 112 logic tests passed, including independently recalculated new questions and combined-page source/assistance/reload. Bank validation caught new Practice-set independent slots using the ordinary twelve-question length, exceeding the existing ten-item contract; corrected to the established six-question Practice-set slots without changing ordinary twelve-question pages. Remaining verification follows with profile controls. A shared combined URL now compares its selected topics before resuming an identically coded saved set.
+
+### Slices 8–9 — final source verification
+
+Completed ratios, retained/refined percentages, and calculator-allowed reverse percentages and speed/distance/time. Combined configuration/help/source-credit/reload now has direct browser coverage. Updated shared-URL resumption to consider selected topics as well as the encoded recipe. Added local profile rename/reset/delete with exact-name confirmation for destructive actions, UUID/history preservation on rename, temporary-working identity/expiry handling and file unlinking without deleting external files. Browser tests cover rename, reset, cancelled deletion and confirmed deletion; pure tests confirm unrelated learners remain unchanged. College account/hosting work remains documentation-only; issue reporting already drafts email with an empty recipient.
+
+`npm run verify:changed` passed format/build, new-topics, docs, all **115 logic tests**, bank, Svelte diagnostics, presentation, startup, Practice sets, Progress and integration. Unchanged colour evidence was reused. The new arithmetic tests cover all new-bank question answers/incorrect examples and operation counts; the new combined and profile browser checks passed. The tips browser fixture initially attempted End after its one-step example had already finished; it now respects the disabled completed control. Existing M03 recap floor/remainder models were excluded from the new exact-rational-chain check and retain their established topic-specific tests.
+
+Reconciled HANDOFF, roadmap, standing UI rules, UI taste, architecture/run guidance and INDEX with current counts/stages and the user's later decisions. Physical iPhone Safari and teacher acceptance remain outstanding; Draft flags remain. No deployment/commit occurred. Final changed-document link verification follows.
+
+### Final catalogue review — correcting new topic addresses
+
+After the passing source run, manual catalogue review found M04/M07 had reused codes 3/6, which already belong to M13/M03. The catalogue validator had resolved by code without asserting the resolved bank matched the loop's topic, so it missed this collision. Assigned unused codes **M04=7, M07=8**, retaining M12=11 and every pre-existing address. Added unique-code and resolved-topic identity assertions, plus a regression explicitly freezing existing codes. The final documentation-only check passed before this newly found source correction; another selected verification run is required now.
+
+### Final completion checkpoint
+
+The catalogue correction passed the complete selected verification sequence: format/build, new-topics, documentation links, **116 logic tests**, bank validation, presentation, startup, Practice sets, Progress and integration. Unchanged Svelte/colour evidence remains cached and valid. Existing topic codes are frozen by regression; all catalogue pages now assert their resolved bank identity. One run deliberately stopped because documentation changed while it was checking it; the follow-up reused unchanged passes and finished successfully. No implementation failure or running task process remains. HANDOFF now lists teacher/device acceptance and explicitly deferred choices as next work.
+
+## 12 October 2026 — handwriting evaluation and mobile refinements (current priority)
+
+User requests an interactive visual comparison of available stroke fonts, with letters, digits, maths symbols, basic animations and explicit missing-symbol coverage including Higher GCSE needs. Build a reusable evaluation helper rather than embedding library calls in method classes; this is evaluation, not wholesale replacement of existing animations.
+
+Mobile: use the screenshot's 60:40 question-heading/control arrangement (Check method upper right; timer grouped beneath it), preserve current question font size by default and allow modest shrinkage to a readable minimum to fit two questions per row. Complete rows fill the available width; incomplete rows retain the normal full-row slot width unless their content needs more. When topic introduction collapses to one column, search/topic controls precede subject/topic; make the topic selector content-sized through shared control styling. Always label answer inputs “Answer”, retaining units where needed. Each topic specification supplies a default question prefix; show “Solve the equation” above an equation in the answering section. Add practical quick-check guidance to every implemented topic specification, distinguishing calculator/non-calculator use.
+
+Implementation pass: added a 16-font local stroke gallery and common native SVG/Web Animations helper, explicit glyph coverage and bundled attribution; no method font replaced. Added bounded selector-font fitting with equal-width row slots, responsive intro order/content-sized selects, 60:40 practice header, universal Answer label with separate units, and bank-owned prefixes. Added M01/M02/M10 website specs and quick-check guidance to all ten implemented topic specs; protected historical sources are unchanged. Verification pending.
+
+Follow-up: user prefers a 12.5px minimum for short question-button content. Use 0.78125rem at the default 16px root, retaining default font sizes whenever content fits and keeping the active question larger. Explained CSS 12pt = 16 CSS pixels for both Samsung and Apple; hardware pixel density does not alter that ratio. Gallery mobile overflow was caught and fixed; comparison paths now use a consistent 1.5px pen. First presentation run after that caught a transient 320px question containment measurement; width-triggered fitting now runs directly in ResizeObserver before paint, with content changes still coalesced. Reverification pending.
+
+Final font-floor decision: after comparing CSS px/pt sizes, the user chose **14px**, replacing the interim 12.5px preference. Defaults remain unchanged and long questions take wider slots. The 320px failure persisted after observer timing was tightened: diagnostics showed some spans reporting narrower bounds than their actual text. Fitting now measures a DOM Range around the maths content, matching the actual-ink containment check.
+
+### Completed and verified — handwriting/mobile refinement batch
+
+- Sixteen locally bundled Latin stroke-font candidates now have letters/digits/basic-symbol specimens, exact missing Basic/Higher/additional character lists and a configurable example with Replay, Pause/Resume and End. Unsupported glyphs are boxed ordinary text. The common `handwriting.mjs` helper owns layout and native stroke playback, including cancellation/seek/reduced motion; methods retain their existing animations. Font licences ship with the gallery. Source-order engraving strokes still require teaching review before adoption.
+- Final question-font minimum is **14px** (0.875rem), retaining original default sizes when they fit. Short questions use equal row slots; incomplete last rows keep the full-row slot width, centred. Long content gets a wider slot. The header uses left 60% heading/Level and right 40% Check method/timer; collapsed topic introductions put controls first and selector triggers share content sizing.
+- The visible answer label is always **Answer**, with units separately described. Topic-bank defaults supply question prefixes; contextual applications can override them. All ten website topic specs include practical checks matched to calculator permission. New M01/M02/M10 specs are indexed; authored historical sources remain untouched.
+- Failure trail: gallery phone overflow corrected by bounding its nested cards. Thin source pens were normalised to a 1.5px display stroke, with screen-space dash lengths. Question fitting now measures DOM Range bounds and confirms the final ink width instead of relying only on proportional font scaling. The residual 320px assertion was reading before native ResizeObserver delivery; waiting for actual settled containment fixed the test without weakening its centring/containment assertions. An earlier note suggesting observer timing alone fixed it was provisional; this is the final evidence.
+- `npm run verify:changed` passed all selected jobs: format/build, puzzle library, new topics, docs, 117 logic tests, bank validation, Svelte diagnostics, presentation, colours, startup, Practice sets, Progress and integration. Inspected the font specimens and exact 360px equation header/button captures. This does not constitute physical iPhone/Samsung acceptance.
+- Gallery preview is running at http://127.0.0.1:8767/handwriting.html (exec session 65392). The existing occupant of port 8766 was not changed. No commit/publication/deployment. Final documentation link verification follows this entry.
+
+## 12 October 2026 — compact introduction and alphabetical topic switcher
+
+Reduced controls-to-subject/title spacing by about **1.5rem only below 440px**, where the introduction is one column; the screenshot showed excessive empty space. Preserved the separate description and chevron gaps. Topic dropdown options now sort **A–Z by title** to make a named topic easier to find; sorting a copy preserves teaching priorities and stable catalogue addresses. Selected verification is pending for these two refinements.
+
+### Whole-session decision recap and rationale
+
+Cross-checked the complete conversation against the dated slices above. This recap records final choices; the earlier entries retain implementation milestones, failures and validation evidence.
+
+| Final choice | Rationale |
+| --- | --- |
+| Review Draft hints/errors/diagrams; strengthen eleven multiplication Confidence questions, retaining IDs | Avoid answer leakage and make challenge depend on carrying/method complexity. |
+| Keep temporary working for 48 hours after its last edit | Allow return to unfinished work without mixing scratch work into durable progress. |
+| Method-topic sixth stages **and** configurable Combined problems, also in the builder; dedicated problem topics finish at stage five; 1–4 operations | Practise both individual methods and choosing/combining methods. Credit the actual source topic without automatic multi-topic promotion. |
+| Reveal/hide How to solve tips with steps, advice and a level-matched example | Offer relevant help; record its use as assistance. |
+| Ratios, then reviewed percentages, then reverse percentages and speed/distance/time with calculator permission | Follow teaching prerequisites and extend calculator-paper practice. Draft still means teacher review pending. |
+| Four scaffolded questions/page; fixed scoring windows 10 independent/mixed, 4 scaffolded/errors, 6 problems/assessment | Keep scoring comparable across page lengths. |
+| Completed initial assessment remains locked with its score; explicit Reassess enabled after seven days; all history retained | Preserve a meaningful baseline and make reassessment deliberate. |
+| Partial-title search and compact 60:40 homepage controls; small priority/a-z radios; fitted single-line heading | Find topics quickly in limited space. Priority starts from teaching difficulty and blends in learner evidence. |
+| Reserve complete masonry slots around rotated Draft stamps | Prevent top/bottom column clipping without changing the stamp design. |
+| Lattice check rounds both factors to 1sf; left carries move lower along their grid diagonal | Keep checks practical without a calculator and reduce carry-position ambiguity; accepted bottom placement stays. |
+| Investigate stroke-library sizes/licences; provide 16-font coverage/animation gallery behind one helper | Evaluate writing clarity and missing GCSE/Higher symbols before changing methods; avoid repeated library integration. |
+| Equal-width question slots, including partial rows; keep default font, shrink only to **14px** | Use mobile space while preserving readable signs/digits. The interim 12.5px idea was withdrawn after the px/pt comparison. |
+| 60:40 practice header; Check method above timer; collapsed topic controls precede subject/title; content-sized selects | Keep controls compact and consistently placed on phones. Below 440px, search/Go and Topic share a wrapping row with a useful search minimum; normal title spacing is restored. |
+| Always label input **Answer**; topic-owned question prefixes; calculator-appropriate quick checks in every topic spec | Make the task explicit (e.g. Solve the equation) and keep teaching/checking conventions systematic. |
+| Alphabetical topic-switcher options | Make an already-known topic quick to locate without changing homepage revision ordering. |
+| Local profile rename/reset/delete with precise confirmation and external-file unlinking only | Complete learner controls while protecting other profiles and saved files. |
+| Issue reporting keeps a composed email with blank recipient; college accounts/links/code URLs remain later work | Retain student control of the destination and keep current scope focused. |
+
+Library measurements and adoption limits remain in [METHOD_ANIMATIONS](docs/METHOD_ANIMATIONS.md#handwriting-stroke-investigation--12-october-2026); standing behaviour is in UI_UX_RULES/UI_TASTE and current state in HANDOFF. No publication was requested. Physical-device and teacher acceptance are not implied by browser checks.
+
+Latest refinement validation: `npm run verify:changed` passed format/build, new-topics, docs, Svelte diagnostics, presentation, colours, startup, Practice sets, Progress and integration; unchanged logic/bank results were reused. Browser assertions cover alphabetic option order and the approximately 2px controls-to-subject gap below 440px, with the wider two-column layout unchanged. The whole-session recap was checked against all user requests. Preview remains on port 8767; no publication or commit.
+
+
+## 12 October 2026 — one-row phone controls and application-topic stages
+
+Latest user decision supersedes the earlier collapsed-title margin reduction: below 440px, search/Go and the content-sized Topic selector share one wrapping row. Reserve enough search width for its prompt; allow wrapping below approximately 360px rather than compressing it. Restore normal subject/title top spacing because the controls now occupy less height.
+
+Dedicated problem-solving topics finish at Independent practice (five stages), because this already applies methods to problems. Mark M03 explicitly in its bank; method topics retain their sixth application stage, and Combined problems retains its configurable page. Keep How to solve tips on M03 independent pages, all historical answers and authored problem questions/Practice-set slots. Use shared stage selection for navigation rather than a topic-specific hidden button. Implementation and selected verification are pending.
+
+
+Preview correction: the running Vite static preview retained its asset inventory across rebuilds, so the updated handwriting HTML referenced CSS/JS files it returned as 404. Reproduced the stylesheet 404 at port 8767; replaced the stale process. This was a preview-serving failure, not missing font data. The first new stage regression also exposed a fixture mistake: creating a learner with all banks selects the first bank; explicitly select M03 before testing its home-stage navigation.
+
+Latest spacing request: reduce the shared active-question-to-Answer-label gap by **0.5rem**, bringing the input closer to the question without changing either text size.
+
+
+Completed verification: `npm run verify:changed` passed format/build, new topics, docs, **118 logic tests**, bank validation, Svelte diagnostics, presentation, colours, startup, Practice sets, Progress and integration. Phone checks confirm search/Go + Topic share a row at 360–439px, wrap at 320px with a ≥160px search field, restore the 26px controls-to-subject gap, and preserve the ≥440px layout. M03 has five chevrons, independent tips and retained Practice-set/history behaviour; other Draft method topics retain six. The active-question bottom margin is reduced by 0.5rem.
+
+The handwriting gallery passed its focused browser checks at the actual `http://127.0.0.1:8767/` address, first under Vite development and again after switching to a direct static-file server. Final preview uses `python3 -m http.server 8767 --bind 127.0.0.1 --directory build` (exec session **41579**), which reads changed asset files without retaining Vite preview's stale inventory. Sixteen font specimens, playback, missing-character fallbacks, responsive layout and reduced motion passed; inspected the styled Sans specimen. No font/runtime change was needed. No commit, publication or physical-device acceptance is implied. Final documentation reconciliation follows.
+
+
+## 12 October 2026 — Pacifico preference and preview address
+
+User prefers Vara **Pacifico** and asks how to keep maths symbols/units visually consistent. Inspected the vendored stroke data: all Latin letters/digits and common alphabetic units are present; exact − × ÷ £ ° ± ≤ ≥ ≈ √ π θ ∞ and superscript ²/³ are absent. Proposed next step (not yet implemented): extend the shared helper's Pacifico glyph set with matching maths pen paths, reuse its letters for units, and position existing digits for powers; fractions/root bars require shared mathematical layout. Review a short maths/unit specimen before integrating into teaching animations.
+
+Port check: the complete app responds at `http://127.0.0.1:8767/`, with the gallery at `/handwriting.html`; port 8766 still has a listener but timed out without an HTTP response. Its unrelated existing process was left untouched. No application source changed for this advice/status request.
+
+
+## 12 October 2026 — Pacifico maths extension and shorter question buttons
+
+User authorises extending Pacifico with matching maths/unit strokes and requests measured package size. Build a separate, reusable extended-font asset and show it alongside the original in the gallery, with units, higher symbols and powers; preserve the original 16 specimens and use the existing shared writing controller. This authorises the extension/evaluation, not replacing every method animation yet. Report font data and shared helper bytes separately from the optional Vara runtime and the full comparison collection.
+
+Reduce question-button top and bottom padding by 0.5rem each (1.5rem → 1rem); lower the old minimum height accordingly so it does not cancel the requested height reduction. Preserve readable text, number/outcome clearance and 44px minimum targets. Implementation/verification pending.
+
+
+The user identified `.question-option` minimum height as a likely constraint; confirmed the existing 78px floor would mask much of a padding-only reduction. Both padding and floor are reduced together (62px floor at the default root). Corner number/result markers keep their font size but use single-line boxes and 2px edge insets to remain clear of the tighter content area. First selected run passed build/new topics and the new font coverage test, but hit an unrelated timing assertion in the existing autosave lifecycle test (25ms wait, expected one save, observed zero); rechecking before considering any change to that subsystem.
+
+
+Pacifico extension and first shortened-button trial passed all selected verification, including **119 logic tests**, generated-data equality/coverage, raised-index rendering, animation controls, mobile containment and marker clearance. The earlier autosave timing test passed on rerun without changing that subsystem (its wait is 20ms; 25ms was the reported test duration). Inspected desktop/mobile extended glyph specimens and the 360px equation-button capture.
+
+User's visual refinement: add **2px to question-content padding on every side**, explicitly preserving the question-number position. Final padding is 18px block / 10px inline at the default root. Minimum height now derives from the existing 30px text/border floor plus twice block padding: **66px**, so a later padding adjustment cannot be masked by an unrelated height floor. Question number offsets remain unchanged. The previous 62px trial is superseded; selected verification follows this refinement.
+
+Measured the standalone extended font (37,078 bytes raw / 11,176 gzip) plus minified shared helper (3,136 / 1,704): **40,214 bytes raw / 12,880 gzip**, with no Vara runtime dependency. The generator adds 64 glyphs for 158 total, retaining the original letter/digit strokes; all audited Basic/Higher/additional/unit/index groups pass, with explicit fallback for unsupported characters. Detailed reproducibility, scope, licence and local-server compression limits are in METHOD_ANIMATIONS.
+
+
+Final 2px refinement verified: `npm run verify:changed` passed format/build, new topics, docs, presentation, colours, Practice sets and Progress; unchanged logic/Svelte/startup/integration evidence was reused. The final button minimum is 66px, block padding 18px and inline padding 10px at the default root. Number offsets and marker positions were preserved exactly through this last refinement. Pacifico Maths is live at `http://127.0.0.1:8767/handwriting.html#pacifico-maths`; the full app remains on port 8767. No method-wide font replacement, commit or publication was performed. Final documentation reconciliation follows.
+
+
+## 12 October 2026 — quieter question numbers
+
+User requests approximately 10% smaller question numbers and 10% less contrast against their surface, with no retest and personal visual confirmation. Changed only `.question-option .num`: 0.8rem → 0.72rem (12.8px → 11.52px at the default root), opacity 0.9 to blend the existing muted colour 10% towards the actual button surface across normal/selected/result states. Corner offsets, question content and result markers are unchanged. Refreshing the static build for port 8767; no tests or verification suites are being run, as requested. Appearance awaits user confirmation.
+
+Static build completed successfully using Vite directly (no test/validation command). Updated preview is ready on port 8767 for the user’s appearance check.
+
+
+## 12 October 2026 — preserve number line-box position
+
+User approves the smaller number size/colour but reports the digits appearing higher. The absolute top inset had not changed; unitless `line-height: 1` shrank the number’s line box from 0.8rem to 0.72rem with the font, also changing the visible glyph’s vertical placement. Keep the approved 0.72rem/90% opacity and restore a fixed 0.8rem line height, preserving the earlier line-box height and corner offsets. Result-marker line height remains 1. No tests requested/run; rebuild only, with visual confirmation left to the user.
+
+Vite-only build completed successfully; the line-box correction is available on port 8767. Visual confirmation remains pending.
+
+
+## 12 October 2026 — number inset correction and refresh stage restoration
+
+User reports the line-box correction did not fix the perceived upward movement. Traced the earlier shorter-button change: the shared number/result inset had also changed from 4px to 2px. Restore **4px specifically for question numbers**, leaving the smaller font, 90% opacity, fixed line height and 2px result-marker inset intact. The earlier claim that font metrics alone explained the movement was incomplete. User continues visual acceptance; no appearance suite is requested.
+
+New authorised behaviour: refresh restores the current chevron stage. Persist `lastMode` with each learner/topic in existing schema-2 browser progress, restore it on session creation/topic/profile selection, and leave ordinary stage selection intact while inside a Practice set. Invalid/missing values fall back to assessment; a retired M03 sixth-stage selection maps to independent practice. Existing page attempts, submitted answers and assessment lock remain authoritative. Functional verification will cover reload, stage/topic/learner isolation and Practice-set separation.
+
+
+User confirms the inset correction and requests a further **1px downward** adjustment: final question-number `top` is **5px**, with approved size/opacity and result-marker positions unchanged. The first focused browser check stalled because its new fixture omitted the existing second Continue confirmation for a new profile; the run timed out waiting for the first stage button; corrected the fixture. Session/Practice-set/problem-solving tests had already passed (27 tests).
+
+
+Completed: rebuilt the static site; **27 focused session/Practice-set/problem-solving tests passed**, and the focused startup browser checks passed with actual reloads through all six ordinary stages and saved second-page restoration. Profile/topic isolation, assessment locking and ordinary-stage separation from saved sets were covered by the focused logic tests. Appearance/colour suites were not rerun, respecting the user's manual appearance review. Final number top inset is 5px. Changes are available at port 8767; no commit/publication.
+
+
+## 13 October 2026 — method handwriting and compact playback/progress
+
+Current authorised priority: integrate reviewed Pacifico Maths pen strokes into learner-written method working through the shared helper and existing timeline; leave explanatory prose in the normal font. Remove the active-working highlight outline and add 2px horizontal clearance. Fit Play/Previous/Next/End/speed on one row at 360px, omit the visible Speed label while preserving its accessible name. Progress becomes “Your progress [bar] [percentage]” then “Level: [level]”, without “recent success”. Silently ignore occupied-intersection attempts in Go puzzles while preserving other invalid-move feedback. These reduce visual clutter and make the animation resemble student working. Implementation and verification pending.
+
+
+Follow-up authorised during this batch: keep the human/practice Go board’s Count, Pass, Undo and Redo on one row at 360px, with Count first (also in keyboard order), retaining 44px targets. Add the repository README’s deployed-site link explicitly labelled “Live demo for testing”. A root README did not exist, so a concise entry point is added and registered in INDEX. First verifier attempt passed formatting, build and puzzle-library tests, then the browser job was blocked by sandbox localhost permissions (EPERM); rerun with the established elevated verification command. No application failure was established by that attempt.
+
+
+Intermediate checks: all topic/Go scenarios, 119 logic tests, Svelte diagnostics and docs passed. Two new presentation assertions needed correction: Chromium reported the default 3px outline width despite `outline-style: none`, and `innerText` includes screen-reader-only Speed text. Assertions now check the actual visible outline style and clipped accessible label. Preserved highlight clearance only in staged working, leaving static previews’ spacing unchanged. Added explicit reduced-motion and failed-font-fetch fallback checks.
+
+
+User follow-up: guide lines should draw **3× faster**, highlights should use **0.85 background alpha** so underlying lines remain visible, and equation-explainer/working horizontal clearance should be effectively zero to reduce prose wrapping. Apply a guide-only pace multiplier through the existing player (numeric handwriting retains its speed), shared translucent highlight colour, and remove the adjacent note/right and maths/left padding.
+
+The first full run passed presentation, colours, startup, Practice sets and Progress; integration flagged the previously approved quieter question numbers for colour contrast. Preserve the user's explicit visual choice; narrowly exclude those numbers from that one rule while retaining raw audit reports and checks on all other content. Visual review also caught a real arithmetic SVG placement issue missed by earlier layout assertions: the nested viewport needed explicit width/height geometry as well as CSS sizing. Added a regression check comparing every placed handwritten digit/carry with the original mathematical baseline. Verification of these refinements is pending.
+
+
+All selected verification passed for the Pacifico integration, corrected digit/carry baselines, 3× guide pace, translucent highlights, reduced explanation gap, compact Go controls, progress layout and README link. Inspected corrected phone lattice and equation captures. No dependency, commit or publication was added.
+
+Latest refinement: centre the method playback controls as one group. User clarifies that chevron memory is per topic: restore each destination’s previous stage, or Initial assessment for a new topic. Code review confirms existing per-learner `topics[subject:topic].lastMode` and `restoreStage()` already implement this. Keep that logic; extend the real-browser startup check to alternate equations/independent → new division/assessment → division/method → equations/independent, reload each saved destination, then visit new multiplication/assessment. Verify centring at 360px without sacrificing the single row.
+
+
+The added topic-navigation browser scenario initially stopped before the stage assertion because automatic scrolling left the dropdown option outside the viewport. The fixture now scrolls to the topic header before opening the selector, matching ordinary visible navigation; no persistence failure was observed. Also removed an unintended extra topic-selector maximum introduced while bounding the progress block; shared content-sized selector styling remains authoritative.
+
+
+User requests more surgical verification, removal of the explainer’s left accent and a final-highlight fade (hold 3 seconds, fade for 1 second). The previous shared-CSS dependency map reran unrelated puzzle/topic scenarios for small playback cosmetics. Isolate playback-control/highlight CSS and add a short focused browser job; its style-only changes must not select the broad topic/puzzle, presentation, Progress or Practice-set suites. Retain broad checks for shared layout/runtime changes. One policy-change verification establishes the new cache; subsequent cosmetic edits use the narrow job.
+
+The final fade belongs to the existing disposable motion controller, affects highlight backgrounds/fills only, cancels on navigation/replay and retains written ink. Reduced motion clears the highlight instantly after the same three-second hold. Native keyboard topic selection is used in the stage-memory regression to avoid the pointer fixture’s off-screen option, preserving actual app navigation and reload assertions.
+
+
+The focused playback job passed in **2.1 seconds**, covering 360px centred controls, equation/arithmetic/fraction working, 85%-alpha highlights, 3s hold/1s fade, replay cancellation and reduced motion. The broader presentation suite also passed. Keep the final highlight timing in real seconds even if the student changes writing speed after the demonstration completes. Dependency-map tests now ensure a change confined to playback CSS selects only this browser job (plus ordinary build/format checks).
+
+The keyboard-based topic-switch regression successfully restored the second topic’s Learn the method stage, then hit an ambiguous test heading (both h1 and method h2 read “Bus stop division”). Tighten the fixture to h1; no application persistence change is required. Subsequent selected verification passed, including focused playback (2.2s) and startup/topic restoration (5.0s).
+
+User requests approximately another 2em for equation explanations without losing RHS working. Replace the annotated animation table’s fixed 56% explanation allocation with intrinsic, non-wrapping maths columns and a remaining-space explanation column; reduce unused outer RHS cell padding to 2px. This moves short working right without transforms or fixed offsets, while longer expressions retain their required width. Check every equation demo/recap at phone widths for actual stroke containment and readable explanation width. Verification pending.
+
+
+Equation-layout verification: the first fixture attempted End on an already completed example; corrected it to wait for font readiness and skip End when already finished. Actual containment then exposed the longest Confidence example overflowing at 320px. Compact 4px inner maths gutters alone were insufficient; added a panel-width-based mobile font clamp from the existing 1.1rem to a 1rem minimum (normal 360px size retained). All six demo/recap examples now pass at 320/360/390px, checking actual strokes against explanation and right boundary. The short 360px example gives prose at least 150px; its capture was visually reviewed. Format/build, docs and focused playback passed; the expanded playback job took 3.9s. No broad suite rerun was needed. Reconciled HANDOFF to current state, removing superseded pending-integration/test claims.
+
+
+## 13 October 2026 — reported missing additional topic cards
+
+User reports missing cards on local port 8767. Inspected the homepage loader and the actual served HTML, then loaded that same preview in a fresh 360px browser context: all 11 cards render, including ratios, percentages, reverse percentages and speed/distance/time. Actual card bounds stay within the viewport; the full-page capture confirms visible cards and no clipping. No registration/rendering defect reproduced and no production change made. An older open tab retaining earlier client data is a possible explanation, not an established cause; ask for a direct homepage refresh before further diagnosis. This was a focused inspection, not a full verification rerun.
+
+
+## 13 October 2026 — ratio question defect and topic-card working
+
+User identified that the ratio preview gives the total then asks for the same total. Audit found 42 affected ratio items (24 independent, 8 scaffolded, 8 spot-error and 2 demos), all with known=target=total. Correct Build items to request a named share and Confidence items to request the difference, keeping IDs and aligning mathematical models, answers, working, hints, checks and error repairs. The Build/card example now shares £160 between Ada and Ben in ratio 3:5 and asks for Ben’s £100 share. Existing saved histories remain intact; no migration or source-deck rewriting. Prior arithmetic validation established calculation consistency but missed this pedagogical defect; add an independent given/requested-quantity regression. User also requests slightly larger, centred working on topic cards; scope styling to previews and check narrow cards. Verification pending.
+
+
+User extends review to every other draft topic: parse for answers already given and other serious defects; also show explicit simplification in selected ratio solutions. Review will use prompt-derived calculations and context checks in addition to the existing model-derived answer checks. Current verification passed topic-card containment/centring, but the new ratio assertion incorrectly treated a two-batch final answer as the one-batch share; correct the test to account for later application operations. No production mathematics failure was indicated by that assertion.
+
+
+Draft-bank review covers 1,743 question/example records across all seven draft topics (249 per bank, including three problem-tip examples). Parsed prompt families, independently recalculated correct displayed working and added durable prompt-derived checks for percentages, reverse percentages, journeys, signed arithmetic and fractions; M03 also checks every model input against the prompt’s numeric/spelled givens. These checks complement model-based mathematics; they do not replace teacher acceptance.
+
+Findings/fixes: 42 ratio questions requested the supplied total; corrected and clarified units/context throughout the ratio bank. Added 33 explicit Build ratio reductions, including the worked/card example 6:10 → 3:5; subsequent arithmetic/diagrams consistently use simplified parts. Removed cancelling add/subtract pairs from 38 fraction applications and corrected addition-only questions to ask the amount altogether. Signed application sets previously repeated one answer throughout Start/Build and had divers rising above sea level: varied first changes, retained divers at/below sea level and replaced generic changes with explicit units/actions in 57 scenarios. Clarified that all full packs sell and what sales/delivery amount is requested in 19 M03 applications; corrected transport step wording and percentage-sales grammar. No additional answer/given contradictions were found in the reviewed reverse-percentage or journey templates; independent prompt calculations pass.
+
+The new prompt checks caught a repair-script mistake that replaced both used quantities in four-operation fraction questions; reconstructed each quantity from its corresponding operation and reran the targeted checks. A signed prompt parser initially missed the minus before £; corrected the parser. All 13 focused content/application tests now pass, including every displayed correct calculation (4,288 steps). Full change-selected verification and final card capture are pending. Existing IDs and saved histories remain intact; no publication.
+
+
+Draft audit/card batch completed: all selected checks passed (new topics, content/logic, bank, Svelte, presentation, playback, colours, startup, Practice sets, Progress and integration). User now requests the same quality/sense audit for the three non-draft topics and about half the vertical spacing between priority/a–z radios. Remove inherited form-label block margins and halve the sort row gap from 0.5rem to 0.25rem; keep horizontal spacing. Audit all ordinary/recap/application items plus arithmetic teaching recaps; verify equation solutions/steps independently and review arithmetic question/answer/remainder relationships and application wording. Work in progress.
+
+
+Non-draft review: 741 records (246 multiplication, 246 division, 249 equations), including application tips and equation recaps. Independent prompt/operand checks found no incorrect ordinary answers or remainders; all equations have a unique stated solution and all 976 correct balance rows preserve it. The expanded calculation check covers all ten topics. Clarified 19 multiplication application examples to specify purchase of all items and 19 division sales examples to specify sale of all full packs and any packaging deduction. No mathematical answer/ID changes were needed in these three banks. Their 379 application steps also pass arithmetic checks. The new equation test initially assumed recaps had an answer field; it now uses the final working row where that field is absent. All ten focused content-quality tests pass.
+
+Sort-radio refinement removes inherited 12px/6px label margins and halves the flex row gap from 8px to 4px, reducing the space between stacked choices to about half their previous centre-to-centre distance. Native radio labels and horizontal spacing remain. Final browser verification pending.
+
+
+All selected checks passed for the non-draft audit and compact radio controls. Final 360px captures confirmed the reduced radio spacing and centred/enlarged previews, but exposed a ratio reduction wrapping inside its output. Use the conventional short equivalent-ratio line (6:10 = 3:5), with both explicit divisions (6÷2=3 and 10÷2=5) in its teaching explanation. The step title still states the common divisor. This avoids splitting the resulting ratio in a narrow card without shrinking the entire preview. Reverification pending for this final content refinement.
+
+
+## 13 October 2026 — units and acceptance of additional topics
+
+- User requests units in speed/distance/time working and stated answers, including intermediate rates (4/3 km/min, then 80 km/h), so conversions are understandable. Learn the method must remind students to include units in exams; app entry stays numeric.
+- Extend the same rule to prices and all unit-bearing answers, placing £ before monetary amounts. Preserve mathematical answers and marking.
+- User accepts removing Draft stamps from all seven additional topics (M03, M13, M15, M04, M06, M07, M12). Update current status and retain content checks independently of Draft status. This does not authorise deployment. Implementation/verification pending.
+
+- Implemented shared quantity formatting and authored intermediate result units; raw calculation operands/answers remain unchanged. Cards, demos and feedback use the same labels. Keep each unit with its result when wrapping. Corrected M03 sticker answer labels that still said cards. Bank-owned teaching notes remind students about exam units.
+- Removed Draft flags from all seven banks and route metadata; updated specifications/current rules. Preserved both browser coverage families by selecting calculation versus symbolic methods, independently of Draft status.
+- Initial selected run passed build, new-topic browser checks, logic, bank validation and Svelte diagnostics. Presentation then exposed an old test assumption: `!draft` selected symbolic questions, but now included prose M03 and incorrectly demanded three columns at 720px. Select symbolic methods explicitly; calculation-topic responsive checks remain separate. The 360px capture also showed a detached km/min label; result/unit wrapping is tightened before rechecking.
+
+- Final unit/status batch passed all selected checks, including presentation, startup, Practice sets, Progress and integration; passing content/logic checks were cached. No deployment.
+
+## 13 October 2026 — remainder working and Build challenge review
+
+- User queries the last card sitting at the bottom of the right column. Current native columns read down then across; they do not place each next card in the shortest column. Explained the cause; no packing change requested explicitly.
+- Replace inverse-identity-first remainder working with division showing quotient/remainder, followed by the contextual answer; retain inverse identities as checks. Review all M03 practice content, not just its card.
+- Homepage already selects Build (level 1 in zero-based data), but the M03 130 ÷ 6 example is too gentle. Replace it with a more substantial Build example and audit tier separation. Found ten Build records that only multiply a rate/area by a quantity, overlapping Start; add a meaningful quantity-combination step while preserving IDs, provenance and historical saved attempts. Implementation/verification pending.
+
+- Replaced 65 inverse-identity working rows across M03 questions/recaps with explicit division and `r` notation; checks keep the useful inverse identity. The new Build demo adds a 66th remainder example: 146 pupils + 9 adults = 155 people; 155 ÷ 12 = 12 r 11; 13 minibuses are needed. Its source ID/provenance are retained with a dated website refinement.
+- Strengthened ten Build rate/area records (including scaffolded/error copies): combine two times or counts before multiplying. Aligned models, answers, units, hints, misconception repairs and checks. Start stays primarily one direct operation; Build adds interpretation/grouping; Confidence links an intermediate result to another quantity/cost. Other card examples already select their topic’s Build demo. Added independent remainder reconstruction and prompt-derived grouping checks; practice-set references continue to use the same bank IDs. Verification pending.
+
+- Remainder/Build batch passed build, new-topic browser checks, content/logic and bank validation; the 360px new card was visually inspected. Presentation then failed the existing 14–17.29px font assertion immediately after resizing from desktop. The test now waits (bounded to three seconds) for the same font bounds while advancing the mock animation clock, allowing ResizeObserver delivery; it retains the original bounds and adds size diagnostics. Rerun pending; no production layout change was made for this failure.
+
+- Final selected verification passed, including presentation (30.1s), startup, Practice sets, Progress and integration; unchanged passing build/content checks were reused. The 360px homepage capture confirms the revised Build question, quotient/remainder working, unit labels and absence of Draft stamps. No masonry, stored-history, commit or deployment changes.
+
+
+## 13 October 2026 — packed masonry and calculation spacing
+
+- User clarifies masonry must place each next card at the highest available position, choosing left to right for equal heights. This supersedes down-column reading order. Preserve priority/a–z DOM and keyboard order while packing in that sequence. Keep natural card heights, responsive widths and stamp clearance.
+- Add explicit space on both sides of displayed equals/approximate signs; component-boundary whitespace currently disappears beside results such as £24. Use shared calculation-renderer spacing. Implementation and verification pending.
+
+- Implemented `topicMasonry`: CSS owns equal responsive track widths; the action places each source-ordered card in the shortest column, with leftmost ties. It responds to resizing, card-size changes and search/sort mutations, reserves the full container height and cleans up observers/frames on navigation. A normal CSS grid is the static fallback; no library dependency.
+- Shared calculation equals/approximation spans now have 0.25em padding on both sides, fixing the missing gap before results/currency. Existing maths/content is unchanged.
+- User confirms sorting must match the sequence students see scrolling down, not column-first reading. This is the new packing/DOM/keyboard sequence and is recorded in standing rules.
+- Verification passed all selected checks: format/build, responsive packing (320–1100px), filter/empty/single-result/sort packing, content containment/sign spacing, logic, Svelte, presentation, playback, colours, startup, Practice sets, Progress and integration. Inspected the 360px screenshot. No content, progress, commit or deployment changes.
+
+
+## 13 October 2026 — ratio Confidence majority
+
+- User wants the majority of level-three (Confidence) ratio practice to link ratio reasoning to further calculations, rather than relying on basic sharing/difference questions. Foundation suitability depends on reasoning and arithmetic, not step count alone.
+- Audit found all 36 independent, 12 scaffolded and 12 error questions still ended at the ratio result; only the 18 problem-stage questions continued further. Target at least 75% in each ordinary practice type, plus matching demonstrations/recap/help. Retain a minority of core ratio questions. Keep each problem within four arithmetic operations and preserve stable IDs/provenance/saved histories.
+- Use varied, plausible links: price per litre, repeated recipe batches, additional rest, beads used, centimetres to metres, and a simple percentage of a money share. Replace unrealistic Confidence costs per gram/minute/centimetre while reviewing those linked questions. Implementation/verification pending.
+
+- User refines the target to two thirds and explicitly includes Learn the method and scaffolded stages. Implemented 24/36 independent, 8/12 scaffolded and 8/12 errors, with a retained core-ratio third; all 18 problem questions remain linked. Updated 63 records including the demo, two stored assessment candidates, recap and help example. Stable IDs/provenance retained; saved histories untouched.
+- Learn the method now demonstrates cost after finding a ratio share, with a metres-conversion recap; problem help demonstrates saving 25% of a money share. Confidence guidance and all eight linked scaffolded examples include the final calculation. Six contexts cover cost, repeated batches, extra rest, beads used, unit conversion and simple percentage saving. Replaced unrealistic linked-question prices and repaired a contradictory one-part-difference note.
+- Authoring script first stopped on an unset local variable before writing any bank changes; corrected and completed. Targeted content/coverage verification pending.
+
+- User additionally requests a light sprinkling of simple two-step Build questions. Added one quarter of ordinary Build practice (9/36 independent, 3/12 scaffolded, 3/12 errors) and the recap. One given ratio part makes the first arithmetic step multiplication; the second is a small cost/addition/subtraction calculation. This is two actual operations, with an identity row explaining the known part. Retained the main Build simplification demo and the majority of core-ratio practice.
+- Added prompt-derived checks for all revised linked contexts, exact per-tier/type proportions and teaching examples, plus a browser check that Confidence scaffolded guidance and feedback include the further calculation. Verification pending.
+
+- Initial verification built successfully, then the new scaffold-feedback browser assertion waited on the next question: a correct submission had automatically advanced. Updated the test to revisit the answered question before inspecting its feedback, matching existing assessment checks. No product change required; rerun pending.
+
+- Scaffolded feedback check now passes. A later homepage resize assertion then caught stale masonry positions before the layout frame settled; the existing packing wait checked ordering/height but omitted horizontal containment. Added horizontal containment to that same bounded wait so it waits for resize completion without relaxing the overflow check. Also removed the same contradictory one-part note from remaining lower-level ratio examples. Rerun pending.
+
+- Final verification initially stopped on formatting in the edited masonry wait; formatted that file, then all selected checks passed: format/build, new-topic browser checks (including ratio scaffolded feedback), docs, logic/content, bank, presentation, startup, Practice sets, Progress and integration. Passing unchanged checks were cached. The prompt-derived ratio checks cover linked arithmetic and units independently of the stored model; exact Build/Confidence proportions are checked. Preview build regenerated; no commit or deployment.
+
+- Remaining coverage reviewed against the original topic plan and wider Foundation content. Outstanding planned areas include signed multiplication/division and order, fraction multiplication/division, forming equations, area/volume and missing lengths, angles/polygons and Pythagoras; FDP conversion and best buys remain optional source drafts. User chose to defer further topics to another time. Current implementation is complete; await new instructions. Handoff updated with this decision; no additional application tests needed for this documentation-only closeout.

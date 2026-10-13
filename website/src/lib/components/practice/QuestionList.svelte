@@ -13,10 +13,16 @@
 <script>
   import MathText from '../teaching/MathText.svelte';
   import { LEVELS } from '#lib/domain/engine.mjs';
+  import { fitQuestionRows } from '#lib/application/question-layout.mjs';
   let { bank, page, selected, onselect, assessment = false } = $props();
 </script>
 
-<ol class="question-list" class:assessment aria-label="Choose the question to answer">
+<ol
+  use:fitQuestionRows
+  class="question-list"
+  class:assessment
+  aria-label="Choose the question to answer"
+>
   {#each page.items as item, index (item.id)}
     {@const question = bank.questions.find((q) => q.id === item.id)}
     {@const response = page.responses[item.id]}

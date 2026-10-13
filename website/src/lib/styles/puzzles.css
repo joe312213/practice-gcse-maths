@@ -96,3 +96,11 @@ main .puzzle-controls .go-status {
 .human-go .go-clocks {
   max-width: 32rem;
 }
+
+/* Four ordinary play actions share the phone row without shrinking touch targets. */
+.human-go .go-play-controls {
+  gap: 6px;
+}
+.go-play-controls .action-button {
+  padding-inline: 10px;
+}

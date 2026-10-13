@@ -40,7 +40,7 @@ const catalogue = JSON.parse(
 
 test("arithmetic working preserves every answer and internal zero in the imported banks", () => {
   for (const bank of banks.slice(1))
-    for (const q of bank.questions) {
+    for (const q of bank.questions.filter((q) => q.type !== "problem")) {
       if (q.method === "lattice") {
         const digits = latticeModel(q.a, q.b)
           .diagonals.map((d) => d.digit)
@@ -166,5 +166,27 @@ test("three real topics preserve separate progress and work together in a coded 
       session.submitAnswer();
     }
     if (view.page.pendingChoice) session.resolvePromotion(false);
+  }
+});
+
+test("lattice checks round both factors to one significant figure without inverse division", () => {
+  const round = (number) => {
+    const place = 10 ** Math.floor(Math.log10(number));
+    return Math.round(number / place) * place;
+  };
+  for (const q of banks
+    .find((b) => b.topic === "M01")
+    .questions.filter((q) => q.method === "lattice")) {
+    const a = round(q.a),
+      b = round(q.b);
+    const formatted = (value) => value.toLocaleString("en-GB");
+    assert.ok(
+      q.check.includes(
+        `${formatted(a)} × ${formatted(b)} = ${formatted(a * b)}`,
+      ),
+      q.id,
+    );
+    assert.ok(q.check.includes("not an exact check"), q.id);
+    assert.equal(q.check.includes("÷"), false, q.id);
   }
 });

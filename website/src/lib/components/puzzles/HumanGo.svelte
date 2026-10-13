@@ -184,7 +184,7 @@
       ? 'Counting: agree on dead groups, then tap them to remove or restore them in the count. Clocks are paused.'
       : `${position.turn === 'b' ? 'Black' : 'White'} to play.${position.passes ? ' The other player passed.' : ''}`)}
 </p>
-<div class="actions">
+<div class="actions go-play-controls">
   {#if counting}<button
       class="action-button"
       onclick={() => {
@@ -193,15 +193,15 @@
       }}>Resume play</button
     >
   {:else}<button
-      class="action-button primary"
-      disabled={Boolean(game.clock?.expired)}
-      onclick={() => play(null)}>Pass</button
-    ><button
       class="action-button"
       onclick={() => {
         game = countHumanGo(game, Date.now());
         message = '';
       }}>Count</button
+    ><button
+      class="action-button primary"
+      disabled={Boolean(game.clock?.expired)}
+      onclick={() => play(null)}>Pass</button
     >{/if}
   <button
     class="action-button"

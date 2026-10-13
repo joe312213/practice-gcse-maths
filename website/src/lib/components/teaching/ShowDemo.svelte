@@ -13,6 +13,7 @@
 -->
 <script>
   import { onMount, tick } from 'svelte';
+  import { asset } from '$app/paths';
   import { createDemoMotion } from '#lib/application/demo-motion.mjs';
   import { createPlayer } from '#lib/application/player.mjs';
 
@@ -27,6 +28,8 @@
     speed = 1,
     onspeed = () => {},
   } = $props();
+  let font = $state(null);
+  let fontReady = $state(false);
   let cursor = $state(0);
   let started = $state(false);
   let playing = $state(false);
@@ -35,6 +38,8 @@
   let disposed = false;
   let stage;
   const speedId = $props.id();
+  // Grid/divider construction runs three times faster than written working.
+  const pace = (step) => (frames[step - 1].guideProgress === undefined ? 1 : 3);
   const frame = $derived(frames[cursor]);
   const step = $derived(frame.step);
   const finished = $derived(cursor === frames.length - 1);
@@ -58,7 +63,10 @@
     player.play();
     await tick();
     if (disposed) return;
-    if (fresh) stage.scrollIntoView({ block: 'start', behavior: 'instant' });
+    if (fresh) {
+      stage.scrollIntoView({ block: 'start', behavior: 'instant' });
+      motion.reveal(new Map(), speed, 650 / pace(cursor + 1));
+    }
     revealLatest();
   }
   /**
@@ -91,9 +99,25 @@
       target.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
   }
   onMount(() => {
+    const abort = new AbortController();
+    fetch(asset('handwriting/pacifico-maths.json'), { signal: abort.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error('Font unavailable');
+        return response.json();
+      })
+      .then((data) => {
+        if (!disposed) font = data;
+      })
+      .catch(() => {
+        /* Ordinary maths remains usable when the optional font cannot load. */
+      })
+      .finally(() => {
+        if (!disposed) fontReady = true;
+      });
     motion = createDemoMotion(stage);
     player = createPlayer({
       length: frames.length,
+      pace,
       delay: 650 / speed,
       /** Player frame callback: update cursor/playing and animate advancing ink after rendering. */
       onFrame: async (next) => {
@@ -109,13 +133,15 @@
           motion.cancel();
           await tick();
           if (disposed) return;
-          if (advancing) motion.reveal(before, speed);
+          if (advancing) motion.reveal(before, speed, 650 / pace(next.step));
+          if (next.step === frames.length) motion.fadeHighlights();
           revealLatest();
         }
       },
     });
     return () => {
       disposed = true;
+      abort.abort();
       player.dispose();
       motion.cancel();
     };
@@ -126,38 +152,42 @@
   {@render introduction?.(step)}
   {@render heading()}
   {#if started}<div class="demo-working">
-      {@render children(frame)}
+      {@render children(frame, font)}
       <div data-demo-working-end aria-hidden="true"></div>
     </div>{/if}
   <div class="demo-controls">
-    <button type="button" class="action-button primary" id="demo-play" onclick={play}
-      >{playing ? 'Pause' : finished ? 'Replay' : 'Play'}</button
+    <button
+      type="button"
+      class="action-button primary"
+      id="demo-play"
+      disabled={!fontReady}
+      onclick={play}>{playing ? 'Pause' : finished ? 'Replay' : 'Play'}</button
     >
     <div class="secondary-controls">
       <button
         class="action-button compact"
         type="button"
         id="demo-back"
-        disabled={step <= 1}
+        disabled={!fontReady || step <= 1}
         onclick={() => go(step - 1)}>Previous</button
       >
       <button
         class="action-button compact"
         type="button"
         id="demo-next"
-        disabled={finished}
+        disabled={!fontReady || finished}
         onclick={() => go(step + 1)}>Next</button
       >
       <button
         class="action-button compact"
         type="button"
         id="demo-all"
-        disabled={finished}
+        disabled={!fontReady || finished}
         onclick={() => go(steps)}>End</button
       >
     </div>
     <label class="demo-speed" for={speedId}
-      >Speed
+      ><span class="sr-only">Speed</span>
       <select
         class="choice-field compact"
         id={speedId}

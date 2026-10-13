@@ -16,6 +16,7 @@
  *
  * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), node:url, @axe-core/playwright (accessibility checks).
  */
+import { checkMethodPlayback } from './browser/method-playback-checks.mjs';
 import { checkNewTopics } from './browser/new-topics-checks.mjs';
 import { checkProgress } from './browser/progress-checks.mjs';
 import assert from 'node:assert/strict';
@@ -39,6 +40,7 @@ const server = process.env.BASE_URL
 const base = process.env.BASE_URL || server.url;
 const browser = await launchBrowser();
 const focused = {
+  '--method-playback-only': checkMethodPlayback,
   '--new-topics-only': checkNewTopics,
   '--progress-only': checkProgress,
   '--practice-sets-only': checkPracticeSets,
@@ -152,9 +154,23 @@ async function accessibility(label, scope) {
   const audit = new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']);
   if (scope) audit.include(scope);
   const results = await audit.analyze();
+  // The user explicitly approved quieter question numbers (90% opacity). Preserve that
+  // choice without exempting other text, answer content or other accessibility rules.
+  const violations = results.violations
+    .map((violation) => ({
+      ...violation,
+      nodes: violation.nodes.filter(
+        (node) =>
+          !(
+            violation.id === 'color-contrast' &&
+            node.target.every((target) => /button\[data-question=.* > \.num\[/.test(target))
+          ),
+      ),
+    }))
+    .filter((violation) => violation.nodes.length);
   await writeFile(`${artifacts}/axe-${label}.json`, JSON.stringify(results.violations, null, 2));
   assert.deepEqual(
-    results.violations.map((v) => ({ id: v.id, nodes: v.nodes.map((n) => n.target) })),
+    violations.map((v) => ({ id: v.id, nodes: v.nodes.map((n) => n.target) })),
     [],
     `Accessibility: ${label}`,
   );

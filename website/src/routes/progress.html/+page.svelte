@@ -24,6 +24,7 @@
   import { maintainRecommendations, REVISION_POLICY } from '#lib/domain/revision.mjs';
   import TopicProgress from '#lib/components/progress/TopicProgress.svelte';
   import ProgressTransfer from '#lib/components/progress/ProgressTransfer.svelte';
+  import ProfileManagement from '#lib/components/progress/ProfileManagement.svelte';
 
   import { PAGE_TYPES } from '#lib/domain/practice-code.mjs';
   let store = $state.raw(null),
@@ -159,6 +160,15 @@
         Choose your name on the <a href={resolve('/')}>practice page</a>, or import your progress
         below.
       </p>{/if}
+    {#if profile}<ProfileManagement
+        {store}
+        {profile}
+        onchange={(next) => {
+          if (!save(next)) throw Error('The profile could not be saved. Please try again.');
+          store = next;
+          refresh();
+        }}
+      />{/if}
     <ProgressTransfer {profile} {store} {save} {initialUpdatedAt} onchange={() => refresh()} />
   {/if}
 </main>

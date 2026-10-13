@@ -2,13 +2,13 @@
 
 Product authority: [web_format.md](../web_format.md) and later [standing decisions](UI_UX_RULES.md). Current implementation/status belongs in [HANDOFF](../HANDOFF.md); dated evidence belongs in [DEV_LOG](../DEV_LOG.md). This is a roadmap, not permission to start every item.
 
-## Next session priorities
+## Current implementation programme — 12 October 2026
 
-Recorded at the user's request on 10 October 2026. These are the agreed next discussion/work slices, not features already delivered or authorisation to provision a cloud service during this session.
+The user now authorises working through the outstanding list in order, documenting each slice: Draft teaching review; multiplication Confidence correction; 48-hour working cache; topic discovery; fixed non-independent scoring windows; both forms of problem solving; Practice-set expansion; further topics; profile/college features. [HANDOFF](../HANDOFF.md) owns the live sequence and evidence.
 
-1. **Review the implemented operation highlighting.** The 11 October follow-up implements arithmetic input/result/carry phases and equation-side highlighting. The repeatable [method animation contract](METHOD_ANIMATIONS.md) defines authoring, sequencing and verification for current and future methods. User visual review remains useful; custom-input animations remain V2.
-2. **Personal cloud progress.** The 12 October decision selects locally synced college OneDrive as the recommended/default student workflow. Explicit linked-file Save/Open reuses schema-2 JSON, reviewed replacement and external-change checks; browser progress remains the working copy. Unsupported browsers use download/import. Automatic two-way merging, background cloud writes and provider sign-in are future work. See [standing rules](UI_UX_RULES.md). A later direct Microsoft integration would require an Entra app and delegated permission/college consent; [Microsoft app folders](https://learn.microsoft.com/en-us/graph/onedrive-sharepoint-appfolder) support personal and work/school storage. No provisioning is authorised.
-3. **Practice countdowns.** The 12 October decision specifies user-started countdowns for Spot the error and Independent practice, default ceil(1.5 × page questions) minutes, adjustment before start, pause/reset and optional soft expiry chime. Separate from active-time measurement and authored timed sets. Scaffolded timer visibility remains a possible later decision.
+Additional instructions: fix iPhone Draft-stamp clipping; provide partial-title search and `priority` / `a-z` sorting in the 40% side of a 60%/40% heading/control row; blend initial topic difficulty with learner revision evidence. Add a sixth application/problem-solving stage and combined problems using 1–4 operations, with reusable collapsible level-matched `How to solve tips`. Ratios and percentages are next, followed by calculator-paper content. Investigate handwriting stroke animation libraries, report payload/adoption issues and keep any integration behind a shared helper.
+
+This authorisation supersedes earlier documentation-only deferrals for these slices. It does not authorise publishing, provisioning external services, inventing college destinations, a Go opponent or adopting an animation dependency without the requested investigation. Highlighting, linked progress saving and countdowns from the previous priority list are implemented.
 
 ## Future Go computer opponent
 
@@ -23,31 +23,19 @@ Documentation requested on 12 October; no opponent implementation is authorised.
 
 Prefer a separately loaded worker/engine adapter if pursued. The reusable puzzle module retains legal moves and board state; the app owns opponent choice and loading UI. Cancel/discard replies after undo/reset/size changes, enforce time limits, keep human play usable without loading AI, and measure against a fixed opponent/test set on school computers and phones. Choose board-size/rating targets before selecting a model. See the [patch register](puzzles_patches.md) for existing human-game boundaries.
 
-## Next content round — multiplication Confidence correction
+## Implemented programme and later work
 
-Reported and confirmed on 11 October 2026; **document now, fix in the next content update round**. Every multiplication Confidence question must use **4-digit × 3-digit, 3-digit × 4-digit, or 4-digit × 4-digit** operands. The current M01 bank includes eleven 3-digit × 2-digit questions: eight independent-practice questions (`maths:M01-S04-C3-Q1/Q2` through `maths:M01-S07-C3-Q1/Q2`) and three error-spotting questions (`maths:M01-SE-C3-Q1`, `Q2`, `Q3`). For example, `342 × 15` and `234 × 56` are currently labelled Confidence.
+The authorised batch implements Confidence operand corrections, a 48-hour working cache, partial-title discovery with blended revision priority, fixed scoring windows, four-question scaffolded pages, the seven-day explicit assessment lock, sixth-stage/combined problems, ratios and calculator practice, and local profile controls. Exact verification and any remaining checks belong in [HANDOFF](../HANDOFF.md), with the dated record in [DEV_LOG](../DEV_LOG.md).
 
-Replace those questions with appropriately challenging products in the permitted digit ranges; review carries as well as operand length. Update answers, hints, method/check notes and plausible errors together, preserving stable IDs and page-slot references. Audit every Confidence activity type and strengthen bank validation for this requirement. Current bank content remains unchanged until that round.
-
-## Agreed working-cache lifetime — implementation deferred
-
-Increase the temporary drawing/typed-working cache lifetime from three to **48 hours after the last edit**. The user requested documentation first and code later. Keep sessionStorage and exclusion from durable progress/backups; closing the tab can still end the cache. Update the TTL and expiry-boundary tests together in that later slice.
-
-## Topic-card sorting backlog
-
-Requested on 10 October 2026: add topic-card sorting by **alphabetical order** and by **revision priority**. Not implemented; the current prerequisite order remains unchanged. When implementing, reuse the existing revision-priority calculation rather than creating competing ranking logic. Confirm the default order and whether the learner's sorting choice is remembered.
-
-## Future work
-
-1. Refine the implemented M01/M02/M10 teaching flow before further expansion. For each later topic, inspect saved resources for provenance, level and style, then review and refine its website content; follow the prerequisite teaching sequence and [current content guidance](../website/README.md#current-content-and-historical-references).
-2. Expand the implemented one-to-four-page Practice sets with mixed-priority/problem-solving activities and reviewed banks. The [54-bit code contract](../website/README.md#practice-sets-codes-and-authored-pages) is implemented for M01/M02/M10 plain/error pages.
-3. Review the implemented topic aggregation/recency defaults documented in website/README. Current aggregation uses plain ×2, other types ×1, excluding absent scores while flagging insufficient evidence; mixed-topic question attribution remains future work.
-4. Add further profile management, issue-report destination and college configuration when requested. Named-learner JSON export/import and CSV answer-history export are implemented. Subject/topic storage isolation is already implemented; no schema-1 migration is outstanding.
-5. Complete relevant teaching/accessibility/device checks before rollout. Hosting/integration and publication remain separate decisions. Custom-input animations and an extra challenge tier are V2; slide export is deferred.
+1. M03/M13/M15/M04/M06/M07/M12 are accepted for unmarked display following the user’s 13 October request; continue reviewing application content from teaching feedback. Keep IDs and source provenance; follow prerequisite order for subsequent expansion.
+2. Device acceptance remains separate from browser automation, including the reported physical iPhone Safari layout.
+3. College integration is later design work: proposed central hosting, college accounts, teacher-configured links and college-code URLs. No college infrastructure is implemented. Issue reporting retains an empty email recipient.
+4. Extra/Super challenge and custom-input animations remain V2; slide export is deferred. The handwriting investigation is complete in [METHOD_ANIMATIONS](METHOD_ANIMATIONS.md#handwriting-stroke-investigation--12-october-2026); adoption must use a shared helper and reviewed glyph paths.
+5. Publication and hosting remain separate actions. No Go opponent is authorised by this programme.
 
 ## Practice set implementation checkpoint — 4 October 2026
 
-The implemented [Practice set contract and authoring guide](../website/README.md#practice-sets-codes-and-authored-pages) owns code fields, slot reuse/resolution, timing and resume behaviour. The 4 October DEV_LOG final-contract entry records why it superseded the three-page limit, per-page challenge, frozen-release/UUID registry and non-reusable slot proposals. Four challenge values are reserved, with no Automatic value; variants remain session choices. Mixed-priority/problem-solving pages and Super challenge require reviewed content/logic before becoming selectable.
+The implemented [Practice set contract and authoring guide](../website/README.md#practice-sets-codes-and-authored-pages) owns code fields, slot reuse/resolution, timing and resume behaviour. The 4 October DEV_LOG final-contract entry records why it superseded the three-page limit, per-page challenge, frozen-release/UUID registry and non-reusable slot proposals. Four challenge values are reserved, with no Automatic value; variants remain session choices. Mixed-priority and problem-solving pages are implemented, including Combined topics; Super challenge remains reserved for reviewed V2 content.
 
 ## Scoring interpretations currently used
 
@@ -55,8 +43,8 @@ This section records scoring decisions and implementation interpretations. Expli
 
 - Target storage scope is subject/topic/page-type/level, alongside assisted outcomes. Schema 2 already scopes topics by subject/topic, with page-type tracks and actual-level histories. Old-data migration was waived. Correct assisted attempts leave scoring history unchanged; incorrect attempts enter as failures. A question remains assisted for the whole page attempt once a hint/reference is used. Retries are learning feedback, not additional scored attempts.
 - Independent practice uses the last ten eligible outcomes with oldest-to-newest weights 1,1,1,1,1,2,2,3,3,3. Zero-pad missing history; do not reset at page boundaries. For page types that typically have few than ten questions, use a rolling window that matches the typical number of questions on that page type: equal weights for 1–4 questions; the newest three weighted twice for typical 5–9 question pages. Denominator includes missing positions. Ordinary independent pages now contain twelve questions; this does not change their ten-answer scoring window.
-- **Implementation gap confirmed 10 October:** “typical number” means a fixed scoring-window length for each page type, even when an individual page differs. Current `scoringWindow(mode, pageSize)` instead uses the actual page length for non-independent activities, capped at ten. Independent practice already uses ten. Agree the fixed lengths for the other page types and review the code/test changes in step 3; no scoring change is authorised by this documentation edit.
-- Reassessment requires min(5, page length) eligible answers; for 1–2-question pages require at least three across pages. Persist lockout/trial state. Short-page success cannot bypass reassessment.
+- **Implemented 12 October:** fixed scoring windows are four for scaffolded/errors, six for problem solving and ten for independent/mixed revision. Scaffolded pages contain four questions. Initial assessment has six questions and no promotion, with explicit reassessment only after a seven-day lock and complete attempt history.
+- Adaptive level reassessment (separate from Initial assessment) requires min(5, page length) eligible answers; for 1–2-question pages require at least three across pages. Persist lockout/trial state. Short-page success cannot bypass reassessment.
 - Promotion checks a type's own history. Trial answers are recorded at their actual level. Failure restores the previous recommendation and its history; no same-page retry unless five new consecutive unassisted successes follow the failure. At page end, a one/zero-question trial offers the specified choice; two or more correct trial answers confirm automatically.
 - Two consecutive submitted questions at the same manually selected lower level lower the recommendation. A manual upward choice changes the recommendation, records its origin and uses the low-score recommendation rule; it does not masquerade as automatic mastery.
 - Start has a recap recommendation instead of a lower-level offer; Confidence has no automatic higher level. Invalid input is not a submitted attempt. Drawing and typed working restore per question from the temporary cache; unsubmitted answer entry resets when changing question and submitted feedback remains.
@@ -67,20 +55,17 @@ This section records scoring decisions and implementation interpretations. Expli
 
 These are recorded engineering interpretations, not urgent approval gates. Preserve current behaviour until reviewed:
 
-- Set the fixed typical scoring-window length for each non-independent page type, independent of individual page length; review reassessment at lengths 5–9 separately.
+- Fixed scoring windows are settled above; any later review of adaptive level reassessment at lengths 5–9 should preserve those windows.
 - Assisted correct trial answers currently neither fail the trial nor count toward confirmation. Opening a reference marks assistance even if the learner does not use it.
 - Submitted answers are immutable within a page; decide whether future unscored retries or repeat-question eligibility intervals help learning.
 - Distinguish manual level choice from demonstrated mastery in any future aggregate display.
 - Initial assessment currently gives immediate feedback and no automatic placement or enforced stage order. Placement criteria remain undefined.
-- Real host integration and profile rename/delete/reset remain unimplemented. Recorded history is retained; JSON progress export/import and CSV answer export are implemented.
+- Local profile rename/delete/reset is implemented; real college host integration remains deferred. Recorded history is retained; JSON progress export/import and CSV answer export are implemented.
 
-## Arithmetic problem-solving options
+## Arithmetic problem-solving implementation
 
-Requested 12 October 2026. The authorised first slice is the Draft [M03 multiplication/division problems topic](../content/specs/M03.md), based on historical teaching material, with contextual rounding and linked calculations.
+The user selected **both** on 12 October: a sixth application stage within topics and combined arithmetic problems, involving **1–4 operations**. Use accessible varied situations requiring students to select operations and interpret results. Mixed problems must not reveal their operation by grouping; prerequisites govern teaching order.
 
-Two later options need a teaching/navigation decision before implementation:
+Both problem-solving pages and the sixth chevron stage offer a reveal/hide **How to solve tips** section: short steps, specific tips and a worked example matching the current challenge level, sharing the teaching renderer. Assistance follows the existing scoring contract. Preserve original stage IDs, existing page slots and saved progress; keep problem-solving histories separate from plain method practice. Do not duplicate identical practice across topic and combined paths.
 
-- **Mixed arithmetic problems topic:** varied situations requiring students to choose among addition, subtraction, multiplication, division, percentages and ratio, including linked operations. Prerequisites should govern availability/order; do not signal the operation by grouping all questions of one type together.
-- **Application stage within topics:** contextual problems using that topic after numerical practice, with its own full pages, challenge bands, feedback and progress treatment. Decide whether it replaces or adds a stage, how timers and completion work, and whether mastered mixed questions belong in a separate topic too.
-
-These options may coexist, but avoid duplicating identical practice or fragmenting progress. Neither a new stage nor a general arithmetic topic is implemented or authorised by this note. Preserve existing stage IDs and saved progress when a later design is agreed.
+Ratios then percentages are the next content priorities; M06 already exists and should be refined/extended rather than duplicated. Subsequent content should support Foundation papers permitting calculators, without assuming an exam board. See [HANDOFF](../HANDOFF.md) for the ordered work slices.

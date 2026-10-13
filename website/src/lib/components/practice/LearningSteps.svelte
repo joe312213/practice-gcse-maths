@@ -6,9 +6,9 @@
 -->
 <script>
   import ChevronSteps from '#lib/components/ui/ChevronSteps.svelte';
-  import { MODES } from '#lib/domain/stages.mjs';
-  let { mode, onselect } = $props();
-  const stages = MODES.map(([id, label], index) => ({ id, label, index }));
+  import { topicStages } from '#lib/domain/stages.mjs';
+  let { bank, mode, onselect } = $props();
+  const stages = $derived(topicStages(bank).map(([id, label], index) => ({ id, label, index })));
   const current = $derived(stages.findIndex((stage) => stage.id === mode));
 </script>
 

@@ -70,3 +70,8 @@ Verification: actual compiled engine on all supported sizes, komi and colour sym
 ## Human board centring
 
 The Go route wraps HumanGo in an app-owned `.human-go` playing area. Host puzzle styles centre the board, setup/action rows, timing disclosure, clocks and status/counting text. Preserve the existing board dimensions and inclusive <=440px wider-board gutters; keep the title/rules row separate. No portable module changes are needed when replaying this layout patch.
+
+
+## 13 October — quiet occupied taps and compact play controls
+
+`ui/boards.js` ignores a puzzle move on an occupied intersection before calling the move rules, avoiding the unnecessary “Choose an empty intersection.” notification. Legal-move validation and other error feedback remain intact. App `HumanGo` places Count before Pass, Undo and Redo in DOM/keyboard order; `.go-play-controls` uses compact gaps and horizontal padding so all four fit at 360px while retaining 44px touch heights.

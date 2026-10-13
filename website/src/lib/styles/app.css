@@ -13,6 +13,7 @@
 @import './theme-mapping.css';
 @import './controls.css';
 @import './components.css';
+@import './method-playback.css';
 @import './theme-controls.css';
 
 @import './progress.css';

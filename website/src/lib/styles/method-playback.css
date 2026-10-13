@@ -1,0 +1,65 @@
+/* Shared method presentation; verified by the focused playback check. */
+.demo-working:has(.balance.annotated) {
+  container-type: inline-size;
+}
+@variant max-viewport-medium {
+  .demo-stage .balance.annotated {
+    /* Only very narrow panels reduce the existing 1.1rem mobile maths size. */
+    font-size: clamp(1rem, 5.6cqi, 1.1rem);
+  }
+}
+.demo-stage .balance.annotated .annotation-column {
+  width: auto;
+}
+.demo-stage .balance.annotated :is(.lhs, .rhs) {
+  /* Keep the longest expression on each side intact; give spare width to prose. */
+  width: 1%;
+}
+.demo-stage .balance.annotated .rhs {
+  padding-left: 4px;
+  padding-right: 2px;
+}
+.demo-stage .balance.annotated .lhs {
+  padding-right: 4px;
+}
+
+.demo-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  padding: 5px 0;
+  background: var(--surface);
+  border-radius: 8px;
+}
+.demo-controls .action-button {
+  padding-inline: 8px;
+}
+.demo-controls .primary {
+  font-size: 0.875rem;
+}
+.secondary-controls {
+  display: contents;
+}
+.demo-speed .choice-field {
+  width: 3.75rem;
+  padding-inline: 6px 20px;
+}
+
+.demo-stage :is(.steps li, .step-note)[aria-current='step'] {
+  background: var(--method-highlight);
+  color: var(--selection-text);
+}
+
+.demo-stage {
+  --method-highlight: color-mix(in srgb, var(--selection-bg) 85%, transparent);
+  scroll-margin-block: 12px;
+}
+.demo-speed {
+  @apply inline-flex items-center;
+  gap: 6px;
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 400;
+}

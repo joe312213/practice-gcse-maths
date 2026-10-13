@@ -22,6 +22,62 @@ import { createTestContext } from './support.mjs';
  * @example await checkStartup(browser, "http://127.0.0.1:8766/"); // Check a running static preview.
  */
 export async function checkStartup(browser, base) {
+  const context = await createTestContext(browser);
+  try {
+    const page = await context.newPage();
+    await page.goto(`${base}fm/solving-equations/`);
+    await page.locator('#begin').click();
+    await page.locator('#username').fill('Stage resume learner');
+    await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    if (await page.locator('#profile-message').isVisible())
+      await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    for (const mode of ['plain', 'scaffolded', 'errors', 'problem', 'demo', 'assessment']) {
+      await page.locator(`[data-mode="${mode}"]`).click();
+      if (mode === 'plain')
+        await page.getByRole('button', { name: 'Next page of questions', exact: true }).click();
+      const before = await page.locator('.question-list').allTextContents();
+      await page.reload();
+      await page.locator(`[data-mode="${mode}"][aria-current="step"]`).waitFor();
+      assert.deepEqual(
+        await page.locator('.question-list').allTextContents(),
+        before,
+        `${mode}: restored question page`,
+      );
+    }
+    async function selectTopic(page, id) {
+      const names = {
+        M01: 'Lattice multiplication',
+        M02: 'Bus stop division',
+        M10: 'Solving equations',
+      };
+      await page.getByLabel('Topic', { exact: true }).click();
+      await page.keyboard.type(names[id].slice(0, 3));
+      await page.keyboard.press('Enter');
+      await page.getByRole('heading', { name: names[id], exact: true, level: 1 }).waitFor();
+    }
+    // Real topic navigation must restore the destination's own stage, never the source's.
+    await page.locator('[data-mode="plain"]').click();
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await selectTopic(page, 'M02');
+    await page.locator('[data-mode="assessment"][aria-current="step"]').waitFor();
+    await page.locator('[data-mode="demo"]').click();
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await selectTopic(page, 'M10');
+    await page.locator('[data-mode="plain"][aria-current="step"]').waitFor();
+    await page.reload();
+    await page.locator('[data-mode="plain"][aria-current="step"]').waitFor();
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await selectTopic(page, 'M02');
+    await page.locator('[data-mode="demo"][aria-current="step"]').waitFor();
+    await page.reload();
+    await page.locator('[data-mode="demo"][aria-current="step"]').waitFor();
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await selectTopic(page, 'M01');
+    await page.locator('[data-mode="assessment"][aria-current="step"]').waitFor();
+  } finally {
+    await context.close();
+  }
+
   for (const fault of [
     'delayed-bank',
     'theme',
@@ -104,6 +160,6 @@ export async function checkStartup(browser, base) {
     }
   }
   console.log(
-    'Startup checks passed: delayed/failed bank, optional theme failure, unavailable/full/corrupt storage.',
+    'Startup checks passed: chevron/page restoration, delayed/failed bank, optional theme failure, unavailable/full/corrupt storage.',
   );
 }

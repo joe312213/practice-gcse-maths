@@ -36,7 +36,8 @@ function storage() {
     removeItem: (key) => data.delete(key),
   };
 }
-test("working survives cache recreation, expires after three hours and is excluded from progress", () => {
+test("working survives cache recreation, expires after 48 hours and is excluded from progress", () => {
+  assert.equal(WORKING_TTL, 48 * 60 * 60 * 1000);
   let now = 10;
   const temporary = storage(),
     data = emptyStore();

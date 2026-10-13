@@ -12,10 +12,11 @@
 -->
 <script>
   import PageNavigation from '../ui/PageNavigation.svelte';
-  import { MODES, nextStage } from '#lib/domain/stages.mjs';
-  let { mode, onadvance, id = 'next-stage' } = $props();
-  const previous = $derived(MODES[MODES.findIndex(([id]) => id === mode) - 1]);
-  const next = $derived(nextStage(mode));
+  import { topicStages, nextStage } from '#lib/domain/stages.mjs';
+  let { bank, mode, onadvance, id = 'next-stage' } = $props();
+  const stages = $derived(topicStages(bank));
+  const previous = $derived(stages[stages.findIndex(([id]) => id === mode) - 1]);
+  const next = $derived(nextStage(mode, bank));
 </script>
 
 <PageNavigation

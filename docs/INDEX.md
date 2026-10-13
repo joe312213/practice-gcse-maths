@@ -6,6 +6,8 @@ Directly authored `web_format.md` is protected; the progress requirements append
 
 ## Current project documents
 
+- [Repository README](../README.md) — live demo for testing and development entry points.
+
 - [AGENTS.md](../AGENTS.md)
 - [HANDOFF.md](../HANDOFF.md)
 - [DEV_LOG.md](../DEV_LOG.md)
@@ -38,10 +40,19 @@ Directly authored `web_format.md` is protected; the progress requirements append
 
 ## Teaching content
 
-- [M03 website draft specification](../content/specs/M03.md)
-- [M13 website draft specification](../content/specs/M13.md)
-- [M15 website draft specification](../content/specs/M15.md)
-- [M06 website draft specification](../content/specs/M06.md)
+- [M01 website specification](../content/specs/M01.md)
+- [M02 website specification](../content/specs/M02.md)
+- [M10 website specification](../content/specs/M10.md)
+- [Problem-solving stage and combined practice](../content/specs/PROBLEM_SOLVING.md)
+
+- [M04 website specification](../content/specs/M04.md)
+- [M07 website specification](../content/specs/M07.md)
+- [M12 website specification](../content/specs/M12.md)
+
+- [M03 website specification](../content/specs/M03.md)
+- [M13 website specification](../content/specs/M13.md)
+- [M15 website specification](../content/specs/M15.md)
+- [M06 website specification](../content/specs/M06.md)
 
 - [content/PRACTICE_PAGES.md](../content/PRACTICE_PAGES.md)
 

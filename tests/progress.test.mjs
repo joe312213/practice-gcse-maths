@@ -95,10 +95,11 @@ test("topic stages separate evidence, weighted success, total count and stalenes
   assert.equal(row.stages.length, 3);
   answers(p, "plain");
   answers(p, "errors", 10, false);
+  answers(p, "problem", 10, false);
   row = topicProgress(p, catalogue, now)[0];
   assert.equal(row.status, "amber");
-  assert.equal(row.total, 20);
-  assert.equal(row.rate, 200 / 3);
+  assert.equal(row.total, 30);
+  assert.equal(row.rate, 50);
   p.topics["maths:M10"].history.forEach((r) => (r.correct = false));
   assert.equal(topicProgress(p, catalogue, now)[0].status, "red");
   p.topics["maths:M10"].history.forEach((r) => {
@@ -110,7 +111,7 @@ test("topic stages separate evidence, weighted success, total count and stalenes
   assert.equal(row.stale, true);
   answers(p, "assessment", 1);
   row = topicProgress(p, catalogue, now)[0];
-  assert.equal(row.total, 21);
+  assert.equal(row.total, 31);
   assert.equal(row.last, now);
   assert.equal(row.stale, true);
   p.topics["maths:M10"].history
@@ -130,6 +131,7 @@ test("recommendations rank missing then low success then stale and persist until
   assert.equal(code.pages[0].type, 1);
   assert.equal(list[0].reasons[0].reason, "Missing data");
   answers(p, "errors");
+  answers(p, "problem");
   assert.equal(maintainRecommendations(p, catalogue, now, uid)[0].id, firstId);
   assert.equal(
     completeRecommendation(
@@ -162,6 +164,7 @@ test("recommendations rank missing then low success then stale and persist until
   const stale = learner();
   answers(stale, "plain", 10, true, now - 30 * 86400000);
   answers(stale, "errors");
+  answers(stale, "problem");
   assert.equal(
     maintainRecommendations(stale, catalogue, now, uid)[0].reasons[0].reason,
     "Stale data",
@@ -284,14 +287,14 @@ test("three pending recommendations refill on load, stop at 15 completions, and 
   assert.equal(list.length, prior + 3);
 });
 
-test("minimum evidence does not replace short-page success weighting or cap stored outcomes", () => {
+test("minimum evidence remains distinct from fixed-window scoring and never caps stored outcomes", () => {
   const p = learner();
   answers(p, "errors", 3);
   p.topics["maths:M10"].history.forEach((r) => (r.pageSize = 3));
   let row = topicProgress(p, catalogue, now)[0];
   assert.equal(
     row.stages[0].breakdown.find((r) => r.mode === "errors").rate,
-    100,
+    75,
   );
   assert.equal(row.status, "missing");
   answers(p, "errors", 30, false);

@@ -46,11 +46,14 @@
       <summary>Answer, method and check</summary>
       <p>
         <strong>Answer:</strong>
-        {bank.method ? '' : 'x = '}{question.answerUnit === '£' ? '£' : ''}<MathText
+        {(question.method ?? bank.method) ? '' : 'x = '}<MathText
           text={question.model?.kind === 'fractions' ? `{${question.answer}}` : question.answer}
-        />{question.answerUnit && question.answerUnit !== '£' ? ` ${question.answerUnit}` : ''}
+          unit={question.answerUnit}
+        />
       </p>
-      {#if question.method_note && bank.method !== 'calculation'}<p>{question.method_note}</p>{/if}
+      {#if question.method_note && question.method !== 'calculation'}<p>
+          {question.method_note}
+        </p>{/if}
       {#if mode === 'errors' && !question.errorOptions}<ul>
           {#each question.errors as error}<li>
               Row {error.row + 1}: {bank.teaching.errorReasons.find((r) => r.id === error.reason)
@@ -59,11 +62,11 @@
             </li>{/each}
         </ul>{/if}
       <!-- Each method owns its correction drawing. -->
-      {#if bank.method === 'calculation'}<CalculationWorking
+      {#if question.method === 'calculation'}<CalculationWorking
           {question}
-        />{:else if bank.method}<ArithmeticWorking {question} />{:else}<EquationWorking
-          rows={question.correct_balance ?? question.balance}
-        />{/if}
+        />{:else if question.method ?? bank.method}<ArithmeticWorking
+          {question}
+        />{:else}<EquationWorking rows={question.correct_balance ?? question.balance} />{/if}
       {#if question.correction}<p>{question.correction}</p>{/if}
       {#if !response.correct && question.error_note && question.error_note !== question.correction}<p
         >

@@ -316,3 +316,16 @@ test("practice input resolves topic aliases before code syntax, including equati
   );
   assert.throws(() => practiceInputCode(all, "   "), /No matching topic/);
 });
+
+test("set reload and exit preserve the ordinary topic chevron and attempt", () => {
+  const f = setup();
+  f.session.switchMode("errors");
+  const ordinary = structuredClone(f.view.page);
+  f.session.startPracticeSet(encodePracticeSet(recipe([entry()])));
+  const resumed = setup(structuredClone(f.data));
+  assert.equal(resumed.view.mode, "plain");
+  assert.ok(resumed.view.practiceSet);
+  resumed.session.leavePracticeSet();
+  assert.equal(resumed.view.mode, "errors");
+  assert.deepEqual(resumed.view.page, ordinary);
+});

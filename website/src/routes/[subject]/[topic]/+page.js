@@ -11,18 +11,20 @@
  * Libs: @sveltejs/kit (HTTP errors).
  */
 import { error } from '@sveltejs/kit';
-import { foundationTopics } from '#lib/content/topic-routes.mjs';
+import { foundationTopics, combinedTopic } from '#lib/content/topic-routes.mjs';
 export const trailingSlash = 'always';
 /**
  * Enumerate Foundation Maths topic slugs for SvelteKit static generation.
  */
-export const entries = () => foundationTopics.map(({ slug }) => ({ subject: 'fm', topic: slug }));
+export const entries = () =>
+  [...foundationTopics, combinedTopic].map(({ slug }) => ({ subject: 'fm', topic: slug }));
 /**
  * Resolve route params to a saved bank ID; call error for unknown subject/topic. Invoked by SvelteKit.
  */
 export function load({ params }) {
   const topic =
-    params.subject === 'fm' && foundationTopics.find((topic) => topic.slug === params.topic);
+    params.subject === 'fm' &&
+    [...foundationTopics, combinedTopic].find((topic) => topic.slug === params.topic);
   if (!topic) error(404, 'Topic not found');
   return { topicId: topic.bank };
 }

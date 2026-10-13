@@ -14,13 +14,13 @@ import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { markAnswer } from '../src/lib/domain/engine.mjs';
 const bank = JSON.parse(await readFile(new URL('../static/data/equations.json', import.meta.url)));
-assert.equal(bank.questions.length, 171);
-assert.equal(new Set(bank.questions.map((q) => q.id)).size, 171);
+assert.equal(bank.questions.length, 243);
+assert.equal(new Set(bank.questions.map((q) => q.id)).size, 243);
 assert.equal(bank.recap.length, 3);
 assert.ok(bank.revision);
 for (const question of bank.questions)
   assert.ok(markAnswer(question.answer, question.answer).correct, question.id);
-console.log('Equation bank validated: 171 unique items and three recaps.');
+console.log('Equation bank validated: 243 unique items and three recaps.');
 
 // Authored Practice set slots must reference real questions of the matching type/level.
 const { resolvePracticePage } = await import('../src/lib/domain/practice-code.mjs');
@@ -75,9 +75,16 @@ for (const topic of banks) {
   );
 }
 for (const arithmetic of banks.slice(1)) {
-  assert.equal(arithmetic.questions.length, 171);
-  assert.equal(new Set(arithmetic.questions.map((q) => q.id)).size, 171);
-  for (const q of arithmetic.questions) {
+  assert.equal(arithmetic.questions.length, 243);
+  assert.equal(new Set(arithmetic.questions.map((q) => q.id)).size, 243);
+  for (const q of arithmetic.questions.filter((q) => q.type !== 'problem')) {
+    if (q.method === 'lattice' && q.level === 2) {
+      const digits = [String(q.a).length, String(q.b).length];
+      assert.ok(
+        digits.every((n) => n === 3 || n === 4) && digits.includes(4),
+        `Confidence multiplication needs 4×3, 3×4 or 4×4 digits: ${q.id}`,
+      );
+    }
     assert.ok(markAnswer(q.answer, q.answer).correct, q.id);
     const parts = q.answer.split(' r ');
     if (parts.length === 2) {
@@ -92,22 +99,41 @@ for (const arithmetic of banks.slice(1)) {
     }
   }
 }
-for (const name of ['signed-numbers', 'fractions', 'percentages', 'problems']) {
-  const draft = JSON.parse(await readFile(new URL(`../static/data/${name}.json`, import.meta.url)));
-  assert.equal(draft.questions.length, 171);
-  assert.ok(draft.draft);
-  for (const q of draft.questions) assert.ok(markAnswer(q.answer, q.answer).correct, q.id);
-  banks.push(draft);
+for (const name of [
+  'signed-numbers',
+  'fractions',
+  'percentages',
+  'problems',
+  'ratios',
+  'reverse-percentages',
+  'speed-distance-time',
+]) {
+  const accepted = JSON.parse(
+    await readFile(new URL(`../static/data/${name}.json`, import.meta.url)),
+  );
+  assert.equal(accepted.questions.length, 243);
+  assert.equal(Boolean(accepted.draft), false);
+  for (const q of accepted.questions) assert.ok(markAnswer(q.answer, q.answer).correct, q.id);
+  banks.push(accepted);
 }
+assert.equal(
+  new Set(catalogue.topics.map((topic) => topic.code)).size,
+  catalogue.topics.length,
+  'Practice-set topic codes must be unique',
+);
 for (const topic of catalogue.topics)
   for (const page of topic.pages) {
     assert.ok(page.slots.length > 0 && page.slots.length <= 15);
     for (let slot = 1; slot <= page.slots.length; slot++)
-      resolvePracticePage(
-        catalogue,
-        banks,
-        { topic: topic.code, type: page.type, slot },
-        page.level,
+      assert.equal(
+        resolvePracticePage(
+          catalogue,
+          banks,
+          { topic: topic.code, type: page.type, slot },
+          page.level,
+        ).bank.topic,
+        topic.bank,
+        `Practice-set code ${topic.code} resolves to ${topic.bank}`,
       );
   }
 console.log('Authored Practice set slots validated.');

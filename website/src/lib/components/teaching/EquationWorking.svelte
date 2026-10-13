@@ -11,8 +11,10 @@
   Libs: none.
 -->
 <script>
+  import MathText from './MathText.svelte';
   let {
     rows,
+    font = null,
     limit = rows.length,
     numbered = false,
     annotations = [],
@@ -26,6 +28,7 @@
   class="balance"
   style:--guide-height={`${guideProgress * 100}%`}
   class:numbered
+  class:staged
   class:annotated={annotations.length > 0}
   aria-label={numbered ? 'Incorrect working, numbered by row' : 'Equation working'}
 >
@@ -49,16 +52,18 @@
         <td
           class="lhs"
           class:unwritten={visible < 1}
-          class:method-active={staged && index === limit - 1 && part >= 1}><span>{row.l}</span></td
+          class:method-active={staged && index === limit - 1 && part >= 1}
+          ><span><MathText text={row.l} {font} /></span></td
         >
         <!-- The column paints one continuous line behind the transparent equation cells. -->
         <td class="equals" class:unwritten={visible < 2} class:operation={row.kind === 'op'}
-          ><span>{row.kind === 'op' ? '' : '='}</span></td
+          ><span><MathText text={row.kind === 'op' ? '' : '='} {font} /></span></td
         >
         <td
           class="rhs"
           class:unwritten={visible < 3}
-          class:method-active={staged && index === limit - 1 && part >= 3}><span>{row.r}</span></td
+          class:method-active={staged && index === limit - 1 && part >= 3}
+          ><span><MathText text={row.r} {font} /></span></td
         >
       </tr>
     {/each}
@@ -66,10 +71,13 @@
 </table>
 
 <style>
+  .staged .lhs > span,
+  .staged .rhs > span {
+    padding-inline: 2px;
+  }
   .method-active > span {
-    background: var(--selection-bg);
+    background: var(--method-highlight, var(--selection-bg));
     color: var(--selection-text);
-    outline: 1px solid var(--selection-border);
     border-radius: var(--radius-field);
   }
 </style>

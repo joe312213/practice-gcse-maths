@@ -85,7 +85,6 @@
 </script>
 
 <section class="intro">
-  <div class="intro-title">{@render title()}</div>
   <div class="intro-controls">
     <form
       class="practice-set-code"
@@ -119,6 +118,7 @@
     </form>
     {@render topicSelector()}
   </div>
+  <div class="intro-title">{@render title()}</div>
   <div class="intro-description">{@render description()}</div>
 </section>
 

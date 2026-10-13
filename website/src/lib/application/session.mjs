@@ -1,3 +1,4 @@
+import { latestAssessment, assessmentStatus } from '../domain/assessment.mjs';
 /**
  * Purpose: Coordinate learner actions, adaptive pages, marking and practice sets through injected dependencies.
  *
@@ -10,6 +11,7 @@
  *
  * Libs: none.
  */
+import { topicStages } from '../domain/stages.mjs';
 import { topicPages, TOPIC_PAGE_SIZES, assessmentPage } from '../domain/topic-pages.mjs';
 import { createWorkingCache } from '../adapters/working-cache.mjs';
 import { backupStatus } from '../domain/progress.mjs';
@@ -65,6 +67,7 @@ export function createSession({
   let mode = 'assessment',
     selected = 0,
     reference = false,
+    tips = false,
     demoLevel = 0;
   let hintVisible = false,
     draftKey = 0,
@@ -97,6 +100,15 @@ export function createSession({
    * Used by: track, page, storePage, enterSetPage, createPage, submitAnswer.
    */
   const topic = () => (profile.topics[scope()] ??= { tracks: {}, pages: {}, history: [] });
+  /** Restore this learner/topic's last chevron; new topics still begin with assessment. */
+  function restoreStage() {
+    const saved = profile?.topics[scope()]?.lastMode;
+    mode = topicStages(bank).some(([id]) => id === saved)
+      ? saved
+      : saved === 'problem' && bank.problemSolvingTopic
+        ? 'plain'
+        : 'assessment';
+  }
   /**
    * Return the active practice-set run, or null outside a set.
    * Used by: page, storePage, setPageDefinition, timeExpired, enterSetPage, restoreSet, createPage, replaceRemaining, snapshot, publish, switchMode, changeLevel, submitAnswer, nextPage, goSetPage, leavePracticeSet, tick.
@@ -138,6 +150,7 @@ export function createSession({
   function effectiveLevel(entry, config) {
     const target = catalogue.topics.find((topic) => topic.code === entry.topic);
     const type = PAGE_TYPES.find((type) => type.id === entry.type);
+    if (target?.aggregate) return config.level;
     return (
       profile.topics[`${catalogue.subject}:${target?.bank}`]?.tracks[type?.mode]?.level ??
       config.level
@@ -159,6 +172,7 @@ export function createSession({
       { ...entry, slot: page()?.authoredSlot ?? entry.slot },
       level,
       random,
+      { profile, topics: run.topics },
     );
   }
   /**
@@ -183,7 +197,10 @@ export function createSession({
     const run = activeSet(),
       entry = run.config.pages[run.index];
     const level = effectiveLevel(entry, run.config);
-    const definition = resolvePracticePage(catalogue, banks, entry, level, random);
+    const definition = resolvePracticePage(catalogue, banks, entry, level, random, {
+      profile,
+      topics: run.topics,
+    });
     bank = definition.bank;
     mode = definition.mode;
     topic().tracks[mode] ??= newTrack(level);
@@ -194,6 +211,7 @@ export function createSession({
     if (!page()) createPage(definition);
     selected = 0;
     reference = false;
+    tips = false;
     resetDraft();
     timeExpired();
   }
@@ -210,7 +228,7 @@ export function createSession({
     } catch (error) {
       activeSet().active = false;
       bank = homeBank;
-      mode = 'assessment';
+      restoreStage();
       message = `Practice set cannot resume: ${error.message}`;
     }
   }
@@ -308,6 +326,7 @@ export function createSession({
   function resetActivity() {
     selected = 0;
     reference = false;
+    tips = false;
     message = '';
     resetDraft();
   }
@@ -321,7 +340,33 @@ export function createSession({
     if (!activeSet() && TOPIC_PAGE_SIZES[mode]) {
       if (page()) rememberOrdinaryPage();
       else openOrdinaryPage(track().level);
-    } else if (!page()) createPage();
+    } else if (!page()) {
+      const previous = mode === 'assessment' ? latestAssessment(topic().history) : null;
+      if (previous && previous.every((record) => question(record.question))) {
+        const restored = {
+          ...newPage(previous.length, 0),
+          revision: bank.revision,
+          attempt: previous[0].attempt,
+          startLevel: 0,
+          count: previous.length,
+          complete: true,
+          items: previous.map((r) => ({ id: r.question, level: r.level })),
+          assisted: {},
+          responses: Object.fromEntries(
+            previous.map((r) => [
+              r.question,
+              {
+                raw: r.raw ?? '',
+                correct: r.correct,
+                assisted: r.assisted,
+                entries: [],
+              },
+            ]),
+          ),
+        };
+        storePage(restored);
+      } else createPage();
+    }
   }
   /**
    * Refill unanswered question slots after a level change while retaining existing responses.
@@ -404,13 +449,16 @@ export function createSession({
   function snapshot() {
     return {
       bank,
+      sourceBank: banks.find((b) => b.topic === current()?.topic) ?? bank,
       timingDeadline: activeSet()?.deadline ?? null,
       profile: profile ? { id: profile.id, name: profile.name, key: profile.key } : null,
       backup: backupStatus(profile, now()),
       demoSpeed: profile?.settings?.demoSpeed ?? 1,
+      assessment: profile ? assessmentStatus(topic().history, now()) : null,
       practiceSet: activeSet()
         ? {
             code: activeSet().code,
+            topics: activeSet().topics?.slice(),
             recommendationId: activeSet().recommendationId,
             index: activeSet().index,
             config: structuredClone(activeSet().config),
@@ -420,7 +468,11 @@ export function createSession({
           }
         : null,
       savedSet: profile?.practiceSet
-        ? { code: profile.practiceSet.code, finished: profile.practiceSet.finished }
+        ? {
+            code: profile.practiceSet.code,
+            finished: profile.practiceSet.finished,
+            topics: profile.practiceSet.topics?.slice(),
+          }
         : null,
       mode,
       selected,
@@ -433,6 +485,7 @@ export function createSession({
             }
           : null,
       reference,
+      tips,
       demoLevel,
       hintVisible,
       draftKey,
@@ -452,6 +505,8 @@ export function createSession({
   function publish(persist = false) {
     if (persist) {
       const run = activeSet();
+      // Practice-set modes must not replace the ordinary topic's chevron selection.
+      if (profile && !run) topic().lastMode = mode;
       const recommendation = profile?.revision?.recommendations.find(
         (item) => item.id === run?.recommendationId,
       );
@@ -461,6 +516,7 @@ export function createSession({
     const value = snapshot();
     for (const fn of listeners) fn(value);
   }
+  restoreStage();
   restoreSet();
   ensurePage();
   resetDraft();
@@ -487,7 +543,7 @@ export function createSession({
       profile = result.profile;
       homeBank = banks.find((item) => item.topic === profile.lastTopic) ?? banks[0];
       bank = homeBank;
-      mode = 'assessment';
+      restoreStage();
       resetActivity();
       restoreSet();
       ensurePage();
@@ -495,7 +551,7 @@ export function createSession({
       return result;
     },
     /**
-     * Leave any set and enter assessment for the requested topic, remembering the learner's selection.
+     * Leave any set and restore the requested topic's saved learning stage.
      * Parameter topicId: bank topic ID, e.g. M10.
      * Calls: activeSet, resetActivity, ensurePage, publish; used by topic selection.
      */
@@ -505,21 +561,22 @@ export function createSession({
       if (activeSet()) activeSet().active = false;
       bank = homeBank = next;
       profile.lastTopic = topicId;
-      mode = 'assessment';
+      restoreStage();
       resetActivity();
       ensurePage();
       publish(true);
     },
     /**
      * Leave any set and enter the requested stage in the home bank, recording demo assistance first.
-     * Parameter next: assessment, demo, scaffolded, errors or plain.
+     * Parameter next: assessment, demo, scaffolded, errors, plain or problem.
      * Calls: activeSet, assist, resetActivity, ensurePage, publish; used by stage navigation.
      */
     switchMode(next) {
       if (activeSet()) activeSet().active = false;
       bank = homeBank;
       if (next === 'demo' && !['assessment', 'demo'].includes(mode)) assist();
-      mode = next;
+      // Old application-stage requests resolve to independent practice without deleting history.
+      mode = topicStages(bank).some(([id]) => id === next) ? next : 'plain';
       resetActivity();
       ensurePage();
       publish(true);
@@ -534,7 +591,7 @@ export function createSession({
       selected = index;
       resetDraft();
       message = '';
-      if (reference) assist();
+      if (reference || tips) assist();
       publish(true);
     },
     /**
@@ -554,7 +611,8 @@ export function createSession({
         if (!Number.isInteger(level) || level < 0 || level > 2)
           throw Error('Unknown challenge level.');
         rememberOrdinaryPage();
-        if (['plain', 'errors'].includes(mode)) manualLevel(track(), newPage(1, level), level);
+        if (['plain', 'errors', 'problem'].includes(mode))
+          manualLevel(track(), newPage(1, level), level);
         openOrdinaryPage(level);
         publish(true);
         return;
@@ -562,7 +620,7 @@ export function createSession({
       if (activeSet()) setPageDefinition(level); // Validate availability before changing progress.
       const p = page();
       p.startLevel = level;
-      if (['plain', 'errors'].includes(mode)) manualLevel(track(), p, level);
+      if (['plain', 'errors', 'problem'].includes(mode)) manualLevel(track(), p, level);
       else p.level = level;
       replaceRemaining();
       selected = Math.max(
@@ -577,6 +635,11 @@ export function createSession({
      * Parameter open: whether teaching reference is visible.
      * Calls: assist, page, publish.
      */
+    setProblemTips(open) {
+      tips = open;
+      if (open) assist();
+      publish(true);
+    },
     setReference(open) {
       reference = open;
       if (open) {
@@ -643,7 +706,7 @@ export function createSession({
       }
       const p = page(),
         q = current();
-      if (p.responses[q.id]) return { duplicate: true };
+      if (p.complete || p.responses[q.id]) return { duplicate: true };
       const numeric = markAnswer(draft.answer, q.answer);
       if (!numeric.valid) {
         inputError = q.answer.includes(' r ')
@@ -672,7 +735,7 @@ export function createSession({
         answerCorrect: result.answerCorrect ?? numeric.correct,
       };
       p.responses[q.id] = response;
-      if (['plain', 'errors'].includes(mode))
+      if (!bank.combined && ['plain', 'errors', 'problem'].includes(mode))
         submit(track(), p, {
           id: q.id,
           level,
@@ -683,8 +746,19 @@ export function createSession({
       else {
         p.count++;
         p.complete = p.count === p.size;
+        if (!assisted || !result.correct) {
+          const owner = bank.combined
+            ? (profile.topics[`${q.subject}:${q.topic}`] ??= { tracks: {}, pages: {}, history: [] })
+            : topic();
+          const actual = (owner.tracks[bank.combined ? q.type : mode] ??= newTrack(level));
+          actual.histories[level].push(result.correct);
+          actual.histories[level] = actual.histories[level].slice(-10);
+        }
       }
-      topic().history.push({
+      const owner = bank.combined
+        ? (profile.topics[`${q.subject}:${q.topic}`] ??= { tracks: {}, pages: {}, history: [] })
+        : topic();
+      owner.history.push({
         attempt: p.attempt,
         ...(activeSet()
           ? {
@@ -694,9 +768,10 @@ export function createSession({
             }
           : {}),
         question: q.id,
+        raw: draft.answer,
         pageSize: p.size,
         revision: bank.revision,
-        type: mode,
+        type: bank.combined ? q.type : mode,
         level,
         correct: result.correct,
         assisted,
@@ -716,7 +791,7 @@ export function createSession({
       if (next !== undefined) {
         selected = next;
         resetDraft();
-        if (reference) assist();
+        if (reference || tips) assist();
         message = `Correct. Moving to question ${selected + 1}.`;
       }
       const run = activeSet();
@@ -731,6 +806,20 @@ export function createSession({
      * Start another ordinary activity page; active practice sets use their own navigation.
      * Calls: activeSet, resetDraft, createPage, publish.
      */
+    reassess() {
+      if (
+        !profile ||
+        activeSet() ||
+        mode !== 'assessment' ||
+        !page()?.complete ||
+        !assessmentStatus(topic().history, now())?.available
+      )
+        return false;
+      createPage();
+      resetActivity();
+      publish(true);
+      return true;
+    },
     nextPage() {
       movePage(1);
     },
@@ -759,7 +848,7 @@ export function createSession({
      * Calls: restoreSet, ensurePage, publish, decodePracticeSet, encodePracticeSet, enterSetPage.
      * @example session.startPracticeSet(code); // Resolve and start an entered practice code.
      */
-    startPracticeSet(raw, recommendationId = null) {
+    startPracticeSet(raw, recommendationId = null, options = {}) {
       if (!profile || !catalogue) throw Error('Choose your name before opening a Practice set.');
       const recommendation = recommendationId
         ? profile.revision?.recommendations.find((item) => item.id === recommendationId)
@@ -788,11 +877,15 @@ export function createSession({
       const config = decodePracticeSet(raw);
       // Validate the whole recipe before replacing any current attempt.
       config.pages.forEach((entry) =>
-        resolvePracticePage(catalogue, banks, entry, effectiveLevel(entry, config), () => 0),
+        resolvePracticePage(catalogue, banks, entry, effectiveLevel(entry, config), () => 0, {
+          profile,
+          topics: options.topics,
+        }),
       );
       const started = now();
       profile.practiceSet = {
         active: true,
+        topics: options.topics,
         recommendationId,
         code: encodePracticeSet(config),
         config,
@@ -826,13 +919,13 @@ export function createSession({
       publish(true);
     },
     /**
-     * Return to ordinary assessment while retaining the saved set.
+     * Return to the saved ordinary learning stage while retaining the saved set.
      * Calls: activeSet, resetActivity, ensurePage, publish.
      */
     leavePracticeSet() {
       if (activeSet()) activeSet().active = false;
       bank = homeBank;
-      mode = 'assessment';
+      restoreStage();
       resetActivity();
       ensurePage();
       publish(true);

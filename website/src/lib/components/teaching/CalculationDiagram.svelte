@@ -59,6 +59,15 @@
           class:active={frame?.step === 2}
         />
       {/each}
+      {#each Array.from({ length: wholeCount }) as _, whole}
+        <rect
+          x={20 + (whole * 280) / wholeCount}
+          y={24 + row * 54}
+          width={280 / wholeCount}
+          height="22"
+          class="whole-boundary"
+        />
+      {/each}
     {/each}
   </svg>
 {:else if diagram?.kind === 'percentage-bar'}
@@ -79,6 +88,52 @@
     <rect x="20" y="26" width={100 * scale} height="22" />
     {#if showRate}<rect x="20" y="52" width={rate * scale} height="12" class="shaded" />
       <text x="160" y="82">{rate}% of the original</text>{/if}
+  </svg>
+{:else if diagram?.kind === 'ratio-bars'}
+  {@const scale = 240 / Math.max(...diagram.parts)}
+  <svg
+    viewBox="0 0 320 150"
+    role="img"
+    aria-label={`Equal ratio parts: ${diagram.labels.join(' to ')}; ${diagram.known}`}
+  >
+    {#each diagram.parts as count, row}
+      <text x="160" y={16 + row * 51}>{diagram.labels[row]}: {count} parts</text>
+      {#each Array.from({ length: count }) as _, part}
+        <rect
+          x={40 + part * scale}
+          y={24 + row * 51}
+          width={scale}
+          height="22"
+          class:shaded={row === 1}
+        />
+      {/each}
+    {/each}
+    <text x="160" y="129">Known {diagram.known}</text>
+    <text x="160" y="145">Every box is one equal part</text>
+  </svg>
+{:else if diagram?.kind === 'reverse-bar'}
+  {@const scale = 280 / Math.max(100, diagram.rate)}
+  <svg
+    viewBox="0 0 320 110"
+    role="img"
+    aria-label={`Original is 100 percent; £${diagram.known} represents ${diagram.rate} percent, excluding delivery`}
+  >
+    <text x="160" y="16">Original = 100% = ?</text>
+    <rect x="20" y="23" width={100 * scale} height="20" />
+    <rect x="20" y="50" width={diagram.rate * scale} height="20" class="shaded" />
+    <text x="160" y="87">{diagram.rate}% = £{diagram.known}</text>
+    {#if diagram.fee}<text x="160" y="104">Delivery £{diagram.fee} is separate</text>{/if}
+  </svg>
+{:else if diagram?.kind === 'journey'}
+  <svg
+    viewBox="0 0 320 95"
+    role="img"
+    aria-label={`Journey information: ${diagram.legs.join('; ')}${diagram.stop ? '; includes a 0.25 hour stop' : ''}`}
+  >
+    <path d="M25 40 H295 M25 34 V46 M160 34 V46 M295 34 V46" />
+    {#each diagram.legs as label, i}<text x={85 + i * 145} y="25">{label}</text>{/each}
+    <text x="160" y="65">Use matching distance and time units</text>
+    {#if diagram.stop}<text x="160" y="86">Include the 0.25 hour stop</text>{/if}
   </svg>
 {/if}
 
@@ -104,6 +159,9 @@
   }
   .shaded {
     fill: var(--selection-bg);
+  }
+  .whole-boundary {
+    stroke-width: 2;
   }
   .active {
     stroke: var(--brand);

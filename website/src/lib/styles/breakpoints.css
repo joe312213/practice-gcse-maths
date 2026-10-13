@@ -8,7 +8,7 @@
   --breakpoint-viewport-medium: 768px;
   --breakpoint-viewport-large: 1024px;
 
-  /* Progress switches from a wrapping strip to its compact grid. */
+  /* Progress changes from a full-row grid to a content-sized grid. */
   --breakpoint-viewport-progress-grid: 678px;
   /* An open method reference can sit beside the question panel. */
   --breakpoint-viewport-reference-columns: 1150px;

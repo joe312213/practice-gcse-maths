@@ -117,6 +117,8 @@ export function bindChallenges(root,{getPart,getAnswer,isLocked=()=>false,onChan
     const action=button.dataset.challengeAction,value=button.dataset.value,old=read(slot,id,part),s=structuredClone(old);
     if(action==='path'){extend(slot,id,part,Number(value));return;}
     if(action==='go'){
+     const board=goPosition(part,old.moves??[])?.board;
+     if(board?.[Number(value)]&&board[Number(value)]!=='.')return;
      const result=playGo(part,old,Number(value),{deferReply:true});
      if(result.error)notify(result.error);else {update(slot,id,result.state,old,selector(action,value));onStatus({instanceId:slot,partId:id,recordedWin:Boolean(goPosition(part,result.state.moves)?.success)});}
      return;

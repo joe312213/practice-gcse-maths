@@ -11,8 +11,10 @@
   Libs: Svelte reactive derivation.
 -->
 <script>
+  import WrittenInk from './WrittenInk.svelte';
+  import MathText from './MathText.svelte';
   import { latticeModel, divisionModel } from '#lib/application/arithmetic-demo.mjs';
-  let { question, frame = { step: 4, count: Infinity }, compact = false } = $props();
+  let { question, frame = { step: 4, count: Infinity }, compact = false, font = null } = $props();
   const guideProgress = $derived(frame.guideProgress ?? 1);
   const lattice = $derived(
     question.method === 'lattice' ? latticeModel(question.a, question.b) : null,
@@ -32,7 +34,22 @@
         height={small ? 23 : 38}
         rx="4"
       />{/if}
-    <text {x} {y} class:carry={small} class:focused={focused || inRegion}>{value}</text>
+    <text
+      visibility={font ? 'hidden' : undefined}
+      aria-hidden={font ? 'true' : undefined}
+      {x}
+      {y}
+      class:carry={small}
+      class:focused={focused || inRegion}>{value}</text
+    >
+    {#if font}<WrittenInk
+        {font}
+        text={value}
+        {x}
+        {y}
+        size={small ? 15 : 27}
+        focused={focused || inRegion}
+      />{/if}
   </g>
 {/snippet}
 
@@ -132,8 +149,8 @@
         {#if diagonal.incoming && (frame.step > 3 || (frame.step === 3 && (k <= activeDiagonal || (k === activeDiagonal + 1 && frame.phase === 'carry'))))}
           {@render digitValue(
             diagonal.incoming,
-            x + 18,
-            y - 23,
+            k < n ? 60 + (n - 1 - k) * 70 + 53 : 60 - 17,
+            k < n ? 50 + m * 70 + 17 : 50 + (m - (k - n)) * 70 - 8,
             (k === activeDiagonal && frame.phase === 'sum') ||
               (k === activeDiagonal + 1 && frame.phase === 'carry'),
             true,
@@ -234,7 +251,9 @@
         {/each}
       </ol>{/if}
   {/if}
-  {#if frame.step === 4}<p><strong>{question.q} = {question.answer}</strong></p>{/if}
+  {#if frame.step === 4}<p>
+      <strong><MathText text={`${question.q} = ${question.answer}`} {font} /></strong>
+    </p>{/if}
 </div>
 
 <style>
@@ -250,10 +269,7 @@
     font-size: 27px;
   }
   .method-focus {
-    fill: var(--selection-bg);
-    stroke: var(--selection-border);
-    stroke-width: 1.5px;
-    vector-effect: non-scaling-stroke;
+    fill: var(--method-highlight, var(--selection-bg));
   }
   text.focused {
     fill: var(--selection-text);

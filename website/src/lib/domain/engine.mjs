@@ -24,7 +24,18 @@
 // Maths progression is independent of DOM/content, so transitions can be checked directly.
 export const MAX_PAGE_SIZE = 12;
 /** Independent success always uses the latest ten eligible answers, regardless of page length. */
-export const scoringWindow = (mode, pageSize) => (mode === 'plain' ? 10 : Math.min(pageSize, 10));
+export const SCORING_WINDOWS = {
+  plain: 10,
+  mixed: 10,
+  assessment: 6,
+  scaffolded: 4,
+  errors: 4,
+  problem: 6,
+};
+export const scoringWindow = (mode) => {
+  if (!SCORING_WINDOWS[mode]) throw Error('Unknown scoring activity.');
+  return SCORING_WINDOWS[mode];
+};
 export const LEVELS = ['Start', 'Build', 'Confidence'];
 /**
  * Return scoring weights for a supported page size from one to ten.

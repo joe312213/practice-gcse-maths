@@ -54,13 +54,11 @@
       disabled={Boolean(response)}
       onchange={(errors) => ondraft({ errors })}
     />{/if}
-  <label for="answer"
-    >{bank.method
-      ? 'Answer'
-      : `${mode === 'errors' ? 'Final correct value' : 'Value'} of x`}{question.answerUnit
-      ? ` (${question.answerUnit})`
-      : ''}</label
-  >
+  {#if question.calculator}<p class="muted">Calculator allowed.</p>{/if}
+  <label for="answer">Answer</label>
+  {#if question.answerUnit}<p id="answer-unit" class="muted">
+      Give your answer in {question.answerUnit}.
+    </p>{/if}
   <input
     id="answer"
     class="text-field"
@@ -70,10 +68,12 @@
     disabled={Boolean(response)}
     required
     aria-invalid={inputError ? 'true' : undefined}
-    aria-describedby={inputError ? 'input-message' : undefined}
+    aria-describedby={[question.answerUnit ? 'answer-unit' : '', inputError ? 'input-message' : '']
+      .filter(Boolean)
+      .join(' ') || undefined}
     oninput={(event) => ondraft({ answer: event.currentTarget.value })}
   />
-  {#if bank.method === 'bus'}<p>
+  {#if question.method === 'bus'}<p>
       {question.answer.includes(' r ')
         ? 'Give a whole-number answer with a remainder, using r.'
         : question.level === 2 || question.q.includes('decimal')

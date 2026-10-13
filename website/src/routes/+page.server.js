@@ -18,7 +18,14 @@ import signedNumbers from '../../static/data/signed-numbers.json' with { type: '
 import fractions from '../../static/data/fractions.json' with { type: 'json' };
 import percentages from '../../static/data/percentages.json' with { type: 'json' };
 import problems from '../../static/data/problems.json' with { type: 'json' };
+import catalogue from '#lib/content/practice-pages.json' with { type: 'json' };
+import ratios from '../../static/data/ratios.json' with { type: 'json' };
+import reversePercentages from '../../static/data/reverse-percentages.json' with { type: 'json' };
+import speedDistanceTime from '../../static/data/speed-distance-time.json' with { type: 'json' };
 const banks = {
+  ratios,
+  'reverse-percentages': reversePercentages,
+  'speed-distance-time': speedDistanceTime,
   problems,
   multiplication,
   division,
@@ -32,13 +39,34 @@ const banks = {
  */
 export function load() {
   return {
-    topics: foundationTopics.map((topic) => {
-      const bank = banks[topic.file];
-      const example = bank.questions.find(
-        (question) => question.type === 'demo' && question.level === 1,
-      );
-      if (!example) throw Error(`Missing Build example for ${topic.bank}`);
-      return { title: bank.title, draft: bank.draft, path: topicPath(topic.bank), example };
-    }),
+    catalogue: {
+      subject: catalogue.subject,
+      topics: catalogue.topics.map(({ pages, ...topic }) => ({
+        ...topic,
+        pages: pages.map(({ type, level }) => ({ type, level })),
+      })),
+    },
+    topics: [
+      ...foundationTopics.map((topic) => {
+        const bank = banks[topic.file];
+        const example = bank.questions.find(
+          (question) => question.type === 'demo' && question.level === 1,
+        );
+        if (!example) throw Error(`Missing Build example for ${topic.bank}`);
+        return {
+          bank: bank.topic,
+          title: bank.title,
+          draft: bank.draft,
+          path: topicPath(topic.bank),
+          example,
+        };
+      }),
+      {
+        bank: 'combined',
+        title: 'Combined problems',
+        path: topicPath('combined'),
+        example: problems.problemTeaching.examples[1],
+      },
+    ],
   };
 }

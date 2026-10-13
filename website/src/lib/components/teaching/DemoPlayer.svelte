@@ -64,8 +64,9 @@
           {question.q ?? `${question.balance[0].l} = ${question.balance[0].r}`}
         </p>
       {/snippet}
-      {#snippet children(frame)}
+      {#snippet children(frame, font)}
         <EquationWorking
+          {font}
           rows={question.balance}
           limit={frame.step}
           part={frame.part}
