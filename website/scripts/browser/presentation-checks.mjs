@@ -710,7 +710,7 @@ export async function checkPresentation(browser, base) {
         const style = getComputedStyle(element);
         return { gap: style.gap, display: style.display, position: style.position };
       }),
-      { gap: '4px', display: 'flex', position: 'static' },
+      { gap: '3px', display: 'flex', position: 'static' },
       'Demo controls retain their spacing below the animated working',
     );
     assert.equal(await page.locator('.balance tr.reveal').count(), 0);
@@ -839,8 +839,8 @@ export async function checkPresentation(browser, base) {
         }
         assert.equal(
           await page.locator('.demo-working').count(),
-          0,
-          'No empty drawing area before playback',
+          1,
+          'The first demo frame is visible before playback',
         );
         const controlsBefore = await page
           .locator('.demo-controls')
@@ -851,7 +851,10 @@ export async function checkPresentation(browser, base) {
         const controlsAfter = await page
           .locator('.demo-controls')
           .evaluate((el) => el.getBoundingClientRect().top + scrollY);
-        assert.ok(controlsAfter > controlsBefore, 'Controls move down when working appears');
+        assert.ok(
+          controlsAfter <= controlsBefore + 1,
+          'Playback restarts inside the visible first-step area',
+        );
 
         const descriptions = page.locator(
           topic === 'M10' ? '.demo-working .step-note' : '.demo-stage .steps li',
@@ -1071,8 +1074,8 @@ export async function checkPresentation(browser, base) {
     );
     await page.keyboard.press('Escape');
     for (const width of [
-      320, 360, 390, 439, 440, 441, 480, 510, 540, 677, 678, 679, 767, 768, 769, 1023, 1024, 1025,
-      1149, 1150, 1151, 1600,
+      320, 360, 390, 439, 440, 441, 480, 510, 540, 677, 678, 679, 767, 768, 769, 800, 900, 950, 951,
+      952, 1023, 1024, 1025, 1149, 1150, 1151, 1600,
     ]) {
       await page.setViewportSize({ width, height: 1000 });
       await page.clock.runFor(32);
@@ -1096,35 +1099,11 @@ export async function checkPresentation(browser, base) {
                 nav.querySelector('.stage-row').lastElementChild.getBoundingClientRect().right -
                   navBounds.right,
               ) < 1,
-            naturalLaterRows: [...nav.querySelectorAll('.stage-row')].slice(1).every((row) => {
-              const buttons = [...row.querySelectorAll('button')];
-              const sizes = buttons.map((button) => {
-                const label = button.querySelector('.stage-label');
-                const probe = label.cloneNode(true);
-                probe.style.cssText = 'position:absolute;white-space:nowrap;width:max-content';
-                button.append(probe);
-                const style = getComputedStyle(button);
-                const natural =
-                  probe.getBoundingClientRect().width +
-                  ['paddingLeft', 'paddingRight', 'borderLeftWidth', 'borderRightWidth'].reduce(
-                    (sum, property) => sum + parseFloat(style[property]),
-                    0,
-                  );
-                probe.remove();
-                return {
-                  natural,
-                  actual: button.getBoundingClientRect().width,
-                  margin: parseFloat(style.marginLeft),
-                };
-              });
-              const roomForNaturalWidths =
-                sizes.reduce((sum, size) => sum + size.natural + size.margin, 0) <=
-                navBounds.width - parseFloat(getComputedStyle(row).paddingLeft);
-              return sizes.every(
-                ({ actual, natural }) =>
-                  actual <= natural + 1 &&
-                  (!roomForNaturalWidths || Math.abs(actual - natural) < 1),
-              );
+            rowLengths: [...nav.querySelectorAll('.stage-row')].map((row) => row.children.length),
+            laterRowsFit: [...nav.querySelectorAll('.stage-row')].slice(1).every((row) => {
+              const equal = nav.classList.contains('equal-rows') && innerWidth < 768;
+              const right = row.lastElementChild.getBoundingClientRect().right;
+              return equal ? Math.abs(right - navBounds.right) < 1 : right <= navBounds.right + 1;
             }),
             labelLines: [...nav.querySelectorAll('.stage-label')].map((label) => {
               const tops = new Set(
@@ -1150,6 +1129,12 @@ export async function checkPresentation(browser, base) {
                     .getPropertyValue('--meter-width')
                     .trim(),
                   columns: getComputedStyle(header).gridTemplateColumns.split(' ').length,
+                  below:
+                    header.querySelector('.progress-card').getBoundingClientRect().top >=
+                    navBounds.bottom,
+                  alongside:
+                    header.querySelector('.progress-card').getBoundingClientRect().left >=
+                    navBounds.right + parseFloat(getComputedStyle(header).columnGap) - 1,
                 }
               : null,
             ratio: nav.getBoundingClientRect().width / header.getBoundingClientRect().width,
@@ -1180,12 +1165,33 @@ export async function checkPresentation(browser, base) {
           geometry.fillsFirstRow,
           `${mode} first row fills its available width at ${width}px`,
         );
-        assert.ok(geometry.naturalLaterRows, `${mode} later rows use natural widths at ${width}px`);
+        assert.ok(
+          geometry.laterRowsFit,
+          `${mode} later rows balance within the gutter at ${width}px`,
+        );
+        if (width >= 360 && width <= 440) assert.deepEqual(geometry.rowLengths, [3, 3]);
+        if (width === 320)
+          assert.deepEqual(
+            geometry.rowLengths,
+            [2, 2, 2],
+            'At the narrowest width, preserve readable phrases with three balanced rows',
+          );
+        if (
+          geometry.labelLines.slice(0, geometry.rowLengths[0]).some((lines) => lines === 2) &&
+          geometry.rowLengths.length > 1
+        )
+          assert.ok(
+            geometry.labelLines.every((lines) => lines === 2),
+            'Wrapped rows share two-line labels',
+          );
         assert.ok(
           geometry.rowsInsideGutter,
           `${mode} chevron forks stay inside the gutters at ${width}px`,
         );
-        if (width >= 768) assert.ok(geometry.width <= 780, 'Desktop navigation is capped at 780px');
+        if (width >= 768) {
+          assert.ok(geometry.width <= 780, 'Desktop navigation is capped at 780px');
+          assert.equal(geometry.rowLengths.length, 1, `Keep the complete stage row at ${width}px`);
+        }
         assert.ok(
           geometry.labelLines.every((lines) => lines <= 2),
           `${mode} stage labels need at most two lines at ${width}px`,
@@ -1204,6 +1210,10 @@ export async function checkPresentation(browser, base) {
           await page.locator('.learning-steps').screenshot({
             path: `${artifacts}/chevron-joins-${mode}-${width}.png`,
           });
+        if ([768, 951].includes(width) && mode === 'plain')
+          await page
+            .locator('.learning-header')
+            .screenshot({ path: `${artifacts}/learning-header-${width}.png` });
         assert.equal(geometry.labelSize, '15px', `${mode} stage labels retain the chosen size`);
         assert.equal(geometry.overflow, false, `${mode} header fits at ${width}px`);
         const panel = await page.locator('.stage-panel').evaluate((element) => {
@@ -1252,7 +1262,11 @@ export async function checkPresentation(browser, base) {
             JSON.stringify(progressRows),
           );
           assert.equal(geometry.progress.meter, width < 1024 ? '4rem' : '6rem');
-          assert.equal(geometry.progress.columns, width < 768 ? 1 : 2);
+          if (geometry.progress.columns === 2) {
+            assert.equal(geometry.rowLengths.length, 1, 'Progress never forces stage wrapping');
+            assert.ok(geometry.progress.alongside, 'The full gap separates progress from stages');
+          } else assert.ok(geometry.progress.below, 'Stacked progress stays below the stage row');
+          if (width < 768) assert.equal(geometry.progress.columns, 1);
         }
 
         assert.equal(geometry.buttonsFit, true, `${mode} stage labels fit at ${width}px`);

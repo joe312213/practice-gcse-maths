@@ -13,6 +13,7 @@
   Libs: none.
 -->
 <script>
+  import { progressTask } from '#lib/adapters/progress-ownership.mjs';
   import { onMount } from 'svelte';
   import {
     readProgressFile,
@@ -76,7 +77,7 @@
       return ' This browser could not remember the file; choose it again next visit.';
     }
   }
-  async function fileAction(open = false) {
+  const fileAction = progressTask(async (open = false) => {
     const learner = profile;
     busy = true;
     message = '';
@@ -130,8 +131,8 @@
     } finally {
       busy = false;
     }
-  }
-  async function forgetFile() {
+  });
+  const forgetFile = progressTask(async () => {
     busy = true;
     const warning = await remember(profile, null);
     if (!warning) linked = null;
@@ -139,7 +140,7 @@
       ? 'Could not forget the saved link. Try again.'
       : 'File link forgotten. Your file and browser progress are unchanged.';
     busy = false;
-  }
+  });
   let pending = $state.raw(null),
     replace = $state(false),
     message = $state('');
@@ -195,7 +196,7 @@
    * Apply the confirmed pending import, save it and refresh the parent view.
    * Calls: importProgress.
    */
-  async function applyImport() {
+  const applyImport = progressTask(async () => {
     busy = true;
     try {
       const next = JSON.parse(JSON.stringify(store));
@@ -221,7 +222,7 @@
     } finally {
       busy = false;
     }
-  }
+  });
 </script>
 
 <section class="card page-panel" id="data-transfer" aria-labelledby="transfer-title">
@@ -236,7 +237,7 @@
       <button
         class="action-button primary"
         disabled={busy}
-        onclick={async () => {
+        onclick={progressTask(async () => {
           try {
             const latest = await readProgressFile(newerFile.link.handle);
             if (latest.fingerprint !== newerFile.link.fingerprint)
@@ -248,7 +249,7 @@
           } catch (error) {
             message = error.message;
           }
-        }}>Use file progress</button
+        })}>Use file progress</button
       >
       <button
         class="action-button"

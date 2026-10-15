@@ -26,6 +26,7 @@ import {
 } from "../website/src/lib/domain/engine.mjs";
 import {
   emptyStore,
+  serializeStore,
   chooseProfile,
   load,
   KEY,
@@ -219,7 +220,7 @@ test("local profiles normalise names, suggest typos, remain isolated and preserv
   assert.equal(
     load({
       /** Storage-read fixture; return configured stored text for the supplied key. */
-      getItem: (key) => (key === KEY ? JSON.stringify(s) : null),
+      getItem: (key) => (key === KEY ? serializeStore(s) : null),
     }).profiles.length,
     2,
   );

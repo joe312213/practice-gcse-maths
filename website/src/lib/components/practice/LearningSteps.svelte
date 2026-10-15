@@ -7,12 +7,18 @@
 <script>
   import ChevronSteps from '#lib/components/ui/ChevronSteps.svelte';
   import { topicStages } from '#lib/domain/stages.mjs';
-  let { bank, mode, onselect } = $props();
+  let { bank, mode, onselect, onmeasure } = $props();
   const stages = $derived(topicStages(bank).map(([id, label], index) => ({ id, label, index })));
   const current = $derived(stages.findIndex((stage) => stage.id === mode));
 </script>
 
-<ChevronSteps items={stages} tag="nav" class="learning-steps" label="Topic learning steps">
+<ChevronSteps
+  {onmeasure}
+  items={stages}
+  tag="nav"
+  class="learning-steps"
+  label="Topic learning steps"
+>
   {#snippet segment(stage, attributes)}
     {@const split = stage.label.lastIndexOf(' ')}
     <button

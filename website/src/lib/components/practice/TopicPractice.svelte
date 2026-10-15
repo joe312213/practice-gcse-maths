@@ -12,6 +12,8 @@
 -->
 <script>
   import { Select } from 'bits-ui';
+  import { fitLearningHeader } from '#lib/adapters/header-layout.mjs';
+  let stageWidth = $state(0);
   import { bindPracticeTimer } from '#lib/adapters/practice-time.mjs';
   import { bindProgressAutosave } from '#lib/adapters/progress-autosave.mjs';
   import { importProgress } from '#lib/domain/progress-transfer.mjs';
@@ -28,6 +30,7 @@
   import SiteHeader from '#lib/components/ui/SiteHeader.svelte';
   import SiteFooter from '#lib/components/ui/SiteFooter.svelte';
   import { onMount, tick } from 'svelte';
+  import { onProgressPause, progressTask } from '#lib/adapters/progress-ownership.mjs';
   import { asset, resolve } from '$app/paths';
   import { openProgress, loadBank } from '#lib/adapters/storage.mjs';
   import { createSession } from '#lib/application/session.mjs';
@@ -221,7 +224,7 @@
           document,
           window,
         );
-        useFile = async () => {
+        useFile = progressTask(async () => {
           const chosen = newerFile;
           fileReviewBusy = true;
           try {
@@ -239,23 +242,29 @@
               // Cleanup must retain the newly imported store, not write the old snapshot back.
               Object.assign(progress.data, next);
             });
-            location.reload();
+            if (!disposed) location.reload();
           } catch (cause) {
             warning = cause.message;
           } finally {
             fileReviewBusy = false;
           }
-        };
+        });
       } catch (cause) {
         error = `${cause.message} Refresh to try again.`;
       }
     }
-    start();
-    return () => {
+    const stop = () => {
+      if (disposed) return;
       disposed = true;
       stopTiming();
       stopSync();
       unsubscribe();
+    };
+    const unregister = onProgressPause(stop);
+    start();
+    return () => {
+      stop();
+      unregister();
     };
   });
 </script>
@@ -408,11 +417,17 @@
     </PracticeSets>
     {#if combined && !view.practiceSet}<CombinedPractice {catalogue} {session} {initialTopics} />
     {:else}
-      <div class="learning-header">
+      <div
+        class="learning-header"
+        use:fitLearningHeader={{ stageWidth: view.practiceSet ? 0 : stageWidth, mode: view.mode }}
+      >
         {#if !view.practiceSet}<LearningSteps
             bank={view.bank}
             mode={view.mode}
             onselect={switchStage}
+            onmeasure={(width) => {
+              stageWidth = width;
+            }}
           />{/if}
         {#if view.page && view.mode !== 'demo' && !view.bank.combined}<Progress
             mode={view.mode}

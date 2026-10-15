@@ -1,3 +1,4 @@
+import { progressTask } from './progress-ownership.mjs';
 /**
  * Purpose: Keep a per-learner file link outside exported progress, and protect explicit file saves.
  * Used by: ProgressTransfer; browser file access is always initiated by a user gesture.
@@ -24,7 +25,23 @@ export async function progressContentFingerprint(raw) {
   } catch {
     return null;
   }
-  if (value?.format !== 'maths-practice-progress') return null;
+  if (!['maths-practice-progress', 'practice-progress'].includes(value?.format)) return null;
+  // Compare equivalent old/new envelopes without hiding unvalidated external changes.
+  if (value.format === 'maths-practice-progress' && [1, 2].includes(value.version)) {
+    const { topics, revision, practiceMeasuredFrom, ...shared } = value;
+    value = {
+      ...shared,
+      format: 'practice-progress',
+      version: 3,
+      subjects: {
+        maths: {
+          topics,
+          revision,
+          ...(practiceMeasuredFrom === undefined ? {} : { practiceMeasuredFrom }),
+        },
+      },
+    };
+  }
   const { exportedAt, backup, progressUpdatedAt, ...content } = value;
   const ordered = (item) =>
     Array.isArray(item)
@@ -169,7 +186,7 @@ export async function chooseProgressFile(profile, picker = window) {
   });
 }
 /** Upgrade existing name-keyed shortcuts once; all new links follow portable learner identity. */
-export async function learnerFileLink(profile, value) {
+export const learnerFileLink = progressTask(async (profile, value) => {
   const key = profile.id ?? profile.key;
   if (value !== undefined) return progressFileLink(key, value);
   const link = await progressFileLink(key);
@@ -180,7 +197,7 @@ export async function learnerFileLink(profile, value) {
     await progressFileLink(profile.key, null);
   }
   return previous;
-}
+});
 
 /** Download fallback needs no directory permission; completion is controlled by the browser. */
 export function downloadProgressFile(profile, kind = 'json') {

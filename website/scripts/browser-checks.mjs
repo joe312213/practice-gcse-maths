@@ -76,7 +76,7 @@ const state = () => page.evaluate(() => JSON.parse(localStorage.getItem('maths-p
  */
 const topic = async () => {
   const s = await state();
-  return s.profiles.find((p) => p.key === s.last).topics['maths:M10'];
+  return s.profiles.find((p) => p.key === s.last).subjects.maths.topics['maths:M10'];
 };
 /**
  * Return the stored page for the requested activity mode.

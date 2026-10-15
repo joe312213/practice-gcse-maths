@@ -194,7 +194,7 @@ export const jobs = [
       /^website\/src\/lib\/domain\/(progress|revision|progress-transfer|practice-history|practice-time|practice-code|engine|profiles)\.mjs$/,
       /^website\/src\/lib\/components\/progress\//,
       /^website\/src\/lib\/styles\/progress\.css$/,
-      /^website\/scripts\/browser\/progress-checks\.mjs$/,
+      /^website\/scripts\/browser\/progress(?:-tabs)?-checks\.mjs$/,
     ]),
     build: true,
     command: ['scripts/browser-checks.mjs', '--progress-only'],

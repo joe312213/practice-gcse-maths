@@ -46,7 +46,9 @@ export async function checkDraftTopics(browser, base) {
       const saved = () =>
         page.evaluate(
           (id) =>
-            JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].topics[`maths:${id}`],
+            JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].subjects.maths.topics[
+              `maths:${id}`
+            ],
           topic.bank,
         );
       if (topic.bank === 'M15') {
@@ -237,7 +239,9 @@ export async function checkDraftTopics(browser, base) {
       await page.locator('.problem-tips #demo-all').click();
     assert.ok(await page.locator('.problem-tips .calculation-step').count());
     const combined = await page.evaluate(
-      () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].practiceSet,
+      () =>
+        JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].subjects.maths
+          .practiceSet,
     );
     const selectedId = combined.attempts[0].items[0].id;
     const sourceTopic = foundationTopics.find((t) => selectedId.startsWith(`maths:${t.bank}-`));
@@ -250,7 +254,7 @@ export async function checkDraftTopics(browser, base) {
     await page.getByRole('button', { name: 'Check answer', exact: true }).click();
     const record = await page.evaluate(
       (topic) =>
-        JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].topics[
+        JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].subjects.maths.topics[
           `maths:${topic}`
         ].history.at(-1),
       sourceTopic.bank,
@@ -261,7 +265,9 @@ export async function checkDraftTopics(browser, base) {
     await page.reload();
     await page.locator('[data-question]').first().waitFor();
     const resumed = await page.evaluate(
-      () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].practiceSet,
+      () =>
+        JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].subjects.maths
+          .practiceSet,
     );
     assert.deepEqual(resumed.attempts[0].items, combined.attempts[0].items);
     assert.equal(resumed.attempts[0].count, 1);

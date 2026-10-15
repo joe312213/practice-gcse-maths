@@ -2,6 +2,24 @@
    Edit theme colours and decoration here. See docs/theming.md. */
 :where(:root, .theme-swatch) {
   color-scheme: light;
+  --error-paper-neutral: #fff;
+  --error-ink-neutral: #000;
+  --error-neutral-weight: 85%;
+  --error-paper: color-mix(
+    in srgb,
+    var(--error-paper-neutral) var(--error-neutral-weight),
+    var(--surface)
+  );
+  --error-ink: color-mix(
+    in srgb,
+    var(--error-ink-neutral) var(--error-neutral-weight),
+    var(--text)
+  );
+  --error-line: color-mix(
+    in srgb,
+    var(--error-ink-neutral) var(--error-neutral-weight),
+    var(--line)
+  );
   --theme-saturation: var(--theme-saturation-default);
   --theme-bg-lightness: var(--theme-bg-default);
 
@@ -81,6 +99,8 @@
 
 :where(:root, .theme-swatch)[data-theme='dark'] {
   color-scheme: dark;
+  --error-paper-neutral: #000;
+  --error-ink-neutral: #fff;
 
   --surface-lift: 0.055;
   --soft-lift: 0.09;

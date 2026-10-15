@@ -13,11 +13,17 @@
  *
  * Libs: none.
  */
-import { validLearnerId } from './profiles.mjs';
+import {
+  validLearnerId,
+  validSubjects,
+  validAccount,
+  validStudentId,
+  createStudentId,
+} from './profiles.mjs';
 import { newTrack, profileKey, MAX_PAGE_SIZE } from './engine.mjs';
 import { decodePracticeSet } from './practice-code.mjs';
 
-const format = 'maths-practice-progress';
+const format = 'practice-progress';
 /**
  * Reject an invalid imported value with the standard non-destructive import error.
  * Parameter condition: required validation condition.
@@ -62,23 +68,30 @@ export function exportProgress(profile, now = Date.now()) {
   return JSON.stringify(
     {
       format,
-      version: 2,
-      practiceMeasuredFrom: profile.practiceMeasuredFrom,
+      version: 3,
       exportedAt: now,
       username: profile.name,
       learnerId: profile.id,
+      studentId: profile.studentId,
+      account: profile.account,
       progressUpdatedAt: profile.progressUpdatedAt,
       backup: { since: profile.backup?.since ?? now, lastExportAt: now, lastExportType: 'json' },
-      topics: Object.fromEntries(
-        Object.entries(profile.topics).map(([key, value]) => [
-          key,
-          { tracks: value.tracks, history: value.history, practice: value.practice },
-        ]),
-      ),
-      revision: {
-        recommendations: (profile.revision?.recommendations ?? []).map(
-          ({ savedAttempt, ...record }) => record,
-        ),
+      subjects: {
+        ...profile.otherSubjects,
+        maths: {
+          practiceMeasuredFrom: profile.practiceMeasuredFrom,
+          topics: Object.fromEntries(
+            Object.entries(profile.topics).map(([key, value]) => [
+              key,
+              { tracks: value.tracks, history: value.history, practice: value.practice },
+            ]),
+          ),
+          revision: {
+            recommendations: (profile.revision?.recommendations ?? []).map(
+              ({ savedAttempt, ...record }) => record,
+            ),
+          },
+        },
       },
     },
     null,
@@ -105,16 +118,38 @@ export function parseProgress(raw) {
   } catch {
     throw Error('This is not a valid JSON progress file.');
   }
+  const current = value?.format === format && value.version === 3;
   requireValue(
-    value?.format === format &&
-      [1, 2].includes(value.version) &&
-      text(value.username) &&
-      object(value.topics),
+    current || (value?.format === 'maths-practice-progress' && [1, 2].includes(value.version)),
   );
+  let otherSubjects;
+  if (current) {
+    requireValue(validSubjects(value.subjects));
+    const { maths = { topics: {}, revision: { recommendations: [] } }, ...others } = value.subjects;
+    requireValue(object(maths));
+    otherSubjects = others;
+    // Copy only subject-owned fields; the learner identity always comes from the envelope.
+    value = {
+      ...value,
+      topics: maths.topics,
+      revision: maths.revision,
+      practiceMeasuredFrom: maths.practiceMeasuredFrom,
+    };
+  }
+  requireValue(text(value.username) && object(value.topics));
   const name = value.username.trim(),
     key = profileKey(name);
   requireValue(key.length > 0 && key.length <= 40);
   const profile = { name, key, topics: {}, revision: { recommendations: [] } };
+  if (otherSubjects) profile.otherSubjects = structuredClone(otherSubjects);
+  if (value.studentId !== undefined) {
+    requireValue(validStudentId(value.studentId));
+    profile.studentId = value.studentId;
+  }
+  if (value.account !== undefined) {
+    requireValue(validAccount(value.account));
+    profile.account = { issuer: value.account.issuer, subject: value.account.subject };
+  }
   if (value.progressUpdatedAt !== undefined) {
     requireValue(number(value.progressUpdatedAt) && value.progressUpdatedAt <= 8640000000000000);
     profile.progressUpdatedAt = value.progressUpdatedAt;
@@ -290,7 +325,7 @@ export function parseProgress(raw) {
 }
 /**
  * Insert or explicitly replace a learner record and make it current.
- * Parameter store: schema-2 learner store.
+ * Parameter store: runtime learner store.
  * Parameter profile: learner record.
  * Parameter replace: explicit permission to replace a matching learner.
  */
@@ -303,7 +338,19 @@ export function importProgress(store, profile, replace = false) {
   if (index >= 0 && !replace)
     throw Error('This learner already has saved progress. Confirm replacement first.');
   // Legacy files gain the confirmed existing identity, or a fresh one on first import.
-  profile = { ...profile, id: profile.id ?? store.profiles[index]?.id ?? crypto.randomUUID() };
+  profile = {
+    ...profile,
+    id: profile.id ?? store.profiles[index]?.id ?? crypto.randomUUID(),
+    account: profile.account ?? store.profiles[index]?.account,
+    // Importing an older maths-only backup must not erase another subject's progress.
+    otherSubjects: { ...store.profiles[index]?.otherSubjects, ...profile.otherSubjects },
+  };
+  const others = store.profiles.filter((_, i) => i !== index);
+  profile.studentId ??=
+    (store.profiles[index]?.id === profile.id ? store.profiles[index]?.studentId : undefined) ??
+    createStudentId(profile.id, others);
+  if (others.some((item) => item.studentId === profile.studentId))
+    throw Error('This student ID belongs to another saved learner. No progress has been replaced.');
   if (index >= 0) store.profiles[index] = structuredClone(profile);
   else store.profiles.push(structuredClone(profile));
   store.last = profile.key;

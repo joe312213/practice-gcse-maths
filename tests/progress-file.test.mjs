@@ -161,3 +161,30 @@ test("directory chooser rejection reports access failure and retains the browser
       error.cause === denied,
   );
 });
+
+test("legacy and subject-scoped files have the same content fingerprint", async () => {
+  const { progressContentFingerprint } =
+    await import("../website/src/lib/adapters/progress-file.mjs");
+  const { exportProgress } =
+    await import("../website/src/lib/domain/progress-transfer.mjs");
+  const modern = JSON.parse(
+    exportProgress({ name: "Jo", topics: {}, practiceMeasuredFrom: 12 }, 100),
+  );
+  const { subjects, ...shared } = modern;
+  const legacy = {
+    ...shared,
+    ...subjects.maths,
+    format: "maths-practice-progress",
+    version: 2,
+  };
+  assert.equal(
+    await progressContentFingerprint(JSON.stringify(modern)),
+    await progressContentFingerprint(JSON.stringify(legacy)),
+  );
+  legacy.version = 42;
+  assert.notEqual(
+    await progressContentFingerprint(JSON.stringify(modern)),
+    await progressContentFingerprint(JSON.stringify(legacy)),
+    "Unsupported versions cannot be mistaken for equivalent saved progress",
+  );
+});

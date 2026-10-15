@@ -63,3 +63,12 @@
   font-size: 0.82rem;
   font-weight: 400;
 }
+
+@variant max-viewport-small {
+  .demo-controls {
+    gap: 3px;
+  }
+  .demo-controls .action-button {
+    padding-inline: 5px;
+  }
+}

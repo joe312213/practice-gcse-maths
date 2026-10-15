@@ -51,3 +51,38 @@ export function bindHeaderLayout(header) {
     content.disconnect();
   };
 }
+
+/** Keep a complete stage row before placing progress alongside it; grid still owns geometry. */
+export function fitLearningHeader(header, { stageWidth }) {
+  let minimum = stageWidth;
+  const resize = new ResizeObserver(layout);
+  function layout() {
+    const progress = header.querySelector('.progress-card');
+    const style = getComputedStyle(header);
+    const available =
+      header.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+    const required =
+      minimum + (progress?.getBoundingClientRect().width ?? 0) + parseFloat(style.columnGap);
+    header.classList.toggle(
+      'progress-alongside',
+      Boolean(minimum && progress && required <= available),
+    );
+  }
+  function observe() {
+    resize.disconnect();
+    resize.observe(header);
+    const progress = header.querySelector('.progress-card');
+    if (progress) resize.observe(progress);
+    layout();
+  }
+  observe();
+  return {
+    update({ stageWidth }) {
+      minimum = stageWidth;
+      observe();
+    },
+    destroy() {
+      resize.disconnect();
+    },
+  };
+}

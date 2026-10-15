@@ -92,3 +92,6 @@ Only the 37,078-byte Pacifico Maths asset is fetched by method playback; the 16-
 
 
 Final operation/explainer highlights hold for three seconds and fade for one second, without fading written ink or retaining the explainer’s former left accent. The shared motion controller owns their effects and cancels them on replay, navigation or disposal. Reduced motion uses the same hold then an instantaneous clear. Cosmetic controls/highlights are isolated in `method-playback.css` and have their own short verification job; shared sequence/rendering changes retain broader coverage.
+
+
+On entry, show the complete first teaching step as a static preview. **Play demo** resets to its first reveal frame and animates from the beginning; **Replay** retains its label. Pausing/resuming preserves the existing timeline. Below 440px, control gaps and horizontal padding are slightly reduced to accommodate the longer label on one row.

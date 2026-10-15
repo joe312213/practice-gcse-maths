@@ -61,10 +61,10 @@
     >
       <Dialog.Title>Your practice, your progress</Dialog.Title>
       <Dialog.Description
-        >Choose a name for your browser’s working copy of progress.</Dialog.Description
+        >Choose a name, or enter the student ID from your saved profile.</Dialog.Description
       >
       <form id="profile-form" onsubmit={submit}>
-        <label for="username">Your name</label>
+        <label for="username">Your name or student ID</label>
         <input
           id="username"
           class="text-field"

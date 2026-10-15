@@ -55,7 +55,7 @@
       onchange={(errors) => ondraft({ errors })}
     />{/if}
   {#if question.calculator}<p class="muted">Calculator allowed.</p>{/if}
-  <label for="answer">Answer</label>
+  <label for="answer">{mode === 'errors' ? 'Corrected answer' : 'Answer'}</label>
   {#if question.answerUnit}<p id="answer-unit" class="muted">
       Give your answer in {question.answerUnit}.
     </p>{/if}

@@ -858,10 +858,50 @@ footer a {
   margin-top: 8px;
 }
 
-/* Method-owned working uses the same paper surface as the learner canvas. */
+/* Scope the authored working to its own paper/ink without changing the question or controls. */
+.error-working {
+  --ink: var(--error-ink);
+  --brand: var(--error-line);
+  --muted: var(--error-ink);
+  color: var(--error-ink);
+  background: var(--error-paper);
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.75rem;
+}
+/* Paper owns the outside clearance; renderer margins still separate internal steps. */
+.error-working .calculation-step:first-child,
+.error-working .calculation-step > :first-child {
+  margin-block-start: 0;
+}
+.error-working .calculation-step:last-child,
+.error-working .calculation-step > :last-child {
+  margin-block-end: 0;
+}
+.error-working > .balance {
+  margin-block: 0;
+}
+.error-working-diagram {
+  position: relative;
+}
 .error-working-image {
-  width: 100%;
-  background: #fff;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+}
+.error-working-diagram::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--error-ink);
+  /* Transparent authored diagrams supply shapes; CSS owns their paper and ink. */
+  mask-image: var(--error-image, linear-gradient(transparent, transparent));
+  mask-mode: alpha;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  pointer-events: none;
 }
 .topic-selector {
   /* Trigger width comes from the shared choice-field rule; align its right edge. */
@@ -1219,17 +1259,17 @@ footer a {
   max-width: min(100%, 20rem);
   text-align: left;
 }
-/* Place compact progress beside the stage navigation when the viewport has room. */
+/* From tablet widths, measured content fit decides whether progress can sit alongside. */
 @variant viewport-medium {
   /* Cap stage navigation at 780px without narrowing the mobile first row. */
   .learning-steps {
     width: 100%;
     max-width: 48.75rem;
   }
-  .learning-header:has(.progress-card) {
+  .learning-header.progress-alongside {
     grid-template-columns: minmax(0, 1fr) max-content;
   }
-  .learning-header .progress-card {
+  .learning-header.progress-alongside .progress-card {
     grid-column: 2;
     margin-block-start: -2.5em;
   }
@@ -1321,4 +1361,11 @@ footer a {
 }
 .word-problem .question-option {
   min-inline-size: 0;
+}
+
+/* Equal mobile stage rows fill the same gutter; a shorter last row stays intrinsic. */
+@variant max-viewport-medium {
+  .learning-steps.equal-rows .stage-row .chevron-segment {
+    flex-grow: 1;
+  }
 }

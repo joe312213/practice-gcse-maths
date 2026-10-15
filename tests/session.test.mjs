@@ -15,7 +15,11 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { createSession } from "../website/src/lib/application/session.mjs";
-import { emptyStore, KEY } from "../website/src/lib/domain/profiles.mjs";
+import {
+  emptyStore,
+  KEY,
+  serializeStore,
+} from "../website/src/lib/domain/profiles.mjs";
 import { openProgress } from "../website/src/lib/adapters/storage.mjs";
 const bank = JSON.parse(
   await readFile(
@@ -153,7 +157,7 @@ test("hints toggle locally, reset on navigation and retain assistance through re
 test("new schema roundtrip preserves sessions, while corrupt storage never gets overwritten", () => {
   const f = setup();
   correct(f);
-  let stored = JSON.stringify(f.data);
+  let stored = serializeStore(f.data);
   const adapter = openProgress({
     /** Storage-read fixture; return configured stored text for the supplied key. */
     getItem: () =>

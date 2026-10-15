@@ -8,9 +8,19 @@
 <script>
   import { tick } from 'svelte';
 
-  let { items, segment, label, tag = 'div', class: className = '', wrap = true } = $props();
+  let {
+    items,
+    segment,
+    label,
+    tag = 'div',
+    class: className = '',
+    wrap = true,
+    onmeasure = () => {},
+  } = $props();
   let rowLengths = $state([]);
   let sized = $state(false);
+  let compact = $state(false);
+  const equalRows = $derived(rowLengths.length > 1 && rowLengths.every((n) => n === rowLengths[0]));
   const rows = $derived.by(() => {
     let offset = 0;
     const grouped = rowLengths.map((length) => items.slice(offset, (offset += length)));
@@ -22,32 +32,70 @@
   function fitRows(root) {
     function measure() {
       const segments = [...root.querySelectorAll('[data-chevron-id]')];
-      const lengths = [0];
-      let used = 0;
-      for (const segment of segments) {
+      const available = root.getBoundingClientRect().width;
+      const widths = segments.map((segment) => {
         const style = getComputedStyle(segment);
+        const phrases = [...segment.querySelectorAll('.chevron-measure')];
         const phraseWidth = Math.max(
           0,
-          ...[...segment.querySelectorAll('.chevron-measure')].map(
-            (phrase) => phrase.getBoundingClientRect().width,
-          ),
+          ...phrases.map((phrase) => phrase.getBoundingClientRect().width),
         );
-        const width =
-          phraseWidth +
-          [
-            'paddingLeft',
-            'paddingRight',
-            'borderLeftWidth',
-            'borderRightWidth',
-            'marginLeft',
-          ].reduce((sum, property) => sum + parseFloat(style[property]), 0);
-        if (wrap && lengths.at(-1) && used + width > root.getBoundingClientRect().width) {
+        const padding = [
+          'paddingLeft',
+          'paddingRight',
+          'borderLeftWidth',
+          'borderRightWidth',
+          'marginLeft',
+        ].reduce((sum, property) => sum + parseFloat(style[property]), 0);
+        const label = segment.querySelector('.stage-label');
+        const probe = label?.cloneNode(true);
+        let natural = phraseWidth;
+        if (probe) {
+          probe.style.cssText = 'position:absolute;white-space:nowrap;width:max-content';
+          for (const phrase of probe.children) phrase.style.display = 'inline';
+          segment.append(probe);
+          natural = probe.getBoundingClientRect().width;
+          probe.remove();
+        }
+        return {
+          min: phraseWidth + padding,
+          natural: natural + padding,
+          inset: -parseFloat(style.marginLeft),
+        };
+      });
+      const rowWidth = (start, count, property = 'min') =>
+        (start ? widths[start].inset : 0) +
+        widths.slice(start, start + count).reduce((sum, width) => sum + width[property], 0);
+      // The parent can reserve a complete compact row before adding adjacent content.
+      onmeasure(Math.ceil(rowWidth(0, widths.length)));
+      const lengths = [0];
+      let start = 0;
+      for (let i = 0; i < widths.length; i++) {
+        if (wrap && lengths.at(-1) && rowWidth(start, lengths.at(-1) + 1) > available) {
+          start = i;
           lengths.push(0);
-          used = -parseFloat(style.marginLeft);
         }
         lengths[lengths.length - 1]++;
-        used += width;
       }
+      // Keep the minimum row count, then move trailing stages down while their phrases fit.
+      let changed;
+      do {
+        changed = false;
+        let offset = widths.length;
+        for (let i = lengths.length - 1; i > 0; i--) {
+          offset -= lengths[i];
+          if (
+            lengths[i - 1] > lengths[i] + 1 &&
+            rowWidth(offset - 1, lengths[i] + 1) <= available
+          ) {
+            lengths[i - 1]--;
+            lengths[i]++;
+            offset--;
+            changed = true;
+          }
+        }
+      } while (changed);
+      compact = lengths.length > 1 && rowWidth(0, lengths[0], 'natural') > available;
       if (lengths.join() !== rowLengths.join()) {
         const focused = root.contains(document.activeElement)
           ? document.activeElement.closest('[data-chevron-id]')?.dataset.chevronId
@@ -74,6 +122,8 @@
   this={tag}
   class={`chevron-steps ${className}`}
   class:sized
+  class:compact
+  class:equal-rows={equalRows}
   aria-label={label}
   use:fitRows={{ items, wrap }}
 >
@@ -112,6 +162,11 @@
   /* The helper groups by minimum phrase width; flexbox fits the complete labels within each row. */
   .chevron-steps.sized .stage-row {
     flex-wrap: nowrap;
+  }
+  .compact :global(.stage-label > span) {
+    display: block;
+    width: max-content;
+    margin-inline: auto;
   }
   .stage-row:first-child :global(.chevron-segment) {
     flex-grow: 1;

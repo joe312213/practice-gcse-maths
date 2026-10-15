@@ -109,14 +109,17 @@ test("JSON timing round trips, accepts older backups without inferred time and r
   s.advance(5000);
   s.timer.pause();
   const exported = JSON.parse(exportProgress(s.profile));
-  assert.equal(exported.version, 2);
+  assert.equal(exported.version, 3);
   const restored = parseProgress(JSON.stringify(exported));
   assert.deepEqual(restored.topics, s.profile.topics);
   assert.equal(restored.practiceMeasuredFrom, s.profile.practiceMeasuredFrom);
-  exported.topics["maths:M10"].practice[0].milliseconds = -1;
+  exported.subjects.maths.topics["maths:M10"].practice[0].milliseconds = -1;
   assert.throws(() => parseProgress(JSON.stringify(exported)), /Invalid/);
-  delete exported.topics["maths:M10"].practice;
-  delete exported.practiceMeasuredFrom;
+  delete exported.subjects.maths.topics["maths:M10"].practice;
+  delete exported.subjects.maths.practiceMeasuredFrom;
+  Object.assign(exported, exported.subjects.maths);
+  delete exported.subjects;
+  exported.format = "maths-practice-progress";
   exported.version = 1;
   assert.equal(
     parseProgress(JSON.stringify(exported)).practiceMeasuredFrom,

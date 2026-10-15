@@ -1,5 +1,6 @@
 <!-- Explicit local profile controls; saved external files are never deleted or reset here. -->
 <script>
+  import { progressTask } from '#lib/adapters/progress-ownership.mjs';
   import { Dialog } from 'bits-ui';
   import { editProfile } from '#lib/domain/profile-management.mjs';
   import { rekeyWorking } from '#lib/adapters/working-cache.mjs';
@@ -13,7 +14,7 @@
     message = $state(''),
     error = $state('');
   let trigger;
-  async function apply(kind) {
+  const apply = progressTask(async (kind) => {
     error = '';
     message = '';
     busy = true;
@@ -48,11 +49,12 @@
     } finally {
       busy = false;
     }
-  }
+  });
 </script>
 
 <section class="card page-panel" aria-labelledby="profile-management-title">
   <h2 id="profile-management-title">Manage your profile</h2>
+  <p>Student ID: <strong>{profile.studentId}</strong></p>
   <form
     onsubmit={(event) => {
       event.preventDefault();
@@ -97,7 +99,7 @@
       >
       <Dialog.Description
         >{action === 'reset'
-          ? 'Clear all attempts, assessments, scores and revision records, keeping your name and preferences.'
+          ? 'Clear maths attempts, assessments, scores and revision records, keeping your name, preferences and other subjects.'
           : 'Remove this learner and their progress from this browser.'} Saved files will be kept and
         unlinked. Close other practice tabs first.</Dialog.Description
       >

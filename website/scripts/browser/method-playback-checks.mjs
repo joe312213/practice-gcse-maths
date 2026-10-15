@@ -67,6 +67,17 @@ export async function checkMethodPlayback(browser, base) {
           await page.getByRole('button', { name: 'Continue', exact: true }).click();
       }
       await page.locator('[data-mode="demo"]').click();
+      assert.equal(await page.locator('#demo-play').textContent(), 'Play demo');
+      await page.locator('.demo-working').waitFor({ state: 'visible' });
+      await page.waitForFunction(() => !document.querySelector('#demo-play').disabled);
+      assert.ok(
+        await page.locator('.demo-working [data-stroke]').count(),
+        'The first teaching step already shows its working',
+      );
+      await page.locator('#demo-play').click();
+      await page.waitForFunction(
+        () => document.querySelector('.demo-working').getAnimations({ subtree: true }).length > 0,
+      );
       await page.locator('#demo-all').click();
       await page.waitForFunction(() =>
         document.getAnimations().some((animation) => animation.id === 'method-highlight-fade'),

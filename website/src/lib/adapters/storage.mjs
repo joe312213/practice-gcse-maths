@@ -11,7 +11,7 @@
  *
  * Libs: none.
  */
-import { KEY, emptyStore, load, ensureLearnerIds } from '../domain/profiles.mjs';
+import { KEY, emptyStore, load, ensureLearnerIds, serializeStore } from '../domain/profiles.mjs';
 import { progressContent } from '../domain/progress-transfer.mjs';
 
 /**
@@ -27,12 +27,14 @@ export function openProgress(storage, onWarning = () => {}) {
   let data;
   try {
     data = load(storage);
-    if (ensureLearnerIds(data)) {
+    const idsChanged = ensureLearnerIds(data);
+    if (idsChanged || data.schema === 2) {
+      data.schema = 3;
       try {
-        storage.setItem(KEY, JSON.stringify(data));
+        storage.setItem(KEY, serializeStore(data));
       } catch {
         onWarning(
-          'Learner IDs could not be saved in this browser. Save a progress file to keep them.',
+          'Updated progress could not be saved in this browser. Save a progress file to keep it.',
         );
       }
     }
@@ -46,7 +48,7 @@ export function openProgress(storage, onWarning = () => {}) {
     data,
     /**
      * Persist a learner store only if the original data was readable; report write failures.
-     * Parameter value: complete schema-2 learner store to serialize.
+     * Parameter value: complete runtime learner store to serialize.
      */
     save(value) {
       for (const profile of value.profiles) {
@@ -59,7 +61,7 @@ export function openProgress(storage, onWarning = () => {}) {
       }
       if (!writable) return false;
       try {
-        storage.setItem(KEY, JSON.stringify(value));
+        storage.setItem(KEY, serializeStore(value));
         return true;
       } catch {
         onWarning(

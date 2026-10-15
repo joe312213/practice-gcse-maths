@@ -75,3 +75,10 @@ The Go route wraps HumanGo in an app-owned `.human-go` playing area. Host puzzle
 ## 13 October — quiet occupied taps and compact play controls
 
 `ui/boards.js` ignores a puzzle move on an occupied intersection before calling the move rules, avoiding the unnecessary “Choose an empty intersection.” notification. Legal-move validation and other error feedback remain intact. App `HumanGo` places Count before Pass, Undo and Redo in DOM/keyboard order; `.go-play-controls` uses compact gaps and horizontal padding so all four fit at 360px while retaining 44px touch heights.
+
+
+## Host state and active controls (15 October 2026 audit)
+
+The reported detached-snapshot drag/focus bug from another app does not appear in this host. Non-Go `PuzzlePlayer` mounts the portable controller once: `player.js` gives `bindChallenges` a live `getAnswer: (_, id) => state[id]`, and surviving cover-path gestures re-read that value on every extension/undo. Text/radio edits update controller state and remove stale feedback without calling `draw`, so the active input/caret survives each character. Svelte receives status callbacks, not a per-character `setState` echo. GoPuzzle/HumanGo also supply live getters of their current answers/game.
+
+`$state.snapshot` belongs at the explicit serialisation/history/initialisation boundary, where cloning is intended. Never capture a detached answer object in long-lived gesture callbacks, and never render/replace an input on each edit. The route's keyed remount follows puzzle/variation/history restoration, not the answer. The existing touch-path test now checks extension, backtracking and re-extension across redraws; sequence-input coverage checks multi-character entry, retained DOM/focus/caret, editing after feedback, and answer retention after an intentional hint redraw. No puzzle production patch was required by this audit.

@@ -77,7 +77,8 @@ export async function checkPracticeSets(browser, base) {
     const state = () =>
       page.evaluate(() => {
         const data = JSON.parse(localStorage.getItem('maths-practice-v2'));
-        return data.profiles.find((profile) => profile.key === data.last).practiceSet;
+        return data.profiles.find((profile) => profile.key === data.last).subjects.maths
+          .practiceSet;
       });
     for (let index = 0; index < 4; index++) {
       let run = await state();

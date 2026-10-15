@@ -1,3 +1,4 @@
+import { progressTask } from './progress-ownership.mjs';
 /**
  * Save linked progress at practice boundaries and browser lifecycle opportunities.
  * The browser copy is always saved first. File writes are serial, verified and never
@@ -42,7 +43,7 @@ export function createProgressAutosave({
           (topic.history ?? []).map((item) => item.at),
         ),
       );
-    const pending = (async () => {
+    const pending = progressTask(async () => {
       try {
         const link = await fileLink(profile);
         const update = await newerLinkedProgress(profile, link, localAt);
@@ -91,7 +92,7 @@ export function createProgressAutosave({
     queue.pending = true;
     if (queue.running) return queue.running;
     report(profile, 'pending', 'Checking and saving your linked progress file…');
-    queue.running = (async () => {
+    queue.running = progressTask(async () => {
       while (queue.pending) {
         queue.pending = false;
         try {

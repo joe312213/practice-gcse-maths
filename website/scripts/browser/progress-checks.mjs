@@ -1,3 +1,4 @@
+import { checkProgressTabs } from './progress-tabs-checks.mjs';
 /**
  * Purpose: Exercise progress breakdowns, backup transfer and revision recommendations at mobile width.
  *
@@ -23,6 +24,7 @@ import { progressFilename } from '../../src/lib/domain/profiles.mjs';
  * @example await checkProgress(browser, "http://127.0.0.1:8766/"); // Check a running static preview.
  */
 export async function checkProgress(browser, base) {
+  await checkProgressTabs(browser, base);
   const context = await createTestContext(browser, { viewport: { width: 390, height: 844 } });
   let page = await context.newPage();
   let freshContext;
@@ -233,7 +235,7 @@ export async function checkProgress(browser, base) {
       ),
       'json',
     );
-    assert.equal(data.revision.recommendations.length, 3);
+    assert.equal(data.subjects.maths.revision.recommendations.length, 3);
     const exportedAt = await page.evaluate(
       () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].backup.lastExportAt,
     );
@@ -379,9 +381,10 @@ export async function checkProgress(browser, base) {
     assert.equal(fallbackData.username, beforeBackup.name);
     assert.deepEqual(
       await page.evaluate(
-        () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].topics,
+        () =>
+          JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].subjects.maths.topics,
       ),
-      beforeBackup.topics,
+      beforeBackup.subjects.maths.topics,
     );
     await page.getByText(/JSON download started/).waitFor();
     assert.equal(
@@ -423,8 +426,9 @@ export async function checkProgress(browser, base) {
     await page.getByRole('button', { name: 'Check answer', exact: true }).click();
     const submittedCount = await page.evaluate(
       () =>
-        JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].topics['maths:M10']
-          .history.length,
+        JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].subjects.maths.topics[
+          'maths:M10'
+        ].history.length,
     );
     await page.locator('[data-mode="demo"]').click();
     await page.waitForFunction(
@@ -433,10 +437,17 @@ export async function checkProgress(browser, base) {
         const folder = await (
           await root.getDirectoryHandle('second-onedrive')
         ).getDirectoryHandle('Maths');
-        const saved = JSON.parse(
-          await (await (await folder.getFileHandle(filename)).getFile()).text(),
-        );
-        return saved.topics['maths:M10'].history.length === count;
+        try {
+          const saved = JSON.parse(
+            await (await (await folder.getFileHandle(filename)).getFile()).text(),
+          );
+          return saved.subjects.maths.topics['maths:M10'].history.length === count;
+        } catch (error) {
+          // OPFS can briefly replace the entry while an asynchronous writer closes.
+          // Keep polling the required contents; a permanently missing file still times out.
+          if (error.name === 'NotFoundError') return false;
+          throw error;
+        }
       },
       { filename: learnerFile, count: submittedCount },
     );
@@ -449,8 +460,8 @@ export async function checkProgress(browser, base) {
       const handle = await folder.getFileHandle(filename);
       const saved = JSON.parse(await (await handle.getFile()).text());
       saved.progressUpdatedAt = Date.now() + 60000;
-      saved.topics['maths:M10'].history.push({
-        ...saved.topics['maths:M10'].history[0],
+      saved.subjects.maths.topics['maths:M10'].history.push({
+        ...saved.subjects.maths.topics['maths:M10'].history[0],
         attempt: 'cloud-newer-result',
         at: saved.progressUpdatedAt,
       });
@@ -462,7 +473,7 @@ export async function checkProgress(browser, base) {
     await page.getByRole('button', { name: 'Keep browser progress', exact: true }).click();
     assert.equal(
       await page.evaluate(() =>
-        JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].topics[
+        JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].subjects.maths.topics[
           'maths:M10'
         ].history.some((item) => item.attempt === 'cloud-newer-result'),
       ),
@@ -471,7 +482,7 @@ export async function checkProgress(browser, base) {
     await page.reload();
     await page.getByRole('button', { name: 'Use file progress', exact: true }).click();
     await page.waitForFunction(() =>
-      JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].topics[
+      JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].subjects.maths.topics[
         'maths:M10'
       ].history.some((item) => item.attempt === 'cloud-newer-result'),
     );
@@ -521,7 +532,7 @@ export async function checkProgress(browser, base) {
     await page.locator('.revision-followup').waitFor();
     const id = await page.evaluate(() => {
       const data = JSON.parse(localStorage.getItem('maths-practice-v2'));
-      return data.profiles[0].revision.recommendations[0].id;
+      return data.profiles[0].subjects.maths.revision.recommendations[0].id;
     });
     await page.reload();
     // Recommendation links render after the saved profile is restored on mount.
@@ -533,16 +544,16 @@ export async function checkProgress(browser, base) {
     assert.equal(
       await page.evaluate(() => {
         const data = JSON.parse(localStorage.getItem('maths-practice-v2'));
-        return data.profiles[0].revision.recommendations[0].id;
+        return data.profiles[0].subjects.maths.revision.recommendations[0].id;
       }),
       id,
     );
     await page.evaluate(() => {
       const data = JSON.parse(localStorage.getItem('maths-practice-v2')),
         profile = data.profiles[0],
-        sample = profile.revision.recommendations[0],
+        sample = profile.subjects.maths.revision.recommendations[0],
         at = Date.now();
-      profile.revision.recommendations = Array.from({ length: 15 }, (_, i) => ({
+      profile.subjects.maths.revision.recommendations = Array.from({ length: 15 }, (_, i) => ({
         ...sample,
         id: `completed-${i}`,
         createdAt: at,
@@ -572,7 +583,7 @@ export async function checkProgress(browser, base) {
       () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0],
     );
     assert.equal(renamed.id, beforeRename.id);
-    assert.deepEqual(renamed.topics, beforeRename.topics);
+    assert.deepEqual(renamed.subjects.maths.topics, beforeRename.subjects.maths.topics);
     await page.getByRole('button', { name: 'Reset progress', exact: true }).click();
     const reset = page.getByRole('dialog');
     assert.equal(await reset.getByRole('button', { name: 'Confirm reset' }).isEnabled(), false);
@@ -582,7 +593,7 @@ export async function checkProgress(browser, base) {
     const cleared = await page.evaluate(
       () => JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0],
     );
-    assert.deepEqual(cleared.topics, {});
+    assert.deepEqual(cleared.subjects.maths.topics, {});
     assert.equal(cleared.id, beforeRename.id);
     await page.getByRole('button', { name: 'Delete profile', exact: true }).click();
     await page.getByRole('dialog').getByRole('button', { name: 'Cancel', exact: true }).click();

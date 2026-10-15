@@ -70,6 +70,7 @@ export async function checkNewTopics(browser, base) {
       ]) {
         await page.goto(`${base}${route}`);
         const trigger = page.getByRole('button', { name: 'Menu', exact: true });
+        await trigger.waitFor();
         assert.equal(await trigger.count(), 1);
         await trigger.focus();
         await page.keyboard.press('Enter');
@@ -449,15 +450,17 @@ export async function checkNewTopics(browser, base) {
       const pageNav = page.getByRole('navigation', { name: 'Practice page navigation' });
       const beforeNavigation = await page.evaluate(
         (topic) =>
-          JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].topics[`maths:${topic}`]
-            .pages.plain,
+          JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].subjects.maths.topics[
+            `maths:${topic}`
+          ].pages.plain,
         topic,
       );
       await pageNav.getByRole('button', { name: 'Next page of questions', exact: true }).click();
       const afterNavigation = await page.evaluate(
         (topic) =>
-          JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].topics[`maths:${topic}`]
-            .pages.plain,
+          JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].subjects.maths.topics[
+            `maths:${topic}`
+          ].pages.plain,
         topic,
       );
       assert.notEqual(afterNavigation.attempt, beforeNavigation.attempt);
@@ -468,7 +471,7 @@ export async function checkNewTopics(browser, base) {
       assert.deepEqual(
         await page.evaluate(
           (topic) =>
-            JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].topics[
+            JSON.parse(localStorage.getItem('maths-practice-v2')).profiles[0].subjects.maths.topics[
               `maths:${topic}`
             ].pages.plain,
           topic,
@@ -490,11 +493,18 @@ export async function checkNewTopics(browser, base) {
       const store = await page.evaluate(() =>
         JSON.parse(localStorage.getItem('maths-practice-v2')),
       );
-      assert.equal(store.profiles[0].topics[`maths:${topic}`].history.at(-1).correct, true);
-      assert.equal(store.profiles[0].topics[`maths:${topic}`].history.at(-1).assisted, true);
+      assert.equal(
+        store.profiles[0].subjects.maths.topics[`maths:${topic}`].history.at(-1).correct,
+        true,
+      );
+      assert.equal(
+        store.profiles[0].subjects.maths.topics[`maths:${topic}`].history.at(-1).assisted,
+        true,
+      );
       assert.equal(await page.locator('#question-hint').isVisible(), false);
       await page.locator('[data-mode="errors"]').click();
       await page.locator('.error-working-image').waitFor();
+      assert.ok(await page.getByLabel('Corrected answer', { exact: true }).isVisible());
       const timer = page.getByRole('region', { name: 'Practice timer' });
       assert.equal(await timer.getByRole('timer').innerText(), '6:00');
       assert.equal(await timer.getByRole('checkbox').count(), 0);
@@ -515,6 +525,46 @@ export async function checkNewTopics(browser, base) {
       assert.match(await timer.innerText(), /Time is up/);
       await timer.getByRole('button', { name: 'Reset timer', exact: true }).click();
       assert.ok(await timer.getByRole('button', { name: 'Add one minute' }).isEnabled());
+      // Sample the painted result: checking the CSS alone misses broken mask asset URLs.
+      const originalTheme = await page.evaluate(() => document.documentElement.dataset.theme);
+      for (const theme of ['light', 'dark']) {
+        await page.evaluate((theme) => {
+          document.documentElement.dataset.theme = theme;
+        }, theme);
+        const diagram = page.locator('.error-working-diagram');
+        await page.locator('.error-working-image').evaluate((img) => img.decode());
+        const png = await diagram.screenshot({
+          path: `${artifacts}/error-working-${topic}-${theme}.png`,
+        });
+        const colours = await page.evaluate(async (encoded) => {
+          const bytes = Uint8Array.from(atob(encoded), (char) => char.charCodeAt(0));
+          const bitmap = await createImageBitmap(new Blob([bytes], { type: 'image/png' }));
+          const canvas = document.createElement('canvas');
+          canvas.width = bitmap.width;
+          canvas.height = bitmap.height;
+          const context = canvas.getContext('2d');
+          context.drawImage(bitmap, 0, 0);
+          const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+          context.fillStyle = getComputedStyle(
+            document.querySelector('.error-working'),
+          ).backgroundColor;
+          context.fillRect(0, 0, 1, 1);
+          const paper = context.getImageData(0, 0, 1, 1).data;
+          let paperPixels = 0;
+          for (let i = 0; i < pixels.length; i += 4)
+            if ([0, 1, 2].every((channel) => Math.abs(pixels[i + channel] - paper[channel]) < 3))
+              paperPixels++;
+          bitmap.close();
+          return paperPixels / (pixels.length / 4);
+        }, png.toString('base64'));
+        assert.ok(
+          colours > 0.5 && colours < 0.995,
+          `${topic} ${theme} error working paints paper and legible ink, not a solid block`,
+        );
+      }
+      await page.evaluate((theme) => {
+        document.documentElement.dataset.theme = theme;
+      }, originalTheme);
       for (const level of [0, 1, 2]) {
         await page.locator('#level').selectOption(String(level));
         const added = bank.questions.find((q) => q.id === `maths:${topic}-SE-C${level + 1}-Q4`);
@@ -531,6 +581,44 @@ export async function checkNewTopics(browser, base) {
         true,
       );
     }
+    await selectTopic(page, 'M03');
+    for (const width of [360, 390, 440]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.clock.runFor(50);
+      await page.waitForFunction(
+        () =>
+          [...document.querySelectorAll('.learning-steps .stage-row')]
+            .map((row) => row.children.length)
+            .join() === '3,2',
+      );
+      const rows = await page.locator('.learning-steps').evaluate((nav) => {
+        const rows = [...nav.querySelectorAll('.stage-row')];
+        const bounds = nav.getBoundingClientRect();
+        return {
+          lengths: rows.map((row) => row.children.length),
+          lastRight: rows.at(-1).lastElementChild.getBoundingClientRect().right,
+          right: bounds.right,
+          lines: [...nav.querySelectorAll('.stage-label')].map(
+            (label) =>
+              new Set(
+                [...label.children].map((span) => Math.round(span.getBoundingClientRect().top)),
+              ).size,
+          ),
+        };
+      });
+      assert.deepEqual(rows.lengths, [3, 2], `Five stages balance at ${width}px`);
+      assert.ok(rows.lastRight < rows.right - 5, 'The shorter final row retains natural widths');
+      if (rows.lines.slice(0, 3).some((n) => n === 2)) assert.ok(rows.lines.every((n) => n === 2));
+    }
+    await page.locator('[data-mode="plain"]').click();
+    for (const width of [767, 768, 769, 800, 900, 951, 952, 1024]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.clock.runFor(50);
+      await expect(page.locator('.learning-steps .stage-row')).toHaveCount(1);
+      assert.equal(await page.locator('.learning-steps [data-chevron-id]').count(), 5);
+    }
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.clock.runFor(50);
     await page.getByRole('button', { name: 'Menu', exact: true }).click();
     await page
       .getByRole('dialog', { name: 'Site menu', exact: true })
@@ -1044,8 +1132,12 @@ async function checkPuzzleTouch(browser, base) {
       const before = await page.evaluate(() => scrollY);
       await touch('touchStart', await point(dots[0]));
       for (const dot of dots.slice(1)) await touch('touchMove', await point(dot));
+      await expect(page.locator('.path-count')).toHaveText(/^3 \/ /);
+      await touch('touchMove', await point(dots[1]));
+      await expect(page.locator('.path-count')).toHaveText(/^2 \/ /);
+      await touch('touchMove', await point(dots[2]));
       await touch('touchEnd');
-      assert.match(await page.locator('.path-count').innerText(), /^3 \/ /);
+      await expect(page.locator('.path-count')).toHaveText(/^3 \/ /);
       assert.equal(await page.evaluate(() => scrollY), before, 'Path drag does not scroll');
     }
     for (const type of [
@@ -1079,6 +1171,38 @@ async function checkPuzzleTouch(browser, base) {
         const field = page.locator('.puzzle-controls input[data-part]').first();
         await field.tap();
         assert.ok(await field.evaluate((el) => document.activeElement === el));
+        const original = await field.elementHandle();
+        await field.pressSequentially('1234');
+        assert.ok(
+          await original.evaluate(
+            (el) => el.isConnected && document.activeElement === el && el.value === '1234',
+          ),
+        );
+        await field.press('ArrowLeft');
+        await field.press('ArrowLeft');
+        await field.pressSequentially('9');
+        assert.ok(
+          await original.evaluate(
+            (el) =>
+              el.isConnected &&
+              document.activeElement === el &&
+              el.value === '12934' &&
+              el.selectionStart === 3,
+          ),
+        );
+        await page.getByRole('button', { name: 'Check puzzle', exact: true }).click();
+        await field.focus();
+        const checked = await field.elementHandle();
+        // End is platform-dependent on macOS; place the caret explicitly for this edit.
+        await field.evaluate((el) => el.setSelectionRange(el.value.length, el.value.length));
+        await field.pressSequentially('5');
+        assert.ok(
+          await checked.evaluate(
+            (el) => el.isConnected && document.activeElement === el && el.value === '129345',
+          ),
+        );
+        await page.getByRole('button', { name: 'Hint', exact: true }).click();
+        assert.equal(await field.inputValue(), '129345', 'Redraw reads the current typed answer');
       }
     }
   } finally {

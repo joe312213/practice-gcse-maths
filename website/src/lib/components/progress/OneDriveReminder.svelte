@@ -4,6 +4,7 @@
   No automatic picker, file overwrite or account connection; Later lasts for this tab session.
 -->
 <script>
+  import { progressTask } from '#lib/adapters/progress-ownership.mjs';
   import { resolve } from '$app/paths';
   import {
     learnerFileLink,
@@ -43,7 +44,7 @@
       disposed = true;
     };
   });
-  async function setup() {
+  const setup = progressTask(async () => {
     const learner = profile;
     busy = true;
     message = '';
@@ -79,7 +80,7 @@
     } finally {
       busy = false;
     }
-  }
+  });
   function downloadBackup() {
     try {
       downloadProgressFile(profile);

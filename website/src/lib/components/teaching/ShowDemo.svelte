@@ -40,7 +40,8 @@
   const speedId = $props.id();
   // Grid/divider construction runs three times faster than written working.
   const pace = (step) => (frames[step - 1].guideProgress === undefined ? 1 : 3);
-  const frame = $derived(frames[cursor]);
+  // Preview the complete first teaching step; playback still starts at its first reveal frame.
+  const frame = $derived(started ? frames[cursor] : frames.findLast((frame) => frame.step === 1));
   const step = $derived(frame.step);
   const finished = $derived(cursor === frames.length - 1);
   $effect(() => {
@@ -151,17 +152,17 @@
 <section class="demo-stage" bind:this={stage} aria-label="Worked solution playback">
   {@render introduction?.(step)}
   {@render heading()}
-  {#if started}<div class="demo-working">
-      {@render children(frame, font)}
-      <div data-demo-working-end aria-hidden="true"></div>
-    </div>{/if}
+  <div class="demo-working">
+    {@render children(frame, font)}
+    <div data-demo-working-end aria-hidden="true"></div>
+  </div>
   <div class="demo-controls">
     <button
       type="button"
       class="action-button primary"
       id="demo-play"
       disabled={!fontReady}
-      onclick={play}>{playing ? 'Pause' : finished ? 'Replay' : 'Play'}</button
+      onclick={play}>{playing ? 'Pause' : finished ? 'Replay' : 'Play demo'}</button
     >
     <div class="secondary-controls">
       <button

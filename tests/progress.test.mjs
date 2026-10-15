@@ -199,7 +199,9 @@ test("progress transfer round-trips data and identity; invalid/colliding imports
   importProgress(store, restored, true);
   assert.equal(store.profiles.length, 1);
   const bad = JSON.parse(exportProgress(p));
-  bad.topics["maths:M10"].tracks.plain.histories[0] = ["not boolean"];
+  bad.subjects.maths.topics["maths:M10"].tracks.plain.histories[0] = [
+    "not boolean",
+  ];
   assert.throws(() => parseProgress(JSON.stringify(bad)), /Invalid/);
   bad.version = 42;
   assert.throws(() => parseProgress(JSON.stringify(bad)), /Invalid/);

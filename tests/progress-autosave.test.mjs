@@ -106,7 +106,7 @@ test("timestamps alone never write; changed results save once despite overlappin
   f.profile.topics.M01 = { history: [{ question: "q1", correct: true }] };
   await Promise.all([sync.flush(), sync.flush(), sync.flush()]);
   assert.equal(f.writes, 1);
-  assert.equal(JSON.parse(f.raw).topics.M01.history.length, 1);
+  assert.equal(JSON.parse(f.raw).subjects.maths.topics.M01.history.length, 1);
   assert.equal(f.profile.fileSync.state, "saved");
   assert.equal(f.requests, 0);
   // A new route's coordinator uses the persisted confirmed fingerprint too.
@@ -261,6 +261,6 @@ test("answers saved locally during a file write are included in a following writ
   release();
   await pending;
   assert.equal(calls, 2);
-  assert.equal(JSON.parse(f.raw).topics.M01.history.length, 2);
+  assert.equal(JSON.parse(f.raw).subjects.maths.topics.M01.history.length, 2);
   assert.equal(f.profile.fileSync.savedThrough, f.profile.progressUpdatedAt);
 });

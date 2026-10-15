@@ -223,14 +223,25 @@
           {#if view.mode === 'scaffolded'}<Guidance
               guidance={view.bank.teaching.guidance[question.level]}
             />{/if}
-          {#if view.mode === 'errors'}{#if question.errorSteps}<CalculationWorking
-                {question}
-                steps={question.errorSteps}
-              />{:else if question.errorImage}<img
-                class="error-working-image"
-                src={asset(question.errorImage)}
-                alt={`Student working for ${question.q}, with a deliberate mistake. Stated answer: ${question.wrong}.`}
-              />{:else}<EquationWorking rows={question.balance} numbered />{/if}{/if}
+          {#if view.mode === 'errors'}<div class="error-working">
+              {#if question.errorSteps}<CalculationWorking
+                  {question}
+                  steps={question.errorSteps}
+                />{:else if question.errorImage}{#key question.errorImage}<div
+                    class="error-working-diagram"
+                  >
+                    <img
+                      class="error-working-image"
+                      onload={(event) =>
+                        event.currentTarget.parentElement.style.setProperty(
+                          '--error-image',
+                          `url("${event.currentTarget.currentSrc}")`,
+                        )}
+                      src={asset(question.errorImage)}
+                      alt={`Student working for ${question.q}, with a deliberate mistake. Stated answer: ${question.wrong}.`}
+                    />
+                  </div>{/key}{:else}<EquationWorking rows={question.balance} numbered />{/if}
+            </div>{/if}
           <fieldset
             class="answer-controls"
             disabled={Boolean(view.practiceSet?.finished || page.complete)}
@@ -274,10 +285,11 @@
         onnext={() => {
           session.nextPage();
           focusAnswer();
-        }}>{question.id}</PageNavigation
+        }}><span class="question-code">{question.id}</span></PageNavigation
       >
+    {:else}
+      <p class="source-ref question-code">{question.id}</p>
     {/if}
-    <p class="source-ref question-code">{question.id}</p>
     <Completion
       {page}
       practiceSet={view.practiceSet}

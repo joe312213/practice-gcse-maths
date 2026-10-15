@@ -22,9 +22,12 @@ export function editProfile(store, key, { action, name, confirmation }) {
     } else {
       next.profiles[index] = {
         id: profile.id,
+        studentId: profile.studentId,
         key: profile.key,
         name: profile.name,
         settings: profile.settings,
+        account: profile.account,
+        otherSubjects: profile.otherSubjects,
         topics: {},
       };
     }
