@@ -4,20 +4,26 @@
   color-scheme: light;
   --error-paper-neutral: #fff;
   --error-ink-neutral: #000;
-  --error-neutral-weight: 85%;
+  --error-paper-neutral-weight: 35%;
+  --error-ink-neutral-weight: 35%;
+  --error-line-neutral-weight: 35%;
+  /* Equal yellow/surface blend lets the marker follow the selected theme. */
+  --error-marker: color-mix(in srgb, #e0c113 60%, var(--surface));
+  --chevron-previous-bg: color-mix(in srgb, var(--surface) 92%, var(--main));
+  --chevron-line: color-mix(in srgb, var(--chevron-previous-bg) 88%, var(--text));
   --error-paper: color-mix(
     in srgb,
-    var(--error-paper-neutral) var(--error-neutral-weight),
+    var(--error-paper-neutral) var(--error-paper-neutral-weight),
     var(--surface)
   );
   --error-ink: color-mix(
     in srgb,
-    var(--error-ink-neutral) var(--error-neutral-weight),
+    var(--error-ink-neutral) var(--error-ink-neutral-weight),
     var(--text)
   );
   --error-line: color-mix(
     in srgb,
-    var(--error-ink-neutral) var(--error-neutral-weight),
+    var(--error-ink-neutral) var(--error-line-neutral-weight),
     var(--line)
   );
   --theme-saturation: var(--theme-saturation-default);

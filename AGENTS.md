@@ -12,7 +12,7 @@ Start with [HANDOFF.md](HANDOFF.md) for current state. [docs/INDEX.md](docs/INDE
 | Implementation | [Code style requirements](docs/CODE_STYLE.md), [website architecture/run guide](website/README.md) and [framework development skill](.agents/skills/maths-framework-development/SKILL.md) |
 | Verification or a longer task | [Efficient development/testing skill](.agents/skills/maths-efficient-development/SKILL.md) |
 | Future features/scoring | [Roadmap and interpretations](docs/WEBSITE_PLAN.md) |
-| Content/questions/answers | [Teaching/source map](docs/INDEX.md#teaching-content), then the relevant topic and specifications |
+| Content/questions/answers | [Teaching/source map](docs/INDEX.md#teaching-content), then the relevant topic and specifications; for error questions follow [Spot-error process](docs/SPOT_ERRORS_PROCESS.md) |
 | Earlier decisions or failures | [DEV_LOG.md](DEV_LOG.md); use Git for full prior versions |
 | Publishing to GitHub | [Publishing instructions](.github/PUBLISHING.md), including applying repository topics |
 | Slides or source-deck audit | [Legacy resources](legacy/README.md); do not run old publishers during website work |

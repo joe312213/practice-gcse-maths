@@ -2,7 +2,7 @@
  * Purpose: Mark structured error-spotting entries and the final numeric answer.
  *
  * Main contents:
- * - markErrors
+ * - markErrors, markInvestigation
  *
  * Used By: tests/website.test.mjs, website/src/lib/application/session.mjs
  *
@@ -22,6 +22,7 @@ import { markAnswer } from './engine.mjs';
  * @example markErrors({ answer: "2", errorOptions: [{ id: "a" }], correctionId: "a" }, [{ correction: "a" }], "2"); // correct: true
  */
 export function markErrors(q, entries, raw) {
+  if (q.investigation) return markInvestigation(q, entries, raw);
   const answer = markAnswer(raw, q.answer);
   if (q.errorOptions) {
     const choice = entries[0]?.correction;
@@ -64,5 +65,47 @@ export function markErrors(q, entries, raw) {
     answerCorrect: answer.correct,
     details,
     unique,
+  };
+}
+
+/** Check a student-chosen set of independent locations/repairs in any discovery order.
+ * Question errors contain { location, reason }; the final answer uses the shared exact marker.
+ * Consequential locations are not authored errors and cannot earn independent-error credit.
+ */
+export function markInvestigation(question, entries, raw) {
+  const answer = markAnswer(raw, question.answer);
+  const unique = new Set(entries.map((entry) => entry.location)).size === entries.length;
+  const details = entries.map((entry) => {
+    const expected = question.errors.find((error) => error.location === entry.location);
+    return {
+      location: entry.location,
+      locationCorrect: Boolean(expected),
+      reasonCorrect: Boolean(expected && expected.reason === entry.reason),
+    };
+  });
+  const missing = question.errors.some(
+    (error) => !entries.some((entry) => entry.location === error.location),
+  );
+  const valid =
+    answer.valid &&
+    (!question.locations ||
+      entries.every(
+        (entry) =>
+          question.locations.some((location) => location.id === entry.location) &&
+          question.options.some((option) => option.id === entry.reason),
+      ));
+  return {
+    valid,
+    unique,
+    correct:
+      valid &&
+      unique &&
+      !missing &&
+      answer.correct &&
+      details.every((entry) => entry.reasonCorrect),
+    answerCorrect: answer.correct,
+    answerValid: answer.valid,
+    missing,
+    details,
   };
 }

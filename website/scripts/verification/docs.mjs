@@ -22,7 +22,8 @@ const paths = execFileSync(
   { cwd: root },
 )
   .toString()
-  .split('\0');
+  .split('\0')
+  .filter((path) => !path.startsWith('website/build/')); // Generated copies are not maintained documents.
 const failures = [];
 let checked = 0;
 const indexPath = resolve(root, 'docs/INDEX.md');

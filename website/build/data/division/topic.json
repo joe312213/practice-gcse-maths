@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "subject": "maths",
+  "topic": "M02",
+  "title": "Bus stop division",
+  "method": "bus",
+  "rows": [
+    "Draw Frame & Position Digits",
+    "Divide Left-to-Right & Carry",
+    "Track Remainders or Decimals",
+    "Write Final Quotient"
+  ],
+  "prompts": [
+    "Inside: 63. Outside on the left: 3. Diagram: Editable bus stop 63 ÷ 3",
+    "6 ÷ 3 = 2. Write 2 above 6. 3 ÷ 3 = 1. Write 1 above 3.",
+    "There is no final remainder. The answer is a whole number.",
+    "63 ÷ 3 = 21"
+  ],
+  "revision": "d4cfcf20e9ce937a",
+  "questionPrefix": "Work out the division",
+  "errorRevision": 2
+}

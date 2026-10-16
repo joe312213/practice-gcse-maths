@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "subject": "maths",
+  "topic": "M04",
+  "title": "Ratios: sharing and missing amounts",
+  "method": "calculation",
+  "revision": "2026-10-13",
+  "calculator": false,
+  "questionPrefix": "Solve the ratio problem",
+  "errorRevision": 2
+}

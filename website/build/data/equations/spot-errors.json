@@ -1,0 +1,2631 @@
+[
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q01",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "3x = 18"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "3x = 18"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 18 − 3 = 15"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Divide both sides by 3; it multiplies x."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E3",
+        "feedback": "18 ÷ 3 = 6."
+      }
+    ],
+    "consequences": [],
+    "answer": "6",
+    "answerCheck": {
+      "expression": "(18-(0))/((3-(0))-(18-(18)))"
+    },
+    "correctWorking": [
+      "3x = 18",
+      "3x = 18",
+      "x = 18 ÷ 3 = 6"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 3x = 18.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q02",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "4x + 5 = 33"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "4x = 33 − (5) = 30"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 15/2"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Recalculate the subtraction; the chosen operation is correct."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E7",
+        "feedback": "The right-hand value should be 28."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "7",
+    "answerCheck": {
+      "expression": "(33-(5))/((9-(5))-(33-(33)))"
+    },
+    "correctWorking": [
+      "4x + 5 = 33",
+      "4x = 33 − (5) = 28",
+      "x = 7"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 4x + 5 = 33.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q03",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "2x + 7 = 25"
+      },
+      {
+        "id": "step-2",
+        "label": "Solve",
+        "text": "2x = 18; x = 9"
+      },
+      {
+        "id": "step-3",
+        "label": "Check left side",
+        "text": "2 + 9 + (7) = 18"
+      },
+      {
+        "id": "step-4",
+        "label": "Check right side",
+        "text": "0 × 9 + 25 = 25"
+      },
+      {
+        "id": "step-5",
+        "label": "Conclusion",
+        "text": "The two sides do not match."
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Substitute by multiplying x by its coefficient."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E8",
+        "feedback": "Replace ax with a × x, not a + x."
+      }
+    ],
+    "consequences": [
+      "step-5"
+    ],
+    "answer": "9",
+    "answerCheck": {
+      "expression": "(25-(7))/((9-(7))-(25-(25)))"
+    },
+    "correctWorking": [
+      "2x + 7 = 25",
+      "2x = 18; x = 9",
+      "2 × 9 + (7) = 25",
+      "0 × 9 + 25 = 25",
+      "The two sides match."
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 2x + 7 = 25. Inspect the student’s check.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q01",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "4(x + 3) = 44"
+      },
+      {
+        "id": "step-2",
+        "label": "Expand the bracket",
+        "text": "4x + 3 = 44"
+      },
+      {
+        "id": "step-3",
+        "label": "Collect and solve",
+        "text": "4x = 41; x = 41/4"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply every term inside the bracket by the outside number, keeping its sign."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E5",
+        "feedback": "The constant becomes 4 × 3 = 12."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "8",
+    "answerCheck": {
+      "expression": "(44-(12))/((16-(12))-(44-(44)))"
+    },
+    "correctWorking": [
+      "4(x + 3) = 44",
+      "4x + 12 = 44",
+      "4x = 32; x = 8"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 4(x + 3) = 44.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q02",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "5x + 7 = 37"
+      },
+      {
+        "id": "step-2",
+        "label": "Collect terms",
+        "text": "12x = 37"
+      },
+      {
+        "id": "step-3",
+        "label": "Solve",
+        "text": "12x = 37; x = 37/12"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Keep the constant separate from the x-terms."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E6",
+        "feedback": "A constant cannot be added to the coefficient of x."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "6",
+    "answerCheck": {
+      "expression": "(37-(7))/((12-(7))-(37-(37)))"
+    },
+    "correctWorking": [
+      "5x + 7 = 37",
+      "5x + 7 = 37",
+      "5x = 30; x = 6"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 5x + 7 = 37.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q03",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "7x − 6 = 57"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "7x = 57 − (-6) = 65"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 65/7"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Recalculate the subtraction; the chosen operation is correct."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E7",
+        "feedback": "The right-hand value should be 63."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "9",
+    "answerCheck": {
+      "expression": "(57-(-6))/((1-(-6))-(57-(57)))"
+    },
+    "correctWorking": [
+      "7x − 6 = 57",
+      "7x = 57 − (-6) = 63",
+      "x = 9"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 7x − 6 = 57.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q01",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "9x − 7 = 4x + 38"
+      },
+      {
+        "id": "step-2",
+        "label": "Collect x-terms",
+        "text": "5x − 7 = 38"
+      },
+      {
+        "id": "step-3",
+        "label": "Remove the constant",
+        "text": "5x = 38 − (-7) = 47"
+      },
+      {
+        "id": "step-4",
+        "label": "Find x",
+        "text": "x = 47/5"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Recalculate the subtraction; the chosen operation is correct."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E7",
+        "feedback": "The right-hand value should be 45."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "9",
+    "answerCheck": {
+      "expression": "(38-(-7))/((2-(-7))-(42-(38)))"
+    },
+    "correctWorking": [
+      "9x − 7 = 4x + 38",
+      "5x − 7 = 38",
+      "5x = 38 − (-7) = 45",
+      "x = 9"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 9x − 7 = 4x + 38.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q02",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "6x + 11 = 2x + 43"
+      },
+      {
+        "id": "step-2",
+        "label": "Solve",
+        "text": "4x = 32; x = 8"
+      },
+      {
+        "id": "step-3",
+        "label": "Check left side",
+        "text": "6 + 8 + (11) = 25"
+      },
+      {
+        "id": "step-4",
+        "label": "Check right side",
+        "text": "2 × 8 + 43 = 59"
+      },
+      {
+        "id": "step-5",
+        "label": "Conclusion",
+        "text": "The two sides do not match."
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Substitute by multiplying x by its coefficient."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E8",
+        "feedback": "Replace ax with a × x, not a + x."
+      }
+    ],
+    "consequences": [
+      "step-5"
+    ],
+    "answer": "8",
+    "answerCheck": {
+      "expression": "(43-(11))/((17-(11))-(45-(43)))"
+    },
+    "correctWorking": [
+      "6x + 11 = 2x + 43",
+      "4x = 32; x = 8",
+      "6 × 8 + (11) = 59",
+      "2 × 8 + 43 = 59",
+      "The two sides match."
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 6x + 11 = 2x + 43. Inspect the student’s check.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q03",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "10x + 18 = 4x + 60"
+      },
+      {
+        "id": "step-2",
+        "label": "Divide both sides by 2",
+        "text": "5x + 18 = 2x + 60"
+      },
+      {
+        "id": "step-3",
+        "label": "Solve",
+        "text": "x = 14"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide every term on both sides by 2."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E4",
+        "feedback": "The constants must also be divided by 2."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "7",
+    "answerCheck": {
+      "expression": "(60-(18))/((28-(18))-(64-(60)))"
+    },
+    "correctWorking": [
+      "10x + 18 = 4x + 60",
+      "5x + 9 = 2x + 30",
+      "3x = 21; x = 7"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 10x + 18 = 4x + 60.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q04",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "4(x + 3) + 3(x − 5) = 2x + 37"
+      },
+      {
+        "id": "step-2",
+        "label": "First bracket",
+        "text": "4(x + 3) = 4x + 3"
+      },
+      {
+        "id": "step-3",
+        "label": "Second bracket",
+        "text": "3(x − 5) = 3x + 15"
+      },
+      {
+        "id": "step-4",
+        "label": "Collect terms",
+        "text": "7x + 18 = 2x + 37"
+      },
+      {
+        "id": "step-5",
+        "label": "Solve",
+        "text": "5x = 19; x = 19/5"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Multiply both terms of the first bracket by 4."
+      },
+      {
+        "id": "repair-2",
+        "text": "Keep the negative sign when multiplying −5 by 3."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E5",
+        "feedback": "The first expansion is 4x + 12."
+      },
+      {
+        "location": "step-3",
+        "reason": "repair-2",
+        "misconception": "E5",
+        "feedback": "The second expansion is 3x − 15."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "8",
+    "answerCheck": {
+      "expression": "(37-(-3))/((4-(-3))-(39-(37)))"
+    },
+    "correctWorking": [
+      "4(x + 3) + 3(x − 5) = 2x + 37",
+      "4(x + 3) = 4x + 12",
+      "3(x − 5) = 3x − 15",
+      "7x − 3 = 2x + 37",
+      "5x = 40; x = 8"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 4(x + 3) + 3(x − 5) = 2x + 37.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q04",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "x + 6 = 19"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "1x = 25"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 25"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Undo the constant by subtracting (6) on both sides."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E1",
+        "feedback": "The right-hand value should be 13."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "13",
+    "answerCheck": {
+      "expression": "(19-(6))/((7-(6))-(19-(19)))"
+    },
+    "correctWorking": [
+      "x + 6 = 19",
+      "1x = 19 − (6) = 13",
+      "x = 13"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve x + 6 = 19.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 13 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q04",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "3x + 11 = 32"
+      },
+      {
+        "id": "step-2",
+        "label": "Solve",
+        "text": "3x = 21; x = 7"
+      },
+      {
+        "id": "step-3",
+        "label": "Check left side",
+        "text": "3 + 7 + (11) = 21"
+      },
+      {
+        "id": "step-4",
+        "label": "Check right side",
+        "text": "0 × 7 + 32 = 32"
+      },
+      {
+        "id": "step-5",
+        "label": "Conclusion",
+        "text": "The two sides do not match."
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Substitute by multiplying x by its coefficient."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E8",
+        "feedback": "Replace ax with a × x, not a + x."
+      }
+    ],
+    "consequences": [
+      "step-5"
+    ],
+    "answer": "7",
+    "answerCheck": {
+      "expression": "(32-(11))/((14-(11))-(32-(32)))"
+    },
+    "correctWorking": [
+      "3x + 11 = 32",
+      "3x = 21; x = 7",
+      "3 × 7 + (11) = 32",
+      "0 × 7 + 32 = 32",
+      "The two sides match."
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 3x + 11 = 32. Inspect the student’s check.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q05",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "8x + 5 = 3x + 35"
+      },
+      {
+        "id": "step-2",
+        "label": "Collect terms",
+        "text": "13x = 3x + 35"
+      },
+      {
+        "id": "step-3",
+        "label": "Solve",
+        "text": "10x = 35; x = 7/2"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Keep the constant separate from the x-terms."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E6",
+        "feedback": "A constant cannot be added to the coefficient of x."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "6",
+    "answerCheck": {
+      "expression": "(35-(5))/((13-(5))-(38-(35)))"
+    },
+    "correctWorking": [
+      "8x + 5 = 3x + 35",
+      "8x + 5 = 3x + 35",
+      "5x = 30; x = 6"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 8x + 5 = 3x + 35.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q05",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "5x + 4 = 44"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "5x = 44"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 44/5"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Apply the subtraction to both sides, not only the x-side."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E2",
+        "feedback": "The right-hand value should be 40."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "8",
+    "answerCheck": {
+      "expression": "(44-(4))/((9-(4))-(44-(44)))"
+    },
+    "correctWorking": [
+      "5x + 4 = 44",
+      "5x = 44 − (4) = 40",
+      "x = 8"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 5x + 4 = 44.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q06",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "7x = 42"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "7x = 42"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 42 − 7 = 35"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide both sides by 7; it multiplies x."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E3",
+        "feedback": "42 ÷ 7 = 6."
+      }
+    ],
+    "consequences": [],
+    "answer": "6",
+    "answerCheck": {
+      "expression": "(42-(0))/((7-(0))-(42-(42)))"
+    },
+    "correctWorking": [
+      "7x = 42",
+      "7x = 42",
+      "x = 42 ÷ 7 = 6"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 7x = 42.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q07",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "3x − 8 = 7"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "3x = 7 − (-8) = 17"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 17/3"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Recalculate the subtraction; the chosen operation is correct."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E7",
+        "feedback": "The right-hand value should be 15."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "5",
+    "answerCheck": {
+      "expression": "(7-(-8))/((-5-(-8))-(7-(7)))"
+    },
+    "correctWorking": [
+      "3x − 8 = 7",
+      "3x = 7 − (-8) = 15",
+      "x = 5"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 3x − 8 = 7.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 5 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q08",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "6x − 5 = 19"
+      },
+      {
+        "id": "step-2",
+        "label": "Solve",
+        "text": "6x = 24; x = 4"
+      },
+      {
+        "id": "step-3",
+        "label": "Check left side",
+        "text": "6 + 4 + (-5) = 5"
+      },
+      {
+        "id": "step-4",
+        "label": "Check right side",
+        "text": "0 × 4 + 19 = 19"
+      },
+      {
+        "id": "step-5",
+        "label": "Conclusion",
+        "text": "The two sides do not match."
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Substitute by multiplying x by its coefficient."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E8",
+        "feedback": "Replace ax with a × x, not a + x."
+      }
+    ],
+    "consequences": [
+      "step-5"
+    ],
+    "answer": "4",
+    "answerCheck": {
+      "expression": "(19-(-5))/((1-(-5))-(19-(19)))"
+    },
+    "correctWorking": [
+      "6x − 5 = 19",
+      "6x = 24; x = 4",
+      "6 × 4 + (-5) = 19",
+      "0 × 4 + 19 = 19",
+      "The two sides match."
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 6x − 5 = 19. Inspect the student’s check.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 4 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q09",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "x − 9 = -6"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "1x = -15"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = -15"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Undo the constant by subtracting (-9) on both sides."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E1",
+        "feedback": "The right-hand value should be 3."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "3",
+    "answerCheck": {
+      "expression": "(-6-(-9))/((-8-(-9))-(-6-(-6)))"
+    },
+    "correctWorking": [
+      "x − 9 = -6",
+      "1x = -6 − (-9) = 3",
+      "x = 3"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve x − 9 = -6.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 3 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q10",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "8x = 56"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "8x = 56"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 56 − 8 = 48"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Divide both sides by 8; it multiplies x."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E3",
+        "feedback": "56 ÷ 8 = 7."
+      }
+    ],
+    "consequences": [],
+    "answer": "7",
+    "answerCheck": {
+      "expression": "(56-(0))/((8-(0))-(56-(56)))"
+    },
+    "correctWorking": [
+      "8x = 56",
+      "8x = 56",
+      "x = 56 ÷ 8 = 7"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 8x = 56.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q11",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "x + 12 = 17"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "1x = 29"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 29"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Undo the constant by subtracting (12) on both sides."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E1",
+        "feedback": "The right-hand value should be 5."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "5",
+    "answerCheck": {
+      "expression": "(17-(12))/((13-(12))-(17-(17)))"
+    },
+    "correctWorking": [
+      "x + 12 = 17",
+      "1x = 17 − (12) = 5",
+      "x = 5"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve x + 12 = 17.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 5 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C1-Q12",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "4x − 3 = 33"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "4x = 33"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 33/4"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Apply the subtraction to both sides, not only the x-side."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E2",
+        "feedback": "The right-hand value should be 36."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "9",
+    "answerCheck": {
+      "expression": "(33-(-3))/((1-(-3))-(33-(33)))"
+    },
+    "correctWorking": [
+      "4x − 3 = 33",
+      "4x = 33 − (-3) = 36",
+      "x = 9"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C1-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 4x − 3 = 33.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q05",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "6x + 14 = 62"
+      },
+      {
+        "id": "step-2",
+        "label": "Divide both sides by 2",
+        "text": "3x + 14 = 62"
+      },
+      {
+        "id": "step-3",
+        "label": "Solve",
+        "text": "x = 16"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Divide every term on both sides by 2."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E4",
+        "feedback": "The constants must also be divided by 2."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "8",
+    "answerCheck": {
+      "expression": "(62-(14))/((20-(14))-(62-(62)))"
+    },
+    "correctWorking": [
+      "6x + 14 = 62",
+      "3x + 7 = 31",
+      "3x = 24; x = 8"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 6x + 14 = 62.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q06",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "3(x − 4) = 15"
+      },
+      {
+        "id": "step-2",
+        "label": "Expand the bracket",
+        "text": "3x − 4 = 15"
+      },
+      {
+        "id": "step-3",
+        "label": "Collect and solve",
+        "text": "3x = 19; x = 19/3"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Multiply every term inside the bracket by the outside number, keeping its sign."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E5",
+        "feedback": "The constant becomes 3 × -4 = -12."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "9",
+    "answerCheck": {
+      "expression": "(15-(-12))/((-9-(-12))-(15-(15)))"
+    },
+    "correctWorking": [
+      "3(x − 4) = 15",
+      "3x − 12 = 15",
+      "3x = 27; x = 9"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 3(x − 4) = 15.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q07",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "8x − 5 = 27"
+      },
+      {
+        "id": "step-2",
+        "label": "Collect terms",
+        "text": "3x = 27"
+      },
+      {
+        "id": "step-3",
+        "label": "Solve",
+        "text": "3x = 27; x = 9"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Keep the constant separate from the x-terms."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E6",
+        "feedback": "A constant cannot be added to the coefficient of x."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "4",
+    "answerCheck": {
+      "expression": "(27-(-5))/((3-(-5))-(27-(27)))"
+    },
+    "correctWorking": [
+      "8x − 5 = 27",
+      "8x − 5 = 27",
+      "8x = 32; x = 4"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 8x − 5 = 27.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 4 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q08",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "9x − 7 = 38"
+      },
+      {
+        "id": "step-2",
+        "label": "Solve",
+        "text": "9x = 45; x = 5"
+      },
+      {
+        "id": "step-3",
+        "label": "Check left side",
+        "text": "9 + 5 + (-7) = 7"
+      },
+      {
+        "id": "step-4",
+        "label": "Check right side",
+        "text": "0 × 5 + 38 = 38"
+      },
+      {
+        "id": "step-5",
+        "label": "Conclusion",
+        "text": "The two sides do not match."
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Substitute by multiplying x by its coefficient."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E8",
+        "feedback": "Replace ax with a × x, not a + x."
+      }
+    ],
+    "consequences": [
+      "step-5"
+    ],
+    "answer": "5",
+    "answerCheck": {
+      "expression": "(38-(-7))/((2-(-7))-(38-(38)))"
+    },
+    "correctWorking": [
+      "9x − 7 = 38",
+      "9x = 45; x = 5",
+      "9 × 5 + (-7) = 38",
+      "0 × 5 + 38 = 38",
+      "The two sides match."
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 9x − 7 = 38. Inspect the student’s check.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 5 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q09",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "6x + 9 = 51"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "6x = 60"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 10"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Undo the constant by subtracting (9) on both sides."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E1",
+        "feedback": "The right-hand value should be 42."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "7",
+    "answerCheck": {
+      "expression": "(51-(9))/((15-(9))-(51-(51)))"
+    },
+    "correctWorking": [
+      "6x + 9 = 51",
+      "6x = 51 − (9) = 42",
+      "x = 7"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 6x + 9 = 51.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q10",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "7x − 4 = 52"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "7x = 52"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 52/7"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Apply the subtraction to both sides, not only the x-side."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E2",
+        "feedback": "The right-hand value should be 56."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "8",
+    "answerCheck": {
+      "expression": "(52-(-4))/((3-(-4))-(52-(52)))"
+    },
+    "correctWorking": [
+      "7x − 4 = 52",
+      "7x = 52 − (-4) = 56",
+      "x = 8"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 7x − 4 = 52.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q11",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "5x + 13 = 58"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove the constant",
+        "text": "5x = 45"
+      },
+      {
+        "id": "step-3",
+        "label": "Find x",
+        "text": "x = 45 − 5 = 40"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Divide both sides by 5; it multiplies x."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E3",
+        "feedback": "45 ÷ 5 = 9."
+      }
+    ],
+    "consequences": [],
+    "answer": "9",
+    "answerCheck": {
+      "expression": "(58-(13))/((18-(13))-(58-(58)))"
+    },
+    "correctWorking": [
+      "5x + 13 = 58",
+      "5x = 45",
+      "x = 45 ÷ 5 = 9"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 5x + 13 = 58.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C2-Q12",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "8x − 18 = 30"
+      },
+      {
+        "id": "step-2",
+        "label": "Divide both sides by 2",
+        "text": "4x − 18 = 30"
+      },
+      {
+        "id": "step-3",
+        "label": "Solve",
+        "text": "x = 12"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide every term on both sides by 2."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E4",
+        "feedback": "The constants must also be divided by 2."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "6",
+    "answerCheck": {
+      "expression": "(30-(-18))/((-10-(-18))-(30-(30)))"
+    },
+    "correctWorking": [
+      "8x − 18 = 30",
+      "4x − 9 = 15",
+      "4x = 24; x = 6"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C2-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 8x − 18 = 30.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q06",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "11x − 9 = 5x + 33"
+      },
+      {
+        "id": "step-2",
+        "label": "Solve",
+        "text": "6x = 42; x = 7"
+      },
+      {
+        "id": "step-3",
+        "label": "Check left side",
+        "text": "11 + 7 + (-9) = 9"
+      },
+      {
+        "id": "step-4",
+        "label": "Check right side",
+        "text": "5 × 7 + 33 = 68"
+      },
+      {
+        "id": "step-5",
+        "label": "Conclusion",
+        "text": "The two sides do not match."
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Substitute by multiplying x by its coefficient."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E8",
+        "feedback": "Replace ax with a × x, not a + x."
+      }
+    ],
+    "consequences": [
+      "step-5"
+    ],
+    "answer": "7",
+    "answerCheck": {
+      "expression": "(33-(-9))/((2-(-9))-(38-(33)))"
+    },
+    "correctWorking": [
+      "11x − 9 = 5x + 33",
+      "6x = 42; x = 7",
+      "11 × 7 + (-9) = 68",
+      "5 × 7 + 33 = 68",
+      "The two sides match."
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 11x − 9 = 5x + 33. Inspect the student’s check.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q07",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "5x + 14 = 2x + 41"
+      },
+      {
+        "id": "step-2",
+        "label": "Collect x-terms",
+        "text": "3x + 14 = 41"
+      },
+      {
+        "id": "step-3",
+        "label": "Remove the constant",
+        "text": "3x = 55"
+      },
+      {
+        "id": "step-4",
+        "label": "Find x",
+        "text": "x = 55/3"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Undo the constant by subtracting (14) on both sides."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E1",
+        "feedback": "The right-hand value should be 27."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "9",
+    "answerCheck": {
+      "expression": "(41-(14))/((19-(14))-(43-(41)))"
+    },
+    "correctWorking": [
+      "5x + 14 = 2x + 41",
+      "3x + 14 = 41",
+      "3x = 41 − (14) = 27",
+      "x = 9"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 5x + 14 = 2x + 41.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q08",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "12x − 7 = 5x + 35"
+      },
+      {
+        "id": "step-2",
+        "label": "Collect x-terms",
+        "text": "7x − 7 = 35"
+      },
+      {
+        "id": "step-3",
+        "label": "Remove the constant",
+        "text": "7x = 35"
+      },
+      {
+        "id": "step-4",
+        "label": "Find x",
+        "text": "x = 5"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Apply the subtraction to both sides, not only the x-side."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "E2",
+        "feedback": "The right-hand value should be 42."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "6",
+    "answerCheck": {
+      "expression": "(35-(-7))/((5-(-7))-(40-(35)))"
+    },
+    "correctWorking": [
+      "12x − 7 = 5x + 35",
+      "7x − 7 = 35",
+      "7x = 35 − (-7) = 42",
+      "x = 6"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 12x − 7 = 5x + 35.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q09",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "9x + 8 = 4x + 63"
+      },
+      {
+        "id": "step-2",
+        "label": "Collect x-terms",
+        "text": "5x + 8 = 63"
+      },
+      {
+        "id": "step-3",
+        "label": "Remove the constant",
+        "text": "5x = 55"
+      },
+      {
+        "id": "step-4",
+        "label": "Find x",
+        "text": "x = 55 − 5 = 50"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide both sides by 5; it multiplies x."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-4",
+        "reason": "repair",
+        "misconception": "E3",
+        "feedback": "55 ÷ 5 = 11."
+      }
+    ],
+    "consequences": [],
+    "answer": "11",
+    "answerCheck": {
+      "expression": "(63-(8))/((17-(8))-(67-(63)))"
+    },
+    "correctWorking": [
+      "9x + 8 = 4x + 63",
+      "5x + 8 = 63",
+      "5x = 55",
+      "x = 55 ÷ 5 = 11"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 9x + 8 = 4x + 63.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 11 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q10",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "12x − 16 = 4x + 48"
+      },
+      {
+        "id": "step-2",
+        "label": "Divide both sides by 2",
+        "text": "6x − 16 = 2x + 48"
+      },
+      {
+        "id": "step-3",
+        "label": "Solve",
+        "text": "x = 16"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Divide every term on both sides by 2."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E4",
+        "feedback": "The constants must also be divided by 2."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "8",
+    "answerCheck": {
+      "expression": "(48-(-16))/((-4-(-16))-(52-(48)))"
+    },
+    "correctWorking": [
+      "12x − 16 = 4x + 48",
+      "6x − 8 = 2x + 24",
+      "4x = 32; x = 8"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 12x − 16 = 4x + 48.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q11",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "5(x − 4) = 2x + 13"
+      },
+      {
+        "id": "step-2",
+        "label": "Expand the bracket",
+        "text": "5x − 4 = 2x + 13"
+      },
+      {
+        "id": "step-3",
+        "label": "Collect and solve",
+        "text": "3x = 17; x = 17/3"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply every term inside the bracket by the outside number, keeping its sign."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E5",
+        "feedback": "The constant becomes 5 × -4 = -20."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "11",
+    "answerCheck": {
+      "expression": "(13-(-20))/((-15-(-20))-(15-(13)))"
+    },
+    "correctWorking": [
+      "5(x − 4) = 2x + 13",
+      "5x − 20 = 2x + 13",
+      "3x = 33; x = 11"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 5(x − 4) = 2x + 13.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 11 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  },
+  {
+    "id": "maths:M10-WEB-ERRORS-R2-C3-Q12",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original equation",
+        "text": "7x − 4 = 2x + 41"
+      },
+      {
+        "id": "step-2",
+        "label": "Collect terms",
+        "text": "3x = 2x + 41"
+      },
+      {
+        "id": "step-3",
+        "label": "Solve",
+        "text": "1x = 41; x = 41"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Keep the constant separate from the x-terms."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Change the sign of every term on the left only."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply the final right-hand value by the coefficient instead of dividing."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "E6",
+        "feedback": "A constant cannot be added to the coefficient of x."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "9",
+    "answerCheck": {
+      "expression": "(41-(-4))/((3-(-4))-(43-(41)))"
+    },
+    "correctWorking": [
+      "7x − 4 = 2x + 41",
+      "7x − 4 = 2x + 41",
+      "5x = 45; x = 9"
+    ],
+    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
+    "draftId": "M10-DRAFT-ERRORS-C3-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Solve 7x − 4 = 2x + 41.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
+    "subject": "maths",
+    "topic": "M10"
+  }
+]

@@ -1,3 +1,7 @@
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
+const [multiplicationBank, divisionBank] = await Promise.all(
+  ["multiplication", "division"].map(readTopicBank),
+);
 /**
  * Purpose: Verify equation reveal frames and method-independent playback ordering.
  *
@@ -11,7 +15,6 @@
  * Libs: node:test (test runner), node:assert/strict (assertions).
  */
 import test from "node:test";
-import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import {
   arithmeticFrames,
@@ -61,12 +64,8 @@ test("lattice writes operand digits and cell tens/units separately in row order"
 
 test("lattice sums each diagonal before writing its digit and carrying to the next", () => {
   for (const [a, b] of [
-    ...JSON.parse(
-      readFileSync(
-        new URL("../website/static/data/multiplication.json", import.meta.url),
-      ),
-    )
-      .questions.filter((q) => q.type === "demo")
+    ...multiplicationBank.questions
+      .filter((q) => q.type === "demo")
       .map((q) => [q.a, q.b]),
     [57, 8],
     [76, 48],
@@ -103,11 +102,7 @@ test("lattice sums each diagonal before writing its digit and carrying to the ne
 
 test("division calculates before writing, then transfers a remainder to the next numeric place", () => {
   for (const question of [
-    ...JSON.parse(
-      readFileSync(
-        new URL("../website/static/data/division.json", import.meta.url),
-      ),
-    ).questions.filter((q) => q.type === "demo"),
+    ...divisionBank.questions.filter((q) => q.type === "demo"),
     { method: "bus", a: 609, b: 3, answer: "203" },
     { method: "bus", a: 374, b: 7, answer: "53 r 3" },
     { method: "bus", a: 1575, b: 12, answer: "131.25" },

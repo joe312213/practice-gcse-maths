@@ -35,7 +35,9 @@ const strokeData = /^website\/(?:static\/handwriting\/|scripts\/prepare-pacifico
 const runner = /^website\/scripts\/(verify-changed\.mjs|verification\/)/;
 const browser = /^website\/scripts\/browser(?:-checks\.mjs|\/support\.mjs)$/;
 const bank =
-  /^(content\/(?:M(?:01|02|10).*\.(?:json|md)|web_assessments\.json|spot_errors\.json)|scripts\/(?:prepare_web_(?:equations|arithmetic)|bank_candidates)\.py|website\/static\/data\/|website\/src\/lib\/content\/practice-pages\.json)/;
+  /^(content\/(?:M(?:01|02|10).*\.(?:json|md)|web_assessments\.json|spot_errors\.json|lattice_error_prototype\.json)|scripts\/(?:prepare_web_(?:equations|arithmetic)|bank_candidates)\.py|website\/static\/data\/|website\/src\/lib\/(?:content\/(?:topic-bank|stage-text)\.mjs|server\/topic-banks\.mjs)|website\/scripts\/read-topic-bank\.mjs|website\/src\/lib\/content\/practice-pages\.json)/;
+const errorDrafts =
+  /^(content\/spot-errors-drafts\/.*\.json|content\/specs\/M\d+\.md|scripts\/(?:review_spot_error_drafts|spot_error_quality)\.py|tests\/spot_error_quality_test\.py)$/;
 /**
  * Build a path predicate matching any supplied regular expression.
  * Parameter patterns: path-matching regular expressions.
@@ -43,6 +45,20 @@ const bank =
 const matches = (patterns) => (path) => patterns.some((pattern) => pattern.test(path));
 
 export const jobs = [
+  {
+    id: 'error-investigation',
+    inputs: matches([
+      runtime,
+      components,
+      styles,
+      bank,
+      config,
+      browser,
+      /^website\/scripts\/browser\/error-investigation-checks\.mjs$/,
+    ]),
+    build: true,
+    command: ['scripts/browser-checks.mjs', '--error-investigation-only'],
+  },
   {
     id: 'puzzle-library',
     inputs: matches([puzzles, config]),
@@ -67,7 +83,9 @@ export const jobs = [
   {
     id: 'docs',
     /** Select active Markdown paths for the documentation-link verification job. */
-    inputs: (path) => path.endsWith('.md') && !/^(legacy|content)\//.test(path),
+    inputs: (path) =>
+      (path.endsWith('.md') && !/^(legacy|content)\//.test(path)) ||
+      path === 'website/scripts/verification/docs.mjs',
     command: ['scripts/verification/docs.mjs'],
   },
   // These tests take well under a second; the whole small logic suite is cheaper
@@ -75,6 +93,7 @@ export const jobs = [
   {
     id: 'logic',
     inputs: matches([
+      errorDrafts,
       strokeData,
       topicRoutes,
       runtime,
@@ -215,6 +234,7 @@ export const jobs = [
 ];
 
 export const isBuildInput = matches([
+  /^content\/lattice_error_prototype\.json$/,
   source,
   puzzles,
   config,

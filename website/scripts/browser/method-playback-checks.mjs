@@ -74,6 +74,16 @@ export async function checkMethodPlayback(browser, base) {
         await page.locator('.demo-working [data-stroke]').count(),
         'The first teaching step already shows its working',
       );
+      await page.locator('#demo-next').click();
+      assert.match(await page.locator('.demo-status').innerText(), /Step 2 .*playing/);
+      await page.waitForFunction(
+        () => document.querySelector('.demo-working').getAnimations({ subtree: true }).length > 0,
+      );
+      await page.waitForFunction(
+        () => !document.querySelector('.demo-status').textContent.includes('playing'),
+      );
+      assert.match(await page.locator('.demo-status').innerText(), /Step 2 of/);
+      await page.locator('#demo-back').click();
       await page.locator('#demo-play').click();
       await page.waitForFunction(
         () => document.querySelector('.demo-working').getAnimations({ subtree: true }).length > 0,

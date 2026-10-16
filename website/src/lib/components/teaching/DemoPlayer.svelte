@@ -11,6 +11,7 @@
   Libs: svelte (component lifecycle and state).
 -->
 <script>
+  import { guidanceFor } from '#lib/content/topic-bank.mjs';
   import { untrack } from 'svelte';
   import { LEVELS } from '#lib/domain/engine.mjs';
   import { equationFrames } from '#lib/application/equation-demo.mjs';
@@ -50,7 +51,7 @@
         onclick={() => chooseLevel(index)}>{label}</button
       >{/each}
   </div>
-  <Guidance guidance={bank.teaching.guidance[level]} />
+  <Guidance guidance={guidanceFor(bank.teaching, level)} />
   <label for={exampleId}>Example</label>
   <select class="choice-field" id={exampleId} data-demo-example bind:value={example}
     ><option value="demo">Worked example</option><option value="recap"

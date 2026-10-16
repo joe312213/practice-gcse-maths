@@ -1,0 +1,308 @@
+[
+  {
+    "q": "−9 + 4",
+    "answer": "-5",
+    "model": {
+      "kind": "signed",
+      "values": [
+        -9,
+        4
+      ],
+      "ops": [
+        "+"
+      ]
+    },
+    "steps": [
+      {
+        "title": "Read the signs",
+        "input": "+ 4",
+        "output": "+4",
+        "note": "Adding a positive moves right."
+      },
+      {
+        "title": "Calculate",
+        "input": "−9 + 4",
+        "output": "−5",
+        "note": "Start at −9. Move 4 right to −5."
+      }
+    ],
+    "diagram": {
+      "kind": "number-line",
+      "points": [
+        -9,
+        -5
+      ]
+    },
+    "hint": "In −9 + 4, what does the sign before 4 tell you to do?",
+    "method_note": "Adding a positive moves right. Start at −9. Move 4 right to −5.",
+    "check": "Undo the final operation: (−5) − 4 = −9.",
+    "wrong": "-13",
+    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
+    "id": "maths:M13-WEB-ASSESSMENT-C1-Q1",
+    "subject": "maths",
+    "topic": "M13",
+    "type": "assessment",
+    "level": 0,
+    "method": "calculation"
+  },
+  {
+    "q": "7 − 15",
+    "answer": "-8",
+    "model": {
+      "kind": "signed",
+      "values": [
+        7,
+        15
+      ],
+      "ops": [
+        "−"
+      ]
+    },
+    "steps": [
+      {
+        "title": "Read the signs",
+        "input": "− 15",
+        "output": "−15",
+        "note": "Subtracting a positive moves left."
+      },
+      {
+        "title": "Calculate",
+        "input": "7 − 15",
+        "output": "−8",
+        "note": "Start at 7. Move 15 left to −8."
+      }
+    ],
+    "diagram": {
+      "kind": "number-line",
+      "points": [
+        7,
+        -8
+      ]
+    },
+    "hint": "In 7 − 15, what does the sign before 15 tell you to do?",
+    "method_note": "Subtracting a positive moves left. Start at 7. Move 15 left to −8.",
+    "check": "Undo the final operation: (−8) + 15 = 7.",
+    "wrong": "22",
+    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
+    "id": "maths:M13-WEB-ASSESSMENT-C1-Q2",
+    "subject": "maths",
+    "topic": "M13",
+    "type": "assessment",
+    "level": 0,
+    "method": "calculation"
+  },
+  {
+    "q": "12 + (−5)",
+    "answer": "7",
+    "model": {
+      "kind": "signed",
+      "values": [
+        12,
+        -5
+      ],
+      "ops": [
+        "+"
+      ]
+    },
+    "steps": [
+      {
+        "title": "Read the signs",
+        "input": "+ (−5)",
+        "output": "−5",
+        "note": "Adding a negative is subtracting its size."
+      },
+      {
+        "title": "Calculate",
+        "input": "12 + (−5)",
+        "output": "12 − 5 = 7",
+        "note": "Start at 12. Move 5 left to 7."
+      }
+    ],
+    "diagram": {
+      "kind": "number-line",
+      "points": [
+        12,
+        7
+      ]
+    },
+    "hint": "In 12 + (−5), what does the sign before (−5) tell you to do?",
+    "method_note": "Adding a negative is subtracting its size. Start at 12. Move 5 left to 7.",
+    "check": "Undo the final operation: 7 − (−5) = 12.",
+    "wrong": "17",
+    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
+    "id": "maths:M13-WEB-ASSESSMENT-C2-Q1",
+    "subject": "maths",
+    "topic": "M13",
+    "type": "assessment",
+    "level": 1,
+    "method": "calculation"
+  },
+  {
+    "q": "−7 − (−12)",
+    "answer": "5",
+    "model": {
+      "kind": "signed",
+      "values": [
+        -7,
+        -12
+      ],
+      "ops": [
+        "−"
+      ]
+    },
+    "steps": [
+      {
+        "title": "Read the signs",
+        "input": "− (−12)",
+        "output": "+12",
+        "note": "Subtracting a negative is adding its size."
+      },
+      {
+        "title": "Calculate",
+        "input": "−7 − (−12)",
+        "output": "−7 + 12 = 5",
+        "note": "Start at −7. Move 12 right to 5."
+      }
+    ],
+    "diagram": {
+      "kind": "number-line",
+      "points": [
+        -7,
+        5
+      ]
+    },
+    "hint": "In −7 − (−12), what does the sign before (−12) tell you to do?",
+    "method_note": "Subtracting a negative is adding its size. Start at −7. Move 12 right to 5.",
+    "check": "Undo the final operation: 5 + (−12) = −7.",
+    "wrong": "-19",
+    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
+    "id": "maths:M13-WEB-ASSESSMENT-C2-Q2",
+    "subject": "maths",
+    "topic": "M13",
+    "type": "assessment",
+    "level": 1,
+    "method": "calculation"
+  },
+  {
+    "q": "−9 + (−6) + 14",
+    "answer": "-1",
+    "model": {
+      "kind": "signed",
+      "values": [
+        -9,
+        -6,
+        14
+      ],
+      "ops": [
+        "+",
+        "+"
+      ]
+    },
+    "steps": [
+      {
+        "title": "Read the signs",
+        "input": "+ (−6)",
+        "output": "−6",
+        "note": "Adding a negative is subtracting its size."
+      },
+      {
+        "title": "Calculate",
+        "input": "−9 + (−6)",
+        "output": "−9 − 6 = −15",
+        "note": "Start at −9. Move 6 left to −15."
+      },
+      {
+        "title": "Read the signs",
+        "input": "+ 14",
+        "output": "+14",
+        "note": "Adding a positive moves right."
+      },
+      {
+        "title": "Calculate",
+        "input": "−15 + 14",
+        "output": "−1",
+        "note": "Start at −15. Move 14 right to −1."
+      }
+    ],
+    "diagram": {
+      "kind": "number-line",
+      "points": [
+        -9,
+        -15,
+        -1
+      ]
+    },
+    "hint": "In −9 + (−6) + 14, what does the sign before (−6) tell you to do?",
+    "method_note": "Adding a negative is subtracting its size. Start at −9. Move 6 left to −15. Adding a positive moves right. Start at −15. Move 14 right to −1.",
+    "check": "Undo the final operation: (−1) − 14 = −15.",
+    "wrong": "11",
+    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
+    "id": "maths:M13-WEB-ASSESSMENT-C3-Q1",
+    "subject": "maths",
+    "topic": "M13",
+    "type": "assessment",
+    "level": 2,
+    "method": "calculation"
+  },
+  {
+    "q": "4 − (−11) − (−8)",
+    "answer": "23",
+    "model": {
+      "kind": "signed",
+      "values": [
+        4,
+        -11,
+        -8
+      ],
+      "ops": [
+        "−",
+        "−"
+      ]
+    },
+    "steps": [
+      {
+        "title": "Read the signs",
+        "input": "− (−11)",
+        "output": "+11",
+        "note": "Subtracting a negative is adding its size."
+      },
+      {
+        "title": "Calculate",
+        "input": "4 − (−11)",
+        "output": "4 + 11 = 15",
+        "note": "Start at 4. Move 11 right to 15."
+      },
+      {
+        "title": "Read the signs",
+        "input": "− (−8)",
+        "output": "+8",
+        "note": "Subtracting a negative is adding its size."
+      },
+      {
+        "title": "Calculate",
+        "input": "15 − (−8)",
+        "output": "15 + 8 = 23",
+        "note": "Start at 15. Move 8 right to 23."
+      }
+    ],
+    "diagram": {
+      "kind": "number-line",
+      "points": [
+        4,
+        15,
+        23
+      ]
+    },
+    "hint": "In 4 − (−11) − (−8), what does the sign before (−11) tell you to do?",
+    "method_note": "Subtracting a negative is adding its size. Start at 4. Move 11 right to 15. Subtracting a negative is adding its size. Start at 15. Move 8 right to 23.",
+    "check": "Undo the final operation: 23 + (−8) = 15.",
+    "wrong": "1",
+    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
+    "id": "maths:M13-WEB-ASSESSMENT-C3-Q2",
+    "subject": "maths",
+    "topic": "M13",
+    "type": "assessment",
+    "level": 2,
+    "method": "calculation"
+  }
+]

@@ -1,0 +1,2562 @@
+[
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q01",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "Given amount £250 represents 125%"
+      },
+      {
+        "id": "step-2",
+        "label": "Multiplier",
+        "text": "125% = 0.125"
+      },
+      {
+        "id": "step-3",
+        "label": "Original price",
+        "text": "250 ÷ 0.125 = £2000"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Use 0.25 because the increase is 25%."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Convert 125% to 12.5."
+      },
+      {
+        "id": "repair",
+        "text": "Convert 125% to 1.25 by dividing by 100."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP5",
+        "feedback": "Convert 125% to 1.25 by dividing by 100."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "200",
+    "answerCheck": {
+      "expression": "(250)/1.25"
+    },
+    "correctWorking": [
+      "125% = 1.25",
+      "Original = 250÷1.25 = £200"
+    ],
+    "hint": "Compare the multiplier with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "£250 is 125% of an original amount. Find the original amount.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q02",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Known part",
+        "text": "96 litres is 60%."
+      },
+      {
+        "id": "step-2",
+        "label": "Multiplier",
+        "text": "60% = 0.06"
+      },
+      {
+        "id": "step-3",
+        "label": "Whole",
+        "text": "96 ÷ 0.06 = 1600 litres"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Subtract the percentage number from the given amount."
+      },
+      {
+        "id": "repair",
+        "text": "Divide the percentage by 100, not 1000."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Multiply the given amount by the percentage multiplier."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP5",
+        "feedback": "60% = 0.6."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "160",
+    "answerCheck": {
+      "expression": "96/(60/100)"
+    },
+    "correctWorking": [
+      "96 litres is 60%.",
+      "60% = 0.6",
+      "96 ÷ 0.6 = 160 litres"
+    ],
+    "hint": "Identify which percentage the given amount represents before finding the whole.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "96 litres is 60% of the original amount of water. Find the original amount.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "litres",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "60% of 160 litres is 96 litres.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q03",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Given percentage",
+        "text": "£48 represents 60%"
+      },
+      {
+        "id": "step-2",
+        "label": "Whole",
+        "text": "100% = £48"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Add £40 to the given amount."
+      },
+      {
+        "id": "repair",
+        "text": "The given amount is 60%, so divide by 0.6 to recover 100%."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Multiply the given amount by 0.6."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP1",
+        "feedback": "The given amount is 60%, so divide by 0.6 to recover 100%."
+      }
+    ],
+    "consequences": [],
+    "answer": "80",
+    "answerCheck": {
+      "expression": "(48)/(60/100)"
+    },
+    "correctWorking": [
+      "1% = £4/5",
+      "100% = £80"
+    ],
+    "hint": "Compare the whole with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "£48 is 60% of a fund. Find the whole fund.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q04",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Given percentage",
+        "text": "£90 represents 75%"
+      },
+      {
+        "id": "step-2",
+        "label": "Whole",
+        "text": "100% = £90"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "The given amount is 75%, so divide by 0.75 to recover 100%."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Multiply the given amount by 0.75."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add £25 to the given amount."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP1",
+        "feedback": "The given amount is 75%, so divide by 0.75 to recover 100%."
+      }
+    ],
+    "consequences": [],
+    "answer": "120",
+    "answerCheck": {
+      "expression": "(90)/(75/100)"
+    },
+    "correctWorking": [
+      "1% = £6/5",
+      "100% = £120"
+    ],
+    "hint": "Compare the whole with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "£90 is 75% of a fund. Find the whole fund.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q05",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Known part",
+        "text": "72 g is 30%."
+      },
+      {
+        "id": "step-2",
+        "label": "Whole",
+        "text": "100% = 72 g"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Subtract the percentage number from the given amount."
+      },
+      {
+        "id": "repair",
+        "text": "The given amount is only the stated percentage, not the whole."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Multiply the given amount by the percentage multiplier."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP1",
+        "feedback": "Divide 72 by 0.3 to find 100%."
+      }
+    ],
+    "consequences": [],
+    "answer": "240",
+    "answerCheck": {
+      "expression": "72/(30/100)"
+    },
+    "correctWorking": [
+      "72 g is 30%.",
+      "100% = 72 ÷ (30/100) = 240 g"
+    ],
+    "hint": "Identify which percentage the given amount represents before finding the whole.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "72 g is 30% of the original amount of flour. Find the original amount.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "g",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "30% of 240 g is 72 g.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q06",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "80% = £96"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "96 × 0.8 = £384/5"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Subtract 20% of the reduced price."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add £20 to the reduced price."
+      },
+      {
+        "id": "repair",
+        "text": "Divide £96 by 0.8 to recover the whole."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP3",
+        "feedback": "Divide £96 by 0.8 to recover the whole."
+      }
+    ],
+    "consequences": [],
+    "answer": "120",
+    "answerCheck": {
+      "expression": "(96)/(0.8)"
+    },
+    "correctWorking": [
+      "Original = 96÷0.8 = £120",
+      "Check: 120×0.8 = 96"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "£96 is 80% of a fund. Find the whole fund.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q07",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "80% = £192"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "192 × 0.8 = £768/5"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Subtract 20% of the reduced price."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add £20 to the reduced price."
+      },
+      {
+        "id": "repair",
+        "text": "Divide £192 by 0.8 to recover the whole."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP3",
+        "feedback": "Divide £192 by 0.8 to recover the whole."
+      }
+    ],
+    "consequences": [],
+    "answer": "240",
+    "answerCheck": {
+      "expression": "(192)/(0.8)"
+    },
+    "correctWorking": [
+      "Original = 192÷0.8 = £240",
+      "Check: 240×0.8 = 192"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "£192 is 80% of a fund. Find the whole fund.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q08",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "75% = £120"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "120 × 0.75 = £90"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Add £25 to the reduced price."
+      },
+      {
+        "id": "repair",
+        "text": "Divide £120 by 0.75 to recover the whole."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Subtract 25% of the reduced price."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP3",
+        "feedback": "Divide £120 by 0.75 to recover the whole."
+      }
+    ],
+    "consequences": [],
+    "answer": "160",
+    "answerCheck": {
+      "expression": "(120)/(0.75)"
+    },
+    "correctWorking": [
+      "Original = 120÷0.75 = £160",
+      "Check: 160×0.75 = 120"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "£120 is 75% of a fund. Find the whole fund.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q09",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "75% = £210"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "210 × 0.75 = £315/2"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Add £25 to the reduced price."
+      },
+      {
+        "id": "repair",
+        "text": "Divide £210 by 0.75 to recover the whole."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Subtract 25% of the reduced price."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP3",
+        "feedback": "Divide £210 by 0.75 to recover the whole."
+      }
+    ],
+    "consequences": [],
+    "answer": "280",
+    "answerCheck": {
+      "expression": "(210)/(0.75)"
+    },
+    "correctWorking": [
+      "Original = 210÷0.75 = £280",
+      "Check: 280×0.75 = 210"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "£210 is 75% of a fund. Find the whole fund.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q10",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "60% = £120"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "120 × 0.6 = £72"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide £120 by 0.6 to recover the whole."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Subtract 40% of the reduced price."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add £40 to the reduced price."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP3",
+        "feedback": "Divide £120 by 0.6 to recover the whole."
+      }
+    ],
+    "consequences": [],
+    "answer": "200",
+    "answerCheck": {
+      "expression": "(120)/(0.6)"
+    },
+    "correctWorking": [
+      "Original = 120÷0.6 = £200",
+      "Check: 200×0.6 = 120"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "£120 is 60% of a fund. Find the whole fund.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q11",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "60% = £192"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "192 × 0.6 = £576/5"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide £192 by 0.6 to recover the whole."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Subtract 40% of the reduced price."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add £40 to the reduced price."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP3",
+        "feedback": "Divide £192 by 0.6 to recover the whole."
+      }
+    ],
+    "consequences": [],
+    "answer": "320",
+    "answerCheck": {
+      "expression": "(192)/(0.6)"
+    },
+    "correctWorking": [
+      "Original = 192÷0.6 = £320",
+      "Check: 320×0.6 = 192"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "£192 is 60% of a fund. Find the whole fund.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C1-Q12",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "Given amount £200 represents 125%"
+      },
+      {
+        "id": "step-2",
+        "label": "Multiplier",
+        "text": "125% = 0.125"
+      },
+      {
+        "id": "step-3",
+        "label": "Original price",
+        "text": "200 ÷ 0.125 = £1600"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Convert 125% to 1.25 by dividing by 100."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Use 0.25 because the increase is 25%."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Convert 125% to 12.5."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP5",
+        "feedback": "Convert 125% to 1.25 by dividing by 100."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "160",
+    "answerCheck": {
+      "expression": "(200)/1.25"
+    },
+    "correctWorking": [
+      "125% = 1.25",
+      "Original = 200÷1.25 = £160"
+    ],
+    "hint": "Compare the multiplier with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C1-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "£200 is 125% of an original amount. Find the original amount.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q01",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "80% = £112"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "112 × 1.2 = £672/5"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Add £20 to the reduced price."
+      },
+      {
+        "id": "repair",
+        "text": "Divide £112 by 0.8 to undo the reduction."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Subtract 20% of the reduced price."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP4",
+        "feedback": "Divide £112 by 0.8 to undo the reduction."
+      }
+    ],
+    "consequences": [],
+    "answer": "140",
+    "answerCheck": {
+      "expression": "(112)/(0.8)"
+    },
+    "correctWorking": [
+      "Original = 112÷0.8 = £140",
+      "Check: 140×0.8 = 112"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £112 after a 20% reduction. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q02",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Change",
+        "text": "20% increase"
+      },
+      {
+        "id": "step-2",
+        "label": "Final percentage",
+        "text": "Final amount represents 20%"
+      },
+      {
+        "id": "step-3",
+        "label": "Original price",
+        "text": "216 ÷ 0.2 = £1080"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "The final amount is 80% of the original."
+      },
+      {
+        "id": "alternative-2",
+        "text": "The final amount is already 100%."
+      },
+      {
+        "id": "repair",
+        "text": "The final amount is 120% of the original. Divide by 1.2."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP2",
+        "feedback": "The final amount is 120% of the original. Divide by 1.2."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "180",
+    "answerCheck": {
+      "expression": "(216)/(1.2)"
+    },
+    "correctWorking": [
+      "Final percentage = 120%",
+      "Original = £180"
+    ],
+    "hint": "Compare the final percentage with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £216 after a 20% increase. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q03",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "80% = £208"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "208 × 1.2 = £1248/5"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Add £20 to the reduced price."
+      },
+      {
+        "id": "repair",
+        "text": "Divide £208 by 0.8 to undo the reduction."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Subtract 20% of the reduced price."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP4",
+        "feedback": "Divide £208 by 0.8 to undo the reduction."
+      }
+    ],
+    "consequences": [],
+    "answer": "260",
+    "answerCheck": {
+      "expression": "(208)/(0.8)"
+    },
+    "correctWorking": [
+      "Original = 208÷0.8 = £260",
+      "Check: 260×0.8 = 208"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £208 after a 20% reduction. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q04",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Change",
+        "text": "25% increase"
+      },
+      {
+        "id": "step-2",
+        "label": "Final percentage",
+        "text": "Final amount represents 25%"
+      },
+      {
+        "id": "step-3",
+        "label": "Original price",
+        "text": "175 ÷ 0.25 = £700"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "The final amount is 75% of the original."
+      },
+      {
+        "id": "alternative-2",
+        "text": "The final amount is already 100%."
+      },
+      {
+        "id": "repair",
+        "text": "The final amount is 125% of the original. Divide by 1.25."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP2",
+        "feedback": "The final amount is 125% of the original. Divide by 1.25."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "140",
+    "answerCheck": {
+      "expression": "(175)/(1.25)"
+    },
+    "correctWorking": [
+      "Final percentage = 125%",
+      "Original = £140"
+    ],
+    "hint": "Compare the final percentage with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £175 after a 25% increase. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q05",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "75% = £135"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "135 × 1.25 = £675/4"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide £135 by 0.75 to undo the reduction."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Subtract 25% of the reduced price."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add £25 to the reduced price."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP4",
+        "feedback": "Divide £135 by 0.75 to undo the reduction."
+      }
+    ],
+    "consequences": [],
+    "answer": "180",
+    "answerCheck": {
+      "expression": "(135)/(0.75)"
+    },
+    "correctWorking": [
+      "Original = 135÷0.75 = £180",
+      "Check: 180×0.75 = 135"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £135 after a 25% reduction. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q06",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Change",
+        "text": "25% increase"
+      },
+      {
+        "id": "step-2",
+        "label": "Final percentage",
+        "text": "Final amount represents 25%"
+      },
+      {
+        "id": "step-3",
+        "label": "Original price",
+        "text": "275 ÷ 0.25 = £1100"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "The final amount is already 100%."
+      },
+      {
+        "id": "repair",
+        "text": "The final amount is 125% of the original. Divide by 1.25."
+      },
+      {
+        "id": "alternative-1",
+        "text": "The final amount is 75% of the original."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP2",
+        "feedback": "The final amount is 125% of the original. Divide by 1.25."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "220",
+    "answerCheck": {
+      "expression": "(275)/(1.25)"
+    },
+    "correctWorking": [
+      "Final percentage = 125%",
+      "Original = £220"
+    ],
+    "hint": "Compare the final percentage with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £275 after a 25% increase. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q07",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "75% = £225"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "225 × 1.25 = £1125/4"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide £225 by 0.75 to undo the reduction."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Subtract 25% of the reduced price."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add £25 to the reduced price."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP4",
+        "feedback": "Divide £225 by 0.75 to undo the reduction."
+      }
+    ],
+    "consequences": [],
+    "answer": "300",
+    "answerCheck": {
+      "expression": "(225)/(0.75)"
+    },
+    "correctWorking": [
+      "Original = 225÷0.75 = £300",
+      "Check: 300×0.75 = 225"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £225 after a 25% reduction. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q08",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Change",
+        "text": "40% increase"
+      },
+      {
+        "id": "step-2",
+        "label": "Final percentage",
+        "text": "Final amount represents 40%"
+      },
+      {
+        "id": "step-3",
+        "label": "Original price",
+        "text": "252 ÷ 0.4 = £630"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "The final amount is already 100%."
+      },
+      {
+        "id": "repair",
+        "text": "The final amount is 140% of the original. Divide by 1.4."
+      },
+      {
+        "id": "alternative-1",
+        "text": "The final amount is 60% of the original."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP2",
+        "feedback": "The final amount is 140% of the original. Divide by 1.4."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "180",
+    "answerCheck": {
+      "expression": "(252)/(1.4)"
+    },
+    "correctWorking": [
+      "Final percentage = 140%",
+      "Original = £180"
+    ],
+    "hint": "Compare the final percentage with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £252 after a 40% increase. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q09",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "60% = £132"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "132 × 1.4 = £924/5"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Subtract 40% of the reduced price."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add £40 to the reduced price."
+      },
+      {
+        "id": "repair",
+        "text": "Divide £132 by 0.6 to undo the reduction."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP4",
+        "feedback": "Divide £132 by 0.6 to undo the reduction."
+      }
+    ],
+    "consequences": [],
+    "answer": "220",
+    "answerCheck": {
+      "expression": "(132)/(0.6)"
+    },
+    "correctWorking": [
+      "Original = 132÷0.6 = £220",
+      "Check: 220×0.6 = 132"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £132 after a 40% reduction. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q10",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Change",
+        "text": "40% increase"
+      },
+      {
+        "id": "step-2",
+        "label": "Final percentage",
+        "text": "Final amount represents 40%"
+      },
+      {
+        "id": "step-3",
+        "label": "Original price",
+        "text": "364 ÷ 0.4 = £910"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "The final amount is 140% of the original. Divide by 1.4."
+      },
+      {
+        "id": "alternative-1",
+        "text": "The final amount is 60% of the original."
+      },
+      {
+        "id": "alternative-2",
+        "text": "The final amount is already 100%."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP2",
+        "feedback": "The final amount is 140% of the original. Divide by 1.4."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "260",
+    "answerCheck": {
+      "expression": "(364)/(1.4)"
+    },
+    "correctWorking": [
+      "Final percentage = 140%",
+      "Original = £260"
+    ],
+    "hint": "Compare the final percentage with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £364 after a 40% increase. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q11",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Final percentage",
+        "text": "60% = £204"
+      },
+      {
+        "id": "step-2",
+        "label": "Original price",
+        "text": "204 × 1.4 = £1428/5"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Subtract 40% of the reduced price."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add £40 to the reduced price."
+      },
+      {
+        "id": "repair",
+        "text": "Divide £204 by 0.6 to undo the reduction."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP4",
+        "feedback": "Divide £204 by 0.6 to undo the reduction."
+      }
+    ],
+    "consequences": [],
+    "answer": "340",
+    "answerCheck": {
+      "expression": "(204)/(0.6)"
+    },
+    "correctWorking": [
+      "Original = 204÷0.6 = £340",
+      "Check: 340×0.6 = 204"
+    ],
+    "hint": "Compare the original price with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £204 after a 40% reduction. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C2-Q12",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Change",
+        "text": "20% increase"
+      },
+      {
+        "id": "step-2",
+        "label": "Final percentage",
+        "text": "Final amount represents 20%"
+      },
+      {
+        "id": "step-3",
+        "label": "Original price",
+        "text": "120 ÷ 0.2 = £600"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "The final amount is 120% of the original. Divide by 1.2."
+      },
+      {
+        "id": "alternative-1",
+        "text": "The final amount is 80% of the original."
+      },
+      {
+        "id": "alternative-2",
+        "text": "The final amount is already 100%."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP2",
+        "feedback": "The final amount is 120% of the original. Divide by 1.2."
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "100",
+    "answerCheck": {
+      "expression": "(120)/(1.2)"
+    },
+    "correctWorking": [
+      "Final percentage = 120%",
+      "Original = £100"
+    ],
+    "hint": "Compare the final percentage with the quantities and operation in the question.",
+    "draftId": "M07-DRAFT-ERRORS-C2-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "An item costs £120 after a 20% increase. Find its original price.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q01",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Bill and delivery",
+        "text": "Bill £201; fixed delivery £6"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove delivery",
+        "text": "£201 − £6 = £195"
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The item price is 75% of its original price."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original unit price",
+        "text": "195 ÷ 0.75 = £260"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested total",
+        "text": "£260"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Divide the whole bill by the percentage number."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Include the delivery charge in the requested original item cost."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the recovered price per item by 4."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-5",
+        "reason": "repair",
+        "misconception": "RP7",
+        "feedback": "The question asks for 4 chairs, not one."
+      }
+    ],
+    "consequences": [],
+    "answer": "1040",
+    "answerCheck": {
+      "expression": "(201-6)/(3/4)*4"
+    },
+    "correctWorking": [
+      "Bill £201; fixed delivery £6",
+      "£201 − £6 = £195",
+      "The item price is 75% of its original price.",
+      "195 ÷ 0.75 = £260",
+      "4 × £260 = £1040"
+    ],
+    "hint": "Separate the fixed fee from the changed item price before identifying what represents 100%.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A bill for one chair is £201, including £6 delivery added after a 25% reduction. Find the original total price of 4 chairs, excluding delivery.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 25% reduction to one original item price, then add £6; this should reproduce the £201 bill.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q02",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Bill and delivery",
+        "text": "Bill £225; fixed delivery £9"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove delivery",
+        "text": "Use £225 as the changed item price."
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The item price is 120% of its original price."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original unit price",
+        "text": "225 ÷ 1.2 = £187.5"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested total",
+        "text": "1 × £187.5 = £187.5"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Include the delivery charge in the requested original item cost."
+      },
+      {
+        "id": "repair",
+        "text": "Remove the fixed delivery charge before reversing the percentage change."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the whole bill by the percentage number."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP6",
+        "feedback": "The changed item price is £216, not the whole bill."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "180",
+    "answerCheck": {
+      "expression": "(225-9)/(6/5)*1"
+    },
+    "correctWorking": [
+      "Bill £225; fixed delivery £9",
+      "£225 − £9 = £216",
+      "The item price is 120% of its original price.",
+      "216 ÷ 1.2 = £180",
+      "1 × £180 = £180"
+    ],
+    "hint": "Separate the fixed fee from the changed item price before identifying what represents 100%.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A bill for one lamp is £225, including £9 delivery added after a 20% increase. Find the original price of the lamp, excluding delivery.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 20% increase to one original item price, then add £9; this should reproduce the £225 bill.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q03",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Total and fixed addition",
+        "text": "Total 216 g; fixed addition 12 g"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove fixed addition",
+        "text": "Use all 216 g as the changed amount."
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The changed amount is 60% of the original."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original amount",
+        "text": "216 ÷ 0.6 = 360 g"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested amount",
+        "text": "360 g"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Remove the separate fixed addition before reversing the percentage change."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the total by the percentage number."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Keep the separate addition in the requested original amount."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP6",
+        "feedback": "The percentage applies to 204 g, not the total including the addition."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "340",
+    "answerCheck": {
+      "expression": "(216-12)/(3/5)*1"
+    },
+    "correctWorking": [
+      "Total 216 g; fixed addition 12 g",
+      "216 − 12 = 204 g",
+      "The changed amount is 60% of the original.",
+      "204 ÷ 0.6 = 340 g",
+      "340 g"
+    ],
+    "hint": "Separate the fixed addition from the percentage-changed quantity first.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "After a 40% reduction from drying, a bag of rice weighs 216 g, including 12 g of packaging added after drying. Find the rice mass before drying, excluding packaging.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "g",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 40% reduction to one original amount, then add 12 g: the total should be 216 g.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q04",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Bill and delivery",
+        "text": "Bill £281; fixed delivery £5"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove delivery",
+        "text": "£281 − £5 = £276"
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The item price is 115% of its original price."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original unit price",
+        "text": "276 ÷ 1.15 = £240"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested total",
+        "text": "£240"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Divide the whole bill by the percentage number."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Include the delivery charge in the requested original item cost."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the recovered price per item by 5."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-5",
+        "reason": "repair",
+        "misconception": "RP7",
+        "feedback": "The question asks for 5 desks, not one."
+      }
+    ],
+    "consequences": [],
+    "answer": "1200",
+    "answerCheck": {
+      "expression": "(281-5)/(23/20)*5"
+    },
+    "correctWorking": [
+      "Bill £281; fixed delivery £5",
+      "£281 − £5 = £276",
+      "The item price is 115% of its original price.",
+      "276 ÷ 1.15 = £240",
+      "5 × £240 = £1200"
+    ],
+    "hint": "Separate the fixed fee from the changed item price before identifying what represents 100%.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A bill for one desk is £281, including £5 delivery added after a 15% increase. Find the original total price of 5 desks, excluding delivery.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 15% increase to one original item price, then add £5; this should reproduce the £281 bill.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q05",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Total and fixed addition",
+        "text": "Total 153 litres; fixed addition 9 litres"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove fixed addition",
+        "text": "Use all 153 litres as the changed amount."
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The changed amount is 90% of the original."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original amount",
+        "text": "153 ÷ 0.9 = 170 litres"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested amount",
+        "text": "170 litres"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Keep the separate addition in the requested original amount."
+      },
+      {
+        "id": "repair",
+        "text": "Remove the separate fixed addition before reversing the percentage change."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the total by the percentage number."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP6",
+        "feedback": "The percentage applies to 144 litres, not the total including the addition."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "160",
+    "answerCheck": {
+      "expression": "(153-9)/(9/10)*1"
+    },
+    "correctWorking": [
+      "Total 153 litres; fixed addition 9 litres",
+      "153 − 9 = 144 litres",
+      "The changed amount is 90% of the original.",
+      "144 ÷ 0.9 = 160 litres",
+      "160 litres"
+    ],
+    "hint": "Separate the fixed addition from the percentage-changed quantity first.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "After a 10% reduction through evaporation, a tank holds 153 litres, including 9 litres added after evaporation. How much water was in the tank originally?",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "litres",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 10% reduction to one original amount, then add 9 litres: the total should be 153 litres.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q06",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Total and fixed addition",
+        "text": "Total 267 g; fixed addition 7 g"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove fixed addition",
+        "text": "267 − 7 = 260 g"
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The changed amount is 130% of the original."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original amount",
+        "text": "260 × 1.3 = 338 g"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested amount",
+        "text": "338 g"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Divide the total by the percentage number."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Keep the separate addition in the requested original amount."
+      },
+      {
+        "id": "repair",
+        "text": "Divide the changed amount by 1.3 to recover the original."
+      },
+      {
+        "id": "repair-2",
+        "text": "Multiply the recovered amount by 3."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-4",
+        "reason": "repair",
+        "misconception": "RP3",
+        "feedback": "Multiplying applies the same percentage change again."
+      },
+      {
+        "location": "step-5",
+        "reason": "repair-2",
+        "misconception": "RP7",
+        "feedback": "The question asks for 3 equal original amounts, not one."
+      }
+    ],
+    "consequences": [],
+    "answer": "600",
+    "answerCheck": {
+      "expression": "(267-7)/(13/10)*3"
+    },
+    "correctWorking": [
+      "Total 267 g; fixed addition 7 g",
+      "267 − 7 = 260 g",
+      "The changed amount is 130% of the original.",
+      "260 ÷ 1.3 = 200 g",
+      "3 × 200 = 600 g"
+    ],
+    "hint": "Separate the fixed addition from the percentage-changed quantity first.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "After a 30% increase from soaking, one sample weighs 267 g, including a 7 g tray added after soaking. Find the original total mass of 3 identical samples, excluding trays.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "g",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 30% increase to one original amount, then add 7 g: the total should be 267 g.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q07",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Bill and delivery",
+        "text": "Bill £244; fixed delivery £4"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove delivery",
+        "text": "£244 − £4 = £240"
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The item price is 75% of its original price."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original unit price",
+        "text": "240 × 0.75 = £180"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested total",
+        "text": "£180"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Include the delivery charge in the requested original item cost."
+      },
+      {
+        "id": "repair",
+        "text": "Divide the changed item price by 0.75 to recover the original."
+      },
+      {
+        "id": "repair-2",
+        "text": "Multiply the recovered price per item by 4."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the whole bill by the percentage number."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-4",
+        "reason": "repair",
+        "misconception": "RP3",
+        "feedback": "Multiplying by the forward multiplier applies the same change again. Divide to recover the original."
+      },
+      {
+        "location": "step-5",
+        "reason": "repair-2",
+        "misconception": "RP7",
+        "feedback": "The question asks for 4 tents, not one."
+      }
+    ],
+    "consequences": [],
+    "answer": "1280",
+    "answerCheck": {
+      "expression": "(244-4)/(3/4)*4"
+    },
+    "correctWorking": [
+      "Bill £244; fixed delivery £4",
+      "£244 − £4 = £240",
+      "The item price is 75% of its original price.",
+      "240 ÷ 0.75 = £320",
+      "4 × £320 = £1280"
+    ],
+    "hint": "Separate the fixed fee from the changed item price before identifying what represents 100%.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A bill for one tent is £244, including £4 delivery added after a 25% reduction. Find the original total price of 4 tents, excluding delivery.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 25% reduction to one original item price, then add £4; this should reproduce the £244 bill.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q08",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Total and fixed addition",
+        "text": "Total 195 people; fixed addition 15 people"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove fixed addition",
+        "text": "195 − 15 = 180 people"
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The changed amount is 120% of the original."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original amount",
+        "text": "180 × 1.2 = 216 people"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested amount",
+        "text": "216 people"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide the changed amount by 1.2 to recover the original."
+      },
+      {
+        "id": "repair-2",
+        "text": "Multiply the recovered amount by 5."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the total by the percentage number."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Keep the separate addition in the requested original amount."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-4",
+        "reason": "repair",
+        "misconception": "RP3",
+        "feedback": "Multiplying applies the same percentage change again."
+      },
+      {
+        "location": "step-5",
+        "reason": "repair-2",
+        "misconception": "RP7",
+        "feedback": "The question asks for 5 equal original amounts, not one."
+      }
+    ],
+    "consequences": [],
+    "answer": "750",
+    "answerCheck": {
+      "expression": "(195-15)/(6/5)*5"
+    },
+    "correctWorking": [
+      "Total 195 people; fixed addition 15 people",
+      "195 − 15 = 180 people",
+      "The changed amount is 120% of the original.",
+      "180 ÷ 1.2 = 150 people",
+      "5 × 150 = 750 people"
+    ],
+    "hint": "Separate the fixed addition from the percentage-changed quantity first.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "After a 20% increase in membership, a club meeting has 195 people, including 15 visitors added after the membership count. 5 clubs had the same original membership. Find their original total membership, excluding visitors.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "people",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 20% increase to one original amount, then add 15 people: the total should be 195 people.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q09",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Total and fixed addition",
+        "text": "Total 195 people; fixed addition 13 people"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove fixed addition",
+        "text": "Use all 195 people as the changed amount."
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The changed amount is 65% of the original."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original amount",
+        "text": "195 ÷ 0.65 = 300 people"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested amount",
+        "text": "300 people"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Remove the separate fixed addition before reversing the percentage change."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the total by the percentage number."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Keep the separate addition in the requested original amount."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP6",
+        "feedback": "The percentage applies to 182 people, not the total including the addition."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "280",
+    "answerCheck": {
+      "expression": "(195-13)/(13/20)*1"
+    },
+    "correctWorking": [
+      "Total 195 people; fixed addition 13 people",
+      "195 − 13 = 182 people",
+      "The changed amount is 65% of the original.",
+      "182 ÷ 0.65 = 280 people",
+      "280 people"
+    ],
+    "hint": "Separate the fixed addition from the percentage-changed quantity first.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "After a 35% reduction in membership, a club meeting has 195 people, including 13 visitors added after the membership count. Find the original membership, excluding visitors.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "people",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 35% reduction to one original amount, then add 13 people: the total should be 195 people.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q10",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Bill and delivery",
+        "text": "Bill £291; fixed delivery £11"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove delivery",
+        "text": "£291 − £11 = £280"
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The item price is 112% of its original price."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original unit price",
+        "text": "280 ÷ 1.12 = £250"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested total",
+        "text": "£250"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Divide the whole bill by the percentage number."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Include the delivery charge in the requested original item cost."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the recovered price per item by 3."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-5",
+        "reason": "repair",
+        "misconception": "RP7",
+        "feedback": "The question asks for 3 monitors, not one."
+      }
+    ],
+    "consequences": [],
+    "answer": "750",
+    "answerCheck": {
+      "expression": "(291-11)/(28/25)*3"
+    },
+    "correctWorking": [
+      "Bill £291; fixed delivery £11",
+      "£291 − £11 = £280",
+      "The item price is 112% of its original price.",
+      "280 ÷ 1.12 = £250",
+      "3 × £250 = £750"
+    ],
+    "hint": "Separate the fixed fee from the changed item price before identifying what represents 100%.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A bill for one monitor is £291, including £11 delivery added after a 12% increase. Find the original total price of 3 monitors, excluding delivery.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 12% increase to one original item price, then add £11; this should reproduce the £291 bill.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q11",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Total and fixed addition",
+        "text": "Total 48 cm; fixed addition 3 cm"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove fixed addition",
+        "text": "Use all 48 cm as the changed amount."
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The changed amount is 50% of the original."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original amount",
+        "text": "48 ÷ 0.5 = 96 cm"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested amount",
+        "text": "96 cm"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Keep the separate addition in the requested original amount."
+      },
+      {
+        "id": "repair",
+        "text": "Remove the separate fixed addition before reversing the percentage change."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the total by the percentage number."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP6",
+        "feedback": "The percentage applies to 45 cm, not the total including the addition."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "90",
+    "answerCheck": {
+      "expression": "(48-3)/(1/2)*1"
+    },
+    "correctWorking": [
+      "Total 48 cm; fixed addition 3 cm",
+      "48 − 3 = 45 cm",
+      "The changed amount is 50% of the original.",
+      "45 ÷ 0.5 = 90 cm",
+      "90 cm"
+    ],
+    "hint": "Separate the fixed addition from the percentage-changed quantity first.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "After a 50% reduction by cutting, a ribbon measures 48 cm, including 3 cm joined on after cutting. Find its original length before cutting.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "cm",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 50% reduction to one original amount, then add 3 cm: the total should be 48 cm.",
+    "subject": "maths",
+    "topic": "M07"
+  },
+  {
+    "id": "maths:M07-WEB-ERRORS-R2-C3-Q12",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Bill and delivery",
+        "text": "Bill £441; fixed delivery £21"
+      },
+      {
+        "id": "step-2",
+        "label": "Remove delivery",
+        "text": "Use £441 as the changed item price."
+      },
+      {
+        "id": "step-3",
+        "label": "Known percentage",
+        "text": "The item price is 105% of its original price."
+      },
+      {
+        "id": "step-4",
+        "label": "Recover original unit price",
+        "text": "441 ÷ 1.05 = £420"
+      },
+      {
+        "id": "step-5",
+        "label": "Requested total",
+        "text": "1 × £420 = £420"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Remove the fixed delivery charge before reversing the percentage change."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the whole bill by the percentage number."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Include the delivery charge in the requested original item cost."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "RP6",
+        "feedback": "The changed item price is £420, not the whole bill."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "400",
+    "answerCheck": {
+      "expression": "(441-21)/(21/20)*1"
+    },
+    "correctWorking": [
+      "Bill £441; fixed delivery £21",
+      "£441 − £21 = £420",
+      "The item price is 105% of its original price.",
+      "420 ÷ 1.05 = £400",
+      "1 × £400 = £400"
+    ],
+    "hint": "Separate the fixed fee from the changed item price before identifying what represents 100%.",
+    "draftId": "M07-DRAFT-ERRORS-C3-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A bill for one table is £441, including £21 delivery added after a 5% increase. Find the original price of the table, excluding delivery.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "£",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Apply the 5% increase to one original item price, then add £21; this should reproduce the £441 bill.",
+    "subject": "maths",
+    "topic": "M07"
+  }
+]

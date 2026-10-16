@@ -1,14 +1,12 @@
+import { readTopicBank } from '../read-topic-bank.mjs';
 /** Real same-origin tabs must hand over fresh progress, never stale snapshots. */
 import assert from 'node:assert/strict';
 import { expect } from '@playwright/test';
-import { readFile } from 'node:fs/promises';
 import { createTestContext } from './support.mjs';
 
 export async function checkProgressTabs(browser, base) {
   const context = await createTestContext(browser);
-  const bank = JSON.parse(
-    await readFile(new URL('../../static/data/equations.json', import.meta.url)),
-  );
+  const bank = await readTopicBank('equations');
   const state = (page) =>
     page.evaluate(() => JSON.parse(localStorage.getItem('maths-practice-v2')));
   const history = async (page) =>

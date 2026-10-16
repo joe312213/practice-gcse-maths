@@ -11,6 +11,7 @@
   Libs: none.
 -->
 <script>
+  import { workingText } from '#lib/application/error-working.mjs';
   import CalculationWorking from '../teaching/CalculationWorking.svelte';
   import MathText from '../teaching/MathText.svelte';
   import ArithmeticWorking from '../teaching/ArithmeticWorking.svelte';
@@ -21,27 +22,51 @@
 {#if response}
   <div
     class="feedback"
+    class:investigation-feedback={question.investigation}
     class:correct={response.correct}
     class:incorrect={!response.correct}
     role="status"
     tabindex="-1"
   >
-    <strong>{response.correct ? 'Correct.' : 'Not quite yet.'}</strong>{#if response.assisted}
-      <span>Assisted practice.</span>{/if}
-    {#if mode === 'errors' && !question.errorOptions}
-      <ul>
-        {#each response.details ?? [] as detail, index}<li>
-            Error {index + 1}: {detail.rowCorrect ? 'row correct' : 'check the row'}; {detail.reasonCorrect
-              ? 'reason correct'
-              : 'check the reason'}; {detail.stepCorrect
-              ? 'corrected step correct'
-              : 'check the corrected step'}.
-          </li>{/each}
-      </ul>
-      <p>
-        {response.answerCorrect ? 'Your final value is right.' : 'Check your final value of x.'}
-      </p>
-    {/if}
+    <div class="feedback-summary">
+      <strong>{response.correct ? 'Correct.' : 'Not quite yet.'}</strong>{#if response.assisted}
+        <span>Assisted practice.</span>{/if}
+      {#if mode === 'errors' && !question.errorOptions && !question.investigation}
+        <ul>
+          {#each response.details ?? [] as detail, index}<li>
+              Error {index + 1}: {detail.rowCorrect ? 'row correct' : 'check the row'}; {detail.reasonCorrect
+                ? 'reason correct'
+                : 'check the reason'}; {detail.stepCorrect
+                ? 'corrected step correct'
+                : 'check the corrected step'}.
+            </li>{/each}
+        </ul>
+        <p>
+          {response.answerCorrect ? 'Your final value is right.' : 'Check your final value of x.'}
+        </p>
+      {/if}
+      {#if question.investigation}
+        {#each response.details ?? [] as detail}
+          {#if !detail.reasonCorrect}<p>
+              <strong
+                >{question.locations.find((location) => location.id === detail.location)
+                  ?.label}:</strong
+              >
+              {detail.locationCorrect
+                ? 'Recheck the reason for this mistake.'
+                : question.consequences.includes(detail.location)
+                  ? 'This follows from an earlier mistake. Find where that mistake began.'
+                  : 'There is no independent method mistake here.'}
+            </p>{/if}
+        {/each}
+        {#if response.missing}<p>There is still a method mistake to find.</p>{/if}
+        <p>
+          {response.answerCorrect
+            ? 'Your corrected answer is right.'
+            : 'Recheck your corrected answer.'}
+        </p>
+      {/if}
+    </div>
     <details>
       <summary>Answer, method and check</summary>
       <p>
@@ -54,7 +79,7 @@
       {#if question.method_note && question.method !== 'calculation'}<p>
           {question.method_note}
         </p>{/if}
-      {#if mode === 'errors' && !question.errorOptions}<ul>
+      {#if mode === 'errors' && !question.errorOptions && !question.investigation}<ul>
           {#each question.errors as error}<li>
               Row {error.row + 1}: {bank.teaching.errorReasons.find((r) => r.id === error.reason)
                 .label} Corrected step: {question.stepOptions.find((s) => s.id === error.correction)
@@ -62,7 +87,18 @@
             </li>{/each}
         </ul>{/if}
       <!-- Each method owns its correction drawing. -->
-      {#if question.method === 'calculation'}<CalculationWorking
+      {#if question.investigation}
+        <ul>
+          {#each question.errors as error}<li>
+              {question.locations.find((location) => location.id === error.location)?.label}: {error.feedback}
+            </li>{/each}
+        </ul>
+        <ol>
+          {#each question.correctWorking as line}<li>
+              <MathText text={workingText(line)} />
+            </li>{/each}
+        </ol>
+      {:else if question.method === 'calculation'}<CalculationWorking
           {question}
         />{:else if question.method ?? bank.method}<ArithmeticWorking
           {question}

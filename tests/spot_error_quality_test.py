@@ -1,0 +1,71 @@
+"""Regression mutations prove level/variety checks reject the audited weaknesses."""
+import copy
+import json
+from pathlib import Path
+import sys
+import unittest
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from review_spot_error_drafts import calculate, answer_value
+from spot_error_quality import check_quality
+
+
+def bank(name, topic):
+    data = json.loads((ROOT / 'website/static/data' / name / 'spot-errors.json').read_text())
+    return dict(topic=topic, questions=[dict(q, level=q['level'] + 1, prompt=q['q'], unit=q['answerUnit']) for q in data])
+
+
+class QualityRegressions(unittest.TestCase):
+    def reject(self, name, topic, mutate, message):
+        data = bank(name, topic)
+        mutate(data['questions'])
+        with self.assertRaisesRegex(AssertionError, message):
+            check_quality(data, calculate, answer_value)
+
+    def test_division_cannot_relabel_easy_work_as_confidence(self):
+        def mutate(qs):
+            easy = copy.deepcopy(qs[0]); easy['level'] = 3
+            qs[-1] = easy
+        self.reject('division', 'M02', mutate, 'two-digit divisor')
+
+    def test_equation_answer_checked_against_original_not_just_stored_expression(self):
+        self.reject('equations', 'M10', lambda qs: qs[0].update(answer='123', answerCheck={'expression': '123'}), 'original equation')
+
+    def test_fraction_confidence_requires_both_denominators_to_change(self):
+        self.reject('fractions', 'M15', lambda qs: qs[-1].update(prompt='Work out 1/3 + 1/6.', answer='1/2'), 'both fractions need conversion')
+
+    def test_signed_repetition_is_rejected(self):
+        def mutate(qs):
+            source = copy.deepcopy(qs[-1])
+            for q in qs:
+                if q['level'] == 3:
+                    q.update(source)
+        self.reject('signed-numbers', 'M13', mutate, 'intermediate results')
+
+    def test_percentage_change_must_include_both_directions(self):
+        def mutate(qs):
+            source = next(q for q in qs if q['level'] == 3 and 'increase' in q['prompt'])
+            for q in qs:
+                if q['level'] == 3:
+                    q.update(copy.deepcopy(source))
+        self.reject('percentages', 'M06', mutate, 'increases and decreases')
+
+    def test_reverse_confidence_requires_fixed_adjustment(self):
+        self.reject('reverse-percentages', 'M07', lambda qs: qs[-1].update(prompt='An item costs £80 after a 20% reduction.'), 'fixed addition')
+
+    def test_applications_need_linked_work(self):
+        self.reject('problems', 'M03', lambda qs: qs[-1].update(answerCheck={'expression': '10'}), 'linked operations')
+
+    def test_ratio_linked_mix_is_preserved(self):
+        self.reject('ratios', 'M04', lambda qs: qs[-1].update(prompt='Share £140 in the ratio 2:5. Find the second share.'), '8/12')
+
+    def test_average_speed_distractor_must_actually_be_wrong(self):
+        def mutate(qs):
+            q = next(q for q in qs if any(e['misconception'] == 'T7' for e in q['errors']))
+            q['prompt'] = 'Travel at 30 km/h for 2 hours, then at 60 km/h for 2 hours.'
+        self.reject('speed-distance-time', 'M12', mutate, 'equal durations')
+
+
+if __name__ == '__main__':
+    unittest.main()

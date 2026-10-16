@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "subject": "maths",
+  "topic": "M07",
+  "title": "Reverse percentages",
+  "method": "calculation",
+  "revision": "M07-web-2026-10-12",
+  "calculator": true,
+  "questionPrefix": "Find the original amount",
+  "errorRevision": 2
+}

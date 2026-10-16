@@ -293,12 +293,18 @@ nav button {
   font-size: var(--question-fit-font, 1.08rem);
   white-space: nowrap;
 }
-.question-option.correct {
+.question-option.correct,
+.feedback.correct,
+.choice-field[data-answer-result='correct'],
+.answer-result[data-answer-result='correct'] {
   border-color: var(--correct-border);
   background: var(--correct-bg);
   color: var(--correct-text);
 }
-.question-option.incorrect {
+.question-option.incorrect,
+.feedback.incorrect,
+.choice-field[data-answer-result='incorrect'],
+.answer-result[data-answer-result='incorrect'] {
   border-color: var(--incorrect-border);
   background: var(--incorrect-bg);
   color: var(--incorrect-text);
@@ -344,16 +350,6 @@ small,
   border-left: 4px solid var(--brand);
   background: var(--soft);
   margin-top: 18px;
-}
-.feedback.correct {
-  border-color: var(--correct-border);
-  background: var(--correct-bg);
-  color: var(--correct-text);
-}
-.feedback.incorrect {
-  border-color: var(--incorrect-border);
-  background: var(--incorrect-bg);
-  color: var(--incorrect-text);
 }
 .balance {
   border-collapse: collapse;
@@ -860,6 +856,7 @@ footer a {
 
 /* Scope the authored working to its own paper/ink without changing the question or controls. */
 .error-working {
+  --working-line: var(--error-line);
   --ink: var(--error-ink);
   --brand: var(--error-line);
   --muted: var(--error-ink);
@@ -1098,6 +1095,7 @@ footer a {
   position: relative;
   color: var(--text);
   text-decoration: none;
+  transition: scale 140ms ease-out;
 }
 .topic-card h3 {
   margin-top: 0;
@@ -1106,6 +1104,17 @@ footer a {
 }
 .topic-card:hover {
   border-color: var(--accent);
+}
+/* Animate the card inside its measured masonry slot, preserving the surrounding layout. */
+@media (prefers-reduced-motion: no-preference) {
+  @media (hover: hover) and (pointer: fine) {
+    .topic-card:hover {
+      scale: 1.015;
+    }
+  }
+  .topic-card:active {
+    scale: 0.985;
+  }
 }
 .topic-example {
   margin-bottom: 0;
@@ -1136,6 +1145,24 @@ footer a {
 .question-workspace > * {
   min-width: 0;
 }
+/* Feedback uses the full workspace; the writing surface keeps its own top breathing room. */
+.question-workspace > .feedback {
+  grid-column: 1 / -1;
+}
+.question-workspace > .working {
+  grid-column: 2;
+  grid-row: 1;
+  margin-block-start: 1rem;
+}
+@variant @question-working-columns {
+  .investigation-feedback {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+}
+
 .question-workspace h3 {
   margin-top: 0;
 }
@@ -1161,6 +1188,11 @@ footer a {
   .question-workspace {
     grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
+  }
+  .question-workspace > .working {
+    grid-column: auto;
+    grid-row: auto;
+    margin-block-start: 0;
   }
 }
 .progress-card {
@@ -1247,7 +1279,7 @@ footer a {
   min-width: min-content;
 }
 .learning-steps .earlier-stage {
-  background: color-mix(in srgb, var(--surface) 92%, var(--main));
+  background: var(--chevron-previous-bg);
 }
 .stage-label > span {
   white-space: nowrap;
@@ -1368,4 +1400,144 @@ footer a {
   .learning-steps.equal-rows .stage-row .chevron-segment {
     flex-grow: 1;
   }
+}
+
+/* Generated wrong working shares geometry with the teaching renderer; locations stay neutral until checked. */
+.error-investigation-workspace {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+.error-investigation-workspace > * {
+  min-width: 0;
+}
+.lattice-error-paper {
+  width: min(100%, 24rem);
+}
+.working-location {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.working-marker {
+  fill: var(--error-marker);
+  stroke: var(--error-marker);
+  stroke-width: 6px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.working-location:focus-visible {
+  outline: 2px dotted var(--error-ink);
+  outline-offset: -3px;
+}
+.location-number {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  padding: 0 4px;
+  border-radius: 50%;
+  background: var(--selection-bg);
+  color: var(--selection-text);
+  font:
+    600 12px/18px system-ui,
+    sans-serif;
+}
+.error-selection-list {
+  padding-inline-start: 1.5rem;
+}
+.error-selection-list li {
+  margin-block-end: 1rem;
+  padding: 0.5rem;
+}
+.error-selection-list p {
+  margin-block: 0.25rem;
+}
+.error-selection-list .action-button {
+  white-space: normal;
+  text-align: left;
+}
+.error-investigation form .actions {
+  margin-block-start: 1rem;
+}
+
+/* Live investigations occupy only the question column of the existing canvas workspace. */
+.live-investigation,
+.investigation-paper {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+}
+.investigation-diagram-scroll {
+  max-inline-size: 100%;
+  overflow-x: auto;
+}
+.investigation-paper .arithmetic-working > p {
+  display: none;
+}
+.working-line {
+  height: auto;
+  min-height: 44px;
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+  margin-block: 0.25rem;
+  text-align: left;
+  color: var(--error-ink);
+  font: inherit;
+  white-space: normal;
+}
+.working-line-content,
+.investigation-bus button > span:not(.location-number) {
+  position: relative;
+}
+.working-line-label {
+  display: block;
+  font-size: 0.8em;
+  margin-block-end: 0.2rem;
+}
+.line-marker {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.investigation-bus {
+  display: grid;
+  min-width: max-content;
+  margin-block: 0.5rem 1rem;
+  color: var(--error-ink);
+  font-size: 1.5rem;
+}
+.investigation-bus .working-location {
+  min-height: 44px;
+  color: inherit;
+  font: inherit;
+}
+.bus-divisor {
+  align-self: center;
+  text-align: center;
+}
+.investigation-bus .bus-dividend {
+  border-top: 2px solid var(--error-line);
+}
+.investigation-bus .bus-first {
+  border-left: 2px solid var(--error-line);
+}
+.investigation-bus sup {
+  font-size: 0.6em;
+  margin-inline-end: 0.15em;
+}
+.investigation-working-details > summary {
+  cursor: pointer;
+  padding-block: 0.5rem;
+}
+.corrected-answer-field {
+  inline-size: calc(12ch + 1.5rem);
+  max-inline-size: 100%;
 }

@@ -1,0 +1,1573 @@
+[
+  {
+    "id": "maths:M03-S02-C1-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "42 packs each contain 15 pens. How many pens are there?",
+    "answer": "630",
+    "answerUnit": "pens",
+    "model": {
+      "kind": "application",
+      "start": 42,
+      "operations": [
+        [
+          "multiply",
+          15
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "42 × 15",
+        "output": "630",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "pens"
+      }
+    ],
+    "hint": "What does the quantity 15 describe: one group, or the whole total?",
+    "method_note": "Find the total for these equal groups.",
+    "check": "630 ÷ 15 = 42.",
+    "wrong": "57",
+    "error_note": "Each of the 42 packs contains 15 pens. 42 + 15 counts neither the packs nor all the pens; use 42 × 15.",
+    "source": "Accepted M03 source slide 2; saved deck text checked"
+  },
+  {
+    "id": "maths:M03-S02-C2-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "215 apples go into bags of 6. How many completely full bags can be made?",
+    "answer": "35",
+    "answerUnit": "bags",
+    "model": {
+      "kind": "application",
+      "start": 215,
+      "operations": [
+        [
+          "floor",
+          6
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "215 ÷ 6",
+        "output": "35 r 5",
+        "note": "35 complete groups of 6, with 5 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "35",
+        "output": "35",
+        "note": "Only completely full groups count; leave the remainder out.",
+        "outputUnit": "bags"
+      }
+    ],
+    "hint": "Would a partly filled group of 6 count as a completely full group?",
+    "method_note": "35 complete groups of 6, with 5 left over. Only completely full groups count; leave the remainder out.",
+    "check": "35 × 6 + 5 = 215; 5 is less than 6.",
+    "wrong": "36",
+    "error_note": "36 groups would need 216, more than the 215 available. Count only full groups.",
+    "source": "Accepted M03 source slide 2; saved deck text checked"
+  },
+  {
+    "id": "maths:M03-S02-C3-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "A painter charges £18 per hour for 32 hours, plus £120 for paint. Find the total bill.",
+    "answer": "696",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 18,
+      "operations": [
+        [
+          "multiply",
+          32
+        ],
+        [
+          "add",
+          120
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "18 × 32",
+        "output": "576",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "576 + 120",
+        "output": "696",
+        "note": "Include the extra amount once.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "What does the quantity 32 describe: one group, or the whole total? What will that first result represent?",
+    "method_note": "Find the total for these equal groups. Include the extra amount once.",
+    "check": "576 ÷ 32 = 18. 696 − 120 = 576.",
+    "wrong": "576",
+    "error_note": "This is only the first cost. Include the extra £120 once.",
+    "source": "Accepted M03 source slide 2; saved deck text checked"
+  },
+  {
+    "id": "maths:M03-S03-C1-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "168 students form 7 equal groups. How many students are in each group?",
+    "answer": "24",
+    "answerUnit": "students",
+    "model": {
+      "kind": "application",
+      "start": 168,
+      "operations": [
+        [
+          "divide",
+          7
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "168 ÷ 7",
+        "output": "24",
+        "note": "Share the whole amount equally.",
+        "outputUnit": "students"
+      }
+    ],
+    "hint": "Which amount is being shared, and how many equal shares are needed (7)?",
+    "method_note": "Share the whole amount equally.",
+    "check": "24 × 7 = 168.",
+    "wrong": "1176",
+    "error_note": "The fixed total 168 is being shared into 7 equal parts. Divide it rather than multiplying.",
+    "source": "Accepted M03 source slide 3; saved deck text checked"
+  },
+  {
+    "id": "maths:M03-S03-C2-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "A worker earns £16 per hour. They work 27 hours one week and 7 hours the next. What are their total wages?",
+    "answer": "544",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 27,
+      "operations": [
+        [
+          "add",
+          7
+        ],
+        [
+          "multiply",
+          16
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Combine the quantities before applying the rate",
+        "input": "27 + 7",
+        "output": "34",
+        "outputUnit": "hours",
+        "note": "Both quantities are in hours; include both."
+      },
+      {
+        "title": "Apply the rate to the combined quantity",
+        "input": "34 × 16",
+        "output": "544",
+        "outputUnit": "£",
+        "note": "Use the same rate for the whole amount."
+      }
+    ],
+    "hint": "Combine the 27 hours and the extra 7 hours before applying the rate.",
+    "method_note": "Add the two quantities in hours, then multiply the total by 16.",
+    "check": "Check by splitting the groups: 27 × 16 + 7 × 16 = 544. Include both groups and give the result in £.",
+    "wrong": "432",
+    "error_note": "432 accounts for only the first 27 hours. The extra 7 hours must also be included.",
+    "source": "Accepted M03 source slide 3; saved deck text checked; website Build grouping step added 13 October 2026"
+  },
+  {
+    "id": "maths:M03-S03-C3-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "157 passengers need vans with 8 passenger seats each. Hire costs £45 per van. Find the total hire cost.",
+    "answer": "900",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 157,
+      "operations": [
+        [
+          "ceil",
+          8
+        ],
+        [
+          "multiply",
+          45
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "157 ÷ 8",
+        "output": "19 r 5",
+        "note": "19 complete groups of 8, with 5 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "19 + 1",
+        "output": "20",
+        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "20 × 45",
+        "output": "900",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "If some are left after making groups of 8, do they still need a place? What will that first result represent?",
+    "method_note": "19 complete groups of 8, with 5 left over. Everyone or everything needs a place; add one group when there is a remainder. Find the total for these equal groups.",
+    "check": "19 × 8 + 5 = 157; 5 is less than 8. 900 ÷ 45 = 20.",
+    "wrong": "855",
+    "error_note": "19 groups of 8 have only 152 places. Include one more group before multiplying by £45.",
+    "source": "Accepted M03 source slide 3; saved deck text checked"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C1-Q13",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "A shop receives 19 trays of 26 pots. How many pots arrive?",
+    "answer": "494",
+    "answerUnit": "pots",
+    "model": {
+      "kind": "application",
+      "start": 19,
+      "operations": [
+        [
+          "multiply",
+          26
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "19 × 26",
+        "output": "494",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "pots"
+      }
+    ],
+    "hint": "What does the quantity 26 describe: one group, or the whole total?",
+    "method_note": "Find the total for these equal groups.",
+    "check": "494 ÷ 26 = 19.",
+    "wrong": "45",
+    "error_note": "Adding 19 and 26 does not count all the equal groups. Multiply 19 by 26.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C1-Q14",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "A 252 cm ribbon is cut into 6 equal lengths. Find each length.",
+    "answer": "42",
+    "answerUnit": "cm",
+    "model": {
+      "kind": "application",
+      "start": 252,
+      "operations": [
+        [
+          "divide",
+          6
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "252 ÷ 6",
+        "output": "42",
+        "note": "Share the whole amount equally.",
+        "outputUnit": "cm"
+      }
+    ],
+    "hint": "Which amount is being shared, and how many equal shares are needed (6)?",
+    "method_note": "Share the whole amount equally.",
+    "check": "42 × 6 = 252.",
+    "wrong": "1512",
+    "error_note": "The fixed total 252 is being shared into 6 equal parts. Divide it rather than multiplying.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C1-Q15",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "A hall has 18 rows of 36 chairs. How many chairs are there?",
+    "answer": "648",
+    "answerUnit": "chairs",
+    "model": {
+      "kind": "application",
+      "start": 18,
+      "operations": [
+        [
+          "multiply",
+          36
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "18 × 36",
+        "output": "648",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "chairs"
+      }
+    ],
+    "hint": "What does the quantity 36 describe: one group, or the whole total?",
+    "method_note": "Find the total for these equal groups.",
+    "check": "648 ÷ 36 = 18.",
+    "wrong": "54",
+    "error_note": "Adding 18 and 36 does not count all the equal groups. Multiply 18 by 36.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C1-Q16",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "368 leaflets are shared equally among 8 volunteers. How many does each get?",
+    "answer": "46",
+    "answerUnit": "leaflets",
+    "model": {
+      "kind": "application",
+      "start": 368,
+      "operations": [
+        [
+          "divide",
+          8
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "368 ÷ 8",
+        "output": "46",
+        "note": "Share the whole amount equally.",
+        "outputUnit": "leaflets"
+      }
+    ],
+    "hint": "Which amount is being shared, and how many equal shares are needed (8)?",
+    "method_note": "Share the whole amount equally.",
+    "check": "46 × 8 = 368.",
+    "wrong": "2944",
+    "error_note": "The fixed total 368 is being shared into 8 equal parts. Divide it rather than multiplying.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C2-Q13",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "298 stickers go into full sheets of 9. How many full sheets are there?",
+    "answer": "33",
+    "answerUnit": "sheets",
+    "model": {
+      "kind": "application",
+      "start": 298,
+      "operations": [
+        [
+          "floor",
+          9
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "298 ÷ 9",
+        "output": "33 r 1",
+        "note": "33 complete groups of 9, with 1 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "33",
+        "output": "33",
+        "note": "Only completely full groups count; leave the remainder out.",
+        "outputUnit": "sheets"
+      }
+    ],
+    "hint": "Would a partly filled group of 9 count as a completely full group?",
+    "method_note": "33 complete groups of 9, with 1 left over. Only completely full groups count; leave the remainder out.",
+    "check": "33 × 9 + 1 = 298; 1 is less than 9.",
+    "wrong": "34",
+    "error_note": "34 groups would need 306, more than the 298 available. Count only full groups.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C2-Q14",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "146 people need vans with 8 passenger seats. How many vans are needed?",
+    "answer": "19",
+    "answerUnit": "vans",
+    "model": {
+      "kind": "application",
+      "start": 146,
+      "operations": [
+        [
+          "ceil",
+          8
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "146 ÷ 8",
+        "output": "18 r 2",
+        "note": "18 complete groups of 8, with 2 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "18 + 1",
+        "output": "19",
+        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "outputUnit": "vans"
+      }
+    ],
+    "hint": "If some are left after making groups of 8, do they still need a place?",
+    "method_note": "18 complete groups of 8, with 2 left over. Everyone or everything needs a place; add one group when there is a remainder.",
+    "check": "18 × 8 + 2 = 146; 2 is less than 8.",
+    "wrong": "18",
+    "error_note": "18 groups provide only 144 places. The remaining 2 still need a place.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C2-Q15",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "A 427 cm strip is cut into 18 cm pieces. How many centimetres remain?",
+    "answer": "13",
+    "answerUnit": "cm",
+    "model": {
+      "kind": "application",
+      "start": 427,
+      "operations": [
+        [
+          "remainder",
+          18
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "427 ÷ 18",
+        "output": "23 r 13",
+        "note": "23 complete groups of 18, with 13 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "13",
+        "output": "13",
+        "note": "The question asks for what is left, not how many groups.",
+        "outputUnit": "cm"
+      }
+    ],
+    "hint": "After removing complete groups of 18, which amount is left?",
+    "method_note": "23 complete groups of 18, with 13 left over. The question asks for what is left, not how many groups.",
+    "check": "23 × 18 + 13 = 427; 13 is less than 18.",
+    "wrong": "23",
+    "error_note": "23 counts complete groups. The question asks for the 13 left over.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C2-Q16",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "A £217 bill is split equally between 4 friends. How much does each pay?",
+    "answer": "54.25",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 217,
+      "operations": [
+        [
+          "divide",
+          4
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "217 ÷ 4",
+        "output": "54.25",
+        "note": "Share the whole amount equally.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "Which amount is being shared, and how many equal shares are needed (4)?",
+    "method_note": "Share the whole amount equally.",
+    "check": "54.25 × 4 = 217.",
+    "wrong": "868",
+    "error_note": "The fixed total 217 is being shared into 4 equal parts. Divide it rather than multiplying.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C3-Q13",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "A hire firm charges £47 for each van with 9 passenger seats. Find the cost for 164 passengers.",
+    "answer": "893",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 164,
+      "operations": [
+        [
+          "ceil",
+          9
+        ],
+        [
+          "multiply",
+          47
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "164 ÷ 9",
+        "output": "18 r 2",
+        "note": "18 complete groups of 9, with 2 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "18 + 1",
+        "output": "19",
+        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "19 × 47",
+        "output": "893",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "If some are left after making groups of 9, do they still need a place? What will that first result represent?",
+    "method_note": "18 complete groups of 9, with 2 left over. Everyone or everything needs a place; add one group when there is a remainder. Find the total for these equal groups.",
+    "check": "18 × 9 + 2 = 164; 2 is less than 9. 893 ÷ 47 = 19.",
+    "wrong": "846",
+    "error_note": "18 groups of 9 have only 162 places. Include one more group before multiplying by £47.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C3-Q14",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "A cafe packs 374 biscuits in full bags of 8, selling each bag for £3. Find the income.",
+    "answer": "138",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 374,
+      "operations": [
+        [
+          "floor",
+          8
+        ],
+        [
+          "multiply",
+          3
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "374 ÷ 8",
+        "output": "46 r 6",
+        "note": "46 complete groups of 8, with 6 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "46",
+        "output": "46",
+        "note": "Only completely full groups count; leave the remainder out."
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "46 × 3",
+        "output": "138",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "Would a partly filled group of 8 count as a completely full group? What will that first result represent?",
+    "method_note": "46 complete groups of 8, with 6 left over. Only completely full groups count; leave the remainder out. Find the total for these equal groups.",
+    "check": "46 × 8 + 6 = 374; 6 is less than 8. 138 ÷ 3 = 46.",
+    "wrong": "141",
+    "error_note": "Only 46 full groups can be made. A partly filled group cannot be sold as full.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C3-Q15",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "Five friends share the cost of 18 tickets at £15 each equally. How much does each pay?",
+    "answer": "54",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 18,
+      "operations": [
+        [
+          "multiply",
+          15
+        ],
+        [
+          "divide",
+          5
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "18 × 15",
+        "output": "270",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "270 ÷ 5",
+        "output": "54",
+        "note": "Share the whole amount equally.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "What does the quantity 15 describe: one group, or the whole total? What will that first result represent?",
+    "method_note": "Find the total for these equal groups. Share the whole amount equally.",
+    "check": "270 ÷ 15 = 18. 54 × 5 = 270.",
+    "wrong": "270",
+    "error_note": "This is the total bill. Share it equally between the 5 people.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SCAFFOLDED-C3-Q16",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "A club orders 23 packs of 18 badges and gives away 167 badges. How many are left?",
+    "answer": "247",
+    "answerUnit": "badges",
+    "model": {
+      "kind": "application",
+      "start": 23,
+      "operations": [
+        [
+          "multiply",
+          18
+        ],
+        [
+          "subtract",
+          167
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "23 × 18",
+        "output": "414",
+        "note": "Find the total for these equal groups."
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "414 − 167",
+        "output": "247",
+        "note": "Take away the amount used or discounted.",
+        "outputUnit": "badges"
+      }
+    ],
+    "hint": "What does the quantity 18 describe: one group, or the whole total? What will that first result represent?",
+    "method_note": "Find the total for these equal groups. Take away the amount used or discounted.",
+    "check": "414 ÷ 18 = 23. 247 + 167 = 414.",
+    "wrong": "581",
+    "error_note": "The amount 167 is used or discounted, so subtract it from 414.",
+    "source": "New website question, 12 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C1-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "A library has 14 shelves with 32 books on each. How many books are there?",
+    "answer": "448",
+    "answerUnit": "books",
+    "model": {
+      "kind": "application",
+      "start": 14,
+      "operations": [
+        [
+          "multiply",
+          32
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "14 × 32",
+        "output": "448",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "books"
+      }
+    ],
+    "hint": "What does the quantity 32 describe: one group, or the whole total?",
+    "method_note": "Find the total for these equal groups.",
+    "check": "448 ÷ 32 = 14.",
+    "wrong": "420",
+    "error_note": "14 × 30 counts only 30 books on each shelf. Include 14 × 2 = 28.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C1-Q1"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C1-Q2",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "105 students form 7 equal groups. How many students are in each group?",
+    "answer": "15",
+    "answerUnit": "students",
+    "model": {
+      "kind": "application",
+      "start": 105,
+      "operations": [
+        [
+          "divide",
+          7
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "105 ÷ 7",
+        "output": "15",
+        "note": "Share the whole amount equally.",
+        "outputUnit": "students"
+      }
+    ],
+    "hint": "Which amount is being shared, and how many equal shares are needed (7)?",
+    "method_note": "Share the whole amount equally.",
+    "check": "15 × 7 = 105.",
+    "wrong": "735",
+    "error_note": "The fixed total 105 is being shared into 7 equal parts. Divide it rather than multiplying.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C1-Q2"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C1-Q3",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "A shop has 26 crates with 41 bottles in each. How many bottles are there?",
+    "answer": "1066",
+    "answerUnit": "bottles",
+    "model": {
+      "kind": "application",
+      "start": 26,
+      "operations": [
+        [
+          "multiply",
+          41
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "26 × 41",
+        "output": "1066",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "bottles"
+      }
+    ],
+    "hint": "What does the quantity 41 describe: one group, or the whole total?",
+    "method_note": "Find the total for these equal groups.",
+    "check": "1066 ÷ 41 = 26.",
+    "wrong": "67",
+    "error_note": "Adding 26 and 41 does not count all the equal groups. Multiply 26 by 41.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C1-Q3"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C1-Q4",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "A 148 m rope is cut into 4 equal pieces. How long is each piece?",
+    "answer": "37",
+    "answerUnit": "m",
+    "model": {
+      "kind": "application",
+      "start": 148,
+      "operations": [
+        [
+          "divide",
+          4
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "148 ÷ 4",
+        "output": "37",
+        "note": "Share the whole amount equally.",
+        "outputUnit": "m"
+      }
+    ],
+    "hint": "Which amount is being shared, and how many equal shares are needed (4)?",
+    "method_note": "Share the whole amount equally.",
+    "check": "37 × 4 = 148.",
+    "wrong": "592",
+    "error_note": "The fixed total 148 is being shared into 4 equal parts. Divide it rather than multiplying.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C1-Q4"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C1-Q5",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "A hall has 13 rows of 85 seats. How many seats are there?",
+    "answer": "1105",
+    "answerUnit": "seats",
+    "model": {
+      "kind": "application",
+      "start": 13,
+      "operations": [
+        [
+          "multiply",
+          85
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "13 × 85",
+        "output": "1105",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "seats"
+      }
+    ],
+    "hint": "What does the quantity 85 describe: one group, or the whole total?",
+    "method_note": "Find the total for these equal groups.",
+    "check": "1105 ÷ 85 = 13.",
+    "wrong": "98",
+    "error_note": "Adding 13 and 85 does not count all the equal groups. Multiply 13 by 85.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C1-Q5"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C1-Q6",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "£175 is shared equally among 5 people. How much does each person receive?",
+    "answer": "35",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 175,
+      "operations": [
+        [
+          "divide",
+          5
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "175 ÷ 5",
+        "output": "35",
+        "note": "Share the whole amount equally.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "Which amount is being shared, and how many equal shares are needed (5)?",
+    "method_note": "Share the whole amount equally.",
+    "check": "35 × 5 = 175.",
+    "wrong": "875",
+    "error_note": "The fixed total 175 is being shared into 5 equal parts. Divide it rather than multiplying.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C1-Q6"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C2-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "130 eggs are packed in cartons of 6. How many full cartons can be packed?",
+    "answer": "21",
+    "answerUnit": "cartons",
+    "model": {
+      "kind": "application",
+      "start": 130,
+      "operations": [
+        [
+          "floor",
+          6
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "130 ÷ 6",
+        "output": "21 r 4",
+        "note": "21 complete groups of 6, with 4 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "21",
+        "output": "21",
+        "note": "Only completely full groups count; leave the remainder out.",
+        "outputUnit": "cartons"
+      }
+    ],
+    "hint": "Would a partly filled group of 6 count as a completely full group?",
+    "method_note": "21 complete groups of 6, with 4 left over. Only completely full groups count; leave the remainder out.",
+    "check": "21 × 6 + 4 = 130; 4 is less than 6.",
+    "wrong": "22",
+    "error_note": "22 groups would need 132, more than the 130 available. Count only full groups.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C2-Q1"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C2-Q2",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "32 passengers need cars with 5 passenger seats each. How many cars are needed?",
+    "answer": "7",
+    "answerUnit": "cars",
+    "model": {
+      "kind": "application",
+      "start": 32,
+      "operations": [
+        [
+          "ceil",
+          5
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "32 ÷ 5",
+        "output": "6 r 2",
+        "note": "6 complete groups of 5, with 2 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "6 + 1",
+        "output": "7",
+        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "outputUnit": "cars"
+      }
+    ],
+    "hint": "If some are left after making groups of 5, do they still need a place?",
+    "method_note": "6 complete groups of 5, with 2 left over. Everyone or everything needs a place; add one group when there is a remainder.",
+    "check": "6 × 5 + 2 = 32; 2 is less than 5.",
+    "wrong": "6",
+    "error_note": "6 groups provide only 30 places. The remaining 2 still need a place.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C2-Q2"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C2-Q3",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "250 chocolates are packed in boxes of 12. How many chocolates are left over?",
+    "answer": "10",
+    "answerUnit": "chocolates",
+    "model": {
+      "kind": "application",
+      "start": 250,
+      "operations": [
+        [
+          "remainder",
+          12
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "250 ÷ 12",
+        "output": "20 r 10",
+        "note": "20 complete groups of 12, with 10 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "10",
+        "output": "10",
+        "note": "The question asks for what is left, not how many groups.",
+        "outputUnit": "chocolates"
+      }
+    ],
+    "hint": "After removing complete groups of 12, which amount is left?",
+    "method_note": "20 complete groups of 12, with 10 left over. The question asks for what is left, not how many groups.",
+    "check": "20 × 12 + 10 = 250; 10 is less than 12.",
+    "wrong": "20",
+    "error_note": "20 counts complete groups. The question asks for the 10 left over.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C2-Q3"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C2-Q4",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "A worker earns £17 per hour. They work 28 hours one week and 7 hours the next. What are their total wages?",
+    "answer": "595",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 28,
+      "operations": [
+        [
+          "add",
+          7
+        ],
+        [
+          "multiply",
+          17
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Combine the quantities before applying the rate",
+        "input": "28 + 7",
+        "output": "35",
+        "outputUnit": "hours",
+        "note": "Both quantities are in hours; include both."
+      },
+      {
+        "title": "Apply the rate to the combined quantity",
+        "input": "35 × 17",
+        "output": "595",
+        "outputUnit": "£",
+        "note": "Use the same rate for the whole amount."
+      }
+    ],
+    "hint": "Combine the 28 hours and the extra 7 hours before applying the rate.",
+    "method_note": "Add the two quantities in hours, then multiply the total by 17.",
+    "check": "Check by splitting the groups: 28 × 17 + 7 × 17 = 595. Include both groups and give the result in £.",
+    "wrong": "476",
+    "error_note": "476 accounts for only the first 28 hours. The extra 7 hours must also be included.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C2-Q4; website Build grouping step added 13 October 2026"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C2-Q5",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "142 rolls are sold in bags of 6. How many full bags can be made?",
+    "answer": "23",
+    "answerUnit": "bags",
+    "model": {
+      "kind": "application",
+      "start": 142,
+      "operations": [
+        [
+          "floor",
+          6
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "142 ÷ 6",
+        "output": "23 r 4",
+        "note": "23 complete groups of 6, with 4 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "23",
+        "output": "23",
+        "note": "Only completely full groups count; leave the remainder out.",
+        "outputUnit": "bags"
+      }
+    ],
+    "hint": "Would a partly filled group of 6 count as a completely full group?",
+    "method_note": "23 complete groups of 6, with 4 left over. Only completely full groups count; leave the remainder out.",
+    "check": "23 × 6 + 4 = 142; 4 is less than 6.",
+    "wrong": "24",
+    "error_note": "24 groups would need 144, more than the 142 available. Count only full groups.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C2-Q5"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C2-Q6",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "A £132 bill is shared equally by 8 friends. How much does each pay?",
+    "answer": "16.5",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 132,
+      "operations": [
+        [
+          "divide",
+          8
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "132 ÷ 8",
+        "output": "16.5",
+        "note": "Share the whole amount equally.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "Which amount is being shared, and how many equal shares are needed (8)?",
+    "method_note": "Share the whole amount equally.",
+    "check": "16.5 × 8 = 132.",
+    "wrong": "1056",
+    "error_note": "The fixed total 132 is being shared into 8 equal parts. Divide it rather than multiplying.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C2-Q6"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C3-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "45 tickets cost £16 each. A group gets £50 off the total. How much does it pay?",
+    "answer": "670",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 45,
+      "operations": [
+        [
+          "multiply",
+          16
+        ],
+        [
+          "subtract",
+          50
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "45 × 16",
+        "output": "720",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "720 − 50",
+        "output": "670",
+        "note": "Take away the amount used or discounted.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "What does the quantity 16 describe: one group, or the whole total? What will that first result represent?",
+    "method_note": "Find the total for these equal groups. Take away the amount used or discounted.",
+    "check": "720 ÷ 16 = 45. 670 + 50 = 720.",
+    "wrong": "770",
+    "error_note": "The amount 50 is used or discounted, so subtract it from 720.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C3-Q1"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C3-Q2",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "115 passengers need vans with 8 passenger seats each. Hire costs £65 per van. Find the total cost.",
+    "answer": "975",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 115,
+      "operations": [
+        [
+          "ceil",
+          8
+        ],
+        [
+          "multiply",
+          65
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "115 ÷ 8",
+        "output": "14 r 3",
+        "note": "14 complete groups of 8, with 3 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "14 + 1",
+        "output": "15",
+        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "15 × 65",
+        "output": "975",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "If some are left after making groups of 8, do they still need a place? What will that first result represent?",
+    "method_note": "14 complete groups of 8, with 3 left over. Everyone or everything needs a place; add one group when there is a remainder. Find the total for these equal groups.",
+    "check": "14 × 8 + 3 = 115; 3 is less than 8. 975 ÷ 65 = 15.",
+    "wrong": "910",
+    "error_note": "14 groups of 8 have only 112 places. Include one more group before multiplying by £65.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C3-Q2"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C3-Q3",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "A gym costs £22 per month plus a £30 joining fee. Find the cost for 14 months.",
+    "answer": "338",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 22,
+      "operations": [
+        [
+          "multiply",
+          14
+        ],
+        [
+          "add",
+          30
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "22 × 14",
+        "output": "308",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "308 + 30",
+        "output": "338",
+        "note": "Include the extra amount once.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "What does the quantity 14 describe: one group, or the whole total? What will that first result represent?",
+    "method_note": "Find the total for these equal groups. Include the extra amount once.",
+    "check": "308 ÷ 14 = 22. 338 − 30 = 308.",
+    "wrong": "308",
+    "error_note": "This is only the first cost. Include the extra £30 once.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C3-Q3"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C3-Q4",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "430 cases fill boxes of 12. Each full box sells for £9. Find the income from full boxes.",
+    "answer": "315",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 430,
+      "operations": [
+        [
+          "floor",
+          12
+        ],
+        [
+          "multiply",
+          9
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "430 ÷ 12",
+        "output": "35 r 10",
+        "note": "35 complete groups of 12, with 10 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "35",
+        "output": "35",
+        "note": "Only completely full groups count; leave the remainder out."
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "35 × 9",
+        "output": "315",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "Would a partly filled group of 12 count as a completely full group? What will that first result represent?",
+    "method_note": "35 complete groups of 12, with 10 left over. Only completely full groups count; leave the remainder out. Find the total for these equal groups.",
+    "check": "35 × 12 + 10 = 430; 10 is less than 12. 315 ÷ 9 = 35.",
+    "wrong": "324",
+    "error_note": "Only 35 full groups can be made. A partly filled group cannot be sold as full.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C3-Q4"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C3-Q5",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "A contractor charges £24 per hour for 15 hours, plus £45 for materials. Find the total bill.",
+    "answer": "405",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 24,
+      "operations": [
+        [
+          "multiply",
+          15
+        ],
+        [
+          "add",
+          45
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "24 × 15",
+        "output": "360",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "360 + 45",
+        "output": "405",
+        "note": "Include the extra amount once.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "What does the quantity 15 describe: one group, or the whole total? What will that first result represent?",
+    "method_note": "Find the total for these equal groups. Include the extra amount once.",
+    "check": "360 ÷ 15 = 24. 405 − 45 = 360.",
+    "wrong": "360",
+    "error_note": "This is only the first cost. Include the extra £45 once.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C3-Q5"
+  },
+  {
+    "id": "maths:M03-WEB-SC4-C3-Q6",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "A shop sells 15 boxes of 12 headphones at £8 per headphone. Find the total sales income.",
+    "answer": "1440",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 15,
+      "operations": [
+        [
+          "multiply",
+          12
+        ],
+        [
+          "multiply",
+          8
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "15 × 12",
+        "output": "180",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "180 × 8",
+        "output": "1440",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "What does the quantity 12 describe: one group, or the whole total? What will that first result represent?",
+    "method_note": "Find the total for these equal groups. Find the total for these equal groups.",
+    "check": "180 ÷ 12 = 15. 1440 ÷ 8 = 180.",
+    "wrong": "180",
+    "error_note": "This is the number of items. Multiply by £8 per item for the sales income.",
+    "source": "Four-question scaffolded extension, adapted from maths:M03-S04-C3-Q6"
+  }
+]

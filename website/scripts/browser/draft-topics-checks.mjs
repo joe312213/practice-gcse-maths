@@ -1,8 +1,8 @@
+import { readTopicBank } from '../read-topic-bank.mjs';
 /** Exercise the calculation methods in the real app, including exact marking and persisted page navigation. */
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
 import { foundationTopics, topicPath } from '../../src/lib/content/topic-routes.mjs';
-import { createTestContext, artifacts } from './support.mjs';
+import { createTestContext, artifacts, selectWrapped } from './support.mjs';
 export async function checkDraftTopics(browser, base) {
   const context = await createTestContext(browser, { viewport: { width: 390, height: 900 } });
   const page = await context.newPage();
@@ -11,9 +11,7 @@ export async function checkDraftTopics(browser, base) {
   await page.clock.install();
   try {
     for (const topic of foundationTopics) {
-      const bank = JSON.parse(
-        await readFile(new URL(`../../static/data/${topic.file}.json`, import.meta.url)),
-      );
+      const bank = await readTopicBank(`${topic.file}`);
       if (bank.method !== 'calculation') continue;
       await page.goto(`${base}${topicPath(topic.bank).slice(1)}`);
       try {
@@ -145,9 +143,24 @@ export async function checkDraftTopics(browser, base) {
         assert.notEqual(second.attempt, first.attempt);
         await page.getByRole('button', { name: 'Previous page of questions', exact: true }).click();
         assert.equal((await saved()).pages[mode].attempt, first.attempt);
+        if (mode === 'errors') {
+          const q = bank.questions.find((q) => q.id === first.items[0].id);
+          for (const error of q.errors) {
+            await page.locator(`[data-location="${error.location}"]`).first().click();
+            await selectWrapped(page, '#investigation-reason', error.reason);
+          }
+        }
         for (const width of [320, 768, 1280]) {
           await page.setViewportSize({ width, height: 1000 });
           await page.clock.runFor(32);
+          if (mode === 'errors') {
+            assert.ok(
+              await page
+                .locator('#investigation-reason')
+                .evaluate((control) => control.scrollWidth <= control.clientWidth + 1),
+              'Selected prose fits at phone and desktop widths',
+            );
+          }
           await page.waitForFunction(() => document.documentElement.scrollWidth <= innerWidth);
           assert.equal(
             await page.evaluate(() => document.documentElement.scrollWidth > innerWidth),
@@ -169,7 +182,10 @@ export async function checkDraftTopics(browser, base) {
         }
         if (mode === 'errors') {
           const q = bank.questions.find((q) => q.id === first.items[0].id);
-          await page.locator('#error-correction').selectOption(q.correctionId);
+          const fits = await page
+            .locator('#investigation-reason')
+            .evaluate((control) => control.scrollWidth <= control.clientWidth + 1);
+          assert.ok(fits, `${q.id} selected correction wraps inside its control`);
           await page.locator('#answer').fill(q.answer);
           await page.getByRole('button', { name: 'Check answer', exact: true }).click();
           assert.equal((await saved()).pages.errors.responses[q.id].correct, true);
@@ -245,9 +261,7 @@ export async function checkDraftTopics(browser, base) {
     );
     const selectedId = combined.attempts[0].items[0].id;
     const sourceTopic = foundationTopics.find((t) => selectedId.startsWith(`maths:${t.bank}-`));
-    const sourceBank = JSON.parse(
-      await readFile(new URL(`../../static/data/${sourceTopic.file}.json`, import.meta.url)),
-    );
+    const sourceBank = await readTopicBank(`${sourceTopic.file}`);
     await page
       .locator('#answer')
       .fill(sourceBank.questions.find((q) => q.id === selectedId).answer);

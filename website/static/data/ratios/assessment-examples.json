@@ -1,0 +1,557 @@
+[
+  {
+    "id": "maths:M04-WEB-ASSESSMENT-C1-Q1",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "assessment",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "The ratio of red beads to blue beads is 5 : 7. There are 100 red beads. How many blue beads are there?",
+    "answer": "140",
+    "answerUnit": "beads",
+    "model": {
+      "kind": "application",
+      "start": "100",
+      "operations": [
+        [
+          "divide",
+          "5"
+        ],
+        [
+          "multiply",
+          "7"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Match the known quantity to parts",
+        "input": "5",
+        "output": "5",
+        "note": "The given first represents 5 equal parts, not one part.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Find the value of one ratio part",
+        "input": "100 ÷ 5",
+        "output": "20",
+        "note": "Find the value of one ratio part.",
+        "outputUnit": "beads"
+      },
+      {
+        "title": "Find the requested second amount",
+        "input": "20 × 7",
+        "output": "140",
+        "note": "Find the requested second amount.",
+        "outputUnit": "beads"
+      }
+    ],
+    "hint": "Does 100 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+    "method_note": "Find the value of one ratio part Find the requested second amount.",
+    "check": "One ratio part is 20. The two quantities are 100 and 140, in the named order. Check their first against the given amount, then check you answered the requested question.",
+    "wrong": "175/3",
+    "error_note": "The known first matches 5 parts, not 12. Find one part before scaling to the requested quantity.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "operationCount": 2,
+    "ratioModel": {
+      "a": 5,
+      "b": 7,
+      "scale": 20,
+      "known": "first",
+      "target": "second",
+      "knownParts": 5,
+      "targetParts": 7
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        5,
+        7
+      ],
+      "labels": [
+        "red beads",
+        "blue beads"
+      ],
+      "known": "first: 100 beads",
+      "knownKind": "first"
+    },
+    "repair": "Match the given first to 5 parts before finding one part.",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M04-WEB-ASSESSMENT-C1-Q2",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "assessment",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "The ratio of the length of ribbon A to the length of ribbon B is 3 : 7. Ribbon B is 84 cm longer than ribbon A. Find the length of ribbon B.",
+    "answer": "147",
+    "answerUnit": "cm",
+    "model": {
+      "kind": "application",
+      "start": "84",
+      "operations": [
+        [
+          "divide",
+          "4"
+        ],
+        [
+          "multiply",
+          "7"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Match the known quantity to parts",
+        "input": "7 − 3",
+        "output": "4",
+        "note": "The given difference represents 4 equal parts, not one part.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Find the value of one ratio part",
+        "input": "84 ÷ 4",
+        "output": "21",
+        "note": "Find the value of one ratio part.",
+        "outputUnit": "cm"
+      },
+      {
+        "title": "Find the requested second amount",
+        "input": "21 × 7",
+        "output": "147",
+        "note": "Find the requested second amount.",
+        "outputUnit": "cm"
+      }
+    ],
+    "hint": "Does 84 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+    "method_note": "Find the value of one ratio part Find the requested second amount.",
+    "check": "One ratio part is 21. The two quantities are 63 and 147, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+    "wrong": "196",
+    "error_note": "The known difference matches 4 parts, not 3. Find one part before scaling to the requested quantity.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "operationCount": 3,
+    "ratioModel": {
+      "a": 3,
+      "b": 7,
+      "scale": 21,
+      "known": "difference",
+      "target": "second",
+      "knownParts": 4,
+      "targetParts": 7
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        3,
+        7
+      ],
+      "labels": [
+        "ribbon A",
+        "ribbon B"
+      ],
+      "known": "difference: 84 cm",
+      "knownKind": "difference"
+    },
+    "repair": "Match the given difference to 4 parts before finding one part.",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M04-WEB-ASSESSMENT-C2-Q1",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "assessment",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "The ratio of red beads to blue beads is 6 : 8. There are 120 red beads. How many more blue beads are there than red beads?",
+    "answer": "40",
+    "answerUnit": "beads",
+    "model": {
+      "kind": "application",
+      "start": "120",
+      "operations": [
+        [
+          "divide",
+          "6"
+        ],
+        [
+          "multiply",
+          "2"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Match the known quantity to parts",
+        "input": "6",
+        "output": "6",
+        "note": "The given first represents 6 equal parts, not one part.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Find the value of one ratio part",
+        "input": "120 ÷ 6",
+        "output": "20",
+        "note": "Find the value of one ratio part.",
+        "outputUnit": "beads"
+      },
+      {
+        "title": "Identify the requested parts",
+        "input": "8 − 6",
+        "output": "2",
+        "note": "This is the number of parts requested in the question.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Find the requested difference amount",
+        "input": "20 × 2",
+        "output": "40",
+        "note": "Find the requested difference amount.",
+        "outputUnit": "beads"
+      }
+    ],
+    "hint": "Does 120 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+    "method_note": "Find the value of one ratio part Find the requested difference amount.",
+    "check": "One ratio part is 20. The two quantities are 120 and 160, in the named order. Check their first against the given amount, then check you answered the requested question.",
+    "wrong": "120/7",
+    "error_note": "The known first matches 6 parts, not 14. Find one part before scaling to the requested quantity.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "operationCount": 3,
+    "ratioModel": {
+      "a": 6,
+      "b": 8,
+      "scale": 20,
+      "known": "first",
+      "target": "difference",
+      "knownParts": 6,
+      "targetParts": 2
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        6,
+        8
+      ],
+      "labels": [
+        "red beads",
+        "blue beads"
+      ],
+      "known": "first: 120 beads",
+      "knownKind": "first"
+    },
+    "repair": "Match the given first to 6 parts before finding one part.",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M04-WEB-ASSESSMENT-C2-Q2",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "assessment",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "The ratio of the length of ribbon A to the length of ribbon B is 4 : 8. Ribbon B is 84 cm longer than ribbon A. Find the length of ribbon B.",
+    "answer": "168",
+    "answerUnit": "cm",
+    "model": {
+      "kind": "application",
+      "start": "84",
+      "operations": [
+        [
+          "divide",
+          "4"
+        ],
+        [
+          "multiply",
+          "8"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Match the known quantity to parts",
+        "input": "8 − 4",
+        "output": "4",
+        "note": "The given difference represents 4 equal parts, not one part.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Find the value of one ratio part",
+        "input": "84 ÷ 4",
+        "output": "21",
+        "note": "Find the value of one ratio part.",
+        "outputUnit": "cm"
+      },
+      {
+        "title": "Find the requested second amount",
+        "input": "21 × 8",
+        "output": "168",
+        "note": "Find the requested second amount.",
+        "outputUnit": "cm"
+      }
+    ],
+    "hint": "Does 84 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+    "method_note": "Find the value of one ratio part Find the requested second amount.",
+    "check": "One ratio part is 21. The two quantities are 84 and 168, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+    "wrong": "56",
+    "error_note": "The known difference matches 4 parts, not 12. Find one part before scaling to the requested quantity.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "operationCount": 3,
+    "ratioModel": {
+      "a": 4,
+      "b": 8,
+      "scale": 21,
+      "known": "difference",
+      "target": "second",
+      "knownParts": 4,
+      "targetParts": 8
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        4,
+        8
+      ],
+      "labels": [
+        "ribbon A",
+        "ribbon B"
+      ],
+      "known": "difference: 84 cm",
+      "knownKind": "difference"
+    },
+    "repair": "Match the given difference to 4 parts before finding one part.",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M04-WEB-ASSESSMENT-C3-Q1",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "assessment",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "Red beads and blue beads are in the ratio 7 : 9. There are 140 red beads. Then 8 blue beads are used. How many blue beads remain?",
+    "answer": "172",
+    "answerUnit": "beads",
+    "model": {
+      "kind": "application",
+      "start": "140",
+      "operations": [
+        [
+          "divide",
+          "7"
+        ],
+        [
+          "multiply",
+          "9"
+        ],
+        [
+          "subtract",
+          "8"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Find the value of one ratio part",
+        "input": "140 ÷ 7",
+        "output": "20",
+        "outputUnit": "beads",
+        "note": "Divide the given first by its matching number of parts."
+      },
+      {
+        "title": "Find the second named quantity",
+        "input": "20 × 9",
+        "output": "180",
+        "outputUnit": "beads",
+        "note": "The second named quantity has 9 equal parts."
+      },
+      {
+        "title": "Subtract the blue beads used",
+        "input": "180 − 8",
+        "output": "172",
+        "outputUnit": "beads",
+        "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+      }
+    ],
+    "hint": "Before considering the beads used, match the given first of 140 beads to its ratio parts. Find the second named quantity first.",
+    "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+    "check": "The original quantities are 140 beads and 180 beads. Check their first amount against the given 140 beads. Subtract the used blue beads from the original blue-bead count. The final answer is 172 beads.",
+    "wrong": "180",
+    "error_note": "180 beads is only the intermediate ratio amount. Subtract the used blue beads from the original blue-bead count.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+    "operationCount": 3,
+    "ratioModel": {
+      "a": 7,
+      "b": 9,
+      "scale": 20,
+      "known": "first",
+      "target": "second",
+      "knownParts": 7,
+      "targetParts": 9
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        7,
+        9
+      ],
+      "labels": [
+        "red beads",
+        "blue beads"
+      ],
+      "known": "first: 140 beads",
+      "knownKind": "first"
+    },
+    "repair": "Subtract the used blue beads from the original blue-bead count.",
+    "questionPrefix": "Solve the problem",
+    "errorSteps": [
+      {
+        "title": "Find the value of one ratio part",
+        "input": "140 ÷ 7",
+        "output": "20",
+        "outputUnit": "beads",
+        "note": "Divide the given first by its matching number of parts."
+      },
+      {
+        "title": "Find the second named quantity",
+        "input": "20 × 9",
+        "output": "180",
+        "outputUnit": "beads",
+        "note": "The second named quantity has 9 equal parts."
+      },
+      {
+        "title": "Student stops at the ratio result",
+        "input": "180",
+        "output": "180",
+        "outputUnit": "beads",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "id": "maths:M04-WEB-ASSESSMENT-C3-Q2",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "assessment",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "The lengths of ribbon A and ribbon B are in the ratio 5 : 9. Ribbon B is 84 cm longer than ribbon A. What is the length of ribbon B in metres?",
+    "answer": "1.89",
+    "answerUnit": "m",
+    "model": {
+      "kind": "application",
+      "start": "84",
+      "operations": [
+        [
+          "divide",
+          "4"
+        ],
+        [
+          "multiply",
+          "9"
+        ],
+        [
+          "divide",
+          "100"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Match the given quantity to ratio parts",
+        "input": "9 − 5",
+        "output": "4",
+        "outputUnit": "",
+        "note": "The given difference represents 4 equal parts."
+      },
+      {
+        "title": "Find the value of one ratio part",
+        "input": "84 ÷ 4",
+        "output": "21",
+        "outputUnit": "cm",
+        "note": "Divide the given difference by its matching number of parts."
+      },
+      {
+        "title": "Find the second named quantity",
+        "input": "21 × 9",
+        "output": "189",
+        "outputUnit": "cm",
+        "note": "The second named quantity has 9 equal parts."
+      },
+      {
+        "title": "Convert centimetres to metres",
+        "input": "189 ÷ 100",
+        "output": "1.89",
+        "outputUnit": "m",
+        "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+      }
+    ],
+    "hint": "Before considering the change of units, match the given difference of 84 cm to its ratio parts. Find the second named quantity first.",
+    "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+    "check": "The original quantities are 105 cm and 189 cm. Check their difference against the given 84 cm. Divide the centimetre length by 100 to express it in metres. The final answer is 1.89 m.",
+    "wrong": "189",
+    "error_note": "189 cm is only the intermediate ratio amount. Divide the centimetre length by 100 to express it in metres.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+    "operationCount": 4,
+    "ratioModel": {
+      "a": 5,
+      "b": 9,
+      "scale": 21,
+      "known": "difference",
+      "target": "second",
+      "knownParts": 4,
+      "targetParts": 9
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        5,
+        9
+      ],
+      "labels": [
+        "ribbon A",
+        "ribbon B"
+      ],
+      "known": "difference: 84 cm",
+      "knownKind": "difference"
+    },
+    "repair": "Divide the centimetre length by 100 to express it in metres.",
+    "questionPrefix": "Solve the problem",
+    "errorSteps": [
+      {
+        "title": "Match the given quantity to ratio parts",
+        "input": "9 − 5",
+        "output": "4",
+        "outputUnit": "",
+        "note": "The given difference represents 4 equal parts."
+      },
+      {
+        "title": "Find the value of one ratio part",
+        "input": "84 ÷ 4",
+        "output": "21",
+        "outputUnit": "cm",
+        "note": "Divide the given difference by its matching number of parts."
+      },
+      {
+        "title": "Find the second named quantity",
+        "input": "21 × 9",
+        "output": "189",
+        "outputUnit": "cm",
+        "note": "The second named quantity has 9 equal parts."
+      },
+      {
+        "title": "Student stops at the ratio result",
+        "input": "189",
+        "output": "189",
+        "outputUnit": "m",
+        "note": ""
+      }
+    ]
+  }
+]

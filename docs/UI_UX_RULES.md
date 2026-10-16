@@ -176,3 +176,29 @@ Chevron restoration is isolated by learner and subject/topic. Refresh retains th
 ## Subject-scoped progress — 15 October 2026
 
 Browser persistence and portable JSON use a shared learner identity plus a `subjects` map. Migrate existing schema-2 browser records losslessly, retaining attempts, history, stage selection, settings and file links; continue importing version-1/2 maths backups. Other subjects survive maths saves, maths-only imports and maths resets. Retain stable learner UUIDs independently of display names. Optional account issuer/subject metadata prepares future account linking; it contains no credentials and conveys no authentication authority. Account infrastructure remains future work. See [the storage contract](../website/README.md#progress-page-recommendations-and-data-transfer).
+
+
+### Shared practice fixes — 15 October 2026
+
+Long correction, reason and corrected-step choices wrap in both the closed control and its options; use the shared accessible wrapping select. Error working retains CSS padding around generated HTML and external diagrams. Paper, ink and line colours use independent theme-blending tokens; chevron dividers have a separate token distinct from preceding-stage fill.
+
+Demo Next plays the next logical step and pauses at its end. Previous and End present their destination immediately; full playback, pause/resume and reduced motion retain the shared player.
+
+For puzzles permitting play beyond a solution, reaching a verified solution earns credit for the current attempt. Later exploration must not erase that earned result; Reset/new puzzle starts a fresh attempt. Replay a Go line when evaluating: a legal continuation beyond a recorded winning prefix still earns marks. Unverified alternatives without a recorded winning prefix do not. Keep puzzle results separate from topic scoring and transferred progress, as currently agreed.
+
+New authored spot-error Practice-set slots also contain four questions. Preserve already-saved attempts and responses at their original length.
+
+
+### Interactive error investigation — 15 October 2026
+
+The agreed [spot-error process](SPOT_ERRORS_PROCESS.md) owns the revised interaction and rationale: select locations, record editable explanation/repair choices, decide when all independent mistakes are found, then check with a corrected answer. Both correct and incorrect locations are selectable. Consequences of earlier mistakes are not separate errors. Equation coverage includes errors within a working line, not only operation choice. The reviewed lattice prototype establishes the shared interaction. The optional dropdown is hidden by default behind a Choose by location toggle; direct region selection remains keyboard accessible. All-topic content drafts are authorised; existing equation controls and live question banks remain unchanged until migration is reviewed.
+
+
+## Topic content ownership
+
+Each topic has one authoritative editing location for content across all learning stages. Generators must preserve manually authored/refined content unless its replacement is clearly requested. Follow the [content ownership and generation rules](../website/README.md#current-content-and-historical-references); build output and historical candidates are not additional authoring sources.
+
+Live spot-error investigations share the existing question/working-canvas layout and its 650px container threshold. Keep investigation controls in the question column. Preserve 44px diagram targets with bounded diagram scrolling when needed. Use concise introductory copy, an accessible but visually hidden Reason label, and a roughly twelve-character Corrected answer field. New question IDs must not replace the definitions needed by saved attempts; retired definitions are lookup-only and never enter new draws. See [the authoring process](SPOT_ERRORS_PROCESS.md).
+
+
+Saved pages containing retired question IDs automatically restart with current questions, including ordinary navigation, saved Practice sets and recommendation copies. Do not expose the old format or an opt-in update banner. The user explicitly prioritised uniform current content over small old-progress discrepancies (16 October 2026). Preserve recorded history, tracks and unaffected current pages; only the obsolete page attempts reset. See the topic-file map for source ownership and shared defaults.

@@ -65,3 +65,14 @@ test('legal move simulation agrees with independently imported boards on every r
   visit(p.tree);
  }
 });
+
+test('a winning prefix retains marks through legal exploration but not an invalid continuation',()=>{
+ const board='.........',won=applyGoMove(board,3,'b',4).board;
+ const part={kind:'go',size:3,player:'b',marks:2,tree:{board,children:[{board:won,move:4,colour:'b',success:true,children:[]}]}};
+ assert.equal(markGo(part,{moves:[4]}).earned,2);
+ assert.equal(markGo(part,{moves:[4,0]}).earned,2);
+ assert.equal(goPosition(part,[4,0]).achievedSuccess,true);
+ assert.equal(markGo(part,{moves:[4,4]}).earned,0);
+ assert.equal(markGo(part,{moves:[0]}).earned,0);
+ assert.equal(markGo(part,{moves:[]}).earned,0);
+});

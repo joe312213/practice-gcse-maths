@@ -11,13 +11,27 @@
   Libs: Svelte reactive derivation.
 -->
 <script>
+  import { markerPath } from '#lib/application/error-working.mjs';
   import WrittenInk from './WrittenInk.svelte';
   import MathText from './MathText.svelte';
   import { latticeModel, divisionModel } from '#lib/application/arithmetic-demo.mjs';
-  let { question, frame = { step: 4, count: Infinity }, compact = false, font = null } = $props();
+  let {
+    question,
+    frame = { step: 4, count: Infinity },
+    compact = false,
+    font = null,
+    working = null,
+    authoredModel = null,
+    selectionDisabled = false,
+    selectedLocation = '',
+    entries = [],
+    onselect = null,
+  } = $props();
   const guideProgress = $derived(frame.guideProgress ?? 1);
   const lattice = $derived(
-    question.method === 'lattice' ? latticeModel(question.a, question.b) : null,
+    question.method === 'lattice'
+      ? (authoredModel ?? latticeModel(question.a, question.b, working ?? {}))
+      : null,
   );
   const activeCell = $derived(frame.cell ?? -1);
   const activeDiagonal = $derived(frame.step === 3 ? frame.count - 1 : -1);
@@ -58,14 +72,26 @@
     {@const n = lattice.top.length}
     {@const m = lattice.right.length}
     <svg
-      viewBox={`0 0 ${n * 70 + 120} ${m * 70 + 130}`}
-      role="img"
-      aria-label={`Lattice for ${question.q}`}
+      viewBox={`0 0 ${lattice.width} ${lattice.height}`}
+      role={onselect ? 'group' : 'img'}
+      aria-label={`${working ? 'Student working' : 'Lattice'} for ${question.q}`}
     >
+      {#if onselect}
+        {#each lattice.regions as region}
+          {#if selectedLocation === region.id || entries.some((entry) => entry.location === region.id)}
+            <path
+              class="working-marker"
+              data-location-marker={region.id}
+              d={markerPath(region, selectedLocation === region.id)}
+              aria-hidden="true"
+            />
+          {/if}
+        {/each}
+      {/if}
       {#if frame.phase === 'sum'}
         {#each lattice.cells as cell}
-          {@const x = 60 + cell.col * 70}
-          {@const y = 50 + cell.row * 70}
+          {@const x = cell.x}
+          {@const y = cell.y}
           {@const diagonal = n + m - 2 - cell.row - cell.col}
           {#if diagonal === activeDiagonal}<polygon
               class="method-focus"
@@ -112,8 +138,8 @@
         {/each}
       {/if}
       {#each lattice.cells as cell, index}
-        {@const x = 60 + cell.col * 70}
-        {@const y = 50 + cell.row * 70}
+        {@const x = cell.x}
+        {@const y = cell.y}
         {#if frame.step > 2 || (frame.step === 2 && index * 2 < frame.count)}
           {@render digitValue(
             Math.floor(cell.value / 10),
@@ -136,8 +162,8 @@
         {/if}
       {/each}
       {#each lattice.diagonals as diagonal, k}
-        {@const x = k < n ? 95 + (n - 1 - k) * 70 : 25}
-        {@const y = k < n ? 90 + m * 70 : 95 + (m - 1 - (k - n)) * 70}
+        {@const x = diagonal.x}
+        {@const y = diagonal.y}
         {#if frame.step > 3 || (frame.step === 3 && (k < activeDiagonal || (k === activeDiagonal && frame.phase !== 'sum')))}
           {@render digitValue(
             diagonal.digit,
@@ -149,14 +175,32 @@
         {#if diagonal.incoming && (frame.step > 3 || (frame.step === 3 && (k <= activeDiagonal || (k === activeDiagonal + 1 && frame.phase === 'carry'))))}
           {@render digitValue(
             diagonal.incoming,
-            k < n ? 60 + (n - 1 - k) * 70 + 53 : 60 - 17,
-            k < n ? 50 + m * 70 + 17 : 50 + (m - (k - n)) * 70 - 8,
+            diagonal.carryX,
+            diagonal.carryY,
             (k === activeDiagonal && frame.phase === 'sum') ||
               (k === activeDiagonal + 1 && frame.phase === 'carry'),
-            true,
+            !diagonal.carryAsDigit,
           )}
         {/if}
       {/each}
+      {#if onselect}
+        {#each lattice.regions as region}
+          {@const number = entries.findIndex((entry) => entry.location === region.id) + 1}
+          <foreignObject x={region.x} y={region.y} width={region.width} height={region.height}>
+            <button
+              type="button"
+              class="working-location"
+              disabled={selectionDisabled}
+              data-location={region.id}
+              aria-label={region.label}
+              aria-pressed={selectedLocation === region.id || number > 0}
+              onclick={() => onselect(region.id)}
+            >
+              {#if number}<span class="location-number" aria-hidden="true">{number}</span>{/if}
+            </button>
+          </foreignObject>
+        {/each}
+      {/if}
     </svg>
     {#if !compact && frame.step === 2 && activeCell >= 0}
       <p class="method-calculation">
@@ -252,7 +296,12 @@
       </ol>{/if}
   {/if}
   {#if frame.step === 4}<p>
-      <strong><MathText text={`${question.q} = ${question.answer}`} {font} /></strong>
+      <strong
+        ><MathText
+          text={`${question.q} = ${working ? lattice.answer : question.answer}`}
+          {font}
+        /></strong
+      >
     </p>{/if}
 </div>
 
@@ -261,7 +310,10 @@
     display: block;
     width: 100%;
     max-height: 420px;
-    color: var(--text);
+    color: var(--ink);
+  }
+  .method-guide {
+    stroke: var(--working-line, currentColor);
   }
   text {
     fill: currentColor;

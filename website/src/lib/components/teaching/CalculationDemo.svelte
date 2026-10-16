@@ -1,5 +1,6 @@
 <!-- Draft numerical methods use authored input/result steps with the existing playback controls. -->
 <script>
+  import { guidanceFor } from '#lib/content/topic-bank.mjs';
   import { untrack } from 'svelte';
   import { LEVELS } from '#lib/domain/engine.mjs';
   import { calculationFrames } from '#lib/application/calculation-demo.mjs';
@@ -35,7 +36,7 @@
   {#if bank.calculator}<p class="muted">
       Calculator allowed. Keep intermediate values unrounded.
     </p>{/if}
-  <Guidance guidance={bank.teaching.guidance[level]} />
+  <Guidance guidance={guidanceFor(bank.teaching, level)} />
   {#if bank.teaching.answerNote}<p class="muted">{bank.teaching.answerNote}</p>{/if}
   <label for={id}>Example</label>
   <select class="choice-field" {id} data-demo-example bind:value={example}

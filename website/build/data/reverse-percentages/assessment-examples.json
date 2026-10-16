@@ -1,0 +1,306 @@
+[
+  {
+    "id": "maths:M07-WEB-ASSESSMENT-C1-Q1",
+    "subject": "maths",
+    "topic": "M07",
+    "type": "assessment",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "30% of an amount is £111.6. Find the whole amount.",
+    "answer": "372",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": "558/5",
+      "operations": [
+        [
+          "divide",
+          "3/10"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide the known part by its percentage multiplier",
+        "input": "111.6 ÷ 0.3",
+        "output": "372",
+        "note": "Divide the known part by its percentage multiplier.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "The item amount represents 30% of the original. Keep any delivery charge separate.",
+    "method_note": "Divide the known part by its percentage multiplier.",
+    "check": "Reverse the calculation chain: 372 × 0.3 = 111.6.",
+    "wrong": "837/25",
+    "error_note": "The known amount is already a percentage of the whole. Multiplying by the percentage again makes it smaller; recover the whole by division.",
+    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "repair": "Use the given item amount as 30% and recover 100%.",
+    "diagram": {
+      "kind": "reverse-bar",
+      "rate": 30,
+      "known": "111.6",
+      "fee": 0
+    },
+    "operationCount": 1,
+    "calculator": true,
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M07-WEB-ASSESSMENT-C1-Q2",
+    "subject": "maths",
+    "topic": "M07",
+    "type": "assessment",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "35% of an amount is £131.6. Find the whole amount.",
+    "answer": "376",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": "658/5",
+      "operations": [
+        [
+          "divide",
+          "7/20"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide the known part by its percentage multiplier",
+        "input": "131.6 ÷ 0.35",
+        "output": "376",
+        "note": "Divide the known part by its percentage multiplier.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "The item amount represents 35% of the original. Keep any delivery charge separate.",
+    "method_note": "Divide the known part by its percentage multiplier.",
+    "check": "Reverse the calculation chain: 376 × 0.35 = 131.6.",
+    "wrong": "2303/50",
+    "error_note": "The known amount is already a percentage of the whole. Multiplying by the percentage again makes it smaller; recover the whole by division.",
+    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "repair": "Use the given item amount as 35% and recover 100%.",
+    "diagram": {
+      "kind": "reverse-bar",
+      "rate": 35,
+      "known": "131.6",
+      "fee": 0
+    },
+    "operationCount": 1,
+    "calculator": true,
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M07-WEB-ASSESSMENT-C2-Q1",
+    "subject": "maths",
+    "topic": "M07",
+    "type": "assessment",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "After a 30% increase, a price is £483.6. Find the original price.",
+    "answer": "372",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": "2418/5",
+      "operations": [
+        [
+          "divide",
+          "13/10"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide the changed price by its percentage multiplier",
+        "input": "483.6 ÷ 1.3",
+        "output": "372",
+        "note": "Divide the changed price by its percentage multiplier.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "The item amount represents 130% of the original. Keep any delivery charge separate.",
+    "method_note": "Divide the changed price by its percentage multiplier.",
+    "check": "Reverse the calculation chain: 372 × 1.3 = 483.6.",
+    "wrong": "8463/25",
+    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 130% of the original.",
+    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "repair": "Use the given item amount as 130% and recover 100%.",
+    "diagram": {
+      "kind": "reverse-bar",
+      "rate": 130,
+      "known": "483.6",
+      "fee": 0
+    },
+    "operationCount": 2,
+    "calculator": true,
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M07-WEB-ASSESSMENT-C2-Q2",
+    "subject": "maths",
+    "topic": "M07",
+    "type": "assessment",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "After a 35% discount, a price is £244.4. Find the original price.",
+    "answer": "376",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": "1222/5",
+      "operations": [
+        [
+          "divide",
+          "13/20"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide the changed price by its percentage multiplier",
+        "input": "244.4 ÷ 0.65",
+        "output": "376",
+        "note": "Divide the changed price by its percentage multiplier.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "The item amount represents 65% of the original. Keep any delivery charge separate.",
+    "method_note": "Divide the changed price by its percentage multiplier.",
+    "check": "Reverse the calculation chain: 376 × 0.65 = 244.4.",
+    "wrong": "16497/50",
+    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 65% of the original.",
+    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "repair": "Use the given item amount as 65% and recover 100%.",
+    "diagram": {
+      "kind": "reverse-bar",
+      "rate": 65,
+      "known": "244.4",
+      "fee": 0
+    },
+    "operationCount": 2,
+    "calculator": true,
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M07-WEB-ASSESSMENT-C3-Q1",
+    "subject": "maths",
+    "topic": "M07",
+    "type": "assessment",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "An item has a 30% increase, then £9 delivery is added. The bill is £492.6. Find the original item price.",
+    "answer": "372",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": "2463/5",
+      "operations": [
+        [
+          "subtract",
+          "9"
+        ],
+        [
+          "divide",
+          "13/10"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Remove delivery before using the percentage",
+        "input": "492.6 − 9",
+        "output": "483.6",
+        "note": "Remove delivery before using the percentage.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Divide by the percentage multiplier to find the original",
+        "input": "483.6 ÷ 1.3",
+        "output": "372",
+        "note": "Divide by the percentage multiplier to find the original.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "The item amount represents 130% of the original. Keep any delivery charge separate.",
+    "method_note": "Remove delivery before using the percentage Divide by the percentage multiplier to find the original.",
+    "check": "Reverse the calculation chain: 372 × 1.3 = 483.6; 483.6 + 9 = 492.6.",
+    "wrong": "8463/25",
+    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 130% of the original.",
+    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "repair": "Use the given item amount as 130% and recover 100%.",
+    "diagram": {
+      "kind": "reverse-bar",
+      "rate": 130,
+      "known": "483.6",
+      "fee": 9
+    },
+    "operationCount": 3,
+    "calculator": true,
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M07-WEB-ASSESSMENT-C3-Q2",
+    "subject": "maths",
+    "topic": "M07",
+    "type": "assessment",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "An item has a 35% discount, then £10 delivery is added. The bill is £254.4. Find the original item price.",
+    "answer": "376",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": "1272/5",
+      "operations": [
+        [
+          "subtract",
+          "10"
+        ],
+        [
+          "divide",
+          "13/20"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Remove delivery before using the percentage",
+        "input": "254.4 − 10",
+        "output": "244.4",
+        "note": "Remove delivery before using the percentage.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Divide by the percentage multiplier to find the original",
+        "input": "244.4 ÷ 0.65",
+        "output": "376",
+        "note": "Divide by the percentage multiplier to find the original.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "The item amount represents 65% of the original. Keep any delivery charge separate.",
+    "method_note": "Remove delivery before using the percentage Divide by the percentage multiplier to find the original.",
+    "check": "Reverse the calculation chain: 376 × 0.65 = 244.4; 244.4 + 10 = 254.4.",
+    "wrong": "16497/50",
+    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 65% of the original.",
+    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "repair": "Use the given item amount as 65% and recover 100%.",
+    "diagram": {
+      "kind": "reverse-bar",
+      "rate": 65,
+      "known": "244.4",
+      "fee": 10
+    },
+    "operationCount": 3,
+    "calculator": true,
+    "questionPrefix": "Solve the problem"
+  }
+]

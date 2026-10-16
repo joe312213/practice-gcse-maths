@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "revision": "00ad8def003ee5fd",
+  "subject": "maths",
+  "topic": "M10",
+  "title": "Solving equations",
+  "rows": [
+    "Simplify the Equation",
+    "Use Inverse Operations",
+    "Find the Unknown",
+    "Check by Substitution"
+  ],
+  "prompts": [
+    "Collect like terms or factorise if useful. Copy the equation with a line through the equals sign.",
+    "Write the same operation on both sides. Choose an operation that makes the equation simpler.",
+    "Continue until x is alone. Keep the left and right sides balanced.",
+    "Put your value into the original equation. Work out both sides and compare."
+  ],
+  "questionPrefix": "Solve the equation",
+  "errorRevision": 2
+}

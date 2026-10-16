@@ -1,0 +1,301 @@
+[
+  {
+    "id": "maths:M04-WEB-PS-C1-Q85",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "problem",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "The ratio of red paint to white paint is 2 : 3. There is 18 litres more white paint than red paint. Find the amount of white paint.",
+    "answer": "54",
+    "answerUnit": "litres",
+    "model": {
+      "kind": "application",
+      "start": "18",
+      "operations": [
+        [
+          "divide",
+          "1"
+        ],
+        [
+          "multiply",
+          "3"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Match the known quantity to parts",
+        "input": "3 − 2",
+        "output": "1",
+        "note": "The given difference represents exactly one equal part.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Find the value of one ratio part",
+        "input": "18 ÷ 1",
+        "output": "18",
+        "note": "Find the value of one ratio part.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Find the requested second amount",
+        "input": "18 × 3",
+        "output": "54",
+        "note": "Find the requested second amount.",
+        "outputUnit": "litres"
+      }
+    ],
+    "hint": "Does 18 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+    "method_note": "Find the value of one ratio part Find the requested second amount.",
+    "check": "One ratio part is 18. The two quantities are 36 and 54, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+    "wrong": "27",
+    "error_note": "The known difference matches 1 part, not 2. Find one part before scaling to the requested quantity.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "operationCount": 3,
+    "ratioModel": {
+      "a": 2,
+      "b": 3,
+      "scale": 18,
+      "known": "difference",
+      "target": "second",
+      "knownParts": 1,
+      "targetParts": 3
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        2,
+        3
+      ],
+      "labels": [
+        "red paint",
+        "white paint"
+      ],
+      "known": "difference: 18 litres",
+      "knownKind": "difference"
+    },
+    "errorSteps": [
+      {
+        "title": "Student working",
+        "input": "18 ÷ 2 × 3",
+        "output": "27",
+        "note": ""
+      }
+    ],
+    "repair": "Match the given difference to 1 part before finding one part."
+  },
+  {
+    "id": "maths:M04-WEB-PS-C2-Q85",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "problem",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "Red beads and blue beads are in the ratio 1 : 2. There are 12 red beads. Then 5 blue beads are used. How many blue beads remain?",
+    "answer": "19",
+    "answerUnit": "beads",
+    "model": {
+      "kind": "application",
+      "start": "12",
+      "operations": [
+        [
+          "divide",
+          "1"
+        ],
+        [
+          "multiply",
+          "2"
+        ],
+        [
+          "subtract",
+          "5"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Identify one ratio part",
+        "input": "12",
+        "output": "12",
+        "outputUnit": "beads",
+        "note": "Red beads represents one part, so no division is needed."
+      },
+      {
+        "title": "Find the second quantity",
+        "input": "12 × 2",
+        "output": "24",
+        "outputUnit": "beads",
+        "note": "The second quantity has 2 equal parts."
+      },
+      {
+        "title": "Subtract the blue beads used",
+        "input": "24 − 5",
+        "output": "19",
+        "outputUnit": "beads",
+        "note": "Subtract the used beads from the blue-bead count."
+      }
+    ],
+    "hint": "The given 12 beads is one ratio part. How many parts does blue beads represent? Then consider the last sentence.",
+    "method_note": "The first amount is already one part. Multiply to find the second amount, then complete one simple further calculation.",
+    "check": "The original amounts are 12 beads and 24 beads, matching 1 : 2. Subtract the used beads from the blue-bead count.",
+    "wrong": "24",
+    "error_note": "24 beads is the intermediate ratio amount. Subtract the used beads from the blue-bead count.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; simple Build linked calculation reviewed 13 October 2026",
+    "operationCount": 2,
+    "ratioModel": {
+      "a": 1,
+      "b": 2,
+      "scale": 12,
+      "known": "first",
+      "target": "second",
+      "knownParts": 1,
+      "targetParts": 2
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        1,
+        2
+      ],
+      "labels": [
+        "red beads",
+        "blue beads"
+      ],
+      "known": "first: 12 beads",
+      "knownKind": "first"
+    },
+    "errorSteps": [
+      {
+        "title": "Identify one ratio part",
+        "input": "12",
+        "output": "12",
+        "outputUnit": "beads",
+        "note": "Red beads represents one part, so no division is needed."
+      },
+      {
+        "title": "Find the second quantity",
+        "input": "12 × 2",
+        "output": "24",
+        "outputUnit": "beads",
+        "note": "The second quantity has 2 equal parts."
+      },
+      {
+        "title": "Student answer",
+        "input": "24",
+        "output": "24",
+        "outputUnit": "beads",
+        "note": ""
+      }
+    ],
+    "repair": "Subtract the used beads from the blue-bead count."
+  },
+  {
+    "id": "maths:M04-WEB-PS-C3-Q85",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "problem",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "The lengths of ribbon A and ribbon B are in the ratio 5 : 9. Ribbon A is 75 cm long. What is the length of ribbon B in metres?",
+    "answer": "1.35",
+    "answerUnit": "m",
+    "model": {
+      "kind": "application",
+      "start": "75",
+      "operations": [
+        [
+          "divide",
+          "5"
+        ],
+        [
+          "multiply",
+          "9"
+        ],
+        [
+          "divide",
+          "100"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Find the value of one ratio part",
+        "input": "75 ÷ 5",
+        "output": "15",
+        "outputUnit": "cm",
+        "note": "Divide the given first by its matching number of parts."
+      },
+      {
+        "title": "Find the second named quantity",
+        "input": "15 × 9",
+        "output": "135",
+        "outputUnit": "cm",
+        "note": "The second named quantity has 9 equal parts."
+      },
+      {
+        "title": "Convert centimetres to metres",
+        "input": "135 ÷ 100",
+        "output": "1.35",
+        "outputUnit": "m",
+        "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+      }
+    ],
+    "hint": "Before considering the change of units, match the given first of 75 cm to its ratio parts. Find the second named quantity first.",
+    "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+    "check": "The original quantities are 75 cm and 135 cm. Check their first amount against the given 75 cm. Divide the centimetre length by 100 to express it in metres. The final answer is 1.35 m.",
+    "wrong": "135",
+    "error_note": "135 cm is only the intermediate ratio amount. Divide the centimetre length by 100 to express it in metres.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+    "operationCount": 3,
+    "ratioModel": {
+      "a": 5,
+      "b": 9,
+      "scale": 15,
+      "known": "first",
+      "target": "second",
+      "knownParts": 5,
+      "targetParts": 9
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        5,
+        9
+      ],
+      "labels": [
+        "ribbon A",
+        "ribbon B"
+      ],
+      "known": "first: 75 cm",
+      "knownKind": "first"
+    },
+    "errorSteps": [
+      {
+        "title": "Find the value of one ratio part",
+        "input": "75 ÷ 5",
+        "output": "15",
+        "outputUnit": "cm",
+        "note": "Divide the given first by its matching number of parts."
+      },
+      {
+        "title": "Find the second named quantity",
+        "input": "15 × 9",
+        "output": "135",
+        "outputUnit": "cm",
+        "note": "The second named quantity has 9 equal parts."
+      },
+      {
+        "title": "Student stops at the ratio result",
+        "input": "135",
+        "output": "135",
+        "outputUnit": "m",
+        "note": ""
+      }
+    ],
+    "repair": "Divide the centimetre length by 100 to express it in metres."
+  }
+]

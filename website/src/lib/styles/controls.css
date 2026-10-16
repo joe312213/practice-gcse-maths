@@ -158,3 +158,36 @@ button.choice-field {
   width: max-content;
   min-width: 0;
 }
+
+/* Prose choices share wrapped trigger/options; Bits UI owns keyboard and focus behaviour. */
+button.wrapping-choice {
+  display: block;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+.choice-options {
+  z-index: 60;
+  width: var(--bits-select-anchor-width);
+  max-width: calc(100vw - 2 * var(--overlay-edge-clearance));
+  max-height: var(--bits-select-content-available-height);
+  overflow-y: auto;
+  padding: 0.25rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-field);
+}
+.choice-option {
+  display: grid;
+  grid-template-columns: 1rem minmax(0, 1fr);
+  gap: 0.25rem;
+  padding: 0.5rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.choice-option[data-highlighted] {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}

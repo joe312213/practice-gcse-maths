@@ -33,7 +33,7 @@ export function applyGoMove(board,size,colour,move,koBoard=null){
 /** Replay recorded branches, or legally explore beyond the supplied tree. */
 export function goPosition(part,moves=[]) {
   if(!Array.isArray(moves)||moves.length>100)return null;
-  let node=part.tree,previousBoard=null,colour=part.player;
+  let node=part.tree,previousBoard=null,colour=part.player,achievedSuccess=Boolean(node.success);
   for(const move of moves){
     if(!Number.isInteger(move)||move<0||move>=part.size**2)return null;
     const next=node.children.find(child=>child.move===move&&child.colour===colour);
@@ -44,9 +44,10 @@ export function goPosition(part,moves=[]) {
       previousBoard=node.board;
       node={board:result.board,children:[],move,colour,recorded:false};
     }
+    achievedSuccess ||= Boolean(node.success);
     colour=colour==='b'?'w':'b';
   }
-  return node;
+  return {...node,achievedSuccess};
 }
 
 /** Play a move; controls may defer the recorded reply to show captures clearly. */
@@ -83,8 +84,10 @@ export function nextGoHint(part,state){
   return node?.children.find(c=>c.colour===part.player&&canWin(c))?.move??null;
 }
 export function markGo(part,state) {
-  if(state.pending!==undefined&&state.pending!==null)return {earned:0,message:'This move is outside the supplied solution tree. It is unverified, not proven losing. Explore it at the source or try a recorded continuation.'};
   const node=goPosition(part,state.moves);
+  // A legal continuation cannot erase a recorded solution reached earlier in this line.
+  if(node?.achievedSuccess)return {earned:part.marks,message:'You reached a winning position in the supplied solution tree.'};
+  if(state.pending!==undefined&&state.pending!==null)return {earned:0,message:'This move is outside the supplied solution tree. It is unverified, not proven losing. Explore it at the source or try a recorded continuation.'};
   if(node?.recorded===false)return {earned:0,message:'No recorded response. This continuation is unverified, not proven losing. Undo to return to the recorded line.'};
   if(!Array.isArray(state.moves)||!state.moves.length||!node)return {earned:0,message:'Play a solution on the board.'};
   return node.success?{earned:part.marks,message:'You reached a winning position in the supplied solution tree.'}:

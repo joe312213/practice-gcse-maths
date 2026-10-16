@@ -1,3 +1,4 @@
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /** Problem mathematics, help assistance and combined source attribution are independent of rendering. */
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -12,13 +13,7 @@ import {
   resolvePracticePage,
 } from "../website/src/lib/domain/practice-code.mjs";
 const banks = await Promise.all(
-  foundationTopics.map(async (t) =>
-    JSON.parse(
-      await readFile(
-        new URL(`../website/static/data/${t.file}.json`, import.meta.url),
-      ),
-    ),
-  ),
+  foundationTopics.map(async (t) => await readTopicBank(`${t.file}`)),
 );
 const catalogue = JSON.parse(
   await readFile(
@@ -35,9 +30,10 @@ test("all application problems have one to four operations, distinct pages and i
       assert.equal(new Set(qs.map((q) => q.q)).size, 18);
     }
     for (const q of [
-      ...bank.questions.filter(
+      ...[...bank.questions, ...bank.retiredQuestions].filter(
         (q) =>
-          q.type === "problem" || ["M04", "M07", "M12"].includes(bank.topic),
+          !q.investigation &&
+          (q.type === "problem" || ["M04", "M07", "M12"].includes(bank.topic)),
       ),
       ...(bank.recap ?? []).filter(() =>
         ["M04", "M07", "M12"].includes(bank.topic),
@@ -88,7 +84,8 @@ test("all application problems have one to four operations, distinct pages and i
 test("ratio questions request an unknown quantity and agree with the ratio, not just their calculation chain", () => {
   const bank = banks.find((bank) => bank.topic === "M04");
   for (const q of [
-    ...bank.questions,
+    ...bank.questions.filter((q) => !q.investigation),
+    ...bank.retiredQuestions,
     ...bank.recap,
     ...bank.problemTeaching.examples,
   ]) {

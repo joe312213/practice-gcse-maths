@@ -1,0 +1,1724 @@
+[
+  {
+    "q": "Find 25% of £120.",
+    "prose": true,
+    "answer": "30",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "120",
+      "rate": "25",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "120 ÷ 100",
+        "output": "1.2",
+        "note": "The whole amount, £120, represents 100%.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "1.2 × 25",
+        "output": "30",
+        "note": "Multiply the value of 1% by 25.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "120 is the whole amount. What is 10% of it, and how could you use that to find 25%?",
+    "method_note": "The whole amount, £120, represents 100%. Multiply the value of 1% by 25.",
+    "check": "Reverse check: 30 ÷ 25 × 100 = 120, the original whole.",
+    "wrong": "95",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C1-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 20% of 190 people.",
+    "prose": true,
+    "answer": "38",
+    "answerUnit": "people",
+    "model": {
+      "kind": "percentages",
+      "original": "190",
+      "rate": "20",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "190 ÷ 100",
+        "output": "1.9",
+        "note": "The whole amount, 190 people, represents 100%.",
+        "outputUnit": "people"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "1.9 × 20",
+        "output": "38",
+        "note": "Multiply the value of 1% by 20.",
+        "outputUnit": "people"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "20"
+    },
+    "hint": "190 is the whole amount. What is 10% of it, and how could you use that to find 20%?",
+    "method_note": "The whole amount, 190 people, represents 100%. Multiply the value of 1% by 20.",
+    "check": "Reverse check: 38 ÷ 20 × 100 = 190, the original whole.",
+    "wrong": "170",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C1-Q2",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 15% of 280 litres.",
+    "prose": true,
+    "answer": "42",
+    "answerUnit": "litres",
+    "model": {
+      "kind": "percentages",
+      "original": "280",
+      "rate": "15",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "280 ÷ 100",
+        "output": "2.8",
+        "note": "The whole amount, 280 litres, represents 100%.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "2.8 × 15",
+        "output": "42",
+        "note": "Multiply the value of 1% by 15.",
+        "outputUnit": "litres"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "15"
+    },
+    "hint": "280 is the whole amount. What is 10% of it, and how could you use that to find 15%?",
+    "method_note": "The whole amount, 280 litres, represents 100%. Multiply the value of 1% by 15.",
+    "check": "Reverse check: 42 ÷ 15 × 100 = 280, the original whole.",
+    "wrong": "265",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C1-Q3",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 35% of 400 km.",
+    "prose": true,
+    "answer": "140",
+    "answerUnit": "km",
+    "model": {
+      "kind": "percentages",
+      "original": "400",
+      "rate": "35",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "400 ÷ 100",
+        "output": "4",
+        "note": "The whole amount, 400 km, represents 100%.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "4 × 35",
+        "output": "140",
+        "note": "Multiply the value of 1% by 35.",
+        "outputUnit": "km"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "35"
+    },
+    "hint": "400 is the whole amount. What is 10% of it, and how could you use that to find 35%?",
+    "method_note": "The whole amount, 400 km, represents 100%. Multiply the value of 1% by 35.",
+    "check": "Reverse check: 140 ÷ 35 × 100 = 400, the original whole.",
+    "wrong": "365",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C1-Q4",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 50% of £88.",
+    "prose": true,
+    "answer": "44",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "88",
+      "rate": "50",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "88 ÷ 100",
+        "output": "0.88",
+        "note": "The whole amount, £88, represents 100%.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "0.88 × 50",
+        "output": "44",
+        "note": "Multiply the value of 1% by 50.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "50"
+    },
+    "hint": "88 is the whole amount. What is 10% of it, and how could you use that to find 50%?",
+    "method_note": "The whole amount, £88, represents 100%. Multiply the value of 1% by 50.",
+    "check": "Reverse check: 44 ÷ 50 × 100 = 88, the original whole.",
+    "wrong": "38",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C1-Q5",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 75% of 112 g.",
+    "prose": true,
+    "answer": "84",
+    "answerUnit": "g",
+    "model": {
+      "kind": "percentages",
+      "original": "112",
+      "rate": "75",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "112 ÷ 100",
+        "output": "1.12",
+        "note": "The whole amount, 112 g, represents 100%.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "1.12 × 75",
+        "output": "84",
+        "note": "Multiply the value of 1% by 75.",
+        "outputUnit": "g"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "75"
+    },
+    "hint": "112 is the whole amount. What is 10% of it, and how could you use that to find 75%?",
+    "method_note": "The whole amount, 112 g, represents 100%. Multiply the value of 1% by 75.",
+    "check": "Reverse check: 84 ÷ 75 × 100 = 112, the original whole.",
+    "wrong": "37",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C1-Q6",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A jacket has a price of £120. It increases by 25%. Find the new price.",
+    "prose": true,
+    "answer": "150",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "120",
+      "rate": "25",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "120 × 25 ÷ 100",
+        "output": "30",
+        "note": "Calculate 25% of the original £120.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "120 + 30",
+        "output": "150",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new price.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "First find 10% or 1% of 120. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 25% of the original £120. Add the change for an increase; subtract it for a decrease. The question asks for the new price.",
+    "check": "Reverse check: 150 − 30 = 120, the original amount.",
+    "wrong": "30",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C2-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A club has a membership of 190 people. It decreases by 20%. Find the new membership.",
+    "prose": true,
+    "answer": "152",
+    "answerUnit": "people",
+    "model": {
+      "kind": "percentages",
+      "original": "190",
+      "rate": "20",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "190 × 20 ÷ 100",
+        "output": "38",
+        "note": "Calculate 20% of the original 190 people.",
+        "outputUnit": "people"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "190 − 38",
+        "output": "152",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new membership.",
+        "outputUnit": "people"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "20"
+    },
+    "hint": "First find 10% or 1% of 190. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 20% of the original 190 people. Add the change for an increase; subtract it for a decrease. The question asks for the new membership.",
+    "check": "Reverse check: 152 + 38 = 190, the original amount.",
+    "wrong": "38",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C2-Q2",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A tank has a water volume of 280 litres. It increases by 15%. Find the new water volume.",
+    "prose": true,
+    "answer": "322",
+    "answerUnit": "litres",
+    "model": {
+      "kind": "percentages",
+      "original": "280",
+      "rate": "15",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "280 × 15 ÷ 100",
+        "output": "42",
+        "note": "Calculate 15% of the original 280 litres.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "280 + 42",
+        "output": "322",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new water volume.",
+        "outputUnit": "litres"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "15"
+    },
+    "hint": "First find 10% or 1% of 280. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 15% of the original 280 litres. Add the change for an increase; subtract it for a decrease. The question asks for the new water volume.",
+    "check": "Reverse check: 322 − 42 = 280, the original amount.",
+    "wrong": "42",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C2-Q3",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A journey has a distance of 400 km. It decreases by 35%. Find the new distance.",
+    "prose": true,
+    "answer": "260",
+    "answerUnit": "km",
+    "model": {
+      "kind": "percentages",
+      "original": "400",
+      "rate": "35",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "400 × 35 ÷ 100",
+        "output": "140",
+        "note": "Calculate 35% of the original 400 km.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "400 − 140",
+        "output": "260",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new distance.",
+        "outputUnit": "km"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "35"
+    },
+    "hint": "First find 10% or 1% of 400. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 35% of the original 400 km. Add the change for an increase; subtract it for a decrease. The question asks for the new distance.",
+    "check": "Reverse check: 260 + 140 = 400, the original amount.",
+    "wrong": "140",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C2-Q4",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A shop has weekly sales of £88. It increases by 50%. Find the new weekly sales.",
+    "prose": true,
+    "answer": "132",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "88",
+      "rate": "50",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "88 × 50 ÷ 100",
+        "output": "44",
+        "note": "Calculate 50% of the original £88.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "88 + 44",
+        "output": "132",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new weekly sales.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "50"
+    },
+    "hint": "First find 10% or 1% of 88. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 50% of the original £88. Add the change for an increase; subtract it for a decrease. The question asks for the new weekly sales.",
+    "check": "Reverse check: 132 − 44 = 88, the original amount.",
+    "wrong": "44",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C2-Q5",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A bag has a mass of 112 g. It decreases by 75%. Find the new mass.",
+    "prose": true,
+    "answer": "28",
+    "answerUnit": "g",
+    "model": {
+      "kind": "percentages",
+      "original": "112",
+      "rate": "75",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "112 × 75 ÷ 100",
+        "output": "84",
+        "note": "Calculate 75% of the original 112 g.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "112 − 84",
+        "output": "28",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new mass.",
+        "outputUnit": "g"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "75"
+    },
+    "hint": "First find 10% or 1% of 112. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 75% of the original 112 g. Add the change for an increase; subtract it for a decrease. The question asks for the new mass.",
+    "check": "Reverse check: 28 + 84 = 112, the original amount.",
+    "wrong": "84",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C2-Q6",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The price changes from £120 to £150. Find the percentage increase.",
+    "prose": true,
+    "answer": "25",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "120",
+      "rate": "25",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "150 − 120",
+        "output": "30",
+        "note": "Find the size of the change in £.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "30 ÷ 120",
+        "output": "{1/4}",
+        "note": "The original amount is £120; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{1/4} × 100",
+        "output": "25%",
+        "note": "The change is a 25% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "Which amount represents 100%: 120 or 150?",
+    "method_note": "Find the size of the change in £. The original amount is £120; use that as the denominator. The change is a 25% increase.",
+    "check": "120 × 25 ÷ 100 = £30, the change between the two amounts.",
+    "wrong": "20",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C3-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The membership changes from 190 people to 152 people. Find the percentage decrease.",
+    "prose": true,
+    "answer": "20",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "190",
+      "rate": "-20",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "190 − 152",
+        "output": "38",
+        "note": "Find the size of the change in people.",
+        "outputUnit": "people"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "38 ÷ 190",
+        "output": "{1/5}",
+        "note": "The original amount is 190 people; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{1/5} × 100",
+        "output": "20%",
+        "note": "The change is a 20% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "20"
+    },
+    "hint": "Which amount represents 100%: 190 or 152?",
+    "method_note": "Find the size of the change in people. The original amount is 190 people; use that as the denominator. The change is a 20% decrease.",
+    "check": "190 × 20 ÷ 100 = 38 people, the change between the two amounts.",
+    "wrong": "25",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C3-Q2",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The water volume changes from 280 litres to 322 litres. Find the percentage increase.",
+    "prose": true,
+    "answer": "15",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "280",
+      "rate": "15",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "322 − 280",
+        "output": "42",
+        "note": "Find the size of the change in litres.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "42 ÷ 280",
+        "output": "{3/20}",
+        "note": "The original amount is 280 litres; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{3/20} × 100",
+        "output": "15%",
+        "note": "The change is a 15% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "15"
+    },
+    "hint": "Which amount represents 100%: 280 or 322?",
+    "method_note": "Find the size of the change in litres. The original amount is 280 litres; use that as the denominator. The change is a 15% increase.",
+    "check": "280 × 15 ÷ 100 = 42 litres, the change between the two amounts.",
+    "wrong": "300/23",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C3-Q3",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The distance changes from 400 km to 260 km. Find the percentage decrease.",
+    "prose": true,
+    "answer": "35",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "400",
+      "rate": "-35",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "400 − 260",
+        "output": "140",
+        "note": "Find the size of the change in km.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "140 ÷ 400",
+        "output": "{7/20}",
+        "note": "The original amount is 400 km; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{7/20} × 100",
+        "output": "35%",
+        "note": "The change is a 35% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "35"
+    },
+    "hint": "Which amount represents 100%: 400 or 260?",
+    "method_note": "Find the size of the change in km. The original amount is 400 km; use that as the denominator. The change is a 35% decrease.",
+    "check": "400 × 35 ÷ 100 = 140 km, the change between the two amounts.",
+    "wrong": "700/13",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C3-Q4",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The weekly sales change from £88 to £132. Find the percentage increase.",
+    "prose": true,
+    "answer": "50",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "88",
+      "rate": "50",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "132 − 88",
+        "output": "44",
+        "note": "Find the size of the change in £.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "44 ÷ 88",
+        "output": "{1/2}",
+        "note": "The original amount is £88; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{1/2} × 100",
+        "output": "50%",
+        "note": "The change is a 50% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "50"
+    },
+    "hint": "Which amount represents 100%: 88 or 132?",
+    "method_note": "Find the size of the change in £. The original amount is £88; use that as the denominator. The change is a 50% increase.",
+    "check": "88 × 50 ÷ 100 = £44, the change between the two amounts.",
+    "wrong": "100/3",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C3-Q5",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The mass changes from 112 g to 28 g. Find the percentage decrease.",
+    "prose": true,
+    "answer": "75",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "112",
+      "rate": "-75",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "112 − 28",
+        "output": "84",
+        "note": "Find the size of the change in g.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "84 ÷ 112",
+        "output": "{3/4}",
+        "note": "The original amount is 112 g; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{3/4} × 100",
+        "output": "75%",
+        "note": "The change is a 75% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "75"
+    },
+    "hint": "Which amount represents 100%: 112 or 28?",
+    "method_note": "Find the size of the change in g. The original amount is 112 g; use that as the denominator. The change is a 75% decrease.",
+    "check": "112 × 75 ÷ 100 = 84 g, the change between the two amounts.",
+    "wrong": "300",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SCAFFOLDED-C3-Q6",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 25% of £80.",
+    "prose": true,
+    "answer": "20",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "80",
+      "rate": "25",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "80 ÷ 100",
+        "output": "0.8",
+        "note": "The whole amount, £80, represents 100%.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "0.8 × 25",
+        "output": "20",
+        "note": "Multiply the value of 1% by 25.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "80 is the whole amount. What is 10% of it, and how could you use that to find 25%?",
+    "method_note": "The whole amount, £80, represents 100%. Multiply the value of 1% by 25.",
+    "check": "Reverse check: 20 ÷ 25 × 100 = 80, the original whole.",
+    "wrong": "55",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SC4-C1-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C1-Q1",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 20% of 150 people.",
+    "prose": true,
+    "answer": "30",
+    "answerUnit": "people",
+    "model": {
+      "kind": "percentages",
+      "original": "150",
+      "rate": "20",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "150 ÷ 100",
+        "output": "1.5",
+        "note": "The whole amount, 150 people, represents 100%.",
+        "outputUnit": "people"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "1.5 × 20",
+        "output": "30",
+        "note": "Multiply the value of 1% by 20.",
+        "outputUnit": "people"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "20"
+    },
+    "hint": "150 is the whole amount. What is 10% of it, and how could you use that to find 20%?",
+    "method_note": "The whole amount, 150 people, represents 100%. Multiply the value of 1% by 20.",
+    "check": "Reverse check: 30 ÷ 20 × 100 = 150, the original whole.",
+    "wrong": "130",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SC4-C1-Q2",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C1-Q2",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 15% of 240 litres.",
+    "prose": true,
+    "answer": "36",
+    "answerUnit": "litres",
+    "model": {
+      "kind": "percentages",
+      "original": "240",
+      "rate": "15",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "240 ÷ 100",
+        "output": "2.4",
+        "note": "The whole amount, 240 litres, represents 100%.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "2.4 × 15",
+        "output": "36",
+        "note": "Multiply the value of 1% by 15.",
+        "outputUnit": "litres"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "15"
+    },
+    "hint": "240 is the whole amount. What is 10% of it, and how could you use that to find 15%?",
+    "method_note": "The whole amount, 240 litres, represents 100%. Multiply the value of 1% by 15.",
+    "check": "Reverse check: 36 ÷ 15 × 100 = 240, the original whole.",
+    "wrong": "225",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SC4-C1-Q3",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C1-Q3",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 35% of 360 km.",
+    "prose": true,
+    "answer": "126",
+    "answerUnit": "km",
+    "model": {
+      "kind": "percentages",
+      "original": "360",
+      "rate": "35",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "360 ÷ 100",
+        "output": "3.6",
+        "note": "The whole amount, 360 km, represents 100%.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "3.6 × 35",
+        "output": "126",
+        "note": "Multiply the value of 1% by 35.",
+        "outputUnit": "km"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "35"
+    },
+    "hint": "360 is the whole amount. What is 10% of it, and how could you use that to find 35%?",
+    "method_note": "The whole amount, 360 km, represents 100%. Multiply the value of 1% by 35.",
+    "check": "Reverse check: 126 ÷ 35 × 100 = 360, the original whole.",
+    "wrong": "325",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SC4-C1-Q4",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C1-Q4",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 50% of £48.",
+    "prose": true,
+    "answer": "24",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "48",
+      "rate": "50",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "48 ÷ 100",
+        "output": "0.48",
+        "note": "The whole amount, £48, represents 100%.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "0.48 × 50",
+        "output": "24",
+        "note": "Multiply the value of 1% by 50.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "50"
+    },
+    "hint": "48 is the whole amount. What is 10% of it, and how could you use that to find 50%?",
+    "method_note": "The whole amount, £48, represents 100%. Multiply the value of 1% by 50.",
+    "check": "Reverse check: 24 ÷ 50 × 100 = 48, the original whole.",
+    "wrong": "-2",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SC4-C1-Q5",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C1-Q5",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 75% of 72 g.",
+    "prose": true,
+    "answer": "54",
+    "answerUnit": "g",
+    "model": {
+      "kind": "percentages",
+      "original": "72",
+      "rate": "75",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "72 ÷ 100",
+        "output": "0.72",
+        "note": "The whole amount, 72 g, represents 100%.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "0.72 × 75",
+        "output": "54",
+        "note": "Multiply the value of 1% by 75.",
+        "outputUnit": "g"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "75"
+    },
+    "hint": "72 is the whole amount. What is 10% of it, and how could you use that to find 75%?",
+    "method_note": "The whole amount, 72 g, represents 100%. Multiply the value of 1% by 75.",
+    "check": "Reverse check: 54 ÷ 75 × 100 = 72, the original whole.",
+    "wrong": "-3",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-SC4-C1-Q6",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C1-Q6",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A jacket has a price of £80. It increases by 25%. Find the new price.",
+    "prose": true,
+    "answer": "100",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "80",
+      "rate": "25",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "80 × 25 ÷ 100",
+        "output": "20",
+        "note": "Calculate 25% of the original £80.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "80 + 20",
+        "output": "100",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new price.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "First find 10% or 1% of 80. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 25% of the original £80. Add the change for an increase; subtract it for a decrease. The question asks for the new price.",
+    "check": "Reverse check: 100 − 20 = 80, the original amount.",
+    "wrong": "20",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SC4-C2-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C2-Q1",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A club has a membership of 150 people. It decreases by 20%. Find the new membership.",
+    "prose": true,
+    "answer": "120",
+    "answerUnit": "people",
+    "model": {
+      "kind": "percentages",
+      "original": "150",
+      "rate": "20",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "150 × 20 ÷ 100",
+        "output": "30",
+        "note": "Calculate 20% of the original 150 people.",
+        "outputUnit": "people"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "150 − 30",
+        "output": "120",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new membership.",
+        "outputUnit": "people"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "20"
+    },
+    "hint": "First find 10% or 1% of 150. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 20% of the original 150 people. Add the change for an increase; subtract it for a decrease. The question asks for the new membership.",
+    "check": "Reverse check: 120 + 30 = 150, the original amount.",
+    "wrong": "30",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SC4-C2-Q2",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C2-Q2",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A tank has a water volume of 240 litres. It increases by 15%. Find the new water volume.",
+    "prose": true,
+    "answer": "276",
+    "answerUnit": "litres",
+    "model": {
+      "kind": "percentages",
+      "original": "240",
+      "rate": "15",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "240 × 15 ÷ 100",
+        "output": "36",
+        "note": "Calculate 15% of the original 240 litres.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "240 + 36",
+        "output": "276",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new water volume.",
+        "outputUnit": "litres"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "15"
+    },
+    "hint": "First find 10% or 1% of 240. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 15% of the original 240 litres. Add the change for an increase; subtract it for a decrease. The question asks for the new water volume.",
+    "check": "Reverse check: 276 − 36 = 240, the original amount.",
+    "wrong": "36",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SC4-C2-Q3",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C2-Q3",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A journey has a distance of 360 km. It decreases by 35%. Find the new distance.",
+    "prose": true,
+    "answer": "234",
+    "answerUnit": "km",
+    "model": {
+      "kind": "percentages",
+      "original": "360",
+      "rate": "35",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "360 × 35 ÷ 100",
+        "output": "126",
+        "note": "Calculate 35% of the original 360 km.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "360 − 126",
+        "output": "234",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new distance.",
+        "outputUnit": "km"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "35"
+    },
+    "hint": "First find 10% or 1% of 360. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 35% of the original 360 km. Add the change for an increase; subtract it for a decrease. The question asks for the new distance.",
+    "check": "Reverse check: 234 + 126 = 360, the original amount.",
+    "wrong": "126",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SC4-C2-Q4",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C2-Q4",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A shop has weekly sales of £48. It increases by 50%. Find the new weekly sales.",
+    "prose": true,
+    "answer": "72",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "48",
+      "rate": "50",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "48 × 50 ÷ 100",
+        "output": "24",
+        "note": "Calculate 50% of the original £48.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "48 + 24",
+        "output": "72",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new weekly sales.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "50"
+    },
+    "hint": "First find 10% or 1% of 48. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 50% of the original £48. Add the change for an increase; subtract it for a decrease. The question asks for the new weekly sales.",
+    "check": "Reverse check: 72 − 24 = 48, the original amount.",
+    "wrong": "24",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SC4-C2-Q5",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C2-Q5",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A bag has a mass of 72 g. It decreases by 75%. Find the new mass.",
+    "prose": true,
+    "answer": "18",
+    "answerUnit": "g",
+    "model": {
+      "kind": "percentages",
+      "original": "72",
+      "rate": "75",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "72 × 75 ÷ 100",
+        "output": "54",
+        "note": "Calculate 75% of the original 72 g.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "72 − 54",
+        "output": "18",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new mass.",
+        "outputUnit": "g"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "75"
+    },
+    "hint": "First find 10% or 1% of 72. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 75% of the original 72 g. Add the change for an increase; subtract it for a decrease. The question asks for the new mass.",
+    "check": "Reverse check: 18 + 54 = 72, the original amount.",
+    "wrong": "54",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-SC4-C2-Q6",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C2-Q6",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The price changes from £80 to £100. Find the percentage increase.",
+    "prose": true,
+    "answer": "25",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "80",
+      "rate": "25",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "100 − 80",
+        "output": "20",
+        "note": "Find the size of the change in £.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "20 ÷ 80",
+        "output": "{1/4}",
+        "note": "The original amount is £80; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{1/4} × 100",
+        "output": "25%",
+        "note": "The change is a 25% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "Which amount represents 100%: 80 or 100?",
+    "method_note": "Find the size of the change in £. The original amount is £80; use that as the denominator. The change is a 25% increase.",
+    "check": "80 × 25 ÷ 100 = £20, the change between the two amounts.",
+    "wrong": "20",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SC4-C3-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C3-Q1",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The membership changes from 150 people to 120 people. Find the percentage decrease.",
+    "prose": true,
+    "answer": "20",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "150",
+      "rate": "-20",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "150 − 120",
+        "output": "30",
+        "note": "Find the size of the change in people.",
+        "outputUnit": "people"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "30 ÷ 150",
+        "output": "{1/5}",
+        "note": "The original amount is 150 people; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{1/5} × 100",
+        "output": "20%",
+        "note": "The change is a 20% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "20"
+    },
+    "hint": "Which amount represents 100%: 150 or 120?",
+    "method_note": "Find the size of the change in people. The original amount is 150 people; use that as the denominator. The change is a 20% decrease.",
+    "check": "150 × 20 ÷ 100 = 30 people, the change between the two amounts.",
+    "wrong": "25",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SC4-C3-Q2",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C3-Q2",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The water volume changes from 240 litres to 276 litres. Find the percentage increase.",
+    "prose": true,
+    "answer": "15",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "240",
+      "rate": "15",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "276 − 240",
+        "output": "36",
+        "note": "Find the size of the change in litres.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "36 ÷ 240",
+        "output": "{3/20}",
+        "note": "The original amount is 240 litres; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{3/20} × 100",
+        "output": "15%",
+        "note": "The change is a 15% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "15"
+    },
+    "hint": "Which amount represents 100%: 240 or 276?",
+    "method_note": "Find the size of the change in litres. The original amount is 240 litres; use that as the denominator. The change is a 15% increase.",
+    "check": "240 × 15 ÷ 100 = 36 litres, the change between the two amounts.",
+    "wrong": "300/23",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SC4-C3-Q3",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C3-Q3",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The distance changes from 360 km to 234 km. Find the percentage decrease.",
+    "prose": true,
+    "answer": "35",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "360",
+      "rate": "-35",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "360 − 234",
+        "output": "126",
+        "note": "Find the size of the change in km.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "126 ÷ 360",
+        "output": "{7/20}",
+        "note": "The original amount is 360 km; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{7/20} × 100",
+        "output": "35%",
+        "note": "The change is a 35% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "35"
+    },
+    "hint": "Which amount represents 100%: 360 or 234?",
+    "method_note": "Find the size of the change in km. The original amount is 360 km; use that as the denominator. The change is a 35% decrease.",
+    "check": "360 × 35 ÷ 100 = 126 km, the change between the two amounts.",
+    "wrong": "700/13",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SC4-C3-Q4",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C3-Q4",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The weekly sales change from £48 to £72. Find the percentage increase.",
+    "prose": true,
+    "answer": "50",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "48",
+      "rate": "50",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "72 − 48",
+        "output": "24",
+        "note": "Find the size of the change in £.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "24 ÷ 48",
+        "output": "{1/2}",
+        "note": "The original amount is £48; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{1/2} × 100",
+        "output": "50%",
+        "note": "The change is a 50% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "50"
+    },
+    "hint": "Which amount represents 100%: 48 or 72?",
+    "method_note": "Find the size of the change in £. The original amount is £48; use that as the denominator. The change is a 50% increase.",
+    "check": "48 × 50 ÷ 100 = £24, the change between the two amounts.",
+    "wrong": "100/3",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SC4-C3-Q5",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C3-Q5",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The mass changes from 72 g to 18 g. Find the percentage decrease.",
+    "prose": true,
+    "answer": "75",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "72",
+      "rate": "-75",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "72 − 18",
+        "output": "54",
+        "note": "Find the size of the change in g.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "54 ÷ 72",
+        "output": "{3/4}",
+        "note": "The original amount is 72 g; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{3/4} × 100",
+        "output": "75%",
+        "note": "The change is a 75% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "75"
+    },
+    "hint": "Which amount represents 100%: 72 or 18?",
+    "method_note": "Find the size of the change in g. The original amount is 72 g; use that as the denominator. The change is a 75% decrease.",
+    "check": "72 × 75 ÷ 100 = 54 g, the change between the two amounts.",
+    "wrong": "300",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-SC4-C3-Q6",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M06-WEB-PLAIN-C3-Q6",
+    "questionPrefix": "Solve the problem"
+  }
+]

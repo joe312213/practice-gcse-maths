@@ -1,0 +1,150 @@
+{
+  "cases": [
+    {
+      "id": "lattice-prototype-1",
+      "a": 43,
+      "b": 6,
+      "working": {
+        "cells": {
+          "0:0": 14
+        }
+      },
+      "errors": [
+        {
+          "location": "cell:0:0",
+          "reason": "cell-fact"
+        }
+      ],
+      "method": "lattice",
+      "q": "43 × 6",
+      "answer": "258"
+    },
+    {
+      "id": "lattice-prototype-2",
+      "a": 89,
+      "b": 7,
+      "working": {
+        "carries": {
+          "2": 0
+        }
+      },
+      "errors": [
+        {
+          "location": "diagonal:2",
+          "reason": "carry-missing"
+        }
+      ],
+      "method": "lattice",
+      "q": "89 × 7",
+      "answer": "623"
+    },
+    {
+      "id": "lattice-prototype-3",
+      "a": 47,
+      "b": 26,
+      "working": {
+        "cells": {
+          "0:0": 6
+        },
+        "carries": {
+          "2": 0
+        }
+      },
+      "errors": [
+        {
+          "location": "cell:0:0",
+          "reason": "cell-fact"
+        },
+        {
+          "location": "diagonal:2",
+          "reason": "carry-missing"
+        }
+      ],
+      "method": "lattice",
+      "q": "47 × 26",
+      "answer": "1222"
+    },
+    {
+      "id": "lattice-prototype-4",
+      "a": 34,
+      "b": 16,
+      "working": {
+        "reverseRight": true
+      },
+      "errors": [
+        {
+          "location": "operand:right",
+          "reason": "operand-order"
+        }
+      ],
+      "method": "lattice",
+      "q": "34 × 16",
+      "answer": "544"
+    },
+    {
+      "id": "lattice-prototype-5",
+      "a": 76,
+      "b": 7,
+      "working": {
+        "carryAsDigits": [2]
+      },
+      "errors": [
+        {
+          "location": "diagonal:2",
+          "reason": "carry-as-digit"
+        }
+      ],
+      "method": "lattice",
+      "q": "76 × 7",
+      "answer": "532"
+    }
+  ],
+  "options": {
+    "cell": [
+      {
+        "id": "cell-fact",
+        "text": "The product is wrong."
+      },
+      {
+        "id": "carry-missing",
+        "text": "A carry has been missed from the next diagonal."
+      },
+      {
+        "id": "operand-order",
+        "text": "The right-hand number is written bottom-up."
+      }
+    ],
+    "diagonal": [
+      {
+        "id": "diagonal-sum",
+        "text": "Diagonal addition is wrong — add its shown digits and carry again."
+      },
+      {
+        "id": "carry-missing",
+        "text": "A carry was missed — include it in this diagonal’s total."
+      },
+      {
+        "id": "carry-double",
+        "text": "A carry was counted twice — include it only once."
+      },
+      {
+        "id": "carry-as-digit",
+        "text": "A carry became an extra answer digit — write it small and include it only in the next diagonal’s total."
+      }
+    ],
+    "operand": [
+      {
+        "id": "operand-order",
+        "text": "Digits run bottom-up — write the right-hand number from top to bottom."
+      },
+      {
+        "id": "operand-copy",
+        "text": "A digit was copied incorrectly — replace it with the digit in the question."
+      },
+      {
+        "id": "operand-zero",
+        "text": "A place-value zero was left out — include it in the right-hand number."
+      }
+    ]
+  }
+}

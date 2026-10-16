@@ -1,0 +1,2696 @@
+[
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q01",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Relationship",
+        "text": "Distance = speed × time"
+      },
+      {
+        "id": "step-2",
+        "label": "Time",
+        "text": "90 ÷ 360 = 1/4 hours"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Subtract speed from distance."
+      },
+      {
+        "id": "repair",
+        "text": "Divide distance by speed to find time."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Multiply distance by speed."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Divide distance by speed to find time."
+      }
+    ],
+    "consequences": [],
+    "answer": "4",
+    "answerCheck": {
+      "expression": "360/90"
+    },
+    "correctWorking": [
+      "Time = 360÷90 = 4 hours"
+    ],
+    "hint": "Compare the time with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A car travels 360 km at 90 km/h. Find the time in hours.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "hours",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q02",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Quantities",
+        "text": "Distance 300 km; time 5 hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Speed",
+        "text": "300 × 5 = 1500 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Divide time by distance."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add distance and time."
+      },
+      {
+        "id": "repair",
+        "text": "Divide distance by time to find speed."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Divide distance by time to find speed."
+      }
+    ],
+    "consequences": [],
+    "answer": "60",
+    "answerCheck": {
+      "expression": "300/5"
+    },
+    "correctWorking": [
+      "Speed = 300÷5 = 60 km/h"
+    ],
+    "hint": "Compare the speed with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A train travels 300 km in 5 hours. Find its average speed.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q03",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Relationship",
+        "text": "Distance = speed × time"
+      },
+      {
+        "id": "step-2",
+        "label": "Time",
+        "text": "100 ÷ 500 = 1/5 hours"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide distance by speed to find time."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Multiply distance by speed."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Subtract speed from distance."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Divide distance by speed to find time."
+      }
+    ],
+    "consequences": [],
+    "answer": "5",
+    "answerCheck": {
+      "expression": "500/100"
+    },
+    "correctWorking": [
+      "Time = 500÷100 = 5 hours"
+    ],
+    "hint": "Compare the time with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A car travels 500 km at 100 km/h. Find the time in hours.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "hours",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q04",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Given quantities",
+        "text": "35 km/h for 2 hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Distance",
+        "text": "35 ÷ 2 = 35/2 km"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Add speed and time."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply speed by time to find distance."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide time by speed."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Multiply speed by time to find distance."
+      }
+    ],
+    "consequences": [],
+    "answer": "70",
+    "answerCheck": {
+      "expression": "35*2"
+    },
+    "correctWorking": [
+      "Distance=35×2=70 km"
+    ],
+    "hint": "Compare the distance with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A ferry travels at 35 km/h for 2 hours. Find the distance.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q05",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Given quantities",
+        "text": "120 km at 40 km/h"
+      },
+      {
+        "id": "step-2",
+        "label": "Time",
+        "text": "120 × 40 = 4800 hours"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide distance by speed to find time."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide speed by distance."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Subtract speed from distance."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Divide distance by speed to find time."
+      }
+    ],
+    "consequences": [],
+    "answer": "3",
+    "answerCheck": {
+      "expression": "120/40"
+    },
+    "correctWorking": [
+      "Time=120÷40=3 hours"
+    ],
+    "hint": "Compare the time with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 120 km at 40 km/h. Find the time in hours.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "hours",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q06",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Given quantities",
+        "text": "45 km/h for 4 hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Distance",
+        "text": "45 ÷ 4 = 45/4 km"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Divide time by speed."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add speed and time."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply speed by time to find distance."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Multiply speed by time to find distance."
+      }
+    ],
+    "consequences": [],
+    "answer": "180",
+    "answerCheck": {
+      "expression": "45*4"
+    },
+    "correctWorking": [
+      "Distance=45×4=180 km"
+    ],
+    "hint": "Compare the distance with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A ferry travels at 45 km/h for 4 hours. Find the distance.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q07",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Given quantities",
+        "text": "100 km at 50 km/h"
+      },
+      {
+        "id": "step-2",
+        "label": "Time",
+        "text": "100 × 50 = 5000 hours"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Subtract speed from distance."
+      },
+      {
+        "id": "repair",
+        "text": "Divide distance by speed to find time."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide speed by distance."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Divide distance by speed to find time."
+      }
+    ],
+    "consequences": [],
+    "answer": "2",
+    "answerCheck": {
+      "expression": "100/50"
+    },
+    "correctWorking": [
+      "Time=100÷50=2 hours"
+    ],
+    "hint": "Compare the time with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 100 km at 50 km/h. Find the time in hours.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "hours",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q08",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Given quantities",
+        "text": "55 km/h for 3 hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Distance",
+        "text": "55 ÷ 3 = 55/3 km"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Multiply speed by time to find distance."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide time by speed."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add speed and time."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Multiply speed by time to find distance."
+      }
+    ],
+    "consequences": [],
+    "answer": "165",
+    "answerCheck": {
+      "expression": "55*3"
+    },
+    "correctWorking": [
+      "Distance=55×3=165 km"
+    ],
+    "hint": "Compare the distance with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A ferry travels at 55 km/h for 3 hours. Find the distance.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q09",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Given quantities",
+        "text": "240 km at 60 km/h"
+      },
+      {
+        "id": "step-2",
+        "label": "Time",
+        "text": "240 × 60 = 14400 hours"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Divide speed by distance."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Subtract speed from distance."
+      },
+      {
+        "id": "repair",
+        "text": "Divide distance by speed to find time."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Divide distance by speed to find time."
+      }
+    ],
+    "consequences": [],
+    "answer": "4",
+    "answerCheck": {
+      "expression": "240/60"
+    },
+    "correctWorking": [
+      "Time=240÷60=4 hours"
+    ],
+    "hint": "Compare the time with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 240 km at 60 km/h. Find the time in hours.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "hours",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q10",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Quantities",
+        "text": "Distance 120 km; time 3 hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Speed",
+        "text": "120 × 3 = 360 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Add distance and time."
+      },
+      {
+        "id": "repair",
+        "text": "Divide distance by time to find speed."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide time by distance."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Divide distance by time to find speed."
+      }
+    ],
+    "consequences": [],
+    "answer": "40",
+    "answerCheck": {
+      "expression": "120/3"
+    },
+    "correctWorking": [
+      "Speed = 120÷3 = 40 km/h"
+    ],
+    "hint": "Compare the speed with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A train travels 120 km in 3 hours. Find its average speed.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q11",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Relationship",
+        "text": "Distance = speed × time"
+      },
+      {
+        "id": "step-2",
+        "label": "Time",
+        "text": "80 ÷ 240 = 1/3 hours"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Multiply distance by speed."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Subtract speed from distance."
+      },
+      {
+        "id": "repair",
+        "text": "Divide distance by speed to find time."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Divide distance by speed to find time."
+      }
+    ],
+    "consequences": [],
+    "answer": "3",
+    "answerCheck": {
+      "expression": "240/80"
+    },
+    "correctWorking": [
+      "Time = 240÷80 = 3 hours"
+    ],
+    "hint": "Compare the time with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A car travels 240 km at 80 km/h. Find the time in hours.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "hours",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C1-Q12",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Quantities",
+        "text": "Distance 200 km; time 4 hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Speed",
+        "text": "200 × 4 = 800 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide distance by time to find speed."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide time by distance."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Add distance and time."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T1",
+        "feedback": "Divide distance by time to find speed."
+      }
+    ],
+    "consequences": [],
+    "answer": "50",
+    "answerCheck": {
+      "expression": "200/4"
+    },
+    "correctWorking": [
+      "Speed = 200÷4 = 50 km/h"
+    ],
+    "hint": "Compare the speed with the quantities and operation in the question.",
+    "draftId": "M12-DRAFT-ERRORS-C1-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A train travels 200 km in 4 hours. Find its average speed.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q01",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "40 km in 45 minutes"
+      },
+      {
+        "id": "step-2",
+        "label": "Convert time",
+        "text": "45 ÷ 100 = 0.45 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Speed calculation",
+        "text": "40 ÷ 9/20 = 800/9 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 88.89 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Divide the minutes by 10 to obtain hours."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply distance by time to find speed."
+      },
+      {
+        "id": "repair",
+        "text": "Divide minutes by 60 to obtain hours."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T2",
+        "feedback": "45 minutes is 3/4 hours."
+      }
+    ],
+    "consequences": [
+      "step-3",
+      "step-4"
+    ],
+    "answer": "53.33",
+    "answerCheck": {
+      "exactExpression": "40/(45/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "40 km in 45 minutes",
+      "45 ÷ 60 = 3/4 hours",
+      "40 ÷ 3/4 = 160/3 km/h",
+      "≈ 53.33 km/h"
+    ],
+    "hint": "Make the time unit match kilometres per hour, keeping full calculator precision.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 40 km in 45 minutes. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Multiply the speed before rounding by the time in hours to recover the distance.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q02",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "60 km in 80 minutes"
+      },
+      {
+        "id": "step-2",
+        "label": "Rate per minute",
+        "text": "60 ÷ 80 = 3/4 km/min"
+      },
+      {
+        "id": "step-3",
+        "label": "Rate per hour",
+        "text": "3/4 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 0.75 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply distance by time to find speed."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the rate in kilometres per minute by 60."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the minutes by 10 to obtain hours."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T4",
+        "feedback": "The hourly rate is 45 km/h."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "45.00",
+    "answerCheck": {
+      "exactExpression": "60/(80/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "60 km in 80 minutes",
+      "60 ÷ 80 = 3/4 km/min",
+      "3/4 × 60 = 45 km/h",
+      "≈ 45.00 km/h"
+    ],
+    "hint": "Make the time unit match kilometres per hour, keeping full calculator precision.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 60 km in 80 minutes. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Multiply the speed before rounding by the time in hours to recover the distance.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q03",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "28 km in 35 minutes"
+      },
+      {
+        "id": "step-2",
+        "label": "Time used in calculation",
+        "text": "35/60 ≈ 0.6 hours; use 0.6"
+      },
+      {
+        "id": "step-3",
+        "label": "Speed calculation",
+        "text": "28 ÷ 3/5 = 140/3 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 46.67 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Keep the full time value; round only the final speed."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the minutes by 10 to obtain hours."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply distance by time to find speed."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T8",
+        "feedback": "Use the original minutes divided by 60 in the speed calculation."
+      }
+    ],
+    "consequences": [
+      "step-3",
+      "step-4"
+    ],
+    "answer": "48.00",
+    "answerCheck": {
+      "exactExpression": "28/(35/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "28 km in 35 minutes",
+      "Keep 35/60 = 7/12 hours without rounding.",
+      "28 ÷ (35/60) = 48 km/h",
+      "≈ 48.00 km/h"
+    ],
+    "hint": "Make the time unit match kilometres per hour, keeping full calculator precision.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 28 km in 35 minutes. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Multiply the speed before rounding by the time in hours to recover the distance.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q04",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "175 km at 50 km/h"
+      },
+      {
+        "id": "step-2",
+        "label": "Time in hours",
+        "text": "175 ÷ 50 = 3.5 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Fractional hour in minutes",
+        "text": "0.5 hour = 5 minutes"
+      },
+      {
+        "id": "step-4",
+        "label": "Total minutes",
+        "text": "3 × 60 + 5 = 185"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Use the decimal digits after the point as minutes."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Divide the fractional hour by 60."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the fractional hour by 60; its decimal digits are not minutes."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T3",
+        "feedback": "0.5 hour is 30 minutes."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "210",
+    "answerCheck": {
+      "expression": "(175)/50*60"
+    },
+    "correctWorking": [
+      "175 km at 50 km/h",
+      "175 ÷ 50 = 3.5 hours",
+      "0.5 × 60 = 30 minutes",
+      "3 × 60 + 30 = 210"
+    ],
+    "hint": "Separate whole hours from the fractional hour before converting to minutes.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A car travels 175 km at 50 km/h. How many minutes does the journey take?",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "minutes",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Divide the minutes by 60, then multiply by 50 km/h to recover 175 km.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q05",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "148.5 km at 54 km/h"
+      },
+      {
+        "id": "step-2",
+        "label": "Time in hours",
+        "text": "148.5 ÷ 54 = 2.75 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Fractional hour in minutes",
+        "text": "0.75 hour = 75 minutes"
+      },
+      {
+        "id": "step-4",
+        "label": "Total minutes",
+        "text": "2 × 60 + 75 = 195"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Divide the fractional hour by 60."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the fractional hour by 60; its decimal digits are not minutes."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Use the decimal digits after the point as minutes."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T3",
+        "feedback": "0.75 hour is 45 minutes."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "165",
+    "answerCheck": {
+      "expression": "(297/2)/54*60"
+    },
+    "correctWorking": [
+      "148.5 km at 54 km/h",
+      "148.5 ÷ 54 = 2.75 hours",
+      "0.75 × 60 = 45 minutes",
+      "2 × 60 + 45 = 165"
+    ],
+    "hint": "Separate whole hours from the fractional hour before converting to minutes.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A car travels 148.5 km at 54 km/h. How many minutes does the journey take?",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "minutes",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Divide the minutes by 60, then multiply by 54 km/h to recover 148.5 km.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q06",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "216 km at 96 km/h"
+      },
+      {
+        "id": "step-2",
+        "label": "Time in hours",
+        "text": "216 ÷ 96 = 2.25 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Fractional hour in minutes",
+        "text": "0.25 hour = 25 minutes"
+      },
+      {
+        "id": "step-4",
+        "label": "Total minutes",
+        "text": "2 × 60 + 25 = 145"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Multiply the fractional hour by 60; its decimal digits are not minutes."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Use the decimal digits after the point as minutes."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Divide the fractional hour by 60."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T3",
+        "feedback": "0.25 hour is 15 minutes."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "135",
+    "answerCheck": {
+      "expression": "(216)/96*60"
+    },
+    "correctWorking": [
+      "216 km at 96 km/h",
+      "216 ÷ 96 = 2.25 hours",
+      "0.25 × 60 = 15 minutes",
+      "2 × 60 + 15 = 135"
+    ],
+    "hint": "Separate whole hours from the fractional hour before converting to minutes.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A car travels 216 km at 96 km/h. How many minutes does the journey take?",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "minutes",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Divide the minutes by 60, then multiply by 96 km/h to recover 216 km.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q07",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "68 km in 75 minutes"
+      },
+      {
+        "id": "step-2",
+        "label": "Convert time",
+        "text": "75 ÷ 100 = 0.75 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Speed calculation",
+        "text": "68 ÷ 3/4 = 272/3 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 90.67 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Divide the minutes by 10 to obtain hours."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply distance by time to find speed."
+      },
+      {
+        "id": "repair",
+        "text": "Divide minutes by 60 to obtain hours."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T2",
+        "feedback": "75 minutes is 5/4 hours."
+      }
+    ],
+    "consequences": [
+      "step-3",
+      "step-4"
+    ],
+    "answer": "54.40",
+    "answerCheck": {
+      "exactExpression": "68/(75/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "68 km in 75 minutes",
+      "75 ÷ 60 = 5/4 hours",
+      "68 ÷ 5/4 = 272/5 km/h",
+      "≈ 54.40 km/h"
+    ],
+    "hint": "Make the time unit match kilometres per hour, keeping full calculator precision.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 68 km in 75 minutes. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Multiply the speed before rounding by the time in hours to recover the distance.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q08",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "42 km in 50 minutes"
+      },
+      {
+        "id": "step-2",
+        "label": "Rate per minute",
+        "text": "42 ÷ 50 = 21/25 km/min"
+      },
+      {
+        "id": "step-3",
+        "label": "Rate per hour",
+        "text": "21/25 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 0.84 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply distance by time to find speed."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the rate in kilometres per minute by 60."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the minutes by 10 to obtain hours."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T4",
+        "feedback": "The hourly rate is 252/5 km/h."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "50.40",
+    "answerCheck": {
+      "exactExpression": "42/(50/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "42 km in 50 minutes",
+      "42 ÷ 50 = 21/25 km/min",
+      "21/25 × 60 = 252/5 km/h",
+      "≈ 50.40 km/h"
+    ],
+    "hint": "Make the time unit match kilometres per hour, keeping full calculator precision.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 42 km in 50 minutes. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Multiply the speed before rounding by the time in hours to recover the distance.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q09",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "18 km in 25 minutes"
+      },
+      {
+        "id": "step-2",
+        "label": "Time used in calculation",
+        "text": "25/60 ≈ 0.4 hours; use 0.4"
+      },
+      {
+        "id": "step-3",
+        "label": "Speed calculation",
+        "text": "18 ÷ 2/5 = 45 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 45.00 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Keep the full time value; round only the final speed."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the minutes by 10 to obtain hours."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply distance by time to find speed."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T8",
+        "feedback": "Use the original minutes divided by 60 in the speed calculation."
+      }
+    ],
+    "consequences": [
+      "step-3",
+      "step-4"
+    ],
+    "answer": "43.20",
+    "answerCheck": {
+      "exactExpression": "18/(25/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "18 km in 25 minutes",
+      "Keep 25/60 = 5/12 hours without rounding.",
+      "18 ÷ (25/60) = 216/5 km/h",
+      "≈ 43.20 km/h"
+    ],
+    "hint": "Make the time unit match kilometres per hour, keeping full calculator precision.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 18 km in 25 minutes. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Multiply the speed before rounding by the time in hours to recover the distance.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q10",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "105 km in 90 minutes"
+      },
+      {
+        "id": "step-2",
+        "label": "Convert time",
+        "text": "90 ÷ 100 = 0.9 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Speed calculation",
+        "text": "105 ÷ 9/10 = 350/3 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 116.67 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Divide the minutes by 10 to obtain hours."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply distance by time to find speed."
+      },
+      {
+        "id": "repair",
+        "text": "Divide minutes by 60 to obtain hours."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T2",
+        "feedback": "90 minutes is 3/2 hours."
+      }
+    ],
+    "consequences": [
+      "step-3",
+      "step-4"
+    ],
+    "answer": "70.00",
+    "answerCheck": {
+      "exactExpression": "105/(90/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "105 km in 90 minutes",
+      "90 ÷ 60 = 3/2 hours",
+      "105 ÷ 3/2 = 70 km/h",
+      "≈ 70.00 km/h"
+    ],
+    "hint": "Make the time unit match kilometres per hour, keeping full calculator precision.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 105 km in 90 minutes. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Multiply the speed before rounding by the time in hours to recover the distance.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q11",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "36 km in 40 minutes"
+      },
+      {
+        "id": "step-2",
+        "label": "Rate per minute",
+        "text": "36 ÷ 40 = 9/10 km/min"
+      },
+      {
+        "id": "step-3",
+        "label": "Rate per hour",
+        "text": "9/10 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 0.90 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Multiply distance by time to find speed."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the rate in kilometres per minute by 60."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the minutes by 10 to obtain hours."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T4",
+        "feedback": "The hourly rate is 54 km/h."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "54.00",
+    "answerCheck": {
+      "exactExpression": "36/(40/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "36 km in 40 minutes",
+      "36 ÷ 40 = 9/10 km/min",
+      "9/10 × 60 = 54 km/h",
+      "≈ 54.00 km/h"
+    ],
+    "hint": "Make the time unit match kilometres per hour, keeping full calculator precision.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 36 km in 40 minutes. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Multiply the speed before rounding by the time in hours to recover the distance.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C2-Q12",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Journey quantities",
+        "text": "48 km in 55 minutes"
+      },
+      {
+        "id": "step-2",
+        "label": "Time used in calculation",
+        "text": "55/60 ≈ 0.9 hours; use 0.9"
+      },
+      {
+        "id": "step-3",
+        "label": "Speed calculation",
+        "text": "48 ÷ 9/10 = 160/3 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 53.33 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Keep the full time value; round only the final speed."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Divide the minutes by 10 to obtain hours."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Multiply distance by time to find speed."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T8",
+        "feedback": "Use the original minutes divided by 60 in the speed calculation."
+      }
+    ],
+    "consequences": [
+      "step-3",
+      "step-4"
+    ],
+    "answer": "52.36",
+    "answerCheck": {
+      "exactExpression": "48/(55/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "48 km in 55 minutes",
+      "Keep 55/60 = 11/12 hours without rounding.",
+      "48 ÷ (55/60) = 576/11 km/h",
+      "≈ 52.36 km/h"
+    ],
+    "hint": "Make the time unit match kilometres per hour, keeping full calculator precision.",
+    "draftId": "M12-DRAFT-ERRORS-C2-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 48 km in 55 minutes. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Multiply the speed before rounding by the time in hours to recover the distance.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q01",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Distance",
+        "text": "98 km"
+      },
+      {
+        "id": "step-2",
+        "label": "Driving time conversion",
+        "text": "80 ÷ 100 = 0.8 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Total journey time",
+        "text": "Use only 0.8 driving hours."
+      },
+      {
+        "id": "step-4",
+        "label": "Average speed",
+        "text": "98 ÷ 4/5 = 245/2 km/h"
+      },
+      {
+        "id": "step-5",
+        "label": "Rounded speed",
+        "text": "≈ 122.50 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair-2",
+        "text": "Include the 25-minute stop in the elapsed journey time."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Use only the stop time as the journey time."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Convert minutes to hours by dividing by 10."
+      },
+      {
+        "id": "repair",
+        "text": "Divide driving minutes by 60, not 100."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T2",
+        "feedback": "Keep the full conversion value."
+      },
+      {
+        "location": "step-3",
+        "reason": "repair-2",
+        "misconception": "T6",
+        "feedback": "Average speed for the whole journey includes stationary time."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "56.00",
+    "answerCheck": {
+      "exactExpression": "98/((80+25)/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "98 km",
+      "80 ÷ 60 = 4/3 hours",
+      "(80 + 25) ÷ 60 = 7/4 hours",
+      "98 ÷ 7/4 = 56 km/h",
+      "≈ 56.00 km/h"
+    ],
+    "hint": "Convert time units consistently and include every part of the elapsed journey.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A van covers 98 km in 80 minutes of driving and stops for another 25 minutes. Find its average speed in km/h for the whole journey, including the stop. Give 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q02",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Distance",
+        "text": "145 km"
+      },
+      {
+        "id": "step-2",
+        "label": "Driving time conversion",
+        "text": "125 ÷ 100 = 1.25 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Total journey time",
+        "text": "Use only 1.25 driving hours."
+      },
+      {
+        "id": "step-4",
+        "label": "Average speed",
+        "text": "145 ÷ 5/4 = 116 km/h"
+      },
+      {
+        "id": "step-5",
+        "label": "Rounded speed",
+        "text": "≈ 116.00 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Use only the stop time as the journey time."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Convert minutes to hours by dividing by 10."
+      },
+      {
+        "id": "repair",
+        "text": "Divide driving minutes by 60, not 100."
+      },
+      {
+        "id": "repair-2",
+        "text": "Include the 20-minute stop in the elapsed journey time."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T2",
+        "feedback": "Keep the full conversion value."
+      },
+      {
+        "location": "step-3",
+        "reason": "repair-2",
+        "misconception": "T6",
+        "feedback": "Average speed for the whole journey includes stationary time."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "60.00",
+    "answerCheck": {
+      "exactExpression": "145/((125+20)/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "145 km",
+      "125 ÷ 60 = 25/12 hours",
+      "(125 + 20) ÷ 60 = 29/12 hours",
+      "145 ÷ 29/12 = 60 km/h",
+      "≈ 60.00 km/h"
+    ],
+    "hint": "Convert time units consistently and include every part of the elapsed journey.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A van covers 145 km in 125 minutes of driving and stops for another 20 minutes. Find its average speed in km/h for the whole journey, including the stop. Give 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q03",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Distance",
+        "text": "64 km"
+      },
+      {
+        "id": "step-2",
+        "label": "Driving time conversion",
+        "text": "55 ÷ 100 = 0.55 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Total journey time",
+        "text": "Use only 0.55 driving hours."
+      },
+      {
+        "id": "step-4",
+        "label": "Average speed",
+        "text": "64 ÷ 11/20 = 1280/11 km/h"
+      },
+      {
+        "id": "step-5",
+        "label": "Rounded speed",
+        "text": "≈ 116.36 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Convert minutes to hours by dividing by 10."
+      },
+      {
+        "id": "repair",
+        "text": "Divide driving minutes by 60, not 100."
+      },
+      {
+        "id": "repair-2",
+        "text": "Include the 15-minute stop in the elapsed journey time."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Use only the stop time as the journey time."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "T2",
+        "feedback": "Keep the full conversion value."
+      },
+      {
+        "location": "step-3",
+        "reason": "repair-2",
+        "misconception": "T6",
+        "feedback": "Average speed for the whole journey includes stationary time."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "54.86",
+    "answerCheck": {
+      "exactExpression": "64/((55+15)/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "64 km",
+      "55 ÷ 60 = 11/12 hours",
+      "(55 + 15) ÷ 60 = 7/6 hours",
+      "64 ÷ 7/6 = 384/7 km/h",
+      "≈ 54.86 km/h"
+    ],
+    "hint": "Convert time units consistently and include every part of the elapsed journey.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A van covers 64 km in 55 minutes of driving and stops for another 15 minutes. Find its average speed in km/h for the whole journey, including the stop. Give 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q04",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "First part",
+        "text": "78 km in 1.5 hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Second part",
+        "text": "126 km in 2.25 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Total distance",
+        "text": "78 + 126 = 204 km"
+      },
+      {
+        "id": "step-4",
+        "label": "Total time",
+        "text": "Use 1.5 hours."
+      },
+      {
+        "id": "step-5",
+        "label": "Average speed",
+        "text": "204 ÷ 1.5 = 136 km/h"
+      },
+      {
+        "id": "step-6",
+        "label": "Rounded speed",
+        "text": "≈ 136.00 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Use only the second distance with the whole journey time."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Average the distances before dividing by the total time."
+      },
+      {
+        "id": "repair",
+        "text": "Add the times of both journey parts."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-4",
+        "reason": "repair",
+        "misconception": "T5",
+        "feedback": "The total time is 3.75 hours."
+      }
+    ],
+    "consequences": [
+      "step-5",
+      "step-6"
+    ],
+    "answer": "54.40",
+    "answerCheck": {
+      "exactExpression": "(78+126)/(3/2+9/4)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "78 km in 1.5 hours",
+      "126 km in 2.25 hours",
+      "78 + 126 = 204 km",
+      "1.5 + 2.25 = 3.75 hours",
+      "204 ÷ 3.75 = 272/5 km/h",
+      "≈ 54.40 km/h"
+    ],
+    "hint": "Total distance and total time must cover the same complete journey.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 78 km in 1.5 hours, then 126 km in 2.25 hours, with no stops. Find the average speed for the whole journey in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q05",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "First part",
+        "text": "110 km in 2 hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Second part",
+        "text": "60 km in 1.25 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Total distance",
+        "text": "110 + 60 = 170 km"
+      },
+      {
+        "id": "step-4",
+        "label": "Total time",
+        "text": "Use 2 hours."
+      },
+      {
+        "id": "step-5",
+        "label": "Average speed",
+        "text": "170 ÷ 2 = 85 km/h"
+      },
+      {
+        "id": "step-6",
+        "label": "Rounded speed",
+        "text": "≈ 85.00 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Average the distances before dividing by the total time."
+      },
+      {
+        "id": "repair",
+        "text": "Add the times of both journey parts."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Use only the second distance with the whole journey time."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-4",
+        "reason": "repair",
+        "misconception": "T5",
+        "feedback": "The total time is 3.25 hours."
+      }
+    ],
+    "consequences": [
+      "step-5",
+      "step-6"
+    ],
+    "answer": "52.31",
+    "answerCheck": {
+      "exactExpression": "(110+60)/(2+5/4)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "110 km in 2 hours",
+      "60 km in 1.25 hours",
+      "110 + 60 = 170 km",
+      "2 + 1.25 = 3.25 hours",
+      "170 ÷ 3.25 = 680/13 km/h",
+      "≈ 52.31 km/h"
+    ],
+    "hint": "Total distance and total time must cover the same complete journey.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 110 km in 2 hours, then 60 km in 1.25 hours, with no stops. Find the average speed for the whole journey in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q06",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "First part",
+        "text": "36 km in 0.75 hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Second part",
+        "text": "87 km in 1.5 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Total distance",
+        "text": "36 + 87 = 123 km"
+      },
+      {
+        "id": "step-4",
+        "label": "Total time",
+        "text": "Use 0.75 hours."
+      },
+      {
+        "id": "step-5",
+        "label": "Average speed",
+        "text": "123 ÷ 0.75 = 164 km/h"
+      },
+      {
+        "id": "step-6",
+        "label": "Rounded speed",
+        "text": "≈ 164.00 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Add the times of both journey parts."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Use only the second distance with the whole journey time."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Average the distances before dividing by the total time."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-4",
+        "reason": "repair",
+        "misconception": "T5",
+        "feedback": "The total time is 2.25 hours."
+      }
+    ],
+    "consequences": [
+      "step-5",
+      "step-6"
+    ],
+    "answer": "54.67",
+    "answerCheck": {
+      "exactExpression": "(36+87)/(3/4+3/2)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "36 km in 0.75 hours",
+      "87 km in 1.5 hours",
+      "36 + 87 = 123 km",
+      "0.75 + 1.5 = 2.25 hours",
+      "123 ÷ 2.25 = 164/3 km/h",
+      "≈ 54.67 km/h"
+    ],
+    "hint": "Total distance and total time must cover the same complete journey.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A coach travels 36 km in 0.75 hours, then 87 km in 1.5 hours, with no stops. Find the average speed for the whole journey in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q07",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Distance and driving",
+        "text": "165 km in 2.5 driving hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Stop conversion",
+        "text": "35/60 = 7/12 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Whole journey time",
+        "text": "2.5 hours"
+      },
+      {
+        "id": "step-4",
+        "label": "Speed",
+        "text": "165 ÷ (5/2) = 66 km/h"
+      },
+      {
+        "id": "step-5",
+        "label": "Rounded speed",
+        "text": "≈ 66.00 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Subtract the stop time from the driving time."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Treat the number of stop minutes as hours."
+      },
+      {
+        "id": "repair",
+        "text": "Add the stop time to the driving time."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T6",
+        "feedback": "The requested average covers the whole elapsed journey."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "53.51",
+    "answerCheck": {
+      "exactExpression": "165/(5/2+35/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "165 km in 2.5 driving hours",
+      "35/60 = 7/12 hours",
+      "2.5 + 35/60 = 37/12 hours",
+      "165/(37/12) = 1980/37 km/h",
+      "≈ 53.51 km/h"
+    ],
+    "hint": "A stationary stop still contributes to the elapsed journey time.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A van covers 165 km in 2.5 hours of driving, with an additional 35-minute stop. Find its average speed for the whole journey in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q08",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "First distance",
+        "text": "32 × 1.5 = 48 km"
+      },
+      {
+        "id": "step-2",
+        "label": "Second distance",
+        "text": "68 × 2.5 = 170 km"
+      },
+      {
+        "id": "step-3",
+        "label": "Average speed",
+        "text": "(32 + 68) ÷ 2 = 50 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 50.00 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Divide the sum of the speeds by the total time."
+      },
+      {
+        "id": "repair",
+        "text": "Divide total distance by total time; these speeds apply for different durations."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Use the faster speed for the whole journey."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T7",
+        "feedback": "Total distance is 218 km and time is 4 hours."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "54.50",
+    "answerCheck": {
+      "exactExpression": "(32*(3/2)+68*(5/2))/(3/2+5/2)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "32 × 1.5 = 48 km",
+      "68 × 2.5 = 170 km",
+      "218 ÷ 4 = 109/2 km/h",
+      "≈ 54.50 km/h"
+    ],
+    "hint": "Work out each distance before combining the journey totals.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A vehicle travels at 32 km/h for 1.5 hours, then at 68 km/h for 2.5 hours, with no stops. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q09",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Distance and driving",
+        "text": "208 km in 3.25 driving hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Stop conversion",
+        "text": "20/60 = 1/3 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Whole journey time",
+        "text": "3.25 hours"
+      },
+      {
+        "id": "step-4",
+        "label": "Speed",
+        "text": "208 ÷ (13/4) = 64 km/h"
+      },
+      {
+        "id": "step-5",
+        "label": "Rounded speed",
+        "text": "≈ 64.00 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Add the stop time to the driving time."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Subtract the stop time from the driving time."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Treat the number of stop minutes as hours."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T6",
+        "feedback": "The requested average covers the whole elapsed journey."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "58.05",
+    "answerCheck": {
+      "exactExpression": "208/(13/4+20/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "208 km in 3.25 driving hours",
+      "20/60 = 1/3 hours",
+      "3.25 + 20/60 = 43/12 hours",
+      "208/(43/12) = 2496/43 km/h",
+      "≈ 58.05 km/h"
+    ],
+    "hint": "A stationary stop still contributes to the elapsed journey time.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A van covers 208 km in 3.25 hours of driving, with an additional 20-minute stop. Find its average speed for the whole journey in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q10",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "First distance",
+        "text": "48 × 2.25 = 108 km"
+      },
+      {
+        "id": "step-2",
+        "label": "Second distance",
+        "text": "60 × 0.75 = 45 km"
+      },
+      {
+        "id": "step-3",
+        "label": "Average speed",
+        "text": "(48 + 60) ÷ 2 = 54 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 54.00 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-1",
+        "text": "Use the faster speed for the whole journey."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Divide the sum of the speeds by the total time."
+      },
+      {
+        "id": "repair",
+        "text": "Divide total distance by total time; these speeds apply for different durations."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T7",
+        "feedback": "Total distance is 153 km and time is 3 hours."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "51.00",
+    "answerCheck": {
+      "exactExpression": "(48*(9/4)+60*(3/4))/(9/4+3/4)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "48 × 2.25 = 108 km",
+      "60 × 0.75 = 45 km",
+      "153 ÷ 3 = 51 km/h",
+      "≈ 51.00 km/h"
+    ],
+    "hint": "Work out each distance before combining the journey totals.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A vehicle travels at 48 km/h for 2.25 hours, then at 60 km/h for 0.75 hours, with no stops. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q11",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Distance and driving",
+        "text": "117 km in 1.75 driving hours"
+      },
+      {
+        "id": "step-2",
+        "label": "Stop conversion",
+        "text": "50/60 = 5/6 hours"
+      },
+      {
+        "id": "step-3",
+        "label": "Whole journey time",
+        "text": "1.75 hours"
+      },
+      {
+        "id": "step-4",
+        "label": "Speed",
+        "text": "117 ÷ (7/4) = 468/7 km/h"
+      },
+      {
+        "id": "step-5",
+        "label": "Rounded speed",
+        "text": "≈ 66.86 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "alternative-2",
+        "text": "Treat the number of stop minutes as hours."
+      },
+      {
+        "id": "repair",
+        "text": "Add the stop time to the driving time."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Subtract the stop time from the driving time."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T6",
+        "feedback": "The requested average covers the whole elapsed journey."
+      }
+    ],
+    "consequences": [
+      "step-4",
+      "step-5"
+    ],
+    "answer": "45.29",
+    "answerCheck": {
+      "exactExpression": "117/(7/4+50/60)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "117 km in 1.75 driving hours",
+      "50/60 = 5/6 hours",
+      "1.75 + 50/60 = 31/12 hours",
+      "117/(31/12) = 1404/31 km/h",
+      "≈ 45.29 km/h"
+    ],
+    "hint": "A stationary stop still contributes to the elapsed journey time.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A van covers 117 km in 1.75 hours of driving, with an additional 50-minute stop. Find its average speed for the whole journey in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  },
+  {
+    "id": "maths:M12-WEB-ERRORS-R2-C3-Q12",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "First distance",
+        "text": "55 × 0.5 = 27.5 km"
+      },
+      {
+        "id": "step-2",
+        "label": "Second distance",
+        "text": "35 × 1.75 = 61.25 km"
+      },
+      {
+        "id": "step-3",
+        "label": "Average speed",
+        "text": "(55 + 35) ÷ 2 = 45 km/h"
+      },
+      {
+        "id": "step-4",
+        "label": "Rounded speed",
+        "text": "≈ 45.00 km/h"
+      }
+    ],
+    "options": [
+      {
+        "id": "repair",
+        "text": "Divide total distance by total time; these speeds apply for different durations."
+      },
+      {
+        "id": "alternative-1",
+        "text": "Use the faster speed for the whole journey."
+      },
+      {
+        "id": "alternative-2",
+        "text": "Divide the sum of the speeds by the total time."
+      }
+    ],
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "T7",
+        "feedback": "Total distance is 88.75 km and time is 2.25 hours."
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "39.44",
+    "answerCheck": {
+      "exactExpression": "(55*(1/2)+35*(7/4))/(1/2+7/4)",
+      "decimalPlaces": 2
+    },
+    "correctWorking": [
+      "55 × 0.5 = 27.5 km",
+      "35 × 1.75 = 61.25 km",
+      "88.75 ÷ 2.25 = 355/9 km/h",
+      "≈ 39.44 km/h"
+    ],
+    "hint": "Work out each distance before combining the journey totals.",
+    "draftId": "M12-DRAFT-ERRORS-C3-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "A vehicle travels at 55 km/h for 0.5 hours, then at 35 km/h for 1.75 hours, with no stops. Find its average speed in km/h to 2 decimal places.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "km/h",
+    "calculator": true,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
+    "subject": "maths",
+    "topic": "M12"
+  }
+]

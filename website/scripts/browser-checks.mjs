@@ -1,3 +1,4 @@
+import { readTopicBank } from './read-topic-bank.mjs';
 /**
  * Purpose: Run selected browser scenarios against a static build and coordinate browser/server cleanup.
  *
@@ -16,13 +17,20 @@
  *
  * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), node:url, @axe-core/playwright (accessibility checks).
  */
+import { checkErrorInvestigation } from './browser/error-investigation-checks.mjs';
 import { checkMethodPlayback } from './browser/method-playback-checks.mjs';
 import { checkNewTopics } from './browser/new-topics-checks.mjs';
 import { checkProgress } from './browser/progress-checks.mjs';
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { artifacts, launchBrowser, serveStatic, createTestContext } from './browser/support.mjs';
+import {
+  artifacts,
+  launchBrowser,
+  serveStatic,
+  createTestContext,
+  selectWrapped,
+} from './browser/support.mjs';
 import { checkVisuals } from './browser/visual-checks.mjs';
 import { checkStartup } from './browser/startup-checks.mjs';
 import { checkThemes } from './browser/theme-checks.mjs';
@@ -40,6 +48,7 @@ const server = process.env.BASE_URL
 const base = process.env.BASE_URL || server.url;
 const browser = await launchBrowser();
 const focused = {
+  '--error-investigation-only': checkErrorInvestigation,
   '--method-playback-only': checkMethodPlayback,
   '--new-topics-only': checkNewTopics,
   '--progress-only': checkProgress,
@@ -63,7 +72,7 @@ const context = await createTestContext(browser, { viewport: { width: 1380, heig
 const page = await context.newPage();
 const errors = [];
 page.on('pageerror', (error) => errors.push(error.message));
-const bank = JSON.parse(await readFile(new URL('../static/data/equations.json', import.meta.url)));
+const bank = await readTopicBank('equations');
 /**
  * Read the browser's stored learner data for assertions.
  * Used by: topic.
@@ -109,17 +118,26 @@ async function submitCorrect(mode, index, wrongReason = false) {
   await page.locator(`[data-question="${index}"]`).click();
   const p = await active(mode),
     q = bank.questions.find((q) => q.id === p.items[index].id);
-  if (mode === 'errors')
+  if (mode === 'errors' && q.investigation) {
+    for (const error of q.errors) {
+      await page.locator(`[data-location="${error.location}"]`).first().click();
+      await selectWrapped(
+        page,
+        '#investigation-reason',
+        wrongReason ? q.options.find((option) => option.id !== error.reason).id : error.reason,
+      );
+    }
+  } else if (mode === 'errors')
     for (const [i, error] of q.errors.entries()) {
       await page.locator(`#error-row-${i}`).selectOption(String(error.row));
-      await page
-        .locator(`#error-reason-${i}`)
-        .selectOption(
-          wrongReason
-            ? bank.teaching.errorReasons.find((r) => r.id !== error.reason).id
-            : error.reason,
-        );
-      await page.locator(`#error-step-${i}`).selectOption(error.correction);
+      await selectWrapped(
+        page,
+        `#error-reason-${i}`,
+        wrongReason
+          ? bank.teaching.errorReasons.find((r) => r.id !== error.reason).id
+          : error.reason,
+      );
+      await selectWrapped(page, `#error-step-${i}`, error.correction);
     }
   await page.locator('#answer').fill(q.answer);
   await page.getByRole('button', { name: 'Check answer', exact: true }).click();
@@ -141,7 +159,7 @@ async function submitCorrect(mode, index, wrongReason = false) {
     assert.equal(await page.locator('#answer').inputValue(), '');
     assert.equal(
       await page.evaluate(() => document.activeElement.id),
-      mode === 'errors' ? 'error-row-0' : 'answer',
+      mode === 'errors' && !q.investigation ? 'error-row-0' : 'answer',
     );
   }
 }
@@ -288,7 +306,12 @@ try {
   }
   assert.ok(two >= 0);
   await page.locator(`[data-question="${two}"]`).click();
-  assert.equal(await page.locator('.error-entry').count(), 2);
+  assert.equal(
+    await page.locator('.error-entry, #investigation-reason').count(),
+    0,
+    'Do not preallocate controls that disclose the number of faults',
+  );
+  assert.ok((await page.locator('.live-investigation [data-location]').count()) >= 2);
   await accessibility('two-errors');
   await shot('two-errors');
   await submitCorrect('errors', two);

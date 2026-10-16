@@ -1,3 +1,4 @@
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /**
  * Purpose: Verify progress aggregation, revision recommendations and learner data transfer.
  *
@@ -41,11 +42,7 @@ const catalogue = JSON.parse(
   ),
 );
 catalogue.topics = catalogue.topics.filter((topic) => topic.bank === "M10");
-const bank = JSON.parse(
-  await readFile(
-    new URL("../website/static/data/equations.json", import.meta.url),
-  ),
-);
+const bank = await readTopicBank("equations");
 let uidCount = 0; /**
  * Return the next deterministic recommendation identifier.
  */

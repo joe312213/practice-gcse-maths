@@ -30,6 +30,7 @@ export function createPlayer({
   pace = () => 1,
 }) {
   let step = 1,
+    stop = length,
     playing = false,
     timer = null,
     disposed = false,
@@ -56,8 +57,11 @@ export function createPlayer({
   const tick = () => {
     timer = null;
     if (disposed || !playing) return;
-    step = Math.min(length, step + 1);
-    if (step === length) playing = false;
+    step = Math.min(stop, step + 1);
+    if (step === stop) {
+      playing = false;
+      paused = true;
+    }
     emit();
     if (playing) timer = schedule(tick, delay / pace(step));
   };
@@ -66,10 +70,16 @@ export function createPlayer({
      * Start or resume frame playback using the current delay.
      * Calls: clear, emit.
      */
-    play() {
+    play({ from, to = length } = {}) {
       if (disposed) return;
       clear();
-      if (!paused || step === length) step = 1;
+      if (from !== undefined) {
+        step = Math.max(1, Math.min(length, from));
+        stop = Math.max(step, Math.min(length, to));
+      } else if (!paused || step === length) {
+        step = 1;
+        stop = length;
+      } else if (step === stop) stop = length;
       paused = false;
       playing = true;
       emit();

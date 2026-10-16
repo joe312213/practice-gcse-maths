@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "subject": "maths",
+  "topic": "M15",
+  "title": "Fraction addition and subtraction",
+  "method": "calculation",
+  "revision": "M15-web-2026-10-13",
+  "rows": [
+    "Prepare the fractions",
+    "Use a common denominator",
+    "Add or subtract",
+    "Simplify and check"
+  ],
+  "provenance": {
+    "spec": "content/specs/M15.md",
+    "source": "New website draft informed by the existing topic source and Foundation specifications; not copied exam questions."
+  },
+  "questionPrefix": "Work out the calculation",
+  "errorRevision": 2
+}

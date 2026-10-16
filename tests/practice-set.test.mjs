@@ -1,3 +1,4 @@
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /**
  * Purpose: Verify practice-set codes, page selection, timers and session restoration with deterministic fixtures.
  *
@@ -24,11 +25,7 @@ import {
 } from "../website/src/lib/domain/practice-code.mjs";
 import { createSession } from "../website/src/lib/application/session.mjs";
 import { emptyStore } from "../website/src/lib/domain/profiles.mjs";
-const bank = JSON.parse(
-  await readFile(
-    new URL("../website/static/data/equations.json", import.meta.url),
-  ),
-);
+const bank = await readTopicBank("equations");
 const catalogue = JSON.parse(
   await readFile(
     new URL("../website/src/lib/content/practice-pages.json", import.meta.url),

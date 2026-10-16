@@ -1,3 +1,4 @@
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /**
  * Purpose: Verify arithmetic answer formats, place value, guides and real multi-topic sessions.
  *
@@ -24,12 +25,8 @@ import { createSession } from "../website/src/lib/application/session.mjs";
 import { emptyStore } from "../website/src/lib/domain/profiles.mjs";
 import { encodePracticeSet } from "../website/src/lib/domain/practice-code.mjs";
 const banks = await Promise.all(
-  ["equations", "multiplication", "division"].map(async (name) =>
-    JSON.parse(
-      await readFile(
-        new URL(`../website/static/data/${name}.json`, import.meta.url),
-      ),
-    ),
+  ["equations", "multiplication", "division"].map(
+    async (name) => await readTopicBank(`${name}`),
   ),
 );
 const catalogue = JSON.parse(
@@ -40,7 +37,10 @@ const catalogue = JSON.parse(
 
 test("arithmetic working preserves every answer and internal zero in the imported banks", () => {
   for (const bank of banks.slice(1))
-    for (const q of bank.questions.filter((q) => q.type !== "problem")) {
+    for (const q of [
+      ...bank.questions.filter((q) => !q.investigation),
+      ...bank.retiredQuestions,
+    ].filter((q) => q.type !== "problem")) {
       if (q.method === "lattice") {
         const digits = latticeModel(q.a, q.b)
           .diagonals.map((d) => d.digit)
@@ -108,7 +108,7 @@ test("guide geometry reserves margins and validates dimensions", () => {
 });
 test("arithmetic errors need a correction as well as the answer", () => {
   for (const bank of banks.slice(1))
-    for (const q of bank.questions.filter((q) => q.type === "errors")) {
+    for (const q of bank.retiredQuestions) {
       assert.ok(
         markErrors(q, [{ correction: q.correctionId }], q.answer).correct,
       );

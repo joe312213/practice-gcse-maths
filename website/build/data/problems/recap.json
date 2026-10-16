@@ -1,0 +1,131 @@
+[
+  {
+    "id": "maths:M03-WEB-RECAP-C1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "recap",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "42 packs each contain 15 pens. How many pens are there?",
+    "answer": "630",
+    "answerUnit": "pens",
+    "model": {
+      "kind": "application",
+      "start": 42,
+      "operations": [
+        [
+          "multiply",
+          15
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "42 × 15",
+        "output": "630",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "pens"
+      }
+    ],
+    "hint": "What does the quantity 15 describe: one group, or the whole total?",
+    "method_note": "Find the total for these equal groups.",
+    "check": "630 ÷ 15 = 42.",
+    "wrong": "57",
+    "error_note": "Adding 42 and 15 does not count all the equal groups. Multiply 42 by 15.",
+    "source": "Accepted M03 source slide 2; saved deck text checked"
+  },
+  {
+    "id": "maths:M03-WEB-RECAP-C2",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "recap",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "215 apples go into bags of 6. How many completely full bags can be made?",
+    "answer": "35",
+    "answerUnit": "bags",
+    "model": {
+      "kind": "application",
+      "start": 215,
+      "operations": [
+        [
+          "floor",
+          6
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "215 ÷ 6",
+        "output": "35 r 5",
+        "note": "35 complete groups of 6, with 5 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "35",
+        "output": "35",
+        "note": "Only completely full groups count; leave the remainder out.",
+        "outputUnit": "bags"
+      }
+    ],
+    "hint": "Would a partly filled group of 6 count as a completely full group?",
+    "method_note": "35 complete groups of 6, with 5 left over. Only completely full groups count; leave the remainder out.",
+    "check": "35 × 6 + 5 = 215; 5 is less than 6.",
+    "wrong": "36",
+    "error_note": "36 groups would need 216, more than the 215 available. Count only full groups.",
+    "source": "Accepted M03 source slide 2; saved deck text checked"
+  },
+  {
+    "id": "maths:M03-WEB-RECAP-C3",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "recap",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "A painter charges £18 per hour for 32 hours, plus £120 for paint. Find the total bill.",
+    "answer": "696",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 18,
+      "operations": [
+        [
+          "multiply",
+          32
+        ],
+        [
+          "add",
+          120
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "18 × 32",
+        "output": "576",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "576 + 120",
+        "output": "696",
+        "note": "Include the extra amount once.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "What does the quantity 32 describe: one group, or the whole total? What will that first result represent?",
+    "method_note": "Find the total for these equal groups. Include the extra amount once.",
+    "check": "576 ÷ 32 = 18. 696 − 120 = 576.",
+    "wrong": "576",
+    "error_note": "This is only the first cost. Include the extra £120 once.",
+    "source": "Accepted M03 source slide 2; saved deck text checked"
+  }
+]

@@ -2,15 +2,15 @@
  * Run with --write to update assets; otherwise report whether their bounds need cropping.
  * Native dimensions retain 20–22-unit writing at 15–16.5 CSS pixels, with no CSS enlargement.
  */
-import { readFile, writeFile, readdir } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { launchBrowser } from './browser/support.mjs';
 
-const root = new URL('../static/data/', import.meta.url);
+import { readTopicBank } from './read-topic-bank.mjs';
+import { foundationTopics } from '../src/lib/content/topic-routes.mjs';
 const paths = new Set();
-for (const name of await readdir(root)) {
-  if (!name.endsWith('.json')) continue;
-  const bank = JSON.parse(await readFile(new URL(name, root), 'utf8'));
-  for (const question of bank.questions ?? [])
+for (const { file } of foundationTopics) {
+  const bank = await readTopicBank(file);
+  for (const question of [...bank.questions, ...bank.retiredQuestions])
     if (question.errorImage) paths.add(question.errorImage);
 }
 const browser = await launchBrowser();

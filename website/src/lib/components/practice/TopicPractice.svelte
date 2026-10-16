@@ -11,6 +11,7 @@
   Libs: bits-ui (dialog/popover interaction), svelte (component lifecycle and state), $app/paths (base-aware URLs).
 -->
 <script>
+  import { findQuestion } from '#lib/domain/topic-pages.mjs';
   import { Select } from 'bits-ui';
   import { fitLearningHeader } from '#lib/adapters/header-layout.mjs';
   let stageWidth = $state(0);
@@ -452,7 +453,7 @@
   {/if}
 </main>
 <SiteFooter
-  question={view?.bank.questions.find((q) => q.id === view?.page?.items[view.selected]?.id)}
+  question={view && findQuestion(view.bank, view.page?.items[view.selected]?.id)}
   topic={view?.bank.title ?? ''}
 />
 <div id="toast" role="status" aria-live="polite">{view?.message ?? ''}</div>

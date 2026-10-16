@@ -48,8 +48,10 @@
       isLocked: () => false,
       onChange: async (_, id, value, selector) => {
         answers = { ...answers, [id]: value };
-        result = null;
-        onChange();
+        const checked = evaluatePuzzle(variation, answers);
+        const reset = Object.values(answers).every((answer) => !JSON.parse(answer).moves?.length);
+        result = reset ? null : result?.complete ? result : checked.complete ? checked : null;
+        onChange(result);
         await tick();
         if (selector) root?.querySelector(selector)?.focus({ preventScroll: true });
       },

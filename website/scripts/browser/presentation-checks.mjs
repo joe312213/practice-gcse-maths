@@ -1,3 +1,4 @@
+import { readTopicBank } from '../read-topic-bank.mjs';
 /**
  * Purpose: Check responsive question layout, working-pad interaction and controlled demo playback.
  *
@@ -11,7 +12,6 @@
  * Libs: node:assert/strict (assertions).
  */
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
 import { expect } from '@playwright/test';
 import { checkHandwriting } from './handwriting-checks.mjs';
 import { foundationTopics } from '../../src/lib/content/topic-routes.mjs';
@@ -61,9 +61,7 @@ export async function checkPresentation(browser, base) {
     const topics = (
       await Promise.all(
         foundationTopics.map(async (topic) => {
-          const bank = JSON.parse(
-            await readFile(new URL(`../../static/data/${topic.file}.json`, import.meta.url)),
-          );
+          const bank = await readTopicBank(`${topic.file}`);
           return bank.method === 'calculation' ? null : topic.bank;
         }),
       )
@@ -687,17 +685,44 @@ export async function checkPresentation(browser, base) {
     await page.setViewportSize({ width: 1280, height: 1000 });
     await page.locator('[data-mode="errors"]').click();
     assert.equal(await page.locator('.question-option').count(), 4);
-    const partial = await page.locator('.question-list').evaluate((list) => {
-      const boxes = [...list.querySelectorAll('li')].map((item) => item.getBoundingClientRect());
-      const bounds = list.getBoundingClientRect(),
-        last = boxes.at(-1);
-      return {
-        count: boxes.filter((box) => Math.abs(box.top - last.top) < 1).length,
-        centred: Math.abs(last.left + last.right - bounds.left - bounds.right) < 1,
-        natural: Math.abs(last.width - boxes[0].width) < 1,
-      };
-    });
-    assert.ok(partial.count === 1 && partial.centred && partial.natural, JSON.stringify(partial));
+    // Exercise the shared fitter with both real four-question pages and uneven counts.
+    for (const [count, expected] of [
+      [4, [2, 2]],
+      [5, [3, 2]],
+      [7, [3, 2, 2]],
+      [8, [3, 3, 2]],
+    ]) {
+      await page.locator('.question-list').evaluate((list, count) => {
+        while (list.children.length < count) {
+          const item = list.firstElementChild.cloneNode(true);
+          item.dataset.layoutFixture = '';
+          list.append(item);
+        }
+      }, count);
+      await page.clock.runFor(50);
+      const layout = await page.locator('.question-list').evaluate((list) => {
+        const boxes = [...list.children].map((item) => item.getBoundingClientRect());
+        const bounds = list.getBoundingClientRect(),
+          rows = [];
+        for (const box of boxes) {
+          if (!rows.length || Math.abs(rows.at(-1)[0].top - box.top) > 1) rows.push([]);
+          rows.at(-1).push(box);
+        }
+        return {
+          counts: rows.map((row) => row.length),
+          centred: rows.every(
+            (row) => Math.abs(row[0].left + row.at(-1).right - bounds.left - bounds.right) < 1,
+          ),
+          equalWidths: boxes.every((box) => Math.abs(box.width - boxes[0].width) < 1),
+        };
+      });
+      assert.deepEqual(layout.counts, expected);
+      assert.ok(layout.centred && layout.equalWidths, JSON.stringify(layout));
+    }
+    await page
+      .locator('[data-layout-fixture]')
+      .evaluateAll((items) => items.forEach((item) => item.remove()));
+    await page.clock.runFor(50);
     await page.screenshot({ path: `${artifacts}/error-questions-four.png`, fullPage: true });
     await page.locator('[data-mode="plain"]').click();
     console.log(

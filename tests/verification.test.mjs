@@ -12,7 +12,11 @@
  */
 import test from "node:test";
 import assert from "node:assert/strict";
-import { plan, isFormatInput } from "../website/scripts/verification/plan.mjs";
+import {
+  plan,
+  isFormatInput,
+  isBuildInput,
+} from "../website/scripts/verification/plan.mjs";
 
 const initial = {
   "HANDOFF.md": "a",
@@ -42,11 +46,18 @@ test("unchanged successful inputs skip every job; docs and theme changes stay na
   assert.deepEqual(selected({ ...initial, "HANDOFF.md": "b" }), ["docs"]);
   assert.deepEqual(
     selected({ ...initial, "website/src/lib/styles/theme-tokens.css": "b" }),
-    ["new-topics", "method-playback", "colours", "practice-sets"],
+    [
+      "error-investigation",
+      "new-topics",
+      "method-playback",
+      "colours",
+      "practice-sets",
+    ],
   );
   assert.deepEqual(
     selected({ ...initial, "website/src/lib/styles/components.css": "b" }),
     [
+      "error-investigation",
       "new-topics",
       "presentation",
       "method-playback",
@@ -60,6 +71,7 @@ test("logic and demo changes use their actual verification families", () => {
   assert.deepEqual(
     selected({ ...initial, "website/src/lib/domain/engine.mjs": "b" }),
     [
+      "error-investigation",
       "new-topics",
       "logic",
       "bank",
@@ -74,13 +86,20 @@ test("logic and demo changes use their actual verification families", () => {
       ...initial,
       "website/src/lib/components/teaching/ShowDemo.svelte": "b",
     }),
-    ["new-topics", "svelte", "presentation", "method-playback"],
+    [
+      "error-investigation",
+      "new-topics",
+      "svelte",
+      "presentation",
+      "method-playback",
+    ],
   );
 });
 test("deleted/new files, failed jobs, changed policy and environment invalidate evidence", () => {
   const removed = { ...initial };
   delete removed["website/src/lib/styles/components.css"];
   assert.deepEqual(selected(removed), [
+    "error-investigation",
     "new-topics",
     "presentation",
     "method-playback",
@@ -151,4 +170,23 @@ test("playback cosmetics select only the focused playback browser job", () => {
       "website/src/lib/application/session.mjs": "changed",
     }).includes("startup"),
   );
+});
+
+test("canonical prototype content invalidates the build and its maths/browser checks", () => {
+  const path = "content/lattice_error_prototype.json";
+  assert.equal(isBuildInput(path), true);
+  const jobs = selected({ ...initial, [path]: "changed" });
+  assert.ok(jobs.includes("error-investigation"));
+  assert.ok(jobs.includes("logic"));
+});
+
+test("candidate error banks select content checks without a website build", () => {
+  for (const path of [
+    "content/spot-errors-drafts/M01.json",
+    "content/specs/M15.md",
+    "scripts/review_spot_error_drafts.py",
+  ]) {
+    assert.deepEqual(selected({ ...initial, [path]: "new" }), ["logic"]);
+    assert.equal(isBuildInput(path), false);
+  }
 });

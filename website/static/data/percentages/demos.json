@@ -1,0 +1,144 @@
+[
+  {
+    "q": "Find 25% of £80.",
+    "prose": true,
+    "answer": "20",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "80",
+      "rate": "25",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "80 ÷ 100",
+        "output": "0.8",
+        "note": "The whole amount, £80, represents 100%.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "0.8 × 25",
+        "output": "20",
+        "note": "Multiply the value of 1% by 25.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "80 is the whole amount. What is 10% of it, and how could you use that to find 25%?",
+    "method_note": "The whole amount, £80, represents 100%. Multiply the value of 1% by 25.",
+    "check": "Reverse check: 20 ÷ 25 × 100 = 80, the original whole.",
+    "wrong": "55",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "id": "maths:M06-WEB-DEMO-C1-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "demo",
+    "level": 0,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A jacket has a price of £80. It increases by 25%. Find the new price.",
+    "prose": true,
+    "answer": "100",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "80",
+      "rate": "25",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "80 × 25 ÷ 100",
+        "output": "20",
+        "note": "Calculate 25% of the original £80.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "80 + 20",
+        "output": "100",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new price.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "First find 10% or 1% of 80. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 25% of the original £80. Add the change for an increase; subtract it for a decrease. The question asks for the new price.",
+    "check": "Reverse check: 100 − 20 = 80, the original amount.",
+    "wrong": "20",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "id": "maths:M06-WEB-DEMO-C2-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "demo",
+    "level": 1,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The price changes from £80 to £100. Find the percentage increase.",
+    "prose": true,
+    "answer": "25",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "80",
+      "rate": "25",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "100 − 80",
+        "output": "20",
+        "note": "Find the size of the change in £.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "20 ÷ 80",
+        "output": "{1/4}",
+        "note": "The original amount is £80; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{1/4} × 100",
+        "output": "25%",
+        "note": "The change is a 25% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "Which amount represents 100%: 80 or 100?",
+    "method_note": "Find the size of the change in £. The original amount is £80; use that as the denominator. The change is a 25% increase.",
+    "check": "80 × 25 ÷ 100 = £20, the change between the two amounts.",
+    "wrong": "20",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "id": "maths:M06-WEB-DEMO-C3-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "demo",
+    "level": 2,
+    "method": "calculation",
+    "questionPrefix": "Solve the problem"
+  }
+]

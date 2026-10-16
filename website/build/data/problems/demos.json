@@ -1,0 +1,148 @@
+[
+  {
+    "id": "maths:M03-S01-C1-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "demo",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "84 tins are shared equally among 4 boxes. How many tins go in each box?",
+    "answer": "21",
+    "answerUnit": "tins",
+    "model": {
+      "kind": "application",
+      "start": 84,
+      "operations": [
+        [
+          "divide",
+          4
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Calculate",
+        "input": "84 ÷ 4",
+        "output": "21",
+        "note": "Share the whole amount equally.",
+        "outputUnit": "tins"
+      }
+    ],
+    "hint": "Which amount is being shared, and how many equal shares are needed (4)?",
+    "method_note": "Share the whole amount equally.",
+    "check": "21 × 4 = 84.",
+    "wrong": "336",
+    "error_note": "The fixed total 84 is being shared into 4 equal parts. Divide it rather than multiplying.",
+    "source": "Accepted M03 source slide 1; saved deck text checked"
+  },
+  {
+    "id": "maths:M03-S01-C2-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "demo",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "A trip has 146 pupils and 9 adults. Each minibus has 12 passenger seats. How many minibuses are needed?",
+    "answer": "13",
+    "answerUnit": "minibuses",
+    "model": {
+      "kind": "application",
+      "start": 146,
+      "operations": [
+        [
+          "add",
+          9
+        ],
+        [
+          "ceil",
+          12
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Count everyone travelling",
+        "input": "146 + 9",
+        "output": "155",
+        "outputUnit": "people",
+        "note": "Adults need passenger seats too."
+      },
+      {
+        "title": "Divide by the passenger seats in each minibus",
+        "input": "155 ÷ 12",
+        "output": "12 r 11",
+        "outputUnit": "",
+        "note": "Twelve minibuses fill up, with eleven people still needing seats."
+      },
+      {
+        "title": "Allow one more minibus for the remaining people",
+        "input": "12 + 1",
+        "output": "13",
+        "outputUnit": "minibuses",
+        "note": "Everyone must travel, so round the number of minibuses up."
+      }
+    ],
+    "hint": "How many people need seats, including the 9 adults? After dividing by 12, decide what any remainder means.",
+    "method_note": "Add the pupils and adults, divide by the seats per minibus, then allow one more minibus for the remaining people.",
+    "check": "12 × 12 = 144 seats is too few for 155 people; 13 × 12 = 156 seats is enough.",
+    "wrong": "12",
+    "error_note": "Twelve minibuses provide only 144 seats. The remaining eleven people need another minibus.",
+    "source": "Accepted M03 source slide 1; saved deck text checked; website Build example strengthened 13 October 2026"
+  },
+  {
+    "id": "maths:M03-S01-C3-Q1",
+    "subject": "maths",
+    "topic": "M03",
+    "type": "demo",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "145 students need minibuses with 9 passenger seats each. Hire costs £40 per minibus. Find the total cost.",
+    "answer": "680",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": 145,
+      "operations": [
+        [
+          "ceil",
+          9
+        ],
+        [
+          "multiply",
+          40
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide to find whole groups and the remainder",
+        "input": "145 ÷ 9",
+        "output": "16 r 1",
+        "note": "16 complete groups of 9, with 1 left over.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Answer the question in context",
+        "input": "16 + 1",
+        "output": "17",
+        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+      },
+      {
+        "title": "Use the intermediate result",
+        "input": "17 × 40",
+        "output": "680",
+        "note": "Find the total for these equal groups.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "If some are left after making groups of 9, do they still need a place? What will that first result represent?",
+    "method_note": "16 complete groups of 9, with 1 left over. Everyone or everything needs a place; add one group when there is a remainder. Find the total for these equal groups.",
+    "check": "16 × 9 + 1 = 145; 1 is less than 9. 680 ÷ 40 = 17.",
+    "wrong": "640",
+    "error_note": "16 groups of 9 have only 144 places. Include one more group before multiplying by £40.",
+    "source": "Accepted M03 source slide 1; saved deck text checked"
+  }
+]

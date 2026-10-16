@@ -1,3 +1,4 @@
+import { readTopicBank } from './read-topic-bank.mjs';
 /**
  * Purpose: Validate the published equation bank against authored IDs, answers and teaching annotations.
  *
@@ -13,7 +14,7 @@
 import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { markAnswer } from '../src/lib/domain/engine.mjs';
-const bank = JSON.parse(await readFile(new URL('../static/data/equations.json', import.meta.url)));
+const bank = await readTopicBank('equations');
 assert.equal(bank.questions.length, 243);
 assert.equal(new Set(bank.questions.map((q) => q.id)).size, 243);
 assert.equal(bank.recap.length, 3);
@@ -30,9 +31,7 @@ const catalogue = JSON.parse(
 const banks = [
   bank,
   ...(await Promise.all(
-    ['multiplication', 'division'].map(async (name) =>
-      JSON.parse(await readFile(new URL(`../static/data/${name}.json`, import.meta.url))),
-    ),
+    ['multiplication', 'division'].map(async (name) => await readTopicBank(`${name}`)),
   )),
 ];
 for (const topic of banks) {
@@ -78,13 +77,16 @@ for (const arithmetic of banks.slice(1)) {
   assert.equal(arithmetic.questions.length, 243);
   assert.equal(new Set(arithmetic.questions.map((q) => q.id)).size, 243);
   for (const q of arithmetic.questions.filter((q) => q.type !== 'problem')) {
-    if (q.method === 'lattice' && q.level === 2) {
-      const digits = [String(q.a).length, String(q.b).length];
+    const lattice = q.diagram?.kind === 'lattice' ? q.diagram : q.method === 'lattice' ? q : null;
+    if (lattice && q.level === 2) {
+      const digits = [String(lattice.a).length, String(lattice.b).length];
       assert.ok(
         digits.every((n) => n === 3 || n === 4) && digits.includes(4),
         `Confidence multiplication needs 4×3, 3×4 or 4×4 digits: ${q.id}`,
       );
     }
+    // Investigation arithmetic and fault traces have their own independent audit.
+    if (q.investigation) continue;
     assert.ok(markAnswer(q.answer, q.answer).correct, q.id);
     const parts = q.answer.split(' r ');
     if (parts.length === 2) {
@@ -108,9 +110,7 @@ for (const name of [
   'reverse-percentages',
   'speed-distance-time',
 ]) {
-  const accepted = JSON.parse(
-    await readFile(new URL(`../static/data/${name}.json`, import.meta.url)),
-  );
+  const accepted = await readTopicBank(`${name}`);
   assert.equal(accepted.questions.length, 243);
   assert.equal(Boolean(accepted.draft), false);
   for (const q of accepted.questions) assert.ok(markAnswer(q.answer, q.answer).correct, q.id);

@@ -1,3 +1,4 @@
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /**
  * Purpose: Verify temporary working restoration and its separation from durable progress.
  *
@@ -12,18 +13,13 @@
  */
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
 import {
   createWorkingCache,
   WORKING_TTL,
 } from "../website/src/lib/adapters/working-cache.mjs";
 import { createSession } from "../website/src/lib/application/session.mjs";
 import { emptyStore } from "../website/src/lib/domain/profiles.mjs";
-const bank = JSON.parse(
-  await readFile(
-    new URL("../website/static/data/equations.json", import.meta.url),
-  ),
-);
+const bank = await readTopicBank("equations");
 function storage() {
   const data = new Map();
   return {

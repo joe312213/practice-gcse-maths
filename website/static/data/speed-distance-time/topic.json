@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "subject": "maths",
+  "topic": "M12",
+  "title": "Speed, distance and time",
+  "method": "calculation",
+  "revision": "M12-web-2026-10-12",
+  "calculator": true,
+  "questionPrefix": "Solve the speed, distance or time problem",
+  "errorRevision": 2
+}

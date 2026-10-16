@@ -186,6 +186,7 @@
       var(--chevron-padding-end, calc(var(--chevron-depth) + 0.5rem));
     border-radius: 0;
     border-width: var(--chevron-border-width);
+    border-color: var(--chevron-line);
     /* 15px labels at the agreed 16px root, scaling with root text size. */
     font-size: 0.9375rem;
     line-height: 1.3;
@@ -201,7 +202,7 @@
   /* Paint both diagonal edges, including the exposed notch when navigation wraps. */
   :global(:where(.chevron-steps) .chevron-segment[aria-current='step']) {
     /* A rectangular selected-colour border leaves dark ticks where the diagonal meets it. */
-    border-color: var(--line);
+    border-color: var(--chevron-line);
     background-clip: padding-box;
   }
   :global(:where(.chevron-steps) .chevron-segment:not(.first-stage)::before),
@@ -212,7 +213,7 @@
     inset: calc(-1 * var(--chevron-border-width));
     pointer-events: none;
     z-index: 1;
-    background: var(--line);
+    background: var(--chevron-line);
   }
   :global(:where(.chevron-steps) .chevron-segment:not(.first-stage)::before) {
     clip-path: polygon(

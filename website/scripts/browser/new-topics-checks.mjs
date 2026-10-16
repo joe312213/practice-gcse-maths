@@ -1,3 +1,4 @@
+import { readTopicBank } from '../read-topic-bank.mjs';
 /**
  * Purpose: Exercise student arithmetic and the actual portable puzzle control in the app.
  *
@@ -12,11 +13,11 @@
  */
 import { checkDraftTopics } from './draft-topics-checks.mjs';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
 import AxeBuilder from '@axe-core/playwright';
 import { expect } from '@playwright/test';
 import { foundationTopics, topicPath } from '../../src/lib/content/topic-routes.mjs';
 import puzzles from '../../vendor/puzzles/catalogue.js';
+import { playGo } from '../../vendor/puzzles/rules/go-rules.js';
 import { createTestContext, artifacts, selectTopic } from './support.mjs';
 
 /** Check actual card bounds, including packing order, non-overlap and footer clearance. */
@@ -29,11 +30,24 @@ async function checkMasonry(page) {
           if (!container.classList.contains('masonry-ready')) return ['Layout not ready'];
           const bounds = container.getBoundingClientRect();
           const boxes = [...container.children].map((item) => item.getBoundingClientRect());
-          const columns = [...new Set(boxes.map((box) => box.left))].sort((a, b) => a - b);
+          // A previous viewport's packing can still fit inside the new container.
+          // Wait for the cards to match the current CSS tracks before accepting it.
+          const style = getComputedStyle(container);
+          const count = style.gridTemplateColumns.split(' ').length;
+          const gap = parseFloat(style.columnGap);
+          const width = (bounds.width - gap * (count - 1)) / count;
+          const columns = Array.from(
+            { length: count },
+            (_, index) => bounds.left + index * (width + gap),
+          );
           const bottoms = columns.map(() => bounds.top);
           const errors = [];
           for (const [index, box] of boxes.entries()) {
-            if (box.left < bounds.left - 1 || box.right > bounds.right + 1)
+            if (
+              Math.abs(box.width - width) > 1 ||
+              box.left < bounds.left - 1 ||
+              box.right > bounds.right + 1
+            )
               errors.push(`Card ${index} has not fitted the resized container`);
             const next = bottoms.indexOf(Math.min(...bottoms));
             if (Math.abs(box.left - columns[next]) > 1 || Math.abs(box.top - bottoms[next]) > 1)
@@ -121,9 +135,7 @@ export async function checkNewTopics(browser, base) {
     await page.getByRole('radio', { name: 'priority', exact: true }).check();
     assert.equal(await page.getByRole('button', { name: 'Copy topic link' }).count(), 0);
     for (const topic of foundationTopics) {
-      const bank = JSON.parse(
-        await readFile(new URL(`../../static/data/${topic.file}.json`, import.meta.url)),
-      );
+      const bank = await readTopicBank(`${topic.file}`);
       const card = page.locator('.topic-card').filter({ hasText: bank.title });
       if (topic.bank === 'M15') assert.ok(await card.locator('.topic-example .fraction').count());
       else
@@ -436,9 +448,7 @@ export async function checkNewTopics(browser, base) {
       await page.locator('[data-mode="demo"]').click();
       await page.locator('[data-demo-level="2"]').click();
       await page.locator('#demo-all').click();
-      const bank = JSON.parse(
-        await readFile(new URL(`../../static/data/${name}.json`, import.meta.url)),
-      );
+      const bank = await readTopicBank(`${name}`);
       await page
         .getByText(
           `${bank.questions.find((q) => q.type === 'demo' && q.level === 2).q} = ${bank.questions.find((q) => q.type === 'demo' && q.level === 2).answer}`,
@@ -503,7 +513,7 @@ export async function checkNewTopics(browser, base) {
       );
       assert.equal(await page.locator('#question-hint').isVisible(), false);
       await page.locator('[data-mode="errors"]').click();
-      await page.locator('.error-working-image').waitFor();
+      await page.locator('.investigation-paper').waitFor();
       assert.ok(await page.getByLabel('Corrected answer', { exact: true }).isVisible());
       const timer = page.getByRole('region', { name: 'Practice timer' });
       assert.equal(await timer.getByRole('timer').innerText(), '6:00');
@@ -525,14 +535,13 @@ export async function checkNewTopics(browser, base) {
       assert.match(await timer.innerText(), /Time is up/);
       await timer.getByRole('button', { name: 'Reset timer', exact: true }).click();
       assert.ok(await timer.getByRole('button', { name: 'Add one minute' }).isEnabled());
-      // Sample the painted result: checking the CSS alone misses broken mask asset URLs.
+      // Sample the generated working: both themed paper and visible ink must actually paint.
       const originalTheme = await page.evaluate(() => document.documentElement.dataset.theme);
       for (const theme of ['light', 'dark']) {
         await page.evaluate((theme) => {
           document.documentElement.dataset.theme = theme;
         }, theme);
-        const diagram = page.locator('.error-working-diagram');
-        await page.locator('.error-working-image').evaluate((img) => img.decode());
+        const diagram = page.locator('.investigation-paper');
         const png = await diagram.screenshot({
           path: `${artifacts}/error-working-${topic}-${theme}.png`,
         });
@@ -567,17 +576,18 @@ export async function checkNewTopics(browser, base) {
       }, originalTheme);
       for (const level of [0, 1, 2]) {
         await page.locator('#level').selectOption(String(level));
-        const added = bank.questions.find((q) => q.id === `maths:${topic}-SE-C${level + 1}-Q4`);
+        const added = bank.questions.find(
+          (q) => q.id === `maths:${topic}-WEB-ERRORS-R2-C${level + 1}-Q04`,
+        );
         await page.locator('.question-option').filter({ hasText: added.q }).click();
-        await page.locator('.error-working-image').evaluate((img) => img.decode());
         await page
           .locator('#active-question')
           .screenshot({ path: `${artifacts}/error-added-${topic}-${level}.png` });
       }
       assert.equal(
         await page
-          .locator('.error-working-image')
-          .evaluate((img) => img.complete && img.naturalWidth > 0),
+          .locator('.investigation-paper')
+          .evaluate((paper) => paper.querySelectorAll('[data-location]').length > 0),
         true,
       );
     }
@@ -1074,6 +1084,16 @@ async function checkPuzzleTouch(browser, base) {
       await page.clock.runFor(1000);
     }
     await page.locator('.go-success').waitFor();
+    await page.getByText(/Well done! .* of .* marks/).waitFor();
+    const visibleMoves = await page
+      .locator('.go-point')
+      .evaluateAll((points) => points.map((point) => Number(point.dataset.value)));
+    const beyond = visibleMoves.find((move) => playGo(go, { moves }, move).state);
+    assert.notEqual(beyond, undefined);
+    await page.locator(`.go-point[data-value="${beyond}"]`).tap();
+    await page.clock.runFor(1000);
+    await page.locator('.go-success').waitFor();
+    await page.getByText(/Well done! .* of .* marks/).waitFor();
     assert.equal(await page.getByRole('button', { name: 'Check puzzle', exact: true }).count(), 0);
     await page.getByRole('button', { name: 'Reset', exact: true }).tap();
     await page.locator('.go-moves').filter({ hasText: 'none yet' }).waitFor();

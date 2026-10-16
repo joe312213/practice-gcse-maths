@@ -1,3 +1,4 @@
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /**
  * Purpose: Verify session actions, marking, assistance and profile-isolated state.
  *
@@ -13,7 +14,6 @@
  */
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
 import { createSession } from "../website/src/lib/application/session.mjs";
 import {
   emptyStore,
@@ -21,11 +21,7 @@ import {
   serializeStore,
 } from "../website/src/lib/domain/profiles.mjs";
 import { openProgress } from "../website/src/lib/adapters/storage.mjs";
-const bank = JSON.parse(
-  await readFile(
-    new URL("../website/static/data/equations.json", import.meta.url),
-  ),
-);
+const bank = await readTopicBank("equations");
 /**
  * Create an isolated session fixture with injected deterministic dependencies.
  * Parameter data: mutable learner store.
@@ -364,11 +360,7 @@ test("refresh restores each ordinary stage and its saved page without rescoring"
 });
 
 test("saved chevrons are isolated by learner/topic and invalid stages fall back safely", async () => {
-  const division = JSON.parse(
-    await readFile(
-      new URL("../website/static/data/division.json", import.meta.url),
-    ),
-  );
+  const division = await readTopicBank("division");
   const data = emptyStore();
   const api = createSession({ bank, banks: [bank, division], data, save() {} });
   let view;

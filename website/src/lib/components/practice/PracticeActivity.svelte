@@ -12,6 +12,9 @@
   Libs: svelte (component lifecycle and state), bits-ui (dialog/popover interaction).
 -->
 <script>
+  import { stageTextFor } from '#lib/content/stage-text.mjs';
+  import { guidanceFor } from '#lib/content/topic-bank.mjs';
+  import { findQuestion } from '#lib/domain/topic-pages.mjs';
   import MathText from '../teaching/MathText.svelte';
   import CalculationWorking from '../teaching/CalculationWorking.svelte';
   import ProblemTips from '../teaching/ProblemTips.svelte';
@@ -35,10 +38,11 @@
     container,
     referenceButton = $state();
   const page = $derived(view.page);
+  const stageText = $derived(stageTextFor(view.bank, view.mode, page.size));
   const hasProblemTips = $derived(
     view.mode === 'problem' || (view.bank.problemSolvingTopic && view.mode === 'plain'),
   );
-  const question = $derived(view.bank.questions.find((q) => q.id === page.items[view.selected].id));
+  const question = $derived(findQuestion(view.bank, page.items[view.selected].id));
   const response = $derived(page.responses[question.id]);
   let assessmentNow = $state(Date.now());
   const canReassess = $derived(view.assessment && assessmentNow >= view.assessment.availableAt);
@@ -176,16 +180,8 @@
           >{/if}
       </div>
     {/if}
-    <p class="muted">
-      {view.mode === 'assessment'
-        ? `Try all ${page.size} without hints. This helps you decide where to begin and measure future progress.`
-        : view.mode === 'errors'
-          ? 'Inspect the written method. Identify the mistake, correct it, then answer the original question.'
-          : 'Show your working. Submit each answer when you are ready.'}
-    </p>
-    {#if view.mode === 'scaffolded'}<p class="muted">
-        These answers help you practise and do not change your independent challenge level.
-      </p>{/if}
+    {#if stageText.intro}<p class="muted">{stageText.intro}</p>{/if}
+    {#if stageText.note}<p class="muted">{stageText.note}</p>{/if}
     {#if hasProblemTips}
       <ProblemTips
         teaching={view.sourceBank.problemTeaching}
@@ -221,9 +217,9 @@
           </p>
           {#if question.instruction}<p>{question.instruction}</p>{/if}
           {#if view.mode === 'scaffolded'}<Guidance
-              guidance={view.bank.teaching.guidance[question.level]}
+              guidance={guidanceFor(view.bank.teaching, question.level)}
             />{/if}
-          {#if view.mode === 'errors'}<div class="error-working">
+          {#if view.mode === 'errors' && !question.investigation}<div class="error-working">
               {#if question.errorSteps}<CalculationWorking
                   {question}
                   steps={question.errorSteps}
@@ -252,6 +248,7 @@
               mode={view.mode}
               {response}
               draft={view.draft}
+              draftKey={view.draftKey}
               assisted={page.assisted[question.id]}
               hintVisible={view.hintVisible}
               inputError={view.inputError}
@@ -260,9 +257,9 @@
               onhint={session.hint}
             />
           </fieldset>
-          <Feedback {question} {response} mode={view.mode} bank={view.sourceBank} />
         </div>
       </section>
+      <Feedback {question} {response} mode={view.mode} bank={view.sourceBank} />
       {#key view.draftKey}<WorkingArea
           embedded
           topic={view.bank.topic}

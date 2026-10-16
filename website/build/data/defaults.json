@@ -1,0 +1,16 @@
+{
+  "stageText": {
+    "practice": {
+      "intro": "Show your working. Submit each answer when you are ready."
+    },
+    "initialAssessment": {
+      "intro": "Try all {questionCount} without hints. This helps you decide where to begin and measure future progress. Try your best but don't worry about getting any wrong."
+    },
+    "errors": {
+      "intro": "Check the working, find the error(s). Click/tap where you find them and choose the reason."
+    },
+    "scaffolded": {
+      "note": "These answers help you practise and do not change your independent challenge level."
+    }
+  }
+}

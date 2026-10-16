@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "subject": "maths",
+  "topic": "M13",
+  "title": "Signed addition and subtraction",
+  "method": "calculation",
+  "revision": "M13-web-2026-10-13",
+  "rows": [
+    "Read the signs",
+    "Rewrite subtraction",
+    "Calculate",
+    "Check by undoing"
+  ],
+  "provenance": {
+    "spec": "content/specs/M13.md",
+    "source": "New website draft informed by the existing topic source and Foundation specifications; not copied exam questions."
+  },
+  "questionPrefix": "Work out the calculation",
+  "errorRevision": 2
+}

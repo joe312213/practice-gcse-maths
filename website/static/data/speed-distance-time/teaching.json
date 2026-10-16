@@ -1,0 +1,15 @@
+{
+  "guidance": {
+    "default": {
+      "aim": "Choose the relationship using the quantity requested and matching units.",
+      "steps": [
+        "Identify distance, speed and time, and the quantity requested.",
+        "Use hours with km/h: divide minutes by 60. Include stops when total elapsed time is requested.",
+        "Use speed = distance ÷ time, distance = speed × time, or time = distance ÷ speed.",
+        "For a whole journey use total distance and total time; round only the final result and include units."
+      ]
+    },
+    "byLevel": {}
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

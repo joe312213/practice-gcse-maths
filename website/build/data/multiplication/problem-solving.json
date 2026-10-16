@@ -1,0 +1,2911 @@
+{
+  "teaching": {
+    "guidance": [
+      {
+        "title": "Read and plan",
+        "text": "Identify what is known and what the final answer must describe."
+      },
+      {
+        "title": "Choose operations",
+        "text": "Decide which quantities to combine. Write each intermediate result with its units."
+      },
+      {
+        "title": "Check and answer",
+        "text": "Round the factors to one significant figure and multiply to check the ballpark size; check the final units too."
+      }
+    ],
+    "examples": [
+      {
+        "id": "maths:M01-WEB-PS-C1-Q100",
+        "subject": "maths",
+        "topic": "M01",
+        "type": "problem",
+        "level": 0,
+        "method": "calculation",
+        "prose": true,
+        "q": "There are 24 boxes with 7 pens in each. How many pens are there altogether?",
+        "answer": "168",
+        "answerUnit": "pens",
+        "model": {
+          "kind": "application",
+          "start": "24",
+          "operations": [
+            [
+              "multiply",
+              "7"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Find the total number of pens",
+            "input": "24 × 7",
+            "output": "168",
+            "note": "Find the total number of pens.",
+            "outputUnit": "pens"
+          }
+        ],
+        "hint": "What quantity does 24 × 7 give you?",
+        "method_note": "Find the total number of pens.",
+        "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140. Compare the final size with your answer; this is a ballpark check.",
+        "wrong": "24",
+        "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+        "source": "Original website application-stage content, 12 October 2026"
+      },
+      {
+        "id": "maths:M01-WEB-PS-C2-Q100",
+        "subject": "maths",
+        "topic": "M01",
+        "type": "problem",
+        "level": 1,
+        "method": "calculation",
+        "prose": true,
+        "q": "There are 24 boxes with 7 pens in each. 9 pens are removed. How many remain?",
+        "answer": "159",
+        "answerUnit": "pens",
+        "model": {
+          "kind": "application",
+          "start": "24",
+          "operations": [
+            [
+              "multiply",
+              "7"
+            ],
+            [
+              "subtract",
+              "9"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Find the total number of pens",
+            "input": "24 × 7",
+            "output": "168",
+            "note": "Find the total number of pens.",
+            "outputUnit": "pens"
+          },
+          {
+            "title": "Remove the 9 pens",
+            "input": "168 − 9",
+            "output": "159",
+            "note": "Remove the 9 pens.",
+            "outputUnit": "pens"
+          }
+        ],
+        "hint": "What quantity does 24 × 7 give you?",
+        "method_note": "Find the total number of pens Remove the 9 pens.",
+        "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 − 9 = 131. Compare the final size with your answer; this is a ballpark check.",
+        "wrong": "168",
+        "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+        "source": "Original website application-stage content, 12 October 2026"
+      },
+      {
+        "id": "maths:M01-WEB-PS-C3-Q100",
+        "subject": "maths",
+        "topic": "M01",
+        "type": "problem",
+        "level": 2,
+        "method": "calculation",
+        "prose": true,
+        "q": "There are 24 boxes with 7 pens in each. A customer buys all the pens. Each pen sells for £7. There is a £9 discount on the whole order. What is the final price?",
+        "answer": "1167",
+        "answerUnit": "£",
+        "model": {
+          "kind": "application",
+          "start": "24",
+          "operations": [
+            [
+              "multiply",
+              "7"
+            ],
+            [
+              "multiply",
+              "7"
+            ],
+            [
+              "subtract",
+              "9"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Find the total number of pens",
+            "input": "24 × 7",
+            "output": "168",
+            "note": "Find the total number of pens.",
+            "outputUnit": "pens"
+          },
+          {
+            "title": "Find the price of all the items",
+            "input": "168 × 7",
+            "output": "1176",
+            "note": "Find the price of all the items.",
+            "outputUnit": "£"
+          },
+          {
+            "title": "Apply the discount once",
+            "input": "1176 − 9",
+            "output": "1167",
+            "note": "Apply the discount once.",
+            "outputUnit": "£"
+          }
+        ],
+        "hint": "What quantity does 24 × 7 give you?",
+        "method_note": "Find the total number of pens Find the price of all the items Apply the discount once.",
+        "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 × 7 = 980; 980 − 9 = 971. Compare the final size with your answer; this is a ballpark check.",
+        "wrong": "168",
+        "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+        "source": "Original website application-stage content, 12 October 2026"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "maths:M01-WEB-PS-C1-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 12 boxes with 7 pens in each. How many pens are there altogether?",
+      "answer": "84",
+      "answerUnit": "pens",
+      "model": {
+        "kind": "application",
+        "start": "12",
+        "operations": [
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of pens",
+          "input": "12 × 7",
+          "output": "84",
+          "note": "Find the total number of pens.",
+          "outputUnit": "pens"
+        }
+      ],
+      "hint": "What quantity does 12 × 7 give you?",
+      "method_note": "Find the total number of pens.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 7 = 70. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "12",
+      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 13 rows with 8 seats in each. How many seats are there altogether?",
+      "answer": "104",
+      "answerUnit": "seats",
+      "model": {
+        "kind": "application",
+        "start": "13",
+        "operations": [
+          [
+            "multiply",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of seats",
+          "input": "13 × 8",
+          "output": "104",
+          "note": "Find the total number of seats.",
+          "outputUnit": "seats"
+        }
+      ],
+      "hint": "What quantity does 13 × 8 give you?",
+      "method_note": "Find the total number of seats.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 8 = 80. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "13",
+      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 14 packs with 9 cards in each. How many cards are there altogether?",
+      "answer": "126",
+      "answerUnit": "cards",
+      "model": {
+        "kind": "application",
+        "start": "14",
+        "operations": [
+          [
+            "multiply",
+            "9"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cards",
+          "input": "14 × 9",
+          "output": "126",
+          "note": "Find the total number of cards.",
+          "outputUnit": "cards"
+        }
+      ],
+      "hint": "What quantity does 14 × 9 give you?",
+      "method_note": "Find the total number of cards.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 9 = 90. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "14",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 15 shelves with 10 books in each. How many books are there altogether?",
+      "answer": "150",
+      "answerUnit": "books",
+      "model": {
+        "kind": "application",
+        "start": "15",
+        "operations": [
+          [
+            "multiply",
+            "10"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of books",
+          "input": "15 × 10",
+          "output": "150",
+          "note": "Find the total number of books.",
+          "outputUnit": "books"
+        }
+      ],
+      "hint": "What quantity does 15 × 10 give you?",
+      "method_note": "Find the total number of books.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "15",
+      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q5",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 16 trays with 11 cakes in each. How many cakes are there altogether?",
+      "answer": "176",
+      "answerUnit": "cakes",
+      "model": {
+        "kind": "application",
+        "start": "16",
+        "operations": [
+          [
+            "multiply",
+            "11"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cakes",
+          "input": "16 × 11",
+          "output": "176",
+          "note": "Find the total number of cakes.",
+          "outputUnit": "cakes"
+        }
+      ],
+      "hint": "What quantity does 16 × 11 give you?",
+      "method_note": "Find the total number of cakes.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "16",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q6",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 17 bags with 12 beads in each. How many beads are there altogether?",
+      "answer": "204",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "17",
+        "operations": [
+          [
+            "multiply",
+            "12"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of beads",
+          "input": "17 × 12",
+          "output": "204",
+          "note": "Find the total number of beads.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "What quantity does 17 × 12 give you?",
+      "method_note": "Find the total number of beads.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "17",
+      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q7",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 15 boxes with 7 pens in each. How many pens are there altogether?",
+      "answer": "105",
+      "answerUnit": "pens",
+      "model": {
+        "kind": "application",
+        "start": "15",
+        "operations": [
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of pens",
+          "input": "15 × 7",
+          "output": "105",
+          "note": "Find the total number of pens.",
+          "outputUnit": "pens"
+        }
+      ],
+      "hint": "What quantity does 15 × 7 give you?",
+      "method_note": "Find the total number of pens.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "15",
+      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q8",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 16 rows with 8 seats in each. How many seats are there altogether?",
+      "answer": "128",
+      "answerUnit": "seats",
+      "model": {
+        "kind": "application",
+        "start": "16",
+        "operations": [
+          [
+            "multiply",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of seats",
+          "input": "16 × 8",
+          "output": "128",
+          "note": "Find the total number of seats.",
+          "outputUnit": "seats"
+        }
+      ],
+      "hint": "What quantity does 16 × 8 give you?",
+      "method_note": "Find the total number of seats.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "16",
+      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q9",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 17 packs with 9 cards in each. How many cards are there altogether?",
+      "answer": "153",
+      "answerUnit": "cards",
+      "model": {
+        "kind": "application",
+        "start": "17",
+        "operations": [
+          [
+            "multiply",
+            "9"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cards",
+          "input": "17 × 9",
+          "output": "153",
+          "note": "Find the total number of cards.",
+          "outputUnit": "cards"
+        }
+      ],
+      "hint": "What quantity does 17 × 9 give you?",
+      "method_note": "Find the total number of cards.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "17",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q10",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 18 shelves with 10 books in each. How many books are there altogether?",
+      "answer": "180",
+      "answerUnit": "books",
+      "model": {
+        "kind": "application",
+        "start": "18",
+        "operations": [
+          [
+            "multiply",
+            "10"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of books",
+          "input": "18 × 10",
+          "output": "180",
+          "note": "Find the total number of books.",
+          "outputUnit": "books"
+        }
+      ],
+      "hint": "What quantity does 18 × 10 give you?",
+      "method_note": "Find the total number of books.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "18",
+      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q11",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 19 trays with 11 cakes in each. How many cakes are there altogether?",
+      "answer": "209",
+      "answerUnit": "cakes",
+      "model": {
+        "kind": "application",
+        "start": "19",
+        "operations": [
+          [
+            "multiply",
+            "11"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cakes",
+          "input": "19 × 11",
+          "output": "209",
+          "note": "Find the total number of cakes.",
+          "outputUnit": "cakes"
+        }
+      ],
+      "hint": "What quantity does 19 × 11 give you?",
+      "method_note": "Find the total number of cakes.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "19",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q12",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 20 bags with 12 beads in each. How many beads are there altogether?",
+      "answer": "240",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "20",
+        "operations": [
+          [
+            "multiply",
+            "12"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of beads",
+          "input": "20 × 12",
+          "output": "240",
+          "note": "Find the total number of beads.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "What quantity does 20 × 12 give you?",
+      "method_note": "Find the total number of beads.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "20",
+      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q13",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 18 boxes with 7 pens in each. How many pens are there altogether?",
+      "answer": "126",
+      "answerUnit": "pens",
+      "model": {
+        "kind": "application",
+        "start": "18",
+        "operations": [
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of pens",
+          "input": "18 × 7",
+          "output": "126",
+          "note": "Find the total number of pens.",
+          "outputUnit": "pens"
+        }
+      ],
+      "hint": "What quantity does 18 × 7 give you?",
+      "method_note": "Find the total number of pens.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "18",
+      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q14",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 19 rows with 8 seats in each. How many seats are there altogether?",
+      "answer": "152",
+      "answerUnit": "seats",
+      "model": {
+        "kind": "application",
+        "start": "19",
+        "operations": [
+          [
+            "multiply",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of seats",
+          "input": "19 × 8",
+          "output": "152",
+          "note": "Find the total number of seats.",
+          "outputUnit": "seats"
+        }
+      ],
+      "hint": "What quantity does 19 × 8 give you?",
+      "method_note": "Find the total number of seats.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "19",
+      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q15",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 20 packs with 9 cards in each. How many cards are there altogether?",
+      "answer": "180",
+      "answerUnit": "cards",
+      "model": {
+        "kind": "application",
+        "start": "20",
+        "operations": [
+          [
+            "multiply",
+            "9"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cards",
+          "input": "20 × 9",
+          "output": "180",
+          "note": "Find the total number of cards.",
+          "outputUnit": "cards"
+        }
+      ],
+      "hint": "What quantity does 20 × 9 give you?",
+      "method_note": "Find the total number of cards.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "20",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q16",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 21 shelves with 10 books in each. How many books are there altogether?",
+      "answer": "210",
+      "answerUnit": "books",
+      "model": {
+        "kind": "application",
+        "start": "21",
+        "operations": [
+          [
+            "multiply",
+            "10"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of books",
+          "input": "21 × 10",
+          "output": "210",
+          "note": "Find the total number of books.",
+          "outputUnit": "books"
+        }
+      ],
+      "hint": "What quantity does 21 × 10 give you?",
+      "method_note": "Find the total number of books.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "21",
+      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q17",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 22 trays with 11 cakes in each. How many cakes are there altogether?",
+      "answer": "242",
+      "answerUnit": "cakes",
+      "model": {
+        "kind": "application",
+        "start": "22",
+        "operations": [
+          [
+            "multiply",
+            "11"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cakes",
+          "input": "22 × 11",
+          "output": "242",
+          "note": "Find the total number of cakes.",
+          "outputUnit": "cakes"
+        }
+      ],
+      "hint": "What quantity does 22 × 11 give you?",
+      "method_note": "Find the total number of cakes.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "22",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C1-Q18",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 23 bags with 12 beads in each. How many beads are there altogether?",
+      "answer": "276",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "23",
+        "operations": [
+          [
+            "multiply",
+            "12"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of beads",
+          "input": "23 × 12",
+          "output": "276",
+          "note": "Find the total number of beads.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "What quantity does 23 × 12 give you?",
+      "method_note": "Find the total number of beads.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "23",
+      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 12 boxes with 7 pens in each. 5 pens are removed. How many remain?",
+      "answer": "79",
+      "answerUnit": "pens",
+      "model": {
+        "kind": "application",
+        "start": "12",
+        "operations": [
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "subtract",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of pens",
+          "input": "12 × 7",
+          "output": "84",
+          "note": "Find the total number of pens.",
+          "outputUnit": "pens"
+        },
+        {
+          "title": "Remove the 5 pens",
+          "input": "84 − 5",
+          "output": "79",
+          "note": "Remove the 5 pens.",
+          "outputUnit": "pens"
+        }
+      ],
+      "hint": "What quantity does 12 × 7 give you?",
+      "method_note": "Find the total number of pens Remove the 5 pens.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 7 = 70; 70 − 5 = 65. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "84",
+      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 13 rows with 8 seats in each. 5 seats are removed. How many remain?",
+      "answer": "99",
+      "answerUnit": "seats",
+      "model": {
+        "kind": "application",
+        "start": "13",
+        "operations": [
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "subtract",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of seats",
+          "input": "13 × 8",
+          "output": "104",
+          "note": "Find the total number of seats.",
+          "outputUnit": "seats"
+        },
+        {
+          "title": "Remove the 5 seats",
+          "input": "104 − 5",
+          "output": "99",
+          "note": "Remove the 5 seats.",
+          "outputUnit": "seats"
+        }
+      ],
+      "hint": "What quantity does 13 × 8 give you?",
+      "method_note": "Find the total number of seats Remove the 5 seats.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 8 = 80; 80 − 5 = 75. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "104",
+      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 14 packs with 9 cards in each. 5 cards are removed. How many remain?",
+      "answer": "121",
+      "answerUnit": "cards",
+      "model": {
+        "kind": "application",
+        "start": "14",
+        "operations": [
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "subtract",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cards",
+          "input": "14 × 9",
+          "output": "126",
+          "note": "Find the total number of cards.",
+          "outputUnit": "cards"
+        },
+        {
+          "title": "Remove the 5 cards",
+          "input": "126 − 5",
+          "output": "121",
+          "note": "Remove the 5 cards.",
+          "outputUnit": "cards"
+        }
+      ],
+      "hint": "What quantity does 14 × 9 give you?",
+      "method_note": "Find the total number of cards Remove the 5 cards.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 9 = 90; 90 − 5 = 85. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "126",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 15 shelves with 10 books in each. 5 books are removed. How many remain?",
+      "answer": "145",
+      "answerUnit": "books",
+      "model": {
+        "kind": "application",
+        "start": "15",
+        "operations": [
+          [
+            "multiply",
+            "10"
+          ],
+          [
+            "subtract",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of books",
+          "input": "15 × 10",
+          "output": "150",
+          "note": "Find the total number of books.",
+          "outputUnit": "books"
+        },
+        {
+          "title": "Remove the 5 books",
+          "input": "150 − 5",
+          "output": "145",
+          "note": "Remove the 5 books.",
+          "outputUnit": "books"
+        }
+      ],
+      "hint": "What quantity does 15 × 10 give you?",
+      "method_note": "Find the total number of books Remove the 5 books.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 5 = 195. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "150",
+      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q5",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 16 trays with 11 cakes in each. 5 cakes are removed. How many remain?",
+      "answer": "171",
+      "answerUnit": "cakes",
+      "model": {
+        "kind": "application",
+        "start": "16",
+        "operations": [
+          [
+            "multiply",
+            "11"
+          ],
+          [
+            "subtract",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cakes",
+          "input": "16 × 11",
+          "output": "176",
+          "note": "Find the total number of cakes.",
+          "outputUnit": "cakes"
+        },
+        {
+          "title": "Remove the 5 cakes",
+          "input": "176 − 5",
+          "output": "171",
+          "note": "Remove the 5 cakes.",
+          "outputUnit": "cakes"
+        }
+      ],
+      "hint": "What quantity does 16 × 11 give you?",
+      "method_note": "Find the total number of cakes Remove the 5 cakes.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 5 = 195. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "176",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q6",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 17 bags with 12 beads in each. 5 beads are removed. How many remain?",
+      "answer": "199",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "17",
+        "operations": [
+          [
+            "multiply",
+            "12"
+          ],
+          [
+            "subtract",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of beads",
+          "input": "17 × 12",
+          "output": "204",
+          "note": "Find the total number of beads.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Remove the 5 beads",
+          "input": "204 − 5",
+          "output": "199",
+          "note": "Remove the 5 beads.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "What quantity does 17 × 12 give you?",
+      "method_note": "Find the total number of beads Remove the 5 beads.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 5 = 195. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "204",
+      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q7",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 15 boxes with 7 pens in each. 6 pens are removed. How many remain?",
+      "answer": "99",
+      "answerUnit": "pens",
+      "model": {
+        "kind": "application",
+        "start": "15",
+        "operations": [
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of pens",
+          "input": "15 × 7",
+          "output": "105",
+          "note": "Find the total number of pens.",
+          "outputUnit": "pens"
+        },
+        {
+          "title": "Remove the 6 pens",
+          "input": "105 − 6",
+          "output": "99",
+          "note": "Remove the 6 pens.",
+          "outputUnit": "pens"
+        }
+      ],
+      "hint": "What quantity does 15 × 7 give you?",
+      "method_note": "Find the total number of pens Remove the 6 pens.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 − 6 = 134. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "105",
+      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q8",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 16 rows with 8 seats in each. 6 seats are removed. How many remain?",
+      "answer": "122",
+      "answerUnit": "seats",
+      "model": {
+        "kind": "application",
+        "start": "16",
+        "operations": [
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of seats",
+          "input": "16 × 8",
+          "output": "128",
+          "note": "Find the total number of seats.",
+          "outputUnit": "seats"
+        },
+        {
+          "title": "Remove the 6 seats",
+          "input": "128 − 6",
+          "output": "122",
+          "note": "Remove the 6 seats.",
+          "outputUnit": "seats"
+        }
+      ],
+      "hint": "What quantity does 16 × 8 give you?",
+      "method_note": "Find the total number of seats Remove the 6 seats.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160; 160 − 6 = 154. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "128",
+      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q9",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 17 packs with 9 cards in each. 6 cards are removed. How many remain?",
+      "answer": "147",
+      "answerUnit": "cards",
+      "model": {
+        "kind": "application",
+        "start": "17",
+        "operations": [
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cards",
+          "input": "17 × 9",
+          "output": "153",
+          "note": "Find the total number of cards.",
+          "outputUnit": "cards"
+        },
+        {
+          "title": "Remove the 6 cards",
+          "input": "153 − 6",
+          "output": "147",
+          "note": "Remove the 6 cards.",
+          "outputUnit": "cards"
+        }
+      ],
+      "hint": "What quantity does 17 × 9 give you?",
+      "method_note": "Find the total number of cards Remove the 6 cards.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180; 180 − 6 = 174. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "153",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q10",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 18 shelves with 10 books in each. 6 books are removed. How many remain?",
+      "answer": "174",
+      "answerUnit": "books",
+      "model": {
+        "kind": "application",
+        "start": "18",
+        "operations": [
+          [
+            "multiply",
+            "10"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of books",
+          "input": "18 × 10",
+          "output": "180",
+          "note": "Find the total number of books.",
+          "outputUnit": "books"
+        },
+        {
+          "title": "Remove the 6 books",
+          "input": "180 − 6",
+          "output": "174",
+          "note": "Remove the 6 books.",
+          "outputUnit": "books"
+        }
+      ],
+      "hint": "What quantity does 18 × 10 give you?",
+      "method_note": "Find the total number of books Remove the 6 books.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 6 = 194. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "180",
+      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q11",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 19 trays with 11 cakes in each. 6 cakes are removed. How many remain?",
+      "answer": "203",
+      "answerUnit": "cakes",
+      "model": {
+        "kind": "application",
+        "start": "19",
+        "operations": [
+          [
+            "multiply",
+            "11"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cakes",
+          "input": "19 × 11",
+          "output": "209",
+          "note": "Find the total number of cakes.",
+          "outputUnit": "cakes"
+        },
+        {
+          "title": "Remove the 6 cakes",
+          "input": "209 − 6",
+          "output": "203",
+          "note": "Remove the 6 cakes.",
+          "outputUnit": "cakes"
+        }
+      ],
+      "hint": "What quantity does 19 × 11 give you?",
+      "method_note": "Find the total number of cakes Remove the 6 cakes.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 6 = 194. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "209",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q12",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 20 bags with 12 beads in each. 6 beads are removed. How many remain?",
+      "answer": "234",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "20",
+        "operations": [
+          [
+            "multiply",
+            "12"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of beads",
+          "input": "20 × 12",
+          "output": "240",
+          "note": "Find the total number of beads.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Remove the 6 beads",
+          "input": "240 − 6",
+          "output": "234",
+          "note": "Remove the 6 beads.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "What quantity does 20 × 12 give you?",
+      "method_note": "Find the total number of beads Remove the 6 beads.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 6 = 194. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "240",
+      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q13",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 18 boxes with 7 pens in each. 7 pens are removed. How many remain?",
+      "answer": "119",
+      "answerUnit": "pens",
+      "model": {
+        "kind": "application",
+        "start": "18",
+        "operations": [
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of pens",
+          "input": "18 × 7",
+          "output": "126",
+          "note": "Find the total number of pens.",
+          "outputUnit": "pens"
+        },
+        {
+          "title": "Remove the 7 pens",
+          "input": "126 − 7",
+          "output": "119",
+          "note": "Remove the 7 pens.",
+          "outputUnit": "pens"
+        }
+      ],
+      "hint": "What quantity does 18 × 7 give you?",
+      "method_note": "Find the total number of pens Remove the 7 pens.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 − 7 = 133. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "126",
+      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q14",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 19 rows with 8 seats in each. 7 seats are removed. How many remain?",
+      "answer": "145",
+      "answerUnit": "seats",
+      "model": {
+        "kind": "application",
+        "start": "19",
+        "operations": [
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of seats",
+          "input": "19 × 8",
+          "output": "152",
+          "note": "Find the total number of seats.",
+          "outputUnit": "seats"
+        },
+        {
+          "title": "Remove the 7 seats",
+          "input": "152 − 7",
+          "output": "145",
+          "note": "Remove the 7 seats.",
+          "outputUnit": "seats"
+        }
+      ],
+      "hint": "What quantity does 19 × 8 give you?",
+      "method_note": "Find the total number of seats Remove the 7 seats.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160; 160 − 7 = 153. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "152",
+      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q15",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 20 packs with 9 cards in each. 7 cards are removed. How many remain?",
+      "answer": "173",
+      "answerUnit": "cards",
+      "model": {
+        "kind": "application",
+        "start": "20",
+        "operations": [
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cards",
+          "input": "20 × 9",
+          "output": "180",
+          "note": "Find the total number of cards.",
+          "outputUnit": "cards"
+        },
+        {
+          "title": "Remove the 7 cards",
+          "input": "180 − 7",
+          "output": "173",
+          "note": "Remove the 7 cards.",
+          "outputUnit": "cards"
+        }
+      ],
+      "hint": "What quantity does 20 × 9 give you?",
+      "method_note": "Find the total number of cards Remove the 7 cards.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180; 180 − 7 = 173. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "180",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q16",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 21 shelves with 10 books in each. 7 books are removed. How many remain?",
+      "answer": "203",
+      "answerUnit": "books",
+      "model": {
+        "kind": "application",
+        "start": "21",
+        "operations": [
+          [
+            "multiply",
+            "10"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of books",
+          "input": "21 × 10",
+          "output": "210",
+          "note": "Find the total number of books.",
+          "outputUnit": "books"
+        },
+        {
+          "title": "Remove the 7 books",
+          "input": "210 − 7",
+          "output": "203",
+          "note": "Remove the 7 books.",
+          "outputUnit": "books"
+        }
+      ],
+      "hint": "What quantity does 21 × 10 give you?",
+      "method_note": "Find the total number of books Remove the 7 books.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 7 = 193. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "210",
+      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q17",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 22 trays with 11 cakes in each. 7 cakes are removed. How many remain?",
+      "answer": "235",
+      "answerUnit": "cakes",
+      "model": {
+        "kind": "application",
+        "start": "22",
+        "operations": [
+          [
+            "multiply",
+            "11"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cakes",
+          "input": "22 × 11",
+          "output": "242",
+          "note": "Find the total number of cakes.",
+          "outputUnit": "cakes"
+        },
+        {
+          "title": "Remove the 7 cakes",
+          "input": "242 − 7",
+          "output": "235",
+          "note": "Remove the 7 cakes.",
+          "outputUnit": "cakes"
+        }
+      ],
+      "hint": "What quantity does 22 × 11 give you?",
+      "method_note": "Find the total number of cakes Remove the 7 cakes.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 7 = 193. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "242",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C2-Q18",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 23 bags with 12 beads in each. 7 beads are removed. How many remain?",
+      "answer": "269",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "23",
+        "operations": [
+          [
+            "multiply",
+            "12"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of beads",
+          "input": "23 × 12",
+          "output": "276",
+          "note": "Find the total number of beads.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Remove the 7 beads",
+          "input": "276 − 7",
+          "output": "269",
+          "note": "Remove the 7 beads.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "What quantity does 23 × 12 give you?",
+      "method_note": "Find the total number of beads Remove the 7 beads.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 7 = 193. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "276",
+      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q1",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 12 boxes with 7 pens in each. A customer buys all the pens. Each pen sells for £3. There is a £5 discount on the whole order. What is the final price?",
+      "answer": "247",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "12",
+        "operations": [
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "subtract",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of pens",
+          "input": "12 × 7",
+          "output": "84",
+          "note": "Find the total number of pens.",
+          "outputUnit": "pens"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "84 × 3",
+          "output": "252",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "252 − 5",
+          "output": "247",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 12 × 7 give you?",
+      "method_note": "Find the total number of pens Find the price of all the items Apply the discount once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 7 = 70; 70 × 3 = 210; 210 − 5 = 205. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "84",
+      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q2",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 13 rows with 8 seats in each. A customer buys all the seats. Each seat sells for £3. There is a £5 discount on the whole order. Delivery costs £6. What is the final price?",
+      "answer": "313",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "13",
+        "operations": [
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "subtract",
+            "5"
+          ],
+          [
+            "add",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of seats",
+          "input": "13 × 8",
+          "output": "104",
+          "note": "Find the total number of seats.",
+          "outputUnit": "seats"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "104 × 3",
+          "output": "312",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "312 − 5",
+          "output": "307",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "307 + 6",
+          "output": "313",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 13 × 8 give you?",
+      "method_note": "Find the total number of seats Find the price of all the items Apply the discount once Add delivery once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 8 = 80; 80 × 3 = 240; 240 − 5 = 235; 235 + 6 = 241. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "104",
+      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q3",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 14 packs with 9 cards in each. A customer buys all the cards. Each card sells for £3. There is a £5 discount on the whole order. What is the final price?",
+      "answer": "373",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "14",
+        "operations": [
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "subtract",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cards",
+          "input": "14 × 9",
+          "output": "126",
+          "note": "Find the total number of cards.",
+          "outputUnit": "cards"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "126 × 3",
+          "output": "378",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "378 − 5",
+          "output": "373",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 14 × 9 give you?",
+      "method_note": "Find the total number of cards Find the price of all the items Apply the discount once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 9 = 90; 90 × 3 = 270; 270 − 5 = 265. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "126",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q4",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 15 shelves with 10 books in each. A customer buys all the books. Each book sells for £3. There is a £5 discount on the whole order. Delivery costs £6. What is the final price?",
+      "answer": "451",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "15",
+        "operations": [
+          [
+            "multiply",
+            "10"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "subtract",
+            "5"
+          ],
+          [
+            "add",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of books",
+          "input": "15 × 10",
+          "output": "150",
+          "note": "Find the total number of books.",
+          "outputUnit": "books"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "150 × 3",
+          "output": "450",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "450 − 5",
+          "output": "445",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "445 + 6",
+          "output": "451",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 15 × 10 give you?",
+      "method_note": "Find the total number of books Find the price of all the items Apply the discount once Add delivery once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 3 = 600; 600 − 5 = 595; 595 + 6 = 601. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "150",
+      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q5",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 16 trays with 11 cakes in each. A customer buys all the cakes. Each cake sells for £3. There is a £5 discount on the whole order. What is the final price?",
+      "answer": "523",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "16",
+        "operations": [
+          [
+            "multiply",
+            "11"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "subtract",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cakes",
+          "input": "16 × 11",
+          "output": "176",
+          "note": "Find the total number of cakes.",
+          "outputUnit": "cakes"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "176 × 3",
+          "output": "528",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "528 − 5",
+          "output": "523",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 16 × 11 give you?",
+      "method_note": "Find the total number of cakes Find the price of all the items Apply the discount once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 3 = 600; 600 − 5 = 595. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "176",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q6",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 17 bags with 12 beads in each. A customer buys all the beads. Each bead sells for £3. There is a £5 discount on the whole order. Delivery costs £6. What is the final price?",
+      "answer": "613",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "17",
+        "operations": [
+          [
+            "multiply",
+            "12"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "subtract",
+            "5"
+          ],
+          [
+            "add",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of beads",
+          "input": "17 × 12",
+          "output": "204",
+          "note": "Find the total number of beads.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "204 × 3",
+          "output": "612",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "612 − 5",
+          "output": "607",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "607 + 6",
+          "output": "613",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 17 × 12 give you?",
+      "method_note": "Find the total number of beads Find the price of all the items Apply the discount once Add delivery once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 3 = 600; 600 − 5 = 595; 595 + 6 = 601. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "204",
+      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q7",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 15 boxes with 7 pens in each. A customer buys all the pens. Each pen sells for £4. There is a £6 discount on the whole order. What is the final price?",
+      "answer": "414",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "15",
+        "operations": [
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of pens",
+          "input": "15 × 7",
+          "output": "105",
+          "note": "Find the total number of pens.",
+          "outputUnit": "pens"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "105 × 4",
+          "output": "420",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "420 − 6",
+          "output": "414",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 15 × 7 give you?",
+      "method_note": "Find the total number of pens Find the price of all the items Apply the discount once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 × 4 = 560; 560 − 6 = 554. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "105",
+      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q8",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 16 rows with 8 seats in each. A customer buys all the seats. Each seat sells for £4. There is a £6 discount on the whole order. Delivery costs £7. What is the final price?",
+      "answer": "513",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "16",
+        "operations": [
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "subtract",
+            "6"
+          ],
+          [
+            "add",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of seats",
+          "input": "16 × 8",
+          "output": "128",
+          "note": "Find the total number of seats.",
+          "outputUnit": "seats"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "128 × 4",
+          "output": "512",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "512 − 6",
+          "output": "506",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "506 + 7",
+          "output": "513",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 16 × 8 give you?",
+      "method_note": "Find the total number of seats Find the price of all the items Apply the discount once Add delivery once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160; 160 × 4 = 640; 640 − 6 = 634; 634 + 7 = 641. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "128",
+      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q9",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 17 packs with 9 cards in each. A customer buys all the cards. Each card sells for £4. There is a £6 discount on the whole order. What is the final price?",
+      "answer": "606",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "17",
+        "operations": [
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cards",
+          "input": "17 × 9",
+          "output": "153",
+          "note": "Find the total number of cards.",
+          "outputUnit": "cards"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "153 × 4",
+          "output": "612",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "612 − 6",
+          "output": "606",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 17 × 9 give you?",
+      "method_note": "Find the total number of cards Find the price of all the items Apply the discount once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180; 180 × 4 = 720; 720 − 6 = 714. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "153",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q10",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 18 shelves with 10 books in each. A customer buys all the books. Each book sells for £4. There is a £6 discount on the whole order. Delivery costs £7. What is the final price?",
+      "answer": "721",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "18",
+        "operations": [
+          [
+            "multiply",
+            "10"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "subtract",
+            "6"
+          ],
+          [
+            "add",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of books",
+          "input": "18 × 10",
+          "output": "180",
+          "note": "Find the total number of books.",
+          "outputUnit": "books"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "180 × 4",
+          "output": "720",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "720 − 6",
+          "output": "714",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "714 + 7",
+          "output": "721",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 18 × 10 give you?",
+      "method_note": "Find the total number of books Find the price of all the items Apply the discount once Add delivery once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 4 = 800; 800 − 6 = 794; 794 + 7 = 801. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "180",
+      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q11",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 19 trays with 11 cakes in each. A customer buys all the cakes. Each cake sells for £4. There is a £6 discount on the whole order. What is the final price?",
+      "answer": "830",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "19",
+        "operations": [
+          [
+            "multiply",
+            "11"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cakes",
+          "input": "19 × 11",
+          "output": "209",
+          "note": "Find the total number of cakes.",
+          "outputUnit": "cakes"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "209 × 4",
+          "output": "836",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "836 − 6",
+          "output": "830",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 19 × 11 give you?",
+      "method_note": "Find the total number of cakes Find the price of all the items Apply the discount once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 4 = 800; 800 − 6 = 794. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "209",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q12",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 20 bags with 12 beads in each. A customer buys all the beads. Each bead sells for £4. There is a £6 discount on the whole order. Delivery costs £7. What is the final price?",
+      "answer": "961",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "20",
+        "operations": [
+          [
+            "multiply",
+            "12"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "subtract",
+            "6"
+          ],
+          [
+            "add",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of beads",
+          "input": "20 × 12",
+          "output": "240",
+          "note": "Find the total number of beads.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "240 × 4",
+          "output": "960",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "960 − 6",
+          "output": "954",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "954 + 7",
+          "output": "961",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 20 × 12 give you?",
+      "method_note": "Find the total number of beads Find the price of all the items Apply the discount once Add delivery once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 4 = 800; 800 − 6 = 794; 794 + 7 = 801. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "240",
+      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q13",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 18 boxes with 7 pens in each. A customer buys all the pens. Each pen sells for £5. There is a £7 discount on the whole order. What is the final price?",
+      "answer": "623",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "18",
+        "operations": [
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of pens",
+          "input": "18 × 7",
+          "output": "126",
+          "note": "Find the total number of pens.",
+          "outputUnit": "pens"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "126 × 5",
+          "output": "630",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "630 − 7",
+          "output": "623",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 18 × 7 give you?",
+      "method_note": "Find the total number of pens Find the price of all the items Apply the discount once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 × 5 = 700; 700 − 7 = 693. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "126",
+      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q14",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 19 rows with 8 seats in each. A customer buys all the seats. Each seat sells for £5. There is a £7 discount on the whole order. Delivery costs £8. What is the final price?",
+      "answer": "761",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "19",
+        "operations": [
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "subtract",
+            "7"
+          ],
+          [
+            "add",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of seats",
+          "input": "19 × 8",
+          "output": "152",
+          "note": "Find the total number of seats.",
+          "outputUnit": "seats"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "152 × 5",
+          "output": "760",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "760 − 7",
+          "output": "753",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "753 + 8",
+          "output": "761",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 19 × 8 give you?",
+      "method_note": "Find the total number of seats Find the price of all the items Apply the discount once Add delivery once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160; 160 × 5 = 800; 800 − 7 = 793; 793 + 8 = 801. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "152",
+      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q15",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 20 packs with 9 cards in each. A customer buys all the cards. Each card sells for £5. There is a £7 discount on the whole order. What is the final price?",
+      "answer": "893",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "20",
+        "operations": [
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cards",
+          "input": "20 × 9",
+          "output": "180",
+          "note": "Find the total number of cards.",
+          "outputUnit": "cards"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "180 × 5",
+          "output": "900",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "900 − 7",
+          "output": "893",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 20 × 9 give you?",
+      "method_note": "Find the total number of cards Find the price of all the items Apply the discount once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180; 180 × 5 = 900; 900 − 7 = 893. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "180",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q16",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 21 shelves with 10 books in each. A customer buys all the books. Each book sells for £5. There is a £7 discount on the whole order. Delivery costs £8. What is the final price?",
+      "answer": "1051",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "21",
+        "operations": [
+          [
+            "multiply",
+            "10"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "subtract",
+            "7"
+          ],
+          [
+            "add",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of books",
+          "input": "21 × 10",
+          "output": "210",
+          "note": "Find the total number of books.",
+          "outputUnit": "books"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "210 × 5",
+          "output": "1050",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "1050 − 7",
+          "output": "1043",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "1043 + 8",
+          "output": "1051",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 21 × 10 give you?",
+      "method_note": "Find the total number of books Find the price of all the items Apply the discount once Add delivery once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 5 = 1,000; 1,000 − 7 = 993; 993 + 8 = 1,001. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "210",
+      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q17",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 22 trays with 11 cakes in each. A customer buys all the cakes. Each cake sells for £5. There is a £7 discount on the whole order. What is the final price?",
+      "answer": "1203",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "22",
+        "operations": [
+          [
+            "multiply",
+            "11"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of cakes",
+          "input": "22 × 11",
+          "output": "242",
+          "note": "Find the total number of cakes.",
+          "outputUnit": "cakes"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "242 × 5",
+          "output": "1210",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "1210 − 7",
+          "output": "1203",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 22 × 11 give you?",
+      "method_note": "Find the total number of cakes Find the price of all the items Apply the discount once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 5 = 1,000; 1,000 − 7 = 993. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "242",
+      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M01-WEB-PS-C3-Q18",
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There are 23 bags with 12 beads in each. A customer buys all the beads. Each bead sells for £5. There is a £7 discount on the whole order. Delivery costs £8. What is the final price?",
+      "answer": "1381",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "23",
+        "operations": [
+          [
+            "multiply",
+            "12"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "subtract",
+            "7"
+          ],
+          [
+            "add",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the total number of beads",
+          "input": "23 × 12",
+          "output": "276",
+          "note": "Find the total number of beads.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Find the price of all the items",
+          "input": "276 × 5",
+          "output": "1380",
+          "note": "Find the price of all the items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Apply the discount once",
+          "input": "1380 − 7",
+          "output": "1373",
+          "note": "Apply the discount once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "1373 + 8",
+          "output": "1381",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "What quantity does 23 × 12 give you?",
+      "method_note": "Find the total number of beads Find the price of all the items Apply the discount once Add delivery once.",
+      "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 5 = 1,000; 1,000 − 7 = 993; 993 + 8 = 1,001. Compare the final size with your answer; this is a ballpark check.",
+      "wrong": "276",
+      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    }
+  ]
+}

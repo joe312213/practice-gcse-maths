@@ -1,0 +1,5499 @@
+{
+  "teaching": {
+    "guidance": [
+      {
+        "title": "Plan",
+        "text": "Read the names in ratio order. Decide whether the known quantity is a total, one amount or a difference."
+      },
+      {
+        "title": "Method",
+        "text": "Add, select or subtract the ratio parts to match that known quantity. Divide the known quantity by its matching parts to find one part."
+      },
+      {
+        "title": "Check",
+        "text": "Check the ratio and given amounts. When the problem has a further calculation, complete it and check the final quantity and units."
+      }
+    ],
+    "examples": [
+      {
+        "id": "maths:M04-WEB-PS-C1-Q86",
+        "subject": "maths",
+        "topic": "M04",
+        "type": "problem",
+        "level": 0,
+        "method": "calculation",
+        "prose": true,
+        "q": "The ratio of flour to sugar is 3 : 5. The total is 152 g. Find the mass of sugar.",
+        "answer": "95",
+        "answerUnit": "g",
+        "model": {
+          "kind": "application",
+          "start": "152",
+          "operations": [
+            [
+              "divide",
+              "8"
+            ],
+            [
+              "multiply",
+              "5"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Match the known quantity to parts",
+            "input": "3 + 5",
+            "output": "8",
+            "note": "The given total represents 8 equal parts, not one part.",
+            "outputUnit": ""
+          },
+          {
+            "title": "Find the value of one ratio part",
+            "input": "152 ÷ 8",
+            "output": "19",
+            "note": "Find the value of one ratio part.",
+            "outputUnit": "g"
+          },
+          {
+            "title": "Find the requested second amount",
+            "input": "19 × 5",
+            "output": "95",
+            "note": "Find the requested second amount.",
+            "outputUnit": "g"
+          }
+        ],
+        "hint": "Does 152 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+        "method_note": "Find the value of one ratio part Find the requested second amount.",
+        "check": "One ratio part is 19. The two quantities are 57 and 95, in the named order. Check their total against the given amount, then check you answered the requested question.",
+        "wrong": "760/3",
+        "error_note": "The known total matches 8 parts, not 3. Find one part before scaling to the requested quantity.",
+        "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+        "operationCount": 3,
+        "ratioModel": {
+          "a": 3,
+          "b": 5,
+          "scale": 19,
+          "known": "total",
+          "target": "second",
+          "knownParts": 8,
+          "targetParts": 5
+        },
+        "diagram": {
+          "kind": "ratio-bars",
+          "parts": [
+            3,
+            5
+          ],
+          "labels": [
+            "flour",
+            "sugar"
+          ],
+          "known": "total: 152 g",
+          "knownKind": "total"
+        },
+        "errorSteps": [
+          {
+            "title": "Student working",
+            "input": "152 ÷ 3 × 5",
+            "output": "{760/3}",
+            "note": ""
+          }
+        ],
+        "repair": "Match the given total to 8 parts before finding one part."
+      },
+      {
+        "id": "maths:M04-WEB-PS-C2-Q86",
+        "subject": "maths",
+        "topic": "M04",
+        "type": "problem",
+        "level": 1,
+        "method": "calculation",
+        "prose": true,
+        "q": "The ratio of flour to sugar is 4 : 6. The total is 190 g. Find the mass of sugar. Then find the total for 3 identical batches.",
+        "answer": "342",
+        "answerUnit": "g",
+        "model": {
+          "kind": "application",
+          "start": "190",
+          "operations": [
+            [
+              "divide",
+              "10"
+            ],
+            [
+              "multiply",
+              "6"
+            ],
+            [
+              "multiply",
+              "3"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Match the known quantity to parts",
+            "input": "4 + 6",
+            "output": "10",
+            "note": "The given total represents 10 equal parts, not one part.",
+            "outputUnit": ""
+          },
+          {
+            "title": "Find the value of one ratio part",
+            "input": "190 ÷ 10",
+            "output": "19",
+            "note": "Find the value of one ratio part.",
+            "outputUnit": "g"
+          },
+          {
+            "title": "Find the requested second amount",
+            "input": "19 × 6",
+            "output": "114",
+            "note": "Find the requested second amount.",
+            "outputUnit": "g"
+          },
+          {
+            "title": "Scale to all the batches",
+            "input": "114 × 3",
+            "output": "342",
+            "note": "Scale to all the batches.",
+            "outputUnit": "g"
+          }
+        ],
+        "hint": "Does 190 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+        "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+        "check": "One ratio part is 19. The two quantities are 76 and 114, in the named order. Check their total against the given amount, then check you answered the requested question.",
+        "wrong": "285",
+        "error_note": "The known total matches 10 parts, not 4. Find one part before scaling to the requested quantity.",
+        "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+        "operationCount": 4,
+        "ratioModel": {
+          "a": 4,
+          "b": 6,
+          "scale": 19,
+          "known": "total",
+          "target": "second",
+          "knownParts": 10,
+          "targetParts": 6
+        },
+        "diagram": {
+          "kind": "ratio-bars",
+          "parts": [
+            4,
+            6
+          ],
+          "labels": [
+            "flour",
+            "sugar"
+          ],
+          "known": "total: 190 g",
+          "knownKind": "total"
+        },
+        "errorSteps": [
+          {
+            "title": "Student working",
+            "input": "190 ÷ 4 × 6",
+            "output": "285",
+            "note": ""
+          }
+        ],
+        "repair": "Match the given total to 10 parts before finding one part."
+      },
+      {
+        "id": "maths:M04-WEB-PS-C3-Q86",
+        "subject": "maths",
+        "topic": "M04",
+        "type": "problem",
+        "level": 2,
+        "method": "calculation",
+        "prose": true,
+        "q": "Ada and Ben share money in the ratio 3 : 5. They share £128 altogether. Ben saves 25% of his share. How much does he save?",
+        "answer": "20",
+        "answerUnit": "£",
+        "model": {
+          "kind": "application",
+          "start": "128",
+          "operations": [
+            [
+              "divide",
+              "8"
+            ],
+            [
+              "multiply",
+              "5"
+            ],
+            [
+              "divide",
+              "4"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Match the given quantity to ratio parts",
+            "input": "3 + 5",
+            "output": "8",
+            "outputUnit": "",
+            "note": "The given total represents 8 equal parts."
+          },
+          {
+            "title": "Find the value of one ratio part",
+            "input": "128 ÷ 8",
+            "output": "16",
+            "outputUnit": "£",
+            "note": "Divide the given total by its matching number of parts."
+          },
+          {
+            "title": "Find the second named quantity",
+            "input": "16 × 5",
+            "output": "80",
+            "outputUnit": "£",
+            "note": "The second named quantity has 5 equal parts."
+          },
+          {
+            "title": "Find 25% of Ben’s share",
+            "input": "80 ÷ 4",
+            "output": "20",
+            "outputUnit": "£",
+            "note": "25% is 1/4, so divide the share by 4."
+          }
+        ],
+        "hint": "Before considering the percentage saved, match the given total of £128 to its ratio parts. Find the second named quantity first.",
+        "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+        "check": "The original quantities are £48 and £80. Check their sum against the given £128. Divide Ben’s share by 4 to find 25%. The final answer is £20.",
+        "wrong": "80",
+        "error_note": "£80 is only the intermediate ratio amount. Divide Ben’s share by 4 to find 25%.",
+        "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+        "operationCount": 4,
+        "ratioModel": {
+          "a": 3,
+          "b": 5,
+          "scale": 16,
+          "known": "total",
+          "target": "second",
+          "knownParts": 8,
+          "targetParts": 5
+        },
+        "diagram": {
+          "kind": "ratio-bars",
+          "parts": [
+            3,
+            5
+          ],
+          "labels": [
+            "Ada’s share",
+            "Ben’s share"
+          ],
+          "known": "total: £128",
+          "knownKind": "total"
+        },
+        "errorSteps": [
+          {
+            "title": "Match the given quantity to ratio parts",
+            "input": "3 + 5",
+            "output": "8",
+            "outputUnit": "",
+            "note": "The given total represents 8 equal parts."
+          },
+          {
+            "title": "Find the value of one ratio part",
+            "input": "128 ÷ 8",
+            "output": "16",
+            "outputUnit": "£",
+            "note": "Divide the given total by its matching number of parts."
+          },
+          {
+            "title": "Find the second named quantity",
+            "input": "16 × 5",
+            "output": "80",
+            "outputUnit": "£",
+            "note": "The second named quantity has 5 equal parts."
+          },
+          {
+            "title": "Student stops at the ratio result",
+            "input": "80",
+            "output": "80",
+            "outputUnit": "£",
+            "note": ""
+          }
+        ],
+        "repair": "Divide Ben’s share by 4 to find 25%."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q1",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red paint to white paint is 2 : 3. There is 28 litres of red paint. Find the amount of white paint.",
+      "answer": "42",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "28",
+        "operations": [
+          [
+            "divide",
+            "2"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "2",
+          "output": "2",
+          "note": "The given first represents 2 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "28 ÷ 2",
+          "output": "14",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "14 × 3",
+          "output": "42",
+          "note": "Find the requested second amount.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Does 28 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 14. The two quantities are 28 and 42, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "84/5",
+      "error_note": "The known first matches 2 parts, not 5. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 2,
+      "ratioModel": {
+        "a": 2,
+        "b": 3,
+        "scale": 14,
+        "known": "first",
+        "target": "second",
+        "knownParts": 2,
+        "targetParts": 3
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          2,
+          3
+        ],
+        "labels": [
+          "red paint",
+          "white paint"
+        ],
+        "known": "first: 28 litres",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 2 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q2",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of flour to sugar is 3 : 5. There is 30 g more sugar than flour. Find the mass of sugar.",
+      "answer": "75",
+      "answerUnit": "g",
+      "model": {
+        "kind": "application",
+        "start": "30",
+        "operations": [
+          [
+            "divide",
+            "2"
+          ],
+          [
+            "multiply",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "5 − 3",
+          "output": "2",
+          "note": "The given difference represents 2 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "30 ÷ 2",
+          "output": "15",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "g"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "15 × 5",
+          "output": "75",
+          "note": "Find the requested second amount.",
+          "outputUnit": "g"
+        }
+      ],
+      "hint": "Does 30 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 15. The two quantities are 45 and 75, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "50",
+      "error_note": "The known difference matches 2 parts, not 3. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 3,
+        "b": 5,
+        "scale": 15,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 2,
+        "targetParts": 5
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          5
+        ],
+        "labels": [
+          "flour",
+          "sugar"
+        ],
+        "known": "difference: 30 g",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 2 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q3",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "Travelling time and resting time are in the ratio 2 : 5. Together they take 112 minutes. How many minutes are spent resting?",
+      "answer": "80",
+      "answerUnit": "minutes",
+      "model": {
+        "kind": "application",
+        "start": "112",
+        "operations": [
+          [
+            "divide",
+            "7"
+          ],
+          [
+            "multiply",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "2 + 5",
+          "output": "7",
+          "note": "The given total represents 7 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "112 ÷ 7",
+          "output": "16",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "minutes"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "16 × 5",
+          "output": "80",
+          "note": "Find the requested second amount.",
+          "outputUnit": "minutes"
+        }
+      ],
+      "hint": "Does 112 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 16. The two quantities are 32 and 80, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "280",
+      "error_note": "The known total matches 7 parts, not 2. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 2,
+        "b": 5,
+        "scale": 16,
+        "known": "total",
+        "target": "second",
+        "knownParts": 7,
+        "targetParts": 5
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          2,
+          5
+        ],
+        "labels": [
+          "travel",
+          "rest"
+        ],
+        "known": "total: 112 minutes",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 7 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q4",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red beads to blue beads is 5 : 7. There are 85 red beads. How many blue beads are there?",
+      "answer": "119",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "85",
+        "operations": [
+          [
+            "divide",
+            "5"
+          ],
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "5",
+          "output": "5",
+          "note": "The given first represents 5 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "85 ÷ 5",
+          "output": "17",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "17 × 7",
+          "output": "119",
+          "note": "Find the requested second amount.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "Does 85 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 17. The two quantities are 85 and 119, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "595/12",
+      "error_note": "The known first matches 5 parts, not 12. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 2,
+      "ratioModel": {
+        "a": 5,
+        "b": 7,
+        "scale": 17,
+        "known": "first",
+        "target": "second",
+        "knownParts": 5,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          7
+        ],
+        "labels": [
+          "red beads",
+          "blue beads"
+        ],
+        "known": "first: 85 beads",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 5 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q5",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of the length of ribbon A to the length of ribbon B is 3 : 7. Ribbon B is 72 cm longer than ribbon A. Find the length of ribbon B.",
+      "answer": "126",
+      "answerUnit": "cm",
+      "model": {
+        "kind": "application",
+        "start": "72",
+        "operations": [
+          [
+            "divide",
+            "4"
+          ],
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "7 − 3",
+          "output": "4",
+          "note": "The given difference represents 4 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "72 ÷ 4",
+          "output": "18",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "cm"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "18 × 7",
+          "output": "126",
+          "note": "Find the requested second amount.",
+          "outputUnit": "cm"
+        }
+      ],
+      "hint": "Does 72 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 18. The two quantities are 54 and 126, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "168",
+      "error_note": "The known difference matches 4 parts, not 3. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 3,
+        "b": 7,
+        "scale": 18,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 4,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          7
+        ],
+        "labels": [
+          "ribbon A",
+          "ribbon B"
+        ],
+        "known": "difference: 72 cm",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 4 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q6",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "Ada and Ben share some money in the ratio 4 : 7. They share £209 altogether. How much does Ben receive?",
+      "answer": "133",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "209",
+        "operations": [
+          [
+            "divide",
+            "11"
+          ],
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "4 + 7",
+          "output": "11",
+          "note": "The given total represents 11 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "209 ÷ 11",
+          "output": "19",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "19 × 7",
+          "output": "133",
+          "note": "Find the requested second amount.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Does 209 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 19. The two quantities are 76 and 133, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "1463/4",
+      "error_note": "The known total matches 11 parts, not 4. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 4,
+        "b": 7,
+        "scale": 19,
+        "known": "total",
+        "target": "second",
+        "knownParts": 11,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          7
+        ],
+        "labels": [
+          "Ada’s share",
+          "Ben’s share"
+        ],
+        "known": "total: 209 £",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 11 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q7",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red paint to white paint is 2 : 3. There is 15 litres more white paint than red paint. Find the amount of white paint.",
+      "answer": "45",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "15",
+        "operations": [
+          [
+            "divide",
+            "1"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "3 − 2",
+          "output": "1",
+          "note": "The given difference represents exactly one equal part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "15 ÷ 1",
+          "output": "15",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "15 × 3",
+          "output": "45",
+          "note": "Find the requested second amount.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Does 15 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 15. The two quantities are 30 and 45, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "45/2",
+      "error_note": "The known difference matches 1 part, not 2. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 2,
+        "b": 3,
+        "scale": 15,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 1,
+        "targetParts": 3
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          2,
+          3
+        ],
+        "labels": [
+          "red paint",
+          "white paint"
+        ],
+        "known": "difference: 15 litres",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 1 part before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q8",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of flour to sugar is 3 : 5. The total is 128 g. Find the mass of sugar.",
+      "answer": "80",
+      "answerUnit": "g",
+      "model": {
+        "kind": "application",
+        "start": "128",
+        "operations": [
+          [
+            "divide",
+            "8"
+          ],
+          [
+            "multiply",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "3 + 5",
+          "output": "8",
+          "note": "The given total represents 8 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "128 ÷ 8",
+          "output": "16",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "g"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "16 × 5",
+          "output": "80",
+          "note": "Find the requested second amount.",
+          "outputUnit": "g"
+        }
+      ],
+      "hint": "Does 128 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 16. The two quantities are 48 and 80, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "640/3",
+      "error_note": "The known total matches 8 parts, not 3. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 3,
+        "b": 5,
+        "scale": 16,
+        "known": "total",
+        "target": "second",
+        "knownParts": 8,
+        "targetParts": 5
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          5
+        ],
+        "labels": [
+          "flour",
+          "sugar"
+        ],
+        "known": "total: 128 g",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 8 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q9",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "Travelling time and resting time are in the ratio 2 : 5. The travelling time is 34 minutes. How many minutes are spent resting?",
+      "answer": "85",
+      "answerUnit": "minutes",
+      "model": {
+        "kind": "application",
+        "start": "34",
+        "operations": [
+          [
+            "divide",
+            "2"
+          ],
+          [
+            "multiply",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "2",
+          "output": "2",
+          "note": "The given first represents 2 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "34 ÷ 2",
+          "output": "17",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "minutes"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "17 × 5",
+          "output": "85",
+          "note": "Find the requested second amount.",
+          "outputUnit": "minutes"
+        }
+      ],
+      "hint": "Does 34 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 17. The two quantities are 34 and 85, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "170/7",
+      "error_note": "The known first matches 2 parts, not 7. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 2,
+      "ratioModel": {
+        "a": 2,
+        "b": 5,
+        "scale": 17,
+        "known": "first",
+        "target": "second",
+        "knownParts": 2,
+        "targetParts": 5
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          2,
+          5
+        ],
+        "labels": [
+          "travel",
+          "rest"
+        ],
+        "known": "first: 34 minutes",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 2 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q10",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red beads to blue beads is 5 : 7. There are 36 more blue beads than red beads. How many blue beads are there?",
+      "answer": "126",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "36",
+        "operations": [
+          [
+            "divide",
+            "2"
+          ],
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "7 − 5",
+          "output": "2",
+          "note": "The given difference represents 2 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "36 ÷ 2",
+          "output": "18",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "18 × 7",
+          "output": "126",
+          "note": "Find the requested second amount.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "Does 36 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 18. The two quantities are 90 and 126, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "252/5",
+      "error_note": "The known difference matches 2 parts, not 5. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 5,
+        "b": 7,
+        "scale": 18,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 2,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          7
+        ],
+        "labels": [
+          "red beads",
+          "blue beads"
+        ],
+        "known": "difference: 36 beads",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 2 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q11",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of the length of ribbon A to the length of ribbon B is 3 : 7. The total is 190 cm. Find the length of ribbon B.",
+      "answer": "133",
+      "answerUnit": "cm",
+      "model": {
+        "kind": "application",
+        "start": "190",
+        "operations": [
+          [
+            "divide",
+            "10"
+          ],
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "3 + 7",
+          "output": "10",
+          "note": "The given total represents 10 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "190 ÷ 10",
+          "output": "19",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "cm"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "19 × 7",
+          "output": "133",
+          "note": "Find the requested second amount.",
+          "outputUnit": "cm"
+        }
+      ],
+      "hint": "Does 190 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 19. The two quantities are 57 and 133, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "1330/3",
+      "error_note": "The known total matches 10 parts, not 3. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 3,
+        "b": 7,
+        "scale": 19,
+        "known": "total",
+        "target": "second",
+        "knownParts": 10,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          7
+        ],
+        "labels": [
+          "ribbon A",
+          "ribbon B"
+        ],
+        "known": "total: 190 cm",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 10 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q12",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "Ada and Ben share some money in the ratio 4 : 7. Ada receives £80. How much does Ben receive?",
+      "answer": "140",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "80",
+        "operations": [
+          [
+            "divide",
+            "4"
+          ],
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "4",
+          "output": "4",
+          "note": "The given first represents 4 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "80 ÷ 4",
+          "output": "20",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "20 × 7",
+          "output": "140",
+          "note": "Find the requested second amount.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Does 80 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 20. The two quantities are 80 and 140, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "560/11",
+      "error_note": "The known first matches 4 parts, not 11. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 2,
+      "ratioModel": {
+        "a": 4,
+        "b": 7,
+        "scale": 20,
+        "known": "first",
+        "target": "second",
+        "knownParts": 4,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          7
+        ],
+        "labels": [
+          "Ada’s share",
+          "Ben’s share"
+        ],
+        "known": "first: 80 £",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 4 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q13",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red paint to white paint is 2 : 3. The total is 80 litres. Find the amount of white paint.",
+      "answer": "48",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "80",
+        "operations": [
+          [
+            "divide",
+            "5"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "2 + 3",
+          "output": "5",
+          "note": "The given total represents 5 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "80 ÷ 5",
+          "output": "16",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "16 × 3",
+          "output": "48",
+          "note": "Find the requested second amount.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Does 80 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 16. The two quantities are 32 and 48, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "120",
+      "error_note": "The known total matches 5 parts, not 2. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 2,
+        "b": 3,
+        "scale": 16,
+        "known": "total",
+        "target": "second",
+        "knownParts": 5,
+        "targetParts": 3
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          2,
+          3
+        ],
+        "labels": [
+          "red paint",
+          "white paint"
+        ],
+        "known": "total: 80 litres",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 5 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q14",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of flour to sugar is 3 : 5. There is 51 g of flour. Find the mass of sugar.",
+      "answer": "85",
+      "answerUnit": "g",
+      "model": {
+        "kind": "application",
+        "start": "51",
+        "operations": [
+          [
+            "divide",
+            "3"
+          ],
+          [
+            "multiply",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "3",
+          "output": "3",
+          "note": "The given first represents 3 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "51 ÷ 3",
+          "output": "17",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "g"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "17 × 5",
+          "output": "85",
+          "note": "Find the requested second amount.",
+          "outputUnit": "g"
+        }
+      ],
+      "hint": "Does 51 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 17. The two quantities are 51 and 85, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "255/8",
+      "error_note": "The known first matches 3 parts, not 8. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 2,
+      "ratioModel": {
+        "a": 3,
+        "b": 5,
+        "scale": 17,
+        "known": "first",
+        "target": "second",
+        "knownParts": 3,
+        "targetParts": 5
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          5
+        ],
+        "labels": [
+          "flour",
+          "sugar"
+        ],
+        "known": "first: 51 g",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 3 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q15",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "Travelling time and resting time are in the ratio 2 : 5. The resting time is 54 minutes longer than the travelling time. How many minutes are spent resting?",
+      "answer": "90",
+      "answerUnit": "minutes",
+      "model": {
+        "kind": "application",
+        "start": "54",
+        "operations": [
+          [
+            "divide",
+            "3"
+          ],
+          [
+            "multiply",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "5 − 2",
+          "output": "3",
+          "note": "The given difference represents 3 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "54 ÷ 3",
+          "output": "18",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "minutes"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "18 × 5",
+          "output": "90",
+          "note": "Find the requested second amount.",
+          "outputUnit": "minutes"
+        }
+      ],
+      "hint": "Does 54 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 18. The two quantities are 36 and 90, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "135",
+      "error_note": "The known difference matches 3 parts, not 2. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 2,
+        "b": 5,
+        "scale": 18,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 3,
+        "targetParts": 5
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          2,
+          5
+        ],
+        "labels": [
+          "travel",
+          "rest"
+        ],
+        "known": "difference: 54 minutes",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 3 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q16",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red beads to blue beads is 5 : 7. The total is 228 beads. How many blue beads are there?",
+      "answer": "133",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "228",
+        "operations": [
+          [
+            "divide",
+            "12"
+          ],
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "5 + 7",
+          "output": "12",
+          "note": "The given total represents 12 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "228 ÷ 12",
+          "output": "19",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "19 × 7",
+          "output": "133",
+          "note": "Find the requested second amount.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "Does 228 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 19. The two quantities are 95 and 133, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "1596/5",
+      "error_note": "The known total matches 12 parts, not 5. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 5,
+        "b": 7,
+        "scale": 19,
+        "known": "total",
+        "target": "second",
+        "knownParts": 12,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          7
+        ],
+        "labels": [
+          "red beads",
+          "blue beads"
+        ],
+        "known": "total: 228 beads",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 12 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q17",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of the length of ribbon A to the length of ribbon B is 3 : 7. Ribbon A is 60 cm long. Find the length of ribbon B.",
+      "answer": "140",
+      "answerUnit": "cm",
+      "model": {
+        "kind": "application",
+        "start": "60",
+        "operations": [
+          [
+            "divide",
+            "3"
+          ],
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "3",
+          "output": "3",
+          "note": "The given first represents 3 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "60 ÷ 3",
+          "output": "20",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "cm"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "20 × 7",
+          "output": "140",
+          "note": "Find the requested second amount.",
+          "outputUnit": "cm"
+        }
+      ],
+      "hint": "Does 60 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 20. The two quantities are 60 and 140, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "42",
+      "error_note": "The known first matches 3 parts, not 10. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 2,
+      "ratioModel": {
+        "a": 3,
+        "b": 7,
+        "scale": 20,
+        "known": "first",
+        "target": "second",
+        "knownParts": 3,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          7
+        ],
+        "labels": [
+          "ribbon A",
+          "ribbon B"
+        ],
+        "known": "first: 60 cm",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 3 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C1-Q18",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "Ada and Ben share some money in the ratio 4 : 7. Ben receives £63 more than Ada. How much does Ben receive?",
+      "answer": "147",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "63",
+        "operations": [
+          [
+            "divide",
+            "3"
+          ],
+          [
+            "multiply",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "7 − 4",
+          "output": "3",
+          "note": "The given difference represents 3 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "63 ÷ 3",
+          "output": "21",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "21 × 7",
+          "output": "147",
+          "note": "Find the requested second amount.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Does 63 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "check": "One ratio part is 21. The two quantities are 84 and 147, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "441/4",
+      "error_note": "The known difference matches 3 parts, not 4. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 4,
+        "b": 7,
+        "scale": 21,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 3,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          7
+        ],
+        "labels": [
+          "Ada’s share",
+          "Ben’s share"
+        ],
+        "known": "difference: 63 £",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 3 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q1",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red paint to white paint is 3 : 4. There is 42 litres of red paint. Find the amount of white paint. Then find the total for 2 identical batches.",
+      "answer": "112",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "42",
+        "operations": [
+          [
+            "divide",
+            "3"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "multiply",
+            "2"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "3",
+          "output": "3",
+          "note": "The given first represents 3 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "42 ÷ 3",
+          "output": "14",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "14 × 4",
+          "output": "56",
+          "note": "Find the requested second amount.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "56 × 2",
+          "output": "112",
+          "note": "Scale to all the batches.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Does 42 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 14. The two quantities are 42 and 56, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "24",
+      "error_note": "The known first matches 3 parts, not 7. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 3,
+        "b": 4,
+        "scale": 14,
+        "known": "first",
+        "target": "second",
+        "knownParts": 3,
+        "targetParts": 4
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          4
+        ],
+        "labels": [
+          "red paint",
+          "white paint"
+        ],
+        "known": "first: 42 litres",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 3 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q2",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of flour to sugar is 4 : 6. There is 30 g more sugar than flour. Find the mass of sugar. Then find the total for 3 identical batches.",
+      "answer": "270",
+      "answerUnit": "g",
+      "model": {
+        "kind": "application",
+        "start": "30",
+        "operations": [
+          [
+            "divide",
+            "2"
+          ],
+          [
+            "multiply",
+            "6"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "6 − 4",
+          "output": "2",
+          "note": "The given difference represents 2 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "30 ÷ 2",
+          "output": "15",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "g"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "15 × 6",
+          "output": "90",
+          "note": "Find the requested second amount.",
+          "outputUnit": "g"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "90 × 3",
+          "output": "270",
+          "note": "Scale to all the batches.",
+          "outputUnit": "g"
+        }
+      ],
+      "hint": "Does 30 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 15. The two quantities are 60 and 90, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "45",
+      "error_note": "The known difference matches 2 parts, not 4. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 4,
+        "b": 6,
+        "scale": 15,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 2,
+        "targetParts": 6
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          6
+        ],
+        "labels": [
+          "flour",
+          "sugar"
+        ],
+        "known": "difference: 30 g",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 2 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q3",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "Travelling time and resting time are in the ratio 3 : 6. Together they take 144 minutes. How many minutes are spent resting? Then find the total for 2 journeys.",
+      "answer": "192",
+      "answerUnit": "minutes",
+      "model": {
+        "kind": "application",
+        "start": "144",
+        "operations": [
+          [
+            "divide",
+            "9"
+          ],
+          [
+            "multiply",
+            "6"
+          ],
+          [
+            "multiply",
+            "2"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "3 + 6",
+          "output": "9",
+          "note": "The given total represents 9 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "144 ÷ 9",
+          "output": "16",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "minutes"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "16 × 6",
+          "output": "96",
+          "note": "Find the requested second amount.",
+          "outputUnit": "minutes"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "96 × 2",
+          "output": "192",
+          "note": "Scale to all the batches.",
+          "outputUnit": "minutes"
+        }
+      ],
+      "hint": "Does 144 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 16. The two quantities are 48 and 96, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "288",
+      "error_note": "The known total matches 9 parts, not 3. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 3,
+        "b": 6,
+        "scale": 16,
+        "known": "total",
+        "target": "second",
+        "knownParts": 9,
+        "targetParts": 6
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          6
+        ],
+        "labels": [
+          "travel",
+          "rest"
+        ],
+        "known": "total: 144 minutes",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 9 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q4",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red beads to blue beads is 6 : 8. There are 102 red beads. How many blue beads are there? Then find the total for 3 identical batches.",
+      "answer": "408",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "102",
+        "operations": [
+          [
+            "divide",
+            "6"
+          ],
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "6",
+          "output": "6",
+          "note": "The given first represents 6 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "102 ÷ 6",
+          "output": "17",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "17 × 8",
+          "output": "136",
+          "note": "Find the requested second amount.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "136 × 3",
+          "output": "408",
+          "note": "Scale to all the batches.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "Does 102 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 17. The two quantities are 102 and 136, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "408/7",
+      "error_note": "The known first matches 6 parts, not 14. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 6,
+        "b": 8,
+        "scale": 17,
+        "known": "first",
+        "target": "second",
+        "knownParts": 6,
+        "targetParts": 8
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          6,
+          8
+        ],
+        "labels": [
+          "red beads",
+          "blue beads"
+        ],
+        "known": "first: 102 beads",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 6 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q5",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of the length of ribbon A to the length of ribbon B is 4 : 8. Ribbon B is 72 cm longer than ribbon A. Find the length of ribbon B. Then find the total for 2 identical batches.",
+      "answer": "288",
+      "answerUnit": "cm",
+      "model": {
+        "kind": "application",
+        "start": "72",
+        "operations": [
+          [
+            "divide",
+            "4"
+          ],
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "2"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "8 − 4",
+          "output": "4",
+          "note": "The given difference represents 4 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "72 ÷ 4",
+          "output": "18",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "cm"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "18 × 8",
+          "output": "144",
+          "note": "Find the requested second amount.",
+          "outputUnit": "cm"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "144 × 2",
+          "output": "288",
+          "note": "Scale to all the batches.",
+          "outputUnit": "cm"
+        }
+      ],
+      "hint": "Does 72 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 18. The two quantities are 72 and 144, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "48",
+      "error_note": "The known difference matches 4 parts, not 12. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 4,
+        "b": 8,
+        "scale": 18,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 4,
+        "targetParts": 8
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          8
+        ],
+        "labels": [
+          "ribbon A",
+          "ribbon B"
+        ],
+        "known": "difference: 72 cm",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 4 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q6",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "Ada and Ben share some money in the ratio 5 : 8. They share £247 altogether. How much does Ben receive? Then find the total for 3 equal payments to Ben.",
+      "answer": "456",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "247",
+        "operations": [
+          [
+            "divide",
+            "13"
+          ],
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "5 + 8",
+          "output": "13",
+          "note": "The given total represents 13 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "247 ÷ 13",
+          "output": "19",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "19 × 8",
+          "output": "152",
+          "note": "Find the requested second amount.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "152 × 3",
+          "output": "456",
+          "note": "Scale to all the batches.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Does 247 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 19. The two quantities are 95 and 152, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "1976/5",
+      "error_note": "The known total matches 13 parts, not 5. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 5,
+        "b": 8,
+        "scale": 19,
+        "known": "total",
+        "target": "second",
+        "knownParts": 13,
+        "targetParts": 8
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          8
+        ],
+        "labels": [
+          "Ada’s share",
+          "Ben’s share"
+        ],
+        "known": "total: 247 £",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 13 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q7",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red paint to white paint is 3 : 4. There is 15 litres more white paint than red paint. Find the amount of white paint. Then find the total for 2 identical batches.",
+      "answer": "120",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "15",
+        "operations": [
+          [
+            "divide",
+            "1"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "multiply",
+            "2"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "4 − 3",
+          "output": "1",
+          "note": "The given difference represents exactly one equal part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "15 ÷ 1",
+          "output": "15",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "15 × 4",
+          "output": "60",
+          "note": "Find the requested second amount.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "60 × 2",
+          "output": "120",
+          "note": "Scale to all the batches.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Does 15 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 15. The two quantities are 45 and 60, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "20",
+      "error_note": "The known difference matches 1 part, not 3. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 3,
+        "b": 4,
+        "scale": 15,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 1,
+        "targetParts": 4
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          4
+        ],
+        "labels": [
+          "red paint",
+          "white paint"
+        ],
+        "known": "difference: 15 litres",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 1 part before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q8",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of flour to sugar is 4 : 6. The total is 160 g. Find the mass of sugar. Then find the total for 3 identical batches.",
+      "answer": "288",
+      "answerUnit": "g",
+      "model": {
+        "kind": "application",
+        "start": "160",
+        "operations": [
+          [
+            "divide",
+            "10"
+          ],
+          [
+            "multiply",
+            "6"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "4 + 6",
+          "output": "10",
+          "note": "The given total represents 10 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "160 ÷ 10",
+          "output": "16",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "g"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "16 × 6",
+          "output": "96",
+          "note": "Find the requested second amount.",
+          "outputUnit": "g"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "96 × 3",
+          "output": "288",
+          "note": "Scale to all the batches.",
+          "outputUnit": "g"
+        }
+      ],
+      "hint": "Does 160 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 16. The two quantities are 64 and 96, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "240",
+      "error_note": "The known total matches 10 parts, not 4. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 4,
+        "b": 6,
+        "scale": 16,
+        "known": "total",
+        "target": "second",
+        "knownParts": 10,
+        "targetParts": 6
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          6
+        ],
+        "labels": [
+          "flour",
+          "sugar"
+        ],
+        "known": "total: 160 g",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 10 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q9",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "Travelling time and resting time are in the ratio 3 : 6. The travelling time is 51 minutes. How many minutes are spent resting? Then find the total for 2 journeys.",
+      "answer": "204",
+      "answerUnit": "minutes",
+      "model": {
+        "kind": "application",
+        "start": "51",
+        "operations": [
+          [
+            "divide",
+            "3"
+          ],
+          [
+            "multiply",
+            "6"
+          ],
+          [
+            "multiply",
+            "2"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "3",
+          "output": "3",
+          "note": "The given first represents 3 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "51 ÷ 3",
+          "output": "17",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "minutes"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "17 × 6",
+          "output": "102",
+          "note": "Find the requested second amount.",
+          "outputUnit": "minutes"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "102 × 2",
+          "output": "204",
+          "note": "Scale to all the batches.",
+          "outputUnit": "minutes"
+        }
+      ],
+      "hint": "Does 51 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 17. The two quantities are 51 and 102, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "34",
+      "error_note": "The known first matches 3 parts, not 9. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 3,
+        "b": 6,
+        "scale": 17,
+        "known": "first",
+        "target": "second",
+        "knownParts": 3,
+        "targetParts": 6
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          6
+        ],
+        "labels": [
+          "travel",
+          "rest"
+        ],
+        "known": "first: 51 minutes",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 3 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q10",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red beads to blue beads is 6 : 8. There are 36 more blue beads than red beads. How many blue beads are there? Then find the total for 3 identical batches.",
+      "answer": "432",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "36",
+        "operations": [
+          [
+            "divide",
+            "2"
+          ],
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "8 − 6",
+          "output": "2",
+          "note": "The given difference represents 2 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "36 ÷ 2",
+          "output": "18",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "18 × 8",
+          "output": "144",
+          "note": "Find the requested second amount.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "144 × 3",
+          "output": "432",
+          "note": "Scale to all the batches.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "Does 36 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 18. The two quantities are 108 and 144, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "48",
+      "error_note": "The known difference matches 2 parts, not 6. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 6,
+        "b": 8,
+        "scale": 18,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 2,
+        "targetParts": 8
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          6,
+          8
+        ],
+        "labels": [
+          "red beads",
+          "blue beads"
+        ],
+        "known": "difference: 36 beads",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 2 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q11",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of the length of ribbon A to the length of ribbon B is 4 : 8. The total is 228 cm. Find the length of ribbon B. Then find the total for 2 identical batches.",
+      "answer": "304",
+      "answerUnit": "cm",
+      "model": {
+        "kind": "application",
+        "start": "228",
+        "operations": [
+          [
+            "divide",
+            "12"
+          ],
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "2"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "4 + 8",
+          "output": "12",
+          "note": "The given total represents 12 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "228 ÷ 12",
+          "output": "19",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "cm"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "19 × 8",
+          "output": "152",
+          "note": "Find the requested second amount.",
+          "outputUnit": "cm"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "152 × 2",
+          "output": "304",
+          "note": "Scale to all the batches.",
+          "outputUnit": "cm"
+        }
+      ],
+      "hint": "Does 228 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 19. The two quantities are 76 and 152, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "456",
+      "error_note": "The known total matches 12 parts, not 4. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 4,
+        "b": 8,
+        "scale": 19,
+        "known": "total",
+        "target": "second",
+        "knownParts": 12,
+        "targetParts": 8
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          8
+        ],
+        "labels": [
+          "ribbon A",
+          "ribbon B"
+        ],
+        "known": "total: 228 cm",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 12 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q12",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "Ada and Ben share some money in the ratio 5 : 8. Ada receives £100. How much does Ben receive? Then find the total for 3 equal payments to Ben.",
+      "answer": "480",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "100",
+        "operations": [
+          [
+            "divide",
+            "5"
+          ],
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "5",
+          "output": "5",
+          "note": "The given first represents 5 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "100 ÷ 5",
+          "output": "20",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "20 × 8",
+          "output": "160",
+          "note": "Find the requested second amount.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "160 × 3",
+          "output": "480",
+          "note": "Scale to all the batches.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Does 100 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 20. The two quantities are 100 and 160, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "800/13",
+      "error_note": "The known first matches 5 parts, not 13. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 5,
+        "b": 8,
+        "scale": 20,
+        "known": "first",
+        "target": "second",
+        "knownParts": 5,
+        "targetParts": 8
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          8
+        ],
+        "labels": [
+          "Ada’s share",
+          "Ben’s share"
+        ],
+        "known": "first: 100 £",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 5 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q13",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red paint to white paint is 3 : 4. The total is 112 litres. Find the amount of white paint. Then find the total for 2 identical batches.",
+      "answer": "128",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "112",
+        "operations": [
+          [
+            "divide",
+            "7"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "multiply",
+            "2"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "3 + 4",
+          "output": "7",
+          "note": "The given total represents 7 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "112 ÷ 7",
+          "output": "16",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "16 × 4",
+          "output": "64",
+          "note": "Find the requested second amount.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "64 × 2",
+          "output": "128",
+          "note": "Scale to all the batches.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Does 112 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 16. The two quantities are 48 and 64, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "448/3",
+      "error_note": "The known total matches 7 parts, not 3. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 3,
+        "b": 4,
+        "scale": 16,
+        "known": "total",
+        "target": "second",
+        "knownParts": 7,
+        "targetParts": 4
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          4
+        ],
+        "labels": [
+          "red paint",
+          "white paint"
+        ],
+        "known": "total: 112 litres",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 7 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q14",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of flour to sugar is 4 : 6. There is 68 g of flour. Find the mass of sugar. Then find the total for 3 identical batches.",
+      "answer": "306",
+      "answerUnit": "g",
+      "model": {
+        "kind": "application",
+        "start": "68",
+        "operations": [
+          [
+            "divide",
+            "4"
+          ],
+          [
+            "multiply",
+            "6"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "4",
+          "output": "4",
+          "note": "The given first represents 4 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "68 ÷ 4",
+          "output": "17",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "g"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "17 × 6",
+          "output": "102",
+          "note": "Find the requested second amount.",
+          "outputUnit": "g"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "102 × 3",
+          "output": "306",
+          "note": "Scale to all the batches.",
+          "outputUnit": "g"
+        }
+      ],
+      "hint": "Does 68 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 17. The two quantities are 68 and 102, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "204/5",
+      "error_note": "The known first matches 4 parts, not 10. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 4,
+        "b": 6,
+        "scale": 17,
+        "known": "first",
+        "target": "second",
+        "knownParts": 4,
+        "targetParts": 6
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          6
+        ],
+        "labels": [
+          "flour",
+          "sugar"
+        ],
+        "known": "first: 68 g",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 4 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q15",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "Travelling time and resting time are in the ratio 3 : 6. The resting time is 54 minutes longer than the travelling time. How many minutes are spent resting? Then find the total for 2 journeys.",
+      "answer": "216",
+      "answerUnit": "minutes",
+      "model": {
+        "kind": "application",
+        "start": "54",
+        "operations": [
+          [
+            "divide",
+            "3"
+          ],
+          [
+            "multiply",
+            "6"
+          ],
+          [
+            "multiply",
+            "2"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "6 − 3",
+          "output": "3",
+          "note": "The given difference represents 3 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "54 ÷ 3",
+          "output": "18",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "minutes"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "18 × 6",
+          "output": "108",
+          "note": "Find the requested second amount.",
+          "outputUnit": "minutes"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "108 × 2",
+          "output": "216",
+          "note": "Scale to all the batches.",
+          "outputUnit": "minutes"
+        }
+      ],
+      "hint": "Does 54 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 18. The two quantities are 54 and 108, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "36",
+      "error_note": "The known difference matches 3 parts, not 9. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 3,
+        "b": 6,
+        "scale": 18,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 3,
+        "targetParts": 6
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          3,
+          6
+        ],
+        "labels": [
+          "travel",
+          "rest"
+        ],
+        "known": "difference: 54 minutes",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 3 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q16",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of red beads to blue beads is 6 : 8. The total is 266 beads. How many blue beads are there? Then find the total for 3 identical batches.",
+      "answer": "456",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "266",
+        "operations": [
+          [
+            "divide",
+            "14"
+          ],
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "6 + 8",
+          "output": "14",
+          "note": "The given total represents 14 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "266 ÷ 14",
+          "output": "19",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "19 × 8",
+          "output": "152",
+          "note": "Find the requested second amount.",
+          "outputUnit": "beads"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "152 × 3",
+          "output": "456",
+          "note": "Scale to all the batches.",
+          "outputUnit": "beads"
+        }
+      ],
+      "hint": "Does 266 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 19. The two quantities are 114 and 152, in the named order. Check their total against the given amount, then check you answered the requested question.",
+      "wrong": "1064/3",
+      "error_note": "The known total matches 14 parts, not 6. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 6,
+        "b": 8,
+        "scale": 19,
+        "known": "total",
+        "target": "second",
+        "knownParts": 14,
+        "targetParts": 8
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          6,
+          8
+        ],
+        "labels": [
+          "red beads",
+          "blue beads"
+        ],
+        "known": "total: 266 beads",
+        "knownKind": "total"
+      },
+      "repair": "Match the given total to 14 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q17",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "The ratio of the length of ribbon A to the length of ribbon B is 4 : 8. Ribbon A is 80 cm long. Find the length of ribbon B. Then find the total for 2 identical batches.",
+      "answer": "320",
+      "answerUnit": "cm",
+      "model": {
+        "kind": "application",
+        "start": "80",
+        "operations": [
+          [
+            "divide",
+            "4"
+          ],
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "2"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "4",
+          "output": "4",
+          "note": "The given first represents 4 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "80 ÷ 4",
+          "output": "20",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "cm"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "20 × 8",
+          "output": "160",
+          "note": "Find the requested second amount.",
+          "outputUnit": "cm"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "160 × 2",
+          "output": "320",
+          "note": "Scale to all the batches.",
+          "outputUnit": "cm"
+        }
+      ],
+      "hint": "Does 80 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 20. The two quantities are 80 and 160, in the named order. Check their first against the given amount, then check you answered the requested question.",
+      "wrong": "160/3",
+      "error_note": "The known first matches 4 parts, not 12. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 4,
+        "b": 8,
+        "scale": 20,
+        "known": "first",
+        "target": "second",
+        "knownParts": 4,
+        "targetParts": 8
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          8
+        ],
+        "labels": [
+          "ribbon A",
+          "ribbon B"
+        ],
+        "known": "first: 80 cm",
+        "knownKind": "first"
+      },
+      "repair": "Match the given first to 4 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C2-Q18",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "Ada and Ben share some money in the ratio 5 : 8. Ben receives £63 more than Ada. How much does Ben receive? Then find the total for 3 equal payments to Ben.",
+      "answer": "504",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "63",
+        "operations": [
+          [
+            "divide",
+            "3"
+          ],
+          [
+            "multiply",
+            "8"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the known quantity to parts",
+          "input": "8 − 5",
+          "output": "3",
+          "note": "The given difference represents 3 equal parts, not one part.",
+          "outputUnit": ""
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "63 ÷ 3",
+          "output": "21",
+          "note": "Find the value of one ratio part.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the requested second amount",
+          "input": "21 × 8",
+          "output": "168",
+          "note": "Find the requested second amount.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Scale to all the batches",
+          "input": "168 × 3",
+          "output": "504",
+          "note": "Scale to all the batches.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Does 63 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
+      "check": "One ratio part is 21. The two quantities are 105 and 168, in the named order. Check their difference against the given amount, then check you answered the requested question.",
+      "wrong": "504/5",
+      "error_note": "The known difference matches 3 parts, not 5. Find one part before scaling to the requested quantity.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 5,
+        "b": 8,
+        "scale": 21,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 3,
+        "targetParts": 8
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          8
+        ],
+        "labels": [
+          "Ada’s share",
+          "Ben’s share"
+        ],
+        "known": "difference: 63 £",
+        "knownKind": "difference"
+      },
+      "repair": "Match the given difference to 3 parts before finding one part.",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q1",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Red paint and white paint are in the ratio 4 : 7. There are 56 litres of red paint. White paint costs £3 per litre. What is the cost of the white paint?",
+      "answer": "294",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "56",
+        "operations": [
+          [
+            "divide",
+            "4"
+          ],
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "56 ÷ 4",
+          "output": "14",
+          "outputUnit": "litres",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "14 × 7",
+          "output": "98",
+          "outputUnit": "litres",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Find the cost of the white paint",
+          "input": "98 × 3",
+          "output": "294",
+          "outputUnit": "£",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the price per litre, match the given first of 56 litres to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 56 litres and 98 litres. Check their first amount against the given 56 litres. Multiply the ratio amount by the stated rate or number of batches. The final answer is £294.",
+      "wrong": "98",
+      "error_note": "98 litres is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 4,
+        "b": 7,
+        "scale": 14,
+        "known": "first",
+        "target": "second",
+        "knownParts": 4,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          7
+        ],
+        "labels": [
+          "red paint",
+          "white paint"
+        ],
+        "known": "first: 56 litres",
+        "knownKind": "first"
+      },
+      "repair": "Multiply the ratio amount by the stated rate or number of batches.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "56 ÷ 4",
+          "output": "14",
+          "outputUnit": "litres",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "14 × 7",
+          "output": "98",
+          "outputUnit": "litres",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "98",
+          "output": "98",
+          "outputUnit": "£",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q2",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "For one batch, flour and sugar are in the ratio 5 : 7. There are 30 g more sugar than flour. The same recipe is used for 4 identical batches. What total mass of sugar is needed?",
+      "answer": "420",
+      "answerUnit": "g",
+      "model": {
+        "kind": "application",
+        "start": "30",
+        "operations": [
+          [
+            "divide",
+            "2"
+          ],
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "multiply",
+            "4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "7 − 5",
+          "output": "2",
+          "outputUnit": "",
+          "note": "The given difference represents 2 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "30 ÷ 2",
+          "output": "15",
+          "outputUnit": "g",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "15 × 7",
+          "output": "105",
+          "outputUnit": "g",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Scale the sugar to all batches",
+          "input": "105 × 4",
+          "output": "420",
+          "outputUnit": "g",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the number of batches, match the given difference of 30 g to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 75 g and 105 g. Check their difference against the given 30 g. Multiply the ratio amount by the stated rate or number of batches. The final answer is 420 g.",
+      "wrong": "105",
+      "error_note": "105 g is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 5,
+        "b": 7,
+        "scale": 15,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 2,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          7
+        ],
+        "labels": [
+          "flour",
+          "sugar"
+        ],
+        "known": "difference: 30 g",
+        "knownKind": "difference"
+      },
+      "repair": "Multiply the ratio amount by the stated rate or number of batches.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "7 − 5",
+          "output": "2",
+          "outputUnit": "",
+          "note": "The given difference represents 2 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "30 ÷ 2",
+          "output": "15",
+          "outputUnit": "g",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "15 × 7",
+          "output": "105",
+          "outputUnit": "g",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "105",
+          "output": "105",
+          "outputUnit": "g",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q3",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Travelling time and resting time on a journey are in the ratio 4 : 7. The journey takes 176 minutes including rest. An extra 8-minute rest is added after this journey. What is the total resting time including the extra rest?",
+      "answer": "120",
+      "answerUnit": "minutes",
+      "model": {
+        "kind": "application",
+        "start": "176",
+        "operations": [
+          [
+            "divide",
+            "11"
+          ],
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "add",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "4 + 7",
+          "output": "11",
+          "outputUnit": "",
+          "note": "The given total represents 11 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "176 ÷ 11",
+          "output": "16",
+          "outputUnit": "minutes",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "16 × 7",
+          "output": "112",
+          "outputUnit": "minutes",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Include the extra rest",
+          "input": "112 + 8",
+          "output": "120",
+          "outputUnit": "minutes",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the extra rest, match the given total of 176 minutes to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 64 minutes and 112 minutes. Check their sum against the given 176 minutes. Add the extra rest to the resting time, not the travelling time. The final answer is 120 minutes.",
+      "wrong": "112",
+      "error_note": "112 minutes is only the intermediate ratio amount. Add the extra rest to the resting time, not the travelling time.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 4,
+        "b": 7,
+        "scale": 16,
+        "known": "total",
+        "target": "second",
+        "knownParts": 11,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          7
+        ],
+        "labels": [
+          "travel",
+          "rest"
+        ],
+        "known": "total: 176 minutes",
+        "knownKind": "total"
+      },
+      "repair": "Add the extra rest to the resting time, not the travelling time.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "4 + 7",
+          "output": "11",
+          "outputUnit": "",
+          "note": "The given total represents 11 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "176 ÷ 11",
+          "output": "16",
+          "outputUnit": "minutes",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "16 × 7",
+          "output": "112",
+          "outputUnit": "minutes",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "112",
+          "output": "112",
+          "outputUnit": "minutes",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q4",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Red beads and blue beads are in the ratio 7 : 9. There are 119 red beads. Then 11 blue beads are used. How many blue beads remain?",
+      "answer": "142",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "119",
+        "operations": [
+          [
+            "divide",
+            "7"
+          ],
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "subtract",
+            "11"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "119 ÷ 7",
+          "output": "17",
+          "outputUnit": "beads",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "17 × 9",
+          "output": "153",
+          "outputUnit": "beads",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Subtract the blue beads used",
+          "input": "153 − 11",
+          "output": "142",
+          "outputUnit": "beads",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the beads used, match the given first of 119 beads to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 119 beads and 153 beads. Check their first amount against the given 119 beads. Subtract the used blue beads from the original blue-bead count. The final answer is 142 beads.",
+      "wrong": "153",
+      "error_note": "153 beads is only the intermediate ratio amount. Subtract the used blue beads from the original blue-bead count.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 7,
+        "b": 9,
+        "scale": 17,
+        "known": "first",
+        "target": "second",
+        "knownParts": 7,
+        "targetParts": 9
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          7,
+          9
+        ],
+        "labels": [
+          "red beads",
+          "blue beads"
+        ],
+        "known": "first: 119 beads",
+        "knownKind": "first"
+      },
+      "repair": "Subtract the used blue beads from the original blue-bead count.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "119 ÷ 7",
+          "output": "17",
+          "outputUnit": "beads",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "17 × 9",
+          "output": "153",
+          "outputUnit": "beads",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "153",
+          "output": "153",
+          "outputUnit": "beads",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q5",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "The lengths of ribbon A and ribbon B are in the ratio 5 : 9. Ribbon B is 72 cm longer than ribbon A. What is the length of ribbon B in metres?",
+      "answer": "1.62",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "72",
+        "operations": [
+          [
+            "divide",
+            "4"
+          ],
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "divide",
+            "100"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "9 − 5",
+          "output": "4",
+          "outputUnit": "",
+          "note": "The given difference represents 4 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "72 ÷ 4",
+          "output": "18",
+          "outputUnit": "cm",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "18 × 9",
+          "output": "162",
+          "outputUnit": "cm",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Convert centimetres to metres",
+          "input": "162 ÷ 100",
+          "output": "1.62",
+          "outputUnit": "m",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the change of units, match the given difference of 72 cm to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 90 cm and 162 cm. Check their difference against the given 72 cm. Divide the centimetre length by 100 to express it in metres. The final answer is 1.62 m.",
+      "wrong": "162",
+      "error_note": "162 cm is only the intermediate ratio amount. Divide the centimetre length by 100 to express it in metres.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 5,
+        "b": 9,
+        "scale": 18,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 4,
+        "targetParts": 9
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          9
+        ],
+        "labels": [
+          "ribbon A",
+          "ribbon B"
+        ],
+        "known": "difference: 72 cm",
+        "knownKind": "difference"
+      },
+      "repair": "Divide the centimetre length by 100 to express it in metres.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "9 − 5",
+          "output": "4",
+          "outputUnit": "",
+          "note": "The given difference represents 4 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "72 ÷ 4",
+          "output": "18",
+          "outputUnit": "cm",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "18 × 9",
+          "output": "162",
+          "outputUnit": "cm",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "162",
+          "output": "162",
+          "outputUnit": "m",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q6",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Ada and Ben share money in the ratio 6 : 9. They share £285 altogether. Ben saves 20% of his share. How much does he save?",
+      "answer": "34.2",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "285",
+        "operations": [
+          [
+            "divide",
+            "15"
+          ],
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "divide",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "6 + 9",
+          "output": "15",
+          "outputUnit": "",
+          "note": "The given total represents 15 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "285 ÷ 15",
+          "output": "19",
+          "outputUnit": "£",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "19 × 9",
+          "output": "171",
+          "outputUnit": "£",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Find 20% of Ben’s share",
+          "input": "171 ÷ 5",
+          "output": "34.2",
+          "outputUnit": "£",
+          "note": "20% is 1/5, so divide the share by 5."
+        }
+      ],
+      "hint": "Before considering the percentage saved, match the given total of £285 to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are £114 and £171. Check their sum against the given £285. Divide Ben’s share by 5 to find 20%. The final answer is £34.2.",
+      "wrong": "171",
+      "error_note": "£171 is only the intermediate ratio amount. Divide Ben’s share by 5 to find 20%.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 6,
+        "b": 9,
+        "scale": 19,
+        "known": "total",
+        "target": "second",
+        "knownParts": 15,
+        "targetParts": 9
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          6,
+          9
+        ],
+        "labels": [
+          "Ada’s share",
+          "Ben’s share"
+        ],
+        "known": "total: £285",
+        "knownKind": "total"
+      },
+      "repair": "Divide Ben’s share by 5 to find 20%.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "6 + 9",
+          "output": "15",
+          "outputUnit": "",
+          "note": "The given total represents 15 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "285 ÷ 15",
+          "output": "19",
+          "outputUnit": "£",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "19 × 9",
+          "output": "171",
+          "outputUnit": "£",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "171",
+          "output": "171",
+          "outputUnit": "£",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q7",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Red paint and white paint are in the ratio 4 : 7. There are 45 litres more white paint than red paint. White paint costs £5 per litre. What is the cost of the white paint?",
+      "answer": "525",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "45",
+        "operations": [
+          [
+            "divide",
+            "3"
+          ],
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "multiply",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "7 − 4",
+          "output": "3",
+          "outputUnit": "",
+          "note": "The given difference represents 3 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "45 ÷ 3",
+          "output": "15",
+          "outputUnit": "litres",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "15 × 7",
+          "output": "105",
+          "outputUnit": "litres",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Find the cost of the white paint",
+          "input": "105 × 5",
+          "output": "525",
+          "outputUnit": "£",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the price per litre, match the given difference of 45 litres to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 60 litres and 105 litres. Check their difference against the given 45 litres. Multiply the ratio amount by the stated rate or number of batches. The final answer is £525.",
+      "wrong": "105",
+      "error_note": "105 litres is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 4,
+        "b": 7,
+        "scale": 15,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 3,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          7
+        ],
+        "labels": [
+          "red paint",
+          "white paint"
+        ],
+        "known": "difference: 45 litres",
+        "knownKind": "difference"
+      },
+      "repair": "Multiply the ratio amount by the stated rate or number of batches.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "7 − 4",
+          "output": "3",
+          "outputUnit": "",
+          "note": "The given difference represents 3 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "45 ÷ 3",
+          "output": "15",
+          "outputUnit": "litres",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "15 × 7",
+          "output": "105",
+          "outputUnit": "litres",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "105",
+          "output": "105",
+          "outputUnit": "£",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q8",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "For one batch, flour and sugar are in the ratio 5 : 7. The mixture weighs 192 g. The same recipe is used for 4 identical batches. What total mass of sugar is needed?",
+      "answer": "448",
+      "answerUnit": "g",
+      "model": {
+        "kind": "application",
+        "start": "192",
+        "operations": [
+          [
+            "divide",
+            "12"
+          ],
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "multiply",
+            "4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "5 + 7",
+          "output": "12",
+          "outputUnit": "",
+          "note": "The given total represents 12 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "192 ÷ 12",
+          "output": "16",
+          "outputUnit": "g",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "16 × 7",
+          "output": "112",
+          "outputUnit": "g",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Scale the sugar to all batches",
+          "input": "112 × 4",
+          "output": "448",
+          "outputUnit": "g",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the number of batches, match the given total of 192 g to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 80 g and 112 g. Check their sum against the given 192 g. Multiply the ratio amount by the stated rate or number of batches. The final answer is 448 g.",
+      "wrong": "112",
+      "error_note": "112 g is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 5,
+        "b": 7,
+        "scale": 16,
+        "known": "total",
+        "target": "second",
+        "knownParts": 12,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          7
+        ],
+        "labels": [
+          "flour",
+          "sugar"
+        ],
+        "known": "total: 192 g",
+        "knownKind": "total"
+      },
+      "repair": "Multiply the ratio amount by the stated rate or number of batches.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "5 + 7",
+          "output": "12",
+          "outputUnit": "",
+          "note": "The given total represents 12 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "192 ÷ 12",
+          "output": "16",
+          "outputUnit": "g",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "16 × 7",
+          "output": "112",
+          "outputUnit": "g",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "112",
+          "output": "112",
+          "outputUnit": "g",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q9",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Travelling time and resting time on a journey are in the ratio 4 : 7. The travelling time is 68 minutes. An extra 6-minute rest is added after this journey. What is the total resting time including the extra rest?",
+      "answer": "125",
+      "answerUnit": "minutes",
+      "model": {
+        "kind": "application",
+        "start": "68",
+        "operations": [
+          [
+            "divide",
+            "4"
+          ],
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "add",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "68 ÷ 4",
+          "output": "17",
+          "outputUnit": "minutes",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "17 × 7",
+          "output": "119",
+          "outputUnit": "minutes",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Include the extra rest",
+          "input": "119 + 6",
+          "output": "125",
+          "outputUnit": "minutes",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the extra rest, match the given first of 68 minutes to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 68 minutes and 119 minutes. Check their first amount against the given 68 minutes. Add the extra rest to the resting time, not the travelling time. The final answer is 125 minutes.",
+      "wrong": "119",
+      "error_note": "119 minutes is only the intermediate ratio amount. Add the extra rest to the resting time, not the travelling time.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 4,
+        "b": 7,
+        "scale": 17,
+        "known": "first",
+        "target": "second",
+        "knownParts": 4,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          7
+        ],
+        "labels": [
+          "travel",
+          "rest"
+        ],
+        "known": "first: 68 minutes",
+        "knownKind": "first"
+      },
+      "repair": "Add the extra rest to the resting time, not the travelling time.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "68 ÷ 4",
+          "output": "17",
+          "outputUnit": "minutes",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "17 × 7",
+          "output": "119",
+          "outputUnit": "minutes",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "119",
+          "output": "119",
+          "outputUnit": "minutes",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q10",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Red beads and blue beads are in the ratio 7 : 9. There are 36 more blue beads than red beads. Then 8 blue beads are used. How many blue beads remain?",
+      "answer": "154",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "36",
+        "operations": [
+          [
+            "divide",
+            "2"
+          ],
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "subtract",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "9 − 7",
+          "output": "2",
+          "outputUnit": "",
+          "note": "The given difference represents 2 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "36 ÷ 2",
+          "output": "18",
+          "outputUnit": "beads",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "18 × 9",
+          "output": "162",
+          "outputUnit": "beads",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Subtract the blue beads used",
+          "input": "162 − 8",
+          "output": "154",
+          "outputUnit": "beads",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the beads used, match the given difference of 36 beads to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 126 beads and 162 beads. Check their difference against the given 36 beads. Subtract the used blue beads from the original blue-bead count. The final answer is 154 beads.",
+      "wrong": "162",
+      "error_note": "162 beads is only the intermediate ratio amount. Subtract the used blue beads from the original blue-bead count.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 7,
+        "b": 9,
+        "scale": 18,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 2,
+        "targetParts": 9
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          7,
+          9
+        ],
+        "labels": [
+          "red beads",
+          "blue beads"
+        ],
+        "known": "difference: 36 beads",
+        "knownKind": "difference"
+      },
+      "repair": "Subtract the used blue beads from the original blue-bead count.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "9 − 7",
+          "output": "2",
+          "outputUnit": "",
+          "note": "The given difference represents 2 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "36 ÷ 2",
+          "output": "18",
+          "outputUnit": "beads",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "18 × 9",
+          "output": "162",
+          "outputUnit": "beads",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "162",
+          "output": "162",
+          "outputUnit": "beads",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q11",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "The lengths of ribbon A and ribbon B are in the ratio 5 : 9. The combined length is 266 cm. What is the length of ribbon B in metres?",
+      "answer": "1.71",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "266",
+        "operations": [
+          [
+            "divide",
+            "14"
+          ],
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "divide",
+            "100"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "5 + 9",
+          "output": "14",
+          "outputUnit": "",
+          "note": "The given total represents 14 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "266 ÷ 14",
+          "output": "19",
+          "outputUnit": "cm",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "19 × 9",
+          "output": "171",
+          "outputUnit": "cm",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Convert centimetres to metres",
+          "input": "171 ÷ 100",
+          "output": "1.71",
+          "outputUnit": "m",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the change of units, match the given total of 266 cm to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 95 cm and 171 cm. Check their sum against the given 266 cm. Divide the centimetre length by 100 to express it in metres. The final answer is 1.71 m.",
+      "wrong": "171",
+      "error_note": "171 cm is only the intermediate ratio amount. Divide the centimetre length by 100 to express it in metres.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 5,
+        "b": 9,
+        "scale": 19,
+        "known": "total",
+        "target": "second",
+        "knownParts": 14,
+        "targetParts": 9
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          9
+        ],
+        "labels": [
+          "ribbon A",
+          "ribbon B"
+        ],
+        "known": "total: 266 cm",
+        "knownKind": "total"
+      },
+      "repair": "Divide the centimetre length by 100 to express it in metres.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "5 + 9",
+          "output": "14",
+          "outputUnit": "",
+          "note": "The given total represents 14 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "266 ÷ 14",
+          "output": "19",
+          "outputUnit": "cm",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "19 × 9",
+          "output": "171",
+          "outputUnit": "cm",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "171",
+          "output": "171",
+          "outputUnit": "m",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q12",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Ada and Ben share money in the ratio 6 : 9. Ada receives £120. Ben saves 25% of his share. How much does he save?",
+      "answer": "45",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "120",
+        "operations": [
+          [
+            "divide",
+            "6"
+          ],
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "divide",
+            "4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "120 ÷ 6",
+          "output": "20",
+          "outputUnit": "£",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "20 × 9",
+          "output": "180",
+          "outputUnit": "£",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Find 25% of Ben’s share",
+          "input": "180 ÷ 4",
+          "output": "45",
+          "outputUnit": "£",
+          "note": "25% is 1/4, so divide the share by 4."
+        }
+      ],
+      "hint": "Before considering the percentage saved, match the given first of £120 to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are £120 and £180. Check their first amount against the given £120. Divide Ben’s share by 4 to find 25%. The final answer is £45.",
+      "wrong": "180",
+      "error_note": "£180 is only the intermediate ratio amount. Divide Ben’s share by 4 to find 25%.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 6,
+        "b": 9,
+        "scale": 20,
+        "known": "first",
+        "target": "second",
+        "knownParts": 6,
+        "targetParts": 9
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          6,
+          9
+        ],
+        "labels": [
+          "Ada’s share",
+          "Ben’s share"
+        ],
+        "known": "first: £120",
+        "knownKind": "first"
+      },
+      "repair": "Divide Ben’s share by 4 to find 25%.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "120 ÷ 6",
+          "output": "20",
+          "outputUnit": "£",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "20 × 9",
+          "output": "180",
+          "outputUnit": "£",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "180",
+          "output": "180",
+          "outputUnit": "£",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q13",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Red paint and white paint are in the ratio 4 : 7. There are 176 litres of paint altogether. White paint costs £3 per litre. What is the cost of the white paint?",
+      "answer": "336",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "176",
+        "operations": [
+          [
+            "divide",
+            "11"
+          ],
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "multiply",
+            "3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "4 + 7",
+          "output": "11",
+          "outputUnit": "",
+          "note": "The given total represents 11 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "176 ÷ 11",
+          "output": "16",
+          "outputUnit": "litres",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "16 × 7",
+          "output": "112",
+          "outputUnit": "litres",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Find the cost of the white paint",
+          "input": "112 × 3",
+          "output": "336",
+          "outputUnit": "£",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the price per litre, match the given total of 176 litres to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 64 litres and 112 litres. Check their sum against the given 176 litres. Multiply the ratio amount by the stated rate or number of batches. The final answer is £336.",
+      "wrong": "112",
+      "error_note": "112 litres is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 4,
+        "b": 7,
+        "scale": 16,
+        "known": "total",
+        "target": "second",
+        "knownParts": 11,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          7
+        ],
+        "labels": [
+          "red paint",
+          "white paint"
+        ],
+        "known": "total: 176 litres",
+        "knownKind": "total"
+      },
+      "repair": "Multiply the ratio amount by the stated rate or number of batches.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "4 + 7",
+          "output": "11",
+          "outputUnit": "",
+          "note": "The given total represents 11 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "176 ÷ 11",
+          "output": "16",
+          "outputUnit": "litres",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "16 × 7",
+          "output": "112",
+          "outputUnit": "litres",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "112",
+          "output": "112",
+          "outputUnit": "£",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q14",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "For one batch, flour and sugar are in the ratio 5 : 7. There are 85 g of flour. The same recipe is used for 4 identical batches. What total mass of sugar is needed?",
+      "answer": "476",
+      "answerUnit": "g",
+      "model": {
+        "kind": "application",
+        "start": "85",
+        "operations": [
+          [
+            "divide",
+            "5"
+          ],
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "multiply",
+            "4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "85 ÷ 5",
+          "output": "17",
+          "outputUnit": "g",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "17 × 7",
+          "output": "119",
+          "outputUnit": "g",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Scale the sugar to all batches",
+          "input": "119 × 4",
+          "output": "476",
+          "outputUnit": "g",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the number of batches, match the given first of 85 g to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 85 g and 119 g. Check their first amount against the given 85 g. Multiply the ratio amount by the stated rate or number of batches. The final answer is 476 g.",
+      "wrong": "119",
+      "error_note": "119 g is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 5,
+        "b": 7,
+        "scale": 17,
+        "known": "first",
+        "target": "second",
+        "knownParts": 5,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          7
+        ],
+        "labels": [
+          "flour",
+          "sugar"
+        ],
+        "known": "first: 85 g",
+        "knownKind": "first"
+      },
+      "repair": "Multiply the ratio amount by the stated rate or number of batches.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "85 ÷ 5",
+          "output": "17",
+          "outputUnit": "g",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "17 × 7",
+          "output": "119",
+          "outputUnit": "g",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "119",
+          "output": "119",
+          "outputUnit": "g",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q15",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Travelling time and resting time on a journey are in the ratio 4 : 7. Resting takes 54 minutes longer than travelling. An extra 12-minute rest is added after this journey. What is the total resting time including the extra rest?",
+      "answer": "138",
+      "answerUnit": "minutes",
+      "model": {
+        "kind": "application",
+        "start": "54",
+        "operations": [
+          [
+            "divide",
+            "3"
+          ],
+          [
+            "multiply",
+            "7"
+          ],
+          [
+            "add",
+            "12"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "7 − 4",
+          "output": "3",
+          "outputUnit": "",
+          "note": "The given difference represents 3 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "54 ÷ 3",
+          "output": "18",
+          "outputUnit": "minutes",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "18 × 7",
+          "output": "126",
+          "outputUnit": "minutes",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Include the extra rest",
+          "input": "126 + 12",
+          "output": "138",
+          "outputUnit": "minutes",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the extra rest, match the given difference of 54 minutes to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 72 minutes and 126 minutes. Check their difference against the given 54 minutes. Add the extra rest to the resting time, not the travelling time. The final answer is 138 minutes.",
+      "wrong": "126",
+      "error_note": "126 minutes is only the intermediate ratio amount. Add the extra rest to the resting time, not the travelling time.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 4,
+        "b": 7,
+        "scale": 18,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 3,
+        "targetParts": 7
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          4,
+          7
+        ],
+        "labels": [
+          "travel",
+          "rest"
+        ],
+        "known": "difference: 54 minutes",
+        "knownKind": "difference"
+      },
+      "repair": "Add the extra rest to the resting time, not the travelling time.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "7 − 4",
+          "output": "3",
+          "outputUnit": "",
+          "note": "The given difference represents 3 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "54 ÷ 3",
+          "output": "18",
+          "outputUnit": "minutes",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "18 × 7",
+          "output": "126",
+          "outputUnit": "minutes",
+          "note": "The second named quantity has 7 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "126",
+          "output": "126",
+          "outputUnit": "minutes",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q16",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Red beads and blue beads are in the ratio 7 : 9. There are 304 beads altogether. Then 14 blue beads are used. How many blue beads remain?",
+      "answer": "157",
+      "answerUnit": "beads",
+      "model": {
+        "kind": "application",
+        "start": "304",
+        "operations": [
+          [
+            "divide",
+            "16"
+          ],
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "subtract",
+            "14"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "7 + 9",
+          "output": "16",
+          "outputUnit": "",
+          "note": "The given total represents 16 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "304 ÷ 16",
+          "output": "19",
+          "outputUnit": "beads",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "19 × 9",
+          "output": "171",
+          "outputUnit": "beads",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Subtract the blue beads used",
+          "input": "171 − 14",
+          "output": "157",
+          "outputUnit": "beads",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the beads used, match the given total of 304 beads to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 133 beads and 171 beads. Check their sum against the given 304 beads. Subtract the used blue beads from the original blue-bead count. The final answer is 157 beads.",
+      "wrong": "171",
+      "error_note": "171 beads is only the intermediate ratio amount. Subtract the used blue beads from the original blue-bead count.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 7,
+        "b": 9,
+        "scale": 19,
+        "known": "total",
+        "target": "second",
+        "knownParts": 16,
+        "targetParts": 9
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          7,
+          9
+        ],
+        "labels": [
+          "red beads",
+          "blue beads"
+        ],
+        "known": "total: 304 beads",
+        "knownKind": "total"
+      },
+      "repair": "Subtract the used blue beads from the original blue-bead count.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "7 + 9",
+          "output": "16",
+          "outputUnit": "",
+          "note": "The given total represents 16 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "304 ÷ 16",
+          "output": "19",
+          "outputUnit": "beads",
+          "note": "Divide the given total by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "19 × 9",
+          "output": "171",
+          "outputUnit": "beads",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "171",
+          "output": "171",
+          "outputUnit": "beads",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q17",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "The lengths of ribbon A and ribbon B are in the ratio 5 : 9. Ribbon A is 100 cm long. What is the length of ribbon B in metres?",
+      "answer": "1.8",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "100",
+        "operations": [
+          [
+            "divide",
+            "5"
+          ],
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "divide",
+            "100"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "100 ÷ 5",
+          "output": "20",
+          "outputUnit": "cm",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "20 × 9",
+          "output": "180",
+          "outputUnit": "cm",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Convert centimetres to metres",
+          "input": "180 ÷ 100",
+          "output": "1.8",
+          "outputUnit": "m",
+          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        }
+      ],
+      "hint": "Before considering the change of units, match the given first of 100 cm to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are 100 cm and 180 cm. Check their first amount against the given 100 cm. Divide the centimetre length by 100 to express it in metres. The final answer is 1.8 m.",
+      "wrong": "180",
+      "error_note": "180 cm is only the intermediate ratio amount. Divide the centimetre length by 100 to express it in metres.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 3,
+      "ratioModel": {
+        "a": 5,
+        "b": 9,
+        "scale": 20,
+        "known": "first",
+        "target": "second",
+        "knownParts": 5,
+        "targetParts": 9
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          5,
+          9
+        ],
+        "labels": [
+          "ribbon A",
+          "ribbon B"
+        ],
+        "known": "first: 100 cm",
+        "knownKind": "first"
+      },
+      "repair": "Divide the centimetre length by 100 to express it in metres.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Find the value of one ratio part",
+          "input": "100 ÷ 5",
+          "output": "20",
+          "outputUnit": "cm",
+          "note": "Divide the given first by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "20 × 9",
+          "output": "180",
+          "outputUnit": "cm",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "180",
+          "output": "180",
+          "outputUnit": "m",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maths:M04-WEB-PROBLEM-C3-Q18",
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Ada and Ben share money in the ratio 6 : 9. Ben receives £63 more than Ada. Ben saves 20% of his share. How much does he save?",
+      "answer": "37.8",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "63",
+        "operations": [
+          [
+            "divide",
+            "3"
+          ],
+          [
+            "multiply",
+            "9"
+          ],
+          [
+            "divide",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "9 − 6",
+          "output": "3",
+          "outputUnit": "",
+          "note": "The given difference represents 3 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "63 ÷ 3",
+          "output": "21",
+          "outputUnit": "£",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "21 × 9",
+          "output": "189",
+          "outputUnit": "£",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Find 20% of Ben’s share",
+          "input": "189 ÷ 5",
+          "output": "37.8",
+          "outputUnit": "£",
+          "note": "20% is 1/5, so divide the share by 5."
+        }
+      ],
+      "hint": "Before considering the percentage saved, match the given difference of £63 to its ratio parts. Find the second named quantity first.",
+      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "check": "The original quantities are £126 and £189. Check their difference against the given £63. Divide Ben’s share by 5 to find 20%. The final answer is £37.8.",
+      "wrong": "189",
+      "error_note": "£189 is only the intermediate ratio amount. Divide Ben’s share by 5 to find 20%.",
+      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "operationCount": 4,
+      "ratioModel": {
+        "a": 6,
+        "b": 9,
+        "scale": 21,
+        "known": "difference",
+        "target": "second",
+        "knownParts": 3,
+        "targetParts": 9
+      },
+      "diagram": {
+        "kind": "ratio-bars",
+        "parts": [
+          6,
+          9
+        ],
+        "labels": [
+          "Ada’s share",
+          "Ben’s share"
+        ],
+        "known": "difference: £63",
+        "knownKind": "difference"
+      },
+      "repair": "Divide Ben’s share by 5 to find 20%.",
+      "questionPrefix": "Solve the problem",
+      "errorSteps": [
+        {
+          "title": "Match the given quantity to ratio parts",
+          "input": "9 − 6",
+          "output": "3",
+          "outputUnit": "",
+          "note": "The given difference represents 3 equal parts."
+        },
+        {
+          "title": "Find the value of one ratio part",
+          "input": "63 ÷ 3",
+          "output": "21",
+          "outputUnit": "£",
+          "note": "Divide the given difference by its matching number of parts."
+        },
+        {
+          "title": "Find the second named quantity",
+          "input": "21 × 9",
+          "output": "189",
+          "outputUnit": "£",
+          "note": "The second named quantity has 9 equal parts."
+        },
+        {
+          "title": "Student stops at the ratio result",
+          "input": "189",
+          "output": "189",
+          "outputUnit": "£",
+          "note": ""
+        }
+      ]
+    }
+  ]
+}

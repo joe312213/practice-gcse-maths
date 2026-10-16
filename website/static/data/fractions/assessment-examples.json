@@ -1,0 +1,320 @@
+[
+  {
+    "q": "{1/10} + {7/10}",
+    "answer": "4/5",
+    "model": {
+      "kind": "fractions",
+      "a": "1/10",
+      "b": "7/10",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/10} + {7/10}",
+        "output": "{1/10} + {7/10}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/10} + {7/10}",
+        "output": "{1/10} + {7/10}",
+        "note": "Both denominators are 10, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{1/10} + {7/10}",
+        "output": "{8/10}",
+        "note": "1 + 7 = 8. Keep the denominator 10."
+      },
+      {
+        "title": "Simplify",
+        "input": "{8/10}",
+        "output": "{4/5}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/10",
+      "b": "7/10",
+      "denominator": 10
+    },
+    "hint": "The parts are already the same size: 10 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 10: 1/10 + 7/10. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {4/5} − {7/10} = {1/10}.",
+    "wrong": "2/5",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-ASSESSMENT-C1-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "assessment",
+    "level": 0,
+    "method": "calculation"
+  },
+  {
+    "q": "{4/11} − {1/11}",
+    "answer": "3/11",
+    "model": {
+      "kind": "fractions",
+      "a": "4/11",
+      "b": "1/11",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{4/11} − {1/11}",
+        "output": "{4/11} − {1/11}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{4/11} − {1/11}",
+        "output": "{4/11} − {1/11}",
+        "note": "Both denominators are 11, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{4/11} − {1/11}",
+        "output": "{3/11}",
+        "note": "4 − 1 = 3. Keep the denominator 11."
+      },
+      {
+        "title": "Simplify",
+        "input": "{3/11}",
+        "output": "{3/11}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "4/11",
+      "b": "1/11",
+      "denominator": 11
+    },
+    "hint": "The parts are already the same size: 11 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 11: 4/11 − 1/11. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {3/11} + {1/11} = {4/11}.",
+    "wrong": "3/22",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-ASSESSMENT-C1-Q2",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "assessment",
+    "level": 0,
+    "method": "calculation"
+  },
+  {
+    "q": "{1/4} + {5/12}",
+    "answer": "2/3",
+    "model": {
+      "kind": "fractions",
+      "a": "1/4",
+      "b": "5/12",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/4} + {5/12}",
+        "output": "{1/4} + {5/12}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/4} + {5/12}",
+        "output": "{3/12} + {5/12}",
+        "note": "Use 12 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{3/12} + {5/12}",
+        "output": "{8/12}",
+        "note": "3 + 5 = 8. Keep the denominator 12."
+      },
+      {
+        "title": "Simplify",
+        "input": "{8/12}",
+        "output": "{2/3}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/4",
+      "b": "5/12",
+      "denominator": 12
+    },
+    "hint": "What common multiple of 4 and 12 can be the denominator for both fractions?",
+    "method_note": "Use denominator 12: 3/12 + 5/12. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {2/3} − {5/12} = {1/4}.",
+    "wrong": "3/8",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-ASSESSMENT-C2-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "assessment",
+    "level": 1,
+    "method": "calculation"
+  },
+  {
+    "q": "{4/9} − {1/3}",
+    "answer": "1/9",
+    "model": {
+      "kind": "fractions",
+      "a": "4/9",
+      "b": "1/3",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{4/9} − {1/3}",
+        "output": "{4/9} − {1/3}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{4/9} − {1/3}",
+        "output": "{4/9} − {3/9}",
+        "note": "Use 9 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{4/9} − {3/9}",
+        "output": "{1/9}",
+        "note": "4 − 3 = 1. Keep the denominator 9."
+      },
+      {
+        "title": "Simplify",
+        "input": "{1/9}",
+        "output": "{1/9}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "4/9",
+      "b": "1/3",
+      "denominator": 9
+    },
+    "hint": "What common multiple of 9 and 3 can be the denominator for both fractions?",
+    "method_note": "Use denominator 9: 4/9 − 3/9. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {1/9} + {1/3} = {4/9}.",
+    "wrong": "1/4",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-ASSESSMENT-C2-Q2",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "assessment",
+    "level": 1,
+    "method": "calculation"
+  },
+  {
+    "q": "1 {1/4} + {2/7}",
+    "answer": "43/28",
+    "model": {
+      "kind": "fractions",
+      "a": "5/4",
+      "b": "2/7",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "1 {1/4} + {2/7}",
+        "output": "{5/4} + {2/7}",
+        "note": "Convert any mixed number: whole number × denominator + numerator; keep the denominator."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{5/4} + {2/7}",
+        "output": "{35/28} + {8/28}",
+        "note": "Use 28 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{35/28} + {8/28}",
+        "output": "{43/28}",
+        "note": "35 + 8 = 43. Keep the denominator 28."
+      },
+      {
+        "title": "Simplify",
+        "input": "{43/28}",
+        "output": "{43/28}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "5/4",
+      "b": "2/7",
+      "denominator": 28
+    },
+    "hint": "What common multiple of 4 and 7 can be the denominator for both fractions?",
+    "method_note": "Use denominator 28: 35/28 + 8/28. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {43/28} − {2/7} = {5/4}.",
+    "wrong": "7/11",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-ASSESSMENT-C3-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "assessment",
+    "level": 2,
+    "method": "calculation"
+  },
+  {
+    "q": "1 {5/8} − 1 {1/5}",
+    "answer": "17/40",
+    "model": {
+      "kind": "fractions",
+      "a": "13/8",
+      "b": "6/5",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "1 {5/8} − 1 {1/5}",
+        "output": "{13/8} − {6/5}",
+        "note": "Convert any mixed number: whole number × denominator + numerator; keep the denominator."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{13/8} − {6/5}",
+        "output": "{65/40} − {48/40}",
+        "note": "Use 40 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{65/40} − {48/40}",
+        "output": "{17/40}",
+        "note": "65 − 48 = 17. Keep the denominator 40."
+      },
+      {
+        "title": "Simplify",
+        "input": "{17/40}",
+        "output": "{17/40}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "13/8",
+      "b": "6/5",
+      "denominator": 40
+    },
+    "hint": "What common multiple of 8 and 5 can be the denominator for both fractions?",
+    "method_note": "Use denominator 40: 65/40 − 48/40. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {17/40} + {6/5} = {13/8}.",
+    "wrong": "7/13",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-ASSESSMENT-C3-Q2",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "assessment",
+    "level": 2,
+    "method": "calculation"
+  }
+]

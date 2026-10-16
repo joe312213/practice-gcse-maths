@@ -1,0 +1,1928 @@
+[
+  {
+    "q": "{4/7} + {5/7}",
+    "answer": "9/7",
+    "model": {
+      "kind": "fractions",
+      "a": "4/7",
+      "b": "5/7",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{4/7} + {5/7}",
+        "output": "{4/7} + {5/7}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{4/7} + {5/7}",
+        "output": "{4/7} + {5/7}",
+        "note": "Both denominators are 7, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{4/7} + {5/7}",
+        "output": "{9/7}",
+        "note": "4 + 5 = 9. Keep the denominator 7."
+      },
+      {
+        "title": "Simplify",
+        "input": "{9/7}",
+        "output": "{9/7}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "4/7",
+      "b": "5/7",
+      "denominator": 7
+    },
+    "hint": "The parts are already the same size: 7 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 7: 4/7 + 5/7. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {9/7} − {5/7} = {4/7}.",
+    "wrong": "9/14",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C1-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation"
+  },
+  {
+    "q": "{8/9} − {5/9}",
+    "answer": "1/3",
+    "model": {
+      "kind": "fractions",
+      "a": "8/9",
+      "b": "5/9",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{8/9} − {5/9}",
+        "output": "{8/9} − {5/9}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{8/9} − {5/9}",
+        "output": "{8/9} − {5/9}",
+        "note": "Both denominators are 9, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{8/9} − {5/9}",
+        "output": "{3/9}",
+        "note": "8 − 5 = 3. Keep the denominator 9."
+      },
+      {
+        "title": "Simplify",
+        "input": "{3/9}",
+        "output": "{1/3}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "8/9",
+      "b": "5/9",
+      "denominator": 9
+    },
+    "hint": "The parts are already the same size: 9 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 9: 8/9 − 5/9. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {1/3} + {5/9} = {8/9}.",
+    "wrong": "1/6",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C1-Q2",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation"
+  },
+  {
+    "q": "{7/8} + {5/8}",
+    "answer": "3/2",
+    "model": {
+      "kind": "fractions",
+      "a": "7/8",
+      "b": "5/8",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{7/8} + {5/8}",
+        "output": "{7/8} + {5/8}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{7/8} + {5/8}",
+        "output": "{7/8} + {5/8}",
+        "note": "Both denominators are 8, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{7/8} + {5/8}",
+        "output": "{12/8}",
+        "note": "7 + 5 = 12. Keep the denominator 8."
+      },
+      {
+        "title": "Simplify",
+        "input": "{12/8}",
+        "output": "{3/2}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "7/8",
+      "b": "5/8",
+      "denominator": 8
+    },
+    "hint": "The parts are already the same size: 8 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 8: 7/8 + 5/8. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {3/2} − {5/8} = {7/8}.",
+    "wrong": "3/4",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C1-Q3",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation"
+  },
+  {
+    "q": "{11/12} − {1/12}",
+    "answer": "5/6",
+    "model": {
+      "kind": "fractions",
+      "a": "11/12",
+      "b": "1/12",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{11/12} − {1/12}",
+        "output": "{11/12} − {1/12}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{11/12} − {1/12}",
+        "output": "{11/12} − {1/12}",
+        "note": "Both denominators are 12, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{11/12} − {1/12}",
+        "output": "{10/12}",
+        "note": "11 − 1 = 10. Keep the denominator 12."
+      },
+      {
+        "title": "Simplify",
+        "input": "{10/12}",
+        "output": "{5/6}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "11/12",
+      "b": "1/12",
+      "denominator": 12
+    },
+    "hint": "The parts are already the same size: 12 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 12: 11/12 − 1/12. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {5/6} + {1/12} = {11/12}.",
+    "wrong": "5/12",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C1-Q4",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation"
+  },
+  {
+    "q": "{9/10} + {3/10}",
+    "answer": "6/5",
+    "model": {
+      "kind": "fractions",
+      "a": "9/10",
+      "b": "3/10",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{9/10} + {3/10}",
+        "output": "{9/10} + {3/10}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{9/10} + {3/10}",
+        "output": "{9/10} + {3/10}",
+        "note": "Both denominators are 10, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{9/10} + {3/10}",
+        "output": "{12/10}",
+        "note": "9 + 3 = 12. Keep the denominator 10."
+      },
+      {
+        "title": "Simplify",
+        "input": "{12/10}",
+        "output": "{6/5}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "9/10",
+      "b": "3/10",
+      "denominator": 10
+    },
+    "hint": "The parts are already the same size: 10 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 10: 9/10 + 3/10. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {6/5} − {3/10} = {9/10}.",
+    "wrong": "3/5",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C1-Q5",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation"
+  },
+  {
+    "q": "{7/11} − {4/11}",
+    "answer": "3/11",
+    "model": {
+      "kind": "fractions",
+      "a": "7/11",
+      "b": "4/11",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{7/11} − {4/11}",
+        "output": "{7/11} − {4/11}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{7/11} − {4/11}",
+        "output": "{7/11} − {4/11}",
+        "note": "Both denominators are 11, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{7/11} − {4/11}",
+        "output": "{3/11}",
+        "note": "7 − 4 = 3. Keep the denominator 11."
+      },
+      {
+        "title": "Simplify",
+        "input": "{3/11}",
+        "output": "{3/11}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "7/11",
+      "b": "4/11",
+      "denominator": 11
+    },
+    "hint": "The parts are already the same size: 11 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 11: 7/11 − 4/11. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {3/11} + {4/11} = {7/11}.",
+    "wrong": "3/22",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C1-Q6",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation"
+  },
+  {
+    "q": "{2/3} + {5/6}",
+    "answer": "3/2",
+    "model": {
+      "kind": "fractions",
+      "a": "2/3",
+      "b": "5/6",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{2/3} + {5/6}",
+        "output": "{2/3} + {5/6}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{2/3} + {5/6}",
+        "output": "{4/6} + {5/6}",
+        "note": "Use 6 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{4/6} + {5/6}",
+        "output": "{9/6}",
+        "note": "4 + 5 = 9. Keep the denominator 6."
+      },
+      {
+        "title": "Simplify",
+        "input": "{9/6}",
+        "output": "{3/2}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "2/3",
+      "b": "5/6",
+      "denominator": 6
+    },
+    "hint": "What common multiple of 3 and 6 can be the denominator for both fractions?",
+    "method_note": "Use denominator 6: 4/6 + 5/6. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {3/2} − {5/6} = {2/3}.",
+    "wrong": "7/9",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C2-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation"
+  },
+  {
+    "q": "{3/4} − {1/8}",
+    "answer": "5/8",
+    "model": {
+      "kind": "fractions",
+      "a": "3/4",
+      "b": "1/8",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{3/4} − {1/8}",
+        "output": "{3/4} − {1/8}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{3/4} − {1/8}",
+        "output": "{6/8} − {1/8}",
+        "note": "Use 8 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{6/8} − {1/8}",
+        "output": "{5/8}",
+        "note": "6 − 1 = 5. Keep the denominator 8."
+      },
+      {
+        "title": "Simplify",
+        "input": "{5/8}",
+        "output": "{5/8}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "3/4",
+      "b": "1/8",
+      "denominator": 8
+    },
+    "hint": "What common multiple of 4 and 8 can be the denominator for both fractions?",
+    "method_note": "Use denominator 8: 6/8 − 1/8. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {5/8} + {1/8} = {3/4}.",
+    "wrong": "1/6",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C2-Q2",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation"
+  },
+  {
+    "q": "{4/5} + {3/10}",
+    "answer": "11/10",
+    "model": {
+      "kind": "fractions",
+      "a": "4/5",
+      "b": "3/10",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{4/5} + {3/10}",
+        "output": "{4/5} + {3/10}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{4/5} + {3/10}",
+        "output": "{8/10} + {3/10}",
+        "note": "Use 10 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{8/10} + {3/10}",
+        "output": "{11/10}",
+        "note": "8 + 3 = 11. Keep the denominator 10."
+      },
+      {
+        "title": "Simplify",
+        "input": "{11/10}",
+        "output": "{11/10}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "4/5",
+      "b": "3/10",
+      "denominator": 10
+    },
+    "hint": "What common multiple of 5 and 10 can be the denominator for both fractions?",
+    "method_note": "Use denominator 10: 8/10 + 3/10. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {11/10} − {3/10} = {4/5}.",
+    "wrong": "7/15",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C2-Q3",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation"
+  },
+  {
+    "q": "{11/12} − {5/6}",
+    "answer": "1/12",
+    "model": {
+      "kind": "fractions",
+      "a": "11/12",
+      "b": "5/6",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{11/12} − {5/6}",
+        "output": "{11/12} − {5/6}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{11/12} − {5/6}",
+        "output": "{11/12} − {10/12}",
+        "note": "Use 12 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{11/12} − {10/12}",
+        "output": "{1/12}",
+        "note": "11 − 10 = 1. Keep the denominator 12."
+      },
+      {
+        "title": "Simplify",
+        "input": "{1/12}",
+        "output": "{1/12}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "11/12",
+      "b": "5/6",
+      "denominator": 12
+    },
+    "hint": "What common multiple of 12 and 6 can be the denominator for both fractions?",
+    "method_note": "Use denominator 12: 11/12 − 10/12. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {1/12} + {5/6} = {11/12}.",
+    "wrong": "1/3",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C2-Q4",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation"
+  },
+  {
+    "q": "{3/4} + {1/12}",
+    "answer": "5/6",
+    "model": {
+      "kind": "fractions",
+      "a": "3/4",
+      "b": "1/12",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{3/4} + {1/12}",
+        "output": "{3/4} + {1/12}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{3/4} + {1/12}",
+        "output": "{9/12} + {1/12}",
+        "note": "Use 12 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{9/12} + {1/12}",
+        "output": "{10/12}",
+        "note": "9 + 1 = 10. Keep the denominator 12."
+      },
+      {
+        "title": "Simplify",
+        "input": "{10/12}",
+        "output": "{5/6}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "3/4",
+      "b": "1/12",
+      "denominator": 12
+    },
+    "hint": "What common multiple of 4 and 12 can be the denominator for both fractions?",
+    "method_note": "Use denominator 12: 9/12 + 1/12. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {5/6} − {1/12} = {3/4}.",
+    "wrong": "1/4",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C2-Q5",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation"
+  },
+  {
+    "q": "{8/9} − {2/3}",
+    "answer": "2/9",
+    "model": {
+      "kind": "fractions",
+      "a": "8/9",
+      "b": "2/3",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{8/9} − {2/3}",
+        "output": "{8/9} − {2/3}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{8/9} − {2/3}",
+        "output": "{8/9} − {6/9}",
+        "note": "Use 9 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{8/9} − {6/9}",
+        "output": "{2/9}",
+        "note": "8 − 6 = 2. Keep the denominator 9."
+      },
+      {
+        "title": "Simplify",
+        "input": "{2/9}",
+        "output": "{2/9}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "8/9",
+      "b": "2/3",
+      "denominator": 9
+    },
+    "hint": "What common multiple of 9 and 3 can be the denominator for both fractions?",
+    "method_note": "Use denominator 9: 8/9 − 6/9. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {2/9} + {2/3} = {8/9}.",
+    "wrong": "1/2",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C2-Q6",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation"
+  },
+  {
+    "q": "{2/3} + {3/4}",
+    "answer": "17/12",
+    "model": {
+      "kind": "fractions",
+      "a": "2/3",
+      "b": "3/4",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{2/3} + {3/4}",
+        "output": "{2/3} + {3/4}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{2/3} + {3/4}",
+        "output": "{8/12} + {9/12}",
+        "note": "Use 12 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{8/12} + {9/12}",
+        "output": "{17/12}",
+        "note": "8 + 9 = 17. Keep the denominator 12."
+      },
+      {
+        "title": "Simplify",
+        "input": "{17/12}",
+        "output": "{17/12}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "2/3",
+      "b": "3/4",
+      "denominator": 12
+    },
+    "hint": "What common multiple of 3 and 4 can be the denominator for both fractions?",
+    "method_note": "Use denominator 12: 8/12 + 9/12. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {17/12} − {3/4} = {2/3}.",
+    "wrong": "5/7",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C3-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation"
+  },
+  {
+    "q": "3 {3/4} − 1 {1/5}",
+    "answer": "51/20",
+    "model": {
+      "kind": "fractions",
+      "a": "15/4",
+      "b": "6/5",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "3 {3/4} − 1 {1/5}",
+        "output": "{15/4} − {6/5}",
+        "note": "Convert any mixed number: whole number × denominator + numerator; keep the denominator."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{15/4} − {6/5}",
+        "output": "{75/20} − {24/20}",
+        "note": "Use 20 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{75/20} − {24/20}",
+        "output": "{51/20}",
+        "note": "75 − 24 = 51. Keep the denominator 20."
+      },
+      {
+        "title": "Simplify",
+        "input": "{51/20}",
+        "output": "{51/20}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "15/4",
+      "b": "6/5",
+      "denominator": 20
+    },
+    "hint": "What common multiple of 4 and 5 can be the denominator for both fractions?",
+    "method_note": "Use denominator 20: 75/20 − 24/20. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {51/20} + {6/5} = {15/4}.",
+    "wrong": "1",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C3-Q2",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation"
+  },
+  {
+    "q": "3 {4/5} + {5/6}",
+    "answer": "139/30",
+    "model": {
+      "kind": "fractions",
+      "a": "19/5",
+      "b": "5/6",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "3 {4/5} + {5/6}",
+        "output": "{19/5} + {5/6}",
+        "note": "Convert any mixed number: whole number × denominator + numerator; keep the denominator."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{19/5} + {5/6}",
+        "output": "{114/30} + {25/30}",
+        "note": "Use 30 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{114/30} + {25/30}",
+        "output": "{139/30}",
+        "note": "114 + 25 = 139. Keep the denominator 30."
+      },
+      {
+        "title": "Simplify",
+        "input": "{139/30}",
+        "output": "{139/30}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "19/5",
+      "b": "5/6",
+      "denominator": 30
+    },
+    "hint": "What common multiple of 5 and 6 can be the denominator for both fractions?",
+    "method_note": "Use denominator 30: 114/30 + 25/30. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {139/30} − {5/6} = {19/5}.",
+    "wrong": "24/11",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C3-Q3",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation"
+  },
+  {
+    "q": "{7/8} − {2/3}",
+    "answer": "5/24",
+    "model": {
+      "kind": "fractions",
+      "a": "7/8",
+      "b": "2/3",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{7/8} − {2/3}",
+        "output": "{7/8} − {2/3}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{7/8} − {2/3}",
+        "output": "{21/24} − {16/24}",
+        "note": "Use 24 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{21/24} − {16/24}",
+        "output": "{5/24}",
+        "note": "21 − 16 = 5. Keep the denominator 24."
+      },
+      {
+        "title": "Simplify",
+        "input": "{5/24}",
+        "output": "{5/24}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "7/8",
+      "b": "2/3",
+      "denominator": 24
+    },
+    "hint": "What common multiple of 8 and 3 can be the denominator for both fractions?",
+    "method_note": "Use denominator 24: 21/24 − 16/24. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {5/24} + {2/3} = {7/8}.",
+    "wrong": "5/11",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C3-Q4",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation"
+  },
+  {
+    "q": "3 {3/4} + {5/7}",
+    "answer": "125/28",
+    "model": {
+      "kind": "fractions",
+      "a": "15/4",
+      "b": "5/7",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "3 {3/4} + {5/7}",
+        "output": "{15/4} + {5/7}",
+        "note": "Convert any mixed number: whole number × denominator + numerator; keep the denominator."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{15/4} + {5/7}",
+        "output": "{105/28} + {20/28}",
+        "note": "Use 28 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{105/28} + {20/28}",
+        "output": "{125/28}",
+        "note": "105 + 20 = 125. Keep the denominator 28."
+      },
+      {
+        "title": "Simplify",
+        "input": "{125/28}",
+        "output": "{125/28}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "15/4",
+      "b": "5/7",
+      "denominator": 28
+    },
+    "hint": "What common multiple of 4 and 7 can be the denominator for both fractions?",
+    "method_note": "Use denominator 28: 105/28 + 20/28. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {125/28} − {5/7} = {15/4}.",
+    "wrong": "20/11",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C3-Q5",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation"
+  },
+  {
+    "q": "3 {4/5} − 1 {3/8}",
+    "answer": "97/40",
+    "model": {
+      "kind": "fractions",
+      "a": "19/5",
+      "b": "11/8",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "3 {4/5} − 1 {3/8}",
+        "output": "{19/5} − {11/8}",
+        "note": "Convert any mixed number: whole number × denominator + numerator; keep the denominator."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{19/5} − {11/8}",
+        "output": "{152/40} − {55/40}",
+        "note": "Use 40 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{152/40} − {55/40}",
+        "output": "{97/40}",
+        "note": "152 − 55 = 97. Keep the denominator 40."
+      },
+      {
+        "title": "Simplify",
+        "input": "{97/40}",
+        "output": "{97/40}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "19/5",
+      "b": "11/8",
+      "denominator": 40
+    },
+    "hint": "What common multiple of 5 and 8 can be the denominator for both fractions?",
+    "method_note": "Use denominator 40: 152/40 − 55/40. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {97/40} + {11/8} = {19/5}.",
+    "wrong": "8/13",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SCAFFOLDED-C3-Q6",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation"
+  },
+  {
+    "q": "{1/7} + {2/7}",
+    "answer": "3/7",
+    "model": {
+      "kind": "fractions",
+      "a": "1/7",
+      "b": "2/7",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/7} + {2/7}",
+        "output": "{1/7} + {2/7}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/7} + {2/7}",
+        "output": "{1/7} + {2/7}",
+        "note": "Both denominators are 7, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{1/7} + {2/7}",
+        "output": "{3/7}",
+        "note": "1 + 2 = 3. Keep the denominator 7."
+      },
+      {
+        "title": "Simplify",
+        "input": "{3/7}",
+        "output": "{3/7}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/7",
+      "b": "2/7",
+      "denominator": 7
+    },
+    "hint": "The parts are already the same size: 7 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 7: 1/7 + 2/7. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {3/7} − {2/7} = {1/7}.",
+    "wrong": "3/14",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C1-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C1-Q1"
+  },
+  {
+    "q": "{4/9} − {1/9}",
+    "answer": "1/3",
+    "model": {
+      "kind": "fractions",
+      "a": "4/9",
+      "b": "1/9",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{4/9} − {1/9}",
+        "output": "{4/9} − {1/9}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{4/9} − {1/9}",
+        "output": "{4/9} − {1/9}",
+        "note": "Both denominators are 9, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{4/9} − {1/9}",
+        "output": "{3/9}",
+        "note": "4 − 1 = 3. Keep the denominator 9."
+      },
+      {
+        "title": "Simplify",
+        "input": "{3/9}",
+        "output": "{1/3}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "4/9",
+      "b": "1/9",
+      "denominator": 9
+    },
+    "hint": "The parts are already the same size: 9 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 9: 4/9 − 1/9. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {1/3} + {1/9} = {4/9}.",
+    "wrong": "1/6",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C1-Q2",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C1-Q2"
+  },
+  {
+    "q": "{1/8} + {7/8}",
+    "answer": "1",
+    "model": {
+      "kind": "fractions",
+      "a": "1/8",
+      "b": "7/8",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/8} + {7/8}",
+        "output": "{1/8} + {7/8}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/8} + {7/8}",
+        "output": "{1/8} + {7/8}",
+        "note": "Both denominators are 8, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{1/8} + {7/8}",
+        "output": "{8/8}",
+        "note": "1 + 7 = 8. Keep the denominator 8."
+      },
+      {
+        "title": "Simplify",
+        "input": "{8/8}",
+        "output": "1",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/8",
+      "b": "7/8",
+      "denominator": 8
+    },
+    "hint": "The parts are already the same size: 8 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 8: 1/8 + 7/8. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: 1 − {7/8} = {1/8}.",
+    "wrong": "1/2",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C1-Q3",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C1-Q3"
+  },
+  {
+    "q": "{5/12} − {1/12}",
+    "answer": "1/3",
+    "model": {
+      "kind": "fractions",
+      "a": "5/12",
+      "b": "1/12",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{5/12} − {1/12}",
+        "output": "{5/12} − {1/12}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{5/12} − {1/12}",
+        "output": "{5/12} − {1/12}",
+        "note": "Both denominators are 12, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{5/12} − {1/12}",
+        "output": "{4/12}",
+        "note": "5 − 1 = 4. Keep the denominator 12."
+      },
+      {
+        "title": "Simplify",
+        "input": "{4/12}",
+        "output": "{1/3}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "5/12",
+      "b": "1/12",
+      "denominator": 12
+    },
+    "hint": "The parts are already the same size: 12 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 12: 5/12 − 1/12. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {1/3} + {1/12} = {5/12}.",
+    "wrong": "1/6",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C1-Q4",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C1-Q4"
+  },
+  {
+    "q": "{1/10} + {7/10}",
+    "answer": "4/5",
+    "model": {
+      "kind": "fractions",
+      "a": "1/10",
+      "b": "7/10",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/10} + {7/10}",
+        "output": "{1/10} + {7/10}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/10} + {7/10}",
+        "output": "{1/10} + {7/10}",
+        "note": "Both denominators are 10, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{1/10} + {7/10}",
+        "output": "{8/10}",
+        "note": "1 + 7 = 8. Keep the denominator 10."
+      },
+      {
+        "title": "Simplify",
+        "input": "{8/10}",
+        "output": "{4/5}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/10",
+      "b": "7/10",
+      "denominator": 10
+    },
+    "hint": "The parts are already the same size: 10 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 10: 1/10 + 7/10. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {4/5} − {7/10} = {1/10}.",
+    "wrong": "2/5",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C1-Q5",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C1-Q5"
+  },
+  {
+    "q": "{4/11} − {1/11}",
+    "answer": "3/11",
+    "model": {
+      "kind": "fractions",
+      "a": "4/11",
+      "b": "1/11",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{4/11} − {1/11}",
+        "output": "{4/11} − {1/11}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{4/11} − {1/11}",
+        "output": "{4/11} − {1/11}",
+        "note": "Both denominators are 11, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{4/11} − {1/11}",
+        "output": "{3/11}",
+        "note": "4 − 1 = 3. Keep the denominator 11."
+      },
+      {
+        "title": "Simplify",
+        "input": "{3/11}",
+        "output": "{3/11}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "4/11",
+      "b": "1/11",
+      "denominator": 11
+    },
+    "hint": "The parts are already the same size: 11 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 11: 4/11 − 1/11. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {3/11} + {1/11} = {4/11}.",
+    "wrong": "3/22",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C1-Q6",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 0,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C1-Q6"
+  },
+  {
+    "q": "{1/3} + {1/6}",
+    "answer": "1/2",
+    "model": {
+      "kind": "fractions",
+      "a": "1/3",
+      "b": "1/6",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/3} + {1/6}",
+        "output": "{1/3} + {1/6}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/3} + {1/6}",
+        "output": "{2/6} + {1/6}",
+        "note": "Use 6 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{2/6} + {1/6}",
+        "output": "{3/6}",
+        "note": "2 + 1 = 3. Keep the denominator 6."
+      },
+      {
+        "title": "Simplify",
+        "input": "{3/6}",
+        "output": "{1/2}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/3",
+      "b": "1/6",
+      "denominator": 6
+    },
+    "hint": "What common multiple of 3 and 6 can be the denominator for both fractions?",
+    "method_note": "Use denominator 6: 2/6 + 1/6. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {1/2} − {1/6} = {1/3}.",
+    "wrong": "2/9",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C2-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C2-Q1"
+  },
+  {
+    "q": "{3/8} − {1/4}",
+    "answer": "1/8",
+    "model": {
+      "kind": "fractions",
+      "a": "3/8",
+      "b": "1/4",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{3/8} − {1/4}",
+        "output": "{3/8} − {1/4}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{3/8} − {1/4}",
+        "output": "{3/8} − {2/8}",
+        "note": "Use 8 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{3/8} − {2/8}",
+        "output": "{1/8}",
+        "note": "3 − 2 = 1. Keep the denominator 8."
+      },
+      {
+        "title": "Simplify",
+        "input": "{1/8}",
+        "output": "{1/8}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "3/8",
+      "b": "1/4",
+      "denominator": 8
+    },
+    "hint": "What common multiple of 8 and 4 can be the denominator for both fractions?",
+    "method_note": "Use denominator 8: 3/8 − 2/8. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {1/8} + {1/4} = {3/8}.",
+    "wrong": "1/6",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C2-Q2",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C2-Q2"
+  },
+  {
+    "q": "{1/5} + {7/10}",
+    "answer": "9/10",
+    "model": {
+      "kind": "fractions",
+      "a": "1/5",
+      "b": "7/10",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/5} + {7/10}",
+        "output": "{1/5} + {7/10}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/5} + {7/10}",
+        "output": "{2/10} + {7/10}",
+        "note": "Use 10 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{2/10} + {7/10}",
+        "output": "{9/10}",
+        "note": "2 + 7 = 9. Keep the denominator 10."
+      },
+      {
+        "title": "Simplify",
+        "input": "{9/10}",
+        "output": "{9/10}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/5",
+      "b": "7/10",
+      "denominator": 10
+    },
+    "hint": "What common multiple of 5 and 10 can be the denominator for both fractions?",
+    "method_note": "Use denominator 10: 2/10 + 7/10. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {9/10} − {7/10} = {1/5}.",
+    "wrong": "8/15",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C2-Q3",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C2-Q3"
+  },
+  {
+    "q": "{1/6} − {1/12}",
+    "answer": "1/12",
+    "model": {
+      "kind": "fractions",
+      "a": "1/6",
+      "b": "1/12",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/6} − {1/12}",
+        "output": "{1/6} − {1/12}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/6} − {1/12}",
+        "output": "{2/12} − {1/12}",
+        "note": "Use 12 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{2/12} − {1/12}",
+        "output": "{1/12}",
+        "note": "2 − 1 = 1. Keep the denominator 12."
+      },
+      {
+        "title": "Simplify",
+        "input": "{1/12}",
+        "output": "{1/12}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/6",
+      "b": "1/12",
+      "denominator": 12
+    },
+    "hint": "What common multiple of 6 and 12 can be the denominator for both fractions?",
+    "method_note": "Use denominator 12: 2/12 − 1/12. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {1/12} + {1/12} = {1/6}.",
+    "wrong": "0",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C2-Q4",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C2-Q4"
+  },
+  {
+    "q": "{1/4} + {5/12}",
+    "answer": "2/3",
+    "model": {
+      "kind": "fractions",
+      "a": "1/4",
+      "b": "5/12",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/4} + {5/12}",
+        "output": "{1/4} + {5/12}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/4} + {5/12}",
+        "output": "{3/12} + {5/12}",
+        "note": "Use 12 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{3/12} + {5/12}",
+        "output": "{8/12}",
+        "note": "3 + 5 = 8. Keep the denominator 12."
+      },
+      {
+        "title": "Simplify",
+        "input": "{8/12}",
+        "output": "{2/3}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/4",
+      "b": "5/12",
+      "denominator": 12
+    },
+    "hint": "What common multiple of 4 and 12 can be the denominator for both fractions?",
+    "method_note": "Use denominator 12: 3/12 + 5/12. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {2/3} − {5/12} = {1/4}.",
+    "wrong": "3/8",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C2-Q5",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C2-Q5"
+  },
+  {
+    "q": "{4/9} − {1/3}",
+    "answer": "1/9",
+    "model": {
+      "kind": "fractions",
+      "a": "4/9",
+      "b": "1/3",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{4/9} − {1/3}",
+        "output": "{4/9} − {1/3}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{4/9} − {1/3}",
+        "output": "{4/9} − {3/9}",
+        "note": "Use 9 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{4/9} − {3/9}",
+        "output": "{1/9}",
+        "note": "4 − 3 = 1. Keep the denominator 9."
+      },
+      {
+        "title": "Simplify",
+        "input": "{1/9}",
+        "output": "{1/9}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "4/9",
+      "b": "1/3",
+      "denominator": 9
+    },
+    "hint": "What common multiple of 9 and 3 can be the denominator for both fractions?",
+    "method_note": "Use denominator 9: 4/9 − 3/9. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {1/9} + {1/3} = {4/9}.",
+    "wrong": "1/4",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C2-Q6",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 1,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C2-Q6"
+  },
+  {
+    "q": "{1/3} + {1/4}",
+    "answer": "7/12",
+    "model": {
+      "kind": "fractions",
+      "a": "1/3",
+      "b": "1/4",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/3} + {1/4}",
+        "output": "{1/3} + {1/4}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/3} + {1/4}",
+        "output": "{4/12} + {3/12}",
+        "note": "Use 12 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{4/12} + {3/12}",
+        "output": "{7/12}",
+        "note": "4 + 3 = 7. Keep the denominator 12."
+      },
+      {
+        "title": "Simplify",
+        "input": "{7/12}",
+        "output": "{7/12}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/3",
+      "b": "1/4",
+      "denominator": 12
+    },
+    "hint": "What common multiple of 3 and 4 can be the denominator for both fractions?",
+    "method_note": "Use denominator 12: 4/12 + 3/12. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {7/12} − {1/4} = {1/3}.",
+    "wrong": "2/7",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C3-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C3-Q1"
+  },
+  {
+    "q": "1 {2/5} − 1 {1/4}",
+    "answer": "3/20",
+    "model": {
+      "kind": "fractions",
+      "a": "7/5",
+      "b": "5/4",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "1 {2/5} − 1 {1/4}",
+        "output": "{7/5} − {5/4}",
+        "note": "Convert any mixed number: whole number × denominator + numerator; keep the denominator."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{7/5} − {5/4}",
+        "output": "{28/20} − {25/20}",
+        "note": "Use 20 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{28/20} − {25/20}",
+        "output": "{3/20}",
+        "note": "28 − 25 = 3. Keep the denominator 20."
+      },
+      {
+        "title": "Simplify",
+        "input": "{3/20}",
+        "output": "{3/20}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "7/5",
+      "b": "5/4",
+      "denominator": 20
+    },
+    "hint": "What common multiple of 5 and 4 can be the denominator for both fractions?",
+    "method_note": "Use denominator 20: 28/20 − 25/20. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {3/20} + {5/4} = {7/5}.",
+    "wrong": "2/9",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C3-Q2",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C3-Q2"
+  },
+  {
+    "q": "1 {1/5} + {1/6}",
+    "answer": "41/30",
+    "model": {
+      "kind": "fractions",
+      "a": "6/5",
+      "b": "1/6",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "1 {1/5} + {1/6}",
+        "output": "{6/5} + {1/6}",
+        "note": "Convert any mixed number: whole number × denominator + numerator; keep the denominator."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{6/5} + {1/6}",
+        "output": "{36/30} + {5/30}",
+        "note": "Use 30 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{36/30} + {5/30}",
+        "output": "{41/30}",
+        "note": "36 + 5 = 41. Keep the denominator 30."
+      },
+      {
+        "title": "Simplify",
+        "input": "{41/30}",
+        "output": "{41/30}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "6/5",
+      "b": "1/6",
+      "denominator": 30
+    },
+    "hint": "What common multiple of 5 and 6 can be the denominator for both fractions?",
+    "method_note": "Use denominator 30: 36/30 + 5/30. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {41/30} − {1/6} = {6/5}.",
+    "wrong": "7/11",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C3-Q3",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C3-Q3"
+  },
+  {
+    "q": "{1/3} − {1/8}",
+    "answer": "5/24",
+    "model": {
+      "kind": "fractions",
+      "a": "1/3",
+      "b": "1/8",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/3} − {1/8}",
+        "output": "{1/3} − {1/8}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/3} − {1/8}",
+        "output": "{8/24} − {3/24}",
+        "note": "Use 24 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{8/24} − {3/24}",
+        "output": "{5/24}",
+        "note": "8 − 3 = 5. Keep the denominator 24."
+      },
+      {
+        "title": "Simplify",
+        "input": "{5/24}",
+        "output": "{5/24}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/3",
+      "b": "1/8",
+      "denominator": 24
+    },
+    "hint": "What common multiple of 3 and 8 can be the denominator for both fractions?",
+    "method_note": "Use denominator 24: 8/24 − 3/24. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {5/24} + {1/8} = {1/3}.",
+    "wrong": "0",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C3-Q4",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C3-Q4"
+  },
+  {
+    "q": "1 {1/4} + {2/7}",
+    "answer": "43/28",
+    "model": {
+      "kind": "fractions",
+      "a": "5/4",
+      "b": "2/7",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "1 {1/4} + {2/7}",
+        "output": "{5/4} + {2/7}",
+        "note": "Convert any mixed number: whole number × denominator + numerator; keep the denominator."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{5/4} + {2/7}",
+        "output": "{35/28} + {8/28}",
+        "note": "Use 28 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{35/28} + {8/28}",
+        "output": "{43/28}",
+        "note": "35 + 8 = 43. Keep the denominator 28."
+      },
+      {
+        "title": "Simplify",
+        "input": "{43/28}",
+        "output": "{43/28}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "5/4",
+      "b": "2/7",
+      "denominator": 28
+    },
+    "hint": "What common multiple of 4 and 7 can be the denominator for both fractions?",
+    "method_note": "Use denominator 28: 35/28 + 8/28. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {43/28} − {2/7} = {5/4}.",
+    "wrong": "7/11",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C3-Q5",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C3-Q5"
+  },
+  {
+    "q": "1 {5/8} − 1 {1/5}",
+    "answer": "17/40",
+    "model": {
+      "kind": "fractions",
+      "a": "13/8",
+      "b": "6/5",
+      "op": "−"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "1 {5/8} − 1 {1/5}",
+        "output": "{13/8} − {6/5}",
+        "note": "Convert any mixed number: whole number × denominator + numerator; keep the denominator."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{13/8} − {6/5}",
+        "output": "{65/40} − {48/40}",
+        "note": "Use 40 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{65/40} − {48/40}",
+        "output": "{17/40}",
+        "note": "65 − 48 = 17. Keep the denominator 40."
+      },
+      {
+        "title": "Simplify",
+        "input": "{17/40}",
+        "output": "{17/40}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "13/8",
+      "b": "6/5",
+      "denominator": 40
+    },
+    "hint": "What common multiple of 8 and 5 can be the denominator for both fractions?",
+    "method_note": "Use denominator 40: 65/40 − 48/40. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {17/40} + {6/5} = {13/8}.",
+    "wrong": "7/13",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-SC4-C3-Q6",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "scaffolded",
+    "level": 2,
+    "method": "calculation",
+    "source": "Four-question scaffolded extension, adapted from maths:M15-WEB-PLAIN-C3-Q6"
+  }
+]

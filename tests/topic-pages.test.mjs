@@ -1,3 +1,4 @@
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /** Defined pages partition banks; new authored equations are checked independently by substitution. */
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -8,12 +9,8 @@ import {
   assessmentPage,
 } from "../website/src/lib/domain/topic-pages.mjs";
 const banks = await Promise.all(
-  ["multiplication", "division", "equations"].map(async (name) =>
-    JSON.parse(
-      await readFile(
-        new URL(`../website/static/data/${name}.json`, import.meta.url),
-      ),
-    ),
+  ["multiplication", "division", "equations"].map(
+    async (name) => await readTopicBank(`${name}`),
   ),
 );
 
@@ -87,7 +84,9 @@ function balanced(row, x) {
 }
 
 test("new equation solutions satisfy every correct row; diagnosed rows fail and their repairs work", () => {
-  for (const q of banks[2].questions.filter((q) => q.id.includes("-P3-"))) {
+  for (const q of [...banks[2].questions, ...banks[2].retiredQuestions].filter(
+    (q) => q.id.includes("-P3-"),
+  )) {
     const answer = evaluate(q.answer, 0),
       wrong = evaluate(q.wrong, 0);
     for (const row of q.correct_balance ?? q.balance)
@@ -120,7 +119,9 @@ test("new equation solutions satisfy every correct row; diagnosed rows fail and 
 
 test("new arithmetic respects level structure and all error diagrams exist", async () => {
   for (const bank of banks.slice(0, 2))
-    for (const q of bank.questions.filter((q) => q.id.includes("-P3-"))) {
+    for (const q of [...bank.questions, ...bank.retiredQuestions].filter((q) =>
+      q.id.includes("-P3-"),
+    )) {
       if (bank.method === "lattice") {
         const shape = [String(q.a).length, String(q.b).length];
         if (q.level === 0) assert.deepEqual(shape, [2, 1], q.id);

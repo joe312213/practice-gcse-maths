@@ -1,0 +1,143 @@
+[
+  {
+    "q": "3 − 8",
+    "answer": "-5",
+    "model": {
+      "kind": "signed",
+      "values": [
+        3,
+        8
+      ],
+      "ops": [
+        "−"
+      ]
+    },
+    "steps": [
+      {
+        "title": "Read the signs",
+        "input": "− 8",
+        "output": "−8",
+        "note": "Subtracting a positive moves left."
+      },
+      {
+        "title": "Calculate",
+        "input": "3 − 8",
+        "output": "−5",
+        "note": "Start at 3. Move 8 left to −5."
+      }
+    ],
+    "diagram": {
+      "kind": "number-line",
+      "points": [
+        3,
+        -5
+      ]
+    },
+    "hint": "In 3 − 8, what does the sign before 8 tell you to do?",
+    "method_note": "Subtracting a positive moves left. Start at 3. Move 8 left to −5.",
+    "check": "Undo the final operation: (−5) + 8 = 3.",
+    "wrong": "11",
+    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
+    "title": "Another worked example",
+    "method": "calculation"
+  },
+  {
+    "q": "−5 − (−9)",
+    "answer": "4",
+    "model": {
+      "kind": "signed",
+      "values": [
+        -5,
+        -9
+      ],
+      "ops": [
+        "−"
+      ]
+    },
+    "steps": [
+      {
+        "title": "Read the signs",
+        "input": "− (−9)",
+        "output": "+9",
+        "note": "Subtracting a negative is adding its size."
+      },
+      {
+        "title": "Calculate",
+        "input": "−5 − (−9)",
+        "output": "−5 + 9 = 4",
+        "note": "Start at −5. Move 9 right to 4."
+      }
+    ],
+    "diagram": {
+      "kind": "number-line",
+      "points": [
+        -5,
+        4
+      ]
+    },
+    "hint": "In −5 − (−9), what does the sign before (−9) tell you to do?",
+    "method_note": "Subtracting a negative is adding its size. Start at −5. Move 9 right to 4.",
+    "check": "Undo the final operation: 4 + (−9) = −5.",
+    "wrong": "-14",
+    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
+    "title": "Another worked example",
+    "method": "calculation"
+  },
+  {
+    "q": "7 − (−2) + (−12)",
+    "answer": "-3",
+    "model": {
+      "kind": "signed",
+      "values": [
+        7,
+        -2,
+        -12
+      ],
+      "ops": [
+        "−",
+        "+"
+      ]
+    },
+    "steps": [
+      {
+        "title": "Read the signs",
+        "input": "− (−2)",
+        "output": "+2",
+        "note": "Subtracting a negative is adding its size."
+      },
+      {
+        "title": "Calculate",
+        "input": "7 − (−2)",
+        "output": "7 + 2 = 9",
+        "note": "Start at 7. Move 2 right to 9."
+      },
+      {
+        "title": "Read the signs",
+        "input": "+ (−12)",
+        "output": "−12",
+        "note": "Adding a negative is subtracting its size."
+      },
+      {
+        "title": "Calculate",
+        "input": "9 + (−12)",
+        "output": "9 − 12 = −3",
+        "note": "Start at 9. Move 12 left to −3."
+      }
+    ],
+    "diagram": {
+      "kind": "number-line",
+      "points": [
+        7,
+        9,
+        -3
+      ]
+    },
+    "hint": "In 7 − (−2) + (−12), what does the sign before (−2) tell you to do?",
+    "method_note": "Subtracting a negative is adding its size. Start at 7. Move 2 right to 9. Adding a negative is subtracting its size. Start at 9. Move 12 left to −3.",
+    "check": "Undo the final operation: (−3) − (−12) = 9.",
+    "wrong": "-7",
+    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
+    "title": "Another worked example",
+    "method": "calculation"
+  }
+]

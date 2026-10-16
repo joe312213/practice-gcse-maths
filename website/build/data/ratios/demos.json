@@ -1,0 +1,291 @@
+[
+  {
+    "id": "maths:M04-WEB-DEMO-C1-Q1",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "demo",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "Travelling time and resting time are in the ratio 2 : 5. Together they take 133 minutes. How many minutes are spent resting?",
+    "answer": "95",
+    "answerUnit": "minutes",
+    "model": {
+      "kind": "application",
+      "start": "133",
+      "operations": [
+        [
+          "divide",
+          "7"
+        ],
+        [
+          "multiply",
+          "5"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Match the known quantity to parts",
+        "input": "2 + 5",
+        "output": "7",
+        "note": "The given total represents 7 equal parts, not one part.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Find the value of one ratio part",
+        "input": "133 ÷ 7",
+        "output": "19",
+        "note": "Find the value of one ratio part.",
+        "outputUnit": "minutes"
+      },
+      {
+        "title": "Find the requested second amount",
+        "input": "19 × 5",
+        "output": "95",
+        "note": "Find the requested second amount.",
+        "outputUnit": "minutes"
+      }
+    ],
+    "hint": "Does 133 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+    "method_note": "Find the value of one ratio part Find the requested second amount.",
+    "check": "One ratio part is 19. The two quantities are 38 and 95, in the named order. Check their total against the given amount, then check you answered the requested question.",
+    "wrong": "665/2",
+    "error_note": "The known total matches 7 parts, not 2. Find one part before scaling to the requested quantity.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "operationCount": 3,
+    "ratioModel": {
+      "a": 2,
+      "b": 5,
+      "scale": 19,
+      "known": "total",
+      "target": "second",
+      "knownParts": 7,
+      "targetParts": 5
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        2,
+        5
+      ],
+      "labels": [
+        "travel",
+        "rest"
+      ],
+      "known": "total: 133 minutes",
+      "knownKind": "total"
+    },
+    "repair": "Match the given total to 7 parts before finding one part.",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M04-WEB-DEMO-C2-Q1",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "demo",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "£160 is shared between Ada and Ben in the ratio 6 : 10. How much does Ben receive?",
+    "answer": "100",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": "160",
+      "operations": [
+        [
+          "divide",
+          "8"
+        ],
+        [
+          "multiply",
+          "5"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Simplify the ratio: divide both parts by 2",
+        "input": "6 : 10",
+        "output": "3 : 5",
+        "note": "6 ÷ 2 = 3 and 10 ÷ 2 = 5. Dividing both parts by 2 keeps the same proportion.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Match the known quantity to simplified parts",
+        "input": "3 + 5",
+        "output": "8",
+        "note": "The given total represents 8 parts in the simplified ratio.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Find one simplified part",
+        "input": "160 ÷ 8",
+        "output": "20",
+        "note": "Use 8 parts for the given total.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Find the requested amount",
+        "input": "20 × 5",
+        "output": "100",
+        "note": "The requested second amount represents 5 simplified parts.",
+        "outputUnit": "£"
+      }
+    ],
+    "hint": "Both ratio numbers divide by 2. Simplify both parts, then match the given total to the simplified parts.",
+    "method_note": "6 ÷ 2 = 3 and 10 ÷ 2 = 5. Dividing both parts by 2 keeps the same proportion. The given total represents 8 parts in the simplified ratio. Use 8 parts for the given total. The requested second amount represents 5 simplified parts.",
+    "check": "The two amounts are 60 and 100. Dividing both by 20 gives 3 : 5, equivalent to 6 : 10.",
+    "wrong": "160",
+    "error_note": "£160 is the total for both people. Ben receives only his 5 of the 8 simplified parts.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "operationCount": 4,
+    "ratioModel": {
+      "a": 6,
+      "b": 10,
+      "scale": 10,
+      "known": "total",
+      "target": "second",
+      "knownParts": 16,
+      "targetParts": 10,
+      "simplifyBy": 2
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        3,
+        5
+      ],
+      "labels": [
+        "Ada’s share",
+        "Ben’s share"
+      ],
+      "known": "total: £160",
+      "knownKind": "total"
+    },
+    "repair": "Find one of the 8 simplified parts, then multiply by Ben’s 5 parts.",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M04-WEB-DEMO-C3-Q1",
+    "subject": "maths",
+    "topic": "M04",
+    "type": "demo",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "Red paint and white paint are in the ratio 3 : 7. There are 28 litres more white paint than red paint. White paint costs £3 per litre. What is the cost of the white paint?",
+    "answer": "147",
+    "answerUnit": "£",
+    "model": {
+      "kind": "application",
+      "start": "28",
+      "operations": [
+        [
+          "divide",
+          "4"
+        ],
+        [
+          "multiply",
+          "7"
+        ],
+        [
+          "multiply",
+          "3"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Match the given quantity to ratio parts",
+        "input": "7 − 3",
+        "output": "4",
+        "outputUnit": "",
+        "note": "The given difference represents 4 equal parts."
+      },
+      {
+        "title": "Find the value of one ratio part",
+        "input": "28 ÷ 4",
+        "output": "7",
+        "outputUnit": "litres",
+        "note": "Divide the given difference by its matching number of parts."
+      },
+      {
+        "title": "Find the second named quantity",
+        "input": "7 × 7",
+        "output": "49",
+        "outputUnit": "litres",
+        "note": "The second named quantity has 7 equal parts."
+      },
+      {
+        "title": "Find the cost of the white paint",
+        "input": "49 × 3",
+        "output": "147",
+        "outputUnit": "£",
+        "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+      }
+    ],
+    "hint": "Before considering the price per litre, match the given difference of 28 litres to its ratio parts. Find the second named quantity first.",
+    "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+    "check": "The original quantities are 21 litres and 49 litres. Check their difference against the given 28 litres. Multiply the ratio amount by the stated rate or number of batches. The final answer is £147.",
+    "wrong": "49",
+    "error_note": "49 litres is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
+    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+    "operationCount": 4,
+    "ratioModel": {
+      "a": 3,
+      "b": 7,
+      "scale": 7,
+      "known": "difference",
+      "target": "second",
+      "knownParts": 4,
+      "targetParts": 7
+    },
+    "diagram": {
+      "kind": "ratio-bars",
+      "parts": [
+        3,
+        7
+      ],
+      "labels": [
+        "red paint",
+        "white paint"
+      ],
+      "known": "difference: 28 litres",
+      "knownKind": "difference"
+    },
+    "repair": "Multiply the ratio amount by the stated rate or number of batches.",
+    "questionPrefix": "Solve the problem",
+    "errorSteps": [
+      {
+        "title": "Match the given quantity to ratio parts",
+        "input": "7 − 3",
+        "output": "4",
+        "outputUnit": "",
+        "note": "The given difference represents 4 equal parts."
+      },
+      {
+        "title": "Find the value of one ratio part",
+        "input": "28 ÷ 4",
+        "output": "7",
+        "outputUnit": "litres",
+        "note": "Divide the given difference by its matching number of parts."
+      },
+      {
+        "title": "Find the second named quantity",
+        "input": "7 × 7",
+        "output": "49",
+        "outputUnit": "litres",
+        "note": "The second named quantity has 7 equal parts."
+      },
+      {
+        "title": "Student stops at the ratio result",
+        "input": "49",
+        "output": "49",
+        "outputUnit": "£",
+        "note": ""
+      }
+    ]
+  }
+]

@@ -113,3 +113,9 @@ export async function selectTopic(page, bank) {
   await page.locator('.learning-header').waitFor();
   await page.getByRole('heading', { name: topic.title, exact: true, level: 1 }).waitFor();
 }
+
+/** Choose a value in the shared wrapping select, exercising its real listbox. */
+export async function selectWrapped(page, selector, value) {
+  await page.locator(selector).click();
+  await page.locator(`[role="option"][data-value="${value}"]`).click();
+}

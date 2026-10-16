@@ -1,0 +1,3021 @@
+{
+  "teaching": {
+    "guidance": [
+      {
+        "title": "Read and plan",
+        "text": "Identify what is known and what the final answer must describe."
+      },
+      {
+        "title": "Choose operations",
+        "text": "Decide which quantities to combine. Write each intermediate result with its units."
+      },
+      {
+        "title": "Check and answer",
+        "text": "Check with an inverse or estimate, then answer the original question."
+      }
+    ],
+    "examples": [
+      {
+        "id": "maths:M06-WEB-PS-C1-Q100",
+        "subject": "maths",
+        "topic": "M06",
+        "type": "problem",
+        "level": 0,
+        "method": "calculation",
+        "prose": true,
+        "q": "A £200 item has a 10% deposit. How much is the deposit?",
+        "answer": "20",
+        "answerUnit": "£",
+        "model": {
+          "kind": "application",
+          "start": "200",
+          "operations": [
+            [
+              "multiply",
+              "1/10"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Find the stated percentage of the whole price",
+            "input": "200 × 0.1",
+            "output": "20",
+            "note": "Find the stated percentage of the whole price.",
+            "outputUnit": "£"
+          }
+        ],
+        "hint": "£200 represents 100%. Find 10% or 1% first.",
+        "method_note": "Find the stated percentage of the whole price.",
+        "check": "Reverse the calculation chain: 20 ÷ 0.1 = 200.",
+        "wrong": "200",
+        "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+        "source": "Original website application-stage content, 12 October 2026"
+      },
+      {
+        "id": "maths:M06-WEB-PS-C2-Q100",
+        "subject": "maths",
+        "topic": "M06",
+        "type": "problem",
+        "level": 1,
+        "method": "calculation",
+        "prose": true,
+        "q": "An item costs £200. Its price falls by 10%. Delivery costs £9. What is the total cost?",
+        "answer": "189",
+        "answerUnit": "£",
+        "model": {
+          "kind": "application",
+          "start": "200",
+          "operations": [
+            [
+              "multiply",
+              "9/10"
+            ],
+            [
+              "add",
+              "9"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Find the reduced price",
+            "input": "200 × 0.9",
+            "output": "180",
+            "note": "Find the reduced price.",
+            "outputUnit": "£"
+          },
+          {
+            "title": "Add delivery once",
+            "input": "180 + 9",
+            "output": "189",
+            "note": "Add delivery once.",
+            "outputUnit": "£"
+          }
+        ],
+        "hint": "After a 10% reduction, what percentage of the original price remains?",
+        "method_note": "Find the reduced price Add delivery once.",
+        "check": "Reverse the calculation chain: 189 − 9 = 180; 180 ÷ 0.9 = 200.",
+        "wrong": "180",
+        "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+        "source": "Original website application-stage content, 12 October 2026"
+      },
+      {
+        "id": "maths:M06-WEB-PS-C3-Q100",
+        "subject": "maths",
+        "topic": "M06",
+        "type": "problem",
+        "level": 2,
+        "method": "calculation",
+        "prose": true,
+        "q": "Each of 7 items normally costs £200. Every item is reduced by 10%. Delivery costs £9 for the order. A £10 voucher is then applied. What is paid?",
+        "answer": "1259",
+        "answerUnit": "£",
+        "model": {
+          "kind": "application",
+          "start": "200",
+          "operations": [
+            [
+              "multiply",
+              "9/10"
+            ],
+            [
+              "multiply",
+              "7"
+            ],
+            [
+              "add",
+              "9"
+            ],
+            [
+              "subtract",
+              "10"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Find one reduced price",
+            "input": "200 × 0.9",
+            "output": "180",
+            "note": "Find one reduced price.",
+            "outputUnit": "£"
+          },
+          {
+            "title": "Find the price of all items",
+            "input": "180 × 7",
+            "output": "1260",
+            "note": "Find the price of all items.",
+            "outputUnit": "£"
+          },
+          {
+            "title": "Add delivery once",
+            "input": "1260 + 9",
+            "output": "1269",
+            "note": "Add delivery once.",
+            "outputUnit": "£"
+          },
+          {
+            "title": "Subtract the voucher once",
+            "input": "1269 − 10",
+            "output": "1259",
+            "note": "Subtract the voucher once.",
+            "outputUnit": "£"
+          }
+        ],
+        "hint": "Find the reduced price of one item before considering all 7 items.",
+        "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+        "check": "Reverse the calculation chain: 1259 + 10 = 1269; 1269 − 9 = 1260; 1260 ÷ 7 = 180; 180 ÷ 0.9 = 200.",
+        "wrong": "180",
+        "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+        "source": "Original website application-stage content, 12 October 2026"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "maths:M06-WEB-PS-C1-Q1",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £40 item has a 10% deposit. How much is the deposit?",
+      "answer": "4",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "40",
+        "operations": [
+          [
+            "multiply",
+            "1/10"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "40 × 0.1",
+          "output": "4",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£40 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 4 ÷ 0.1 = 40.",
+      "wrong": "40",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q2",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £60 item has a 20% deposit. How much is the deposit?",
+      "answer": "12",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "60",
+        "operations": [
+          [
+            "multiply",
+            "1/5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "60 × 0.2",
+          "output": "12",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£60 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 12 ÷ 0.2 = 60.",
+      "wrong": "60",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q3",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £80 item has a 25% deposit. How much is the deposit?",
+      "answer": "20",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "80",
+        "operations": [
+          [
+            "multiply",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "80 × 0.25",
+          "output": "20",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£80 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 20 ÷ 0.25 = 80.",
+      "wrong": "80",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q4",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £100 item has a 30% deposit. How much is the deposit?",
+      "answer": "30",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "100",
+        "operations": [
+          [
+            "multiply",
+            "3/10"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "100 × 0.3",
+          "output": "30",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£100 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 30 ÷ 0.3 = 100.",
+      "wrong": "100",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q5",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £120 item has a 15% deposit. How much is the deposit?",
+      "answer": "18",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "120",
+        "operations": [
+          [
+            "multiply",
+            "3/20"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "120 × 0.15",
+          "output": "18",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£120 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 18 ÷ 0.15 = 120.",
+      "wrong": "120",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q6",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £140 item has a 35% deposit. How much is the deposit?",
+      "answer": "49",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "140",
+        "operations": [
+          [
+            "multiply",
+            "7/20"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "140 × 0.35",
+          "output": "49",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£140 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 49 ÷ 0.35 = 140.",
+      "wrong": "140",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q7",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £80 item has a 10% deposit. How much is the deposit?",
+      "answer": "8",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "80",
+        "operations": [
+          [
+            "multiply",
+            "1/10"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "80 × 0.1",
+          "output": "8",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£80 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 8 ÷ 0.1 = 80.",
+      "wrong": "80",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q8",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £100 item has a 20% deposit. How much is the deposit?",
+      "answer": "20",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "100",
+        "operations": [
+          [
+            "multiply",
+            "1/5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "100 × 0.2",
+          "output": "20",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£100 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 20 ÷ 0.2 = 100.",
+      "wrong": "100",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q9",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £120 item has a 25% deposit. How much is the deposit?",
+      "answer": "30",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "120",
+        "operations": [
+          [
+            "multiply",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "120 × 0.25",
+          "output": "30",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£120 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 30 ÷ 0.25 = 120.",
+      "wrong": "120",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q10",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £140 item has a 30% deposit. How much is the deposit?",
+      "answer": "42",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "140",
+        "operations": [
+          [
+            "multiply",
+            "3/10"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "140 × 0.3",
+          "output": "42",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£140 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 42 ÷ 0.3 = 140.",
+      "wrong": "140",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q11",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £160 item has a 15% deposit. How much is the deposit?",
+      "answer": "24",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "160",
+        "operations": [
+          [
+            "multiply",
+            "3/20"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "160 × 0.15",
+          "output": "24",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£160 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 24 ÷ 0.15 = 160.",
+      "wrong": "160",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q12",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £180 item has a 35% deposit. How much is the deposit?",
+      "answer": "63",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "180",
+        "operations": [
+          [
+            "multiply",
+            "7/20"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "180 × 0.35",
+          "output": "63",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£180 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 63 ÷ 0.35 = 180.",
+      "wrong": "180",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q13",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £120 item has a 10% deposit. How much is the deposit?",
+      "answer": "12",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "120",
+        "operations": [
+          [
+            "multiply",
+            "1/10"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "120 × 0.1",
+          "output": "12",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£120 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 12 ÷ 0.1 = 120.",
+      "wrong": "120",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q14",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £140 item has a 20% deposit. How much is the deposit?",
+      "answer": "28",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "140",
+        "operations": [
+          [
+            "multiply",
+            "1/5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "140 × 0.2",
+          "output": "28",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£140 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 28 ÷ 0.2 = 140.",
+      "wrong": "140",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q15",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £160 item has a 25% deposit. How much is the deposit?",
+      "answer": "40",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "160",
+        "operations": [
+          [
+            "multiply",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "160 × 0.25",
+          "output": "40",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£160 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 40 ÷ 0.25 = 160.",
+      "wrong": "160",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q16",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £180 item has a 30% deposit. How much is the deposit?",
+      "answer": "54",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "180",
+        "operations": [
+          [
+            "multiply",
+            "3/10"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "180 × 0.3",
+          "output": "54",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£180 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 54 ÷ 0.3 = 180.",
+      "wrong": "180",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q17",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £200 item has a 15% deposit. How much is the deposit?",
+      "answer": "30",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "200",
+        "operations": [
+          [
+            "multiply",
+            "3/20"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "200 × 0.15",
+          "output": "30",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£200 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 30 ÷ 0.15 = 200.",
+      "wrong": "200",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C1-Q18",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "A £220 item has a 35% deposit. How much is the deposit?",
+      "answer": "77",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "220",
+        "operations": [
+          [
+            "multiply",
+            "7/20"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the stated percentage of the whole price",
+          "input": "220 × 0.35",
+          "output": "77",
+          "note": "Find the stated percentage of the whole price.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "£220 represents 100%. Find 10% or 1% first.",
+      "method_note": "Find the stated percentage of the whole price.",
+      "check": "Reverse the calculation chain: 77 ÷ 0.35 = 220.",
+      "wrong": "220",
+      "error_note": "This has not completed the requested calculation. After “find the stated percentage of the whole price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q1",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £40. Its price falls by 10%. Delivery costs £5. What is the total cost?",
+      "answer": "41",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "40",
+        "operations": [
+          [
+            "multiply",
+            "9/10"
+          ],
+          [
+            "add",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "40 × 0.9",
+          "output": "36",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "36 + 5",
+          "output": "41",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 10% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 41 − 5 = 36; 36 ÷ 0.9 = 40.",
+      "wrong": "36",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q2",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £60. Its price falls by 20%. Delivery costs £5. What is the total cost?",
+      "answer": "53",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "60",
+        "operations": [
+          [
+            "multiply",
+            "4/5"
+          ],
+          [
+            "add",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "60 × 0.8",
+          "output": "48",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "48 + 5",
+          "output": "53",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 20% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 53 − 5 = 48; 48 ÷ 0.8 = 60.",
+      "wrong": "48",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q3",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £80. Its price falls by 25%. Delivery costs £5. What is the total cost?",
+      "answer": "65",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "80",
+        "operations": [
+          [
+            "multiply",
+            "3/4"
+          ],
+          [
+            "add",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "80 × 0.75",
+          "output": "60",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "60 + 5",
+          "output": "65",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 25% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 65 − 5 = 60; 60 ÷ 0.75 = 80.",
+      "wrong": "60",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q4",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £100. Its price falls by 30%. Delivery costs £5. What is the total cost?",
+      "answer": "75",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "100",
+        "operations": [
+          [
+            "multiply",
+            "7/10"
+          ],
+          [
+            "add",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "100 × 0.7",
+          "output": "70",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "70 + 5",
+          "output": "75",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 30% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 75 − 5 = 70; 70 ÷ 0.7 = 100.",
+      "wrong": "70",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q5",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £120. Its price falls by 15%. Delivery costs £5. What is the total cost?",
+      "answer": "107",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "120",
+        "operations": [
+          [
+            "multiply",
+            "17/20"
+          ],
+          [
+            "add",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "120 × 0.85",
+          "output": "102",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "102 + 5",
+          "output": "107",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 15% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 107 − 5 = 102; 102 ÷ 0.85 = 120.",
+      "wrong": "102",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q6",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £140. Its price falls by 35%. Delivery costs £5. What is the total cost?",
+      "answer": "96",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "140",
+        "operations": [
+          [
+            "multiply",
+            "13/20"
+          ],
+          [
+            "add",
+            "5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "140 × 0.65",
+          "output": "91",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "91 + 5",
+          "output": "96",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 35% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 96 − 5 = 91; 91 ÷ 0.65 = 140.",
+      "wrong": "91",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q7",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £80. Its price falls by 10%. Delivery costs £6. What is the total cost?",
+      "answer": "78",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "80",
+        "operations": [
+          [
+            "multiply",
+            "9/10"
+          ],
+          [
+            "add",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "80 × 0.9",
+          "output": "72",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "72 + 6",
+          "output": "78",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 10% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 78 − 6 = 72; 72 ÷ 0.9 = 80.",
+      "wrong": "72",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q8",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £100. Its price falls by 20%. Delivery costs £6. What is the total cost?",
+      "answer": "86",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "100",
+        "operations": [
+          [
+            "multiply",
+            "4/5"
+          ],
+          [
+            "add",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "100 × 0.8",
+          "output": "80",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "80 + 6",
+          "output": "86",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 20% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 86 − 6 = 80; 80 ÷ 0.8 = 100.",
+      "wrong": "80",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q9",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £120. Its price falls by 25%. Delivery costs £6. What is the total cost?",
+      "answer": "96",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "120",
+        "operations": [
+          [
+            "multiply",
+            "3/4"
+          ],
+          [
+            "add",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "120 × 0.75",
+          "output": "90",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "90 + 6",
+          "output": "96",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 25% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 96 − 6 = 90; 90 ÷ 0.75 = 120.",
+      "wrong": "90",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q10",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £140. Its price falls by 30%. Delivery costs £6. What is the total cost?",
+      "answer": "104",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "140",
+        "operations": [
+          [
+            "multiply",
+            "7/10"
+          ],
+          [
+            "add",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "140 × 0.7",
+          "output": "98",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "98 + 6",
+          "output": "104",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 30% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 104 − 6 = 98; 98 ÷ 0.7 = 140.",
+      "wrong": "98",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q11",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £160. Its price falls by 15%. Delivery costs £6. What is the total cost?",
+      "answer": "142",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "160",
+        "operations": [
+          [
+            "multiply",
+            "17/20"
+          ],
+          [
+            "add",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "160 × 0.85",
+          "output": "136",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "136 + 6",
+          "output": "142",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 15% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 142 − 6 = 136; 136 ÷ 0.85 = 160.",
+      "wrong": "136",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q12",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £180. Its price falls by 35%. Delivery costs £6. What is the total cost?",
+      "answer": "123",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "180",
+        "operations": [
+          [
+            "multiply",
+            "13/20"
+          ],
+          [
+            "add",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "180 × 0.65",
+          "output": "117",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "117 + 6",
+          "output": "123",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 35% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 123 − 6 = 117; 117 ÷ 0.65 = 180.",
+      "wrong": "117",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q13",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £120. Its price falls by 10%. Delivery costs £7. What is the total cost?",
+      "answer": "115",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "120",
+        "operations": [
+          [
+            "multiply",
+            "9/10"
+          ],
+          [
+            "add",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "120 × 0.9",
+          "output": "108",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "108 + 7",
+          "output": "115",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 10% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 115 − 7 = 108; 108 ÷ 0.9 = 120.",
+      "wrong": "108",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q14",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £140. Its price falls by 20%. Delivery costs £7. What is the total cost?",
+      "answer": "119",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "140",
+        "operations": [
+          [
+            "multiply",
+            "4/5"
+          ],
+          [
+            "add",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "140 × 0.8",
+          "output": "112",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "112 + 7",
+          "output": "119",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 20% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 119 − 7 = 112; 112 ÷ 0.8 = 140.",
+      "wrong": "112",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q15",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £160. Its price falls by 25%. Delivery costs £7. What is the total cost?",
+      "answer": "127",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "160",
+        "operations": [
+          [
+            "multiply",
+            "3/4"
+          ],
+          [
+            "add",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "160 × 0.75",
+          "output": "120",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "120 + 7",
+          "output": "127",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 25% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 127 − 7 = 120; 120 ÷ 0.75 = 160.",
+      "wrong": "120",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q16",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £180. Its price falls by 30%. Delivery costs £7. What is the total cost?",
+      "answer": "133",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "180",
+        "operations": [
+          [
+            "multiply",
+            "7/10"
+          ],
+          [
+            "add",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "180 × 0.7",
+          "output": "126",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "126 + 7",
+          "output": "133",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 30% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 133 − 7 = 126; 126 ÷ 0.7 = 180.",
+      "wrong": "126",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q17",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £200. Its price falls by 15%. Delivery costs £7. What is the total cost?",
+      "answer": "177",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "200",
+        "operations": [
+          [
+            "multiply",
+            "17/20"
+          ],
+          [
+            "add",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "200 × 0.85",
+          "output": "170",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "170 + 7",
+          "output": "177",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 15% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 177 − 7 = 170; 170 ÷ 0.85 = 200.",
+      "wrong": "170",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C2-Q18",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "An item costs £220. Its price falls by 35%. Delivery costs £7. What is the total cost?",
+      "answer": "150",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "220",
+        "operations": [
+          [
+            "multiply",
+            "13/20"
+          ],
+          [
+            "add",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find the reduced price",
+          "input": "220 × 0.65",
+          "output": "143",
+          "note": "Find the reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "143 + 7",
+          "output": "150",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "After a 35% reduction, what percentage of the original price remains?",
+      "method_note": "Find the reduced price Add delivery once.",
+      "check": "Reverse the calculation chain: 150 − 7 = 143; 143 ÷ 0.65 = 220.",
+      "wrong": "143",
+      "error_note": "This has not completed the requested calculation. After “find the reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q1",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 3 items normally costs £40. Every item is reduced by 10%. Delivery costs £5 for the order. A £6 voucher is then applied. What is paid?",
+      "answer": "107",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "40",
+        "operations": [
+          [
+            "multiply",
+            "9/10"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "add",
+            "5"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "40 × 0.9",
+          "output": "36",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "36 × 3",
+          "output": "108",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "108 + 5",
+          "output": "113",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "113 − 6",
+          "output": "107",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 3 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 107 + 6 = 113; 113 − 5 = 108; 108 ÷ 3 = 36; 36 ÷ 0.9 = 40.",
+      "wrong": "36",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q2",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 3 items normally costs £60. Every item is reduced by 20%. Delivery costs £5 for the order. A £6 voucher is then applied. What is paid?",
+      "answer": "143",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "60",
+        "operations": [
+          [
+            "multiply",
+            "4/5"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "add",
+            "5"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "60 × 0.8",
+          "output": "48",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "48 × 3",
+          "output": "144",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "144 + 5",
+          "output": "149",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "149 − 6",
+          "output": "143",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 3 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 143 + 6 = 149; 149 − 5 = 144; 144 ÷ 3 = 48; 48 ÷ 0.8 = 60.",
+      "wrong": "48",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q3",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 3 items normally costs £80. Every item is reduced by 25%. Delivery costs £5 for the order. A £6 voucher is then applied. What is paid?",
+      "answer": "179",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "80",
+        "operations": [
+          [
+            "multiply",
+            "3/4"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "add",
+            "5"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "80 × 0.75",
+          "output": "60",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "60 × 3",
+          "output": "180",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "180 + 5",
+          "output": "185",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "185 − 6",
+          "output": "179",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 3 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 179 + 6 = 185; 185 − 5 = 180; 180 ÷ 3 = 60; 60 ÷ 0.75 = 80.",
+      "wrong": "60",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q4",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 3 items normally costs £100. Every item is reduced by 30%. Delivery costs £5 for the order. A £6 voucher is then applied. What is paid?",
+      "answer": "209",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "100",
+        "operations": [
+          [
+            "multiply",
+            "7/10"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "add",
+            "5"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "100 × 0.7",
+          "output": "70",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "70 × 3",
+          "output": "210",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "210 + 5",
+          "output": "215",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "215 − 6",
+          "output": "209",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 3 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 209 + 6 = 215; 215 − 5 = 210; 210 ÷ 3 = 70; 70 ÷ 0.7 = 100.",
+      "wrong": "70",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q5",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 3 items normally costs £120. Every item is reduced by 15%. Delivery costs £5 for the order. A £6 voucher is then applied. What is paid?",
+      "answer": "305",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "120",
+        "operations": [
+          [
+            "multiply",
+            "17/20"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "add",
+            "5"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "120 × 0.85",
+          "output": "102",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "102 × 3",
+          "output": "306",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "306 + 5",
+          "output": "311",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "311 − 6",
+          "output": "305",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 3 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 305 + 6 = 311; 311 − 5 = 306; 306 ÷ 3 = 102; 102 ÷ 0.85 = 120.",
+      "wrong": "102",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q6",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 3 items normally costs £140. Every item is reduced by 35%. Delivery costs £5 for the order. A £6 voucher is then applied. What is paid?",
+      "answer": "272",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "140",
+        "operations": [
+          [
+            "multiply",
+            "13/20"
+          ],
+          [
+            "multiply",
+            "3"
+          ],
+          [
+            "add",
+            "5"
+          ],
+          [
+            "subtract",
+            "6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "140 × 0.65",
+          "output": "91",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "91 × 3",
+          "output": "273",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "273 + 5",
+          "output": "278",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "278 − 6",
+          "output": "272",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 3 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 272 + 6 = 278; 278 − 5 = 273; 273 ÷ 3 = 91; 91 ÷ 0.65 = 140.",
+      "wrong": "91",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q7",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 4 items normally costs £80. Every item is reduced by 10%. Delivery costs £6 for the order. A £7 voucher is then applied. What is paid?",
+      "answer": "287",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "80",
+        "operations": [
+          [
+            "multiply",
+            "9/10"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "add",
+            "6"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "80 × 0.9",
+          "output": "72",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "72 × 4",
+          "output": "288",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "288 + 6",
+          "output": "294",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "294 − 7",
+          "output": "287",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 4 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 287 + 7 = 294; 294 − 6 = 288; 288 ÷ 4 = 72; 72 ÷ 0.9 = 80.",
+      "wrong": "72",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q8",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 4 items normally costs £100. Every item is reduced by 20%. Delivery costs £6 for the order. A £7 voucher is then applied. What is paid?",
+      "answer": "319",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "100",
+        "operations": [
+          [
+            "multiply",
+            "4/5"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "add",
+            "6"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "100 × 0.8",
+          "output": "80",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "80 × 4",
+          "output": "320",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "320 + 6",
+          "output": "326",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "326 − 7",
+          "output": "319",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 4 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 319 + 7 = 326; 326 − 6 = 320; 320 ÷ 4 = 80; 80 ÷ 0.8 = 100.",
+      "wrong": "80",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q9",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 4 items normally costs £120. Every item is reduced by 25%. Delivery costs £6 for the order. A £7 voucher is then applied. What is paid?",
+      "answer": "359",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "120",
+        "operations": [
+          [
+            "multiply",
+            "3/4"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "add",
+            "6"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "120 × 0.75",
+          "output": "90",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "90 × 4",
+          "output": "360",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "360 + 6",
+          "output": "366",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "366 − 7",
+          "output": "359",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 4 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 359 + 7 = 366; 366 − 6 = 360; 360 ÷ 4 = 90; 90 ÷ 0.75 = 120.",
+      "wrong": "90",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q10",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 4 items normally costs £140. Every item is reduced by 30%. Delivery costs £6 for the order. A £7 voucher is then applied. What is paid?",
+      "answer": "391",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "140",
+        "operations": [
+          [
+            "multiply",
+            "7/10"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "add",
+            "6"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "140 × 0.7",
+          "output": "98",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "98 × 4",
+          "output": "392",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "392 + 6",
+          "output": "398",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "398 − 7",
+          "output": "391",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 4 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 391 + 7 = 398; 398 − 6 = 392; 392 ÷ 4 = 98; 98 ÷ 0.7 = 140.",
+      "wrong": "98",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q11",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 4 items normally costs £160. Every item is reduced by 15%. Delivery costs £6 for the order. A £7 voucher is then applied. What is paid?",
+      "answer": "543",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "160",
+        "operations": [
+          [
+            "multiply",
+            "17/20"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "add",
+            "6"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "160 × 0.85",
+          "output": "136",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "136 × 4",
+          "output": "544",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "544 + 6",
+          "output": "550",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "550 − 7",
+          "output": "543",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 4 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 543 + 7 = 550; 550 − 6 = 544; 544 ÷ 4 = 136; 136 ÷ 0.85 = 160.",
+      "wrong": "136",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q12",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 4 items normally costs £180. Every item is reduced by 35%. Delivery costs £6 for the order. A £7 voucher is then applied. What is paid?",
+      "answer": "467",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "180",
+        "operations": [
+          [
+            "multiply",
+            "13/20"
+          ],
+          [
+            "multiply",
+            "4"
+          ],
+          [
+            "add",
+            "6"
+          ],
+          [
+            "subtract",
+            "7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "180 × 0.65",
+          "output": "117",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "117 × 4",
+          "output": "468",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "468 + 6",
+          "output": "474",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "474 − 7",
+          "output": "467",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 4 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 467 + 7 = 474; 474 − 6 = 468; 468 ÷ 4 = 117; 117 ÷ 0.65 = 180.",
+      "wrong": "117",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q13",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 5 items normally costs £120. Every item is reduced by 10%. Delivery costs £7 for the order. A £8 voucher is then applied. What is paid?",
+      "answer": "539",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "120",
+        "operations": [
+          [
+            "multiply",
+            "9/10"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "add",
+            "7"
+          ],
+          [
+            "subtract",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "120 × 0.9",
+          "output": "108",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "108 × 5",
+          "output": "540",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "540 + 7",
+          "output": "547",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "547 − 8",
+          "output": "539",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 5 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 539 + 8 = 547; 547 − 7 = 540; 540 ÷ 5 = 108; 108 ÷ 0.9 = 120.",
+      "wrong": "108",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q14",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 5 items normally costs £140. Every item is reduced by 20%. Delivery costs £7 for the order. A £8 voucher is then applied. What is paid?",
+      "answer": "559",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "140",
+        "operations": [
+          [
+            "multiply",
+            "4/5"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "add",
+            "7"
+          ],
+          [
+            "subtract",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "140 × 0.8",
+          "output": "112",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "112 × 5",
+          "output": "560",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "560 + 7",
+          "output": "567",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "567 − 8",
+          "output": "559",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 5 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 559 + 8 = 567; 567 − 7 = 560; 560 ÷ 5 = 112; 112 ÷ 0.8 = 140.",
+      "wrong": "112",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q15",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 5 items normally costs £160. Every item is reduced by 25%. Delivery costs £7 for the order. A £8 voucher is then applied. What is paid?",
+      "answer": "599",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "160",
+        "operations": [
+          [
+            "multiply",
+            "3/4"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "add",
+            "7"
+          ],
+          [
+            "subtract",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "160 × 0.75",
+          "output": "120",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "120 × 5",
+          "output": "600",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "600 + 7",
+          "output": "607",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "607 − 8",
+          "output": "599",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 5 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 599 + 8 = 607; 607 − 7 = 600; 600 ÷ 5 = 120; 120 ÷ 0.75 = 160.",
+      "wrong": "120",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q16",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 5 items normally costs £180. Every item is reduced by 30%. Delivery costs £7 for the order. A £8 voucher is then applied. What is paid?",
+      "answer": "629",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "180",
+        "operations": [
+          [
+            "multiply",
+            "7/10"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "add",
+            "7"
+          ],
+          [
+            "subtract",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "180 × 0.7",
+          "output": "126",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "126 × 5",
+          "output": "630",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "630 + 7",
+          "output": "637",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "637 − 8",
+          "output": "629",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 5 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 629 + 8 = 637; 637 − 7 = 630; 630 ÷ 5 = 126; 126 ÷ 0.7 = 180.",
+      "wrong": "126",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q17",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 5 items normally costs £200. Every item is reduced by 15%. Delivery costs £7 for the order. A £8 voucher is then applied. What is paid?",
+      "answer": "849",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "200",
+        "operations": [
+          [
+            "multiply",
+            "17/20"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "add",
+            "7"
+          ],
+          [
+            "subtract",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "200 × 0.85",
+          "output": "170",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "170 × 5",
+          "output": "850",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "850 + 7",
+          "output": "857",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "857 − 8",
+          "output": "849",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 5 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 849 + 8 = 857; 857 − 7 = 850; 850 ÷ 5 = 170; 170 ÷ 0.85 = 200.",
+      "wrong": "170",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M06-WEB-PS-C3-Q18",
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "Each of 5 items normally costs £220. Every item is reduced by 35%. Delivery costs £7 for the order. A £8 voucher is then applied. What is paid?",
+      "answer": "714",
+      "answerUnit": "£",
+      "model": {
+        "kind": "application",
+        "start": "220",
+        "operations": [
+          [
+            "multiply",
+            "13/20"
+          ],
+          [
+            "multiply",
+            "5"
+          ],
+          [
+            "add",
+            "7"
+          ],
+          [
+            "subtract",
+            "8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Find one reduced price",
+          "input": "220 × 0.65",
+          "output": "143",
+          "note": "Find one reduced price.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Find the price of all items",
+          "input": "143 × 5",
+          "output": "715",
+          "note": "Find the price of all items.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Add delivery once",
+          "input": "715 + 7",
+          "output": "722",
+          "note": "Add delivery once.",
+          "outputUnit": "£"
+        },
+        {
+          "title": "Subtract the voucher once",
+          "input": "722 − 8",
+          "output": "714",
+          "note": "Subtract the voucher once.",
+          "outputUnit": "£"
+        }
+      ],
+      "hint": "Find the reduced price of one item before considering all 5 items.",
+      "method_note": "Find one reduced price Find the price of all items Add delivery once Subtract the voucher once.",
+      "check": "Reverse the calculation chain: 714 + 8 = 722; 722 − 7 = 715; 715 ÷ 5 = 143; 143 ÷ 0.65 = 220.",
+      "wrong": "143",
+      "error_note": "This has not completed the requested calculation. After “find one reduced price”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    }
+  ]
+}

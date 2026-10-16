@@ -69,3 +69,61 @@ The user selected **both** on 12 October: a sixth application stage within topic
 Both problem-solving pages and the sixth chevron stage offer a reveal/hide **How to solve tips** section: short steps, specific tips and a worked example matching the current challenge level, sharing the teaching renderer. Assistance follows the existing scoring contract. Preserve original stage IDs, existing page slots and saved progress; keep problem-solving histories separate from plain method practice. Do not duplicate identical practice across topic and combined paths.
 
 Ratios then percentages are the next content priorities; M06 already exists and should be refined/extended rather than duplicated. Subsequent content should support Foundation papers permitting calculators, without assuming an exam board. See [HANDOFF](../HANDOFF.md) for the ordered work slices.
+
+
+## Content maintenance review — 15 October 2026 (proposal, not a refactor)
+
+The runtime reads `website/static/data/*.json` and referenced `working/*.svg`. These are the directly edited, authoritative banks for all ten topics. `website/src/lib/content/practice-pages.json` selects existing question IDs for portable Practice-set codes; ordinary pages partition bank questions by stage/level. Topic routing/registry data describes discovery and identity, not question wording. Normal builds validate and copy the live data; they do not regenerate it from Python or Markdown.
+
+The confusing second chain is historical: topic Markdown, `spot_errors.json`, saved decks and web-support JSON feed optional Python reference-candidate tools. Those tools deliberately write temporary comparison candidates, not live banks. Keep their provenance/comparison capability; they are not a second authoring source. Other old slide-building scripts belong to the legacy workflow. `content/PRACTICE_PAGES.md` also retains an outdated two-question scaffolded count in its dated expansion account; the current requirement is four.
+
+On 16 October the user confirmed the ownership requirement: one clear editable source per topic across all learning stages, and no generator replacement of manually authored/refined content without an explicit replacement request. The [standing ownership rule](../website/README.md#current-content-and-historical-references) applies now; the exact relocation paths and build changes below remain a proposal. One topic bank should hold all its stage content, with assets referenced and catalogues containing IDs only. Generators produce separate review candidates; ordinary builds validate/copy canonical data without rewriting it.
+
+Options for discussion before moving or consolidating files:
+
+1. **Documentation only:** put a short source-of-truth table in the website guide and improve historical labels/links. Lowest risk, but live authored content remains under `website/static` and obsolete tooling remains visually mixed with current work.
+2. **Recommended single-source relocation:** move directly maintained banks/working diagrams to `content/banks/`, copy them into static output during the build, and update validators/tests together. Keep specs under `content/specs`, code-address selection in one catalogue, and group historical material/tools explicitly. Preserve IDs, JSON shape, URLs, saved work and useful reference-candidate comparisons. Do not regenerate refined content from old sources. This has build-path/testing cost but aligns ownership with AGENTS.
+3. **Structured authoring generator:** introduce a typed misconception catalogue and deterministic generators for variants, wrong working and correction options. Potentially useful for large-scale content generation, but adds an authoring language and another transformation to maintain. It is not needed to fix the current UI or clarify the existing source of truth.
+
+At the time of this proposal no relocation, generator or retirement had been implemented; see the adopted layout below for current state. Directly authored documents and legacy resources require preservation. Reduce duplicate standing rules by linking UI rules, method-animation contract and topic specs; retain DEV_LOG as dated evidence and HANDOFF as current state.
+
+### Spot-error content decisions needing agreement
+
+Follow the [user-authored process](SPOT_ERRORS_PROCESS.md). Before bank rewrites, agree common errors in each topic/method spec, then build displayed incorrect working from those errors and derive one correct process option plus distinct misconception-based distractors. Use one dropdown per independent error in working order; later consequences of one mistake are not extra independent errors. Keep the final corrected answer separate.
+
+Misconception lists live in the Common errors sections of the [topic specs](INDEX.md#teaching-content). The lattice prototype has agreed coverage. The user agreed M02 division (D1–D7), M13 signed addition/subtraction (S1–S7) and M10 equations (E1–E8) on 16 October. The user also agreed M15 fractions (F1–F8), M06 percentages (P1–P8) and M03 multiplication/division problems (A1–A8). The user also agreed M04 ratio (R1–R8), M12 speed/distance/time (T1–T8) and M07 reverse percentages (RP1–RP7). All nine non-lattice implemented-topic lists are now agreed. M01 L1–L8 are now all agreed. The user authorised all-topic drafting and then live integration: [360 questions](../content/spot-errors-drafts/README.md), 36 per topic, are incorporated into the existing banks with distinct IDs and retained prior-attempt definitions. Combined practice retains source-topic coverage; planned, unimplemented topics need their own later review. Agreement on misconception lists does not itself replace live bank content.
+
+Confirmed issues before a full per-question review: M04-WEB-ERRORS-C1-Q1 labels “Use the given quantity as the value of one part” as wrong although its given difference equals one part; repeated generic correction/distractor templates in calculation banks are not always specific to the displayed error. Existing equation tasks ask for row, reason and correction, whereas the new process asks for one correction dropdown per error. This earlier control proposal is superseded by the agreed [interactive investigation process](SPOT_ERRORS_PROCESS.md): meaningful location selection and an editable list of explanation/repair choices, with the student deciding when all independent mistakes have been found. The prototype established the UI; live integration now includes equations and all other implemented topics. Independent-error counts vary by question and are not disclosed by preallocated controls. The cited old questions remain historical definitions only. The user subsequently authorised automatic reset of saved retired-question pages so all active work uses the current interface.
+
+All ten live banks already have 12 error questions per level (three pages of four). Eight older M01/M02/M10 Practice-set slots had only three; these have now been extended with existing matching questions. Saved attempts retain their original questions/responses; a current three-question saved attempt is not evidence of a short bank.
+
+
+### Adopted topic-folder layout — 16 October 2026
+
+The user superseded the earlier content/banks proposal below: editable content now lives in `website/static/data/<topic>/`, split by area, with shared/named-level guidance. The [editing map](../website/README.md#editing-learn-the-method-and-topic-content) is authoritative. Development and static builds assemble the unchanged bank URLs automatically; no source generation or pre-commit preparation is needed. The old empty website/data directory had no consumers. Historical Markdown/Python grouping remains a separate proposal.
+
+### Earlier relocation scope (superseded paths; retained rationale)
+
+| Current location | Proposed ownership | Change needed |
+| --- | --- | --- |
+| `website/static/data/*.json` (10 banks) | `content/banks/*.json` | Move exact reviewed files; validate source banks; copy to the same `/data/*.json` URLs |
+| `website/static/data/working/*.svg` (72 diagrams) | `content/banks/working/*.svg` | Move exact assets with banks; crop/check canonical assets; publish unchanged relative URLs |
+| `website/src/lib/content/practice-pages.json` | `content/practice-pages.json` | Keep a separate small ID-selection catalogue; update imports without changing code addresses/slot meanings |
+| `content/specs/*.md` | Same | Requirements and agreed misconception lists; never duplicate complete live banks |
+| `content/topic_registry.json` and `website/src/lib/content/topic-routes.mjs` | Retain initially | Audit overlapping discovery metadata before deciding whether one can replace the other |
+| Historical topic Markdown/JSON and saved decks | Explicit historical grouping, with original provenance | Inventory incoming links/imports first; preserve authored text and manual deck edits |
+| `prepare_web_arithmetic.py`, `prepare_web_equations.py`, `bank_candidates.py` | Retained reference-candidate tool group | Preserve temporary-output comparisons and their tests; no live overwrite command |
+| Legacy slide generators/renderers | Legacy tool group, in a later slice | Move only after checking their relative imports, paths and callers; never run them as part of website builds |
+
+Implementation would add one small content-copy command shared by build/dev startup, plus dev watching of canonical content changes. Static data becomes generated and ignored, with a clear generated-source notice; build products remain governed by the existing publishing policy. Homepage server imports, the validator, browser fixtures, Node tests, crop tool and verifier dependency map must all target the correct source/output boundary. The dev server needs explicit read access to the canonical content directory. No parallel editable copy or general-purpose content compiler is needed.
+
+Suggested sequence: (1) agree ownership and inventory references; (2) move live banks/assets/catalogue without content changes, compare every published data file byte-for-byte and verify URLs/IDs/progress; (3) clarify and group historical sources/tools, testing comparison commands separately; (4) consolidate overlapping prose only after preserving directly authored wording and checking links. Keep content rewriting separate from relocation so each review can establish what changed. This is a proposal only; user approval is still required before refactoring.
+
+## Optional topic-page modes — TODO, 16 October 2026
+
+Both proposals below were explicitly deferred by the user. Neither is implemented; current selection/restoration remains unchanged.
+
+- **Random draws without repetition:** for each topic/stage/challenge level, draw from the complete eligible pool, randomise order, and exclude questions selected for earlier pages until the pool is exhausted. Keep assessment's balanced two-per-level sampling. Restoring a page preserves its questions, order, answers and working; a new page or explicit retry is the draw boundary. Agree the optional-mode control, cycle reset, adaptation and authored Practice-set interactions before implementation. Assessments already randomise when started but do not maintain an unused pool across reassessments.
+- **Advance after 100%:** if a student completes a page at a stage with 100%, open the next page first on their next visit to that stage. After the final page, **wrap around to the first page**, as explicitly decided by the user. Preserve earlier pages/answers for review. Advance once per qualifying completion/visit transition, not repeatedly on rerenders or reloads. Establish the precise visit boundary and how repeated cycles interact with retained completed attempts when implementing. This is an optional ordinary-topic navigation mode; assessment locks and authored Practice sets retain their own rules unless separately changed.
+
+Test stage/level/learner isolation, saved-state restoration, no random repeats before exhaustion, the 100% threshold, once-only advancement, final-to-first wrap, and unchanged scoring/history. No progress migration or automatic reset is authorised by these TODOs.

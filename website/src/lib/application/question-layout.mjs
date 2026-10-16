@@ -2,6 +2,15 @@
  * Purpose: Fit short question previews to equal-width rows without shrinking below 0.875rem (14px at the default root).
  * Used by: QuestionList.svelte. Uses: CSS-owned preferred column count. Libs: browser observers.
  */
+/** Use the fewest rows allowed by capacity, then distribute items as evenly as possible. */
+export function balancedQuestionRows(count, capacity) {
+  const rows = Math.ceil(count / capacity);
+  return Array.from(
+    { length: rows },
+    (_, row) => Math.floor(count / rows) + (row < count % rows ? 1 : 0),
+  );
+}
+
 export function fitQuestionRows(list) {
   let frame = 0,
     disposed = false;
@@ -40,13 +49,14 @@ export function fitQuestionRows(list) {
     });
     const cell = (columns) => (width - gap * (columns - 1)) / columns;
     // Three columns remain an option on assessments/wide panels, but two readable columns take precedence.
-    const columns =
+    const capacity =
       preferred === 3 &&
       items.every((item) =>
         item.prose ? cell(3) >= 224 : (item.natural * minimum) / item.size + item.inset <= cell(3),
       )
         ? 3
         : 2;
+    const columns = balancedQuestionRows(items.length, capacity)[0] ?? 1;
     list.style.setProperty('--question-layout-columns', String(columns));
     for (const { item, prose, natural, inset, size, range } of items) {
       const available = cell(columns) - inset;
@@ -66,6 +76,26 @@ export function fitQuestionRows(list) {
       item.classList.toggle('wide-question', wide);
       if (wide) item.style.removeProperty('--question-fit-font');
     }
+    // Full-width expressions separate runs. Balance each run without moving DOM nodes
+    // or stretching a shorter row's cards; symmetric margins force its row boundary.
+    let run = [];
+    function balanceRun() {
+      let offset = 0;
+      for (const count of balancedQuestionRows(run.length, columns)) {
+        const inset = `calc((100% + var(--question-gap)) * ${columns - count} / ${2 * columns})`;
+        run[offset].style.marginInlineStart = inset;
+        run[offset + count - 1].style.marginInlineEnd = inset;
+        offset += count;
+      }
+      run = [];
+    }
+    for (const { item } of items) {
+      item.style.removeProperty('margin-inline-start');
+      item.style.removeProperty('margin-inline-end');
+      if (item.classList.contains('wide-question')) balanceRun();
+      else run.push(item);
+    }
+    balanceRun();
   }
   /** Coalesce resize, text and page changes into one measurement before paint. */
   function schedule() {

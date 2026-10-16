@@ -22,10 +22,33 @@
   <h1>About Maths practice</h1>
   <section class="card page-panel">
     <h2>Author and purpose</h2>
+    <p>Created by Joe Hudson</p>
     <p>
-      Created by Joe Hudson to help Foundation GCSE Maths students practise accurate methods and
-      build confidence through short, regular activities.
+      The motivation for this app was to help Foundation GCSE Maths students achieve a pass in their
+      exams, while developing confidence in basic maths methods, and perhaps even enjoy applying
+      maths to some problem solving.
     </p>
+    <p>
+      Many students retaking do not achieve a pass on their 2nd attempt. The hope is that a bit of
+      extra regular practice using this app can build some skill and remove the mystery or fear
+      around the maths they need, and encourage better attenance and engagement in their regular
+      maths lessons.
+    </p>
+
+    <h2>Features</h2>
+    <ul>
+      <li>Progress tracking with cloud sync, learner feedback and revision prioritization</li>
+      <li>Adaptive question challenge level</li>
+      <li>Initial assessments per topic</li>
+      <li>Learn the method guidance with animated demos</li>
+      <li>Scaffolded practice</li>
+      <li>Spot the error practice to reinforce method application and checking skills</li>
+      <li>Regular question practice</li>
+      <li>Written problems based on topic methods</li>
+      <li>Activity timers</li>
+      <li>Sharable activity codes (great for starters)</li>
+      <li>Broad selection of non-maths puzzles to compliment regular maths practice</li>
+    </ul>
     <h2>Related Apps</h2>
     <p>
       The theme palettes, controls and puzzles are adapted from <a
@@ -33,7 +56,7 @@
       >. Its <a href="https://github.com/jhudshcg/starters">source code</a> also informed the approach
       to practice, feedback and saved progress.
     </p>
-    <h2>Go score estimates</h2>
+    <h2>Libraries Used</h2>
     <p>
       Optional estimates use GNU Go 3.8, copyright the Free Software Foundation and contributors,
       under GPL version 3 or later. <a href={asset('/engines/gnugo/COPYING')}>Licence</a> ·
@@ -56,11 +79,6 @@
       The site is still being developed. Checks support review; they do not imply that every topic
       or feature is finished. There are currently many missing topics and planned features,
       hopefully coming soon. Requests and suggestions are welcome.
-    </p>
-    <h2>Progress tracking feature</h2>
-    <p>
-      Names and progress are stored in this browser on this device. They are not online accounts and
-      are not synchronised across devices.
     </p>
   </section>
 </main>

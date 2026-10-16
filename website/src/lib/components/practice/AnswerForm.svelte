@@ -11,6 +11,8 @@
   Libs: none.
 -->
 <script>
+  import WrappingSelect from '../ui/WrappingSelect.svelte';
+  import ErrorInvestigation from '../teaching/ErrorInvestigation.svelte';
   import ErrorEntries from '../teaching/ErrorEntries.svelte';
   let {
     question,
@@ -18,6 +20,7 @@
     mode,
     response,
     draft,
+    draftKey,
     assisted,
     hintVisible,
     inputError,
@@ -34,19 +37,23 @@
     onsubmit();
   }}
 >
-  {#if mode === 'errors' && question.errorOptions}
+  {#if mode === 'errors' && question.investigation}
+    {#key draftKey}<ErrorInvestigation
+        {question}
+        {response}
+        entries={response?.entries ?? draft.errors}
+        onchange={(errors) => ondraft({ errors })}
+      />{/key}
+  {:else if mode === 'errors' && question.errorOptions}
     <label for="error-correction">Which correction fixes the working?</label>
-    <select
+    <WrappingSelect
       id="error-correction"
-      class="choice-field"
-      required
+      options={question.errorOptions}
+      placeholder="Choose a correction"
       disabled={Boolean(response)}
       value={(response?.entries ?? draft.errors)[0]?.correction ?? ''}
-      onchange={(event) => ondraft({ errors: [{ correction: event.currentTarget.value }] })}
-    >
-      <option value="">Choose a correction</option>
-      {#each question.errorOptions as option}<option value={option.id}>{option.text}</option>{/each}
-    </select>
+      onchange={(correction) => ondraft({ errors: [{ correction }] })}
+    />
   {:else if mode === 'errors'}<ErrorEntries
       {question}
       reasons={bank.teaching.errorReasons}
@@ -61,7 +68,13 @@
     </p>{/if}
   <input
     id="answer"
-    class="text-field"
+    class="text-field answer-result"
+    class:corrected-answer-field={mode === 'errors'}
+    data-answer-result={response && mode === 'errors'
+      ? response.answerCorrect
+        ? 'correct'
+        : 'incorrect'
+      : undefined}
     autocomplete="off"
     inputmode="text"
     value={response?.raw ?? draft.answer}

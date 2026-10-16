@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "subject": "maths",
+  "topic": "M01",
+  "title": "Lattice multiplication",
+  "method": "lattice",
+  "rows": [
+    "Draw Grid & Arrange Digits",
+    "Find & Fill Cell Products",
+    "Sum Diagonals & Track Carries",
+    "Write Final Answer"
+  ],
+  "prompts": [
+    "2 columns × 1 row. Top: 4, 3. Right: 6.",
+    "Cells: 24, 18. Tens above; units below. Diagram: Editable lattice 43 × 6",
+    "Start at the bottom right: 8 → write 8 1 + 4 = 5 → write 5 2 → write 2",
+    "43 × 6 = 258"
+  ],
+  "revision": "f89bb468b2ee4a1a",
+  "questionPrefix": "Work out the product",
+  "errorRevision": 2
+}

@@ -1,0 +1,2911 @@
+{
+  "teaching": {
+    "guidance": [
+      {
+        "title": "Read and plan",
+        "text": "Identify what is known and what the final answer must describe."
+      },
+      {
+        "title": "Choose operations",
+        "text": "Decide which quantities to combine. Write each intermediate result with its units."
+      },
+      {
+        "title": "Check and answer",
+        "text": "Check with an inverse or estimate, then answer the original question."
+      }
+    ],
+    "examples": [
+      {
+        "id": "maths:M15-WEB-PS-C1-Q100",
+        "subject": "maths",
+        "topic": "M15",
+        "type": "problem",
+        "level": 0,
+        "method": "calculation",
+        "prose": true,
+        "q": "There is {3/14} m of ribbon. Another {1/7} m is added. How much is there altogether?",
+        "answer": "5/14",
+        "answerUnit": "m",
+        "model": {
+          "kind": "application",
+          "start": "3/14",
+          "operations": [
+            [
+              "add",
+              "1/7"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Combine the first two quantities using equal-sized fraction parts",
+            "input": "{3/14} + {1/7}",
+            "output": "{5/14}",
+            "note": "Combine the first two quantities using equal-sized fraction parts.",
+            "outputUnit": "m"
+          }
+        ],
+        "hint": "Write both starting fractions using 14 equal parts per whole before combining them.",
+        "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+        "check": "Reverse the calculation chain: {5/14} − {1/7} = {3/14}.",
+        "wrong": "3/14",
+        "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+        "source": "Original website application-stage content, 12 October 2026"
+      },
+      {
+        "id": "maths:M15-WEB-PS-C2-Q100",
+        "subject": "maths",
+        "topic": "M15",
+        "type": "problem",
+        "level": 1,
+        "method": "calculation",
+        "prose": true,
+        "q": "There is {3/14} m of ribbon. Another {1/14} m is added. {1/28} m is used. How much is left?",
+        "answer": "1/4",
+        "answerUnit": "m",
+        "model": {
+          "kind": "application",
+          "start": "3/14",
+          "operations": [
+            [
+              "add",
+              "1/14"
+            ],
+            [
+              "subtract",
+              "1/28"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Combine the first two quantities using equal-sized fraction parts",
+            "input": "{3/14} + {1/14}",
+            "output": "{2/7}",
+            "note": "Combine the first two quantities using equal-sized fraction parts.",
+            "outputUnit": "m"
+          },
+          {
+            "title": "Subtract the amount used",
+            "input": "{2/7} − {1/28}",
+            "output": "{1/4}",
+            "note": "Subtract the amount used.",
+            "outputUnit": "m"
+          }
+        ],
+        "hint": "Find a common denominator for {3/14} and {1/14}. Then account for the {1/28} m used.",
+        "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+        "check": "Reverse the calculation chain: {1/4} + {1/28} = {2/7}; {2/7} − {1/14} = {3/14}.",
+        "wrong": "2/7",
+        "error_note": "This only combines the first two quantities. Also account for the amount used.",
+        "source": "Original website application-stage content, 12 October 2026"
+      },
+      {
+        "id": "maths:M15-WEB-PS-C3-Q100",
+        "subject": "maths",
+        "topic": "M15",
+        "type": "problem",
+        "level": 2,
+        "method": "calculation",
+        "prose": true,
+        "q": "There is {29/14} m of ribbon. Another {1/14} m is added. {1/28} m is used. Another {1/3} m is added. How much is left?",
+        "answer": "205/84",
+        "answerUnit": "m",
+        "model": {
+          "kind": "application",
+          "start": "29/14",
+          "operations": [
+            [
+              "add",
+              "1/14"
+            ],
+            [
+              "subtract",
+              "1/28"
+            ],
+            [
+              "add",
+              "1/3"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Combine the first two quantities using equal-sized fraction parts",
+            "input": "{29/14} + {1/14}",
+            "output": "{15/7}",
+            "note": "Combine the first two quantities using equal-sized fraction parts.",
+            "outputUnit": "m"
+          },
+          {
+            "title": "Subtract the amount used",
+            "input": "{15/7} − {1/28}",
+            "output": "{59/28}",
+            "note": "Subtract the amount used.",
+            "outputUnit": "m"
+          },
+          {
+            "title": "Add the further amount using a common denominator",
+            "input": "{59/28} + {1/3}",
+            "output": "{205/84}",
+            "note": "Add the further amount using a common denominator.",
+            "outputUnit": "m"
+          }
+        ],
+        "hint": "Find a common denominator for {29/14} and {1/14}. Then account for the {1/28} m used.",
+        "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator.",
+        "check": "Reverse the calculation chain: {205/84} − {1/3} = {59/28}; {59/28} + {1/28} = {15/7}; {15/7} − {1/14} = {29/14}.",
+        "wrong": "15/7",
+        "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+        "source": "Original website application-stage content, 12 October 2026"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "maths:M15-WEB-PS-C1-Q1",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.5 m of ribbon. Another {1/3} m is added. How much is there altogether?",
+      "answer": "5/6",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "1/2",
+        "operations": [
+          [
+            "add",
+            "1/3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "0.5 + {1/3}",
+          "output": "{5/6}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Write both starting fractions using 6 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/6} − {1/3} = 0.5.",
+      "wrong": "1/2",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q2",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.375 litres of juice. Another 0.25 litres is added. How much is there altogether?",
+      "answer": "5/8",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "3/8",
+        "operations": [
+          [
+            "add",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "0.375 + 0.25",
+          "output": "0.625",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Write both starting fractions using 8 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: 0.625 − 0.25 = 0.375.",
+      "wrong": "3/8",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q3",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.3 kg of flour. Another 0.2 kg is added. How much is there altogether?",
+      "answer": "1/2",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "3/10",
+        "operations": [
+          [
+            "add",
+            "1/5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "0.3 + 0.2",
+          "output": "0.5",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Write both starting fractions using 10 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: 0.5 − 0.2 = 0.3.",
+      "wrong": "3/10",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q4",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.25 m of rope. Another {1/6} m is added. How much is there altogether?",
+      "answer": "5/12",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "1/4",
+        "operations": [
+          [
+            "add",
+            "1/6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "0.25 + {1/6}",
+          "output": "{5/12}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Write both starting fractions using 12 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/12} − {1/6} = 0.25.",
+      "wrong": "1/4",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q5",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {1/3} litres of water. Another {2/9} litres is added. How much is there altogether?",
+      "answer": "5/9",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "1/3",
+        "operations": [
+          [
+            "add",
+            "2/9"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{1/3} + {2/9}",
+          "output": "{5/9}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Write both starting fractions using 9 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/9} − {2/9} = {1/3}.",
+      "wrong": "1/3",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q6",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.2 kg of rice. Another {2/15} kg is added. How much is there altogether?",
+      "answer": "1/3",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "1/5",
+        "operations": [
+          [
+            "add",
+            "2/15"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "0.2 + {2/15}",
+          "output": "{1/3}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Write both starting fractions using 15 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {1/3} − {2/15} = 0.2.",
+      "wrong": "1/5",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q7",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.375 m of ribbon. Another 0.25 m is added. How much is there altogether?",
+      "answer": "5/8",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "3/8",
+        "operations": [
+          [
+            "add",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "0.375 + 0.25",
+          "output": "0.625",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Write both starting fractions using 8 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: 0.625 − 0.25 = 0.375.",
+      "wrong": "3/8",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q8",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.3 litres of juice. Another 0.2 litres is added. How much is there altogether?",
+      "answer": "1/2",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "3/10",
+        "operations": [
+          [
+            "add",
+            "1/5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "0.3 + 0.2",
+          "output": "0.5",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Write both starting fractions using 10 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: 0.5 − 0.2 = 0.3.",
+      "wrong": "3/10",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q9",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.25 kg of flour. Another {1/6} kg is added. How much is there altogether?",
+      "answer": "5/12",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "1/4",
+        "operations": [
+          [
+            "add",
+            "1/6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "0.25 + {1/6}",
+          "output": "{5/12}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Write both starting fractions using 12 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/12} − {1/6} = 0.25.",
+      "wrong": "1/4",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q10",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/14} m of rope. Another {1/7} m is added. How much is there altogether?",
+      "answer": "5/14",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "3/14",
+        "operations": [
+          [
+            "add",
+            "1/7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/14} + {1/7}",
+          "output": "{5/14}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Write both starting fractions using 14 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/14} − {1/7} = {3/14}.",
+      "wrong": "3/14",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q11",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/11} litres of water. Another {2/11} litres is added. How much is there altogether?",
+      "answer": "5/11",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "3/11",
+        "operations": [
+          [
+            "add",
+            "2/11"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/11} + {2/11}",
+          "output": "{5/11}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Write both starting fractions using 11 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/11} − {2/11} = {3/11}.",
+      "wrong": "3/11",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q12",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/17} kg of rice. Another {2/17} kg is added. How much is there altogether?",
+      "answer": "5/17",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "3/17",
+        "operations": [
+          [
+            "add",
+            "2/17"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/17} + {2/17}",
+          "output": "{5/17}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Write both starting fractions using 17 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/17} − {2/17} = {3/17}.",
+      "wrong": "3/17",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q13",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.3 m of ribbon. Another 0.2 m is added. How much is there altogether?",
+      "answer": "1/2",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "3/10",
+        "operations": [
+          [
+            "add",
+            "1/5"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "0.3 + 0.2",
+          "output": "0.5",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Write both starting fractions using 10 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: 0.5 − 0.2 = 0.3.",
+      "wrong": "3/10",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q14",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.25 litres of juice. Another {1/6} litres is added. How much is there altogether?",
+      "answer": "5/12",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "1/4",
+        "operations": [
+          [
+            "add",
+            "1/6"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "0.25 + {1/6}",
+          "output": "{5/12}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Write both starting fractions using 12 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/12} − {1/6} = 0.25.",
+      "wrong": "1/4",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q15",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/14} kg of flour. Another {1/7} kg is added. How much is there altogether?",
+      "answer": "5/14",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "3/14",
+        "operations": [
+          [
+            "add",
+            "1/7"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/14} + {1/7}",
+          "output": "{5/14}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Write both starting fractions using 14 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/14} − {1/7} = {3/14}.",
+      "wrong": "3/14",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q16",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/16} m of rope. Another 0.125 m is added. How much is there altogether?",
+      "answer": "5/16",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "3/16",
+        "operations": [
+          [
+            "add",
+            "1/8"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/16} + 0.125",
+          "output": "{5/16}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Write both starting fractions using 16 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/16} − 0.125 = {3/16}.",
+      "wrong": "3/16",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q17",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/13} litres of water. Another {2/13} litres is added. How much is there altogether?",
+      "answer": "5/13",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "3/13",
+        "operations": [
+          [
+            "add",
+            "2/13"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/13} + {2/13}",
+          "output": "{5/13}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Write both starting fractions using 13 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/13} − {2/13} = {3/13}.",
+      "wrong": "3/13",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C1-Q18",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 0,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/19} kg of rice. Another {2/19} kg is added. How much is there altogether?",
+      "answer": "5/19",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "3/19",
+        "operations": [
+          [
+            "add",
+            "2/19"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/19} + {2/19}",
+          "output": "{5/19}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Write both starting fractions using 19 equal parts per whole before combining them.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts.",
+      "check": "Reverse the calculation chain: {5/19} − {2/19} = {3/19}.",
+      "wrong": "3/19",
+      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q1",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.5 m of ribbon. Another {1/6} m is added. {1/12} m is used. How much is left?",
+      "answer": "7/12",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "1/2",
+        "operations": [
+          [
+            "add",
+            "1/6"
+          ],
+          [
+            "subtract",
+            "1/12"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{1/2} + {1/6}",
+          "output": "{2/3}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{2/3} − {1/12}",
+          "output": "{7/12}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {1/2} and {1/6}. Then account for the {1/12} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/12} + {1/12} = {2/3}; {2/3} − {1/6} = {1/2}.",
+      "wrong": "2/3",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q2",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.375 litres of juice. Another {1/8} litres is added. {1/16} litres is used. How much is left?",
+      "answer": "7/16",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "3/8",
+        "operations": [
+          [
+            "add",
+            "1/8"
+          ],
+          [
+            "subtract",
+            "1/16"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/8} + {1/8}",
+          "output": "{1/2}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{1/2} − {1/16}",
+          "output": "{7/16}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {3/8} and {1/8}. Then account for the {1/16} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/16} + {1/16} = {1/2}; {1/2} − {1/8} = {3/8}.",
+      "wrong": "1/2",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q3",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.3 kg of flour. Another {1/10} kg is added. {1/20} kg is used. How much is left?",
+      "answer": "7/20",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "3/10",
+        "operations": [
+          [
+            "add",
+            "1/10"
+          ],
+          [
+            "subtract",
+            "1/20"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/10} + {1/10}",
+          "output": "{2/5}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{2/5} − {1/20}",
+          "output": "{7/20}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {3/10} and {1/10}. Then account for the {1/20} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/20} + {1/20} = {2/5}; {2/5} − {1/10} = {3/10}.",
+      "wrong": "2/5",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q4",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.25 m of rope. Another {1/12} m is added. {1/24} m is used. How much is left?",
+      "answer": "7/24",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "1/4",
+        "operations": [
+          [
+            "add",
+            "1/12"
+          ],
+          [
+            "subtract",
+            "1/24"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{1/4} + {1/12}",
+          "output": "{1/3}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{1/3} − {1/24}",
+          "output": "{7/24}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {1/4} and {1/12}. Then account for the {1/24} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/24} + {1/24} = {1/3}; {1/3} − {1/12} = {1/4}.",
+      "wrong": "1/3",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q5",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {1/3} litres of water. Another {1/9} litres is added. {1/18} litres is used. How much is left?",
+      "answer": "7/18",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "1/3",
+        "operations": [
+          [
+            "add",
+            "1/9"
+          ],
+          [
+            "subtract",
+            "1/18"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{1/3} + {1/9}",
+          "output": "{4/9}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{4/9} − {1/18}",
+          "output": "{7/18}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {1/3} and {1/9}. Then account for the {1/18} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/18} + {1/18} = {4/9}; {4/9} − {1/9} = {1/3}.",
+      "wrong": "4/9",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q6",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.2 kg of rice. Another {1/15} kg is added. {1/30} kg is used. How much is left?",
+      "answer": "7/30",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "1/5",
+        "operations": [
+          [
+            "add",
+            "1/15"
+          ],
+          [
+            "subtract",
+            "1/30"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{1/5} + {1/15}",
+          "output": "{4/15}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{4/15} − {1/30}",
+          "output": "{7/30}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {1/5} and {1/15}. Then account for the {1/30} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/30} + {1/30} = {4/15}; {4/15} − {1/15} = {1/5}.",
+      "wrong": "4/15",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q7",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.375 m of ribbon. Another {1/8} m is added. {1/16} m is used. How much is left?",
+      "answer": "7/16",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "3/8",
+        "operations": [
+          [
+            "add",
+            "1/8"
+          ],
+          [
+            "subtract",
+            "1/16"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/8} + {1/8}",
+          "output": "{1/2}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{1/2} − {1/16}",
+          "output": "{7/16}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {3/8} and {1/8}. Then account for the {1/16} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/16} + {1/16} = {1/2}; {1/2} − {1/8} = {3/8}.",
+      "wrong": "1/2",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q8",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.3 litres of juice. Another {1/10} litres is added. {1/20} litres is used. How much is left?",
+      "answer": "7/20",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "3/10",
+        "operations": [
+          [
+            "add",
+            "1/10"
+          ],
+          [
+            "subtract",
+            "1/20"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/10} + {1/10}",
+          "output": "{2/5}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{2/5} − {1/20}",
+          "output": "{7/20}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {3/10} and {1/10}. Then account for the {1/20} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/20} + {1/20} = {2/5}; {2/5} − {1/10} = {3/10}.",
+      "wrong": "2/5",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q9",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.25 kg of flour. Another {1/12} kg is added. {1/24} kg is used. How much is left?",
+      "answer": "7/24",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "1/4",
+        "operations": [
+          [
+            "add",
+            "1/12"
+          ],
+          [
+            "subtract",
+            "1/24"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{1/4} + {1/12}",
+          "output": "{1/3}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{1/3} − {1/24}",
+          "output": "{7/24}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {1/4} and {1/12}. Then account for the {1/24} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/24} + {1/24} = {1/3}; {1/3} − {1/12} = {1/4}.",
+      "wrong": "1/3",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q10",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/14} m of rope. Another {1/14} m is added. {1/28} m is used. How much is left?",
+      "answer": "1/4",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "3/14",
+        "operations": [
+          [
+            "add",
+            "1/14"
+          ],
+          [
+            "subtract",
+            "1/28"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/14} + {1/14}",
+          "output": "{2/7}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{2/7} − {1/28}",
+          "output": "{1/4}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {3/14} and {1/14}. Then account for the {1/28} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {1/4} + {1/28} = {2/7}; {2/7} − {1/14} = {3/14}.",
+      "wrong": "2/7",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q11",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/11} litres of water. Another {1/11} litres is added. {1/22} litres is used. How much is left?",
+      "answer": "7/22",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "3/11",
+        "operations": [
+          [
+            "add",
+            "1/11"
+          ],
+          [
+            "subtract",
+            "1/22"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/11} + {1/11}",
+          "output": "{4/11}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{4/11} − {1/22}",
+          "output": "{7/22}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {3/11} and {1/11}. Then account for the {1/22} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/22} + {1/22} = {4/11}; {4/11} − {1/11} = {3/11}.",
+      "wrong": "4/11",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q12",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/17} kg of rice. Another {1/17} kg is added. {1/34} kg is used. How much is left?",
+      "answer": "7/34",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "3/17",
+        "operations": [
+          [
+            "add",
+            "1/17"
+          ],
+          [
+            "subtract",
+            "1/34"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/17} + {1/17}",
+          "output": "{4/17}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{4/17} − {1/34}",
+          "output": "{7/34}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {3/17} and {1/17}. Then account for the {1/34} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/34} + {1/34} = {4/17}; {4/17} − {1/17} = {3/17}.",
+      "wrong": "4/17",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q13",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.3 m of ribbon. Another {1/10} m is added. {1/20} m is used. How much is left?",
+      "answer": "7/20",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "3/10",
+        "operations": [
+          [
+            "add",
+            "1/10"
+          ],
+          [
+            "subtract",
+            "1/20"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/10} + {1/10}",
+          "output": "{2/5}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{2/5} − {1/20}",
+          "output": "{7/20}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {3/10} and {1/10}. Then account for the {1/20} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/20} + {1/20} = {2/5}; {2/5} − {1/10} = {3/10}.",
+      "wrong": "2/5",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q14",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 0.25 litres of juice. Another {1/12} litres is added. {1/24} litres is used. How much is left?",
+      "answer": "7/24",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "1/4",
+        "operations": [
+          [
+            "add",
+            "1/12"
+          ],
+          [
+            "subtract",
+            "1/24"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{1/4} + {1/12}",
+          "output": "{1/3}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{1/3} − {1/24}",
+          "output": "{7/24}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {1/4} and {1/12}. Then account for the {1/24} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/24} + {1/24} = {1/3}; {1/3} − {1/12} = {1/4}.",
+      "wrong": "1/3",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q15",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/14} kg of flour. Another {1/14} kg is added. {1/28} kg is used. How much is left?",
+      "answer": "1/4",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "3/14",
+        "operations": [
+          [
+            "add",
+            "1/14"
+          ],
+          [
+            "subtract",
+            "1/28"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/14} + {1/14}",
+          "output": "{2/7}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{2/7} − {1/28}",
+          "output": "{1/4}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {3/14} and {1/14}. Then account for the {1/28} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {1/4} + {1/28} = {2/7}; {2/7} − {1/14} = {3/14}.",
+      "wrong": "2/7",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q16",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/16} m of rope. Another {1/16} m is added. {1/32} m is used. How much is left?",
+      "answer": "7/32",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "3/16",
+        "operations": [
+          [
+            "add",
+            "1/16"
+          ],
+          [
+            "subtract",
+            "1/32"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/16} + {1/16}",
+          "output": "{1/4}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{1/4} − {1/32}",
+          "output": "{7/32}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {3/16} and {1/16}. Then account for the {1/32} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/32} + {1/32} = {1/4}; {1/4} − {1/16} = {3/16}.",
+      "wrong": "1/4",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q17",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/13} litres of water. Another {1/13} litres is added. {1/26} litres is used. How much is left?",
+      "answer": "7/26",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "3/13",
+        "operations": [
+          [
+            "add",
+            "1/13"
+          ],
+          [
+            "subtract",
+            "1/26"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/13} + {1/13}",
+          "output": "{4/13}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{4/13} − {1/26}",
+          "output": "{7/26}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {3/13} and {1/13}. Then account for the {1/26} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/26} + {1/26} = {4/13}; {4/13} − {1/13} = {3/13}.",
+      "wrong": "4/13",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C2-Q18",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 1,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {3/19} kg of rice. Another {1/19} kg is added. {1/38} kg is used. How much is left?",
+      "answer": "7/38",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "3/19",
+        "operations": [
+          [
+            "add",
+            "1/19"
+          ],
+          [
+            "subtract",
+            "1/38"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{3/19} + {1/19}",
+          "output": "{4/19}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{4/19} − {1/38}",
+          "output": "{7/38}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {3/19} and {1/19}. Then account for the {1/38} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used.",
+      "check": "Reverse the calculation chain: {7/38} + {1/38} = {4/19}; {4/19} − {1/19} = {3/19}.",
+      "wrong": "4/19",
+      "error_note": "This only combines the first two quantities. Also account for the amount used.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q1",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {13/6} m of ribbon. Another {1/6} m is added. {1/12} m is used. Another {1/3} m is added. How much is left?",
+      "answer": "31/12",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "13/6",
+        "operations": [
+          [
+            "add",
+            "1/6"
+          ],
+          [
+            "subtract",
+            "1/12"
+          ],
+          [
+            "add",
+            "1/3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{13/6} + {1/6}",
+          "output": "{7/3}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{7/3} − {1/12}",
+          "output": "{9/4}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{9/4} + {1/3}",
+          "output": "{31/12}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {13/6} and {1/6}. Then account for the {1/12} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator.",
+      "check": "Reverse the calculation chain: {31/12} − {1/3} = {9/4}; {9/4} + {1/12} = {7/3}; {7/3} − {1/6} = {13/6}.",
+      "wrong": "7/3",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q2",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 2.125 litres of juice. Another {1/8} litres is added. {1/16} litres is used. Another {1/3} litres is added. {1/4} litres is used. How much is left?",
+      "answer": "109/48",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "17/8",
+        "operations": [
+          [
+            "add",
+            "1/8"
+          ],
+          [
+            "subtract",
+            "1/16"
+          ],
+          [
+            "add",
+            "1/3"
+          ],
+          [
+            "subtract",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{17/8} + {1/8}",
+          "output": "{9/4}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{9/4} − {1/16}",
+          "output": "{35/16}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{35/16} + {1/3}",
+          "output": "{121/48}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the final amount used",
+          "input": "{121/48} − {1/4}",
+          "output": "{109/48}",
+          "note": "Subtract the final amount used.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {17/8} and {1/8}. Then account for the {1/16} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator Subtract the final amount used.",
+      "check": "Reverse the calculation chain: {109/48} + {1/4} = {121/48}; {121/48} − {1/3} = {35/16}; {35/16} + {1/16} = {9/4}; {9/4} − {1/8} = {17/8}.",
+      "wrong": "9/4",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q3",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 2.1 kg of flour. Another {1/10} kg is added. {1/20} kg is used. Another {1/3} kg is added. How much is left?",
+      "answer": "149/60",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "21/10",
+        "operations": [
+          [
+            "add",
+            "1/10"
+          ],
+          [
+            "subtract",
+            "1/20"
+          ],
+          [
+            "add",
+            "1/3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{21/10} + {1/10}",
+          "output": "{11/5}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{11/5} − {1/20}",
+          "output": "{43/20}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{43/20} + {1/3}",
+          "output": "{149/60}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {21/10} and {1/10}. Then account for the {1/20} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator.",
+      "check": "Reverse the calculation chain: {149/60} − {1/3} = {43/20}; {43/20} + {1/20} = {11/5}; {11/5} − {1/10} = {21/10}.",
+      "wrong": "11/5",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q4",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {25/12} m of rope. Another {1/12} m is added. {1/24} m is used. Another {1/3} m is added. {1/4} m is used. How much is left?",
+      "answer": "53/24",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "25/12",
+        "operations": [
+          [
+            "add",
+            "1/12"
+          ],
+          [
+            "subtract",
+            "1/24"
+          ],
+          [
+            "add",
+            "1/3"
+          ],
+          [
+            "subtract",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{25/12} + {1/12}",
+          "output": "{13/6}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{13/6} − {1/24}",
+          "output": "{17/8}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{17/8} + {1/3}",
+          "output": "{59/24}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the final amount used",
+          "input": "{59/24} − {1/4}",
+          "output": "{53/24}",
+          "note": "Subtract the final amount used.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {25/12} and {1/12}. Then account for the {1/24} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator Subtract the final amount used.",
+      "check": "Reverse the calculation chain: {53/24} + {1/4} = {59/24}; {59/24} − {1/3} = {17/8}; {17/8} + {1/24} = {13/6}; {13/6} − {1/12} = {25/12}.",
+      "wrong": "13/6",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q5",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {19/9} litres of water. Another {1/9} litres is added. {1/18} litres is used. Another {1/3} litres is added. How much is left?",
+      "answer": "5/2",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "19/9",
+        "operations": [
+          [
+            "add",
+            "1/9"
+          ],
+          [
+            "subtract",
+            "1/18"
+          ],
+          [
+            "add",
+            "1/3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{19/9} + {1/9}",
+          "output": "{20/9}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{20/9} − {1/18}",
+          "output": "{13/6}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{13/6} + {1/3}",
+          "output": "{5/2}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {19/9} and {1/9}. Then account for the {1/18} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator.",
+      "check": "Reverse the calculation chain: {5/2} − {1/3} = {13/6}; {13/6} + {1/18} = {20/9}; {20/9} − {1/9} = {19/9}.",
+      "wrong": "20/9",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q6",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {31/15} kg of rice. Another {1/15} kg is added. {1/30} kg is used. Another {1/3} kg is added. {1/4} kg is used. How much is left?",
+      "answer": "131/60",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "31/15",
+        "operations": [
+          [
+            "add",
+            "1/15"
+          ],
+          [
+            "subtract",
+            "1/30"
+          ],
+          [
+            "add",
+            "1/3"
+          ],
+          [
+            "subtract",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{31/15} + {1/15}",
+          "output": "{32/15}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{32/15} − {1/30}",
+          "output": "{21/10}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{21/10} + {1/3}",
+          "output": "{73/30}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the final amount used",
+          "input": "{73/30} − {1/4}",
+          "output": "{131/60}",
+          "note": "Subtract the final amount used.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {31/15} and {1/15}. Then account for the {1/30} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator Subtract the final amount used.",
+      "check": "Reverse the calculation chain: {131/60} + {1/4} = {73/30}; {73/30} − {1/3} = {21/10}; {21/10} + {1/30} = {32/15}; {32/15} − {1/15} = {31/15}.",
+      "wrong": "32/15",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q7",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 2.125 m of ribbon. Another {1/8} m is added. {1/16} m is used. Another {1/3} m is added. How much is left?",
+      "answer": "121/48",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "17/8",
+        "operations": [
+          [
+            "add",
+            "1/8"
+          ],
+          [
+            "subtract",
+            "1/16"
+          ],
+          [
+            "add",
+            "1/3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{17/8} + {1/8}",
+          "output": "{9/4}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{9/4} − {1/16}",
+          "output": "{35/16}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{35/16} + {1/3}",
+          "output": "{121/48}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {17/8} and {1/8}. Then account for the {1/16} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator.",
+      "check": "Reverse the calculation chain: {121/48} − {1/3} = {35/16}; {35/16} + {1/16} = {9/4}; {9/4} − {1/8} = {17/8}.",
+      "wrong": "9/4",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q8",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 2.1 litres of juice. Another {1/10} litres is added. {1/20} litres is used. Another {1/3} litres is added. {1/4} litres is used. How much is left?",
+      "answer": "67/30",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "21/10",
+        "operations": [
+          [
+            "add",
+            "1/10"
+          ],
+          [
+            "subtract",
+            "1/20"
+          ],
+          [
+            "add",
+            "1/3"
+          ],
+          [
+            "subtract",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{21/10} + {1/10}",
+          "output": "{11/5}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{11/5} − {1/20}",
+          "output": "{43/20}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{43/20} + {1/3}",
+          "output": "{149/60}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the final amount used",
+          "input": "{149/60} − {1/4}",
+          "output": "{67/30}",
+          "note": "Subtract the final amount used.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {21/10} and {1/10}. Then account for the {1/20} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator Subtract the final amount used.",
+      "check": "Reverse the calculation chain: {67/30} + {1/4} = {149/60}; {149/60} − {1/3} = {43/20}; {43/20} + {1/20} = {11/5}; {11/5} − {1/10} = {21/10}.",
+      "wrong": "11/5",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q9",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {25/12} kg of flour. Another {1/12} kg is added. {1/24} kg is used. Another {1/3} kg is added. How much is left?",
+      "answer": "59/24",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "25/12",
+        "operations": [
+          [
+            "add",
+            "1/12"
+          ],
+          [
+            "subtract",
+            "1/24"
+          ],
+          [
+            "add",
+            "1/3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{25/12} + {1/12}",
+          "output": "{13/6}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{13/6} − {1/24}",
+          "output": "{17/8}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{17/8} + {1/3}",
+          "output": "{59/24}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {25/12} and {1/12}. Then account for the {1/24} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator.",
+      "check": "Reverse the calculation chain: {59/24} − {1/3} = {17/8}; {17/8} + {1/24} = {13/6}; {13/6} − {1/12} = {25/12}.",
+      "wrong": "13/6",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q10",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {29/14} m of rope. Another {1/14} m is added. {1/28} m is used. Another {1/3} m is added. {1/4} m is used. How much is left?",
+      "answer": "46/21",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "29/14",
+        "operations": [
+          [
+            "add",
+            "1/14"
+          ],
+          [
+            "subtract",
+            "1/28"
+          ],
+          [
+            "add",
+            "1/3"
+          ],
+          [
+            "subtract",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{29/14} + {1/14}",
+          "output": "{15/7}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{15/7} − {1/28}",
+          "output": "{59/28}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{59/28} + {1/3}",
+          "output": "{205/84}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the final amount used",
+          "input": "{205/84} − {1/4}",
+          "output": "{46/21}",
+          "note": "Subtract the final amount used.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {29/14} and {1/14}. Then account for the {1/28} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator Subtract the final amount used.",
+      "check": "Reverse the calculation chain: {46/21} + {1/4} = {205/84}; {205/84} − {1/3} = {59/28}; {59/28} + {1/28} = {15/7}; {15/7} − {1/14} = {29/14}.",
+      "wrong": "15/7",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q11",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {23/11} litres of water. Another {1/11} litres is added. {1/22} litres is used. Another {1/3} litres is added. How much is left?",
+      "answer": "163/66",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "23/11",
+        "operations": [
+          [
+            "add",
+            "1/11"
+          ],
+          [
+            "subtract",
+            "1/22"
+          ],
+          [
+            "add",
+            "1/3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{23/11} + {1/11}",
+          "output": "{24/11}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{24/11} − {1/22}",
+          "output": "{47/22}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{47/22} + {1/3}",
+          "output": "{163/66}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {23/11} and {1/11}. Then account for the {1/22} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator.",
+      "check": "Reverse the calculation chain: {163/66} − {1/3} = {47/22}; {47/22} + {1/22} = {24/11}; {24/11} − {1/11} = {23/11}.",
+      "wrong": "24/11",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q12",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {35/17} kg of rice. Another {1/17} kg is added. {1/34} kg is used. Another {1/3} kg is added. {1/4} kg is used. How much is left?",
+      "answer": "443/204",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "35/17",
+        "operations": [
+          [
+            "add",
+            "1/17"
+          ],
+          [
+            "subtract",
+            "1/34"
+          ],
+          [
+            "add",
+            "1/3"
+          ],
+          [
+            "subtract",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{35/17} + {1/17}",
+          "output": "{36/17}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{36/17} − {1/34}",
+          "output": "{71/34}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{71/34} + {1/3}",
+          "output": "{247/102}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the final amount used",
+          "input": "{247/102} − {1/4}",
+          "output": "{443/204}",
+          "note": "Subtract the final amount used.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {35/17} and {1/17}. Then account for the {1/34} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator Subtract the final amount used.",
+      "check": "Reverse the calculation chain: {443/204} + {1/4} = {247/102}; {247/102} − {1/3} = {71/34}; {71/34} + {1/34} = {36/17}; {36/17} − {1/17} = {35/17}.",
+      "wrong": "36/17",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q13",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is 2.1 m of ribbon. Another {1/10} m is added. {1/20} m is used. Another {1/3} m is added. How much is left?",
+      "answer": "149/60",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "21/10",
+        "operations": [
+          [
+            "add",
+            "1/10"
+          ],
+          [
+            "subtract",
+            "1/20"
+          ],
+          [
+            "add",
+            "1/3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{21/10} + {1/10}",
+          "output": "{11/5}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{11/5} − {1/20}",
+          "output": "{43/20}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{43/20} + {1/3}",
+          "output": "{149/60}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {21/10} and {1/10}. Then account for the {1/20} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator.",
+      "check": "Reverse the calculation chain: {149/60} − {1/3} = {43/20}; {43/20} + {1/20} = {11/5}; {11/5} − {1/10} = {21/10}.",
+      "wrong": "11/5",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q14",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {25/12} litres of juice. Another {1/12} litres is added. {1/24} litres is used. Another {1/3} litres is added. {1/4} litres is used. How much is left?",
+      "answer": "53/24",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "25/12",
+        "operations": [
+          [
+            "add",
+            "1/12"
+          ],
+          [
+            "subtract",
+            "1/24"
+          ],
+          [
+            "add",
+            "1/3"
+          ],
+          [
+            "subtract",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{25/12} + {1/12}",
+          "output": "{13/6}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{13/6} − {1/24}",
+          "output": "{17/8}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{17/8} + {1/3}",
+          "output": "{59/24}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the final amount used",
+          "input": "{59/24} − {1/4}",
+          "output": "{53/24}",
+          "note": "Subtract the final amount used.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {25/12} and {1/12}. Then account for the {1/24} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator Subtract the final amount used.",
+      "check": "Reverse the calculation chain: {53/24} + {1/4} = {59/24}; {59/24} − {1/3} = {17/8}; {17/8} + {1/24} = {13/6}; {13/6} − {1/12} = {25/12}.",
+      "wrong": "13/6",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q15",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {29/14} kg of flour. Another {1/14} kg is added. {1/28} kg is used. Another {1/3} kg is added. How much is left?",
+      "answer": "205/84",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "29/14",
+        "operations": [
+          [
+            "add",
+            "1/14"
+          ],
+          [
+            "subtract",
+            "1/28"
+          ],
+          [
+            "add",
+            "1/3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{29/14} + {1/14}",
+          "output": "{15/7}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{15/7} − {1/28}",
+          "output": "{59/28}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{59/28} + {1/3}",
+          "output": "{205/84}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {29/14} and {1/14}. Then account for the {1/28} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator.",
+      "check": "Reverse the calculation chain: {205/84} − {1/3} = {59/28}; {59/28} + {1/28} = {15/7}; {15/7} − {1/14} = {29/14}.",
+      "wrong": "15/7",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q16",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {33/16} m of rope. Another {1/16} m is added. {1/32} m is used. Another {1/3} m is added. {1/4} m is used. How much is left?",
+      "answer": "209/96",
+      "answerUnit": "m",
+      "model": {
+        "kind": "application",
+        "start": "33/16",
+        "operations": [
+          [
+            "add",
+            "1/16"
+          ],
+          [
+            "subtract",
+            "1/32"
+          ],
+          [
+            "add",
+            "1/3"
+          ],
+          [
+            "subtract",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{33/16} + {1/16}",
+          "output": "{17/8}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{17/8} − {1/32}",
+          "output": "{67/32}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{67/32} + {1/3}",
+          "output": "{233/96}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "m"
+        },
+        {
+          "title": "Subtract the final amount used",
+          "input": "{233/96} − {1/4}",
+          "output": "{209/96}",
+          "note": "Subtract the final amount used.",
+          "outputUnit": "m"
+        }
+      ],
+      "hint": "Find a common denominator for {33/16} and {1/16}. Then account for the {1/32} m used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator Subtract the final amount used.",
+      "check": "Reverse the calculation chain: {209/96} + {1/4} = {233/96}; {233/96} − {1/3} = {67/32}; {67/32} + {1/32} = {17/8}; {17/8} − {1/16} = {33/16}.",
+      "wrong": "17/8",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q17",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {27/13} litres of water. Another {1/13} litres is added. {1/26} litres is used. Another {1/3} litres is added. How much is left?",
+      "answer": "191/78",
+      "answerUnit": "litres",
+      "model": {
+        "kind": "application",
+        "start": "27/13",
+        "operations": [
+          [
+            "add",
+            "1/13"
+          ],
+          [
+            "subtract",
+            "1/26"
+          ],
+          [
+            "add",
+            "1/3"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{27/13} + {1/13}",
+          "output": "{28/13}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{28/13} − {1/26}",
+          "output": "{55/26}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "litres"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{55/26} + {1/3}",
+          "output": "{191/78}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "litres"
+        }
+      ],
+      "hint": "Find a common denominator for {27/13} and {1/13}. Then account for the {1/26} litres used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator.",
+      "check": "Reverse the calculation chain: {191/78} − {1/3} = {55/26}; {55/26} + {1/26} = {28/13}; {28/13} − {1/13} = {27/13}.",
+      "wrong": "28/13",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    },
+    {
+      "id": "maths:M15-WEB-PS-C3-Q18",
+      "subject": "maths",
+      "topic": "M15",
+      "type": "problem",
+      "level": 2,
+      "method": "calculation",
+      "prose": true,
+      "q": "There is {39/19} kg of rice. Another {1/19} kg is added. {1/38} kg is used. Another {1/3} kg is added. {1/4} kg is used. How much is left?",
+      "answer": "493/228",
+      "answerUnit": "kg",
+      "model": {
+        "kind": "application",
+        "start": "39/19",
+        "operations": [
+          [
+            "add",
+            "1/19"
+          ],
+          [
+            "subtract",
+            "1/38"
+          ],
+          [
+            "add",
+            "1/3"
+          ],
+          [
+            "subtract",
+            "1/4"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Combine the first two quantities using equal-sized fraction parts",
+          "input": "{39/19} + {1/19}",
+          "output": "{40/19}",
+          "note": "Combine the first two quantities using equal-sized fraction parts.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the amount used",
+          "input": "{40/19} − {1/38}",
+          "output": "{79/38}",
+          "note": "Subtract the amount used.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Add the further amount using a common denominator",
+          "input": "{79/38} + {1/3}",
+          "output": "{275/114}",
+          "note": "Add the further amount using a common denominator.",
+          "outputUnit": "kg"
+        },
+        {
+          "title": "Subtract the final amount used",
+          "input": "{275/114} − {1/4}",
+          "output": "{493/228}",
+          "note": "Subtract the final amount used.",
+          "outputUnit": "kg"
+        }
+      ],
+      "hint": "Find a common denominator for {39/19} and {1/19}. Then account for the {1/38} kg used.",
+      "method_note": "Combine the first two quantities using equal-sized fraction parts Subtract the amount used Add the further amount using a common denominator Subtract the final amount used.",
+      "check": "Reverse the calculation chain: {493/228} + {1/4} = {275/114}; {275/114} − {1/3} = {79/38}; {79/38} + {1/38} = {40/19}; {40/19} − {1/19} = {39/19}.",
+      "wrong": "40/19",
+      "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
+      "source": "Original website application-stage content, 12 October 2026",
+      "questionPrefix": "Solve the problem"
+    }
+  ]
+}

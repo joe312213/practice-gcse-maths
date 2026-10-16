@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "subject": "maths",
+  "topic": "M03",
+  "title": "Multiplication and division problems",
+  "problemSolvingTopic": true,
+  "method": "calculation",
+  "revision": "2026-10-13",
+  "rows": [
+    "Choose the calculation",
+    "Use a written method",
+    "Check in context",
+    "Answer with units"
+  ],
+  "provenance": {
+    "spec": "content/specs/M03.md",
+    "source": "M03 saved question deck, accepted Markdown and answers HTML; reviewed spot_errors.json; new website extensions. Historical references are retained in question IDs."
+  },
+  "questionPrefix": "Solve the problem",
+  "errorRevision": 2
+}

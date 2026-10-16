@@ -1,6 +1,11 @@
 /** Authored bank order defines distinct full pages within each topic, stage and level. */
 export const TOPIC_PAGE_SIZES = { plain: 12, scaffolded: 4, errors: 4, problem: 6 };
 
+/** Historical records can resolve retired IDs; retired definitions never enter new draws. */
+export function findQuestion(bank, id) {
+  return bank.questions.find((q) => q.id === id) ?? bank.retiredQuestions?.find((q) => q.id === id);
+}
+
 export function topicPages(bank, mode, level) {
   const size = TOPIC_PAGE_SIZES[mode];
   if (!size) return [];
@@ -39,4 +44,44 @@ export function assessmentPage(bank, random = Math.random) {
     }
     return candidates.slice(0, 2);
   });
+}
+
+/** Replace retired page content on load. The user prioritises the current UI over old attempt fidelity.
+ * Recorded answer history/tracks stay intact; current question pages are never reset.
+ */
+export function discardRetiredAttempts(data, banks) {
+  const retired = new Set(banks.flatMap((bank) => (bank.retiredQuestions ?? []).map((q) => q.id)));
+  const outdated = (attempt) => attempt?.items.some((item) => retired.has(item.id));
+  let changed = false;
+  function resetSet(run) {
+    if (!run?.attempts.some(outdated)) return;
+    run.attempts = run.attempts.map((attempt) => (outdated(attempt) ? null : attempt));
+    if (run.finished === 'complete') run.finished = null;
+    changed = true;
+  }
+  for (const profile of data.profiles) {
+    for (const topic of Object.values(profile.topics)) {
+      for (const [mode, attempt] of Object.entries(topic.pages ?? {}))
+        if (outdated(attempt)) {
+          delete topic.pages[mode];
+          changed = true;
+        }
+      for (const levels of Object.values(topic.practicePages ?? {}))
+        for (const group of Object.values(levels)) {
+          if (!group.attempts.some(outdated)) continue;
+          group.attempts = group.attempts.map((attempt) => (outdated(attempt) ? null : attempt));
+          changed = true;
+        }
+      for (const visits of Object.values(topic.pageHistory ?? {}))
+        for (const direction of ['previous', 'next']) {
+          if (!visits[direction].some(outdated)) continue;
+          visits[direction] = visits[direction].filter((attempt) => !outdated(attempt));
+          changed = true;
+        }
+    }
+    resetSet(profile.practiceSet);
+    for (const recommendation of profile.revision?.recommendations ?? [])
+      resetSet(recommendation.savedAttempt);
+  }
+  return changed;
 }

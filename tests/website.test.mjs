@@ -1,3 +1,5 @@
+import { guidanceFor } from "../website/src/lib/content/topic-bank.mjs";
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /**
  * Purpose: Verify arithmetic marking, adaptive progression, profiles and demo playback without a browser.
  *
@@ -12,7 +14,6 @@
  */
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
 import {
   scoringWindow,
   weights,
@@ -226,11 +227,7 @@ test("local profiles normalise names, suggest typos, remain isolated and preserv
   );
 });
 test("Three full pages per stage/level preserve authored questions; all answers parse", async () => {
-  const bank = JSON.parse(
-    await readFile(
-      new URL("../website/static/data/equations.json", import.meta.url),
-    ),
-  );
+  const bank = await readTopicBank("equations");
   assert.equal(bank.questions.length, 243);
   assert.equal(new Set(bank.questions.map((q) => q.id)).size, 243);
   for (let l = 0; l < 3; l++)
@@ -238,7 +235,10 @@ test("Three full pages per stage/level preserve authored questions; all answers 
       bank.questions.filter((q) => q.type === "plain" && q.level === l).length,
       36,
     );
-  for (const q of bank.questions.filter((q) => q.type !== "problem")) {
+  for (const q of [
+    ...bank.questions.filter((q) => !q.investigation),
+    ...bank.retiredQuestions,
+  ].filter((q) => q.type !== "problem")) {
     assert.ok(q.balance.length >= 3);
     assert.equal(markAnswer(q.answer, q.answer).correct, true);
     if (q.type === "errors") assert.ok(q.correct_balance && q.correction);
@@ -265,11 +265,7 @@ test("assisted answers cannot initiate an early promotion from a previously high
   assert.equal(t.level, 0);
 });
 test("error metadata identifies actual mistakes, not a valid alternative method", async () => {
-  const { questions } = JSON.parse(
-    await readFile(
-      new URL("../website/static/data/equations.json", import.meta.url),
-    ),
-  );
+  const { retiredQuestions: questions } = await readTopicBank("equations");
   const q = questions.find((q) => q.id === "maths:M10-SE-C2-Q3");
   assert.equal(q.errors[0].row, 2); // dividing by 5 on row 2 is a valid first step
   assert.equal(
@@ -288,11 +284,7 @@ test("error metadata identifies actual mistakes, not a valid alternative method"
 import { markErrors } from "../website/src/lib/domain/errors.mjs";
 import { createPlayer } from "../website/src/lib/application/player.mjs";
 test("row, reason, corrected step and final answer all contribute to error marking", async () => {
-  const { questions } = JSON.parse(
-    await readFile(
-      new URL("../website/static/data/equations.json", import.meta.url),
-    ),
-  );
+  const { retiredQuestions: questions } = await readTopicBank("equations");
   for (const q of questions.filter((q) => q.type === "errors")) {
     assert.equal(markErrors(q, q.errors, q.answer).correct, true, q.id);
     assert.equal(markErrors(q, q.errors, q.wrong).correct, false, q.id);
@@ -373,14 +365,10 @@ test("playback runs to end, pauses/resumes, restarts and cancels disposed timers
   assert.equal(last, saved);
 });
 test("all demo/recap rows have authored reasons; Start guidance has fewer steps", async () => {
-  const bank = JSON.parse(
-    await readFile(
-      new URL("../website/static/data/equations.json", import.meta.url),
-    ),
-  );
+  const bank = await readTopicBank("equations");
   assert.ok(
-    bank.teaching.guidance[0].steps.length <
-      bank.teaching.guidance[2].steps.length,
+    guidanceFor(bank.teaching, 0).steps.length <
+      guidanceFor(bank.teaching, 2).steps.length,
   );
   for (let i = 0; i < 3; i++) {
     const q = bank.questions.find((q) => q.type === "demo" && q.level === i);
@@ -464,4 +452,35 @@ test("fixed activity scoring windows ignore individual page length", () => {
     assert.equal(scoringWindow("problem", size), 6);
     assert.equal(scoringWindow("assessment", size), 6);
   }
+});
+
+test("bounded playback animates a logical step, pauses there, and resumes ordinary play", () => {
+  let pending, last;
+  const player = createPlayer({
+    length: 8,
+    onFrame: (state) => (last = state),
+    schedule: (fn) => {
+      pending = fn;
+      return 1;
+    },
+    cancel: () => {
+      pending = null;
+    },
+  });
+  player.play({ from: 3, to: 5 });
+  assert.deepEqual(last, { step: 3, playing: true });
+  pending();
+  assert.equal(last.step, 4);
+  player.pause();
+  assert.equal(pending, null);
+  player.play();
+  const tick = pending;
+  pending = null;
+  tick();
+  assert.deepEqual(last, { step: 5, playing: false });
+  assert.equal(pending, null);
+  player.play();
+  pending();
+  assert.equal(last.step, 6);
+  player.dispose();
 });

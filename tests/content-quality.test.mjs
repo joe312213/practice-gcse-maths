@@ -1,7 +1,8 @@
+import { guidanceFor } from "../website/src/lib/content/topic-bank.mjs";
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /** Review regressions: derive answers from prompts and check every displayed correct step. */
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
 const names = [
   "ratios",
   "fractions",
@@ -15,14 +16,15 @@ const names = [
   "equations",
 ];
 const banks = await Promise.all(
-  names.map(async (name) =>
-    JSON.parse(
-      await readFile(
-        new URL(`../website/static/data/${name}.json`, import.meta.url),
-      ),
-    ),
-  ),
+  names.map(async (name) => await readTopicBank(`${name}`)),
 );
+// These regressions inspect the original model/step schema, including definitions kept
+// for saved attempts. Live investigations have their own exact-arithmetic/trace audit.
+for (const bank of banks)
+  bank.questions = [
+    ...bank.questions.filter((q) => !q.investigation),
+    ...bank.retiredQuestions,
+  ];
 const items = (b) => [
   ...b.questions,
   ...(b.recap ?? []),
@@ -432,7 +434,7 @@ test("ratio challenge mix introduces two-step Build links and makes two thirds o
     bank.problemTeaching.examples[2],
   ]) {
     assert.ok(q.model.operations.length > 2);
-    assert.match(bank.teaching.guidance[2].aim, /further calculation/);
+    assert.match(guidanceFor(bank.teaching, 2).aim, /further calculation/);
   }
   assert.equal(
     bank.questions.find((q) => q.type === "demo" && q.level === 2).answer,

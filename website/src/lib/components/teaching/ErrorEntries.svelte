@@ -11,6 +11,7 @@
   Libs: none.
 -->
 <script>
+  import WrappingSelect from '../ui/WrappingSelect.svelte';
   let { question, reasons, entries, disabled = false, onchange } = $props();
   /**
    * Replace one error entry field while retaining the other row/reason/correction values.
@@ -64,32 +65,25 @@
           >{/each}
       </select>
       <label for={`error-reason-${index}`}>Reason</label>
-      <select
-        class="choice-field"
+      <WrappingSelect
         id={`error-reason-${index}`}
         data-error-reason
-        required
+        options={reasons.map((reason) => ({ id: reason.id, text: reason.label }))}
+        placeholder="Choose a reason"
         {disabled}
         value={entry.reason ?? ''}
-        onchange={(event) => update(index, 'reason', event.currentTarget.value)}
-      >
-        <option value="">Choose a reason</option>{#each reasons as reason}<option value={reason.id}
-            >{reason.label}</option
-          >{/each}
-      </select>
+        onchange={(value) => update(index, 'reason', value)}
+      />
       <label for={`error-step-${index}`}>Corrected step</label>
-      <select
-        class="choice-field"
+      <WrappingSelect
         id={`error-step-${index}`}
         data-error-step
-        required
+        options={question.stepOptions}
+        placeholder="Choose the corrected step"
         {disabled}
         value={entry.correction ?? ''}
-        onchange={(event) => update(index, 'correction', event.currentTarget.value)}
-      >
-        <option value="">Choose the corrected step</option
-        >{#each question.stepOptions as step}<option value={step.id}>{step.text}</option>{/each}
-      </select>
+        onchange={(value) => update(index, 'correction', value)}
+      />
     </fieldset>
   {/each}
 </div>

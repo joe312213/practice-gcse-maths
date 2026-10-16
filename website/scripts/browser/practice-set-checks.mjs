@@ -1,3 +1,4 @@
+import { readTopicBank } from '../read-topic-bank.mjs';
 /**
  * Purpose: Exercise practice-set creation, codes, timers and page navigation in an isolated browser profile.
  *
@@ -11,7 +12,6 @@
  * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), @axe-core/playwright (accessibility checks).
  */
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
 import AxeBuilder from '@axe-core/playwright';
 import { createTestContext, artifacts } from './support.mjs';
 import { decodePracticeSet, encodePracticeSet } from '../../src/lib/domain/practice-code.mjs';
@@ -25,9 +25,7 @@ import { decodePracticeSet, encodePracticeSet } from '../../src/lib/domain/pract
  */
 export async function checkPracticeSets(browser, base) {
   const banks = await Promise.all(
-    ['equations', 'multiplication', 'division'].map(async (name) =>
-      JSON.parse(await readFile(new URL(`../../static/data/${name}.json`, import.meta.url))),
-    ),
+    ['equations', 'multiplication', 'division'].map(async (name) => await readTopicBank(`${name}`)),
   );
   const questions = banks.flatMap((bank) => bank.questions);
   const context = await createTestContext(browser, { viewport: { width: 1100, height: 1000 } });

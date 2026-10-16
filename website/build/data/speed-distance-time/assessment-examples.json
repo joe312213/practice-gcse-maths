@@ -1,0 +1,354 @@
+[
+  {
+    "id": "maths:M12-WEB-ASSESSMENT-C1-Q1",
+    "subject": "maths",
+    "topic": "M12",
+    "type": "assessment",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "A train travels 190.75 km in 1.75 hours. Find the average speed.",
+    "answer": "109",
+    "answerUnit": "km/h",
+    "model": {
+      "kind": "application",
+      "start": "763/4",
+      "operations": [
+        [
+          "divide",
+          "7/4"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Divide distance by time in hours",
+        "input": "190.75 ÷ 1.75",
+        "output": "109",
+        "note": "Divide distance by time in hours.",
+        "outputUnit": "km/h"
+      }
+    ],
+    "hint": "Write the units beside the known distance, speed and time before choosing the formula.",
+    "method_note": "Divide distance by time in hours.",
+    "check": "Reverse the calculation chain: 109 × 1.75 = 190.75.",
+    "wrong": "5341/16",
+    "error_note": "Check the units and whether this question asks for distance, speed or time. Minutes and hours use a factor of 60.",
+    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "calculator": true,
+    "diagram": {
+      "kind": "journey",
+      "legs": [
+        "190.75 km",
+        "1.75 hours"
+      ],
+      "stop": 0
+    },
+    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time.",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M12-WEB-ASSESSMENT-C1-Q2",
+    "subject": "maths",
+    "topic": "M12",
+    "type": "assessment",
+    "level": 0,
+    "method": "calculation",
+    "prose": true,
+    "q": "A delivery van travels at 49 km/h for 2.25 hours. Find the distance.",
+    "answer": "441/4",
+    "answerUnit": "km",
+    "model": {
+      "kind": "application",
+      "start": "49",
+      "operations": [
+        [
+          "multiply",
+          "9/4"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Multiply speed by time in hours",
+        "input": "49 × 2.25",
+        "output": "110.25",
+        "note": "Multiply speed by time in hours.",
+        "outputUnit": "km"
+      }
+    ],
+    "hint": "Write the units beside the known distance, speed and time before choosing the formula.",
+    "method_note": "Multiply speed by time in hours.",
+    "check": "Reverse the calculation chain: 110.25 ÷ 2.25 = 49.",
+    "wrong": "196/9",
+    "error_note": "Check the units and whether this question asks for distance, speed or time. Minutes and hours use a factor of 60.",
+    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "calculator": true,
+    "diagram": {
+      "kind": "journey",
+      "legs": [
+        "110.25 km",
+        "2.25 hours"
+      ],
+      "stop": 0
+    },
+    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time.",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M12-WEB-ASSESSMENT-C2-Q1",
+    "subject": "maths",
+    "topic": "M12",
+    "type": "assessment",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "A train travels 190.75 km in 105 minutes. Find the speed in km/h.",
+    "answer": "109",
+    "answerUnit": "km/h",
+    "model": {
+      "kind": "application",
+      "start": "763/4",
+      "operations": [
+        [
+          "divide",
+          "105"
+        ],
+        [
+          "multiply",
+          "60"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Find the distance travelled per minute",
+        "input": "190.75 ÷ 105",
+        "output": "{109/60}",
+        "note": "Find the distance travelled per minute.",
+        "outputUnit": "km/min"
+      },
+      {
+        "title": "Convert kilometres per minute to kilometres per hour",
+        "input": "{109/60} × 60",
+        "output": "109",
+        "note": "Convert kilometres per minute to kilometres per hour.",
+        "outputUnit": "km/h"
+      }
+    ],
+    "hint": "105 minutes is not 1.05 hours. There are 60 minutes in one hour.",
+    "method_note": "Find the distance travelled per minute Convert kilometres per minute to kilometres per hour.",
+    "check": "Reverse the calculation chain: 109 ÷ 60 = {109/60}; {109/60} × 105 = 190.75.",
+    "wrong": "80115/4",
+    "error_note": "Check the units and whether this question asks for distance, speed or time. Minutes and hours use a factor of 60.",
+    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "calculator": true,
+    "diagram": {
+      "kind": "journey",
+      "legs": [
+        "190.75 km",
+        "1.75 hours"
+      ],
+      "stop": 0
+    },
+    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time.",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M12-WEB-ASSESSMENT-C2-Q2",
+    "subject": "maths",
+    "topic": "M12",
+    "type": "assessment",
+    "level": 1,
+    "method": "calculation",
+    "prose": true,
+    "q": "A delivery van travels at 49 km/h for 135 minutes. Find the distance.",
+    "answer": "441/4",
+    "answerUnit": "km",
+    "model": {
+      "kind": "application",
+      "start": "135",
+      "operations": [
+        [
+          "divide",
+          "60"
+        ],
+        [
+          "multiply",
+          "49"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Convert minutes into hours",
+        "input": "135 ÷ 60",
+        "output": "2.25",
+        "note": "Convert minutes into hours.",
+        "outputUnit": "h"
+      },
+      {
+        "title": "Multiply speed by time in hours",
+        "input": "2.25 × 49",
+        "output": "110.25",
+        "note": "Multiply speed by time in hours.",
+        "outputUnit": "km"
+      }
+    ],
+    "hint": "135 minutes is not 1.35 hours. There are 60 minutes in one hour.",
+    "method_note": "Convert minutes into hours Multiply speed by time in hours.",
+    "check": "Reverse the calculation chain: 110.25 ÷ 49 = 2.25; 2.25 × 60 = 135.",
+    "wrong": "8100",
+    "error_note": "Check the units and whether this question asks for distance, speed or time. Minutes and hours use a factor of 60.",
+    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "calculator": true,
+    "diagram": {
+      "kind": "journey",
+      "legs": [
+        "110.25 km",
+        "2.25 hours"
+      ],
+      "stop": 0
+    },
+    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time.",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M12-WEB-ASSESSMENT-C3-Q1",
+    "subject": "maths",
+    "topic": "M12",
+    "type": "assessment",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "A train travels 79 km in 1 hour, then 58 km in 0.5 hours. There is also a 0.25-hour stop. Include the stop. Find the average speed for the whole journey. Give your answer to 2 decimal places.",
+    "answer": "78.29",
+    "answerUnit": "km/h",
+    "model": {
+      "kind": "application",
+      "start": "79",
+      "operations": [
+        [
+          "add",
+          "58"
+        ],
+        [
+          "divide",
+          "7/4"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Find total elapsed time",
+        "input": "1 + 0.5 + 0.25",
+        "output": "1.75",
+        "note": "Include all travel time and any stop.",
+        "outputUnit": "h"
+      },
+      {
+        "title": "Find the total distance",
+        "input": "79 + 58",
+        "output": "137",
+        "note": "Find the total distance.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Divide by the total elapsed hours",
+        "input": "137 ÷ 1.75",
+        "output": "78.29",
+        "note": "Divide by total time in hours, then round the final result to 2 decimal places.",
+        "approximate": true,
+        "outputUnit": "km/h"
+      }
+    ],
+    "hint": "Use total distance and total elapsed time; do not average the two speeds.",
+    "method_note": "Find the total distance Divide by the total elapsed hours.",
+    "check": "Total distance is 137 km; total elapsed time is 105/60 hours. Multiply the final speed by that time to recover approximately 137 km.",
+    "wrong": "195/2",
+    "error_note": "This averages the two speeds without accounting for their different times or any stop.",
+    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "calculator": true,
+    "roundTo": 2,
+    "operationCount": 4,
+    "diagram": {
+      "kind": "journey",
+      "legs": [
+        "79 km / 1 h",
+        "58 km / 0.5 h"
+      ],
+      "stop": 15
+    },
+    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time.",
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "id": "maths:M12-WEB-ASSESSMENT-C3-Q2",
+    "subject": "maths",
+    "topic": "M12",
+    "type": "assessment",
+    "level": 2,
+    "method": "calculation",
+    "prose": true,
+    "q": "A delivery van travels 45 km in 1 hour, then 37 km in 0.5 hours. Find the average speed for the whole journey. Give your answer to 2 decimal places.",
+    "answer": "54.67",
+    "answerUnit": "km/h",
+    "model": {
+      "kind": "application",
+      "start": "45",
+      "operations": [
+        [
+          "add",
+          "37"
+        ],
+        [
+          "divide",
+          "3/2"
+        ]
+      ]
+    },
+    "steps": [
+      {
+        "title": "Find total elapsed time",
+        "input": "1 + 0.5",
+        "output": "1.5",
+        "note": "Include all travel time and any stop.",
+        "outputUnit": "h"
+      },
+      {
+        "title": "Find the total distance",
+        "input": "45 + 37",
+        "output": "82",
+        "note": "Find the total distance.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Divide by the total elapsed hours",
+        "input": "82 ÷ 1.5",
+        "output": "54.67",
+        "note": "Divide by total time in hours, then round the final result to 2 decimal places.",
+        "approximate": true,
+        "outputUnit": "km/h"
+      }
+    ],
+    "hint": "Use total distance and total elapsed time; do not average the two speeds.",
+    "method_note": "Find the total distance Divide by the total elapsed hours.",
+    "check": "Total distance is 82 km; total elapsed time is 90/60 hours. Multiply the final speed by that time to recover approximately 82 km.",
+    "wrong": "119/2",
+    "error_note": "This averages the two speeds without accounting for their different times or any stop.",
+    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "calculator": true,
+    "roundTo": 2,
+    "operationCount": 3,
+    "diagram": {
+      "kind": "journey",
+      "legs": [
+        "45 km / 1 h",
+        "37 km / 0.5 h"
+      ],
+      "stop": 0
+    },
+    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time.",
+    "questionPrefix": "Solve the problem"
+  }
+]

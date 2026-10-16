@@ -12,6 +12,7 @@ export function combinedBank(banks) {
     method: 'calculation',
     revision: banks.map((b) => b.revision).join('|'),
     questions: banks.flatMap((b) => b.questions),
+    retiredQuestions: banks.flatMap((b) => b.retiredQuestions ?? []),
     problemTeaching:
       banks.find((b) => b.topic === 'M03')?.problemTeaching ?? banks[0].problemTeaching,
   };

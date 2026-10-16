@@ -11,6 +11,7 @@
   Libs: Svelte state and derivation.
 -->
 <script>
+  import { guidanceFor } from '#lib/content/topic-bank.mjs';
   import { LEVELS } from '#lib/domain/engine.mjs';
   import { arithmeticFrames } from '#lib/application/arithmetic-demo.mjs';
   import ArithmeticWorking from './ArithmeticWorking.svelte';
@@ -36,7 +37,7 @@
   {#key question}
     <ShowDemo {frames} steps={4} {speed} {onspeed}>
       {#snippet introduction(step)}
-        <Guidance guidance={bank.teaching.guidance[initialLevel]} activeStep={step} />
+        <Guidance guidance={guidanceFor(bank.teaching, initialLevel)} activeStep={step} />
       {/snippet}
       {#snippet heading()}<p class="selected-equation">{question.q}</p>{/snippet}
       {#snippet children(frame, font)}<ArithmeticWorking {font} {question} {frame} />{/snippet}

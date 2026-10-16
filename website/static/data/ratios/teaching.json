@@ -1,0 +1,34 @@
+{
+  "guidance": {
+    "default": {
+      "aim": "Match the known amount to equal ratio parts.",
+      "steps": [
+        "Read the names in ratio order. Decide whether the known quantity is a total, one amount or a difference.",
+        "Add, select or subtract the ratio parts to match that known quantity.",
+        "Divide the known quantity by its matching parts to find one part.",
+        "Multiply one part by the parts requested; check the ratio and units."
+      ]
+    },
+    "byLevel": {
+      "build": {
+        "aim": "Match the known amount to equal ratio parts.",
+        "steps": [
+          "Read the names in ratio order. Decide whether the known quantity is a total, one amount or a difference.",
+          "Add, select or subtract the ratio parts to match that known quantity.",
+          "Divide the known quantity by its matching parts to find one part.",
+          "Multiply one part by the parts requested. In the occasional linked problem, complete the final calculation too; check the ratio and units."
+        ]
+      },
+      "confidence": {
+        "aim": "Connect ratio reasoning to a further calculation, keeping track of quantities and units.",
+        "steps": [
+          "Identify what the given amount represents: a named quantity, total or difference.",
+          "Find one ratio part, then the quantity needed for the next calculation.",
+          "Use that quantity to find a cost, scale a recipe, adjust an amount, convert units or find a simple percentage.",
+          "Check the original ratio, then check the final quantity and units."
+        ]
+      }
+    }
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

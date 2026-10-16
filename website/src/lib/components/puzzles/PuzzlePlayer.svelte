@@ -75,8 +75,8 @@
     {source}
     bind:this={control}
     onAssist={() => (assisted = true)}
-    onChange={() => {
-      result = null;
+    onChange={(checked) => {
+      result = checked;
       message = '';
     }}
     onMessage={(text) => (message = text)}

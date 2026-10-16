@@ -1,0 +1,2534 @@
+[
+  {
+    "q": "Find 12.5% of £160.",
+    "prose": true,
+    "answer": "20",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "160",
+      "rate": "25/2",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "160 ÷ 100",
+        "output": "1.6",
+        "note": "The whole amount, £160, represents 100%.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "1.6 × 12.5",
+        "output": "20",
+        "note": "Multiply the value of 1% by 12.5.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "12.5"
+    },
+    "hint": "160 is the whole amount. What is 10% of it, and how could you use that to find 12.5%?",
+    "method_note": "The whole amount, £160, represents 100%. Multiply the value of 1% by 12.5.",
+    "check": "Reverse check: 20 ÷ 12.5 × 100 = 160, the original whole.",
+    "wrong": "147.5",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "160 − 12.5",
+        "output": "147.5",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Find one percent of the amount, then scale it to the required percentage.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Find one percent of the amount, then scale it to the required percentage."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 8% of 290 litres.",
+    "prose": true,
+    "answer": "23.2",
+    "answerUnit": "litres",
+    "model": {
+      "kind": "percentages",
+      "original": "290",
+      "rate": "8",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "290 ÷ 100",
+        "output": "2.9",
+        "note": "The whole amount, 290 litres, represents 100%.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "2.9 × 8",
+        "output": "23.2",
+        "note": "Multiply the value of 1% by 8.",
+        "outputUnit": "litres"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "8"
+    },
+    "hint": "290 is the whole amount. What is 10% of it, and how could you use that to find 8%?",
+    "method_note": "The whole amount, 290 litres, represents 100%. Multiply the value of 1% by 8.",
+    "check": "Reverse check: 23.2 ÷ 8 × 100 = 290, the original whole.",
+    "wrong": "29",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q2",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "290 ÷ 10",
+        "output": "29",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Scale the value of ten percent to the percentage requested.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Scale the value of ten percent to the percentage requested."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 30% of 680 litres.",
+    "prose": true,
+    "answer": "204",
+    "answerUnit": "litres",
+    "model": {
+      "kind": "percentages",
+      "original": "680",
+      "rate": "30",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "680 ÷ 100",
+        "output": "6.8",
+        "note": "The whole amount, 680 litres, represents 100%.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "6.8 × 30",
+        "output": "204",
+        "note": "Multiply the value of 1% by 30.",
+        "outputUnit": "litres"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "30"
+    },
+    "hint": "680 is the whole amount. What is 10% of it, and how could you use that to find 30%?",
+    "method_note": "The whole amount, 680 litres, represents 100%. Multiply the value of 1% by 30.",
+    "check": "Reverse check: 204 ÷ 30 × 100 = 680, the original whole.",
+    "wrong": "68/3",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q3",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "680 ÷ 30",
+        "output": "68/3",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the original amount by one hundred, then multiply by the percentage.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Divide the original amount by one hundred, then multiply by the percentage."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 45% of 360 km.",
+    "prose": true,
+    "answer": "162",
+    "answerUnit": "km",
+    "model": {
+      "kind": "percentages",
+      "original": "360",
+      "rate": "45",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "360 ÷ 100",
+        "output": "3.6",
+        "note": "The whole amount, 360 km, represents 100%.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "3.6 × 45",
+        "output": "162",
+        "note": "Multiply the value of 1% by 45.",
+        "outputUnit": "km"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "45"
+    },
+    "hint": "360 is the whole amount. What is 10% of it, and how could you use that to find 45%?",
+    "method_note": "The whole amount, 360 km, represents 100%. Multiply the value of 1% by 45.",
+    "check": "Reverse check: 162 ÷ 45 × 100 = 360, the original whole.",
+    "wrong": "315",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q4",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "360 − 45",
+        "output": "315",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Find one percent of the amount, then scale it to the required percentage.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Find one percent of the amount, then scale it to the required percentage."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 5% of £220.",
+    "prose": true,
+    "answer": "11",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "220",
+      "rate": "5",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "220 ÷ 100",
+        "output": "2.2",
+        "note": "The whole amount, £220, represents 100%.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "2.2 × 5",
+        "output": "11",
+        "note": "Multiply the value of 1% by 5.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "5"
+    },
+    "hint": "220 is the whole amount. What is 10% of it, and how could you use that to find 5%?",
+    "method_note": "The whole amount, £220, represents 100%. Multiply the value of 1% by 5.",
+    "check": "Reverse check: 11 ÷ 5 × 100 = 220, the original whole.",
+    "wrong": "22",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q5",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "220 ÷ 10",
+        "output": "22",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Scale the value of ten percent to the percentage requested.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Scale the value of ten percent to the percentage requested."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 18% of 490 g.",
+    "prose": true,
+    "answer": "88.2",
+    "answerUnit": "g",
+    "model": {
+      "kind": "percentages",
+      "original": "490",
+      "rate": "18",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "490 ÷ 100",
+        "output": "4.9",
+        "note": "The whole amount, 490 g, represents 100%.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "4.9 × 18",
+        "output": "88.2",
+        "note": "Multiply the value of 1% by 18.",
+        "outputUnit": "g"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "18"
+    },
+    "hint": "490 is the whole amount. What is 10% of it, and how could you use that to find 18%?",
+    "method_note": "The whole amount, 490 g, represents 100%. Multiply the value of 1% by 18.",
+    "check": "Reverse check: 88.2 ÷ 18 × 100 = 490, the original whole.",
+    "wrong": "245/9",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q6",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "490 ÷ 18",
+        "output": "245/9",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the original amount by one hundred, then multiply by the percentage.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Divide the original amount by one hundred, then multiply by the percentage."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 25% of £96.",
+    "prose": true,
+    "answer": "24",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "96",
+      "rate": "25",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "96 ÷ 100",
+        "output": "0.96",
+        "note": "The whole amount, £96, represents 100%.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "0.96 × 25",
+        "output": "24",
+        "note": "Multiply the value of 1% by 25.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "96 is the whole amount. What is 10% of it, and how could you use that to find 25%?",
+    "method_note": "The whole amount, £96, represents 100%. Multiply the value of 1% by 25.",
+    "check": "Reverse check: 24 ÷ 25 × 100 = 96, the original whole.",
+    "wrong": "71",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q7",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "96 − 25",
+        "output": "71",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Find one percent of the amount, then scale it to the required percentage.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Find one percent of the amount, then scale it to the required percentage."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 50% of 124 people.",
+    "prose": true,
+    "answer": "62",
+    "answerUnit": "people",
+    "model": {
+      "kind": "percentages",
+      "original": "124",
+      "rate": "50",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "124 ÷ 100",
+        "output": "1.24",
+        "note": "The whole amount, 124 people, represents 100%.",
+        "outputUnit": "people"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "1.24 × 50",
+        "output": "62",
+        "note": "Multiply the value of 1% by 50.",
+        "outputUnit": "people"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "50"
+    },
+    "hint": "124 is the whole amount. What is 10% of it, and how could you use that to find 50%?",
+    "method_note": "The whole amount, 124 people, represents 100%. Multiply the value of 1% by 50.",
+    "check": "Reverse check: 62 ÷ 50 × 100 = 124, the original whole.",
+    "wrong": "12.4",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q8",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "124 ÷ 10",
+        "output": "12.4",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Scale the value of ten percent to the percentage requested.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Scale the value of ten percent to the percentage requested."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 62.5% of 200 litres.",
+    "prose": true,
+    "answer": "125",
+    "answerUnit": "litres",
+    "model": {
+      "kind": "percentages",
+      "original": "200",
+      "rate": "125/2",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "200 ÷ 100",
+        "output": "2",
+        "note": "The whole amount, 200 litres, represents 100%.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "2 × 62.5",
+        "output": "125",
+        "note": "Multiply the value of 1% by 62.5.",
+        "outputUnit": "litres"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "62.5"
+    },
+    "hint": "200 is the whole amount. What is 10% of it, and how could you use that to find 62.5%?",
+    "method_note": "The whole amount, 200 litres, represents 100%. Multiply the value of 1% by 62.5.",
+    "check": "Reverse check: 125 ÷ 62.5 × 100 = 200, the original whole.",
+    "wrong": "3.2",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q9",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "200 ÷ 62.5",
+        "output": "3.2",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the original amount by one hundred, then multiply by the percentage.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Divide the original amount by one hundred, then multiply by the percentage."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 15% of 320 km.",
+    "prose": true,
+    "answer": "48",
+    "answerUnit": "km",
+    "model": {
+      "kind": "percentages",
+      "original": "320",
+      "rate": "15",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "320 ÷ 100",
+        "output": "3.2",
+        "note": "The whole amount, 320 km, represents 100%.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "3.2 × 15",
+        "output": "48",
+        "note": "Multiply the value of 1% by 15.",
+        "outputUnit": "km"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "15"
+    },
+    "hint": "320 is the whole amount. What is 10% of it, and how could you use that to find 15%?",
+    "method_note": "The whole amount, 320 km, represents 100%. Multiply the value of 1% by 15.",
+    "check": "Reverse check: 48 ÷ 15 × 100 = 320, the original whole.",
+    "wrong": "305",
+    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q10",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "320 − 15",
+        "output": "305",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Find one percent of the amount, then scale it to the required percentage.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Find one percent of the amount, then scale it to the required percentage."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 35% of £460.",
+    "prose": true,
+    "answer": "161",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "460",
+      "rate": "35",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "460 ÷ 100",
+        "output": "4.6",
+        "note": "The whole amount, £460, represents 100%.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "4.6 × 35",
+        "output": "161",
+        "note": "Multiply the value of 1% by 35.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "35"
+    },
+    "hint": "460 is the whole amount. What is 10% of it, and how could you use that to find 35%?",
+    "method_note": "The whole amount, £460, represents 100%. Multiply the value of 1% by 35.",
+    "check": "Reverse check: 161 ÷ 35 × 100 = 460, the original whole.",
+    "wrong": "46",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q11",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "460 ÷ 10",
+        "output": "46",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Scale the value of ten percent to the percentage requested.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Scale the value of ten percent to the percentage requested."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "Find 12% of 640 g.",
+    "prose": true,
+    "answer": "76.8",
+    "answerUnit": "g",
+    "model": {
+      "kind": "percentages",
+      "original": "640",
+      "rate": "12",
+      "task": "amount"
+    },
+    "steps": [
+      {
+        "title": "Find one percent",
+        "input": "640 ÷ 100",
+        "output": "6.4",
+        "note": "The whole amount, 640 g, represents 100%.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Scale to the percentage",
+        "input": "6.4 × 12",
+        "output": "76.8",
+        "note": "Multiply the value of 1% by 12.",
+        "outputUnit": "g"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "12"
+    },
+    "hint": "640 is the whole amount. What is 10% of it, and how could you use that to find 12%?",
+    "method_note": "The whole amount, 640 g, represents 100%. Multiply the value of 1% by 12.",
+    "check": "Reverse check: 76.8 ÷ 12 × 100 = 640, the original whole.",
+    "wrong": "160/3",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C1-Q12",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 0,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "640 ÷ 12",
+        "output": "160/3",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the original amount by one hundred, then multiply by the percentage.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Divide the original amount by one hundred, then multiply by the percentage."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A jacket has a price of £160. It increases by 12.5%. Find the new price.",
+    "prose": true,
+    "answer": "180",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "160",
+      "rate": "25/2",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "160 × 12.5 ÷ 100",
+        "output": "20",
+        "note": "Calculate 12.5% of the original £160.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "160 + 20",
+        "output": "180",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new price.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "12.5"
+    },
+    "hint": "First find 10% or 1% of 160. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 12.5% of the original £160. Add the change for an increase; subtract it for a decrease. The question asks for the new price.",
+    "check": "Reverse check: 180 − 20 = 160, the original amount.",
+    "wrong": "20",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "160 × 12.5 ÷ 100",
+        "output": "20",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Use the percentage amount as the change; apply it to the original amount.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Use the percentage amount as the change; apply it to the original amount."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A container has a volume of 290 litres. It decreases by 8%. Find the new volume.",
+    "prose": true,
+    "answer": "266.8",
+    "answerUnit": "litres",
+    "model": {
+      "kind": "percentages",
+      "original": "290",
+      "rate": "8",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "290 × 8 ÷ 100",
+        "output": "23.2",
+        "note": "Calculate 8% of the original 290 litres.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "290 − 23.2",
+        "output": "266.8",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new volume.",
+        "outputUnit": "litres"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "8"
+    },
+    "hint": "First find 10% or 1% of 290. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 8% of the original 290 litres. Add the change for an increase; subtract it for a decrease. The question asks for the new volume.",
+    "check": "Reverse check: 266.8 + 23.2 = 290, the original amount.",
+    "wrong": "313.2",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q2",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "290 + 23.2",
+        "output": "313.2",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Add the change for an increase and subtract it for a decrease.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Add the change for an increase and subtract it for a decrease."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A tank has a water volume of 680 litres. It increases by 30%. Find the new water volume.",
+    "prose": true,
+    "answer": "884",
+    "answerUnit": "litres",
+    "model": {
+      "kind": "percentages",
+      "original": "680",
+      "rate": "30",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "680 × 30 ÷ 100",
+        "output": "204",
+        "note": "Calculate 30% of the original 680 litres.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "680 + 204",
+        "output": "884",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new water volume.",
+        "outputUnit": "litres"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "30"
+    },
+    "hint": "First find 10% or 1% of 680. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 30% of the original 680 litres. Add the change for an increase; subtract it for a decrease. The question asks for the new water volume.",
+    "check": "Reverse check: 884 − 204 = 680, the original amount.",
+    "wrong": "710",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q3",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "680 + 30",
+        "output": "710",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Calculate the percentage amount before applying the increase or decrease.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Calculate the percentage amount before applying the increase or decrease."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A journey has a distance of 360 km. It decreases by 45%. Find the new distance.",
+    "prose": true,
+    "answer": "198",
+    "answerUnit": "km",
+    "model": {
+      "kind": "percentages",
+      "original": "360",
+      "rate": "45",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "360 × 45 ÷ 100",
+        "output": "162",
+        "note": "Calculate 45% of the original 360 km.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "360 − 162",
+        "output": "198",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new distance.",
+        "outputUnit": "km"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "45"
+    },
+    "hint": "First find 10% or 1% of 360. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 45% of the original 360 km. Add the change for an increase; subtract it for a decrease. The question asks for the new distance.",
+    "check": "Reverse check: 198 + 162 = 360, the original amount.",
+    "wrong": "162",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q4",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "360 × 45 ÷ 100",
+        "output": "162",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Use the percentage amount as the change; apply it to the original amount.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Use the percentage amount as the change; apply it to the original amount."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A shop has weekly sales of £220. It increases by 5%. Find the new weekly sales.",
+    "prose": true,
+    "answer": "231",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "220",
+      "rate": "5",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "220 × 5 ÷ 100",
+        "output": "11",
+        "note": "Calculate 5% of the original £220.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "220 + 11",
+        "output": "231",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new weekly sales.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "5"
+    },
+    "hint": "First find 10% or 1% of 220. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 5% of the original £220. Add the change for an increase; subtract it for a decrease. The question asks for the new weekly sales.",
+    "check": "Reverse check: 231 − 11 = 220, the original amount.",
+    "wrong": "209",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q5",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "220 − 11",
+        "output": "209",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Add the change for an increase and subtract it for a decrease.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Add the change for an increase and subtract it for a decrease."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A bag has a mass of 490 g. It decreases by 18%. Find the new mass.",
+    "prose": true,
+    "answer": "401.8",
+    "answerUnit": "g",
+    "model": {
+      "kind": "percentages",
+      "original": "490",
+      "rate": "18",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "490 × 18 ÷ 100",
+        "output": "88.2",
+        "note": "Calculate 18% of the original 490 g.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "490 − 88.2",
+        "output": "401.8",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new mass.",
+        "outputUnit": "g"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "18"
+    },
+    "hint": "First find 10% or 1% of 490. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 18% of the original 490 g. Add the change for an increase; subtract it for a decrease. The question asks for the new mass.",
+    "check": "Reverse check: 401.8 + 88.2 = 490, the original amount.",
+    "wrong": "472",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q6",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "490 − 18",
+        "output": "472",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Calculate the percentage amount before applying the increase or decrease.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Calculate the percentage amount before applying the increase or decrease."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A jacket has a price of £96. It increases by 25%. Find the new price.",
+    "prose": true,
+    "answer": "120",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "96",
+      "rate": "25",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "96 × 25 ÷ 100",
+        "output": "24",
+        "note": "Calculate 25% of the original £96.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "96 + 24",
+        "output": "120",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new price.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "First find 10% or 1% of 96. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 25% of the original £96. Add the change for an increase; subtract it for a decrease. The question asks for the new price.",
+    "check": "Reverse check: 120 − 24 = 96, the original amount.",
+    "wrong": "24",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q7",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "96 × 25 ÷ 100",
+        "output": "24",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Use the percentage amount as the change; apply it to the original amount.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Use the percentage amount as the change; apply it to the original amount."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A club has a membership of 124 people. It decreases by 50%. Find the new membership.",
+    "prose": true,
+    "answer": "62",
+    "answerUnit": "people",
+    "model": {
+      "kind": "percentages",
+      "original": "124",
+      "rate": "50",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "124 × 50 ÷ 100",
+        "output": "62",
+        "note": "Calculate 50% of the original 124 people.",
+        "outputUnit": "people"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "124 − 62",
+        "output": "62",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new membership.",
+        "outputUnit": "people"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "50"
+    },
+    "hint": "First find 10% or 1% of 124. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 50% of the original 124 people. Add the change for an increase; subtract it for a decrease. The question asks for the new membership.",
+    "check": "Reverse check: 62 + 62 = 124, the original amount.",
+    "wrong": "186",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q8",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "124 + 62",
+        "output": "186",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Add the change for an increase and subtract it for a decrease.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Add the change for an increase and subtract it for a decrease."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A tank has a water volume of 200 litres. It increases by 62.5%. Find the new water volume.",
+    "prose": true,
+    "answer": "325",
+    "answerUnit": "litres",
+    "model": {
+      "kind": "percentages",
+      "original": "200",
+      "rate": "125/2",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "200 × 62.5 ÷ 100",
+        "output": "125",
+        "note": "Calculate 62.5% of the original 200 litres.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "200 + 125",
+        "output": "325",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new water volume.",
+        "outputUnit": "litres"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "62.5"
+    },
+    "hint": "First find 10% or 1% of 200. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 62.5% of the original 200 litres. Add the change for an increase; subtract it for a decrease. The question asks for the new water volume.",
+    "check": "Reverse check: 325 − 125 = 200, the original amount.",
+    "wrong": "262.5",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q9",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "200 + 62.5",
+        "output": "262.5",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Calculate the percentage amount before applying the increase or decrease.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Calculate the percentage amount before applying the increase or decrease."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A journey has a distance of 320 km. It decreases by 15%. Find the new distance.",
+    "prose": true,
+    "answer": "272",
+    "answerUnit": "km",
+    "model": {
+      "kind": "percentages",
+      "original": "320",
+      "rate": "15",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "320 × 15 ÷ 100",
+        "output": "48",
+        "note": "Calculate 15% of the original 320 km.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "320 − 48",
+        "output": "272",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new distance.",
+        "outputUnit": "km"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "15"
+    },
+    "hint": "First find 10% or 1% of 320. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 15% of the original 320 km. Add the change for an increase; subtract it for a decrease. The question asks for the new distance.",
+    "check": "Reverse check: 272 + 48 = 320, the original amount.",
+    "wrong": "48",
+    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q10",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "320 × 15 ÷ 100",
+        "output": "48",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Use the percentage amount as the change; apply it to the original amount.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Use the percentage amount as the change; apply it to the original amount."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A shop has weekly sales of £460. It increases by 35%. Find the new weekly sales.",
+    "prose": true,
+    "answer": "621",
+    "answerUnit": "£",
+    "model": {
+      "kind": "percentages",
+      "original": "460",
+      "rate": "35",
+      "task": "increase"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "460 × 35 ÷ 100",
+        "output": "161",
+        "note": "Calculate 35% of the original £460.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "460 + 161",
+        "output": "621",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new weekly sales.",
+        "outputUnit": "£"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "35"
+    },
+    "hint": "First find 10% or 1% of 460. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 35% of the original £460. Add the change for an increase; subtract it for a decrease. The question asks for the new weekly sales.",
+    "check": "Reverse check: 621 − 161 = 460, the original amount.",
+    "wrong": "299",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q11",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "460 − 161",
+        "output": "299",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Add the change for an increase and subtract it for a decrease.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Add the change for an increase and subtract it for a decrease."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "A bag has a mass of 640 g. It decreases by 12%. Find the new mass.",
+    "prose": true,
+    "answer": "563.2",
+    "answerUnit": "g",
+    "model": {
+      "kind": "percentages",
+      "original": "640",
+      "rate": "12",
+      "task": "decrease"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "640 × 12 ÷ 100",
+        "output": "76.8",
+        "note": "Calculate 12% of the original 640 g.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Find the new amount",
+        "input": "640 − 76.8",
+        "output": "563.2",
+        "note": "Add the change for an increase; subtract it for a decrease. The question asks for the new mass.",
+        "outputUnit": "g"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "12"
+    },
+    "hint": "First find 10% or 1% of 640. Does the question ask for the change or the final amount?",
+    "method_note": "Calculate 12% of the original 640 g. Add the change for an increase; subtract it for a decrease. The question asks for the new mass.",
+    "check": "Reverse check: 563.2 + 76.8 = 640, the original amount.",
+    "wrong": "628",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C2-Q12",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 1,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "640 − 12",
+        "output": "628",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Calculate the percentage amount before applying the increase or decrease.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Calculate the percentage amount before applying the increase or decrease."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The price changes from £160 to £180. Find the percentage increase.",
+    "prose": true,
+    "answer": "12.5",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "160",
+      "rate": "25/2",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "180 − 160",
+        "output": "20",
+        "note": "Find the size of the change in £.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "20 ÷ 160",
+        "output": "{1/8}",
+        "note": "The original amount is £160; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{1/8} × 100",
+        "output": "12.5%",
+        "note": "The change is a 12.5% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "12.5"
+    },
+    "hint": "Which amount represents 100%: 160 or 180?",
+    "method_note": "Find the size of the change in £. The original amount is £160; use that as the denominator. The change is a 12.5% increase.",
+    "check": "160 × 12.5 ÷ 100 = £20, the change between the two amounts.",
+    "wrong": "100/9",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q1",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "20 ÷ 180 × 100",
+        "output": "100/9",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the change by the original amount before multiplying by one hundred.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Divide the change by the original amount before multiplying by one hundred."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The volume changes from 290 litres to 266.8 litres. Find the percentage decrease.",
+    "prose": true,
+    "answer": "8",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "290",
+      "rate": "-8",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "290 − 266.8",
+        "output": "23.2",
+        "note": "Find the size of the change in litres.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "23.2 ÷ 290",
+        "output": "{2/25}",
+        "note": "The original amount is 290 litres; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{2/25} × 100",
+        "output": "8%",
+        "note": "The change is a 8% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "8"
+    },
+    "hint": "Which amount represents 100%: 290 or 266.8?",
+    "method_note": "Find the size of the change in litres. The original amount is 290 litres; use that as the denominator. The change is a 8% decrease.",
+    "check": "290 × 8 ÷ 100 = 23.2 litres, the change between the two amounts.",
+    "wrong": "0.08",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q2",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "23.2 ÷ 290",
+        "output": "0.08",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Multiply the change divided by the original amount by one hundred to express it as a percentage.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the change divided by the original amount by one hundred to express it as a percentage."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The water volume changes from 680 litres to 884 litres. Find the percentage increase.",
+    "prose": true,
+    "answer": "30",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "680",
+      "rate": "30",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "884 − 680",
+        "output": "204",
+        "note": "Find the size of the change in litres.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "204 ÷ 680",
+        "output": "{3/10}",
+        "note": "The original amount is 680 litres; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{3/10} × 100",
+        "output": "30%",
+        "note": "The change is a 30% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "30"
+    },
+    "hint": "Which amount represents 100%: 680 or 884?",
+    "method_note": "Find the size of the change in litres. The original amount is 680 litres; use that as the denominator. The change is a 30% increase.",
+    "check": "680 × 30 ÷ 100 = 204 litres, the change between the two amounts.",
+    "wrong": "1000/3",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q3",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "680 ÷ 204 × 100",
+        "output": "1000/3",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the change by the original amount, not the other way round.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Divide the change by the original amount, not the other way round."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The distance changes from 360 km to 198 km. Find the percentage decrease.",
+    "prose": true,
+    "answer": "45",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "360",
+      "rate": "-45",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "360 − 198",
+        "output": "162",
+        "note": "Find the size of the change in km.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "162 ÷ 360",
+        "output": "{9/20}",
+        "note": "The original amount is 360 km; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{9/20} × 100",
+        "output": "45%",
+        "note": "The change is a 45% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "45"
+    },
+    "hint": "Which amount represents 100%: 360 or 198?",
+    "method_note": "Find the size of the change in km. The original amount is 360 km; use that as the denominator. The change is a 45% decrease.",
+    "check": "360 × 45 ÷ 100 = 162 km, the change between the two amounts.",
+    "wrong": "900/11",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q4",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "162 ÷ 198 × 100",
+        "output": "900/11",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the change by the original amount before multiplying by one hundred.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Divide the change by the original amount before multiplying by one hundred."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The weekly sales change from £220 to £231. Find the percentage increase.",
+    "prose": true,
+    "answer": "5",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "220",
+      "rate": "5",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "231 − 220",
+        "output": "11",
+        "note": "Find the size of the change in £.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "11 ÷ 220",
+        "output": "{1/20}",
+        "note": "The original amount is £220; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{1/20} × 100",
+        "output": "5%",
+        "note": "The change is a 5% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "5"
+    },
+    "hint": "Which amount represents 100%: 220 or 231?",
+    "method_note": "Find the size of the change in £. The original amount is £220; use that as the denominator. The change is a 5% increase.",
+    "check": "220 × 5 ÷ 100 = £11, the change between the two amounts.",
+    "wrong": "0.05",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q5",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "11 ÷ 220",
+        "output": "0.05",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Multiply the change divided by the original amount by one hundred to express it as a percentage.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the change divided by the original amount by one hundred to express it as a percentage."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The mass changes from 490 g to 401.8 g. Find the percentage decrease.",
+    "prose": true,
+    "answer": "18",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "490",
+      "rate": "-18",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "490 − 401.8",
+        "output": "88.2",
+        "note": "Find the size of the change in g.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "88.2 ÷ 490",
+        "output": "{9/50}",
+        "note": "The original amount is 490 g; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{9/50} × 100",
+        "output": "18%",
+        "note": "The change is a 18% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "18"
+    },
+    "hint": "Which amount represents 100%: 490 or 401.8?",
+    "method_note": "Find the size of the change in g. The original amount is 490 g; use that as the denominator. The change is a 18% decrease.",
+    "check": "490 × 18 ÷ 100 = 88.2 g, the change between the two amounts.",
+    "wrong": "5000/9",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q6",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "490 ÷ 88.2 × 100",
+        "output": "5000/9",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the change by the original amount, not the other way round.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Divide the change by the original amount, not the other way round."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The price changes from £96 to £120. Find the percentage increase.",
+    "prose": true,
+    "answer": "25",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "96",
+      "rate": "25",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "120 − 96",
+        "output": "24",
+        "note": "Find the size of the change in £.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "24 ÷ 96",
+        "output": "{1/4}",
+        "note": "The original amount is £96; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{1/4} × 100",
+        "output": "25%",
+        "note": "The change is a 25% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "25"
+    },
+    "hint": "Which amount represents 100%: 96 or 120?",
+    "method_note": "Find the size of the change in £. The original amount is £96; use that as the denominator. The change is a 25% increase.",
+    "check": "96 × 25 ÷ 100 = £24, the change between the two amounts.",
+    "wrong": "20",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q7",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "24 ÷ 120 × 100",
+        "output": "20",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the change by the original amount before multiplying by one hundred.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Divide the change by the original amount before multiplying by one hundred."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The membership changes from 124 people to 62 people. Find the percentage decrease.",
+    "prose": true,
+    "answer": "50",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "124",
+      "rate": "-50",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "124 − 62",
+        "output": "62",
+        "note": "Find the size of the change in people.",
+        "outputUnit": "people"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "62 ÷ 124",
+        "output": "{1/2}",
+        "note": "The original amount is 124 people; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{1/2} × 100",
+        "output": "50%",
+        "note": "The change is a 50% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "50"
+    },
+    "hint": "Which amount represents 100%: 124 or 62?",
+    "method_note": "Find the size of the change in people. The original amount is 124 people; use that as the denominator. The change is a 50% decrease.",
+    "check": "124 × 50 ÷ 100 = 62 people, the change between the two amounts.",
+    "wrong": "0.5",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q8",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "62 ÷ 124",
+        "output": "0.5",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Multiply the change divided by the original amount by one hundred to express it as a percentage.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the change divided by the original amount by one hundred to express it as a percentage."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The water volume changes from 200 litres to 325 litres. Find the percentage increase.",
+    "prose": true,
+    "answer": "62.5",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "200",
+      "rate": "125/2",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "325 − 200",
+        "output": "125",
+        "note": "Find the size of the change in litres.",
+        "outputUnit": "litres"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "125 ÷ 200",
+        "output": "{5/8}",
+        "note": "The original amount is 200 litres; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{5/8} × 100",
+        "output": "62.5%",
+        "note": "The change is a 62.5% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "62.5"
+    },
+    "hint": "Which amount represents 100%: 200 or 325?",
+    "method_note": "Find the size of the change in litres. The original amount is 200 litres; use that as the denominator. The change is a 62.5% increase.",
+    "check": "200 × 62.5 ÷ 100 = 125 litres, the change between the two amounts.",
+    "wrong": "160",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q9",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "200 ÷ 125 × 100",
+        "output": "160",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the change by the original amount, not the other way round.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Divide the change by the original amount, not the other way round."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The distance changes from 320 km to 272 km. Find the percentage decrease.",
+    "prose": true,
+    "answer": "15",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "320",
+      "rate": "-15",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "320 − 272",
+        "output": "48",
+        "note": "Find the size of the change in km.",
+        "outputUnit": "km"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "48 ÷ 320",
+        "output": "{3/20}",
+        "note": "The original amount is 320 km; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{3/20} × 100",
+        "output": "15%",
+        "note": "The change is a 15% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "15"
+    },
+    "hint": "Which amount represents 100%: 320 or 272?",
+    "method_note": "Find the size of the change in km. The original amount is 320 km; use that as the denominator. The change is a 15% decrease.",
+    "check": "320 × 15 ÷ 100 = 48 km, the change between the two amounts.",
+    "wrong": "300/17",
+    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q10",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "48 ÷ 272 × 100",
+        "output": "300/17",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the change by the original amount before multiplying by one hundred.",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Divide the change by the original amount before multiplying by one hundred."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The weekly sales change from £460 to £621. Find the percentage increase.",
+    "prose": true,
+    "answer": "35",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "460",
+      "rate": "35",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "621 − 460",
+        "output": "161",
+        "note": "Find the size of the change in £.",
+        "outputUnit": "£"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "161 ÷ 460",
+        "output": "{7/20}",
+        "note": "The original amount is £460; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{7/20} × 100",
+        "output": "35%",
+        "note": "The change is a 35% increase.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "35"
+    },
+    "hint": "Which amount represents 100%: 460 or 621?",
+    "method_note": "Find the size of the change in £. The original amount is £460; use that as the denominator. The change is a 35% increase.",
+    "check": "460 × 35 ÷ 100 = £161, the change between the two amounts.",
+    "wrong": "0.35",
+    "error_note": "The calculation stops too early or applies the change in the wrong direction.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q11",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "161 ÷ 460",
+        "output": "0.35",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Multiply the change divided by the original amount by one hundred to express it as a percentage.",
+    "errorOptions": [
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Multiply the change divided by the original amount by one hundred to express it as a percentage."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  },
+  {
+    "q": "The mass changes from 640 g to 563.2 g. Find the percentage decrease.",
+    "prose": true,
+    "answer": "12",
+    "answerUnit": "%",
+    "model": {
+      "kind": "percentages",
+      "original": "640",
+      "rate": "-12",
+      "task": "change"
+    },
+    "steps": [
+      {
+        "title": "Find the change",
+        "input": "640 − 563.2",
+        "output": "76.8",
+        "note": "Find the size of the change in g.",
+        "outputUnit": "g"
+      },
+      {
+        "title": "Compare with the original",
+        "input": "76.8 ÷ 640",
+        "output": "{3/25}",
+        "note": "The original amount is 640 g; use that as the denominator.",
+        "outputUnit": ""
+      },
+      {
+        "title": "Convert to percent",
+        "input": "{3/25} × 100",
+        "output": "12%",
+        "note": "The change is a 12% decrease.",
+        "outputUnit": "%"
+      }
+    ],
+    "diagram": {
+      "kind": "percentage-bar",
+      "rate": "12"
+    },
+    "hint": "Which amount represents 100%: 640 or 563.2?",
+    "method_note": "Find the size of the change in g. The original amount is 640 g; use that as the denominator. The change is a 12% decrease.",
+    "check": "640 × 12 ÷ 100 = 76.8 g, the change between the two amounts.",
+    "wrong": "2500/3",
+    "error_note": "The student used the wrong operation or treated a percentage as an amount.",
+    "id": "maths:M06-WEB-ERRORS-C3-Q12",
+    "subject": "maths",
+    "topic": "M06",
+    "type": "errors",
+    "level": 2,
+    "method": "calculation",
+    "errorSteps": [
+      {
+        "title": "Student calculation",
+        "input": "640 ÷ 76.8 × 100",
+        "output": "2500/3",
+        "note": ""
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "Divide the change by the original amount, not the other way round.",
+    "errorOptions": [
+      {
+        "id": "wrong-b",
+        "text": "Use the new amount as the whole in every calculation."
+      },
+      {
+        "id": "repair",
+        "text": "Divide the change by the original amount, not the other way round."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Use the percentage number directly as the change in the amount."
+      }
+    ],
+    "questionPrefix": "Solve the problem"
+  }
+]

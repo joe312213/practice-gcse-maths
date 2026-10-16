@@ -1,0 +1,161 @@
+[
+  {
+    "q": "{1/7} + {2/7}",
+    "answer": "3/7",
+    "model": {
+      "kind": "fractions",
+      "a": "1/7",
+      "b": "2/7",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/7} + {2/7}",
+        "output": "{1/7} + {2/7}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/7} + {2/7}",
+        "output": "{1/7} + {2/7}",
+        "note": "Both denominators are 7, so the parts already have equal size. Keep this denominator."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{1/7} + {2/7}",
+        "output": "{3/7}",
+        "note": "1 + 2 = 3. Keep the denominator 7."
+      },
+      {
+        "title": "Simplify",
+        "input": "{3/7}",
+        "output": "{3/7}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/7",
+      "b": "2/7",
+      "denominator": 7
+    },
+    "hint": "The parts are already the same size: 7 per whole. Which numbers count how many parts you have?",
+    "method_note": "Use denominator 7: 1/7 + 2/7. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {3/7} − {2/7} = {1/7}.",
+    "wrong": "3/14",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-DEMO-C1-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "demo",
+    "level": 0,
+    "method": "calculation"
+  },
+  {
+    "q": "{1/3} + {1/6}",
+    "answer": "1/2",
+    "model": {
+      "kind": "fractions",
+      "a": "1/3",
+      "b": "1/6",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/3} + {1/6}",
+        "output": "{1/3} + {1/6}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/3} + {1/6}",
+        "output": "{2/6} + {1/6}",
+        "note": "Use 6 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{2/6} + {1/6}",
+        "output": "{3/6}",
+        "note": "2 + 1 = 3. Keep the denominator 6."
+      },
+      {
+        "title": "Simplify",
+        "input": "{3/6}",
+        "output": "{1/2}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/3",
+      "b": "1/6",
+      "denominator": 6
+    },
+    "hint": "What common multiple of 3 and 6 can be the denominator for both fractions?",
+    "method_note": "Use denominator 6: 2/6 + 1/6. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {1/2} − {1/6} = {1/3}.",
+    "wrong": "2/9",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-DEMO-C2-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "demo",
+    "level": 1,
+    "method": "calculation"
+  },
+  {
+    "q": "{1/3} + {1/4}",
+    "answer": "7/12",
+    "model": {
+      "kind": "fractions",
+      "a": "1/3",
+      "b": "1/4",
+      "op": "+"
+    },
+    "steps": [
+      {
+        "title": "Prepare the fractions",
+        "input": "{1/3} + {1/4}",
+        "output": "{1/3} + {1/4}",
+        "note": "Both values use the same-sized whole."
+      },
+      {
+        "title": "Use a common denominator",
+        "input": "{1/3} + {1/4}",
+        "output": "{4/12} + {3/12}",
+        "note": "Use 12 equal parts per whole. Multiply each numerator and denominator by the same factor."
+      },
+      {
+        "title": "Add or subtract numerators",
+        "input": "{4/12} + {3/12}",
+        "output": "{7/12}",
+        "note": "4 + 3 = 7. Keep the denominator 12."
+      },
+      {
+        "title": "Simplify",
+        "input": "{7/12}",
+        "output": "{7/12}",
+        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+      }
+    ],
+    "diagram": {
+      "kind": "fraction-bars",
+      "a": "1/3",
+      "b": "1/4",
+      "denominator": 12
+    },
+    "hint": "What common multiple of 3 and 4 can be the denominator for both fractions?",
+    "method_note": "Use denominator 12: 4/12 + 3/12. Combine the numerators, then simplify.",
+    "check": "Reverse the operation: {7/12} − {1/4} = {1/3}.",
+    "wrong": "2/7",
+    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
+    "id": "maths:M15-WEB-DEMO-C3-Q1",
+    "subject": "maths",
+    "topic": "M15",
+    "type": "demo",
+    "level": 2,
+    "method": "calculation"
+  }
+]

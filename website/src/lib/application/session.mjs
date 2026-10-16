@@ -12,7 +12,13 @@ import { latestAssessment, assessmentStatus } from '../domain/assessment.mjs';
  * Libs: none.
  */
 import { topicStages } from '../domain/stages.mjs';
-import { topicPages, TOPIC_PAGE_SIZES, assessmentPage } from '../domain/topic-pages.mjs';
+import {
+  findQuestion,
+  discardRetiredAttempts,
+  topicPages,
+  TOPIC_PAGE_SIZES,
+  assessmentPage,
+} from '../domain/topic-pages.mjs';
 import { createWorkingCache } from '../adapters/working-cache.mjs';
 import { backupStatus } from '../domain/progress.mjs';
 import { completeRecommendation } from '../domain/revision.mjs';
@@ -80,7 +86,7 @@ export function createSession({
    * Parameter id: stable question ID.
    * Used by: current.
    */
-  const question = (id) => bank.questions.find((q) => q.id === id);
+  const question = (id) => findQuestion(bank, id);
   /**
    * Filter active-bank questions by activity type and optional challenge level.
    * Parameter type: question-type code or activity ID.
@@ -264,6 +270,8 @@ export function createSession({
     draftKey++;
     inputError = '';
   }
+  // Retired question pages are automatically replaced; keep recorded results and current pages.
+  if (discardRetiredAttempts(data, banks)) save(data);
   // Invalidate outdated page attempts only; all recorded answer history is retained.
   for (const p of data.profiles)
     for (const loaded of banks) {
@@ -717,8 +725,9 @@ export function createSession({
       }
       const result = mode === 'errors' ? markErrors(q, draft.errors, draft.answer) : numeric;
       if (!result.valid || result.unique === false) {
-        inputError =
-          'Choose a row, reason and corrected step for each error. Select each error row once.';
+        inputError = q.investigation
+          ? 'Choose a reason for each selected location. Select each location once.'
+          : 'Choose a row, reason and corrected step for each error. Select each error row once.';
         publish();
         return { invalid: true };
       }
@@ -732,6 +741,7 @@ export function createSession({
         assisted,
         entries: structuredClone(draft.errors),
         details: result.details,
+        missing: result.missing,
         answerCorrect: result.answerCorrect ?? numeric.correct,
       };
       p.responses[q.id] = response;

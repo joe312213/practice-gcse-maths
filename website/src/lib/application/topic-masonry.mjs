@@ -11,14 +11,16 @@ export function topicMasonry(container) {
     frame = 0;
     if (disposed || !container.clientWidth) return;
     const style = getComputedStyle(container);
-    const widths = style.gridTemplateColumns.split(' ').map(parseFloat);
+    const columns = style.gridTemplateColumns.split(' ').length;
     const gap = parseFloat(style.columnGap);
-    const heights = widths.map(() => 0);
+    // Fit measured container space, including fractional tracks and Safari grid rounding.
+    const width = (container.getBoundingClientRect().width - gap * (columns - 1)) / columns;
+    const heights = Array(columns).fill(0);
     container.classList.add('masonry-ready');
-    for (const item of container.children) item.style.width = `${widths[0]}px`;
+    for (const item of container.children) item.style.width = `${width}px`;
     for (const item of container.children) {
       const column = heights.indexOf(Math.min(...heights));
-      item.style.left = `${column * (widths[0] + gap)}px`;
+      item.style.left = `${column * (width + gap)}px`;
       item.style.top = `${heights[column]}px`;
       // Each slot includes its own top gap, also reserving space for future Draft stamps.
       heights[column] += item.getBoundingClientRect().height;

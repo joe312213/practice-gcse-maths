@@ -1,0 +1,1683 @@
+[
+  {
+    "q": "x − 8 = 15",
+    "answer": "23",
+    "balance": [
+      {
+        "l": "x − 8",
+        "r": "15"
+      },
+      {
+        "l": "+ 8",
+        "r": "+ 8",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "23"
+      }
+    ],
+    "check": "At x = 23, left side = 15 and right side = 15.",
+    "wrong": "7",
+    "error_work": "x = 15 − 8 = 7",
+    "error_note": "To remove −8, add 8 to both sides. This gives x = 23.",
+    "kind": "sub",
+    "coefficients": [
+      "1",
+      "-8",
+      "0",
+      "15"
+    ],
+    "hint": "On the left, what operation would undo −8? What would remain with x?",
+    "method_note": "Add 8 to both sides to leave x = 23.",
+    "id": "maths:M10-S02-C1-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0
+  },
+  {
+    "q": "5x + 7 = 37",
+    "answer": "6",
+    "balance": [
+      {
+        "l": "5x + 7",
+        "r": "37"
+      },
+      {
+        "l": "− 7",
+        "r": "− 7",
+        "kind": "op"
+      },
+      {
+        "l": "5x",
+        "r": "30"
+      },
+      {
+        "l": "÷ 5",
+        "r": "÷ 5",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "6"
+      }
+    ],
+    "check": "At x = 6, left side = 37 and right side = 37.",
+    "wrong": "8.8",
+    "error_work": "5x = 37 + 7 = 44; x = 8.8",
+    "error_note": "To remove +7, subtract 7 from both sides. This gives 5x = 30 before finding one x.",
+    "kind": "two",
+    "coefficients": [
+      "5",
+      "7",
+      "0",
+      "37"
+    ],
+    "hint": "On the left, what operation would undo +7? What would remain with x?",
+    "method_note": "Subtract 7 from both sides to leave 5x = 30. Divide both sides by 5 to get x = 6.",
+    "id": "maths:M10-S02-C2-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1
+  },
+  {
+    "q": "3(x + 4) = x + 20",
+    "answer": "4",
+    "balance": [
+      {
+        "l": "3(x + 4)",
+        "r": "x + 20"
+      },
+      {
+        "l": "3x + 12",
+        "r": "x + 20"
+      },
+      {
+        "l": "− x",
+        "r": "− x",
+        "kind": "op"
+      },
+      {
+        "l": "2x + 12",
+        "r": "20"
+      },
+      {
+        "l": "− 12",
+        "r": "− 12",
+        "kind": "op"
+      },
+      {
+        "l": "2x",
+        "r": "8"
+      },
+      {
+        "l": "÷ 2",
+        "r": "÷ 2",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "4"
+      }
+    ],
+    "check": "At x = 4, left side = 24 and right side = 24.",
+    "wrong": "2",
+    "error_work": "4x + 12 = 20; x = 2",
+    "error_note": "Subtract x from both sides: 3x − x = 2x. Adding the coefficients instead does not preserve this equation.",
+    "kind": "both_bracket",
+    "coefficients": [
+      "3",
+      "12",
+      "1",
+      "20"
+    ],
+    "hint": "What would the left side look like after expanding the brackets? Does it help?",
+    "method_note": "After simplifying, subtract x from both sides to leave 2x + 12 = 20. Subtract 12 from both sides, then divide by 2.",
+    "id": "maths:M10-S02-C3-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2
+  },
+  {
+    "q": "6x = -18",
+    "answer": "-3",
+    "balance": [
+      {
+        "l": "6x",
+        "r": "-18"
+      },
+      {
+        "l": "÷ 6",
+        "r": "÷ 6",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "-3"
+      }
+    ],
+    "check": "At x = -3, left side = -18 and right side = -18.",
+    "wrong": "-24",
+    "error_work": "x = -18 − 6 = -24",
+    "error_note": "6x means multiplication by 6. Subtracting 6 does not leave x; divide both sides by 6.",
+    "kind": "mul",
+    "coefficients": [
+      "6",
+      "0",
+      "0",
+      "-18"
+    ],
+    "hint": "In 6x = -18, 6x means 6 times x. How could you find the value of one x?",
+    "method_note": "Divide both sides by 6: x = -18 ÷ 6 = -3. A negative number divided by a positive number is negative.",
+    "id": "maths:M10-S03-C1-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0
+  },
+  {
+    "q": "4x − 9 = 23",
+    "answer": "8",
+    "balance": [
+      {
+        "l": "4x − 9",
+        "r": "23"
+      },
+      {
+        "l": "+ 9",
+        "r": "+ 9",
+        "kind": "op"
+      },
+      {
+        "l": "4x",
+        "r": "32"
+      },
+      {
+        "l": "÷ 4",
+        "r": "÷ 4",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "8"
+      }
+    ],
+    "check": "At x = 8, left side = 23 and right side = 23.",
+    "wrong": "3.5",
+    "error_work": "4x = 23 − 9 = 14; x = 3.5",
+    "error_note": "To remove −9, add 9 to both sides. This gives 4x = 32 before finding one x.",
+    "kind": "two",
+    "coefficients": [
+      "4",
+      "-9",
+      "0",
+      "23"
+    ],
+    "hint": "On the left, what operation would undo −9? What would remain with x?",
+    "method_note": "Add 9 to both sides to leave 4x = 32. Divide both sides by 4 to get x = 8.",
+    "id": "maths:M10-S03-C2-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1
+  },
+  {
+    "q": "5(x − 2) = 2x + 23",
+    "answer": "11",
+    "balance": [
+      {
+        "l": "5(x − 2)",
+        "r": "2x + 23"
+      },
+      {
+        "l": "5x − 10",
+        "r": "2x + 23"
+      },
+      {
+        "l": "− 2x",
+        "r": "− 2x",
+        "kind": "op"
+      },
+      {
+        "l": "3x − 10",
+        "r": "23"
+      },
+      {
+        "l": "+ 10",
+        "r": "+ 10",
+        "kind": "op"
+      },
+      {
+        "l": "3x",
+        "r": "33"
+      },
+      {
+        "l": "÷ 3",
+        "r": "÷ 3",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "11"
+      }
+    ],
+    "check": "At x = 11, left side = 45 and right side = 45.",
+    "wrong": "33/7",
+    "error_work": "7x − 10 = 23; x = 33/7",
+    "error_note": "Subtract 2x from both sides: 5x − 2x = 3x. Adding the coefficients instead does not preserve this equation.",
+    "kind": "both_bracket",
+    "coefficients": [
+      "5",
+      "-10",
+      "2",
+      "23"
+    ],
+    "hint": "What would the left side look like after expanding the brackets? Does it help?",
+    "method_note": "After simplifying, subtract 2x from both sides to leave 3x − 10 = 23. Add 10 to both sides, then divide by 3.",
+    "id": "maths:M10-S03-C3-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2
+  },
+  {
+    "id": "maths:M10-P3-SC-C1-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0,
+    "q": "x − 16 = 9",
+    "answer": "25",
+    "balance": [
+      {
+        "l": "x − 16",
+        "r": "9"
+      },
+      {
+        "l": "+ 16",
+        "r": "+ 16",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "25"
+      }
+    ],
+    "coefficients": [
+      "1",
+      "-16",
+      "0",
+      "9"
+    ],
+    "kind": "linear",
+    "hint": "Undo the constant -16 on both sides before dealing with the coefficient.",
+    "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 25. Substitute into the original equation to check.",
+    "check": "At x = 25, left side = 9 and right side = 9.",
+    "wrong": "-7",
+    "error_note": "Check the inverse operations and both sides: x = -7 gives -23 on the left but 9 on the right."
+  },
+  {
+    "id": "maths:M10-P3-SC-C1-Q2",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0,
+    "q": "8x = 28",
+    "answer": "3.5",
+    "balance": [
+      {
+        "l": "8x",
+        "r": "28"
+      },
+      {
+        "l": "÷ 8",
+        "r": "÷ 8",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "3.5"
+      }
+    ],
+    "coefficients": [
+      "8",
+      "0",
+      "0",
+      "28"
+    ],
+    "kind": "linear",
+    "hint": "Which operation undoes multiplication by 8?",
+    "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 3.5. Substitute into the original equation to check.",
+    "check": "At x = 3.5, left side = 28 and right side = 28.",
+    "wrong": "20",
+    "error_note": "Check the inverse operations and both sides: x = 20 gives 160 on the left but 28 on the right."
+  },
+  {
+    "id": "maths:M10-P3-SC-C1-Q3",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0,
+    "q": "x / 7 = -4",
+    "answer": "-28",
+    "balance": [
+      {
+        "l": "x / 7",
+        "r": "-4"
+      },
+      {
+        "l": "× 7",
+        "r": "× 7",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "-28"
+      }
+    ],
+    "coefficients": [
+      "1/7",
+      "0",
+      "0",
+      "-4"
+    ],
+    "kind": "division",
+    "hint": "Which operation undoes division by 7?",
+    "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -28. Substitute into the original equation to check.",
+    "check": "At x = -28, left side = -4 and right side = -4.",
+    "wrong": "-29/7",
+    "error_note": "Check the inverse operations and both sides: x = -29/7 gives -29/49 on the left but -4 on the right."
+  },
+  {
+    "id": "maths:M10-P3-SC-C1-Q4",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0,
+    "q": "5 = x + 12",
+    "answer": "-7",
+    "balance": [
+      {
+        "l": "5",
+        "r": "x + 12"
+      },
+      {
+        "l": "− 12",
+        "r": "− 12",
+        "kind": "op"
+      },
+      {
+        "l": "-7",
+        "r": "x"
+      }
+    ],
+    "coefficients": [
+      "1",
+      "12",
+      "0",
+      "5"
+    ],
+    "kind": "reversed",
+    "hint": "Undo the constant 12 on both sides before dealing with the coefficient.",
+    "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -7. Substitute into the original equation to check.",
+    "check": "At x = -7, left side = 5 and right side = 5.",
+    "wrong": "17",
+    "error_note": "Check the inverse operations and both sides: x = 17 gives 29 on the left but 5 on the right."
+  },
+  {
+    "id": "maths:M10-P3-SC-C2-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1,
+    "q": "7x + 9 = 44",
+    "answer": "5",
+    "balance": [
+      {
+        "l": "7x + 9",
+        "r": "44"
+      },
+      {
+        "l": "− 9",
+        "r": "− 9",
+        "kind": "op"
+      },
+      {
+        "l": "7x",
+        "r": "35"
+      },
+      {
+        "l": "÷ 7",
+        "r": "÷ 7",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "5"
+      }
+    ],
+    "coefficients": [
+      "7",
+      "9",
+      "0",
+      "44"
+    ],
+    "kind": "linear",
+    "hint": "Undo the constant 9 on both sides before dealing with the coefficient.",
+    "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 5. Substitute into the original equation to check.",
+    "check": "At x = 5, left side = 44 and right side = 44.",
+    "wrong": "53/7",
+    "error_note": "Check the inverse operations and both sides: x = 53/7 gives 62 on the left but 44 on the right."
+  },
+  {
+    "id": "maths:M10-P3-SC-C2-Q2",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1,
+    "q": "x / 6 + 4 = -1",
+    "answer": "-30",
+    "balance": [
+      {
+        "l": "x / 6 + 4",
+        "r": "-1"
+      },
+      {
+        "l": "− 4",
+        "r": "− 4",
+        "kind": "op"
+      },
+      {
+        "l": "x / 6",
+        "r": "-5"
+      },
+      {
+        "l": "× 6",
+        "r": "× 6",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "-30"
+      }
+    ],
+    "coefficients": [
+      "1/6",
+      "4",
+      "0",
+      "-1"
+    ],
+    "kind": "division",
+    "hint": "Undo the constant 4 on both sides before dealing with the coefficient.",
+    "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -30. Substitute into the original equation to check.",
+    "check": "At x = -30, left side = -1 and right side = -1.",
+    "wrong": "18",
+    "error_note": "Check the inverse operations and both sides: x = 18 gives 7 on the left but -1 on the right."
+  },
+  {
+    "id": "maths:M10-P3-SC-C2-Q3",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1,
+    "q": "-5x − 7 = 18",
+    "answer": "-5",
+    "balance": [
+      {
+        "l": "-5x − 7",
+        "r": "18"
+      },
+      {
+        "l": "+ 7",
+        "r": "+ 7",
+        "kind": "op"
+      },
+      {
+        "l": "-5x",
+        "r": "25"
+      },
+      {
+        "l": "÷ -5",
+        "r": "÷ -5",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "-5"
+      }
+    ],
+    "coefficients": [
+      "-5",
+      "-7",
+      "0",
+      "18"
+    ],
+    "kind": "linear",
+    "hint": "Undo the constant -7 on both sides before dealing with the coefficient.",
+    "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = -5. Substitute into the original equation to check.",
+    "check": "At x = -5, left side = 18 and right side = 18.",
+    "wrong": "-2.2",
+    "error_note": "Check the inverse operations and both sides: x = -2.2 gives 4 on the left but 18 on the right."
+  },
+  {
+    "id": "maths:M10-P3-SC-C2-Q4",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1,
+    "q": "8x − 9 = 11",
+    "answer": "2.5",
+    "balance": [
+      {
+        "l": "8x − 9",
+        "r": "11"
+      },
+      {
+        "l": "+ 9",
+        "r": "+ 9",
+        "kind": "op"
+      },
+      {
+        "l": "8x",
+        "r": "20"
+      },
+      {
+        "l": "÷ 8",
+        "r": "÷ 8",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "2.5"
+      }
+    ],
+    "coefficients": [
+      "8",
+      "-9",
+      "0",
+      "11"
+    ],
+    "kind": "linear",
+    "hint": "Undo the constant -9 on both sides before dealing with the coefficient.",
+    "method_note": "Apply each inverse operation to both sides. The simplified equation gives x = 2.5. Substitute into the original equation to check.",
+    "check": "At x = 2.5, left side = 11 and right side = 11.",
+    "wrong": "0.25",
+    "error_note": "Check the inverse operations and both sides: x = 0.25 gives -7 on the left but 11 on the right."
+  },
+  {
+    "id": "maths:M10-P3-SC-C3-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2,
+    "q": "4(x + 7) = 2x + 42",
+    "answer": "7",
+    "balance": [
+      {
+        "l": "4(x + 7)",
+        "r": "2x + 42"
+      },
+      {
+        "l": "4x + 28",
+        "r": "2x + 42"
+      },
+      {
+        "l": "− 2x",
+        "r": "− 2x",
+        "kind": "op"
+      },
+      {
+        "l": "2x + 28",
+        "r": "42"
+      },
+      {
+        "l": "− 28",
+        "r": "− 28",
+        "kind": "op"
+      },
+      {
+        "l": "2x",
+        "r": "14"
+      },
+      {
+        "l": "÷ 2",
+        "r": "÷ 2",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "7"
+      }
+    ],
+    "coefficients": [
+      "4",
+      "28",
+      "2",
+      "42"
+    ],
+    "kind": "both_bracket",
+    "hint": "Expand the bracket by multiplying both terms by 4.",
+    "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 2x + 28 = 42. The simplified equation gives x = 7. Substitute into the original equation to check.",
+    "check": "At x = 7, left side = 56 and right side = 56.",
+    "wrong": "35",
+    "error_note": "Check the inverse operations and both sides: x = 35 gives 168 on the left but 112 on the right."
+  },
+  {
+    "id": "maths:M10-P3-SC-C3-Q2",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2,
+    "q": "6(x − 3) = 4x − 7",
+    "answer": "5.5",
+    "balance": [
+      {
+        "l": "6(x − 3)",
+        "r": "4x − 7"
+      },
+      {
+        "l": "6x − 18",
+        "r": "4x − 7"
+      },
+      {
+        "l": "− 4x",
+        "r": "− 4x",
+        "kind": "op"
+      },
+      {
+        "l": "2x − 18",
+        "r": "-7"
+      },
+      {
+        "l": "+ 18",
+        "r": "+ 18",
+        "kind": "op"
+      },
+      {
+        "l": "2x",
+        "r": "11"
+      },
+      {
+        "l": "÷ 2",
+        "r": "÷ 2",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "5.5"
+      }
+    ],
+    "coefficients": [
+      "6",
+      "-18",
+      "4",
+      "-7"
+    ],
+    "kind": "both_bracket",
+    "hint": "Expand the bracket by multiplying both terms by 6.",
+    "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 2x − 18 = -7. The simplified equation gives x = 5.5. Substitute into the original equation to check.",
+    "check": "At x = 5.5, left side = 15 and right side = 15.",
+    "wrong": "-12.5",
+    "error_note": "Check the inverse operations and both sides: x = -12.5 gives -93 on the left but -57 on the right."
+  },
+  {
+    "id": "maths:M10-P3-SC-C3-Q3",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2,
+    "q": "9x + 5 = 3x − 13",
+    "answer": "-3",
+    "balance": [
+      {
+        "l": "9x + 5",
+        "r": "3x − 13"
+      },
+      {
+        "l": "− 3x",
+        "r": "− 3x",
+        "kind": "op"
+      },
+      {
+        "l": "6x + 5",
+        "r": "-13"
+      },
+      {
+        "l": "− 5",
+        "r": "− 5",
+        "kind": "op"
+      },
+      {
+        "l": "6x",
+        "r": "-18"
+      },
+      {
+        "l": "÷ 6",
+        "r": "÷ 6",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "-3"
+      }
+    ],
+    "coefficients": [
+      "9",
+      "5",
+      "3",
+      "-13"
+    ],
+    "kind": "linear",
+    "hint": "Undo the constant 5 on both sides before dealing with the coefficient.",
+    "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 6x + 5 = -13. The simplified equation gives x = -3. Substitute into the original equation to check.",
+    "check": "At x = -3, left side = -22 and right side = -22.",
+    "wrong": "-4/3",
+    "error_note": "Check the inverse operations and both sides: x = -4/3 gives -7 on the left but -17 on the right."
+  },
+  {
+    "id": "maths:M10-P3-SC-C3-Q4",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2,
+    "q": "5(x − 4) = 2x − 11",
+    "answer": "3",
+    "balance": [
+      {
+        "l": "5(x − 4)",
+        "r": "2x − 11"
+      },
+      {
+        "l": "5x − 20",
+        "r": "2x − 11"
+      },
+      {
+        "l": "− 2x",
+        "r": "− 2x",
+        "kind": "op"
+      },
+      {
+        "l": "3x − 20",
+        "r": "-11"
+      },
+      {
+        "l": "+ 20",
+        "r": "+ 20",
+        "kind": "op"
+      },
+      {
+        "l": "3x",
+        "r": "9"
+      },
+      {
+        "l": "÷ 3",
+        "r": "÷ 3",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "3"
+      }
+    ],
+    "coefficients": [
+      "5",
+      "-20",
+      "2",
+      "-11"
+    ],
+    "kind": "both_bracket",
+    "hint": "Expand the bracket by multiplying both terms by 5.",
+    "method_note": "Apply each inverse operation to both sides. Collect the x terms first: 3x − 20 = -11. The simplified equation gives x = 3. Substitute into the original equation to check.",
+    "check": "At x = 3, left side = -5 and right side = -5.",
+    "wrong": "-31/3",
+    "error_note": "Check the inverse operations and both sides: x = -31/3 gives -215/3 on the left but -95/3 on the right."
+  },
+  {
+    "q": "x + 6 = -2",
+    "answer": "-8",
+    "balance": [
+      {
+        "l": "x + 6",
+        "r": "-2"
+      },
+      {
+        "l": "− 6",
+        "r": "− 6",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "-8"
+      }
+    ],
+    "check": "At x = -8, left side = -2 and right side = -2.",
+    "wrong": "4",
+    "error_work": "x = -2 + 6 = 4",
+    "error_note": "To remove +6, subtract 6 from both sides. This gives x = -8.",
+    "kind": "add",
+    "coefficients": [
+      "1",
+      "6",
+      "0",
+      "-2"
+    ],
+    "hint": "On the left, what operation would undo +6? What would remain with x?",
+    "method_note": "Subtract 6 from both sides to leave x = -8.",
+    "id": "maths:M10-WEB-SC4-C1-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q1"
+  },
+  {
+    "q": "8 = x − 6",
+    "answer": "14",
+    "balance": [
+      {
+        "l": "8",
+        "r": "x − 6"
+      },
+      {
+        "l": "x − 6",
+        "r": "8"
+      },
+      {
+        "l": "+ 6",
+        "r": "+ 6",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "14"
+      }
+    ],
+    "check": "At x = 14, left side = 8 and right side = 8.",
+    "wrong": "2",
+    "error_work": "x = 8 − 6 = 2",
+    "error_note": "To remove −6, add 6 to both sides. This gives x = 14.",
+    "kind": "sub",
+    "coefficients": [
+      "1",
+      "-6",
+      "0",
+      "8"
+    ],
+    "hint": "On the right, what operation would undo −6? What would remain with x?",
+    "method_note": "Add 6 to both sides to leave x = 14.",
+    "id": "maths:M10-WEB-SC4-C1-Q2",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q2"
+  },
+  {
+    "q": "x − 7 = 18",
+    "answer": "25",
+    "balance": [
+      {
+        "l": "x − 7",
+        "r": "18"
+      },
+      {
+        "l": "+ 7",
+        "r": "+ 7",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "25"
+      }
+    ],
+    "check": "At x = 25, left side = 18 and right side = 18.",
+    "wrong": "11",
+    "error_work": "x = 18 − 7 = 11",
+    "error_note": "To remove −7, add 7 to both sides. This gives x = 25.",
+    "kind": "sub",
+    "coefficients": [
+      "1",
+      "-7",
+      "0",
+      "18"
+    ],
+    "hint": "On the left, what operation would undo −7? What would remain with x?",
+    "method_note": "Add 7 to both sides to leave x = 25.",
+    "id": "maths:M10-WEB-SC4-C1-Q3",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q3"
+  },
+  {
+    "q": "x − 9 = -4",
+    "answer": "5",
+    "balance": [
+      {
+        "l": "x − 9",
+        "r": "-4"
+      },
+      {
+        "l": "+ 9",
+        "r": "+ 9",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "5"
+      }
+    ],
+    "check": "At x = 5, left side = -4 and right side = -4.",
+    "wrong": "-13",
+    "error_work": "x = -4 − 9 = -13",
+    "error_note": "To remove −9, add 9 to both sides. This gives x = 5.",
+    "kind": "sub",
+    "coefficients": [
+      "1",
+      "-9",
+      "0",
+      "-4"
+    ],
+    "hint": "On the left, what operation would undo −9? What would remain with x?",
+    "method_note": "Add 9 to both sides to leave x = 5.",
+    "id": "maths:M10-WEB-SC4-C1-Q4",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q4"
+  },
+  {
+    "q": "189 = 7x",
+    "answer": "27",
+    "balance": [
+      {
+        "l": "189",
+        "r": "7x"
+      },
+      {
+        "l": "7x",
+        "r": "189"
+      },
+      {
+        "l": "÷ 7",
+        "r": "÷ 7",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "27"
+      }
+    ],
+    "check": "At x = 27, left side = 189 and right side = 189.",
+    "wrong": "182",
+    "error_work": "x = 189 − 7 = 182",
+    "error_note": "7x means multiplication by 7. Subtracting 7 does not leave x; divide both sides by 7.",
+    "kind": "mul",
+    "coefficients": [
+      "7",
+      "0",
+      "0",
+      "189"
+    ],
+    "hint": "In 189 = 7x, 7x means 7 times x. How could you find the value of one x?",
+    "method_note": "Divide both sides by 7: x = 189 ÷ 7 = 27.",
+    "id": "maths:M10-WEB-SC4-C1-Q5",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q5"
+  },
+  {
+    "q": "4x = 4",
+    "answer": "1",
+    "balance": [
+      {
+        "l": "4x",
+        "r": "4"
+      },
+      {
+        "l": "÷ 4",
+        "r": "÷ 4",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "1"
+      }
+    ],
+    "check": "At x = 1, left side = 4 and right side = 4.",
+    "wrong": "0",
+    "error_work": "x = 4 − 4 = 0",
+    "error_note": "4x means multiplication by 4. Subtracting 4 does not leave x; divide both sides by 4.",
+    "kind": "mul",
+    "coefficients": [
+      "4",
+      "0",
+      "0",
+      "4"
+    ],
+    "hint": "In 4x = 4, 4x means 4 times x. How could you find the value of one x?",
+    "method_note": "Divide both sides by 4: x = 4 ÷ 4 = 1.",
+    "id": "maths:M10-WEB-SC4-C1-Q6",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 0,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q6"
+  },
+  {
+    "q": "6x − 3 = 57",
+    "answer": "10",
+    "balance": [
+      {
+        "l": "6x − 3",
+        "r": "57"
+      },
+      {
+        "l": "+ 3",
+        "r": "+ 3",
+        "kind": "op"
+      },
+      {
+        "l": "6x",
+        "r": "60"
+      },
+      {
+        "l": "÷ 6",
+        "r": "÷ 6",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "10"
+      }
+    ],
+    "check": "At x = 10, left side = 57 and right side = 57.",
+    "wrong": "9",
+    "error_work": "6x = 57 − 3 = 54; x = 9",
+    "error_note": "To remove −3, add 3 to both sides. This gives 6x = 60 before finding one x.",
+    "kind": "two",
+    "coefficients": [
+      "6",
+      "-3",
+      "0",
+      "57"
+    ],
+    "hint": "On the left, what operation would undo −3? What would remain with x?",
+    "method_note": "Add 3 to both sides to leave 6x = 60. Divide both sides by 6 to get x = 10.",
+    "id": "maths:M10-WEB-SC4-C2-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q1"
+  },
+  {
+    "q": "8 + 7x = 71",
+    "answer": "9",
+    "balance": [
+      {
+        "l": "8 + 7x",
+        "r": "71"
+      },
+      {
+        "l": "− 8",
+        "r": "− 8",
+        "kind": "op"
+      },
+      {
+        "l": "7x",
+        "r": "63"
+      },
+      {
+        "l": "÷ 7",
+        "r": "÷ 7",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "9"
+      }
+    ],
+    "check": "At x = 9, left side = 71 and right side = 71.",
+    "wrong": "79/7",
+    "error_work": "7x = 71 + 8 = 79; x = 79/7",
+    "error_note": "To remove +8, subtract 8 from both sides. This gives 7x = 63 before finding one x.",
+    "kind": "reverse",
+    "coefficients": [
+      "7",
+      "8",
+      "0",
+      "71"
+    ],
+    "hint": "On the left, what operation would undo +8? What would remain with x?",
+    "method_note": "Subtract 8 from both sides to leave 7x = 63. Divide both sides by 7 to get x = 9.",
+    "id": "maths:M10-WEB-SC4-C2-Q2",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q2"
+  },
+  {
+    "q": "7x + 6 = -29",
+    "answer": "-5",
+    "balance": [
+      {
+        "l": "7x + 6",
+        "r": "-29"
+      },
+      {
+        "l": "− 6",
+        "r": "− 6",
+        "kind": "op"
+      },
+      {
+        "l": "7x",
+        "r": "-35"
+      },
+      {
+        "l": "÷ 7",
+        "r": "÷ 7",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "-5"
+      }
+    ],
+    "check": "At x = -5, left side = -29 and right side = -29.",
+    "wrong": "-23/7",
+    "error_work": "7x = -29 + 6 = -23; x = -23/7",
+    "error_note": "To remove +6, subtract 6 from both sides. This gives 7x = -35 before finding one x.",
+    "kind": "two",
+    "coefficients": [
+      "7",
+      "6",
+      "0",
+      "-29"
+    ],
+    "hint": "On the left, what operation would undo +6? What would remain with x?",
+    "method_note": "Subtract 6 from both sides to leave 7x = -35. Divide both sides by 7 to get x = -5.",
+    "id": "maths:M10-WEB-SC4-C2-Q3",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q3"
+  },
+  {
+    "q": "-9 + 6x = 39",
+    "answer": "8",
+    "balance": [
+      {
+        "l": "-9 + 6x",
+        "r": "39"
+      },
+      {
+        "l": "+ 9",
+        "r": "+ 9",
+        "kind": "op"
+      },
+      {
+        "l": "6x",
+        "r": "48"
+      },
+      {
+        "l": "÷ 6",
+        "r": "÷ 6",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "8"
+      }
+    ],
+    "check": "At x = 8, left side = 39 and right side = 39.",
+    "wrong": "5",
+    "error_work": "6x = 39 − 9 = 30; x = 5",
+    "error_note": "To remove −9, add 9 to both sides. This gives 6x = 48 before finding one x.",
+    "kind": "reverse",
+    "coefficients": [
+      "6",
+      "-9",
+      "0",
+      "39"
+    ],
+    "hint": "On the left, what operation would undo −9? What would remain with x?",
+    "method_note": "Add 9 to both sides to leave 6x = 48. Divide both sides by 6 to get x = 8.",
+    "id": "maths:M10-WEB-SC4-C2-Q4",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q4"
+  },
+  {
+    "q": "5x + x + 8 = 8",
+    "answer": "0",
+    "balance": [
+      {
+        "l": "5x + x + 8",
+        "r": "8"
+      },
+      {
+        "l": "6x + 8",
+        "r": "8"
+      },
+      {
+        "l": "− 8",
+        "r": "− 8",
+        "kind": "op"
+      },
+      {
+        "l": "6x",
+        "r": "0"
+      },
+      {
+        "l": "÷ 6",
+        "r": "÷ 6",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "0"
+      }
+    ],
+    "check": "At x = 0, left side = 8 and right side = 8.",
+    "wrong": "8/3",
+    "error_work": "6x = 8 + 8 = 16; x = 8/3",
+    "error_note": "To remove +8, subtract 8 from both sides. This gives 6x = 0 before finding one x.",
+    "kind": "collect",
+    "coefficients": [
+      "6",
+      "8",
+      "0",
+      "8"
+    ],
+    "hint": "On the left, which terms contain x? What would that side look like after collecting them?",
+    "method_note": "Collect the x-terms first. Subtract 8 from both sides to leave 6x = 0. Divide both sides by 6 to get x = 0.",
+    "id": "maths:M10-WEB-SC4-C2-Q5",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q5"
+  },
+  {
+    "q": "-3 + 2x = -11",
+    "answer": "-4",
+    "balance": [
+      {
+        "l": "-3 + 2x",
+        "r": "-11"
+      },
+      {
+        "l": "+ 3",
+        "r": "+ 3",
+        "kind": "op"
+      },
+      {
+        "l": "2x",
+        "r": "-8"
+      },
+      {
+        "l": "÷ 2",
+        "r": "÷ 2",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "-4"
+      }
+    ],
+    "check": "At x = -4, left side = -11 and right side = -11.",
+    "wrong": "-7",
+    "error_work": "2x = -11 − 3 = -14; x = -7",
+    "error_note": "To remove −3, add 3 to both sides. This gives 2x = -8 before finding one x.",
+    "kind": "reverse",
+    "coefficients": [
+      "2",
+      "-3",
+      "0",
+      "-11"
+    ],
+    "hint": "On the left, what operation would undo −3? What would remain with x?",
+    "method_note": "Add 3 to both sides to leave 2x = -8. Divide both sides by 2 to get x = -4.",
+    "id": "maths:M10-WEB-SC4-C2-Q6",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 1,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q6"
+  },
+  {
+    "q": "3(x − 3) = 2x − 11",
+    "answer": "-2",
+    "balance": [
+      {
+        "l": "3(x − 3)",
+        "r": "2x − 11"
+      },
+      {
+        "l": "3x − 9",
+        "r": "2x − 11"
+      },
+      {
+        "l": "− 2x",
+        "r": "− 2x",
+        "kind": "op"
+      },
+      {
+        "l": "x − 9",
+        "r": "-11"
+      },
+      {
+        "l": "+ 9",
+        "r": "+ 9",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "-2"
+      }
+    ],
+    "check": "At x = -2, left side = -15 and right side = -15.",
+    "wrong": "-0.4",
+    "error_work": "5x − 9 = -11; x = -0.4",
+    "error_note": "Subtract 2x from both sides: 3x − 2x = x. Adding the coefficients instead does not preserve this equation.",
+    "kind": "both_bracket",
+    "coefficients": [
+      "3",
+      "-9",
+      "2",
+      "-11"
+    ],
+    "hint": "What would the left side look like after expanding the brackets? Does it help?",
+    "method_note": "After simplifying, subtract 2x from both sides to leave x − 9 = -11. Add 9 to both sides to leave x = -2.",
+    "id": "maths:M10-WEB-SC4-C3-Q1",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q1"
+  },
+  {
+    "q": "5x + 10 = 20",
+    "answer": "2",
+    "balance": [
+      {
+        "l": "5x + 10",
+        "r": "20"
+      },
+      {
+        "l": "5(x + 2)",
+        "r": "20"
+      },
+      {
+        "l": "÷ 5",
+        "r": "÷ 5",
+        "kind": "op"
+      },
+      {
+        "l": "x + 2",
+        "r": "4"
+      },
+      {
+        "l": "− 2",
+        "r": "− 2",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "2"
+      }
+    ],
+    "check": "At x = 2, left side = 20 and right side = 20.",
+    "wrong": "-6",
+    "error_work": "x + 10 = 4; x = -6",
+    "error_note": "Dividing by 5 changes every term: the constant 10 becomes 2 as well as 5x becoming x.",
+    "kind": "factor",
+    "coefficients": [
+      "5",
+      "10",
+      "0",
+      "20"
+    ],
+    "instruction": "Use a common factor to simplify the equation first. Show which factor you use.",
+    "hint": "What number divides every term in 5x + 10 = 20? What would the equation look like after dividing both sides by it?",
+    "method_note": "Divide every term by 5: 10 ÷ 5 = 2 and 20 ÷ 5 = 4. Then isolate x.",
+    "id": "maths:M10-WEB-SC4-C3-Q2",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q2"
+  },
+  {
+    "q": "3x + 12 = 9",
+    "answer": "-1",
+    "balance": [
+      {
+        "l": "3x + 12",
+        "r": "9"
+      },
+      {
+        "l": "3(x + 4)",
+        "r": "9"
+      },
+      {
+        "l": "÷ 3",
+        "r": "÷ 3",
+        "kind": "op"
+      },
+      {
+        "l": "x + 4",
+        "r": "3"
+      },
+      {
+        "l": "− 4",
+        "r": "− 4",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "-1"
+      }
+    ],
+    "check": "At x = -1, left side = 9 and right side = 9.",
+    "wrong": "-9",
+    "error_work": "x + 12 = 3; x = -9",
+    "error_note": "Dividing by 3 changes every term: the constant 12 becomes 4 as well as 3x becoming x.",
+    "kind": "factor",
+    "coefficients": [
+      "3",
+      "12",
+      "0",
+      "9"
+    ],
+    "instruction": "Use a common factor to simplify the equation first. Show which factor you use.",
+    "hint": "What number divides every term in 3x + 12 = 9? What would the equation look like after dividing both sides by it?",
+    "method_note": "Divide every term by 3: 12 ÷ 3 = 4 and 9 ÷ 3 = 3. Then isolate x.",
+    "id": "maths:M10-WEB-SC4-C3-Q3",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q3"
+  },
+  {
+    "q": "4x + 2 = x + 14",
+    "answer": "4",
+    "balance": [
+      {
+        "l": "4x + 2",
+        "r": "x + 14"
+      },
+      {
+        "l": "− x",
+        "r": "− x",
+        "kind": "op"
+      },
+      {
+        "l": "3x + 2",
+        "r": "14"
+      },
+      {
+        "l": "− 2",
+        "r": "− 2",
+        "kind": "op"
+      },
+      {
+        "l": "3x",
+        "r": "12"
+      },
+      {
+        "l": "÷ 3",
+        "r": "÷ 3",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "4"
+      }
+    ],
+    "check": "At x = 4, left side = 18 and right side = 18.",
+    "wrong": "2.4",
+    "error_work": "5x + 2 = 14; x = 2.4",
+    "error_note": "Subtract x from both sides: 4x − x = 3x. Adding the coefficients instead does not preserve this equation.",
+    "kind": "both",
+    "coefficients": [
+      "4",
+      "2",
+      "1",
+      "14"
+    ],
+    "hint": "In 4x + 2 = x + 14, what could you subtract from both sides to leave x-terms on just one side?",
+    "method_note": "After simplifying, subtract x from both sides to leave 3x + 2 = 14. Subtract 2 from both sides, then divide by 3.",
+    "id": "maths:M10-WEB-SC4-C3-Q4",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q4"
+  },
+  {
+    "q": "5(x − 3) = x + 69",
+    "answer": "21",
+    "balance": [
+      {
+        "l": "5(x − 3)",
+        "r": "x + 69"
+      },
+      {
+        "l": "5x − 15",
+        "r": "x + 69"
+      },
+      {
+        "l": "− x",
+        "r": "− x",
+        "kind": "op"
+      },
+      {
+        "l": "4x − 15",
+        "r": "69"
+      },
+      {
+        "l": "+ 15",
+        "r": "+ 15",
+        "kind": "op"
+      },
+      {
+        "l": "4x",
+        "r": "84"
+      },
+      {
+        "l": "÷ 4",
+        "r": "÷ 4",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "21"
+      }
+    ],
+    "check": "At x = 21, left side = 90 and right side = 90.",
+    "wrong": "14",
+    "error_work": "6x − 15 = 69; x = 14",
+    "error_note": "Subtract x from both sides: 5x − x = 4x. Adding the coefficients instead does not preserve this equation.",
+    "kind": "both_bracket",
+    "coefficients": [
+      "5",
+      "-15",
+      "1",
+      "69"
+    ],
+    "hint": "What would the left side look like after expanding the brackets? Does it help?",
+    "method_note": "After simplifying, subtract x from both sides to leave 4x − 15 = 69. Add 15 to both sides, then divide by 4.",
+    "id": "maths:M10-WEB-SC4-C3-Q5",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q5"
+  },
+  {
+    "q": "6x + 12 = 126",
+    "answer": "19",
+    "balance": [
+      {
+        "l": "6x + 12",
+        "r": "126"
+      },
+      {
+        "l": "6(x + 2)",
+        "r": "126"
+      },
+      {
+        "l": "÷ 6",
+        "r": "÷ 6",
+        "kind": "op"
+      },
+      {
+        "l": "x + 2",
+        "r": "21"
+      },
+      {
+        "l": "− 2",
+        "r": "− 2",
+        "kind": "op"
+      },
+      {
+        "l": "x",
+        "r": "19"
+      }
+    ],
+    "check": "At x = 19, left side = 126 and right side = 126.",
+    "wrong": "9",
+    "error_work": "x + 12 = 21; x = 9",
+    "error_note": "Dividing by 6 changes every term: the constant 12 becomes 2 as well as 6x becoming x.",
+    "kind": "factor",
+    "coefficients": [
+      "6",
+      "12",
+      "0",
+      "126"
+    ],
+    "instruction": "Use a common factor to simplify the equation first. Show which factor you use.",
+    "hint": "What number divides every term in 6x + 12 = 126? What would the equation look like after dividing both sides by it?",
+    "method_note": "Divide every term by 6: 12 ÷ 6 = 2 and 126 ÷ 6 = 21. Then isolate x.",
+    "id": "maths:M10-WEB-SC4-C3-Q6",
+    "subject": "maths",
+    "topic": "M10",
+    "type": "scaffolded",
+    "level": 2,
+    "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q6"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "guidance": {
+    "default": {
+      "aim": "Combine fractions with a common denominator.",
+      "steps": [
+        "Prepare the fractions",
+        "Use a common denominator",
+        "Add or subtract",
+        "Simplify and check"
+      ]
+    },
+    "byLevel": {
+      "build": {
+        "aim": "Use equivalent fractions when one denominator is a multiple of the other.",
+        "steps": [
+          "Prepare the fractions",
+          "Use a common denominator",
+          "Add or subtract",
+          "Simplify and check"
+        ]
+      },
+      "confidence": {
+        "aim": "Use unrelated denominators and convert mixed numbers before calculating.",
+        "steps": [
+          "Prepare the fractions",
+          "Use a common denominator",
+          "Add or subtract",
+          "Simplify and check"
+        ]
+      }
+    }
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

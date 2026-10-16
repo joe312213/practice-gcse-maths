@@ -1,7 +1,7 @@
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /** Independently check draft-bank mathematics, page coverage and deterministic teaching phases. */
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
 import { rational, markAnswer } from "../website/src/lib/domain/engine.mjs";
 import { markErrors } from "../website/src/lib/domain/errors.mjs";
 import {
@@ -10,12 +10,8 @@ import {
 } from "../website/src/lib/domain/topic-pages.mjs";
 import { calculationFrames } from "../website/src/lib/application/calculation-demo.mjs";
 const banks = await Promise.all(
-  ["signed-numbers", "fractions", "percentages", "problems"].map(async (file) =>
-    JSON.parse(
-      await readFile(
-        new URL(`../website/static/data/${file}.json`, import.meta.url),
-      ),
-    ),
+  ["signed-numbers", "fractions", "percentages", "problems"].map(
+    async (file) => await readTopicBank(`${file}`),
   ),
 );
 function expected(m) {
@@ -88,7 +84,11 @@ for (const bank of banks)
       assessmentPage(bank, () => 0.3).map((q) => q.level),
       [0, 0, 1, 1, 2, 2],
     );
-    for (const q of [...bank.questions, ...bank.recap]) {
+    for (const q of [
+      ...bank.questions.filter((q) => !q.investigation),
+      ...bank.retiredQuestions,
+      ...bank.recap,
+    ]) {
       assert.ok(
         markAnswer(q.answer, expected(q.model)).correct,
         `${q.id}: ${q.q}`,

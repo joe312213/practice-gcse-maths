@@ -1,17 +1,13 @@
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /** Units are presentation metadata; arithmetic and accepted numeric answers stay unchanged. */
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
 import { formatQuantity } from "../website/src/lib/domain/quantity.mjs";
 import { markAnswer } from "../website/src/lib/domain/engine.mjs";
-const load = async (name) =>
-  JSON.parse(
-    await readFile(
-      new URL(`../website/static/data/${name}.json`, import.meta.url),
-    ),
-  );
+const load = async (name) => await readTopicBank(`${name}`);
 const items = (b) => [
-  ...b.questions,
+  ...b.questions.filter((q) => !q.investigation),
+  ...b.retiredQuestions,
   ...(b.recap ?? []),
   ...b.problemTeaching.examples,
 ];

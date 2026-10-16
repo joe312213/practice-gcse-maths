@@ -1,0 +1,1217 @@
+[
+  {
+    "id": "maths:M01-SE-C1-Q1",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "43 × 6",
+    "a": 43,
+    "b": 6,
+    "answer": "258",
+    "check": "Round each factor to 1 significant figure: 43 ≈ 40 and 6 ≈ 6. Estimate: 40 × 6 = 240. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C1-Q1.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Change the 4 × 6 cell to 2 tens and 4 units."
+      },
+      {
+        "id": "1",
+        "text": "Change the 4 × 6 cell to 4 tens and 2 units."
+      },
+      {
+        "id": "2",
+        "text": "Keep the 4 × 6 cell and reverse the final answer digits."
+      }
+    ],
+    "correctionId": "0",
+    "correction": "The top-left cell should be 4 × 6 = 24, not 14. Correct answer: 258.",
+    "wrong": "158",
+    "error_note": "The top-left cell should be 4 × 6 = 24, not 14. Correct answer: 258.",
+    "hint": "Check the 4 × 6 cell. Do its two halves represent that product?"
+  },
+  {
+    "id": "maths:M01-SE-C1-Q2",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "89 × 7",
+    "a": 89,
+    "b": 7,
+    "answer": "623",
+    "check": "Round each factor to 1 significant figure: 89 ≈ 90 and 7 ≈ 7. Estimate: 90 × 7 = 630. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C1-Q2.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Write the carry as an extra answer digit."
+      },
+      {
+        "id": "1",
+        "text": "Add the carry from the tens diagonal into the hundreds diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Add the carry back into the units diagonal."
+      }
+    ],
+    "correctionId": "1",
+    "correction": "Include the carry from the previous diagonal in the next total. Correct answer: 623.",
+    "wrong": "523",
+    "error_note": "Include the carry from the previous diagonal in the next total. Correct answer: 623.",
+    "hint": "The middle diagonal totals more than 9. Where should its carry go?"
+  },
+  {
+    "id": "maths:M01-SE-C1-Q3",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "76 × 7",
+    "a": 76,
+    "b": 7,
+    "answer": "532",
+    "check": "Round each factor to 1 significant figure: 76 ≈ 80 and 7 ≈ 7. Estimate: 80 × 7 = 560. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C1-Q3.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Keep the small carry as a separate answer digit."
+      },
+      {
+        "id": "1",
+        "text": "Ignore the small carry after writing it."
+      },
+      {
+        "id": "2",
+        "text": "Add the small carry into the next diagonal once."
+      }
+    ],
+    "correctionId": "2",
+    "correction": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 532.",
+    "wrong": "5132",
+    "error_note": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 532.",
+    "hint": "Compare the small carry digit with the digits of the final answer. Do they have the same job?"
+  },
+  {
+    "id": "maths:M01-SE-C2-Q1",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "34 × 16",
+    "a": 34,
+    "b": 16,
+    "answer": "544",
+    "check": "Round each factor to 1 significant figure: 34 ≈ 30 and 16 ≈ 20. Estimate: 30 × 20 = 600. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C2-Q1.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Put the 2 from the 4 × 6 cell into the tens diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Put both digits of the 4 × 6 cell into the units diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Put the 4 from the 4 × 6 cell into the tens diagonal."
+      }
+    ],
+    "correctionId": "0",
+    "correction": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 544.",
+    "wrong": "526",
+    "error_note": "The 2 in the bottom-right cell belongs to the next diagonal (tens), not the units diagonal. Correct answer: 544.",
+    "hint": "In the 4 × 6 cell, which diagonal contains the tens part of the product?"
+  },
+  {
+    "id": "maths:M01-SE-C2-Q2",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "47 × 26",
+    "a": 47,
+    "b": 26,
+    "answer": "1222",
+    "check": "Round each factor to 1 significant figure: 47 ≈ 50 and 26 ≈ 30. Estimate: 50 × 30 = 1,500. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C2-Q2.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Add the carry to the units diagonal instead."
+      },
+      {
+        "id": "1",
+        "text": "Add the carry from the tens diagonal into the hundreds diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Write the carry as an extra digit between the diagonal totals."
+      }
+    ],
+    "correctionId": "1",
+    "correction": "Include the carry from the previous diagonal in the next total. Correct answer: 1,222.",
+    "wrong": "1122",
+    "error_note": "Include the carry from the previous diagonal in the next total. Correct answer: 1,222.",
+    "hint": "Follow the carry out of the tens diagonal. Was it included in the next total?"
+  },
+  {
+    "id": "maths:M01-SE-C2-Q3",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "68 × 24",
+    "a": 68,
+    "b": 24,
+    "answer": "1632",
+    "check": "Round each factor to 1 significant figure: 68 ≈ 70 and 24 ≈ 20. Estimate: 70 × 20 = 1,400. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C2-Q3.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Copy the carry into the answer as a separate digit."
+      },
+      {
+        "id": "1",
+        "text": "Remove the carry without using it in another total."
+      },
+      {
+        "id": "2",
+        "text": "Use the carry in the next diagonal total, without adding an extra answer digit."
+      }
+    ],
+    "correctionId": "2",
+    "correction": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 1,632.",
+    "wrong": "16132",
+    "error_note": "The carry is a small working digit, not an extra answer digit. Add it into the next diagonal once. Correct answer: 1,632.",
+    "hint": "Is the small carry part of the written answer, or part of the next diagonal total?"
+  },
+  {
+    "id": "maths:M01-SE-C3-Q1",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "6,786 × 947",
+    "a": 6786,
+    "b": 947,
+    "answer": "6426342",
+    "check": "Round each factor to 1 significant figure: 6,786 ≈ 7,000 and 947 ≈ 900. Estimate: 7,000 × 900 = 6,300,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C3-Q1.svg",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Write 4 tens and 2 units in the 6 × 7 cell."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Keep that cell and discard every diagonal carry."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Put both digits of that cell in the units diagonal."
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "6 × 7 = 42, not 52. Write 4 tens and 2 units, then recalculate the diagonals.",
+    "wrong": "6426352",
+    "error_note": "6 × 7 = 42, not 52. Write 4 tens and 2 units, then recalculate the diagonals.",
+    "hint": "Check the 6 × 7 cell. What product belongs in its two halves?",
+    "method_note": "The hundreds diagonal has 22 plus the incoming carry 1, totalling 23. Write 3 and carry 2 into the thousands diagonal."
+  },
+  {
+    "id": "maths:M01-SE-C3-Q2",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "8,947 × 768",
+    "a": 8947,
+    "b": 768,
+    "answer": "6871296",
+    "check": "Round each factor to 1 significant figure: 8,947 ≈ 9,000 and 768 ≈ 800. Estimate: 9,000 × 800 = 7,200,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C3-Q2.svg",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Write 5 tens and 6 units in the 7 × 8 cell."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Keep that cell and discard every diagonal carry."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Put both digits of that cell in the units diagonal."
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "7 × 8 = 56, not 66. Write 5 tens and 6 units, then recalculate the diagonals.",
+    "wrong": "6871306",
+    "error_note": "7 × 8 = 56, not 66. Write 5 tens and 6 units, then recalculate the diagonals.",
+    "hint": "Check the 7 × 8 cell. What product belongs in its two halves?",
+    "method_note": "The hundreds diagonal has 22 plus the incoming carry 0, totalling 22. Write 2 and carry 2 into the thousands diagonal."
+  },
+  {
+    "id": "maths:M01-SE-C3-Q3",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "7,865 × 8,596",
+    "a": 7865,
+    "b": 8596,
+    "answer": "67607540",
+    "check": "Round each factor to 1 significant figure: 7,865 ≈ 8,000 and 8,596 ≈ 9,000. Estimate: 8,000 × 9,000 = 72,000,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C3-Q3.svg",
+    "errorOptions": [
+      {
+        "id": "repair",
+        "text": "Write 3 tens and 0 units in the 5 × 6 cell."
+      },
+      {
+        "id": "wrong-a",
+        "text": "Keep that cell and discard every diagonal carry."
+      },
+      {
+        "id": "wrong-b",
+        "text": "Put both digits of that cell in the units diagonal."
+      }
+    ],
+    "correctionId": "repair",
+    "correction": "5 × 6 = 30, not 40. Write 3 tens and 0 units, then recalculate the diagonals.",
+    "wrong": "67607550",
+    "error_note": "5 × 6 = 30, not 40. Write 3 tens and 0 units, then recalculate the diagonals.",
+    "hint": "Check the 5 × 6 cell. What product belongs in its two halves?",
+    "method_note": "The hundreds diagonal has 24 plus the incoming carry 1, totalling 25. Write 5 and carry 2 into the thousands diagonal."
+  },
+  {
+    "id": "maths:M01-SE-C1-Q4",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "57 × 8",
+    "a": 57,
+    "b": 8,
+    "answer": "456",
+    "check": "Round each factor to 1 significant figure: 57 ≈ 60 and 8 ≈ 8. Estimate: 60 × 8 = 480. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C1-Q4.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Change the 5 × 8 cell to 4 tens and 0 units."
+      },
+      {
+        "id": "1",
+        "text": "Change the 5 × 8 cell to 0 tens and 4 units."
+      },
+      {
+        "id": "2",
+        "text": "Keep the 5 × 8 cell and remove every carry when adding diagonals."
+      }
+    ],
+    "correctionId": "0",
+    "correction": "The top-left cell should be 5 × 8 = 40, not 30. Recalculate the diagonals, including each carry. Correct answer: 456.",
+    "wrong": "356",
+    "error_note": "The top-left cell should be 5 × 8 = 40, not 30. Recalculate the diagonals, including each carry. Correct answer: 456.",
+    "hint": "Check the 5 × 8 cell. What product do its two halves represent?"
+  },
+  {
+    "id": "maths:M01-SE-C2-Q4",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "76 × 48",
+    "a": 76,
+    "b": 48,
+    "answer": "3648",
+    "check": "Round each factor to 1 significant figure: 76 ≈ 80 and 48 ≈ 50. Estimate: 80 × 50 = 4,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C2-Q4.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Change the 7 × 4 cell to 2 tens and 8 units."
+      },
+      {
+        "id": "1",
+        "text": "Change the 7 × 4 cell to 8 tens and 2 units."
+      },
+      {
+        "id": "2",
+        "text": "Keep the 7 × 4 cell and remove every carry when adding diagonals."
+      }
+    ],
+    "correctionId": "0",
+    "correction": "The top-left cell should be 7 × 4 = 28, not 18. Recalculate the diagonals, including each carry. Correct answer: 3,648.",
+    "wrong": "2648",
+    "error_note": "The top-left cell should be 7 × 4 = 28, not 18. Recalculate the diagonals, including each carry. Correct answer: 3,648.",
+    "hint": "Check the 7 × 4 cell. What product do its two halves represent?"
+  },
+  {
+    "id": "maths:M01-SE-C3-Q4",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "6,874 × 759",
+    "a": 6874,
+    "b": 759,
+    "answer": "5217366",
+    "check": "Round each factor to 1 significant figure: 6,874 ≈ 7,000 and 759 ≈ 800. Estimate: 7,000 × 800 = 5,600,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "errorImage": "data/working/M01-SE-C3-Q4.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Change the 6 × 7 cell to 4 tens and 2 units."
+      },
+      {
+        "id": "1",
+        "text": "Change the 6 × 7 cell to 2 tens and 4 units."
+      },
+      {
+        "id": "2",
+        "text": "Keep the 6 × 7 cell and remove every carry when adding diagonals."
+      }
+    ],
+    "correctionId": "0",
+    "correction": "The top-left cell should be 6 × 7 = 42, not 32. Recalculate the diagonals, including each carry. Correct answer: 5,217,366.",
+    "wrong": "4217366",
+    "error_note": "The top-left cell should be 6 × 7 = 42, not 32. Recalculate the diagonals, including each carry. Correct answer: 5,217,366.",
+    "hint": "Check the 6 × 7 cell. What product do its two halves represent?"
+  },
+  {
+    "id": "maths:M01-P3-ER-C1-Q1",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "48 × 7",
+    "a": 48,
+    "b": 7,
+    "answer": "336",
+    "check": "Round each factor to 1 significant figure: 48 ≈ 50 and 7 ≈ 7. Estimate: 50 × 7 = 350. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the 8 × 7 cell and the place of each digit.",
+    "method_note": "The 10s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+    "wrong": "346",
+    "error_note": "Write 5 in the tens half and 6 in the units half of the 8 × 7 cell. Correct answer: 336.",
+    "errorImage": "data/working/M01-P3-ER-C1-Q1.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Write 6 in the tens half and 6 in the units half of that cell."
+      },
+      {
+        "id": "1",
+        "text": "Put the whole product 56 in the units half of that cell."
+      },
+      {
+        "id": "2",
+        "text": "Write 5 in the tens half and 6 in the units half of the 8 × 7 cell."
+      }
+    ],
+    "correctionId": "2",
+    "correction": "Write 5 in the tens half and 6 in the units half of the 8 × 7 cell. Correct answer: 336."
+  },
+  {
+    "id": "maths:M01-P3-ER-C1-Q2",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "69 × 8",
+    "a": 69,
+    "b": 8,
+    "answer": "552",
+    "check": "Round each factor to 1 significant figure: 69 ≈ 70 and 8 ≈ 8. Estimate: 70 × 8 = 560. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the 9 × 8 cell and the place of each digit.",
+    "method_note": "The 10s diagonal contains a sum of 15, plus 0 carried in: total 15. Write 5 and carry 1 to the next diagonal.",
+    "wrong": "507",
+    "error_note": "Write 7 in the tens half and 2 in the units half of the 9 × 8 cell. Correct answer: 552.",
+    "errorImage": "data/working/M01-P3-ER-C1-Q2.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Put the whole product 72 in the units half of that cell."
+      },
+      {
+        "id": "1",
+        "text": "Write 7 in the tens half and 2 in the units half of the 9 × 8 cell."
+      },
+      {
+        "id": "2",
+        "text": "Write 2 in the tens half and 7 in the units half of that cell."
+      }
+    ],
+    "correctionId": "1",
+    "correction": "Write 7 in the tens half and 2 in the units half of the 9 × 8 cell. Correct answer: 552."
+  },
+  {
+    "id": "maths:M01-P3-ER-C1-Q3",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "57 × 9",
+    "a": 57,
+    "b": 9,
+    "answer": "513",
+    "check": "Round each factor to 1 significant figure: 57 ≈ 60 and 9 ≈ 9. Estimate: 60 × 9 = 540. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "The 10s diagonal totals 11. Which part is carried?",
+    "method_note": "The 10s diagonal contains a sum of 11, plus 0 carried in: total 11. Write 1 and carry 1 to the next diagonal.",
+    "wrong": "413",
+    "error_note": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 513.",
+    "errorImage": "data/working/M01-P3-ER-C1-Q3.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Carry 1 from the 10s diagonal to the 100s diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Keep the whole total in the 10s answer position."
+      },
+      {
+        "id": "2",
+        "text": "Carry 2 into the next diagonal."
+      }
+    ],
+    "correctionId": "0",
+    "correction": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 513."
+  },
+  {
+    "id": "maths:M01-P3-ER-C1-Q4",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "86 × 7",
+    "a": 86,
+    "b": 7,
+    "answer": "602",
+    "check": "Round each factor to 1 significant figure: 86 ≈ 90 and 7 ≈ 7. Estimate: 90 × 7 = 630. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "The 10s diagonal totals 10. Which part is carried?",
+    "method_note": "The 10s diagonal contains a sum of 10, plus 0 carried in: total 10. Write 0 and carry 1 to the next diagonal.",
+    "wrong": "702",
+    "error_note": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 602.",
+    "errorImage": "data/working/M01-P3-ER-C1-Q4.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Keep the whole total in the 10s answer position."
+      },
+      {
+        "id": "1",
+        "text": "Carry 2 into the next diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Carry 1 from the 10s diagonal to the 100s diagonal."
+      }
+    ],
+    "correctionId": "2",
+    "correction": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 602."
+  },
+  {
+    "id": "maths:M01-P3-ER-C1-Q5",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "62 × 9",
+    "a": 62,
+    "b": 9,
+    "answer": "558",
+    "check": "Round each factor to 1 significant figure: 62 ≈ 60 and 9 ≈ 9. Estimate: 60 × 9 = 540. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the addition written for the 1s diagonal.",
+    "method_note": "The 2 × 9 cell holds 1 tens and 8 units. Add the diagonals from bottom right, retaining any zero answer places.",
+    "wrong": "559",
+    "error_note": "Recalculate that diagonal: 8 + 0 = 8. Correct answer: 558.",
+    "errorImage": "data/working/M01-P3-ER-C1-Q5.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Ignore every tens half when summing that diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Recalculate that diagonal: 8 + 0 = 8."
+      },
+      {
+        "id": "2",
+        "text": "Add another carry of 1 to that diagonal."
+      }
+    ],
+    "correctionId": "1",
+    "correction": "Recalculate that diagonal: 8 + 0 = 8. Correct answer: 558."
+  },
+  {
+    "id": "maths:M01-P3-ER-C1-Q6",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "75 × 8",
+    "a": 75,
+    "b": 8,
+    "answer": "600",
+    "check": "Round each factor to 1 significant figure: 75 ≈ 80 and 8 ≈ 8. Estimate: 80 × 8 = 640. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Do the two halves of the bottom-right cell have the same place value?",
+    "method_note": "The 10s diagonal contains a sum of 10, plus 0 carried in: total 10. Write 0 and carry 1 to the next diagonal.",
+    "wrong": "564",
+    "error_note": "Place the 4 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 600.",
+    "errorImage": "data/working/M01-P3-ER-C1-Q6.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Place the 4 from the tens half of the bottom-right cell in the tens diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Place both halves of the bottom-right cell in the units diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Ignore the tens half of the bottom-right cell."
+      }
+    ],
+    "correctionId": "0",
+    "correction": "Place the 4 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 600."
+  },
+  {
+    "id": "maths:M01-P3-ER-C1-Q7",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "70 × 6",
+    "a": 70,
+    "b": 6,
+    "answer": "420",
+    "check": "Round each factor to 1 significant figure: 70 ≈ 70 and 6 ≈ 6. Estimate: 70 × 6 = 420. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the 0 × 6 cell and the place of each digit.",
+    "method_note": "The 0 × 6 cell holds 0 tens and 0 units. Add the diagonals from bottom right, retaining any zero answer places.",
+    "wrong": "426",
+    "error_note": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell. Correct answer: 420.",
+    "errorImage": "data/working/M01-P3-ER-C1-Q7.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Write 0 in the tens half and 6 in the units half of that cell."
+      },
+      {
+        "id": "1",
+        "text": "Put the whole product 0 in the units half of that cell."
+      },
+      {
+        "id": "2",
+        "text": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell."
+      }
+    ],
+    "correctionId": "2",
+    "correction": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell. Correct answer: 420."
+  },
+  {
+    "id": "maths:M01-P3-ER-C1-Q8",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 0,
+    "q": "98 × 7",
+    "a": 98,
+    "b": 7,
+    "answer": "686",
+    "check": "Round each factor to 1 significant figure: 98 ≈ 100 and 7 ≈ 7. Estimate: 100 × 7 = 700. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Which diagonal supplies the units digit of the answer?",
+    "method_note": "The 8 × 7 cell holds 5 tens and 6 units. Add the diagonals from bottom right, retaining any zero answer places.",
+    "wrong": "6860",
+    "error_note": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 686.",
+    "errorImage": "data/working/M01-P3-ER-C1-Q8.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Read the diagonal digits in reverse order."
+      },
+      {
+        "id": "1",
+        "text": "Read the diagonal digits once, ending with the units digit; do not append a zero."
+      },
+      {
+        "id": "2",
+        "text": "Append two zeros to the diagonal digits."
+      }
+    ],
+    "correctionId": "1",
+    "correction": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 686."
+  },
+  {
+    "id": "maths:M01-P3-ER-C2-Q1",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "58 × 79",
+    "a": 58,
+    "b": 79,
+    "answer": "4582",
+    "check": "Round each factor to 1 significant figure: 58 ≈ 60 and 79 ≈ 80. Estimate: 60 × 80 = 4,800. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the 8 × 9 cell and the place of each digit.",
+    "method_note": "The 10s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+    "wrong": "4592",
+    "error_note": "Write 7 in the tens half and 2 in the units half of the 8 × 9 cell. Correct answer: 4582.",
+    "errorImage": "data/working/M01-P3-ER-C2-Q1.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Write 8 in the tens half and 2 in the units half of that cell."
+      },
+      {
+        "id": "1",
+        "text": "Put the whole product 72 in the units half of that cell."
+      },
+      {
+        "id": "2",
+        "text": "Write 7 in the tens half and 2 in the units half of the 8 × 9 cell."
+      }
+    ],
+    "correctionId": "2",
+    "correction": "Write 7 in the tens half and 2 in the units half of the 8 × 9 cell. Correct answer: 4582."
+  },
+  {
+    "id": "maths:M01-P3-ER-C2-Q2",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "96 × 47",
+    "a": 96,
+    "b": 47,
+    "answer": "4512",
+    "check": "Round each factor to 1 significant figure: 96 ≈ 100 and 47 ≈ 50. Estimate: 100 × 50 = 5,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the 6 × 7 cell and the place of each digit.",
+    "method_note": "The 10s diagonal contains a sum of 11, plus 0 carried in: total 11. Write 1 and carry 1 to the next diagonal.",
+    "wrong": "4494",
+    "error_note": "Write 4 in the tens half and 2 in the units half of the 6 × 7 cell. Correct answer: 4512.",
+    "errorImage": "data/working/M01-P3-ER-C2-Q2.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Put the whole product 42 in the units half of that cell."
+      },
+      {
+        "id": "1",
+        "text": "Write 4 in the tens half and 2 in the units half of the 6 × 7 cell."
+      },
+      {
+        "id": "2",
+        "text": "Write 2 in the tens half and 4 in the units half of that cell."
+      }
+    ],
+    "correctionId": "1",
+    "correction": "Write 4 in the tens half and 2 in the units half of the 6 × 7 cell. Correct answer: 4512."
+  },
+  {
+    "id": "maths:M01-P3-ER-C2-Q3",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "87 × 69",
+    "a": 87,
+    "b": 69,
+    "answer": "6003",
+    "check": "Round each factor to 1 significant figure: 87 ≈ 90 and 69 ≈ 70. Estimate: 90 × 70 = 6,300. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "The 10s diagonal totals 10. Which part is carried?",
+    "method_note": "The 10s diagonal contains a sum of 10, plus 0 carried in: total 10. Write 0 and carry 1 to the next diagonal.",
+    "wrong": "5903",
+    "error_note": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 6003.",
+    "errorImage": "data/working/M01-P3-ER-C2-Q3.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Carry 1 from the 10s diagonal to the 100s diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Keep the whole total in the 10s answer position."
+      },
+      {
+        "id": "2",
+        "text": "Carry 2 into the next diagonal."
+      }
+    ],
+    "correctionId": "0",
+    "correction": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 6003."
+  },
+  {
+    "id": "maths:M01-P3-ER-C2-Q4",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "68 × 95",
+    "a": 68,
+    "b": 95,
+    "answer": "6460",
+    "check": "Round each factor to 1 significant figure: 68 ≈ 70 and 95 ≈ 100. Estimate: 70 × 100 = 7,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "The 100s diagonal totals 14. Which part is carried?",
+    "method_note": "The 100s diagonal contains a sum of 14, plus 0 carried in: total 14. Write 4 and carry 1 to the next diagonal.",
+    "wrong": "7460",
+    "error_note": "Carry 1 from the 100s diagonal to the 1000s diagonal. Correct answer: 6460.",
+    "errorImage": "data/working/M01-P3-ER-C2-Q4.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Keep the whole total in the 100s answer position."
+      },
+      {
+        "id": "1",
+        "text": "Carry 2 into the next diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Carry 1 from the 100s diagonal to the 1000s diagonal."
+      }
+    ],
+    "correctionId": "2",
+    "correction": "Carry 1 from the 100s diagonal to the 1000s diagonal. Correct answer: 6460."
+  },
+  {
+    "id": "maths:M01-P3-ER-C2-Q5",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "73 × 86",
+    "a": 73,
+    "b": 86,
+    "answer": "6278",
+    "check": "Round each factor to 1 significant figure: 73 ≈ 70 and 86 ≈ 90. Estimate: 70 × 90 = 6,300. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the addition written for the 100s diagonal.",
+    "method_note": "The 100s diagonal contains a sum of 12, plus 0 carried in: total 12. Write 2 and carry 1 to the next diagonal.",
+    "wrong": "6378",
+    "error_note": "Recalculate that diagonal: 12 + 0 = 12. Correct answer: 6278.",
+    "errorImage": "data/working/M01-P3-ER-C2-Q5.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Ignore every tens half when summing that diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Recalculate that diagonal: 12 + 0 = 12."
+      },
+      {
+        "id": "2",
+        "text": "Add another carry of 1 to that diagonal."
+      }
+    ],
+    "correctionId": "1",
+    "correction": "Recalculate that diagonal: 12 + 0 = 12. Correct answer: 6278."
+  },
+  {
+    "id": "maths:M01-P3-ER-C2-Q6",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "92 × 78",
+    "a": 92,
+    "b": 78,
+    "answer": "7176",
+    "check": "Round each factor to 1 significant figure: 92 ≈ 90 and 78 ≈ 80. Estimate: 90 × 80 = 7,200. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Do the two halves of the bottom-right cell have the same place value?",
+    "method_note": "The 100s diagonal contains a sum of 11, plus 0 carried in: total 11. Write 1 and carry 1 to the next diagonal.",
+    "wrong": "7167",
+    "error_note": "Place the 1 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 7176.",
+    "errorImage": "data/working/M01-P3-ER-C2-Q6.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Place the 1 from the tens half of the bottom-right cell in the tens diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Place both halves of the bottom-right cell in the units diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Ignore the tens half of the bottom-right cell."
+      }
+    ],
+    "correctionId": "0",
+    "correction": "Place the 1 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 7176."
+  },
+  {
+    "id": "maths:M01-P3-ER-C2-Q7",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "80 × 67",
+    "a": 80,
+    "b": 67,
+    "answer": "5360",
+    "check": "Round each factor to 1 significant figure: 80 ≈ 80 and 67 ≈ 70. Estimate: 80 × 70 = 5,600. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the 0 × 6 cell and the place of each digit.",
+    "method_note": "The 100s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+    "wrong": "5420",
+    "error_note": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell. Correct answer: 5360.",
+    "errorImage": "data/working/M01-P3-ER-C2-Q7.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Write 0 in the tens half and 6 in the units half of that cell."
+      },
+      {
+        "id": "1",
+        "text": "Put the whole product 0 in the units half of that cell."
+      },
+      {
+        "id": "2",
+        "text": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell."
+      }
+    ],
+    "correctionId": "2",
+    "correction": "Write 0 in the tens half and 0 in the units half of the 0 × 6 cell. Correct answer: 5360."
+  },
+  {
+    "id": "maths:M01-P3-ER-C2-Q8",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 1,
+    "q": "89 × 76",
+    "a": 89,
+    "b": 76,
+    "answer": "6764",
+    "check": "Round each factor to 1 significant figure: 89 ≈ 90 and 76 ≈ 80. Estimate: 90 × 80 = 7,200. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Which diagonal supplies the units digit of the answer?",
+    "method_note": "The 10s diagonal contains a sum of 16, plus 0 carried in: total 16. Write 6 and carry 1 to the next diagonal.",
+    "wrong": "67640",
+    "error_note": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 6764.",
+    "errorImage": "data/working/M01-P3-ER-C2-Q8.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Read the diagonal digits in reverse order."
+      },
+      {
+        "id": "1",
+        "text": "Read the diagonal digits once, ending with the units digit; do not append a zero."
+      },
+      {
+        "id": "2",
+        "text": "Append two zeros to the diagonal digits."
+      }
+    ],
+    "correctionId": "1",
+    "correction": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 6764."
+  },
+  {
+    "id": "maths:M01-P3-ER-C3-Q1",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "8,796 × 768",
+    "a": 8796,
+    "b": 768,
+    "answer": "6755328",
+    "check": "Round each factor to 1 significant figure: 8,796 ≈ 9,000 and 768 ≈ 800. Estimate: 9,000 × 800 = 7,200,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the 6 × 8 cell and the place of each digit.",
+    "method_note": "The 10s diagonal contains a sum of 12, plus 0 carried in: total 12. Write 2 and carry 1 to the next diagonal.",
+    "wrong": "6755338",
+    "error_note": "Write 4 in the tens half and 8 in the units half of the 6 × 8 cell. Correct answer: 6755328.",
+    "errorImage": "data/working/M01-P3-ER-C3-Q1.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Write 5 in the tens half and 8 in the units half of that cell."
+      },
+      {
+        "id": "1",
+        "text": "Put the whole product 48 in the units half of that cell."
+      },
+      {
+        "id": "2",
+        "text": "Write 4 in the tens half and 8 in the units half of the 6 × 8 cell."
+      }
+    ],
+    "correctionId": "2",
+    "correction": "Write 4 in the tens half and 8 in the units half of the 6 × 8 cell. Correct answer: 6755328."
+  },
+  {
+    "id": "maths:M01-P3-ER-C3-Q2",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "9,874 × 8,697",
+    "a": 9874,
+    "b": 8697,
+    "answer": "85874178",
+    "check": "Round each factor to 1 significant figure: 9,874 ≈ 10,000 and 8,697 ≈ 9,000. Estimate: 10,000 × 9,000 = 90,000,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the 4 × 7 cell and the place of each digit.",
+    "method_note": "The 10s diagonal contains a sum of 17, plus 0 carried in: total 17. Write 7 and carry 1 to the next diagonal.",
+    "wrong": "85874232",
+    "error_note": "Write 2 in the tens half and 8 in the units half of the 4 × 7 cell. Correct answer: 85874178.",
+    "errorImage": "data/working/M01-P3-ER-C3-Q2.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Put the whole product 28 in the units half of that cell."
+      },
+      {
+        "id": "1",
+        "text": "Write 2 in the tens half and 8 in the units half of the 4 × 7 cell."
+      },
+      {
+        "id": "2",
+        "text": "Write 8 in the tens half and 2 in the units half of that cell."
+      }
+    ],
+    "correctionId": "1",
+    "correction": "Write 2 in the tens half and 8 in the units half of the 4 × 7 cell. Correct answer: 85874178."
+  },
+  {
+    "id": "maths:M01-P3-ER-C3-Q3",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "786 × 9,587",
+    "a": 786,
+    "b": 9587,
+    "answer": "7535382",
+    "check": "Round each factor to 1 significant figure: 786 ≈ 800 and 9,587 ≈ 10,000. Estimate: 800 × 10,000 = 8,000,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "The 10s diagonal totals 18. Which part is carried?",
+    "method_note": "The 10s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+    "wrong": "7535282",
+    "error_note": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 7535382.",
+    "errorImage": "data/working/M01-P3-ER-C3-Q3.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Carry 1 from the 10s diagonal to the 100s diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Keep the whole total in the 10s answer position."
+      },
+      {
+        "id": "2",
+        "text": "Carry 2 into the next diagonal."
+      }
+    ],
+    "correctionId": "0",
+    "correction": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 7535382."
+  },
+  {
+    "id": "maths:M01-P3-ER-C3-Q4",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "6,974 × 987",
+    "a": 6974,
+    "b": 987,
+    "answer": "6883338",
+    "check": "Round each factor to 1 significant figure: 6,974 ≈ 7,000 and 987 ≈ 1,000. Estimate: 7,000 × 1,000 = 7,000,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "The 10s diagonal totals 13. Which part is carried?",
+    "method_note": "The 10s diagonal contains a sum of 13, plus 0 carried in: total 13. Write 3 and carry 1 to the next diagonal.",
+    "wrong": "6883438",
+    "error_note": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 6883338.",
+    "errorImage": "data/working/M01-P3-ER-C3-Q4.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Keep the whole total in the 10s answer position."
+      },
+      {
+        "id": "1",
+        "text": "Carry 2 into the next diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Carry 1 from the 10s diagonal to the 100s diagonal."
+      }
+    ],
+    "correctionId": "2",
+    "correction": "Carry 1 from the 10s diagonal to the 100s diagonal. Correct answer: 6883338."
+  },
+  {
+    "id": "maths:M01-P3-ER-C3-Q5",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "8,697 × 7,986",
+    "a": 8697,
+    "b": 7986,
+    "answer": "69454242",
+    "check": "Round each factor to 1 significant figure: 8,697 ≈ 9,000 and 7,986 ≈ 8,000. Estimate: 9,000 × 8,000 = 72,000,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the addition written for the 10s diagonal.",
+    "method_note": "The 10s diagonal contains a sum of 14, plus 0 carried in: total 14. Write 4 and carry 1 to the next diagonal.",
+    "wrong": "69454252",
+    "error_note": "Recalculate that diagonal: 14 + 0 = 14. Correct answer: 69454242.",
+    "errorImage": "data/working/M01-P3-ER-C3-Q5.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Ignore every tens half when summing that diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Recalculate that diagonal: 14 + 0 = 14."
+      },
+      {
+        "id": "2",
+        "text": "Add another carry of 1 to that diagonal."
+      }
+    ],
+    "correctionId": "1",
+    "correction": "Recalculate that diagonal: 14 + 0 = 14. Correct answer: 69454242."
+  },
+  {
+    "id": "maths:M01-P3-ER-C3-Q6",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "958 × 8,679",
+    "a": 958,
+    "b": 8679,
+    "answer": "8314482",
+    "check": "Round each factor to 1 significant figure: 958 ≈ 1,000 and 8,679 ≈ 9,000. Estimate: 1,000 × 9,000 = 9,000,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Do the two halves of the bottom-right cell have the same place value?",
+    "method_note": "The 10s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+    "wrong": "8314419",
+    "error_note": "Place the 7 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 8314482.",
+    "errorImage": "data/working/M01-P3-ER-C3-Q6.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Place the 7 from the tens half of the bottom-right cell in the tens diagonal."
+      },
+      {
+        "id": "1",
+        "text": "Place both halves of the bottom-right cell in the units diagonal."
+      },
+      {
+        "id": "2",
+        "text": "Ignore the tens half of the bottom-right cell."
+      }
+    ],
+    "correctionId": "0",
+    "correction": "Place the 7 from the tens half of the bottom-right cell in the tens diagonal. Correct answer: 8314482."
+  },
+  {
+    "id": "maths:M01-P3-ER-C3-Q7",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "7,086 × 879",
+    "a": 7086,
+    "b": 879,
+    "answer": "6228594",
+    "check": "Round each factor to 1 significant figure: 7,086 ≈ 7,000 and 879 ≈ 900. Estimate: 7,000 × 900 = 6,300,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Check the 0 × 8 cell and the place of each digit.",
+    "method_note": "The 100s diagonal contains a sum of 25, plus 0 carried in: total 25. Write 5 and carry 2 to the next diagonal.",
+    "wrong": "6308594",
+    "error_note": "Write 0 in the tens half and 0 in the units half of the 0 × 8 cell. Correct answer: 6228594.",
+    "errorImage": "data/working/M01-P3-ER-C3-Q7.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Write 0 in the tens half and 8 in the units half of that cell."
+      },
+      {
+        "id": "1",
+        "text": "Put the whole product 0 in the units half of that cell."
+      },
+      {
+        "id": "2",
+        "text": "Write 0 in the tens half and 0 in the units half of the 0 × 8 cell."
+      }
+    ],
+    "correctionId": "2",
+    "correction": "Write 0 in the tens half and 0 in the units half of the 0 × 8 cell. Correct answer: 6228594."
+  },
+  {
+    "id": "maths:M01-P3-ER-C3-Q8",
+    "subject": "maths",
+    "topic": "M01",
+    "type": "errors",
+    "level": 2,
+    "q": "9,687 × 7,586",
+    "a": 9687,
+    "b": 7586,
+    "answer": "73485582",
+    "check": "Round each factor to 1 significant figure: 9,687 ≈ 10,000 and 7,586 ≈ 8,000. Estimate: 10,000 × 8,000 = 80,000,000. Compare the size of your answer with this ballpark estimate; it is not an exact check.",
+    "method": "lattice",
+    "hint": "Which diagonal supplies the units digit of the answer?",
+    "method_note": "The 10s diagonal contains a sum of 18, plus 0 carried in: total 18. Write 8 and carry 1 to the next diagonal.",
+    "wrong": "734855820",
+    "error_note": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 73485582.",
+    "errorImage": "data/working/M01-P3-ER-C3-Q8.svg",
+    "errorOptions": [
+      {
+        "id": "0",
+        "text": "Read the diagonal digits in reverse order."
+      },
+      {
+        "id": "1",
+        "text": "Read the diagonal digits once, ending with the units digit; do not append a zero."
+      },
+      {
+        "id": "2",
+        "text": "Append two zeros to the diagonal digits."
+      }
+    ],
+    "correctionId": "1",
+    "correction": "Read the diagonal digits once, ending with the units digit; do not append a zero. Correct answer: 73485582."
+  }
+]

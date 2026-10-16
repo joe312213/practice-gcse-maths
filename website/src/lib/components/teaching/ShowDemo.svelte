@@ -79,6 +79,20 @@
     step = Math.min(steps, step);
     player.go(frames.findLastIndex((frame) => frame.step === step) + 1);
   }
+  /** Animate only the next logical step, retaining already written working. */
+  async function next() {
+    const target = Math.min(steps, step + 1);
+    const before = motion.snapshot();
+    started = true;
+    player.play({
+      from: frames.findIndex((frame) => frame.step === target) + 1,
+      to: frames.findLastIndex((frame) => frame.step === target) + 1,
+    });
+    await tick();
+    if (disposed) return;
+    motion.reveal(before, speed, 650 / pace(cursor + 1));
+    revealLatest();
+  }
   /** Keep the new bottom edge visible, including inside a scrollable method-reference dialog.
    * Native nearest scrolling moves only the necessary ancestors; no focus or smooth-scroll queue.
    */
@@ -177,7 +191,7 @@
         type="button"
         id="demo-next"
         disabled={!fontReady || finished}
-        onclick={() => go(step + 1)}>Next</button
+        onclick={next}>Next</button
       >
       <button
         class="action-button compact"

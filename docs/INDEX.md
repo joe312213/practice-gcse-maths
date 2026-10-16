@@ -18,7 +18,7 @@ Directly authored `web_format.md` is protected; the progress requirements append
 - [Puzzle patches](puzzles_patches.md) — portable changes, app companions and replay/verification instructions for upstream updates.
 - [Method animation contract](METHOD_ANIMATIONS.md) — operation/reveal sequencing, highlights and verification for current and future teaching animations.
 - [docs/WEBSITE_PLAN.md](../docs/WEBSITE_PLAN.md)
-- [website/README.md](../website/README.md) — includes the [FAQ route and shared panels](../website/README.md#faq-and-shared-page-presentation)
+- [website/README.md](../website/README.md) — includes the [topic-folder editing map and named/shared guidance](../website/README.md#editing-learn-the-method-and-topic-content), plus the [FAQ route and shared panels](../website/README.md#faq-and-shared-page-presentation)
 - [docs/FRAMEWORK_MIGRATION_PLAN.md](../docs/FRAMEWORK_MIGRATION_PLAN.md)
 
 ## Development workflows
@@ -39,6 +39,12 @@ Directly authored `web_format.md` is protected; the progress requirements append
 - [tests/fixtures/README.md](../tests/fixtures/README.md)
 
 ## Teaching content
+
+- [Topic JSON file map](../website/static/data/README.md) — each topic file’s contents, app usage, guidance fields, assessment selection and editing rules.
+- [Spot-error content and review guide](../content/spot-errors-drafts/README.md) — 360 live questions in the authoritative topic banks; read-only validation and HTML review.
+
+- [Lattice prototype examples](../content/lattice_error_prototype.json) — separate review fixtures, not live bank replacements.
+- [Spot-error authoring process](SPOT_ERRORS_PROCESS.md) — agree topic/method misconceptions in the specs before writing erroneous working and distinct correction options.
 
 - [M01 website specification](../content/specs/M01.md)
 - [M02 website specification](../content/specs/M02.md)
