@@ -1,42 +1,41 @@
-<!--
-  Purpose: Connect the challenge selector and teaching data to the shared demo presentation.
-
-  Main contents:
-  - chooseLevel
-
-  Used By: website/src/lib/components/practice/PracticeActivity.svelte, website/src/routes/+page.svelte
-
-  Uses: website/src/lib/domain/engine.mjs, website/src/lib/application/equation-demo.mjs, website/src/lib/components/teaching/Guidance.svelte, website/src/lib/components/teaching/EquationWorking.svelte, website/src/lib/components/teaching/ShowDemo.svelte.
-
-  Libs: svelte (component lifecycle and state).
--->
+<!-- Shared level/example selection and playback; each method keeps its own working renderer. -->
 <script>
   import { guidanceFor } from '#lib/content/topic-bank.mjs';
   import { untrack } from 'svelte';
   import { LEVELS } from '#lib/domain/engine.mjs';
   import { equationFrames } from '#lib/application/equation-demo.mjs';
+  import { arithmeticFrames } from '#lib/application/arithmetic-demo.mjs';
+  import { calculationFrames } from '#lib/application/calculation-demo.mjs';
   import Guidance from './Guidance.svelte';
   import EquationWorking from './EquationWorking.svelte';
+  import ArithmeticWorking from './ArithmeticWorking.svelte';
+  import CalculationWorking from './CalculationWorking.svelte';
+  import CalculationDiagram from './CalculationDiagram.svelte';
+  import MathText from './MathText.svelte';
   import ShowDemo from './ShowDemo.svelte';
+  import WrappingSelect from '../ui/WrappingSelect.svelte';
   let { bank, initialLevel = 0, onlevel = () => {}, speed = 1, onspeed = () => {} } = $props();
   let level = $state(untrack(() => initialLevel)),
-    example = $state('demo');
+    exampleKey = $state('demo');
   const exampleId = $props.id();
-  const question = $derived(
-    example === 'demo'
-      ? bank.questions.find((q) => q.type === 'demo' && q.level === level)
-      : bank.recap[level],
+  const examples = $derived(bank.teaching.examples[['start', 'build', 'confidence'][level]]);
+  const example = $derived(examples.find((item) => item.key === exampleKey) ?? examples[0]);
+  const question = $derived(example.question);
+  const arithmetic = $derived(['bus', 'lattice'].includes(bank.method));
+  const calculation = $derived(bank.method === 'calculation');
+  const frames = $derived(
+    arithmetic
+      ? arithmeticFrames(question)
+      : calculation
+        ? calculationFrames(question.steps)
+        : equationFrames(question.balance),
   );
-  const annotations = $derived(
-    bank.teaching[example === 'demo' ? 'demoAnnotations' : 'recapAnnotations'][level],
+  const steps = $derived(
+    arithmetic ? 5 : calculation ? question.steps.length : question.balance.length + 1,
   );
-  const frames = $derived(equationFrames(question.balance));
-  /**
-   * Publish the selected demonstration level to its parent.
-   * Parameter value: zero-based challenge level (0–2).
-   */
   function chooseLevel(value) {
     level = value;
+    exampleKey = 'demo';
     onlevel(value);
   }
 </script>
@@ -51,34 +50,53 @@
         onclick={() => chooseLevel(index)}>{label}</button
       >{/each}
   </div>
-  <Guidance guidance={guidanceFor(bank.teaching, level)} />
+  {#if bank.calculator}<p class="muted">
+      Calculator allowed. Keep intermediate values unrounded.
+    </p>{/if}
+  {#if !arithmetic}<Guidance guidance={guidanceFor(bank.teaching, level)} />{/if}
+  {#if calculation && bank.teaching.answerNote}<p class="muted">{bank.teaching.answerNote}</p>{/if}
   <label for={exampleId}>Example</label>
-  <select class="choice-field" id={exampleId} data-demo-example bind:value={example}
-    ><option value="demo">Worked example</option><option value="recap"
-      >{bank.recap[level].title}</option
-    ></select
-  >
-  {#key question}
-    <ShowDemo {frames} steps={question.balance.length} {speed} {onspeed}>
+  <WrappingSelect
+    id={exampleId}
+    data-demo-example
+    aria-label="Example"
+    value={example.key}
+    options={examples.map((item, index) => ({ id: item.key, text: `${index + 1}. ${item.name}` }))}
+    onchange={(value) => (exampleKey = value)}
+  />
+  {#key example}
+    <ShowDemo {frames} {steps} {speed} {onspeed}>
+      {#snippet introduction(step)}
+        {#if arithmetic}<Guidance
+            guidance={guidanceFor(bank.teaching, level)}
+            activeStep={step}
+          />{/if}
+      {/snippet}
       {#snippet heading()}
-        <p class="selected-equation">
-          {question.q ?? `${question.balance[0].l} = ${question.balance[0].r}`}
+        <p class="selected-equation" class:word-question={question.prose}>
+          <MathText text={question.q ?? `${question.balance[0].l} = ${question.balance[0].r}`} />
         </p>
       {/snippet}
       {#snippet children(frame, font)}
-        <EquationWorking
-          {font}
-          rows={question.balance}
-          limit={frame.step}
-          part={frame.part}
-          guideProgress={frame.guideProgress ?? 1}
-          staged
-          {annotations}
-        />
+        {#if arithmetic}<ArithmeticWorking {font} {question} {frame} />
+        {:else if calculation}<CalculationDiagram {question} {frame} /><CalculationWorking
+            {font}
+            {question}
+            {frame}
+          />
+        {:else}<EquationWorking
+            {font}
+            rows={question.balance}
+            limit={Math.max(1, frame.step - 1)}
+            part={frame.part}
+            guideProgress={frame.guideProgress ?? 1}
+            staged
+            annotations={example.annotations}
+          />{/if}
       {/snippet}
       {#snippet completion()}
         <div class="demo-check">
-          {#if question.check}<p><strong>Check:</strong> {question.check}</p>{/if}
+          {#if question.check}<p><strong>Check:</strong> <MathText text={question.check} /></p>{/if}
           {#each question.notes ?? [] as note}<p>{note}</p>{/each}
         </div>
       {/snippet}

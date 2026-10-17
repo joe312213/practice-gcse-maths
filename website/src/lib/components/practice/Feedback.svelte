@@ -24,6 +24,7 @@
     class="feedback"
     class:investigation-feedback={question.investigation}
     class:correct={response.correct}
+    class:early-reattempt={response.correct && response.earlyReattempt}
     class:incorrect={!response.correct}
     role="status"
     tabindex="-1"
@@ -31,6 +32,10 @@
     <div class="feedback-summary">
       <strong>{response.correct ? 'Correct.' : 'Not quite yet.'}</strong>{#if response.assisted}
         <span>Assisted practice.</span>{/if}
+      {#if response.earlyReattempt}<p>
+          Early retry: this answer does not count towards progress. Wait at least two hours after
+          your most recent incorrect answer for a retry to count.
+        </p>{/if}
       {#if mode === 'errors' && !question.errorOptions && !question.investigation}
         <ul>
           {#each response.details ?? [] as detail, index}<li>

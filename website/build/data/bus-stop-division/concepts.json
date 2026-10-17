@@ -1,0 +1,34 @@
+{
+  "dividend": {
+    "title": "Dividend",
+    "explanation": "The dividend is the number being divided. The divisor is the number you divide by.",
+    "guidance": "Put the dividend inside the bus stop and the divisor outside on the left.",
+    "examples": [
+      "For 84 ÷ 3, put 84 inside and 3 outside."
+    ]
+  },
+  "remainder": {
+    "title": "remainder",
+    "explanation": "A remainder is the amount left after making as many whole groups as possible. It must be smaller than the divisor.",
+    "guidance": "Carry it to the next place value before dividing again.",
+    "examples": [
+      "8 tens ÷ 3 gives 2 tens with 2 tens left. With the next 4 units, that becomes 24 units."
+    ]
+  },
+  "decimal-extension": {
+    "title": "decimal point and zeros",
+    "explanation": "Adding zeros after a decimal point does not change the number.",
+    "guidance": "Continue dividing into tenths, hundredths and so on; align the answer decimal point with the dividend.",
+    "examples": [
+      "7 ÷ 2: write 7.0. The remaining 1 unit becomes 10 tenths, so the answer is 3.5."
+    ]
+  },
+  "place-value-zeros": {
+    "title": "place-value zeros",
+    "explanation": "A zero in the answer holds a place when the divisor fits zero whole times.",
+    "guidance": "Write the zero before moving to the next digit.",
+    "examples": [
+      "408 ÷ 4 = 102. The zero tens must stay in the answer."
+    ]
+  }
+}

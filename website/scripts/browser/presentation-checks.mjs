@@ -965,10 +965,17 @@ export async function checkPresentation(browser, base) {
               step: Number(stage.querySelector('.demo-status').textContent.match(/Step (\d+)/)[1]),
             };
           });
-          assert.equal(highlighting.count, topic === 'M10' ? highlighting.step : count);
+          assert.equal(
+            highlighting.count,
+            topic === 'M10' ? Math.max(1, highlighting.step - 1) : count,
+          );
           assert.deepEqual(
             highlighting.active,
-            [highlighting.step],
+            topic === 'M10'
+              ? highlighting.step === 1
+                ? []
+                : [highlighting.step - 1]
+              : [highlighting.step],
             'Highlight follows the current logical step',
           );
         }

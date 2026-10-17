@@ -1,0 +1,469 @@
+{
+  "name": "Solving equations",
+  "guidance": {
+    "default": {
+      "aim": "Find the value of one x. Undo the operation attached to x, using the same operation on both sides.",
+      "steps": [
+        [
+          "Choose the ",
+          {
+            "concept": "opposite-operation",
+            "text": "opposite operation"
+          },
+          " to undo what is happening to x."
+        ],
+        [
+          "Do it to ",
+          {
+            "concept": "balance",
+            "text": "both sides"
+          },
+          ", then check your value in the original equation."
+        ]
+      ]
+    },
+    "byLevel": {
+      "build": {
+        "aim": "Leave the x-term on one side, then find the value of one x. Keep both sides equal at every step.",
+        "steps": [
+          [
+            "Collect ",
+            {
+              "concept": "like-terms",
+              "text": "like terms"
+            },
+            " if needed. Undo the added or subtracted number on ",
+            {
+              "concept": "balance",
+              "text": "both sides"
+            },
+            "."
+          ],
+          [
+            "Divide ",
+            {
+              "concept": "balance",
+              "text": "both sides"
+            },
+            " by the number multiplying x, so that one x remains."
+          ],
+          [
+            {
+              "concept": "substitution",
+              "text": "Substitute"
+            },
+            " your value into the original equation to check it."
+          ]
+        ]
+      },
+      "confidence": {
+        "aim": "Gather the x-terms on one side, then find the value of one x. Choose operations that make the equation simpler.",
+        "steps": [
+          [
+            "Simplify each side. ",
+            {
+              "concept": "expand-brackets",
+              "text": "Expand"
+            },
+            " every bracket term, or divide out a ",
+            {
+              "concept": "common-factor",
+              "text": "common factor"
+            },
+            " when that is shorter."
+          ],
+          [
+            "Add or subtract the same x-term on ",
+            {
+              "concept": "balance",
+              "text": "both sides"
+            },
+            " to leave x on just one side."
+          ],
+          [
+            "Undo the remaining constant, then divide by the ",
+            {
+              "concept": "coefficient",
+              "text": "coefficient"
+            },
+            " to leave one x."
+          ],
+          "Check your value in the original equation, including its brackets."
+        ]
+      }
+    }
+  },
+  "submethods": {
+    "undo-subtraction": {
+      "name": "Undo subtraction",
+      "levels": [
+        "start"
+      ],
+      "when": "A number is subtracted from x.",
+      "steps": [
+        "Add that number to both sides.",
+        "Simplify to leave x."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    },
+    "undo-addition": {
+      "name": "Undo addition",
+      "levels": [
+        "start"
+      ],
+      "when": "A number is added to x.",
+      "steps": [
+        "Subtract that number from both sides.",
+        "Simplify to leave x."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    },
+    "undo-multiplication": {
+      "name": "Undo multiplication",
+      "levels": [
+        "start"
+      ],
+      "when": "A coefficient multiplies x.",
+      "steps": [
+        "Divide both sides by the coefficient.",
+        "Simplify to find one x."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    },
+    "undo-division": {
+      "name": "Undo division",
+      "levels": [
+        "start"
+      ],
+      "when": "x is divided by a number.",
+      "steps": [
+        "Multiply both sides by that number.",
+        "Simplify to leave x."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    },
+    "reversed": {
+      "name": "Read an equation with x on the right",
+      "levels": [
+        "start"
+      ],
+      "when": "The unknown is on the right of the equals sign.",
+      "steps": [
+        "Either keep the equation in this order or swap the two complete sides.",
+        "Use the same inverse operation on both sides."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    },
+    "two-step": {
+      "name": "Undo two operations",
+      "levels": [
+        "build"
+      ],
+      "when": "An x-term has an added or subtracted constant.",
+      "steps": [
+        "Undo the addition or subtraction on both sides.",
+        "Undo multiplication by dividing both sides."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    },
+    "collect": {
+      "name": "Collect like terms first",
+      "levels": [
+        "build"
+      ],
+      "when": "More than one x-term occurs on the same side.",
+      "steps": [
+        "Combine their coefficients, keeping x.",
+        "Undo the constant, then the remaining coefficient."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    },
+    "two-step-division": {
+      "name": "Undo an added constant and division",
+      "levels": [
+        "build"
+      ],
+      "when": "An expression such as x ÷ a + b equals a number.",
+      "steps": [
+        "Undo the added or subtracted constant first.",
+        "Multiply both sides by the divisor."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    },
+    "factor": {
+      "name": "Divide out a common factor",
+      "levels": [
+        "build",
+        "confidence"
+      ],
+      "when": "Every term on both sides has a common factor.",
+      "steps": [
+        "Identify a factor of every term.",
+        "Divide every term on both sides by that factor.",
+        "Solve the simpler equation."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    },
+    "expand": {
+      "name": "Expand brackets before balancing",
+      "levels": [
+        "confidence"
+      ],
+      "when": "Expanding a bracket will expose the terms that must be gathered.",
+      "steps": [
+        "Multiply every bracket term by the outside coefficient, retaining signs.",
+        "Collect x-terms on one side, then undo the constant and coefficient."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    },
+    "both-sides": {
+      "name": "Gather x-terms from both sides",
+      "levels": [
+        "confidence"
+      ],
+      "when": "Both sides contain x.",
+      "steps": [
+        "Subtract the same x-term from both sides.",
+        "Undo the constant on the x side.",
+        "Divide both sides by the remaining coefficient."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    },
+    "divide-bracket": {
+      "name": "Divide before expanding",
+      "levels": [
+        "confidence"
+      ],
+      "when": "A whole bracket is multiplied by a number and the other side divides easily by it.",
+      "steps": [
+        "Divide both whole sides by the outside multiplier.",
+        "Solve the equation inside the bracket."
+      ],
+      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+    }
+  },
+  "examples": {
+    "start": [
+      {
+        "key": "demo",
+        "name": "Undo subtraction by adding",
+        "submethods": [
+          "undo-subtraction"
+        ],
+        "question": "maths:M10-S01-C1-Q1",
+        "annotations": [
+          "We want x on its own. Here, 7 is being subtracted from x.",
+          "Add 7 to both sides to undo subtracting 7. The two sides stay equal.",
+          "The −7 and +7 cancel, leaving one x. On the right, 5 + 7 = 12."
+        ]
+      },
+      {
+        "key": "recap",
+        "name": "Undo addition by subtracting",
+        "submethods": [
+          "undo-addition"
+        ],
+        "recap": 0,
+        "annotations": [
+          "Undo the +7 to leave one x.",
+          "Subtract 7 from both sides to keep the equation balanced.",
+          "19 − 7 = 12, so x = 12."
+        ]
+      },
+      {
+        "key": "multiply",
+        "name": "Undo multiplication with x on the right",
+        "submethods": [
+          "undo-multiplication",
+          "reversed"
+        ],
+        "question": "maths:M10-S04-C1-Q5",
+        "annotations": [
+          "The right side is seven lots of x.",
+          "Swap the two complete sides; they still have equal value.",
+          "Divide both sides by 7 to leave one x.",
+          "189 ÷ 7 = 27. Check 7 × 27 = 189."
+        ]
+      },
+      {
+        "key": "divide",
+        "name": "Undo division by multiplying",
+        "submethods": [
+          "undo-division"
+        ],
+        "question": "maths:M10-S05-C1-Q4",
+        "annotations": [
+          "x is divided by 2. Multiplication will undo that division.",
+          "Multiply both sides by 2.",
+          "11 × 2 = 22. Check 22 ÷ 2 = 11."
+        ]
+      }
+    ],
+    "build": [
+      {
+        "key": "demo",
+        "name": "Undo addition, then multiplication",
+        "submethods": [
+          "two-step"
+        ],
+        "question": "maths:M10-S01-C2-Q1",
+        "annotations": [
+          "First isolate the term 4x, then find the value of one x.",
+          "Subtract 3 from both sides to remove the +3 beside 4x.",
+          "This leaves 4x = 28: four lots of x have a total of 28.",
+          "Divide both sides by 4 because 4x means four times x.",
+          "One x remains. Its value is 28 ÷ 4 = 7."
+        ]
+      },
+      {
+        "key": "recap",
+        "name": "Factorise and divide both whole sides",
+        "submethods": [
+          "factor"
+        ],
+        "recap": 1,
+        "annotations": [
+          "Every term is divisible by 6. A common factor can simplify the equation.",
+          "6 is a common factor of both terms on the left: 6x + 12 = 6(x + 2).",
+          "Divide both whole sides by 6. This removes the outside multiplier.",
+          "30 ÷ 6 = 5, so x + 2 = 5.",
+          "Subtract 2 from both sides to leave one x.",
+          "5 − 2 = 3, so x = 3."
+        ]
+      },
+      {
+        "key": "subtract",
+        "name": "Undo subtraction, then multiplication",
+        "submethods": [
+          "two-step"
+        ],
+        "question": "maths:M10-S04-C2-Q1",
+        "annotations": [
+          "First leave the term 6x on its own.",
+          "Add 3 to both sides to undo subtracting 3.",
+          "57 + 3 = 60, leaving six lots of x.",
+          "Divide both sides by 6 to find one x.",
+          "60 ÷ 6 = 10. Check in the original equation."
+        ]
+      },
+      {
+        "key": "collect",
+        "name": "Collect like terms before solving",
+        "submethods": [
+          "collect"
+        ],
+        "question": "maths:M10-S04-C2-Q5",
+        "annotations": [
+          "There are two x-terms on the left.",
+          "5x + x = 6x. The constant 8 stays separate.",
+          "Subtract 8 from both sides.",
+          "The right side becomes 0.",
+          "Divide both sides by 6.",
+          "Zero divided by 6 is 0, so x = 0."
+        ]
+      },
+      {
+        "key": "divide",
+        "name": "Undo addition, then division",
+        "submethods": [
+          "two-step-division"
+        ],
+        "question": "maths:M10-P3-PL-C2-Q5",
+        "annotations": [
+          "First remove the added 7.",
+          "Subtract 7 from both sides.",
+          "12 − 7 = 5, leaving x divided by 3.",
+          "Multiply both sides by 3 to undo division.",
+          "5 × 3 = 15. Check 15 ÷ 3 + 7 = 12."
+        ]
+      }
+    ],
+    "confidence": [
+      {
+        "key": "demo",
+        "name": "Expand brackets with x on both sides",
+        "submethods": [
+          "expand",
+          "both-sides"
+        ],
+        "question": "maths:M10-S01-C3-Q1",
+        "annotations": [
+          "There are x-terms on both sides. Expand first, then gather those terms on one side.",
+          "Multiply every term inside the bracket by 3: 3 × x + 3 × 2 = 3x + 6.",
+          "Subtract x from both sides. This removes the smaller x-term on the right.",
+          "On the left, 3x − x = 2x. The right side is now just 24.",
+          "Subtract 6 from both sides to leave the term 2x on its own.",
+          "Two lots of x equal 18. We still need the value of one x.",
+          "Divide both sides by 2 to change 2x into one x.",
+          "One x equals 9. Substitute 9 into the original brackets to check."
+        ]
+      },
+      {
+        "key": "recap",
+        "name": "Divide the bracket before expanding",
+        "submethods": [
+          "divide-bracket"
+        ],
+        "recap": 2,
+        "annotations": [
+          "Both sides have a factor of 3. Dividing first is shorter than expanding here.",
+          "3 is a common factor, so divide both sides by 3 to simplify.",
+          "The bracket becomes x + 4, and 27 ÷ 3 = 9.",
+          "Subtract 4 from both sides to leave one x.",
+          "9 − 4 = 5, so x = 5."
+        ]
+      },
+      {
+        "key": "both-sides",
+        "name": "Gather x-terms without brackets",
+        "submethods": [
+          "both-sides"
+        ],
+        "question": "maths:M10-S04-C3-Q4",
+        "annotations": [
+          "There are x-terms on both sides.",
+          "Subtract x from both sides.",
+          "4x − x = 3x; the right side is now 14.",
+          "Subtract 2 from both sides.",
+          "14 − 2 = 12.",
+          "Divide both sides by 3.",
+          "12 ÷ 3 = 4. Check both original sides give 18."
+        ]
+      },
+      {
+        "key": "factor",
+        "name": "Factorise before solving",
+        "submethods": [
+          "factor"
+        ],
+        "question": "maths:M10-S04-C3-Q2",
+        "annotations": [
+          "Both left-hand terms have a factor of 5.",
+          "Write 5x + 10 as 5(x + 2).",
+          "Divide both whole sides by 5.",
+          "20 ÷ 5 = 4.",
+          "Subtract 2 from both sides.",
+          "4 − 2 = 2. Check 5 × 2 + 10 = 20."
+        ]
+      },
+      {
+        "key": "negative-bracket",
+        "name": "Expand a bracket containing subtraction",
+        "submethods": [
+          "expand",
+          "both-sides"
+        ],
+        "question": "maths:M10-S04-C3-Q1",
+        "annotations": [
+          "Distribute the 3 to both terms inside the bracket.",
+          "3 × x − 3 × 3 = 3x − 9.",
+          "Subtract 2x from both sides.",
+          "3x − 2x = x.",
+          "Add 9 to both sides.",
+          "−11 + 9 = −2. Check in the original bracket."
+        ]
+      }
+    ]
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

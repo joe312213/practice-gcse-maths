@@ -63,13 +63,13 @@ The learning stages are initial assessment, method/demo, scaffolded practice, sp
 
 ### Equation bank (M10)
 
-The authoritative M10 bank is `website/static/data/equations/`, containing 243 questions. Earlier imported/refined questions retain their IDs; the [three-page expansion](../content/PRACTICE_PAGES.md) records the newly authored additions. Edit and review the current bank when refining questions, hints, methods or feedback; preserve existing IDs.
+The authoritative M10 bank is `website/static/data/solving-equations/`, containing 243 questions. Earlier imported/refined questions retain their IDs; the [three-page expansion](../content/PRACTICE_PAGES.md) records the newly authored additions. Edit and review the current bank when refining questions, hints, methods or feedback; preserve existing IDs.
 
-`content/M10_equations.json`, `content/M10_web_recap.json` and `content/M10_web_teaching.json` retain earlier source material. The optional command `python3 -B scripts/prepare_web_equations.py` reconstructs a **historical reference candidate**, using only Python's standard library. It does not read or audit PowerPoint slides.
+`content/M10_equations.json`, `content/M10_web_recap.json` and `content/M10_web_method.json` retain earlier source material. The optional command `python3 -B scripts/prepare_web_equations.py` reconstructs a **historical reference candidate**, using only Python's standard library. It does not read or audit PowerPoint slides.
 
 ### Arithmetic banks (M01 and M02)
 
-The authoritative banks are `website/static/data/multiplication/` and `division/`, with their referenced `working/*.svg` diagrams. Each contains 243 questions: six preserved assessment examples, three demonstrations, 36 scaffolded, 108 independent, 36 spot-the-error and 54 problem-solving questions. Edit and review these current banks directly; catalogue slots retain existing topic addresses and question IDs.
+The authoritative banks are `website/static/data/lattice-multiplication/` and `division/`, with their referenced `working/*.svg` diagrams. Each contains 243 questions: six preserved assessment examples, three demonstrations, 36 scaffolded, 108 independent, 36 spot-the-error and 54 problem-solving questions. Edit and review these current banks directly; catalogue slots retain existing topic addresses and question IDs.
 
 The optional command `python3 -B scripts/prepare_web_arithmetic.py` reconstructs historical reference candidates from topic Markdown, saved assessment examples/error diagrams and earlier refinements in `content/M01_M02_web_support.json`. It requires `python-pptx`; the local interpreter with it installed is `/Users/joehudson/.pyenv/versions/3.13.3/bin/python3`. [Historical import evidence](../docs/ARITHMETIC_IMPORT_AUDIT.json) retains the original hashes and coverage.
 
@@ -219,13 +219,17 @@ The dependency map is `scripts/verification/plan.mjs`:
 | --- | --- |
 | Active Markdown | Local file-link existence and INDEX coverage; no application build |
 | Domain/session logic and Node tests | Fast complete Node suite; relevant bank/Svelte/integration checks according to the map |
-| Teaching/demo components | Svelte and presentation |
+| Teaching/demo components | Svelte and presentation; isolated investigation components select investigation/Svelte only |
+| Spot-error questions or named error types | Logic/content validation and the investigation browser scenario |
+| Isolated investigation CSS | Investigation browser only |
 | Practice/UI components, routes/session/adapters | Relevant Svelte, presentation/startup and interaction scenarios |
 | Layout/control CSS | Presentation, semantic colours and Practice set builder/flow |
 | Theme CSS | Semantic colours and Practice set builder/flow |
 | Theme controller | Semantic colours and startup |
 | Bank/reference-tool inputs | Current-bank validation, logic (including candidate-output isolation) and affected browser scenarios |
 | Build/package configuration | Broader mapped checks |
+
+Cheap logic/content/Svelte checks run before building or launching browsers. Investigation styling lives in `src/lib/styles/error-investigation.css`, so future changes do not invalidate unrelated layout suites. Routine investigation checks assert geometry, touch selection and font presence without screenshots; `CAPTURE_VISUALS=1` opts into captures for a specific unresolved appearance question.
 
 Formatting checks only changed supported website files and root Node tests (all on initial run or formatter-config changes). A production build runs once when selected browser checks need one; its source fingerprint and generated-file hashes prevent stale build reuse. Logic-only and documentation-only runs do not build. Pure domain JavaScript also gets Svelte/project diagnostics; Practice set codec, progression and profile changes additionally select the focused set scenario. Session-domain changes select activity integration; weekly history/timing changes select Progress, and the shared topic startup component and header/theme controls select startup-fault checks.
 
@@ -331,23 +335,25 @@ These are the authoritative editable banks for **all stages** of each topic. Bui
 
 | Topic | Topic teaching file |
 | --- | --- |
-| Lattice multiplication | [multiplication/teaching.json](static/data/multiplication/teaching.json) |
-| Bus-stop division | [division/teaching.json](static/data/division/teaching.json) |
-| Signed addition/subtraction | [signed-numbers/teaching.json](static/data/signed-numbers/teaching.json) |
-| Solving equations | [equations/teaching.json](static/data/equations/teaching.json) |
-| Fraction addition/subtraction | [fractions/teaching.json](static/data/fractions/teaching.json) |
-| Percentages | [percentages/teaching.json](static/data/percentages/teaching.json) |
-| Multiplication/division problems | [problems/teaching.json](static/data/problems/teaching.json) |
-| Ratio | [ratios/teaching.json](static/data/ratios/teaching.json) |
-| Speed, distance and time | [speed-distance-time/teaching.json](static/data/speed-distance-time/teaching.json) |
-| Reverse percentages | [reverse-percentages/teaching.json](static/data/reverse-percentages/teaching.json) |
+| Lattice multiplication | [lattice-multiplication/method.json](static/data/lattice-multiplication/method.json) |
+| Bus-stop division | [bus-stop-division/method.json](static/data/bus-stop-division/method.json) |
+| Signed addition/subtraction | [signed-addition-subtraction/method.json](static/data/signed-addition-subtraction/method.json) |
+| Solving equations | [solving-equations/method.json](static/data/solving-equations/method.json) |
+| Fraction addition/subtraction | [fraction-addition-subtraction/method.json](static/data/fraction-addition-subtraction/method.json) |
+| Percentages | [percentages/method.json](static/data/percentages/method.json) |
+| Multiplication/division problems | [multiplication-division-problems/method.json](static/data/multiplication-division-problems/method.json) |
+| Ratio | [ratios/method.json](static/data/ratios/method.json) |
+| Speed, distance and time | [speed-distance-time/method.json](static/data/speed-distance-time/method.json) |
+| Reverse percentages | [reverse-percentages/method.json](static/data/reverse-percentages/method.json) |
 
 The [topic-content file map](static/data/README.md) explains every JSON file, its fields, its app consumers, assessment selection and editing rules.
 
-For **Learn the method**, edit `teaching.json → guidance.default.aim` and `.steps`. `guidance.byLevel` optionally contains `start`, `build` or `confidence`; a named entry replaces the entire default guide for that level. Store shared text once. The runtime maps question levels 0/1/2 to those names through `guidanceFor`. In `demos.json`, find the required `level` for its example:
+For named sub-method specifications and the numbered example lists (at least four per level), follow the [method catalogue contract](static/data/README.md#editing-learn-the-method).
+
+For **Learn the method**, edit `method.json → guidance.default.aim` and `.steps`. `guidance.byLevel` optionally contains `start`, `build` or `confidence`; a named entry replaces the entire default guide for that level. Store shared text once. The runtime maps question levels 0/1/2 to those names through `guidanceFor`. In `demos.json`, find the required `level` for its example:
 
 - Calculation topics use `q`, `answer`, `model` and `steps` (`input`, `output`, `note`). Keep the values/model and written steps consistent.
-- Equations use `balance` for displayed lines/operations and `demoAnnotations[level]` in `teaching.json` for the matching narration. Keep annotation order aligned with the balance rows.
+- Equations use `balance` for displayed lines/operations and `examples[level][index].annotations` in `method.json` for the matching narration. Keep annotation order aligned with the balance rows.
 - Lattice/bus-stop use `a`, `b`, `q`, `answer` and guidance. Their digits, carries and animation frames are calculated by [arithmetic-demo.mjs](src/lib/application/arithmetic-demo.mjs), with rendering in [ArithmeticWorking.svelte](src/lib/components/teaching/ArithmeticWorking.svelte). Changes to animation geometry/behaviour require code, not another content file.
 
-`recap.json` holds reminder examples; `recapAnnotations` in `teaching.json` supplies their narration where present. `problem-solving.json → teaching` owns problem-solving advice/examples. Spot-error question fields are described in [the content guide](../content/spot-errors-drafts/README.md). Preserve question IDs for content that means the same thing; substantive replacement requires distinct IDs and retained saved-attempt definitions.
+`recap.json` holds reminder examples; each referenced example in `method.json` supplies its equation narration. `problem-solving.json → teaching` owns problem-solving advice/examples. Spot-error question fields are described in [the content guide](../content/spot-errors-drafts/README.md). Preserve question IDs for content that means the same thing; substantive replacement requires distinct IDs and retained saved-attempt definitions.

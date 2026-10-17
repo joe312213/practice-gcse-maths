@@ -1,0 +1,58 @@
+{
+  "opposite-operation": {
+    "title": "opposite operation",
+    "explanation": "An opposite (inverse) operation undoes another operation: addition undoes subtraction, and division undoes multiplication.",
+    "guidance": "Choose the operation that removes what is attached to x. Apply it to both sides.",
+    "examples": [
+      "x − 7 = 5: add 7 to both sides, giving x = 12."
+    ]
+  },
+  "balance": {
+    "title": "both sides",
+    "explanation": "The equals sign says that the two sides have the same value.",
+    "guidance": "Keep that balance by doing the same operation to each side.",
+    "examples": [
+      "x + 4 = 10: subtract 4 on both sides to get x = 6."
+    ]
+  },
+  "like-terms": {
+    "title": "like terms",
+    "explanation": "Like terms have the same letter part. Constants are numbers without a letter.",
+    "guidance": "Combine x-terms with x-terms, and numbers with numbers.",
+    "examples": [
+      "3x + 2x + 4 = 5x + 4. You cannot combine 5x and 4 into 9x."
+    ]
+  },
+  "substitution": {
+    "title": "Substitute",
+    "explanation": "Substituting means replacing a letter with its value.",
+    "guidance": "Use the original equation to check that both sides give the same number.",
+    "examples": [
+      "For 4x + 3 = 31, try x = 7: 4 × 7 + 3 = 31."
+    ]
+  },
+  "common-factor": {
+    "title": "common factor",
+    "explanation": "A common factor divides every term in an expression exactly.",
+    "guidance": "You can divide both sides by that factor. Divide every term on each side.",
+    "examples": [
+      "3x + 6 = 18: divide both sides by 3 to get x + 2 = 6."
+    ]
+  },
+  "coefficient": {
+    "title": "coefficient",
+    "explanation": "A coefficient is the number multiplying a letter. In 4x, it is 4.",
+    "guidance": "Once the x-term is alone, divide both sides by its coefficient.",
+    "examples": [
+      "4x = 28: divide both sides by 4, giving x = 7."
+    ]
+  },
+  "expand-brackets": {
+    "title": "Expand",
+    "explanation": "Expanding removes brackets by multiplying every term inside by the number outside.",
+    "guidance": "Include each term and keep its sign.",
+    "examples": [
+      "3(x + 2) = 3x + 6; 3(x − 2) = 3x − 6."
+    ]
+  }
+}

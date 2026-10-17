@@ -43,7 +43,8 @@
       <tr data-step={index < limit ? index : undefined} class:op={row.kind === 'op'}>
         {#if annotations.length}<td
             class="step-note"
-            aria-current={staged && index === limit - 1 ? 'step' : undefined}
+            class:unwritten={visible === 0}
+            aria-current={staged && index === limit - 1 && part > 0 ? 'step' : undefined}
             ><span>{annotations[index] ?? ''}</span></td
           >{/if}
         {#if numbered}<th class="row-number" scope="row"

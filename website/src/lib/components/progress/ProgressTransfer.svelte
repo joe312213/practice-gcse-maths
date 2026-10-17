@@ -295,15 +295,17 @@
       </p>{/if}
   {:else}
     <p>
-      Use Export JSON below and save it in your OneDrive folder. Import the latest file before using
-      another computer.
+      Use Export JSON below. On iPhone, open the download and choose Share → Save to Files →
+      OneDrive. Enable OneDrive in the Files app if it is missing. Import the latest file here
+      before continuing on another device; this browser cannot save automatically to a linked
+      folder.
     </p>
   {/if}
-  <p>
-    Tab switches and leaving practice also attempt a save. Check any save warning before closing.
-    Wait for OneDrive to sync; use one computer at a time. Opening a file still requires your
-    review.
-  </p>
+  {#if supported}<p>
+      Tab switches and leaving practice also attempt a save. Check any save warning before closing.
+      Wait for OneDrive to sync; use one computer at a time. Opening a file still requires your
+      review.
+    </p>{/if}
   {#if backup}
     <p>
       Last JSON backup: {backup.lastExportAt === null

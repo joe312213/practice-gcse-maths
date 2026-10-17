@@ -25,7 +25,9 @@ import { decodePracticeSet, encodePracticeSet } from '../../src/lib/domain/pract
  */
 export async function checkPracticeSets(browser, base) {
   const banks = await Promise.all(
-    ['equations', 'multiplication', 'division'].map(async (name) => await readTopicBank(`${name}`)),
+    ['solving-equations', 'lattice-multiplication', 'bus-stop-division'].map(
+      async (name) => await readTopicBank(`${name}`),
+    ),
   );
   const questions = banks.flatMap((bank) => bank.questions);
   const context = await createTestContext(browser, { viewport: { width: 1100, height: 1000 } });

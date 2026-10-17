@@ -15,26 +15,17 @@
         "text": "90 ÷ 360 = 1/4 hours"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Subtract speed from distance."
-      },
-      {
-        "id": "repair",
-        "text": "Divide distance by speed to find time."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Multiply distance by speed."
-      }
-    ],
+    "options": {
+      "alternative-2": "subtract-speed-from-distance",
+      "repair": "divide-distance-by-speed-to-find-time",
+      "alternative-1": "multiply-distance-by-speed"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Divide distance by speed to find time."
+        "feedback": "divide-distance-by-speed-to-find-time"
       }
     ],
     "consequences": [],
@@ -76,26 +67,17 @@
         "text": "300 × 5 = 1500 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide time by distance."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add distance and time."
-      },
-      {
-        "id": "repair",
-        "text": "Divide distance by time to find speed."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-time-by-distance",
+      "alternative-2": "add-distance-and-time",
+      "repair": "divide-distance-by-time-to-find-speed"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Divide distance by time to find speed."
+        "feedback": "divide-distance-by-time-to-find-speed"
       }
     ],
     "consequences": [],
@@ -137,26 +119,17 @@
         "text": "100 ÷ 500 = 1/5 hours"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide distance by speed to find time."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Multiply distance by speed."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract speed from distance."
-      }
-    ],
+    "options": {
+      "repair": "divide-distance-by-speed-to-find-time",
+      "alternative-1": "multiply-distance-by-speed",
+      "alternative-2": "subtract-speed-from-distance"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Divide distance by speed to find time."
+        "feedback": "divide-distance-by-speed-to-find-time"
       }
     ],
     "consequences": [],
@@ -198,26 +171,17 @@
         "text": "35 ÷ 2 = 35/2 km"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add speed and time."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply speed by time to find distance."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide time by speed."
-      }
-    ],
+    "options": {
+      "alternative-2": "add-speed-and-time",
+      "repair": "multiply-speed-by-time-to-find-distance",
+      "alternative-1": "divide-time-by-speed"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Multiply speed by time to find distance."
+        "feedback": "multiply-speed-by-time-to-find-distance"
       }
     ],
     "consequences": [],
@@ -259,26 +223,17 @@
         "text": "120 × 40 = 4800 hours"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide distance by speed to find time."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide speed by distance."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract speed from distance."
-      }
-    ],
+    "options": {
+      "repair": "divide-distance-by-speed-to-find-time",
+      "alternative-1": "divide-speed-by-distance",
+      "alternative-2": "subtract-speed-from-distance"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Divide distance by speed to find time."
+        "feedback": "divide-distance-by-speed-to-find-time"
       }
     ],
     "consequences": [],
@@ -320,26 +275,17 @@
         "text": "45 ÷ 4 = 45/4 km"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide time by speed."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add speed and time."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply speed by time to find distance."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-time-by-speed",
+      "alternative-2": "add-speed-and-time",
+      "repair": "multiply-speed-by-time-to-find-distance"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Multiply speed by time to find distance."
+        "feedback": "multiply-speed-by-time-to-find-distance"
       }
     ],
     "consequences": [],
@@ -381,26 +327,17 @@
         "text": "100 × 50 = 5000 hours"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Subtract speed from distance."
-      },
-      {
-        "id": "repair",
-        "text": "Divide distance by speed to find time."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide speed by distance."
-      }
-    ],
+    "options": {
+      "alternative-2": "subtract-speed-from-distance",
+      "repair": "divide-distance-by-speed-to-find-time",
+      "alternative-1": "divide-speed-by-distance"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Divide distance by speed to find time."
+        "feedback": "divide-distance-by-speed-to-find-time"
       }
     ],
     "consequences": [],
@@ -442,26 +379,17 @@
         "text": "55 ÷ 3 = 55/3 km"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Multiply speed by time to find distance."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide time by speed."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add speed and time."
-      }
-    ],
+    "options": {
+      "repair": "multiply-speed-by-time-to-find-distance",
+      "alternative-1": "divide-time-by-speed",
+      "alternative-2": "add-speed-and-time"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Multiply speed by time to find distance."
+        "feedback": "multiply-speed-by-time-to-find-distance"
       }
     ],
     "consequences": [],
@@ -503,26 +431,17 @@
         "text": "240 × 60 = 14400 hours"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide speed by distance."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract speed from distance."
-      },
-      {
-        "id": "repair",
-        "text": "Divide distance by speed to find time."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-speed-by-distance",
+      "alternative-2": "subtract-speed-from-distance",
+      "repair": "divide-distance-by-speed-to-find-time"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Divide distance by speed to find time."
+        "feedback": "divide-distance-by-speed-to-find-time"
       }
     ],
     "consequences": [],
@@ -564,26 +483,17 @@
         "text": "120 × 3 = 360 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add distance and time."
-      },
-      {
-        "id": "repair",
-        "text": "Divide distance by time to find speed."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide time by distance."
-      }
-    ],
+    "options": {
+      "alternative-2": "add-distance-and-time",
+      "repair": "divide-distance-by-time-to-find-speed",
+      "alternative-1": "divide-time-by-distance"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Divide distance by time to find speed."
+        "feedback": "divide-distance-by-time-to-find-speed"
       }
     ],
     "consequences": [],
@@ -625,26 +535,17 @@
         "text": "80 ÷ 240 = 1/3 hours"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Multiply distance by speed."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract speed from distance."
-      },
-      {
-        "id": "repair",
-        "text": "Divide distance by speed to find time."
-      }
-    ],
+    "options": {
+      "alternative-1": "multiply-distance-by-speed",
+      "alternative-2": "subtract-speed-from-distance",
+      "repair": "divide-distance-by-speed-to-find-time"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Divide distance by speed to find time."
+        "feedback": "divide-distance-by-speed-to-find-time"
       }
     ],
     "consequences": [],
@@ -686,26 +587,17 @@
         "text": "200 × 4 = 800 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide distance by time to find speed."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide time by distance."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add distance and time."
-      }
-    ],
+    "options": {
+      "repair": "divide-distance-by-time-to-find-speed",
+      "alternative-1": "divide-time-by-distance",
+      "alternative-2": "add-distance-and-time"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T1",
-        "feedback": "Divide distance by time to find speed."
+        "feedback": "divide-distance-by-time-to-find-speed"
       }
     ],
     "consequences": [],
@@ -757,26 +649,28 @@
         "text": "≈ 88.89 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the minutes by 10 to obtain hours."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Multiply distance by time to find speed."
-      },
-      {
-        "id": "repair",
-        "text": "Divide minutes by 60 to obtain hours."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "divide-the-minutes-by-to-obtain-hours",
+        "10"
+      ],
+      "alternative-2": "multiply-distance-by-time-to-find-speed",
+      "repair": [
+        "divide-minutes-by-to-obtain-hours",
+        "60"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T2",
-        "feedback": "45 minutes is 3/4 hours."
+        "feedback": [
+          "minutes-is-hours",
+          "45",
+          "3",
+          "4"
+        ]
       }
     ],
     "consequences": [
@@ -835,26 +729,26 @@
         "text": "≈ 0.75 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Multiply distance by time to find speed."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the rate in kilometres per minute by 60."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the minutes by 10 to obtain hours."
-      }
-    ],
+    "options": {
+      "alternative-2": "multiply-distance-by-time-to-find-speed",
+      "repair": [
+        "multiply-the-rate-in-kilometres-per-minute-by",
+        "60"
+      ],
+      "alternative-1": [
+        "divide-the-minutes-by-to-obtain-hours",
+        "10"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T4",
-        "feedback": "The hourly rate is 45 km/h."
+        "feedback": [
+          "the-hourly-rate-is-km-h",
+          "45"
+        ]
       }
     ],
     "consequences": [
@@ -912,26 +806,23 @@
         "text": "≈ 46.67 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Keep the full time value; round only the final speed."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the minutes by 10 to obtain hours."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Multiply distance by time to find speed."
-      }
-    ],
+    "options": {
+      "repair": "keep-the-full-time-value-round-only-the",
+      "alternative-1": [
+        "divide-the-minutes-by-to-obtain-hours",
+        "10"
+      ],
+      "alternative-2": "multiply-distance-by-time-to-find-speed"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T8",
-        "feedback": "Use the original minutes divided by 60 in the speed calculation."
+        "feedback": [
+          "use-the-original-minutes-divided-by-in-the",
+          "60"
+        ]
       }
     ],
     "consequences": [
@@ -990,26 +881,27 @@
         "text": "3 × 60 + 5 = 185"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use the decimal digits after the point as minutes."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the fractional hour by 60."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the fractional hour by 60; its decimal digits are not minutes."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-the-decimal-digits-after-the-point-as",
+      "alternative-2": [
+        "divide-the-fractional-hour-by",
+        "60"
+      ],
+      "repair": [
+        "multiply-the-fractional-hour-by-its-decimal-digits",
+        "60"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T3",
-        "feedback": "0.5 hour is 30 minutes."
+        "feedback": [
+          "hour-is-minutes",
+          "0.5",
+          "30"
+        ]
       }
     ],
     "consequences": [
@@ -1066,26 +958,27 @@
         "text": "2 × 60 + 75 = 195"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Divide the fractional hour by 60."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the fractional hour by 60; its decimal digits are not minutes."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the decimal digits after the point as minutes."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "divide-the-fractional-hour-by",
+        "60"
+      ],
+      "repair": [
+        "multiply-the-fractional-hour-by-its-decimal-digits",
+        "60"
+      ],
+      "alternative-1": "use-the-decimal-digits-after-the-point-as"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T3",
-        "feedback": "0.75 hour is 45 minutes."
+        "feedback": [
+          "hour-is-minutes",
+          "0.75",
+          "45"
+        ]
       }
     ],
     "consequences": [
@@ -1142,26 +1035,27 @@
         "text": "2 × 60 + 25 = 145"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Multiply the fractional hour by 60; its decimal digits are not minutes."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the decimal digits after the point as minutes."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the fractional hour by 60."
-      }
-    ],
+    "options": {
+      "repair": [
+        "multiply-the-fractional-hour-by-its-decimal-digits",
+        "60"
+      ],
+      "alternative-1": "use-the-decimal-digits-after-the-point-as",
+      "alternative-2": [
+        "divide-the-fractional-hour-by",
+        "60"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T3",
-        "feedback": "0.25 hour is 15 minutes."
+        "feedback": [
+          "hour-is-minutes",
+          "0.25",
+          "15"
+        ]
       }
     ],
     "consequences": [
@@ -1218,26 +1112,28 @@
         "text": "≈ 90.67 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the minutes by 10 to obtain hours."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Multiply distance by time to find speed."
-      },
-      {
-        "id": "repair",
-        "text": "Divide minutes by 60 to obtain hours."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "divide-the-minutes-by-to-obtain-hours",
+        "10"
+      ],
+      "alternative-2": "multiply-distance-by-time-to-find-speed",
+      "repair": [
+        "divide-minutes-by-to-obtain-hours",
+        "60"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T2",
-        "feedback": "75 minutes is 5/4 hours."
+        "feedback": [
+          "minutes-is-hours",
+          "75",
+          "5",
+          "4"
+        ]
       }
     ],
     "consequences": [
@@ -1296,26 +1192,27 @@
         "text": "≈ 0.84 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Multiply distance by time to find speed."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the rate in kilometres per minute by 60."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the minutes by 10 to obtain hours."
-      }
-    ],
+    "options": {
+      "alternative-2": "multiply-distance-by-time-to-find-speed",
+      "repair": [
+        "multiply-the-rate-in-kilometres-per-minute-by",
+        "60"
+      ],
+      "alternative-1": [
+        "divide-the-minutes-by-to-obtain-hours",
+        "10"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T4",
-        "feedback": "The hourly rate is 252/5 km/h."
+        "feedback": [
+          "the-hourly-rate-is-km-h-2",
+          "252",
+          "5"
+        ]
       }
     ],
     "consequences": [
@@ -1373,26 +1270,23 @@
         "text": "≈ 45.00 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Keep the full time value; round only the final speed."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the minutes by 10 to obtain hours."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Multiply distance by time to find speed."
-      }
-    ],
+    "options": {
+      "repair": "keep-the-full-time-value-round-only-the",
+      "alternative-1": [
+        "divide-the-minutes-by-to-obtain-hours",
+        "10"
+      ],
+      "alternative-2": "multiply-distance-by-time-to-find-speed"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T8",
-        "feedback": "Use the original minutes divided by 60 in the speed calculation."
+        "feedback": [
+          "use-the-original-minutes-divided-by-in-the",
+          "60"
+        ]
       }
     ],
     "consequences": [
@@ -1451,26 +1345,28 @@
         "text": "≈ 116.67 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the minutes by 10 to obtain hours."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Multiply distance by time to find speed."
-      },
-      {
-        "id": "repair",
-        "text": "Divide minutes by 60 to obtain hours."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "divide-the-minutes-by-to-obtain-hours",
+        "10"
+      ],
+      "alternative-2": "multiply-distance-by-time-to-find-speed",
+      "repair": [
+        "divide-minutes-by-to-obtain-hours",
+        "60"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T2",
-        "feedback": "90 minutes is 3/2 hours."
+        "feedback": [
+          "minutes-is-hours",
+          "90",
+          "3",
+          "2"
+        ]
       }
     ],
     "consequences": [
@@ -1529,26 +1425,26 @@
         "text": "≈ 0.90 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Multiply distance by time to find speed."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the rate in kilometres per minute by 60."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the minutes by 10 to obtain hours."
-      }
-    ],
+    "options": {
+      "alternative-2": "multiply-distance-by-time-to-find-speed",
+      "repair": [
+        "multiply-the-rate-in-kilometres-per-minute-by",
+        "60"
+      ],
+      "alternative-1": [
+        "divide-the-minutes-by-to-obtain-hours",
+        "10"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T4",
-        "feedback": "The hourly rate is 54 km/h."
+        "feedback": [
+          "the-hourly-rate-is-km-h",
+          "54"
+        ]
       }
     ],
     "consequences": [
@@ -1606,26 +1502,23 @@
         "text": "≈ 53.33 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Keep the full time value; round only the final speed."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the minutes by 10 to obtain hours."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Multiply distance by time to find speed."
-      }
-    ],
+    "options": {
+      "repair": "keep-the-full-time-value-round-only-the",
+      "alternative-1": [
+        "divide-the-minutes-by-to-obtain-hours",
+        "10"
+      ],
+      "alternative-2": "multiply-distance-by-time-to-find-speed"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T8",
-        "feedback": "Use the original minutes divided by 60 in the speed calculation."
+        "feedback": [
+          "use-the-original-minutes-divided-by-in-the",
+          "60"
+        ]
       }
     ],
     "consequences": [
@@ -1689,36 +1582,34 @@
         "text": "≈ 122.50 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "repair-2",
-        "text": "Include the 25-minute stop in the elapsed journey time."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use only the stop time as the journey time."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Convert minutes to hours by dividing by 10."
-      },
-      {
-        "id": "repair",
-        "text": "Divide driving minutes by 60, not 100."
-      }
-    ],
+    "options": {
+      "repair-2": [
+        "include-the-minute-stop-in-the-elapsed-journey",
+        "25"
+      ],
+      "alternative-1": "use-only-the-stop-time-as-the-journey",
+      "alternative-2": [
+        "convert-minutes-to-hours-by-dividing-by",
+        "10"
+      ],
+      "repair": [
+        "divide-driving-minutes-by-not",
+        "60",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T2",
-        "feedback": "Keep the full conversion value."
+        "feedback": "keep-the-full-conversion-value"
       },
       {
         "location": "step-3",
         "reason": "repair-2",
         "misconception": "T6",
-        "feedback": "Average speed for the whole journey includes stationary time."
+        "feedback": "average-speed-for-the-whole-journey-includes-stationary"
       }
     ],
     "consequences": [
@@ -1783,36 +1674,34 @@
         "text": "≈ 116.00 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use only the stop time as the journey time."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Convert minutes to hours by dividing by 10."
-      },
-      {
-        "id": "repair",
-        "text": "Divide driving minutes by 60, not 100."
-      },
-      {
-        "id": "repair-2",
-        "text": "Include the 20-minute stop in the elapsed journey time."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-only-the-stop-time-as-the-journey",
+      "alternative-2": [
+        "convert-minutes-to-hours-by-dividing-by",
+        "10"
+      ],
+      "repair": [
+        "divide-driving-minutes-by-not",
+        "60",
+        "100"
+      ],
+      "repair-2": [
+        "include-the-minute-stop-in-the-elapsed-journey",
+        "20"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T2",
-        "feedback": "Keep the full conversion value."
+        "feedback": "keep-the-full-conversion-value"
       },
       {
         "location": "step-3",
         "reason": "repair-2",
         "misconception": "T6",
-        "feedback": "Average speed for the whole journey includes stationary time."
+        "feedback": "average-speed-for-the-whole-journey-includes-stationary"
       }
     ],
     "consequences": [
@@ -1877,36 +1766,34 @@
         "text": "≈ 116.36 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Convert minutes to hours by dividing by 10."
-      },
-      {
-        "id": "repair",
-        "text": "Divide driving minutes by 60, not 100."
-      },
-      {
-        "id": "repair-2",
-        "text": "Include the 15-minute stop in the elapsed journey time."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use only the stop time as the journey time."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "convert-minutes-to-hours-by-dividing-by",
+        "10"
+      ],
+      "repair": [
+        "divide-driving-minutes-by-not",
+        "60",
+        "100"
+      ],
+      "repair-2": [
+        "include-the-minute-stop-in-the-elapsed-journey",
+        "15"
+      ],
+      "alternative-1": "use-only-the-stop-time-as-the-journey"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "T2",
-        "feedback": "Keep the full conversion value."
+        "feedback": "keep-the-full-conversion-value"
       },
       {
         "location": "step-3",
         "reason": "repair-2",
         "misconception": "T6",
-        "feedback": "Average speed for the whole journey includes stationary time."
+        "feedback": "average-speed-for-the-whole-journey-includes-stationary"
       }
     ],
     "consequences": [
@@ -1976,26 +1863,20 @@
         "text": "≈ 136.00 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use only the second distance with the whole journey time."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Average the distances before dividing by the total time."
-      },
-      {
-        "id": "repair",
-        "text": "Add the times of both journey parts."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-only-the-second-distance-with-the-whole",
+      "alternative-2": "average-the-distances-before-dividing-by-the-total",
+      "repair": "add-the-times-of-both-journey-parts"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "T5",
-        "feedback": "The total time is 3.75 hours."
+        "feedback": [
+          "the-total-time-is-hours",
+          "3.75"
+        ]
       }
     ],
     "consequences": [
@@ -2066,26 +1947,20 @@
         "text": "≈ 85.00 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Average the distances before dividing by the total time."
-      },
-      {
-        "id": "repair",
-        "text": "Add the times of both journey parts."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use only the second distance with the whole journey time."
-      }
-    ],
+    "options": {
+      "alternative-2": "average-the-distances-before-dividing-by-the-total",
+      "repair": "add-the-times-of-both-journey-parts",
+      "alternative-1": "use-only-the-second-distance-with-the-whole"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "T5",
-        "feedback": "The total time is 3.25 hours."
+        "feedback": [
+          "the-total-time-is-hours",
+          "3.25"
+        ]
       }
     ],
     "consequences": [
@@ -2156,26 +2031,20 @@
         "text": "≈ 164.00 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Add the times of both journey parts."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use only the second distance with the whole journey time."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Average the distances before dividing by the total time."
-      }
-    ],
+    "options": {
+      "repair": "add-the-times-of-both-journey-parts",
+      "alternative-1": "use-only-the-second-distance-with-the-whole",
+      "alternative-2": "average-the-distances-before-dividing-by-the-total"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "T5",
-        "feedback": "The total time is 2.25 hours."
+        "feedback": [
+          "the-total-time-is-hours",
+          "2.25"
+        ]
       }
     ],
     "consequences": [
@@ -2241,26 +2110,17 @@
         "text": "≈ 66.00 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Subtract the stop time from the driving time."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Treat the number of stop minutes as hours."
-      },
-      {
-        "id": "repair",
-        "text": "Add the stop time to the driving time."
-      }
-    ],
+    "options": {
+      "alternative-1": "subtract-the-stop-time-from-the-driving-time",
+      "alternative-2": "treat-the-number-of-stop-minutes-as-hours",
+      "repair": "add-the-stop-time-to-the-driving-time"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T6",
-        "feedback": "The requested average covers the whole elapsed journey."
+        "feedback": "the-requested-average-covers-the-whole-elapsed-journey"
       }
     ],
     "consequences": [
@@ -2320,26 +2180,21 @@
         "text": "≈ 50.00 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Divide the sum of the speeds by the total time."
-      },
-      {
-        "id": "repair",
-        "text": "Divide total distance by total time; these speeds apply for different durations."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the faster speed for the whole journey."
-      }
-    ],
+    "options": {
+      "alternative-2": "divide-the-sum-of-the-speeds-by-the",
+      "repair": "divide-total-distance-by-total-time-these-speeds",
+      "alternative-1": "use-the-faster-speed-for-the-whole-journey"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T7",
-        "feedback": "Total distance is 218 km and time is 4 hours."
+        "feedback": [
+          "total-distance-is-km-and-time-is-hours",
+          "218",
+          "4"
+        ]
       }
     ],
     "consequences": [
@@ -2402,26 +2257,17 @@
         "text": "≈ 64.00 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Add the stop time to the driving time."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract the stop time from the driving time."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Treat the number of stop minutes as hours."
-      }
-    ],
+    "options": {
+      "repair": "add-the-stop-time-to-the-driving-time",
+      "alternative-1": "subtract-the-stop-time-from-the-driving-time",
+      "alternative-2": "treat-the-number-of-stop-minutes-as-hours"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T6",
-        "feedback": "The requested average covers the whole elapsed journey."
+        "feedback": "the-requested-average-covers-the-whole-elapsed-journey"
       }
     ],
     "consequences": [
@@ -2481,26 +2327,21 @@
         "text": "≈ 54.00 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use the faster speed for the whole journey."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the sum of the speeds by the total time."
-      },
-      {
-        "id": "repair",
-        "text": "Divide total distance by total time; these speeds apply for different durations."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-the-faster-speed-for-the-whole-journey",
+      "alternative-2": "divide-the-sum-of-the-speeds-by-the",
+      "repair": "divide-total-distance-by-total-time-these-speeds"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T7",
-        "feedback": "Total distance is 153 km and time is 3 hours."
+        "feedback": [
+          "total-distance-is-km-and-time-is-hours",
+          "153",
+          "3"
+        ]
       }
     ],
     "consequences": [
@@ -2563,26 +2404,17 @@
         "text": "≈ 66.86 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Treat the number of stop minutes as hours."
-      },
-      {
-        "id": "repair",
-        "text": "Add the stop time to the driving time."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract the stop time from the driving time."
-      }
-    ],
+    "options": {
+      "alternative-2": "treat-the-number-of-stop-minutes-as-hours",
+      "repair": "add-the-stop-time-to-the-driving-time",
+      "alternative-1": "subtract-the-stop-time-from-the-driving-time"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T6",
-        "feedback": "The requested average covers the whole elapsed journey."
+        "feedback": "the-requested-average-covers-the-whole-elapsed-journey"
       }
     ],
     "consequences": [
@@ -2642,26 +2474,21 @@
         "text": "≈ 45.00 km/h"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide total distance by total time; these speeds apply for different durations."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the faster speed for the whole journey."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the sum of the speeds by the total time."
-      }
-    ],
+    "options": {
+      "repair": "divide-total-distance-by-total-time-these-speeds",
+      "alternative-1": "use-the-faster-speed-for-the-whole-journey",
+      "alternative-2": "divide-the-sum-of-the-speeds-by-the"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "T7",
-        "feedback": "Total distance is 88.75 km and time is 2.25 hours."
+        "feedback": [
+          "total-distance-is-km-and-time-is-hours",
+          "88.75",
+          "2.25"
+        ]
       }
     ],
     "consequences": [

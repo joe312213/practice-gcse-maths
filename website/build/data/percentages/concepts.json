@@ -1,0 +1,26 @@
+{
+  "whole": {
+    "title": "whole",
+    "explanation": "The whole is the original amount represented by 100%.",
+    "guidance": "Identify what the percentage is of before choosing a calculation.",
+    "examples": [
+      "20% of £60 means £60 is the whole; {20/100} × £60 = £12."
+    ]
+  },
+  "percentage-calculation": {
+    "title": "Choose the calculation",
+    "explanation": "Percent means out of 100. A percentage can be written as a fraction or a decimal multiplier.",
+    "guidance": "For a percentage of an amount, divide the percentage by 100 and multiply by the amount.",
+    "examples": [
+      "15% of 80 = 0.15 × 80 = 12."
+    ]
+  },
+  "percentage-change": {
+    "title": "requested amount",
+    "explanation": "The percentage part, the new amount and the percentage change are different quantities.",
+    "guidance": "For an increase or decrease, add or subtract the change. To find percentage change, divide the change by the original amount and multiply by 100.",
+    "examples": [
+      "£50 increased by 20% rises by £10 to £60. From £50 to £60, the percentage change is 10 ÷ 50 × 100 = 20%."
+    ]
+  }
+}

@@ -8,7 +8,8 @@ async function checkEquationWidths(page) {
     for (const level of [0, 1, 2]) {
       await page.locator(`[data-demo-level="${level}"]`).click();
       for (const example of ['demo', 'recap']) {
-        await page.locator('[data-demo-example]').selectOption(example);
+        await page.locator('[data-demo-example]').click();
+        await page.getByRole('listbox').getByRole('option', { name: example === 'demo' ? /^1\./ : /^2\./ }).click();
         await page.waitForFunction(() => !document.querySelector('#demo-play')?.disabled);
         if (await page.locator('#demo-all').isEnabled()) await page.locator('#demo-all').click();
         await page.waitForFunction(() => document.querySelector('.balance [data-stroke]'));
@@ -55,6 +56,7 @@ export async function checkMethodPlayback(browser, base) {
     for (const topic of [
       'solving-equations',
       'lattice-multiplication',
+      'bus-stop-division',
       'fraction-addition-subtraction',
     ]) {
       await page.goto(`${base}fm/${topic}/`);
@@ -67,13 +69,50 @@ export async function checkMethodPlayback(browser, base) {
           await page.getByRole('button', { name: 'Continue', exact: true }).click();
       }
       await page.locator('[data-mode="demo"]').click();
+      const chooser = page.locator('[data-demo-example]');
+      assert.match(await chooser.innerText(), /^1\. /);
+      await chooser.click();
+      const names = await page.getByRole('listbox').getByRole('option').allTextContents();
+      assert.ok(names.length >= 2);
+      names.forEach((name, index) => {
+        assert.match(name.replace('✓', '').trim(), new RegExp(`^${index + 1}\\. `));
+        assert.doesNotMatch(name, /worked example/i);
+      });
+      await page.getByRole('listbox').getByRole('option', { name: /^2\./ }).click();
+      assert.match(await chooser.innerText(), /^2\. /);
+      await page.locator('[data-demo-level="1"]').click();
+      assert.match(
+        await chooser.innerText(),
+        /^1\. /,
+        'Changing level resets to its first named example',
+      );
+      await page.locator('[data-demo-level="0"]').click();
+      const help = page.locator('.guidance .concept-help').first();
+      assert.equal(await help.getAttribute('aria-expanded'), 'false');
+      await help.focus();
+      await page.keyboard.press('Enter');
+      assert.equal(await help.getAttribute('aria-expanded'), 'true');
+      const panel = page.locator(`[id="${await help.getAttribute('aria-controls')}"]`);
+      assert.equal(await panel.isVisible(), true);
+      assert.match(await panel.innerText(), /Example:/);
+      await help.click();
+      assert.equal(await panel.isVisible(), false);
       assert.equal(await page.locator('#demo-play').textContent(), 'Play demo');
       await page.locator('.demo-working').waitFor({ state: 'visible' });
       await page.waitForFunction(() => !document.querySelector('#demo-play').disabled);
-      assert.ok(
-        await page.locator('.demo-working [data-stroke]').count(),
-        'The first teaching step already shows its working',
-      );
+      const construction = {
+        'solving-equations': 'Draw the dividing line',
+        'lattice-multiplication': 'Draw the grid and diagonals',
+        'bus-stop-division': 'Draw the bus stop',
+      }[topic];
+      if (construction) {
+        assert.ok((await page.locator('.demo-status').innerText()).includes(construction));
+        assert.equal(
+          await page.locator('.demo-working [data-written-ink]:visible').count(),
+          0,
+          'Construction is its own completed step, before writing operands',
+        );
+      } else assert.ok(await page.locator('.demo-working [data-stroke]').count());
       await page.locator('#demo-next').click();
       assert.match(await page.locator('.demo-status').innerText(), /Step 2 .*playing/);
       await page.waitForFunction(
@@ -84,6 +123,10 @@ export async function checkMethodPlayback(browser, base) {
       );
       assert.match(await page.locator('.demo-status').innerText(), /Step 2 of/);
       await page.locator('#demo-back').click();
+      if (construction) {
+        assert.ok((await page.locator('.demo-status').innerText()).includes(construction));
+        assert.equal(await page.locator('.demo-working [data-written-ink]:visible').count(), 0);
+      }
       await page.locator('#demo-play').click();
       await page.waitForFunction(
         () => document.querySelector('.demo-working').getAnimations({ subtree: true }).length > 0,

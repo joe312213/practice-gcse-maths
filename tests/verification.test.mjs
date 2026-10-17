@@ -190,3 +190,47 @@ test("candidate error banks select content checks without a website build", () =
     assert.equal(isBuildInput(path), false);
   }
 });
+
+test("isolated investigation content and styling avoid unrelated browser suites", () => {
+  assert.deepEqual(
+    selected({
+      ...initial,
+      "website/src/lib/styles/error-investigation.css": "new",
+    }),
+    ["error-investigation"],
+  );
+  assert.deepEqual(
+    selected({
+      ...initial,
+      "website/src/lib/components/teaching/InvestigationWorking.svelte": "new",
+    }),
+    ["error-investigation", "svelte"],
+  );
+  for (const file of ["spot-errors", "error-types"]) {
+    assert.deepEqual(
+      selected({
+        ...initial,
+        [`website/static/data/fraction-addition-subtraction/${file}.json`]:
+          "new",
+      }),
+      ["error-investigation", "logic", "bank"],
+    );
+  }
+});
+
+test("method and concept catalogue edits select focused teaching verification", () => {
+  for (const file of ["method", "concepts"])
+    assert.deepEqual(
+      selected({
+        ...initial,
+        [`website/static/data/solving-equations/${file}.json`]: "new",
+      }),
+      ["logic", "bank", "presentation", "method-playback"],
+    );
+  assert.ok(
+    selected({
+      ...initial,
+      "website/src/lib/components/teaching/MethodStep.svelte": "new",
+    }).includes("method-playback"),
+  );
+});

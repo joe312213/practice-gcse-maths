@@ -1,0 +1,102 @@
+{
+  "types": {
+    "RP1": {
+      "name": "Assigning 100% to an amount known to be only part of the original",
+      "example": "£48 is 60% of the original, but label £48 as 100% and retain it as the whole. The original is 48 ÷ 0.6 = £80.",
+      "repairs": [
+        "the-given-amount-is-only-the-stated-percentage",
+        "the-given-amount-is-so-divide-by-to"
+      ]
+    },
+    "RP2": {
+      "name": "Using the percentage change instead of the percentage represented by the final amount",
+      "example": "After a 20% reduction the price is £64; calculate 64 ÷ 0.2. £64 represents 80%, so divide by 0.8 to get £80. After an increase, use 100% plus the increase.",
+      "repairs": [
+        "the-final-amount-is-of-the-original-divide"
+      ]
+    },
+    "RP3": {
+      "name": "Multiplying by the forward multiplier instead of dividing",
+      "example": "Undo a 20% reduction by calculating 64 × 0.8 = £51.20. Divide by 0.8 to recover £80.",
+      "repairs": [
+        "divide-by-to-recover-the-whole",
+        "divide-the-changed-amount-by-to-recover-the",
+        "divide-the-changed-item-price-by-to-recover"
+      ]
+    },
+    "RP4": {
+      "name": "Trying to undo a change with the opposite percentage of the changed amount",
+      "example": "Undo a 20% reduction by adding 20% to £64, obtaining £76.80. The percentage is now based on a different whole; use 64 ÷ 0.8 = £80.",
+      "repairs": [
+        "divide-by-to-undo-the-reduction"
+      ]
+    },
+    "RP5": {
+      "name": "Converting the known percentage/multiplier with the wrong place value",
+      "example": "After a 25% increase, correctly identify 125% but convert it to 0.125 rather than 1.25. For a final £100, divide by 1.25 to recover £80.",
+      "repairs": [
+        "convert-to-by-dividing-by",
+        "divide-the-percentage-by-not"
+      ]
+    },
+    "RP6": {
+      "name": "Failing to remove a separate fixed addition before reversing the percentage",
+      "example": "A total of £69 includes £5 delivery added after a 20% reduction; use 69 ÷ 0.8 − 5 = £81.25. Remove delivery first: (69 − 5) ÷ 0.8 = £80.",
+      "repairs": [
+        "remove-the-fixed-delivery-charge-before-reversing-the",
+        "remove-the-separate-fixed-addition-before-reversing-the"
+      ]
+    },
+    "RP7": {
+      "name": "Stopping at the recovered unit amount or scaling the wrong amount",
+      "example": "One item costs £64 after a 20% reduction. Correctly recover £80 each but give £80 when asked for the original cost of three items. Complete 3 × 80 = £240.",
+      "repairs": [
+        "multiply-the-recovered-amount-by",
+        "multiply-the-recovered-price-per-item-by"
+      ]
+    }
+  },
+  "reasons": {
+    "use-because-the-increase-is": "Use {0} because the increase is {1}%.",
+    "convert-to": "Convert {0}% to {1}.",
+    "convert-to-by-dividing-by": "Convert {0}% to {1} by dividing by {2}.",
+    "subtract-the-percentage-number-from-the-given-amount": "Subtract the percentage number from the given amount.",
+    "divide-the-percentage-by-not": "Divide the percentage by {0}, not {1}.",
+    "multiply-the-given-amount-by-the-percentage-multiplier": "Multiply the given amount by the percentage multiplier.",
+    "": "{0}% = {1}.",
+    "add-to-the-given-amount": "Add £{0} to the given amount.",
+    "the-given-amount-is-so-divide-by-to": "The given amount is {0}%, so divide by {1} to recover {2}%.",
+    "multiply-the-given-amount-by": "Multiply the given amount by {0}.",
+    "the-given-amount-is-only-the-stated-percentage": "The given amount is only the stated percentage, not the whole.",
+    "divide-by-to-find": "Divide {0} by {1} to find {2}%.",
+    "subtract-of-the-reduced-price": "Subtract {0}% of the reduced price.",
+    "add-to-the-reduced-price": "Add £{0} to the reduced price.",
+    "divide-by-to-recover-the-whole": "Divide £{0} by {1} to recover the whole.",
+    "divide-by-to-undo-the-reduction": "Divide £{0} by {1} to undo the reduction.",
+    "the-final-amount-is-of-the-original": "The final amount is {0}% of the original.",
+    "the-final-amount-is-already": "The final amount is already {0}%.",
+    "the-final-amount-is-of-the-original-divide": "The final amount is {0}% of the original. Divide by {1}.",
+    "divide-the-whole-bill-by-the-percentage-number": "Divide the whole bill by the percentage number.",
+    "include-the-delivery-charge-in-the-requested-original": "Include the delivery charge in the requested original item cost.",
+    "multiply-the-recovered-price-per-item-by": "Multiply the recovered price per item by {0}.",
+    "the-question-asks-for-chairs-not-one": "The question asks for {0} chairs, not one.",
+    "remove-the-fixed-delivery-charge-before-reversing-the": "Remove the fixed delivery charge before reversing the percentage change.",
+    "the-changed-item-price-is-not-the-whole": "The changed item price is £{0}, not the whole bill.",
+    "remove-the-separate-fixed-addition-before-reversing-the": "Remove the separate fixed addition before reversing the percentage change.",
+    "divide-the-total-by-the-percentage-number": "Divide the total by the percentage number.",
+    "keep-the-separate-addition-in-the-requested-original": "Keep the separate addition in the requested original amount.",
+    "the-percentage-applies-to-g-not-the-total": "The percentage applies to {0} g, not the total including the addition.",
+    "the-question-asks-for-desks-not-one": "The question asks for {0} desks, not one.",
+    "the-percentage-applies-to-litres-not-the-total": "The percentage applies to {0} litres, not the total including the addition.",
+    "divide-the-changed-amount-by-to-recover-the": "Divide the changed amount by {0} to recover the original.",
+    "multiply-the-recovered-amount-by": "Multiply the recovered amount by {0}.",
+    "multiplying-applies-the-same-percentage-change-again": "Multiplying applies the same percentage change again.",
+    "the-question-asks-for-equal-original-amounts-not": "The question asks for {0} equal original amounts, not one.",
+    "divide-the-changed-item-price-by-to-recover": "Divide the changed item price by {0} to recover the original.",
+    "multiplying-by-the-forward-multiplier-applies-the-same": "Multiplying by the forward multiplier applies the same change again. Divide to recover the original.",
+    "the-question-asks-for-tents-not-one": "The question asks for {0} tents, not one.",
+    "the-percentage-applies-to-people-not-the-total": "The percentage applies to {0} people, not the total including the addition.",
+    "the-question-asks-for-monitors-not-one": "The question asks for {0} monitors, not one.",
+    "the-percentage-applies-to-cm-not-the-total": "The percentage applies to {0} cm, not the total including the addition."
+  }
+}

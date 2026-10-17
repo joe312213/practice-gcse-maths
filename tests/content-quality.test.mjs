@@ -5,15 +5,15 @@ import test from "node:test";
 import assert from "node:assert/strict";
 const names = [
   "ratios",
-  "fractions",
-  "signed-numbers",
+  "fraction-addition-subtraction",
+  "signed-addition-subtraction",
   "percentages",
-  "problems",
+  "multiplication-division-problems",
   "reverse-percentages",
   "speed-distance-time",
-  "multiplication",
-  "division",
-  "equations",
+  "lattice-multiplication",
+  "bus-stop-division",
+  "solving-equations",
 ];
 const banks = await Promise.all(
   names.map(async (name) => await readTopicBank(`${name}`)),

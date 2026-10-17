@@ -76,6 +76,7 @@
   --selection-bg: var(--selection-base);
   --selection-border: var(--selection-border-base);
   --correct-bg: var(--correct-base);
+  --early-reattempt: #eaf0eb;
   --correct-border: var(--correct-border-base);
   --incorrect-bg: var(--incorrect-base);
   --incorrect-border: var(--incorrect-border-base);
@@ -133,6 +134,7 @@
   --selection-border-base-raw: #d3aa4f;
   --selection-text-raw: #ffe9b8;
   --correct-base-raw: #1f402d;
+  --early-reattempt: #2b362f;
   --correct-border-base-raw: #6ab783;
   --correct-text-raw: #b1edc4;
   --incorrect-base-raw: #44262f;
@@ -364,6 +366,7 @@
    At each palette default, authored colours retain their original saturation. */
 @supports (color: hsl(from red h s l)) and (color: oklch(from red l c h)) {
   :where(:root, .theme-swatch) {
+    --early-reattempt: oklch(from var(--correct-bg) l calc(c * 0.35) h);
     --sat-down: min(1, calc(var(--theme-saturation) / var(--theme-saturation-default)));
     --sat-up: max(
       0,

@@ -1,0 +1,26 @@
+{
+  "equal-groups": {
+    "title": "Choose the calculation",
+    "explanation": "Multiplication finds the total of equal groups. Division finds the size or number of groups.",
+    "guidance": "Decide what is known and what you need to find before calculating.",
+    "examples": [
+      "6 boxes of 8 pens contain 6 × 8 = 48 pens. Sharing 48 pens between 6 pupils gives 48 ÷ 6 = 8 each."
+    ]
+  },
+  "interpret-remainder": {
+    "title": "Check in context",
+    "explanation": "The story determines what to do with a remainder. You may need another whole group, only full groups, or an exact share.",
+    "guidance": "Ask whether a partial group is possible and whether everyone or everything must fit.",
+    "examples": [
+      "25 people in taxis holding 4 each need 7 taxis: 6 taxis leave 1 person without a seat."
+    ]
+  },
+  "units": {
+    "title": "units",
+    "explanation": "Units explain what a number measures or counts.",
+    "guidance": "Include the requested unit and check that it fits the question.",
+    "examples": [
+      "If 3 tickets cost £7 each, the total is £21, not 21 tickets."
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "types": {
+    "R1": {
+      "name": "Matching a total to just one share's parts",
+      "example": "Share £40 in the ratio 2:3, but calculate one part as 40 ÷ 2. The total represents five parts: 40 ÷ 5 = £8.",
+      "repairs": [
+        "the-total-covers-parts-divide-by",
+        "the-total-represents-parts-divide-by",
+        "the-total-represents-ratio-parts"
+      ]
+    },
+    "R2": {
+      "name": "Treating a named amount as the total",
+      "example": "Red:blue = 3:5, with 24 red beads; calculate one part as 24 ÷ 8. The 24 beads represent three parts: one part is 8 beads.",
+      "repairs": [
+        "the-red-share-represents-parts-divide-by-2"
+      ]
+    },
+    "R3": {
+      "name": "Matching a difference to the sum rather than difference of parts",
+      "example": "For 2:5 with an £18 difference, divide 18 by 7. The difference represents three parts: 18 ÷ 3 = £6.",
+      "repairs": [
+        "divide-the-money-difference-by-the-difference-of",
+        "the-difference-represents-parts-divide-by"
+      ]
+    },
+    "R4": {
+      "name": "Using an additive change instead of a common scale factor",
+      "example": "Scale 2:3 so the first amount is 10, then add 8 to both parts to get 10:11. Multiply both by 5 to get 10:15.",
+      "repairs": [
+        "multiply-both-parts-by-the-relationship-is-multiplicative"
+      ]
+    },
+    "R5": {
+      "name": "Reversing named shares or answering for the other quantity",
+      "example": "Red:blue = 2:3 and total 40; give 16 for blue instead of 24. Preserve the names and requested share.",
+      "repairs": [
+        "the-requested-quantity-is-the-second-share-with",
+        "white-is-the-second-share-parts-not",
+        "white-is-the-second-share-with-parts"
+      ]
+    },
+    "R6": {
+      "name": "Simplifying only one ratio part or using unequal factors",
+      "example": "Simplify 6:10 to 3:10. Divide both by 2 to obtain 3:5.",
+      "repairs": [
+        "divide-both-ratio-parts-by-the-same-factor"
+      ]
+    },
+    "R7": {
+      "name": "Mixing original and simplified part sizes in the calculation",
+      "example": "Simplify 6:10 to 3:5, then divide £160 by 16 but multiply the result by 5. Use 16 with the original ten-part share, or 8 with the simplified five-part share; both give £100.",
+      "repairs": [
+        "that-part-value-uses-the-original-ratio-multiply"
+      ]
+    },
+    "R8": {
+      "name": "Stopping at the ratio amount or using it incorrectly in a required linked step",
+      "example": "Red:white paint = 2:3, total 10 litres; correctly find 6 litres of white but give £6 as its cost at £4/litre. Complete 6 × 4 = £24. Other variants can require unit conversion, repeated batches or a percentage of the share.",
+      "repairs": [
+        "add-the-extra-length-to-the-blue-ribbon",
+        "divide-centimetres-by-to-convert-to-metres",
+        "find-the-quarter-saved-not-the-three-quarters",
+        "halve-the-full-batch-sugar-amount",
+        "multiply-the-sugar-in-one-batch-by-the",
+        "multiply-the-white-volume-by-the-price-per",
+        "subtract-the-blue-beads-used-from-the-blue",
+        "subtract-what-ben-spends-from-his-share"
+      ]
+    }
+  },
+  "reasons": {
+    "the-red-share-represents-parts-divide-by": "The red share represents {0} parts — divide by {1}.",
+    "add-beads-to-the-red-amount": "Add {0} beads to the red amount.",
+    "the-red-share-represents-parts-divide-by-2": "The red share represents {0} parts — divide {1} by {2}.",
+    "multiply-both-parts-by-the-relationship-is-multiplicative": "Multiply both parts by {0}; the relationship is multiplicative.",
+    "add-the-same-amount-to-both-parts": "Add the same amount to both parts.",
+    "multiply-the-sugar-part-by": "Multiply the sugar part by {0}.",
+    "use-the-smaller-share-because-white-is-requested": "Use the smaller share because white is requested.",
+    "divide-the-total-equally-between-the-two-colours": "Divide the total equally between the two colours.",
+    "white-is-the-second-share-with-parts": "White is the second share, with {0} parts.",
+    "add-the-ratio-parts-to-the-money-instead": "Add the ratio parts to the money instead of dividing.",
+    "the-total-covers-parts-divide-by": "The total covers {0} parts — divide £{1} by {2}.",
+    "the-total-covers-parts-divide-by-2": "The total covers {0} parts — divide by {1}.",
+    "use-the-first-share-as-the-final-answer": "Use the first share as the final answer.",
+    "divide-the-second-share-by-its-number-of": "Divide the second share by its number of ratio parts again.",
+    "multiply-the-white-volume-by-the-price-per": "Multiply the white volume by the price per litre.",
+    "the-second-share-is-the-further-calculation-gives": "The second share is {0}; the further calculation gives {1}.",
+    "subtract-the-blue-beads-used-from-the-blue": "Subtract the blue beads used from the blue share.",
+    "divide-the-difference-by-bea-s-parts": "Divide the difference by Bea’s {0} parts.",
+    "treat-as-one-part-and-multiply-by": "Treat £{0} as one part and multiply by {1}.",
+    "the-difference-represents-parts-divide-by": "The £{0} difference represents {1} parts — divide by {2}.",
+    "divide-only-the-second-ratio-part-by": "Divide only the second ratio part by {0}.",
+    "subtract-from-both-ratio-parts": "Subtract {0} from both ratio parts.",
+    "divide-both-ratio-parts-by-the-same-factor": "Divide both ratio parts by the same factor, {0}.",
+    "halve-the-original-part-value-once-more": "Halve the original part value once more.",
+    "that-part-value-uses-the-original-ratio-multiply": "That part value uses the original ratio — multiply it by {0}, not {1}.",
+    "multiply-that-part-value-by": "Multiply that part value by {0}.",
+    "add-the-extra-length-to-the-blue-ribbon": "Add the extra length to the blue ribbon.",
+    "divide-the-amount-by-the-price-per-litre": "Divide the amount by the price per litre before using the ratio.",
+    "the-total-represents-parts-divide-by": "The total represents {0} parts; divide by {1}.",
+    "divide-the-total-by-the-white-share-s": "Divide the total by the white share’s {0} parts.",
+    "white-is-the-second-share-parts-not": "White is the second share: {0} parts, not {1}.",
+    "use-the-first-ratio-part-as-the-final": "Use the first ratio part as the final answer.",
+    "multiply-the-sugar-in-one-batch-by-the": "Multiply the sugar in one batch by the number of batches.",
+    "apply-the-extra-operation-to-the-original-total": "Apply the extra operation to the original total instead of the named share.",
+    "the-required-further-calculation-gives-g": "The required further calculation gives {0} g.",
+    "use-the-extra-amount-as-the-value-of": "Use the extra amount as the value of one ratio part.",
+    "the-total-represents-ratio-parts": "The total represents {0} ratio parts.",
+    "the-requested-quantity-is-the-second-share-with": "The requested quantity is the second share, with {0} parts.",
+    "divide-the-total-by-the-larger-ratio-part": "Divide the total by the larger ratio part alone.",
+    "divide-by": "Divide {0} by {1}.",
+    "keep-the-labels-in-their-stated-order": "Keep the labels in their stated order.",
+    "subtract-what-ben-spends-from-his-share": "Subtract what Ben spends from his share.",
+    "the-required-further-calculation-gives": "The required further calculation gives {0} £.",
+    "divide-centimetres-by-to-convert-to-metres": "Divide centimetres by {0} to convert to metres.",
+    "the-required-further-calculation-gives-m": "The required further calculation gives {0}/{1} m.",
+    "halve-the-full-batch-sugar-amount": "Halve the full-batch sugar amount.",
+    "divide-the-money-difference-by-the-difference-of": "Divide the money difference by the difference of parts, {0}.",
+    "divide-the-money-difference-by-bea-s-parts": "Divide the money difference by Bea’s {0} parts.",
+    "treat-the-money-difference-as-one-part": "Treat the money difference as one part.",
+    "matches-three-parts-so-one-part-is": "£{0} matches three parts, so one part is £{1}.",
+    "find-the-quarter-saved-not-the-three-quarters": "Find the quarter saved, not the three quarters left."
+  }
+}

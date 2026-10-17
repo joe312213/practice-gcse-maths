@@ -47,14 +47,14 @@ test("journey rates, times and distances carry the appropriate intermediate unit
 
 test("money working distinguishes item counts, ratio parts and percentage proportions from prices", async () => {
   for (const name of [
-    "multiplication",
-    "division",
-    "problems",
+    "lattice-multiplication",
+    "bus-stop-division",
+    "multiplication-division-problems",
     "ratios",
     "percentages",
     "reverse-percentages",
-    "equations",
-    "signed-numbers",
+    "solving-equations",
+    "signed-addition-subtraction",
   ]) {
     const bank = await load(name);
     for (const q of items(bank)) {

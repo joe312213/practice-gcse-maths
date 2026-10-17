@@ -5,7 +5,7 @@
   - play
   - go
 
-  Used By: DemoPlayer.svelte and ArithmeticDemo.svelte
+  Used By: DemoPlayer.svelte
 
   Uses: application/player.mjs and application/demo-motion.mjs.
 
@@ -217,7 +217,9 @@
     </label>
   </div>
   <!-- Visual progress stays readable without announcing every playback frame. -->
-  <p class="demo-status">Step {step} of {steps}{playing ? ' · playing' : ''}</p>
+  <p class="demo-status">
+    Step {step} of {steps}{frame.label ? ` · ${frame.label}` : ''}{playing ? ' · playing' : ''}
+  </p>
   {#if finished}{@render completion?.()}
     <div data-demo-completion-end aria-hidden="true"></div>{/if}
 </section>

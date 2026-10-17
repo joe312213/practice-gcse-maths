@@ -1,0 +1,89 @@
+{
+  "types": {
+    "P1": {
+      "name": "Treating the percentage number as a quantity with the original units",
+      "example": "Calling 25% of £80 “£25”, or adding £25 for a 25% increase. Calculate 25/100 of £80 = £20.",
+      "repairs": [
+        "find-of-the-mass-the-percentage-number-itself",
+        "multiply-by-the-percentage-number-is-not-a"
+      ]
+    },
+    "P2": {
+      "name": "Converting a percentage to a decimal/fraction with the wrong place value",
+      "example": "5% → 0.5 instead of 0.05. The denominator is 100.",
+      "repairs": [
+        "divide-by-the-multiplier-is",
+        "divide-the-percentage-number-by-not"
+      ]
+    },
+    "P3": {
+      "name": "Confusing the percentage change amount with the new total",
+      "example": "For a 25% increase on £80, correctly find £20 but give £20 as the new price. Add it to £80 to obtain £100. Using 0.25 instead of 1.25 as a multiplier for the new price is the same conceptual family.",
+      "repairs": [
+        "add-the-change-to-the-original-amount"
+      ]
+    },
+    "P4": {
+      "name": "Applying a change in the wrong direction",
+      "example": "A 25% decrease on £80 gives £100. Subtract £20 to obtain £60; use 0.75 rather than 1.25 if using a multiplier.",
+      "repairs": [
+        "subtract-the-change-from-the-original-amount"
+      ]
+    },
+    "P5": {
+      "name": "Using the new amount as the denominator for percentage change",
+      "example": "For £80 → £100, calculate 20/100 × 100 = 20%. Compare with the original £80: 25%.",
+      "repairs": [
+        "compare-the-change-with-the-original-amount"
+      ]
+    },
+    "P6": {
+      "name": "Using the whole new amount instead of the difference in the numerator",
+      "example": "For £80 → £100, calculate 100/80 × 100 and call 125% the increase. £100 is 125% of the original, so the increase is 25%.",
+      "repairs": [
+        "use-the-change-as-the-numerator-not-the"
+      ]
+    },
+    "P7": {
+      "name": "Inverting the fraction for percentage change",
+      "example": "For £80 → £100, use 80/20 × 100 = 400%. The change goes over the original: 20/80 × 100.",
+      "repairs": [
+        "divide-the-change-by-the-original-amount-then"
+      ]
+    },
+    "P8": {
+      "name": "Failing to convert a proportion to a percentage",
+      "example": "Correctly calculate 20/80 = 0.25, then label the increase 0.25%. Multiply by 100 to obtain 25%.",
+      "repairs": [
+        "multiply-the-proportion-by-before-writing-a-percentage"
+      ]
+    }
+  },
+  "reasons": {
+    "divide-the-mass-by-the-percentage-number": "Divide the mass by the percentage number.",
+    "find-of-the-mass-the-percentage-number-itself": "Find {0}/{1} of the mass; the percentage number itself is not kilograms.",
+    "subtract-the-percentage-number-from-the-mass": "Subtract the percentage number from the mass.",
+    "add-the-percentage-number-to-the-amount": "Add the percentage number to the amount.",
+    "multiply-by-the-percentage-number-is-not-a": "Multiply £{0} by {1}/{2}; the percentage number is not a money amount.",
+    "divide-the-amount-by-the-percentage-number": "Divide the amount by the percentage number.",
+    "divide-by-the-multiplier-is": "Divide {0} by {1}: the multiplier is {2}.",
+    "use-the-percentage-number-itself-as-the-multiplier": "Use the percentage number itself as the multiplier.",
+    "divide-the-percentage-number-by": "Divide the percentage number by {0}.",
+    "divide-the-original-amount-by-the-calculated-change": "Divide the original amount by the calculated change.",
+    "add-the-percentage-number-itself-to-the-original": "Add the percentage number itself to the original amount.",
+    "add-the-change-to-the-original-amount": "Add the change to the original amount.",
+    "": "{0} + {1} = {2}.",
+    "subtract-the-change-from-the-original-amount": "Subtract the change from the original amount.",
+    "-2": "{0} − {1} = {2}.",
+    "-3": "{0} − {1}/{2} = {3}/{4}.",
+    "divide-the-percentage-number-by-not": "Divide the percentage number by {0}, not {1}.",
+    "-4": "{0}% = {1}.",
+    "use-the-new-amount-itself-as-the-percentage": "Use the new amount itself as the percentage.",
+    "subtract-from-the-new-amount-to-get-the": "Subtract {0} from the new amount to get the percentage.",
+    "multiply-the-proportion-by-before-writing-a-percentage": "Multiply the proportion by {0} before writing a percentage.",
+    "-5": "{0} ÷ {1} × {2} = {3}%",
+    "compare-the-change-with-the-original-amount": "Compare the change with the original amount, {0}.",
+    "use-the-change-as-the-numerator-not-the": "Use the change, {0}, as the numerator, not the whole new amount.",
+    "divide-the-change-by-the-original-amount-then": "Divide the change by the original amount, then multiply by {0}."
+  }
+}

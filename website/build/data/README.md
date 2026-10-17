@@ -6,18 +6,18 @@
 
 | Folder | Topic |
 | --- | --- |
-| [multiplication](multiplication/teaching.json) | M01 · Lattice multiplication |
-| [division](division/teaching.json) | M02 · Bus-stop division |
-| [signed-numbers](signed-numbers/teaching.json) | M13 · Signed addition and subtraction |
-| [equations](equations/teaching.json) | M10 · Solving equations |
-| [fractions](fractions/teaching.json) | M15 · Fraction addition and subtraction |
-| [percentages](percentages/teaching.json) | M06 · Percentages |
-| [problems](problems/teaching.json) | M03 · Multiplication/division problems |
-| [ratios](ratios/teaching.json) | M04 · Ratios |
-| [speed-distance-time](speed-distance-time/teaching.json) | M12 · Speed, distance and time |
-| [reverse-percentages](reverse-percentages/teaching.json) | M07 · Reverse percentages |
+| [lattice-multiplication](lattice-multiplication/method.json) | M01 · Lattice multiplication |
+| [bus-stop-division](bus-stop-division/method.json) | M02 · Bus-stop division |
+| [signed-addition-subtraction](signed-addition-subtraction/method.json) | M13 · Signed addition and subtraction |
+| [solving-equations](solving-equations/method.json) | M10 · Solving equations |
+| [fraction-addition-subtraction](fraction-addition-subtraction/method.json) | M15 · Fraction addition and subtraction |
+| [percentages](percentages/method.json) | M06 · Percentages |
+| [multiplication-division-problems](multiplication-division-problems/method.json) | M03 · Multiplication/division problems |
+| [ratios](ratios/method.json) | M04 · Ratios |
+| [speed-distance-time](speed-distance-time/method.json) | M12 · Speed, distance and time |
+| [reverse-percentages](reverse-percentages/method.json) | M07 · Reverse percentages |
 
-Links open each topic's teaching file; its sibling files follow the same map below. Combined problems draws from these topics and has no separate editable bank.
+Links open each topic's method specification; its sibling files follow the same map below. Combined problems draws from these topics and has no separate editable bank.
 
 ## Shared defaults across topics
 
@@ -40,7 +40,7 @@ A topic can override individual fields in **its `topic.json`**, for example:
 }
 ```
 
-Resolution is shared `practice` fallback → shared stage-specific values → topic stage-specific values. Author-facing stage keys are `initialAssessment`, `scaffolded`, `errors`, `plain`, `problem` (and `mixed` for mixed practice). Override only what differs; omitted fields inherit, and an empty string hides that field. `{questionCount}` is the only supported substitution, not executable code. The app maps its existing internal `assessment` identifier to `initialAssessment`; saved progress IDs do not change. These are presentation defaults: page sizes, selection, scoring and calculator rules remain in their existing owners. Topic-specific method guidance still belongs in `teaching.json`.
+Resolution is shared `practice` fallback → shared stage-specific values → topic stage-specific values. Author-facing stage keys are `initialAssessment`, `scaffolded`, `errors`, `plain`, `problem` (and `mixed` for mixed practice). Override only what differs; omitted fields inherit, and an empty string hides that field. `{questionCount}` is the only supported substitution, not executable code. The app maps its existing internal `assessment` identifier to `initialAssessment`; saved progress IDs do not change. These are presentation defaults: page sizes, selection, scoring and calculator rules remain in their existing owners. Topic-specific method guidance still belongs in `method.json`.
 
 ## What each JSON file supplies
 
@@ -48,20 +48,40 @@ Counts describe the current banks, not limits on future authoring. Challenge lev
 
 | File | Contents and exact use |
 | --- | --- |
-| `topic.json` | A metadata object: identity (`subject`, `topic`), student-facing `title`, rendering `method`, revision markers, default question prefix and topic flags such as `calculator`/`problemSolvingTopic`, where present. Provenance records remain here. `rows`/`prompts` in older topics are retained source descriptions; the current method instructions come from `teaching.json`, not these fields. Do not change IDs or revisions merely to edit wording: bank revisions affect saved-page retention. |
-| `teaching.json` | Method guidance (`guidance.default` and optional named entries in `guidance.byLevel`), equation demo/recap narration (`demoAnnotations`, `recapAnnotations`) and `answerNote`, where present. Used by Learn the method and the same method/reference components opened from practice. Scaffolded practice also shows the guidance. Equation `errorReasons` remain for the old saved-question interface. This file does **not** contain the demo question values or the step-by-step arithmetic of calculation examples. |
+| `topic.json` | A metadata object: identity (`subject`, `topic`), student-facing `title`, rendering `method`, revision markers, default question prefix and topic flags such as `calculator`/`problemSolvingTopic`, where present. Provenance records remain here. `rows`/`prompts` in older topics are retained source descriptions; the current method instructions come from `method.json`, not these fields. Do not change IDs or revisions merely to edit wording: bank revisions affect saved-page retention. |
+| `method.json` | Method name, level guidance, named `submethods` with applicability/steps/checks, and ordered `examples.start/build/confidence` references. Each example has a readable `name`, stable `key`, referenced sub-method keys and a question ID or recap index. Equation narration lives on that example as `annotations`. The shared player and scaffolded guidance consume this file. |
+| `concepts.json` | Concept keys mapped to `title`, `explanation`, `guidance` and an `examples` array. Referenced inline by method steps; each reference inserts an accessible question-mark button and expandable explanation. |
 | `demos.json` | Array of three main worked examples, one per numeric `level`. These supply Learn the method's question, numbers and working. The topic homepage also uses the Build-level example. Equation examples contain `balance` rows; calculation examples contain `model` and `steps`; lattice/bus-stop examples contain `a`/`b`, with geometry and animation generated by shared code. |
-| `recap.json` | Array of three alternative reminder examples where the method player supports them; `null` for lattice multiplication and bus-stop division. These feed the player's example chooser, not another practice question pool. Equation recap narration is in `teaching.json → recapAnnotations`. |
-| `scaffolded.json` | Array of 36 scaffolded-practice questions: 12 per level, shown as three four-question pages. Records include prompts, answers, hints and correction/check material. The stage also draws method guidance from `teaching.json`. |
-| `spot-errors.json` | Array of 36 current interactive investigations: 12 per level, shown as three four-question pages. Each record owns its wrong working, selectable `locations`, explanation `options`, independent `errors`, consequential errors, corrected answer and `correctWorking`. Lattice/bus-stop records include structured `diagram` data. Options and accepted error reasons belong together here. See the [detailed contract](../../../content/spot-errors-drafts/README.md#data-contract) and [authoring process](../../../docs/SPOT_ERRORS_PROCESS.md). |
+| `recap.json` | Preserved alternative examples (`null` for lattice/bus stop), available to `method.json` through a zero-based `recap` reference. Their presence does not automatically add them to the chooser. These are not a new scored question pool. |
+| `scaffolded.json` | Array of 36 scaffolded-practice questions: 12 per level, shown as three four-question pages. Records include prompts, answers, hints and correction/check material. The stage also draws method guidance from `method.json`. |
+| `spot-errors.json` | Array of 36 current interactive investigations: 12 per level, shown as three four-question pages. Each record owns its wrong working, selectable `locations`, ordered explanation references in `options`, independent `errors`, consequences, corrected answer and `correctWorking`. Lattice/bus-stop records include structured `diagram` data. Reusable wording and misconception definitions live in `error-types.json`; question IDs and choice IDs remain stable. See the [detailed contract](../../../content/spot-errors-drafts/README.md#data-contract) and [authoring process](../../../docs/SPOT_ERRORS_PROCESS.md). |
+| `error-types.json` | Compact topic catalogue: `types` maps existing shorthand codes (for example F1) to a name, example and accepted `repairs`; `reasons` maps readable names to explanation/feedback templates. This is the place to review and edit the error types and selectable reasons. `legacyReasons`, where present, preserves the old saved-question correction labels unchanged. |
 | `practice.json` | Array of 108 independent-practice questions: 36 per level, shown as three twelve-question pages. **Live initial assessment also draws from this file**: two eligible questions per level. For the dedicated multiplication/division problems topic, this bank supplies its independent problem-solving practice. |
-| `problem-solving.json` | Object with two different areas: `teaching` supplies the Read and plan / Check method advice and worked examples; `questions` contains 54 scored problem-solving questions, 18 per level, shown as three six-question pages. `teaching.guidance` is an ordered list of problem-solving tips, not the method guide's default/byLevel structure. The Combined problems homepage preview also uses a Build example from `problems/problem-solving.json → teaching.examples`. |
+| `problem-solving.json` | Object with two different areas: `teaching` supplies the Read and plan / Check method advice and worked examples; `questions` contains 54 scored problem-solving questions, 18 per level, shown as three six-question pages. `teaching.guidance` is an ordered list of problem-solving tips, not the method guide's default/byLevel structure. The Combined problems homepage preview also uses a Build example from `multiplication-division-problems/problem-solving.json → teaching.examples`. |
 | `assessment-examples.json` | Array of six retained dedicated assessment questions from the earlier content design. They remain loadable by ID for existing saved assessment attempts. **Editing these does not alter a newly drawn initial assessment**; edit eligible questions in `practice.json` for that. Selection rules live in code, as explained below. |
 | `retired-questions.json` | Historical definitions for superseded questions. They are excluded from new draws and catalogue selection. Saved active pages containing these IDs are automatically reset to current content; older recorded results remain. Do not use this file to author live questions or reclassify historical scores. |
 
+## Editing error types and reasons
+
+Edit each topic's `error-types.json`. `types` explains the misconception codes used by the questions; its `repairs` lists accepted reason names. `reasons` contains both selectable explanations and feedback text, including distractors. Wording is preserved from the current bank and still needs the user's teaching review.
+
+In `spot-errors.json`, `options` is an ordered object keyed by the **existing answer-choice ID**:
+
+```json
+"options": {
+  "alternative-2": "multiply-the-numerators-together",
+  "repair": ["keep-denominator-and-add-the-numerators", "12"],
+  "alternative-1": "add-both-denominators-as-well"
+}
+```
+
+A string names a reason directly. An array names a template then supplies its `{0}`, `{1}`, … values in order. For example, `"Keep denominator {0} and add the numerators."` becomes “Keep denominator 12 and add the numerators.” `errors[].feedback` uses the same reference format. `errors[].reason` still names the accepted **choice ID**, while `misconception` still names the type, such as `F1`. The shared loader expands references for the UI and audits; missing names/values and unlisted repairs fail validation.
+
+Changing shared wording updates all its uses. When changing what a reason means, adding/removing a type or changing which reason is accepted, reconcile the affected questions and feedback too. The user will edit these catalogues; subsequent integration must preserve those edits and review each affected question's mathematics rather than regenerating the bank.
+
 ## Editing Learn the method
 
-For shared instruction text, open the topic's `teaching.json`:
+For shared instruction text, open the topic's `method.json`:
 
 ```json
 {
@@ -82,11 +102,43 @@ For shared instruction text, open the topic's `teaching.json`:
 
 `byLevel` may be empty. A `start`, `build` or `confidence` entry replaces the **whole** default guide at that level; arrays are not appended or merged. Keep shared wording in `default` rather than making three identical copies.
 
+A step can also be an array of text and concept references, for example:
+
+```json
+["Choose the ", {"concept": "opposite-operation", "text": "opposite operation"}, " to undo what is happening to x."]
+```
+
+Put the definition in the same topic's `concepts.json`, keyed by `opposite-operation`. Each definition has `title`, `explanation`, `guidance`, and a non-empty `examples` array. The reference's `text` is the phrase shown in the step; the shared definition is written once. Use `{1/3}` notation for stacked fractions in explanations/examples. Missing keys and incomplete definitions fail validation. Help starts closed, opens beside its owning step, and resets when the guide changes. These references work in Learn the method, method references and scaffolded guidance.
+
+Every challenge level should have **at least four named, numbered examples**, even when it uses one method throughout. Numbers come from the example order; do not type numbers into the names. Use names that identify the operation, problem variety or sub-method, such as “Undo division by multiplying”. The selector wraps long names on mobile and resets to the first example when the level changes.
+
+Each `submethods` key specifies `name`, applicable `levels` (`start`, `build`, `confidence`), `when`, ordered `steps`, and `check`. Ordinary steps of one algorithm need not be declared as separate sub-methods: lattice multiplication has one algorithm, with several illustrative examples per level. Each applicable sub-method must be demonstrated by at least one example at that level; one example can demonstrate several.
+
+An example entry looks like:
+
+```json
+{
+  "key": "divide",
+  "name": "Undo division by multiplying",
+  "submethods": ["undo-division"],
+  "question": "maths:M10-S05-C1-Q4",
+  "annotations": [
+    "x is divided by 2. Multiplication will undo that division.",
+    "Multiply both sides by 2.",
+    "11 × 2 = 22. Check 22 ÷ 2 = 11."
+  ]
+}
+```
+
+`question` references an existing question ID in this topic. Alternatively use `"recap": 0` for the Start recap (1 = Build, 2 = Confidence); never supply both. Keep the example at the same challenge level as its source. Preserve the existing `demo` key for the first example; other keys need only be unique within that level. Examples reference checked working rather than copying questions into the method specification. Editing a referenced practice question also changes its scored version. Source questions, saved IDs and public topic URLs were preserved when folders were renamed to their specific topic slugs.
+
+The current implementation has at least two examples per level; expansion to the requested four remains pending. Validation currently rejects missing coverage, fewer than two examples, duplicate/generic names, invalid references and mismatched equation narration. Content-only method/concept edits select cheap validation plus the focused presentation and method-playback suites.
+
 For example-specific text and working:
 
-- **Equations:** edit `demos.json → balance` alongside `teaching.json → demoAnnotations[level]`. Narration must match the displayed rows. Recaps use `recap.json` and `recapAnnotations[level]`.
+- **Equations:** edit the referenced question’s `balance` alongside its `method.json → examples[level][index].annotations`. Every balance row needs one matching narration entry, including recap references.
 - **Calculation topics:** edit `demos.json → steps`, including each step's `title`, `input`, `output` and `note`. Keep those steps consistent with `q`, `answer` and `model`. Their recap records use the same kind of fields.
-- **Lattice and bus stop:** edit the example's `a`, `b`, `q` and `answer` in `demos.json`; edit method instructions in `teaching.json`. Digits, carries and animation frames are calculated by [shared arithmetic code](../../src/lib/application/arithmetic-demo.mjs). Changing animation mechanics requires code, not another content file.
+- **Lattice and bus stop:** edit the example's `a`, `b`, `q` and `answer` in `demos.json`; edit method instructions in `method.json`. Digits, carries and animation frames are calculated by [shared arithmetic code](../../src/lib/application/arithmetic-demo.mjs). Changing animation mechanics requires code, not another content file.
 
 ## Selection rules and supporting files
 

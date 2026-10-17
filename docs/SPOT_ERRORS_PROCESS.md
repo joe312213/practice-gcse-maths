@@ -63,4 +63,11 @@ Recompute each fault's consequences and the corrected solution independently fro
 
 Run change-selected verification. `scripts/review_spot_error_drafts.py` reads live investigations for exact answers, coverage and available diagram traces; `scripts/spot_error_quality.py` adds level/variety guards and selected independent original-question/corrected-line calculations. Regression mutations prove rejection of the audited weaknesses. These checks recognise the current authored mathematical forms: extend the independent check when introducing a valid new form, rather than bypassing it. Automated passes cannot certify every teaching choice or explanation; page-by-page review remains required.
 
-Edit the canonical topic `spot-errors.json`. Optional generators must produce separate candidates and must not overwrite manual content without an explicit replacement request. Builds and audits remain read-only with respect to these sources. Preserve IDs when revising questions.
+Edit shared error definitions and reasons in the canonical topic `error-types.json`; `spot-errors.json` references them by name. The [content guide](../website/static/data/README.md#editing-error-types-and-reasons) defines the compact reference format. Preserve the user’s catalogue edits and reconcile affected working, distractors and accepted reasons during integration. Edit question-specific working in `spot-errors.json`. Optional generators must produce separate candidates and must not overwrite manual content without an explicit replacement request. Builds and audits remain read-only with respect to these sources. Preserve IDs when revising questions.
+
+
+## Mobile rendering and focused verification — 17 October 2026
+
+Live wrong working uses the same Pacifico stroke font as the method demonstrations. Retain SVG for those strokes and shared lattice geometry, with normal HTML buttons positioned as a separate percentage-based layer over the uncapped investigation SVG. Do not put interactive HTML inside SVG `foreignObject`: mobile hit testing must match the visible digits, including scrolled side and bottom regions. Line markers fit the intrinsic mathematical expression, excluding its label and spare row width; touch areas may remain larger than their marks.
+
+Prefer assertions of hit targets, marker/content bounds, font presence and saved responses. Routine investigation runs do not capture screenshots; use `CAPTURE_VISUALS=1` only for a named visual question. Physical iPhone confirmation remains distinct from Chromium touch emulation.

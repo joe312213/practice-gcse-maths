@@ -1,0 +1,115 @@
+{
+  "types": {
+    "A1": {
+      "name": "Choosing addition where equal groups require multiplication, or multiplication where sharing/grouping requires division",
+      "example": "Eight boxes of six items are modelled as 8 + 6 = 14. Use eight groups of six: 48. Accept correct repeated addition as a valid method.",
+      "repairs": [
+        "divide-the-total-apples-by-the-number-of",
+        "multiply-the-number-of-trays-by-the-muffins"
+      ]
+    },
+    "A2": {
+      "name": "Reversing the division operands",
+      "example": "For 48 biscuits packed six per bag, use 6 ÷ 48. Divide the total by the bag size: 48 ÷ 6 = 8 bags.",
+      "repairs": [
+        "divide-the-total-biscuits-by-biscuits-per-bag"
+      ]
+    },
+    "A3": {
+      "name": "Omitting a required quantity before calculating groups",
+      "example": "For 46 pupils and 5 adults in minibuses with 10 passenger seats, divide only 46 by 10 and give 5 buses. Include all 51 passengers, requiring 6 buses.",
+      "repairs": [
+        "include-both-groups-in-the-total-count",
+        "include-the-adults-as-well-as-the-pupils"
+      ]
+    },
+    "A4": {
+      "name": "Rounding automatically rather than interpreting the required whole groups",
+      "example": "13 people in six-seat vehicles require 3 vehicles, but 13 biscuits make only 2 full packs of six. Rounding down in the first case or up in the second is wrong. Use separate examples with explicit objectives.",
+      "repairs": [
+        "count-only-full-packs-leftover-biscuits-do-not",
+        "round-up-the-remaining-people-still-need-a"
+      ]
+    },
+    "A5": {
+      "name": "Giving the quotient when the remainder is requested, or attaching the wrong meaning to the remainder",
+      "example": "From 17 m of ribbon cut into 3 m lengths, 17 ÷ 3 = 5 r 2. Giving “5 m left” confuses the five full lengths with the 2 m left.",
+      "repairs": [
+        "the-remainder-is-the-length-left-not-the",
+        "use-the-remainder-as-the-leftover-length-not"
+      ]
+    },
+    "A6": {
+      "name": "Using the wrong intermediate quantity in a later calculation",
+      "example": "Correctly find 3 vehicles for 13 people, then price 13 vehicles at £20 each. Use the calculated 3 vehicles: £60.",
+      "repairs": [
+        "price-the-crates-not-the-bottles",
+        "price-the-tents-not-the-campers",
+        "price-the-vehicles-not-the-people"
+      ]
+    },
+    "A7": {
+      "name": "Repeating a one-off charge or omitting a required final step",
+      "example": "Four £6 tickets plus one £3 booking fee are calculated as 4 × (6 + 3) = £36. The fee applies once: 4 × 6 + 3 = £27. Stopping at £24 is an alternative example of the omitted-fee fault.",
+      "repairs": [
+        "add-the-order-fee-once-not-once-per",
+        "apply-the-one-off-charge-once-for-the"
+      ]
+    },
+    "A8": {
+      "name": "Combining incompatible units without conversion",
+      "example": "Cut 2 m of ribbon into 25 cm lengths using 2 ÷ 25. Convert first: 200 ÷ 25 = 8 lengths.",
+      "repairs": [
+        "convert-m-to-cm-before-dividing"
+      ]
+    }
+  },
+  "reasons": {
+    "convert-metres-to-centimetres-by-dividing-by": "Convert metres to centimetres by dividing by {0}.",
+    "multiply-the-metre-length-by-the-centimetre-length": "Multiply the metre length by the centimetre length.",
+    "convert-m-to-cm-before-dividing": "Convert {0} m to {1} cm before dividing.",
+    "add-the-number-of-boxes-to-the-apples": "Add the number of boxes to the apples.",
+    "divide-the-total-apples-by-the-number-of": "Divide the total apples by the number of equal boxes.",
+    "subtract-the-number-of-boxes-from-the-apples": "Subtract the number of boxes from the apples.",
+    "divide-the-number-of-trays-by-muffins-per": "Divide the number of trays by muffins per tray.",
+    "subtract-the-number-of-trays-from-muffins-per": "Subtract the number of trays from muffins per tray.",
+    "multiply-the-number-of-trays-by-the-muffins": "Multiply the number of trays by the muffins per tray.",
+    "subtract-biscuits-per-bag-from-the-total": "Subtract biscuits per bag from the total.",
+    "divide-the-total-biscuits-by-biscuits-per-bag": "Divide the total biscuits by biscuits per bag.",
+    "multiply-total-biscuits-by-biscuits-per-bag": "Multiply total biscuits by biscuits per bag.",
+    "add-the-quotient-and-remainder-to-find-the": "Add the quotient and remainder to find the length left.",
+    "multiply-the-remainder-by-the-length-of-each": "Multiply the remainder by the length of each piece.",
+    "use-the-remainder-as-the-leftover-length-not": "Use the remainder as the leftover length, not the number of pieces.",
+    "pieces-use-m-leaving-m": "{0} pieces use {1} m, leaving {2} m.",
+    "count-only-the-adults": "Count only the adults.",
+    "round-down-even-when-passengers-would-be-left": "Round down even when passengers would be left behind.",
+    "include-the-adults-as-well-as-the-pupils": "Include the adults as well as the pupils.",
+    "all-passengers-need-a-place": "All {0} passengers need a place.",
+    "use-only-the-whole-number-quotient-ignore-the": "Use only the whole-number quotient; ignore the people left over.",
+    "use-the-remainder-as-the-number-of-complete": "Use the remainder as the number of complete groups.",
+    "round-up-the-remaining-people-still-need-a": "Round up: the remaining people still need a vehicle.",
+    "the-remainder-is-the-required-count-is": "The remainder is {0}; the required count is {1}.",
+    "count-only-full-packs-leftover-biscuits-do-not": "Count only full packs; leftover biscuits do not make another complete pack.",
+    "count-the-leftover-biscuits-as-one-more-complete": "Count the leftover biscuits as one more complete pack.",
+    "price-only-fully-filled-groups-and-ignore-the": "Price only fully filled groups and ignore the leftovers.",
+    "divide-the-group-count-by-its-unit-price": "Divide the group count by its unit price.",
+    "price-the-vehicles-not-the-people": "Price the {0} vehicles, not the {1} people.",
+    "": "{0} × {1} = {2}.",
+    "subtract-the-charge-from-the-item-cost": "Subtract the charge from the item cost.",
+    "apply-the-one-off-charge-once-for-the": "Apply the one-off charge once for the whole order.",
+    "multiply-the-unit-price-by-the-charge-instead": "Multiply the unit price by the charge instead of the quantity.",
+    "the-extra-charge-is-not": "The extra charge is £{0}, not £{1}.",
+    "price-the-tents-not-the-campers": "Price the {0} tents, not the {1} campers.",
+    "price-the-crates-not-the-bottles": "Price the {0} crates, not the {1} bottles.",
+    "round-down-even-if-some-items-or-people": "Round down even if some items or people remain.",
+    "include-both-groups-in-the-total-count": "Include both groups in the total count.",
+    "add-the-order-fee-once-not-once-per": "Add the order fee once, not once per group.",
+    "count-only-the-additional-group": "Count only the additional group.",
+    "there-are-altogether": "There are {0} altogether.",
+    "the-fixed-fee-is": "The fixed fee is £{0}.",
+    "price-one-more-complete-piece-instead": "Price one more complete piece instead.",
+    "treat-the-remainder-as-the-number-of-full": "Treat the remainder as the number of full-length pieces.",
+    "the-remainder-is-the-length-left-not-the": "The remainder is the length left, not the number of full pieces.",
+    "the-leftover-length-is-m": "The leftover length is {0} m."
+  }
+}

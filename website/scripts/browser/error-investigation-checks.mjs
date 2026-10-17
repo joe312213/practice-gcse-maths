@@ -7,6 +7,8 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect } from '@playwright/test';
 import { createTestContext, selectWrapped, artifacts } from './support.mjs';
 import { latticeModel } from '../../src/lib/application/arithmetic-demo.mjs';
+import { investigationLattice } from '../../src/lib/application/error-working.mjs';
+const captureVisuals = process.env.CAPTURE_VISUALS === '1';
 import prototype from '../../../content/lattice_error_prototype.json' with { type: 'json' };
 
 async function checkPrototypeInvestigation(browser, base) {
@@ -103,7 +105,7 @@ async function checkPrototypeInvestigation(browser, base) {
         assert.ok(sizes.includes('27px'), 'Oversized carry must appear at answer-digit size');
         await expect(page.locator('.arithmetic-working')).toContainText('5132');
       }
-      if (index >= 3)
+      if (captureVisuals && index >= 3)
         await page.screenshot({
           path: `${artifacts}/lattice-error-example-${index + 1}-390.png`,
           fullPage: true,
@@ -113,7 +115,7 @@ async function checkPrototypeInvestigation(browser, base) {
         await selectWrapped(page, '#investigation-reason', error.reason);
       }
       assert.deepEqual(await page.locator('.error-working svg text').allTextContents(), original);
-      if (q.working.reverseRight) {
+      if (captureVisuals && q.working.reverseRight) {
         await page
           .locator('.error-working')
           .screenshot({ path: `${artifacts}/lattice-error-vertical-marker-390.png` });
@@ -170,10 +172,11 @@ async function checkPrototypeInvestigation(browser, base) {
     for (const mode of ['light', 'dark']) {
       if (mode === 'dark')
         await page.getByRole('button', { name: 'Switch to paired dark theme' }).click();
-      await page.screenshot({
-        path: `${artifacts}/lattice-error-marker-${mode}-390.png`,
-        fullPage: true,
-      });
+      if (captureVisuals)
+        await page.screenshot({
+          path: `${artifacts}/lattice-error-marker-${mode}-390.png`,
+          fullPage: true,
+        });
       for (const selector of [
         '#investigation-answer',
         '#investigation-reason',
@@ -209,7 +212,10 @@ async function checkPrototypeInvestigation(browser, base) {
 
 /** Real stages share the question/canvas boundary, exact marker and durable session responses. */
 async function checkLiveInvestigations(browser, base) {
-  const context = await createTestContext(browser, { viewport: { width: 1200, height: 1000 } });
+  const context = await createTestContext(browser, {
+    viewport: { width: 1200, height: 1000 },
+    hasTouch: true,
+  });
   const page = await context.newPage(),
     errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
@@ -263,6 +269,44 @@ async function checkLiveInvestigations(browser, base) {
       const attempt = await saved(),
         q = bank.questions.find((q) => q.id === attempt.items[0].id);
       assert.equal(attempt.items.length, 4);
+      await page.locator('.error-working [data-written-ink]').first().waitFor();
+      if (q.diagram?.kind === 'lattice') {
+        await page.setViewportSize({ width: 390, height: 844 });
+        const model = investigationLattice(q);
+        const points = [
+          ...model.right.map((_, row) => ({
+            id: 'operand-right',
+            x: 85 + model.top.length * 70,
+            y: 78 + row * 70,
+          })),
+          ...model.diagonals.map((d, i) => ({ id: `diagonal-${i}`, x: d.x, y: d.y - 10 })),
+          ...model.cells.map((cell) => ({
+            id: `cell-${cell.row}-${cell.col}`,
+            x: cell.x + 19,
+            y: cell.y + 20,
+          })),
+        ];
+        for (const point of points) {
+          const target = page.locator(`.lattice-location[data-location="${point.id}"]`);
+          await target.scrollIntoViewIfNeeded();
+          const position = await page.locator('.lattice-diagram > svg').evaluate((svg, point) => {
+            const screen = new DOMPoint(point.x, point.y).matrixTransform(svg.getScreenCTM());
+            return {
+              x: screen.x,
+              y: screen.y,
+              hit: document.elementFromPoint(screen.x, screen.y)?.closest('[data-location]')
+                ?.dataset.location,
+            };
+          }, point);
+          assert.equal(position.hit, point.id, 'Visible digit must hit its own region');
+          await page.touchscreen.tap(position.x, position.y);
+          await expect(target).toHaveAttribute('aria-pressed', 'true');
+          await page.touchscreen.tap(position.x, position.y);
+          await expect(target).toHaveAttribute('aria-pressed', 'false');
+        }
+        await page.setViewportSize({ width: 1200, height: 1000 });
+      }
+
       await expect(page.locator('#investigation-location')).toBeHidden();
       await expect(page.locator('#answer')).toHaveValue('');
       await page.locator('#answer').pressSequentially('123');
@@ -291,6 +335,18 @@ async function checkLiveInvestigations(browser, base) {
         await target.focus();
         await page.keyboard.press('Enter');
         await expect(target).toHaveAttribute('aria-pressed', 'true');
+        if (await target.locator('.working-line-content').count()) {
+          const bounds = await target.evaluate((button) => {
+            const box = (selector) => button.querySelector(selector).getBoundingClientRect();
+            return {
+              marker: box('.line-marker'),
+              text: box('.working-expression'),
+              label: box('.working-line-label'),
+            };
+          });
+          assert.ok(bounds.marker.width <= bounds.text.width + 12, 'Marker hugs working width');
+          assert.ok(bounds.marker.top >= bounds.label.bottom, 'Marker excludes the label');
+        }
         await selectWrapped(page, '#investigation-reason', error.reason);
       }
       assert.ok(
@@ -332,13 +388,15 @@ async function checkLiveInvestigations(browser, base) {
           );
         }
         if (topic.bank === 'M01') {
-          await page
-            .locator('.question-workspace')
-            .screenshot({ path: `${artifacts}/live-errors-canvas-1200.png` });
+          if (captureVisuals)
+            await page
+              .locator('.question-workspace')
+              .screenshot({ path: `${artifacts}/live-errors-canvas-1200.png` });
           await page.setViewportSize({ width: 390, height: 1000 });
-          await page
-            .locator('.question-workspace')
-            .screenshot({ path: `${artifacts}/live-errors-canvas-390.png` });
+          if (captureVisuals)
+            await page
+              .locator('.question-workspace')
+              .screenshot({ path: `${artifacts}/live-errors-canvas-390.png` });
           await page.setViewportSize({ width: 1200, height: 1000 });
         }
       }
@@ -397,9 +455,10 @@ async function checkLiveInvestigations(browser, base) {
               'Feedback precedes canvas on mobile',
             );
           }
-          await page
-            .locator('.question-workspace')
-            .screenshot({ path: `${artifacts}/live-error-feedback-${width}.png` });
+          if (captureVisuals)
+            await page
+              .locator('.question-workspace')
+              .screenshot({ path: `${artifacts}/live-error-feedback-${width}.png` });
         }
       }
       await page.reload();

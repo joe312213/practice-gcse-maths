@@ -152,7 +152,10 @@ const output = await outputHash(buildDirectory);
 // A deleted/replaced build invalidates browser evidence even with unchanged source.
 if (cache.build && cache.build.output !== output)
   for (const job of planned) if (job.build) job.run = true;
-const selected = planned.filter((job) => job.run);
+// Fail on inexpensive content/logic/compile checks before building or opening a browser.
+const selected = planned
+  .filter((job) => job.run)
+  .sort((a, b) => Number(Boolean(a.build)) - Number(Boolean(b.build)));
 const buildNeeded =
   selected.some((job) => job.build) &&
   (args.has('--force') || cache.build?.input !== buildKey || cache.build?.output !== output);

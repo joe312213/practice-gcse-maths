@@ -1,18 +1,17 @@
 """Regression mutations prove level/variety checks reject the audited weaknesses."""
 import copy
-import json
 from pathlib import Path
 import sys
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from review_spot_error_drafts import calculate, answer_value
+from review_spot_error_drafts import calculate, answer_value, live_banks
 from spot_error_quality import check_quality
 
 
 def bank(name, topic):
-    data = json.loads((ROOT / 'website/static/data' / name / 'spot-errors.json').read_text())
+    data = [q for q in live_banks()[name]['questions'] if q.get('investigation')]
     return dict(topic=topic, questions=[dict(q, level=q['level'] + 1, prompt=q['q'], unit=q['answerUnit']) for q in data])
 
 
@@ -27,13 +26,13 @@ class QualityRegressions(unittest.TestCase):
         def mutate(qs):
             easy = copy.deepcopy(qs[0]); easy['level'] = 3
             qs[-1] = easy
-        self.reject('division', 'M02', mutate, 'two-digit divisor')
+        self.reject('bus-stop-division', 'M02', mutate, 'two-digit divisor')
 
     def test_equation_answer_checked_against_original_not_just_stored_expression(self):
-        self.reject('equations', 'M10', lambda qs: qs[0].update(answer='123', answerCheck={'expression': '123'}), 'original equation')
+        self.reject('solving-equations', 'M10', lambda qs: qs[0].update(answer='123', answerCheck={'expression': '123'}), 'original equation')
 
     def test_fraction_confidence_requires_both_denominators_to_change(self):
-        self.reject('fractions', 'M15', lambda qs: qs[-1].update(prompt='Work out 1/3 + 1/6.', answer='1/2'), 'both fractions need conversion')
+        self.reject('fraction-addition-subtraction', 'M15', lambda qs: qs[-1].update(prompt='Work out 1/3 + 1/6.', answer='1/2'), 'both fractions need conversion')
 
     def test_signed_repetition_is_rejected(self):
         def mutate(qs):
@@ -41,7 +40,7 @@ class QualityRegressions(unittest.TestCase):
             for q in qs:
                 if q['level'] == 3:
                     q.update(source)
-        self.reject('signed-numbers', 'M13', mutate, 'intermediate results')
+        self.reject('signed-addition-subtraction', 'M13', mutate, 'intermediate results')
 
     def test_percentage_change_must_include_both_directions(self):
         def mutate(qs):
@@ -55,7 +54,7 @@ class QualityRegressions(unittest.TestCase):
         self.reject('reverse-percentages', 'M07', lambda qs: qs[-1].update(prompt='An item costs £80 after a 20% reduction.'), 'fixed addition')
 
     def test_applications_need_linked_work(self):
-        self.reject('problems', 'M03', lambda qs: qs[-1].update(answerCheck={'expression': '10'}), 'linked operations')
+        self.reject('multiplication-division-problems', 'M03', lambda qs: qs[-1].update(answerCheck={'expression': '10'}), 'linked operations')
 
     def test_ratio_linked_mix_is_preserved(self):
         self.reject('ratios', 'M04', lambda qs: qs[-1].update(prompt='Share £140 in the ratio 2:5. Find the second share.'), '8/12')

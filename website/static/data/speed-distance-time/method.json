@@ -1,0 +1,181 @@
+{
+  "name": "Speed, distance and time",
+  "guidance": {
+    "default": {
+      "aim": "Choose the relationship using the quantity requested and matching units.",
+      "steps": [
+        "Identify distance, speed and time, and the quantity requested.",
+        [
+          "Use hours with km/h: ",
+          {
+            "concept": "minutes-to-hours",
+            "text": "divide minutes by 60"
+          },
+          ". Include stops when total elapsed time is requested."
+        ],
+        [
+          "Use ",
+          {
+            "concept": "speed-formula",
+            "text": "speed = distance ÷ time"
+          },
+          ", distance = speed × time, or time = distance ÷ speed."
+        ],
+        [
+          "For a whole journey use ",
+          {
+            "concept": "average-speed",
+            "text": "total distance and total time"
+          },
+          "; round only the final result and include units."
+        ]
+      ]
+    },
+    "byLevel": {}
+  },
+  "submethods": {
+    "speed": {
+      "name": "Find speed from distance and time",
+      "levels": [
+        "start",
+        "build"
+      ],
+      "when": "Distance and elapsed time are known.",
+      "steps": [
+        "Express time in the units needed by the speed.",
+        "Divide distance by time."
+      ],
+      "check": "Use speed × time to recover distance, and check the units and the size of the result."
+    },
+    "distance": {
+      "name": "Find distance from speed and time",
+      "levels": [
+        "start",
+        "build"
+      ],
+      "when": "Speed and time are known.",
+      "steps": [
+        "Match the time unit to the speed unit.",
+        "Multiply speed by time."
+      ],
+      "check": "Use speed × time to recover distance, and check the units and the size of the result."
+    },
+    "time": {
+      "name": "Find time from distance and speed",
+      "levels": [
+        "start"
+      ],
+      "when": "Distance and speed are known.",
+      "steps": [
+        "Divide distance by speed.",
+        "Give the result in the time unit used by the speed."
+      ],
+      "check": "Use speed × time to recover distance, and check the units and the size of the result."
+    },
+    "minutes": {
+      "name": "Convert minutes to hours",
+      "levels": [
+        "build"
+      ],
+      "when": "Time is given in minutes but speed is in km/h.",
+      "steps": [
+        "Divide the number of minutes by 60.",
+        "Use that value in the chosen relationship."
+      ],
+      "check": "Use speed × time to recover distance, and check the units and the size of the result."
+    },
+    "journey": {
+      "name": "Find average speed for a whole journey",
+      "levels": [
+        "confidence"
+      ],
+      "when": "Several journey stages have different distances or times.",
+      "steps": [
+        "Add all the distances.",
+        "Add all elapsed travel times.",
+        "Divide total distance by total time."
+      ],
+      "check": "Use speed × time to recover distance, and check the units and the size of the result."
+    },
+    "stops": {
+      "name": "Include stops in elapsed time",
+      "levels": [
+        "confidence"
+      ],
+      "when": "A whole-journey average is requested and the journey includes a stop.",
+      "steps": [
+        "Add the stop duration to the travel times.",
+        "Divide the total distance by the full elapsed time."
+      ],
+      "check": "Use speed × time to recover distance, and check the units and the size of the result."
+    }
+  },
+  "examples": {
+    "start": [
+      {
+        "key": "demo",
+        "name": "Find time from distance and speed",
+        "submethods": [
+          "time"
+        ],
+        "question": "maths:M12-WEB-DEMO-C1-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Find speed from distance and time",
+        "submethods": [
+          "speed"
+        ],
+        "recap": 0
+      },
+      {
+        "key": "distance",
+        "name": "Find distance from speed and time",
+        "submethods": [
+          "distance"
+        ],
+        "question": "maths:M12-WEB-PLAIN-C1-Q2"
+      }
+    ],
+    "build": [
+      {
+        "key": "demo",
+        "name": "Convert minutes and find speed",
+        "submethods": [
+          "minutes",
+          "speed"
+        ],
+        "question": "maths:M12-WEB-DEMO-C2-Q1"
+      },
+      {
+        "key": "distance",
+        "name": "Convert minutes and find distance",
+        "submethods": [
+          "minutes",
+          "distance"
+        ],
+        "question": "maths:M12-WEB-PLAIN-C2-Q2"
+      }
+    ],
+    "confidence": [
+      {
+        "key": "demo",
+        "name": "Find average speed across two stages",
+        "submethods": [
+          "journey"
+        ],
+        "question": "maths:M12-WEB-DEMO-C3-Q1"
+      },
+      {
+        "key": "stops",
+        "name": "Include a stop in average speed",
+        "submethods": [
+          "journey",
+          "stops"
+        ],
+        "question": "maths:M12-WEB-PLAIN-C3-Q2"
+      }
+    ]
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

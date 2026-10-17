@@ -227,7 +227,7 @@ test("local profiles normalise names, suggest typos, remain isolated and preserv
   );
 });
 test("Three full pages per stage/level preserve authored questions; all answers parse", async () => {
-  const bank = await readTopicBank("equations");
+  const bank = await readTopicBank("solving-equations");
   assert.equal(bank.questions.length, 243);
   assert.equal(new Set(bank.questions.map((q) => q.id)).size, 243);
   for (let l = 0; l < 3; l++)
@@ -265,7 +265,8 @@ test("assisted answers cannot initiate an early promotion from a previously high
   assert.equal(t.level, 0);
 });
 test("error metadata identifies actual mistakes, not a valid alternative method", async () => {
-  const { retiredQuestions: questions } = await readTopicBank("equations");
+  const { retiredQuestions: questions } =
+    await readTopicBank("solving-equations");
   const q = questions.find((q) => q.id === "maths:M10-SE-C2-Q3");
   assert.equal(q.errors[0].row, 2); // dividing by 5 on row 2 is a valid first step
   assert.equal(
@@ -284,7 +285,8 @@ test("error metadata identifies actual mistakes, not a valid alternative method"
 import { markErrors } from "../website/src/lib/domain/errors.mjs";
 import { createPlayer } from "../website/src/lib/application/player.mjs";
 test("row, reason, corrected step and final answer all contribute to error marking", async () => {
-  const { retiredQuestions: questions } = await readTopicBank("equations");
+  const { retiredQuestions: questions } =
+    await readTopicBank("solving-equations");
   for (const q of questions.filter((q) => q.type === "errors")) {
     assert.equal(markErrors(q, q.errors, q.answer).correct, true, q.id);
     assert.equal(markErrors(q, q.errors, q.wrong).correct, false, q.id);
@@ -365,21 +367,22 @@ test("playback runs to end, pauses/resumes, restarts and cancels disposed timers
   assert.equal(last, saved);
 });
 test("all demo/recap rows have authored reasons; Start guidance has fewer steps", async () => {
-  const bank = await readTopicBank("equations");
+  const bank = await readTopicBank("solving-equations");
   assert.ok(
     guidanceFor(bank.teaching, 0).steps.length <
       guidanceFor(bank.teaching, 2).steps.length,
   );
-  for (let i = 0; i < 3; i++) {
-    const q = bank.questions.find((q) => q.type === "demo" && q.level === i);
-    assert.equal(q.balance.length, bank.teaching.demoAnnotations[i].length);
-    assert.equal(
-      bank.recap[i].balance.length,
-      bank.teaching.recapAnnotations[i].length,
-    );
-  }
-  assert.match(bank.teaching.demoAnnotations[2][1], /every term/);
-  assert.match(bank.teaching.recapAnnotations[2][1], /3 is a common factor/);
+  for (const examples of Object.values(bank.teaching.examples))
+    for (const example of examples)
+      assert.equal(example.question.balance.length, example.annotations.length);
+  assert.match(
+    bank.teaching.examples.confidence[0].annotations[1],
+    /every term/,
+  );
+  assert.match(
+    bank.teaching.examples.confidence[1].annotations[1],
+    /3 is a common factor/,
+  );
 });
 
 test("changing playback speed reschedules one timer without skipping a step", () => {

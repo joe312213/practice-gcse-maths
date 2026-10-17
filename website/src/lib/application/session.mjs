@@ -1,4 +1,5 @@
 import { latestAssessment, assessmentStatus } from '../domain/assessment.mjs';
+import { earlyReattempt, latestResponse, countsForProgress } from '../domain/reattempts.mjs';
 /**
  * Purpose: Coordinate learner actions, adaptive pages, marking and practice sets through injected dependencies.
  *
@@ -80,6 +81,7 @@ export function createSession({
     draft = freshDraft(),
     message = '',
     inputError = '';
+  let retrying = false;
   const listeners = new Set();
   /**
    * Find an authored question by stable ID in the active bank.
@@ -244,6 +246,18 @@ export function createSession({
    * Used by: assist, submitAnswer.
    */
   const current = () => question(page()?.items[selected]?.id);
+  const answerOwner = (q) =>
+    bank.combined
+      ? (profile.topics[`${q.subject}:${q.topic}`] ??= { tracks: {}, pages: {}, history: [] })
+      : topic();
+  /** Assessment and set retries are practice only, after their original run is finished. */
+  function canRetry() {
+    if (!profile || mode === 'demo' || !current() || page().pendingChoice) return false;
+    if (activeSet() && !activeSet().finished) return false;
+    if (mode === 'assessment' && !page().complete) return false;
+    const response = latestResponse(page(), current().id);
+    return Boolean(response && (!response.correct || response.earlyReattempt));
+  }
   /**
    * Create empty transient answer, error-entry, typed-working and stroke fields.
    * Used by: createSession, resetDraft.
@@ -264,6 +278,7 @@ export function createSession({
    * Calls: workingKey, freshDraft, workingCache.load; used when the selected question changes.
    */
   function resetDraft() {
+    retrying = false;
     const key = workingKey();
     draft = { ...freshDraft(), ...(key ? workingCache.load(key) : null) };
     hintVisible = false;
@@ -410,7 +425,7 @@ export function createSession({
    */
   function assist() {
     const q = current();
-    if (q && !page().responses[q.id]) page().assisted[q.id] = true;
+    if (q && (!page().responses[q.id] || retrying)) page().assisted[q.id] = true;
   }
   /** Keep the active page authoritative after JSON reload, where object aliases are lost.
    * Legacy saved pages retain their questions/answers as the first page of their starting level.
@@ -458,7 +473,9 @@ export function createSession({
     return {
       bank,
       sourceBank: banks.find((b) => b.topic === current()?.topic) ?? bank,
-      timingDeadline: activeSet()?.deadline ?? null,
+      timingDeadline: retrying ? null : (activeSet()?.deadline ?? null),
+      retrying,
+      canRetry: canRetry(),
       profile: profile ? { id: profile.id, name: profile.name, key: profile.key } : null,
       backup: backupStatus(profile, now()),
       demoSpeed: profile?.settings?.demoSpeed ?? 1,
@@ -702,19 +719,30 @@ export function createSession({
         workingCache.save(key, draft);
       publish();
     },
+    /** Start a separate practice response while preserving the original submission and totals. */
+    retryQuestion() {
+      if (!canRetry()) return false;
+      resetDraft();
+      retrying = true;
+      page().assisted[current().id] = Boolean(reference || tips);
+      message =
+        'Try this question again. Attempts within two hours of your last incorrect answer do not count towards progress.';
+      publish();
+      return true;
+    },
     /**
      * Validate and mark the current draft, record the outcome and advance the page when appropriate.
      * Calls: timeExpired, activeSet, publish, page, current, markAnswer, markErrors, submit, track, topic, replaceRemaining, resetDraft, assist, completeRecommendation.
      * @example session.updateDraft({ answer: "2" }); session.submitAnswer(); // Mark the selected question.
      */
     submitAnswer() {
-      if (timeExpired() || activeSet()?.finished) {
+      if (!retrying && (timeExpired() || activeSet()?.finished)) {
         publish(true);
         return { expired: true };
       }
       const p = page(),
         q = current();
-      if (p.complete || p.responses[q.id]) return { duplicate: true };
+      if (retrying ? !canRetry() : p.complete || p.responses[q.id]) return { duplicate: true };
       const numeric = markAnswer(draft.answer, q.answer);
       if (!numeric.valid) {
         inputError = q.answer.includes(' r ')
@@ -735,39 +763,50 @@ export function createSession({
       const before = p.level,
         level = p.items[selected].level,
         assisted = Boolean(p.assisted[q.id]);
+      const owner = answerOwner(q);
+      const at = now();
+      const early = earlyReattempt(owner.history, q.id, at);
+      const reattempt = retrying;
+      const outcomeType = bank.combined || (reattempt && mode === 'assessment') ? q.type : mode;
       const response = {
         raw: draft.answer,
         correct: result.correct,
         assisted,
+        ...(early ? { earlyReattempt: true } : {}),
         entries: structuredClone(draft.errors),
         details: result.details,
         missing: result.missing,
         answerCorrect: result.answerCorrect ?? numeric.correct,
       };
-      p.responses[q.id] = response;
-      if (!bank.combined && ['plain', 'errors', 'problem'].includes(mode))
-        submit(track(), p, {
-          id: q.id,
-          level,
-          correct: result.correct,
-          assisted,
-          window: scoringWindow(mode, p.size),
-        });
-      else {
-        p.count++;
-        p.complete = p.count === p.size;
-        if (!assisted || !result.correct) {
-          const owner = bank.combined
-            ? (profile.topics[`${q.subject}:${q.topic}`] ??= { tracks: {}, pages: {}, history: [] })
-            : topic();
-          const actual = (owner.tracks[bank.combined ? q.type : mode] ??= newTrack(level));
+      if (reattempt) {
+        (p.reattempts ??= {})[q.id] = response;
+        if (countsForProgress(response)) {
+          const actual = (owner.tracks[outcomeType] ??= newTrack(level));
           actual.histories[level].push(result.correct);
           actual.histories[level] = actual.histories[level].slice(-10);
         }
+      } else {
+        p.responses[q.id] = response;
+        if (!bank.combined && ['plain', 'errors', 'problem'].includes(mode))
+          submit(track(), p, {
+            id: q.id,
+            level,
+            correct: result.correct,
+            assisted,
+            earlyReattempt: early,
+            window: scoringWindow(mode, p.size),
+          });
+        else {
+          p.count++;
+          p.complete = p.count === p.size;
+          if (countsForProgress(response)) {
+            const actual = (owner.tracks[outcomeType] ??= newTrack(level));
+            actual.histories[level].push(result.correct);
+            actual.histories[level] = actual.histories[level].slice(-10);
+          }
+        }
       }
-      const owner = bank.combined
-        ? (profile.topics[`${q.subject}:${q.topic}`] ??= { tracks: {}, pages: {}, history: [] })
-        : topic();
+      retrying = false;
       owner.history.push({
         attempt: p.attempt,
         ...(activeSet()
@@ -781,23 +820,26 @@ export function createSession({
         raw: draft.answer,
         pageSize: p.size,
         revision: bank.revision,
-        type: bank.combined ? q.type : mode,
+        type: outcomeType,
         level,
         correct: result.correct,
         assisted,
-        at: now(),
+        ...(reattempt ? { reattempt: true } : {}),
+        ...(early ? { earlyReattempt: true } : {}),
+        at,
       });
       if (before !== p.level && !p.complete) replaceRemaining(p.level > before);
       message =
         draft.points < 8 && !draft.working.trim()
           ? 'Remember to show your working. You can draw, type or use paper.'
           : '';
-      const next = result.correct
-        ? Array.from(
-            { length: p.items.length - 1 },
-            (_, offset) => (selected + offset + 1) % p.items.length,
-          ).find((i) => !p.responses[p.items[i].id])
-        : undefined;
+      const next =
+        result.correct && !activeSet()?.finished
+          ? Array.from(
+              { length: p.items.length - 1 },
+              (_, offset) => (selected + offset + 1) % p.items.length,
+            ).find((i) => !p.responses[p.items[i].id])
+          : undefined;
       if (next !== undefined) {
         selected = next;
         resetDraft();
@@ -805,7 +847,7 @@ export function createSession({
         message = `Correct. Moving to question ${selected + 1}.`;
       }
       const run = activeSet();
-      if (run && run.config.pages.every((_, index) => run.attempts[index]?.complete))
+      if (!reattempt && run && run.config.pages.every((_, index) => run.attempts[index]?.complete))
         run.finished = 'complete';
       if (completeRecommendation(profile, run, now()))
         message = 'Well done! Your focused practice will help your grades.';

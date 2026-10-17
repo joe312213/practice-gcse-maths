@@ -1,0 +1,94 @@
+{
+  "types": {
+    "F1": {
+      "name": "Adding/subtracting denominators as well as numerators",
+      "example": "3/8 + 2/8 = 5/16. The parts remain eighths: 5/8.",
+      "repairs": [
+        "keep-denominator-and-add-the-numerators"
+      ]
+    },
+    "F2": {
+      "name": "Changing a denominator without scaling the numerator by the same factor",
+      "example": "Rewriting 1/3 as 1/6 rather than 2/6. Equivalent fractions must preserve the value.",
+      "repairs": [
+        "multiply-both-parts-of-the-first-fraction-by",
+        "multiply-both-parts-of-the-second-fraction-by",
+        "multiply-the-numerator-as-well-as-the-denominator"
+      ]
+    },
+    "F3": {
+      "name": "Changing the requested operation or reversing subtraction",
+      "example": "For 5/6 − 1/3, correctly rewrite 1/3 as 2/6, then add 5 + 2. Subtract 5 − 2, giving 3/6. Preserve the original order when subtracting.",
+      "repairs": [
+        "keep-the-subtraction-subtract-the-second-numerator-from",
+        "keep-the-subtraction-when-combining-the-numerators"
+      ]
+    },
+    "F4": {
+      "name": "Converting a mixed number to an improper fraction incorrectly",
+      "example": "2 1/3 → 3/3 rather than 7/3. Two wholes are six thirds, then add the remaining third.",
+      "repairs": [
+        "multiply-the-whole-number-by-the-denominator-then"
+      ]
+    },
+    "F5": {
+      "name": "Regrouping a whole as one fractional part",
+      "example": "When subtracting 3/4 from 2 1/4, rewrite 2 1/4 as 1 2/4. One whole supplies four quarters: the correct regrouping is 1 5/4.",
+      "repairs": [
+        "one-whole-supplies-not"
+      ]
+    },
+    "F6": {
+      "name": "Simplifying only one part, or using different changes to numerator and denominator",
+      "example": "4/6 → 2/6. Divide both by 2 to obtain 2/3.",
+      "repairs": [
+        "simplify-by-dividing-both-the-original-numerator-and"
+      ]
+    },
+    "F7": {
+      "name": "Cancelling across addition/subtraction as if multiplying",
+      "example": "Cross-cancelling the two 2s in 2/3 + 1/2 to obtain 1/3 + 1. Use equivalent fractions over a common denominator; the sum is 7/6.",
+      "repairs": [
+        "use-equivalent-fractions-do-not-cancel-across-an"
+      ]
+    },
+    "F8": {
+      "name": "Converting an improper fraction back to a mixed number with the wrong fractional unit",
+      "example": "7/3 → 2 1/7. The remainder is still one third: 2 1/3.",
+      "repairs": [
+        "keep-the-fraction-denominator-when-writing-the-remainder"
+      ]
+    }
+  },
+  "reasons": {
+    "multiply-the-numerators-together": "Multiply the numerators together.",
+    "keep-denominator-and-add-the-numerators": "Keep denominator {0} and add the numerators.",
+    "add-both-denominators-as-well": "Add both denominators as well.",
+    "keep-the-subtraction-subtract-the-second-numerator-from": "Keep the subtraction: subtract the second numerator from the first.",
+    "subtract-the-first-numerator-from-the-second": "Subtract the first numerator from the second.",
+    "subtract-the-denominators-as-well": "Subtract the denominators as well.",
+    "simplify-by-dividing-only-the-original-denominator": "Simplify by dividing only the original denominator.",
+    "simplify-by-subtracting-the-same-number-from-the": "Simplify by subtracting the same number from the original numerator and denominator.",
+    "simplify-by-dividing-both-the-original-numerator-and": "Simplify by dividing both the original numerator and denominator by the same factor.",
+    "divide-numerator-and-denominator-by-the-same-factor": "Divide numerator and denominator by the same factor.",
+    "add-the-original-denominators-to-choose-the-new": "Add the original denominators to choose the new denominator.",
+    "multiply-the-original-numerators-instead-of-combining-them": "Multiply the original numerators instead of combining them.",
+    "multiply-the-numerator-as-well-as-the-denominator": "Multiply the numerator as well as the denominator by {0}.",
+    "": "{0}/{1} = {2}/{3}.",
+    "keep-the-subtraction-when-combining-the-numerators": "Keep the subtraction when combining the numerators.",
+    "-2": "{0} − {1} = {2}.",
+    "divide-both-and-by": "Divide both {0} and {1} by {2}.",
+    "multiply-both-parts-of-the-second-fraction-by": "Multiply both parts of the second fraction by {0}.",
+    "add-the-original-denominators-to-choose-a-common": "Add the original denominators to choose a common denominator.",
+    "multiply-the-original-numerators-instead-of-adding-or": "Multiply the original numerators instead of adding or subtracting.",
+    "multiply-both-parts-of-the-first-fraction-by": "Multiply both parts of the first fraction by {0}.",
+    "multiply-the-whole-number-by-the-denominator-then": "Multiply the whole number by the denominator, then add the numerator.",
+    "-3": "{0} × {1} + {2} = {3}.",
+    "one-whole-supplies-not": "One whole supplies {0}/{1}, not {2}/{3}.",
+    "regroup-as": "Regroup as {0} {1}/{2}.",
+    "use-equivalent-fractions-do-not-cancel-across-an": "Use equivalent fractions; do not cancel across an addition sign.",
+    "the-common-denominator-can-be": "The common denominator can be {0}.",
+    "keep-the-fraction-denominator-when-writing-the-remainder": "Keep the fraction denominator when writing the remainder as a fractional part.",
+    "remainder-so": "{0} ÷ {1} = {2} remainder {3}, so {4} {5}/{6}."
+  }
+}

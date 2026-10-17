@@ -1,0 +1,107 @@
+{
+  "types": {
+    "T1": {
+      "name": "Choosing the wrong relationship or reversing a division",
+      "example": "For 120 km in 2 hours, calculate speed as 120 × 2 = 240. Use distance ÷ time = 60 km/h. For time, use distance ÷ speed, not the reverse.",
+      "repairs": [
+        "divide-distance-by-speed-to-find-time",
+        "divide-distance-by-time-to-find-speed",
+        "multiply-speed-by-time-to-find-distance"
+      ]
+    },
+    "T2": {
+      "name": "Treating minutes as hundredths of an hour",
+      "example": "90 minutes → 0.9 hours. Divide by 60: 1.5 hours.",
+      "repairs": [
+        "divide-driving-minutes-by-not",
+        "divide-minutes-by-to-obtain-hours"
+      ]
+    },
+    "T3": {
+      "name": "Reading decimal hours as clock minutes",
+      "example": "Read 1.5 hours as 1 hour 50 minutes (or 1 hour 5 minutes). The fractional hour is 0.5 × 60 = 30 minutes.",
+      "repairs": [
+        "multiply-the-fractional-hour-by-its-decimal-digits"
+      ]
+    },
+    "T4": {
+      "name": "Calculating with one unit but labelling the result with another",
+      "example": "120 km ÷ 90 minutes = 1.33… km/min, labelled as km/h. Convert the rate by multiplying by 60, or divide by 1.5 hours, to obtain 80 km/h.",
+      "repairs": [
+        "multiply-the-rate-in-kilometres-per-minute-by"
+      ]
+    },
+    "T5": {
+      "name": "Combining the whole journey's distance with only part of its time, or vice versa",
+      "example": "Travel 30 km in 1 hour, then 120 km in 2 hours; calculate 150 ÷ 2 = 75 km/h. The matching totals are 150 km and 3 hours, giving 50 km/h.",
+      "repairs": [
+        "add-the-times-of-both-journey-parts"
+      ]
+    },
+    "T6": {
+      "name": "Omitting a stop when the requested average includes it",
+      "example": "Travel 120 km in 2 moving hours with an additional 30-minute stop; give 60 km/h for the whole journey including the stop. Use 120 ÷ 2.5 = 48 km/h.",
+      "repairs": [
+        "add-the-stop-time-to-the-driving-time",
+        "include-the-minute-stop-in-the-elapsed-journey"
+      ]
+    },
+    "T7": {
+      "name": "Taking an unweighted mean of speeds when time at each speed differs",
+      "example": "One hour at 30 km/h and two hours at 60 km/h: (30 + 60) ÷ 2 = 45. Total distance ÷ total time gives 150 ÷ 3 = 50 km/h.",
+      "repairs": [
+        "divide-total-distance-by-total-time-these-speeds"
+      ]
+    },
+    "T8": {
+      "name": "Rounding an intermediate conversion/calculation too early",
+      "example": "Convert 20 minutes to 0.33 hours, then calculate 10 ÷ 0.33 = 30.30 km/h. Retain 20/60 hours to obtain 30 km/h, then round only the requested final result.",
+      "repairs": [
+        "keep-the-full-time-value-round-only-the"
+      ]
+    }
+  },
+  "reasons": {
+    "subtract-speed-from-distance": "Subtract speed from distance.",
+    "divide-distance-by-speed-to-find-time": "Divide distance by speed to find time.",
+    "multiply-distance-by-speed": "Multiply distance by speed.",
+    "divide-time-by-distance": "Divide time by distance.",
+    "add-distance-and-time": "Add distance and time.",
+    "divide-distance-by-time-to-find-speed": "Divide distance by time to find speed.",
+    "add-speed-and-time": "Add speed and time.",
+    "multiply-speed-by-time-to-find-distance": "Multiply speed by time to find distance.",
+    "divide-time-by-speed": "Divide time by speed.",
+    "divide-speed-by-distance": "Divide speed by distance.",
+    "divide-the-minutes-by-to-obtain-hours": "Divide the minutes by {0} to obtain hours.",
+    "multiply-distance-by-time-to-find-speed": "Multiply distance by time to find speed.",
+    "divide-minutes-by-to-obtain-hours": "Divide minutes by {0} to obtain hours.",
+    "minutes-is-hours": "{0} minutes is {1}/{2} hours.",
+    "multiply-the-rate-in-kilometres-per-minute-by": "Multiply the rate in kilometres per minute by {0}.",
+    "the-hourly-rate-is-km-h": "The hourly rate is {0} km/h.",
+    "keep-the-full-time-value-round-only-the": "Keep the full time value; round only the final speed.",
+    "use-the-original-minutes-divided-by-in-the": "Use the original minutes divided by {0} in the speed calculation.",
+    "use-the-decimal-digits-after-the-point-as": "Use the decimal digits after the point as minutes.",
+    "divide-the-fractional-hour-by": "Divide the fractional hour by {0}.",
+    "multiply-the-fractional-hour-by-its-decimal-digits": "Multiply the fractional hour by {0}; its decimal digits are not minutes.",
+    "hour-is-minutes": "{0} hour is {1} minutes.",
+    "the-hourly-rate-is-km-h-2": "The hourly rate is {0}/{1} km/h.",
+    "include-the-minute-stop-in-the-elapsed-journey": "Include the {0}-minute stop in the elapsed journey time.",
+    "use-only-the-stop-time-as-the-journey": "Use only the stop time as the journey time.",
+    "convert-minutes-to-hours-by-dividing-by": "Convert minutes to hours by dividing by {0}.",
+    "divide-driving-minutes-by-not": "Divide driving minutes by {0}, not {1}.",
+    "keep-the-full-conversion-value": "Keep the full conversion value.",
+    "average-speed-for-the-whole-journey-includes-stationary": "Average speed for the whole journey includes stationary time.",
+    "use-only-the-second-distance-with-the-whole": "Use only the second distance with the whole journey time.",
+    "average-the-distances-before-dividing-by-the-total": "Average the distances before dividing by the total time.",
+    "add-the-times-of-both-journey-parts": "Add the times of both journey parts.",
+    "the-total-time-is-hours": "The total time is {0} hours.",
+    "subtract-the-stop-time-from-the-driving-time": "Subtract the stop time from the driving time.",
+    "treat-the-number-of-stop-minutes-as-hours": "Treat the number of stop minutes as hours.",
+    "add-the-stop-time-to-the-driving-time": "Add the stop time to the driving time.",
+    "the-requested-average-covers-the-whole-elapsed-journey": "The requested average covers the whole elapsed journey.",
+    "divide-the-sum-of-the-speeds-by-the": "Divide the sum of the speeds by the total time.",
+    "divide-total-distance-by-total-time-these-speeds": "Divide total distance by total time; these speeds apply for different durations.",
+    "use-the-faster-speed-for-the-whole-journey": "Use the faster speed for the whole journey.",
+    "total-distance-is-km-and-time-is-hours": "Total distance is {0} km and time is {1} hours."
+  }
+}

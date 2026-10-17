@@ -12,6 +12,7 @@
 -->
 <script>
   import { findQuestion } from '#lib/domain/topic-pages.mjs';
+  import { latestResponse } from '#lib/domain/reattempts.mjs';
   import MathText from '../teaching/MathText.svelte';
   import { LEVELS } from '#lib/domain/engine.mjs';
   import { fitQuestionRows } from '#lib/application/question-layout.mjs';
@@ -26,7 +27,7 @@
 >
   {#each page.items as item, index (item.id)}
     {@const question = findQuestion(bank, item.id)}
-    {@const response = page.responses[item.id]}
+    {@const response = latestResponse(page, item.id)}
     <li class:word-problem={question.prose}>
       <button
         type="button"
@@ -34,10 +35,11 @@
         class="question-option"
         class:active={index === selected}
         class:correct={response?.correct}
+        class:early-reattempt={response?.correct && response.earlyReattempt}
         class:incorrect={response && !response.correct}
         aria-current={index === selected ? 'true' : undefined}
         aria-controls="active-question"
-        aria-label={`Question ${index + 1}: ${question.q}${response ? (response.correct ? ', correct' : ', incorrect') : ''}`}
+        aria-label={`Question ${index + 1}: ${question.q}${response ? (response.correct ? ', correct' : ', incorrect') : ''}${response?.earlyReattempt ? ', early retry: not counted towards progress' : ''}`}
         onclick={() => onselect(index)}
       >
         <span class="num" aria-hidden="true">{index + 1}</span>

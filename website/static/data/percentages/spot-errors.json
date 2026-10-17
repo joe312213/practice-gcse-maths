@@ -15,26 +15,25 @@
         "text": "12.5% of 160 kg = 12.5 kg"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Divide the mass by the percentage number."
-      },
-      {
-        "id": "repair",
-        "text": "Find 12.5/100 of the mass; the percentage number itself is not kilograms."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract the percentage number from the mass."
-      }
-    ],
+    "options": {
+      "alternative-2": "divide-the-mass-by-the-percentage-number",
+      "repair": [
+        "find-of-the-mass-the-percentage-number-itself",
+        "12.5",
+        "100"
+      ],
+      "alternative-1": "subtract-the-percentage-number-from-the-mass"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P1",
-        "feedback": "Find 12.5/100 of the mass; the percentage number itself is not kilograms."
+        "feedback": [
+          "find-of-the-mass-the-percentage-number-itself",
+          "12.5",
+          "100"
+        ]
       }
     ],
     "consequences": [],
@@ -76,26 +75,25 @@
         "text": "50% of 74 kg = 50 kg"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Find 50/100 of the mass; the percentage number itself is not kilograms."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract the percentage number from the mass."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the mass by the percentage number."
-      }
-    ],
+    "options": {
+      "repair": [
+        "find-of-the-mass-the-percentage-number-itself",
+        "50",
+        "100"
+      ],
+      "alternative-1": "subtract-the-percentage-number-from-the-mass",
+      "alternative-2": "divide-the-mass-by-the-percentage-number"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P1",
-        "feedback": "Find 50/100 of the mass; the percentage number itself is not kilograms."
+        "feedback": [
+          "find-of-the-mass-the-percentage-number-itself",
+          "50",
+          "100"
+        ]
       }
     ],
     "consequences": [],
@@ -137,26 +135,25 @@
         "text": "75% of 120 kg = 75 kg"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Subtract the percentage number from the mass."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the mass by the percentage number."
-      },
-      {
-        "id": "repair",
-        "text": "Find 75/100 of the mass; the percentage number itself is not kilograms."
-      }
-    ],
+    "options": {
+      "alternative-1": "subtract-the-percentage-number-from-the-mass",
+      "alternative-2": "divide-the-mass-by-the-percentage-number",
+      "repair": [
+        "find-of-the-mass-the-percentage-number-itself",
+        "75",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P1",
-        "feedback": "Find 75/100 of the mass; the percentage number itself is not kilograms."
+        "feedback": [
+          "find-of-the-mass-the-percentage-number-itself",
+          "75",
+          "100"
+        ]
       }
     ],
     "consequences": [],
@@ -198,26 +195,27 @@
         "text": "25% of £120 = £25"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number to the amount."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply £120 by 25/100; the percentage number is not a money amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the amount by the percentage number."
-      }
-    ],
+    "options": {
+      "alternative-2": "add-the-percentage-number-to-the-amount",
+      "repair": [
+        "multiply-by-the-percentage-number-is-not-a",
+        "120",
+        "25",
+        "100"
+      ],
+      "alternative-1": "divide-the-amount-by-the-percentage-number"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P1",
-        "feedback": "Multiply £120 by 25/100; the percentage number is not a money amount."
+        "feedback": [
+          "multiply-by-the-percentage-number-is-not-a",
+          "120",
+          "25",
+          "100"
+        ]
       }
     ],
     "consequences": [],
@@ -264,26 +262,30 @@
         "text": "140 × 0.5 = 70 m"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide 5 by 100: the multiplier is 0.05."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the percentage number itself as the multiplier."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the percentage number by 1000."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-by-the-multiplier-is",
+        "5",
+        "100",
+        "0.05"
+      ],
+      "alternative-1": "use-the-percentage-number-itself-as-the-multiplier",
+      "alternative-2": [
+        "divide-the-percentage-number-by",
+        "1000"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P2",
-        "feedback": "Divide 5 by 100: the multiplier is 0.05."
+        "feedback": [
+          "divide-by-the-multiplier-is",
+          "5",
+          "100",
+          "0.05"
+        ]
       }
     ],
     "consequences": [
@@ -333,26 +335,30 @@
         "text": "280 × 0.5 = 140 m"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use the percentage number itself as the multiplier."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the percentage number by 1000."
-      },
-      {
-        "id": "repair",
-        "text": "Divide 5 by 100: the multiplier is 0.05."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-the-percentage-number-itself-as-the-multiplier",
+      "alternative-2": [
+        "divide-the-percentage-number-by",
+        "1000"
+      ],
+      "repair": [
+        "divide-by-the-multiplier-is",
+        "5",
+        "100",
+        "0.05"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P2",
-        "feedback": "Divide 5 by 100: the multiplier is 0.05."
+        "feedback": [
+          "divide-by-the-multiplier-is",
+          "5",
+          "100",
+          "0.05"
+        ]
       }
     ],
     "consequences": [
@@ -397,26 +403,27 @@
         "text": "15% of £160 = £15"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Multiply £160 by 15/100; the percentage number is not a money amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the amount by the percentage number."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number to the amount."
-      }
-    ],
+    "options": {
+      "repair": [
+        "multiply-by-the-percentage-number-is-not-a",
+        "160",
+        "15",
+        "100"
+      ],
+      "alternative-1": "divide-the-amount-by-the-percentage-number",
+      "alternative-2": "add-the-percentage-number-to-the-amount"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P1",
-        "feedback": "Multiply £160 by 15/100; the percentage number is not a money amount."
+        "feedback": [
+          "multiply-by-the-percentage-number-is-not-a",
+          "160",
+          "15",
+          "100"
+        ]
       }
     ],
     "consequences": [],
@@ -463,26 +470,30 @@
         "text": "180 × 1.2 = 216 m"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use the percentage number itself as the multiplier."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the percentage number by 1000."
-      },
-      {
-        "id": "repair",
-        "text": "Divide 12 by 100: the multiplier is 0.12."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-the-percentage-number-itself-as-the-multiplier",
+      "alternative-2": [
+        "divide-the-percentage-number-by",
+        "1000"
+      ],
+      "repair": [
+        "divide-by-the-multiplier-is",
+        "12",
+        "100",
+        "0.12"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P2",
-        "feedback": "Divide 12 by 100: the multiplier is 0.12."
+        "feedback": [
+          "divide-by-the-multiplier-is",
+          "12",
+          "100",
+          "0.12"
+        ]
       }
     ],
     "consequences": [
@@ -532,26 +543,30 @@
         "text": "320 × 1.2 = 384 m"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Divide the percentage number by 1000."
-      },
-      {
-        "id": "repair",
-        "text": "Divide 12 by 100: the multiplier is 0.12."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the percentage number itself as the multiplier."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "divide-the-percentage-number-by",
+        "1000"
+      ],
+      "repair": [
+        "divide-by-the-multiplier-is",
+        "12",
+        "100",
+        "0.12"
+      ],
+      "alternative-1": "use-the-percentage-number-itself-as-the-multiplier"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P2",
-        "feedback": "Divide 12 by 100: the multiplier is 0.12."
+        "feedback": [
+          "divide-by-the-multiplier-is",
+          "12",
+          "100",
+          "0.12"
+        ]
       }
     ],
     "consequences": [
@@ -596,26 +611,27 @@
         "text": "35% of £200 = £35"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the amount by the percentage number."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number to the amount."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply £200 by 35/100; the percentage number is not a money amount."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-the-amount-by-the-percentage-number",
+      "alternative-2": "add-the-percentage-number-to-the-amount",
+      "repair": [
+        "multiply-by-the-percentage-number-is-not-a",
+        "200",
+        "35",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P1",
-        "feedback": "Multiply £200 by 35/100; the percentage number is not a money amount."
+        "feedback": [
+          "multiply-by-the-percentage-number-is-not-a",
+          "200",
+          "35",
+          "100"
+        ]
       }
     ],
     "consequences": [],
@@ -662,26 +678,30 @@
         "text": "220 × 0.7 = 154 m"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Divide the percentage number by 1000."
-      },
-      {
-        "id": "repair",
-        "text": "Divide 7 by 100: the multiplier is 0.07."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the percentage number itself as the multiplier."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "divide-the-percentage-number-by",
+        "1000"
+      ],
+      "repair": [
+        "divide-by-the-multiplier-is",
+        "7",
+        "100",
+        "0.07"
+      ],
+      "alternative-1": "use-the-percentage-number-itself-as-the-multiplier"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P2",
-        "feedback": "Divide 7 by 100: the multiplier is 0.07."
+        "feedback": [
+          "divide-by-the-multiplier-is",
+          "7",
+          "100",
+          "0.07"
+        ]
       }
     ],
     "consequences": [
@@ -731,26 +751,30 @@
         "text": "360 × 0.7 = 252 m"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide 7 by 100: the multiplier is 0.07."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the percentage number itself as the multiplier."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the percentage number by 1000."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-by-the-multiplier-is",
+        "7",
+        "100",
+        "0.07"
+      ],
+      "alternative-1": "use-the-percentage-number-itself-as-the-multiplier",
+      "alternative-2": [
+        "divide-the-percentage-number-by",
+        "1000"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P2",
-        "feedback": "Divide 7 by 100: the multiplier is 0.07."
+        "feedback": [
+          "divide-by-the-multiplier-is",
+          "7",
+          "100",
+          "0.07"
+        ]
       }
     ],
     "consequences": [
@@ -805,26 +829,22 @@
         "text": "£40"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      },
-      {
-        "id": "repair",
-        "text": "Add the change to the original amount."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change",
+      "alternative-2": "add-the-percentage-number-itself-to-the-original",
+      "repair": "add-the-change-to-the-original-amount"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "P3",
-        "feedback": "160 + 40 = 200."
+        "feedback": [
+          "",
+          "160",
+          "40",
+          "200"
+        ]
       }
     ],
     "consequences": [],
@@ -879,26 +899,22 @@
         "text": "276 litres"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      },
-      {
-        "id": "repair",
-        "text": "Subtract the change from the original amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      }
-    ],
+    "options": {
+      "alternative-2": "add-the-percentage-number-itself-to-the-original",
+      "repair": "subtract-the-change-from-the-original-amount",
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "P4",
-        "feedback": "240 − 36 = 204."
+        "feedback": [
+          "-2",
+          "240",
+          "36",
+          "204"
+        ]
       }
     ],
     "consequences": [],
@@ -953,26 +969,22 @@
         "text": "70 people"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Add the change to the original amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      }
-    ],
+    "options": {
+      "repair": "add-the-change-to-the-original-amount",
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change",
+      "alternative-2": "add-the-percentage-number-itself-to-the-original"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "P3",
-        "feedback": "350 + 70 = 420."
+        "feedback": [
+          "",
+          "350",
+          "70",
+          "420"
+        ]
       }
     ],
     "consequences": [],
@@ -1027,26 +1039,22 @@
         "text": "528 m"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      },
-      {
-        "id": "repair",
-        "text": "Subtract the change from the original amount."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change",
+      "alternative-2": "add-the-percentage-number-itself-to-the-original",
+      "repair": "subtract-the-change-from-the-original-amount"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "P4",
-        "feedback": "480 − 48 = 432."
+        "feedback": [
+          "-2",
+          "480",
+          "48",
+          "432"
+        ]
       }
     ],
     "consequences": [],
@@ -1101,26 +1109,22 @@
         "text": "54 people"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      },
-      {
-        "id": "repair",
-        "text": "Add the change to the original amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      }
-    ],
+    "options": {
+      "alternative-2": "add-the-percentage-number-itself-to-the-original",
+      "repair": "add-the-change-to-the-original-amount",
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "P3",
-        "feedback": "180 + 54 = 234."
+        "feedback": [
+          "",
+          "180",
+          "54",
+          "234"
+        ]
       }
     ],
     "consequences": [],
@@ -1175,26 +1179,24 @@
         "text": "1792/5 kg"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Subtract the change from the original amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      }
-    ],
+    "options": {
+      "repair": "subtract-the-change-from-the-original-amount",
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change",
+      "alternative-2": "add-the-percentage-number-itself-to-the-original"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "P4",
-        "feedback": "320 − 192/5 = 1408/5."
+        "feedback": [
+          "-3",
+          "320",
+          "192",
+          "5",
+          "1408",
+          "5"
+        ]
       }
     ],
     "consequences": [],
@@ -1249,26 +1251,22 @@
         "text": "£91"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      },
-      {
-        "id": "repair",
-        "text": "Add the change to the original amount."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change",
+      "alternative-2": "add-the-percentage-number-itself-to-the-original",
+      "repair": "add-the-change-to-the-original-amount"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "P3",
-        "feedback": "260 + 91 = 351."
+        "feedback": [
+          "",
+          "260",
+          "91",
+          "351"
+        ]
       }
     ],
     "consequences": [],
@@ -1323,26 +1321,22 @@
         "text": "522 GB"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      },
-      {
-        "id": "repair",
-        "text": "Subtract the change from the original amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      }
-    ],
+    "options": {
+      "alternative-2": "add-the-percentage-number-itself-to-the-original",
+      "repair": "subtract-the-change-from-the-original-amount",
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "P4",
-        "feedback": "450 − 72 = 378."
+        "feedback": [
+          "-2",
+          "450",
+          "72",
+          "378"
+        ]
       }
     ],
     "consequences": [],
@@ -1397,26 +1391,22 @@
         "text": "33 tickets"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Add the change to the original amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      }
-    ],
+    "options": {
+      "repair": "add-the-change-to-the-original-amount",
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change",
+      "alternative-2": "add-the-percentage-number-itself-to-the-original"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "P3",
-        "feedback": "220 + 33 = 253."
+        "feedback": [
+          "",
+          "220",
+          "33",
+          "253"
+        ]
       }
     ],
     "consequences": [],
@@ -1471,36 +1461,37 @@
         "text": "£270"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      },
-      {
-        "id": "repair",
-        "text": "Divide the percentage number by 100, not 10."
-      },
-      {
-        "id": "repair-2",
-        "text": "Subtract the change from the original amount."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change",
+      "alternative-2": "add-the-percentage-number-itself-to-the-original",
+      "repair": [
+        "divide-the-percentage-number-by-not",
+        "100",
+        "10"
+      ],
+      "repair-2": "subtract-the-change-from-the-original-amount"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P2",
-        "feedback": "5% = 0.05."
+        "feedback": [
+          "-4",
+          "5",
+          "0.05"
+        ]
       },
       {
         "location": "step-4",
         "reason": "repair-2",
         "misconception": "P4",
-        "feedback": "180 − 9 = 171."
+        "feedback": [
+          "-2",
+          "180",
+          "9",
+          "171"
+        ]
       }
     ],
     "consequences": [
@@ -1557,36 +1548,37 @@
         "text": "680 litres"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      },
-      {
-        "id": "repair",
-        "text": "Divide the percentage number by 100, not 10."
-      },
-      {
-        "id": "repair-2",
-        "text": "Subtract the change from the original amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      }
-    ],
+    "options": {
+      "alternative-2": "add-the-percentage-number-itself-to-the-original",
+      "repair": [
+        "divide-the-percentage-number-by-not",
+        "100",
+        "10"
+      ],
+      "repair-2": "subtract-the-change-from-the-original-amount",
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P2",
-        "feedback": "10% = 0.1."
+        "feedback": [
+          "-4",
+          "10",
+          "0.1"
+        ]
       },
       {
         "location": "step-4",
         "reason": "repair-2",
         "misconception": "P4",
-        "feedback": "340 − 34 = 306."
+        "feedback": [
+          "-2",
+          "340",
+          "34",
+          "306"
+        ]
       }
     ],
     "consequences": [
@@ -1643,36 +1635,37 @@
         "text": "780 m"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide the percentage number by 100, not 10."
-      },
-      {
-        "id": "repair-2",
-        "text": "Subtract the change from the original amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the original amount by the calculated change."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add the percentage number itself to the original amount."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-the-percentage-number-by-not",
+        "100",
+        "10"
+      ],
+      "repair-2": "subtract-the-change-from-the-original-amount",
+      "alternative-1": "divide-the-original-amount-by-the-calculated-change",
+      "alternative-2": "add-the-percentage-number-itself-to-the-original"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "P2",
-        "feedback": "20% = 0.2."
+        "feedback": [
+          "-4",
+          "20",
+          "0.2"
+        ]
       },
       {
         "location": "step-4",
         "reason": "repair-2",
         "misconception": "P4",
-        "feedback": "260 − 52 = 208."
+        "feedback": [
+          "-2",
+          "260",
+          "52",
+          "208"
+        ]
       }
     ],
     "consequences": [
@@ -1724,26 +1717,29 @@
         "text": "65 ÷ 260 = 1/4%"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the proportion by 100 before writing a percentage."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage",
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ],
+      "repair": [
+        "multiply-the-proportion-by-before-writing-a-percentage",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P8",
-        "feedback": "65 ÷ 260 × 100 = 25%"
+        "feedback": [
+          "-5",
+          "65",
+          "260",
+          "100",
+          "25"
+        ]
       }
     ],
     "consequences": [],
@@ -1792,26 +1788,29 @@
         "text": "36 ÷ 204 × 100 = 300/17%"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      },
-      {
-        "id": "repair",
-        "text": "Compare the change with the original amount, 240."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ],
+      "repair": [
+        "compare-the-change-with-the-original-amount",
+        "240"
+      ],
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P5",
-        "feedback": "36 ÷ 240 × 100 = 15%"
+        "feedback": [
+          "-5",
+          "36",
+          "240",
+          "100",
+          "15"
+        ]
       }
     ],
     "consequences": [],
@@ -1860,26 +1859,29 @@
         "text": "208 ÷ 320 × 100 = 65%"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Use the change, 112, as the numerator, not the whole new amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      }
-    ],
+    "options": {
+      "repair": [
+        "use-the-change-as-the-numerator-not-the",
+        "112"
+      ],
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage",
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P6",
-        "feedback": "112 ÷ 320 × 100 = 35%"
+        "feedback": [
+          "-5",
+          "112",
+          "320",
+          "100",
+          "35"
+        ]
       }
     ],
     "consequences": [],
@@ -1928,26 +1930,29 @@
         "text": "180 ÷ 36 × 100 = 500%"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      },
-      {
-        "id": "repair",
-        "text": "Divide the change by the original amount, then multiply by 100."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage",
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ],
+      "repair": [
+        "divide-the-change-by-the-original-amount-then",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P7",
-        "feedback": "36 ÷ 180 × 100 = 20%"
+        "feedback": [
+          "-5",
+          "36",
+          "180",
+          "100",
+          "20"
+        ]
       }
     ],
     "consequences": [],
@@ -1996,26 +2001,29 @@
         "text": "42 ÷ 350 = 3/25%"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the proportion by 100 before writing a percentage."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ],
+      "repair": [
+        "multiply-the-proportion-by-before-writing-a-percentage",
+        "100"
+      ],
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P8",
-        "feedback": "42 ÷ 350 × 100 = 12%"
+        "feedback": [
+          "-5",
+          "42",
+          "350",
+          "100",
+          "12"
+        ]
       }
     ],
     "consequences": [],
@@ -2064,26 +2072,29 @@
         "text": "144 ÷ 624 × 100 = 300/13%"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Compare the change with the original amount, 480."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      }
-    ],
+    "options": {
+      "repair": [
+        "compare-the-change-with-the-original-amount",
+        "480"
+      ],
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage",
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P5",
-        "feedback": "144 ÷ 480 × 100 = 30%"
+        "feedback": [
+          "-5",
+          "144",
+          "480",
+          "100",
+          "30"
+        ]
       }
     ],
     "consequences": [],
@@ -2132,26 +2143,29 @@
         "text": "232 ÷ 160 × 100 = 145%"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      },
-      {
-        "id": "repair",
-        "text": "Use the change, 72, as the numerator, not the whole new amount."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage",
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ],
+      "repair": [
+        "use-the-change-as-the-numerator-not-the",
+        "72"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P6",
-        "feedback": "72 ÷ 160 × 100 = 45%"
+        "feedback": [
+          "-5",
+          "72",
+          "160",
+          "100",
+          "45"
+        ]
       }
     ],
     "consequences": [],
@@ -2200,26 +2214,29 @@
         "text": "450 ÷ 72 × 100 = 625%"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      },
-      {
-        "id": "repair",
-        "text": "Divide the change by the original amount, then multiply by 100."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ],
+      "repair": [
+        "divide-the-change-by-the-original-amount-then",
+        "100"
+      ],
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P7",
-        "feedback": "72 ÷ 450 × 100 = 16%"
+        "feedback": [
+          "-5",
+          "72",
+          "450",
+          "100",
+          "16"
+        ]
       }
     ],
     "consequences": [],
@@ -2268,26 +2285,29 @@
         "text": "112 ÷ 280 = 2/5%"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Multiply the proportion by 100 before writing a percentage."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      }
-    ],
+    "options": {
+      "repair": [
+        "multiply-the-proportion-by-before-writing-a-percentage",
+        "100"
+      ],
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage",
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P8",
-        "feedback": "112 ÷ 280 × 100 = 40%"
+        "feedback": [
+          "-5",
+          "112",
+          "280",
+          "100",
+          "40"
+        ]
       }
     ],
     "consequences": [],
@@ -2336,26 +2356,29 @@
         "text": "90 ÷ 270 × 100 = 100/3%"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      },
-      {
-        "id": "repair",
-        "text": "Compare the change with the original amount, 360."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage",
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ],
+      "repair": [
+        "compare-the-change-with-the-original-amount",
+        "360"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P5",
-        "feedback": "90 ÷ 360 × 100 = 25%"
+        "feedback": [
+          "-5",
+          "90",
+          "360",
+          "100",
+          "25"
+        ]
       }
     ],
     "consequences": [],
@@ -2404,26 +2427,29 @@
         "text": "708 ÷ 600 × 100 = 118%"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      },
-      {
-        "id": "repair",
-        "text": "Use the change, 108, as the numerator, not the whole new amount."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ],
+      "repair": [
+        "use-the-change-as-the-numerator-not-the",
+        "108"
+      ],
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P6",
-        "feedback": "108 ÷ 600 × 100 = 18%"
+        "feedback": [
+          "-5",
+          "108",
+          "600",
+          "100",
+          "18"
+        ]
       }
     ],
     "consequences": [],
@@ -2472,26 +2498,29 @@
         "text": "250 ÷ 20 × 100 = 1250%"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide the change by the original amount, then multiply by 100."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the new amount itself as the percentage."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract 100 from the new amount to get the percentage."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-the-change-by-the-original-amount-then",
+        "100"
+      ],
+      "alternative-1": "use-the-new-amount-itself-as-the-percentage",
+      "alternative-2": [
+        "subtract-from-the-new-amount-to-get-the",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "P7",
-        "feedback": "20 ÷ 250 × 100 = 8%"
+        "feedback": [
+          "-5",
+          "20",
+          "250",
+          "100",
+          "8"
+        ]
       }
     ],
     "consequences": [],

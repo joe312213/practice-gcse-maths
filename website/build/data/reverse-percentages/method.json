@@ -1,0 +1,147 @@
+{
+  "name": "Reverse percentages",
+  "guidance": {
+    "default": {
+      "aim": "The original whole is 100%; a changed price is a different percentage of it.",
+      "steps": [
+        [
+          "Identify the ",
+          {
+            "concept": "original-whole",
+            "text": "original 100%"
+          },
+          " and remove any separate delivery charge."
+        ],
+        "For a reduction subtract the rate from 100%; for an increase add it.",
+        [
+          "Divide the resulting percentage by 100 to form a ",
+          {
+            "concept": "reverse-multiplier",
+            "text": "multiplier"
+          },
+          ", then divide the known amount by it."
+        ],
+        [
+          "Apply any final quantity requested and ",
+          {
+            "concept": "reverse-check",
+            "text": "check"
+          },
+          " by applying the original percentage change."
+        ]
+      ]
+    },
+    "byLevel": {}
+  },
+  "submethods": {
+    "whole": {
+      "name": "Recover the original whole",
+      "levels": [
+        "start"
+      ],
+      "when": "A known amount represents a stated percentage of the original.",
+      "steps": [
+        "Convert the percentage to a decimal multiplier.",
+        "Divide the known amount by the multiplier."
+      ],
+      "check": "Apply the original percentage change to your original amount, then restore any separate charge."
+    },
+    "discount": {
+      "name": "Reverse a percentage discount",
+      "levels": [
+        "build",
+        "confidence"
+      ],
+      "when": "The known price is after a percentage reduction.",
+      "steps": [
+        "Subtract the reduction percentage from 100%.",
+        "Divide the known item price by that decimal multiplier."
+      ],
+      "check": "Apply the original percentage change to your original amount, then restore any separate charge."
+    },
+    "increase": {
+      "name": "Reverse a percentage increase",
+      "levels": [
+        "build",
+        "confidence"
+      ],
+      "when": "The known price is after a percentage increase.",
+      "steps": [
+        "Add the increase percentage to 100%.",
+        "Divide the known item price by that decimal multiplier."
+      ],
+      "check": "Apply the original percentage change to your original amount, then restore any separate charge."
+    },
+    "charge": {
+      "name": "Remove a separate charge first",
+      "levels": [
+        "confidence"
+      ],
+      "when": "A fixed charge was added after the percentage change.",
+      "steps": [
+        "Subtract the fixed charge from the bill.",
+        "Reverse the percentage change using the remaining item price."
+      ],
+      "check": "Apply the original percentage change to your original amount, then restore any separate charge."
+    }
+  },
+  "examples": {
+    "start": [
+      {
+        "key": "demo",
+        "name": "Recover 100% from a known 25%",
+        "submethods": [
+          "whole"
+        ],
+        "question": "maths:M07-WEB-DEMO-C1-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Recover 100% from a known 15%",
+        "submethods": [
+          "whole"
+        ],
+        "recap": 0
+      }
+    ],
+    "build": [
+      {
+        "key": "demo",
+        "name": "Recover a price before a discount",
+        "submethods": [
+          "discount"
+        ],
+        "question": "maths:M07-WEB-DEMO-C2-Q1"
+      },
+      {
+        "key": "increase",
+        "name": "Recover a price before an increase",
+        "submethods": [
+          "increase"
+        ],
+        "question": "maths:M07-WEB-PLAIN-C2-Q2"
+      }
+    ],
+    "confidence": [
+      {
+        "key": "demo",
+        "name": "Remove delivery, then reverse a discount",
+        "submethods": [
+          "charge",
+          "discount"
+        ],
+        "question": "maths:M07-WEB-DEMO-C3-Q1"
+      },
+      {
+        "key": "increase",
+        "name": "Remove delivery, then reverse an increase",
+        "submethods": [
+          "charge",
+          "increase"
+        ],
+        "question": "maths:M07-WEB-PLAIN-C3-Q2"
+      }
+    ]
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

@@ -19,7 +19,7 @@ import {
 } from "../website/src/lib/adapters/working-cache.mjs";
 import { createSession } from "../website/src/lib/application/session.mjs";
 import { emptyStore } from "../website/src/lib/domain/profiles.mjs";
-const bank = await readTopicBank("equations");
+const bank = await readTopicBank("solving-equations");
 function storage() {
   const data = new Map();
   return {

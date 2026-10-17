@@ -72,7 +72,7 @@ const context = await createTestContext(browser, { viewport: { width: 1380, heig
 const page = await context.newPage();
 const errors = [];
 page.on('pageerror', (error) => errors.push(error.message));
-const bank = await readTopicBank('equations');
+const bank = await readTopicBank('solving-equations');
 /**
  * Read the browser's stored learner data for assertions.
  * Used by: topic.
@@ -216,7 +216,11 @@ try {
   await page.getByRole('button', { name: 'Replay', exact: true }).waitFor({ timeout: 12000 });
   await page.locator('[data-demo-level="2"]').click();
   assert.equal(await page.locator('.guidance li').count(), 4);
-  await page.locator('[data-demo-example]').selectOption('recap');
+  await page.locator('[data-demo-example]').click();
+  await page.getByRole('option', { name: /^2\./ }).click();
+  assert.match(await page.locator('.demo-status').innerText(), /Draw the dividing line/);
+  await page.locator('#demo-next').click();
+  assert.match(await page.locator('.demo-working').innerText(), /Both sides have a factor of 3/);
   await page.locator('#demo-next').click();
   assert.match(await page.locator('.demo-working').innerText(), /3 is a common factor/);
   assert.equal(

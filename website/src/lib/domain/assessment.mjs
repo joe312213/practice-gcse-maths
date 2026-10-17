@@ -4,7 +4,7 @@ export const REASSESS_DELAY = 7 * 24 * 60 * 60 * 1000;
 export function latestAssessment(history = []) {
   const attempts = new Map();
   for (const record of history) {
-    if (record.type !== 'assessment') continue;
+    if (record.type !== 'assessment' || record.reattempt) continue;
     if (!attempts.has(record.attempt)) attempts.set(record.attempt, []);
     attempts.get(record.attempt).push(record);
   }

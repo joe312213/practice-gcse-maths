@@ -6,9 +6,15 @@ Teach the operations a learner performs on paper, in their mathematical order. H
 
 1. Start with a checked mathematical model: operands, intermediate values, place values, result and any carry/remainder. Reuse that model for the complete static solution and the animated solution.
 2. List the ordered operations, their input marks, output location and dependency on earlier outputs. An incoming carry is an input to the next operation, not a new result of that operation.
-3. Separate **inspect/calculate**, **write result**, and **transfer carry/remainder** whenever they are distinct acts. Do not reveal a result or carry before its calculation. Omit transfer frames when there is nothing to transfer. Preserve meaningful zeros.
+3. Give any guide construction (grid, divider or bus-stop bracket) its own named first logical step, containing no written calculation. Previous/Next and the displayed step count must include it. Then separate **inspect/calculate**, **write result**, and **transfer carry/remainder** whenever they are distinct acts. Do not reveal a result or carry before its calculation. Omit transfer frames when there is nothing to transfer. Preserve meaningful zeros.
 4. Define each frame's visible ink and active region from its frame data, independent of elapsed wall time or the previous DOM. Revisiting a frame must reproduce the same state.
 5. Supply concise numerical explanations as a non-colour alternative. Keep completed working visible, retire the previous highlight, and retain the current explanation. Avoid pulsing or flashing.
+
+Concept help belongs beside the relevant method phrase, independently of animation playback. Store reusable definitions in each topic’s `concepts.json` and reference their keys from method steps. The [editing guide](../website/static/data/README.md#editing-learn-the-method) documents the safe text/reference format; opening help does not advance or restart a demonstration.
+
+## Named examples and sub-methods
+
+Each topic’s `method.json` owns ordered, descriptively named examples for Start/Build/Confidence, with at least four examples per level. It also specifies each sub-method’s applicability, steps and check. The loader verifies reference validity and example coverage. The shared player numbers the examples and uses the same renderers/playback for all of them. See the [authoring contract](../website/static/data/README.md#editing-learn-the-method).
 
 ## Topic-owned sequences
 
@@ -94,4 +100,4 @@ Only the 37,078-byte Pacifico Maths asset is fetched by method playback; the 16-
 Final operation/explainer highlights hold for three seconds and fade for one second, without fading written ink or retaining the explainer’s former left accent. The shared motion controller owns their effects and cancels them on replay, navigation or disposal. Reduced motion uses the same hold then an instantaneous clear. Cosmetic controls/highlights are isolated in `method-playback.css` and have their own short verification job; shared sequence/rendering changes retain broader coverage.
 
 
-On entry, show the complete first teaching step as a static preview. **Play demo** resets to its first reveal frame and animates from the beginning; **Replay** retains its label. Pausing/resuming preserves the existing timeline. Below 440px, control gaps and horizontal padding are slightly reduced to accommodate the longer label on one row.
+On entry, show the complete first teaching step as a static preview. For methods with construction, this is the empty completed guide; the operands/equation belong to the next step. **Play demo** resets to its first reveal frame and animates from the beginning; **Replay** retains its label. Pausing/resuming preserves the existing timeline. Below 440px, control gaps and horizontal padding are slightly reduced to accommodate the longer label on one row.

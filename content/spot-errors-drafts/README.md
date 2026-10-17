@@ -17,8 +17,8 @@ The historically named tool now reads the live banks directly. It validates exac
 ## Data contract
 
 - `locations`: ordered meaningful regions, including correct and incorrect working. IDs express mathematical roles, not screen coordinates. Whole working lines are the default outside spatial methods; finer regions distinguish independent mistakes.
-- `options`: question-specific explanation/repair choices available at every location. Labels/order must not disclose correctness.
-- `errors`: independent faults with misconception IDs, accepted reason and feedback. `consequences` identifies later wrong values that are not additional faults to select.
+- `options`: ordered stable choice IDs referencing named reason templates in the topic’s `error-types.json`. See the [reference syntax](../../website/static/data/README.md#editing-error-types-and-reasons). Labels/order must not disclose correctness.
+- `errors`: independent faults with misconception IDs, accepted choice ID and named feedback reference. `error-types.json` specifies each misconception and its accepted repair names. `consequences` identifies later wrong values that are not additional faults to select.
 - `diagram`: authored lattice cells/diagonal contributions or bus-stop columns/transfers where supplied. Bus-stop columns link to `locations` by `workingLocation` and `transferLocation` IDs, so editing a displayed label cannot break selection. The generated diagram and readable working details show the same authored values. Other questions use named selectable working lines.
 - `answer`, `answerUnit`, `correctWorking`, `hint`: final answer and review content. `answerCheck` independently verifies exact rational arithmetic or final two-decimal-place rounding.
 - `level`: 0 = Start, 1 = Build, 2 = Confidence. `page` groups four questions, with three pages at each level. Single/multiple independent mistakes are mixed; the UI never preallocates a known error count.

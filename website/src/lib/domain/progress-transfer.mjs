@@ -218,6 +218,11 @@ export function parseProgress(raw) {
       const clean = {};
       for (const field of ['question', 'attempt', 'type', 'level', 'correct', 'assisted', 'at'])
         clean[field] = record[field];
+      for (const field of ['reattempt', 'earlyReattempt'])
+        if (record[field] !== undefined) {
+          requireValue(typeof record[field] === 'boolean');
+          clean[field] = record[field];
+        }
       for (const field of ['revision', 'practiceCode', 'raw'])
         if (record[field] !== undefined) {
           requireValue(text(record[field]));
@@ -382,6 +387,8 @@ export function exportCsv(profile) {
       'assisted',
       'answered_at',
       'attempt',
+      'reattempt',
+      'early_reattempt',
     ],
   ];
   for (const [topic, saved] of Object.entries(profile.topics))
@@ -396,6 +403,8 @@ export function exportCsv(profile) {
         item.assisted,
         new Date(item.at).toISOString(),
         item.attempt,
+        Boolean(item.reattempt),
+        Boolean(item.earlyReattempt),
       ]);
   return rows.map((row) => row.map(cell).join(',')).join('\r\n') + '\r\n';
 }

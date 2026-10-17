@@ -1,0 +1,245 @@
+{
+  "name": "Fraction addition and subtraction",
+  "guidance": {
+    "default": {
+      "aim": "Combine fractions with a common denominator.",
+      "steps": [
+        [
+          {
+            "concept": "prepare-fractions",
+            "text": "Prepare the fractions"
+          }
+        ],
+        [
+          "Use a ",
+          {
+            "concept": "common-denominator",
+            "text": "common denominator"
+          }
+        ],
+        [
+          {
+            "concept": "combine-numerators",
+            "text": "Add or subtract"
+          }
+        ],
+        [
+          {
+            "concept": "simplify",
+            "text": "Simplify"
+          },
+          " and check"
+        ]
+      ]
+    },
+    "byLevel": {
+      "build": {
+        "aim": "Use equivalent fractions when one denominator is a multiple of the other.",
+        "steps": [
+          [
+            {
+              "concept": "prepare-fractions",
+              "text": "Prepare the fractions"
+            }
+          ],
+          [
+            "Use a ",
+            {
+              "concept": "common-denominator",
+              "text": "common denominator"
+            }
+          ],
+          [
+            {
+              "concept": "combine-numerators",
+              "text": "Add or subtract"
+            }
+          ],
+          [
+            {
+              "concept": "simplify",
+              "text": "Simplify"
+            },
+            " and check"
+          ]
+        ]
+      },
+      "confidence": {
+        "aim": "Use unrelated denominators and convert mixed numbers before calculating.",
+        "steps": [
+          [
+            {
+              "concept": "prepare-fractions",
+              "text": "Prepare the fractions"
+            }
+          ],
+          [
+            "Use a ",
+            {
+              "concept": "common-denominator",
+              "text": "common denominator"
+            }
+          ],
+          [
+            {
+              "concept": "combine-numerators",
+              "text": "Add or subtract"
+            }
+          ],
+          [
+            {
+              "concept": "simplify",
+              "text": "Simplify"
+            },
+            " and check"
+          ]
+        ]
+      }
+    }
+  },
+  "submethods": {
+    "add": {
+      "name": "Add fractions",
+      "levels": [
+        "start",
+        "build",
+        "confidence"
+      ],
+      "when": "The task combines two fractions.",
+      "steps": [
+        "Make the denominators equal if necessary.",
+        "Add only the numerators; keep the denominator.",
+        "Simplify the result."
+      ],
+      "check": "Reverse the addition or subtraction using equivalent fractions to recover the starting value."
+    },
+    "subtract": {
+      "name": "Subtract fractions",
+      "levels": [
+        "start",
+        "build",
+        "confidence"
+      ],
+      "when": "The task finds the difference between two fractions.",
+      "steps": [
+        "Make the denominators equal if necessary.",
+        "Subtract only the numerators; keep the denominator.",
+        "Simplify the result."
+      ],
+      "check": "Reverse the addition or subtraction using equivalent fractions to recover the starting value."
+    },
+    "equivalent": {
+      "name": "Scale to a common denominator",
+      "levels": [
+        "build",
+        "confidence"
+      ],
+      "when": "The fractions have different denominators.",
+      "steps": [
+        "Choose a common multiple of the denominators.",
+        "Multiply each numerator and its denominator by the same scale factor."
+      ],
+      "check": "Reverse the addition or subtraction using equivalent fractions to recover the starting value."
+    },
+    "mixed": {
+      "name": "Convert mixed numbers",
+      "levels": [
+        "confidence"
+      ],
+      "when": "A fraction includes a whole-number part.",
+      "steps": [
+        "Multiply the whole number by the denominator and add the numerator.",
+        "Keep the denominator and use the resulting improper fraction."
+      ],
+      "check": "Reverse the addition or subtraction using equivalent fractions to recover the starting value."
+    },
+    "simplify": {
+      "name": "Simplify the final fraction",
+      "levels": [
+        "start",
+        "build",
+        "confidence"
+      ],
+      "when": "The numerator and denominator share a factor greater than 1.",
+      "steps": [
+        "Divide both by the same common factor.",
+        "Repeat until no common factor greater than 1 remains."
+      ],
+      "check": "Reverse the addition or subtraction using equivalent fractions to recover the starting value."
+    }
+  },
+  "examples": {
+    "start": [
+      {
+        "key": "demo",
+        "name": "Add fractions with equal denominators",
+        "submethods": [
+          "add"
+        ],
+        "question": "maths:M15-WEB-DEMO-C1-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Subtract fractions and simplify",
+        "submethods": [
+          "subtract",
+          "simplify"
+        ],
+        "recap": 0
+      }
+    ],
+    "build": [
+      {
+        "key": "demo",
+        "name": "Scale one fraction, then add and simplify",
+        "submethods": [
+          "equivalent",
+          "add",
+          "simplify"
+        ],
+        "question": "maths:M15-WEB-DEMO-C2-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Scale one fraction, then subtract",
+        "submethods": [
+          "equivalent",
+          "subtract"
+        ],
+        "recap": 1
+      }
+    ],
+    "confidence": [
+      {
+        "key": "demo",
+        "name": "Scale both fractions, then add",
+        "submethods": [
+          "equivalent",
+          "add"
+        ],
+        "question": "maths:M15-WEB-DEMO-C3-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Convert mixed numbers, then subtract",
+        "submethods": [
+          "equivalent",
+          "mixed",
+          "subtract"
+        ],
+        "recap": 2
+      },
+      {
+        "key": "simplify",
+        "name": "Combine unlike fractions and simplify",
+        "submethods": [
+          "equivalent",
+          "simplify",
+          "add"
+        ],
+        "question": "maths:M15-WEB-PLAIN-C3-Q9"
+      }
+    ]
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

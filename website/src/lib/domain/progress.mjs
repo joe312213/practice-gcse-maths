@@ -18,6 +18,7 @@
  */
 import { success, scoringWindow } from './engine.mjs';
 import { PAGE_TYPES } from './practice-code.mjs';
+import { countsForProgress } from './reattempts.mjs';
 
 // Share the existing page-size-dependent success scheme; evidence counts never truncate history.
 export const PROGRESS_POLICY = { minimum: 5, staleDays: 28, timezone: 'Europe/London' };
@@ -56,9 +57,9 @@ export function topicProgress(profile, catalogue, now = Date.now()) {
     .map((topic) => {
       const key = `${catalogue.subject}:${topic.bank}`;
       const saved = profile.topics[key];
-      const history = saved?.history ?? [];
+      const history = (saved?.history ?? []).filter((item) => !item.earlyReattempt);
       const assessment = history
-        .filter((item) => item.type === 'assessment')
+        .filter((item) => item.type === 'assessment' && !item.reattempt)
         .sort((a, b) => a.at - b.at);
       const grouped = new Map();
       for (const item of assessment) {
@@ -89,7 +90,7 @@ export function topicProgress(profile, catalogue, now = Date.now()) {
        */
       const detail = (type, level) => {
         const records = history.filter((item) => item.type === type.mode && item.level === level);
-        const eligible = records.filter((item) => !item.assisted || !item.correct);
+        const eligible = records.filter(countsForProgress);
         // Histories also support older stores without detailed per-question records.
         const outcomes = eligible.length
           ? eligible.map((item) => item.correct)

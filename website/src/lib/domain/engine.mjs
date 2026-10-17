@@ -125,13 +125,26 @@ export function manualLevel(track, page, level) {
 export function submit(
   track,
   page,
-  { id, level, correct, assisted = false, window = Math.min(page.size, 10) },
+  {
+    id,
+    level,
+    correct,
+    assisted = false,
+    earlyReattempt = false,
+    window = Math.min(page.size, 10),
+  },
 ) {
   if (page.complete || Object.hasOwn(page.results, id)) return { duplicate: true };
   if (level !== page.level) throw Error('Question level does not match the current page.');
   const eligible = !assisted || !correct;
   page.results[id] = { level, correct, assisted };
   page.count++;
+  if (earlyReattempt) {
+    page.results[id].earlyReattempt = true;
+    page.complete = page.count === page.size;
+    if (page.complete && page.trial) page.pendingChoice = true;
+    return { eligible: false, level: page.level, notice: page.notice };
+  }
   if (eligible) {
     track.histories[level].push(Boolean(correct));
     track.histories[level] = track.histories[level].slice(-10);
@@ -171,7 +184,7 @@ export function submit(
     track.shortStreak = correct && !assisted ? track.shortStreak + 1 : 0;
   const rate = success(track.histories[track.level], window);
   const allPerfect = Object.values(page.results).every(
-    (r) => r.correct && !r.assisted && r.level === track.level,
+    (r) => r.correct && !r.assisted && !r.earlyReattempt && r.level === track.level,
   );
   const shortReady =
     page.size < 5 &&

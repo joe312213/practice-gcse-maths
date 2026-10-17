@@ -1,0 +1,89 @@
+{
+  "types": {
+    "S1": {
+      "name": "Losing the sign of the starting number",
+      "example": "Rewriting −3 + 5 as 3 + 5. Keep the starting value −3; the answer is 2.",
+      "repairs": [
+        "keep-the-starting-negative-sign-begin-at"
+      ]
+    },
+    "S2": {
+      "name": "Treating addition of a negative as addition of a positive",
+      "example": "Rewriting 6 + (−3) as 6 + 3. It is 6 − 3 = 3.",
+      "repairs": [
+        "adding-means-subtracting",
+        "adding-means-subtracting-2"
+      ]
+    },
+    "S3": {
+      "name": "Failing to reverse the change when subtracting a negative",
+      "example": "Rewriting 6 − (−3) as 6 − 3. Subtracting −3 adds 3, giving 9.",
+      "repairs": [
+        "subtracting-adds",
+        "subtracting-means-adding",
+        "subtracting-means-adding-2"
+      ]
+    },
+    "S4": {
+      "name": "Applying “two minuses make a plus” to unrelated signs",
+      "example": "Rewriting −4 − 3 as 4 + 3. The starting sign and subtraction operation do not cancel; the result is −7.",
+      "repairs": [
+        "the-starting-minus-and-subtraction-sign-do-not"
+      ]
+    },
+    "S5": {
+      "name": "Choosing the wrong sign after calculating the difference of magnitudes",
+      "example": "Writing −7 + 3 = 4. The result remains below zero: −4.",
+      "repairs": [
+        "keep-a-negative-result-because-the-negative-starting"
+      ]
+    },
+    "S6": {
+      "name": "Number-line direction or counting error despite a correct symbolic operation",
+      "example": "Moving left for −2 + 5, or counting the starting tick as move one and stopping at 2. Move five intervals right to 3. These are separate candidate faults, not automatically two errors in one diagram.",
+      "repairs": [
+        "move-intervals-right-from-the-starting-tick-is"
+      ]
+    },
+    "S7": {
+      "name": "Starting a later operation from zero/original input instead of the intermediate result",
+      "example": "For −3 + 8 − 2, correctly reach 5, then restart the second arrow at 0. Continue from 5 to 3.",
+      "repairs": [
+        "start-the-second-move-from-the-previous-result",
+        "start-the-second-move-from-the-previous-result-2"
+      ]
+    }
+  },
+  "reasons": {
+    "a-plus-operation-always-gives-a-positive-answer": "A plus operation always gives a positive answer.",
+    "keep-a-negative-result-because-the-negative-starting": "Keep a negative result because the negative starting magnitude is larger.",
+    "add-the-magnitudes-and-make-the-result-positive": "Add the magnitudes and make the result positive.",
+    "the-negative-magnitude-is-greater-so-the-result": "The negative magnitude {0} is greater, so the result is −{1}.",
+    "move-intervals-right-from-the-starting-tick-is": "Move {0} intervals right from −{1}; the starting tick is not a move.",
+    "move-left-because-the-starting-number-is-negative": "Move left because the starting number is negative.",
+    "count-the-starting-tick-as-the-first-interval": "Count the starting tick as the first interval.",
+    "keep-the-starting-negative-sign-begin-at": "Keep the starting negative sign: begin at −{0}.",
+    "change-the-addition-to-multiplication": "Change the addition to multiplication.",
+    "make-both-numbers-positive-before-adding": "Make both numbers positive before adding.",
+    "the-starting-minus-and-subtraction-sign-do-not": "The starting minus and subtraction sign do not cancel. Start negative and move further left.",
+    "change-both-signs-to-plus-whenever-two-minuses": "Change both signs to plus whenever two minuses appear.",
+    "subtract-the-smaller-magnitude-from-the-larger-and": "Subtract the smaller magnitude from the larger and make it positive.",
+    "subtracting-means-adding": "Subtracting −{0} means adding {1}.",
+    "ignore-the-sign-inside-the-brackets": "Ignore the sign inside the brackets.",
+    "multiply-the-two-numbers-because-there-are-brackets": "Multiply the two numbers because there are brackets.",
+    "subtracting-adds": "Subtracting −{0} adds {1}.",
+    "ignore-the-negative-sign-inside-the-brackets": "Ignore the negative sign inside the brackets.",
+    "multiply-the-two-numbers": "Multiply the two numbers.",
+    "adding-means-subtracting": "Adding −{0} means subtracting {1}.",
+    "restart-every-move-from-the-original-first-number": "Restart every move from the original first number.",
+    "ignore-the-signs-attached-to-the-numbers": "Ignore the signs attached to the numbers.",
+    "subtracting-means-adding-2": "Subtracting -{0} means adding {1}.",
+    "reverse-the-direction-for-subtraction-of-a-negative": "Reverse the direction for subtraction of a negative.",
+    "start-the-second-move-from-the-previous-result": "Start the second move from the previous result, -{0}.",
+    "do-not-restart-from-zero-between-operations": "Do not restart from zero between operations.",
+    "start-the-second-move-from-the-previous-result-2": "Start the second move from the previous result, {0}.",
+    "adding-means-subtracting-2": "Adding -{0} means subtracting {1}.",
+    "the-intermediate-result-should-be": "The intermediate result should be {0}.",
+    "the-intermediate-result-should-be-2": "The intermediate result should be -{0}."
+  }
+}

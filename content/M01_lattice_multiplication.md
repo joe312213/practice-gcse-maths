@@ -12,7 +12,8 @@ This section specifies the website method, at every level and in method referenc
 
 | Operation | Inspect / calculate | Write and highlight | Dependency / next action |
 | --- | --- | --- | --- |
-| Set up | Draw the grid and its diagonals | Top operand digits left to right, then side digits top to bottom, one at a time | Finish the guide before products |
+| Draw the grid and diagonals | Construct the empty lattice | Grid and diagonal lines only | A distinct named first step; finish before writing numbers |
+| Set up the numbers | Use the completed lattice | Top operand digits left to right, then side digits top to bottom, one at a time | Finish operands before products |
 | Multiply a cell | Highlight its top and side operands; explain their numerical product | Tens in the upper triangle, then units in the lower triangle, as separate frames | Traverse cells across each row, then down |
 | Sum a diagonal | Highlight all contributing half-cells and digits, plus the incoming carry; explain the total | Highlight and write the units digit at the bottom/left end of that diagonal | Start at bottom right and move towards upper left |
 | Transfer a carry | Keep the just-calculated total available | If nonzero, highlight and write the carry in the next diagonal's carry position | Complete transfer before highlighting/summing the next diagonal |

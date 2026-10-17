@@ -12,7 +12,8 @@ This section specifies the website sequence for all levels and method references
 
 | Operation | Inspect / calculate | Write and highlight | Dependency / next action |
 | --- | --- | --- | --- |
-| Set up | Draw the bus-stop bracket | Dividend inside, divisor outside | Finish the guide before dividing |
+| Draw the bus stop | Construct the empty bracket | Bracket only | A distinct named first step; finish before writing numbers |
+| Set up the numbers | Use the completed bracket | Dividend inside, divisor outside | Finish operands before dividing |
 | Divide a place | Highlight divisor, current dividend digit and any incoming remainder; explain the combined value and division | Highlight and write the quotient digit directly above this place | Work left to right; keep meaningful zero digits |
 | Transfer remainder | Retain the calculated division/remainder | Write and highlight a nonzero remainder at the next numeric place | Transfer before calculating there; a decimal marker is never a carry target |
 | Continue into decimals | Identify the aligned decimal markers and appended zero | Reveal and highlight the decimal continuation | Cross the marker without changing the remainder's value; repeat divide → write → transfer |

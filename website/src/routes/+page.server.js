@@ -44,7 +44,7 @@ export function load() {
         bank: 'combined',
         title: 'Combined problems',
         path: topicPath('combined'),
-        example: banks.problems.problemTeaching.examples[1],
+        example: banks['multiplication-division-problems'].problemTeaching.examples[1],
       },
     ],
   };

@@ -1,0 +1,34 @@
+{
+  "prepare-fractions": {
+    "title": "Prepare the fractions",
+    "explanation": "A mixed number contains a whole number and a fraction. An improper fraction writes the whole amount as one fraction.",
+    "guidance": "Before combining mixed numbers, multiply the whole number by the denominator and add the numerator.",
+    "examples": [
+      "2 {1/3} = (2 × 3 + 1)/3 = {7/3}."
+    ]
+  },
+  "common-denominator": {
+    "title": "common denominator",
+    "explanation": "The denominator tells you the size of the equal parts. Fractions need the same-sized parts before you add or subtract them.",
+    "guidance": "Multiply the top and bottom of a fraction by the same number to make an equivalent fraction.",
+    "examples": [
+      "{1/3} + {1/6} = {2/6} + {1/6} = {3/6}."
+    ]
+  },
+  "combine-numerators": {
+    "title": "Add or subtract",
+    "explanation": "With a common denominator, add or subtract the numerators only.",
+    "guidance": "Keep the denominator: the size of each part has not changed.",
+    "examples": [
+      "{5/8} − {2/8} = {3/8}, not {3/0}."
+    ]
+  },
+  "simplify": {
+    "title": "Simplify",
+    "explanation": "Equivalent fractions describe the same amount. Simplest form uses no common factor greater than 1.",
+    "guidance": "Divide the numerator and denominator by the same common factor.",
+    "examples": [
+      "{6/8} = {3/4} after dividing both by 2."
+    ]
+  }
+}

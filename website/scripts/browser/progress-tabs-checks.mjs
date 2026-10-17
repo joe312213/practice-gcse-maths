@@ -6,7 +6,7 @@ import { createTestContext } from './support.mjs';
 
 export async function checkProgressTabs(browser, base) {
   const context = await createTestContext(browser);
-  const bank = await readTopicBank('equations');
+  const bank = await readTopicBank('solving-equations');
   const state = (page) =>
     page.evaluate(() => JSON.parse(localStorage.getItem('maths-practice-v2')));
   const history = async (page) =>

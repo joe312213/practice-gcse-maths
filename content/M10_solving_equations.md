@@ -12,7 +12,8 @@ This section specifies every website equation example and recap. Follow the [sha
 
 | Operation | Inspect / calculate | Write and highlight | Dependency / next action |
 | --- | --- | --- | --- |
-| Set up | Draw the vertical balance line | Reveal the initial left expression, equals sign, then right expression | Establish the equation before transforming it |
+| Draw the dividing line | Construct the vertical balance line | Line only | A distinct named first step; finish before writing the equation |
+| Set up the equation | Use the completed divider | Reveal the initial left expression, equals sign, then right expression | Establish the equation before transforming it |
 | Transform both sides | Explain the inverse operation or simplification | Highlight/reveal the operation on the left, then the same operation on the right; retain the left operation while the right appears | Apply to both whole sides before showing the simplified equation |
 | Show the new equation | Retain the paired operations and previous equation | Reveal the resulting left expression, equals sign and right expression in order, highlighting the active side | Complete this balanced transformation before the next |
 | Finish and check | Retain the full sequence | Show the solved value and authored substitution check where supplied | Agree with the original equation and accepted answer |

@@ -1,0 +1,286 @@
+{
+  "name": "Bus stop division",
+  "guidance": {
+    "default": {
+      "aim": "Divide from left to right.",
+      "steps": [
+        "Draw the bus stop.",
+        [
+          {
+            "concept": "dividend",
+            "text": "Dividend"
+          },
+          " inside; divisor outside on the left. Space the digits clearly."
+        ],
+        [
+          "Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the ",
+          {
+            "concept": "remainder",
+            "text": "remainder"
+          },
+          " as a small prefix to the next digit."
+        ],
+        [
+          "Check the final ",
+          {
+            "concept": "remainder",
+            "text": "remainder"
+          },
+          ". Build: write any remainder as r. Confidence: add a ",
+          {
+            "concept": "decimal-extension",
+            "text": "decimal point and zeros"
+          },
+          ". Continue until the remainder is 0."
+        ],
+        [
+          "Write the complete answer. Keep ",
+          {
+            "concept": "place-value-zeros",
+            "text": "place-value zeros"
+          },
+          ". Align decimal points."
+        ]
+      ]
+    },
+    "byLevel": {
+      "build": {
+        "aim": "Carry remainders; give any final remainder using r.",
+        "steps": [
+          "Draw the bus stop.",
+          [
+            {
+              "concept": "dividend",
+              "text": "Dividend"
+            },
+            " inside; divisor outside on the left. Space the digits clearly."
+          ],
+          [
+            "Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the ",
+            {
+              "concept": "remainder",
+              "text": "remainder"
+            },
+            " as a small prefix to the next digit."
+          ],
+          [
+            "Check the final ",
+            {
+              "concept": "remainder",
+              "text": "remainder"
+            },
+            ". Build: write any remainder as r. Confidence: add a ",
+            {
+              "concept": "decimal-extension",
+              "text": "decimal point and zeros"
+            },
+            ". Continue until the remainder is 0."
+          ],
+          [
+            "Write the complete answer. Keep ",
+            {
+              "concept": "place-value-zeros",
+              "text": "place-value zeros"
+            },
+            ". Align decimal points."
+          ]
+        ]
+      },
+      "confidence": {
+        "aim": "Continue with decimal places until there is no remainder.",
+        "steps": [
+          "Draw the bus stop.",
+          [
+            {
+              "concept": "dividend",
+              "text": "Dividend"
+            },
+            " inside; divisor outside on the left. Space the digits clearly."
+          ],
+          [
+            "Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the ",
+            {
+              "concept": "remainder",
+              "text": "remainder"
+            },
+            " as a small prefix to the next digit."
+          ],
+          [
+            "Check the final ",
+            {
+              "concept": "remainder",
+              "text": "remainder"
+            },
+            ". Build: write any remainder as r. Confidence: add a ",
+            {
+              "concept": "decimal-extension",
+              "text": "decimal point and zeros"
+            },
+            ". Continue until the remainder is 0."
+          ],
+          [
+            "Write the complete answer. Keep ",
+            {
+              "concept": "place-value-zeros",
+              "text": "place-value zeros"
+            },
+            ". Align decimal points."
+          ]
+        ]
+      }
+    }
+  },
+  "submethods": {
+    "exact": {
+      "name": "Divide with no carried remainder",
+      "levels": [
+        "start"
+      ],
+      "when": "Each current place divides exactly.",
+      "steps": [
+        "Draw the bus stop and align the operands.",
+        "Divide from left to right, placing each quotient digit above its dividend digit."
+      ],
+      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+    },
+    "carry": {
+      "name": "Carry a remainder to the next place",
+      "levels": [
+        "build",
+        "confidence"
+      ],
+      "when": "A place does not divide exactly and another digit follows.",
+      "steps": [
+        "Find the whole quotient digit and the remainder.",
+        "The remainder becomes ten times as much in the next place; combine it with the next digit.",
+        "Divide the combined amount."
+      ],
+      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+    },
+    "zero": {
+      "name": "Keep a zero in the quotient",
+      "levels": [
+        "start",
+        "build",
+        "confidence"
+      ],
+      "when": "The divisor fits zero times at a place after the answer has begun.",
+      "steps": [
+        "Write 0 above that place.",
+        "Carry the remaining amount into the next place before dividing again."
+      ],
+      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+    },
+    "final-remainder": {
+      "name": "Give a whole-number remainder",
+      "levels": [
+        "build"
+      ],
+      "when": "The task requests a whole-number answer with a remainder.",
+      "steps": [
+        "Finish the whole-number division.",
+        "Write the leftover amount using r; it must be smaller than the divisor."
+      ],
+      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+    },
+    "decimal": {
+      "name": "Continue into decimal places",
+      "levels": [
+        "confidence"
+      ],
+      "when": "An exact decimal answer is required.",
+      "steps": [
+        "Add a decimal point and trailing zeros to the dividend.",
+        "Align the quotient decimal point.",
+        "Continue dividing until the remainder is zero."
+      ],
+      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+    },
+    "two-digit-divisor": {
+      "name": "Divide by a two-digit divisor",
+      "levels": [
+        "confidence"
+      ],
+      "when": "The divisor has two digits.",
+      "steps": [
+        "Use enough leading dividend digits to make the first group.",
+        "Choose the largest multiple of the divisor that fits.",
+        "Record its quotient digit and carry the remainder."
+      ],
+      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+    }
+  },
+  "examples": {
+    "start": [
+      {
+        "key": "demo",
+        "name": "Divide exactly, place by place",
+        "submethods": [
+          "exact"
+        ],
+        "question": "maths:M02-S01-C1-Q1"
+      },
+      {
+        "key": "carry",
+        "name": "Divide 96 by 3 exactly",
+        "submethods": [
+          "exact"
+        ],
+        "question": "maths:M02-S04-C1-Q4"
+      },
+      {
+        "key": "zero",
+        "name": "Keep a zero in the tens column",
+        "submethods": [
+          "zero"
+        ],
+        "question": "maths:M02-S06-C1-Q6"
+      }
+    ],
+    "build": [
+      {
+        "key": "demo",
+        "name": "Carry and record a final remainder",
+        "submethods": [
+          "carry",
+          "final-remainder"
+        ],
+        "question": "maths:M02-S01-C2-Q1"
+      },
+      {
+        "key": "zero",
+        "name": "Keep a zero before the final remainder",
+        "submethods": [
+          "carry",
+          "zero",
+          "final-remainder"
+        ],
+        "question": "maths:M02-S07-C2-Q2"
+      }
+    ],
+    "confidence": [
+      {
+        "key": "demo",
+        "name": "Two-digit divisor and decimal continuation",
+        "submethods": [
+          "carry",
+          "zero",
+          "decimal",
+          "two-digit-divisor"
+        ],
+        "question": "maths:M02-S01-C3-Q1"
+      },
+      {
+        "key": "whole",
+        "name": "Two-digit divisor with an exact whole-number answer",
+        "submethods": [
+          "carry",
+          "zero",
+          "two-digit-divisor"
+        ],
+        "question": "maths:M02-P3-PL-C3-Q3"
+      }
+    ]
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

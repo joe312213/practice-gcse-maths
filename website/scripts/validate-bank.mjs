@@ -14,7 +14,7 @@ import { readTopicBank } from './read-topic-bank.mjs';
 import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { markAnswer } from '../src/lib/domain/engine.mjs';
-const bank = await readTopicBank('equations');
+const bank = await readTopicBank('solving-equations');
 assert.equal(bank.questions.length, 243);
 assert.equal(new Set(bank.questions.map((q) => q.id)).size, 243);
 assert.equal(bank.recap.length, 3);
@@ -31,7 +31,9 @@ const catalogue = JSON.parse(
 const banks = [
   bank,
   ...(await Promise.all(
-    ['multiplication', 'division'].map(async (name) => await readTopicBank(`${name}`)),
+    ['lattice-multiplication', 'bus-stop-division'].map(
+      async (name) => await readTopicBank(`${name}`),
+    ),
   )),
 ];
 for (const topic of banks) {
@@ -102,10 +104,10 @@ for (const arithmetic of banks.slice(1)) {
   }
 }
 for (const name of [
-  'signed-numbers',
-  'fractions',
+  'signed-addition-subtraction',
+  'fraction-addition-subtraction',
   'percentages',
-  'problems',
+  'multiplication-division-problems',
   'ratios',
   'reverse-percentages',
   'speed-distance-time',

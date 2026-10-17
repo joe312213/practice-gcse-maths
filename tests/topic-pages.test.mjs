@@ -9,7 +9,7 @@ import {
   assessmentPage,
 } from "../website/src/lib/domain/topic-pages.mjs";
 const banks = await Promise.all(
-  ["multiplication", "division", "equations"].map(
+  ["lattice-multiplication", "bus-stop-division", "solving-equations"].map(
     async (name) => await readTopicBank(`${name}`),
   ),
 );

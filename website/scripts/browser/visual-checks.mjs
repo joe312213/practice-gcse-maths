@@ -43,7 +43,7 @@ export async function checkVisuals(browser, base) {
       'styles.css',
       'theme-tokens.css',
       'theme-controls.css',
-      'data/equations.json',
+      'data/solving-equations.json',
     ];
     for (const file of files) {
       const path = join(directory, file);

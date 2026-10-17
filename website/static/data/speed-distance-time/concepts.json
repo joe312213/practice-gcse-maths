@@ -1,0 +1,26 @@
+{
+  "minutes-to-hours": {
+    "title": "divide minutes by 60",
+    "explanation": "There are 60 minutes in an hour. A fraction of an hour is not written like clock time.",
+    "guidance": "For a speed in km/h, convert minutes to hours before using the formula.",
+    "examples": [
+      "30 minutes = 30 ÷ 60 = 0.5 hours, not 0.30 hours."
+    ]
+  },
+  "speed-formula": {
+    "title": "speed = distance ÷ time",
+    "explanation": "Speed tells you how far something travels per unit of time.",
+    "guidance": "Divide distance by time for speed; multiply speed by time for distance; divide distance by speed for time.",
+    "examples": [
+      "120 km in 2 hours gives 120 ÷ 2 = 60 km/h."
+    ]
+  },
+  "average-speed": {
+    "title": "total distance and total time",
+    "explanation": "Average speed describes the whole journey, even if speeds vary.",
+    "guidance": "Add all distances and all elapsed times, including stops when requested. Divide the totals.",
+    "examples": [
+      "60 km in 1 hour then 40 km in 1 hour gives 100 ÷ 2 = 50 km/h."
+    ]
+  }
+}

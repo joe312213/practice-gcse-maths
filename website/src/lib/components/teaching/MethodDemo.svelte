@@ -1,28 +1,7 @@
-<!--
-  Purpose: Select the topic-owned demonstration without coupling playback to a method.
-
-  Main contents:
-  - Equation and arithmetic adapter selection.
-
-  Used By: Practice route and PracticeActivity.
-
-  Uses: DemoPlayer and ArithmeticDemo.
-
-  Libs: none.
--->
+<!-- A topic change resets the shared player's level/example state. -->
 <script>
-  import CalculationDemo from './CalculationDemo.svelte';
   import DemoPlayer from './DemoPlayer.svelte';
-  import ArithmeticDemo from './ArithmeticDemo.svelte';
   let { bank, ...props } = $props();
 </script>
 
-{#key bank.topic}
-  {#if bank.method === 'calculation'}<CalculationDemo
-      {bank}
-      {...props}
-    />{:else if bank.method}<ArithmeticDemo {bank} {...props} />{:else}<DemoPlayer
-      {bank}
-      {...props}
-    />{/if}
-{/key}
+{#key bank.topic}<DemoPlayer {bank} {...props} />{/key}

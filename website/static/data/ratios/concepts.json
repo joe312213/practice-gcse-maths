@@ -1,0 +1,26 @@
+{
+  "ratio-order": {
+    "title": "ratio order",
+    "explanation": "Each number in a ratio belongs to the name in the same position.",
+    "guidance": "Write the names above the parts before calculating.",
+    "examples": [
+      "Red : blue = 2 : 3 means 2 red parts for every 3 blue parts."
+    ]
+  },
+  "matching-parts": {
+    "title": "matching parts",
+    "explanation": "The known amount may represent all the parts, one named share, or the difference between shares.",
+    "guidance": "Match the amount before dividing: add parts for a total, select parts for one share, subtract parts for a difference.",
+    "examples": [
+      "For 2 : 3, a total of £30 is 5 parts; a difference of £6 is 1 part."
+    ]
+  },
+  "one-part": {
+    "title": "one part",
+    "explanation": "Ratio parts are equal-sized units. Knowing the value of one part lets you find any share.",
+    "guidance": "Divide a known amount by its matching number of parts. Then multiply by the requested parts.",
+    "examples": [
+      "Share £30 in the ratio 2 : 3. One part = £30 ÷ 5 = £6; the shares are £12 and £18."
+    ]
+  }
+}

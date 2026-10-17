@@ -1,6 +1,6 @@
 import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 const [multiplicationBank, divisionBank] = await Promise.all(
-  ["multiplication", "division"].map(readTopicBank),
+  ["lattice-multiplication", "bus-stop-division"].map(readTopicBank),
 );
 /**
  * Purpose: Verify equation reveal frames and method-independent playback ordering.
@@ -33,16 +33,17 @@ test("equation playback draws the line, then left, equals and right; operations 
     ...[0, 0.25, 0.5, 0.75, 1].map((guideProgress) => ({
       step: 1,
       part: 0,
+      label: "Draw the dividing line",
       guideProgress,
     })),
-    { step: 1, part: 1 },
-    { step: 1, part: 2 },
-    { step: 1, part: 3 },
     { step: 2, part: 1 },
+    { step: 2, part: 2 },
     { step: 2, part: 3 },
     { step: 3, part: 1 },
-    { step: 3, part: 2 },
     { step: 3, part: 3 },
+    { step: 4, part: 1 },
+    { step: 4, part: 2 },
+    { step: 4, part: 3 },
   ]);
 });
 
@@ -50,13 +51,13 @@ test("lattice writes operand digits and cell tens/units separately in row order"
   const frames = arithmeticFrames({ method: "lattice", a: 34, b: 12 });
   assert.deepEqual(
     frames
-      .filter((frame) => frame.step === 1 && frame.guideProgress === undefined)
+      .filter((frame) => frame.step === 2 && frame.guideProgress === undefined)
       .map((frame) => frame.count),
     [1, 2, 3, 4],
   );
   assert.deepEqual(
     frames
-      .filter((frame) => frame.step === 2 && frame.phase !== "multiply")
+      .filter((frame) => frame.step === 3 && frame.phase !== "multiply")
       .map((frame) => frame.count),
     [1, 2, 3, 4, 5, 6, 7, 8],
   );
@@ -86,7 +87,7 @@ test("lattice sums each diagonal before writing its digit and carrying to the ne
       assert.equal(d.incoming, carry);
       assert.equal(d.total, d.sum + carry);
       const phases = frames
-        .filter((f) => f.step === 3 && f.count === i + 1)
+        .filter((f) => f.step === 4 && f.count === i + 1)
         .map((f) => f.phase);
       assert.deepEqual(
         phases,
@@ -132,6 +133,31 @@ test("division calculates before writing, then transfers a remainder to the next
           assert.equal(model.places[carry.target].incoming, place.remainder);
         }
       }
+    }
+  }
+});
+
+test("construction is a named standalone step before arithmetic setup at every level", () => {
+  for (const bank of [multiplicationBank, divisionBank]) {
+    for (const question of bank.questions.filter((q) => q.type === "demo")) {
+      const frames = arithmeticFrames(question);
+      const construction = frames.filter((frame) => frame.step === 1);
+      assert.ok(
+        construction.every(
+          (frame) => frame.label.startsWith("Draw ") && frame.count === 0,
+        ),
+      );
+      assert.equal(construction.at(-1).guideProgress, 1);
+      assert.deepEqual(
+        [...new Set(frames.map((frame) => frame.step))],
+        [1, 2, 3, 4, 5],
+      );
+      assert.ok(
+        frames
+          .filter((frame) => frame.step === 2)
+          .every((frame) => !frame.phase && frame.guideProgress === undefined),
+      );
+      assert.equal(bank.teaching.guidance.default.steps.length, 5);
     }
   }
 });

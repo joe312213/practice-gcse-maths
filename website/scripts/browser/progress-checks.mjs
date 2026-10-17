@@ -1,3 +1,4 @@
+import { checkReattempts } from './reattempt-checks.mjs';
 import { checkProgressTabs } from './progress-tabs-checks.mjs';
 /**
  * Purpose: Exercise progress breakdowns, backup transfer and revision recommendations at mobile width.
@@ -12,6 +13,7 @@ import { checkProgressTabs } from './progress-tabs-checks.mjs';
  * Libs: node:assert/strict (assertions), node:fs/promises (download reads), @axe-core/playwright (accessibility checks).
  */
 import assert from 'node:assert/strict';
+import { expect } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 import AxeBuilder from '@axe-core/playwright';
 import { createTestContext, artifacts } from './support.mjs';
@@ -25,6 +27,7 @@ import { progressFilename } from '../../src/lib/domain/profiles.mjs';
  */
 export async function checkProgress(browser, base) {
   await checkProgressTabs(browser, base);
+  await checkReattempts(browser, base);
   const context = await createTestContext(browser, { viewport: { width: 390, height: 844 } });
   let page = await context.newPage();
   let freshContext;
@@ -39,6 +42,30 @@ export async function checkProgress(browser, base) {
     if (await page.locator('#profile-message').isVisible())
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     await page.getByRole('complementary', { name: 'Save browser progress to OneDrive' }).waitFor();
+    const unsupported = await createTestContext(browser, {
+      viewport: { width: 390, height: 844 },
+      storageState: await context.storageState(),
+    });
+    try {
+      await unsupported.addInitScript(() => {
+        delete window.showDirectoryPicker;
+        delete window.showSaveFilePicker;
+      });
+      const mobile = await unsupported.newPage();
+      await mobile.goto(`${base}fm/solving-equations/`);
+      const reminder = mobile.getByRole('complementary', {
+        name: 'Save browser progress to OneDrive',
+      });
+      await expect(reminder).toContainText('Share → Save to Files');
+      await expect(
+        reminder.getByRole('button', { name: 'Save to OneDrive', exact: true }),
+      ).toHaveCount(0);
+      const downloading = mobile.waitForEvent('download');
+      await reminder.getByRole('button', { name: 'Export progress file', exact: true }).click();
+      assert.ok((await downloading).suggestedFilename().endsWith('.json'));
+    } finally {
+      await unsupported.close();
+    }
     await page.getByRole('button', { name: 'Later', exact: true }).click();
     await page.clock.runFor(65000);
     await page.getByRole('link', { name: 'Progress', exact: true }).click();

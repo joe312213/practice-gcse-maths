@@ -11,12 +11,16 @@
  * Libs: none.
  */
 export const foundationTopics = [
-  { bank: 'M01', slug: 'lattice-multiplication', file: 'multiplication' },
-  { bank: 'M02', slug: 'bus-stop-division', file: 'division' },
-  { bank: 'M03', slug: 'multiplication-division-problems', file: 'problems' },
-  { bank: 'M13', slug: 'signed-addition-subtraction', file: 'signed-numbers' },
-  { bank: 'M10', slug: 'solving-equations', file: 'equations' },
-  { bank: 'M15', slug: 'fraction-addition-subtraction', file: 'fractions' },
+  { bank: 'M01', slug: 'lattice-multiplication', file: 'lattice-multiplication' },
+  { bank: 'M02', slug: 'bus-stop-division', file: 'bus-stop-division' },
+  {
+    bank: 'M03',
+    slug: 'multiplication-division-problems',
+    file: 'multiplication-division-problems',
+  },
+  { bank: 'M13', slug: 'signed-addition-subtraction', file: 'signed-addition-subtraction' },
+  { bank: 'M10', slug: 'solving-equations', file: 'solving-equations' },
+  { bank: 'M15', slug: 'fraction-addition-subtraction', file: 'fraction-addition-subtraction' },
   { bank: 'M04', slug: 'ratios', file: 'ratios' },
   { bank: 'M06', slug: 'percentages', file: 'percentages' },
   { bank: 'M07', slug: 'reverse-percentages', file: 'reverse-percentages' },

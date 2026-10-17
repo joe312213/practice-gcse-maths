@@ -1,5 +1,7 @@
 <!-- Render authored wrong working as selectable diagram regions or named working lines. -->
 <script>
+  import { onMount } from 'svelte';
+  import { asset } from '$app/paths';
   import ArithmeticWorking from './ArithmeticWorking.svelte';
   import MathText from './MathText.svelte';
   import {
@@ -8,6 +10,22 @@
     workingText,
   } from '#lib/application/error-working.mjs';
   let { question, selected, entries, disabled, onselect } = $props();
+  let font = $state(null);
+  onMount(() => {
+    const abort = new AbortController();
+    fetch(asset('handwriting/pacifico-maths.json'), { signal: abort.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error('Font unavailable');
+        return response.json();
+      })
+      .then((data) => {
+        font = data;
+      })
+      .catch(() => {
+        /* Keep ordinary maths readable if the optional handwriting fails. */
+      });
+    return () => abort.abort();
+  });
   const lattice = $derived(
     question.diagram?.kind === 'lattice' ? investigationLattice(question) : null,
   );
@@ -35,21 +53,20 @@
     aria-pressed={active(location.id)}
     onclick={() => onselect(location.id)}
   >
-    {#if active(location.id)}<svg
-        class="line-marker"
-        viewBox="0 0 300 60"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-        ><path
-          class="working-marker"
-          d={markerPath({ x: 0, y: 0, width: 300, height: 60 }, selected === location.id)}
-        /></svg
-      >{/if}
-    <span class="working-line-content"
-      ><span class="working-line-label">{location.label}</span><MathText
-        text={workingText(location.text)}
-      /></span
-    >
+    <span class="working-line-label">{location.label}</span>
+    <span class="working-line-content">
+      {#if active(location.id)}<svg
+          class="line-marker"
+          viewBox="0 0 300 60"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          ><path
+            class="working-marker"
+            d={markerPath({ x: 0, y: 0, width: 300, height: 60 }, selected === location.id)}
+          /></svg
+        >{/if}
+      <span class="working-expression"><MathText text={workingText(location.text)} {font} /></span>
+    </span>
     {@render selectionNumber(location.id)}
   </button>
 {/snippet}
@@ -66,6 +83,7 @@
             b: question.diagram.b,
             q: `${question.diagram.a} × ${question.diagram.b}`,
           }}
+          {font}
           working={{}}
           authoredModel={lattice}
           compact
@@ -112,11 +130,11 @@
                     d={markerPath({ x: 0, y: 0, width: 60, height: 60 }, false)}
                   /></svg
                 >{/if}
-              <span>{column.quotientDigit}</span>
+              <span><MathText text={column.quotientDigit} {font} /></span>
               {@render selectionNumber(location.id)}
             </button>
           {/each}
-          <span class="bus-divisor">{bus.divisor}</span>
+          <span class="bus-divisor"><MathText text={bus.divisor} {font} /></span>
           {#each bus.columns as column, index}
             {@const location = busLocation(column, true)}
             <button
@@ -139,8 +157,9 @@
                   /></svg
                 >{/if}
               <span
-                >{#if column.previousRemainder}<sup>{column.previousRemainder}</sup
-                  >{/if}{column.digit}</span
+                >{#if column.previousRemainder}<sup
+                    ><MathText text={column.previousRemainder} {font} /></sup
+                  >{/if}<MathText text={column.digit} {font} /></span
               >
               {@render selectionNumber(location.id)}
             </button>

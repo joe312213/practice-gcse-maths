@@ -21,7 +21,7 @@ import {
   serializeStore,
 } from "../website/src/lib/domain/profiles.mjs";
 import { openProgress } from "../website/src/lib/adapters/storage.mjs";
-const bank = await readTopicBank("equations");
+const bank = await readTopicBank("solving-equations");
 /**
  * Create an isolated session fixture with injected deterministic dependencies.
  * Parameter data: mutable learner store.
@@ -360,7 +360,7 @@ test("refresh restores each ordinary stage and its saved page without rescoring"
 });
 
 test("saved chevrons are isolated by learner/topic and invalid stages fall back safely", async () => {
-  const division = await readTopicBank("division");
+  const division = await readTopicBank("bus-stop-division");
   const data = emptyStore();
   const api = createSession({ bank, banks: [bank, division], data, save() {} });
   let view;

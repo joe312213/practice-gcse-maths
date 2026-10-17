@@ -4,7 +4,7 @@
   Main contents:
   - Lattice and bus stop diagrams with text explanations.
 
-  Used By: ArithmeticDemo and Feedback.
+  Used By: DemoPlayer and Feedback.
 
   Uses: arithmetic-demo.mjs.
 
@@ -17,7 +17,7 @@
   import { latticeModel, divisionModel } from '#lib/application/arithmetic-demo.mjs';
   let {
     question,
-    frame = { step: 4, count: Infinity },
+    frame = { step: 5, count: Infinity },
     compact = false,
     font = null,
     working = null,
@@ -34,7 +34,7 @@
       : null,
   );
   const activeCell = $derived(frame.cell ?? -1);
-  const activeDiagonal = $derived(frame.step === 3 ? frame.count - 1 : -1);
+  const activeDiagonal = $derived(frame.step === 4 ? frame.count - 1 : -1);
   const division = $derived(question.method === 'bus' ? divisionModel(question) : null);
 </script>
 
@@ -71,138 +71,143 @@
   {#if lattice}
     {@const n = lattice.top.length}
     {@const m = lattice.right.length}
-    <svg
-      viewBox={`0 0 ${lattice.width} ${lattice.height}`}
-      role={onselect ? 'group' : 'img'}
-      aria-label={`${working ? 'Student working' : 'Lattice'} for ${question.q}`}
+    <div
+      class="lattice-diagram"
+      class:selectable={Boolean(onselect)}
+      style={onselect ? `aspect-ratio:${lattice.width}/${lattice.height}` : undefined}
     >
-      {#if onselect}
-        {#each lattice.regions as region}
-          {#if selectedLocation === region.id || entries.some((entry) => entry.location === region.id)}
-            <path
-              class="working-marker"
-              data-location-marker={region.id}
-              d={markerPath(region, selectedLocation === region.id)}
-              aria-hidden="true"
-            />
-          {/if}
+      <svg
+        viewBox={`0 0 ${lattice.width} ${lattice.height}`}
+        role={onselect ? 'group' : 'img'}
+        aria-label={`${working ? 'Student working' : 'Lattice'} for ${question.q}`}
+      >
+        {#if onselect}
+          {#each lattice.regions as region}
+            {#if selectedLocation === region.id || entries.some((entry) => entry.location === region.id)}
+              <path
+                class="working-marker"
+                data-location-marker={region.id}
+                d={markerPath(region, selectedLocation === region.id)}
+                aria-hidden="true"
+              />
+            {/if}
+          {/each}
+        {/if}
+        {#if frame.phase === 'sum'}
+          {#each lattice.cells as cell}
+            {@const x = cell.x}
+            {@const y = cell.y}
+            {@const diagonal = n + m - 2 - cell.row - cell.col}
+            {#if diagonal === activeDiagonal}<polygon
+                class="method-focus"
+                data-method-highlight="diagonal"
+                points={`${x + 70},${y} ${x + 70},${y + 70} ${x},${y + 70}`}
+              />{/if}
+            {#if diagonal + 1 === activeDiagonal}<polygon
+                class="method-focus"
+                data-method-highlight="diagonal"
+                points={`${x},${y} ${x + 70},${y} ${x},${y + 70}`}
+              />{/if}
+          {/each}
+        {/if}
+        {#each lattice.guides as path, index}
+          <path
+            class="method-guide"
+            d={path}
+            fill="none"
+            stroke="currentColor"
+            pathLength="1"
+            stroke-dasharray="1"
+            stroke-dashoffset={1 -
+              Math.max(0, Math.min(1, guideProgress * lattice.guides.length - index))}
+          />
         {/each}
-      {/if}
-      {#if frame.phase === 'sum'}
-        {#each lattice.cells as cell}
+        {#if guideProgress === 1}
+          {#each lattice.top as digit, col}
+            {#if frame.step > 2 || col < frame.count}{@render digitValue(
+                digit,
+                95 + col * 70,
+                32,
+                (frame.step === 2 && col === frame.count - 1) ||
+                  (frame.step === 3 && lattice.cells[activeCell]?.col === col),
+              )}{/if}
+          {/each}
+          {#each lattice.right as digit, row}
+            {#if frame.step > 2 || n + row < frame.count}{@render digitValue(
+                digit,
+                85 + n * 70,
+                88 + row * 70,
+                (frame.step === 2 && n + row === frame.count - 1) ||
+                  (frame.step === 3 && lattice.cells[activeCell]?.row === row),
+              )}{/if}
+          {/each}
+        {/if}
+        {#each lattice.cells as cell, index}
           {@const x = cell.x}
           {@const y = cell.y}
-          {@const diagonal = n + m - 2 - cell.row - cell.col}
-          {#if diagonal === activeDiagonal}<polygon
-              class="method-focus"
-              data-method-highlight="diagonal"
-              points={`${x + 70},${y} ${x + 70},${y + 70} ${x},${y + 70}`}
-            />{/if}
-          {#if diagonal + 1 === activeDiagonal}<polygon
-              class="method-focus"
-              data-method-highlight="diagonal"
-              points={`${x},${y} ${x + 70},${y} ${x},${y + 70}`}
-            />{/if}
+          {#if frame.step > 3 || (frame.step === 3 && index * 2 < frame.count)}
+            {@render digitValue(
+              Math.floor(cell.value / 10),
+              x + 19,
+              y + 29,
+              index === activeCell && frame.phase === 'tens',
+              false,
+              frame.phase === 'sum' && n + m - 1 - cell.row - cell.col === activeDiagonal,
+            )}
+          {/if}
+          {#if frame.step > 3 || (frame.step === 3 && index * 2 + 1 < frame.count)}
+            {@render digitValue(
+              cell.value % 10,
+              x + 51,
+              y + 60,
+              index === activeCell && frame.phase === 'units',
+              false,
+              frame.phase === 'sum' && n + m - 2 - cell.row - cell.col === activeDiagonal,
+            )}
+          {/if}
         {/each}
-      {/if}
-      {#each lattice.guides as path, index}
-        <path
-          class="method-guide"
-          d={path}
-          fill="none"
-          stroke="currentColor"
-          pathLength="1"
-          stroke-dasharray="1"
-          stroke-dashoffset={1 -
-            Math.max(0, Math.min(1, guideProgress * lattice.guides.length - index))}
-        />
-      {/each}
-      {#if guideProgress === 1}
-        {#each lattice.top as digit, col}
-          {#if frame.step > 1 || col < frame.count}{@render digitValue(
-              digit,
-              95 + col * 70,
-              32,
-              (frame.step === 1 && col === frame.count - 1) ||
-                (frame.step === 2 && lattice.cells[activeCell]?.col === col),
-            )}{/if}
+        {#each lattice.diagonals as diagonal, k}
+          {@const x = diagonal.x}
+          {@const y = diagonal.y}
+          {#if frame.step > 4 || (frame.step === 4 && (k < activeDiagonal || (k === activeDiagonal && frame.phase !== 'sum')))}
+            {@render digitValue(
+              diagonal.digit,
+              x,
+              y,
+              k === activeDiagonal && frame.phase === 'write',
+            )}
+          {/if}
+          {#if diagonal.incoming && (frame.step > 4 || (frame.step === 4 && (k <= activeDiagonal || (k === activeDiagonal + 1 && frame.phase === 'carry'))))}
+            {@render digitValue(
+              diagonal.incoming,
+              diagonal.carryX,
+              diagonal.carryY,
+              (k === activeDiagonal && frame.phase === 'sum') ||
+                (k === activeDiagonal + 1 && frame.phase === 'carry'),
+              !diagonal.carryAsDigit,
+            )}
+          {/if}
         {/each}
-        {#each lattice.right as digit, row}
-          {#if frame.step > 1 || n + row < frame.count}{@render digitValue(
-              digit,
-              85 + n * 70,
-              88 + row * 70,
-              (frame.step === 1 && n + row === frame.count - 1) ||
-                (frame.step === 2 && lattice.cells[activeCell]?.row === row),
-            )}{/if}
-        {/each}
-      {/if}
-      {#each lattice.cells as cell, index}
-        {@const x = cell.x}
-        {@const y = cell.y}
-        {#if frame.step > 2 || (frame.step === 2 && index * 2 < frame.count)}
-          {@render digitValue(
-            Math.floor(cell.value / 10),
-            x + 19,
-            y + 29,
-            index === activeCell && frame.phase === 'tens',
-            false,
-            frame.phase === 'sum' && n + m - 1 - cell.row - cell.col === activeDiagonal,
-          )}
-        {/if}
-        {#if frame.step > 2 || (frame.step === 2 && index * 2 + 1 < frame.count)}
-          {@render digitValue(
-            cell.value % 10,
-            x + 51,
-            y + 60,
-            index === activeCell && frame.phase === 'units',
-            false,
-            frame.phase === 'sum' && n + m - 2 - cell.row - cell.col === activeDiagonal,
-          )}
-        {/if}
-      {/each}
-      {#each lattice.diagonals as diagonal, k}
-        {@const x = diagonal.x}
-        {@const y = diagonal.y}
-        {#if frame.step > 3 || (frame.step === 3 && (k < activeDiagonal || (k === activeDiagonal && frame.phase !== 'sum')))}
-          {@render digitValue(
-            diagonal.digit,
-            x,
-            y,
-            k === activeDiagonal && frame.phase === 'write',
-          )}
-        {/if}
-        {#if diagonal.incoming && (frame.step > 3 || (frame.step === 3 && (k <= activeDiagonal || (k === activeDiagonal + 1 && frame.phase === 'carry'))))}
-          {@render digitValue(
-            diagonal.incoming,
-            diagonal.carryX,
-            diagonal.carryY,
-            (k === activeDiagonal && frame.phase === 'sum') ||
-              (k === activeDiagonal + 1 && frame.phase === 'carry'),
-            !diagonal.carryAsDigit,
-          )}
-        {/if}
-      {/each}
+      </svg>
       {#if onselect}
         {#each lattice.regions as region}
           {@const number = entries.findIndex((entry) => entry.location === region.id) + 1}
-          <foreignObject x={region.x} y={region.y} width={region.width} height={region.height}>
-            <button
-              type="button"
-              class="working-location"
-              disabled={selectionDisabled}
-              data-location={region.id}
-              aria-label={region.label}
-              aria-pressed={selectedLocation === region.id || number > 0}
-              onclick={() => onselect(region.id)}
-            >
-              {#if number}<span class="location-number" aria-hidden="true">{number}</span>{/if}
-            </button>
-          </foreignObject>
+          <button
+            type="button"
+            class="working-location lattice-location"
+            style={`left:${(100 * region.x) / lattice.width}%;top:${(100 * region.y) / lattice.height}%;width:${(100 * region.width) / lattice.width}%;height:${(100 * region.height) / lattice.height}%`}
+            disabled={selectionDisabled}
+            data-location={region.id}
+            aria-label={region.label}
+            aria-pressed={selectedLocation === region.id || number > 0}
+            onclick={() => onselect(region.id)}
+          >
+            {#if number}<span class="location-number" aria-hidden="true">{number}</span>{/if}
+          </button>
         {/each}
       {/if}
-    </svg>
-    {#if !compact && frame.step === 2 && activeCell >= 0}
+    </div>
+    {#if !compact && frame.step === 3 && activeCell >= 0}
       <p class="method-calculation">
         {lattice.top[lattice.cells[activeCell].col]} × {lattice.right[
           lattice.cells[activeCell].row
@@ -213,9 +218,9 @@
             : 'write the units below the diagonal.'}
       </p>
     {/if}
-    {#if !compact && frame.step >= 3}
+    {#if !compact && frame.step >= 4}
       <ol aria-label="Diagonal totals from bottom right">
-        {#each lattice.diagonals.slice(0, frame.step === 3 ? frame.count : undefined) as d}<li>
+        {#each lattice.diagonals.slice(0, frame.step === 4 ? frame.count : undefined) as d}<li>
             {d.sum} + carry {d.incoming} = {d.total}: write {d.digit}{d.carry
               ? `, carry ${d.carry}`
               : ''}.
@@ -238,7 +243,7 @@
         stroke="currentColor"
         stroke-width="2"
       />
-      {#if guideProgress === 1}{@render digitValue(
+      {#if frame.step >= 2 && guideProgress === 1}{@render digitValue(
           question.b,
           35,
           112,
@@ -254,7 +259,7 @@
           frame.target > frame.count &&
           index >= frame.count &&
           index <= frame.target}
-        {#if guideProgress === 1 && (index < division.integerLength || (frame.step >= 3 && index < frame.count) || carried || decimalSetup)}
+        {#if frame.step >= 2 && guideProgress === 1 && (index < division.integerLength || (frame.step >= 4 && index < frame.count) || carried || decimalSetup)}
           {@render digitValue(
             place.digit,
             100 + index * 55,
@@ -263,7 +268,7 @@
               decimalSetup,
           )}
         {/if}
-        {#if frame.step > 1 && (index < frame.count - 1 || (index === frame.count - 1 && frame.phase !== 'divide') || (decimalSetup && place.digit === '.'))}
+        {#if frame.step > 2 && (index < frame.count - 1 || (index === frame.count - 1 && frame.phase !== 'divide') || (decimalSetup && place.digit === '.'))}
           {@render digitValue(
             place.quotient,
             100 + index * 55,
@@ -272,7 +277,7 @@
               (decimalSetup && place.digit === '.'),
           )}
         {/if}
-        {#if carried && frame.step > 1}
+        {#if carried && frame.step > 2}
           {@render digitValue(
             place.incoming,
             80 + index * 55,
@@ -285,7 +290,7 @@
         {/if}
       {/each}
     </svg>
-    {#if !compact && frame.step > 1}<ol>
+    {#if !compact && frame.step > 2}<ol>
         {#each division.places.slice(0, frame.count) as p}
           <li>
             {p.digit === '.'
@@ -295,7 +300,7 @@
         {/each}
       </ol>{/if}
   {/if}
-  {#if frame.step === 4}<p>
+  {#if frame.step === 5}<p>
       <strong
         ><MathText
           text={`${question.q} = ${working ? lattice.answer : question.answer}`}
@@ -306,7 +311,18 @@
 </div>
 
 <style>
-  .arithmetic-working svg {
+  .lattice-diagram {
+    position: relative;
+  }
+  .lattice-diagram.selectable > svg {
+    max-height: none;
+    height: 100%;
+  }
+  .lattice-location {
+    position: absolute;
+  }
+  .arithmetic-working > svg,
+  .lattice-diagram > svg {
     display: block;
     width: 100%;
     max-height: 420px;

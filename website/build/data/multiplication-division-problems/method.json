@@ -1,0 +1,333 @@
+{
+  "name": "Multiplication and division problems",
+  "guidance": {
+    "default": {
+      "aim": "Choose multiplication or division for equal groups, then check the units.",
+      "steps": [
+        [
+          {
+            "concept": "equal-groups",
+            "text": "Choose the calculation"
+          }
+        ],
+        "Use a written method",
+        [
+          {
+            "concept": "interpret-remainder",
+            "text": "Check in context"
+          }
+        ],
+        [
+          "Answer with ",
+          {
+            "concept": "units",
+            "text": "units"
+          }
+        ]
+      ]
+    },
+    "byLevel": {
+      "build": {
+        "aim": "Combine given quantities where needed, then decide whether the answer needs full groups, another group, a remainder or an exact share.",
+        "steps": [
+          [
+            {
+              "concept": "equal-groups",
+              "text": "Choose the calculation"
+            }
+          ],
+          "Use a written method",
+          [
+            {
+              "concept": "interpret-remainder",
+              "text": "Check in context"
+            }
+          ],
+          [
+            "Answer with ",
+            {
+              "concept": "units",
+              "text": "units"
+            }
+          ]
+        ]
+      },
+      "confidence": {
+        "aim": "Link calculations and interpret an intermediate result before using it.",
+        "steps": [
+          [
+            {
+              "concept": "equal-groups",
+              "text": "Choose the calculation"
+            }
+          ],
+          "Use a written method",
+          [
+            {
+              "concept": "interpret-remainder",
+              "text": "Check in context"
+            }
+          ],
+          [
+            "Answer with ",
+            {
+              "concept": "units",
+              "text": "units"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "submethods": {
+    "share": {
+      "name": "Divide into equal shares",
+      "levels": [
+        "start"
+      ],
+      "when": "The total and number of equal groups are known.",
+      "steps": [
+        "Identify the total and number of groups.",
+        "Divide to find the amount in each group."
+      ],
+      "check": "Check the original group sizes, whether a partial group is possible, and the unit requested in the story."
+    },
+    "total": {
+      "name": "Multiply equal groups",
+      "levels": [
+        "start"
+      ],
+      "when": "The number of groups and the amount per group are known.",
+      "steps": [
+        "Identify the two factors.",
+        "Multiply and state what the total counts."
+      ],
+      "check": "Check the original group sizes, whether a partial group is possible, and the unit requested in the story."
+    },
+    "ceil": {
+      "name": "Allow another whole group",
+      "levels": [
+        "build",
+        "confidence"
+      ],
+      "when": "Everyone or everything must fit and a partial group remains.",
+      "steps": [
+        "Divide to find the number of full groups and remainder.",
+        "If there is a remainder, allow one extra group."
+      ],
+      "check": "Check the original group sizes, whether a partial group is possible, and the unit requested in the story."
+    },
+    "floor": {
+      "name": "Count full groups only",
+      "levels": [
+        "build",
+        "confidence"
+      ],
+      "when": "Only complete packs or groups can be used.",
+      "steps": [
+        "Divide by the group size.",
+        "Keep only the whole-number quotient."
+      ],
+      "check": "Check the original group sizes, whether a partial group is possible, and the unit requested in the story."
+    },
+    "remainder": {
+      "name": "Find what is left over",
+      "levels": [
+        "build"
+      ],
+      "when": "The question asks for the amount left after making full groups.",
+      "steps": [
+        "Find the whole-number quotient.",
+        "Subtract quotient × group size from the total."
+      ],
+      "check": "Check the original group sizes, whether a partial group is possible, and the unit requested in the story."
+    },
+    "exact-share": {
+      "name": "Share exactly using decimals",
+      "levels": [
+        "build"
+      ],
+      "when": "Money or a divisible quantity is shared without discarding a remainder.",
+      "steps": [
+        "Divide the total by the number of shares.",
+        "Continue into decimals to give the exact share."
+      ],
+      "check": "Check the original group sizes, whether a partial group is possible, and the unit requested in the story."
+    },
+    "combine": {
+      "name": "Combine quantities before multiplying",
+      "levels": [
+        "build"
+      ],
+      "when": "Several times or counts use the same rate or group size.",
+      "steps": [
+        "Add the relevant counts first.",
+        "Multiply their sum by the common rate."
+      ],
+      "check": "Check the original group sizes, whether a partial group is possible, and the unit requested in the story."
+    },
+    "fixed-change": {
+      "name": "Apply a fixed charge or discount",
+      "levels": [
+        "confidence"
+      ],
+      "when": "A cost includes a fixed addition or subtraction after multiplication.",
+      "steps": [
+        "Calculate the variable cost.",
+        "Add the fixed charge or subtract the fixed discount."
+      ],
+      "check": "Check the original group sizes, whether a partial group is possible, and the unit requested in the story."
+    },
+    "group-cost": {
+      "name": "Price the required whole groups",
+      "levels": [
+        "confidence"
+      ],
+      "when": "A rounded number of groups has a price per group.",
+      "steps": [
+        "Find the number of usable or required whole groups in context.",
+        "Multiply by the price per group."
+      ],
+      "check": "Check the original group sizes, whether a partial group is possible, and the unit requested in the story."
+    },
+    "linked-product": {
+      "name": "Multiply through several group sizes",
+      "levels": [
+        "confidence"
+      ],
+      "when": "Groups contain smaller equal groups, each with a value or count.",
+      "steps": [
+        "Multiply to find the total number of individual items.",
+        "Multiply by the value per item."
+      ],
+      "check": "Check the original group sizes, whether a partial group is possible, and the unit requested in the story."
+    },
+    "share-cost": {
+      "name": "Share a calculated cost",
+      "levels": [
+        "confidence"
+      ],
+      "when": "The cost of several items is shared equally.",
+      "steps": [
+        "Multiply to find the total cost.",
+        "Divide by the number of people sharing."
+      ],
+      "check": "Check the original group sizes, whether a partial group is possible, and the unit requested in the story."
+    }
+  },
+  "examples": {
+    "start": [
+      {
+        "key": "demo",
+        "name": "Divide a total into equal shares",
+        "submethods": [
+          "share"
+        ],
+        "question": "maths:M03-S01-C1-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Find the total in equal groups",
+        "submethods": [
+          "total"
+        ],
+        "recap": 0
+      }
+    ],
+    "build": [
+      {
+        "key": "demo",
+        "name": "Combine passengers and allow another minibus",
+        "submethods": [
+          "ceil"
+        ],
+        "question": "maths:M03-S01-C2-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Count only completely full bags",
+        "submethods": [
+          "floor"
+        ],
+        "recap": 1
+      },
+      {
+        "key": "remainder",
+        "name": "Find the amount left over",
+        "submethods": [
+          "remainder"
+        ],
+        "question": "maths:M03-S04-C2-Q3"
+      },
+      {
+        "key": "exact",
+        "name": "Share a bill exactly",
+        "submethods": [
+          "exact-share"
+        ],
+        "question": "maths:M03-S04-C2-Q6"
+      },
+      {
+        "key": "combine",
+        "name": "Add working hours, then calculate wages",
+        "submethods": [
+          "combine"
+        ],
+        "question": "maths:M03-S04-C2-Q4"
+      }
+    ],
+    "confidence": [
+      {
+        "key": "demo",
+        "name": "Find required minibuses, then hire cost",
+        "submethods": [
+          "ceil",
+          "group-cost"
+        ],
+        "question": "maths:M03-S01-C3-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Calculate a cost and add a fixed charge",
+        "submethods": [
+          "fixed-change"
+        ],
+        "recap": 2
+      },
+      {
+        "key": "discount",
+        "name": "Calculate a cost and subtract a discount",
+        "submethods": [
+          "fixed-change"
+        ],
+        "question": "maths:M03-S04-C3-Q1"
+      },
+      {
+        "key": "full-groups",
+        "name": "Price only the full boxes",
+        "submethods": [
+          "floor",
+          "group-cost"
+        ],
+        "question": "maths:M03-S04-C3-Q4"
+      },
+      {
+        "key": "linked",
+        "name": "Find item count, then sales income",
+        "submethods": [
+          "linked-product"
+        ],
+        "question": "maths:M03-S04-C3-Q6"
+      },
+      {
+        "key": "share",
+        "name": "Calculate a ticket cost, then share it",
+        "submethods": [
+          "share-cost"
+        ],
+        "question": "maths:M03-S05-C3-Q5"
+      }
+    ]
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

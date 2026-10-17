@@ -20,26 +20,35 @@
         "text": "250 ÷ 0.125 = £2000"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use 0.25 because the increase is 25%."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Convert 125% to 12.5."
-      },
-      {
-        "id": "repair",
-        "text": "Convert 125% to 1.25 by dividing by 100."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "use-because-the-increase-is",
+        "0.25",
+        "25"
+      ],
+      "alternative-2": [
+        "convert-to",
+        "125",
+        "12.5"
+      ],
+      "repair": [
+        "convert-to-by-dividing-by",
+        "125",
+        "1.25",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP5",
-        "feedback": "Convert 125% to 1.25 by dividing by 100."
+        "feedback": [
+          "convert-to-by-dividing-by",
+          "125",
+          "1.25",
+          "100"
+        ]
       }
     ],
     "consequences": [
@@ -89,26 +98,25 @@
         "text": "96 ÷ 0.06 = 1600 litres"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Subtract the percentage number from the given amount."
-      },
-      {
-        "id": "repair",
-        "text": "Divide the percentage by 100, not 1000."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Multiply the given amount by the percentage multiplier."
-      }
-    ],
+    "options": {
+      "alternative-2": "subtract-the-percentage-number-from-the-given-amount",
+      "repair": [
+        "divide-the-percentage-by-not",
+        "100",
+        "1000"
+      ],
+      "alternative-1": "multiply-the-given-amount-by-the-percentage-multiplier"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP5",
-        "feedback": "60% = 0.6."
+        "feedback": [
+          "",
+          "60",
+          "0.6"
+        ]
       }
     ],
     "consequences": [
@@ -154,26 +162,33 @@
         "text": "100% = £48"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add £40 to the given amount."
-      },
-      {
-        "id": "repair",
-        "text": "The given amount is 60%, so divide by 0.6 to recover 100%."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Multiply the given amount by 0.6."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "add-to-the-given-amount",
+        "40"
+      ],
+      "repair": [
+        "the-given-amount-is-so-divide-by-to",
+        "60",
+        "0.6",
+        "100"
+      ],
+      "alternative-1": [
+        "multiply-the-given-amount-by",
+        "0.6"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP1",
-        "feedback": "The given amount is 60%, so divide by 0.6 to recover 100%."
+        "feedback": [
+          "the-given-amount-is-so-divide-by-to",
+          "60",
+          "0.6",
+          "100"
+        ]
       }
     ],
     "consequences": [],
@@ -216,26 +231,33 @@
         "text": "100% = £90"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "The given amount is 75%, so divide by 0.75 to recover 100%."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Multiply the given amount by 0.75."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add £25 to the given amount."
-      }
-    ],
+    "options": {
+      "repair": [
+        "the-given-amount-is-so-divide-by-to",
+        "75",
+        "0.75",
+        "100"
+      ],
+      "alternative-1": [
+        "multiply-the-given-amount-by",
+        "0.75"
+      ],
+      "alternative-2": [
+        "add-to-the-given-amount",
+        "25"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP1",
-        "feedback": "The given amount is 75%, so divide by 0.75 to recover 100%."
+        "feedback": [
+          "the-given-amount-is-so-divide-by-to",
+          "75",
+          "0.75",
+          "100"
+        ]
       }
     ],
     "consequences": [],
@@ -278,26 +300,22 @@
         "text": "100% = 72 g"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Subtract the percentage number from the given amount."
-      },
-      {
-        "id": "repair",
-        "text": "The given amount is only the stated percentage, not the whole."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Multiply the given amount by the percentage multiplier."
-      }
-    ],
+    "options": {
+      "alternative-2": "subtract-the-percentage-number-from-the-given-amount",
+      "repair": "the-given-amount-is-only-the-stated-percentage",
+      "alternative-1": "multiply-the-given-amount-by-the-percentage-multiplier"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP1",
-        "feedback": "Divide 72 by 0.3 to find 100%."
+        "feedback": [
+          "divide-by-to-find",
+          "72",
+          "0.3",
+          "100"
+        ]
       }
     ],
     "consequences": [],
@@ -340,26 +358,31 @@
         "text": "96 × 0.8 = £384/5"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Subtract 20% of the reduced price."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add £20 to the reduced price."
-      },
-      {
-        "id": "repair",
-        "text": "Divide £96 by 0.8 to recover the whole."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "20"
+      ],
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "20"
+      ],
+      "repair": [
+        "divide-by-to-recover-the-whole",
+        "96",
+        "0.8"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP3",
-        "feedback": "Divide £96 by 0.8 to recover the whole."
+        "feedback": [
+          "divide-by-to-recover-the-whole",
+          "96",
+          "0.8"
+        ]
       }
     ],
     "consequences": [],
@@ -402,26 +425,31 @@
         "text": "192 × 0.8 = £768/5"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Subtract 20% of the reduced price."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add £20 to the reduced price."
-      },
-      {
-        "id": "repair",
-        "text": "Divide £192 by 0.8 to recover the whole."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "20"
+      ],
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "20"
+      ],
+      "repair": [
+        "divide-by-to-recover-the-whole",
+        "192",
+        "0.8"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP3",
-        "feedback": "Divide £192 by 0.8 to recover the whole."
+        "feedback": [
+          "divide-by-to-recover-the-whole",
+          "192",
+          "0.8"
+        ]
       }
     ],
     "consequences": [],
@@ -464,26 +492,31 @@
         "text": "120 × 0.75 = £90"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add £25 to the reduced price."
-      },
-      {
-        "id": "repair",
-        "text": "Divide £120 by 0.75 to recover the whole."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract 25% of the reduced price."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "25"
+      ],
+      "repair": [
+        "divide-by-to-recover-the-whole",
+        "120",
+        "0.75"
+      ],
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "25"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP3",
-        "feedback": "Divide £120 by 0.75 to recover the whole."
+        "feedback": [
+          "divide-by-to-recover-the-whole",
+          "120",
+          "0.75"
+        ]
       }
     ],
     "consequences": [],
@@ -526,26 +559,31 @@
         "text": "210 × 0.75 = £315/2"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add £25 to the reduced price."
-      },
-      {
-        "id": "repair",
-        "text": "Divide £210 by 0.75 to recover the whole."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract 25% of the reduced price."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "25"
+      ],
+      "repair": [
+        "divide-by-to-recover-the-whole",
+        "210",
+        "0.75"
+      ],
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "25"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP3",
-        "feedback": "Divide £210 by 0.75 to recover the whole."
+        "feedback": [
+          "divide-by-to-recover-the-whole",
+          "210",
+          "0.75"
+        ]
       }
     ],
     "consequences": [],
@@ -588,26 +626,31 @@
         "text": "120 × 0.6 = £72"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide £120 by 0.6 to recover the whole."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract 40% of the reduced price."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add £40 to the reduced price."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-by-to-recover-the-whole",
+        "120",
+        "0.6"
+      ],
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "40"
+      ],
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "40"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP3",
-        "feedback": "Divide £120 by 0.6 to recover the whole."
+        "feedback": [
+          "divide-by-to-recover-the-whole",
+          "120",
+          "0.6"
+        ]
       }
     ],
     "consequences": [],
@@ -650,26 +693,31 @@
         "text": "192 × 0.6 = £576/5"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide £192 by 0.6 to recover the whole."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract 40% of the reduced price."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add £40 to the reduced price."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-by-to-recover-the-whole",
+        "192",
+        "0.6"
+      ],
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "40"
+      ],
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "40"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP3",
-        "feedback": "Divide £192 by 0.6 to recover the whole."
+        "feedback": [
+          "divide-by-to-recover-the-whole",
+          "192",
+          "0.6"
+        ]
       }
     ],
     "consequences": [],
@@ -717,26 +765,35 @@
         "text": "200 ÷ 0.125 = £1600"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Convert 125% to 1.25 by dividing by 100."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use 0.25 because the increase is 25%."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Convert 125% to 12.5."
-      }
-    ],
+    "options": {
+      "repair": [
+        "convert-to-by-dividing-by",
+        "125",
+        "1.25",
+        "100"
+      ],
+      "alternative-1": [
+        "use-because-the-increase-is",
+        "0.25",
+        "25"
+      ],
+      "alternative-2": [
+        "convert-to",
+        "125",
+        "12.5"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP5",
-        "feedback": "Convert 125% to 1.25 by dividing by 100."
+        "feedback": [
+          "convert-to-by-dividing-by",
+          "125",
+          "1.25",
+          "100"
+        ]
       }
     ],
     "consequences": [
@@ -781,26 +838,31 @@
         "text": "112 × 1.2 = £672/5"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add £20 to the reduced price."
-      },
-      {
-        "id": "repair",
-        "text": "Divide £112 by 0.8 to undo the reduction."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract 20% of the reduced price."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "20"
+      ],
+      "repair": [
+        "divide-by-to-undo-the-reduction",
+        "112",
+        "0.8"
+      ],
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "20"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP4",
-        "feedback": "Divide £112 by 0.8 to undo the reduction."
+        "feedback": [
+          "divide-by-to-undo-the-reduction",
+          "112",
+          "0.8"
+        ]
       }
     ],
     "consequences": [],
@@ -848,26 +910,31 @@
         "text": "216 ÷ 0.2 = £1080"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "The final amount is 80% of the original."
-      },
-      {
-        "id": "alternative-2",
-        "text": "The final amount is already 100%."
-      },
-      {
-        "id": "repair",
-        "text": "The final amount is 120% of the original. Divide by 1.2."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "the-final-amount-is-of-the-original",
+        "80"
+      ],
+      "alternative-2": [
+        "the-final-amount-is-already",
+        "100"
+      ],
+      "repair": [
+        "the-final-amount-is-of-the-original-divide",
+        "120",
+        "1.2"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP2",
-        "feedback": "The final amount is 120% of the original. Divide by 1.2."
+        "feedback": [
+          "the-final-amount-is-of-the-original-divide",
+          "120",
+          "1.2"
+        ]
       }
     ],
     "consequences": [
@@ -912,26 +979,31 @@
         "text": "208 × 1.2 = £1248/5"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add £20 to the reduced price."
-      },
-      {
-        "id": "repair",
-        "text": "Divide £208 by 0.8 to undo the reduction."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract 20% of the reduced price."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "20"
+      ],
+      "repair": [
+        "divide-by-to-undo-the-reduction",
+        "208",
+        "0.8"
+      ],
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "20"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP4",
-        "feedback": "Divide £208 by 0.8 to undo the reduction."
+        "feedback": [
+          "divide-by-to-undo-the-reduction",
+          "208",
+          "0.8"
+        ]
       }
     ],
     "consequences": [],
@@ -979,26 +1051,31 @@
         "text": "175 ÷ 0.25 = £700"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "The final amount is 75% of the original."
-      },
-      {
-        "id": "alternative-2",
-        "text": "The final amount is already 100%."
-      },
-      {
-        "id": "repair",
-        "text": "The final amount is 125% of the original. Divide by 1.25."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "the-final-amount-is-of-the-original",
+        "75"
+      ],
+      "alternative-2": [
+        "the-final-amount-is-already",
+        "100"
+      ],
+      "repair": [
+        "the-final-amount-is-of-the-original-divide",
+        "125",
+        "1.25"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP2",
-        "feedback": "The final amount is 125% of the original. Divide by 1.25."
+        "feedback": [
+          "the-final-amount-is-of-the-original-divide",
+          "125",
+          "1.25"
+        ]
       }
     ],
     "consequences": [
@@ -1043,26 +1120,31 @@
         "text": "135 × 1.25 = £675/4"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide £135 by 0.75 to undo the reduction."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract 25% of the reduced price."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add £25 to the reduced price."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-by-to-undo-the-reduction",
+        "135",
+        "0.75"
+      ],
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "25"
+      ],
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "25"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP4",
-        "feedback": "Divide £135 by 0.75 to undo the reduction."
+        "feedback": [
+          "divide-by-to-undo-the-reduction",
+          "135",
+          "0.75"
+        ]
       }
     ],
     "consequences": [],
@@ -1110,26 +1192,31 @@
         "text": "275 ÷ 0.25 = £1100"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "The final amount is already 100%."
-      },
-      {
-        "id": "repair",
-        "text": "The final amount is 125% of the original. Divide by 1.25."
-      },
-      {
-        "id": "alternative-1",
-        "text": "The final amount is 75% of the original."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "the-final-amount-is-already",
+        "100"
+      ],
+      "repair": [
+        "the-final-amount-is-of-the-original-divide",
+        "125",
+        "1.25"
+      ],
+      "alternative-1": [
+        "the-final-amount-is-of-the-original",
+        "75"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP2",
-        "feedback": "The final amount is 125% of the original. Divide by 1.25."
+        "feedback": [
+          "the-final-amount-is-of-the-original-divide",
+          "125",
+          "1.25"
+        ]
       }
     ],
     "consequences": [
@@ -1174,26 +1261,31 @@
         "text": "225 × 1.25 = £1125/4"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide £225 by 0.75 to undo the reduction."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Subtract 25% of the reduced price."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add £25 to the reduced price."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-by-to-undo-the-reduction",
+        "225",
+        "0.75"
+      ],
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "25"
+      ],
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "25"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP4",
-        "feedback": "Divide £225 by 0.75 to undo the reduction."
+        "feedback": [
+          "divide-by-to-undo-the-reduction",
+          "225",
+          "0.75"
+        ]
       }
     ],
     "consequences": [],
@@ -1241,26 +1333,31 @@
         "text": "252 ÷ 0.4 = £630"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "The final amount is already 100%."
-      },
-      {
-        "id": "repair",
-        "text": "The final amount is 140% of the original. Divide by 1.4."
-      },
-      {
-        "id": "alternative-1",
-        "text": "The final amount is 60% of the original."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "the-final-amount-is-already",
+        "100"
+      ],
+      "repair": [
+        "the-final-amount-is-of-the-original-divide",
+        "140",
+        "1.4"
+      ],
+      "alternative-1": [
+        "the-final-amount-is-of-the-original",
+        "60"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP2",
-        "feedback": "The final amount is 140% of the original. Divide by 1.4."
+        "feedback": [
+          "the-final-amount-is-of-the-original-divide",
+          "140",
+          "1.4"
+        ]
       }
     ],
     "consequences": [
@@ -1305,26 +1402,31 @@
         "text": "132 × 1.4 = £924/5"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Subtract 40% of the reduced price."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add £40 to the reduced price."
-      },
-      {
-        "id": "repair",
-        "text": "Divide £132 by 0.6 to undo the reduction."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "40"
+      ],
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "40"
+      ],
+      "repair": [
+        "divide-by-to-undo-the-reduction",
+        "132",
+        "0.6"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP4",
-        "feedback": "Divide £132 by 0.6 to undo the reduction."
+        "feedback": [
+          "divide-by-to-undo-the-reduction",
+          "132",
+          "0.6"
+        ]
       }
     ],
     "consequences": [],
@@ -1372,26 +1474,31 @@
         "text": "364 ÷ 0.4 = £910"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "The final amount is 140% of the original. Divide by 1.4."
-      },
-      {
-        "id": "alternative-1",
-        "text": "The final amount is 60% of the original."
-      },
-      {
-        "id": "alternative-2",
-        "text": "The final amount is already 100%."
-      }
-    ],
+    "options": {
+      "repair": [
+        "the-final-amount-is-of-the-original-divide",
+        "140",
+        "1.4"
+      ],
+      "alternative-1": [
+        "the-final-amount-is-of-the-original",
+        "60"
+      ],
+      "alternative-2": [
+        "the-final-amount-is-already",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP2",
-        "feedback": "The final amount is 140% of the original. Divide by 1.4."
+        "feedback": [
+          "the-final-amount-is-of-the-original-divide",
+          "140",
+          "1.4"
+        ]
       }
     ],
     "consequences": [
@@ -1436,26 +1543,31 @@
         "text": "204 × 1.4 = £1428/5"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Subtract 40% of the reduced price."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add £40 to the reduced price."
-      },
-      {
-        "id": "repair",
-        "text": "Divide £204 by 0.6 to undo the reduction."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "subtract-of-the-reduced-price",
+        "40"
+      ],
+      "alternative-2": [
+        "add-to-the-reduced-price",
+        "40"
+      ],
+      "repair": [
+        "divide-by-to-undo-the-reduction",
+        "204",
+        "0.6"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP4",
-        "feedback": "Divide £204 by 0.6 to undo the reduction."
+        "feedback": [
+          "divide-by-to-undo-the-reduction",
+          "204",
+          "0.6"
+        ]
       }
     ],
     "consequences": [],
@@ -1503,26 +1615,31 @@
         "text": "120 ÷ 0.2 = £600"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "The final amount is 120% of the original. Divide by 1.2."
-      },
-      {
-        "id": "alternative-1",
-        "text": "The final amount is 80% of the original."
-      },
-      {
-        "id": "alternative-2",
-        "text": "The final amount is already 100%."
-      }
-    ],
+    "options": {
+      "repair": [
+        "the-final-amount-is-of-the-original-divide",
+        "120",
+        "1.2"
+      ],
+      "alternative-1": [
+        "the-final-amount-is-of-the-original",
+        "80"
+      ],
+      "alternative-2": [
+        "the-final-amount-is-already",
+        "100"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP2",
-        "feedback": "The final amount is 120% of the original. Divide by 1.2."
+        "feedback": [
+          "the-final-amount-is-of-the-original-divide",
+          "120",
+          "1.2"
+        ]
       }
     ],
     "consequences": [
@@ -1582,26 +1699,23 @@
         "text": "£260"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the whole bill by the percentage number."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Include the delivery charge in the requested original item cost."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the recovered price per item by 4."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-the-whole-bill-by-the-percentage-number",
+      "alternative-2": "include-the-delivery-charge-in-the-requested-original",
+      "repair": [
+        "multiply-the-recovered-price-per-item-by",
+        "4"
+      ]
+    },
     "errors": [
       {
         "location": "step-5",
         "reason": "repair",
         "misconception": "RP7",
-        "feedback": "The question asks for 4 chairs, not one."
+        "feedback": [
+          "the-question-asks-for-chairs-not-one",
+          "4"
+        ]
       }
     ],
     "consequences": [],
@@ -1662,26 +1776,20 @@
         "text": "1 × £187.5 = £187.5"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Include the delivery charge in the requested original item cost."
-      },
-      {
-        "id": "repair",
-        "text": "Remove the fixed delivery charge before reversing the percentage change."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the whole bill by the percentage number."
-      }
-    ],
+    "options": {
+      "alternative-2": "include-the-delivery-charge-in-the-requested-original",
+      "repair": "remove-the-fixed-delivery-charge-before-reversing-the",
+      "alternative-1": "divide-the-whole-bill-by-the-percentage-number"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP6",
-        "feedback": "The changed item price is £216, not the whole bill."
+        "feedback": [
+          "the-changed-item-price-is-not-the-whole",
+          "216"
+        ]
       }
     ],
     "consequences": [
@@ -1745,26 +1853,20 @@
         "text": "360 g"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Remove the separate fixed addition before reversing the percentage change."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the total by the percentage number."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Keep the separate addition in the requested original amount."
-      }
-    ],
+    "options": {
+      "repair": "remove-the-separate-fixed-addition-before-reversing-the",
+      "alternative-1": "divide-the-total-by-the-percentage-number",
+      "alternative-2": "keep-the-separate-addition-in-the-requested-original"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP6",
-        "feedback": "The percentage applies to 204 g, not the total including the addition."
+        "feedback": [
+          "the-percentage-applies-to-g-not-the-total",
+          "204"
+        ]
       }
     ],
     "consequences": [
@@ -1828,26 +1930,23 @@
         "text": "£240"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the whole bill by the percentage number."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Include the delivery charge in the requested original item cost."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the recovered price per item by 5."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-the-whole-bill-by-the-percentage-number",
+      "alternative-2": "include-the-delivery-charge-in-the-requested-original",
+      "repair": [
+        "multiply-the-recovered-price-per-item-by",
+        "5"
+      ]
+    },
     "errors": [
       {
         "location": "step-5",
         "reason": "repair",
         "misconception": "RP7",
-        "feedback": "The question asks for 5 desks, not one."
+        "feedback": [
+          "the-question-asks-for-desks-not-one",
+          "5"
+        ]
       }
     ],
     "consequences": [],
@@ -1908,26 +2007,20 @@
         "text": "170 litres"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Keep the separate addition in the requested original amount."
-      },
-      {
-        "id": "repair",
-        "text": "Remove the separate fixed addition before reversing the percentage change."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the total by the percentage number."
-      }
-    ],
+    "options": {
+      "alternative-2": "keep-the-separate-addition-in-the-requested-original",
+      "repair": "remove-the-separate-fixed-addition-before-reversing-the",
+      "alternative-1": "divide-the-total-by-the-percentage-number"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP6",
-        "feedback": "The percentage applies to 144 litres, not the total including the addition."
+        "feedback": [
+          "the-percentage-applies-to-litres-not-the-total",
+          "144"
+        ]
       }
     ],
     "consequences": [
@@ -1991,36 +2084,33 @@
         "text": "338 g"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the total by the percentage number."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Keep the separate addition in the requested original amount."
-      },
-      {
-        "id": "repair",
-        "text": "Divide the changed amount by 1.3 to recover the original."
-      },
-      {
-        "id": "repair-2",
-        "text": "Multiply the recovered amount by 3."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-the-total-by-the-percentage-number",
+      "alternative-2": "keep-the-separate-addition-in-the-requested-original",
+      "repair": [
+        "divide-the-changed-amount-by-to-recover-the",
+        "1.3"
+      ],
+      "repair-2": [
+        "multiply-the-recovered-amount-by",
+        "3"
+      ]
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "RP3",
-        "feedback": "Multiplying applies the same percentage change again."
+        "feedback": "multiplying-applies-the-same-percentage-change-again"
       },
       {
         "location": "step-5",
         "reason": "repair-2",
         "misconception": "RP7",
-        "feedback": "The question asks for 3 equal original amounts, not one."
+        "feedback": [
+          "the-question-asks-for-equal-original-amounts-not",
+          "3"
+        ]
       }
     ],
     "consequences": [],
@@ -2081,36 +2171,33 @@
         "text": "£180"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Include the delivery charge in the requested original item cost."
-      },
-      {
-        "id": "repair",
-        "text": "Divide the changed item price by 0.75 to recover the original."
-      },
-      {
-        "id": "repair-2",
-        "text": "Multiply the recovered price per item by 4."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the whole bill by the percentage number."
-      }
-    ],
+    "options": {
+      "alternative-2": "include-the-delivery-charge-in-the-requested-original",
+      "repair": [
+        "divide-the-changed-item-price-by-to-recover",
+        "0.75"
+      ],
+      "repair-2": [
+        "multiply-the-recovered-price-per-item-by",
+        "4"
+      ],
+      "alternative-1": "divide-the-whole-bill-by-the-percentage-number"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "RP3",
-        "feedback": "Multiplying by the forward multiplier applies the same change again. Divide to recover the original."
+        "feedback": "multiplying-by-the-forward-multiplier-applies-the-same"
       },
       {
         "location": "step-5",
         "reason": "repair-2",
         "misconception": "RP7",
-        "feedback": "The question asks for 4 tents, not one."
+        "feedback": [
+          "the-question-asks-for-tents-not-one",
+          "4"
+        ]
       }
     ],
     "consequences": [],
@@ -2171,36 +2258,33 @@
         "text": "216 people"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide the changed amount by 1.2 to recover the original."
-      },
-      {
-        "id": "repair-2",
-        "text": "Multiply the recovered amount by 5."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the total by the percentage number."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Keep the separate addition in the requested original amount."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-the-changed-amount-by-to-recover-the",
+        "1.2"
+      ],
+      "repair-2": [
+        "multiply-the-recovered-amount-by",
+        "5"
+      ],
+      "alternative-1": "divide-the-total-by-the-percentage-number",
+      "alternative-2": "keep-the-separate-addition-in-the-requested-original"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "RP3",
-        "feedback": "Multiplying applies the same percentage change again."
+        "feedback": "multiplying-applies-the-same-percentage-change-again"
       },
       {
         "location": "step-5",
         "reason": "repair-2",
         "misconception": "RP7",
-        "feedback": "The question asks for 5 equal original amounts, not one."
+        "feedback": [
+          "the-question-asks-for-equal-original-amounts-not",
+          "5"
+        ]
       }
     ],
     "consequences": [],
@@ -2261,26 +2345,20 @@
         "text": "300 people"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Remove the separate fixed addition before reversing the percentage change."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the total by the percentage number."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Keep the separate addition in the requested original amount."
-      }
-    ],
+    "options": {
+      "repair": "remove-the-separate-fixed-addition-before-reversing-the",
+      "alternative-1": "divide-the-total-by-the-percentage-number",
+      "alternative-2": "keep-the-separate-addition-in-the-requested-original"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP6",
-        "feedback": "The percentage applies to 182 people, not the total including the addition."
+        "feedback": [
+          "the-percentage-applies-to-people-not-the-total",
+          "182"
+        ]
       }
     ],
     "consequences": [
@@ -2344,26 +2422,23 @@
         "text": "£250"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the whole bill by the percentage number."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Include the delivery charge in the requested original item cost."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the recovered price per item by 3."
-      }
-    ],
+    "options": {
+      "alternative-1": "divide-the-whole-bill-by-the-percentage-number",
+      "alternative-2": "include-the-delivery-charge-in-the-requested-original",
+      "repair": [
+        "multiply-the-recovered-price-per-item-by",
+        "3"
+      ]
+    },
     "errors": [
       {
         "location": "step-5",
         "reason": "repair",
         "misconception": "RP7",
-        "feedback": "The question asks for 3 monitors, not one."
+        "feedback": [
+          "the-question-asks-for-monitors-not-one",
+          "3"
+        ]
       }
     ],
     "consequences": [],
@@ -2424,26 +2499,20 @@
         "text": "96 cm"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Keep the separate addition in the requested original amount."
-      },
-      {
-        "id": "repair",
-        "text": "Remove the separate fixed addition before reversing the percentage change."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the total by the percentage number."
-      }
-    ],
+    "options": {
+      "alternative-2": "keep-the-separate-addition-in-the-requested-original",
+      "repair": "remove-the-separate-fixed-addition-before-reversing-the",
+      "alternative-1": "divide-the-total-by-the-percentage-number"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP6",
-        "feedback": "The percentage applies to 45 cm, not the total including the addition."
+        "feedback": [
+          "the-percentage-applies-to-cm-not-the-total",
+          "45"
+        ]
       }
     ],
     "consequences": [
@@ -2507,26 +2576,20 @@
         "text": "1 × £420 = £420"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Remove the fixed delivery charge before reversing the percentage change."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the whole bill by the percentage number."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Include the delivery charge in the requested original item cost."
-      }
-    ],
+    "options": {
+      "repair": "remove-the-fixed-delivery-charge-before-reversing-the",
+      "alternative-1": "divide-the-whole-bill-by-the-percentage-number",
+      "alternative-2": "include-the-delivery-charge-in-the-requested-original"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "RP6",
-        "feedback": "The changed item price is £420, not the whole bill."
+        "feedback": [
+          "the-changed-item-price-is-not-the-whole",
+          "420"
+        ]
       }
     ],
     "consequences": [

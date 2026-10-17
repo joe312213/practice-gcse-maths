@@ -10,9 +10,12 @@ import {
 } from "../website/src/lib/domain/topic-pages.mjs";
 import { calculationFrames } from "../website/src/lib/application/calculation-demo.mjs";
 const banks = await Promise.all(
-  ["signed-numbers", "fractions", "percentages", "problems"].map(
-    async (file) => await readTopicBank(`${file}`),
-  ),
+  [
+    "signed-addition-subtraction",
+    "fraction-addition-subtraction",
+    "percentages",
+    "multiplication-division-problems",
+  ].map(async (file) => await readTopicBank(`${file}`)),
 );
 function expected(m) {
   if (m.kind === "application") {

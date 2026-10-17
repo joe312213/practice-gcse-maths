@@ -1,0 +1,113 @@
+{
+  "types": {
+    "E1": {
+      "name": "Claiming a term has been undone using the wrong inverse",
+      "example": "x + 5 = 12 → x = 17. Subtract 5 to isolate x, giving 7. Simply adding 5 to both sides and retaining all terms is valid, even if inefficient.",
+      "repairs": [
+        "undo-the-constant-by-subtracting-on-both-sides",
+        "undo-the-constant-by-subtracting-on-both-sides-2"
+      ]
+    },
+    "E2": {
+      "name": "Breaking equality by changing only one side or applying different operations",
+      "example": "Subtract 5 on the left but add 5 on the right of 3x + 5 = 20. Apply the same operation to both sides.",
+      "repairs": [
+        "apply-the-subtraction-to-both-sides-not-only"
+      ]
+    },
+    "E3": {
+      "name": "Treating a coefficient as an added number",
+      "example": "4x = 28 → x = 24. Four multiplies x; divide both sides by 4 to obtain 7.",
+      "repairs": [
+        "divide-both-sides-by-it-multiplies-x"
+      ]
+    },
+    "E4": {
+      "name": "Dividing only some terms on a side",
+      "example": "6x + 8 = 20 → 3x + 8 = 10. Dividing by 2 must give 3x + 4 = 10.",
+      "repairs": [
+        "divide-every-term-on-both-sides-by"
+      ]
+    },
+    "E5": {
+      "name": "Expanding brackets incompletely or mishandling a sign within them",
+      "example": "3(x + 4) → 3x + 4, or 2(x − 3) → 2x + 6. Correct expansions are 3x + 12 and 2x − 6; use one clearly identified fault per authored example.",
+      "repairs": [
+        "keep-the-negative-sign-when-multiplying-by",
+        "multiply-both-terms-of-the-first-bracket-by",
+        "multiply-every-term-inside-the-bracket-by-the"
+      ]
+    },
+    "E6": {
+      "name": "Combining unlike terms or losing the variable when collecting like terms",
+      "example": "2x + 3 → 5x, or 5x − 2x → 3. Unlike terms stay separate; 5x − 2x = 3x.",
+      "repairs": [
+        "keep-the-constant-separate-from-the-x-terms"
+      ]
+    },
+    "E7": {
+      "name": "Arithmetic/sign slip within an otherwise valid balancing step",
+      "example": "For 3x + 5 = 20, correctly choose −5 on both sides but evaluate 20 − 5 as 25. The choice is valid; the calculation should give 3x = 15.",
+      "repairs": [
+        "recalculate-the-subtraction-the-chosen-operation-is-correct"
+      ]
+    },
+    "E8": {
+      "name": "Checking against the wrong equation or substituting incorrectly",
+      "example": "Checking x = 7 in 4x + 3 = 31 as 4 + 7 + 3. Substitute into the original equation: 4 × 7 + 3 = 31, evaluating both sides.",
+      "repairs": [
+        "substitute-by-multiplying-x-by-its-coefficient"
+      ]
+    }
+  },
+  "reasons": {
+    "change-the-sign-of-every-term-on-the": "Change the sign of every term on the left only.",
+    "multiply-the-final-right-hand-value-by-the": "Multiply the final right-hand value by the coefficient instead of dividing.",
+    "divide-both-sides-by-it-multiplies-x": "Divide both sides by {0}; it multiplies x.",
+    "": "{0} ÷ {1} = {2}.",
+    "recalculate-the-subtraction-the-chosen-operation-is-correct": "Recalculate the subtraction; the chosen operation is correct.",
+    "the-right-hand-value-should-be": "The right-hand value should be {0}.",
+    "substitute-by-multiplying-x-by-its-coefficient": "Substitute by multiplying x by its coefficient.",
+    "replace-ax-with-a-x-not-a-x": "Replace ax with a × x, not a + x.",
+    "multiply-every-term-inside-the-bracket-by-the": "Multiply every term inside the bracket by the outside number, keeping its sign.",
+    "the-constant-becomes": "The constant becomes {0} × {1} = {2}.",
+    "keep-the-constant-separate-from-the-x-terms": "Keep the constant separate from the x-terms.",
+    "a-constant-cannot-be-added-to-the-coefficient": "A constant cannot be added to the coefficient of x.",
+    "divide-every-term-on-both-sides-by": "Divide every term on both sides by {0}.",
+    "the-constants-must-also-be-divided-by": "The constants must also be divided by {0}.",
+    "multiply-both-terms-of-the-first-bracket-by": "Multiply both terms of the first bracket by {0}.",
+    "keep-the-negative-sign-when-multiplying-by": "Keep the negative sign when multiplying −{0} by {1}.",
+    "the-first-expansion-is-x": "The first expansion is {0}x + {1}.",
+    "the-second-expansion-is-x": "The second expansion is {0}x − {1}.",
+    "undo-the-constant-by-subtracting-on-both-sides": "Undo the constant by subtracting ({0}) on both sides.",
+    "apply-the-subtraction-to-both-sides-not-only": "Apply the subtraction to both sides, not only the x-side.",
+    "undo-the-constant-by-subtracting-on-both-sides-2": "Undo the constant by subtracting (-{0}) on both sides.",
+    "the-constant-becomes-2": "The constant becomes {0} × -{1} = -{2}."
+  },
+  "legacyReasons": [
+    {
+      "id": "inverse",
+      "label": "Addition or subtraction was not undone using its inverse."
+    },
+    {
+      "id": "balance",
+      "label": "Different operations were applied to the two sides."
+    },
+    {
+      "id": "multiply",
+      "label": "A coefficient multiplies x; subtracting it does not undo it."
+    },
+    {
+      "id": "whole_side",
+      "label": "Division was not applied to every term on a side."
+    },
+    {
+      "id": "expand",
+      "label": "The multiplier was not applied to every bracket term."
+    },
+    {
+      "id": "arithmetic",
+      "label": "The arithmetic result is incorrect."
+    }
+  ]
+}

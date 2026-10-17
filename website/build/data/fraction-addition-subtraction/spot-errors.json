@@ -1,0 +1,2436 @@
+[
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q01",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "11/12+2/12"
+      },
+      {
+        "id": "step-2",
+        "label": "Sum",
+        "text": "(11+2)/(12+12)=13/24"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-numerators-together",
+      "repair": [
+        "keep-denominator-and-add-the-numerators",
+        "12"
+      ],
+      "alternative-1": "add-both-denominators-as-well"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F1",
+        "feedback": [
+          "keep-denominator-and-add-the-numerators",
+          "12"
+        ]
+      }
+    ],
+    "consequences": [],
+    "answer": "13/12",
+    "answerCheck": {
+      "expression": "11/12+2/12"
+    },
+    "correctWorking": [
+      "11/12+2/12=13/12"
+    ],
+    "hint": "Compare the sum with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 11/12 + 2/12.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q02",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "11/12−3/12"
+      },
+      {
+        "id": "step-2",
+        "label": "Numerators",
+        "text": "11+3=14"
+      },
+      {
+        "id": "step-3",
+        "label": "Answer",
+        "text": "14/12"
+      }
+    ],
+    "options": {
+      "repair": "keep-the-subtraction-subtract-the-second-numerator-from",
+      "alternative-1": "subtract-the-first-numerator-from-the-second",
+      "alternative-2": "subtract-the-denominators-as-well"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F3",
+        "feedback": "keep-the-subtraction-subtract-the-second-numerator-from"
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "2/3",
+    "answerCheck": {
+      "expression": "11/12-3/12"
+    },
+    "correctWorking": [
+      "11/12−3/12=2/3"
+    ],
+    "hint": "Compare the numerators with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 11/12 − 3/12.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q03",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Addition",
+        "text": "1/14+3/14=4/14"
+      },
+      {
+        "id": "step-2",
+        "label": "Simplification",
+        "text": "4/14=2/14"
+      }
+    ],
+    "options": {
+      "alternative-1": "simplify-by-dividing-only-the-original-denominator",
+      "alternative-2": "simplify-by-subtracting-the-same-number-from-the",
+      "repair": "simplify-by-dividing-both-the-original-numerator-and"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F6",
+        "feedback": "divide-numerator-and-denominator-by-the-same-factor"
+      }
+    ],
+    "consequences": [],
+    "answer": "2/7",
+    "answerCheck": {
+      "expression": "4/14"
+    },
+    "correctWorking": [
+      "4/14=2/7"
+    ],
+    "hint": "Compare the simplification with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 1/14 + 3/14 in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q04",
+    "level": 0,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "13/14+3/14"
+      },
+      {
+        "id": "step-2",
+        "label": "Sum",
+        "text": "(13+3)/(14+14)=16/28"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-numerators-together",
+      "repair": [
+        "keep-denominator-and-add-the-numerators",
+        "14"
+      ],
+      "alternative-1": "add-both-denominators-as-well"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F1",
+        "feedback": [
+          "keep-denominator-and-add-the-numerators",
+          "14"
+        ]
+      }
+    ],
+    "consequences": [],
+    "answer": "8/7",
+    "answerCheck": {
+      "expression": "13/14+3/14"
+    },
+    "correctWorking": [
+      "13/14+3/14=8/7"
+    ],
+    "hint": "Compare the sum with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 13/14 + 3/14.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q05",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "13/14−2/14"
+      },
+      {
+        "id": "step-2",
+        "label": "Numerators",
+        "text": "13+2=15"
+      },
+      {
+        "id": "step-3",
+        "label": "Answer",
+        "text": "15/14"
+      }
+    ],
+    "options": {
+      "repair": "keep-the-subtraction-subtract-the-second-numerator-from",
+      "alternative-1": "subtract-the-first-numerator-from-the-second",
+      "alternative-2": "subtract-the-denominators-as-well"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F3",
+        "feedback": "keep-the-subtraction-subtract-the-second-numerator-from"
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "11/14",
+    "answerCheck": {
+      "expression": "13/14-2/14"
+    },
+    "correctWorking": [
+      "13/14−2/14=11/14"
+    ],
+    "hint": "Compare the numerators with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 13/14 − 2/14.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q06",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Addition",
+        "text": "1/16+3/16=4/16"
+      },
+      {
+        "id": "step-2",
+        "label": "Simplification",
+        "text": "4/16=2/16"
+      }
+    ],
+    "options": {
+      "alternative-1": "simplify-by-dividing-only-the-original-denominator",
+      "alternative-2": "simplify-by-subtracting-the-same-number-from-the",
+      "repair": "simplify-by-dividing-both-the-original-numerator-and"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F6",
+        "feedback": "divide-numerator-and-denominator-by-the-same-factor"
+      }
+    ],
+    "consequences": [],
+    "answer": "1/4",
+    "answerCheck": {
+      "expression": "4/16"
+    },
+    "correctWorking": [
+      "4/16=1/4"
+    ],
+    "hint": "Compare the simplification with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 1/16 + 3/16 in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q07",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "7/8+2/8"
+      },
+      {
+        "id": "step-2",
+        "label": "Sum",
+        "text": "(7+2)/(8+8)=9/16"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-numerators-together",
+      "repair": [
+        "keep-denominator-and-add-the-numerators",
+        "8"
+      ],
+      "alternative-1": "add-both-denominators-as-well"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F1",
+        "feedback": [
+          "keep-denominator-and-add-the-numerators",
+          "8"
+        ]
+      }
+    ],
+    "consequences": [],
+    "answer": "9/8",
+    "answerCheck": {
+      "expression": "7/8+2/8"
+    },
+    "correctWorking": [
+      "7/8+2/8=9/8"
+    ],
+    "hint": "Compare the sum with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 7/8 + 2/8.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q08",
+    "level": 0,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "7/8−3/8"
+      },
+      {
+        "id": "step-2",
+        "label": "Numerators",
+        "text": "7+3=10"
+      },
+      {
+        "id": "step-3",
+        "label": "Answer",
+        "text": "10/8"
+      }
+    ],
+    "options": {
+      "repair": "keep-the-subtraction-subtract-the-second-numerator-from",
+      "alternative-1": "subtract-the-first-numerator-from-the-second",
+      "alternative-2": "subtract-the-denominators-as-well"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F3",
+        "feedback": "keep-the-subtraction-subtract-the-second-numerator-from"
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "1/2",
+    "answerCheck": {
+      "expression": "7/8-3/8"
+    },
+    "correctWorking": [
+      "7/8−3/8=1/2"
+    ],
+    "hint": "Compare the numerators with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 7/8 − 3/8.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q09",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Addition",
+        "text": "1/10+3/10=4/10"
+      },
+      {
+        "id": "step-2",
+        "label": "Simplification",
+        "text": "4/10=2/10"
+      }
+    ],
+    "options": {
+      "alternative-1": "simplify-by-dividing-only-the-original-denominator",
+      "alternative-2": "simplify-by-subtracting-the-same-number-from-the",
+      "repair": "simplify-by-dividing-both-the-original-numerator-and"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F6",
+        "feedback": "divide-numerator-and-denominator-by-the-same-factor"
+      }
+    ],
+    "consequences": [],
+    "answer": "2/5",
+    "answerCheck": {
+      "expression": "4/10"
+    },
+    "correctWorking": [
+      "4/10=2/5"
+    ],
+    "hint": "Compare the simplification with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 1/10 + 3/10 in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q10",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "9/10+3/10"
+      },
+      {
+        "id": "step-2",
+        "label": "Sum",
+        "text": "(9+3)/(10+10)=12/20"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-numerators-together",
+      "repair": [
+        "keep-denominator-and-add-the-numerators",
+        "10"
+      ],
+      "alternative-1": "add-both-denominators-as-well"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F1",
+        "feedback": [
+          "keep-denominator-and-add-the-numerators",
+          "10"
+        ]
+      }
+    ],
+    "consequences": [],
+    "answer": "6/5",
+    "answerCheck": {
+      "expression": "9/10+3/10"
+    },
+    "correctWorking": [
+      "9/10+3/10=6/5"
+    ],
+    "hint": "Compare the sum with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 9/10 + 3/10.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q11",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "9/10−2/10"
+      },
+      {
+        "id": "step-2",
+        "label": "Numerators",
+        "text": "9+2=11"
+      },
+      {
+        "id": "step-3",
+        "label": "Answer",
+        "text": "11/10"
+      }
+    ],
+    "options": {
+      "repair": "keep-the-subtraction-subtract-the-second-numerator-from",
+      "alternative-1": "subtract-the-first-numerator-from-the-second",
+      "alternative-2": "subtract-the-denominators-as-well"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F3",
+        "feedback": "keep-the-subtraction-subtract-the-second-numerator-from"
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "7/10",
+    "answerCheck": {
+      "expression": "9/10-2/10"
+    },
+    "correctWorking": [
+      "9/10−2/10=7/10"
+    ],
+    "hint": "Compare the numerators with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 9/10 − 2/10.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C1-Q12",
+    "level": 0,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Addition",
+        "text": "1/12+3/12=4/12"
+      },
+      {
+        "id": "step-2",
+        "label": "Simplification",
+        "text": "4/12=2/12"
+      }
+    ],
+    "options": {
+      "alternative-1": "simplify-by-dividing-only-the-original-denominator",
+      "alternative-2": "simplify-by-subtracting-the-same-number-from-the",
+      "repair": "simplify-by-dividing-both-the-original-numerator-and"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F6",
+        "feedback": "divide-numerator-and-denominator-by-the-same-factor"
+      }
+    ],
+    "consequences": [],
+    "answer": "1/3",
+    "answerCheck": {
+      "expression": "4/12"
+    },
+    "correctWorking": [
+      "4/12=1/3"
+    ],
+    "hint": "Compare the simplification with the quantities and operation in the question.",
+    "draftId": "M15-DRAFT-ERRORS-C1-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 1/12 + 3/12 in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Check each corrected step against the original quantities and requested answer.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q01",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "1/4 + 1/8"
+      },
+      {
+        "id": "step-2",
+        "label": "First equivalent fraction",
+        "text": "1/4 = 1/8"
+      },
+      {
+        "id": "step-3",
+        "label": "Second equivalent fraction",
+        "text": "1/8 = 1/8"
+      },
+      {
+        "id": "step-4",
+        "label": "Combine numerators",
+        "text": "1/8 + 1/8 = 1/4"
+      }
+    ],
+    "options": {
+      "alternative-1": "add-the-original-denominators-to-choose-the-new",
+      "alternative-2": "multiply-the-original-numerators-instead-of-combining-them",
+      "repair": [
+        "multiply-the-numerator-as-well-as-the-denominator",
+        "2"
+      ]
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F2",
+        "feedback": [
+          "",
+          "1",
+          "4",
+          "2",
+          "8"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "3/8",
+    "answerCheck": {
+      "expression": "1/4+1/8"
+    },
+    "correctWorking": [
+      "1/4 + 1/8",
+      "1/4 = 2/8",
+      "1/8 = 1/8",
+      "2/8 + 1/8 = 3/8"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 1/4 + 1/8. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is greater than 1/4.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q02",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "5/6 − 1/3"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "5/6 − 2/6"
+      },
+      {
+        "id": "step-3",
+        "label": "Numerator calculation",
+        "text": "5 + 2 = 7"
+      },
+      {
+        "id": "step-4",
+        "label": "Result",
+        "text": "7/6"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-original-numerators-instead-of-combining-them",
+      "repair": "keep-the-subtraction-when-combining-the-numerators",
+      "alternative-1": "add-the-original-denominators-to-choose-the-new"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F3",
+        "feedback": [
+          "-2",
+          "5",
+          "2",
+          "3"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "1/2",
+    "answerCheck": {
+      "expression": "5/6-1/3"
+    },
+    "correctWorking": [
+      "5/6 − 1/3",
+      "5/6 − 2/6",
+      "5 − 2 = 3",
+      "1/2"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 5/6 − 1/3. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is less than 5/6.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q03",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "1/3 + 3/9"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "3/9 + 3/9 = 6/9"
+      },
+      {
+        "id": "step-3",
+        "label": "Simplify",
+        "text": "6/9 = 2/9"
+      }
+    ],
+    "options": {
+      "repair": "simplify-by-dividing-both-the-original-numerator-and",
+      "alternative-1": "simplify-by-dividing-only-the-original-denominator",
+      "alternative-2": "simplify-by-subtracting-the-same-number-from-the"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F6",
+        "feedback": [
+          "divide-both-and-by",
+          "6",
+          "9",
+          "3"
+        ]
+      }
+    ],
+    "consequences": [],
+    "answer": "2/3",
+    "answerCheck": {
+      "expression": "1/3+3/9"
+    },
+    "correctWorking": [
+      "1/3 + 3/9",
+      "3/9 + 3/9 = 6/9",
+      "6/9 = 2/3"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 1/3 + 3/9. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is greater than 1/3.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q04",
+    "level": 1,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "2/5 + 3/20"
+      },
+      {
+        "id": "step-2",
+        "label": "First equivalent fraction",
+        "text": "2/5 = 2/20"
+      },
+      {
+        "id": "step-3",
+        "label": "Second equivalent fraction",
+        "text": "3/20 = 3/20"
+      },
+      {
+        "id": "step-4",
+        "label": "Combine numerators",
+        "text": "2/20 + 3/20 = 1/4"
+      }
+    ],
+    "options": {
+      "alternative-1": "add-the-original-denominators-to-choose-the-new",
+      "alternative-2": "multiply-the-original-numerators-instead-of-combining-them",
+      "repair": [
+        "multiply-the-numerator-as-well-as-the-denominator",
+        "4"
+      ]
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F2",
+        "feedback": [
+          "",
+          "2",
+          "5",
+          "8",
+          "20"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "11/20",
+    "answerCheck": {
+      "expression": "2/5+3/20"
+    },
+    "correctWorking": [
+      "2/5 + 3/20",
+      "2/5 = 8/20",
+      "3/20 = 3/20",
+      "8/20 + 3/20 = 11/20"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 2/5 + 3/20. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is greater than 2/5.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q05",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "7/10 − 1/5"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "7/10 − 2/10"
+      },
+      {
+        "id": "step-3",
+        "label": "Numerator calculation",
+        "text": "7 + 2 = 9"
+      },
+      {
+        "id": "step-4",
+        "label": "Result",
+        "text": "9/10"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-original-numerators-instead-of-combining-them",
+      "repair": "keep-the-subtraction-when-combining-the-numerators",
+      "alternative-1": "add-the-original-denominators-to-choose-the-new"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F3",
+        "feedback": [
+          "-2",
+          "7",
+          "2",
+          "5"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "1/2",
+    "answerCheck": {
+      "expression": "7/10-1/5"
+    },
+    "correctWorking": [
+      "7/10 − 1/5",
+      "7/10 − 2/10",
+      "7 − 2 = 5",
+      "1/2"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 7/10 − 1/5. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is less than 7/10.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q06",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "3/4 − 1/12"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "9/12 − 1/12 = 8/12"
+      },
+      {
+        "id": "step-3",
+        "label": "Simplify",
+        "text": "8/12 = 2/12"
+      }
+    ],
+    "options": {
+      "repair": "simplify-by-dividing-both-the-original-numerator-and",
+      "alternative-1": "simplify-by-dividing-only-the-original-denominator",
+      "alternative-2": "simplify-by-subtracting-the-same-number-from-the"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F6",
+        "feedback": [
+          "divide-both-and-by",
+          "8",
+          "12",
+          "4"
+        ]
+      }
+    ],
+    "consequences": [],
+    "answer": "2/3",
+    "answerCheck": {
+      "expression": "3/4-1/12"
+    },
+    "correctWorking": [
+      "3/4 − 1/12",
+      "9/12 − 1/12 = 8/12",
+      "8/12 = 2/3"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 3/4 − 1/12. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is less than 3/4.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q07",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "1/6 + 1/30"
+      },
+      {
+        "id": "step-2",
+        "label": "First equivalent fraction",
+        "text": "1/6 = 1/30"
+      },
+      {
+        "id": "step-3",
+        "label": "Second equivalent fraction",
+        "text": "1/30 = 1/30"
+      },
+      {
+        "id": "step-4",
+        "label": "Combine numerators",
+        "text": "1/30 + 1/30 = 1/15"
+      }
+    ],
+    "options": {
+      "alternative-1": "add-the-original-denominators-to-choose-the-new",
+      "alternative-2": "multiply-the-original-numerators-instead-of-combining-them",
+      "repair": [
+        "multiply-the-numerator-as-well-as-the-denominator",
+        "5"
+      ]
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F2",
+        "feedback": [
+          "",
+          "1",
+          "6",
+          "5",
+          "30"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "1/5",
+    "answerCheck": {
+      "expression": "1/6+1/30"
+    },
+    "correctWorking": [
+      "1/6 + 1/30",
+      "1/6 = 5/30",
+      "1/30 = 1/30",
+      "5/30 + 1/30 = 1/5"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 1/6 + 1/30. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is greater than 1/6.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q08",
+    "level": 1,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "11/12 − 1/4"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "11/12 − 3/12"
+      },
+      {
+        "id": "step-3",
+        "label": "Numerator calculation",
+        "text": "11 + 3 = 14"
+      },
+      {
+        "id": "step-4",
+        "label": "Result",
+        "text": "7/6"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-original-numerators-instead-of-combining-them",
+      "repair": "keep-the-subtraction-when-combining-the-numerators",
+      "alternative-1": "add-the-original-denominators-to-choose-the-new"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F3",
+        "feedback": [
+          "-2",
+          "11",
+          "3",
+          "8"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "2/3",
+    "answerCheck": {
+      "expression": "11/12-1/4"
+    },
+    "correctWorking": [
+      "11/12 − 1/4",
+      "11/12 − 3/12",
+      "11 − 3 = 8",
+      "2/3"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 11/12 − 1/4. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is less than 11/12.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q09",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "3/5 + 1/15"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "9/15 + 1/15 = 10/15"
+      },
+      {
+        "id": "step-3",
+        "label": "Simplify",
+        "text": "10/15 = 2/15"
+      }
+    ],
+    "options": {
+      "repair": "simplify-by-dividing-both-the-original-numerator-and",
+      "alternative-1": "simplify-by-dividing-only-the-original-denominator",
+      "alternative-2": "simplify-by-subtracting-the-same-number-from-the"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F6",
+        "feedback": [
+          "divide-both-and-by",
+          "10",
+          "15",
+          "5"
+        ]
+      }
+    ],
+    "consequences": [],
+    "answer": "2/3",
+    "answerCheck": {
+      "expression": "3/5+1/15"
+    },
+    "correctWorking": [
+      "3/5 + 1/15",
+      "9/15 + 1/15 = 10/15",
+      "10/15 = 2/3"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 3/5 + 1/15. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is greater than 3/5.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q10",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "3/8 + 1/24"
+      },
+      {
+        "id": "step-2",
+        "label": "First equivalent fraction",
+        "text": "3/8 = 3/24"
+      },
+      {
+        "id": "step-3",
+        "label": "Second equivalent fraction",
+        "text": "1/24 = 1/24"
+      },
+      {
+        "id": "step-4",
+        "label": "Combine numerators",
+        "text": "3/24 + 1/24 = 1/6"
+      }
+    ],
+    "options": {
+      "alternative-1": "add-the-original-denominators-to-choose-the-new",
+      "alternative-2": "multiply-the-original-numerators-instead-of-combining-them",
+      "repair": [
+        "multiply-the-numerator-as-well-as-the-denominator",
+        "3"
+      ]
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F2",
+        "feedback": [
+          "",
+          "3",
+          "8",
+          "9",
+          "24"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "5/12",
+    "answerCheck": {
+      "expression": "3/8+1/24"
+    },
+    "correctWorking": [
+      "3/8 + 1/24",
+      "3/8 = 9/24",
+      "1/24 = 1/24",
+      "9/24 + 1/24 = 5/12"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 3/8 + 1/24. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is greater than 3/8.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q11",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "4/5 − 3/10"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "8/10 − 3/10"
+      },
+      {
+        "id": "step-3",
+        "label": "Numerator calculation",
+        "text": "8 + 3 = 11"
+      },
+      {
+        "id": "step-4",
+        "label": "Result",
+        "text": "11/10"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-original-numerators-instead-of-combining-them",
+      "repair": "keep-the-subtraction-when-combining-the-numerators",
+      "alternative-1": "add-the-original-denominators-to-choose-the-new"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F3",
+        "feedback": [
+          "-2",
+          "8",
+          "3",
+          "5"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "1/2",
+    "answerCheck": {
+      "expression": "4/5-3/10"
+    },
+    "correctWorking": [
+      "4/5 − 3/10",
+      "8/10 − 3/10",
+      "8 − 3 = 5",
+      "1/2"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 4/5 − 3/10. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is less than 4/5.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C2-Q12",
+    "level": 1,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "5/6 − 1/18"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "15/18 − 1/18 = 14/18"
+      },
+      {
+        "id": "step-3",
+        "label": "Simplify",
+        "text": "14/18 = 7/18"
+      }
+    ],
+    "options": {
+      "repair": "simplify-by-dividing-both-the-original-numerator-and",
+      "alternative-1": "simplify-by-dividing-only-the-original-denominator",
+      "alternative-2": "simplify-by-subtracting-the-same-number-from-the"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F6",
+        "feedback": [
+          "divide-both-and-by",
+          "14",
+          "18",
+          "2"
+        ]
+      }
+    ],
+    "consequences": [],
+    "answer": "7/9",
+    "answerCheck": {
+      "expression": "5/6-1/18"
+    },
+    "correctWorking": [
+      "5/6 − 1/18",
+      "15/18 − 1/18 = 14/18",
+      "14/18 = 7/9"
+    ],
+    "hint": "Check that equivalent fractions keep their value, then keep the original operation.",
+    "draftId": "M15-DRAFT-ERRORS-C2-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 5/6 − 1/18. Give your answer in simplest form.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Use the original fractions to check that the result is less than 5/6.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q01",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "2/9 + 1/6"
+      },
+      {
+        "id": "step-2",
+        "label": "Common denominator",
+        "text": "18"
+      },
+      {
+        "id": "step-3",
+        "label": "First equivalent fraction",
+        "text": "2/9 = 2/18"
+      },
+      {
+        "id": "step-4",
+        "label": "Second equivalent fraction",
+        "text": "1/6 = 1/18"
+      },
+      {
+        "id": "step-5",
+        "label": "Sum",
+        "text": "1/6"
+      }
+    ],
+    "options": {
+      "repair-2": [
+        "multiply-both-parts-of-the-second-fraction-by",
+        "3"
+      ],
+      "alternative-1": "add-the-original-denominators-to-choose-a-common",
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or",
+      "repair": [
+        "multiply-both-parts-of-the-first-fraction-by",
+        "2"
+      ]
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F2",
+        "feedback": [
+          "",
+          "2",
+          "9",
+          "4",
+          "18"
+        ]
+      },
+      {
+        "location": "step-4",
+        "reason": "repair-2",
+        "misconception": "F2",
+        "feedback": [
+          "",
+          "1",
+          "6",
+          "3",
+          "18"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-5"
+    ],
+    "answer": "7/18",
+    "answerCheck": {
+      "expression": "2/9+1/6"
+    },
+    "correctWorking": [
+      "2/9 + 1/6",
+      "18",
+      "2/9 = 4/18",
+      "1/6 = 3/18",
+      "7/18"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q01",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 2/9 + 1/6.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q02",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "2 1/3 + 3/4"
+      },
+      {
+        "id": "step-2",
+        "label": "Convert mixed number",
+        "text": "2 1/3 = 3/3"
+      },
+      {
+        "id": "step-3",
+        "label": "Common denominator",
+        "text": "12/12 + 9/12"
+      },
+      {
+        "id": "step-4",
+        "label": "Result",
+        "text": "7/4"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or",
+      "repair": "multiply-the-whole-number-by-the-denominator-then",
+      "alternative-1": "add-the-original-denominators-to-choose-a-common"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F4",
+        "feedback": [
+          "-3",
+          "2",
+          "3",
+          "1",
+          "7"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-3",
+      "step-4"
+    ],
+    "answer": "37/12",
+    "answerCheck": {
+      "expression": "(2+1/3)+3/4"
+    },
+    "correctWorking": [
+      "2 1/3 + 3/4",
+      "2 1/3 = 7/3",
+      "28/12 + 9/12",
+      "37/12"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q02",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 2 1/3 + 3/4.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q03",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "3 2/5 − 5/6"
+      },
+      {
+        "id": "step-2",
+        "label": "Convert mixed number",
+        "text": "3 2/5 = 5/5"
+      },
+      {
+        "id": "step-3",
+        "label": "Common denominator",
+        "text": "30/30 − 25/30"
+      },
+      {
+        "id": "step-4",
+        "label": "Result",
+        "text": "1/6"
+      }
+    ],
+    "options": {
+      "repair": "multiply-the-whole-number-by-the-denominator-then",
+      "alternative-1": "add-the-original-denominators-to-choose-a-common",
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F4",
+        "feedback": [
+          "-3",
+          "3",
+          "5",
+          "2",
+          "17"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-3",
+      "step-4"
+    ],
+    "answer": "77/30",
+    "answerCheck": {
+      "expression": "(3+2/5)-5/6"
+    },
+    "correctWorking": [
+      "3 2/5 − 5/6",
+      "3 2/5 = 17/5",
+      "102/30 − 25/30",
+      "77/30"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q03",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 3 2/5 − 5/6.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q04",
+    "level": 2,
+    "page": 1,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "4 1/6 − 3/4"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "4 2/12 − 9/12"
+      },
+      {
+        "id": "step-3",
+        "label": "Regroup one whole",
+        "text": "4 2/12 = 3 3/12"
+      },
+      {
+        "id": "step-4",
+        "label": "Subtract",
+        "text": "2 1/2"
+      }
+    ],
+    "options": {
+      "alternative-1": "add-the-original-denominators-to-choose-a-common",
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or",
+      "repair": [
+        "one-whole-supplies-not",
+        "12",
+        "12",
+        "1",
+        "12"
+      ]
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F5",
+        "feedback": [
+          "regroup-as",
+          "3",
+          "14",
+          "12"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "41/12",
+    "answerCheck": {
+      "expression": "4+1/6-3/4"
+    },
+    "correctWorking": [
+      "4 1/6 − 3/4",
+      "4 2/12 − 9/12",
+      "4 2/12 = 3 14/12",
+      "3 5/12"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q04",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 4 1/6 − 3/4.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q05",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "3 1/4 − 5/6"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "3 3/12 − 10/12"
+      },
+      {
+        "id": "step-3",
+        "label": "Regroup one whole",
+        "text": "3 3/12 = 2 4/12"
+      },
+      {
+        "id": "step-4",
+        "label": "Subtract",
+        "text": "1 1/2"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or",
+      "repair": [
+        "one-whole-supplies-not",
+        "12",
+        "12",
+        "1",
+        "12"
+      ],
+      "alternative-1": "add-the-original-denominators-to-choose-a-common"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F5",
+        "feedback": [
+          "regroup-as",
+          "2",
+          "15",
+          "12"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "29/12",
+    "answerCheck": {
+      "expression": "3+1/4-5/6"
+    },
+    "correctWorking": [
+      "3 1/4 − 5/6",
+      "3 3/12 − 10/12",
+      "3 3/12 = 2 15/12",
+      "2 5/12"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q05",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 3 1/4 − 5/6.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q06",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "5 2/7 − 4/5"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "5 10/35 − 28/35"
+      },
+      {
+        "id": "step-3",
+        "label": "Regroup one whole",
+        "text": "5 10/35 = 4 11/35"
+      },
+      {
+        "id": "step-4",
+        "label": "Subtract",
+        "text": "3 18/35"
+      }
+    ],
+    "options": {
+      "repair": [
+        "one-whole-supplies-not",
+        "35",
+        "35",
+        "1",
+        "35"
+      ],
+      "alternative-1": "add-the-original-denominators-to-choose-a-common",
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F5",
+        "feedback": [
+          "regroup-as",
+          "4",
+          "45",
+          "35"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-4"
+    ],
+    "answer": "157/35",
+    "answerCheck": {
+      "expression": "5+2/7-4/5"
+    },
+    "correctWorking": [
+      "5 2/7 − 4/5",
+      "5 10/35 − 28/35",
+      "5 10/35 = 4 45/35",
+      "4 17/35"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q06",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 5 2/7 − 4/5.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q07",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "2/5 + 1/2"
+      },
+      {
+        "id": "step-2",
+        "label": "Rewrite fractions",
+        "text": "2/5 + 1/2 = 1/5 + 1"
+      },
+      {
+        "id": "step-3",
+        "label": "Sum",
+        "text": "6/5"
+      }
+    ],
+    "options": {
+      "alternative-1": "add-the-original-denominators-to-choose-a-common",
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or",
+      "repair": "use-equivalent-fractions-do-not-cancel-across-an"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F7",
+        "feedback": [
+          "the-common-denominator-can-be",
+          "10"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "9/10",
+    "answerCheck": {
+      "expression": "2/5+1/2"
+    },
+    "correctWorking": [
+      "2/5 + 1/2",
+      "2/5 + 1/2 = 4/10 + 5/10",
+      "9/10"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q07",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 2/5 + 1/2.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q08",
+    "level": 2,
+    "page": 2,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "3/8 + 2/3"
+      },
+      {
+        "id": "step-2",
+        "label": "Rewrite fractions",
+        "text": "3/8 + 2/3 = 1/8 + 2"
+      },
+      {
+        "id": "step-3",
+        "label": "Sum",
+        "text": "17/8"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or",
+      "repair": "use-equivalent-fractions-do-not-cancel-across-an",
+      "alternative-1": "add-the-original-denominators-to-choose-a-common"
+    },
+    "errors": [
+      {
+        "location": "step-2",
+        "reason": "repair",
+        "misconception": "F7",
+        "feedback": [
+          "the-common-denominator-can-be",
+          "24"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-3"
+    ],
+    "answer": "25/24",
+    "answerCheck": {
+      "expression": "3/8+2/3"
+    },
+    "correctWorking": [
+      "3/8 + 2/3",
+      "3/8 + 2/3 = 9/24 + 16/24",
+      "25/24"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q08",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 3/8 + 2/3.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q09",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "11/6 + 3/4"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "22/12 + 9/12 = 31/12"
+      },
+      {
+        "id": "step-3",
+        "label": "Convert to mixed number",
+        "text": "2 7/31"
+      }
+    ],
+    "options": {
+      "repair": "keep-the-fraction-denominator-when-writing-the-remainder",
+      "alternative-1": "add-the-original-denominators-to-choose-a-common",
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F8",
+        "feedback": [
+          "remainder-so",
+          "31",
+          "12",
+          "2",
+          "7",
+          "2",
+          "7",
+          "12"
+        ]
+      }
+    ],
+    "consequences": [],
+    "answer": "2 7/12",
+    "answerCheck": {
+      "expression": "11/6+3/4"
+    },
+    "correctWorking": [
+      "11/6 + 3/4",
+      "22/12 + 9/12 = 31/12",
+      "2 7/12"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q09",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 11/6 + 3/4. Give a mixed number.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q10",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "13/8 + 5/6"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "39/24 + 20/24 = 59/24"
+      },
+      {
+        "id": "step-3",
+        "label": "Convert to mixed number",
+        "text": "2 11/59"
+      }
+    ],
+    "options": {
+      "alternative-1": "add-the-original-denominators-to-choose-a-common",
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or",
+      "repair": "keep-the-fraction-denominator-when-writing-the-remainder"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F8",
+        "feedback": [
+          "remainder-so",
+          "59",
+          "24",
+          "2",
+          "11",
+          "2",
+          "11",
+          "24"
+        ]
+      }
+    ],
+    "consequences": [],
+    "answer": "2 11/24",
+    "answerCheck": {
+      "expression": "13/8+5/6"
+    },
+    "correctWorking": [
+      "13/8 + 5/6",
+      "39/24 + 20/24 = 59/24",
+      "2 11/24"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q10",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 13/8 + 5/6. Give a mixed number.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q11",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "17/10 − 2/3"
+      },
+      {
+        "id": "step-2",
+        "label": "Equivalent fractions",
+        "text": "51/30 − 20/30 = 31/30"
+      },
+      {
+        "id": "step-3",
+        "label": "Convert to mixed number",
+        "text": "1 1/31"
+      }
+    ],
+    "options": {
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or",
+      "repair": "keep-the-fraction-denominator-when-writing-the-remainder",
+      "alternative-1": "add-the-original-denominators-to-choose-a-common"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F8",
+        "feedback": [
+          "remainder-so",
+          "31",
+          "30",
+          "1",
+          "1",
+          "1",
+          "1",
+          "30"
+        ]
+      }
+    ],
+    "consequences": [],
+    "answer": "1 1/30",
+    "answerCheck": {
+      "expression": "17/10-2/3"
+    },
+    "correctWorking": [
+      "17/10 − 2/3",
+      "51/30 − 20/30 = 31/30",
+      "1 1/30"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q11",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 17/10 − 2/3. Give a mixed number.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  },
+  {
+    "id": "maths:M15-WEB-ERRORS-R2-C3-Q12",
+    "level": 2,
+    "page": 3,
+    "locations": [
+      {
+        "id": "step-1",
+        "label": "Original fractions",
+        "text": "3/10 + 5/12"
+      },
+      {
+        "id": "step-2",
+        "label": "Common denominator",
+        "text": "60"
+      },
+      {
+        "id": "step-3",
+        "label": "First equivalent fraction",
+        "text": "3/10 = 3/60"
+      },
+      {
+        "id": "step-4",
+        "label": "Second equivalent fraction",
+        "text": "5/12 = 5/60"
+      },
+      {
+        "id": "step-5",
+        "label": "Sum",
+        "text": "2/15"
+      }
+    ],
+    "options": {
+      "repair": [
+        "multiply-both-parts-of-the-first-fraction-by",
+        "6"
+      ],
+      "repair-2": [
+        "multiply-both-parts-of-the-second-fraction-by",
+        "5"
+      ],
+      "alternative-1": "add-the-original-denominators-to-choose-a-common",
+      "alternative-2": "multiply-the-original-numerators-instead-of-adding-or"
+    },
+    "errors": [
+      {
+        "location": "step-3",
+        "reason": "repair",
+        "misconception": "F2",
+        "feedback": [
+          "",
+          "3",
+          "10",
+          "18",
+          "60"
+        ]
+      },
+      {
+        "location": "step-4",
+        "reason": "repair-2",
+        "misconception": "F2",
+        "feedback": [
+          "",
+          "5",
+          "12",
+          "25",
+          "60"
+        ]
+      }
+    ],
+    "consequences": [
+      "step-5"
+    ],
+    "answer": "43/60",
+    "answerCheck": {
+      "expression": "3/10+5/12"
+    },
+    "correctWorking": [
+      "3/10 + 5/12",
+      "60",
+      "3/10 = 18/60",
+      "5/12 = 25/60",
+      "43/60"
+    ],
+    "hint": "Check conversion to equivalent fractions or mixed numbers before combining the numerators.",
+    "draftId": "M15-DRAFT-ERRORS-C3-Q12",
+    "type": "errors",
+    "investigation": true,
+    "method": "investigation",
+    "q": "Work out 3/10 + 5/12.",
+    "prose": true,
+    "questionPrefix": "",
+    "answerUnit": "",
+    "calculator": false,
+    "method_note": "Find the independent mistakes and complete the corrected working.",
+    "check": "Compare with nearby whole numbers, then reverse the addition or subtraction using the original other fraction.",
+    "subject": "maths",
+    "topic": "M15"
+  }
+]

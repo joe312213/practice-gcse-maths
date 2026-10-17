@@ -1,0 +1,34 @@
+{
+  "diagonals": {
+    "title": "diagonals",
+    "explanation": "The diagonal lines separate tens from units and collect values with the same place value.",
+    "guidance": "Draw each diagonal from the top right to the bottom left of its cell. Add along the diagonal bands.",
+    "examples": [
+      "For a cell product of 24, write 2 above the diagonal and 4 below it."
+    ]
+  },
+  "tens-and-units": {
+    "title": "Tens",
+    "explanation": "A two-digit product has a tens digit and a units digit.",
+    "guidance": "Write both digits in each cell, including a zero tens digit for a product below 10.",
+    "examples": [
+      "3 × 2 = 6: write 0 above the diagonal and 6 below."
+    ]
+  },
+  "carry": {
+    "title": "carry",
+    "explanation": "Ten units of one place value make one unit of the next place value.",
+    "guidance": "Write the units digit of a diagonal total; carry the tens to the next diagonal.",
+    "examples": [
+      "A diagonal total of 17 means write 7 and carry 1."
+    ]
+  },
+  "leading-zeros": {
+    "title": "leading zeros",
+    "explanation": "Zeros before the first non-zero digit of a whole number do not change its value.",
+    "guidance": "Leave out leading zeros when reading the answer, but keep zeros between other digits.",
+    "examples": [
+      "Read 0408 as 408, not 48."
+    ]
+  }
+}

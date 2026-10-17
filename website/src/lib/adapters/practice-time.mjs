@@ -72,7 +72,7 @@ export function createPracticeTimer({
       const scope = `${(view.sourceBank ?? view.bank).subject}:${(view.sourceBank ?? view.bank).topic}`;
       const attempt = view.page?.attempt ?? 'demo';
       const key =
-        profile && !view.page?.complete && !view.practiceSet?.finished
+        profile && (view.retrying || (!view.page?.complete && !view.practiceSet?.finished))
           ? JSON.stringify([profile.key, scope, view.mode, attempt])
           : null;
       if (key === target?.key) return;

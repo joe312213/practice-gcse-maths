@@ -20,26 +20,34 @@
         "text": "12/5 × 7 = 84/5"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "The red share represents 7 parts — divide by 7."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add 4 beads to the red amount."
-      },
-      {
-        "id": "repair",
-        "text": "The red share represents 3 parts — divide 24 by 3."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "the-red-share-represents-parts-divide-by",
+        "7",
+        "7"
+      ],
+      "alternative-2": [
+        "add-beads-to-the-red-amount",
+        "4"
+      ],
+      "repair": [
+        "the-red-share-represents-parts-divide-by-2",
+        "3",
+        "24",
+        "3"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R2",
-        "feedback": "The red share represents 3 parts — divide 24 by 3."
+        "feedback": [
+          "the-red-share-represents-parts-divide-by-2",
+          "3",
+          "24",
+          "3"
+        ]
       }
     ],
     "consequences": [
@@ -89,26 +97,26 @@
         "text": "7 + 27 = 34 g"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Multiply both parts by 10; the relationship is multiplicative."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Add the same amount to both parts."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Multiply the sugar part by 30."
-      }
-    ],
+    "options": {
+      "repair": [
+        "multiply-both-parts-by-the-relationship-is-multiplicative",
+        "10"
+      ],
+      "alternative-1": "add-the-same-amount-to-both-parts",
+      "alternative-2": [
+        "multiply-the-sugar-part-by",
+        "30"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R4",
-        "feedback": "Multiply both parts by 10; the relationship is multiplicative."
+        "feedback": [
+          "multiply-both-parts-by-the-relationship-is-multiplicative",
+          "10"
+        ]
       }
     ],
     "consequences": [
@@ -158,26 +166,23 @@
         "text": "3 × 11 = 33 litres"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use the smaller share because white is requested."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the total equally between the two colours."
-      },
-      {
-        "id": "repair",
-        "text": "White is the second share, with 7 parts."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-the-smaller-share-because-white-is-requested",
+      "alternative-2": "divide-the-total-equally-between-the-two-colours",
+      "repair": [
+        "white-is-the-second-share-with-parts",
+        "7"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R5",
-        "feedback": "White is the second share, with 7 parts."
+        "feedback": [
+          "white-is-the-second-share-with-parts",
+          "7"
+        ]
       }
     ],
     "consequences": [
@@ -227,26 +232,34 @@
         "text": "9/2 × 7 = 63/2"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add 4 beads to the red amount."
-      },
-      {
-        "id": "repair",
-        "text": "The red share represents 3 parts — divide 45 by 3."
-      },
-      {
-        "id": "alternative-1",
-        "text": "The red share represents 7 parts — divide by 7."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "add-beads-to-the-red-amount",
+        "4"
+      ],
+      "repair": [
+        "the-red-share-represents-parts-divide-by-2",
+        "3",
+        "45",
+        "3"
+      ],
+      "alternative-1": [
+        "the-red-share-represents-parts-divide-by",
+        "7",
+        "7"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R2",
-        "feedback": "The red share represents 3 parts — divide 45 by 3."
+        "feedback": [
+          "the-red-share-represents-parts-divide-by-2",
+          "3",
+          "45",
+          "3"
+        ]
       }
     ],
     "consequences": [
@@ -296,26 +309,23 @@
         "text": "3 × 17 = 51 litres"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use the smaller share because white is requested."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the total equally between the two colours."
-      },
-      {
-        "id": "repair",
-        "text": "White is the second share, with 7 parts."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-the-smaller-share-because-white-is-requested",
+      "alternative-2": "divide-the-total-equally-between-the-two-colours",
+      "repair": [
+        "white-is-the-second-share-with-parts",
+        "7"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R5",
-        "feedback": "White is the second share, with 7 parts."
+        "feedback": [
+          "white-is-the-second-share-with-parts",
+          "7"
+        ]
       }
     ],
     "consequences": [
@@ -365,26 +375,31 @@
         "text": "£35/2 × 5 = £175/2"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Add the ratio parts to the money instead of dividing."
-      },
-      {
-        "id": "repair",
-        "text": "The total covers 7 parts — divide £35 by 7."
-      },
-      {
-        "id": "alternative-1",
-        "text": "The total covers 5 parts — divide by 5."
-      }
-    ],
+    "options": {
+      "alternative-2": "add-the-ratio-parts-to-the-money-instead",
+      "repair": [
+        "the-total-covers-parts-divide-by",
+        "7",
+        "35",
+        "7"
+      ],
+      "alternative-1": [
+        "the-total-covers-parts-divide-by-2",
+        "5",
+        "5"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R1",
-        "feedback": "The total covers 7 parts — divide £35 by 7."
+        "feedback": [
+          "the-total-covers-parts-divide-by",
+          "7",
+          "35",
+          "7"
+        ]
       }
     ],
     "consequences": [
@@ -435,26 +450,34 @@
         "text": "12/7 × 5 = 60/7"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "The red share represents 2 parts — divide 12 by 2."
-      },
-      {
-        "id": "alternative-1",
-        "text": "The red share represents 5 parts — divide by 5."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add 3 beads to the red amount."
-      }
-    ],
+    "options": {
+      "repair": [
+        "the-red-share-represents-parts-divide-by-2",
+        "2",
+        "12",
+        "2"
+      ],
+      "alternative-1": [
+        "the-red-share-represents-parts-divide-by",
+        "5",
+        "5"
+      ],
+      "alternative-2": [
+        "add-beads-to-the-red-amount",
+        "3"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R2",
-        "feedback": "The red share represents 2 parts — divide 12 by 2."
+        "feedback": [
+          "the-red-share-represents-parts-divide-by-2",
+          "2",
+          "12",
+          "2"
+        ]
       }
     ],
     "consequences": [
@@ -504,26 +527,26 @@
         "text": "5 + 14 = 19 g"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Multiply the sugar part by 16."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply both parts by 8; the relationship is multiplicative."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Add the same amount to both parts."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "multiply-the-sugar-part-by",
+        "16"
+      ],
+      "repair": [
+        "multiply-both-parts-by-the-relationship-is-multiplicative",
+        "8"
+      ],
+      "alternative-1": "add-the-same-amount-to-both-parts"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R4",
-        "feedback": "Multiply both parts by 8; the relationship is multiplicative."
+        "feedback": [
+          "multiply-both-parts-by-the-relationship-is-multiplicative",
+          "8"
+        ]
       }
     ],
     "consequences": [
@@ -573,26 +596,23 @@
         "text": "2 × 9 = 18 litres"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "White is the second share, with 5 parts."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the smaller share because white is requested."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the total equally between the two colours."
-      }
-    ],
+    "options": {
+      "repair": [
+        "white-is-the-second-share-with-parts",
+        "5"
+      ],
+      "alternative-1": "use-the-smaller-share-because-white-is-requested",
+      "alternative-2": "divide-the-total-equally-between-the-two-colours"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R5",
-        "feedback": "White is the second share, with 5 parts."
+        "feedback": [
+          "white-is-the-second-share-with-parts",
+          "5"
+        ]
       }
     ],
     "consequences": [
@@ -642,26 +662,34 @@
         "text": "26/7 × 5 = 130/7"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "The red share represents 5 parts — divide by 5."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add 3 beads to the red amount."
-      },
-      {
-        "id": "repair",
-        "text": "The red share represents 2 parts — divide 26 by 2."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "the-red-share-represents-parts-divide-by",
+        "5",
+        "5"
+      ],
+      "alternative-2": [
+        "add-beads-to-the-red-amount",
+        "3"
+      ],
+      "repair": [
+        "the-red-share-represents-parts-divide-by-2",
+        "2",
+        "26",
+        "2"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R2",
-        "feedback": "The red share represents 2 parts — divide 26 by 2."
+        "feedback": [
+          "the-red-share-represents-parts-divide-by-2",
+          "2",
+          "26",
+          "2"
+        ]
       }
     ],
     "consequences": [
@@ -711,26 +739,23 @@
         "text": "2 × 15 = 30 litres"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "White is the second share, with 5 parts."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the smaller share because white is requested."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the total equally between the two colours."
-      }
-    ],
+    "options": {
+      "repair": [
+        "white-is-the-second-share-with-parts",
+        "5"
+      ],
+      "alternative-1": "use-the-smaller-share-because-white-is-requested",
+      "alternative-2": "divide-the-total-equally-between-the-two-colours"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R5",
-        "feedback": "White is the second share, with 5 parts."
+        "feedback": [
+          "white-is-the-second-share-with-parts",
+          "5"
+        ]
       }
     ],
     "consequences": [
@@ -780,26 +805,31 @@
         "text": "£70/3 × 7 = £490/3"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "The total covers 10 parts — divide £70 by 10."
-      },
-      {
-        "id": "alternative-1",
-        "text": "The total covers 7 parts — divide by 7."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Add the ratio parts to the money instead of dividing."
-      }
-    ],
+    "options": {
+      "repair": [
+        "the-total-covers-parts-divide-by",
+        "10",
+        "70",
+        "10"
+      ],
+      "alternative-1": [
+        "the-total-covers-parts-divide-by-2",
+        "7",
+        "7"
+      ],
+      "alternative-2": "add-the-ratio-parts-to-the-money-instead"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R1",
-        "feedback": "The total covers 10 parts — divide £70 by 10."
+        "feedback": [
+          "the-total-covers-parts-divide-by",
+          "10",
+          "70",
+          "10"
+        ]
       }
     ],
     "consequences": [
@@ -850,26 +880,21 @@
         "text": "27/2"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Use the first share as the final answer."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the second share by its number of ratio parts again."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the white volume by the price per litre."
-      }
-    ],
+    "options": {
+      "alternative-1": "use-the-first-share-as-the-final-answer",
+      "alternative-2": "divide-the-second-share-by-its-number-of",
+      "repair": "multiply-the-white-volume-by-the-price-per"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "R8",
-        "feedback": "The second share is 54; the further calculation gives 216."
+        "feedback": [
+          "the-second-share-is-the-further-calculation-gives",
+          "54",
+          "216"
+        ]
       }
     ],
     "consequences": [],
@@ -918,26 +943,21 @@
         "text": "77"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Divide the second share by its number of ratio parts again."
-      },
-      {
-        "id": "repair",
-        "text": "Subtract the blue beads used from the blue share."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the first share as the final answer."
-      }
-    ],
+    "options": {
+      "alternative-2": "divide-the-second-share-by-its-number-of",
+      "repair": "subtract-the-blue-beads-used-from-the-blue",
+      "alternative-1": "use-the-first-share-as-the-final-answer"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "R8",
-        "feedback": "The second share is 60; the further calculation gives 43."
+        "feedback": [
+          "the-second-share-is-the-further-calculation-gives",
+          "60",
+          "43"
+        ]
       }
     ],
     "consequences": [],
@@ -986,26 +1006,34 @@
         "text": "£3 × 5 = £15"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the difference by Bea’s 5 parts."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Treat £21 as one part and multiply by 5."
-      },
-      {
-        "id": "repair",
-        "text": "The £21 difference represents 3 parts — divide by 3."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "divide-the-difference-by-bea-s-parts",
+        "5"
+      ],
+      "alternative-2": [
+        "treat-as-one-part-and-multiply-by",
+        "21",
+        "5"
+      ],
+      "repair": [
+        "the-difference-represents-parts-divide-by",
+        "21",
+        "3",
+        "3"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R3",
-        "feedback": "The £21 difference represents 3 parts — divide by 3."
+        "feedback": [
+          "the-difference-represents-parts-divide-by",
+          "21",
+          "3",
+          "3"
+        ]
       }
     ],
     "consequences": [
@@ -1060,26 +1088,29 @@
         "text": "£35/6 × 10 = £175/3"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide only the second ratio part by 2."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract 2 from both ratio parts."
-      },
-      {
-        "id": "repair",
-        "text": "Divide both ratio parts by the same factor, 2."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "divide-only-the-second-ratio-part-by",
+        "2"
+      ],
+      "alternative-2": [
+        "subtract-from-both-ratio-parts",
+        "2"
+      ],
+      "repair": [
+        "divide-both-ratio-parts-by-the-same-factor",
+        "2"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R6",
-        "feedback": "Divide both ratio parts by the same factor, 2."
+        "feedback": [
+          "divide-both-ratio-parts-by-the-same-factor",
+          "2"
+        ]
       }
     ],
     "consequences": [
@@ -1131,26 +1162,28 @@
         "text": "£11/2 × 5 = £55/2"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Halve the original part value once more."
-      },
-      {
-        "id": "repair",
-        "text": "That part value uses the original ratio — multiply it by 10, not 5."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Multiply that part value by 2."
-      }
-    ],
+    "options": {
+      "alternative-2": "halve-the-original-part-value-once-more",
+      "repair": [
+        "that-part-value-uses-the-original-ratio-multiply",
+        "10",
+        "5"
+      ],
+      "alternative-1": [
+        "multiply-that-part-value-by",
+        "2"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "R7",
-        "feedback": "That part value uses the original ratio — multiply it by 10, not 5."
+        "feedback": [
+          "that-part-value-uses-the-original-ratio-multiply",
+          "10",
+          "5"
+        ]
       }
     ],
     "consequences": [],
@@ -1198,26 +1231,34 @@
         "text": "£6 × 5 = £30"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Treat £42 as one part and multiply by 5."
-      },
-      {
-        "id": "repair",
-        "text": "The £42 difference represents 3 parts — divide by 3."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the difference by Bea’s 5 parts."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "treat-as-one-part-and-multiply-by",
+        "42",
+        "5"
+      ],
+      "repair": [
+        "the-difference-represents-parts-divide-by",
+        "42",
+        "3",
+        "3"
+      ],
+      "alternative-1": [
+        "divide-the-difference-by-bea-s-parts",
+        "5"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R3",
-        "feedback": "The £42 difference represents 3 parts — divide by 3."
+        "feedback": [
+          "the-difference-represents-parts-divide-by",
+          "42",
+          "3",
+          "3"
+        ]
       }
     ],
     "consequences": [
@@ -1267,26 +1308,34 @@
         "text": "£18/5 × 7 = £126/5"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Treat £36 as one part and multiply by 7."
-      },
-      {
-        "id": "repair",
-        "text": "The £36 difference represents 4 parts — divide by 4."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the difference by Bea’s 7 parts."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "treat-as-one-part-and-multiply-by",
+        "36",
+        "7"
+      ],
+      "repair": [
+        "the-difference-represents-parts-divide-by",
+        "36",
+        "4",
+        "4"
+      ],
+      "alternative-1": [
+        "divide-the-difference-by-bea-s-parts",
+        "7"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R3",
-        "feedback": "The £36 difference represents 4 parts — divide by 4."
+        "feedback": [
+          "the-difference-represents-parts-divide-by",
+          "36",
+          "4",
+          "4"
+        ]
       }
     ],
     "consequences": [
@@ -1341,26 +1390,29 @@
         "text": "£120/17 × 14 = £1680/17"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Subtract 2 from both ratio parts."
-      },
-      {
-        "id": "repair",
-        "text": "Divide both ratio parts by the same factor, 2."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide only the second ratio part by 2."
-      }
-    ],
+    "options": {
+      "alternative-2": [
+        "subtract-from-both-ratio-parts",
+        "2"
+      ],
+      "repair": [
+        "divide-both-ratio-parts-by-the-same-factor",
+        "2"
+      ],
+      "alternative-1": [
+        "divide-only-the-second-ratio-part-by",
+        "2"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R6",
-        "feedback": "Divide both ratio parts by the same factor, 2."
+        "feedback": [
+          "divide-both-ratio-parts-by-the-same-factor",
+          "2"
+        ]
       }
     ],
     "consequences": [
@@ -1412,26 +1464,28 @@
         "text": "£13/2 × 7 = £91/2"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "That part value uses the original ratio — multiply it by 14, not 7."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Multiply that part value by 3."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Halve the original part value once more."
-      }
-    ],
+    "options": {
+      "repair": [
+        "that-part-value-uses-the-original-ratio-multiply",
+        "14",
+        "7"
+      ],
+      "alternative-1": [
+        "multiply-that-part-value-by",
+        "3"
+      ],
+      "alternative-2": "halve-the-original-part-value-once-more"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "R7",
-        "feedback": "That part value uses the original ratio — multiply it by 14, not 7."
+        "feedback": [
+          "that-part-value-uses-the-original-ratio-multiply",
+          "14",
+          "7"
+        ]
       }
     ],
     "consequences": [],
@@ -1479,26 +1533,34 @@
         "text": "£32/5 × 7 = £224/5"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "The £64 difference represents 4 parts — divide by 4."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the difference by Bea’s 7 parts."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Treat £64 as one part and multiply by 7."
-      }
-    ],
+    "options": {
+      "repair": [
+        "the-difference-represents-parts-divide-by",
+        "64",
+        "4",
+        "4"
+      ],
+      "alternative-1": [
+        "divide-the-difference-by-bea-s-parts",
+        "7"
+      ],
+      "alternative-2": [
+        "treat-as-one-part-and-multiply-by",
+        "64",
+        "7"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R3",
-        "feedback": "The £64 difference represents 4 parts — divide by 4."
+        "feedback": [
+          "the-difference-represents-parts-divide-by",
+          "64",
+          "4",
+          "4"
+        ]
       }
     ],
     "consequences": [
@@ -1548,26 +1610,34 @@
         "text": "£55/13 × 9 = £495/13"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "The £55 difference represents 5 parts — divide by 5."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the difference by Bea’s 9 parts."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Treat £55 as one part and multiply by 9."
-      }
-    ],
+    "options": {
+      "repair": [
+        "the-difference-represents-parts-divide-by",
+        "55",
+        "5",
+        "5"
+      ],
+      "alternative-1": [
+        "divide-the-difference-by-bea-s-parts",
+        "9"
+      ],
+      "alternative-2": [
+        "treat-as-one-part-and-multiply-by",
+        "55",
+        "9"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R3",
-        "feedback": "The £55 difference represents 5 parts — divide by 5."
+        "feedback": [
+          "the-difference-represents-parts-divide-by",
+          "55",
+          "5",
+          "5"
+        ]
       }
     ],
     "consequences": [
@@ -1617,26 +1687,21 @@
         "text": "85"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Add the extra length to the blue ribbon."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Use the first share as the final answer."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Divide the second share by its number of ratio parts again."
-      }
-    ],
+    "options": {
+      "repair": "add-the-extra-length-to-the-blue-ribbon",
+      "alternative-1": "use-the-first-share-as-the-final-answer",
+      "alternative-2": "divide-the-second-share-by-its-number-of"
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "R8",
-        "feedback": "The second share is 100; the further calculation gives 115."
+        "feedback": [
+          "the-second-share-is-the-further-calculation-gives",
+          "100",
+          "115"
+        ]
       }
     ],
     "consequences": [],
@@ -1690,36 +1755,43 @@
         "text": "(72 ÷ 3) × 3 × 4 = £288"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Divide the amount by the price per litre before using the ratio."
-      },
-      {
-        "id": "repair",
-        "text": "The total represents 9 parts; divide by 9."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the total by the white share’s 6 parts."
-      },
-      {
-        "id": "repair-second",
-        "text": "White is the second share: 6 parts, not 3."
-      }
-    ],
+    "options": {
+      "alternative-2": "divide-the-amount-by-the-price-per-litre",
+      "repair": [
+        "the-total-represents-parts-divide-by",
+        "9",
+        "9"
+      ],
+      "alternative-1": [
+        "divide-the-total-by-the-white-share-s",
+        "6"
+      ],
+      "repair-second": [
+        "white-is-the-second-share-parts-not",
+        "6",
+        "3"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R1",
-        "feedback": "The total represents 9 parts; divide by 9."
+        "feedback": [
+          "the-total-represents-parts-divide-by",
+          "9",
+          "9"
+        ]
       },
       {
         "location": "step-3",
         "reason": "repair-second",
         "misconception": "R5",
-        "feedback": "White is the second share: 6 parts, not 3."
+        "feedback": [
+          "white-is-the-second-share-parts-not",
+          "6",
+          "3"
+        ]
       }
     ],
     "consequences": [
@@ -1775,26 +1847,20 @@
         "text": "280"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Use the first ratio part as the final answer."
-      },
-      {
-        "id": "repair",
-        "text": "Multiply the sugar in one batch by the number of batches."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Apply the extra operation to the original total instead of the named share."
-      }
-    ],
+    "options": {
+      "alternative-2": "use-the-first-ratio-part-as-the-final",
+      "repair": "multiply-the-sugar-in-one-batch-by-the",
+      "alternative-1": "apply-the-extra-operation-to-the-original-total"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "R8",
-        "feedback": "The required further calculation gives 840 g."
+        "feedback": [
+          "the-required-further-calculation-gives-g",
+          "840"
+        ]
       }
     ],
     "consequences": [],
@@ -1849,36 +1915,34 @@
         "text": "(99/4) × 4 + 15 = 114"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-2",
-        "text": "Use the extra amount as the value of one ratio part."
-      },
-      {
-        "id": "repair",
-        "text": "The total represents 11 ratio parts."
-      },
-      {
-        "id": "repair-2",
-        "text": "The requested quantity is the second share, with 7 parts."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the total by the larger ratio part alone."
-      }
-    ],
+    "options": {
+      "alternative-2": "use-the-extra-amount-as-the-value-of",
+      "repair": [
+        "the-total-represents-ratio-parts",
+        "11"
+      ],
+      "repair-2": [
+        "the-requested-quantity-is-the-second-share-with",
+        "7"
+      ],
+      "alternative-1": "divide-the-total-by-the-larger-ratio-part"
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R1",
-        "feedback": "Divide 99 by 11."
+        "feedback": [
+          "divide-by",
+          "99",
+          "11"
+        ]
       },
       {
         "location": "step-3",
         "reason": "repair-2",
         "misconception": "R5",
-        "feedback": "Keep the labels in their stated order."
+        "feedback": "keep-the-labels-in-their-stated-order"
       }
     ],
     "consequences": [
@@ -1935,26 +1999,20 @@
         "text": "215"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Apply the extra operation to the original total instead of the named share."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Use the first ratio part as the final answer."
-      },
-      {
-        "id": "repair",
-        "text": "Subtract what Ben spends from his share."
-      }
-    ],
+    "options": {
+      "alternative-1": "apply-the-extra-operation-to-the-original-total",
+      "alternative-2": "use-the-first-ratio-part-as-the-final",
+      "repair": "subtract-what-ben-spends-from-his-share"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "R8",
-        "feedback": "The required further calculation gives 145 £."
+        "feedback": [
+          "the-required-further-calculation-gives",
+          "145"
+        ]
       }
     ],
     "consequences": [],
@@ -2009,36 +2067,34 @@
         "text": "(130/5) × 5 − 30 = 100"
       }
     ],
-    "options": [
-      {
-        "id": "repair-2",
-        "text": "The requested quantity is the second share, with 8 parts."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide the total by the larger ratio part alone."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Use the extra amount as the value of one ratio part."
-      },
-      {
-        "id": "repair",
-        "text": "The total represents 13 ratio parts."
-      }
-    ],
+    "options": {
+      "repair-2": [
+        "the-requested-quantity-is-the-second-share-with",
+        "8"
+      ],
+      "alternative-1": "divide-the-total-by-the-larger-ratio-part",
+      "alternative-2": "use-the-extra-amount-as-the-value-of",
+      "repair": [
+        "the-total-represents-ratio-parts",
+        "13"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R1",
-        "feedback": "Divide 130 by 13."
+        "feedback": [
+          "divide-by",
+          "130",
+          "13"
+        ]
       },
       {
         "location": "step-3",
         "reason": "repair-2",
         "misconception": "R5",
-        "feedback": "Keep the labels in their stated order."
+        "feedback": "keep-the-labels-in-their-stated-order"
       }
     ],
     "consequences": [
@@ -2095,26 +2151,24 @@
         "text": "10500"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide centimetres by 100 to convert to metres."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Apply the extra operation to the original total instead of the named share."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Use the first ratio part as the final answer."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-centimetres-by-to-convert-to-metres",
+        "100"
+      ],
+      "alternative-1": "apply-the-extra-operation-to-the-original-total",
+      "alternative-2": "use-the-first-ratio-part-as-the-final"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "R8",
-        "feedback": "The required further calculation gives 21/20 m."
+        "feedback": [
+          "the-required-further-calculation-gives-m",
+          "21",
+          "20"
+        ]
       }
     ],
     "consequences": [],
@@ -2169,26 +2223,20 @@
         "text": "400"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Apply the extra operation to the original total instead of the named share."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Use the first ratio part as the final answer."
-      },
-      {
-        "id": "repair",
-        "text": "Halve the full-batch sugar amount."
-      }
-    ],
+    "options": {
+      "alternative-1": "apply-the-extra-operation-to-the-original-total",
+      "alternative-2": "use-the-first-ratio-part-as-the-final",
+      "repair": "halve-the-full-batch-sugar-amount"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "R8",
-        "feedback": "The required further calculation gives 100 g."
+        "feedback": [
+          "the-required-further-calculation-gives-g",
+          "100"
+        ]
       }
     ],
     "consequences": [],
@@ -2243,26 +2291,27 @@
         "text": "(36/11)×7=252/11 pounds"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide the money difference by the difference of parts, 3."
-      },
-      {
-        "id": "other-1",
-        "text": "Divide the money difference by Bea’s 7 parts."
-      },
-      {
-        "id": "other-2",
-        "text": "Treat the money difference as one part."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-the-money-difference-by-the-difference-of",
+        "3"
+      ],
+      "other-1": [
+        "divide-the-money-difference-by-bea-s-parts",
+        "7"
+      ],
+      "other-2": "treat-the-money-difference-as-one-part"
+    },
     "errors": [
       {
         "location": "one",
         "reason": "repair",
         "misconception": "R3",
-        "feedback": "£36 matches three parts, so one part is £12."
+        "feedback": [
+          "matches-three-parts-so-one-part-is",
+          "36",
+          "12"
+        ]
       }
     ],
     "consequences": [
@@ -2318,26 +2367,29 @@
         "text": "£91/11 × 18 = £1638/11"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Divide both ratio parts by the same factor, 2."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Divide only the second ratio part by 2."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Subtract 2 from both ratio parts."
-      }
-    ],
+    "options": {
+      "repair": [
+        "divide-both-ratio-parts-by-the-same-factor",
+        "2"
+      ],
+      "alternative-1": [
+        "divide-only-the-second-ratio-part-by",
+        "2"
+      ],
+      "alternative-2": [
+        "subtract-from-both-ratio-parts",
+        "2"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R6",
-        "feedback": "Divide both ratio parts by the same factor, 2."
+        "feedback": [
+          "divide-both-ratio-parts-by-the-same-factor",
+          "2"
+        ]
       }
     ],
     "consequences": [
@@ -2389,26 +2441,28 @@
         "text": "£15/2 × 9 = £135/2"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Multiply that part value by 4."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Halve the original part value once more."
-      },
-      {
-        "id": "repair",
-        "text": "That part value uses the original ratio — multiply it by 18, not 9."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "multiply-that-part-value-by",
+        "4"
+      ],
+      "alternative-2": "halve-the-original-part-value-once-more",
+      "repair": [
+        "that-part-value-uses-the-original-ratio-multiply",
+        "18",
+        "9"
+      ]
+    },
     "errors": [
       {
         "location": "step-3",
         "reason": "repair",
         "misconception": "R7",
-        "feedback": "That part value uses the original ratio — multiply it by 18, not 9."
+        "feedback": [
+          "that-part-value-uses-the-original-ratio-multiply",
+          "18",
+          "9"
+        ]
       }
     ],
     "consequences": [],
@@ -2456,26 +2510,34 @@
         "text": "£90/13 × 9 = £810/13"
       }
     ],
-    "options": [
-      {
-        "id": "alternative-1",
-        "text": "Divide the difference by Bea’s 9 parts."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Treat £90 as one part and multiply by 9."
-      },
-      {
-        "id": "repair",
-        "text": "The £90 difference represents 5 parts — divide by 5."
-      }
-    ],
+    "options": {
+      "alternative-1": [
+        "divide-the-difference-by-bea-s-parts",
+        "9"
+      ],
+      "alternative-2": [
+        "treat-as-one-part-and-multiply-by",
+        "90",
+        "9"
+      ],
+      "repair": [
+        "the-difference-represents-parts-divide-by",
+        "90",
+        "5",
+        "5"
+      ]
+    },
     "errors": [
       {
         "location": "step-2",
         "reason": "repair",
         "misconception": "R3",
-        "feedback": "The £90 difference represents 5 parts — divide by 5."
+        "feedback": [
+          "the-difference-represents-parts-divide-by",
+          "90",
+          "5",
+          "5"
+        ]
       }
     ],
     "consequences": [
@@ -2530,26 +2592,20 @@
         "text": "75"
       }
     ],
-    "options": [
-      {
-        "id": "repair",
-        "text": "Find the quarter saved, not the three quarters left."
-      },
-      {
-        "id": "alternative-1",
-        "text": "Apply the extra operation to the original total instead of the named share."
-      },
-      {
-        "id": "alternative-2",
-        "text": "Use the first ratio part as the final answer."
-      }
-    ],
+    "options": {
+      "repair": "find-the-quarter-saved-not-the-three-quarters",
+      "alternative-1": "apply-the-extra-operation-to-the-original-total",
+      "alternative-2": "use-the-first-ratio-part-as-the-final"
+    },
     "errors": [
       {
         "location": "step-4",
         "reason": "repair",
         "misconception": "R8",
-        "feedback": "The required further calculation gives 25 £."
+        "feedback": [
+          "the-required-further-calculation-gives",
+          "25"
+        ]
       }
     ],
     "consequences": [],

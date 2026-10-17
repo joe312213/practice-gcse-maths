@@ -1,0 +1,198 @@
+{
+  "name": "Signed addition and subtraction",
+  "guidance": {
+    "default": {
+      "aim": "Add and subtract positive integers, including crossing zero.",
+      "steps": [
+        [
+          {
+            "concept": "number-and-operation",
+            "text": "Read the signs"
+          }
+        ],
+        [
+          {
+            "concept": "subtract-negative",
+            "text": "Rewrite subtraction"
+          }
+        ],
+        "Calculate",
+        [
+          {
+            "concept": "inverse-check",
+            "text": "Check by undoing"
+          }
+        ]
+      ]
+    },
+    "byLevel": {
+      "build": {
+        "aim": "Add and subtract negative integers; distinguish the operation from the signed number.",
+        "steps": [
+          [
+            {
+              "concept": "number-and-operation",
+              "text": "Read the signs"
+            }
+          ],
+          [
+            {
+              "concept": "subtract-negative",
+              "text": "Rewrite subtraction"
+            }
+          ],
+          "Calculate",
+          [
+            {
+              "concept": "inverse-check",
+              "text": "Check by undoing"
+            }
+          ]
+        ]
+      },
+      "confidence": {
+        "aim": "Combine two signed additions or subtractions, keeping intermediate results.",
+        "steps": [
+          [
+            {
+              "concept": "number-and-operation",
+              "text": "Read the signs"
+            }
+          ],
+          [
+            {
+              "concept": "subtract-negative",
+              "text": "Rewrite subtraction"
+            }
+          ],
+          "Calculate",
+          [
+            {
+              "concept": "inverse-check",
+              "text": "Check by undoing"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "submethods": {
+    "add-positive": {
+      "name": "Add a positive number",
+      "levels": [
+        "start"
+      ],
+      "when": "A positive amount is added, possibly crossing zero.",
+      "steps": [
+        "Move towards larger numbers by the amount added.",
+        "Keep the sign of the resulting value."
+      ],
+      "check": "Undo the operations in reverse order to recover the starting number."
+    },
+    "subtract-positive": {
+      "name": "Subtract a positive number",
+      "levels": [
+        "start"
+      ],
+      "when": "A positive amount is subtracted, possibly crossing zero.",
+      "steps": [
+        "Move towards smaller numbers by the amount subtracted.",
+        "Keep the sign of the resulting value."
+      ],
+      "check": "Undo the operations in reverse order to recover the starting number."
+    },
+    "add-negative": {
+      "name": "Add a negative number",
+      "levels": [
+        "build"
+      ],
+      "when": "The number being added is negative.",
+      "steps": [
+        "Rewrite adding a negative as subtracting its positive size.",
+        "Calculate, including any crossing of zero."
+      ],
+      "check": "Undo the operations in reverse order to recover the starting number."
+    },
+    "subtract-negative": {
+      "name": "Subtract a negative number",
+      "levels": [
+        "build"
+      ],
+      "when": "The number being subtracted is negative.",
+      "steps": [
+        "Rewrite subtraction as addition of the opposite.",
+        "Adding the positive opposite increases the value."
+      ],
+      "check": "Undo the operations in reverse order to recover the starting number."
+    },
+    "linked-signs": {
+      "name": "Combine signed operations in order",
+      "levels": [
+        "confidence"
+      ],
+      "when": "Two additions or subtractions are linked.",
+      "steps": [
+        "Rewrite each subtraction of a negative carefully.",
+        "Calculate from left to right, keeping the intermediate signed result."
+      ],
+      "check": "Undo the operations in reverse order to recover the starting number."
+    }
+  },
+  "examples": {
+    "start": [
+      {
+        "key": "demo",
+        "name": "Add a positive number across zero",
+        "submethods": [
+          "add-positive"
+        ],
+        "question": "maths:M13-WEB-DEMO-C1-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Subtract a positive number across zero",
+        "submethods": [
+          "subtract-positive"
+        ],
+        "recap": 0
+      }
+    ],
+    "build": [
+      {
+        "key": "demo",
+        "name": "Add a negative number",
+        "submethods": [
+          "add-negative"
+        ],
+        "question": "maths:M13-WEB-DEMO-C2-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Subtract a negative number",
+        "submethods": [
+          "subtract-negative"
+        ],
+        "recap": 1
+      }
+    ],
+    "confidence": [
+      {
+        "key": "demo",
+        "name": "Add, then subtract a negative",
+        "submethods": [
+          "linked-signs"
+        ],
+        "question": "maths:M13-WEB-DEMO-C3-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Subtract a negative, then add a negative",
+        "submethods": [
+          "linked-signs"
+        ],
+        "recap": 2
+      }
+    ]
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

@@ -42,7 +42,7 @@ const catalogue = JSON.parse(
   ),
 );
 catalogue.topics = catalogue.topics.filter((topic) => topic.bank === "M10");
-const bank = await readTopicBank("equations");
+const bank = await readTopicBank("solving-equations");
 let uidCount = 0; /**
  * Return the next deterministic recommendation identifier.
  */

@@ -4,7 +4,7 @@
  * Main contents:
  * - latticeModel, divisionModel, arithmeticFrames.
  *
- * Used By: ArithmeticWorking, ArithmeticDemo and arithmetic tests.
+ * Used By: ArithmeticWorking, DemoPlayer and arithmetic tests.
  *
  * Uses: demo-guide.mjs (guideFrames).
  *
@@ -123,31 +123,35 @@ export function divisionModel(question) {
   return { places, remainder, integerLength: String(a).length };
 }
 
-/** Build method-owned frames for the shared four-step playback controller. */
+/** Build method-owned frames for the shared five-step playback controller. */
 export function arithmeticFrames(question) {
-  const frames = guideFrames({ count: 0 });
+  const frames = guideFrames({
+    count: 0,
+    label: question.method === 'lattice' ? 'Draw the grid and diagonals' : 'Draw the bus stop',
+  });
   if (question.method === 'lattice') {
     const model = latticeModel(question.a, question.b);
     // Write operands across the top, then down the side; each cell follows row order.
     for (let count = 1; count <= model.top.length + model.right.length; count++)
-      frames.push({ step: 1, count });
+      frames.push({ step: 2, count });
     model.cells.forEach((_, cell) => {
       for (const [offset, phase] of ['multiply', 'tens', 'units'].entries())
-        frames.push({ step: 2, count: cell * 2 + offset, cell, phase });
+        frames.push({ step: 3, count: cell * 2 + offset, cell, phase });
     });
     model.diagonals.forEach((diagonal, index) => {
       for (const phase of ['sum', 'write', ...(diagonal.carry ? ['carry'] : [])])
-        frames.push({ step: 3, count: index + 1, phase });
+        frames.push({ step: 4, count: index + 1, phase });
     });
   } else {
     const model = divisionModel(question);
+    frames.push({ step: 2, count: 0 });
     model.places.forEach((place, index) => {
       for (const phase of [
         ...(place.digit === '.' ? ['decimal'] : ['divide', 'write']),
         ...(place.remainder && index < model.places.length - 1 ? ['carry'] : []),
       ])
         frames.push({
-          step: index < model.integerLength ? 2 : 3,
+          step: index < model.integerLength ? 3 : 4,
           count: index + 1,
           phase,
           // A carried remainder crosses a decimal marker to the next numeric place.
@@ -158,8 +162,8 @@ export function arithmeticFrames(question) {
         });
     });
     if (!model.places.some((p) => p.digit === '.'))
-      frames.push({ step: 3, count: model.places.length });
+      frames.push({ step: 4, count: model.places.length });
   }
-  frames.push({ step: 4, count: Infinity });
+  frames.push({ step: 5, count: Infinity });
   return frames;
 }

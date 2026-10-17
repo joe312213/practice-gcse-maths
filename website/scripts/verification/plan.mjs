@@ -22,20 +22,26 @@ const config = /^website\/(package(?:-lock)?\.json|[^/]+\.(?:js|json))$/;
 const puzzles = /^website\/(vendor\/puzzles|static\/engines\/gnugo)\//;
 const source = /^website\/(src|static)\//;
 const topicRoutes = /^website\/src\/lib\/content\/topic-routes\.mjs$/;
-const runtime = /^website\/src\/(lib\/(application|domain|adapters)\/|routes\/)/;
+const investigation =
+  /^website\/(?:src\/lib\/(?:application\/error-working\.mjs|components\/teaching\/(?:InvestigationWorking|ErrorInvestigation|LatticeErrorInvestigation)\.svelte|styles\/error-investigation\.css)|static\/data\/[^/]+\/(?:spot-errors|error-types)\.json)$/;
+const runtime =
+  /^website\/src\/(lib\/(application\/(?!error-working\.mjs$)|domain\/|adapters\/)|routes\/)/;
 const interaction =
   /^website\/src\/(lib\/(application\/session\.mjs|adapters\/|components\/(practice|ui)\/)|routes\/)/;
 const layout = /^website\/src\/lib\/styles\/(components|controls|app|breakpoints)\.css$/;
 const breakpoints = /^website\/src\/lib\/styles\/breakpoints\.css$/;
-const components = /^website\/src\/lib\/components\//;
-const styles = /^website\/src\/lib\/styles\/(?!method-playback\.css$)/;
+const components =
+  /^website\/src\/lib\/components\/(?!teaching\/(?:InvestigationWorking|ErrorInvestigation|LatticeErrorInvestigation)\.svelte$)/;
+const styles = /^website\/src\/lib\/styles\/(?!(?:method-playback|error-investigation)\.css$)/;
 const methodStyle = /^website\/src\/lib\/styles\/method-playback\.css$/;
 const theme = /^website\/src\/lib\/(theme\/|styles\/theme-)/;
 const strokeData = /^website\/(?:static\/handwriting\/|scripts\/prepare-pacifico-maths\.mjs$)/;
 const runner = /^website\/scripts\/(verify-changed\.mjs|verification\/)/;
 const browser = /^website\/scripts\/browser(?:-checks\.mjs|\/support\.mjs)$/;
 const bank =
-  /^(content\/(?:M(?:01|02|10).*\.(?:json|md)|web_assessments\.json|spot_errors\.json|lattice_error_prototype\.json)|scripts\/(?:prepare_web_(?:equations|arithmetic)|bank_candidates)\.py|website\/static\/data\/|website\/src\/lib\/(?:content\/(?:topic-bank|stage-text)\.mjs|server\/topic-banks\.mjs)|website\/scripts\/read-topic-bank\.mjs|website\/src\/lib\/content\/practice-pages\.json)/;
+  /^(content\/(?:M(?:01|02|10).*\.(?:json|md)|web_assessments\.json|spot_errors\.json|lattice_error_prototype\.json)|scripts\/(?:prepare_web_(?:equations|arithmetic)|bank_candidates)\.py|website\/static\/data\/(?![^/]+\/(?:spot-errors|error-types|method|concepts)\.json$)|website\/src\/lib\/(?:content\/(?:topic-bank|stage-text)\.mjs|server\/topic-banks\.mjs)|website\/scripts\/read-topic-bank\.mjs|website\/src\/lib\/content\/practice-pages\.json)/;
+const methodContent = /^website\/static\/data\/[^/]+\/(?:method|concepts)\.json$/;
+const errorContent = /^website\/static\/data\/[^/]+\/(?:spot-errors|error-types)\.json$/;
 const errorDrafts =
   /^(content\/spot-errors-drafts\/.*\.json|content\/specs\/M\d+\.md|scripts\/(?:review_spot_error_drafts|spot_error_quality)\.py|tests\/spot_error_quality_test\.py)$/;
 /**
@@ -48,6 +54,8 @@ export const jobs = [
   {
     id: 'error-investigation',
     inputs: matches([
+      investigation,
+      strokeData,
       runtime,
       components,
       styles,
@@ -93,6 +101,9 @@ export const jobs = [
   {
     id: 'logic',
     inputs: matches([
+      methodContent,
+      errorContent,
+      /^website\/src\/lib\/application\/error-working\.mjs$/,
       errorDrafts,
       strokeData,
       topicRoutes,
@@ -107,6 +118,8 @@ export const jobs = [
   {
     id: 'bank',
     inputs: matches([
+      methodContent,
+      errorContent,
       bank,
       topicRoutes,
       /^website\/scripts\/validate-bank\.mjs$/,
@@ -124,6 +137,7 @@ export const jobs = [
   {
     id: 'presentation',
     inputs: matches([
+      methodContent,
       strokeData,
       components,
       layout,
@@ -143,13 +157,15 @@ export const jobs = [
   {
     id: 'method-playback',
     inputs: matches([
+      methodContent,
+      bank,
       methodStyle,
       layout,
       theme,
       strokeData,
       config,
       browser,
-      /^website\/src\/lib\/components\/teaching\/ShowDemo\.svelte$/,
+      /^website\/src\/lib\/components\/teaching\/(?:ShowDemo|DemoPlayer|MethodDemo|Guidance|MethodStep)\.svelte$/,
       /^website\/src\/lib\/application\/(?:player|demo-motion)\.mjs$/,
       /^website\/scripts\/browser\/method-playback-checks\.mjs$/,
     ]),
@@ -195,7 +211,7 @@ export const jobs = [
       config,
       browser,
       styles,
-      /^website\/src\/lib\/domain\/(practice-code|engine|profiles)\.mjs$/,
+      /^website\/src\/lib\/domain\/(practice-code|reattempts|engine|profiles)\.mjs$/,
       /^website\/scripts\/browser\/practice-set-checks\.mjs$/,
     ]),
     build: true,
@@ -210,10 +226,10 @@ export const jobs = [
       topicRoutes,
       config,
       browser,
-      /^website\/src\/lib\/domain\/(progress|revision|progress-transfer|practice-history|practice-time|practice-code|engine|profiles)\.mjs$/,
+      /^website\/src\/lib\/domain\/(progress|revision|reattempts|progress-transfer|practice-history|practice-time|practice-code|engine|profiles)\.mjs$/,
       /^website\/src\/lib\/components\/progress\//,
       /^website\/src\/lib\/styles\/progress\.css$/,
-      /^website\/scripts\/browser\/progress(?:-tabs)?-checks\.mjs$/,
+      /^website\/scripts\/browser\/(?:progress(?:-tabs)?|reattempt)-checks\.mjs$/,
     ]),
     build: true,
     command: ['scripts/browser-checks.mjs', '--progress-only'],
@@ -223,7 +239,7 @@ export const jobs = [
     id: 'integration',
     inputs: matches([
       interaction,
-      /^website\/src\/lib\/domain\/(engine|errors|profiles|practice-code|revision|progress)\.mjs$/,
+      /^website\/src\/lib\/domain\/(engine|errors|reattempts|profiles|practice-code|revision|progress)\.mjs$/,
       bank,
       config,
       browser,

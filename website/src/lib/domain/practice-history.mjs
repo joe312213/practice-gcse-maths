@@ -11,6 +11,7 @@
  * Libs: None.
  */
 import { weekKey } from './progress.mjs';
+import { countsForProgress } from './reattempts.mjs';
 /**
  * Return this and last Monday's UK date keys for an epoch-millisecond timestamp.
  * Calls weekKey; used by practiceHistory and PracticeHistory.svelte.
@@ -47,9 +48,10 @@ export function practiceHistory(profile, scope = '', mode = 'plain', now = Date.
   for (const [key, topic] of Object.entries(profile.topics)) {
     if (scope && scope !== key) continue;
     for (const item of topic.history) {
+      if (item.earlyReattempt) continue;
       const week = row(weekKey(item.at));
       week.answered++;
-      if (item.type === mode && (!item.correct || !item.assisted)) {
+      if (item.type === mode && countsForProgress(item)) {
         const level = week.levels[item.level];
         level.scored++;
         if (item.correct) level.correct++;

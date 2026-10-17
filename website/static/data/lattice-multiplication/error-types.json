@@ -1,0 +1,84 @@
+{
+  "types": {
+    "L1": {
+      "name": "The product is wrong",
+      "example": "Include incorrect multiplication (4 × 6 shown as 14 instead of 24) and reversed digits (3 × 4 shown as 21 instead of 12, or 3 × 2 shown as 60 instead of 6). Use one option: “The product is wrong.” Propagate the displayed product through the totals; correction feedback gives the correct product and its tens/units.",
+      "repairs": [
+        "the-product-is-wrong"
+      ]
+    },
+    "L2": {
+      "name": "Carry omitted from the next diagonal",
+      "example": "In 89 × 7, the units diagonal totals 13 but its carry is omitted from the tens diagonal. Include that carry to obtain 623.",
+      "repairs": [
+        "include-the-incoming-carry-once-in-this-diagonal"
+      ]
+    },
+    "L3": {
+      "name": "Right-hand factor digits written bottom-up",
+      "example": "Lay out 34 × 16 as 34 × 61, obtaining 2074 instead of 544. Repair the factor order; the resulting cells are consequences.",
+      "repairs": [
+        "write-the-right-hand-factor-digits-top-to"
+      ]
+    },
+    "L4": {
+      "name": "Oversized carry read as an extra answer digit",
+      "example": "In 76 × 7, correctly calculate the diagonal totals but copy the full-size carry into the answer, giving 5132 instead of 532. Distinguish carry notation from output digits.",
+      "repairs": [
+        "the-carry-is-not-an-extra-answer-digit"
+      ]
+    },
+    "L6": {
+      "name": "Adding a digit along the wrong diagonal",
+      "example": "In 23 × 4, include the units 2 from the 12 cell in the tens diagonal instead of the units diagonal, producing 110 rather than 92. Add each triangular entry exactly once in its own diagonal.",
+      "repairs": [
+        "move-the-misplaced-cell-digit-back-to-its"
+      ]
+    },
+    "L7": {
+      "name": "Adding a carry twice",
+      "example": "In 76 × 7, the tens diagonal totals 13 and carries 1. Add that carry twice to the hundreds diagonal: 4 + 1 + 1 = 6, producing 632 instead of 532. Include it once: 4 + 1 = 5.",
+      "repairs": [
+        "the-incoming-carry-has-been-included-twice-add"
+      ]
+    },
+    "L8": {
+      "name": "Dropping an internal zero when reading the answer",
+      "example": "The lattice for 101 × 2 correctly gives hundreds 2, tens 0, units 2, but the answer is copied as 22. Retain the zero to give 202. A variant may insert an extra internal zero despite correct totals.",
+      "repairs": [
+        "retain-the-zero-output-digit-in-its-place"
+      ]
+    }
+  },
+  "reasons": {
+    "a-carry-has-been-missed-from-the-next": "A carry has been missed from the next diagonal.",
+    "the-right-hand-number-is-written-bottom-up": "The right-hand number is written bottom-up.",
+    "the-product-is-wrong": "The product is wrong.",
+    "not-write-in-the-tens-half-and-in": "{0} × {1} = {2}, not {3}. Write {4} in the tens half and {5} in the units half.",
+    "append-the-carry-as-another-answer-digit": "Append the carry as another answer digit.",
+    "the-incoming-carry-has-been-included-twice-add": "The incoming carry has been included twice — add it only once.",
+    "omit-the-incoming-carry-completely": "Omit the incoming carry completely.",
+    "write-the-right-hand-factor-digits-top-to": "Write the right-hand factor digits top to bottom in their original order.",
+    "reverse-the-top-factor-instead": "Reverse the top factor instead.",
+    "remove-a-zero-from-the-right-hand-factor": "Remove a zero from the right-hand factor.",
+    "add-the-carry-to-the-diagonal-a-second": "Add the carry to the diagonal a second time.",
+    "the-carry-is-not-an-extra-answer-digit": "The carry is not an extra answer digit — keep it small and use it only in its diagonal sum.",
+    "delete-the-carry-from-the-diagonal-sum-as": "Delete the carry from the diagonal sum as well.",
+    "move-the-misplaced-cell-digit-back-to-its": "Move the misplaced cell digit back to its own diagonal; include every entry once.",
+    "add-the-incoming-carry-twice": "Add the incoming carry twice.",
+    "reverse-the-order-of-all-answer-digits": "Reverse the order of all answer digits.",
+    "the-units-digit-from-row-column-belongs-in": "The units digit {0} from row {1}, column {2} belongs in the {3},{4}s diagonal, not the {5},{6}s diagonal. Include it once.",
+    "move-the-zero-to-the-end-of-the": "Move the zero to the end of the answer.",
+    "retain-the-zero-output-digit-in-its-place": "Retain the zero output digit in its place when reading the answer.",
+    "remove-every-zero-from-the-final-answer": "Remove every zero from the final answer.",
+    "keep-every-output-digit-including-the-internal-zeros": "Keep every output digit, including the internal zeros: {0},{1},{2}.",
+    "count-the-incoming-carry-twice": "Count the incoming carry twice.",
+    "append-the-incoming-carry-as-an-extra-answer": "Append the incoming carry as an extra answer digit.",
+    "include-the-incoming-carry-once-in-this-diagonal": "Include the incoming carry once in this diagonal’s sum.",
+    "include-the-incoming-carry-once-in-the-s": "Include the incoming carry {0} once in the {1}s diagonal.",
+    "the-incoming-carry-was-counted-twice-in-the": "The incoming carry {0} was counted twice in the {1},{2}s diagonal. Include it once.",
+    "include-the-incoming-carry-once-in-the-s-2": "Include the incoming carry {0} once in the {1},{2}s diagonal.",
+    "write-from-top-to-bottom-recalculate-the-cells": "Write {0} from top to bottom: {1}, {2}, {3}. Recalculate the cells using this order.",
+    "the-carry-belongs-in-the-s-diagonal-sum": "The carry {0} belongs in the {1},{2}s diagonal sum, not as an extra digit in the answer."
+  }
+}

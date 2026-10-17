@@ -1,0 +1,349 @@
+{
+  "name": "Ratios: sharing and missing amounts",
+  "guidance": {
+    "default": {
+      "aim": "Match the known amount to equal ratio parts.",
+      "steps": [
+        [
+          "Read the names in ",
+          {
+            "concept": "ratio-order",
+            "text": "ratio order"
+          },
+          ". Decide whether the known quantity is a total, one amount or a difference."
+        ],
+        "Add, select or subtract the ratio parts to match that known quantity.",
+        [
+          "Divide the known quantity by its ",
+          {
+            "concept": "matching-parts",
+            "text": "matching parts"
+          },
+          " to find ",
+          {
+            "concept": "one-part",
+            "text": "one part"
+          },
+          "."
+        ],
+        [
+          "Multiply ",
+          {
+            "concept": "one-part",
+            "text": "one part"
+          },
+          " by the parts requested; check the ratio and units."
+        ]
+      ]
+    },
+    "byLevel": {
+      "build": {
+        "aim": "Match the known amount to equal ratio parts.",
+        "steps": [
+          [
+            "Read the names in ",
+            {
+              "concept": "ratio-order",
+              "text": "ratio order"
+            },
+            ". Decide whether the known quantity is a total, one amount or a difference."
+          ],
+          "Add, select or subtract the ratio parts to match that known quantity.",
+          [
+            "Divide the known quantity by its ",
+            {
+              "concept": "matching-parts",
+              "text": "matching parts"
+            },
+            " to find ",
+            {
+              "concept": "one-part",
+              "text": "one part"
+            },
+            "."
+          ],
+          [
+            "Multiply ",
+            {
+              "concept": "one-part",
+              "text": "one part"
+            },
+            " by the parts requested. In the occasional linked problem, complete the final calculation too; check the ratio and units."
+          ]
+        ]
+      },
+      "confidence": {
+        "aim": "Connect ratio reasoning to a further calculation, keeping track of quantities and units.",
+        "steps": [
+          "Identify what the given amount represents: a named quantity, total or difference.",
+          [
+            "Find ",
+            {
+              "concept": "one-part",
+              "text": "one ratio part"
+            },
+            ", then the quantity needed for the next calculation."
+          ],
+          "Use that quantity to find a cost, scale a recipe, adjust an amount, convert units or find a simple percentage.",
+          "Check the original ratio, then check the final quantity and units."
+        ]
+      }
+    }
+  },
+  "submethods": {
+    "total": {
+      "name": "Share a known total",
+      "levels": [
+        "start",
+        "build",
+        "confidence"
+      ],
+      "when": "The known amount represents all the ratio parts.",
+      "steps": [
+        "Add the ratio parts.",
+        "Divide the total by that sum to find one part.",
+        "Multiply by the requested share’s parts."
+      ],
+      "check": "Rebuild the known total, share or difference from one part, then check the units of any final calculation."
+    },
+    "share": {
+      "name": "Use one known share",
+      "levels": [
+        "start",
+        "build",
+        "confidence"
+      ],
+      "when": "The amount of one named share is given.",
+      "steps": [
+        "Match it to that share’s number of ratio parts.",
+        "Divide to find one part, then scale to the requested share."
+      ],
+      "check": "Rebuild the known total, share or difference from one part, then check the units of any final calculation."
+    },
+    "difference": {
+      "name": "Use a known difference",
+      "levels": [
+        "start",
+        "build",
+        "confidence"
+      ],
+      "when": "The difference between two shares is given.",
+      "steps": [
+        "Subtract the smaller ratio part from the larger.",
+        "Divide the known difference by this part difference.",
+        "Scale one part to the requested share."
+      ],
+      "check": "Rebuild the known total, share or difference from one part, then check the units of any final calculation."
+    },
+    "difference-answer": {
+      "name": "Find the difference between shares",
+      "levels": [
+        "build"
+      ],
+      "when": "One share is known and the question asks how much larger the other share is.",
+      "steps": [
+        "Find the value of one part.",
+        "Multiply it by the difference between the two ratio parts."
+      ],
+      "check": "Rebuild the known total, share or difference from one part, then check the units of any final calculation."
+    },
+    "simplify": {
+      "name": "Simplify ratio parts first",
+      "levels": [
+        "build"
+      ],
+      "when": "The ratio parts share a common factor.",
+      "steps": [
+        "Divide all parts by the same factor.",
+        "Match the given amount to the simplified parts."
+      ],
+      "check": "Rebuild the known total, share or difference from one part, then check the units of any final calculation."
+    },
+    "cost": {
+      "name": "Calculate the cost of a share",
+      "levels": [
+        "build",
+        "confidence"
+      ],
+      "when": "A share has a given cost per unit.",
+      "steps": [
+        "Find the required share using the ratio.",
+        "Multiply by the unit price."
+      ],
+      "check": "Rebuild the known total, share or difference from one part, then check the units of any final calculation."
+    },
+    "adjust": {
+      "name": "Adjust a share after finding it",
+      "levels": [
+        "build",
+        "confidence"
+      ],
+      "when": "A fixed amount is added to or removed from a share.",
+      "steps": [
+        "Calculate the original share first.",
+        "Apply the fixed change to that share."
+      ],
+      "check": "Rebuild the known total, share or difference from one part, then check the units of any final calculation."
+    },
+    "scale": {
+      "name": "Scale a recipe to several batches",
+      "levels": [
+        "confidence"
+      ],
+      "when": "A ratio describes one batch and several identical batches are requested.",
+      "steps": [
+        "Find the ingredient amount for one batch.",
+        "Multiply by the number of batches."
+      ],
+      "check": "Rebuild the known total, share or difference from one part, then check the units of any final calculation."
+    },
+    "units": {
+      "name": "Convert the share’s units",
+      "levels": [
+        "confidence"
+      ],
+      "when": "The required answer uses different units.",
+      "steps": [
+        "Find the share in the given units.",
+        "Convert using the stated or known unit relationship."
+      ],
+      "check": "Rebuild the known total, share or difference from one part, then check the units of any final calculation."
+    },
+    "percentage": {
+      "name": "Find a percentage of a share",
+      "levels": [
+        "confidence"
+      ],
+      "when": "Only a percentage of one person’s share is requested.",
+      "steps": [
+        "Find that person’s share first.",
+        "Multiply it by the percentage divided by 100."
+      ],
+      "check": "Rebuild the known total, share or difference from one part, then check the units of any final calculation."
+    }
+  },
+  "examples": {
+    "start": [
+      {
+        "key": "demo",
+        "name": "Share a known total",
+        "submethods": [
+          "total"
+        ],
+        "question": "maths:M04-WEB-DEMO-C1-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Use a known difference",
+        "submethods": [
+          "difference"
+        ],
+        "recap": 0
+      },
+      {
+        "key": "share",
+        "name": "Find a share from another share",
+        "submethods": [
+          "share"
+        ],
+        "question": "maths:M04-WEB-PLAIN-C1-Q2"
+      }
+    ],
+    "build": [
+      {
+        "key": "demo",
+        "name": "Simplify a ratio and share a total",
+        "submethods": [
+          "simplify",
+          "total"
+        ],
+        "question": "maths:M04-WEB-DEMO-C2-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Find a share, then subtract items",
+        "submethods": [
+          "share",
+          "adjust"
+        ],
+        "recap": 1
+      },
+      {
+        "key": "difference",
+        "name": "Use a difference with simplified parts",
+        "submethods": [
+          "difference",
+          "simplify"
+        ],
+        "question": "maths:M04-WEB-PLAIN-C2-Q3"
+      },
+      {
+        "key": "difference-answer",
+        "name": "Find how much larger a share is",
+        "submethods": [
+          "share",
+          "difference-answer",
+          "simplify"
+        ],
+        "question": "maths:M04-WEB-PLAIN-C2-Q2"
+      },
+      {
+        "key": "cost",
+        "name": "Find a share, then its cost",
+        "submethods": [
+          "share",
+          "cost"
+        ],
+        "question": "maths:M04-WEB-PLAIN-C2-Q4"
+      }
+    ],
+    "confidence": [
+      {
+        "key": "demo",
+        "name": "Use a difference, then calculate cost",
+        "submethods": [
+          "difference",
+          "cost"
+        ],
+        "question": "maths:M04-WEB-DEMO-C3-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Find a share and convert its units",
+        "submethods": [
+          "share",
+          "units"
+        ],
+        "recap": 2
+      },
+      {
+        "key": "scale",
+        "name": "Scale a recipe to several batches",
+        "submethods": [
+          "share",
+          "scale"
+        ],
+        "question": "maths:M04-WEB-PLAIN-C3-Q2"
+      },
+      {
+        "key": "adjust",
+        "name": "Share a total, then remove items",
+        "submethods": [
+          "total",
+          "adjust"
+        ],
+        "question": "maths:M04-WEB-PLAIN-C3-Q4"
+      },
+      {
+        "key": "percentage",
+        "name": "Find a percentage of a person’s share",
+        "submethods": [
+          "total",
+          "percentage"
+        ],
+        "question": "maths:M04-WEB-PLAIN-C3-Q12"
+      }
+    ]
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

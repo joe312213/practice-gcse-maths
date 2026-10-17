@@ -25,7 +25,7 @@ import {
 } from "../website/src/lib/domain/practice-code.mjs";
 import { createSession } from "../website/src/lib/application/session.mjs";
 import { emptyStore } from "../website/src/lib/domain/profiles.mjs";
-const bank = await readTopicBank("equations");
+const bank = await readTopicBank("solving-equations");
 const catalogue = JSON.parse(
   await readFile(
     new URL("../website/src/lib/content/practice-pages.json", import.meta.url),

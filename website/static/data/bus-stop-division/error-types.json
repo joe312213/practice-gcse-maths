@@ -1,0 +1,70 @@
+{
+  "types": {
+    "D1": {
+      "name": "Choosing an incorrect quotient digit from a division/multiplication fact",
+      "example": "In 43 ÷ 8, choosing 6 groups rather than 5. Use 8 × 5 = 40; 8 × 6 exceeds 43. A digit that is too small can instead leave a remainder at least as large as the divisor.",
+      "repairs": [
+        "the-quotient-digit-is-wrong-use-the-greatest"
+      ]
+    },
+    "D2": {
+      "name": "Calculating the remainder incorrectly despite choosing the correct quotient digit",
+      "example": "Five groups of 8 from 43, but writing 43 − 40 = 2. The remainder is 3.",
+      "repairs": [
+        "the-subtraction-for-this-remainder-is-wrong"
+      ]
+    },
+    "D3": {
+      "name": "Losing or transferring a remainder with the wrong place value",
+      "example": "In 178 ÷ 4, after 17 ÷ 4 = 4 r 1, the next amount is 18, not 1 + 8 = 9 or just 8.",
+      "repairs": [
+        "treat-the-carried-remainder-as-tens-of-the"
+      ]
+    },
+    "D4": {
+      "name": "Omitting a necessary zero in the quotient / misaligning quotient digits",
+      "example": "Writing 816 ÷ 4 = 24 instead of 204. Record the zero tens before proceeding to the units.",
+      "repairs": [
+        "keep-the-zero-quotient-digit-in-its-place"
+      ]
+    },
+    "D5": {
+      "name": "Discarding a final remainder when a remainder answer is required",
+      "example": "Writing 178 ÷ 4 = 44 rather than 44 r 2. A remainder must be included and smaller than the divisor.",
+      "repairs": [
+        "include-the-nonzero-final-remainder"
+      ]
+    },
+    "D6": {
+      "name": "Treating a remainder as a decimal digit instead of continuing the division",
+      "example": "Writing 5 ÷ 4 = 1.1 because the remainder is 1. Continue with 10 tenths, then 20 hundredths, to obtain 1.25.",
+      "repairs": [
+        "convert-the-remainder-by-dividing-it-by-the"
+      ]
+    },
+    "D7": {
+      "name": "Misplacing the decimal point when continuing to a decimal answer",
+      "example": "Writing 45 ÷ 6 = 75 rather than 7.5. Place the quotient decimal over the dividend decimal and continue with zeros.",
+      "repairs": [
+        "put-the-decimal-point-after-the-whole-number"
+      ]
+    }
+  },
+  "reasons": {
+    "add-the-dividend-and-divisor-instead-of-dividing": "Add the dividend and divisor instead of dividing.",
+    "reverse-the-dividend-and-divisor": "Reverse the dividend and divisor.",
+    "the-quotient-digit-is-wrong-use-the-greatest": "The quotient digit is wrong; use the greatest number of whole groups that fits.",
+    "fits-times-in-the-remainder-must-be-less": "{0} fits {1} times in {2}; the remainder must be less than {3}.",
+    "the-subtraction-for-this-remainder-is-wrong": "The subtraction for this remainder is wrong.",
+    "": "{0} − {1} = {2}.",
+    "keep-the-zero-quotient-digit-in-its-place": "Keep the zero quotient digit in its place.",
+    "the-complete-answer-is": "The complete answer is {0}.",
+    "treat-the-carried-remainder-as-tens-of-the": "Treat the carried remainder as tens of the next place, then add the next digit.",
+    "tens-and-ones-make-not": "{0} tens and {1} ones make {2}, not {3}.",
+    "include-the-nonzero-final-remainder": "Include the nonzero final remainder.",
+    "the-complete-answer-is-remainder": "The complete answer is {0} remainder {1}.",
+    "put-the-decimal-point-after-the-whole-number": "Put the decimal point after the whole-number quotient.",
+    "the-answer-is": "{0}/{1} = {2}; the answer is {3}.",
+    "convert-the-remainder-by-dividing-it-by-the": "Convert the remainder by dividing it by the divisor; it is not a decimal digit."
+  }
+}

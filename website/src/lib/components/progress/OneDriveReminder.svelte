@@ -104,15 +104,22 @@
 
 {#if visible}
   <aside class="card page-panel onedrive-reminder" aria-label="Save browser progress to OneDrive">
-    <p>Choose your OneDrive folder, we'll save your progress in the Maths folder.</p>
+    {#if supported}
+      <p>Choose your OneDrive folder, we'll save your progress in the Maths folder.</p>
+    {:else}
+      <p>
+        Export your progress file, then save it in OneDrive. On iPhone, open the download, choose
+        Share → Save to Files and select OneDrive. Enable OneDrive in the Files app if it is
+        missing.
+      </p>
+    {/if}
     <div class="actions">
       {#if supported}<button class="action-button primary" disabled={busy} onclick={setup}
           >Save to OneDrive</button
         >{/if}
-      <a class="action-button" href={resolve('/progress.html')}
-        >{supported ? 'Open an existing file' : 'Export progress file'}</a
-      >
-      <button class="action-button" disabled={busy} onclick={downloadBackup}>Download backup</button
+      <a class="action-button" href={resolve('/progress.html')}>Open an existing file</a>
+      <button class="action-button" disabled={busy} onclick={downloadBackup}
+        >{supported ? 'Download backup' : 'Export progress file'}</button
       >
       <button class="action-button" disabled={busy} onclick={later}>Later</button>
     </div>

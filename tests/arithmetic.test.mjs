@@ -25,7 +25,7 @@ import { createSession } from "../website/src/lib/application/session.mjs";
 import { emptyStore } from "../website/src/lib/domain/profiles.mjs";
 import { encodePracticeSet } from "../website/src/lib/domain/practice-code.mjs";
 const banks = await Promise.all(
-  ["equations", "multiplication", "division"].map(
+  ["solving-equations", "lattice-multiplication", "bus-stop-division"].map(
     async (name) => await readTopicBank(`${name}`),
   ),
 );

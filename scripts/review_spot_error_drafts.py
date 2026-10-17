@@ -18,11 +18,22 @@ from html import escape
 import json
 from pathlib import Path
 import re
+import subprocess
+from functools import cache
 
 from spot_error_quality import check_quality
 
 ROOT = Path(__file__).resolve().parents[1]
 BANKS = ROOT / 'website/static/data'
+
+@cache
+def live_banks():
+    """Use the shared JS assembler, including named reasons, once per audit process."""
+    names = sorted(path.parent.name for path in BANKS.glob('*/topic.json'))
+    output = subprocess.check_output(
+        ['node', str(ROOT / 'website/scripts/read-topic-bank.mjs'), *names], cwd=ROOT, text=True)
+    return json.loads(output)
+
 
 
 def calculate(expression):
@@ -225,11 +236,10 @@ def main():
     parser.add_argument('--html', type=Path, help='Write a disposable review HTML outside the content sources')
     args = parser.parse_args()
     order = ['M01', 'M02', 'M13', 'M10', 'M15', 'M06', 'M03', 'M04', 'M12', 'M07']
-    names = ['multiplication', 'division', 'signed-numbers', 'equations', 'fractions', 'percentages', 'problems', 'ratios', 'speed-distance-time', 'reverse-percentages']
+    names = ['lattice-multiplication', 'bus-stop-division', 'signed-addition-subtraction', 'solving-equations', 'fraction-addition-subtraction', 'percentages', 'multiplication-division-problems', 'ratios', 'speed-distance-time', 'reverse-percentages']
     banks = []
     for topic, name in zip(order, names):
-        live = json.loads((BANKS / name / 'topic.json').read_text())
-        live['questions'] = json.loads((BANKS / name / 'spot-errors.json').read_text())
+        live = live_banks()[name]
         questions = [dict(q, level=q['level'] + 1, prompt=q['q'], unit=q['answerUnit']) for q in live['questions'] if q.get('investigation')]
         banks.append(dict(topic=topic, title=live['title'], questions=questions))
     for bank in banks:

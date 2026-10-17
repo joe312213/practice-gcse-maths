@@ -15,6 +15,7 @@
   import { stageTextFor } from '#lib/content/stage-text.mjs';
   import { guidanceFor } from '#lib/content/topic-bank.mjs';
   import { findQuestion } from '#lib/domain/topic-pages.mjs';
+  import { latestResponse } from '#lib/domain/reattempts.mjs';
   import MathText from '../teaching/MathText.svelte';
   import CalculationWorking from '../teaching/CalculationWorking.svelte';
   import ProblemTips from '../teaching/ProblemTips.svelte';
@@ -43,7 +44,7 @@
     view.mode === 'problem' || (view.bank.problemSolvingTopic && view.mode === 'plain'),
   );
   const question = $derived(findQuestion(view.bank, page.items[view.selected].id));
-  const response = $derived(page.responses[question.id]);
+  const response = $derived(view.retrying ? null : latestResponse(page, question.id));
   let assessmentNow = $state(Date.now());
   const canReassess = $derived(view.assessment && assessmentNow >= view.assessment.availableAt);
   onMount(() => {
@@ -240,7 +241,7 @@
             </div>{/if}
           <fieldset
             class="answer-controls"
-            disabled={Boolean(view.practiceSet?.finished || page.complete)}
+            disabled={!view.retrying && Boolean(view.practiceSet?.finished || page.complete)}
           >
             <AnswerForm
               {question}
@@ -260,6 +261,18 @@
         </div>
       </section>
       <Feedback {question} {response} mode={view.mode} bank={view.sourceBank} />
+      {#if view.canRetry && !view.retrying}
+        <button
+          class="action-button"
+          type="button"
+          id="retry-question"
+          onclick={async () => {
+            session.retryQuestion();
+            await tick();
+            focusAnswer();
+          }}>Try this question again</button
+        >
+      {/if}
       {#key view.draftKey}<WorkingArea
           embedded
           topic={view.bank.topic}

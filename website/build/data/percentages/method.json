@@ -1,0 +1,204 @@
+{
+  "name": "Percentages and percentage change",
+  "guidance": {
+    "default": {
+      "aim": "Find a percentage of an amount.",
+      "steps": [
+        [
+          "Identify the ",
+          {
+            "concept": "whole",
+            "text": "whole"
+          }
+        ],
+        [
+          {
+            "concept": "percentage-calculation",
+            "text": "Choose the calculation"
+          }
+        ],
+        "Calculate",
+        [
+          "Check the ",
+          {
+            "concept": "percentage-change",
+            "text": "requested amount"
+          }
+        ]
+      ]
+    },
+    "byLevel": {
+      "build": {
+        "aim": "Apply a percentage increase or decrease to find a new amount.",
+        "steps": [
+          [
+            "Identify the ",
+            {
+              "concept": "whole",
+              "text": "whole"
+            }
+          ],
+          [
+            {
+              "concept": "percentage-calculation",
+              "text": "Choose the calculation"
+            }
+          ],
+          "Calculate",
+          [
+            "Check the ",
+            {
+              "concept": "percentage-change",
+              "text": "requested amount"
+            }
+          ]
+        ]
+      },
+      "confidence": {
+        "aim": "Find a percentage change using the original amount.",
+        "steps": [
+          [
+            "Identify the ",
+            {
+              "concept": "whole",
+              "text": "whole"
+            }
+          ],
+          [
+            {
+              "concept": "percentage-calculation",
+              "text": "Choose the calculation"
+            }
+          ],
+          "Calculate",
+          [
+            "Check the ",
+            {
+              "concept": "percentage-change",
+              "text": "requested amount"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "submethods": {
+    "amount": {
+      "name": "Find a percentage of an amount",
+      "levels": [
+        "start"
+      ],
+      "when": "The whole amount and a percentage are known.",
+      "steps": [
+        "Find one percent by dividing the whole by 100.",
+        "Multiply by the requested percentage."
+      ],
+      "check": "Use the original amount as 100%. Apply the calculated percentage to reconstruct the amount or change."
+    },
+    "increase": {
+      "name": "Find a new amount after an increase",
+      "levels": [
+        "build"
+      ],
+      "when": "The amount increases by a given percentage.",
+      "steps": [
+        "Find the percentage of the original amount.",
+        "Add that increase to the original amount."
+      ],
+      "check": "Use the original amount as 100%. Apply the calculated percentage to reconstruct the amount or change."
+    },
+    "decrease": {
+      "name": "Find a new amount after a decrease",
+      "levels": [
+        "build"
+      ],
+      "when": "The amount decreases by a given percentage.",
+      "steps": [
+        "Find the percentage of the original amount.",
+        "Subtract that decrease from the original amount."
+      ],
+      "check": "Use the original amount as 100%. Apply the calculated percentage to reconstruct the amount or change."
+    },
+    "percentage-increase": {
+      "name": "Calculate a percentage increase",
+      "levels": [
+        "confidence"
+      ],
+      "when": "The original and larger new amount are known.",
+      "steps": [
+        "Subtract original from new to find the increase.",
+        "Divide by the original amount and multiply by 100."
+      ],
+      "check": "Use the original amount as 100%. Apply the calculated percentage to reconstruct the amount or change."
+    },
+    "percentage-decrease": {
+      "name": "Calculate a percentage decrease",
+      "levels": [
+        "confidence"
+      ],
+      "when": "The original and smaller new amount are known.",
+      "steps": [
+        "Subtract new from original to find the decrease.",
+        "Divide by the original amount and multiply by 100."
+      ],
+      "check": "Use the original amount as 100%. Apply the calculated percentage to reconstruct the amount or change."
+    }
+  },
+  "examples": {
+    "start": [
+      {
+        "key": "demo",
+        "name": "Find 25% of an amount using 1%",
+        "submethods": [
+          "amount"
+        ],
+        "question": "maths:M06-WEB-DEMO-C1-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Find 20% of an amount using 1%",
+        "submethods": [
+          "amount"
+        ],
+        "recap": 0
+      }
+    ],
+    "build": [
+      {
+        "key": "demo",
+        "name": "Find a new amount after an increase",
+        "submethods": [
+          "increase"
+        ],
+        "question": "maths:M06-WEB-DEMO-C2-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Find a new amount after a decrease",
+        "submethods": [
+          "decrease"
+        ],
+        "recap": 1
+      }
+    ],
+    "confidence": [
+      {
+        "key": "demo",
+        "name": "Calculate a percentage increase",
+        "submethods": [
+          "percentage-increase"
+        ],
+        "question": "maths:M06-WEB-DEMO-C3-Q1"
+      },
+      {
+        "key": "recap",
+        "name": "Calculate a percentage decrease",
+        "submethods": [
+          "percentage-decrease"
+        ],
+        "recap": 2
+      }
+    ]
+  },
+  "answerNote": "In exams, include the correct units in your working and final answer (including £ for money). In this app, enter just the number; the answer field shows the required unit."
+}

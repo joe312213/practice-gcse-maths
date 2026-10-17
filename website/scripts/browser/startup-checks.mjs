@@ -116,14 +116,14 @@ export async function checkStartup(browser, base) {
         if (fault === 'corrupt-store') localStorage.setItem('maths-practice-v2', '{bad');
       }, fault);
       if (fault === 'bank')
-        await page.route('**/data/equations.json', (route) =>
+        await page.route('**/data/solving-equations.json', (route) =>
           route.fulfill({ status: 503, body: 'Unavailable' }),
         );
       if (fault === 'delayed-bank') {
         const gate = new Promise((resolve) => {
           release = resolve;
         });
-        await page.route('**/data/equations.json', async (route) => {
+        await page.route('**/data/solving-equations.json', async (route) => {
           await gate;
           await route.continue();
         });

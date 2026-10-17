@@ -292,8 +292,8 @@ export async function checkNewTopics(browser, base) {
     await page.getByRole('heading', { name: 'Bus stop division', exact: true, level: 1 }).waitFor();
     assert.equal(await page.getByLabel('Topic', { exact: true }).textContent(), 'Topic');
     for (const [topic, name, tool] of [
-      ['M01', 'multiplication', 'Grid'],
-      ['M02', 'division', 'Frame'],
+      ['M01', 'lattice-multiplication', 'Grid'],
+      ['M02', 'bus-stop-division', 'Frame'],
     ]) {
       await selectTopic(page, topic);
       await page.waitForURL(`${base}${topicPath(topic).slice(1)}`);
