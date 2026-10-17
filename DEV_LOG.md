@@ -236,14 +236,12 @@ Current authority: [web specification](web_format.md), [UI/UX rules](docs/UI_UX_
 - CSV is offered only after a JSON download is triggered during the current page visit, with “Would you also like to save a CSV version to view in Excel?” Reload/import/learner change hides the offer again. JSON remains the primary restorable export.
 - Updated spec, reminder wording, logic/browser assertions and handoff. All selected checks passed, including 45 logic tests and browser checks confirming CSV stays hidden until JSON export and does not alter the backup date.
 
-
 ## 6 October 2026 — project moved to Maths root
 
 - User moved project contents from `/Users/joehudson/Dev/Maths/practice` to `/Users/joehudson/Dev/Maths`, corrected `.agents/skills/`, discarded Pylance’s unsaved import rewrites and deleted the old folder. Earlier dated paths above describe the previous layout; open `Maths/` as the workspace root now.
 - Updated HANDOFF, the website run directory and five legacy topic README root references. Corrected eleven legacy README links to the existing root `content/` directory. Internal project-relative paths otherwise survive the move; no specification, Python or application changes were needed.
 - `.git` was previously inside the deleted folder and is absent from the new root. Git status fails; the normal verification command from `website/` fails during Git file discovery. An initial invocation from the project root also failed because the npm script belongs to `website/`. No Git metadata recovery or new repository initialisation was attempted.
 - Direct file-link verification across 22 development/legacy Markdown documents: 139 non-archive links resolve; eight historical links to retired `_prevN` PowerPoint/PDF artifacts remain unavailable. No application tests or legacy publishers ran. Restore original Git metadata before Git-dependent verification or history work.
-
 
 ## 6 October 2026 — recovered layout, refactoring guide and Progress styling
 
@@ -253,12 +251,10 @@ Current authority: [web specification](web_format.md), [UI/UX rules](docs/UI_UX_
 - Actual defect: shared panel classes were present on the Progress popover but its surface/padding/border/stacking CSS targeted only the theme picker ID. Moved shared appearance to `.theme-menu`; theme-picker-specific child styling stays scoped to its ID. Progress header's Back to practice link now uses existing themed navigation classes.
 - Added browser assertions for nontransparent panel background, border/padding/stacking, viewport containment and themed back-link colour. All selected format, docs, logic, bank, Svelte diagnostics, build, presentation, colours, startup, practice-set, progress and integration checks passed. Initial browser run was blocked by sandbox local-server EPERM; rerun outside the sandbox passed. No deployment or source-resource regeneration.
 
-
 ## 6 October 2026 — surface-preserving button hover
 
 - User requested a shared hover rule retaining mostly the normal surface with a subtle selected-colour tint. Replaced ordinary action-button hover's `--surface-soft` with 90% normal surface / 10% `--selection-base`; reusable `.hover-tint` supports other surface controls and a `--hover-surface` override. Primary/current-step/quiet actions retain their existing treatment; disabled buttons do not receive the tint.
 - Added the standing rule to UI_UX_RULES. Browser regression exercises real pointer hover for action buttons and opt-in controls across all eight default palettes/modes. Selected format, docs, build, presentation, semantic-colour and practice-set checks passed.
-
 
 ## 6 October 2026 — sketch-pad interrupted release
 
@@ -267,12 +263,10 @@ Current authority: [web specification](web_format.md), [UI/UX rules](docs/UI_UX_
 - Browser regression covers normal outside release, lost capture, unpressed re-entry and drawing again. Format, Svelte diagnostics, build, presentation, colours, practice sets, progress and integration passed.
 - Preserved the user's current 75/25 surface/selection hover mix and aligned its earlier 90/10 test and standing rule. Colour-test probes now have stable positions. Progress test now uses hover to open the panel: its old mouse click could immediately close the hover-opened panel before style inspection. An attempted positioning wait did not address that race and was removed. No app popover behaviour changes in this fix.
 
-
 ## 6 October 2026 — simplify sketch pointer handling
 
 - At the user's request, removed the redundant button-state check from pointer movement. The entry handler only checks pressed state and delegates to the shared `end` function; movement only checks active-stroke/pointer ownership. Removed unused boolean returns and a duplicate reset in Clear. Release, cancellation, capture loss and window blur still share the same stroke-ending path.
 - Final format, build, Svelte diagnostics, presentation (including outside-release/re-entry regression), practice sets, progress and integration checks passed. The preceding run detected the final simplification arriving during verification and correctly required a rerun; results above cover the final source.
-
 
 ## 6 October 2026 — code-comment policy and concise transfer brief
 
@@ -282,7 +276,6 @@ Current authority: [web specification](web_format.md), [UI/UX rules](docs/UI_UX_
 - Final selected format, documentation links, logic, bank, Svelte diagnostics, build, presentation, colours, startup, practice sets, progress and integration checks passed. Initial formatting from the repository root could not resolve the Svelte Prettier plugin; formatting from website/ succeeded.
 - Added T_LEVEL_REFACTOR_AGENT_GUIDE_V2.md at the user's request: a 345-word transfer brief emphasizing required Svelte/Tailwind/daisyUI/Bits UI roles and an incremental, evidence-based migration while leaving architectural judgment to the destination agent. Kept and indexed the original guide.
 - Empty docs/dev-log is a leftover from deleting its last dated log in commit 4bfc9d8 during consolidation into DEV_LOG.md. It has no current references and was left untouched.
-
 
 ## 6 October 2026 — local production builds and Pages deployment
 
@@ -316,7 +309,6 @@ Verification initially exposed equations-only test fixture assumptions and stale
 
 Final selected verification passed: formatting/docs, 50 logic tests, bank/catalogue validation, portable puzzle-library tests, zero-error/zero-warning Svelte diagnostics, production build, new-topic/puzzle mobile scenario, presentation/default colours, startup faults, Practice sets, Progress and activity integration. The new browser scenario covers guide retention, both demos, answer history, original error images, correct/blank puzzle checks, hint reset, solutions and mounting all nine types without page overflow. Manual touch/stylus/assistive-technology review and classroom puzzle calibration remain unclaimed. No commit, push or deployment performed.
 
-
 ## 8 October 2026 — Compact search entry and resizable sketch canvas
 
 Replaced the visible Optional Practice set label and large submit button with an accessible hidden label, exact placeholder `practice code or search`, and compact Go button kept immediately to the field's right. Removed the nine-character input limit so free text works; underlying case-sensitive codes are unchanged. Topic title/ID/tag word-prefix search accepts lattice/multiplication, grid/multiply, bus stop/divide and equations/algebra aliases. Words in one query all match the same topic; commas combine topics. Each match contributes one random independent-practice page to an untimed set, with the existing saved challenge override. Known text matches precede code syntax to handle the nine-letter word “equations”. No match gives suggestions without replacing the activity. Arithmetic bank regeneration now preserves catalogue search tags.
@@ -325,26 +317,21 @@ Added a separate touch/pen/mouse resize grip below the canvas, keyboard Up/Down 
 
 All selected verification passed: formatting, production build, docs, 51 logic tests, bank/catalogue, Svelte diagnostics (zero errors/warnings), new-topic browser scenario with pointer/keyboard resize and bitmap recovery, presentation/default colours, startup, mobile Practice set/search, Progress and activity integration. Browser checks needed the existing local-server permission. Existing development server remains at http://127.0.0.1:8766/; no commit or deployment performed.
 
-
 ## 8 October 2026 — Header control placement and smaller canvas grip
 
 Moved code/search to the top right of the topic header beneath the main navigation, with the topic selector directly below it. The Go button uses the standard action-button size. Both controls remain responsive and retain their existing accessible labels and behaviour. Reduced the canvas grip from 64×24px to 40×16px. Selected formatting/build, logic, Svelte diagnostics, new-topic/resize, presentation, colours, startup, Practice sets/search, Progress and integration checks passed; no new tests were added for this layout-only change. Development site remains running; no commit or deployment performed.
-
 
 ## 8 October 2026 — Compact search width on all screen sizes
 
 Reduced the search field to a preferred 15rem width and made its row/header controls use their content width rather than fill the mobile container. The row stays right-aligned and may shrink when necessary to avoid overflow. Selected formatting, build, docs, new-topic interactions, presentation, colours and mobile Practice set/search checks passed. Development server remains running; no deployment.
 
-
 ## 8 October 2026 — Consistent topic-header right gutter
 
 Fixed intrinsic grid sizing that allowed the controls to extend beyond their allocated flex width. The title now has a named, shrinkable flex item; the controls use an explicit minmax(0, 1fr) track, keeping both rows within the header without compensating margins or clipping. Compact search width and standard Go size remain. Presentation regression checks passed for all three topics at seven viewport widths (320–1600px), asserting both controls share the header’s right gutter and search stays compact. Selected verification results are recorded in HANDOFF.
 
-
 ## 8 October 2026 — Notes containment and medium-width header
 
 Capped writing surfaces at their calculated card width and restricted the notes textarea to vertical resizing, preserving edge-to-edge and inset variants. Replaced the header’s fixed 767px stacking rule with flex wrapping and an 18rem preferred title basis: medium widths wrap the title/description beside the controls, while phones stack them. Selected formatting, production build, new-topic, presentation, colour and Practice set checks passed. Presentation covers eight header widths including 720px side-by-side and phone stacking, plus oversized textarea width containment across nine viewports. No deployment performed.
-
 
 ## 8 October 2026 — Puzzle icon selection and development loading fix
 
@@ -356,11 +343,9 @@ The user supplied a visual example and requested hiding the grid after choosing.
 
 The Go reference screenshot prompted a dedicated Svelte composition using the package’s supported render/bind APIs, with no vendor edits: strategy/next-move hints above the board, coordinate/source/rules below, and unhighlighted turn text. Go challenge labels now include the same kyu ranges as T-Level. Regression checks cover both hint controls, attribution placement, turn styling, a played move, Undo, checking and solution replay. Svelte diagnostics identified non-reactive component references in the wrapper; those were made reactive. The user then requested hiding maths puzzles; the Classic maths tile is excluded, leaving eight selectable types, while library content is preserved.
 
-
 ## 8 October 2026 — Remove development field-style selector
 
 Removed the Field style (dev) selector, its state/import, the unused inset CSS variant and its obsolete browser assertion. Both writing surfaces now always use the existing full-card-width square-corner style, with the width cap and vertical-only textarea resize retained. Existing responsive full-width checks remain.
-
 
 ## 8 October 2026 — Hamburger menu trigger
 
@@ -409,21 +394,17 @@ Independent implementation: SiteHeader/SiteFooter now own common brand/navigatio
 
 Drawing uses a shared renderer and theme-independent stroke colour IDs, an X clear action, a separate eraser with five times pen area, and four inks whose HSL lightness inverts in dark mode. Erasing removes ink to the canvas background, including over guides. The issue dialog follows the T-Level preview/copy/email-draft pattern. These changes are undergoing selected verification; working persistence and timing/history presentation remain unfinished pending storage decisions.
 
-
 ## 10 October 2026 — JSON progress and session working agreed
 
 User chose to retain JSON storage and clarified that drawings need only last a session/about three hours. Implemented an expiring sessionStorage working cache, separate from durable progress. Retained schema-2 local progress; added measured active time in per-topic visit/hour buckets and JSON export v2 with v1 import support. Integrated the T-Level two-minute idle/five-second poll/hidden-pause rules; transient clocks never charge absence after reload. Added weekly minutes and per-level success views, with explicit unknown historic timing and a separate initial assessment baseline. SQLite remains deferred; no backend/storage engine migration is authorised or needed for this slice.
 
 Independent shared header/footer/report controls, share links, popup dismissal, drawing tools/colours/theme inversion are implemented. Browser restoration tests exposed Chromium edge-rasterisation differences between canvas instances; tests now assert restored ink/erasure/guide pixels with exact logical-stroke tests separately. Removing an unnecessary stroke-end repaint preserves pointer-release bitmap behaviour. Verification is still in progress; no final pass claimed here yet.
 
-
 Final verification: `npm run verify:changed` passed, with cached selected coverage of 59 logic tests, format/build, Svelte diagnostics (zero errors/warnings), drawing/topic restoration, presentation, default colours, startup faults, Practice sets, Progress/accessibility and activity integration. The installed browser test clock confirmed 65 seconds of unfinished practice appears as 1.1 minutes on Progress. The weekly table is a labelled, focusable scroll region for keyboard users on small screens; its Svelte noninteractive-tabindex exception is explicitly documented, and the automated accessibility check passes. No verification process remains running. No commit, push or deployment was performed. Manual touch/stylus/screen-reader review remains unclaimed.
-
 
 ## 10 October 2026 — softer drawing surface and tool selection
 
 User requested a more subtle selected-pen highlight and reduced canvas contrast. Changed the shared selection outline from solid two-pixel text colour to a one-pixel muted outline, preserving keyboard focus. Canvas backgrounds are now off-white `#f2f2f2` and dark grey `#202020`. Updated the existing browser expectation. `npm run verify:changed` passed all selected checks: formatting/build, drawing/topic, docs, presentation, colours and Practice sets. No commit or deployment performed.
-
 
 ## 10 October 2026 — topic homepage and clean subject/topic URLs
 
@@ -431,11 +412,9 @@ User approved Build-level card examples and lowercase Foundation Maths routes. I
 
 The first Practice-set browser run exposed that an active mixed-topic set could be replaced by the URL's topic on reload. Active sets now carry their existing shareable code in `?set=...`; reload resumes the matching saved set, while a plain topic link reliably opens its topic. Set links also work through name selection. All selected verification subsequently passed: formatting/build, bank, 59 logic tests, puzzle library, Svelte (zero diagnostics), homepage/examples/accessibility/static routes/Back/reload, drawing/topic flows, presentation, colours, startup, Practice sets, Progress and activity integration. No verification process remains running; no commit, push or deployment was performed.
 
-
 ## 10 October 2026 — compact, minimal topic cards
 
 Removed the example/Build label and practice call to action from the topic cards, leaving the title and question only. Gave the homepage its own compact wrapping card layout, with 20rem preferred widths and full-width cards on screens 480px and below. Progress layout remains separately defined. `npm run verify:changed` passed all selected checks: format/build, docs, logic, Svelte, topic cards, presentation, colours, startup, Practice sets, Progress and integration. No commit or deployment performed.
-
 
 ## 10 October 2026 — narrower multi-card rows and layout discussion
 
@@ -537,13 +516,11 @@ Recorded next-session user selection for displaying a timer on scaffolded practi
 
 Extended next-session demo highlighting to include the textual method-description step corresponding to the currently animated portion. Recorded in roadmap and HANDOFF; not implemented.
 
-
 ## 10 October 2026 — refactor review: docs alignment
 
 Step 1 evaluation found conflicting hook/persistence guidance, stale feature status, missing skill links, misplaced content evidence and incomplete source comments. The user authorised action across all review steps, changed the intended working-cache lifetime to 48 hours with code explicitly deferred, and corrected the teaching-skill example themselves. Their CODE_STYLE addition requires keeping code/documentation alignment explicit; preserved both user-edited files.
 
 Corrected README path, active publishing-hook guidance, JSON v2 contract, temporary-working description, arithmetic totals and eight-family selector. Reconciled roadmap availability and working retention; indexed both missing skills and grouped arithmetic evidence with teaching content. Kept the protected-specification redirect and both intentionally retained T-Level briefs. Historical log entries remain unchanged. UI_UX_RULES records the 48-hour requirement with an explicit three-hour implementation caveat; roadmap/HANDOFF identify the later TTL/test slice. Comment conformance proceeds in step 2. No tests run at this checkpoint; no runtime changes yet.
-
 
 ## 10 October 2026 — refactor review: code quality
 
@@ -557,13 +534,11 @@ Step 3 compared startup/storage recovery, topic routing, five-stage navigation, 
 
 Implemented: three-topic sets, six-question assessments, twelve-question independent pages with ten-answer scoring, JSON v2/v1 import, temporary working and active-time history. Explicitly deferred: 48-hour cache lifetime (current three hours unchanged), operation/method-step highlighting, timer visibility choice, sorting and cloud sync. These are not reported as delivered or defects to fix opportunistically. Visual/manual device claims remain limited to recorded evidence and the checks about to run.
 
-
 ## 10 October 2026 — refactor review: test quality and selection
 
 Step 4 reviewed unit/session/browser boundaries, deterministic time/randomness, bank validation, cached selection and test readability. Existing tests cover exact arithmetic, adaptive thresholds/assistance, immutable submissions, set expiry/resume, import validation, recommendations, startup faults, drawing restoration, playback and responsive/accessibility behaviour. Found selection omissions after moving startup to TopicPractice and adding practice-history/time domains: their focused checks could remain cached. Added startup mappings for TopicPractice/shared header/theme controls, Progress mappings for history/time/code, and integration mappings for session-domain dependencies; regression cases assert these selections. Root Node tests now participate in changed-file formatting, addressing compressed newer test code.
 
 Added working-cache tests for copy isolation, read-versus-edit expiry and blocked-storage fallback with one warning. Tests preserve the currently implemented TTL; the 48-hour change remains deferred. Enhanced docs verification to require INDEX entries for all maintained Markdown, including routed content/legacy documents, alongside existing active-link checks. No external-link/anchor audit or legacy deck regeneration is implied. README describes the adjusted verification boundaries. Verification pending.
-
 
 ## 10 October 2026 — correction: refactor discussion gates skipped
 
@@ -572,7 +547,6 @@ The user pointed out that the agent skipped the report/discuss stages for steps 
 Verification had already started: initial browser server bind failed with sandbox EPERM; an authorised rerun reused the completed format/build/puzzle checks. Additional checks reported passing through Practice sets before the correction. Verification rebuilt tracked website/build assets; no commit or publication occurred. Any passing result establishes technical evidence only, not user approval of the edits.
 
 The already-running verification subsequently completed: all selected checks passed, including Progress and integration. No verification process remains running; the final pause-record edits were not rechecked.
-
 
 ## 10 October 2026 — step 1 repeated, discussed and corrected
 
@@ -765,9 +739,7 @@ The 479/480 viewport pair is now a single 480px boundary and 767/768 a single 76
 
 Before CSS edits, the expanded presentation baseline passed all five stages at 16 viewport widths around the existing thresholds. Named-variant compilation was checked in memory using the installed compiler. CODE_STYLE matches the start-of-follow-up snapshot; no bank, scoring, cache-lifetime, palette or protected specification changes. Source diff review confirms style declarations are otherwise preserved. Verification in progress: format/build passed; the sandbox blocked browser serving with 127.0.0.1 EPERM, so an authorised rerun is using cached passing results.
 
-
 Final selected verification passed format, puzzle-library, build, new-topics, docs, logic, bank, Svelte sync/diagnostics, presentation, colours, startup, Practice sets, Progress and integration. The 16-width/five-stage checks, reference resizing across 768/1150 and fractional container cases at 480/650/780 all passed. Register-only changes select the appropriate consumers. No process remains running; generated build assets refreshed, with no commit/publication. No additional dependency or bespoke CSS transformer was introduced. The retained 678px exception has an explicit purpose but no claimed historical numeric derivation. Responsive follow-up complete; final record-only documentation check selected docs alone and passed.
-
 
 ## 11 October 2026 — shared dimensions and derived geometry
 
@@ -796,11 +768,9 @@ Reviewed all of components.css, related shared styles, component consumers and r
 
 Pre-edit presentation baseline passed. Sandbox initially blocked the local server (127.0.0.1 EPERM); approved rerun passed. Source comparison against `/private/tmp/maths-dimensions-before` confirms the intended substitutions; CODE_STYLE is byte-identical to that snapshot. No bank, palette, breakpoint or protected-specification edits. Existing browser checks cover resize/restore/Home reset and ink preservation. Selected post-change verification is pending.
 
-
 Final selected verification passed format/build, puzzle-library, new-topics, docs, logic, bank, Svelte/diagnostics, presentation, colours, startup, Practice sets, Progress and integration. Formatting initially flagged two files; only those were formatted before rerunning. Browser serving again required approved local-server access after sandbox EPERM; cached passing work was reused. New menu-gutter/action-clearance and number/expression-separation checks passed, alongside existing all-stage/breakpoint/overlay and canvas resize/Home-reset/ink-preservation coverage. CODE_STYLE remains unchanged; generated build assets refreshed. No process remains running, and no commit/publication or manual touch/stylus review is claimed. Final record-only documentation check passed through verify:changed from website/.
 
 The first direct record-only docs invocation used the repository root instead of its required website/ working directory and failed before checking links; the normal verify:changed invocation from website/ selected docs alone and passed.
-
 
 ## 11 October 2026 — concrete CSS review checklist
 
@@ -810,7 +780,6 @@ UI_TASTE now links to the general rules instead of repeating them; its applicati
 
 History places the 17px root font in the initial migrated stylesheet and the number-slot variable in the later question-layout refactor. No recorded derivation or comparative 16/18px evidence was found. A readability compromise for the root and two-digit capacity for the slot are plausible explanations, not established historical reasons. Change-selected documentation verification passed (docs only).
 
-
 ## 11 October 2026 — 16px / 18px visual comparison
 
 At the user's request, captured eight lattice-multiplication independent-practice comparisons: root font and question-number slot both at 16px or both at 18px, at 390×844, 440×956, 768×1024 and 1024×1200 logical browser viewports. Used the latest verified static build, an isolated fresh profile, default Start challenge, default light Rose theme, identical deterministic questions and device scale 1. Overrides exist only in browser styles; production CSS remains unchanged at 17px.
@@ -818,7 +787,6 @@ At the user's request, captured eight lattice-multiplication independent-practic
 Phone viewport-only captures stopped before the question buttons. Replaced them with eight full-page captures at the same requested browser viewport sizes, explained during the task, so number slots and working are visible. Artifacts are under `website/test-results/browser/font-comparison/`: eight PNGs, `index.html` side-by-side viewer and `manifest.json` recording computed values, viewport/image dimensions and shared question text. Capture script is `/private/tmp/maths-font-comparison.mjs`; no source/test implementation changed. HANDOFF records review availability and the pending decision.
 
 Inspected all eight final images. Neither size produces horizontal page overflow; question grids remain one/two/three columns at phone/768/1024 widths respectively. At 18px, text/controls are larger and the page is taller; the progress strip wraps further at 390px. Screenshot assertions confirmed both requested computed values, unchanged questions, viewport dimensions and PNG widths. Local browser/server access needed permission after sandbox EPERM; all processes closed. This is requested visual evidence, not a new full verification run or approval to change the application's typography.
-
 
 ## 11 October 2026 — chosen 16px scale and stage-label refinement
 
@@ -828,9 +796,7 @@ Previewed a 1px wider gap at the four comparison viewports; it remained faint be
 
 Files: components.css sets root/number slot to 16px, stage labels to 0.9375rem (15px), and adds one shared non-interactive separator pseudo-element except on the final stage. UI_TASTE records the new baseline and paragraph measure's resulting 608px width. Presentation checks retain the intended 2rem stage gap using root-relative measurements, replacing assumptions tied to the old 17px root; all-stage checks also require the chosen 15px labels. HANDOFF records remaining verification. No bank, scoring, persistence, breakpoint, protected specification or CODE_STYLE edits. Selected verification and final visual inspection pending.
 
-
 Verification complete: selected format/build, new-topics, docs, presentation, colours, Practice sets and Progress passed. Browser jobs needed approved local-server access following sandbox EPERM; passing build/format results were reused. All five stages retained the chosen 15px labels and fit the existing boundary checks. Visually inspected final actual-build lattice screenshots at all four requested viewports under `website/test-results/browser/stage-refinement/`; confirmed root 16px, label 15px, clearer diagonal borders and no horizontal page overflow. Gap-only previews are labelled `-preview`; final images have only the viewport in their filenames. Per-file source diff reviewed: only the intended root/slot/label/stroke changes are in components.css. Generated build refreshed; no browser/server left running, no commit or publication. Final record-only docs check passed.
-
 
 ## 11 October 2026 — mobile question layout and stable header tools
 
@@ -840,21 +806,17 @@ Implementation: SiteHeader adds one tools slot containing the theme controls and
 
 Source snapshot `/private/tmp/maths-mobile-layout-before`; build/format passed. Initial browser serving blocked by sandbox EPERM; selected permitted rerun and final visual review pending.
 
-
 Follow-up verification: all originally selected jobs passed, including integration, after replacing its obsolete 210px minimum assertion with equal widths within each actual row. The initial long-expression test incorrectly required a full row; measurement showed an equal 429.5px pair fit, so the assertion now accepts that valid result. Tablet screenshot review also prompted explicit top alignment of header tools. Phone/tablet screenshots confirmed the requested edge-to-edge card and header arrangement.
 
 The user then identified the remaining 4×4-digit wrapping at widths below 394px and transparent chevron seams. Moved question numbers to the top-left, preserving the 10px left inset and 16px slot; removed the 29px horizontal number clearance and its obsolete variables. Equation padding is now 8px horizontally with 1.5rem vertical clearance for number/result labels; equation font sizes remain unchanged. Presentation checks assert Confidence pairs at 360/394/768px, centred intact maths and number/result separation. The displayed 360px page includes four 4×4 products, all paired. README/UI_TASTE now describe corner-label spacing.
 
 Removed the intentional 0.05rem chevron gap, aligned pseudo-element strokes to the outer clip (absolute positioning previously used the inset padding box), and outlined the left notch so wrapped edges retain a border. Preserved stage labels, colours, depth, order and native controls. Latest selected format/build, new-topics, presentation, colours, Practice sets and Progress passed. Added final join-gap assertions and close-up captures for matching the user's assessment example; final presentation/docs verification pending. No content, scoring, persistence, CODE_STYLE or protected specification changes in this follow-up.
 
-
 Chevron close-ups at 390/768px and the no-gap assertion passed. Inspected the assessment phone close-up against the user's example: continuous border-colour joins, no intentional background seam. The first final run exposed a pre-existing test-clock race (pauseAt(host time) could fall behind browser time); corrected the test to pause one second ahead of its own browser clock and the focused rerun passed.
 
 The user additionally requested “Level” instead of “Challenge” beside the practice selector and a “Check method” text link on the same row. PracticeActivity now uses the shared quiet button style for that action, preserves its reference toggle/focus handling, and exposes its expanded state. Presentation checks cover the requested same-row relationship; UI_TASTE records it. Final change-selected verification pending.
 
-
 Final verification passed: format/build, new-topics, docs, Svelte/diagnostics, presentation, Practice sets, Progress and integration; the passing colour result remained valid and was reused. The new label assertion initially used Playwright's exact label-text matcher, which also collected nested option text; switched to the combobox's accessible name “Level”, which passed. Reviewed the final 360px Confidence screenshot: two-column 4×4 products, top-left numbers, and Check method beside Level. Inspected assessment chevron close-ups at both 390 and 768px; joins use continuous border colour. Captures are `confidence-questions-{360,394,768}.png` and `chevron-joins-{assessment,plain}-{390,768}.png` under website/test-results/browser/. Targeted diff whitespace check passed; unrelated pre-existing skill whitespace remains untouched. Build assets refreshed, no test/server running, no commit or publication. HANDOFF now records completion and the deferred content correction.
-
 
 ## 11 October 2026 — stable method-page playback and visible descriptions
 
@@ -862,14 +824,11 @@ User requested method-step descriptions near 14px by default and 16px at >=768px
 
 Updated UI_UX_RULES to supersede the old follow-current-step scrolling requirement, UI_TASTE for visual rules, README for playback ownership, and HANDOFF for recovery. No bank content, scoring or persistence changes. Presentation coverage now checks all three Confidence methods at 360/768px through playback, plus existing reveal ordering, pause/speed and references. Verification/visual inspection pending.
 
-
 Playback regression checks exposed indirect scrolling beyond the removed explicit followStep: disappearing arithmetic notes shortened the document, and at wider widths the footer became a browser scroll anchor when completion appeared. Reserved arithmetic-note height with overlapping intrinsic grid cells and unrevealed list items, reserved equation guide-note space, and disabled anchoring on the document/dialog scroller while a demo is present. Removed obsolete data-demo-current markers. An older equation annotation selector initially overrode the requested font size; corrected selector specificity. Tests now confirm fixed scroll for the six method/width Confidence cases. The expanded test left a tablet viewport before an existing phone-only reference check, so it is explicitly restored; final full selected pass pending. Screenshots settle native animations after virtual timers finish so their end-state ink is complete.
-
 
 Final selected verification passed: format/build, new-topics, docs, Svelte/diagnostics, presentation, colours, Practice sets and Progress, reusing unchanged successful results. Browser coverage samples all three Confidence methods at 360 and 768px throughout playback/completion: exact unchanged scroll positions, 14/16px description sizes, stable description counts, active highlight matching the logical step, and question/working/control order. Existing reveal sequencing, pause/resume/speed persistence, reduced-motion and responsive reference checks passed.
 
 Inspected all three phone captures plus lattice/equation tablet captures. The smaller descriptions and current-step treatment are clear; longer examples still require manual scrolling and no universal simultaneous viewport fit is claimed. Captures: website/test-results/browser/method-layout-{M01,M02,M10}-{360,768}.png. Current-step text highlighting is now implemented; separate mathematical operand/cell/carry highlighting remains proposed in the roadmap. Source whitespace check passed, obsolete followStep/data-demo-current references removed, banks/specification/CODE_STYLE unchanged. Build refreshed, no processes running, no commit or publication.
-
 
 ## 11 October 2026 — compact demo starts and centred topic-card pairs
 
@@ -877,11 +836,9 @@ User rejected repeated guide instructions beneath the diagram and blank space re
 
 Topic cards now use centred wrapping flex rows with a shared width/gap, 150px preference below the existing 480px breakpoint and 180px from it (rem-based), capped at half the usable row width after the gap. Reduced card padding, heading and question typography to fit readable previews; preserved content, colours, natural heights and links. Removed the unused topic-card container threshold and aligned UI_TASTE, UI_UX_RULES, README and HANDOFF. Added browser checks for compact initial demos, natural control movement, duplicate-note removal, and centred topic pairs/content fit at 320, 360, 390, 440, 479, 480, 481, 600, 768 and 1100px. Verification and visual review pending.
 
-
 Verification complete: selected format/build, new-topics, docs, Svelte/diagnostics, presentation, colours, startup, Practice sets and Progress all passed on the first implementation run. Checked compact initial demos and normal-flow control movement, unchanged scroll throughout all three Confidence demos at 360/768px, progressive equation rows with current-row highlighting, and arithmetic demos containing no repeated note list. Topic cards fit their content, preserve centred partial rows and allow at least two per row across 320–1100px; the registered 480px transition gives 150px/180px preferred widths, and all three current topics fit at 768px.
 
 Inspected topic-home-360/480.png, method-ready-360.png and the refreshed method-layout-M01-360.png. Cards and example content fit; the initial demo has the question immediately above controls, with no reserved drawing area; after playback the diagram/final answer sit above the lowered controls. Other viewport/method captures are in website/test-results/browser/. Source diff whitespace check passed and no live bank changed. No new dependency, breakpoint, JS sizing calculation, commit or publication; removed the obsolete container threshold and reused existing compact renderer/style tokens. HANDOFF records completion; no process remains running.
-
 
 ## 11 October 2026 — restore calculation notes and unify stage card width
 
@@ -893,7 +850,6 @@ Extracted the phone edge-to-edge and >=768px inset card rules into one shared st
 Verification complete: selected format/build, new-topics, docs, Svelte/diagnostics, presentation, colours, startup, Practice sets, Progress and integration all passed. The regression check now distinguishes real numeric working from repeated general instructions: it requires diagonal carry or division remainder calculations, retains the final answer and rejects repeated setup text. Every learning stage passes phone/full-width and >=768px/inset geometry/border checks; compact initial demos and no-scroll playback continue to pass.
 
 Inspected refreshed 360px multiplication and division method screenshots under website/test-results/browser/method-layout-M01-360.png and method-layout-M02-360.png: the calculation notes are restored and the full-width card has only horizontal top/bottom borders. Shared stage-panel owns those rules once. Whitespace check passed; topic-card sizing and question banks unchanged. Build refreshed, no process running, no commit or publication. HANDOFF records the correction and final evidence.
-
 
 ## 11 October 2026 — minimum topic width, proportional previews and universal menu
 
@@ -929,7 +885,6 @@ User supplied an annotated topic header and clarified that guides need vertical 
 
 Guide insertion now lays out in current visible canvas dimensions before converting to the shared bitmap coordinate system. Both lattice and division frames are centred with 48px minimum handwriting margins; lattice cells are square and capped at 72px. Saved guides and strokes are preserved through resizing/restoration. This supersedes the earlier fixed y=85 and 90% scaling. Updated existing pure geometry checks and browser coverage; verification and visual inspection pending.
 
-
 ### Development-log recovery and final verification
 
 Found that documentation commands had appended a DEV_LOG entry and then mistakenly written the previous HANDOFF buffer to DEV_LOG. Restored the saved pre-dimensions log and replayed 30 recorded log edits, preserving their original text and order, while excluding the stale-buffer writes and one command that failed before its log edit. Recovery source: `/private/tmp/maths-dimensions-before/DEV_LOG.md` plus this session's recorded edit commands. The reconstruction is retained at `/private/tmp/maths-restored-DEV_LOG.md`; the overwritten file was also saved before replacement. No historical entries were intentionally condensed or dropped.
@@ -946,7 +901,6 @@ During review the user selected a 28px minimum topic title instead of the restor
 
 Final selected format/build, new-topics, docs, Svelte/diagnostics, presentation, colours, startup, Practice sets, Progress and integration checks passed, reusing unchanged passing evidence. Responsive coverage checks the 28px-minimum title, original subject scale, linked subject, column clearance, intact search prompt and resetting Topic navigation control; the existing route and Practice-set flows passed. Inspected the restored header arrangement at 440px before the final title-size refinement; fresh final screenshots are under website/test-results/browser/topic-header-{439,440,600,800}.png. Scoped whitespace check passed. No running process, commit or publication.
 
-
 ## 11 October 2026 — puzzle navigation, consistent panels and reusable Progress chevrons
 
 Implemented the user's fixes 1–10. Puzzle family links now participate in browser history and restore selection on Back, with the shared Maths practice/Puzzles/Progress header, Level label and no duplicate chooser button. App-owned responsive overrides fit puzzle boards within their containers. Main page panels share the topic practice mobile treatment below 768px: full viewport width, square corners and top/bottom borders only. Question rows retain natural widths and centre partial rows. Text links use theme colours and button-shaped links omit underlines; intentional quiet text actions retain theirs. Progress copy is shorter, with supporting explanations on /help.html linked from the footer. The imported puzzle package is unchanged.
@@ -961,7 +915,6 @@ Inspected puzzle-go-320.png, puzzle-sudoku-320.png, progress-refined-{320,390}.p
 
 Report-only modularity findings (point 11): vendor/puzzles is the documented unchanged @subject-apps/puzzles 0.1.0 package pinned to upstream commit 69560b227aaedefe72457241a53205ee93b7e024. It owns content, metadata/artwork, marking/rules, renderers/interactions and optional scoped base styles, without application routing, persistence or theme-choice dependencies. Maths owns selection/history, checking/reveal policy and theme/fit wrappers. GoPuzzle uses public render/bind/evaluate APIs without duplicating Go rules, but relies on generated .go-* markup and strategy-hint hooks, making it the main integration seam to check on updates. Distribution is a manual local vendored dependency rather than a separately versioned repository update. A future extraction should move applicable authoring tools, independent validators, cached source evidence and authoring instructions with the runtime package, then retain pinned updates and consumer integration checks. The existing boundary is already close to the desired modular format; no architectural rewrite is needed first. Review is based on this checkout and pinned package documentation, not a fresh upstream comparison.
 
-
 ## 11 October 2026 — touch puzzle controls and methodical operation highlighting
 
 Implemented the user's nine refinements. Progress has equal outside padding and rounded external meter ends, with square internal joins. Selected chevrons retain the shared border colour instead of a dark rectangular border that left ticks at diagonal corners; the fill clips to the padding box. Native selectors/file inputs use content sizing with container limits; the user chose normal browser sizing as the fallback on older browsers. The Bits UI Topic control is unchanged. Removed the historical full-width error-selector override. Canvas default is 262px (+16), preserving existing saved dimensions/ink. Header brand/actions wrap at intrinsic widths, reserving only the tools' first line through a width derived from shared control sizes/gaps; actions gain 1rem left margin and their trailing Progress link aligns right. No new breakpoint. Footer uses centred author credit and spaced links; removed the old practice/storage slogan and obsolete left margins.
@@ -974,9 +927,7 @@ Pure tests validate every current arithmetic demo level plus zero/carry/decimal 
 
 Verification encountered stale canvas bitmap-height expectations, a wrapped-label locator that needed partial matching, an overly broad centring rule caught in visual review, and an About footer link too close to the next link row. Corrected each; footer-only alignment and paragraph spacing are now checked. All selected format/build, puzzle-library, new-topics, docs, logic, Svelte/diagnostics, presentation, colours, startup, Practice sets, Progress and integration passed before the last selector/footer margin cleanup. Final selected verification pending for that cleanup. Inspected method-highlight-M01-{sum,write,carry,diagonal}.png, method-highlight-M02-{divide,write,carry}.png, go-touch-preview.png, header-intrinsic-744.png and progress-complete-chevron-joins.png. Touch evidence is browser emulation, not a physical-device audit. No commit or publication.
 
-
 Final verification complete: the last format/build, new-topics, docs, presentation, colours, Practice sets and Progress checks passed after the selector/footer cleanup; other current passing fingerprints were reused. Integration and Svelte checks passed after the footer markup/accessibility correction. Inspected the final 744px short-name header, connected rounded meters and a multi-cell highlighted lattice diagonal. Source whitespace check passed. Build refreshed; no running process, commit or publication. The approved CSS fallback and vendor patch are documented, and HANDOFF records completion and optional physical-device review.
-
 
 ## 12 October 2026 — topic animation specifications, puzzle navigation and human Go
 
@@ -1008,7 +959,6 @@ Verification: all selected format/build, portable puzzle rules, new-topics, docs
 
 Initial formatting omissions were corrected. The first build exposed a FAQ fragment link whose target exists only after hydration; changed it to the prerendered Progress route. A later presentation run observed the already-known native ResizeObserver/virtual-clock timing race after viewport resize; the Confidence geometry check now waits for the real layout to fit, as existing related checks do. The subsequent selected run passed. No source-bank changes in this slice, commit, publication or deployment.
 
-
 ## 12 October 2026 — portable learner identity, OneDrive onboarding and Go estimates
 
 User approved stable random learner UUIDs, preserved across exports/imports without accounts or passwords. Additive schema-2 loading retains all existing name-keyed progress and results. Personalised file names are `Maths/practice_progress_<safe name>_<UUID>.json`. Directory setup reuses or creates Maths without removing existing contents; selecting Maths itself avoids nesting. Existing nonempty files require validated import/review, never silent initial replacement. Native handles move from prior name keys to learner IDs when applicable. Imports match identity first and name second, reject ambiguous identity/name collisions and retain explicit replacement review; legacy files receive/preserve an ID. Practice now shows a nonblocking save-to-OneDrive prompt for learners without a linked file, including existing browser learners; Later dismisses for the tab. The direct save action preserves existing files and reports conflicts. Browser working progress remains intact. No automatic cloud merge or provider authentication.
@@ -1020,7 +970,6 @@ Removed the human-board instruction paragraph; clock explanation appears during 
 Selected format/build, puzzle-library, new-topics, docs, logic, Svelte/diagnostics, presentation, colours, startup, Practice sets, Progress and integration passed across this slice. The new fresh-browser Progress scenario initially reloaded before navigation completed; waiting for its destination heading fixed the race and the rerun passed. Real origin-private directory/file tests cover existing Maths content preservation, personalised filenames, direct prompt save/refusal and fresh-browser import; picker selection is stubbed. Actual college OneDrive sync remains untested. Inspected the 320px coordinate/estimated-corner capture. Physical touch/pinch/audio remains a device check.
 
 Subsequent grid-spacing corrections: a viewBox-only expansion moved labels slightly outward; fixing their relative positions still changed text scaling and constrained the grid too much. Latest user instruction freezes labels' positions and sizes and expands only the inner playing grid. Renderer now retains the coordinate layer/viewBox and transforms a separate grid/stones/markers group by .2 grid units per edge (about 8px on the normal 9×9 board). Buttons share that transform; drag hit-testing uses the inverse SVG screen matrix and preview circles belong to the transformed group. Removed the former clearance cap. Focused estimate/geometry tests pass 4/4, including fixed label positions/sizes, enlarged grid and unchanged puzzle viewBox. **Full final verification permission was declined: final grid/pointer browser verification and build refresh remain outstanding.** Earlier passing browser checks do not cover this last correction. No commit, publication or deployment.
-
 
 ## 12 October 2026 — aligned Go coordinates, persistent timer disclosure and scoring research
 
@@ -1059,7 +1008,6 @@ Selected format/build, new-topics, docs, logic, Svelte/diagnostics, presentation
 Corrected ordinary topic Prev/Next from individual-question selection to page-attempt navigation. Next restores a saved later page or creates another at the forward end; Prev restores earlier questions/responses. Browser-persisted previous/next stacks are scoped by learner/topic/stage, alongside the existing active page. Revisits never score answers again. Pending promotion choices still require resolution before advancing. The single-page assessment has no duplicate pager; Practice sets retain their ordered navigation. Question selection/automatic answer advancement and attempt-keyed temporary working remain unchanged. JSON exports continue to contain results rather than page attempts.
 
 Browser regression verifies a new 12-question attempt and exact restoration on Prev; domain checks cover responses, no duplicate scoring, reload with a page ahead, and learner/stage isolation. An initial test compared an in-memory undefined field against JSON where that field is absent; corrected the expected persisted representation. Selected format/build, new-topics, docs, logic, Svelte/diagnostics, presentation, Practice sets, Progress and integration passed; unrelated passing fingerprints reused. No publication or deployment.
-
 
 ## 12 October 2026 — three-page banks, automatic file saves and balanced assessments
 
@@ -1227,18 +1175,15 @@ Library measurements and adoption limits remain in [METHOD_ANIMATIONS](docs/METH
 
 Latest refinement validation: `npm run verify:changed` passed format/build, new-topics, docs, Svelte diagnostics, presentation, colours, startup, Practice sets, Progress and integration; unchanged logic/bank results were reused. Browser assertions cover alphabetic option order and the approximately 2px controls-to-subject gap below 440px, with the wider two-column layout unchanged. The whole-session recap was checked against all user requests. Preview remains on port 8767; no publication or commit.
 
-
 ## 12 October 2026 — one-row phone controls and application-topic stages
 
 Latest user decision supersedes the earlier collapsed-title margin reduction: below 440px, search/Go and the content-sized Topic selector share one wrapping row. Reserve enough search width for its prompt; allow wrapping below approximately 360px rather than compressing it. Restore normal subject/title top spacing because the controls now occupy less height.
 
 Dedicated problem-solving topics finish at Independent practice (five stages), because this already applies methods to problems. Mark M03 explicitly in its bank; method topics retain their sixth application stage, and Combined problems retains its configurable page. Keep How to solve tips on M03 independent pages, all historical answers and authored problem questions/Practice-set slots. Use shared stage selection for navigation rather than a topic-specific hidden button. Implementation and selected verification are pending.
 
-
 Preview correction: the running Vite static preview retained its asset inventory across rebuilds, so the updated handwriting HTML referenced CSS/JS files it returned as 404. Reproduced the stylesheet 404 at port 8767; replaced the stale process. This was a preview-serving failure, not missing font data. The first new stage regression also exposed a fixture mistake: creating a learner with all banks selects the first bank; explicitly select M03 before testing its home-stage navigation.
 
 Latest spacing request: reduce the shared active-question-to-Answer-label gap by **0.5rem**, bringing the input closer to the question without changing either text size.
-
 
 Completed verification: `npm run verify:changed` passed format/build, new topics, docs, **118 logic tests**, bank validation, Svelte diagnostics, presentation, colours, startup, Practice sets, Progress and integration. Phone checks confirm search/Go + Topic share a row at 360–439px, wrap at 320px with a ≥160px search field, restore the 26px controls-to-subject gap, and preserve the ≥440px layout. M03 has five chevrons, independent tips and retained Practice-set/history behaviour; other Draft method topics retain six. The active-question bottom margin is reduced by 0.5rem.
 
@@ -1251,16 +1196,13 @@ User prefers Vara **Pacifico** and asks how to keep maths symbols/units visually
 
 Port check: the complete app responds at `http://127.0.0.1:8767/`, with the gallery at `/handwriting.html`; port 8766 still has a listener but timed out without an HTTP response. Its unrelated existing process was left untouched. No application source changed for this advice/status request.
 
-
 ## 12 October 2026 — Pacifico maths extension and shorter question buttons
 
 User authorises extending Pacifico with matching maths/unit strokes and requests measured package size. Build a separate, reusable extended-font asset and show it alongside the original in the gallery, with units, higher symbols and powers; preserve the original 16 specimens and use the existing shared writing controller. This authorises the extension/evaluation, not replacing every method animation yet. Report font data and shared helper bytes separately from the optional Vara runtime and the full comparison collection.
 
 Reduce question-button top and bottom padding by 0.5rem each (1.5rem → 1rem); lower the old minimum height accordingly so it does not cancel the requested height reduction. Preserve readable text, number/outcome clearance and 44px minimum targets. Implementation/verification pending.
 
-
 The user identified `.question-option` minimum height as a likely constraint; confirmed the existing 78px floor would mask much of a padding-only reduction. Both padding and floor are reduced together (62px floor at the default root). Corner number/result markers keep their font size but use single-line boxes and 2px edge insets to remain clear of the tighter content area. First selected run passed build/new topics and the new font coverage test, but hit an unrelated timing assertion in the existing autosave lifecycle test (25ms wait, expected one save, observed zero); rechecking before considering any change to that subsystem.
-
 
 Pacifico extension and first shortened-button trial passed all selected verification, including **119 logic tests**, generated-data equality/coverage, raised-index rendering, animation controls, mobile containment and marker clearance. The earlier autosave timing test passed on rerun without changing that subsystem (its wait is 20ms; 25ms was the reported test duration). Inspected desktop/mobile extended glyph specimens and the 360px equation-button capture.
 
@@ -1271,13 +1213,11 @@ Measured the standalone extended font (37,078 bytes raw / 11,176 gzip) plus mini
 
 Final 2px refinement verified: `npm run verify:changed` passed format/build, new topics, docs, presentation, colours, Practice sets and Progress; unchanged logic/Svelte/startup/integration evidence was reused. The final button minimum is 66px, block padding 18px and inline padding 10px at the default root. Number offsets and marker positions were preserved exactly through this last refinement. Pacifico Maths is live at `http://127.0.0.1:8767/handwriting.html#pacifico-maths`; the full app remains on port 8767. No method-wide font replacement, commit or publication was performed. Final documentation reconciliation follows.
 
-
 ## 12 October 2026 — quieter question numbers
 
 User requests approximately 10% smaller question numbers and 10% less contrast against their surface, with no retest and personal visual confirmation. Changed only `.question-option .num`: 0.8rem → 0.72rem (12.8px → 11.52px at the default root), opacity 0.9 to blend the existing muted colour 10% towards the actual button surface across normal/selected/result states. Corner offsets, question content and result markers are unchanged. Refreshing the static build for port 8767; no tests or verification suites are being run, as requested. Appearance awaits user confirmation.
 
 Static build completed successfully using Vite directly (no test/validation command). Updated preview is ready on port 8767 for the user’s appearance check.
-
 
 ## 12 October 2026 — preserve number line-box position
 
@@ -1285,43 +1225,33 @@ User approves the smaller number size/colour but reports the digits appearing hi
 
 Vite-only build completed successfully; the line-box correction is available on port 8767. Visual confirmation remains pending.
 
-
 ## 12 October 2026 — number inset correction and refresh stage restoration
 
 User reports the line-box correction did not fix the perceived upward movement. Traced the earlier shorter-button change: the shared number/result inset had also changed from 4px to 2px. Restore **4px specifically for question numbers**, leaving the smaller font, 90% opacity, fixed line height and 2px result-marker inset intact. The earlier claim that font metrics alone explained the movement was incomplete. User continues visual acceptance; no appearance suite is requested.
 
 New authorised behaviour: refresh restores the current chevron stage. Persist `lastMode` with each learner/topic in existing schema-2 browser progress, restore it on session creation/topic/profile selection, and leave ordinary stage selection intact while inside a Practice set. Invalid/missing values fall back to assessment; a retired M03 sixth-stage selection maps to independent practice. Existing page attempts, submitted answers and assessment lock remain authoritative. Functional verification will cover reload, stage/topic/learner isolation and Practice-set separation.
 
-
 User confirms the inset correction and requests a further **1px downward** adjustment: final question-number `top` is **5px**, with approved size/opacity and result-marker positions unchanged. The first focused browser check stalled because its new fixture omitted the existing second Continue confirmation for a new profile; the run timed out waiting for the first stage button; corrected the fixture. Session/Practice-set/problem-solving tests had already passed (27 tests).
 
-
 Completed: rebuilt the static site; **27 focused session/Practice-set/problem-solving tests passed**, and the focused startup browser checks passed with actual reloads through all six ordinary stages and saved second-page restoration. Profile/topic isolation, assessment locking and ordinary-stage separation from saved sets were covered by the focused logic tests. Appearance/colour suites were not rerun, respecting the user's manual appearance review. Final number top inset is 5px. Changes are available at port 8767; no commit/publication.
-
 
 ## 13 October 2026 — method handwriting and compact playback/progress
 
 Current authorised priority: integrate reviewed Pacifico Maths pen strokes into learner-written method working through the shared helper and existing timeline; leave explanatory prose in the normal font. Remove the active-working highlight outline and add 2px horizontal clearance. Fit Play/Previous/Next/End/speed on one row at 360px, omit the visible Speed label while preserving its accessible name. Progress becomes “Your progress [bar] [percentage]” then “Level: [level]”, without “recent success”. Silently ignore occupied-intersection attempts in Go puzzles while preserving other invalid-move feedback. These reduce visual clutter and make the animation resemble student working. Implementation and verification pending.
 
-
 Follow-up authorised during this batch: keep the human/practice Go board’s Count, Pass, Undo and Redo on one row at 360px, with Count first (also in keyboard order), retaining 44px targets. Add the repository README’s deployed-site link explicitly labelled “Live demo for testing”. A root README did not exist, so a concise entry point is added and registered in INDEX. First verifier attempt passed formatting, build and puzzle-library tests, then the browser job was blocked by sandbox localhost permissions (EPERM); rerun with the established elevated verification command. No application failure was established by that attempt.
 
-
 Intermediate checks: all topic/Go scenarios, 119 logic tests, Svelte diagnostics and docs passed. Two new presentation assertions needed correction: Chromium reported the default 3px outline width despite `outline-style: none`, and `innerText` includes screen-reader-only Speed text. Assertions now check the actual visible outline style and clipped accessible label. Preserved highlight clearance only in staged working, leaving static previews’ spacing unchanged. Added explicit reduced-motion and failed-font-fetch fallback checks.
-
 
 User follow-up: guide lines should draw **3× faster**, highlights should use **0.85 background alpha** so underlying lines remain visible, and equation-explainer/working horizontal clearance should be effectively zero to reduce prose wrapping. Apply a guide-only pace multiplier through the existing player (numeric handwriting retains its speed), shared translucent highlight colour, and remove the adjacent note/right and maths/left padding.
 
 The first full run passed presentation, colours, startup, Practice sets and Progress; integration flagged the previously approved quieter question numbers for colour contrast. Preserve the user's explicit visual choice; narrowly exclude those numbers from that one rule while retaining raw audit reports and checks on all other content. Visual review also caught a real arithmetic SVG placement issue missed by earlier layout assertions: the nested viewport needed explicit width/height geometry as well as CSS sizing. Added a regression check comparing every placed handwritten digit/carry with the original mathematical baseline. Verification of these refinements is pending.
 
-
 All selected verification passed for the Pacifico integration, corrected digit/carry baselines, 3× guide pace, translucent highlights, reduced explanation gap, compact Go controls, progress layout and README link. Inspected corrected phone lattice and equation captures. No dependency, commit or publication was added.
 
 Latest refinement: centre the method playback controls as one group. User clarifies that chevron memory is per topic: restore each destination’s previous stage, or Initial assessment for a new topic. Code review confirms existing per-learner `topics[subject:topic].lastMode` and `restoreStage()` already implement this. Keep that logic; extend the real-browser startup check to alternate equations/independent → new division/assessment → division/method → equations/independent, reload each saved destination, then visit new multiplication/assessment. Verify centring at 360px without sacrificing the single row.
 
-
 The added topic-navigation browser scenario initially stopped before the stage assertion because automatic scrolling left the dropdown option outside the viewport. The fixture now scrolls to the topic header before opening the selector, matching ordinary visible navigation; no persistence failure was observed. Also removed an unintended extra topic-selector maximum introduced while bounding the progress block; shared content-sized selector styling remains authoritative.
-
 
 User requests more surgical verification, removal of the explainer’s left accent and a final-highlight fade (hold 3 seconds, fade for 1 second). The previous shared-CSS dependency map reran unrelated puzzle/topic scenarios for small playback cosmetics. Isolate playback-control/highlight CSS and add a short focused browser job; its style-only changes must not select the broad topic/puzzle, presentation, Progress or Practice-set suites. Retain broad checks for shared layout/runtime changes. One policy-change verification establishes the new cache; subsequent cosmetic edits use the narrow job.
 
@@ -1334,22 +1264,17 @@ The keyboard-based topic-switch regression successfully restored the second topi
 
 User requests approximately another 2em for equation explanations without losing RHS working. Replace the annotated animation table’s fixed 56% explanation allocation with intrinsic, non-wrapping maths columns and a remaining-space explanation column; reduce unused outer RHS cell padding to 2px. This moves short working right without transforms or fixed offsets, while longer expressions retain their required width. Check every equation demo/recap at phone widths for actual stroke containment and readable explanation width. Verification pending.
 
-
 Equation-layout verification: the first fixture attempted End on an already completed example; corrected it to wait for font readiness and skip End when already finished. Actual containment then exposed the longest Confidence example overflowing at 320px. Compact 4px inner maths gutters alone were insufficient; added a panel-width-based mobile font clamp from the existing 1.1rem to a 1rem minimum (normal 360px size retained). All six demo/recap examples now pass at 320/360/390px, checking actual strokes against explanation and right boundary. The short 360px example gives prose at least 150px; its capture was visually reviewed. Format/build, docs and focused playback passed; the expanded playback job took 3.9s. No broad suite rerun was needed. Reconciled HANDOFF to current state, removing superseded pending-integration/test claims.
-
 
 ## 13 October 2026 — reported missing additional topic cards
 
 User reports missing cards on local port 8767. Inspected the homepage loader and the actual served HTML, then loaded that same preview in a fresh 360px browser context: all 11 cards render, including ratios, percentages, reverse percentages and speed/distance/time. Actual card bounds stay within the viewport; the full-page capture confirms visible cards and no clipping. No registration/rendering defect reproduced and no production change made. An older open tab retaining earlier client data is a possible explanation, not an established cause; ask for a direct homepage refresh before further diagnosis. This was a focused inspection, not a full verification rerun.
 
-
 ## 13 October 2026 — ratio question defect and topic-card working
 
 User identified that the ratio preview gives the total then asks for the same total. Audit found 42 affected ratio items (24 independent, 8 scaffolded, 8 spot-error and 2 demos), all with known=target=total. Correct Build items to request a named share and Confidence items to request the difference, keeping IDs and aligning mathematical models, answers, working, hints, checks and error repairs. The Build/card example now shares £160 between Ada and Ben in ratio 3:5 and asks for Ben’s £100 share. Existing saved histories remain intact; no migration or source-deck rewriting. Prior arithmetic validation established calculation consistency but missed this pedagogical defect; add an independent given/requested-quantity regression. User also requests slightly larger, centred working on topic cards; scope styling to previews and check narrow cards. Verification pending.
 
-
 User extends review to every other draft topic: parse for answers already given and other serious defects; also show explicit simplification in selected ratio solutions. Review will use prompt-derived calculations and context checks in addition to the existing model-derived answer checks. Current verification passed topic-card containment/centring, but the new ratio assertion incorrectly treated a two-batch final answer as the one-batch share; correct the test to account for later application operations. No production mathematics failure was indicated by that assertion.
-
 
 Draft-bank review covers 1,743 question/example records across all seven draft topics (249 per bank, including three problem-tip examples). Parsed prompt families, independently recalculated correct displayed working and added durable prompt-derived checks for percentages, reverse percentages, journeys, signed arithmetic and fractions; M03 also checks every model input against the prompt’s numeric/spelled givens. These checks complement model-based mathematics; they do not replace teacher acceptance.
 
@@ -1365,9 +1290,7 @@ Non-draft review: 741 records (246 multiplication, 246 division, 249 equations),
 
 Sort-radio refinement removes inherited 12px/6px label margins and halves the flex row gap from 8px to 4px, reducing the space between stacked choices to about half their previous centre-to-centre distance. Native radio labels and horizontal spacing remain. Final browser verification pending.
 
-
 All selected checks passed for the non-draft audit and compact radio controls. Final 360px captures confirmed the reduced radio spacing and centred/enlarged previews, but exposed a ratio reduction wrapping inside its output. Use the conventional short equivalent-ratio line (6:10 = 3:5), with both explicit divisions (6÷2=3 and 10÷2=5) in its teaching explanation. The step title still states the common divisor. This avoids splitting the resulting ratio in a narrow card without shrinking the entire preview. Reverification pending for this final content refinement.
-
 
 ## 13 October 2026 — units and acceptance of additional topics
 
@@ -1394,7 +1317,6 @@ All selected checks passed for the non-draft audit and compact radio controls. F
 
 - Final selected verification passed, including presentation (30.1s), startup, Practice sets, Progress and integration; unchanged passing build/content checks were reused. The 360px homepage capture confirms the revised Build question, quotient/remainder working, unit labels and absence of Draft stamps. No masonry, stored-history, commit or deployment changes.
 
-
 ## 13 October 2026 — packed masonry and calculation spacing
 
 - User clarifies masonry must place each next card at the highest available position, choosing left to right for equal heights. This supersedes down-column reading order. Preserve priority/a–z DOM and keyboard order while packing in that sequence. Keep natural card heights, responsive widths and stamp clearance.
@@ -1404,7 +1326,6 @@ All selected checks passed for the non-draft audit and compact radio controls. F
 - Shared calculation equals/approximation spans now have 0.25em padding on both sides, fixing the missing gap before results/currency. Existing maths/content is unchanged.
 - User confirms sorting must match the sequence students see scrolling down, not column-first reading. This is the new packing/DOM/keyboard sequence and is recorded in standing rules.
 - Verification passed all selected checks: format/build, responsive packing (320–1100px), filter/empty/single-result/sort packing, content containment/sign spacing, logic, Svelte, presentation, playback, colours, startup, Practice sets, Progress and integration. Inspected the 360px screenshot. No content, progress, commit or deployment changes.
-
 
 ## 13 October 2026 — ratio Confidence majority
 
@@ -1427,7 +1348,6 @@ All selected checks passed for the non-draft audit and compact radio controls. F
 
 - Remaining coverage reviewed against the original topic plan and wider Foundation content. Outstanding planned areas include signed multiplication/division and order, fraction multiplication/division, forming equations, area/volume and missing lengths, angles/polygons and Pythagoras; FDP conversion and best buys remain optional source drafts. User chose to defer further topics to another time. Current implementation is complete; await new instructions. Handoff updated with this decision; no additional application tests needed for this documentation-only closeout.
 
-
 ## 15 October 2026 — balanced navigation, demo preview and portable subject progress
 
 User requested balanced chevron wrapping, “Play demo” with the first teaching step visible, a shared multi-subject progress file with seamless migration, and theme-token control of incorrect-working paper/ink. After the architecture question, the user approved subject namespaces in both browser storage and portable files and added preparation for future user accounts.
@@ -1438,12 +1358,9 @@ Error-working tokens blend 85% light/dark neutrals with the theme's surface/text
 
 Verification in progress. Initial selected run needed local-server sandbox escalation. Checks exposed old expectations that working was absent before playback and a runtime JSON fixture bypassing the new storage serializer; those assertions/fixture were updated. Visual review caught a faulty luminance mask (mixed white/transparent source backgrounds and relative CSS URL resolution); the alpha-mask approach and painted-paper/ink checks replace it. Narrow-width layout checks now wait for ResizeObserver regrouping before inspecting five-stage rows. No commit/publication/deployment.
 
-
 Follow-up: user clarified UUID concern as students seeing/typing their user ID. Recommended retaining UUIDs internally and using a chosen username or short unambiguous learner code for future sign-in; no account UI or code generation added. User also asked for SVG whitespace suggestions: recommended cropping viewBoxes to actual working bounds plus consistent margins while retaining a natural-size cap; that crop remains proposed. Explicitly requested “Corrected answer” in Spot the error; implemented through the shared answer form and updated the standing label rule. Latest completed evidence before that label edit: domain/migration, bank, Svelte, presentation, method playback and colour checks passed. Light/dark error masks and 390px balanced chevrons visually inspected. At 320px, measured label constraints require balanced 2+2+2 rather than squeezing three stages. Final selected verification is next.
 
-
 Final evidence (15 October): `npm run verify:changed` completed successfully. Format/build, topic browser, docs, logic (including lossless local migration, multi-subject/account round trips, failed writes and old/new file fingerprints), bank, Svelte, presentation, playback, colours, startup, Practice sets, Progress and integration passed. Unsupported legacy file versions remain distinct in content fingerprints. The final label edit was included in browser checks. Earlier completed checks were reused by fingerprint. No verification process remains; preview was restarted at `http://127.0.0.1:8767/` (exec session 80843). No commit/publication/deployment. SVG cropping and student-facing account identifiers remain proposed follow-ups.
-
 
 ## 15 October 2026 — student IDs, tight SVG bounds and tab ownership
 
@@ -1455,27 +1372,21 @@ The isolated adapter audit confirmed six stale-snapshot failures: answers lost w
 
 Verification underway: the first browser run was sandbox-blocked; the authorised retry exposed an assertion inspecting server markup before the new ownership gate had mounted the menu. Updated it to wait for route readiness. Initial editing also caught and corrected missing arrow syntax in async wrappers before build. The first build passed. Added identity/migration tests, operation-drain/failure tests and real multi-tab handover coverage, including pending native-file work. Final selected evidence will be recorded below. No publication or deployment.
 
-
 Follow-up audit requested during closeout: examined the other app's detached-Svelte-snapshot drag/input regression against PuzzlePlayer, portable player/boards, GoPuzzle/HumanGo and route history. This host already reads mutable current state from retained gesture closures, avoids per-character controller redraws, and uses snapshots only for deliberate history transfer. No matching production defect found. Strengthened the existing browser scenario to assert drag backtracking/re-extension and the same input DOM node, focus/caret and stored answer through typing, feedback editing and a deliberate hint redraw. Recorded the integration rule in the puzzle patch register; verification pending.
 
 The SVG check exposed font-hinting-dependent rounding when measuring at the previous crop's display scale. The crop tool now measures at a fixed 1:1 authored-unit/CSS-pixel scale before applying natural dimensions, making subsequent runs stable. No mathematical shape/text edits are involved.
 
-
 Closeout verification refinement: the strengthened touch test originally read the DOM before Chrome delivered the queued move; it now waits for the expected route count. Its new typing checks passed retained DOM/focus/caret; the subsequent feedback-edit check used a platform-dependent End key and now positions the caret explicitly. These are test corrections, not puzzle implementation patches. The repeat crop check passed all 72 diagrams unchanged after fixed-scale regeneration. Added a guard/test ensuring simultaneous initial tab startup never requests handover without an explicit user click. Final selected verification remains in progress.
 
-
 Additional reported layout issue: screenshots show six stages in one compact row at 767px but 3+3 at 768–951px. Source inspection confirms the parent header switches at 768px to a progress column plus 2rem gap, sharply reducing navigation width. After row grouping, three full labels fit again, so labels return to one line. Equal-row expansion is restricted to widths below 768px, leaving the second row shorter at tablet widths. There is no 951px breakpoint: the observed upper edge is intrinsic phrase-fit space in the remaining column. Recommended follow-up is measured parent-layout fitting: retain progress below until all stages fit alongside with readable two-line labels. This latest request was for explanation; no parent-layout change has been applied. Record as the next proposed UI refinement, not a completed fix.
-
 
 The user then explicitly approved retaining a single chevron row at 768px+ whenever space permits. Implemented a parent fit rule: ChevronSteps reports the complete compact row's measured width; the header observes its available width and current progress width, adding the existing CSS gap. Only a fitting combination receives adjacent columns and the raised progress alignment. Otherwise progress remains below the full stage row. This preserves existing mobile row balancing and the desktop width cap while removing the abrupt 768px loss of navigation space. Added five/six-stage boundary checks through 950/951/952px and progress placement checks; verification pending for this new slice.
 
 The preceding closeout batch completed all selected checks successfully, including puzzle drag/input regression coverage, tab handover/pending-file tests and integration. Its final Progress run retried only transient NotFoundError during the bounded native-file content poll; permanent missing files still fail. This success predates the newly authorised parent-layout edit above.
 
-
 Final parent-layout evidence: `npm run verify:changed` passed all selected format/build, topic-browser, docs, logic, Svelte diagnostics, presentation, playback, colours, startup, Practice-set, Progress and integration checks. Five/six-stage boundary checks include 767/768/769 and the reported 950–952px region; six stages stay on one row throughout the tested tablet widths, with progress below or alongside as measured fit allows. Inspected 768px and 951px header captures. No new fixed-width breakpoint was introduced.
 
 The user then requested removal of the nearby duplicate question code, keeping the centre code, with very efficient testing. Moved the existing `.question-code` marker onto the centred PageNavigation content and made the lower standalone reference the alternative only when no pager exists. Normal practice therefore renders one code; assessment/Practice sets retain their sole reference. This final low-impact markup edit passed single-file formatting, a fresh build/bank validation and one focused browser check against Ratios at 951px: one centred code, a changed code after Next with no duplicate, and one assessment reference. The broader passing suites were deliberately not repeated for that final edit. Standing rules and HANDOFF updated; final documentation-link/whitespace checks complete the closeout. No commit, publication, deployment or subagents.
-
 
 ## 15 October 2026 — Shared practice controls, layout, playback and Go fixes
 
@@ -1492,11 +1403,9 @@ User requested shared component/CSS fixes, error-authoring process integration, 
 
 Verification: cached `npm run verify:changed` passes format/build, portable puzzle library, new-topics browser, docs, logic, bank, Svelte diagnostics, presentation, method playback, colours, startup, Practice sets, Progress and integration. Initial server start was sandbox-blocked; approved retry used local Chrome. The new Go browser regression initially chose a legal move outside the cropped visible board; corrected the fixture to choose a visible legal continuation, then it passed. No production issue was hidden by that test correction. Final documentation-only cached verification selected just docs and passed; git diff --check passed. No commit/publication/deployment.
 
-
 ## 15 October 2026 — Interactive spot-error approach agreed, lattice prototype started
 
 User confirmed the purpose is method understanding, accurate application and accurate checking. Both correct/incorrect locations must be selectable; assess independent mistakes, not consequential wrong values. Equation locations must cover mistakes within a line as well as operation choice. Documented the revised interaction, rationale, authoring/causal checks and accessibility in SPOT_ERRORS_PROCESS before coding. User authorised a separate three-case lattice prototype using shared generated working. The earlier fixed-control discussion is superseded; broader topic-bank migration and content relocation remain outside this prototype.
-
 
 ### Lattice prototype implemented and verified
 
@@ -1505,7 +1414,6 @@ The isolated `/spot-errors.html` route contains three canonical examples from co
 Verified wrong products 158, 523 and 922, with correct products 258, 623 and 1222; removing either independent fault in the third example gives the appropriate singly faulty working. Browser checks cover all examples, keyboard selection of a correct region, removing/editing entries, no duplicates, consequential feedback, final answers, 44px-or-larger targets at 320/390/900px, automated accessibility and unchanged progress storage. Inspected the 390px capture. Physical devices, larger lattices and other misconception families remain later review work.
 
 All selected verification jobs passed, including existing demos/playback and progress/integration. Added the prototype job to verification-map expectations after their initial expected-list failure, and explicitly made canonical prototype data a build input; passing checks were reused where their fingerprints remained current. Final documentation-only cached link verification and git diff --check passed. The local Vite preview remains running at http://127.0.0.1:8767/spot-errors.html (session 94306). No publication, deployment or commit.
-
 
 ## 15 October 2026 — Lattice setup and oversized-carry examples
 
@@ -1516,26 +1424,21 @@ User requested two authentic misconceptions after reviewing the prototype: right
 
 User requested marker-style highlighting to avoid side selections resembling extra grid cells, existing correct/incorrect colour highlighting, and repeated diagram activation to deselect. Implemented broad diagonal strokes behind the maths using an error-marker theme token, preserving a separate dotted keyboard focus indicator. Checked list entries, repair choice, final answer and overall feedback reuse existing marking tokens with text feedback; edits clear stale marking. Tapping/clicking or keyboard-activating an already highlighted place removes it and its recorded diagnosis; list Edit and the optional location dropdown still support revision. Both new error types are now explicit in the M01 common-error list with agreed versus proposed scope clarified. All selected refinement checks passed; inspected 390px light/dark marker and feedback captures. The colour assertion was corrected to read each element’s locally blended token, and the dark capture now uses the real theme toggle so lightness settings are applied. No production palette adjustment was needed. Cached checks were reused; no commit or publication.
 
-
 ## 15 October 2026 — Chisel-tip marker refinement
 
 User requested a yellower theme-blended mark, roughly retained lightness, greater thickness and slanted flat ends instead of semicircles; the side factor should use a near-vertical mark. Shared working rendering now uses filled quadrilaterals behind the maths, with direction taken from the location kind. The marker token blends yellow with themed paper and keeps moderate perceptual lightness. Selection/marking behaviour is unchanged. All selected checks passed (format/build, prototype, new topics, docs, Svelte, presentation, method playback, colours, Practice sets and Progress). Inspected light/dark marker and vertical-factor captures. Refreshed the local preview after rebuilding; no publication.
-
 
 ## 16 October 2026 — Softer marker colour and geometry
 
 User chose #e0c113 with more surface blending, a 1–3 degree curve and very slightly rounded corners. The shared marker token now mixes yellow and theme surface equally. Shared marker paths retain their chisel-tip ends and near-vertical side-factor orientation, adding a two-degree quadratic bow; a matching 2px rounded join softens corners without returning to semicircular ends. All selected checks passed; light/dark and vertical marker captures inspected. Restarted the local preview to serve rebuilt assets; no publication.
 
-
 Follow-up marker refinement (16 October): user requested 3% curvature and triple corner radius. Quadratic midpoint displacement is now 3% of stroke length; the matching rounded stroke increases from 2px to 6px, taking the outer corner radius from 1px to 3px. Colour and interaction stay unchanged. Inset the left tip to keep its enlarged corner inside the canvas; the verifier correctly stopped when that visual adjustment changed inputs during checking. Final selected verification passed, the light render was inspected and the refreshed preview returned HTTP 200.
-
 
 ## 16 October 2026 — Next topic misconceptions and single-source ownership
 
 User requested draft misconceptions for the next three topics and confirmed that content for every stage needs one clear editing location per topic. Expanded M02 division, M13 signed addition/subtraction and M10 equation draft lists in teaching order, with concrete illustrative mistakes and repairs, selection suggestions and causal/valid-alternative caveats. These lists await review; no live questions were rewritten.
 
 Recorded the ownership/no-overwrite rule in the website guide and linked it from standing rules and the relocation proposal. Every topic has one canonical editable bank; generators write separate review candidates and may replace authored/refined content only when that replacement is clearly requested. Build copies are disposable and do not author the bank. The relocation layout remains proposed; no folders, generators or runtime code changed. The default verifier selected the broader baseline and passed format/build, prototype and puzzle-library checks, then stopped on the unrelated 360px two-card assertion in new-topics (no browser errors). Recorded for focused investigation rather than changing layout during content drafting. Direct documentation-link verification passed.
-
 
 ## 16 October 2026 — First misconception batch agreed; next three drafted
 
@@ -1546,11 +1449,9 @@ User approved division D1–D7, signed addition/subtraction S1–S7 and equation
 
 User approved fractions F1–F8, percentages P1–P8 and multiplication/division problems A1–A8. Recorded those lists as agreed in their specs. Prepared ratio M04 (R1–R8), speed/distance/time M12 (T1–T8) and reverse percentages M07 (RP1–RP7), following teaching order across the remaining implemented topics. Examples distinguish given ratio quantities, matching journey totals/units and the original percentage whole; safeguards preserve valid alternative methods and avoid counting consequences as additional mistakes. These lists await review. No live banks, generators, runtime code or content paths changed. Direct documentation verification and git diff --check passed; the earlier unrelated mobile-card assertion remains outstanding.
 
-
 ## 16 October 2026 — Third misconception batch agreed; remaining lattice proposals expanded
 
 User approved ratio R1–R8, speed/distance/time T1–T8 and reverse percentages RP1–RP7. All nine non-lattice implemented-topic lists are now agreed. Recorded lattice's four previously approved prototype families as L1–L4 and expanded the remaining proposals L5–L8: cell digit placement, wrong diagonal, duplicate carry and internal answer zero. Examples explicitly reveal the causal mistake; correct/empty locations remain selectable, and valid blank cell tens/leading-zero notation is not marked wrong. The new families await agreement; no live content, runtime, generators or paths changed. Combined practice uses its source-topic coverage; planned, unimplemented topics remain separate future work. Documentation links and git diff --check passed. The prior mobile-card verification issue remains outstanding.
-
 
 ## 16 October 2026 — All-topic spot-error drafts and optional location chooser
 
@@ -1560,9 +1461,7 @@ Each topic has one editable JSON draft. A read-only review/audit tool renders a 
 
 The prototype's optional location dropdown is now hidden by default behind a Choose by location link-style button. It exposes expanded/control relationships, preserves selections when hidden and resets closed on Start again/new question. Keyboard-operable direct regions remain available. The existing focused browser check now covers the disclosure. Build/browser evidence pending; previous unrelated mobile-card failure remains recorded in HANDOFF.
 
-
 Verification for the all-topic draft/disclosure slice: direct candidate audit and eight focused draft/dependency tests passed. The selected verifier first hit sandbox EPERM while binding localhost; approved retry reused format/build and passed every selected job, including prototype disclosure/keyboard/state retention, new topics, logic/banks, Svelte, presentation, playback, colours, startup, Practice sets, Progress and integration. The earlier 360px card assertion did not reproduce; neither its test nor layout code was changed, so this is a current passing result rather than a claimed diagnosed fix. Refreshed preview on port 8767 (session 23858). Final content-only refinements add a common-denominator example with shared factors and round displayed erroneous speeds as requested, avoiding an accidental extra formatting mistake; the candidate audit/review HTML was regenerated. No live bank, saved progress, deployment or commit changed.
-
 
 ## 16 October 2026 — Concise spot-error introduction
 
@@ -1579,9 +1478,7 @@ Tests now cover live marking, missing/extra/duplicate diagnoses, all-topic old-a
 
 Added an editing guide locating Learn the method text and examples in each authoritative bank. User proposed a topic folder containing smaller files per editing area; recommended deterministic assembly into the existing runtime shape, with sole editable sources and no generator overwrite of reviewed/manual content. Initial assessment currently selects ordinary practice questions, so a separate assessment question file would misrepresent that relationship. User also highlighted identical guidance at three challenge levels: current array positions carry level identity. Proposed shared guidance.default with optional whole-object guidance.byLevel replacements keyed start/build/confidence, avoiding repeated shared text. Source relocation and guidance schema changes remain discussion proposals, not implemented. Preserved concurrent user About-page copy edits; applied formatting only.
 
-
 Final integration verification: all selected jobs passed (format/build, live error-investigation, new topics, docs, logic/content audit, bank, Svelte/diagnostics, presentation, playback, colours, startup, Practice sets, Progress and integration). The intermittent 360px card assertion recurred: its readiness helper derived columns from already positioned cards and could accept stale one-column packing after a resize. It now waits for card widths/positions to match current CSS tracks as well as checking packing/containment; the focused suite passed without changing production masonry. Earlier failures were obsolete selectors/schema expectations, updated with separate retained-definition coverage. One run deliberately stopped when documentation inputs changed; the subsequent cached run completed. Physical-device/assistive-technology and pedagogical review are not implied by these results. No publication, deployment or commit.
-
 
 ## 16 October 2026 — Topic folders, shared guidance and opening updated questions
 
@@ -1593,9 +1490,7 @@ The new spot-error interface could remain hidden because existing saved pages in
 
 All selected verification jobs passed: format/build, live investigations, puzzle library, new topics, docs, logic/content audit, bank, Svelte diagnostics, presentation, playback, colours, startup, Practice sets, Progress and integration. A separate focused development-mode check is in progress to verify the reported workflow directly; result follows. No commit, deployment or publication.
 
-
 Development workflow confirmation: the focused live investigation browser check passed against an isolated npm run dev server on port 8768, including assembled JSON endpoints, all ten live stages and the explicit saved-page update. The temporary server was stopped without touching the user's server; build preview refreshed on port 8767. Vite logged ResizeObserver delivery-loop warnings during the automated resize exercise; assertions passed, and this content refactor does not claim those warnings diagnosed or fixed. Final documentation links and whitespace verification follow.
-
 
 ## 16 October 2026 — Distinct lattice reasons, wider feedback, content map and shared defaults
 
@@ -1612,7 +1507,6 @@ Added shared static/data/defaults.json for practice, initial-assessment and spot
 After seeing the opt-in update banner, the user explicitly prioritised uniform current questions over small progress discrepancies. Removed that banner and its action. Session startup now removes only page attempts containing retired question IDs from ordinary pages, level navigation/history stacks, saved Practice sets and recommendation copies. Current definitions recreate those pages automatically. Recorded scoring history, challenge tracks and unaffected current-format pages remain. Affected completed sets reopen while retaining existing deadlines; expired sets retain normal expiry handling. Old cached working is not transferred onto unrelated new questions. This replaces the earlier promise to keep old-format saved activities visible. Unit checks cover all ten topics, current-page preservation, idempotence, sets/recommendations and unchanged history; browser checks verify automatic entry without old controls or the banner.
 
 Verification is completing for the combined slice. Core migration/default/content/Svelte/presentation checks passed; an in-flight user chevron change from 75% to 88% surface blending correctly invalidated affected browser evidence, so the cached runner is refreshing those checks. Preserved that edit and the user's 60% yellow marker blend. Final result follows.
-
 
 Final evidence for the combined slice: all selected checks passed with current fingerprints, including automatic legacy replacement, shared assessment copy across all topics, exact marking, responsive feedback/canvas geometry, saved sets/progress and full integration. Cached passing checks were reused and affected theme checks refreshed after the user edit. Preview refreshed on port 8767 (session 71299); user dev server untouched. Final documentation-only verification and whitespace check passed. No commit or publication.
 
@@ -1668,7 +1562,6 @@ Investigated page selection: assessments already draw two independent questions 
 
 Final verification: `npm run verify:changed` passed all selected checks against the final content: build, all-topic investigations/new topics, arithmetic/coverage/level/variety regression mutations, bank validation, Svelte diagnostics, responsive presentation, playback, colours, startup, Practice sets, progress and integration. The first run correctly stopped when content changed during verification; the final run completed with current fingerprints. No page-selection changes, progress reset, commit or publication. Preview refreshed at http://127.0.0.1:8767/ (session 66874) with the verified build; final housekeeping changes only documentation.
 
-
 ## 17 October 2026 — mobile error working, named reasons and focused checks
 
 The user reported iPhone lattice taps hitting nearby cells, row markers extending beyond working, a missing folder button under OneDrive instructions, duplicated explanations and excessive verification cost. Replaced lattice `foreignObject` controls with a native HTML percentage overlay sharing the diagram’s model and uncapped investigation aspect ratio. Reused the demonstration’s Pacifico strokes for live wrong working. Line marks now fit intrinsic mathematical expressions, excluding labels/spare row space; the original chisel geometry and colour tokens remain.
@@ -1678,7 +1571,6 @@ Moved the current ten topics’ 76 type definitions and 329 reusable explanation
 Unsupported browsers now offer an export action and iPhone Files instructions without referring to an absent folder picker. The user clarified that they want actual cloud sync and confirmed keeping GitHub Pages. Documented MSAL browser sign-in/Graph app-folder integration as the next requested slice: no server-side script/VPS/client secret is required, but app registration, public configuration, account/profile association, existing-file adoption and conflict handling remain. No cloud sync was implemented by the fallback change.
 
 Adopted cheaper verification in code: run logic/content/Svelte checks before browsers, isolate investigation CSS/content/component dependencies, and make investigation screenshots opt-in. Added meaningful regressions for visible-digit touch targets, marker bounds, shared font presence, unsupported-picker downloads, named-reference validation and check selection. All selected browser suites passed; investigation took 18.0s, new topics 47.1s, presentation 34.2s, playback 7.9s, colours 2.0s, startup 5.6s, Practice sets 4.8s, progress 8.9s and integration 17.1s. Format/logic/bank/Svelte/build also passed. The first browser attempt hit sandbox localhost EPERM; the authorised retry reused successful cached checks/build. Physical iPhone Safari is not covered by Chromium touch emulation. No deployment/publication/commit occurred. The final cheap run passed format, documentation and logic (including full-bank supported-glyph coverage); browser evidence was reused. Maintained-source `git diff --check` passed.
-
 
 ## 17 October 2026 — distinct construction steps in method demos
 
