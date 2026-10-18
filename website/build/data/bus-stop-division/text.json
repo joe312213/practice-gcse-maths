@@ -1,0 +1,57 @@
+{
+  "defaults": {
+    "spot-errors": {
+      "subject": "maths",
+      "topic": "M02",
+      "type": "errors",
+      "method": "investigation",
+      "prose": true,
+      "investigation": true,
+      "hint": {
+        "textRef": "check-quotient-digits"
+      },
+      "method_note": {
+        "textRef": "investigation-task"
+      }
+    },
+    "assessment-examples": {
+      "subject": "maths",
+      "topic": "M02",
+      "type": "assessment",
+      "method": "bus"
+    },
+    "practice": {
+      "subject": "maths",
+      "topic": "M02",
+      "type": "plain",
+      "method": "bus"
+    },
+    "problem-solving": {
+      "subject": "maths",
+      "topic": "M02",
+      "type": "problem",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "application-source"
+      }
+    },
+    "demos": {
+      "subject": "maths",
+      "topic": "M02",
+      "type": "demo",
+      "method": "bus"
+    },
+    "scaffolded": {
+      "subject": "maths",
+      "topic": "M02",
+      "type": "scaffolded",
+      "method": "bus"
+    }
+  },
+  "phrases": {
+    "check-quotient-digits": "Check each quotient digit using a multiple of the divisor, then check the remainder and its place value.",
+    "equal-groups-hint": "Which quantity is shared into {groups} equal groups? Check whether anything must be removed first.",
+    "check-division": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+  }
+}

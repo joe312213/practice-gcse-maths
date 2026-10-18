@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M03-S01-C1-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "demo",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "84 tins are shared equally among 4 boxes. How many tins go in each box?",
     "answer": "21",
     "answerUnit": "tins",
@@ -38,12 +33,7 @@
   },
   {
     "id": "maths:M03-S01-C2-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "demo",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A trip has 146 pupils and 9 adults. Each minibus has 12 passenger seats. How many minibuses are needed?",
     "answer": "13",
     "answerUnit": "minibuses",
@@ -93,12 +83,7 @@
   },
   {
     "id": "maths:M03-S01-C3-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "demo",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "145 students need minibuses with 9 passenger seats each. Hire costs £40 per minibus. Find the total cost.",
     "answer": "680",
     "answerUnit": "£",
@@ -128,7 +113,9 @@
         "title": "Answer the question in context",
         "input": "16 + 1",
         "output": "17",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+        "note": {
+          "textRef": "round-up-groups"
+        }
       },
       {
         "title": "Use the intermediate result",

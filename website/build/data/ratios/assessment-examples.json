@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M04-WEB-ASSESSMENT-C1-Q1",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "assessment",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "The ratio of red beads to blue beads is 5 : 7. There are 100 red beads. How many blue beads are there?",
     "answer": "140",
     "answerUnit": "beads",
@@ -47,12 +42,21 @@
         "outputUnit": "beads"
       }
     ],
-    "hint": "Does 100 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-    "method_note": "Find the value of one ratio part Find the requested second amount.",
+    "hint": {
+      "textRef": "match-known-quantity",
+      "values": {
+        "amount": "100"
+      }
+    },
+    "method_note": {
+      "textRef": "find-requested-share"
+    },
     "check": "One ratio part is 20. The two quantities are 100 and 140, in the named order. Check their first against the given amount, then check you answered the requested question.",
     "wrong": "175/3",
     "error_note": "The known first matches 5 parts, not 12. Find one part before scaling to the requested quantity.",
-    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "source": {
+      "textRef": "question-source"
+    },
     "operationCount": 2,
     "ratioModel": {
       "a": 5,
@@ -81,12 +85,7 @@
   },
   {
     "id": "maths:M04-WEB-ASSESSMENT-C1-Q2",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "assessment",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "The ratio of the length of ribbon A to the length of ribbon B is 3 : 7. Ribbon B is 84 cm longer than ribbon A. Find the length of ribbon B.",
     "answer": "147",
     "answerUnit": "cm",
@@ -127,12 +126,21 @@
         "outputUnit": "cm"
       }
     ],
-    "hint": "Does 84 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-    "method_note": "Find the value of one ratio part Find the requested second amount.",
+    "hint": {
+      "textRef": "match-known-quantity",
+      "values": {
+        "amount": "84"
+      }
+    },
+    "method_note": {
+      "textRef": "find-requested-share"
+    },
     "check": "One ratio part is 21. The two quantities are 63 and 147, in the named order. Check their difference against the given amount, then check you answered the requested question.",
     "wrong": "196",
     "error_note": "The known difference matches 4 parts, not 3. Find one part before scaling to the requested quantity.",
-    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "source": {
+      "textRef": "question-source"
+    },
     "operationCount": 3,
     "ratioModel": {
       "a": 3,
@@ -161,12 +169,7 @@
   },
   {
     "id": "maths:M04-WEB-ASSESSMENT-C2-Q1",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "assessment",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "The ratio of red beads to blue beads is 6 : 8. There are 120 red beads. How many more blue beads are there than red beads?",
     "answer": "40",
     "answerUnit": "beads",
@@ -214,12 +217,19 @@
         "outputUnit": "beads"
       }
     ],
-    "hint": "Does 120 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+    "hint": {
+      "textRef": "match-known-quantity",
+      "values": {
+        "amount": "120"
+      }
+    },
     "method_note": "Find the value of one ratio part Find the requested difference amount.",
     "check": "One ratio part is 20. The two quantities are 120 and 160, in the named order. Check their first against the given amount, then check you answered the requested question.",
     "wrong": "120/7",
     "error_note": "The known first matches 6 parts, not 14. Find one part before scaling to the requested quantity.",
-    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "source": {
+      "textRef": "question-source"
+    },
     "operationCount": 3,
     "ratioModel": {
       "a": 6,
@@ -248,12 +258,7 @@
   },
   {
     "id": "maths:M04-WEB-ASSESSMENT-C2-Q2",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "assessment",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "The ratio of the length of ribbon A to the length of ribbon B is 4 : 8. Ribbon B is 84 cm longer than ribbon A. Find the length of ribbon B.",
     "answer": "168",
     "answerUnit": "cm",
@@ -294,12 +299,21 @@
         "outputUnit": "cm"
       }
     ],
-    "hint": "Does 84 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-    "method_note": "Find the value of one ratio part Find the requested second amount.",
+    "hint": {
+      "textRef": "match-known-quantity",
+      "values": {
+        "amount": "84"
+      }
+    },
+    "method_note": {
+      "textRef": "find-requested-share"
+    },
     "check": "One ratio part is 21. The two quantities are 84 and 168, in the named order. Check their difference against the given amount, then check you answered the requested question.",
     "wrong": "56",
     "error_note": "The known difference matches 4 parts, not 12. Find one part before scaling to the requested quantity.",
-    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "source": {
+      "textRef": "question-source"
+    },
     "operationCount": 3,
     "ratioModel": {
       "a": 4,
@@ -328,12 +342,7 @@
   },
   {
     "id": "maths:M04-WEB-ASSESSMENT-C3-Q1",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "assessment",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "Red beads and blue beads are in the ratio 7 : 9. There are 140 red beads. Then 8 blue beads are used. How many blue beads remain?",
     "answer": "172",
     "answerUnit": "beads",
@@ -375,15 +384,21 @@
         "input": "180 − 8",
         "output": "172",
         "outputUnit": "beads",
-        "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        "note": {
+          "textRef": "finish-linked-calculation"
+        }
       }
     ],
     "hint": "Before considering the beads used, match the given first of 140 beads to its ratio parts. Find the second named quantity first.",
-    "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+    "method_note": {
+      "textRef": "linked-ratio-method"
+    },
     "check": "The original quantities are 140 beads and 180 beads. Check their first amount against the given 140 beads. Subtract the used blue beads from the original blue-bead count. The final answer is 172 beads.",
     "wrong": "180",
     "error_note": "180 beads is only the intermediate ratio amount. Subtract the used blue beads from the original blue-bead count.",
-    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+    "source": {
+      "textRef": "linked-source"
+    },
     "operationCount": 3,
     "ratioModel": {
       "a": 7,
@@ -435,12 +450,7 @@
   },
   {
     "id": "maths:M04-WEB-ASSESSMENT-C3-Q2",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "assessment",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "The lengths of ribbon A and ribbon B are in the ratio 5 : 9. Ribbon B is 84 cm longer than ribbon A. What is the length of ribbon B in metres?",
     "answer": "1.89",
     "answerUnit": "m",
@@ -489,15 +499,21 @@
         "input": "189 ÷ 100",
         "output": "1.89",
         "outputUnit": "m",
-        "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        "note": {
+          "textRef": "finish-linked-calculation"
+        }
       }
     ],
     "hint": "Before considering the change of units, match the given difference of 84 cm to its ratio parts. Find the second named quantity first.",
-    "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+    "method_note": {
+      "textRef": "linked-ratio-method"
+    },
     "check": "The original quantities are 105 cm and 189 cm. Check their difference against the given 84 cm. Divide the centimetre length by 100 to express it in metres. The final answer is 1.89 m.",
     "wrong": "189",
     "error_note": "189 cm is only the intermediate ratio amount. Divide the centimetre length by 100 to express it in metres.",
-    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+    "source": {
+      "textRef": "linked-source"
+    },
     "operationCount": 4,
     "ratioModel": {
       "a": 5,

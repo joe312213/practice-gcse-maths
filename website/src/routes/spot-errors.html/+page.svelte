@@ -1,4 +1,18 @@
-<!-- Separate review route; the prototype does not replace live questions or record progress. -->
+<!--
+  Purpose: Separate review route; the prototype does not replace live questions or record
+  progress.
+
+  Main contents:
+  - Isolated lattice prototype fixtures and investigation controls.
+
+  Used By: SvelteKit route loading/prerendering.
+
+  Uses: website/src/lib/components/ui/SiteHeader.svelte,
+  website/src/lib/components/ui/SiteFooter.svelte,
+  website/src/lib/components/teaching/LatticeErrorInvestigation.svelte.
+
+  Libs: none.
+-->
 <script>
   import SiteHeader from '#lib/components/ui/SiteHeader.svelte';
   import SiteFooter from '#lib/components/ui/SiteFooter.svelte';

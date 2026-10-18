@@ -1,8 +1,32 @@
-<!-- Shared level/example selection and playback; each method keeps its own working renderer. -->
+<!--
+  Purpose: Shared level/example selection and playback; each method keeps its own working
+  renderer.
+
+  Main contents:
+  - chooseLevel.
+
+  Used By: website/src/lib/components/teaching/MethodDemo.svelte.
+
+  Uses: website/src/lib/content/topic-runtime.mjs, website/src/lib/content/topic-bank.mjs, website/src/lib/components/ui/LevelSelector.svelte,
+  website/src/lib/application/equation-demo.mjs,
+  website/src/lib/application/arithmetic-demo.mjs,
+  website/src/lib/application/calculation-demo.mjs,
+  website/src/lib/components/teaching/Guidance.svelte,
+  website/src/lib/components/teaching/EquationWorking.svelte,
+  website/src/lib/components/teaching/ArithmeticWorking.svelte,
+  website/src/lib/components/teaching/CalculationWorking.svelte,
+  website/src/lib/components/teaching/CalculationDiagram.svelte,
+  website/src/lib/components/teaching/MathText.svelte,
+  website/src/lib/components/teaching/ShowDemo.svelte,
+  website/src/lib/components/ui/WrappingSelect.svelte.
+
+  Libs: svelte (component state, lifecycle and transitions).
+-->
 <script>
+  import { exampleQuestion } from '#lib/content/topic-runtime.mjs';
   import { guidanceFor } from '#lib/content/topic-bank.mjs';
   import { untrack } from 'svelte';
-  import { LEVELS } from '#lib/domain/engine.mjs';
+  import LevelSelector from '../ui/LevelSelector.svelte';
   import { equationFrames } from '#lib/application/equation-demo.mjs';
   import { arithmeticFrames } from '#lib/application/arithmetic-demo.mjs';
   import { calculationFrames } from '#lib/application/calculation-demo.mjs';
@@ -20,7 +44,7 @@
   const exampleId = $props.id();
   const examples = $derived(bank.teaching.examples[['start', 'build', 'confidence'][level]]);
   const example = $derived(examples.find((item) => item.key === exampleKey) ?? examples[0]);
-  const question = $derived(example.question);
+  const question = $derived(exampleQuestion(bank, example));
   const arithmetic = $derived(['bus', 'lattice'].includes(bank.method));
   const calculation = $derived(bank.method === 'calculation');
   const frames = $derived(
@@ -33,6 +57,7 @@
   const steps = $derived(
     arithmetic ? 5 : calculation ? question.steps.length : question.balance.length + 1,
   );
+  /** Select a challenge and reset its example before notifying the session; called by level buttons. */
   function chooseLevel(value) {
     level = value;
     exampleKey = 'demo';
@@ -41,15 +66,7 @@
 </script>
 
 <div class="demo-body">
-  <div class="level-row" role="group" aria-label="Demonstration challenge">
-    {#each LEVELS as label, index}<button
-        class="action-button"
-        type="button"
-        data-demo-level={index}
-        aria-pressed={index === level}
-        onclick={() => chooseLevel(index)}>{label}</button
-      >{/each}
-  </div>
+  <LevelSelector {level} onchange={chooseLevel} demo />
   {#if bank.calculator}<p class="muted">
       Calculator allowed. Keep intermediate values unrounded.
     </p>{/if}

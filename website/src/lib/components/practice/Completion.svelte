@@ -4,9 +4,9 @@
   Main contents:
   - Component markup, input props and event bindings.
 
-  Used By: website/src/lib/components/practice/PracticeActivity.svelte
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte.
 
-  Uses: caller-owned retry, promotion and Practice-set navigation callbacks.
+  Uses: no local module imports.
 
   Libs: none.
 -->

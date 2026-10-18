@@ -4,9 +4,9 @@
  * Main contents:
  * - Method tools and guide line geometry.
  *
- * Used By: WorkingArea and drawing-assist tests.
+ * Used By: tests/arithmetic.test.mjs, website/src/lib/components/practice/WorkingArea.svelte.
  *
- * Uses: domain/working.mjs for shared canvas dimensions.
+ * Uses: website/src/lib/domain/working.mjs.
  *
  * Libs: none.
  */

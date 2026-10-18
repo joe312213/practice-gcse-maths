@@ -1,5 +1,17 @@
-<!-- Purpose: Render one written token with shared Pacifico strokes; ShowDemo owns its motion.
-     SVG placement uses the same baseline for digits, carries and inline mathematical working. -->
+<!--
+  Purpose: Render one written token with shared Pacifico strokes; ShowDemo owns its motion. SVG
+  placement uses the same baseline for digits, carries and inline mathematical working.
+
+  Main contents:
+  - Measured stroke paths, baselines and clipping for a single animated maths token.
+
+  Used By: website/src/lib/components/teaching/ArithmeticWorking.svelte,
+  website/src/lib/components/teaching/MathText.svelte.
+
+  Uses: website/src/lib/application/handwriting.mjs.
+
+  Libs: none.
+-->
 <script>
   import { renderHandwriting } from '#lib/application/handwriting.mjs';
   let { font, text, x = null, y = null, size = 27, focused = false } = $props();

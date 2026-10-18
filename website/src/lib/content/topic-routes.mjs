@@ -4,9 +4,13 @@
  * Main contents:
  * - foundationTopics, topicPath.
  *
- * Used By: homepage, topic route, practice and progress links.
+ * Used By: tests/error-investigation.test.mjs, tests/problem-solving.test.mjs,
+ * tests/topic-content.test.mjs, website/scripts/browser/draft-topics-checks.mjs,
+ * website/scripts/browser/error-investigation-checks.mjs,
+ * website/scripts/browser/new-topics-checks.mjs,
+ * website/scripts/browser/presentation-checks.mjs.
  *
- * Uses: question-bank file names and IDs.
+ * Uses: no local module imports.
  *
  * Libs: none.
  */
@@ -28,6 +32,7 @@ export const foundationTopics = [
 ];
 /** Return the stable Foundation Maths path for a saved bank ID. */
 export const combinedTopic = { bank: 'combined', slug: 'combined-problems' };
+/** Resolve a stable bank ID to its public Foundation Maths URL, rejecting unknown IDs. Used by topic links and navigation. Example: topicPath("M01"). */
 export function topicPath(bank) {
   if (bank === combinedTopic.bank) return `/fm/${combinedTopic.slug}/`;
   const topic = foundationTopics.find((topic) => topic.bank === bank);

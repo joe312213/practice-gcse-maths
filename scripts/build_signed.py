@@ -1,24 +1,21 @@
-"""Purpose: Build M13 review decks from Markdown; keep practice answers separate.
+"""Purpose: Retired signed-number deck builder: parse reviewed Markdown, draw number-line examples
+and produce separate question and answer decks. Its direct command is deliberately disabled.
 
 Main contents:
-- section
-- table
-- newdeck
-- base
-- line
-- numberline
-- question_grid
-- assessment
-- recap
-- make
+- section, table, newdeck, base, line, numberline, question_grid, assessment, recap, make.
 
 Used By: manual legacy command invocation.
 
 Uses: scripts/build_ratio.py.
 
-Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck inspection).
+Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck
+inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: The __main__ guard exits before make(); historical make() reads signed-number
+Markdown and writes named decks under topics/signed_numbers/.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 import re,sys,hashlib
@@ -94,7 +91,7 @@ def numberline(s,x,y,w,lo,hi,jumps,t):
  Calls: line, xx, b.text.
  Used by: question_grid.
 
- Example in the caller's context: numberline(s, x, y, w, lo, hi, jumps, t)
+ Example: numberline(s, x, y, w, lo, hi, jumps, t)
  """
  def xx(n):
   """Map a number to its horizontal position on the number line.
@@ -124,7 +121,7 @@ def question_grid(p,sn):
  Calls: table, section, base, b.text, b.headers, b.rect, numberline, b.progression.
  Used by: make.
 
- Example in the caller's context: question_grid(p, sn)
+ Example: question_grid(p, sn)
  """
  rows=table(section(sn));demo=sn==1
  s=base(p,'Worked demo • Follow each calculation.' if demo else f'Step-by-step practice {sn-1} • Show your working.',f'M13-S{sn:02}')
@@ -154,7 +151,7 @@ def assessment(p,answers=False):
  Calls: b.splitcells, base, b.rect, b.text.
  Used by: make.
 
- Example in the caller's context: assessment(p, answers)
+ Example: assessment(p, answers)
  """
  sec=re.search(r'^## Initial assessment.*?\n(.*?)(?=^## |\Z)',src,re.S|re.M)[1]
  rows=[b.splitcells(l) for l in sec.splitlines() if re.match(r'^\| [1-4] \|',l)]
@@ -172,7 +169,7 @@ def recap(p):
  Calls: base, b.splitcells, b.rect, b.text.
  Used by: make.
 
- Example in the caller's context: recap(p)
+ Example: recap(p)
  """
  s=base(p,'Rules recap • Start at the first number.','M13-RULES')
  block=re.search(r'^## Rules recap.*?\n(.*?)(?=^## |\Z)',src,re.M|re.S)[1]
@@ -195,7 +192,7 @@ def make():
  Calls: newdeck, assessment, recap, question_grid, base, b.headers, table, section, b.rect, b.text,
  b.progression.
 
- Example in the caller's context: make()
+ Example: make()
  """
  q=newdeck();a=newdeck();assessment(q);recap(q);assessment(a,True)
  for sn in range(1,4):question_grid(q,sn)

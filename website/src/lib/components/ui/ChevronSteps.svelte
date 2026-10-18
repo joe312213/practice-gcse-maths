@@ -1,9 +1,16 @@
 <!--
-  Purpose: Share joined, clipped chevrons and intrinsic row fitting across different step contents.
-  Main contents: Caller-rendered segments, first/last geometry and focus-preserving row grouping.
-  Used By: LearningSteps and TopicProgress.
-  Uses: No application/domain modules.
-  Libs: Svelte tick; native ResizeObserver.
+  Purpose: Share joined, clipped chevrons and intrinsic row fitting across different step
+  contents.
+
+  Main contents:
+  Caller-rendered segments, first/last geometry and focus-preserving row grouping.
+
+  Used By: website/src/lib/components/practice/LearningSteps.svelte,
+  website/src/lib/components/progress/TopicProgress.svelte.
+
+  Uses: no local module imports.
+
+  Libs: svelte (component state, lifecycle and transitions).
 -->
 <script>
   import { tick } from 'svelte';

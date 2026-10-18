@@ -1,17 +1,28 @@
 <!--
-  Purpose: Load the current learner's topic overview, revision recommendations and transfer controls.
+  Purpose: Load the current learner's topic overview, revision recommendations and transfer
+  controls.
 
   Main contents:
   - refresh
   - label
 
-  Used By: SvelteKit route loading.
+  Used By: SvelteKit route loading/prerendering.
 
-  Uses: website/src/lib/content/practice-pages.json, website/src/lib/adapters/storage.mjs, website/src/lib/domain/progress.mjs, website/src/lib/domain/revision.mjs, website/src/lib/components/progress/TopicProgress.svelte, website/src/lib/components/progress/ProgressTransfer.svelte, website/src/lib/components/ui/ThemeControls.svelte, website/src/lib/domain/practice-code.mjs.
+  Uses: website/src/lib/domain/anonymous.mjs,
+  website/src/lib/components/progress/PracticeHistory.svelte,
+  website/src/lib/content/topic-routes.mjs, website/src/lib/components/ui/SiteHeader.svelte,
+  website/src/lib/components/ui/SiteFooter.svelte, website/src/lib/content/practice-pages.json,
+  website/src/lib/adapters/storage.mjs, website/src/lib/domain/progress.mjs,
+  website/src/lib/domain/revision.mjs, website/src/lib/components/progress/TopicProgress.svelte,
+  website/src/lib/components/progress/ProgressTransfer.svelte,
+  website/src/lib/components/progress/ProfileManagement.svelte,
+  website/src/lib/domain/practice-code.mjs.
 
-  Libs: svelte (component lifecycle and state), $app/paths (base-aware URLs).
+  Libs: svelte (component state, lifecycle and transitions), $app/paths (SvelteKit
+  navigation/route state).
 -->
 <script>
+  import { beginAnonymous, nameAnonymous } from '#lib/domain/anonymous.mjs';
   import PracticeHistory from '#lib/components/progress/PracticeHistory.svelte';
   import { topicPath } from '#lib/content/topic-routes.mjs';
   import SiteHeader from '#lib/components/ui/SiteHeader.svelte';
@@ -33,6 +44,25 @@
     weekly = $state.raw(null),
     recommendations = $state.raw([]),
     warning = $state('');
+  let name = $state(''),
+    nameMessage = $state(''),
+    pendingName = $state('');
+  /** Confirm a new name or adopt into an existing learner, then save and refresh the visit summaries. */
+  function saveName(event) {
+    event.preventDefault();
+    try {
+      const result = nameAnonymous(store, name, pendingName === name);
+      if (!result.profile) {
+        pendingName = name;
+        nameMessage = 'Check your name, then select Save name again to create your profile.';
+        return;
+      }
+      nameMessage = '';
+      refresh();
+    } catch (cause) {
+      nameMessage = cause.message;
+    }
+  }
   let save = $state.raw(() => {});
   let initialUpdatedAt = $state(0);
   let openBreakdown = $state(null);
@@ -67,6 +97,7 @@
     const adapter = openProgress(storage, (text) => (warning = text));
     store = adapter.data;
     save = adapter.save;
+    if (!store.profiles.some((item) => item.key === store.last)) beginAnonymous(store);
     const learner = store.profiles.find((item) => item.key === store.last);
     initialUpdatedAt =
       learner?.progressUpdatedAt ??
@@ -94,10 +125,31 @@
   {#if !store}<p>Loading progress…</p>
   {:else}
     {#if profile}
-      <p>Progress for <strong>{profile.name}</strong> · working copy in this browser.</p>
-      <p>
-        Recommended: <a href="#data-transfer">save your progress in your synced OneDrive folder</a>.
-      </p>
+      {#if profile.anonymous}
+        <section class="card page-panel">
+          <h2>Keep your progress beyond this visit</h2>
+          <p>Your progress below covers this visit. Enter your name to save it for next time.</p>
+          <form onsubmit={saveName}>
+            <label for="progress-name">Your name</label>
+            <input
+              class="text-field"
+              id="progress-name"
+              bind:value={name}
+              maxlength="40"
+              required
+              autocomplete="off"
+            />
+            <button class="action-button primary">Save name</button>
+            <p role="status">{nameMessage}</p>
+          </form>
+        </section>
+      {:else}<p>
+          Progress for <strong>{profile.name}</strong> · working copy in this browser.
+        </p>{/if}
+      {#if !profile.anonymous}<p>
+          Recommended: <a href="#data-transfer">save your progress in your synced OneDrive folder</a
+          >.
+        </p>{/if}
       <section aria-label="Progress by topic" class="topic-grid">
         {#each rows as row}<TopicProgress {row} bind:openBreakdown />{/each}
       </section>
@@ -160,7 +212,7 @@
         Choose your name on the <a href={resolve('/')}>practice page</a>, or import your progress
         below.
       </p>{/if}
-    {#if profile}<ProfileManagement
+    {#if profile && !profile.anonymous}<ProfileManagement
         {store}
         {profile}
         onchange={(next) => {
@@ -169,7 +221,14 @@
           refresh();
         }}
       />{/if}
-    <ProgressTransfer {profile} {store} {save} {initialUpdatedAt} onchange={() => refresh()} />
+    <!-- Anonymous visitors can import a saved learner; exporting requires a saved name. -->
+    <ProgressTransfer
+      profile={profile?.anonymous ? null : profile}
+      {store}
+      {save}
+      {initialUpdatedAt}
+      onchange={() => refresh()}
+    />
   {/if}
 </main>
 <SiteFooter />

@@ -4,7 +4,8 @@
     "explanation": "Multiplication finds the total of equal groups. Division finds the size or number of groups.",
     "guidance": "Decide what is known and what you need to find before calculating.",
     "examples": [
-      "6 boxes of 8 pens contain 6 × 8 = 48 pens. Sharing 48 pens between 6 pupils gives 48 ÷ 6 = 8 each."
+      "6 boxes of 8 pens contain 6 × 8 = 48 pens. Sharing 48 pens between 6 pupils gives 48 ÷ 6 = 8 each.",
+      "72 bottles packed 6 to a box: the total and group size are known, so 72 ÷ 6 = 12 boxes. Check: 12 boxes × 6 bottles per box = 72 bottles."
     ]
   },
   "interpret-remainder": {
@@ -12,7 +13,8 @@
     "explanation": "The story determines what to do with a remainder. You may need another whole group, only full groups, or an exact share.",
     "guidance": "Ask whether a partial group is possible and whether everyone or everything must fit.",
     "examples": [
-      "25 people in taxis holding 4 each need 7 taxis: 6 taxis leave 1 person without a seat."
+      "25 people in taxis holding 4 each need 7 taxis: 6 taxis leave 1 person without a seat.",
+      "25 metres of ribbon cut into 4-metre pieces gives 6 complete pieces with 1 metre left. Unlike taxis, you cannot round up: the leftover metre cannot make another full piece."
     ]
   },
   "units": {
@@ -20,7 +22,8 @@
     "explanation": "Units explain what a number measures or counts.",
     "guidance": "Include the requested unit and check that it fits the question.",
     "examples": [
-      "If 3 tickets cost £7 each, the total is £21, not 21 tickets."
+      "If 3 tickets cost £7 each, the total is £21, not 21 tickets.",
+      "180 cm cut into 3 equal lengths gives 60 cm per length. If the answer is requested in metres, convert 60 cm ÷ 100 = 0.6 m."
     ]
   }
 }

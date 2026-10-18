@@ -4,7 +4,7 @@
  * Main contents:
  * - createPlayer
  *
- * Used By: tests/website.test.mjs, website/src/lib/components/teaching/ShowDemo.svelte
+ * Used By: tests/website.test.mjs, website/src/lib/components/teaching/ShowDemo.svelte.
  *
  * Uses: no local module imports.
  *

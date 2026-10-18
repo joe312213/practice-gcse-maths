@@ -1,7 +1,20 @@
 /**
- * Purpose: Render supplied stroke glyphs and provide cancellable, seekable writing playback.
- * Used by: StrokeSample.svelte, WrittenInk.svelte and demo-motion.mjs.
- * Uses: normalized local glyph data. Libs: native SVG and Web Animations APIs only.
+ * Purpose: Load and validate the shared Pacifico Maths stroke font, convert tokens to measured
+ * strokes, and coordinate cancellable writing. Teaching components share this geometry and
+ * report unsupported symbols honestly.
+ *
+ * Main contents:
+ * - characterGroups, missingCharacters, renderHandwriting, animateStrokes.
+ *
+ * Used By: tests/handwriting.test.mjs, tests/topic-content.test.mjs,
+ * website/src/lib/application/demo-motion.mjs,
+ * website/src/lib/components/teaching/StrokeSample.svelte,
+ * website/src/lib/components/teaching/WrittenInk.svelte,
+ * website/src/routes/handwriting.html/+page.svelte.
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: none.
  */
 export const characterGroups = [
   ['Uppercase', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'],

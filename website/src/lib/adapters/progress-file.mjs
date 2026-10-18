@@ -1,18 +1,38 @@
-import { progressTask } from './progress-ownership.mjs';
 /**
- * Purpose: Keep a per-learner file link outside exported progress, and protect explicit file saves.
- * Used by: ProgressTransfer; browser file access is always initiated by a user gesture.
- * Uses: IndexedDB and File System Access, with no cloud credentials or automatic merging.
+ * Purpose: Adapt portable learner progress to browser file/folder handles, downloads and
+ * IndexedDB handle storage. Permission checks, fingerprints and per-file locks prevent silent
+ * replacement of conflicting progress.
+ *
+ * Main contents:
+ * - readProgressFile, progressContentFingerprint, newerLinkedProgress, saveProgressFile,
+ *   withProgressFileLock, progressFileLink, chooseProgressFile, learnerFileLink,
+ *   downloadProgressFile.
+ *
+ * Used By: tests/progress-autosave.test.mjs, tests/progress-file.test.mjs,
+ * website/scripts/audit-progress-concurrency.mjs,
+ * website/src/lib/adapters/progress-autosave.mjs,
+ * website/src/lib/components/practice/TopicPractice.svelte,
+ * website/src/lib/components/progress/OneDriveReminder.svelte,
+ * website/src/lib/components/progress/ProfileManagement.svelte.
+ *
+ * Uses: website/src/lib/adapters/progress-ownership.mjs, website/src/lib/domain/profiles.mjs,
+ * website/src/lib/domain/progress-transfer.mjs.
+ *
+ * Libs: none.
  */
+import { progressTask } from './progress-ownership.mjs';
+
 import { progressFilename } from '../domain/profiles.mjs';
 import { exportProgress, exportCsv, parseProgress } from '../domain/progress-transfer.mjs';
 const limit = 10 * 1024 * 1024;
+/** Read a size-limited file handle and fingerprint its text for conflict review; callers validate its JSON. Called by import/autosave flows; never writes the file. */
 export async function readProgressFile(handle) {
   const file = await handle.getFile();
   if (file.size > limit) throw Error('Choose a progress file smaller than 10 MB.');
   const raw = await file.text();
   return { raw, fingerprint: await fingerprint(raw) };
 }
+/** Hash serialised file content for change detection. Called by progress-file reads/writes; matching hashes compare content, not learner authentication. */
 async function fingerprint(raw) {
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(raw));
   return Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, '0')).join('');

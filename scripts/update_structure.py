@@ -1,32 +1,28 @@
-"""Purpose: Preserve saved teaching slides; refresh assessments/error activities and compile outputs.
-Run from any directory: python3 practice/scripts/update_structure.py
-Current topic files are required; restore missing accepted decks from Git.
+"""Purpose: Historical coordinator for saved slide resources: preserve existing teaching slides,
+refresh assessment/error activities, and assemble question decks and HTML answers. Also supplies
+shared slide copying and output helpers.
 
 Main contents:
-- texts
-- remove
-- save
-- save_text
-- base
-- assessment
-- lattice_content
-- errors
-- insert_before
-- clone
-- inline
-- md
-- error_answers
-- answers
-- page
-- main
+- texts, remove, save, save_text, base, assessment, lattice_content, errors, insert_before,
+  clone, inline, md, error_answers, answers, page, main.
 
-Used By: scripts/build_fraction_topic.py, scripts/build_priority_topic.py, scripts/compile_starters.py, scripts/fix_lattice_carries.py, scripts/fix_saved_layout.py, scripts/refresh_answers.py, scripts/rename_columns.py.
+Used By: scripts/build_fraction_topic.py, scripts/build_priority_topic.py,
+scripts/compile_starters.py, scripts/fix_lattice_carries.py, scripts/fix_saved_layout.py,
+scripts/refresh_answers.py, scripts/rename_columns.py.
 
-Uses: scripts/answer_layout.py, scripts/build_starters.py, scripts/compile_starters.py, scripts/rendering/__init__.py, scripts/rendering/estimates.py, scripts/review_answer_patterns.py, scripts/student_workings.py.
+Uses: scripts/answer_layout.py, scripts/build_starters.py, scripts/compile_starters.py,
+scripts/rendering/__init__.py, scripts/rendering/estimates.py,
+scripts/review_answer_patterns.py, scripts/student_workings.py.
 
-Libs: Pillow (font measurement/image rendering), compile_starters, python-pptx (editable slides and deck inspection), review_answer_patterns.
+Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck
+inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Historical invocation: python3 scripts/update_structure.py from the repository
+root. Reads saved topic decks and content sources; writes topic/consolidated decks and answer
+HTML. Current website work must not invoke this publisher.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 from copy import deepcopy
@@ -98,7 +94,7 @@ def base(p,title,subtitle,ref):
  Calls: b.box, b.text.
  Used by: assessment, errors.
 
- Example in the caller's context: base(p, title, subtitle, ref)
+ Example: base(p, title, subtitle, ref)
  """
  for i,old in enumerate(p.slides):old.part._partname=PackURI(f"/ppt/slides/slide{1000+i}.xml")
  s=p.slides.add_slide(p.slide_layouts[6]);s.background.fill.solid();s.background.fill.fore_color.rgb=RGBColor.from_string(b.BG)
@@ -114,7 +110,7 @@ def assessment(p,mid,questions):
  question text.
  Calls: base, b.box, b.text.
 
- Example in the caller's context: assessment(p, mid, questions)
+ Example: assessment(p, mid, questions)
  """
  s=base(p,TOPICS[mid][2]+' — initial assessment','Show your full written method. No calculators.',mid+'-IA')
  for i,q in enumerate(questions):
@@ -131,7 +127,7 @@ def lattice_content(item):
  Calls: estimates.multiplication.
  Used by: errors.
 
- Example in the caller's context: lattice_content(item)
+ Example: lattice_content(item)
  """
  a,c=item['a'],item['b'];aa,cc=str(a),str(c);n,m=len(aa),len(cc)
  cells=[[int(x)*int(y) for x in aa] for y in cc]
@@ -176,7 +172,7 @@ def errors(p,mid):
  Calls: base, b.box, b.text, lattice_content, student.draw.
  Used by: main.
 
- Example in the caller's context: errors(p, mid)
+ Example: errors(p, mid)
  """
  s=base(p,TOPICS[mid][2]+' — spot the errors','Each student’s working contains a mistake. Find it, correct the working and give the right answer.',mid+'-SE')
  cw=15.16/3
@@ -207,7 +203,7 @@ def clone(target,source):
 
  Parameters: target — destination presentation or target slide, as used here; source — source slide.
 
- Example in the caller's context: clone(target, source)
+ Example: clone(target, source)
  """
  s=target.slides.add_slide(target.slide_layouts[6])
  for sh in list(s.shapes):s.shapes._spTree.remove(sh._element)
@@ -237,7 +233,7 @@ def md(value):
  Parameters: value — text or numeric value to render.
  Calls: inline, c.strip.
 
- Example in the caller's context: md(value)
+ Example: md(value)
  """
  out=[];table=False
  for line in value.splitlines():
@@ -261,7 +257,7 @@ def error_answers(mid):
  Calls: inline, answer_layout.corrected.
  Used by: answers.
 
- Example in the caller's context: error_answers(mid)
+ Example: error_answers(mid)
  """
  out=[f'<h3>{mid}-SE — Spot the errors: corrections</h3><div class="three-columns">']
  for t,col in enumerate(DATA[mid]):
@@ -285,7 +281,7 @@ def answers(mid):
  answer_layout.worked.
  Used by: page.
 
- Example in the caller's context: answers(mid)
+ Example: answers(mid)
  """
  out=[answer_layout.opening(mid,TOPICS[mid][2])+f'<h3>{mid}-IA — Initial assessment</h3>']
  if mid in IA:
@@ -318,7 +314,7 @@ def main():
  """Run the update structure command using its configured input and output paths.
  Calls: texts, remove, insert_before, errors, save, save_text, page.
 
- Example in the caller's context: main()
+ Example: main()
  """
  from review_answer_patterns import review
  review(DATA)

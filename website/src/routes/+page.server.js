@@ -1,14 +1,16 @@
 /**
- * Purpose: Build compact homepage previews from the practice banks without sending complete banks to the homepage client.
+ * Purpose: Build compact homepage previews from the practice banks without sending complete
+ * banks to the homepage client.
  *
  * Main contents:
  * - load.
  *
- * Used By: Homepage +page.svelte through SvelteKit.
+ * Used By: SvelteKit route loading/prerendering.
  *
- * Uses: topic-routes.mjs; static/data multiplication, division and equations banks.
+ * Uses: website/src/lib/content/topic-routes.mjs, website/src/lib/server/topic-banks.mjs,
+ * website/src/lib/content/practice-pages.json.
  *
- * Libs: SvelteKit (server load convention).
+ * Libs: none.
  */
 import { foundationTopics, topicPath } from '#lib/content/topic-routes.mjs';
 import { topicBanks as banks } from '#lib/server/topic-banks.mjs';

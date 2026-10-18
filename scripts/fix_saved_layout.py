@@ -1,15 +1,21 @@
-"""Purpose: Apply approved progression arrows to plain grids and maintain the lattice templates.
+"""Purpose: Historical saved-deck repair: apply the approved progression arrows to plain practice
+grids and rebuild the empty lattice setup slides, then compile the saved topics.
 
 Main contents:
-- apply
+- apply: Update saved progression-arrow placement and lattice layout from the accepted reference
+  deck.
 
 Used By: manual legacy command invocation.
 
 Uses: scripts/compile_starters.py, scripts/update_structure.py.
 
-Libs: compile_starters, python-pptx (editable slides and deck inspection).
+Libs: python-pptx (editable slides and deck inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Reads saved topic decks from topic_registry.json; overwrites affected decks
+and consolidated outputs. Not used by website layout.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from copy import deepcopy
 from pathlib import Path
@@ -22,7 +28,7 @@ def apply():
  """Update saved progression-arrow placement and lattice layout from the accepted reference deck.
  Calls: u.Presentation, u.texts, u.qn, u.remove, u.base, u.insert_before, u.save.
 
- Example in the caller's context: apply()
+ Example: apply()
  """
  registry=json.loads((ROOT/'content/topic_registry.json').read_text())
  ref=u.Presentation(ROOT/'topics/signed_numbers/Signed_addition_subtraction_M13_questions.pptx')

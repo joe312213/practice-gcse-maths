@@ -1,13 +1,19 @@
-"""Purpose: Write historical import candidates without touching authoritative application files.
+"""Purpose: Write reconstructed historical imports to a new temporary review directory, with a
+manifest comparing them to current files. This boundary prevents old generators from overwriting
+the authoritative website banks.
 
 Main contents:
-- write_candidates
+- write_candidates: Write prepared relative-path/text pairs into a fresh temporary directory.
 
 Used By: prepare_web_arithmetic.py, prepare_web_equations.py.
 
 Uses: current repository files for read-only comparison.
 
 Libs: Python standard library for temporary directories, paths and JSON.
+
+Usage and output: Call write_candidates({relative_path: text}); prints and returns its temporary
+directory. Reads current files for comparison; writes candidates and comparison.json only in
+that directory.
 """
 from pathlib import Path
 import json

@@ -4,7 +4,10 @@
  * Main contents:
  * - markErrors, markInvestigation
  *
- * Used By: tests/website.test.mjs, website/src/lib/application/session.mjs
+ * Used By: tests/arithmetic.test.mjs, tests/draft-topics.test.mjs,
+ * tests/error-investigation.test.mjs, tests/website.test.mjs,
+ * website/src/lib/application/session.mjs,
+ * website/src/lib/components/teaching/LatticeErrorInvestigation.svelte.
  *
  * Uses: website/src/lib/domain/engine.mjs.
  *

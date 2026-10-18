@@ -1,13 +1,28 @@
 /* GNU Go browser estimate interface, GPL-3.0-or-later.
  * Copyright (c) 2026 Joe Hudson.
- * Calls GNU Go 3.8's full position analysis, territory classification and area
- * influence score. JSON uses row-major points; positive lead favours White.
+ *
+ * Purpose: Expose GNU Go's position analysis, territory classification and area
+ * influence score as JSON. Row-major ownership uses B/W/.; positive lead favours White.
+ *
+ * Main contents:
+ * - estimate_position: initialize the engine, load a board and return its estimate.
+ *
+ * Used By: worker.js via the Emscripten export built by build.sh.
+ *
+ * Uses: the pinned GNU Go source archive's gnugo.h/liberty.h and engine libraries.
+ *
+ * Libs: GNU Go 3.8 for analysis; stdio for bounded JSON formatting.
  * Compile/link with the accompanying upstream source; see build.sh and COPYING.
  */
 #include <stdio.h>
 #include "gnugo.h"
 #include "liberty.h"
 
+/* Estimate a validated row-major position: size is the board width, position has
+ * size*size B/W/. characters, to_move is 1 for Black or 2 for White, white_komi
+ * is finite. worker.js validates the payload. Returns a reused static JSON buffer.
+ * Example: estimate_position(5, ".........................", 1, 6.5f).
+ */
 const char *estimate_position(int size, const char *position, int to_move, float white_komi) {
   static int initialized = 0;
   static char result[2048];

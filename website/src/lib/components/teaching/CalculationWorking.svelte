@@ -1,4 +1,19 @@
-<!-- Authored calculation steps, shared by new-topic demos, feedback and incorrect working. -->
+<!--
+  Purpose: Authored calculation steps, shared by new-topic demos, feedback and incorrect
+  working.
+
+  Main contents:
+  - Authored calculation rows, reveal frames, working notes and final highlights.
+
+  Used By: website/src/lib/components/practice/Feedback.svelte,
+  website/src/lib/components/practice/PracticeActivity.svelte,
+  website/src/lib/components/teaching/DemoPlayer.svelte,
+  website/src/lib/components/teaching/ProblemTips.svelte, website/src/routes/+page.svelte.
+
+  Uses: website/src/lib/components/teaching/MathText.svelte.
+
+  Libs: none.
+-->
 <script>
   import MathText from './MathText.svelte';
   let { question, steps = question.steps, frame = null, compact = false, font = null } = $props();

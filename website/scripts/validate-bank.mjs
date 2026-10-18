@@ -1,16 +1,23 @@
-import { readTopicBank } from './read-topic-bank.mjs';
 /**
- * Purpose: Validate the published equation bank against authored IDs, answers and teaching annotations.
+ * Purpose: Validate assembled topic banks and authored Practice set references before a build.
+ * Check stable IDs, answer formats, hints, method examples, investigation coverage and the
+ * catalogue against the same content the app loads.
  *
  * Main contents:
- * - Module initialization and configuration.
+ * - Topic/catalogue assembly and invariant assertions; terminal validation summary.
  *
- * Used By: Verification command entry points.
+ * Used By: the documented command below.
  *
- * Uses: website/src/lib/domain/engine.mjs.
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/domain/engine.mjs,
+ * website/src/lib/domain/practice-code.mjs.
  *
  * Libs: node:fs/promises (asynchronous file access), node:assert/strict (assertions).
+ *
+ * Usage and output: From website/: node scripts/validate-bank.mjs (also npm run build). Reads
+ * all topic parts/catalogue; prints counts and fails on invalid content. Writes nothing.
  */
+import { readTopicBank } from './read-topic-bank.mjs';
+
 import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { markAnswer } from '../src/lib/domain/engine.mjs';

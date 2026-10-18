@@ -1,6 +1,19 @@
+/**
+ * Purpose: Review regressions: derive answers from prompts and check every displayed correct
+ * step.
+ *
+ * Main contents:
+ * - arithmetic, atom, product, sum, correct, at.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/src/lib/content/topic-bank.mjs, website/scripts/read-topic-bank.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import { guidanceFor } from "../website/src/lib/content/topic-bank.mjs";
 import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
-/** Review regressions: derive answers from prompts and check every displayed correct step. */
+
 import test from "node:test";
 import assert from "node:assert/strict";
 const names = [
@@ -32,6 +45,7 @@ const items = (b) => [
 ];
 
 // A small arithmetic grammar, not eval: only numbers, signs, brackets and four operations.
+/** Evaluate this test’s arithmetic expression independently of production marking. */
 function arithmetic(source) {
   const text = String(source)
     .replace(/(\d+)\s+\{(\d+\/\d+)\}/g, "($1+($2))")
@@ -90,6 +104,7 @@ const numbers = (text) =>
   [...text.matchAll(/\{[-\d]+\/\d+\}|[-−]?\d+(?:\.\d+)?/g)].map((m) =>
     arithmetic(m[0]),
   );
+/** Recompute the expected mathematical result for a question fixture. */
 function correct(q, expected) {
   assert.ok(
     Math.abs(arithmetic(q.answer) - expected) < 0.00501,

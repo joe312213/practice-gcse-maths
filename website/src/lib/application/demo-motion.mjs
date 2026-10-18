@@ -1,14 +1,15 @@
 /**
- * Purpose: Interpolate newly revealed demo ink through native browser animations, preserving static rendering and reduced motion.
+ * Purpose: Interpolate newly revealed demo ink through native browser animations, preserving
+ * static rendering and reduced motion.
  *
  * Main contents:
  * - createDemoMotion and its snapshot, playback and cleanup controls.
  *
- * Used By: ShowDemo.svelte.
+ * Used By: website/src/lib/components/teaching/ShowDemo.svelte.
  *
- * Uses: handwriting.mjs for shared ordered pen strokes.
+ * Uses: website/src/lib/application/handwriting.mjs.
  *
- * Libs: None; uses Web Animations and browser style/media APIs.
+ * Libs: none.
  */
 import { animateStrokes } from './handwriting.mjs';
 

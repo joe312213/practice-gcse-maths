@@ -1,6 +1,28 @@
+/**
+ * Purpose: Exercise prototype and live error investigations through pointer, touch and keyboard
+ * input. Check geometry, selections, diagnoses, marking and retained progress using real shared
+ * working renderers.
+ *
+ * Main contents:
+ * - checkErrorInvestigation.
+ *
+ * Used By: website/scripts/browser-checks.mjs.
+ *
+ * Uses: website/src/lib/content/stage-text.mjs, website/scripts/read-topic-bank.mjs,
+ * website/src/lib/content/topic-routes.mjs, website/scripts/browser/support.mjs,
+ * website/src/lib/application/arithmetic-demo.mjs,
+ * website/src/lib/application/error-working.mjs, content/lattice_error_prototype.json.
+ *
+ * Libs: node:assert/strict (assertions), @axe-core/playwright (accessibility assertions),
+ * @playwright/test (browser automation and assertions).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
+ */
 import { stageTextFor } from '../../src/lib/content/stage-text.mjs';
 import { readTopicBank } from '../read-topic-bank.mjs';
-/** Exercise the isolated lattice prototype through pointer, keyboard and the shared choices. */
+
 import assert from 'node:assert/strict';
 import { foundationTopics, topicPath } from '../../src/lib/content/topic-routes.mjs';
 import AxeBuilder from '@axe-core/playwright';
@@ -11,6 +33,7 @@ import { investigationLattice } from '../../src/lib/application/error-working.mj
 const captureVisuals = process.env.CAPTURE_VISUALS === '1';
 import prototype from '../../../content/lattice_error_prototype.json' with { type: 'json' };
 
+/** Exercise the isolated lattice fixtures with the supplied browser/base URL; check marking, touch geometry and diagnosis edits. Called by checkErrorInvestigation before live-topic checks. */
 async function checkPrototypeInvestigation(browser, base) {
   const context = await createTestContext(browser, { viewport: { width: 390, height: 844 } });
   const page = await context.newPage();
@@ -270,6 +293,21 @@ async function checkLiveInvestigations(browser, base) {
         q = bank.questions.find((q) => q.id === attempt.items[0].id);
       assert.equal(attempt.items.length, 4);
       await page.locator('.error-working [data-written-ink]').first().waitFor();
+      if (q.id === 'maths:M15-WEB-ERRORS-R2-C1-Q01') {
+        await expect(page.locator('[data-location="step-2"]')).toHaveAttribute(
+          'aria-label',
+          /\(12\+12\)$/,
+        );
+        await expect(page.locator('[data-location="step-2-part-1"]')).toHaveAttribute(
+          'aria-label',
+          /\(11\+2\)$/,
+        );
+        const widths = await page.locator('[data-location="step-2"]').evaluate((target) => ({
+          target: target.getBoundingClientRect().width,
+          row: target.closest('.working-line').getBoundingClientRect().width,
+        }));
+        assert.ok(widths.target < widths.row / 2, 'The denominator is a separate, narrow target');
+      }
       if (q.diagram?.kind === 'lattice') {
         await page.setViewportSize({ width: 390, height: 844 });
         const model = investigationLattice(q);
@@ -339,9 +377,12 @@ async function checkLiveInvestigations(browser, base) {
           const bounds = await target.evaluate((button) => {
             const box = (selector) => button.querySelector(selector).getBoundingClientRect();
             return {
-              marker: box('.line-marker'),
+              marker: box('.line-marker path'),
               text: box('.working-expression'),
-              label: box('.working-line-label'),
+              label: button
+                .closest('.working-line')
+                .querySelector('.working-line-label')
+                .getBoundingClientRect(),
             };
           });
           assert.ok(bounds.marker.width <= bounds.text.width + 12, 'Marker hugs working width');
@@ -478,6 +519,7 @@ async function checkLiveInvestigations(browser, base) {
   }
 }
 
+/** Run this focused browser scenario against the supplied browser and base URL. Called by the shared suite runner; isolated contexts and finally cleanup protect other sessions. Example: await checkErrorInvestigation(browser, base). */
 export async function checkErrorInvestigation(browser, base) {
   await checkPrototypeInvestigation(browser, base);
   await checkLiveInvestigations(browser, base);

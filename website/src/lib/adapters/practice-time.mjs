@@ -1,14 +1,16 @@
 /**
- * Purpose: Bind active practice timing to session changes and browser lifecycle; save credited time in hourly buckets.
+ * Purpose: Bind active practice timing to session changes and browser lifecycle; save credited
+ * time in hourly buckets.
  *
  * Main contents:
  * - createPracticeTimer; bindPracticeTimer.
  *
- * Used By: TopicPractice.svelte and practice-time tests.
+ * Used By: tests/practice-time.test.mjs,
+ * website/src/lib/components/practice/TopicPractice.svelte.
  *
- * Uses: domain/practice-time.mjs.
+ * Uses: website/src/lib/domain/practice-time.mjs.
  *
- * Libs: None; browser objects, clock, identifiers and persistence are injected.
+ * Libs: none.
  */
 import {
   engagePractice,

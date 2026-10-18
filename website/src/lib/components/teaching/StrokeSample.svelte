@@ -1,4 +1,15 @@
-<!-- Purpose: Accessible font specimen and optional writing controls. Uses: shared handwriting controller. -->
+<!--
+  Purpose: Accessible font specimen and optional writing controls.
+
+  Main contents:
+  - Font specimen output, missing-glyph reporting and optional writing controls.
+
+  Used By: website/src/routes/handwriting.html/+page.svelte.
+
+  Uses: website/src/lib/application/handwriting.mjs.
+
+  Libs: none.
+-->
 <script>
   import { renderHandwriting } from '#lib/application/handwriting.mjs';
   let { font, text, animated = false } = $props();

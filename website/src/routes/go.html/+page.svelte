@@ -1,4 +1,19 @@
-<!-- App route for the portable human Go board. Native Back restores the puzzle route snapshot. -->
+<!--
+  Purpose: App route for the portable human Go board. Native Back restores the puzzle route
+  snapshot.
+
+  Main contents:
+  - Portable Go board route and back-navigation state.
+
+  Used By: SvelteKit route loading/prerendering.
+
+  Uses: website/src/lib/components/ui/SiteHeader.svelte,
+  website/src/lib/components/ui/SiteFooter.svelte,
+  website/src/lib/components/puzzles/HumanGo.svelte, website/src/lib/styles/puzzles.css.
+
+  Libs: $app/paths (SvelteKit navigation/route state), @subject-apps/puzzles/metadata (shared
+  puzzle package metadata), @subject-apps/puzzles/styles (shared puzzle package styles).
+-->
 <script>
   import { resolve } from '$app/paths';
   import SiteHeader from '#lib/components/ui/SiteHeader.svelte';

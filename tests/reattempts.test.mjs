@@ -1,4 +1,20 @@
-/** Retry outcomes must never rewrite original results or leak early practice into progress. */
+/**
+ * Purpose: Retry outcomes must never rewrite original results or leak early practice into
+ * progress.
+ *
+ * Main contents:
+ * - fixture, reload.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/application/session.mjs,
+ * website/src/lib/domain/profiles.mjs, website/src/lib/domain/reattempts.mjs,
+ * website/src/lib/domain/progress.mjs, website/src/lib/domain/practice-history.mjs,
+ * website/src/lib/domain/assessment.mjs, website/src/lib/domain/progress-transfer.mjs,
+ * website/src/lib/domain/practice-code.mjs, website/src/lib/content/practice-pages.json.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
@@ -19,6 +35,7 @@ import { encodePracticeSet } from "../website/src/lib/domain/practice-code.mjs";
 import catalogue from "../website/src/lib/content/practice-pages.json" with { type: "json" };
 const bank = await readTopicBank("solving-equations");
 const delay = REATTEMPT_POLICY["count-reattempt-mintime"];
+/** Create deterministic injected state, time and dependencies for this test module; returns controls for the exercised lifecycle. */
 function fixture() {
   let time = Date.UTC(2026, 9, 17, 10),
     id = 0,
@@ -159,7 +176,12 @@ test("late assisted retries stay excluded and abandoning a retry does not unlock
 test("assessment retries leave the original baseline and seven-day lock unchanged", () => {
   const f = fixture();
   f.answer(false);
-  assert.equal(f.session.retryQuestion(), false);
+  const original = structuredClone(f.view.page.responses);
+  assert.equal(f.session.retryQuestion(), true);
+  f.answer(true);
+  assert.deepEqual(f.view.page.responses, original);
+  assert.equal(f.view.page.count, 1);
+  f.session.select(0);
   for (let i = 1; i < f.view.page.size; i++) {
     f.session.select(i);
     f.answer(true);
@@ -188,7 +210,12 @@ test("finished timed sets allow practice retries without rewriting the set resul
   });
   f.session.startPracticeSet(code);
   f.answer(false);
-  assert.equal(f.session.retryQuestion(), false);
+  const original = structuredClone(f.view.page.responses);
+  assert.equal(f.session.retryQuestion(), true);
+  f.answer(true);
+  assert.deepEqual(f.view.page.responses, original);
+  assert.equal(f.view.page.count, 1);
+  f.session.select(0);
   f.advance(24 * 3600000);
   f.session.tick();
   assert.equal(f.view.practiceSet.finished, "expired");

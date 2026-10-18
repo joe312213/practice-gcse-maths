@@ -1,16 +1,19 @@
 <!--
-  Purpose: Export or validate and import learner progress, with JSON backup reminders and replacement confirmation.
+  Purpose: Export or validate and import learner progress, with JSON backup reminders and
+  replacement confirmation.
 
   Main contents:
   - download
   - readFile
   - applyImport
 
-  Used By: website/src/routes/progress.html/+page.svelte
+  Used By: website/src/routes/progress.html/+page.svelte.
 
-  Uses: website/src/lib/domain/progress.mjs, website/src/lib/domain/progress-transfer.mjs.
+  Uses: website/src/lib/adapters/progress-ownership.mjs,
+  website/src/lib/adapters/progress-file.mjs, website/src/lib/domain/profiles.mjs,
+  website/src/lib/domain/progress.mjs, website/src/lib/domain/progress-transfer.mjs.
 
-  Libs: none.
+  Libs: svelte (component state, lifecycle and transitions).
 -->
 <script>
   import { progressTask } from '#lib/adapters/progress-ownership.mjs';

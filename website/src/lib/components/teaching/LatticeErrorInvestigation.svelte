@@ -1,4 +1,18 @@
-<!-- Prototype interaction: shared generated lattice, editable diagnoses and explicit final checking. -->
+<!--
+  Purpose: Prototype interaction: shared generated lattice, editable diagnoses and explicit
+  final checking.
+
+  Main contents:
+  - choose, toggle, record, remove, isConsequence, reset.
+
+  Used By: website/src/routes/spot-errors.html/+page.svelte.
+
+  Uses: website/src/lib/components/teaching/ArithmeticWorking.svelte,
+  website/src/lib/components/ui/WrappingSelect.svelte,
+  website/src/lib/application/arithmetic-demo.mjs, website/src/lib/domain/errors.mjs.
+
+  Libs: svelte (component state, lifecycle and transitions).
+-->
 <script>
   import { tick } from 'svelte';
   import ArithmeticWorking from './ArithmeticWorking.svelte';

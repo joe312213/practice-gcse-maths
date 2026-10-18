@@ -1,9 +1,33 @@
+/**
+ * Purpose: Canonical topic parts, named guidance and runtime assembly must agree without
+ * generation.
+ *
+ * Main contents:
+ * - every topic assembles its complete bank and three named challenge guides; shared guidance
+ *   falls back and level overrides replace the entire object; stage text inherits shared copy,
+ *   substitutes actual page size and isolates topic overrides; named reasons expand values
+ *   without changing saved IDs, and reject broken references; every topic has working concept
+ *   references; missing keys and incomplete explanations fail assembly.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/static/data/defaults.json, website/static/handwriting/pacifico-maths.json,
+ * website/src/lib/application/handwriting.mjs, website/src/lib/application/error-working.mjs,
+ * website/src/lib/content/stage-text.mjs, website/scripts/read-topic-bank.mjs,
+ * website/src/lib/content/topic-bank.mjs, website/src/lib/content/topic-routes.mjs,
+ * website/src/lib/application/arithmetic-demo.mjs,
+ * website/src/lib/application/equation-demo.mjs,
+ * website/src/lib/application/calculation-demo.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions), node:fs/promises (asynchronous
+ * file access).
+ */
 import defaults from "../website/static/data/defaults.json" with { type: "json" };
 import handwriting from "../website/static/handwriting/pacifico-maths.json" with { type: "json" };
 import { missingCharacters } from "../website/src/lib/application/handwriting.mjs";
 import { workingText } from "../website/src/lib/application/error-working.mjs";
 import { stageTextFor } from "../website/src/lib/content/stage-text.mjs";
-/** Canonical topic parts, named guidance and runtime assembly must agree without generation. */
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
@@ -109,6 +133,7 @@ test("named reasons expand values without changing saved IDs, and reject broken 
   };
   const question = {
     id: "existing-question",
+    locations: [{ id: "step-2", label: "Sum", text: "1/12 + 1/12 = 2/24" }],
     options: { repair: ["keep-denominator", "12"] },
     errors: [
       {
@@ -203,7 +228,7 @@ test("method catalogues cover every declared sub-method with at least two runnab
     );
     const bank = await readTopicBank(topic.file);
     for (const [level, examples] of Object.entries(bank.teaching.examples)) {
-      assert.ok(examples.length >= 2, `${topic.file}/${level}`);
+      assert.ok(examples.length >= 4, `${topic.file}/${level}`);
       for (const example of examples) {
         const q = example.question;
         assert.doesNotMatch(example.name, /worked example/i);
@@ -230,27 +255,17 @@ test("method catalogues cover every declared sub-method with at least two runnab
 });
 
 test("method validation rejects coverage gaps, vague names, wrong levels and mismatched narration", async () => {
-  const { readFile } = await import("node:fs/promises");
-  const { TOPIC_FILES } =
-    await import("../website/src/lib/content/topic-bank.mjs");
-  const parts = Object.fromEntries(
-    await Promise.all(
-      TOPIC_FILES.map(async (file) => [
-        file,
-        JSON.parse(
-          await readFile(
-            new URL(
-              `../website/static/data/solving-equations/${file}.json`,
-              import.meta.url,
-            ),
-          ),
-        ),
-      ]),
-    ),
-  );
+  const { readTopicParts } =
+    await import("../website/scripts/read-topic-bank.mjs");
+  const parts = await readTopicParts("solving-equations");
   for (const [mutate, error] of [
-    [(p) => p.method.examples.start.splice(1), /At least two/],
-    [(p) => p.method.examples.start.pop(), /Missing start example/],
+    [(p) => p.method.examples.start.splice(1), /At least four/],
+    [
+      (p) => {
+        for (const example of p.method.examples.start) example.submethods = [];
+      },
+      /Missing start example/,
+    ],
     [
       (p) => (p.method.examples.start[0].name = "Worked example"),
       /Invalid method example/,
@@ -272,4 +287,57 @@ test("method validation rejects coverage gaps, vague names, wrong levels and mis
     mutate(changed);
     assert.throws(() => assembleTopic(changed), error);
   }
+});
+
+test("working targets preserve full rows and reject ambiguous or broken author references", async () => {
+  const { resolveLocations } =
+    await import("../website/src/lib/content/topic-bank.mjs");
+  const { workingParts } =
+    await import("../website/src/lib/application/error-working.mjs");
+  for (const { file } of foundationTopics) {
+    const bank = await readTopicBank(file);
+    for (const q of bank.questions.filter((q) => q.investigation)) {
+      assert.equal(
+        new Set(q.locations.map((l) => l.id)).size,
+        q.locations.length,
+      );
+      for (const row of q.locations.filter((l) => l.targets)) {
+        const parts = workingParts(row);
+        assert.equal(parts.map((part) => part.text).join(""), row.text);
+        for (const part of parts.filter((part) => part.id))
+          assert.ok(q.locations.some((location) => location.id === part.id));
+      }
+    }
+  }
+  const row = {
+    id: "line",
+    text: "2 + 3 = 5",
+    targets: [{ id: "line", label: "Sum", text: "2 + 3" }],
+  };
+  assert.equal(resolveLocations([row])[0], row);
+  assert.throws(
+    () =>
+      resolveLocations([
+        { ...row, targets: [{ id: "line", label: "Sum", text: "missing" }] },
+      ]),
+    /Invalid working target/,
+  );
+  assert.throws(
+    () =>
+      resolveLocations([
+        { ...row, targets: [{ id: "other", label: "Sum", text: "2 + 3" }] },
+      ]),
+    /retain row ID/,
+  );
+  assert.throws(
+    () =>
+      resolveLocations([
+        {
+          ...row,
+          targets: [...row.targets, { id: "used", label: "Result", text: "5" }],
+        },
+        { id: "used", text: "1" },
+      ]),
+    /Duplicate working target/,
+  );
 });

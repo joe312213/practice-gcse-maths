@@ -1,15 +1,33 @@
 <!--
-  Purpose: Compose the active question, teaching reference, answer form and working area with focus management.
+  Purpose: Compose the active question, teaching reference, answer form and working area with
+  focus management.
 
   Main contents:
   - focusAnswer
   - submit
 
-  Used By: website/src/lib/components/practice/TopicPractice.svelte
+  Used By: website/src/lib/components/practice/TopicPractice.svelte.
 
-  Uses: website/src/lib/domain/engine.mjs, website/src/lib/domain/stages.mjs, website/src/lib/components/practice/QuestionList.svelte, website/src/lib/components/practice/AnswerForm.svelte, website/src/lib/components/practice/Feedback.svelte, website/src/lib/components/practice/WorkingArea.svelte, website/src/lib/components/practice/Completion.svelte, website/src/lib/components/teaching/Guidance.svelte, website/src/lib/components/teaching/EquationWorking.svelte, website/src/lib/components/teaching/MethodDemo.svelte.
+  Uses: website/src/lib/content/stage-text.mjs, website/src/lib/content/topic-bank.mjs,
+  website/src/lib/domain/topic-pages.mjs, website/src/lib/domain/reattempts.mjs,
+  website/src/lib/components/teaching/MathText.svelte,
+  website/src/lib/components/teaching/CalculationWorking.svelte,
+  website/src/lib/components/teaching/ProblemTips.svelte, website/src/lib/components/ui/LevelSelector.svelte,
+  website/src/lib/domain/stages.mjs,
+  website/src/lib/components/practice/PracticeCountdown.svelte,
+  website/src/lib/components/ui/PageNavigation.svelte,
+  website/src/lib/components/practice/QuestionList.svelte,
+  website/src/lib/components/practice/AnswerForm.svelte,
+  website/src/lib/components/practice/Feedback.svelte,
+  website/src/lib/components/practice/WorkingArea.svelte,
+  website/src/lib/components/practice/Completion.svelte,
+  website/src/lib/components/teaching/Guidance.svelte,
+  website/src/lib/components/teaching/EquationWorking.svelte,
+  website/src/lib/components/teaching/MethodDemo.svelte.
 
-  Libs: svelte (component lifecycle and state), bits-ui (dialog/popover interaction).
+  Libs: svelte (component state, lifecycle and transitions), svelte/transition (element fade
+  transitions), bits-ui (accessible dialogs, popovers and choices), $app/paths (SvelteKit
+  navigation/route state).
 -->
 <script>
   import { stageTextFor } from '#lib/content/stage-text.mjs';
@@ -19,9 +37,10 @@
   import MathText from '../teaching/MathText.svelte';
   import CalculationWorking from '../teaching/CalculationWorking.svelte';
   import ProblemTips from '../teaching/ProblemTips.svelte';
-  import { onMount, tick } from 'svelte';
+  import { onMount, onDestroy, tick } from 'svelte';
+  import { fade } from 'svelte/transition';
   import { Dialog } from 'bits-ui';
-  import { LEVELS } from '#lib/domain/engine.mjs';
+  import LevelSelector from '../ui/LevelSelector.svelte';
   import { MODES } from '#lib/domain/stages.mjs';
   import PracticeCountdown from './PracticeCountdown.svelte';
   import PageNavigation from '../ui/PageNavigation.svelte';
@@ -38,6 +57,10 @@
   let mobile = $state(false),
     container,
     referenceButton = $state();
+  let flash = $state(null),
+    flashTimer;
+  let reduceMotion = $state(false);
+  onDestroy(() => clearTimeout(flashTimer));
   const page = $derived(view.page);
   const stageText = $derived(stageTextFor(view.bank, view.mode, page.size));
   const hasProblemTips = $derived(
@@ -48,6 +71,7 @@
   let assessmentNow = $state(Date.now());
   const canReassess = $derived(view.assessment && assessmentNow >= view.assessment.availableAt);
   onMount(() => {
+    reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const assessmentClock = setInterval(() => {
       assessmentNow = Date.now();
     }, 60000);
@@ -81,10 +105,18 @@
    * Calls: tick, focusAnswer.
    */
   async function submit() {
+    const answeredNumber = view.selected + 1;
     const result = session.submitAnswer();
+    if (result.response) {
+      clearTimeout(flashTimer);
+      flash = { ...result.response, number: answeredNumber };
+      flashTimer = setTimeout(() => {
+        flash = null;
+      }, 2000);
+    }
     await tick();
     if (result.advanced) focusAnswer();
-    else if (!result.invalid) container.querySelector('.feedback')?.focus();
+    else if (!result.invalid) container.querySelector('.feedback[tabindex]')?.focus();
   }
 </script>
 
@@ -125,22 +157,17 @@
                 : 'Choose a question'}
           </h2>
           {#if view.mode !== 'assessment'}
-            <label
-              >Level <select
-                class="choice-field"
-                id="level"
-                value={view.pageNavigation?.level ?? page.level}
-                disabled={Boolean(
-                  view.bank.combined ||
-                  page.trial ||
-                  page.pendingChoice ||
-                  (view.practiceSet && page.complete) ||
-                  view.practiceSet?.finished,
-                )}
-                onchange={(event) => session.changeLevel(Number(event.currentTarget.value))}
-                >{#each LEVELS as label, index}<option value={index}>{label}</option>{/each}</select
-              ></label
-            >
+            <LevelSelector
+              level={view.pageNavigation?.level ?? page.level}
+              disabled={Boolean(
+                view.bank.combined ||
+                page.trial ||
+                page.pendingChoice ||
+                (view.practiceSet && page.complete) ||
+                view.practiceSet?.finished,
+              )}
+              onchange={session.changeLevel}
+            />
           {/if}
         </div>
       </div>
@@ -213,9 +240,16 @@
               {question.questionPrefix ?? view.sourceBank.questionPrefix}
             </p>
           {/if}
-          <p class="selected-equation" class:word-question={question.prose}>
-            <MathText text={question.q} />
-          </p>
+          <div class="question-transition">
+            {#key question.id}<p
+                class="selected-equation"
+                class:word-question={question.prose}
+                in:fade={{ duration: reduceMotion ? 0 : 500, delay: reduceMotion ? 0 : 500 }}
+                out:fade={{ duration: reduceMotion ? 0 : 500 }}
+              >
+                <MathText text={question.q} />
+              </p>{/key}
+          </div>
           {#if question.instruction}<p>{question.instruction}</p>{/if}
           {#if view.mode === 'scaffolded'}<Guidance
               guidance={guidanceFor(view.bank.teaching, question.level)}
@@ -241,7 +275,9 @@
             </div>{/if}
           <fieldset
             class="answer-controls"
-            disabled={!view.retrying && Boolean(view.practiceSet?.finished || page.complete)}
+            disabled={!view.retrying &&
+              !view.canRetry &&
+              Boolean(view.practiceSet?.finished || page.complete)}
           >
             <AnswerForm
               {question}
@@ -256,11 +292,38 @@
               onsubmit={submit}
               ondraft={session.updateDraft}
               onhint={session.hint}
+              onretry={() => session.retryQuestion()}
+              canRetry={view.canRetry}
+              {flash}
             />
           </fieldset>
         </div>
       </section>
-      <Feedback {question} {response} mode={view.mode} bank={view.sourceBank} />
+      {#if flash || response}<div
+          class="feedback-slot"
+          class:success-only={!(response && !response.correct)}
+        >
+          {#if flash}
+            {#key flash}<div
+                class="feedback feedback-flash"
+                class:correct={flash.correct}
+                class:incorrect={!flash.correct}
+                class:early-reattempt={flash.earlyReattempt}
+                role="status"
+              >
+                <strong
+                  >Question {flash.number}: {flash.correct ? 'Correct.' : 'Not quite yet.'}</strong
+                >
+                {#if flash.earlyReattempt}<span> Early retry: practice only.</span>{/if}
+              </div>{/key}
+          {/if}
+          <Feedback
+            {question}
+            response={flash?.correct && response?.correct ? null : response}
+            mode={view.mode}
+            bank={view.sourceBank}
+          />
+        </div>{/if}
       {#if view.canRetry && !view.retrying}
         <button
           class="action-button"
@@ -338,6 +401,39 @@
 {/if}
 
 <style>
+  .question-transition {
+    display: grid;
+  }
+  .question-transition > p {
+    grid-area: 1 / 1;
+  }
+  .feedback-slot {
+    grid-column: 1 / -1;
+    position: relative;
+  }
+  .feedback-slot.success-only {
+    grid-column: 1;
+  }
+  .feedback-flash {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 1;
+    pointer-events: none;
+    animation: feedback-fade 1s 1s forwards;
+  }
+  @keyframes feedback-fade {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .feedback-flash {
+      animation: none;
+    }
+  }
   .reassess-link {
     color: var(--muted);
   }
@@ -359,13 +455,6 @@
   }
   .practice-question-heading h2 {
     font-size: clamp(1rem, 5cqw, 1.5rem);
-  }
-  .practice-question-heading label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.875rem;
   }
   .practice-question-tools {
     display: grid;

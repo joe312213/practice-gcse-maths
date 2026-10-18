@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M07-WEB-DEMO-C1-Q1",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "demo",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "25% of an amount is £92. Find the whole amount.",
     "answer": "368",
     "answerUnit": "£",
@@ -29,12 +24,18 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 25% of the original. Keep any delivery charge separate.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "25"
+      }
+    },
     "method_note": "Divide the known part by its percentage multiplier.",
     "check": "Reverse the calculation chain: 368 × 0.25 = 92.",
     "wrong": "23",
-    "error_note": "The known amount is already a percentage of the whole. Multiplying by the percentage again makes it smaller; recover the whole by division.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "recover-whole-by-division"
+    },
     "repair": "Use the given item amount as 25% and recover 100%.",
     "diagram": {
       "kind": "reverse-bar",
@@ -48,12 +49,7 @@
   },
   {
     "id": "maths:M07-WEB-DEMO-C2-Q1",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "demo",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "After a 25% discount, a price is £276. Find the original price.",
     "answer": "368",
     "answerUnit": "£",
@@ -76,12 +72,21 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 75% of the original. Keep any delivery charge separate.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "75"
+      }
+    },
     "method_note": "Divide the changed price by its percentage multiplier.",
     "check": "Reverse the calculation chain: 368 × 0.75 = 276.",
     "wrong": "345",
-    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 75% of the original.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "avoid-forward-percentage",
+      "values": {
+        "percentage": "75"
+      }
+    },
     "repair": "Use the given item amount as 75% and recover 100%.",
     "diagram": {
       "kind": "reverse-bar",
@@ -95,12 +100,7 @@
   },
   {
     "id": "maths:M07-WEB-DEMO-C3-Q1",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "demo",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "An item has a 25% discount, then £8 delivery is added. The bill is £284. Find the original item price.",
     "answer": "368",
     "answerUnit": "£",
@@ -134,12 +134,23 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 75% of the original. Keep any delivery charge separate.",
-    "method_note": "Remove delivery before using the percentage Divide by the percentage multiplier to find the original.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "75"
+      }
+    },
+    "method_note": {
+      "textRef": "separate-delivery-method"
+    },
     "check": "Reverse the calculation chain: 368 × 0.75 = 276; 276 + 8 = 284.",
     "wrong": "345",
-    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 75% of the original.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "avoid-forward-percentage",
+      "values": {
+        "percentage": "75"
+      }
+    },
     "repair": "Use the given item amount as 75% and recover 100%.",
     "diagram": {
       "kind": "reverse-bar",

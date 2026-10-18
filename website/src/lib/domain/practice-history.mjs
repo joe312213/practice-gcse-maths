@@ -1,14 +1,16 @@
 /**
- * Purpose: Derive UK weekly time and success from durable records without storing percentages or inventing historical timing.
+ * Purpose: Derive UK weekly time and success from durable records without storing percentages or
+ * inventing historical timing.
  *
  * Main contents:
  * - practiceWeeks; practiceHistory.
  *
- * Used By: PracticeHistory.svelte and practice-time tests.
+ * Used By: tests/practice-time.test.mjs, tests/reattempts.test.mjs,
+ * website/src/lib/components/progress/PracticeHistory.svelte.
  *
- * Uses: progress.mjs (weekKey).
+ * Uses: website/src/lib/domain/progress.mjs, website/src/lib/domain/reattempts.mjs.
  *
- * Libs: None.
+ * Libs: none.
  */
 import { weekKey } from './progress.mjs';
 import { countsForProgress } from './reattempts.mjs';

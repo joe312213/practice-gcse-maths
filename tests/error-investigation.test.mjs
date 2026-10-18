@@ -1,5 +1,26 @@
+/**
+ * Purpose: Protect independent mistakes, propagated consequences and unordered investigation
+ * marking.
+ *
+ * Main contents:
+ * - prototype faults produce consistent wrong working and preserve the correct model; checking
+ *   requires every independent mistake, no extras, correct reasons and final answer; reversed
+ *   setup propagates through every cell; oversized carry changes reading, not addition; wrong
+ *   lattice products include reversed digits under one accepted diagnosis; Confidence lattice
+ *   investigations demand varied multi-digit multiplication with carrying.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/scripts/read-topic-bank.mjs, content/lattice_error_prototype.json,
+ * website/src/lib/application/arithmetic-demo.mjs, website/src/lib/domain/errors.mjs,
+ * website/src/lib/content/topic-routes.mjs, website/src/lib/domain/topic-pages.mjs,
+ * website/src/lib/application/error-working.mjs, website/src/lib/application/session.mjs,
+ * website/src/lib/adapters/working-cache.mjs, website/src/lib/domain/profiles.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
-/** Protect independent mistakes, propagated consequences and unordered investigation marking. */
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import prototype from "../content/lattice_error_prototype.json" with { type: "json" };
@@ -481,4 +502,25 @@ test("retired pages are removed from saved sets, recommendation copies and page 
     assert.equal(saved.deadline, 1000);
   }
   assert.equal(discardRetiredAttempts(data, banks), false);
+});
+
+test("fraction denominator targets preserve marking and offer correct neighbouring expressions", () => {
+  const q = liveBanks
+    .find((b) => b.topic === "M15")
+    .questions.find((q) => q.id === "maths:M15-WEB-ERRORS-R2-C1-Q01");
+  const row = q.locations.find((l) => l.id === "step-2");
+  assert.equal(row.targets.find((t) => t.id === "step-2").text, "(12+12)");
+  assert.equal(
+    row.targets.find((t) => t.text === "(11+2)").id,
+    "step-2-part-1",
+  );
+  assert.equal(markInvestigation(q, q.errors, q.answer).correct, true);
+  assert.equal(
+    markInvestigation(
+      q,
+      [{ location: "step-2-part-1", reason: q.errors[0].reason }],
+      q.answer,
+    ).correct,
+    false,
+  );
 });

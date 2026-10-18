@@ -1,9 +1,9 @@
 """Purpose: Easy non-calculator reasonableness checks; bounds are not exact-answer proofs.
 
 Main contents:
-- bounds
-- multiplication
-- division
+- bounds: Return simple lower and upper bounds for a non-calculator estimate.
+- multiplication: Produce a ballpark multiplication check from operand bounds.
+- division: Produce a quotient-bound check without claiming an exact division result.
 
 Used By: scripts/answer_layout.py, scripts/update_structure.py.
 
@@ -11,7 +11,9 @@ Uses: no local module imports.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Import from legacy answer/deck publishers; pass the operands or working
+records to the listed functions. Returns SVG/HTML, or draws into a caller-supplied slide; does
+not save files.
 """
 import math
 

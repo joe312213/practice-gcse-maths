@@ -1,9 +1,11 @@
-"""Purpose: Lightweight final-result inventory for the error-spotting question bank.
-Only final answers count: intermediate working and repeated operand digits do not.
+"""Purpose: Inventory final correct and incorrect results in historical spot-error content to
+detect repeated answers and positional cues. Intermediate values do not count; this is not a
+proof of mathematical correctness.
 
 Main contents:
-- normalise
-- review
+- normalise: Normalize a displayed answer to an exact fraction, using the question divisor for
+  remainder.
+- review: Collect final correct and incorrect answers and write their repetition-pattern review.
 
 Used By: scripts/update_structure.py.
 
@@ -11,7 +13,11 @@ Uses: no local module imports.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: review(bank) writes content/SPOT_ERRORS_ANSWER_PATTERNS.md. Direct invocation
+reads content/spot_errors.json; update_structure also calls review.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from collections import Counter,defaultdict
 from fractions import Fraction
@@ -39,7 +45,7 @@ def review(data):
  Parameters: data — structured question bank.
  Calls: normalise.
 
- Example in the caller's context: review(data)
+ Example: review(data)
  """
  all_values=defaultdict(list);lines=['# Error-spotting answer-pattern review — 1 October 2026','',
  'Reviewed final correct and deliberately incorrect results for all 45 SE questions. Compare numerical values regardless of units/currency; preserve signs and the value of any remainder. Do not count intermediate calculations as separate final answers.','',

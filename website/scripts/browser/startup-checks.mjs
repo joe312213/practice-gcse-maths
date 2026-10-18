@@ -1,16 +1,23 @@
 /**
- * Purpose: Inject startup faults to verify usable recovery from theme, storage and bank failures.
+ * Purpose: Inject startup faults to verify usable recovery from theme, storage and bank
+ * failures.
  *
  * Main contents:
  * - checkStartup
  *
- * Used By: website/scripts/browser-checks.mjs
+ * Used By: website/scripts/browser-checks.mjs.
  *
- * Uses: website/scripts/browser/support.mjs.
+ * Uses: website/scripts/browser/support.mjs, website/scripts/read-topic-bank.mjs.
  *
- * Libs: node:assert/strict (assertions).
+ * Libs: node:assert/strict (assertions), @playwright/test (browser assertions).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
  */
 import assert from 'node:assert/strict';
+import { expect } from '@playwright/test';
+import { readTopicBank } from '../read-topic-bank.mjs';
 import { createTestContext } from './support.mjs';
 
 /**
@@ -22,6 +29,7 @@ import { createTestContext } from './support.mjs';
  * @example await checkStartup(browser, "http://127.0.0.1:8766/"); // Check a running static preview.
  */
 export async function checkStartup(browser, base) {
+  await checkAnonymousVisit(browser, base);
   const context = await createTestContext(browser);
   try {
     const page = await context.newPage();
@@ -116,14 +124,14 @@ export async function checkStartup(browser, base) {
         if (fault === 'corrupt-store') localStorage.setItem('maths-practice-v2', '{bad');
       }, fault);
       if (fault === 'bank')
-        await page.route('**/data/solving-equations.json', (route) =>
+        await page.route('**/data/solving-equations.json*', (route) =>
           route.fulfill({ status: 503, body: 'Unavailable' }),
         );
       if (fault === 'delayed-bank') {
         const gate = new Promise((resolve) => {
           release = resolve;
         });
-        await page.route('**/data/solving-equations.json', async (route) => {
+        await page.route('**/data/solving-equations.json*', async (route) => {
           await gate;
           await route.continue();
         });
@@ -162,4 +170,58 @@ export async function checkStartup(browser, base) {
   console.log(
     'Startup checks passed: chevron/page restoration, delayed/failed bank, optional theme failure, unavailable/full/corrupt storage.',
   );
+}
+
+/** Verify one-bank startup, cached revisits and adoption of an anonymous visit on Progress. */
+async function checkAnonymousVisit(browser, base) {
+  const context = await createTestContext(browser);
+  try {
+    const page = await context.newPage();
+    const banks = [];
+    page.on('request', (request) => {
+      if (/\/data\/[^/]+\.json\?v=/.test(request.url())) banks.push(request.url());
+    });
+    await page.goto(`${base}fm/solving-equations/`);
+    await page.locator('#begin-anonymous').click();
+    assert.equal(banks.length, 1, 'ordinary topic startup requests only its own bank');
+    assert.match(banks[0], /solving-equations\.json\?v=[a-f0-9]{16}$/);
+    await page.locator('[data-mode="plain"]').click();
+    const visit = () =>
+      page.evaluate(() => JSON.parse(sessionStorage.getItem('maths-anonymous-visit')));
+    const before = await visit();
+    const id = before.topics['maths:M10'].pages.plain.items[0].id;
+    const bank = await readTopicBank('solving-equations');
+    await page
+      .locator('#answer')
+      .fill(bank.questions.find((question) => question.id === id).answer);
+    await page.getByRole('button', { name: 'Check answer', exact: true }).click();
+    await page.reload();
+    await page.locator('#answer').waitFor();
+    assert.equal((await visit()).topics['maths:M10'].history.length, 1);
+    assert.equal(banks.length, 2, 'reload still only requests this topic');
+    assert.equal(banks[0], banks[1], 'unchanged content keeps its cache key');
+    const transfer = await page.evaluate(
+      () =>
+        performance
+          .getEntriesByType('resource')
+          .find((entry) => /\/data\/solving-equations\.json\?v=/.test(entry.name))?.transferSize,
+    );
+    assert.equal(
+      transfer,
+      0,
+      'the revisit serves the bank from browser cache without transferring its body',
+    );
+    await page.getByRole('link', { name: 'Progress', exact: true }).click();
+    await page.locator('#progress-name').fill('Visit learner');
+    await page.getByRole('button', { name: 'Save name', exact: true }).click();
+    await page.getByRole('button', { name: 'Save name', exact: true }).click();
+    await expect(page.locator('#progress-name')).toHaveCount(0);
+    const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('maths-practice-v2')));
+    assert.equal(saved.profiles.length, 1);
+    assert.equal(saved.profiles[0].name, 'Visit learner');
+    assert.equal(saved.profiles[0].subjects.maths.topics['maths:M10'].history.length, 1);
+    assert.equal(await visit(), null, 'naming clears the anonymous session copy');
+  } finally {
+    await context.close();
+  }
 }

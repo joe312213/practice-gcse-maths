@@ -4,7 +4,8 @@
     "explanation": "There are 60 minutes in an hour. A fraction of an hour is not written like clock time.",
     "guidance": "For a speed in km/h, convert minutes to hours before using the formula.",
     "examples": [
-      "30 minutes = 30 ÷ 60 = 0.5 hours, not 0.30 hours."
+      "30 minutes = 30 ÷ 60 = 0.5 hours, not 0.30 hours.",
+      "45 minutes = 45 ÷ 60 = 0.75 hours. At 80 km/h the distance is 80 × 0.75 = 60 km. Using 0.45 would incorrectly give 36 km."
     ]
   },
   "speed-formula": {
@@ -12,7 +13,8 @@
     "explanation": "Speed tells you how far something travels per unit of time.",
     "guidance": "Divide distance by time for speed; multiply speed by time for distance; divide distance by speed for time.",
     "examples": [
-      "120 km in 2 hours gives 120 ÷ 2 = 60 km/h."
+      "120 km in 2 hours gives 120 ÷ 2 = 60 km/h.",
+      "To travel 150 km at 60 km/h, time = 150 ÷ 60 = 2.5 hours, which is 2 hours 30 minutes. Check: 60 × 2.5 = 150 km."
     ]
   },
   "average-speed": {
@@ -20,7 +22,8 @@
     "explanation": "Average speed describes the whole journey, even if speeds vary.",
     "guidance": "Add all distances and all elapsed times, including stops when requested. Divide the totals.",
     "examples": [
-      "60 km in 1 hour then 40 km in 1 hour gives 100 ÷ 2 = 50 km/h."
+      "60 km in 1 hour then 40 km in 1 hour gives 100 ÷ 2 = 50 km/h.",
+      "60 km in 1 hour, then 60 km in 2 hours: total distance = 120 km; total time = 3 hours. Average = 40 km/h. Averaging the speeds 60 and 30 would give 45, which ignores the different times."
     ]
   }
 }

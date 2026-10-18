@@ -1,9 +1,26 @@
+/**
+ * Purpose: Real same-origin tabs must hand over fresh progress, never stale snapshots.
+ *
+ * Main contents:
+ * - checkProgressTabs.
+ *
+ * Used By: website/scripts/browser/progress-checks.mjs.
+ *
+ * Uses: website/scripts/read-topic-bank.mjs, website/scripts/browser/support.mjs.
+ *
+ * Libs: node:assert/strict (assertions), @playwright/test (browser automation and assertions).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
+ */
 import { readTopicBank } from '../read-topic-bank.mjs';
-/** Real same-origin tabs must hand over fresh progress, never stale snapshots. */
+
 import assert from 'node:assert/strict';
 import { expect } from '@playwright/test';
 import { createTestContext } from './support.mjs';
 
+/** Run this focused browser scenario against the supplied browser and base URL. Called by the shared suite runner; isolated contexts and finally cleanup protect other sessions. Example: await checkProgressTabs(browser, base). */
 export async function checkProgressTabs(browser, base) {
   const context = await createTestContext(browser);
   const bank = await readTopicBank('solving-equations');

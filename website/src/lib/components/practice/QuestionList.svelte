@@ -4,9 +4,11 @@
   Main contents:
   - Component markup, input props and event bindings.
 
-  Used By: website/src/lib/components/practice/PracticeActivity.svelte
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte.
 
-  Uses: website/src/lib/domain/engine.mjs.
+  Uses: website/src/lib/domain/topic-pages.mjs, website/src/lib/domain/reattempts.mjs,
+  website/src/lib/components/teaching/MathText.svelte, website/src/lib/domain/engine.mjs,
+  website/src/lib/application/question-layout.mjs.
 
   Libs: none.
 -->

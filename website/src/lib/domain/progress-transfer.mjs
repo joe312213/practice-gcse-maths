@@ -1,5 +1,6 @@
 /**
- * Purpose: Validate portable learner records and serialize JSON backups or spreadsheet-safe CSV history.
+ * Purpose: Validate portable learner records and serialize JSON backups or spreadsheet-safe CSV
+ * history.
  *
  * Main contents:
  * - exportProgress
@@ -7,9 +8,12 @@
  * - importProgress
  * - exportCsv
  *
- * Used By: tests/progress.test.mjs, website/src/lib/components/progress/ProgressTransfer.svelte
+ * Used By: tests/learner-id.test.mjs, tests/practice-time.test.mjs,
+ * tests/progress-autosave.test.mjs, tests/progress-file.test.mjs, tests/progress.test.mjs,
+ * tests/reattempts.test.mjs, tests/session.test.mjs.
  *
- * Uses: website/src/lib/domain/engine.mjs, website/src/lib/domain/practice-code.mjs.
+ * Uses: website/src/lib/domain/profiles.mjs, website/src/lib/domain/engine.mjs,
+ * website/src/lib/domain/practice-code.mjs.
  *
  * Libs: none.
  */

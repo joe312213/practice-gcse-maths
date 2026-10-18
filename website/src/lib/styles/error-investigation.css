@@ -136,3 +136,22 @@
   max-inline-size: 100%;
   padding: 0.1em 0.2em;
 }
+/* Counter the marker's downward bow so long expressions stay covered. */
+.working-line-content > .line-marker {
+  transform: rotate(-3deg);
+}
+.working-parts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.working-part {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  min-height: 44px;
+  min-width: 44px;
+  height: auto;
+  font: inherit;
+  color: inherit;
+}

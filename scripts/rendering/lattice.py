@@ -1,7 +1,8 @@
 """Purpose: Finished lattice multiplication: exact cells, diagonal digits and separate carries.
 
 Main contents:
-- draw
+- draw: Render exact lattice cells, answer diagonals and carries as SVG and optional slide
+  shapes.
 
 Used By: scripts/answer_layout.py, scripts/rendering/applications.py.
 
@@ -9,7 +10,9 @@ Uses: scripts/rendering/canvas.py.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Import from legacy answer/deck publishers; pass the operands or working
+records to the listed functions. Returns SVG/HTML, or draws into a caller-supplied slide; does
+not save files.
 """
 from .canvas import Canvas
 
@@ -21,7 +24,7 @@ def draw(a,b,slide=None,x=0,y=0,cell=.64):
  lattice cell size in inches.
  Calls: c.text, c.line, c.finish.
 
- Example in the caller's context: draw(a, b, slide, x, y, cell)
+ Example: draw(a, b, slide, x, y, cell)
  """
  aa,bb=str(a),str(b);n,m=len(aa),len(bb);w=max(3,n*cell+1.1);h=m*cell+1.38;c=Canvas(w,h,slide,x,y);gx=.46;gy=.46
  for j,d in enumerate(aa):c.text(gx+j*cell,gy-.35,cell,.3,d,22,'center',bold=True)

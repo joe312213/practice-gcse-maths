@@ -1,12 +1,15 @@
 <!--
-  Purpose: Render the current answer input and submit action, including pending promotion choices.
+  Purpose: Render the current answer input and submit action, including pending promotion
+  choices.
 
   Main contents:
   - Component markup, input props and event bindings.
 
-  Used By: website/src/lib/components/practice/PracticeActivity.svelte
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte.
 
-  Uses: website/src/lib/components/teaching/ErrorEntries.svelte.
+  Uses: website/src/lib/components/ui/WrappingSelect.svelte,
+  website/src/lib/components/teaching/ErrorInvestigation.svelte,
+  website/src/lib/components/teaching/ErrorEntries.svelte.
 
   Libs: none.
 -->
@@ -27,6 +30,9 @@
     onsubmit,
     ondraft,
     onhint,
+    onretry,
+    canRetry = false,
+    flash = null,
   } = $props();
 </script>
 
@@ -66,26 +72,48 @@
   {#if question.answerUnit}<p id="answer-unit" class="muted">
       Give your answer in {question.answerUnit}.
     </p>{/if}
-  <input
-    id="answer"
-    class="text-field answer-result"
-    class:corrected-answer-field={mode === 'errors'}
-    data-answer-result={response && mode === 'errors'
-      ? response.answerCorrect
-        ? 'correct'
-        : 'incorrect'
-      : undefined}
-    autocomplete="off"
-    inputmode="text"
-    value={response?.raw ?? draft.answer}
-    disabled={Boolean(response)}
-    required
-    aria-invalid={inputError ? 'true' : undefined}
-    aria-describedby={[question.answerUnit ? 'answer-unit' : '', inputError ? 'input-message' : '']
-      .filter(Boolean)
-      .join(' ') || undefined}
-    oninput={(event) => ondraft({ answer: event.currentTarget.value })}
-  />
+  <div class="answer-entry">
+    <input
+      id="answer"
+      class="text-field answer-result"
+      class:corrected-answer-field={mode === 'errors'}
+      data-answer-result={response && mode === 'errors'
+        ? response.answerCorrect
+          ? 'correct'
+          : 'incorrect'
+        : undefined}
+      autocomplete="off"
+      inputmode="text"
+      value={response?.raw ?? draft.answer}
+      disabled={Boolean(response) && !canRetry}
+      readonly={Boolean(response)}
+      onclick={() => {
+        if (response && canRetry) onretry();
+      }}
+      onkeydown={(event) => {
+        if (response && canRetry && event.key === 'Enter') {
+          event.preventDefault();
+          onretry();
+        }
+      }}
+      required
+      aria-invalid={inputError ? 'true' : undefined}
+      aria-describedby={[
+        question.answerUnit ? 'answer-unit' : '',
+        inputError ? 'input-message' : '',
+      ]
+        .filter(Boolean)
+        .join(' ') || undefined}
+      oninput={(event) => ondraft({ answer: event.currentTarget.value })}
+    />
+    {#if flash}{#key flash}<span
+          class="answer-flash"
+          class:correct={flash.correct}
+          class:incorrect={!flash.correct}
+          class:early-reattempt={flash.earlyReattempt}
+          aria-hidden="true">{flash.correct ? '✓' : '✗'}</span
+        >{/key}{/if}
+  </div>
   {#if question.method === 'bus'}<p>
       {question.answer.includes(' r ')
         ? 'Give a whole-number answer with a remainder, using r.'
@@ -112,3 +140,43 @@
     score.
   </p>
 </form>
+
+<style>
+  .answer-entry {
+    position: relative;
+    width: min(15rem, calc(100% - 3rem));
+  }
+  .answer-entry input {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .answer-flash {
+    position: absolute;
+    inset-inline-start: calc(100% + 0.5rem);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    line-height: 1;
+    animation: answer-fade 1s 1s forwards;
+  }
+  .answer-flash.correct {
+    color: var(--correct-text);
+  }
+  .answer-flash.incorrect {
+    color: var(--incorrect-text);
+  }
+  @keyframes answer-fade {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .answer-flash {
+      animation: none;
+    }
+  }
+</style>

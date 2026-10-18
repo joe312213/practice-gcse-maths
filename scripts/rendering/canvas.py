@@ -3,13 +3,18 @@
 Main contents:
 - Canvas
 
-Used By: scripts/build_fraction_topic.py, scripts/rendering/bus_stop.py, scripts/rendering/equations.py, scripts/rendering/fractions.py, scripts/rendering/lattice.py, scripts/rendering/ratio.py, scripts/rendering/signed_numbers.py.
+Used By: scripts/build_fraction_topic.py, scripts/rendering/bus_stop.py,
+scripts/rendering/equations.py, scripts/rendering/fractions.py, scripts/rendering/lattice.py,
+scripts/rendering/ratio.py, scripts/rendering/signed_numbers.py.
 
 Uses: no local module imports.
 
-Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck inspection).
+Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck
+inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Import from legacy answer/deck publishers; pass the operands or working
+records to the listed functions. Returns SVG/HTML, or draws into a caller-supplied slide; does
+not save files.
 """
 import html,re
 from pptx.util import Inches,Pt
@@ -35,7 +40,7 @@ class Canvas:
   inches; h — height in inches; value — text or numeric value to render; size — font size in points;
   align — text alignment; color — text/stroke colour hex string; bold — whether to use bold text.
 
-  Example in the caller's context: canvas.text(x, y, w, h, value, size, align, color, bold)
+  Example: canvas.text(x, y, w, h, value, size, align, color, bold)
   """
   value=str(value)
   if self.slide is not None:
@@ -75,7 +80,7 @@ class Canvas:
   or numeric value to render; size — font size in points.
   Calls: self.text, self.line.
 
-  Example in the caller's context: canvas.math(x, y, value, size)
+  Example: canvas.math(x, y, value, size)
   """
   font=ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial.ttf',size*4);cursor=x
   for token in re.split(r'(\{[^{}]+/[^{}]+\})',value):

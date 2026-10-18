@@ -1,15 +1,22 @@
-"""Purpose: Compile saved topic files in registry order without rebuilding their content.
+"""Purpose: Combine already saved topic decks and answer HTML in the prerequisite order from the
+topic registry. It copies saved slide content; it does not regenerate questions or diagrams.
 
 Main contents:
-- compile_all
+- compile_all: Combine saved topic decks and HTML answers in registry order without rebuilding
+  questions.
 
-Used By: scripts/build_fraction_topic.py, scripts/build_priority_topic.py, scripts/fix_lattice_carries.py, scripts/fix_saved_layout.py, scripts/update_structure.py.
+Used By: scripts/build_fraction_topic.py, scripts/build_priority_topic.py,
+scripts/fix_lattice_carries.py, scripts/fix_saved_layout.py, scripts/update_structure.py.
 
 Uses: scripts/update_structure.py.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Reads content/topic_registry.json and the referenced topic files; writes the
+consolidated starter deck and GCSE_Maths_Revision_Starters_answers.html.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 import json,html
@@ -19,7 +26,7 @@ def compile_all():
  """Combine saved topic decks and HTML answers in registry order without rebuilding questions.
  Calls: u.Presentation, u.remove, u.clone, u.save, u.page, u.save_text.
 
- Example in the caller's context: compile_all()
+ Example: compile_all()
  """
  topics=json.loads((ROOT/'content/topic_registry.json').read_text())
  main=ROOT/'GCSE_Maths_Revision_Starters.pptx'

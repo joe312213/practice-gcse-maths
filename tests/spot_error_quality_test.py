@@ -1,4 +1,19 @@
-"""Regression mutations prove level/variety checks reject the audited weaknesses."""
+"""Purpose: Prove the live-content quality guards reject the specific weaknesses found
+in the teaching audit, using isolated mutations rather than rewriting bank files.
+
+Main contents:
+- bank: adapt live investigation records to the quality-check contract.
+- QualityRegressions: challenge-level, operation-variety and distractor mutations.
+
+Used By: tests/spot-error-drafts.test.mjs in the change-selected logic suite.
+
+Uses: scripts/review_spot_error_drafts.py and scripts/spot_error_quality.py.
+
+Libs: unittest for rejection assertions; copy/pathlib/sys for isolated fixtures/imports.
+
+Usage and output: python3 tests/spot_error_quality_test.py prints test results and
+returns a failing status on regression. Reads the live banks; writes no content.
+"""
 import copy
 from pathlib import Path
 import sys
@@ -11,12 +26,14 @@ from spot_error_quality import check_quality
 
 
 def bank(name, topic):
+    """Map a folder and topic ID to author-facing levels; calls live_banks for reject fixtures."""
     data = [q for q in live_banks()[name]['questions'] if q.get('investigation')]
     return dict(topic=topic, questions=[dict(q, level=q['level'] + 1, prompt=q['q'], unit=q['answerUnit']) for q in data])
 
 
 class QualityRegressions(unittest.TestCase):
     def reject(self, name, topic, mutate, message):
+        """Mutate a fresh bank and require check_quality to reject it with the expected rule."""
         data = bank(name, topic)
         mutate(data['questions'])
         with self.assertRaisesRegex(AssertionError, message):

@@ -4,9 +4,9 @@
   Main contents:
   - update
 
-  Used By: website/src/lib/components/practice/AnswerForm.svelte
+  Used By: website/src/lib/components/practice/AnswerForm.svelte.
 
-  Uses: no local module imports.
+  Uses: website/src/lib/components/ui/WrappingSelect.svelte.
 
   Libs: none.
 -->

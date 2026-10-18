@@ -1,14 +1,15 @@
 /**
- * Purpose: Render theme-independent pen, eraser and guide strokes without changing their saved coordinates or colours.
+ * Purpose: Render theme-independent pen, eraser and guide strokes without changing their saved
+ * coordinates or colours.
  *
  * Main contents:
  * - Pen/eraser widths; INK_COLOURS; inkColour; drawStroke.
  *
- * Used By: WorkingArea.svelte.
+ * Used By: website/src/lib/components/practice/WorkingArea.svelte.
  *
- * Uses: No local modules.
+ * Uses: no local module imports.
  *
- * Libs: None; uses the supplied canvas context.
+ * Libs: none.
  */
 export const PEN_WIDTH = 3;
 // A circular eraser has five times the pen's area, not five times its diameter.

@@ -1,4 +1,15 @@
-/** Shared row allocation: balance within readable capacity without adding needless rows. */
+/**
+ * Purpose: Shared row allocation: balance within readable capacity without adding needless rows.
+ *
+ * Main contents:
+ * - question rows favour even counts within the available column capacity.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/src/lib/application/question-layout.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import test from "node:test";
 import assert from "node:assert/strict";
 import { balancedQuestionRows } from "../website/src/lib/application/question-layout.mjs";

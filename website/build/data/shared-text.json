@@ -1,0 +1,7 @@
+{
+  "investigation-task": "Find the independent mistakes and complete the corrected working.",
+  "check-original-quantities": "Check each corrected step against the original quantities and requested answer.",
+  "check-requested-unit": "Substitute the corrected result into the original quantities and check the requested unit.",
+  "complete-calculation": "This has not completed the requested calculation. After “{firstStep}”, check what quantity the question asks you to find.",
+  "application-source": "Original website application-stage content, 12 October 2026"
+}

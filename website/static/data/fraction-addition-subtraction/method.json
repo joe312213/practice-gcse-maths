@@ -4,31 +4,35 @@
     "default": {
       "aim": "Combine fractions with a common denominator.",
       "steps": [
+        "Write the fraction calculation, including its + or − sign. Draw a clear fraction bar for each fraction, keeping numerators above and denominators below; leave room to rewrite equivalent fractions on the next line.",
         [
           {
             "concept": "prepare-fractions",
             "text": "Prepare the fractions"
-          }
+          },
+          ". If there is a mixed number, multiply its whole number by the denominator and add the numerator; keep the denominator to write one improper fraction."
         ],
         [
           "Use a ",
           {
             "concept": "common-denominator",
             "text": "common denominator"
-          }
+          },
+          ": choose a number both denominators divide into, then multiply each numerator and denominator by the same factor to reach it. If the denominators already match, keep them."
         ],
         [
           {
             "concept": "combine-numerators",
             "text": "Add or subtract"
-          }
+          },
+          " the numerators, following the sign in the question. Keep the common denominator because the size of each part has not changed."
         ],
         [
           {
             "concept": "simplify",
             "text": "Simplify"
           },
-          " and check"
+          " by dividing the numerator and denominator by the same common factor until no factor greater than 1 remains. Check by reversing the addition or subtraction."
         ]
       ]
     },
@@ -36,62 +40,70 @@
       "build": {
         "aim": "Use equivalent fractions when one denominator is a multiple of the other.",
         "steps": [
+          "Write the fraction calculation, including its + or − sign. Draw a clear fraction bar for each fraction, keeping numerators above and denominators below; leave room to rewrite equivalent fractions on the next line.",
           [
             {
               "concept": "prepare-fractions",
               "text": "Prepare the fractions"
-            }
+            },
+            ". If there is a mixed number, multiply its whole number by the denominator and add the numerator; keep the denominator to write one improper fraction."
           ],
           [
             "Use a ",
             {
               "concept": "common-denominator",
               "text": "common denominator"
-            }
+            },
+            ": choose a number both denominators divide into, then multiply each numerator and denominator by the same factor to reach it. If the denominators already match, keep them."
           ],
           [
             {
               "concept": "combine-numerators",
               "text": "Add or subtract"
-            }
+            },
+            " the numerators, following the sign in the question. Keep the common denominator because the size of each part has not changed."
           ],
           [
             {
               "concept": "simplify",
               "text": "Simplify"
             },
-            " and check"
+            " by dividing the numerator and denominator by the same common factor until no factor greater than 1 remains. Check by reversing the addition or subtraction."
           ]
         ]
       },
       "confidence": {
         "aim": "Use unrelated denominators and convert mixed numbers before calculating.",
         "steps": [
+          "Write the fraction calculation, including its + or − sign. Draw a clear fraction bar for each fraction, keeping numerators above and denominators below; leave room to rewrite equivalent fractions on the next line.",
           [
             {
               "concept": "prepare-fractions",
               "text": "Prepare the fractions"
-            }
+            },
+            ". If there is a mixed number, multiply its whole number by the denominator and add the numerator; keep the denominator to write one improper fraction."
           ],
           [
             "Use a ",
             {
               "concept": "common-denominator",
               "text": "common denominator"
-            }
+            },
+            ": choose a number both denominators divide into, then multiply each numerator and denominator by the same factor to reach it. If the denominators already match, keep them."
           ],
           [
             {
               "concept": "combine-numerators",
               "text": "Add or subtract"
-            }
+            },
+            " the numerators, following the sign in the question. Keep the common denominator because the size of each part has not changed."
           ],
           [
             {
               "concept": "simplify",
               "text": "Simplify"
             },
-            " and check"
+            " by dividing the numerator and denominator by the same common factor until no factor greater than 1 remains. Check by reversing the addition or subtraction."
           ]
         ]
       }
@@ -186,6 +198,23 @@
           "simplify"
         ],
         "recap": 0
+      },
+      {
+        "key": "web-plain-c1-q1",
+        "name": "Add sevenths",
+        "submethods": [
+          "add"
+        ],
+        "question": "maths:M15-WEB-PLAIN-C1-Q1"
+      },
+      {
+        "key": "web-plain-c1-q2",
+        "name": "Subtract ninths and simplify",
+        "submethods": [
+          "subtract",
+          "simplify"
+        ],
+        "question": "maths:M15-WEB-PLAIN-C1-Q2"
       }
     ],
     "build": [
@@ -207,6 +236,25 @@
           "subtract"
         ],
         "recap": 1
+      },
+      {
+        "key": "web-plain-c2-q1",
+        "name": "Add thirds and sixths",
+        "submethods": [
+          "add",
+          "equivalent",
+          "simplify"
+        ],
+        "question": "maths:M15-WEB-PLAIN-C2-Q1"
+      },
+      {
+        "key": "web-plain-c2-q2",
+        "name": "Subtract quarters from eighths",
+        "submethods": [
+          "subtract",
+          "equivalent"
+        ],
+        "question": "maths:M15-WEB-PLAIN-C2-Q2"
       }
     ],
     "confidence": [
@@ -238,6 +286,17 @@
           "add"
         ],
         "question": "maths:M15-WEB-PLAIN-C3-Q9"
+      },
+      {
+        "key": "web-plain-c3-q2",
+        "name": "Subtract two mixed numbers",
+        "submethods": [
+          "mixed",
+          "subtract",
+          "equivalent",
+          "simplify"
+        ],
+        "question": "maths:M15-WEB-PLAIN-C3-Q2"
       }
     ]
   },

@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M07-WEB-ASSESSMENT-C1-Q1",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "assessment",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "30% of an amount is £111.6. Find the whole amount.",
     "answer": "372",
     "answerUnit": "£",
@@ -29,12 +24,18 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 30% of the original. Keep any delivery charge separate.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "30"
+      }
+    },
     "method_note": "Divide the known part by its percentage multiplier.",
     "check": "Reverse the calculation chain: 372 × 0.3 = 111.6.",
     "wrong": "837/25",
-    "error_note": "The known amount is already a percentage of the whole. Multiplying by the percentage again makes it smaller; recover the whole by division.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "recover-whole-by-division"
+    },
     "repair": "Use the given item amount as 30% and recover 100%.",
     "diagram": {
       "kind": "reverse-bar",
@@ -48,12 +49,7 @@
   },
   {
     "id": "maths:M07-WEB-ASSESSMENT-C1-Q2",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "assessment",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "35% of an amount is £131.6. Find the whole amount.",
     "answer": "376",
     "answerUnit": "£",
@@ -76,12 +72,18 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 35% of the original. Keep any delivery charge separate.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "35"
+      }
+    },
     "method_note": "Divide the known part by its percentage multiplier.",
     "check": "Reverse the calculation chain: 376 × 0.35 = 131.6.",
     "wrong": "2303/50",
-    "error_note": "The known amount is already a percentage of the whole. Multiplying by the percentage again makes it smaller; recover the whole by division.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "recover-whole-by-division"
+    },
     "repair": "Use the given item amount as 35% and recover 100%.",
     "diagram": {
       "kind": "reverse-bar",
@@ -95,12 +97,7 @@
   },
   {
     "id": "maths:M07-WEB-ASSESSMENT-C2-Q1",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "assessment",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "After a 30% increase, a price is £483.6. Find the original price.",
     "answer": "372",
     "answerUnit": "£",
@@ -123,12 +120,21 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 130% of the original. Keep any delivery charge separate.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "130"
+      }
+    },
     "method_note": "Divide the changed price by its percentage multiplier.",
     "check": "Reverse the calculation chain: 372 × 1.3 = 483.6.",
     "wrong": "8463/25",
-    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 130% of the original.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "avoid-forward-percentage",
+      "values": {
+        "percentage": "130"
+      }
+    },
     "repair": "Use the given item amount as 130% and recover 100%.",
     "diagram": {
       "kind": "reverse-bar",
@@ -142,12 +148,7 @@
   },
   {
     "id": "maths:M07-WEB-ASSESSMENT-C2-Q2",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "assessment",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "After a 35% discount, a price is £244.4. Find the original price.",
     "answer": "376",
     "answerUnit": "£",
@@ -170,12 +171,21 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 65% of the original. Keep any delivery charge separate.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "65"
+      }
+    },
     "method_note": "Divide the changed price by its percentage multiplier.",
     "check": "Reverse the calculation chain: 376 × 0.65 = 244.4.",
     "wrong": "16497/50",
-    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 65% of the original.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "avoid-forward-percentage",
+      "values": {
+        "percentage": "65"
+      }
+    },
     "repair": "Use the given item amount as 65% and recover 100%.",
     "diagram": {
       "kind": "reverse-bar",
@@ -189,12 +199,7 @@
   },
   {
     "id": "maths:M07-WEB-ASSESSMENT-C3-Q1",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "assessment",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "An item has a 30% increase, then £9 delivery is added. The bill is £492.6. Find the original item price.",
     "answer": "372",
     "answerUnit": "£",
@@ -228,12 +233,23 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 130% of the original. Keep any delivery charge separate.",
-    "method_note": "Remove delivery before using the percentage Divide by the percentage multiplier to find the original.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "130"
+      }
+    },
+    "method_note": {
+      "textRef": "separate-delivery-method"
+    },
     "check": "Reverse the calculation chain: 372 × 1.3 = 483.6; 483.6 + 9 = 492.6.",
     "wrong": "8463/25",
-    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 130% of the original.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "avoid-forward-percentage",
+      "values": {
+        "percentage": "130"
+      }
+    },
     "repair": "Use the given item amount as 130% and recover 100%.",
     "diagram": {
       "kind": "reverse-bar",
@@ -247,12 +263,7 @@
   },
   {
     "id": "maths:M07-WEB-ASSESSMENT-C3-Q2",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "assessment",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "An item has a 35% discount, then £10 delivery is added. The bill is £254.4. Find the original item price.",
     "answer": "376",
     "answerUnit": "£",
@@ -286,12 +297,23 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 65% of the original. Keep any delivery charge separate.",
-    "method_note": "Remove delivery before using the percentage Divide by the percentage multiplier to find the original.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "65"
+      }
+    },
+    "method_note": {
+      "textRef": "separate-delivery-method"
+    },
     "check": "Reverse the calculation chain: 376 × 0.65 = 244.4; 244.4 + 10 = 254.4.",
     "wrong": "16497/50",
-    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 65% of the original.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "avoid-forward-percentage",
+      "values": {
+        "percentage": "65"
+      }
+    },
     "repair": "Use the given item amount as 65% and recover 100%.",
     "diagram": {
       "kind": "reverse-bar",

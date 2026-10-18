@@ -5,14 +5,14 @@
       "aim": "Match the known amount to equal ratio parts.",
       "steps": [
         [
-          "Read the names in ",
+          "Write the names above their numbers in ",
           {
             "concept": "ratio-order",
             "text": "ratio order"
           },
-          ". Decide whether the known quantity is a total, one amount or a difference."
+          ". Underneath, label the known amount and its units as the total, one share or the difference. Leave a line to calculate the value of one part."
         ],
-        "Add, select or subtract the ratio parts to match that known quantity.",
+        "Match the known quantity to ratio parts: add the parts for a total, use the named share’s parts for one share, or subtract the smaller part from the larger for a difference.",
         [
           "Divide the known quantity by its ",
           {
@@ -41,14 +41,14 @@
         "aim": "Match the known amount to equal ratio parts.",
         "steps": [
           [
-            "Read the names in ",
+            "Write the names above their numbers in ",
             {
               "concept": "ratio-order",
               "text": "ratio order"
             },
-            ". Decide whether the known quantity is a total, one amount or a difference."
+            ". Underneath, label the known amount and its units as the total, one share or the difference. Leave a line to calculate the value of one part."
           ],
-          "Add, select or subtract the ratio parts to match that known quantity.",
+          "Match the known quantity to ratio parts: add the parts for a total, use the named share’s parts for one share, or subtract the smaller part from the larger for a difference.",
           [
             "Divide the known quantity by its ",
             {
@@ -75,14 +75,22 @@
       "confidence": {
         "aim": "Connect ratio reasoning to a further calculation, keeping track of quantities and units.",
         "steps": [
-          "Identify what the given amount represents: a named quantity, total or difference.",
+          [
+            "Write the names above their numbers in ",
+            {
+              "concept": "ratio-order",
+              "text": "ratio order"
+            },
+            ". Underneath, label the known amount and its units as the total, one share or the difference. Leave a line to calculate the value of one part."
+          ],
           [
             "Find ",
             {
               "concept": "one-part",
               "text": "one ratio part"
             },
-            ", then the quantity needed for the next calculation."
+            ", then the quantity needed for the next calculation.",
+            " Divide the known quantity by the matching number of parts, then multiply by the parts of the share you need."
           ],
           "Use that quantity to find a cost, scale a recipe, adjust an amount, convert units or find a simple percentage.",
           "Check the original ratio, then check the final quantity and units."
@@ -247,6 +255,14 @@
           "share"
         ],
         "question": "maths:M04-WEB-PLAIN-C1-Q2"
+      },
+      {
+        "key": "web-plain-c1-q4",
+        "name": "Share 84 beads in the ratio 5 : 7",
+        "submethods": [
+          "total"
+        ],
+        "question": "maths:M04-WEB-PLAIN-C1-Q4"
       }
     ],
     "build": [

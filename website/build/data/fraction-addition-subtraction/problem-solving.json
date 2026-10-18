@@ -49,8 +49,15 @@
         "method_note": "Combine the first two quantities using equal-sized fraction parts.",
         "check": "Reverse the calculation chain: {5/14} − {1/7} = {3/14}.",
         "wrong": "3/14",
-        "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "complete-calculation",
+          "values": {
+            "firstStep": "combine the first two quantities using equal-sized fraction parts"
+          }
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       },
       {
         "id": "maths:M15-WEB-PS-C2-Q100",
@@ -98,7 +105,9 @@
         "check": "Reverse the calculation chain: {1/4} + {1/28} = {2/7}; {2/7} − {1/14} = {3/14}.",
         "wrong": "2/7",
         "error_note": "This only combines the first two quantities. Also account for the amount used.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "source": {
+          "textRef": "application-source"
+        }
       },
       {
         "id": "maths:M15-WEB-PS-C3-Q100",
@@ -157,19 +166,16 @@
         "check": "Reverse the calculation chain: {205/84} − {1/3} = {59/28}; {59/28} + {1/28} = {15/7}; {15/7} − {1/14} = {29/14}.",
         "wrong": "15/7",
         "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "source": {
+          "textRef": "application-source"
+        }
       }
     ]
   },
   "questions": [
     {
       "id": "maths:M15-WEB-PS-C1-Q1",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.5 m of ribbon. Another {1/3} m is added. How much is there altogether?",
       "answer": "5/6",
       "answerUnit": "m",
@@ -196,18 +202,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/6} − {1/3} = 0.5.",
       "wrong": "1/2",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q2",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.375 litres of juice. Another 0.25 litres is added. How much is there altogether?",
       "answer": "5/8",
       "answerUnit": "litres",
@@ -234,18 +239,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: 0.625 − 0.25 = 0.375.",
       "wrong": "3/8",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q3",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.3 kg of flour. Another 0.2 kg is added. How much is there altogether?",
       "answer": "1/2",
       "answerUnit": "kg",
@@ -272,18 +276,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: 0.5 − 0.2 = 0.3.",
       "wrong": "3/10",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q4",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.25 m of rope. Another {1/6} m is added. How much is there altogether?",
       "answer": "5/12",
       "answerUnit": "m",
@@ -310,18 +313,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/12} − {1/6} = 0.25.",
       "wrong": "1/4",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q5",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {1/3} litres of water. Another {2/9} litres is added. How much is there altogether?",
       "answer": "5/9",
       "answerUnit": "litres",
@@ -348,18 +350,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/9} − {2/9} = {1/3}.",
       "wrong": "1/3",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q6",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.2 kg of rice. Another {2/15} kg is added. How much is there altogether?",
       "answer": "1/3",
       "answerUnit": "kg",
@@ -386,18 +387,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {1/3} − {2/15} = 0.2.",
       "wrong": "1/5",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q7",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.375 m of ribbon. Another 0.25 m is added. How much is there altogether?",
       "answer": "5/8",
       "answerUnit": "m",
@@ -424,18 +424,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: 0.625 − 0.25 = 0.375.",
       "wrong": "3/8",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q8",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.3 litres of juice. Another 0.2 litres is added. How much is there altogether?",
       "answer": "1/2",
       "answerUnit": "litres",
@@ -462,18 +461,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: 0.5 − 0.2 = 0.3.",
       "wrong": "3/10",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q9",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.25 kg of flour. Another {1/6} kg is added. How much is there altogether?",
       "answer": "5/12",
       "answerUnit": "kg",
@@ -500,18 +498,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/12} − {1/6} = 0.25.",
       "wrong": "1/4",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q10",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/14} m of rope. Another {1/7} m is added. How much is there altogether?",
       "answer": "5/14",
       "answerUnit": "m",
@@ -538,18 +535,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/14} − {1/7} = {3/14}.",
       "wrong": "3/14",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q11",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/11} litres of water. Another {2/11} litres is added. How much is there altogether?",
       "answer": "5/11",
       "answerUnit": "litres",
@@ -576,18 +572,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/11} − {2/11} = {3/11}.",
       "wrong": "3/11",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q12",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/17} kg of rice. Another {2/17} kg is added. How much is there altogether?",
       "answer": "5/17",
       "answerUnit": "kg",
@@ -614,18 +609,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/17} − {2/17} = {3/17}.",
       "wrong": "3/17",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q13",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.3 m of ribbon. Another 0.2 m is added. How much is there altogether?",
       "answer": "1/2",
       "answerUnit": "m",
@@ -652,18 +646,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: 0.5 − 0.2 = 0.3.",
       "wrong": "3/10",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q14",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.25 litres of juice. Another {1/6} litres is added. How much is there altogether?",
       "answer": "5/12",
       "answerUnit": "litres",
@@ -690,18 +683,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/12} − {1/6} = 0.25.",
       "wrong": "1/4",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q15",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/14} kg of flour. Another {1/7} kg is added. How much is there altogether?",
       "answer": "5/14",
       "answerUnit": "kg",
@@ -728,18 +720,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/14} − {1/7} = {3/14}.",
       "wrong": "3/14",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q16",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/16} m of rope. Another 0.125 m is added. How much is there altogether?",
       "answer": "5/16",
       "answerUnit": "m",
@@ -766,18 +757,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/16} − 0.125 = {3/16}.",
       "wrong": "3/16",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q17",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/13} litres of water. Another {2/13} litres is added. How much is there altogether?",
       "answer": "5/13",
       "answerUnit": "litres",
@@ -804,18 +794,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/13} − {2/13} = {3/13}.",
       "wrong": "3/13",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C1-Q18",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/19} kg of rice. Another {2/19} kg is added. How much is there altogether?",
       "answer": "5/19",
       "answerUnit": "kg",
@@ -842,18 +831,17 @@
       "method_note": "Combine the first two quantities using equal-sized fraction parts.",
       "check": "Reverse the calculation chain: {5/19} − {2/19} = {3/19}.",
       "wrong": "3/19",
-      "error_note": "This has not completed the requested calculation. After “combine the first two quantities using equal-sized fraction parts”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "combine the first two quantities using equal-sized fraction parts"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q1",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.5 m of ribbon. Another {1/6} m is added. {1/12} m is used. How much is left?",
       "answer": "7/12",
       "answerUnit": "m",
@@ -892,17 +880,11 @@
       "check": "Reverse the calculation chain: {7/12} + {1/12} = {2/3}; {2/3} − {1/6} = {1/2}.",
       "wrong": "2/3",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q2",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.375 litres of juice. Another {1/8} litres is added. {1/16} litres is used. How much is left?",
       "answer": "7/16",
       "answerUnit": "litres",
@@ -941,17 +923,11 @@
       "check": "Reverse the calculation chain: {7/16} + {1/16} = {1/2}; {1/2} − {1/8} = {3/8}.",
       "wrong": "1/2",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q3",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.3 kg of flour. Another {1/10} kg is added. {1/20} kg is used. How much is left?",
       "answer": "7/20",
       "answerUnit": "kg",
@@ -990,17 +966,11 @@
       "check": "Reverse the calculation chain: {7/20} + {1/20} = {2/5}; {2/5} − {1/10} = {3/10}.",
       "wrong": "2/5",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q4",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.25 m of rope. Another {1/12} m is added. {1/24} m is used. How much is left?",
       "answer": "7/24",
       "answerUnit": "m",
@@ -1039,17 +1009,11 @@
       "check": "Reverse the calculation chain: {7/24} + {1/24} = {1/3}; {1/3} − {1/12} = {1/4}.",
       "wrong": "1/3",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q5",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {1/3} litres of water. Another {1/9} litres is added. {1/18} litres is used. How much is left?",
       "answer": "7/18",
       "answerUnit": "litres",
@@ -1088,17 +1052,11 @@
       "check": "Reverse the calculation chain: {7/18} + {1/18} = {4/9}; {4/9} − {1/9} = {1/3}.",
       "wrong": "4/9",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q6",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.2 kg of rice. Another {1/15} kg is added. {1/30} kg is used. How much is left?",
       "answer": "7/30",
       "answerUnit": "kg",
@@ -1137,17 +1095,11 @@
       "check": "Reverse the calculation chain: {7/30} + {1/30} = {4/15}; {4/15} − {1/15} = {1/5}.",
       "wrong": "4/15",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q7",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.375 m of ribbon. Another {1/8} m is added. {1/16} m is used. How much is left?",
       "answer": "7/16",
       "answerUnit": "m",
@@ -1186,17 +1138,11 @@
       "check": "Reverse the calculation chain: {7/16} + {1/16} = {1/2}; {1/2} − {1/8} = {3/8}.",
       "wrong": "1/2",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q8",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.3 litres of juice. Another {1/10} litres is added. {1/20} litres is used. How much is left?",
       "answer": "7/20",
       "answerUnit": "litres",
@@ -1235,17 +1181,11 @@
       "check": "Reverse the calculation chain: {7/20} + {1/20} = {2/5}; {2/5} − {1/10} = {3/10}.",
       "wrong": "2/5",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q9",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.25 kg of flour. Another {1/12} kg is added. {1/24} kg is used. How much is left?",
       "answer": "7/24",
       "answerUnit": "kg",
@@ -1284,17 +1224,11 @@
       "check": "Reverse the calculation chain: {7/24} + {1/24} = {1/3}; {1/3} − {1/12} = {1/4}.",
       "wrong": "1/3",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q10",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/14} m of rope. Another {1/14} m is added. {1/28} m is used. How much is left?",
       "answer": "1/4",
       "answerUnit": "m",
@@ -1333,17 +1267,11 @@
       "check": "Reverse the calculation chain: {1/4} + {1/28} = {2/7}; {2/7} − {1/14} = {3/14}.",
       "wrong": "2/7",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q11",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/11} litres of water. Another {1/11} litres is added. {1/22} litres is used. How much is left?",
       "answer": "7/22",
       "answerUnit": "litres",
@@ -1382,17 +1310,11 @@
       "check": "Reverse the calculation chain: {7/22} + {1/22} = {4/11}; {4/11} − {1/11} = {3/11}.",
       "wrong": "4/11",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q12",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/17} kg of rice. Another {1/17} kg is added. {1/34} kg is used. How much is left?",
       "answer": "7/34",
       "answerUnit": "kg",
@@ -1431,17 +1353,11 @@
       "check": "Reverse the calculation chain: {7/34} + {1/34} = {4/17}; {4/17} − {1/17} = {3/17}.",
       "wrong": "4/17",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q13",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.3 m of ribbon. Another {1/10} m is added. {1/20} m is used. How much is left?",
       "answer": "7/20",
       "answerUnit": "m",
@@ -1480,17 +1396,11 @@
       "check": "Reverse the calculation chain: {7/20} + {1/20} = {2/5}; {2/5} − {1/10} = {3/10}.",
       "wrong": "2/5",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q14",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 0.25 litres of juice. Another {1/12} litres is added. {1/24} litres is used. How much is left?",
       "answer": "7/24",
       "answerUnit": "litres",
@@ -1529,17 +1439,11 @@
       "check": "Reverse the calculation chain: {7/24} + {1/24} = {1/3}; {1/3} − {1/12} = {1/4}.",
       "wrong": "1/3",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q15",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/14} kg of flour. Another {1/14} kg is added. {1/28} kg is used. How much is left?",
       "answer": "1/4",
       "answerUnit": "kg",
@@ -1578,17 +1482,11 @@
       "check": "Reverse the calculation chain: {1/4} + {1/28} = {2/7}; {2/7} − {1/14} = {3/14}.",
       "wrong": "2/7",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q16",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/16} m of rope. Another {1/16} m is added. {1/32} m is used. How much is left?",
       "answer": "7/32",
       "answerUnit": "m",
@@ -1627,17 +1525,11 @@
       "check": "Reverse the calculation chain: {7/32} + {1/32} = {1/4}; {1/4} − {1/16} = {3/16}.",
       "wrong": "1/4",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q17",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/13} litres of water. Another {1/13} litres is added. {1/26} litres is used. How much is left?",
       "answer": "7/26",
       "answerUnit": "litres",
@@ -1676,17 +1568,11 @@
       "check": "Reverse the calculation chain: {7/26} + {1/26} = {4/13}; {4/13} − {1/13} = {3/13}.",
       "wrong": "4/13",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C2-Q18",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {3/19} kg of rice. Another {1/19} kg is added. {1/38} kg is used. How much is left?",
       "answer": "7/38",
       "answerUnit": "kg",
@@ -1725,17 +1611,11 @@
       "check": "Reverse the calculation chain: {7/38} + {1/38} = {4/19}; {4/19} − {1/19} = {3/19}.",
       "wrong": "4/19",
       "error_note": "This only combines the first two quantities. Also account for the amount used.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q1",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {13/6} m of ribbon. Another {1/6} m is added. {1/12} m is used. Another {1/3} m is added. How much is left?",
       "answer": "31/12",
       "answerUnit": "m",
@@ -1785,17 +1665,11 @@
       "check": "Reverse the calculation chain: {31/12} − {1/3} = {9/4}; {9/4} + {1/12} = {7/3}; {7/3} − {1/6} = {13/6}.",
       "wrong": "7/3",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q2",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 2.125 litres of juice. Another {1/8} litres is added. {1/16} litres is used. Another {1/3} litres is added. {1/4} litres is used. How much is left?",
       "answer": "109/48",
       "answerUnit": "litres",
@@ -1856,17 +1730,11 @@
       "check": "Reverse the calculation chain: {109/48} + {1/4} = {121/48}; {121/48} − {1/3} = {35/16}; {35/16} + {1/16} = {9/4}; {9/4} − {1/8} = {17/8}.",
       "wrong": "9/4",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q3",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 2.1 kg of flour. Another {1/10} kg is added. {1/20} kg is used. Another {1/3} kg is added. How much is left?",
       "answer": "149/60",
       "answerUnit": "kg",
@@ -1916,17 +1784,11 @@
       "check": "Reverse the calculation chain: {149/60} − {1/3} = {43/20}; {43/20} + {1/20} = {11/5}; {11/5} − {1/10} = {21/10}.",
       "wrong": "11/5",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q4",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {25/12} m of rope. Another {1/12} m is added. {1/24} m is used. Another {1/3} m is added. {1/4} m is used. How much is left?",
       "answer": "53/24",
       "answerUnit": "m",
@@ -1987,17 +1849,11 @@
       "check": "Reverse the calculation chain: {53/24} + {1/4} = {59/24}; {59/24} − {1/3} = {17/8}; {17/8} + {1/24} = {13/6}; {13/6} − {1/12} = {25/12}.",
       "wrong": "13/6",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q5",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {19/9} litres of water. Another {1/9} litres is added. {1/18} litres is used. Another {1/3} litres is added. How much is left?",
       "answer": "5/2",
       "answerUnit": "litres",
@@ -2047,17 +1903,11 @@
       "check": "Reverse the calculation chain: {5/2} − {1/3} = {13/6}; {13/6} + {1/18} = {20/9}; {20/9} − {1/9} = {19/9}.",
       "wrong": "20/9",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q6",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {31/15} kg of rice. Another {1/15} kg is added. {1/30} kg is used. Another {1/3} kg is added. {1/4} kg is used. How much is left?",
       "answer": "131/60",
       "answerUnit": "kg",
@@ -2118,17 +1968,11 @@
       "check": "Reverse the calculation chain: {131/60} + {1/4} = {73/30}; {73/30} − {1/3} = {21/10}; {21/10} + {1/30} = {32/15}; {32/15} − {1/15} = {31/15}.",
       "wrong": "32/15",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q7",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 2.125 m of ribbon. Another {1/8} m is added. {1/16} m is used. Another {1/3} m is added. How much is left?",
       "answer": "121/48",
       "answerUnit": "m",
@@ -2178,17 +2022,11 @@
       "check": "Reverse the calculation chain: {121/48} − {1/3} = {35/16}; {35/16} + {1/16} = {9/4}; {9/4} − {1/8} = {17/8}.",
       "wrong": "9/4",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q8",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 2.1 litres of juice. Another {1/10} litres is added. {1/20} litres is used. Another {1/3} litres is added. {1/4} litres is used. How much is left?",
       "answer": "67/30",
       "answerUnit": "litres",
@@ -2249,17 +2087,11 @@
       "check": "Reverse the calculation chain: {67/30} + {1/4} = {149/60}; {149/60} − {1/3} = {43/20}; {43/20} + {1/20} = {11/5}; {11/5} − {1/10} = {21/10}.",
       "wrong": "11/5",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q9",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {25/12} kg of flour. Another {1/12} kg is added. {1/24} kg is used. Another {1/3} kg is added. How much is left?",
       "answer": "59/24",
       "answerUnit": "kg",
@@ -2309,17 +2141,11 @@
       "check": "Reverse the calculation chain: {59/24} − {1/3} = {17/8}; {17/8} + {1/24} = {13/6}; {13/6} − {1/12} = {25/12}.",
       "wrong": "13/6",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q10",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {29/14} m of rope. Another {1/14} m is added. {1/28} m is used. Another {1/3} m is added. {1/4} m is used. How much is left?",
       "answer": "46/21",
       "answerUnit": "m",
@@ -2380,17 +2206,11 @@
       "check": "Reverse the calculation chain: {46/21} + {1/4} = {205/84}; {205/84} − {1/3} = {59/28}; {59/28} + {1/28} = {15/7}; {15/7} − {1/14} = {29/14}.",
       "wrong": "15/7",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q11",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {23/11} litres of water. Another {1/11} litres is added. {1/22} litres is used. Another {1/3} litres is added. How much is left?",
       "answer": "163/66",
       "answerUnit": "litres",
@@ -2440,17 +2260,11 @@
       "check": "Reverse the calculation chain: {163/66} − {1/3} = {47/22}; {47/22} + {1/22} = {24/11}; {24/11} − {1/11} = {23/11}.",
       "wrong": "24/11",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q12",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {35/17} kg of rice. Another {1/17} kg is added. {1/34} kg is used. Another {1/3} kg is added. {1/4} kg is used. How much is left?",
       "answer": "443/204",
       "answerUnit": "kg",
@@ -2511,17 +2325,11 @@
       "check": "Reverse the calculation chain: {443/204} + {1/4} = {247/102}; {247/102} − {1/3} = {71/34}; {71/34} + {1/34} = {36/17}; {36/17} − {1/17} = {35/17}.",
       "wrong": "36/17",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q13",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is 2.1 m of ribbon. Another {1/10} m is added. {1/20} m is used. Another {1/3} m is added. How much is left?",
       "answer": "149/60",
       "answerUnit": "m",
@@ -2571,17 +2379,11 @@
       "check": "Reverse the calculation chain: {149/60} − {1/3} = {43/20}; {43/20} + {1/20} = {11/5}; {11/5} − {1/10} = {21/10}.",
       "wrong": "11/5",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q14",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {25/12} litres of juice. Another {1/12} litres is added. {1/24} litres is used. Another {1/3} litres is added. {1/4} litres is used. How much is left?",
       "answer": "53/24",
       "answerUnit": "litres",
@@ -2642,17 +2444,11 @@
       "check": "Reverse the calculation chain: {53/24} + {1/4} = {59/24}; {59/24} − {1/3} = {17/8}; {17/8} + {1/24} = {13/6}; {13/6} − {1/12} = {25/12}.",
       "wrong": "13/6",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q15",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {29/14} kg of flour. Another {1/14} kg is added. {1/28} kg is used. Another {1/3} kg is added. How much is left?",
       "answer": "205/84",
       "answerUnit": "kg",
@@ -2702,17 +2498,11 @@
       "check": "Reverse the calculation chain: {205/84} − {1/3} = {59/28}; {59/28} + {1/28} = {15/7}; {15/7} − {1/14} = {29/14}.",
       "wrong": "15/7",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q16",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {33/16} m of rope. Another {1/16} m is added. {1/32} m is used. Another {1/3} m is added. {1/4} m is used. How much is left?",
       "answer": "209/96",
       "answerUnit": "m",
@@ -2773,17 +2563,11 @@
       "check": "Reverse the calculation chain: {209/96} + {1/4} = {233/96}; {233/96} − {1/3} = {67/32}; {67/32} + {1/32} = {17/8}; {17/8} − {1/16} = {33/16}.",
       "wrong": "17/8",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q17",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {27/13} litres of water. Another {1/13} litres is added. {1/26} litres is used. Another {1/3} litres is added. How much is left?",
       "answer": "191/78",
       "answerUnit": "litres",
@@ -2833,17 +2617,11 @@
       "check": "Reverse the calculation chain: {191/78} − {1/3} = {55/26}; {55/26} + {1/26} = {28/13}; {28/13} − {1/13} = {27/13}.",
       "wrong": "28/13",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M15-WEB-PS-C3-Q18",
-      "subject": "maths",
-      "topic": "M15",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There is {39/19} kg of rice. Another {1/19} kg is added. {1/38} kg is used. Another {1/3} kg is added. {1/4} kg is used. How much is left?",
       "answer": "493/228",
       "answerUnit": "kg",
@@ -2904,7 +2682,6 @@
       "check": "Reverse the calculation chain: {493/228} + {1/4} = {275/114}; {275/114} − {1/3} = {79/38}; {79/38} + {1/38} = {40/19}; {40/19} − {1/19} = {39/19}.",
       "wrong": "40/19",
       "error_note": "This only combines the first two quantities. Also account for the amount used and the further amount added.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     }
   ]

@@ -1,4 +1,3 @@
-import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /**
  * Purpose: Verify session actions, marking, assistance and profile-isolated state.
  *
@@ -6,12 +5,16 @@ import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
  * - setup
  * - correct
  *
- * Used By: Node test runner.
+ * Used By: verify:changed logic job and Node test runner.
  *
- * Uses: website/src/lib/application/session.mjs, website/src/lib/domain/profiles.mjs, website/src/lib/adapters/storage.mjs.
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/application/session.mjs,
+ * website/src/lib/domain/profiles.mjs, website/src/lib/adapters/storage.mjs,
+ * website/src/lib/domain/assessment.mjs, website/src/lib/domain/progress-transfer.mjs.
  *
- * Libs: node:test (test runner), node:assert/strict (assertions), node:fs/promises (asynchronous file access).
+ * Libs: node:test (test runner), node:assert/strict (assertions).
  */
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createSession } from "../website/src/lib/application/session.mjs";

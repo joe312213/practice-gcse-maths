@@ -1,11 +1,13 @@
-"""Purpose: Add the Initial Assessment slide as Slide 1 to GCSE_Maths_Revision_Starters_prev4.pptx.
-Preserves all existing 21 slides without modifying any of their content.
+"""Purpose: Historical one-off patch: prepend a six-question assessment to the named saved starter
+PowerPoint and save it in place. Existing slides are retained, so rerunning adds another
+assessment.
 
 Main contents:
-- box
-- text
-- build_assessment_slide
-- main
+- box: Add a filled rectangle to the slide, removing inherited effects.
+- text: Draw text with the supplied geometry and typography.
+- build_assessment_slide: Append the four-question initial-assessment slide and return its slide
+  object.
+- main: Run the add initial assessment command using its configured input and output paths.
 
 Used By: manual legacy command invocation.
 
@@ -13,7 +15,11 @@ Uses: no local module imports.
 
 Libs: python-pptx (editable slides and deck inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Reads and overwrites GCSE_Maths_Revision_Starters_prev4.pptx. The declared
+answers path is not written.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 raise SystemExit('Retired assessment migration: assessments are already in current decks; historical outputs are kept in Git.')
 from pathlib import Path
@@ -43,7 +49,7 @@ def box(slide, x, y, w, h, fill, line=None):
     line — optional outline colour.
     Used by: build_assessment_slide.
 
-    Example in the caller's context: box(slide, x, y, w, h, fill, line)
+    Example: box(slide, x, y, w, h, fill, line)
     """
     shape = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(x), Inches(y), Inches(w), Inches(h))
     shape.fill.solid()
@@ -68,7 +74,7 @@ def text(slide, x, y, w, h, value, size=20, color=INK, bold=False, valign=MSO_AN
     use bold text; valign — vertical text alignment; align — text alignment.
     Used by: build_assessment_slide.
 
-    Example in the caller's context: text(slide, x, y, w, h, value, size, color, bold, valign,
+    Example: text(slide, x, y, w, h, value, size, color, bold, valign,
     align)
     """
     shape = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
@@ -98,7 +104,7 @@ def build_assessment_slide(prs):
     Calls: box, text.
     Used by: main.
 
-    Example in the caller's context: build_assessment_slide(prs)
+    Example: build_assessment_slide(prs)
     """
     s = prs.slides.add_slide(prs.slide_layouts[6])
     s.background.fill.solid()
@@ -193,7 +199,7 @@ def main():
     """Run the add initial assessment command using its configured input and output paths.
     Calls: build_assessment_slide.
 
-    Example in the caller's context: main()
+    Example: main()
     """
     prs = Presentation(PPTX_PATH)
     original_count = len(prs.slides)

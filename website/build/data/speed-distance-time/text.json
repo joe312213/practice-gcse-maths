@@ -1,0 +1,102 @@
+{
+  "defaults": {
+    "recap": {
+      "subject": "maths",
+      "topic": "M12",
+      "type": "problem",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      },
+      "repair": {
+        "textRef": "matching-units-method"
+      }
+    },
+    "spot-errors": {
+      "subject": "maths",
+      "topic": "M12",
+      "type": "errors",
+      "method": "investigation",
+      "prose": true,
+      "investigation": true,
+      "method_note": {
+        "textRef": "investigation-task"
+      }
+    },
+    "assessment-examples": {
+      "subject": "maths",
+      "topic": "M12",
+      "type": "assessment",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      },
+      "repair": {
+        "textRef": "matching-units-method"
+      }
+    },
+    "practice": {
+      "subject": "maths",
+      "topic": "M12",
+      "type": "plain",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      },
+      "repair": {
+        "textRef": "matching-units-method"
+      }
+    },
+    "problem-solving": {
+      "subject": "maths",
+      "topic": "M12",
+      "type": "problem",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      },
+      "repair": {
+        "textRef": "matching-units-method"
+      }
+    },
+    "demos": {
+      "subject": "maths",
+      "topic": "M12",
+      "type": "demo",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      },
+      "repair": {
+        "textRef": "matching-units-method"
+      }
+    },
+    "scaffolded": {
+      "subject": "maths",
+      "topic": "M12",
+      "type": "scaffolded",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      },
+      "repair": {
+        "textRef": "matching-units-method"
+      }
+    }
+  },
+  "phrases": {
+    "matching-units-method": "Use the requested speed/distance/time relationship with matching units and total elapsed time.",
+    "check-units-and-formula": "Check the units and whether this question asks for distance, speed or time. Minutes and hours use a factor of 60.",
+    "write-known-units": "Write the units beside the known distance, speed and time before choosing the formula.",
+    "avoid-average-speeds": "This averages the two speeds without accounting for their different times or any stop.",
+    "convert-speed-method": "Find the distance travelled per minute Convert kilometres per minute to kilometres per hour.",
+    "check-unrounded-speed": "Multiply the speed before rounding by the time in hours to recover the distance.",
+    "question-source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved."
+  }
+}

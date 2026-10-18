@@ -9,6 +9,7 @@
   --error-line-neutral-weight: 35%;
   /* Equal yellow/surface blend lets the marker follow the selected theme. */
   --error-marker: color-mix(in srgb, #e0c113 60%, var(--surface));
+  --level-selected-outline: color-mix(in srgb, var(--main) 55%, var(--surface));
   --chevron-previous-bg: color-mix(in srgb, var(--surface) 92%, var(--main));
   --chevron-line: color-mix(in srgb, var(--chevron-previous-bg) 88%, var(--text));
   --error-paper: color-mix(

@@ -4,7 +4,8 @@
     "explanation": "The dividend is the number being divided. The divisor is the number you divide by.",
     "guidance": "Put the dividend inside the bus stop and the divisor outside on the left.",
     "examples": [
-      "For 84 ÷ 3, put 84 inside and 3 outside."
+      "For 84 ÷ 3, put 84 inside and 3 outside.",
+      "156 ÷ 6: write 156 under the roof, 6 outside on the left and the answer above the matching place values. Start with 15 tens because 6 does not fit into 1 hundred."
     ]
   },
   "remainder": {
@@ -12,7 +13,8 @@
     "explanation": "A remainder is the amount left after making as many whole groups as possible. It must be smaller than the divisor.",
     "guidance": "Carry it to the next place value before dividing again.",
     "examples": [
-      "8 tens ÷ 3 gives 2 tens with 2 tens left. With the next 4 units, that becomes 24 units."
+      "8 tens ÷ 3 gives 2 tens with 2 tens left. With the next 4 units, that becomes 24 units.",
+      "95 ÷ 4: 9 tens gives 2 tens and 1 ten left. Combine that ten with 5 units to make 15. Then 15 ÷ 4 gives 3 with 3 left: 23 r 3. Check: 4 × 23 + 3 = 95."
     ]
   },
   "decimal-extension": {
@@ -20,7 +22,8 @@
     "explanation": "Adding zeros after a decimal point does not change the number.",
     "guidance": "Continue dividing into tenths, hundredths and so on; align the answer decimal point with the dividend.",
     "examples": [
-      "7 ÷ 2: write 7.0. The remaining 1 unit becomes 10 tenths, so the answer is 3.5."
+      "7 ÷ 2: write 7.0. The remaining 1 unit becomes 10 tenths, so the answer is 3.5.",
+      "13 ÷ 4: 13 ÷ 4 gives 3 remainder 1. Write 13.00: 10 tenths gives 2 tenths remainder 2 tenths, then 20 hundredths gives 5 hundredths. Answer: 3.25."
     ]
   },
   "place-value-zeros": {
@@ -28,7 +31,8 @@
     "explanation": "A zero in the answer holds a place when the divisor fits zero whole times.",
     "guidance": "Write the zero before moving to the next digit.",
     "examples": [
-      "408 ÷ 4 = 102. The zero tens must stay in the answer."
+      "408 ÷ 4 = 102. The zero tens must stay in the answer.",
+      "618 ÷ 6: 6 hundreds gives 1 hundred; 1 ten gives 0 tens and is carried to the 8 units. 18 units gives 3 units, so 103 × 6 = 618. Omitting the zero would give only 13."
     ]
   }
 }

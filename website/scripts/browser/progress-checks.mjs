@@ -1,17 +1,26 @@
-import { checkReattempts } from './reattempt-checks.mjs';
-import { checkProgressTabs } from './progress-tabs-checks.mjs';
 /**
- * Purpose: Exercise progress breakdowns, backup transfer and revision recommendations at mobile width.
+ * Purpose: Exercise progress breakdowns, backup transfer and revision recommendations at mobile
+ * width.
  *
  * Main contents:
  * - checkProgress
  *
- * Used By: website/scripts/browser-checks.mjs
+ * Used By: website/scripts/browser-checks.mjs.
  *
- * Uses: website/scripts/browser/support.mjs.
+ * Uses: website/scripts/browser/reattempt-checks.mjs,
+ * website/scripts/browser/progress-tabs-checks.mjs, website/scripts/browser/support.mjs,
+ * website/src/lib/domain/profiles.mjs.
  *
- * Libs: node:assert/strict (assertions), node:fs/promises (download reads), @axe-core/playwright (accessibility checks).
+ * Libs: node:assert/strict (assertions), @playwright/test (browser automation and assertions),
+ * node:fs/promises (asynchronous file access), @axe-core/playwright (accessibility assertions).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
  */
+import { checkReattempts } from './reattempt-checks.mjs';
+import { checkProgressTabs } from './progress-tabs-checks.mjs';
+
 import assert from 'node:assert/strict';
 import { expect } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
@@ -470,9 +479,9 @@ export async function checkProgress(browser, base) {
           );
           return saved.subjects.maths.topics['maths:M10'].history.length === count;
         } catch (error) {
-          // OPFS can briefly replace the entry while an asynchronous writer closes.
-          // Keep polling the required contents; a permanently missing file still times out.
-          if (error.name === 'NotFoundError') return false;
+          // OPFS replacement can briefly invalidate either the entry or its File snapshot.
+          // Reacquire and check the exact contents; persistent read/save failures still time out.
+          if (['NotFoundError', 'NotReadableError'].includes(error.name)) return false;
           throw error;
         }
       },

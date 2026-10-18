@@ -4,15 +4,47 @@
     "explanation": "An opposite (inverse) operation undoes another operation: addition undoes subtraction, and division undoes multiplication.",
     "guidance": "Choose the operation that removes what is attached to x. Apply it to both sides.",
     "examples": [
-      "x − 7 = 5: add 7 to both sides, giving x = 12."
-    ]
+      "x − 7 = 5: add 7 to both sides, giving x = 12.",
+      "3x + 4 = 19: first undo +4 with −4 on both sides, giving 3x = 15. Then undo ×3 with ÷3 on both sides, giving x = 5."
+    ],
+    "table": {
+      "caption": "Operations that undo each other — apply the inverse to both sides",
+      "headers": [
+        "Operation on x",
+        "Opposite operation",
+        "Examples"
+      ],
+      "rows": [
+        [
+          "Add (+)",
+          "Subtract (−)",
+          "x + 5 = 12 → x = 7; x + 2 = 9 → x = 7"
+        ],
+        [
+          "Subtract (−)",
+          "Add (+)",
+          "x − 4 = 9 → x = 13; x − 7 = 5 → x = 12"
+        ],
+        [
+          "Multiply (×)",
+          "Divide (÷)",
+          "3x = 18 → x = 6; 5x = 35 → x = 7"
+        ],
+        [
+          "Divide (÷)",
+          "Multiply (×)",
+          "x ÷ 4 = 3 → x = 12; x ÷ 2 = 5 → x = 10"
+        ]
+      ]
+    }
   },
   "balance": {
     "title": "both sides",
     "explanation": "The equals sign says that the two sides have the same value.",
     "guidance": "Keep that balance by doing the same operation to each side.",
     "examples": [
-      "x + 4 = 10: subtract 4 on both sides to get x = 6."
+      "x + 4 = 10: subtract 4 on both sides to get x = 6.",
+      "2x = 14: dividing both sides by 2 keeps them equal, giving x = 7. Dividing only the left would incorrectly claim x = 14."
     ]
   },
   "like-terms": {
@@ -20,7 +52,8 @@
     "explanation": "Like terms have the same letter part. Constants are numbers without a letter.",
     "guidance": "Combine x-terms with x-terms, and numbers with numbers.",
     "examples": [
-      "3x + 2x + 4 = 5x + 4. You cannot combine 5x and 4 into 9x."
+      "3x + 2x + 4 = 5x + 4. You cannot combine 5x and 4 into 9x.",
+      "4x + 3 + 2x − 1 = 20 becomes 6x + 2 = 20. Subtract 2 to get 6x = 18, then divide by 6 to get x = 3."
     ]
   },
   "substitution": {
@@ -28,7 +61,8 @@
     "explanation": "Substituting means replacing a letter with its value.",
     "guidance": "Use the original equation to check that both sides give the same number.",
     "examples": [
-      "For 4x + 3 = 31, try x = 7: 4 × 7 + 3 = 31."
+      "For 4x + 3 = 31, try x = 7: 4 × 7 + 3 = 31.",
+      "For 3(x − 2) = 15, try x = 7: left side = 3 × (7 − 2) = 15; right side = 15. The two values agree, so the solution checks."
     ]
   },
   "common-factor": {
@@ -36,7 +70,8 @@
     "explanation": "A common factor divides every term in an expression exactly.",
     "guidance": "You can divide both sides by that factor. Divide every term on each side.",
     "examples": [
-      "3x + 6 = 18: divide both sides by 3 to get x + 2 = 6."
+      "3x + 6 = 18: divide both sides by 3 to get x + 2 = 6.",
+      "4x + 8 = 20: all terms divide by 4, giving x + 2 = 5, then x = 3. Dividing only 4x would leave the equation unbalanced."
     ]
   },
   "coefficient": {
@@ -44,7 +79,8 @@
     "explanation": "A coefficient is the number multiplying a letter. In 4x, it is 4.",
     "guidance": "Once the x-term is alone, divide both sides by its coefficient.",
     "examples": [
-      "4x = 28: divide both sides by 4, giving x = 7."
+      "4x = 28: divide both sides by 4, giving x = 7.",
+      "−3x = 12: the coefficient is −3, including its sign. Divide both sides by −3 to get x = −4. Check: −3 × −4 = 12."
     ]
   },
   "expand-brackets": {
@@ -52,7 +88,38 @@
     "explanation": "Expanding removes brackets by multiplying every term inside by the number outside.",
     "guidance": "Include each term and keep its sign.",
     "examples": [
-      "3(x + 2) = 3x + 6; 3(x − 2) = 3x − 6."
+      "3(x + 2) = 3x + 6; 3(x − 2) = 3x − 6.",
+      "2(3x − 4) = 10 becomes 6x − 8 = 10. The 2 multiplies both 3x and −4. Add 8, then divide by 6: x = 3."
     ]
+  },
+  "choose-approach": {
+    "title": "Choose and review an approach",
+    "explanation": "There is often more than one correct route. Aim to make the equation simpler after each step. Collect like terms, and look for an easy inverse operation or common factor.",
+    "guidance": "Simplify both sides on every new line. If your route creates awkward fractions or long expressions, check your working, return to the original equation and try a different first step. A longer route may still be correct.",
+    "examples": [
+      "For 2x + 6 = 18, subtract 6 then divide by 2: 2x = 12 → x = 6. Or divide every term by 2 first: x + 3 = 9 → x = 6. Both routes work.",
+      "For 3x + 6 = 21, dividing by 3 first gives x + 2 = 7. Subtract 2 to get x = 5. Check: 3 × 5 + 6 = 21."
+    ],
+    "table": {
+      "caption": "Simplify as you go: 3x + 6 = 21",
+      "headers": [
+        "Less helpful: leave arithmetic unfinished",
+        "Clearer: simplify each new line"
+      ],
+      "rows": [
+        [
+          "3x + 6 − 6 = 21 − 6",
+          "3x = 15"
+        ],
+        [
+          "(3x + 6 − 6) ÷ 3 = (21 − 6) ÷ 3",
+          "x = 5"
+        ],
+        [
+          "You still need to resolve both long expressions. Extra terms make mistakes easier.",
+          "Each line shows what remains and which operation to choose next."
+        ]
+      ]
+    }
   }
 }

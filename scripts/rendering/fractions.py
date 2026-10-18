@@ -1,11 +1,11 @@
 """Purpose: Exact stacked fractions and equal-whole strips, as editable shapes or SVG.
 
 Main contents:
-- token
-- mixed
-- draw
-- strips
-- answer_html
+- token: Encode a reduced rational as an integer or stacked-fraction token.
+- mixed: Format a positive improper fraction as a mixed number when appropriate.
+- draw: Render stacked-fraction working lines as SVG and optional editable slide shapes.
+- strips: Draw equal-whole fraction strips with the requested shaded parts.
+- answer_html: CSS-sized answer text: no empty SVG canvas that shrinks its contents.
 
 Used By: scripts/build_fraction_topic.py, scripts/fraction_content.py.
 
@@ -13,7 +13,9 @@ Uses: scripts/rendering/canvas.py.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Import from legacy answer/deck publishers; pass the operands or working
+records to the listed functions. Returns SVG/HTML, or draws into a caller-supplied slide; does
+not save files.
 """
 import html,re
 from fractions import Fraction
@@ -66,7 +68,7 @@ def answer_html(value):
 
  Parameters: value — text or numeric value to render.
 
- Example in the caller's context: answer_html(value)
+ Example: answer_html(value)
  """
  parts=[];spoken=[]
  for part in re.split(r'(\{[^{}]+/[^{}]+\})',value):

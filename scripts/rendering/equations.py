@@ -1,7 +1,8 @@
 """Purpose: Vertical-line balance working; compact mode keeps operations beside each step.
 
 Main contents:
-- draw
+- draw: Render balance rows beside a vertical divider, optionally placing operations inline in
+  compact.
 
 Used By: scripts/build_priority_topic.py.
 
@@ -9,7 +10,9 @@ Uses: scripts/rendering/canvas.py.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Import from legacy answer/deck publishers; pass the operands or working
+records to the listed functions. Returns SVG/HTML, or draws into a caller-supplied slide; does
+not save files.
 """
 from .canvas import Canvas
 
@@ -23,7 +26,7 @@ def draw(rows,slide=None,x=0,y=0,w=4.6,step=.43,size=21,compact=False):
  inline.
  Calls: c.line, c.text, c.rect, c.finish.
 
- Example in the caller's context: draw(rows, slide, x, y, w, step, size, compact)
+ Example: draw(rows, slide, x, y, w, step, size, compact)
  """
  equations=[r for r in rows if r.get('kind')!='op'];h=(len(equations) if compact else len(rows))*step+.10;c=Canvas(w,h,slide,x,y);mid=w/2
  c.line(mid,.02,mid,h-.06,'8193A0',1.2);index=0

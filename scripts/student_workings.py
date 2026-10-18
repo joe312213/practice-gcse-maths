@@ -1,20 +1,27 @@
-"""Purpose: Editable student-style working for SE cards; same diagrams embedded in HTML answers.
+"""Purpose: Draw deliberately incorrect student working for historical error-spotting cards as
+editable PowerPoint shapes and matching SVG answer illustrations. Faults come from authored
+records, not random corruption.
 
 Main contents:
 - Paper
-- bus
-- lattice
-- equations
-- column
-- draw
+- bus: Digits occupy genuine place-value columns; remainders are small prefixes.
+- lattice: Draw lattice multiplication cells, diagonal totals and carries.
+- equations: Draw a sequence of student working lines at a fixed vertical step.
+- column: Draw column arithmetic with aligned digits and multiplication carries where needed.
+- draw: Render a deliberately incorrect worked example in both editable slide shapes and SVG.
 
 Used By: scripts/update_structure.py.
 
 Uses: scripts/build_starters.py.
 
-Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck inspection).
+Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck
+inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: draw(...) writes shapes into the supplied slide and stores generated SVG on
+the supplied record. The calling legacy publisher owns saved files.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 import html
 from pptx.util import Inches,Pt
@@ -37,7 +44,7 @@ class Paper:
   inches; h — height in inches; value — text or numeric value to render; size — font size in points;
   bold — whether to use bold text; align — text alignment.
 
-  Example in the caller's context: canvas.text(x, y, w, h, value, size, bold, align)
+  Example: canvas.text(x, y, w, h, value, size, bold, align)
   """
   sh=self.slide.shapes.add_textbox(Inches(self.x+x),Inches(self.y+y),Inches(w),Inches(h))
   from PIL import ImageFont
@@ -76,7 +83,7 @@ def bus(p,x,y,d,scale=1):
  Calls: p.line, p.text.
  Used by: draw.
 
- Example in the caller's context: bus(p, x, y, d, scale)
+ Example: bus(p, x, y, d, scale)
  """
  digits=d['digits'];q=d['quotient'];step=.46*scale;gx=x+.47*scale;gy=y+.36*scale
  p.line(gx-.06*scale,gy,gx+len(digits)*step+.03*scale,gy,1.3)
@@ -100,7 +107,7 @@ def lattice(p,item):
  Calls: p.text, p.line.
  Used by: draw.
 
- Example in the caller's context: lattice(p, item)
+ Example: lattice(p, item)
  """
  a,c=str(item['a']),str(item['b']);n,m=len(a),len(c);cell=.47;gx=.51;gy=.73
  for j,d in enumerate(a):p.text(gx+j*cell,gy-.29,cell,.29,d,20,align='center')
@@ -162,7 +169,7 @@ def draw(slide,x,y,mid,item):
  coordinate in inches; mid — stable topic ID; item — structured question record.
  Calls: lattice, bus, p.text, equations, column, p.finish.
 
- Example in the caller's context: draw(slide, x, y, mid, item)
+ Example: draw(slide, x, y, mid, item)
  """
  p=Paper(slide,x,y)
  if mid=='M01':lattice(p,item)

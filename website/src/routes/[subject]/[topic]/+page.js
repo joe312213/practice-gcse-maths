@@ -4,11 +4,11 @@
  * Main contents:
  * - trailingSlash; entries; load.
  *
- * Used By: SvelteKit and the adjacent +page.svelte.
+ * Used By: SvelteKit route loading/prerendering.
  *
- * Uses: topic-routes.mjs.
+ * Uses: website/src/lib/content/topic-routes.mjs.
  *
- * Libs: @sveltejs/kit (HTTP errors).
+ * Libs: @sveltejs/kit (route responses/errors).
  */
 import { error } from '@sveltejs/kit';
 import { foundationTopics, combinedTopic } from '#lib/content/topic-routes.mjs';

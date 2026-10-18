@@ -4,9 +4,13 @@
  * Main contents:
  * - latticeModel, divisionModel, arithmeticFrames.
  *
- * Used By: ArithmeticWorking, DemoPlayer and arithmetic tests.
+ * Used By: tests/arithmetic.test.mjs, tests/demo-sequence.test.mjs,
+ * tests/error-investigation.test.mjs, tests/topic-content.test.mjs,
+ * website/scripts/browser/error-investigation-checks.mjs,
+ * website/src/lib/application/error-working.mjs,
+ * website/src/lib/components/teaching/ArithmeticWorking.svelte.
  *
- * Uses: demo-guide.mjs (guideFrames).
+ * Uses: website/src/lib/application/demo-guide.mjs.
  *
  * Libs: none.
  */

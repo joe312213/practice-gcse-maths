@@ -12,12 +12,41 @@
       {
         "id": "step-2",
         "label": "One part",
-        "text": "24 ÷ 10 = 12/5"
+        "text": "24 ÷ 10 = 12/5",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "24"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "10"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "12/5"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Blue beads",
-        "text": "12/5 × 7 = 84/5"
+        "text": "12/5 × 7 = 84/5",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Blue beads: calculation",
+            "text": "12/5 × 7"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Blue beads: result",
+            "text": "84/5"
+          }
+        ]
       }
     ],
     "options": {
@@ -63,18 +92,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:blue beads = 3:7. There are 24 red beads. How many blue beads are there?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "beads",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C1-Q02",
@@ -84,17 +108,53 @@
       {
         "id": "step-1",
         "label": "Starting ratio",
-        "text": "Flour:sugar = 3:7"
+        "text": "Flour:sugar = 3:7",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Starting ratio: calculation",
+            "text": "Flour:sugar"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Starting ratio: result",
+            "text": "3:7"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Scale change",
-        "text": "30 − 3 = 27; add this to both parts"
+        "text": "30 − 3 = 27; add this to both parts",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Difference calculation",
+            "text": "30 − 3 = 27"
+          },
+          {
+            "id": "step-2",
+            "label": "How to scale the ratio",
+            "text": "add this to both parts"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Sugar",
-        "text": "7 + 27 = 34 g"
+        "text": "7 + 27 = 34 g",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Sugar: calculation",
+            "text": "7 + 27"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Sugar: result",
+            "text": "34 g"
+          }
+        ]
       }
     ],
     "options": {
@@ -132,18 +192,13 @@
     ],
     "hint": "Compare the scale change with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Flour:sugar = 3:7. A batch uses 30 g flour. How much sugar is needed?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "g",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C1-Q03",
@@ -153,7 +208,19 @@
       {
         "id": "step-1",
         "label": "One part",
-        "text": "110 ÷ 10 = 11 litres"
+        "text": "110 ÷ 10 = 11 litres",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "One part: calculation",
+            "text": "110 ÷ 10"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "One part: result",
+            "text": "11 litres"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -163,7 +230,19 @@
       {
         "id": "step-3",
         "label": "White amount",
-        "text": "3 × 11 = 33 litres"
+        "text": "3 × 11 = 33 litres",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "White amount: calculation",
+            "text": "3 × 11"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "White amount: result",
+            "text": "33 litres"
+          }
+        ]
       }
     ],
     "options": {
@@ -198,18 +277,13 @@
     ],
     "hint": "Compare the named share with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:white paint = 3:7. There are 110 litres altogether. Find the white paint.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "litres",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C1-Q04",
@@ -224,12 +298,41 @@
       {
         "id": "step-2",
         "label": "One part",
-        "text": "45 ÷ 10 = 9/2"
+        "text": "45 ÷ 10 = 9/2",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "45"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "10"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "9/2"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Blue beads",
-        "text": "9/2 × 7 = 63/2"
+        "text": "9/2 × 7 = 63/2",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Blue beads: calculation",
+            "text": "9/2 × 7"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Blue beads: result",
+            "text": "63/2"
+          }
+        ]
       }
     ],
     "options": {
@@ -275,18 +378,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:blue beads = 3:7. There are 45 red beads. How many blue beads are there?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "beads",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C1-Q05",
@@ -296,7 +394,19 @@
       {
         "id": "step-1",
         "label": "One part",
-        "text": "170 ÷ 10 = 17 litres"
+        "text": "170 ÷ 10 = 17 litres",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "One part: calculation",
+            "text": "170 ÷ 10"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "One part: result",
+            "text": "17 litres"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -306,7 +416,19 @@
       {
         "id": "step-3",
         "label": "White amount",
-        "text": "3 × 17 = 51 litres"
+        "text": "3 × 17 = 51 litres",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "White amount: calculation",
+            "text": "3 × 17"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "White amount: result",
+            "text": "51 litres"
+          }
+        ]
       }
     ],
     "options": {
@@ -341,18 +463,13 @@
     ],
     "hint": "Compare the named share with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:white paint = 3:7. There are 170 litres altogether. Find the white paint.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "litres",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C1-Q06",
@@ -362,17 +479,58 @@
       {
         "id": "step-1",
         "label": "Ratio",
-        "text": "Ali:Bea = 2:5"
+        "text": "Ali:Bea = 2:5",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Ratio: calculation",
+            "text": "Ali:Bea"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Ratio: result",
+            "text": "2:5"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "One part",
-        "text": "£35 ÷ 2 = £35/2"
+        "text": "£35 ÷ 2 = £35/2",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "£35"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "2"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "£35/2"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Bea’s share",
-        "text": "£35/2 × 5 = £175/2"
+        "text": "£35/2 × 5 = £175/2",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Bea’s share: calculation",
+            "text": "£35/2 × 5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Bea’s share: result",
+            "text": "£175/2"
+          }
+        ]
       }
     ],
     "options": {
@@ -416,18 +574,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Share £35 between Ali and Bea in the ratio 2:5. How much does Bea receive?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C1-Q07",
@@ -442,12 +595,41 @@
       {
         "id": "step-2",
         "label": "One part",
-        "text": "12 ÷ 7 = 12/7"
+        "text": "12 ÷ 7 = 12/7",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "12"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "7"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "12/7"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Blue beads",
-        "text": "12/7 × 5 = 60/7"
+        "text": "12/7 × 5 = 60/7",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Blue beads: calculation",
+            "text": "12/7 × 5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Blue beads: result",
+            "text": "60/7"
+          }
+        ]
       }
     ],
     "options": {
@@ -493,18 +675,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:blue beads = 2:5. There are 12 red beads. How many blue beads are there?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "beads",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C1-Q08",
@@ -514,17 +691,53 @@
       {
         "id": "step-1",
         "label": "Starting ratio",
-        "text": "Flour:sugar = 2:5"
+        "text": "Flour:sugar = 2:5",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Starting ratio: calculation",
+            "text": "Flour:sugar"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Starting ratio: result",
+            "text": "2:5"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Scale change",
-        "text": "16 − 2 = 14; add this to both parts"
+        "text": "16 − 2 = 14; add this to both parts",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Difference calculation",
+            "text": "16 − 2 = 14"
+          },
+          {
+            "id": "step-2",
+            "label": "How to scale the ratio",
+            "text": "add this to both parts"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Sugar",
-        "text": "5 + 14 = 19 g"
+        "text": "5 + 14 = 19 g",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Sugar: calculation",
+            "text": "5 + 14"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Sugar: result",
+            "text": "19 g"
+          }
+        ]
       }
     ],
     "options": {
@@ -562,18 +775,13 @@
     ],
     "hint": "Compare the scale change with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Flour:sugar = 2:5. A batch uses 16 g flour. How much sugar is needed?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "g",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C1-Q09",
@@ -583,7 +791,19 @@
       {
         "id": "step-1",
         "label": "One part",
-        "text": "63 ÷ 7 = 9 litres"
+        "text": "63 ÷ 7 = 9 litres",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "One part: calculation",
+            "text": "63 ÷ 7"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "One part: result",
+            "text": "9 litres"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -593,7 +813,19 @@
       {
         "id": "step-3",
         "label": "White amount",
-        "text": "2 × 9 = 18 litres"
+        "text": "2 × 9 = 18 litres",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "White amount: calculation",
+            "text": "2 × 9"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "White amount: result",
+            "text": "18 litres"
+          }
+        ]
       }
     ],
     "options": {
@@ -628,18 +860,13 @@
     ],
     "hint": "Compare the named share with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:white paint = 2:5. There are 63 litres altogether. Find the white paint.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "litres",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C1-Q10",
@@ -654,12 +881,41 @@
       {
         "id": "step-2",
         "label": "One part",
-        "text": "26 ÷ 7 = 26/7"
+        "text": "26 ÷ 7 = 26/7",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "26"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "7"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "26/7"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Blue beads",
-        "text": "26/7 × 5 = 130/7"
+        "text": "26/7 × 5 = 130/7",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Blue beads: calculation",
+            "text": "26/7 × 5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Blue beads: result",
+            "text": "130/7"
+          }
+        ]
       }
     ],
     "options": {
@@ -705,18 +961,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:blue beads = 2:5. There are 26 red beads. How many blue beads are there?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "beads",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C1-Q11",
@@ -726,7 +977,19 @@
       {
         "id": "step-1",
         "label": "One part",
-        "text": "105 ÷ 7 = 15 litres"
+        "text": "105 ÷ 7 = 15 litres",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "One part: calculation",
+            "text": "105 ÷ 7"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "One part: result",
+            "text": "15 litres"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -736,7 +999,19 @@
       {
         "id": "step-3",
         "label": "White amount",
-        "text": "2 × 15 = 30 litres"
+        "text": "2 × 15 = 30 litres",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "White amount: calculation",
+            "text": "2 × 15"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "White amount: result",
+            "text": "30 litres"
+          }
+        ]
       }
     ],
     "options": {
@@ -771,18 +1046,13 @@
     ],
     "hint": "Compare the named share with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:white paint = 2:5. There are 105 litres altogether. Find the white paint.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "litres",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C1-Q12",
@@ -792,17 +1062,58 @@
       {
         "id": "step-1",
         "label": "Ratio",
-        "text": "Ali:Bea = 3:7"
+        "text": "Ali:Bea = 3:7",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Ratio: calculation",
+            "text": "Ali:Bea"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Ratio: result",
+            "text": "3:7"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "One part",
-        "text": "£70 ÷ 3 = £70/3"
+        "text": "£70 ÷ 3 = £70/3",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "£70"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "3"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "£70/3"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Bea’s share",
-        "text": "£70/3 × 7 = £490/3"
+        "text": "£70/3 × 7 = £490/3",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Bea’s share: calculation",
+            "text": "£70/3 × 7"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Bea’s share: result",
+            "text": "£490/3"
+          }
+        ]
       }
     ],
     "options": {
@@ -846,18 +1157,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C1-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Share £70 between Ali and Bea in the ratio 3:7. How much does Bea receive?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q01",
@@ -872,7 +1178,19 @@
       {
         "id": "step-2",
         "label": "Second share",
-        "text": "18 × 3 = 54"
+        "text": "18 × 3 = 54",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Second share: calculation",
+            "text": "18 × 3"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Second share: result",
+            "text": "54"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -909,18 +1227,13 @@
     ],
     "hint": "Find the named share, then apply the extra information.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:white paint = 1:3. There are 18 litres of red paint. White costs £4 per litre. Find its cost.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q02",
@@ -935,7 +1248,19 @@
       {
         "id": "step-2",
         "label": "Second share",
-        "text": "12 × 5 = 60"
+        "text": "12 × 5 = 60",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Second share: calculation",
+            "text": "12 × 5"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Second share: result",
+            "text": "60"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -972,18 +1297,13 @@
     ],
     "hint": "Find the named share, then apply the extra information.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:blue beads = 1:5, with 12 red beads. Use 17 blue beads. How many blue beads remain?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "beads",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q03",
@@ -993,17 +1313,58 @@
       {
         "id": "step-1",
         "label": "Difference",
-        "text": "5 − 2 = 3 parts"
+        "text": "5 − 2 = 3 parts",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Difference: calculation",
+            "text": "5 − 2"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Difference: result",
+            "text": "3 parts"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "One part",
-        "text": "£21 ÷ 7 = £3"
+        "text": "£21 ÷ 7 = £3",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "£21"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "7"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "£3"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Bea’s share",
-        "text": "£3 × 5 = £15"
+        "text": "£3 × 5 = £15",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Bea’s share: calculation",
+            "text": "£3 × 5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Bea’s share: result",
+            "text": "£15"
+          }
+        ]
       }
     ],
     "options": {
@@ -1049,18 +1410,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Ali:Bea savings = 2:5. Bea has £21 more than Ali. Find Bea’s savings.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q04",
@@ -1075,17 +1431,53 @@
       {
         "id": "step-2",
         "label": "Simplified ratio",
-        "text": "2:10 (divide the first part by 2)"
+        "text": "2:10 (divide the first part by 2)",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Simplified ratio: ratio",
+            "text": "2:10"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Simplified ratio: operation",
+            "text": "(divide the first part by 2)"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "One part",
-        "text": "£70 ÷ 12 = £35/6"
+        "text": "£70 ÷ 12 = £35/6",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "One part: calculation",
+            "text": "£70 ÷ 12"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "One part: result",
+            "text": "£35/6"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Larger share",
-        "text": "£35/6 × 10 = £175/3"
+        "text": "£35/6 × 10 = £175/3",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Larger share: calculation",
+            "text": "£35/6 × 10"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Larger share: result",
+            "text": "£175/3"
+          }
+        ]
       }
     ],
     "options": {
@@ -1128,18 +1520,13 @@
     ],
     "hint": "Compare the simplified ratio with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Simplify 4:10, then find the larger share of £70.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q05",
@@ -1149,17 +1536,53 @@
       {
         "id": "step-1",
         "label": "Simplification",
-        "text": "4:10 = 2:5"
+        "text": "4:10 = 2:5",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Simplification: calculation",
+            "text": "4:10"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Simplification: result",
+            "text": "2:5"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Original part value",
-        "text": "£77 ÷ 14 = £11/2"
+        "text": "£77 ÷ 14 = £11/2",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Original part value: calculation",
+            "text": "£77 ÷ 14"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Original part value: result",
+            "text": "£11/2"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Larger share",
-        "text": "£11/2 × 5 = £55/2"
+        "text": "£11/2 × 5 = £55/2",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Larger share: calculation",
+            "text": "£11/2 × 5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Larger share: result",
+            "text": "£55/2"
+          }
+        ]
       }
     ],
     "options": {
@@ -1197,18 +1620,13 @@
     ],
     "hint": "Compare the larger share with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Share £77 in ratio 4:10. Find the larger share.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q06",
@@ -1218,17 +1636,58 @@
       {
         "id": "step-1",
         "label": "Difference",
-        "text": "5 − 2 = 3 parts"
+        "text": "5 − 2 = 3 parts",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Difference: calculation",
+            "text": "5 − 2"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Difference: result",
+            "text": "3 parts"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "One part",
-        "text": "£42 ÷ 7 = £6"
+        "text": "£42 ÷ 7 = £6",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "£42"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "7"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "£6"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Bea’s share",
-        "text": "£6 × 5 = £30"
+        "text": "£6 × 5 = £30",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Bea’s share: calculation",
+            "text": "£6 × 5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Bea’s share: result",
+            "text": "£30"
+          }
+        ]
       }
     ],
     "options": {
@@ -1274,18 +1733,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Ali:Bea savings = 2:5. Bea has £42 more than Ali. Find Bea’s savings.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q07",
@@ -1295,17 +1749,58 @@
       {
         "id": "step-1",
         "label": "Difference",
-        "text": "7 − 3 = 4 parts"
+        "text": "7 − 3 = 4 parts",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Difference: calculation",
+            "text": "7 − 3"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Difference: result",
+            "text": "4 parts"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "One part",
-        "text": "£36 ÷ 10 = £18/5"
+        "text": "£36 ÷ 10 = £18/5",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "£36"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "10"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "£18/5"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Bea’s share",
-        "text": "£18/5 × 7 = £126/5"
+        "text": "£18/5 × 7 = £126/5",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Bea’s share: calculation",
+            "text": "£18/5 × 7"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Bea’s share: result",
+            "text": "£126/5"
+          }
+        ]
       }
     ],
     "options": {
@@ -1351,18 +1846,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Ali:Bea savings = 3:7. Bea has £36 more than Ali. Find Bea’s savings.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q08",
@@ -1377,17 +1867,53 @@
       {
         "id": "step-2",
         "label": "Simplified ratio",
-        "text": "3:14 (divide the first part by 2)"
+        "text": "3:14 (divide the first part by 2)",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Simplified ratio: ratio",
+            "text": "3:14"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Simplified ratio: operation",
+            "text": "(divide the first part by 2)"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "One part",
-        "text": "£120 ÷ 17 = £120/17"
+        "text": "£120 ÷ 17 = £120/17",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "One part: calculation",
+            "text": "£120 ÷ 17"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "One part: result",
+            "text": "£120/17"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Larger share",
-        "text": "£120/17 × 14 = £1680/17"
+        "text": "£120/17 × 14 = £1680/17",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Larger share: calculation",
+            "text": "£120/17 × 14"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Larger share: result",
+            "text": "£1680/17"
+          }
+        ]
       }
     ],
     "options": {
@@ -1430,18 +1956,13 @@
     ],
     "hint": "Compare the simplified ratio with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Simplify 6:14, then find the larger share of £120.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q09",
@@ -1451,17 +1972,53 @@
       {
         "id": "step-1",
         "label": "Simplification",
-        "text": "6:14 = 3:7"
+        "text": "6:14 = 3:7",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Simplification: calculation",
+            "text": "6:14"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Simplification: result",
+            "text": "3:7"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Original part value",
-        "text": "£130 ÷ 20 = £13/2"
+        "text": "£130 ÷ 20 = £13/2",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Original part value: calculation",
+            "text": "£130 ÷ 20"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Original part value: result",
+            "text": "£13/2"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Larger share",
-        "text": "£13/2 × 7 = £91/2"
+        "text": "£13/2 × 7 = £91/2",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Larger share: calculation",
+            "text": "£13/2 × 7"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Larger share: result",
+            "text": "£91/2"
+          }
+        ]
       }
     ],
     "options": {
@@ -1499,18 +2056,13 @@
     ],
     "hint": "Compare the larger share with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Share £130 in ratio 6:14. Find the larger share.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q10",
@@ -1520,17 +2072,58 @@
       {
         "id": "step-1",
         "label": "Difference",
-        "text": "7 − 3 = 4 parts"
+        "text": "7 − 3 = 4 parts",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Difference: calculation",
+            "text": "7 − 3"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Difference: result",
+            "text": "4 parts"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "One part",
-        "text": "£64 ÷ 10 = £32/5"
+        "text": "£64 ÷ 10 = £32/5",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "£64"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "10"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "£32/5"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Bea’s share",
-        "text": "£32/5 × 7 = £224/5"
+        "text": "£32/5 × 7 = £224/5",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Bea’s share: calculation",
+            "text": "£32/5 × 7"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Bea’s share: result",
+            "text": "£224/5"
+          }
+        ]
       }
     ],
     "options": {
@@ -1576,18 +2169,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Ali:Bea savings = 3:7. Bea has £64 more than Ali. Find Bea’s savings.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q11",
@@ -1597,17 +2185,58 @@
       {
         "id": "step-1",
         "label": "Difference",
-        "text": "9 − 4 = 5 parts"
+        "text": "9 − 4 = 5 parts",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Difference: calculation",
+            "text": "9 − 4"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Difference: result",
+            "text": "5 parts"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "One part",
-        "text": "£55 ÷ 13 = £55/13"
+        "text": "£55 ÷ 13 = £55/13",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "£55"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "13"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "£55/13"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Bea’s share",
-        "text": "£55/13 × 9 = £495/13"
+        "text": "£55/13 × 9 = £495/13",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Bea’s share: calculation",
+            "text": "£55/13 × 9"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Bea’s share: result",
+            "text": "£495/13"
+          }
+        ]
       }
     ],
     "options": {
@@ -1653,18 +2282,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Ali:Bea savings = 4:9. Bea has £55 more than Ali. Find Bea’s savings.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C2-Q12",
@@ -1679,7 +2303,19 @@
       {
         "id": "step-2",
         "label": "Second share",
-        "text": "25 × 4 = 100"
+        "text": "25 × 4 = 100",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Second share: calculation",
+            "text": "25 × 4"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Second share: result",
+            "text": "100"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -1716,18 +2352,13 @@
     ],
     "hint": "Find the named share, then apply the extra information.",
     "draftId": "M04-DRAFT-ERRORS-C2-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:blue ribbon lengths = 1:4. Red is 25 cm long. Join another 15 cm onto blue. Find the new blue length.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "cm",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q01",
@@ -1737,12 +2368,41 @@
       {
         "id": "step-1",
         "label": "Ratio",
-        "text": "Red:white = 3:6"
+        "text": "Red:white = 3:6",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Ratio: calculation",
+            "text": "Red:white"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Ratio: result",
+            "text": "3:6"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "One part",
-        "text": "72 ÷ 3 = 24 litres"
+        "text": "72 ÷ 3 = 24 litres",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "72"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "3"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "24 litres"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -1752,7 +2412,19 @@
       {
         "id": "step-4",
         "label": "White cost",
-        "text": "(72 ÷ 3) × 3 × 4 = £288"
+        "text": "(72 ÷ 3) × 3 × 4 = £288",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "White cost: calculation",
+            "text": "(72 ÷ 3) × 3 × 4"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "White cost: result",
+            "text": "£288"
+          }
+        ]
       }
     ],
     "options": {
@@ -1808,18 +2480,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:white paint = 3:6, total 72 litres. White costs £4 per litre. Find the cost of the white paint.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q02",
@@ -1834,12 +2501,36 @@
       {
         "id": "step-2",
         "label": "One part",
-        "text": "400 ÷ 10 = 40"
+        "text": "400 ÷ 10 = 40",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "One part: calculation",
+            "text": "400 ÷ 10"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "One part: result",
+            "text": "40"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second share",
-        "text": "40 × 7 = 280"
+        "text": "40 × 7 = 280",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Second share: calculation",
+            "text": "40 × 7"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Second share: result",
+            "text": "280"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -1876,18 +2567,13 @@
     ],
     "hint": "Find the named share before making the linked calculation.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Flour:sugar = 3:7. One batch contains 400 g altogether. Find the sugar needed for 3 batches.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "g",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q03",
@@ -1902,7 +2588,24 @@
       {
         "id": "step-2",
         "label": "One part",
-        "text": "99 ÷ 4 = 99/4"
+        "text": "99 ÷ 4 = 99/4",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "99"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "4"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "99/4"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -1912,7 +2615,19 @@
       {
         "id": "step-4",
         "label": "Further calculation",
-        "text": "(99/4) × 4 + 15 = 114"
+        "text": "(99/4) × 4 + 15 = 114",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Further calculation: calculation",
+            "text": "(99/4) × 4 + 15"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Further calculation: result",
+            "text": "114"
+          }
+        ]
       }
     ],
     "options": {
@@ -1960,18 +2675,13 @@
     ],
     "hint": "Check what the given total represents and which share is requested.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Preparation:cooking time = 4:7, taking 99 minutes altogether. A new recipe needs 15 extra minutes of cooking. Find the new cooking time.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "minutes",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q04",
@@ -1986,12 +2696,36 @@
       {
         "id": "step-2",
         "label": "One part",
-        "text": "260 ÷ 13 = 20"
+        "text": "260 ÷ 13 = 20",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "One part: calculation",
+            "text": "260 ÷ 13"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "One part: result",
+            "text": "20"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second share",
-        "text": "20 × 9 = 180"
+        "text": "20 × 9 = 180",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Second share: calculation",
+            "text": "20 × 9"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Second share: result",
+            "text": "180"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -2028,18 +2762,13 @@
     ],
     "hint": "Find the named share before making the linked calculation.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Ada:Ben money = 4:9. They share £260. Ben spends £35. How much does Ben keep?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q05",
@@ -2054,7 +2783,24 @@
       {
         "id": "step-2",
         "label": "One part",
-        "text": "130 ÷ 5 = 26"
+        "text": "130 ÷ 5 = 26",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "130"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "5"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "26"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -2064,7 +2810,19 @@
       {
         "id": "step-4",
         "label": "Further calculation",
-        "text": "(130/5) × 5 − 30 = 100"
+        "text": "(130/5) × 5 − 30 = 100",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Further calculation: calculation",
+            "text": "(130/5) × 5 − 30"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Further calculation: result",
+            "text": "100"
+          }
+        ]
       }
     ],
     "options": {
@@ -2112,18 +2870,13 @@
     ],
     "hint": "Check what the given total represents and which share is requested.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:blue beads = 5:8, with 130 beads altogether. Use 30 blue beads. How many blue beads remain?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "beads",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q06",
@@ -2138,12 +2891,36 @@
       {
         "id": "step-2",
         "label": "One part",
-        "text": "45 ÷ 3 = 15"
+        "text": "45 ÷ 3 = 15",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "One part: calculation",
+            "text": "45 ÷ 3"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "One part: result",
+            "text": "15"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second share",
-        "text": "15 × 7 = 105"
+        "text": "15 × 7 = 105",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Second share: calculation",
+            "text": "15 × 7"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Second share: result",
+            "text": "105"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -2184,18 +2961,13 @@
     ],
     "hint": "Find the named share before making the linked calculation.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Red:blue ribbon lengths = 3:7. Red is 45 cm long. Find the blue length in metres.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q07",
@@ -2210,12 +2982,36 @@
       {
         "id": "step-2",
         "label": "One part",
-        "text": "80 ÷ 2 = 40"
+        "text": "80 ÷ 2 = 40",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "One part: calculation",
+            "text": "80 ÷ 2"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "One part: result",
+            "text": "40"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second share",
-        "text": "40 × 5 = 200"
+        "text": "40 × 5 = 200",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Second share: calculation",
+            "text": "40 × 5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Second share: result",
+            "text": "200"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -2252,18 +3048,13 @@
     ],
     "hint": "Find the named share before making the linked calculation.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Flour:sugar = 2:5. A full batch uses 80 g flour. Find the sugar needed for half a batch.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "g",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q08",
@@ -2273,22 +3064,75 @@
       {
         "id": "given",
         "label": "Ratio and difference",
-        "text": "Ali:Bea = 4:7; difference £36"
+        "text": "Ali:Bea = 4:7; difference £36",
+        "targets": [
+          {
+            "id": "given",
+            "label": "Ratio and difference: calculation",
+            "text": "Ali:Bea"
+          },
+          {
+            "id": "given-part-2",
+            "label": "Ratio and difference: result",
+            "text": "4:7; difference £36"
+          }
+        ]
       },
       {
         "id": "parts",
         "label": "Difference in parts",
-        "text": "7−4=3 parts"
+        "text": "7−4=3 parts",
+        "targets": [
+          {
+            "id": "parts",
+            "label": "Difference in parts: calculation",
+            "text": "7−4"
+          },
+          {
+            "id": "parts-part-2",
+            "label": "Difference in parts: result",
+            "text": "3 parts"
+          }
+        ]
       },
       {
         "id": "one",
         "label": "One part",
-        "text": "36÷(4+7)=36/11 pounds"
+        "text": "36÷(4+7)=36/11 pounds",
+        "targets": [
+          {
+            "id": "one-part-1",
+            "label": "One part: quantity",
+            "text": "36"
+          },
+          {
+            "id": "one",
+            "label": "One part: divisor",
+            "text": "(4+7)"
+          },
+          {
+            "id": "one-part-3",
+            "label": "One part: result",
+            "text": "36/11 pounds"
+          }
+        ]
       },
       {
         "id": "share",
         "label": "Bea’s savings",
-        "text": "(36/11)×7=252/11 pounds"
+        "text": "(36/11)×7=252/11 pounds",
+        "targets": [
+          {
+            "id": "share",
+            "label": "Bea’s savings: calculation",
+            "text": "(36/11)×7"
+          },
+          {
+            "id": "share-part-2",
+            "label": "Bea’s savings: result",
+            "text": "252/11 pounds"
+          }
+        ]
       }
     ],
     "options": {
@@ -2328,18 +3172,13 @@
     ],
     "hint": "Match the known difference to the difference between the ratio parts.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Ali:Bea savings = 4:7. Bea has £36 more than Ali. Find Bea’s savings.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q09",
@@ -2354,17 +3193,53 @@
       {
         "id": "step-2",
         "label": "Simplified ratio",
-        "text": "4:18 (divide the first part by 2)"
+        "text": "4:18 (divide the first part by 2)",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Simplified ratio: ratio",
+            "text": "4:18"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Simplified ratio: operation",
+            "text": "(divide the first part by 2)"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "One part",
-        "text": "£182 ÷ 22 = £91/11"
+        "text": "£182 ÷ 22 = £91/11",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "One part: calculation",
+            "text": "£182 ÷ 22"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "One part: result",
+            "text": "£91/11"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Larger share",
-        "text": "£91/11 × 18 = £1638/11"
+        "text": "£91/11 × 18 = £1638/11",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Larger share: calculation",
+            "text": "£91/11 × 18"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Larger share: result",
+            "text": "£1638/11"
+          }
+        ]
       }
     ],
     "options": {
@@ -2407,18 +3282,13 @@
     ],
     "hint": "Compare the simplified ratio with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Simplify 8:18, then find the larger share of £182.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q10",
@@ -2428,17 +3298,53 @@
       {
         "id": "step-1",
         "label": "Simplification",
-        "text": "8:18 = 4:9"
+        "text": "8:18 = 4:9",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Simplification: calculation",
+            "text": "8:18"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Simplification: result",
+            "text": "4:9"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Original part value",
-        "text": "£195 ÷ 26 = £15/2"
+        "text": "£195 ÷ 26 = £15/2",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Original part value: calculation",
+            "text": "£195 ÷ 26"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Original part value: result",
+            "text": "£15/2"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Larger share",
-        "text": "£15/2 × 9 = £135/2"
+        "text": "£15/2 × 9 = £135/2",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Larger share: calculation",
+            "text": "£15/2 × 9"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Larger share: result",
+            "text": "£135/2"
+          }
+        ]
       }
     ],
     "options": {
@@ -2476,18 +3382,13 @@
     ],
     "hint": "Compare the larger share with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Share £195 in ratio 8:18. Find the larger share.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q11",
@@ -2497,17 +3398,58 @@
       {
         "id": "step-1",
         "label": "Difference",
-        "text": "9 − 4 = 5 parts"
+        "text": "9 − 4 = 5 parts",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Difference: calculation",
+            "text": "9 − 4"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Difference: result",
+            "text": "5 parts"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "One part",
-        "text": "£90 ÷ 13 = £90/13"
+        "text": "£90 ÷ 13 = £90/13",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "One part: quantity",
+            "text": "£90"
+          },
+          {
+            "id": "step-2",
+            "label": "One part: divisor",
+            "text": "13"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "One part: result",
+            "text": "£90/13"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Bea’s share",
-        "text": "£90/13 × 9 = £810/13"
+        "text": "£90/13 × 9 = £810/13",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Bea’s share: calculation",
+            "text": "£90/13 × 9"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Bea’s share: result",
+            "text": "£810/13"
+          }
+        ]
       }
     ],
     "options": {
@@ -2553,18 +3495,13 @@
     ],
     "hint": "Compare the one part with the quantities and operation in the question.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Ali:Bea savings = 4:9. Bea has £90 more than Ali. Find Bea’s savings.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M04-WEB-ERRORS-R2-C3-Q12",
@@ -2579,12 +3516,36 @@
       {
         "id": "step-2",
         "label": "One part",
-        "text": "140 ÷ 7 = 20"
+        "text": "140 ÷ 7 = 20",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "One part: calculation",
+            "text": "140 ÷ 7"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "One part: result",
+            "text": "20"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second share",
-        "text": "20 × 5 = 100"
+        "text": "20 × 5 = 100",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Second share: calculation",
+            "text": "20 × 5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Second share: result",
+            "text": "100"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -2621,17 +3582,12 @@
     ],
     "hint": "Find the named share before making the linked calculation.",
     "draftId": "M04-DRAFT-ERRORS-C3-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Ada:Ben money = 2:5. They share £140. Ben saves 25% of his share. How much does he save?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M04"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   }
 ]

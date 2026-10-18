@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M03-S04-C1-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A library has 14 shelves with 32 books on each. How many books are there?",
     "answer": "448",
     "answerUnit": "books",
@@ -38,12 +33,7 @@
   },
   {
     "id": "maths:M03-S04-C2-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "130 eggs are packed in cartons of 6. How many full cartons can be packed?",
     "answer": "21",
     "answerUnit": "cartons",
@@ -69,7 +59,9 @@
         "title": "Answer the question in context",
         "input": "21",
         "output": "21",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "cartons"
       }
     ],
@@ -82,12 +74,7 @@
   },
   {
     "id": "maths:M03-S04-C3-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "45 tickets cost £16 each. A group gets £50 off the total. How much does it pay?",
     "answer": "670",
     "answerUnit": "£",
@@ -130,12 +117,7 @@
   },
   {
     "id": "maths:M03-S04-C1-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "105 students form 7 equal groups. How many students are in each group?",
     "answer": "15",
     "answerUnit": "students",
@@ -167,12 +149,7 @@
   },
   {
     "id": "maths:M03-S04-C2-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "32 passengers need cars with 5 passenger seats each. How many cars are needed?",
     "answer": "7",
     "answerUnit": "cars",
@@ -198,7 +175,9 @@
         "title": "Answer the question in context",
         "input": "6 + 1",
         "output": "7",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "cars"
       }
     ],
@@ -211,12 +190,7 @@
   },
   {
     "id": "maths:M03-S04-C3-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "115 passengers need vans with 8 passenger seats each. Hire costs £65 per van. Find the total cost.",
     "answer": "975",
     "answerUnit": "£",
@@ -246,7 +220,9 @@
         "title": "Answer the question in context",
         "input": "14 + 1",
         "output": "15",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+        "note": {
+          "textRef": "round-up-groups"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -265,12 +241,7 @@
   },
   {
     "id": "maths:M03-S04-C1-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop has 26 crates with 41 bottles in each. How many bottles are there?",
     "answer": "1066",
     "answerUnit": "bottles",
@@ -302,12 +273,7 @@
   },
   {
     "id": "maths:M03-S04-C2-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "250 chocolates are packed in boxes of 12. How many chocolates are left over?",
     "answer": "10",
     "answerUnit": "chocolates",
@@ -346,12 +312,7 @@
   },
   {
     "id": "maths:M03-S04-C3-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A gym costs £22 per month plus a £30 joining fee. Find the cost for 14 months.",
     "answer": "338",
     "answerUnit": "£",
@@ -394,12 +355,7 @@
   },
   {
     "id": "maths:M03-S04-C1-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A 148 m rope is cut into 4 equal pieces. How long is each piece?",
     "answer": "37",
     "answerUnit": "m",
@@ -431,12 +387,7 @@
   },
   {
     "id": "maths:M03-S04-C2-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A worker earns £17 per hour. They work 28 hours one week and 7 hours the next. What are their total wages?",
     "answer": "595",
     "answerUnit": "£",
@@ -479,12 +430,7 @@
   },
   {
     "id": "maths:M03-S04-C3-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "430 cases fill boxes of 12. Each full box sells for £9. Find the income from full boxes.",
     "answer": "315",
     "answerUnit": "£",
@@ -514,7 +460,9 @@
         "title": "Answer the question in context",
         "input": "35",
         "output": "35",
-        "note": "Only completely full groups count; leave the remainder out."
+        "note": {
+          "textRef": "full-groups-only"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -533,12 +481,7 @@
   },
   {
     "id": "maths:M03-S04-C1-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A hall has 13 rows of 85 seats. How many seats are there?",
     "answer": "1105",
     "answerUnit": "seats",
@@ -570,12 +513,7 @@
   },
   {
     "id": "maths:M03-S04-C2-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "142 rolls are sold in bags of 6. How many full bags can be made?",
     "answer": "23",
     "answerUnit": "bags",
@@ -601,7 +539,9 @@
         "title": "Answer the question in context",
         "input": "23",
         "output": "23",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "bags"
       }
     ],
@@ -614,12 +554,7 @@
   },
   {
     "id": "maths:M03-S04-C3-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A contractor charges £24 per hour for 15 hours, plus £45 for materials. Find the total bill.",
     "answer": "405",
     "answerUnit": "£",
@@ -662,12 +597,7 @@
   },
   {
     "id": "maths:M03-S04-C1-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "£175 is shared equally among 5 people. How much does each person receive?",
     "answer": "35",
     "answerUnit": "£",
@@ -699,12 +629,7 @@
   },
   {
     "id": "maths:M03-S04-C2-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A £132 bill is shared equally by 8 friends. How much does each pay?",
     "answer": "16.5",
     "answerUnit": "£",
@@ -736,12 +661,7 @@
   },
   {
     "id": "maths:M03-S04-C3-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop sells 15 boxes of 12 headphones at £8 per headphone. Find the total sales income.",
     "answer": "1440",
     "answerUnit": "£",
@@ -784,12 +704,7 @@
   },
   {
     "id": "maths:M03-S05-C1-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "18 trays each hold 24 plants. How many plants are there?",
     "answer": "432",
     "answerUnit": "plants",
@@ -821,12 +736,7 @@
   },
   {
     "id": "maths:M03-S05-C2-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "197 leaflets are bundled in groups of 8. How many complete bundles can be made?",
     "answer": "24",
     "answerUnit": "bundles",
@@ -852,7 +762,9 @@
         "title": "Answer the question in context",
         "input": "24",
         "output": "24",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "bundles"
       }
     ],
@@ -865,12 +777,7 @@
   },
   {
     "id": "maths:M03-S05-C3-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "28 shirts cost £14 each. Delivery costs £18. Find the total cost.",
     "answer": "410",
     "answerUnit": "£",
@@ -913,12 +820,7 @@
   },
   {
     "id": "maths:M03-S05-C1-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "156 pens are shared equally among 6 classes. How many pens does each class get?",
     "answer": "26",
     "answerUnit": "pens",
@@ -950,12 +852,7 @@
   },
   {
     "id": "maths:M03-S05-C2-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A camp has 83 people. Each tent sleeps 6. How many tents are needed?",
     "answer": "14",
     "answerUnit": "tents",
@@ -981,7 +878,9 @@
         "title": "Answer the question in context",
         "input": "13 + 1",
         "output": "14",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "tents"
       }
     ],
@@ -994,12 +893,7 @@
   },
   {
     "id": "maths:M03-S05-C3-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "94 people need tables seating 6 each. Tables cost £12 each to hire. Find the total hire cost.",
     "answer": "192",
     "answerUnit": "£",
@@ -1029,7 +923,9 @@
         "title": "Answer the question in context",
         "input": "15 + 1",
         "output": "16",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+        "note": {
+          "textRef": "round-up-groups"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -1048,12 +944,7 @@
   },
   {
     "id": "maths:M03-S05-C1-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A club orders 23 packs of 16 badges. How many badges does it order?",
     "answer": "368",
     "answerUnit": "badges",
@@ -1085,12 +976,7 @@
   },
   {
     "id": "maths:M03-S05-C2-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A 275 cm strip is cut into 12 cm pieces. How many centimetres remain?",
     "answer": "11",
     "answerUnit": "cm",
@@ -1129,12 +1015,7 @@
   },
   {
     "id": "maths:M03-S05-C3-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A club buys 24 packs of 15 drinks. It uses 87 drinks. How many remain?",
     "answer": "273",
     "answerUnit": "drinks",
@@ -1176,12 +1057,7 @@
   },
   {
     "id": "maths:M03-S05-C1-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "£248 is shared equally among 8 people. How much does each person get?",
     "answer": "31",
     "answerUnit": "£",
@@ -1213,12 +1089,7 @@
   },
   {
     "id": "maths:M03-S05-C2-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A printer produces 36 pages per minute. It runs for 14 minutes, then for another 7 minutes at the same rate. How many pages does it produce altogether?",
     "answer": "756",
     "answerUnit": "pages",
@@ -1261,12 +1132,7 @@
   },
   {
     "id": "maths:M03-S05-C3-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A baker has 286 biscuits. Full bags hold 8 and sell for £3 each. Find the sales income.",
     "answer": "105",
     "answerUnit": "£",
@@ -1296,7 +1162,9 @@
         "title": "Answer the question in context",
         "input": "35",
         "output": "35",
-        "note": "Only completely full groups count; leave the remainder out."
+        "note": {
+          "textRef": "full-groups-only"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -1315,12 +1183,7 @@
   },
   {
     "id": "maths:M03-S05-C1-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A runner covers 12 km each week for 27 weeks. How far do they run?",
     "answer": "324",
     "answerUnit": "km",
@@ -1352,12 +1215,7 @@
   },
   {
     "id": "maths:M03-S05-C2-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "£154 is split equally among 4 workers. How much does each receive?",
     "answer": "38.5",
     "answerUnit": "£",
@@ -1389,12 +1247,7 @@
   },
   {
     "id": "maths:M03-S05-C3-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "Four friends share the cost of 18 tickets at £12 each equally. How much does each friend pay?",
     "answer": "54",
     "answerUnit": "£",
@@ -1437,12 +1290,7 @@
   },
   {
     "id": "maths:M03-S05-C1-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A 189 cm ribbon is cut into 7 equal pieces. Find the length of each piece.",
     "answer": "27",
     "answerUnit": "cm",
@@ -1474,12 +1322,7 @@
   },
   {
     "id": "maths:M03-S05-C2-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "253 photos go in albums holding 24 photos. How many albums are needed for all the photos?",
     "answer": "11",
     "answerUnit": "albums",
@@ -1505,7 +1348,9 @@
         "title": "Answer the question in context",
         "input": "10 + 1",
         "output": "11",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "albums"
       }
     ],
@@ -1518,12 +1363,7 @@
   },
   {
     "id": "maths:M03-S05-C3-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop sells 17 cartons of 24 pens at £2 per pen. Find the total sales income.",
     "answer": "816",
     "answerUnit": "£",
@@ -1566,12 +1406,7 @@
   },
   {
     "id": "maths:M03-S06-C1-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "16 boxes each hold 35 cables. How many cables are there?",
     "answer": "560",
     "answerUnit": "cables",
@@ -1603,12 +1438,7 @@
   },
   {
     "id": "maths:M03-S06-C2-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "245 apples are packed in bags of 8. How many full bags can be made?",
     "answer": "30",
     "answerUnit": "bags",
@@ -1634,7 +1464,9 @@
         "title": "Answer the question in context",
         "input": "30",
         "output": "30",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "bags"
       }
     ],
@@ -1647,12 +1479,7 @@
   },
   {
     "id": "maths:M03-S06-C3-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A gardener charges £21 per hour for 18 hours, plus £64 for plants. Find the total bill.",
     "answer": "442",
     "answerUnit": "£",
@@ -1695,12 +1522,7 @@
   },
   {
     "id": "maths:M03-S06-C1-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "252 stickers are shared equally among 7 students. How many does each student get?",
     "answer": "36",
     "answerUnit": "stickers",
@@ -1732,12 +1554,7 @@
   },
   {
     "id": "maths:M03-S06-C2-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A hotel has 137 guests. Each shuttle carries 9 guests. How many shuttle trips are needed?",
     "answer": "16",
     "answerUnit": "trips",
@@ -1763,7 +1580,9 @@
         "title": "Answer the question in context",
         "input": "15 + 1",
         "output": "16",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "trips"
       }
     ],
@@ -1776,12 +1595,7 @@
   },
   {
     "id": "maths:M03-S06-C3-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "167 passengers need coaches with 24 passenger seats each. Hire costs £85 per coach. Find the total cost.",
     "answer": "595",
     "answerUnit": "£",
@@ -1811,7 +1625,9 @@
         "title": "Answer the question in context",
         "input": "6 + 1",
         "output": "7",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+        "note": {
+          "textRef": "round-up-groups"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -1830,12 +1646,7 @@
   },
   {
     "id": "maths:M03-S06-C1-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A cinema has 28 rows of 24 seats. Find the total number of seats.",
     "answer": "672",
     "answerUnit": "seats",
@@ -1867,12 +1678,7 @@
   },
   {
     "id": "maths:M03-S06-C2-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "359 beads are used in bracelets of 12 beads. How many beads remain?",
     "answer": "11",
     "answerUnit": "beads",
@@ -1911,12 +1717,7 @@
   },
   {
     "id": "maths:M03-S06-C3-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A club buys 32 packs of 18 cards. It gives away 145 cards. How many remain?",
     "answer": "431",
     "answerUnit": "cards",
@@ -1958,12 +1759,7 @@
   },
   {
     "id": "maths:M03-S06-C1-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A 336 m cable is cut into 8 equal lengths. How long is each length?",
     "answer": "42",
     "answerUnit": "m",
@@ -1995,12 +1791,7 @@
   },
   {
     "id": "maths:M03-S06-C2-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A technician earns £23 per hour. They work 16 hours one week and 7 hours the next. What are their total wages?",
     "answer": "529",
     "answerUnit": "£",
@@ -2043,12 +1834,7 @@
   },
   {
     "id": "maths:M03-S06-C3-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "397 oranges fill bags of 6. Each full bag sells for £4. Find the sales income.",
     "answer": "264",
     "answerUnit": "£",
@@ -2078,7 +1864,9 @@
         "title": "Answer the question in context",
         "input": "66",
         "output": "66",
-        "note": "Only completely full groups count; leave the remainder out."
+        "note": {
+          "textRef": "full-groups-only"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -2097,12 +1885,7 @@
   },
   {
     "id": "maths:M03-S06-C1-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A charity buys 19 packs of 32 cards. How many cards does it buy?",
     "answer": "608",
     "answerUnit": "cards",
@@ -2134,12 +1917,7 @@
   },
   {
     "id": "maths:M03-S06-C2-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A £186 bill is shared equally by 8 people. How much does each person pay?",
     "answer": "23.25",
     "answerUnit": "£",
@@ -2171,12 +1949,7 @@
   },
   {
     "id": "maths:M03-S06-C3-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "Six people equally share the cost of 15 meals at £14 each. How much does each person pay?",
     "answer": "35",
     "answerUnit": "£",
@@ -2219,12 +1992,7 @@
   },
   {
     "id": "maths:M03-S06-C1-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "£315 is shared equally among 9 people. How much does each receive?",
     "answer": "35",
     "answerUnit": "£",
@@ -2256,12 +2024,7 @@
   },
   {
     "id": "maths:M03-S06-C2-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "Each floor tile covers 25 cm². One area uses 48 tiles and another uses 7 tiles. What total area do the tiles cover?",
     "answer": "1375",
     "answerUnit": "cm²",
@@ -2304,12 +2067,7 @@
   },
   {
     "id": "maths:M03-S06-C3-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop sells 23 boxes of 16 mugs at £5 per mug. Find the total sales income.",
     "answer": "1840",
     "answerUnit": "£",
@@ -2352,12 +2110,7 @@
   },
   {
     "id": "maths:M03-S07-C1-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "27 packets each contain 18 labels. How many labels are there?",
     "answer": "486",
     "answerUnit": "labels",
@@ -2389,12 +2142,7 @@
   },
   {
     "id": "maths:M03-S07-C2-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "367 bottles are packed in boxes of 12. How many complete boxes can be packed?",
     "answer": "30",
     "answerUnit": "boxes",
@@ -2420,7 +2168,9 @@
         "title": "Answer the question in context",
         "input": "30",
         "output": "30",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "boxes"
       }
     ],
@@ -2433,12 +2183,7 @@
   },
   {
     "id": "maths:M03-S07-C3-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "36 tickets cost £17 each. A group gets £75 off the total. How much does it pay?",
     "answer": "537",
     "answerUnit": "£",
@@ -2481,12 +2226,7 @@
   },
   {
     "id": "maths:M03-S07-C1-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "384 books are shared equally among 8 shelves. How many books go on each shelf?",
     "answer": "48",
     "answerUnit": "books",
@@ -2518,12 +2258,7 @@
   },
   {
     "id": "maths:M03-S07-C2-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A hostel has 158 guests. Each room holds 6 guests. How many rooms are needed?",
     "answer": "27",
     "answerUnit": "rooms",
@@ -2549,7 +2284,9 @@
         "title": "Answer the question in context",
         "input": "26 + 1",
         "output": "27",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "rooms"
       }
     ],
@@ -2562,12 +2299,7 @@
   },
   {
     "id": "maths:M03-S07-C3-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "203 people need tables seating 8 each. Hire costs £15 per table. Find the total hire cost.",
     "answer": "390",
     "answerUnit": "£",
@@ -2597,7 +2329,9 @@
         "title": "Answer the question in context",
         "input": "25 + 1",
         "output": "26",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+        "note": {
+          "textRef": "round-up-groups"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -2616,12 +2350,7 @@
   },
   {
     "id": "maths:M03-S07-C1-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A nursery has 34 trays of 16 seedlings. How many seedlings are there?",
     "answer": "544",
     "answerUnit": "seedlings",
@@ -2653,12 +2382,7 @@
   },
   {
     "id": "maths:M03-S07-C2-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A 413 cm ribbon is cut into 15 cm lengths. How many centimetres remain?",
     "answer": "8",
     "answerUnit": "cm",
@@ -2697,12 +2421,7 @@
   },
   {
     "id": "maths:M03-S07-C3-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop buys 29 boxes of 24 notebooks. It sells 187 notebooks. How many remain?",
     "answer": "509",
     "answerUnit": "notebooks",
@@ -2744,12 +2463,7 @@
   },
   {
     "id": "maths:M03-S07-C1-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "£425 is shared equally among 5 people. How much does each receive?",
     "answer": "85",
     "answerUnit": "£",
@@ -2781,12 +2495,7 @@
   },
   {
     "id": "maths:M03-S07-C2-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A machine labels 28 bottles per minute. It runs for 19 minutes, then for another 7 minutes at the same rate. How many bottles does it label altogether?",
     "answer": "728",
     "answerUnit": "bottles",
@@ -2829,12 +2538,7 @@
   },
   {
     "id": "maths:M03-S07-C3-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A baker has 518 rolls. Full bags hold 12 and sell for £5 each. Find the sales income.",
     "answer": "215",
     "answerUnit": "£",
@@ -2864,7 +2568,9 @@
         "title": "Answer the question in context",
         "input": "43",
         "output": "43",
-        "note": "Only completely full groups count; leave the remainder out."
+        "note": {
+          "textRef": "full-groups-only"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -2883,12 +2589,7 @@
   },
   {
     "id": "maths:M03-S07-C1-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A hall has 26 rows of 35 seats. How many seats are there?",
     "answer": "910",
     "answerUnit": "seats",
@@ -2920,12 +2621,7 @@
   },
   {
     "id": "maths:M03-S07-C2-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A £238 bill is shared equally by 8 friends. How much does each friend pay?",
     "answer": "29.75",
     "answerUnit": "£",
@@ -2957,12 +2653,7 @@
   },
   {
     "id": "maths:M03-S07-C3-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "Seven people equally share the cost of 21 meals at £16 each. How much does each person pay?",
     "answer": "48",
     "answerUnit": "£",
@@ -3005,12 +2696,7 @@
   },
   {
     "id": "maths:M03-S07-C1-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A 294 cm strip is cut into 6 equal lengths. Find the length of each piece.",
     "answer": "49",
     "answerUnit": "cm",
@@ -3042,12 +2728,7 @@
   },
   {
     "id": "maths:M03-S07-C2-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "319 files fit in folders holding 24 files. How many folders are needed for all the files?",
     "answer": "14",
     "answerUnit": "folders",
@@ -3073,7 +2754,9 @@
         "title": "Answer the question in context",
         "input": "13 + 1",
         "output": "14",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "folders"
       }
     ],
@@ -3086,12 +2769,7 @@
   },
   {
     "id": "maths:M03-S07-C3-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop sells 28 boxes of 15 keyrings at £3 per keyring. Find the total sales income.",
     "answer": "1260",
     "answerUnit": "£",
@@ -3134,12 +2812,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A sports club buys 17 packs of 28 tennis balls. How many balls does it buy?",
     "answer": "476",
     "answerUnit": "balls",
@@ -3171,12 +2844,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "216 programmes are shared equally between 8 sellers. How many does each receive?",
     "answer": "27",
     "answerUnit": "programmes",
@@ -3208,12 +2876,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A factory fills 24 trays with 18 jars each. How many jars are there?",
     "answer": "432",
     "answerUnit": "jars",
@@ -3245,12 +2908,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A 364 cm cord is cut into 7 equal lengths. How long is each length?",
     "answer": "52",
     "answerUnit": "cm",
@@ -3282,12 +2940,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "One school trip costs £26 per student. What is the cost for 35 students?",
     "answer": "910",
     "answerUnit": "£",
@@ -3319,12 +2972,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A £288 prize is shared equally by 9 winners. How much does each get?",
     "answer": "32",
     "answerUnit": "£",
@@ -3356,12 +3004,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q7",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A printer makes 38 labels each minute. How many does it make in 12 minutes?",
     "answer": "456",
     "answerUnit": "labels",
@@ -3393,12 +3036,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q8",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop places 328 cans equally on 8 shelves. How many are on each shelf?",
     "answer": "41",
     "answerUnit": "cans",
@@ -3430,12 +3068,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q9",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A theatre has 23 rows of 34 seats. How many seats are there?",
     "answer": "782",
     "answerUnit": "seats",
@@ -3467,12 +3100,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q10",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A 315 litre tank fills 7 identical empty containers equally. How many litres go in each?",
     "answer": "45",
     "answerUnit": "litres",
@@ -3504,12 +3132,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q11",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A charity buys 16 boxes containing 27 notebooks each. How many notebooks is this?",
     "answer": "432",
     "answerUnit": "notebooks",
@@ -3541,12 +3164,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C1-Q12",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A £392 bill is shared equally by 7 people. How much does each pay?",
     "answer": "56",
     "answerUnit": "£",
@@ -3578,12 +3196,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A bakery packs 283 biscuits in boxes of 8. How many completely full boxes can it make?",
     "answer": "35",
     "answerUnit": "boxes",
@@ -3609,7 +3222,9 @@
         "title": "Answer the question in context",
         "input": "35",
         "output": "35",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "boxes"
       }
     ],
@@ -3622,12 +3237,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "119 visitors need boats holding 8 visitors each. How many boats are needed?",
     "answer": "15",
     "answerUnit": "boats",
@@ -3653,7 +3263,9 @@
         "title": "Answer the question in context",
         "input": "14 + 1",
         "output": "15",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "boats"
       }
     ],
@@ -3666,12 +3278,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A 347 cm strip is cut into 15 cm lengths. How many centimetres are left?",
     "answer": "2",
     "answerUnit": "cm",
@@ -3710,12 +3317,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A £174 bill is shared equally among 8 friends. How much does each pay?",
     "answer": "21.75",
     "answerUnit": "£",
@@ -3747,12 +3349,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A cleaner earns £19 per hour. They work 26 hours one week and 7 hours the next. What are their total wages?",
     "answer": "627",
     "answerUnit": "£",
@@ -3795,12 +3392,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A photographer stores 287 photos in folders holding 24 each. How many folders are needed?",
     "answer": "12",
     "answerUnit": "folders",
@@ -3826,7 +3418,9 @@
         "title": "Answer the question in context",
         "input": "11 + 1",
         "output": "12",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "folders"
       }
     ],
@@ -3839,12 +3433,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q7",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop has 326 oranges and sells complete bags of 9. How many full bags can it make?",
     "answer": "36",
     "answerUnit": "bags",
@@ -3870,7 +3459,9 @@
         "title": "Answer the question in context",
         "input": "36",
         "output": "36",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "bags"
       }
     ],
@@ -3883,12 +3474,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q8",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A craft club makes necklaces with 16 beads each from 395 beads. How many beads remain?",
     "answer": "11",
     "answerUnit": "beads",
@@ -3927,12 +3513,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q9",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A £203 prize is split equally between 4 people. How much does each receive?",
     "answer": "50.75",
     "answerUnit": "£",
@@ -3964,12 +3545,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q10",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A machine seals 37 packets per minute. It runs for 18 minutes, then for another 7 minutes at the same rate. How many packets does it seal altogether?",
     "answer": "925",
     "answerUnit": "packets",
@@ -4012,12 +3588,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q11",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "187 guests need tables seating 8 each. What is the smallest number of tables needed?",
     "answer": "24",
     "answerUnit": "tables",
@@ -4043,7 +3614,9 @@
         "title": "Answer the question in context",
         "input": "23 + 1",
         "output": "24",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "tables"
       }
     ],
@@ -4056,12 +3629,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C2-Q12",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A farm packs 457 eggs in boxes of 12. How many full boxes can it pack?",
     "answer": "38",
     "answerUnit": "boxes",
@@ -4087,7 +3655,9 @@
         "title": "Answer the question in context",
         "input": "38",
         "output": "38",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "boxes"
       }
     ],
@@ -4100,12 +3670,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A trip needs 27 tickets at £18 each and a single £36 booking fee. Find the total cost.",
     "answer": "522",
     "answerUnit": "£",
@@ -4148,12 +3713,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "173 passengers need minibuses with 12 passenger seats each. Hire costs £58 per minibus. Find the total cost.",
     "answer": "870",
     "answerUnit": "£",
@@ -4183,7 +3743,9 @@
         "title": "Answer the question in context",
         "input": "14 + 1",
         "output": "15",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+        "note": {
+          "textRef": "round-up-groups"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -4202,12 +3764,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A club buys 26 packs of 18 drinks and serves 159 drinks. How many remain?",
     "answer": "309",
     "answerUnit": "drinks",
@@ -4249,12 +3806,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A baker has 463 cakes. Complete boxes of 8 sell for £11 each. Find the income from full boxes.",
     "answer": "627",
     "answerUnit": "£",
@@ -4284,7 +3836,9 @@
         "title": "Answer the question in context",
         "input": "57",
         "output": "57",
-        "note": "Only completely full groups count; leave the remainder out."
+        "note": {
+          "textRef": "full-groups-only"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -4303,12 +3857,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "Six friends share the cost of 27 tickets at £14 each equally. How much does each pay?",
     "answer": "63",
     "answerUnit": "£",
@@ -4351,12 +3900,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop sells 19 cartons of 24 mugs at £6 per mug. Find the total income.",
     "answer": "2736",
     "answerUnit": "£",
@@ -4399,12 +3943,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q7",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A painter charges £23 per hour for 28 hours and £95 for paint. Find the total bill.",
     "answer": "739",
     "answerUnit": "£",
@@ -4447,12 +3986,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q8",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A group needs 221 seats at tables seating 8 each. Each table costs £17 to hire. Find the hire cost.",
     "answer": "476",
     "answerUnit": "£",
@@ -4482,7 +4016,9 @@
         "title": "Answer the question in context",
         "input": "27 + 1",
         "output": "28",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+        "note": {
+          "textRef": "round-up-groups"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -4501,12 +4037,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q9",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop buys 35 boxes of 16 pencils and sells 238 pencils. How many remain?",
     "answer": "322",
     "answerUnit": "pencils",
@@ -4548,12 +4079,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q10",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A farm has 587 apples. Complete bags of 9 sell for £4 each. Find the income from full bags.",
     "answer": "260",
     "answerUnit": "£",
@@ -4583,7 +4109,9 @@
         "title": "Answer the question in context",
         "input": "65",
         "output": "65",
-        "note": "Only completely full groups count; leave the remainder out."
+        "note": {
+          "textRef": "full-groups-only"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -4602,12 +4130,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q11",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "Eight friends equally share the cost of 26 meals at £18 each. How much does each pay?",
     "answer": "58.5",
     "answerUnit": "£",
@@ -4650,12 +4173,7 @@
   },
   {
     "id": "maths:M03-WEB-PLAIN-C3-Q12",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "plain",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A group buys 34 tickets at £19 each and gets £85 off the total. How much does it pay?",
     "answer": "561",
     "answerUnit": "£",

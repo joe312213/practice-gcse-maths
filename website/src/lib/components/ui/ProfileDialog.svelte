@@ -4,16 +4,17 @@
   Main contents:
   - submit
 
-  Used By: website/src/lib/components/practice/TopicPractice.svelte
+  Used By: website/src/lib/components/practice/TopicPractice.svelte.
 
   Uses: no local module imports.
 
-  Libs: bits-ui (dialog/popover interaction).
+  Libs: bits-ui (accessible dialogs, popovers and choices), $app/paths (SvelteKit
+  navigation/route state).
 -->
 <script>
   import { Dialog } from 'bits-ui';
   import { resolve } from '$app/paths';
-  let { open = $bindable(false), chooseName, returnFocus } = $props();
+  let { open = $bindable(false), chooseName, returnFocus, onanonymous } = $props();
   let name = $state(''),
     pending = $state(null),
     message = $state(''),
@@ -30,10 +31,10 @@
    * Submit the component's current form and update feedback/focus.
    * Parameter event: DOM event supplied by the bound handler.
    */
-  function submit(event) {
+  async function submit(event) {
     event.preventDefault();
     try {
-      const result = chooseName(name, pending === name);
+      const result = await chooseName(name, pending === name);
       if (result.profile) {
         open = false;
         return;
@@ -61,7 +62,8 @@
     >
       <Dialog.Title>Your practice, your progress</Dialog.Title>
       <Dialog.Description
-        >Choose a name, or enter the student ID from your saved profile.</Dialog.Description
+        >Enter a name to keep progress beyond this visit, or use your saved student ID. A name is
+        optional.</Dialog.Description
       >
       <form id="profile-form" onsubmit={submit}>
         <label for="username">Your name or student ID</label>
@@ -79,13 +81,21 @@
               class="action-button"
               type="button"
               data-name={match}
-              onclick={() => {
-                chooseName(match);
+              onclick={async () => {
+                await chooseName(match);
                 open = false;
               }}>Use {match}</button
             >{/each}
         </div>
         <button class="action-button" type="submit">Continue</button>
+        {#if onanonymous}<button
+            class="action-button"
+            type="button"
+            onclick={() => {
+              onanonymous();
+              open = false;
+            }}>Continue without a name</button
+          >{/if}
         <Dialog.Close class="action-button" id="profile-cancel">Cancel</Dialog.Close>
       </form>
       <p>

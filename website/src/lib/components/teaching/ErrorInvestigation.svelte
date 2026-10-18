@@ -1,4 +1,19 @@
-<!-- Controlled live diagnoses; transient selection stays mounted while session drafts change. -->
+<!--
+  Purpose: Controlled live diagnoses; transient selection stays mounted while session drafts
+  change.
+
+  Main contents:
+  - toggle, remove, record.
+
+  Used By: website/src/lib/components/practice/AnswerForm.svelte.
+
+  Uses: website/src/lib/components/teaching/InvestigationWorking.svelte,
+  website/src/lib/components/ui/WrappingSelect.svelte,
+  website/src/lib/components/teaching/MathText.svelte,
+  website/src/lib/application/error-working.mjs.
+
+  Libs: svelte (component state, lifecycle and transitions).
+-->
 <script>
   import { tick } from 'svelte';
   import InvestigationWorking from './InvestigationWorking.svelte';

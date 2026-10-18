@@ -5,11 +5,16 @@
  * - run
  * - changed
  *
- * Used By: Verification command entry points.
+ * Used By: the documented command below.
  *
  * Uses: no local module imports.
  *
- * Libs: node:fs (file access), node:child_process (Git/build subprocesses), node:url, node:path (filesystem paths).
+ * Libs: node:fs (filesystem reads/watchers), node:child_process (Git and verification
+ * subprocesses), node:url (module/file URL conversion), node:path (filesystem path resolution).
+ *
+ * Usage and output: From website/: npm run verify:watch, only when ongoing verification is
+ * requested. Watches maintained inputs and serialises verify-changed runs; stop with Ctrl-C. The
+ * child verifier owns logs/cache/build writes.
  */
 import { watch } from 'node:fs';
 import { spawn } from 'node:child_process';

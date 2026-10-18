@@ -1,4 +1,19 @@
-/** Explicit file writes must reject outside edits and propagate failed writes. */
+/**
+ * Purpose: Explicit file writes must reject outside edits and propagate failed writes.
+ *
+ * Main contents:
+ * - saving a known version succeeds, an outside update never gets overwritten; oversized input
+ *   and a failed write are not reported as saved; remembered-file permission is renewed before
+ *   the first read; directory setup reuses Maths and never removes or overwrites existing user
+ *   files; folder creation failures after selection are visible even for AbortError.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/src/lib/adapters/progress-file.mjs,
+ * website/src/lib/domain/progress-transfer.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import test from "node:test";
 import assert from "node:assert/strict";
 import {

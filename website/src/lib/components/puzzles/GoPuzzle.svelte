@@ -4,11 +4,13 @@
   Main contents:
   - Board rendering, binding disposal and assistance callbacks.
 
-  Used By: PuzzlePlayer.
+  Used By: website/src/lib/components/puzzles/PuzzlePlayer.svelte.
 
-  Uses: No local modules.
+  Uses: no local module imports.
 
-  Libs: Svelte tick for DOM updates; @subject-apps/puzzles render, boards and evaluation APIs for Go controls and checking.
+  Libs: svelte (component state, lifecycle and transitions), @subject-apps/puzzles/render
+  (shared puzzle package render), @subject-apps/puzzles/boards (shared puzzle package boards),
+  @subject-apps/puzzles/evaluation (shared puzzle package evaluation).
 -->
 <script>
   import { tick } from 'svelte';

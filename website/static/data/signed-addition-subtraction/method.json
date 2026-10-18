@@ -5,23 +5,27 @@
       "aim": "Add and subtract positive integers, including crossing zero.",
       "steps": [
         [
+          "Write the calculation, putting brackets around any negative number that follows an operation. Separate each ",
           {
             "concept": "number-and-operation",
-            "text": "Read the signs"
-          }
+            "text": "number sign and operation"
+          },
+          ". If using a number line, draw it with 0 and enough labelled places in both directions, then mark the starting number."
         ],
         [
           {
             "concept": "subtract-negative",
             "text": "Rewrite subtraction"
-          }
+          },
+          " as addition of the opposite number: subtracting a positive moves left, while subtracting a negative moves right. For example, 4 − (−3) becomes 4 + 3."
         ],
-        "Calculate",
+        "Work from left to right through addition and subtraction. From your current value, move right when adding a positive number and left when adding a negative; keep the sign of each intermediate result.",
         [
           {
             "concept": "inverse-check",
             "text": "Check by undoing"
-          }
+          },
+          ": reverse the last operation from your answer to recover the previous value. Keep each number’s sign when checking, including any move across zero."
         ]
       ]
     },
@@ -30,23 +34,27 @@
         "aim": "Add and subtract negative integers; distinguish the operation from the signed number.",
         "steps": [
           [
+            "Write the calculation, putting brackets around any negative number that follows an operation. Separate each ",
             {
               "concept": "number-and-operation",
-              "text": "Read the signs"
-            }
+              "text": "number sign and operation"
+            },
+            ". If using a number line, draw it with 0 and enough labelled places in both directions, then mark the starting number."
           ],
           [
             {
               "concept": "subtract-negative",
               "text": "Rewrite subtraction"
-            }
+            },
+            " as addition of the opposite number: subtracting a positive moves left, while subtracting a negative moves right. For example, 4 − (−3) becomes 4 + 3."
           ],
-          "Calculate",
+          "Work from left to right through addition and subtraction. From your current value, move right when adding a positive number and left when adding a negative; keep the sign of each intermediate result.",
           [
             {
               "concept": "inverse-check",
               "text": "Check by undoing"
-            }
+            },
+            ": reverse the last operation from your answer to recover the previous value. Keep each number’s sign when checking, including any move across zero."
           ]
         ]
       },
@@ -54,23 +62,27 @@
         "aim": "Combine two signed additions or subtractions, keeping intermediate results.",
         "steps": [
           [
+            "Write the calculation, putting brackets around any negative number that follows an operation. Separate each ",
             {
               "concept": "number-and-operation",
-              "text": "Read the signs"
-            }
+              "text": "number sign and operation"
+            },
+            ". If using a number line, draw it with 0 and enough labelled places in both directions, then mark the starting number."
           ],
           [
             {
               "concept": "subtract-negative",
               "text": "Rewrite subtraction"
-            }
+            },
+            " as addition of the opposite number: subtracting a positive moves left, while subtracting a negative moves right. For example, 4 − (−3) becomes 4 + 3."
           ],
-          "Calculate",
+          "Work from left to right through addition and subtraction. From your current value, move right when adding a positive number and left when adding a negative; keep the sign of each intermediate result.",
           [
             {
               "concept": "inverse-check",
               "text": "Check by undoing"
-            }
+            },
+            ": reverse the last operation from your answer to recover the previous value. Keep each number’s sign when checking, including any move across zero."
           ]
         ]
       }
@@ -155,6 +167,22 @@
           "subtract-positive"
         ],
         "recap": 0
+      },
+      {
+        "key": "web-plain-c1-q3",
+        "name": "Add 9 to negative 6",
+        "submethods": [
+          "add-positive"
+        ],
+        "question": "maths:M13-WEB-PLAIN-C1-Q3"
+      },
+      {
+        "key": "web-plain-c1-q4",
+        "name": "Subtract 12 from positive 5",
+        "submethods": [
+          "subtract-positive"
+        ],
+        "question": "maths:M13-WEB-PLAIN-C1-Q4"
       }
     ],
     "build": [
@@ -173,6 +201,22 @@
           "subtract-negative"
         ],
         "recap": 1
+      },
+      {
+        "key": "web-plain-c2-q3",
+        "name": "Add negative 7 to positive 4",
+        "submethods": [
+          "add-negative"
+        ],
+        "question": "maths:M13-WEB-PLAIN-C2-Q3"
+      },
+      {
+        "key": "web-plain-c2-q4",
+        "name": "Subtract negative 6 from negative 8",
+        "submethods": [
+          "subtract-negative"
+        ],
+        "question": "maths:M13-WEB-PLAIN-C2-Q4"
       }
     ],
     "confidence": [
@@ -191,6 +235,22 @@
           "linked-signs"
         ],
         "recap": 2
+      },
+      {
+        "key": "web-plain-c3-q1",
+        "name": "Add a positive then subtract a negative",
+        "submethods": [
+          "linked-signs"
+        ],
+        "question": "maths:M13-WEB-PLAIN-C3-Q1"
+      },
+      {
+        "key": "web-plain-c3-q4",
+        "name": "Add two negative numbers in sequence",
+        "submethods": [
+          "linked-signs"
+        ],
+        "question": "maths:M13-WEB-PLAIN-C3-Q4"
       }
     ]
   },

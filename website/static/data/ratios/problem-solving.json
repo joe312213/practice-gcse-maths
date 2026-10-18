@@ -63,12 +63,21 @@
             "outputUnit": "g"
           }
         ],
-        "hint": "Does 152 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-        "method_note": "Find the value of one ratio part Find the requested second amount.",
+        "hint": {
+          "textRef": "match-known-quantity",
+          "values": {
+            "amount": "152"
+          }
+        },
+        "method_note": {
+          "textRef": "find-requested-share"
+        },
         "check": "One ratio part is 19. The two quantities are 57 and 95, in the named order. Check their total against the given amount, then check you answered the requested question.",
         "wrong": "760/3",
         "error_note": "The known total matches 8 parts, not 3. Find one part before scaling to the requested quantity.",
-        "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+        "source": {
+          "textRef": "question-source"
+        },
         "operationCount": 3,
         "ratioModel": {
           "a": 3,
@@ -161,12 +170,19 @@
             "outputUnit": "g"
           }
         ],
-        "hint": "Does 190 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+        "hint": {
+          "textRef": "match-known-quantity",
+          "values": {
+            "amount": "190"
+          }
+        },
         "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
         "check": "One ratio part is 19. The two quantities are 76 and 114, in the named order. Check their total against the given amount, then check you answered the requested question.",
         "wrong": "285",
         "error_note": "The known total matches 10 parts, not 4. Find one part before scaling to the requested quantity.",
-        "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+        "source": {
+          "textRef": "question-source"
+        },
         "operationCount": 4,
         "ratioModel": {
           "a": 4,
@@ -260,11 +276,15 @@
           }
         ],
         "hint": "Before considering the percentage saved, match the given total of £128 to its ratio parts. Find the second named quantity first.",
-        "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+        "method_note": {
+          "textRef": "linked-ratio-method"
+        },
         "check": "The original quantities are £48 and £80. Check their sum against the given £128. Divide Ben’s share by 4 to find 25%. The final answer is £20.",
         "wrong": "80",
         "error_note": "£80 is only the intermediate ratio amount. Divide Ben’s share by 4 to find 25%.",
-        "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+        "source": {
+          "textRef": "linked-source"
+        },
         "operationCount": 4,
         "ratioModel": {
           "a": 3,
@@ -325,12 +345,7 @@
   "questions": [
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q1",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red paint to white paint is 2 : 3. There is 28 litres of red paint. Find the amount of white paint.",
       "answer": "42",
       "answerUnit": "litres",
@@ -371,12 +386,21 @@
           "outputUnit": "litres"
         }
       ],
-      "hint": "Does 28 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "28"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 14. The two quantities are 28 and 42, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "84/5",
       "error_note": "The known first matches 2 parts, not 5. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 2,
       "ratioModel": {
         "a": 2,
@@ -405,12 +429,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q2",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of flour to sugar is 3 : 5. There is 30 g more sugar than flour. Find the mass of sugar.",
       "answer": "75",
       "answerUnit": "g",
@@ -451,12 +470,21 @@
           "outputUnit": "g"
         }
       ],
-      "hint": "Does 30 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "30"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 15. The two quantities are 45 and 75, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "50",
       "error_note": "The known difference matches 2 parts, not 3. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 3,
@@ -485,12 +513,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q3",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "Travelling time and resting time are in the ratio 2 : 5. Together they take 112 minutes. How many minutes are spent resting?",
       "answer": "80",
       "answerUnit": "minutes",
@@ -531,12 +554,21 @@
           "outputUnit": "minutes"
         }
       ],
-      "hint": "Does 112 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "112"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 16. The two quantities are 32 and 80, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "280",
       "error_note": "The known total matches 7 parts, not 2. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 2,
@@ -565,12 +597,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q4",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red beads to blue beads is 5 : 7. There are 85 red beads. How many blue beads are there?",
       "answer": "119",
       "answerUnit": "beads",
@@ -611,12 +638,21 @@
           "outputUnit": "beads"
         }
       ],
-      "hint": "Does 85 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "85"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 17. The two quantities are 85 and 119, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "595/12",
       "error_note": "The known first matches 5 parts, not 12. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 2,
       "ratioModel": {
         "a": 5,
@@ -645,12 +681,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q5",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of the length of ribbon A to the length of ribbon B is 3 : 7. Ribbon B is 72 cm longer than ribbon A. Find the length of ribbon B.",
       "answer": "126",
       "answerUnit": "cm",
@@ -691,12 +722,21 @@
           "outputUnit": "cm"
         }
       ],
-      "hint": "Does 72 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "72"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 18. The two quantities are 54 and 126, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "168",
       "error_note": "The known difference matches 4 parts, not 3. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 3,
@@ -725,12 +765,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q6",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "Ada and Ben share some money in the ratio 4 : 7. They share £209 altogether. How much does Ben receive?",
       "answer": "133",
       "answerUnit": "£",
@@ -771,12 +806,21 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Does 209 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "209"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 19. The two quantities are 76 and 133, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "1463/4",
       "error_note": "The known total matches 11 parts, not 4. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 4,
@@ -805,12 +849,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q7",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red paint to white paint is 2 : 3. There is 15 litres more white paint than red paint. Find the amount of white paint.",
       "answer": "45",
       "answerUnit": "litres",
@@ -851,12 +890,21 @@
           "outputUnit": "litres"
         }
       ],
-      "hint": "Does 15 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "15"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 15. The two quantities are 30 and 45, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "45/2",
       "error_note": "The known difference matches 1 part, not 2. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 2,
@@ -885,12 +933,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q8",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of flour to sugar is 3 : 5. The total is 128 g. Find the mass of sugar.",
       "answer": "80",
       "answerUnit": "g",
@@ -931,12 +974,21 @@
           "outputUnit": "g"
         }
       ],
-      "hint": "Does 128 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "128"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 16. The two quantities are 48 and 80, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "640/3",
       "error_note": "The known total matches 8 parts, not 3. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 3,
@@ -965,12 +1017,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q9",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "Travelling time and resting time are in the ratio 2 : 5. The travelling time is 34 minutes. How many minutes are spent resting?",
       "answer": "85",
       "answerUnit": "minutes",
@@ -1011,12 +1058,21 @@
           "outputUnit": "minutes"
         }
       ],
-      "hint": "Does 34 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "34"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 17. The two quantities are 34 and 85, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "170/7",
       "error_note": "The known first matches 2 parts, not 7. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 2,
       "ratioModel": {
         "a": 2,
@@ -1045,12 +1101,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q10",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red beads to blue beads is 5 : 7. There are 36 more blue beads than red beads. How many blue beads are there?",
       "answer": "126",
       "answerUnit": "beads",
@@ -1091,12 +1142,21 @@
           "outputUnit": "beads"
         }
       ],
-      "hint": "Does 36 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "36"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 18. The two quantities are 90 and 126, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "252/5",
       "error_note": "The known difference matches 2 parts, not 5. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 5,
@@ -1125,12 +1185,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q11",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of the length of ribbon A to the length of ribbon B is 3 : 7. The total is 190 cm. Find the length of ribbon B.",
       "answer": "133",
       "answerUnit": "cm",
@@ -1171,12 +1226,21 @@
           "outputUnit": "cm"
         }
       ],
-      "hint": "Does 190 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "190"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 19. The two quantities are 57 and 133, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "1330/3",
       "error_note": "The known total matches 10 parts, not 3. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 3,
@@ -1205,12 +1269,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q12",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "Ada and Ben share some money in the ratio 4 : 7. Ada receives £80. How much does Ben receive?",
       "answer": "140",
       "answerUnit": "£",
@@ -1251,12 +1310,21 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Does 80 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "80"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 20. The two quantities are 80 and 140, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "560/11",
       "error_note": "The known first matches 4 parts, not 11. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 2,
       "ratioModel": {
         "a": 4,
@@ -1285,12 +1353,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q13",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red paint to white paint is 2 : 3. The total is 80 litres. Find the amount of white paint.",
       "answer": "48",
       "answerUnit": "litres",
@@ -1331,12 +1394,21 @@
           "outputUnit": "litres"
         }
       ],
-      "hint": "Does 80 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "80"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 16. The two quantities are 32 and 48, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "120",
       "error_note": "The known total matches 5 parts, not 2. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 2,
@@ -1365,12 +1437,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q14",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of flour to sugar is 3 : 5. There is 51 g of flour. Find the mass of sugar.",
       "answer": "85",
       "answerUnit": "g",
@@ -1411,12 +1478,21 @@
           "outputUnit": "g"
         }
       ],
-      "hint": "Does 51 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "51"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 17. The two quantities are 51 and 85, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "255/8",
       "error_note": "The known first matches 3 parts, not 8. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 2,
       "ratioModel": {
         "a": 3,
@@ -1445,12 +1521,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q15",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "Travelling time and resting time are in the ratio 2 : 5. The resting time is 54 minutes longer than the travelling time. How many minutes are spent resting?",
       "answer": "90",
       "answerUnit": "minutes",
@@ -1491,12 +1562,21 @@
           "outputUnit": "minutes"
         }
       ],
-      "hint": "Does 54 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "54"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 18. The two quantities are 36 and 90, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "135",
       "error_note": "The known difference matches 3 parts, not 2. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 2,
@@ -1525,12 +1605,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q16",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red beads to blue beads is 5 : 7. The total is 228 beads. How many blue beads are there?",
       "answer": "133",
       "answerUnit": "beads",
@@ -1571,12 +1646,21 @@
           "outputUnit": "beads"
         }
       ],
-      "hint": "Does 228 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "228"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 19. The two quantities are 95 and 133, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "1596/5",
       "error_note": "The known total matches 12 parts, not 5. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 5,
@@ -1605,12 +1689,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q17",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of the length of ribbon A to the length of ribbon B is 3 : 7. Ribbon A is 60 cm long. Find the length of ribbon B.",
       "answer": "140",
       "answerUnit": "cm",
@@ -1651,12 +1730,21 @@
           "outputUnit": "cm"
         }
       ],
-      "hint": "Does 60 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "60"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 20. The two quantities are 60 and 140, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "42",
       "error_note": "The known first matches 3 parts, not 10. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 2,
       "ratioModel": {
         "a": 3,
@@ -1685,12 +1773,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C1-Q18",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "Ada and Ben share some money in the ratio 4 : 7. Ben receives £63 more than Ada. How much does Ben receive?",
       "answer": "147",
       "answerUnit": "£",
@@ -1731,12 +1814,21 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Does 63 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-      "method_note": "Find the value of one ratio part Find the requested second amount.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "63"
+        }
+      },
+      "method_note": {
+        "textRef": "find-requested-share"
+      },
       "check": "One ratio part is 21. The two quantities are 84 and 147, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "441/4",
       "error_note": "The known difference matches 3 parts, not 4. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 4,
@@ -1765,12 +1857,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q1",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red paint to white paint is 3 : 4. There is 42 litres of red paint. Find the amount of white paint. Then find the total for 2 identical batches.",
       "answer": "112",
       "answerUnit": "litres",
@@ -1822,12 +1909,19 @@
           "outputUnit": "litres"
         }
       ],
-      "hint": "Does 42 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "42"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 14. The two quantities are 42 and 56, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "24",
       "error_note": "The known first matches 3 parts, not 7. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 3,
@@ -1856,12 +1950,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q2",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of flour to sugar is 4 : 6. There is 30 g more sugar than flour. Find the mass of sugar. Then find the total for 3 identical batches.",
       "answer": "270",
       "answerUnit": "g",
@@ -1913,12 +2002,19 @@
           "outputUnit": "g"
         }
       ],
-      "hint": "Does 30 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "30"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 15. The two quantities are 60 and 90, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "45",
       "error_note": "The known difference matches 2 parts, not 4. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 4,
@@ -1947,12 +2043,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q3",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "Travelling time and resting time are in the ratio 3 : 6. Together they take 144 minutes. How many minutes are spent resting? Then find the total for 2 journeys.",
       "answer": "192",
       "answerUnit": "minutes",
@@ -2004,12 +2095,19 @@
           "outputUnit": "minutes"
         }
       ],
-      "hint": "Does 144 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "144"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 16. The two quantities are 48 and 96, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "288",
       "error_note": "The known total matches 9 parts, not 3. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 3,
@@ -2038,12 +2136,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q4",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red beads to blue beads is 6 : 8. There are 102 red beads. How many blue beads are there? Then find the total for 3 identical batches.",
       "answer": "408",
       "answerUnit": "beads",
@@ -2095,12 +2188,19 @@
           "outputUnit": "beads"
         }
       ],
-      "hint": "Does 102 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "102"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 17. The two quantities are 102 and 136, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "408/7",
       "error_note": "The known first matches 6 parts, not 14. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 6,
@@ -2129,12 +2229,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q5",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of the length of ribbon A to the length of ribbon B is 4 : 8. Ribbon B is 72 cm longer than ribbon A. Find the length of ribbon B. Then find the total for 2 identical batches.",
       "answer": "288",
       "answerUnit": "cm",
@@ -2186,12 +2281,19 @@
           "outputUnit": "cm"
         }
       ],
-      "hint": "Does 72 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "72"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 18. The two quantities are 72 and 144, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "48",
       "error_note": "The known difference matches 4 parts, not 12. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 4,
@@ -2220,12 +2322,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q6",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "Ada and Ben share some money in the ratio 5 : 8. They share £247 altogether. How much does Ben receive? Then find the total for 3 equal payments to Ben.",
       "answer": "456",
       "answerUnit": "£",
@@ -2277,12 +2374,19 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Does 247 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "247"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 19. The two quantities are 95 and 152, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "1976/5",
       "error_note": "The known total matches 13 parts, not 5. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 5,
@@ -2311,12 +2415,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q7",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red paint to white paint is 3 : 4. There is 15 litres more white paint than red paint. Find the amount of white paint. Then find the total for 2 identical batches.",
       "answer": "120",
       "answerUnit": "litres",
@@ -2368,12 +2467,19 @@
           "outputUnit": "litres"
         }
       ],
-      "hint": "Does 15 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "15"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 15. The two quantities are 45 and 60, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "20",
       "error_note": "The known difference matches 1 part, not 3. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 3,
@@ -2402,12 +2508,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q8",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of flour to sugar is 4 : 6. The total is 160 g. Find the mass of sugar. Then find the total for 3 identical batches.",
       "answer": "288",
       "answerUnit": "g",
@@ -2459,12 +2560,19 @@
           "outputUnit": "g"
         }
       ],
-      "hint": "Does 160 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "160"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 16. The two quantities are 64 and 96, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "240",
       "error_note": "The known total matches 10 parts, not 4. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 4,
@@ -2493,12 +2601,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q9",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "Travelling time and resting time are in the ratio 3 : 6. The travelling time is 51 minutes. How many minutes are spent resting? Then find the total for 2 journeys.",
       "answer": "204",
       "answerUnit": "minutes",
@@ -2550,12 +2653,19 @@
           "outputUnit": "minutes"
         }
       ],
-      "hint": "Does 51 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "51"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 17. The two quantities are 51 and 102, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "34",
       "error_note": "The known first matches 3 parts, not 9. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 3,
@@ -2584,12 +2694,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q10",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red beads to blue beads is 6 : 8. There are 36 more blue beads than red beads. How many blue beads are there? Then find the total for 3 identical batches.",
       "answer": "432",
       "answerUnit": "beads",
@@ -2641,12 +2746,19 @@
           "outputUnit": "beads"
         }
       ],
-      "hint": "Does 36 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "36"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 18. The two quantities are 108 and 144, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "48",
       "error_note": "The known difference matches 2 parts, not 6. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 6,
@@ -2675,12 +2787,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q11",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of the length of ribbon A to the length of ribbon B is 4 : 8. The total is 228 cm. Find the length of ribbon B. Then find the total for 2 identical batches.",
       "answer": "304",
       "answerUnit": "cm",
@@ -2732,12 +2839,19 @@
           "outputUnit": "cm"
         }
       ],
-      "hint": "Does 228 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "228"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 19. The two quantities are 76 and 152, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "456",
       "error_note": "The known total matches 12 parts, not 4. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 4,
@@ -2766,12 +2880,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q12",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "Ada and Ben share some money in the ratio 5 : 8. Ada receives £100. How much does Ben receive? Then find the total for 3 equal payments to Ben.",
       "answer": "480",
       "answerUnit": "£",
@@ -2823,12 +2932,19 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Does 100 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "100"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 20. The two quantities are 100 and 160, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "800/13",
       "error_note": "The known first matches 5 parts, not 13. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 5,
@@ -2857,12 +2973,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q13",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red paint to white paint is 3 : 4. The total is 112 litres. Find the amount of white paint. Then find the total for 2 identical batches.",
       "answer": "128",
       "answerUnit": "litres",
@@ -2914,12 +3025,19 @@
           "outputUnit": "litres"
         }
       ],
-      "hint": "Does 112 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "112"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 16. The two quantities are 48 and 64, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "448/3",
       "error_note": "The known total matches 7 parts, not 3. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 3,
@@ -2948,12 +3066,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q14",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of flour to sugar is 4 : 6. There is 68 g of flour. Find the mass of sugar. Then find the total for 3 identical batches.",
       "answer": "306",
       "answerUnit": "g",
@@ -3005,12 +3118,19 @@
           "outputUnit": "g"
         }
       ],
-      "hint": "Does 68 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "68"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 17. The two quantities are 68 and 102, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "204/5",
       "error_note": "The known first matches 4 parts, not 10. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 4,
@@ -3039,12 +3159,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q15",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "Travelling time and resting time are in the ratio 3 : 6. The resting time is 54 minutes longer than the travelling time. How many minutes are spent resting? Then find the total for 2 journeys.",
       "answer": "216",
       "answerUnit": "minutes",
@@ -3096,12 +3211,19 @@
           "outputUnit": "minutes"
         }
       ],
-      "hint": "Does 54 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "54"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 18. The two quantities are 54 and 108, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "36",
       "error_note": "The known difference matches 3 parts, not 9. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 3,
@@ -3130,12 +3252,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q16",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of red beads to blue beads is 6 : 8. The total is 266 beads. How many blue beads are there? Then find the total for 3 identical batches.",
       "answer": "456",
       "answerUnit": "beads",
@@ -3187,12 +3304,19 @@
           "outputUnit": "beads"
         }
       ],
-      "hint": "Does 266 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "266"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 19. The two quantities are 114 and 152, in the named order. Check their total against the given amount, then check you answered the requested question.",
       "wrong": "1064/3",
       "error_note": "The known total matches 14 parts, not 6. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 6,
@@ -3221,12 +3345,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q17",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The ratio of the length of ribbon A to the length of ribbon B is 4 : 8. Ribbon A is 80 cm long. Find the length of ribbon B. Then find the total for 2 identical batches.",
       "answer": "320",
       "answerUnit": "cm",
@@ -3278,12 +3397,19 @@
           "outputUnit": "cm"
         }
       ],
-      "hint": "Does 80 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "80"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 20. The two quantities are 80 and 160, in the named order. Check their first against the given amount, then check you answered the requested question.",
       "wrong": "160/3",
       "error_note": "The known first matches 4 parts, not 12. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 4,
@@ -3312,12 +3438,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C2-Q18",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "Ada and Ben share some money in the ratio 5 : 8. Ben receives £63 more than Ada. How much does Ben receive? Then find the total for 3 equal payments to Ben.",
       "answer": "504",
       "answerUnit": "£",
@@ -3369,12 +3490,19 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Does 63 describe the total, one named amount or the difference? Match it to the correct number of parts.",
+      "hint": {
+        "textRef": "match-known-quantity",
+        "values": {
+          "amount": "63"
+        }
+      },
       "method_note": "Find the value of one ratio part Find the requested second amount Scale to all the batches.",
       "check": "One ratio part is 21. The two quantities are 105 and 168, in the named order. Check their difference against the given amount, then check you answered the requested question.",
       "wrong": "504/5",
       "error_note": "The known difference matches 3 parts, not 5. Find one part before scaling to the requested quantity.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+      "source": {
+        "textRef": "question-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 5,
@@ -3403,12 +3531,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q1",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Red paint and white paint are in the ratio 4 : 7. There are 56 litres of red paint. White paint costs £3 per litre. What is the cost of the white paint?",
       "answer": "294",
       "answerUnit": "£",
@@ -3450,15 +3573,21 @@
           "input": "98 × 3",
           "output": "294",
           "outputUnit": "£",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the price per litre, match the given first of 56 litres to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 56 litres and 98 litres. Check their first amount against the given 56 litres. Multiply the ratio amount by the stated rate or number of batches. The final answer is £294.",
       "wrong": "98",
       "error_note": "98 litres is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 4,
@@ -3510,12 +3639,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q2",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "For one batch, flour and sugar are in the ratio 5 : 7. There are 30 g more sugar than flour. The same recipe is used for 4 identical batches. What total mass of sugar is needed?",
       "answer": "420",
       "answerUnit": "g",
@@ -3564,15 +3688,21 @@
           "input": "105 × 4",
           "output": "420",
           "outputUnit": "g",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the number of batches, match the given difference of 30 g to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 75 g and 105 g. Check their difference against the given 30 g. Multiply the ratio amount by the stated rate or number of batches. The final answer is 420 g.",
       "wrong": "105",
       "error_note": "105 g is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 5,
@@ -3631,12 +3761,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q3",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Travelling time and resting time on a journey are in the ratio 4 : 7. The journey takes 176 minutes including rest. An extra 8-minute rest is added after this journey. What is the total resting time including the extra rest?",
       "answer": "120",
       "answerUnit": "minutes",
@@ -3685,15 +3810,21 @@
           "input": "112 + 8",
           "output": "120",
           "outputUnit": "minutes",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the extra rest, match the given total of 176 minutes to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 64 minutes and 112 minutes. Check their sum against the given 176 minutes. Add the extra rest to the resting time, not the travelling time. The final answer is 120 minutes.",
       "wrong": "112",
       "error_note": "112 minutes is only the intermediate ratio amount. Add the extra rest to the resting time, not the travelling time.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 4,
@@ -3752,12 +3883,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q4",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Red beads and blue beads are in the ratio 7 : 9. There are 119 red beads. Then 11 blue beads are used. How many blue beads remain?",
       "answer": "142",
       "answerUnit": "beads",
@@ -3799,15 +3925,21 @@
           "input": "153 − 11",
           "output": "142",
           "outputUnit": "beads",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the beads used, match the given first of 119 beads to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 119 beads and 153 beads. Check their first amount against the given 119 beads. Subtract the used blue beads from the original blue-bead count. The final answer is 142 beads.",
       "wrong": "153",
       "error_note": "153 beads is only the intermediate ratio amount. Subtract the used blue beads from the original blue-bead count.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 7,
@@ -3859,12 +3991,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q5",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "The lengths of ribbon A and ribbon B are in the ratio 5 : 9. Ribbon B is 72 cm longer than ribbon A. What is the length of ribbon B in metres?",
       "answer": "1.62",
       "answerUnit": "m",
@@ -3913,15 +4040,21 @@
           "input": "162 ÷ 100",
           "output": "1.62",
           "outputUnit": "m",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the change of units, match the given difference of 72 cm to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 90 cm and 162 cm. Check their difference against the given 72 cm. Divide the centimetre length by 100 to express it in metres. The final answer is 1.62 m.",
       "wrong": "162",
       "error_note": "162 cm is only the intermediate ratio amount. Divide the centimetre length by 100 to express it in metres.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 5,
@@ -3980,12 +4113,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q6",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Ada and Ben share money in the ratio 6 : 9. They share £285 altogether. Ben saves 20% of his share. How much does he save?",
       "answer": "34.2",
       "answerUnit": "£",
@@ -4038,11 +4166,15 @@
         }
       ],
       "hint": "Before considering the percentage saved, match the given total of £285 to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are £114 and £171. Check their sum against the given £285. Divide Ben’s share by 5 to find 20%. The final answer is £34.2.",
       "wrong": "171",
       "error_note": "£171 is only the intermediate ratio amount. Divide Ben’s share by 5 to find 20%.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 6,
@@ -4101,12 +4233,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q7",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Red paint and white paint are in the ratio 4 : 7. There are 45 litres more white paint than red paint. White paint costs £5 per litre. What is the cost of the white paint?",
       "answer": "525",
       "answerUnit": "£",
@@ -4155,15 +4282,21 @@
           "input": "105 × 5",
           "output": "525",
           "outputUnit": "£",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the price per litre, match the given difference of 45 litres to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 60 litres and 105 litres. Check their difference against the given 45 litres. Multiply the ratio amount by the stated rate or number of batches. The final answer is £525.",
       "wrong": "105",
       "error_note": "105 litres is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 4,
@@ -4222,12 +4355,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q8",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "For one batch, flour and sugar are in the ratio 5 : 7. The mixture weighs 192 g. The same recipe is used for 4 identical batches. What total mass of sugar is needed?",
       "answer": "448",
       "answerUnit": "g",
@@ -4276,15 +4404,21 @@
           "input": "112 × 4",
           "output": "448",
           "outputUnit": "g",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the number of batches, match the given total of 192 g to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 80 g and 112 g. Check their sum against the given 192 g. Multiply the ratio amount by the stated rate or number of batches. The final answer is 448 g.",
       "wrong": "112",
       "error_note": "112 g is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 5,
@@ -4343,12 +4477,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q9",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Travelling time and resting time on a journey are in the ratio 4 : 7. The travelling time is 68 minutes. An extra 6-minute rest is added after this journey. What is the total resting time including the extra rest?",
       "answer": "125",
       "answerUnit": "minutes",
@@ -4390,15 +4519,21 @@
           "input": "119 + 6",
           "output": "125",
           "outputUnit": "minutes",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the extra rest, match the given first of 68 minutes to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 68 minutes and 119 minutes. Check their first amount against the given 68 minutes. Add the extra rest to the resting time, not the travelling time. The final answer is 125 minutes.",
       "wrong": "119",
       "error_note": "119 minutes is only the intermediate ratio amount. Add the extra rest to the resting time, not the travelling time.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 4,
@@ -4450,12 +4585,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q10",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Red beads and blue beads are in the ratio 7 : 9. There are 36 more blue beads than red beads. Then 8 blue beads are used. How many blue beads remain?",
       "answer": "154",
       "answerUnit": "beads",
@@ -4504,15 +4634,21 @@
           "input": "162 − 8",
           "output": "154",
           "outputUnit": "beads",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the beads used, match the given difference of 36 beads to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 126 beads and 162 beads. Check their difference against the given 36 beads. Subtract the used blue beads from the original blue-bead count. The final answer is 154 beads.",
       "wrong": "162",
       "error_note": "162 beads is only the intermediate ratio amount. Subtract the used blue beads from the original blue-bead count.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 7,
@@ -4571,12 +4707,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q11",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "The lengths of ribbon A and ribbon B are in the ratio 5 : 9. The combined length is 266 cm. What is the length of ribbon B in metres?",
       "answer": "1.71",
       "answerUnit": "m",
@@ -4625,15 +4756,21 @@
           "input": "171 ÷ 100",
           "output": "1.71",
           "outputUnit": "m",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the change of units, match the given total of 266 cm to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 95 cm and 171 cm. Check their sum against the given 266 cm. Divide the centimetre length by 100 to express it in metres. The final answer is 1.71 m.",
       "wrong": "171",
       "error_note": "171 cm is only the intermediate ratio amount. Divide the centimetre length by 100 to express it in metres.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 5,
@@ -4692,12 +4829,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q12",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Ada and Ben share money in the ratio 6 : 9. Ada receives £120. Ben saves 25% of his share. How much does he save?",
       "answer": "45",
       "answerUnit": "£",
@@ -4743,11 +4875,15 @@
         }
       ],
       "hint": "Before considering the percentage saved, match the given first of £120 to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are £120 and £180. Check their first amount against the given £120. Divide Ben’s share by 4 to find 25%. The final answer is £45.",
       "wrong": "180",
       "error_note": "£180 is only the intermediate ratio amount. Divide Ben’s share by 4 to find 25%.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 6,
@@ -4799,12 +4935,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q13",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Red paint and white paint are in the ratio 4 : 7. There are 176 litres of paint altogether. White paint costs £3 per litre. What is the cost of the white paint?",
       "answer": "336",
       "answerUnit": "£",
@@ -4853,15 +4984,21 @@
           "input": "112 × 3",
           "output": "336",
           "outputUnit": "£",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the price per litre, match the given total of 176 litres to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 64 litres and 112 litres. Check their sum against the given 176 litres. Multiply the ratio amount by the stated rate or number of batches. The final answer is £336.",
       "wrong": "112",
       "error_note": "112 litres is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 4,
@@ -4920,12 +5057,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q14",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "For one batch, flour and sugar are in the ratio 5 : 7. There are 85 g of flour. The same recipe is used for 4 identical batches. What total mass of sugar is needed?",
       "answer": "476",
       "answerUnit": "g",
@@ -4967,15 +5099,21 @@
           "input": "119 × 4",
           "output": "476",
           "outputUnit": "g",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the number of batches, match the given first of 85 g to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 85 g and 119 g. Check their first amount against the given 85 g. Multiply the ratio amount by the stated rate or number of batches. The final answer is 476 g.",
       "wrong": "119",
       "error_note": "119 g is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 5,
@@ -5027,12 +5165,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q15",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Travelling time and resting time on a journey are in the ratio 4 : 7. Resting takes 54 minutes longer than travelling. An extra 12-minute rest is added after this journey. What is the total resting time including the extra rest?",
       "answer": "138",
       "answerUnit": "minutes",
@@ -5081,15 +5214,21 @@
           "input": "126 + 12",
           "output": "138",
           "outputUnit": "minutes",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the extra rest, match the given difference of 54 minutes to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 72 minutes and 126 minutes. Check their difference against the given 54 minutes. Add the extra rest to the resting time, not the travelling time. The final answer is 138 minutes.",
       "wrong": "126",
       "error_note": "126 minutes is only the intermediate ratio amount. Add the extra rest to the resting time, not the travelling time.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 4,
@@ -5148,12 +5287,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q16",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Red beads and blue beads are in the ratio 7 : 9. There are 304 beads altogether. Then 14 blue beads are used. How many blue beads remain?",
       "answer": "157",
       "answerUnit": "beads",
@@ -5202,15 +5336,21 @@
           "input": "171 − 14",
           "output": "157",
           "outputUnit": "beads",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the beads used, match the given total of 304 beads to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 133 beads and 171 beads. Check their sum against the given 304 beads. Subtract the used blue beads from the original blue-bead count. The final answer is 157 beads.",
       "wrong": "171",
       "error_note": "171 beads is only the intermediate ratio amount. Subtract the used blue beads from the original blue-bead count.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 7,
@@ -5269,12 +5409,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q17",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "The lengths of ribbon A and ribbon B are in the ratio 5 : 9. Ribbon A is 100 cm long. What is the length of ribbon B in metres?",
       "answer": "1.8",
       "answerUnit": "m",
@@ -5316,15 +5451,21 @@
           "input": "180 ÷ 100",
           "output": "1.8",
           "outputUnit": "m",
-          "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+          "note": {
+            "textRef": "finish-linked-calculation"
+          }
         }
       ],
       "hint": "Before considering the change of units, match the given first of 100 cm to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are 100 cm and 180 cm. Check their first amount against the given 100 cm. Divide the centimetre length by 100 to express it in metres. The final answer is 1.8 m.",
       "wrong": "180",
       "error_note": "180 cm is only the intermediate ratio amount. Divide the centimetre length by 100 to express it in metres.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 3,
       "ratioModel": {
         "a": 5,
@@ -5376,12 +5517,7 @@
     },
     {
       "id": "maths:M04-WEB-PROBLEM-C3-Q18",
-      "subject": "maths",
-      "topic": "M04",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "Ada and Ben share money in the ratio 6 : 9. Ben receives £63 more than Ada. Ben saves 20% of his share. How much does he save?",
       "answer": "37.8",
       "answerUnit": "£",
@@ -5434,11 +5570,15 @@
         }
       ],
       "hint": "Before considering the percentage saved, match the given difference of £63 to its ratio parts. Find the second named quantity first.",
-      "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+      "method_note": {
+        "textRef": "linked-ratio-method"
+      },
       "check": "The original quantities are £126 and £189. Check their difference against the given £63. Divide Ben’s share by 5 to find 20%. The final answer is £37.8.",
       "wrong": "189",
       "error_note": "£189 is only the intermediate ratio amount. Divide Ben’s share by 5 to find 20%.",
-      "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+      "source": {
+        "textRef": "linked-source"
+      },
       "operationCount": 4,
       "ratioModel": {
         "a": 6,

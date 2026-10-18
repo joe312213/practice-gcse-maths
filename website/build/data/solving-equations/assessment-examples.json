@@ -31,9 +31,6 @@
     "hint": "On the left, what operation would undo +6? What would remain with x?",
     "method_note": "Subtract 6 from both sides to leave x = 17.",
     "id": "maths:M10-IA-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "assessment",
     "level": 0
   },
   {
@@ -68,9 +65,6 @@
     "hint": "In 5x = 35, 5x means 5 times x. How could you find the value of one x?",
     "method_note": "Divide both sides by 5: x = 35 ÷ 5 = 7.",
     "id": "maths:M10-IA-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "assessment",
     "level": 0
   },
   {
@@ -114,9 +108,6 @@
     "hint": "On the left, what operation would undo −4? What would remain with x?",
     "method_note": "Add 4 to both sides to leave 3x = 27. Divide both sides by 3 to get x = 9.",
     "id": "maths:M10-IA-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "assessment",
     "level": 1
   },
   {
@@ -164,9 +155,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract x from both sides to leave x + 6 = 14. Subtract 6 from both sides to leave x = 8.",
     "id": "maths:M10-IA-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "assessment",
     "level": 2
   },
   {
@@ -209,10 +197,7 @@
     "method_note": "Add 7 to both sides to get 5x = 35, then divide both sides by 5.",
     "wrong": "4.2",
     "error_note": "Subtracting 7 again would give 5x = 21. Undo −7 by adding 7 to both sides.",
-    "id": "maths:M10-IA-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "assessment"
+    "id": "maths:M10-IA-Q5"
   },
   {
     "q": "3(x − 2) = x + 10",
@@ -267,9 +252,6 @@
     "method_note": "Expand to 3x − 6 = x + 10. Subtract x from both sides, add 6, then divide by 2.",
     "wrong": "6",
     "error_note": "Expanding as 3x − 2 misses the multiplication of −2 by 3. The expanded left side is 3x − 6.",
-    "id": "maths:M10-IA-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "assessment"
+    "id": "maths:M10-IA-Q6"
   }
 ]

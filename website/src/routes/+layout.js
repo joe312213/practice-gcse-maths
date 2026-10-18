@@ -4,7 +4,7 @@
  * Main contents:
  * - prerender
  *
- * Used By: SvelteKit route loading.
+ * Used By: SvelteKit route loading/prerendering.
  *
  * Uses: no local module imports.
  *

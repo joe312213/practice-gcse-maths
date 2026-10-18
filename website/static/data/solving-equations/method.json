@@ -4,21 +4,43 @@
     "default": {
       "aim": "Find the value of one x. Undo the operation attached to x, using the same operation on both sides.",
       "steps": [
+        "Write the original equation. Draw a vertical dividing line down from the middle of the equals sign, leaving room on both sides for the same operation and for a simplified equation on each new line.",
+        [
+          "Decide your ",
+          {
+            "concept": "choose-approach",
+            "text": "approach"
+          },
+          ": simplify each side, then choose an ",
+          {
+            "concept": "opposite-operation",
+            "text": "opposite operation"
+          },
+          " that brings you closer to one x. More than one path can work; if a path becomes awkward, return to the original equation and try another."
+        ],
         [
           "Choose the ",
           {
             "concept": "opposite-operation",
             "text": "opposite operation"
           },
-          " to undo what is happening to x."
+          " to undo what is happening to x.",
+          " Addition is undone by subtraction, and multiplication by division; reverse subtraction with addition and division with multiplication."
         ],
         [
-          "Do it to ",
+          "Apply your chosen operation to ",
           {
             "concept": "balance",
             "text": "both sides"
           },
-          ", then check your value in the original equation."
+          " to keep them equal. Simplify the left and right sides before deciding whether another operation is needed to leave x on its own."
+        ],
+        [
+          {
+            "concept": "substitution",
+            "text": "Substitute"
+          },
+          " your answer for every x in the original equation. Calculate both sides; they must give the same value."
         ]
       ]
     },
@@ -26,6 +48,20 @@
       "build": {
         "aim": "Leave the x-term on one side, then find the value of one x. Keep both sides equal at every step.",
         "steps": [
+          "Write the original equation. Draw a vertical dividing line down from the middle of the equals sign, leaving room on both sides for the same operation and for a simplified equation on each new line.",
+          [
+            "Decide your ",
+            {
+              "concept": "choose-approach",
+              "text": "approach"
+            },
+            ": simplify each side, then choose an ",
+            {
+              "concept": "opposite-operation",
+              "text": "opposite operation"
+            },
+            " that brings you closer to one x. More than one path can work; if a path becomes awkward, return to the original equation and try another."
+          ],
           [
             "Collect ",
             {
@@ -52,13 +88,29 @@
               "concept": "substitution",
               "text": "Substitute"
             },
-            " your value into the original equation to check it."
-          ]
+            " your value into the original equation to check it.",
+            " Replace every x with your answer and calculate both sides; they must give the same value."
+          ],
+          "After every operation, simplify the left and right sides before choosing the next step."
         ]
       },
       "confidence": {
         "aim": "Gather the x-terms on one side, then find the value of one x. Choose operations that make the equation simpler.",
         "steps": [
+          "Write the original equation. Draw a vertical dividing line down from the middle of the equals sign, leaving room on both sides for the same operation and for a simplified equation on each new line.",
+          [
+            "Decide your ",
+            {
+              "concept": "choose-approach",
+              "text": "approach"
+            },
+            ": simplify each side, then choose an ",
+            {
+              "concept": "opposite-operation",
+              "text": "opposite operation"
+            },
+            " that brings you closer to one x. More than one path can work; if a path becomes awkward, return to the original equation and try another."
+          ],
           [
             "Simplify each side. ",
             {
@@ -70,7 +122,8 @@
               "concept": "common-factor",
               "text": "common factor"
             },
-            " when that is shorter."
+            " when that is shorter.",
+            " When expanding, multiply every term inside by the outside number, keeping its sign."
           ],
           [
             "Add or subtract the same x-term on ",
@@ -88,7 +141,8 @@
             },
             " to leave one x."
           ],
-          "Check your value in the original equation, including its brackets."
+          "Check your value in the original equation, including its brackets.",
+          "After every operation, simplify the left and right sides before choosing the next step."
         ]
       }
     }
@@ -104,7 +158,9 @@
         "Add that number to both sides.",
         "Simplify to leave x."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     },
     "undo-addition": {
       "name": "Undo addition",
@@ -116,7 +172,9 @@
         "Subtract that number from both sides.",
         "Simplify to leave x."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     },
     "undo-multiplication": {
       "name": "Undo multiplication",
@@ -128,7 +186,9 @@
         "Divide both sides by the coefficient.",
         "Simplify to find one x."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     },
     "undo-division": {
       "name": "Undo division",
@@ -140,7 +200,9 @@
         "Multiply both sides by that number.",
         "Simplify to leave x."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     },
     "reversed": {
       "name": "Read an equation with x on the right",
@@ -152,7 +214,9 @@
         "Either keep the equation in this order or swap the two complete sides.",
         "Use the same inverse operation on both sides."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     },
     "two-step": {
       "name": "Undo two operations",
@@ -164,7 +228,9 @@
         "Undo the addition or subtraction on both sides.",
         "Undo multiplication by dividing both sides."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     },
     "collect": {
       "name": "Collect like terms first",
@@ -176,7 +242,9 @@
         "Combine their coefficients, keeping x.",
         "Undo the constant, then the remaining coefficient."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     },
     "two-step-division": {
       "name": "Undo an added constant and division",
@@ -188,7 +256,9 @@
         "Undo the added or subtracted constant first.",
         "Multiply both sides by the divisor."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     },
     "factor": {
       "name": "Divide out a common factor",
@@ -202,7 +272,9 @@
         "Divide every term on both sides by that factor.",
         "Solve the simpler equation."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     },
     "expand": {
       "name": "Expand brackets before balancing",
@@ -214,7 +286,9 @@
         "Multiply every bracket term by the outside coefficient, retaining signs.",
         "Collect x-terms on one side, then undo the constant and coefficient."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     },
     "both-sides": {
       "name": "Gather x-terms from both sides",
@@ -227,7 +301,9 @@
         "Undo the constant on the x side.",
         "Divide both sides by the remaining coefficient."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     },
     "divide-bracket": {
       "name": "Divide before expanding",
@@ -239,7 +315,9 @@
         "Divide both whole sides by the outside multiplier.",
         "Solve the equation inside the bracket."
       ],
-      "check": "Substitute the answer into the original equation; evaluate each side separately and check equality."
+      "check": {
+        "textRef": "substitution-check"
+      }
     }
   },
   "examples": {

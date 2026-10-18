@@ -5,7 +5,10 @@
  * - MODES
  * - nextStage
  *
- * Used By: website/src/lib/components/practice/NextStage.svelte, website/src/lib/components/practice/PracticeActivity.svelte, website/src/lib/components/practice/TopicPractice.svelte
+ * Used By: tests/problem-solving.test.mjs, website/src/lib/application/session.mjs,
+ * website/src/lib/components/practice/LearningSteps.svelte,
+ * website/src/lib/components/practice/NextStage.svelte,
+ * website/src/lib/components/practice/PracticeActivity.svelte.
  *
  * Uses: no local module imports.
  *

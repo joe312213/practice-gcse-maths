@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M12-WEB-DEMO-C1-Q1",
-    "subject": "maths",
-    "topic": "M12",
-    "type": "demo",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A coach travels 120 km at 80 km/h. Find the time in hours.",
     "answer": "3/2",
     "answerUnit": "hours",
@@ -29,12 +24,15 @@
         "outputUnit": "h"
       }
     ],
-    "hint": "Write the units beside the known distance, speed and time before choosing the formula.",
+    "hint": {
+      "textRef": "write-known-units"
+    },
     "method_note": "Divide distance by speed.",
     "check": "Reverse the calculation chain: 1.5 × 80 = 120.",
     "wrong": "9600",
-    "error_note": "Check the units and whether this question asks for distance, speed or time. Minutes and hours use a factor of 60.",
-    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "check-units-and-formula"
+    },
     "calculator": true,
     "diagram": {
       "kind": "journey",
@@ -44,17 +42,11 @@
       ],
       "stop": 0
     },
-    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time.",
     "questionPrefix": "Solve the problem"
   },
   {
     "id": "maths:M12-WEB-DEMO-C2-Q1",
-    "subject": "maths",
-    "topic": "M12",
-    "type": "demo",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A coach travels 120 km in 90 minutes. Find the speed in km/h.",
     "answer": "80",
     "answerUnit": "km/h",
@@ -89,11 +81,14 @@
       }
     ],
     "hint": "90 minutes is not 0.9 hours. There are 60 minutes in one hour.",
-    "method_note": "Find the distance travelled per minute Convert kilometres per minute to kilometres per hour.",
+    "method_note": {
+      "textRef": "convert-speed-method"
+    },
     "check": "Reverse the calculation chain: 80 ÷ 60 = {4/3}; {4/3} × 90 = 120.",
     "wrong": "10800",
-    "error_note": "Check the units and whether this question asks for distance, speed or time. Minutes and hours use a factor of 60.",
-    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "check-units-and-formula"
+    },
     "calculator": true,
     "diagram": {
       "kind": "journey",
@@ -103,17 +98,11 @@
       ],
       "stop": 0
     },
-    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time.",
     "questionPrefix": "Solve the problem"
   },
   {
     "id": "maths:M12-WEB-DEMO-C3-Q1",
-    "subject": "maths",
-    "topic": "M12",
-    "type": "demo",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A coach travels 61 km in 1 hour, then 46 km in 0.5 hours. Find the average speed for the whole journey. Give your answer to 2 decimal places.",
     "answer": "71.33",
     "answerUnit": "km/h",
@@ -159,8 +148,9 @@
     "method_note": "Find the total distance Divide by the total elapsed hours.",
     "check": "Total distance is 107 km; total elapsed time is 90/60 hours. Multiply the final speed by that time to recover approximately 107 km.",
     "wrong": "153/2",
-    "error_note": "This averages the two speeds without accounting for their different times or any stop.",
-    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "avoid-average-speeds"
+    },
     "calculator": true,
     "roundTo": 2,
     "operationCount": 3,
@@ -172,7 +162,6 @@
       ],
       "stop": 0
     },
-    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time.",
     "questionPrefix": "Solve the problem"
   }
 ]

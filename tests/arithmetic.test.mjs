@@ -1,16 +1,21 @@
-import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /**
  * Purpose: Verify arithmetic answer formats, place value, guides and real multi-topic sessions.
  *
  * Main contents:
  * - Exact answers, demo invariants, error marking and topic isolation.
  *
- * Used By: Node test runner.
+ * Used By: verify:changed logic job and Node test runner.
  *
- * Uses: arithmetic-demo, drawing-assist, engine, errors, session and published banks.
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/application/arithmetic-demo.mjs,
+ * website/src/lib/application/drawing-assist.mjs, website/src/lib/domain/engine.mjs,
+ * website/src/lib/domain/errors.mjs, website/src/lib/application/session.mjs,
+ * website/src/lib/domain/profiles.mjs, website/src/lib/domain/practice-code.mjs.
  *
- * Libs: Node test/assert/fs.
+ * Libs: node:test (test runner), node:assert/strict (assertions), node:fs/promises (asynchronous
+ * file access).
  */
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";

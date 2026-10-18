@@ -1,5 +1,6 @@
 /**
- * Purpose: Map source families to verification jobs and fingerprint their inputs for cached selection.
+ * Purpose: Map source families to verification jobs and fingerprint their inputs for cached
+ * selection.
  *
  * Main contents:
  * - jobs
@@ -9,11 +10,15 @@
  * - fingerprint
  * - plan
  *
- * Used By: tests/verification.test.mjs, website/scripts/verify-changed.mjs
+ * Used By: tests/verification.test.mjs, website/scripts/verify-changed.mjs.
  *
  * Uses: no local module imports.
  *
- * Libs: node:crypto (fingerprints).
+ * Libs: node:crypto (content fingerprints).
+ *
+ * Usage and output: Imported by verify-changed and verification tests. Pass source
+ * text/fingerprints and prior successful evidence to plan(); returns selected jobs and
+ * build/format predicates. Performs no checks or filesystem writes itself.
  */
 import { createHash } from 'node:crypto';
 
@@ -39,7 +44,7 @@ const strokeData = /^website\/(?:static\/handwriting\/|scripts\/prepare-pacifico
 const runner = /^website\/scripts\/(verify-changed\.mjs|verification\/)/;
 const browser = /^website\/scripts\/browser(?:-checks\.mjs|\/support\.mjs)$/;
 const bank =
-  /^(content\/(?:M(?:01|02|10).*\.(?:json|md)|web_assessments\.json|spot_errors\.json|lattice_error_prototype\.json)|scripts\/(?:prepare_web_(?:equations|arithmetic)|bank_candidates)\.py|website\/static\/data\/(?![^/]+\/(?:spot-errors|error-types|method|concepts)\.json$)|website\/src\/lib\/(?:content\/(?:topic-bank|stage-text)\.mjs|server\/topic-banks\.mjs)|website\/scripts\/read-topic-bank\.mjs|website\/src\/lib\/content\/practice-pages\.json)/;
+  /^(content\/(?:M(?:01|02|10).*\.(?:json|md)|web_assessments\.json|spot_errors\.json|lattice_error_prototype\.json)|scripts\/(?:prepare_web_(?:equations|arithmetic)|bank_candidates)\.py|website\/static\/data\/(?![^/]+\/(?:spot-errors|error-types|method|concepts)\.json$)|website\/src\/lib\/(?:content\/(?:topic-bank|topic-runtime|text-references|stage-text)\.mjs|server\/topic-banks\.mjs)|website\/scripts\/read-topic-bank\.mjs|website\/src\/lib\/content\/practice-pages\.json)/;
 const methodContent = /^website\/static\/data\/[^/]+\/(?:method|concepts)\.json$/;
 const errorContent = /^website\/static\/data\/[^/]+\/(?:spot-errors|error-types)\.json$/;
 const errorDrafts =

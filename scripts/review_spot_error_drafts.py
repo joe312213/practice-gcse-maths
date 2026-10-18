@@ -1,13 +1,28 @@
-"""Purpose: Validate live spot-error questions and render an HTML review copy.
+"""Purpose: Read the live topic-folder banks through the shared Node assembler, independently
+verify arithmetic and fault traces, apply level/variety rules, and optionally render a human-
+review HTML copy. Never rewrites questions.
 
-Reads the one editable live JSON bank per topic. Never writes banks or regenerates
-questions. Arithmetic checks are independent of the temporary authoring helpers;
-pedagogical wording/options and future diagram rendering still require review.
+Main contents:
+- live_banks: Use the shared JS assembler, including named reasons, once per audit process.
+- calculate: Evaluate numeric arithmetic only, exactly; no names or executable calls.
+- answer_value: Read a draft's exact numeric, mixed-number or remainder answer for validation.
+- check_lattice: Reconcile every displayed cell, diagonal, carry and read-off with its faults.
+- check_division: Check each bus-stop transfer, digit and remainder against its explicit fault.
+- validate: Check a topic against its spec and arithmetic; return its coverage count.
+- review_html: Render a disposable teacher review; data continues to live only in JSON.
+- main: Validate the ten topic files, then optionally write a disposable HTML review.
 
-Main contents: calculate, answer_value, check_lattice, check_division, validate,
-review_html, main. Used by: the content author and tests/spot-error-drafts.test.mjs.
-Uses: website/static/data/<topic>/*.json and content/specs/M*.md.
+Used By: tests/spot-error-drafts.test.mjs, tests/spot_error_quality_test.py and manual content
+review.
+
+Uses: website/scripts/read-topic-bank.mjs, scripts/spot_error_quality.py,
+website/static/data/<topic>/*.json and content/specs/M*.md.
+
 Libs: Python standard library for exact arithmetic, JSON, paths and HTML escaping.
+
+Usage and output: From repository root: python3 scripts/review_spot_error_drafts.py; add --html
+/private/tmp/spot-errors.html for a review copy. Assertions fail on invalid content; HTML output
+must be outside content/ and the live banks.
 """
 import argparse
 import ast
@@ -39,6 +54,7 @@ def live_banks():
 def calculate(expression):
     """Evaluate numeric arithmetic only, exactly; no names or executable calls."""
     def visit(node):
+        """Recursively evaluate the permitted numeric AST nodes; reject names/calls in calculate."""
         if isinstance(node, ast.Constant) and type(node.value) in (int, float):
             return Fraction(str(node.value))
         if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.USub, ast.UAdd)):

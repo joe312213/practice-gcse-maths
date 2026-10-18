@@ -5,12 +5,15 @@
  * - openProgress
  * - loadBank
  *
- * Used By: tests/session.test.mjs, website/src/lib/components/practice/TopicPractice.svelte, website/src/routes/progress.html/+page.svelte
+ * Used By: tests/anonymous.test.mjs, tests/learner-id.test.mjs, tests/session.test.mjs,
+ * website/src/lib/components/practice/TopicPractice.svelte, website/src/routes/+page.svelte,
+ * website/src/routes/progress.html/+page.svelte.
  *
- * Uses: website/src/lib/domain/profiles.mjs.
+ * Uses: website/src/lib/content/topic-runtime.mjs, website/src/lib/domain/profiles.mjs, website/src/lib/domain/progress-transfer.mjs.
  *
  * Libs: none.
  */
+import { openTopic } from '../content/topic-runtime.mjs';
 import { KEY, emptyStore, load, ensureLearnerIds, serializeStore } from '../domain/profiles.mjs';
 import { progressContent } from '../domain/progress-transfer.mjs';
 
@@ -22,7 +25,15 @@ import { progressContent } from '../domain/progress-transfer.mjs';
  * Calls: load, emptyStore.
  * @example const progress = openProgress(localStorage, showWarning);
  */
-export function openProgress(storage, onWarning = () => {}) {
+export function openProgress(storage, onWarning = () => {}, temporary) {
+  const visitKey = 'maths-anonymous-visit';
+  if (temporary === undefined) {
+    try {
+      temporary = globalThis.sessionStorage;
+    } catch {
+      /* In-memory visit remains usable. */
+    }
+  }
   let writable = true;
   let data;
   try {
@@ -43,6 +54,19 @@ export function openProgress(storage, onWarning = () => {}) {
     data = emptyStore();
     onWarning(`${error.message} Practice can continue without saving.`);
   }
+  // A fresh tab has no visit. Never recover an anonymous learner from durable storage.
+  data.profiles = data.profiles.filter((profile) => !profile.anonymous);
+  const namedLast = data.last === '__anonymous__' ? null : data.last;
+  let lastNamed = namedLast;
+  try {
+    const visit = JSON.parse(temporary?.getItem(visitKey) ?? 'null');
+    if (visit?.anonymous && visit.topics) {
+      data.profiles.push(visit);
+      data.last = visit.key;
+    }
+  } catch {
+    /* A damaged temporary visit cannot replace saved named progress. */
+  }
   const contents = new Map(data.profiles.map((profile) => [profile.id, progressContent(profile)]));
   return {
     data,
@@ -59,9 +83,26 @@ export function openProgress(storage, onWarning = () => {}) {
           contents.set(profile.id, content);
         }
       }
+      const guest = value.profiles.find((profile) => profile.anonymous);
+      try {
+        if (guest && value.last === guest.key) temporary?.setItem(visitKey, JSON.stringify(guest));
+        else temporary?.removeItem(visitKey);
+      } catch {
+        onWarning(
+          'This visit is only available while this page stays open. Enter a name to save your progress.',
+        );
+      }
       if (!writable) return false;
       try {
-        storage.setItem(KEY, serializeStore(value));
+        if (value.last !== '__anonymous__') lastNamed = value.last;
+        storage.setItem(
+          KEY,
+          serializeStore({
+            ...value,
+            last: lastNamed,
+            profiles: value.profiles.filter((profile) => !profile.anonymous),
+          }),
+        );
         return true;
       } catch {
         onWarning(
@@ -79,9 +120,9 @@ export function openProgress(storage, onWarning = () => {}) {
  * Parameter fetcher: injected fetch implementation.
  */
 export async function loadBank(url, fetcher = fetch) {
-  const response = await fetcher(url, { cache: 'no-store' });
+  const response = await fetcher(url, { cache: 'force-cache' });
   if (!response.ok) throw Error('The question bank could not be loaded.');
-  const bank = await response.json();
+  const bank = openTopic(await response.json());
   if (!Array.isArray(bank.questions) || !bank.revision)
     throw Error('The question bank is invalid.');
   return bank;

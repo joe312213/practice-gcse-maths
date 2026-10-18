@@ -1,7 +1,9 @@
-"""Purpose: Deterministic, skill-specific written-maths renderers.
+"""Purpose: Package boundary for the deterministic legacy maths renderers. The modules provide
+completed written working for saved answer pages and PowerPoint publishers; website rendering
+lives separately in Svelte.
 
 Main contents:
-- Module-level setup and legacy command flow.
+- Package documentation only.
 
 Used By: scripts/answer_layout.py, scripts/update_structure.py.
 
@@ -9,5 +11,6 @@ Uses: no local module imports.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Import the required rendering submodule; this initializer performs no work and
+has no file output.
 """

@@ -1,16 +1,23 @@
-import { readTopicBank } from '../read-topic-bank.mjs';
 /**
- * Purpose: Exercise practice-set creation, codes, timers and page navigation in an isolated browser profile.
+ * Purpose: Exercise practice-set creation, codes, timers and page navigation in an isolated
+ * browser profile.
  *
  * Main contents:
  * - checkPracticeSets
  *
- * Used By: website/scripts/browser-checks.mjs
+ * Used By: website/scripts/browser-checks.mjs.
  *
- * Uses: website/scripts/browser/support.mjs, website/src/lib/domain/practice-code.mjs.
+ * Uses: website/scripts/read-topic-bank.mjs, website/scripts/browser/support.mjs,
+ * website/src/lib/domain/practice-code.mjs.
  *
- * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), @axe-core/playwright (accessibility checks).
+ * Libs: node:assert/strict (assertions), @axe-core/playwright (accessibility assertions).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
  */
+import { readTopicBank } from '../read-topic-bank.mjs';
+
 import assert from 'node:assert/strict';
 import AxeBuilder from '@axe-core/playwright';
 import { createTestContext, artifacts } from './support.mjs';
@@ -70,6 +77,7 @@ export async function checkPracticeSets(browser, base) {
     assert.equal(decodePracticeSet(code).pages.length, 4);
     await page.locator('.practice-set-builder').waitFor({ state: 'hidden' });
     await page.getByRole('button', { name: 'Go', exact: true }).click();
+    await page.locator('.practice-set-status').waitFor();
     /**
      * Read the browser's stored learner data for assertions.
      * Used by: checkPracticeSets.
@@ -107,6 +115,7 @@ export async function checkPracticeSets(browser, base) {
     const input = page.getByRole('textbox', { name: 'Practice code or topic search', exact: true });
     await input.fill('multiplication');
     await page.getByRole('button', { name: 'Go', exact: true }).click();
+    await page.locator('.practice-set-status').waitFor();
     assert.deepEqual(
       (await state()).config.pages.map((p) => p.topic),
       [0, 6],
@@ -114,6 +123,7 @@ export async function checkPracticeSets(browser, base) {
     await page.getByRole('button', { name: 'Leave Practice set', exact: true }).click();
     await input.fill('lattice');
     await input.press('Enter');
+    await page.locator('.practice-set-status').waitFor();
     assert.deepEqual(
       (await state()).config.pages.map((p) => p.topic),
       [0],
@@ -121,6 +131,7 @@ export async function checkPracticeSets(browser, base) {
     await page.getByRole('button', { name: 'Leave Practice set', exact: true }).click();
     await input.fill('equations');
     await input.press('Enter');
+    await page.locator('.practice-set-status').waitFor();
     assert.deepEqual(
       (await state()).config.pages.map((p) => p.topic),
       [9],
@@ -146,6 +157,7 @@ export async function checkPracticeSets(browser, base) {
     await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
     await page.locator('#practice-code').fill(timed);
     await page.getByRole('button', { name: 'Go', exact: true }).click();
+    await page.locator('.practice-set-status').waitFor();
     assert.equal((await state()).attempts[0].authoredSlot, 3);
     await page.clock.fastForward(300001);
     assert.equal((await state()).finished, 'expired');

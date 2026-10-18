@@ -7,17 +7,58 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "3x = 18"
+        "text": "3x = 18",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "3x"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "18"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "3x = 18"
+        "text": "3x = 18",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Remove the constant: calculation",
+            "text": "3x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Remove the constant: result",
+            "text": "18"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 18 − 3 = 15"
+        "text": "x = 18 − 3 = 15",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3",
+            "label": "Find x: next expression",
+            "text": "18 − 3"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Find x: result",
+            "text": "15"
+          }
+        ]
       }
     ],
     "options": {
@@ -51,20 +92,12 @@
       "3x = 18",
       "x = 18 ÷ 3 = 6"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 3x = 18.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C1-Q02",
@@ -74,17 +107,58 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "4x + 5 = 33"
+        "text": "4x + 5 = 33",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "4x + 5"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "33"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "4x = 33 − (5) = 30"
+        "text": "4x = 33 − (5) = 30",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "4x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Remove the constant: next expression",
+            "text": "33 − (5)"
+          },
+          {
+            "id": "step-2",
+            "label": "Remove the constant: result",
+            "text": "30"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 15/2"
+        "text": "x = 15/2",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Find x: result",
+            "text": "15/2"
+          }
+        ]
       }
     ],
     "options": {
@@ -115,20 +189,12 @@
       "4x = 33 − (5) = 28",
       "x = 7"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 4x + 5 = 33.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C1-Q03",
@@ -138,22 +204,75 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "2x + 7 = 25"
+        "text": "2x + 7 = 25",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "2x + 7"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "25"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Solve",
-        "text": "2x = 18; x = 9"
+        "text": "2x = 18; x = 9",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Solve: calculation",
+            "text": "2x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Solve: next expression",
+            "text": "18; x"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "Solve: result",
+            "text": "9"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Check left side",
-        "text": "2 + 9 + (7) = 18"
+        "text": "2 + 9 + (7) = 18",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Check left side: calculation",
+            "text": "2 + 9 + (7)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Check left side: result",
+            "text": "18"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Check right side",
-        "text": "0 × 9 + 25 = 25"
+        "text": "0 × 9 + 25 = 25",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Check right side: calculation",
+            "text": "0 × 9 + 25"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Check right side: result",
+            "text": "25"
+          }
+        ]
       },
       {
         "id": "step-5",
@@ -188,20 +307,12 @@
       "0 × 9 + 25 = 25",
       "The two sides match."
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 2x + 7 = 25. Inspect the student’s check.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q01",
@@ -211,17 +322,63 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "4(x + 3) = 44"
+        "text": "4(x + 3) = 44",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "4(x + 3)"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "44"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Expand the bracket",
-        "text": "4x + 3 = 44"
+        "text": "4x + 3 = 44",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Expanded x term",
+            "text": "4x"
+          },
+          {
+            "id": "step-2",
+            "label": "Expanded constant",
+            "text": "+ 3"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "Right side",
+            "text": "44"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Collect and solve",
-        "text": "4x = 41; x = 41/4"
+        "text": "4x = 41; x = 41/4",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Collect and solve: calculation",
+            "text": "4x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Collect and solve: next expression",
+            "text": "41; x"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Collect and solve: result",
+            "text": "41/4"
+          }
+        ]
       }
     ],
     "options": {
@@ -254,20 +411,12 @@
       "4x + 12 = 44",
       "4x = 32; x = 8"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 4(x + 3) = 44.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q02",
@@ -277,17 +426,58 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "5x + 7 = 37"
+        "text": "5x + 7 = 37",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "5x + 7"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "37"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Collect terms",
-        "text": "12x = 37"
+        "text": "12x = 37",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Collect terms: calculation",
+            "text": "12x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Collect terms: result",
+            "text": "37"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Solve",
-        "text": "12x = 37; x = 37/12"
+        "text": "12x = 37; x = 37/12",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Solve: calculation",
+            "text": "12x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Solve: next expression",
+            "text": "37; x"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Solve: result",
+            "text": "37/12"
+          }
+        ]
       }
     ],
     "options": {
@@ -315,20 +505,12 @@
       "5x + 7 = 37",
       "5x = 30; x = 6"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 5x + 7 = 37.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q03",
@@ -338,17 +520,58 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "7x − 6 = 57"
+        "text": "7x − 6 = 57",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "7x − 6"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "57"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "7x = 57 − (-6) = 65"
+        "text": "7x = 57 − (-6) = 65",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "7x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Remove the constant: next expression",
+            "text": "57 − (-6)"
+          },
+          {
+            "id": "step-2",
+            "label": "Remove the constant: result",
+            "text": "65"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 65/7"
+        "text": "x = 65/7",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Find x: result",
+            "text": "65/7"
+          }
+        ]
       }
     ],
     "options": {
@@ -379,20 +602,12 @@
       "7x = 57 − (-6) = 63",
       "x = 9"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 7x − 6 = 57.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q01",
@@ -402,22 +617,75 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "9x − 7 = 4x + 38"
+        "text": "9x − 7 = 4x + 38",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "9x − 7"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "4x + 38"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Collect x-terms",
-        "text": "5x − 7 = 38"
+        "text": "5x − 7 = 38",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Collect x-terms: calculation",
+            "text": "5x − 7"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Collect x-terms: result",
+            "text": "38"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Remove the constant",
-        "text": "5x = 38 − (-7) = 47"
+        "text": "5x = 38 − (-7) = 47",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "5x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Remove the constant: next expression",
+            "text": "38 − (-7)"
+          },
+          {
+            "id": "step-3",
+            "label": "Remove the constant: result",
+            "text": "47"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Find x",
-        "text": "x = 47/5"
+        "text": "x = 47/5",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Find x: result",
+            "text": "47/5"
+          }
+        ]
       }
     ],
     "options": {
@@ -449,20 +717,12 @@
       "5x = 38 − (-7) = 45",
       "x = 9"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 9x − 7 = 4x + 38.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q02",
@@ -472,22 +732,75 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "6x + 11 = 2x + 43"
+        "text": "6x + 11 = 2x + 43",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "6x + 11"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "2x + 43"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Solve",
-        "text": "4x = 32; x = 8"
+        "text": "4x = 32; x = 8",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Solve: calculation",
+            "text": "4x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Solve: next expression",
+            "text": "32; x"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "Solve: result",
+            "text": "8"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Check left side",
-        "text": "6 + 8 + (11) = 25"
+        "text": "6 + 8 + (11) = 25",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Check left side: calculation",
+            "text": "6 + 8 + (11)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Check left side: result",
+            "text": "25"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Check right side",
-        "text": "2 × 8 + 43 = 59"
+        "text": "2 × 8 + 43 = 59",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Check right side: calculation",
+            "text": "2 × 8 + 43"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Check right side: result",
+            "text": "59"
+          }
+        ]
       },
       {
         "id": "step-5",
@@ -522,20 +835,12 @@
       "2 × 8 + 43 = 59",
       "The two sides match."
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 6x + 11 = 2x + 43. Inspect the student’s check.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q03",
@@ -545,7 +850,19 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "10x + 18 = 4x + 60"
+        "text": "10x + 18 = 4x + 60",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "10x + 18"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "4x + 60"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -555,7 +872,19 @@
       {
         "id": "step-3",
         "label": "Solve",
-        "text": "x = 14"
+        "text": "x = 14",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Solve: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Solve: result",
+            "text": "14"
+          }
+        ]
       }
     ],
     "options": {
@@ -589,20 +918,12 @@
       "5x + 9 = 2x + 30",
       "3x = 21; x = 7"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 10x + 18 = 4x + 60.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q04",
@@ -612,27 +933,102 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "4(x + 3) + 3(x − 5) = 2x + 37"
+        "text": "4(x + 3) + 3(x − 5) = 2x + 37",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "4(x + 3) + 3(x − 5)"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "2x + 37"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "First bracket",
-        "text": "4(x + 3) = 4x + 3"
+        "text": "4(x + 3) = 4x + 3",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Expanded x term",
+            "text": "4(x"
+          },
+          {
+            "id": "step-2",
+            "label": "Expanded constant",
+            "text": "+ 3)"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "Right side",
+            "text": "4x + 3"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second bracket",
-        "text": "3(x − 5) = 3x + 15"
+        "text": "3(x − 5) = 3x + 15",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Expanded x term",
+            "text": "3(x"
+          },
+          {
+            "id": "step-3",
+            "label": "Expanded constant",
+            "text": "− 5)"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Right side",
+            "text": "3x + 15"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Collect terms",
-        "text": "7x + 18 = 2x + 37"
+        "text": "7x + 18 = 2x + 37",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Collect terms: calculation",
+            "text": "7x + 18"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Collect terms: result",
+            "text": "2x + 37"
+          }
+        ]
       },
       {
         "id": "step-5",
         "label": "Solve",
-        "text": "5x = 19; x = 19/5"
+        "text": "5x = 19; x = 19/5",
+        "targets": [
+          {
+            "id": "step-5",
+            "label": "Solve: calculation",
+            "text": "5x"
+          },
+          {
+            "id": "step-5-part-2",
+            "label": "Solve: next expression",
+            "text": "19; x"
+          },
+          {
+            "id": "step-5-part-3",
+            "label": "Solve: result",
+            "text": "19/5"
+          }
+        ]
       }
     ],
     "options": {
@@ -685,20 +1081,12 @@
       "7x − 3 = 2x + 37",
       "5x = 40; x = 8"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 4(x + 3) + 3(x − 5) = 2x + 37.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C1-Q04",
@@ -708,17 +1096,53 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "x + 6 = 19"
+        "text": "x + 6 = 19",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "x + 6"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "19"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "1x = 25"
+        "text": "1x = 25",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "1x"
+          },
+          {
+            "id": "step-2",
+            "label": "Remove the constant: result",
+            "text": "25"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 25"
+        "text": "x = 25",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Find x: result",
+            "text": "25"
+          }
+        ]
       }
     ],
     "options": {
@@ -752,20 +1176,12 @@
       "1x = 19 − (6) = 13",
       "x = 13"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve x + 6 = 19.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 13 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 13 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q04",
@@ -775,22 +1191,75 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "3x + 11 = 32"
+        "text": "3x + 11 = 32",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "3x + 11"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "32"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Solve",
-        "text": "3x = 21; x = 7"
+        "text": "3x = 21; x = 7",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Solve: calculation",
+            "text": "3x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Solve: next expression",
+            "text": "21; x"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "Solve: result",
+            "text": "7"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Check left side",
-        "text": "3 + 7 + (11) = 21"
+        "text": "3 + 7 + (11) = 21",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Check left side: calculation",
+            "text": "3 + 7 + (11)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Check left side: result",
+            "text": "21"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Check right side",
-        "text": "0 × 7 + 32 = 32"
+        "text": "0 × 7 + 32 = 32",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Check right side: calculation",
+            "text": "0 × 7 + 32"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Check right side: result",
+            "text": "32"
+          }
+        ]
       },
       {
         "id": "step-5",
@@ -825,20 +1294,12 @@
       "0 × 7 + 32 = 32",
       "The two sides match."
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 3x + 11 = 32. Inspect the student’s check.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q05",
@@ -848,17 +1309,58 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "8x + 5 = 3x + 35"
+        "text": "8x + 5 = 3x + 35",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "8x + 5"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "3x + 35"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Collect terms",
-        "text": "13x = 3x + 35"
+        "text": "13x = 3x + 35",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Collect terms: calculation",
+            "text": "13x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Collect terms: result",
+            "text": "3x + 35"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Solve",
-        "text": "10x = 35; x = 7/2"
+        "text": "10x = 35; x = 7/2",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Solve: calculation",
+            "text": "10x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Solve: next expression",
+            "text": "35; x"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Solve: result",
+            "text": "7/2"
+          }
+        ]
       }
     ],
     "options": {
@@ -886,20 +1388,12 @@
       "8x + 5 = 3x + 35",
       "5x = 30; x = 6"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 8x + 5 = 3x + 35.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C1-Q05",
@@ -909,17 +1403,53 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "5x + 4 = 44"
+        "text": "5x + 4 = 44",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "5x + 4"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "44"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "5x = 44"
+        "text": "5x = 44",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "5x"
+          },
+          {
+            "id": "step-2",
+            "label": "Remove the constant: result",
+            "text": "44"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 44/5"
+        "text": "x = 44/5",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Find x: result",
+            "text": "44/5"
+          }
+        ]
       }
     ],
     "options": {
@@ -950,20 +1480,12 @@
       "5x = 44 − (4) = 40",
       "x = 8"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 5x + 4 = 44.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C1-Q06",
@@ -973,17 +1495,58 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "7x = 42"
+        "text": "7x = 42",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "7x"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "42"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "7x = 42"
+        "text": "7x = 42",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Remove the constant: calculation",
+            "text": "7x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Remove the constant: result",
+            "text": "42"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 42 − 7 = 35"
+        "text": "x = 42 − 7 = 35",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3",
+            "label": "Find x: next expression",
+            "text": "42 − 7"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Find x: result",
+            "text": "35"
+          }
+        ]
       }
     ],
     "options": {
@@ -1017,20 +1580,12 @@
       "7x = 42",
       "x = 42 ÷ 7 = 6"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 7x = 42.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C1-Q07",
@@ -1040,17 +1595,58 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "3x − 8 = 7"
+        "text": "3x − 8 = 7",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "3x − 8"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "7"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "3x = 7 − (-8) = 17"
+        "text": "3x = 7 − (-8) = 17",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "3x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Remove the constant: next expression",
+            "text": "7 − (-8)"
+          },
+          {
+            "id": "step-2",
+            "label": "Remove the constant: result",
+            "text": "17"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 17/3"
+        "text": "x = 17/3",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Find x: result",
+            "text": "17/3"
+          }
+        ]
       }
     ],
     "options": {
@@ -1081,20 +1677,12 @@
       "3x = 7 − (-8) = 15",
       "x = 5"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 3x − 8 = 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 5 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 5 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C1-Q08",
@@ -1104,22 +1692,75 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "6x − 5 = 19"
+        "text": "6x − 5 = 19",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "6x − 5"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "19"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Solve",
-        "text": "6x = 24; x = 4"
+        "text": "6x = 24; x = 4",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Solve: calculation",
+            "text": "6x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Solve: next expression",
+            "text": "24; x"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "Solve: result",
+            "text": "4"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Check left side",
-        "text": "6 + 4 + (-5) = 5"
+        "text": "6 + 4 + (-5) = 5",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Check left side: calculation",
+            "text": "6 + 4 + (-5)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Check left side: result",
+            "text": "5"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Check right side",
-        "text": "0 × 4 + 19 = 19"
+        "text": "0 × 4 + 19 = 19",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Check right side: calculation",
+            "text": "0 × 4 + 19"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Check right side: result",
+            "text": "19"
+          }
+        ]
       },
       {
         "id": "step-5",
@@ -1154,20 +1795,12 @@
       "0 × 4 + 19 = 19",
       "The two sides match."
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 6x − 5 = 19. Inspect the student’s check.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 4 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 4 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C1-Q09",
@@ -1177,17 +1810,53 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "x − 9 = -6"
+        "text": "x − 9 = -6",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "x − 9"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "-6"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "1x = -15"
+        "text": "1x = -15",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "1x"
+          },
+          {
+            "id": "step-2",
+            "label": "Remove the constant: result",
+            "text": "-15"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = -15"
+        "text": "x = -15",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Find x: result",
+            "text": "-15"
+          }
+        ]
       }
     ],
     "options": {
@@ -1221,20 +1890,12 @@
       "1x = -6 − (-9) = 3",
       "x = 3"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve x − 9 = -6.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 3 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 3 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C1-Q10",
@@ -1244,17 +1905,58 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "8x = 56"
+        "text": "8x = 56",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "8x"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "56"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "8x = 56"
+        "text": "8x = 56",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Remove the constant: calculation",
+            "text": "8x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Remove the constant: result",
+            "text": "56"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 56 − 8 = 48"
+        "text": "x = 56 − 8 = 48",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3",
+            "label": "Find x: next expression",
+            "text": "56 − 8"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Find x: result",
+            "text": "48"
+          }
+        ]
       }
     ],
     "options": {
@@ -1288,20 +1990,12 @@
       "8x = 56",
       "x = 56 ÷ 8 = 7"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 8x = 56.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C1-Q11",
@@ -1311,17 +2005,53 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "x + 12 = 17"
+        "text": "x + 12 = 17",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "x + 12"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "17"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "1x = 29"
+        "text": "1x = 29",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "1x"
+          },
+          {
+            "id": "step-2",
+            "label": "Remove the constant: result",
+            "text": "29"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 29"
+        "text": "x = 29",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Find x: result",
+            "text": "29"
+          }
+        ]
       }
     ],
     "options": {
@@ -1355,20 +2085,12 @@
       "1x = 17 − (12) = 5",
       "x = 5"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve x + 12 = 17.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 5 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 5 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C1-Q12",
@@ -1378,17 +2100,53 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "4x − 3 = 33"
+        "text": "4x − 3 = 33",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "4x − 3"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "33"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "4x = 33"
+        "text": "4x = 33",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "4x"
+          },
+          {
+            "id": "step-2",
+            "label": "Remove the constant: result",
+            "text": "33"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 33/4"
+        "text": "x = 33/4",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Find x: result",
+            "text": "33/4"
+          }
+        ]
       }
     ],
     "options": {
@@ -1419,20 +2177,12 @@
       "4x = 33 − (-3) = 36",
       "x = 9"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C1-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 4x − 3 = 33.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q05",
@@ -1442,7 +2192,19 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "6x + 14 = 62"
+        "text": "6x + 14 = 62",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "6x + 14"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "62"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -1452,7 +2214,19 @@
       {
         "id": "step-3",
         "label": "Solve",
-        "text": "x = 16"
+        "text": "x = 16",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Solve: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Solve: result",
+            "text": "16"
+          }
+        ]
       }
     ],
     "options": {
@@ -1486,20 +2260,12 @@
       "3x + 7 = 31",
       "3x = 24; x = 8"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 6x + 14 = 62.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q06",
@@ -1509,17 +2275,63 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "3(x − 4) = 15"
+        "text": "3(x − 4) = 15",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "3(x − 4)"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "15"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Expand the bracket",
-        "text": "3x − 4 = 15"
+        "text": "3x − 4 = 15",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Expanded x term",
+            "text": "3x"
+          },
+          {
+            "id": "step-2",
+            "label": "Expanded constant",
+            "text": "− 4"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "Right side",
+            "text": "15"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Collect and solve",
-        "text": "3x = 19; x = 19/3"
+        "text": "3x = 19; x = 19/3",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Collect and solve: calculation",
+            "text": "3x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Collect and solve: next expression",
+            "text": "19; x"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Collect and solve: result",
+            "text": "19/3"
+          }
+        ]
       }
     ],
     "options": {
@@ -1552,20 +2364,12 @@
       "3x − 12 = 15",
       "3x = 27; x = 9"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 3(x − 4) = 15.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q07",
@@ -1575,17 +2379,58 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "8x − 5 = 27"
+        "text": "8x − 5 = 27",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "8x − 5"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "27"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Collect terms",
-        "text": "3x = 27"
+        "text": "3x = 27",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Collect terms: calculation",
+            "text": "3x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Collect terms: result",
+            "text": "27"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Solve",
-        "text": "3x = 27; x = 9"
+        "text": "3x = 27; x = 9",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Solve: calculation",
+            "text": "3x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Solve: next expression",
+            "text": "27; x"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Solve: result",
+            "text": "9"
+          }
+        ]
       }
     ],
     "options": {
@@ -1613,20 +2458,12 @@
       "8x − 5 = 27",
       "8x = 32; x = 4"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 8x − 5 = 27.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 4 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 4 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q08",
@@ -1636,22 +2473,75 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "9x − 7 = 38"
+        "text": "9x − 7 = 38",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "9x − 7"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "38"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Solve",
-        "text": "9x = 45; x = 5"
+        "text": "9x = 45; x = 5",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Solve: calculation",
+            "text": "9x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Solve: next expression",
+            "text": "45; x"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "Solve: result",
+            "text": "5"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Check left side",
-        "text": "9 + 5 + (-7) = 7"
+        "text": "9 + 5 + (-7) = 7",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Check left side: calculation",
+            "text": "9 + 5 + (-7)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Check left side: result",
+            "text": "7"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Check right side",
-        "text": "0 × 5 + 38 = 38"
+        "text": "0 × 5 + 38 = 38",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Check right side: calculation",
+            "text": "0 × 5 + 38"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Check right side: result",
+            "text": "38"
+          }
+        ]
       },
       {
         "id": "step-5",
@@ -1686,20 +2576,12 @@
       "0 × 5 + 38 = 38",
       "The two sides match."
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 9x − 7 = 38. Inspect the student’s check.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 5 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 5 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q09",
@@ -1709,17 +2591,53 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "6x + 9 = 51"
+        "text": "6x + 9 = 51",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "6x + 9"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "51"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "6x = 60"
+        "text": "6x = 60",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "6x"
+          },
+          {
+            "id": "step-2",
+            "label": "Remove the constant: result",
+            "text": "60"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 10"
+        "text": "x = 10",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Find x: result",
+            "text": "10"
+          }
+        ]
       }
     ],
     "options": {
@@ -1753,20 +2671,12 @@
       "6x = 51 − (9) = 42",
       "x = 7"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 6x + 9 = 51.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q10",
@@ -1776,17 +2686,53 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "7x − 4 = 52"
+        "text": "7x − 4 = 52",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "7x − 4"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "52"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "7x = 52"
+        "text": "7x = 52",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "7x"
+          },
+          {
+            "id": "step-2",
+            "label": "Remove the constant: result",
+            "text": "52"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 52/7"
+        "text": "x = 52/7",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Find x: result",
+            "text": "52/7"
+          }
+        ]
       }
     ],
     "options": {
@@ -1817,20 +2763,12 @@
       "7x = 52 − (-4) = 56",
       "x = 8"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 7x − 4 = 52.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q11",
@@ -1840,17 +2778,58 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "5x + 13 = 58"
+        "text": "5x + 13 = 58",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "5x + 13"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "58"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Remove the constant",
-        "text": "5x = 45"
+        "text": "5x = 45",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Remove the constant: calculation",
+            "text": "5x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Remove the constant: result",
+            "text": "45"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Find x",
-        "text": "x = 45 − 5 = 40"
+        "text": "x = 45 − 5 = 40",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3",
+            "label": "Find x: next expression",
+            "text": "45 − 5"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Find x: result",
+            "text": "40"
+          }
+        ]
       }
     ],
     "options": {
@@ -1884,20 +2863,12 @@
       "5x = 45",
       "x = 45 ÷ 5 = 9"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 5x + 13 = 58.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C2-Q12",
@@ -1907,7 +2878,19 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "8x − 18 = 30"
+        "text": "8x − 18 = 30",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "8x − 18"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "30"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -1917,7 +2900,19 @@
       {
         "id": "step-3",
         "label": "Solve",
-        "text": "x = 12"
+        "text": "x = 12",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Solve: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Solve: result",
+            "text": "12"
+          }
+        ]
       }
     ],
     "options": {
@@ -1951,20 +2946,12 @@
       "4x − 9 = 15",
       "4x = 24; x = 6"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C2-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 8x − 18 = 30.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q06",
@@ -1974,22 +2961,75 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "11x − 9 = 5x + 33"
+        "text": "11x − 9 = 5x + 33",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "11x − 9"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "5x + 33"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Solve",
-        "text": "6x = 42; x = 7"
+        "text": "6x = 42; x = 7",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Solve: calculation",
+            "text": "6x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Solve: next expression",
+            "text": "42; x"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "Solve: result",
+            "text": "7"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Check left side",
-        "text": "11 + 7 + (-9) = 9"
+        "text": "11 + 7 + (-9) = 9",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Check left side: calculation",
+            "text": "11 + 7 + (-9)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Check left side: result",
+            "text": "9"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Check right side",
-        "text": "5 × 7 + 33 = 68"
+        "text": "5 × 7 + 33 = 68",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Check right side: calculation",
+            "text": "5 × 7 + 33"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Check right side: result",
+            "text": "68"
+          }
+        ]
       },
       {
         "id": "step-5",
@@ -2024,20 +3064,12 @@
       "5 × 7 + 33 = 68",
       "The two sides match."
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 11x − 9 = 5x + 33. Inspect the student’s check.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 7 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 7 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q07",
@@ -2047,22 +3079,70 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "5x + 14 = 2x + 41"
+        "text": "5x + 14 = 2x + 41",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "5x + 14"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "2x + 41"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Collect x-terms",
-        "text": "3x + 14 = 41"
+        "text": "3x + 14 = 41",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Collect x-terms: calculation",
+            "text": "3x + 14"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Collect x-terms: result",
+            "text": "41"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Remove the constant",
-        "text": "3x = 55"
+        "text": "3x = 55",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "3x"
+          },
+          {
+            "id": "step-3",
+            "label": "Remove the constant: result",
+            "text": "55"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Find x",
-        "text": "x = 55/3"
+        "text": "x = 55/3",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Find x: result",
+            "text": "55/3"
+          }
+        ]
       }
     ],
     "options": {
@@ -2097,20 +3177,12 @@
       "3x = 41 − (14) = 27",
       "x = 9"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 5x + 14 = 2x + 41.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q08",
@@ -2120,22 +3192,70 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "12x − 7 = 5x + 35"
+        "text": "12x − 7 = 5x + 35",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "12x − 7"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "5x + 35"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Collect x-terms",
-        "text": "7x − 7 = 35"
+        "text": "7x − 7 = 35",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Collect x-terms: calculation",
+            "text": "7x − 7"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Collect x-terms: result",
+            "text": "35"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Remove the constant",
-        "text": "7x = 35"
+        "text": "7x = 35",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Remove the constant: calculation",
+            "text": "7x"
+          },
+          {
+            "id": "step-3",
+            "label": "Remove the constant: result",
+            "text": "35"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Find x",
-        "text": "x = 5"
+        "text": "x = 5",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Find x: result",
+            "text": "5"
+          }
+        ]
       }
     ],
     "options": {
@@ -2167,20 +3287,12 @@
       "7x = 35 − (-7) = 42",
       "x = 6"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 12x − 7 = 5x + 35.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 6 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 6 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q09",
@@ -2190,22 +3302,75 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "9x + 8 = 4x + 63"
+        "text": "9x + 8 = 4x + 63",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "9x + 8"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "4x + 63"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Collect x-terms",
-        "text": "5x + 8 = 63"
+        "text": "5x + 8 = 63",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Collect x-terms: calculation",
+            "text": "5x + 8"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Collect x-terms: result",
+            "text": "63"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Remove the constant",
-        "text": "5x = 55"
+        "text": "5x = 55",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Remove the constant: calculation",
+            "text": "5x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Remove the constant: result",
+            "text": "55"
+          }
+        ]
       },
       {
         "id": "step-4",
         "label": "Find x",
-        "text": "x = 55 − 5 = 50"
+        "text": "x = 55 − 5 = 50",
+        "targets": [
+          {
+            "id": "step-4-part-1",
+            "label": "Find x: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-4",
+            "label": "Find x: next expression",
+            "text": "55 − 5"
+          },
+          {
+            "id": "step-4-part-3",
+            "label": "Find x: result",
+            "text": "50"
+          }
+        ]
       }
     ],
     "options": {
@@ -2240,20 +3405,12 @@
       "5x = 55",
       "x = 55 ÷ 5 = 11"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 9x + 8 = 4x + 63.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 11 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 11 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q10",
@@ -2263,7 +3420,19 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "12x − 16 = 4x + 48"
+        "text": "12x − 16 = 4x + 48",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "12x − 16"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "4x + 48"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -2273,7 +3442,19 @@
       {
         "id": "step-3",
         "label": "Solve",
-        "text": "x = 16"
+        "text": "x = 16",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Solve: calculation",
+            "text": "x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Solve: result",
+            "text": "16"
+          }
+        ]
       }
     ],
     "options": {
@@ -2307,20 +3488,12 @@
       "6x − 8 = 2x + 24",
       "4x = 32; x = 8"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 12x − 16 = 4x + 48.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 8 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 8 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q11",
@@ -2330,17 +3503,63 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "5(x − 4) = 2x + 13"
+        "text": "5(x − 4) = 2x + 13",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "5(x − 4)"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "2x + 13"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Expand the bracket",
-        "text": "5x − 4 = 2x + 13"
+        "text": "5x − 4 = 2x + 13",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Expanded x term",
+            "text": "5x"
+          },
+          {
+            "id": "step-2",
+            "label": "Expanded constant",
+            "text": "− 4"
+          },
+          {
+            "id": "step-2-part-3",
+            "label": "Right side",
+            "text": "2x + 13"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Collect and solve",
-        "text": "3x = 17; x = 17/3"
+        "text": "3x = 17; x = 17/3",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Collect and solve: calculation",
+            "text": "3x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Collect and solve: next expression",
+            "text": "17; x"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Collect and solve: result",
+            "text": "17/3"
+          }
+        ]
       }
     ],
     "options": {
@@ -2373,20 +3592,12 @@
       "5x − 20 = 2x + 13",
       "3x = 33; x = 11"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 5(x − 4) = 2x + 13.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 11 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 11 into the original equation and evaluate each side separately."
   },
   {
     "id": "maths:M10-WEB-ERRORS-R2-C3-Q12",
@@ -2396,17 +3607,58 @@
       {
         "id": "step-1",
         "label": "Original equation",
-        "text": "7x − 4 = 2x + 41"
+        "text": "7x − 4 = 2x + 41",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Original equation: calculation",
+            "text": "7x − 4"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Original equation: result",
+            "text": "2x + 41"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Collect terms",
-        "text": "3x = 2x + 41"
+        "text": "3x = 2x + 41",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Collect terms: calculation",
+            "text": "3x"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Collect terms: result",
+            "text": "2x + 41"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Solve",
-        "text": "1x = 41; x = 41"
+        "text": "1x = 41; x = 41",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Solve: calculation",
+            "text": "1x"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Solve: next expression",
+            "text": "41; x"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Solve: result",
+            "text": "41"
+          }
+        ]
       }
     ],
     "options": {
@@ -2434,19 +3686,11 @@
       "7x − 4 = 2x + 41",
       "5x = 45; x = 9"
     ],
-    "hint": "Check each operation on both sides; keep the signs when substituting into the original equation.",
     "draftId": "M10-DRAFT-ERRORS-C3-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Solve 7x − 4 = 2x + 41.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute x = 9 into the original equation and evaluate each side separately.",
-    "subject": "maths",
-    "topic": "M10"
+    "check": "Substitute x = 9 into the original equation and evaluate each side separately."
   }
 ]

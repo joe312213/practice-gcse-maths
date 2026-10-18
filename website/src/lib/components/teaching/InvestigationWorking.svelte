@@ -1,4 +1,18 @@
-<!-- Render authored wrong working as selectable diagram regions or named working lines. -->
+<!--
+  Purpose: Render authored wrong working as selectable diagram regions or named working lines.
+
+  Main contents:
+  - Selectable lattice/bus-stop regions and equation/calculation rows with diagnosis markers.
+
+  Used By: website/src/lib/components/teaching/ErrorInvestigation.svelte.
+
+  Uses: website/src/lib/components/teaching/ArithmeticWorking.svelte,
+  website/src/lib/components/teaching/MathText.svelte,
+  website/src/lib/application/error-working.mjs.
+
+  Libs: svelte (component state, lifecycle and transitions), $app/paths (SvelteKit
+  navigation/route state).
+-->
 <script>
   import { onMount } from 'svelte';
   import { asset } from '$app/paths';
@@ -8,6 +22,7 @@
     investigationLattice,
     markerPath,
     workingText,
+    workingParts,
   } from '#lib/application/error-working.mjs';
   let { question, selected, entries, disabled, onselect } = $props();
   let font = $state(null);
@@ -44,31 +59,70 @@
 {/snippet}
 
 {#snippet line(location)}
-  <button
-    type="button"
-    class="working-location working-line"
-    {disabled}
-    data-location={location.id}
-    aria-label={`${location.label}: ${location.text}`}
-    aria-pressed={active(location.id)}
-    onclick={() => onselect(location.id)}
-  >
-    <span class="working-line-label">{location.label}</span>
-    <span class="working-line-content">
-      {#if active(location.id)}<svg
-          class="line-marker"
-          viewBox="0 0 300 60"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-          ><path
-            class="working-marker"
-            d={markerPath({ x: 0, y: 0, width: 300, height: 60 }, selected === location.id)}
-          /></svg
-        >{/if}
-      <span class="working-expression"><MathText text={workingText(location.text)} {font} /></span>
-    </span>
-    {@render selectionNumber(location.id)}
-  </button>
+  {#if location.targets}
+    <div class="working-line" data-working-line={location.id}>
+      <span class="working-line-label">{location.label}</span>
+      <span class="working-parts">
+        {#each workingParts(location) as target}
+          {#if target.id}
+            <button
+              type="button"
+              class="working-location working-part"
+              {disabled}
+              data-location={target.id}
+              aria-label={`${target.label}: ${target.text}`}
+              aria-pressed={active(target.id)}
+              onclick={() => onselect(target.id)}
+            >
+              <span class="working-line-content">
+                {#if active(target.id)}<svg
+                    class="line-marker"
+                    viewBox="0 0 300 60"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                    ><path
+                      class="working-marker"
+                      d={markerPath({ x: 0, y: 0, width: 300, height: 60 }, selected === target.id)}
+                    /></svg
+                  >{/if}
+                <span class="working-expression"
+                  ><MathText text={workingText(target.text)} {font} /></span
+                >
+              </span>
+              {@render selectionNumber(target.id)}
+            </button>
+          {:else}<MathText text={workingText(target.text)} {font} />{/if}
+        {/each}
+      </span>
+    </div>
+  {:else}
+    <button
+      type="button"
+      class="working-location working-line"
+      {disabled}
+      data-location={location.id}
+      aria-label={`${location.label}: ${location.text}`}
+      aria-pressed={active(location.id)}
+      onclick={() => onselect(location.id)}
+    >
+      <span class="working-line-label">{location.label}</span>
+      <span class="working-line-content">
+        {#if active(location.id)}<svg
+            class="line-marker"
+            viewBox="0 0 300 60"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+            ><path
+              class="working-marker"
+              d={markerPath({ x: 0, y: 0, width: 300, height: 60 }, selected === location.id)}
+            /></svg
+          >{/if}
+        <span class="working-expression"><MathText text={workingText(location.text)} {font} /></span
+        >
+      </span>
+      {@render selectionNumber(location.id)}
+    </button>
+  {/if}
 {/snippet}
 
 <div class="error-working investigation-paper">
@@ -167,6 +221,8 @@
         </div>
       </div>
     {/if}
-    {#each question.locations as location}{@render line(location)}{/each}
+    {#each question.locations.filter((location) => !location.within) as location}{@render line(
+        location,
+      )}{/each}
   {/if}
 </div>

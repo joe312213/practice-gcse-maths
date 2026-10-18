@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M12-WEB-PS-C1-Q85",
-    "subject": "maths",
-    "topic": "M12",
-    "type": "problem",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A cyclist travels 19.5 km in 0.75 hours. Find the average speed.",
     "answer": "26",
     "answerUnit": "km/h",
@@ -29,12 +24,15 @@
         "outputUnit": "km/h"
       }
     ],
-    "hint": "Write the units beside the known distance, speed and time before choosing the formula.",
+    "hint": {
+      "textRef": "write-known-units"
+    },
     "method_note": "Divide distance by time in hours.",
     "check": "Reverse the calculation chain: 26 × 0.75 = 19.5.",
     "wrong": "117/8",
-    "error_note": "Check the units and whether this question asks for distance, speed or time. Minutes and hours use a factor of 60.",
-    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "check-units-and-formula"
+    },
     "calculator": true,
     "errorSteps": [
       {
@@ -51,17 +49,11 @@
         "0.75 hours"
       ],
       "stop": 0
-    },
-    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time."
+    }
   },
   {
     "id": "maths:M12-WEB-PS-C2-Q85",
-    "subject": "maths",
-    "topic": "M12",
-    "type": "problem",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A cyclist travels 19.5 km in 45 minutes. Find the speed in km/h.",
     "answer": "26",
     "answerUnit": "km/h",
@@ -96,11 +88,14 @@
       }
     ],
     "hint": "45 minutes is not 0.45 hours. There are 60 minutes in one hour.",
-    "method_note": "Find the distance travelled per minute Convert kilometres per minute to kilometres per hour.",
+    "method_note": {
+      "textRef": "convert-speed-method"
+    },
     "check": "Reverse the calculation chain: 26 ÷ 60 = {13/30}; {13/30} × 45 = 19.5.",
     "wrong": "1755/2",
-    "error_note": "Check the units and whether this question asks for distance, speed or time. Minutes and hours use a factor of 60.",
-    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "check-units-and-formula"
+    },
     "calculator": true,
     "errorSteps": [
       {
@@ -117,17 +112,11 @@
         "0.75 hours"
       ],
       "stop": 0
-    },
-    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time."
+    }
   },
   {
     "id": "maths:M12-WEB-PS-C3-Q85",
-    "subject": "maths",
-    "topic": "M12",
-    "type": "problem",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A cyclist travels 26 km in 1 hour, then 23 km in 0.5 hours. Find the average speed for the whole journey. Give your answer to 2 decimal places.",
     "answer": "32.67",
     "answerUnit": "km/h",
@@ -173,8 +162,9 @@
     "method_note": "Find the total distance Divide by the total elapsed hours.",
     "check": "Total distance is 49 km; total elapsed time is 90/60 hours. Multiply the final speed by that time to recover approximately 49 km.",
     "wrong": "36",
-    "error_note": "This averages the two speeds without accounting for their different times or any stop.",
-    "source": "Original website extension of content/M12_speed_distance_and_time.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "avoid-average-speeds"
+    },
     "calculator": true,
     "roundTo": 2,
     "operationCount": 3,
@@ -193,7 +183,6 @@
         "23 km / 0.5 h"
       ],
       "stop": 0
-    },
-    "repair": "Use the requested speed/distance/time relationship with matching units and total elapsed time."
+    }
   }
 ]

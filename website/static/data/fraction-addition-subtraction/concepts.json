@@ -4,7 +4,8 @@
     "explanation": "A mixed number contains a whole number and a fraction. An improper fraction writes the whole amount as one fraction.",
     "guidance": "Before combining mixed numbers, multiply the whole number by the denominator and add the numerator.",
     "examples": [
-      "2 {1/3} = (2 × 3 + 1)/3 = {7/3}."
+      "2 {1/3} = (2 × 3 + 1)/3 = {7/3}.",
+      "1 {3/4} − {1/2}: one whole is {4/4}, so write {7/4} − {1/2}. Change the half to {2/4}, then subtract to get {5/4} = 1 {1/4}."
     ]
   },
   "common-denominator": {
@@ -12,7 +13,8 @@
     "explanation": "The denominator tells you the size of the equal parts. Fractions need the same-sized parts before you add or subtract them.",
     "guidance": "Multiply the top and bottom of a fraction by the same number to make an equivalent fraction.",
     "examples": [
-      "{1/3} + {1/6} = {2/6} + {1/6} = {3/6}."
+      "{1/3} + {1/6} = {2/6} + {1/6} = {3/6}.",
+      "{2/3} + {1/4}: use twelfths because 12 is a multiple of both 3 and 4. Multiply 2 and 3 by 4, and 1 and 4 by 3: {8/12} + {3/12} = {11/12}."
     ]
   },
   "combine-numerators": {
@@ -20,7 +22,8 @@
     "explanation": "With a common denominator, add or subtract the numerators only.",
     "guidance": "Keep the denominator: the size of each part has not changed.",
     "examples": [
-      "{5/8} − {2/8} = {3/8}, not {3/0}."
+      "{5/8} − {2/8} = {3/8}, not {3/0}.",
+      "{2/7} + {3/7} means two sevenths plus three sevenths: five sevenths, {5/7}. The pieces stay sevenths; adding the denominators would change their size."
     ]
   },
   "simplify": {
@@ -28,7 +31,8 @@
     "explanation": "Equivalent fractions describe the same amount. Simplest form uses no common factor greater than 1.",
     "guidance": "Divide the numerator and denominator by the same common factor.",
     "examples": [
-      "{6/8} = {3/4} after dividing both by 2."
+      "{6/8} = {3/4} after dividing both by 2.",
+      "{9/12}: both numbers divide by 3, giving {3/4}. Check by multiplying top and bottom by 3 to recover {9/12}. Dividing just the top would change the amount."
     ]
   }
 }

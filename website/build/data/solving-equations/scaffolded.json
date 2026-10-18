@@ -31,9 +31,6 @@
     "hint": "On the left, what operation would undo −8? What would remain with x?",
     "method_note": "Add 8 to both sides to leave x = 23.",
     "id": "maths:M10-S02-C1-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0
   },
   {
@@ -77,9 +74,6 @@
     "hint": "On the left, what operation would undo +7? What would remain with x?",
     "method_note": "Subtract 7 from both sides to leave 5x = 30. Divide both sides by 5 to get x = 6.",
     "id": "maths:M10-S02-C2-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1
   },
   {
@@ -136,9 +130,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract x from both sides to leave 2x + 12 = 20. Subtract 12 from both sides, then divide by 2.",
     "id": "maths:M10-S02-C3-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2
   },
   {
@@ -173,9 +164,6 @@
     "hint": "In 6x = -18, 6x means 6 times x. How could you find the value of one x?",
     "method_note": "Divide both sides by 6: x = -18 ÷ 6 = -3. A negative number divided by a positive number is negative.",
     "id": "maths:M10-S03-C1-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0
   },
   {
@@ -219,9 +207,6 @@
     "hint": "On the left, what operation would undo −9? What would remain with x?",
     "method_note": "Add 9 to both sides to leave 4x = 32. Divide both sides by 4 to get x = 8.",
     "id": "maths:M10-S03-C2-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1
   },
   {
@@ -278,16 +263,10 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract 2x from both sides to leave 3x − 10 = 23. Add 10 to both sides, then divide by 3.",
     "id": "maths:M10-S03-C3-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2
   },
   {
     "id": "maths:M10-P3-SC-C1-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0,
     "q": "x − 16 = 9",
     "answer": "25",
@@ -321,9 +300,6 @@
   },
   {
     "id": "maths:M10-P3-SC-C1-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0,
     "q": "8x = 28",
     "answer": "3.5",
@@ -357,9 +333,6 @@
   },
   {
     "id": "maths:M10-P3-SC-C1-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0,
     "q": "x / 7 = -4",
     "answer": "-28",
@@ -393,9 +366,6 @@
   },
   {
     "id": "maths:M10-P3-SC-C1-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0,
     "q": "5 = x + 12",
     "answer": "-7",
@@ -429,9 +399,6 @@
   },
   {
     "id": "maths:M10-P3-SC-C2-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1,
     "q": "7x + 9 = 44",
     "answer": "5",
@@ -474,9 +441,6 @@
   },
   {
     "id": "maths:M10-P3-SC-C2-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1,
     "q": "x / 6 + 4 = -1",
     "answer": "-30",
@@ -519,9 +483,6 @@
   },
   {
     "id": "maths:M10-P3-SC-C2-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1,
     "q": "-5x − 7 = 18",
     "answer": "-5",
@@ -564,9 +525,6 @@
   },
   {
     "id": "maths:M10-P3-SC-C2-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1,
     "q": "8x − 9 = 11",
     "answer": "2.5",
@@ -609,9 +567,6 @@
   },
   {
     "id": "maths:M10-P3-SC-C3-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2,
     "q": "4(x + 7) = 2x + 42",
     "answer": "7",
@@ -667,9 +622,6 @@
   },
   {
     "id": "maths:M10-P3-SC-C3-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2,
     "q": "6(x − 3) = 4x − 7",
     "answer": "5.5",
@@ -725,9 +677,6 @@
   },
   {
     "id": "maths:M10-P3-SC-C3-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2,
     "q": "9x + 5 = 3x − 13",
     "answer": "-3",
@@ -779,9 +728,6 @@
   },
   {
     "id": "maths:M10-P3-SC-C3-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2,
     "q": "5(x − 4) = 2x − 11",
     "answer": "3",
@@ -867,9 +813,6 @@
     "hint": "On the left, what operation would undo +6? What would remain with x?",
     "method_note": "Subtract 6 from both sides to leave x = -8.",
     "id": "maths:M10-WEB-SC4-C1-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q1"
   },
@@ -909,9 +852,6 @@
     "hint": "On the right, what operation would undo −6? What would remain with x?",
     "method_note": "Add 6 to both sides to leave x = 14.",
     "id": "maths:M10-WEB-SC4-C1-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q2"
   },
@@ -947,9 +887,6 @@
     "hint": "On the left, what operation would undo −7? What would remain with x?",
     "method_note": "Add 7 to both sides to leave x = 25.",
     "id": "maths:M10-WEB-SC4-C1-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q3"
   },
@@ -985,9 +922,6 @@
     "hint": "On the left, what operation would undo −9? What would remain with x?",
     "method_note": "Add 9 to both sides to leave x = 5.",
     "id": "maths:M10-WEB-SC4-C1-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q4"
   },
@@ -1027,9 +961,6 @@
     "hint": "In 189 = 7x, 7x means 7 times x. How could you find the value of one x?",
     "method_note": "Divide both sides by 7: x = 189 ÷ 7 = 27.",
     "id": "maths:M10-WEB-SC4-C1-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q5"
   },
@@ -1065,9 +996,6 @@
     "hint": "In 4x = 4, 4x means 4 times x. How could you find the value of one x?",
     "method_note": "Divide both sides by 4: x = 4 ÷ 4 = 1.",
     "id": "maths:M10-WEB-SC4-C1-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 0,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C1-Q6"
   },
@@ -1112,9 +1040,6 @@
     "hint": "On the left, what operation would undo −3? What would remain with x?",
     "method_note": "Add 3 to both sides to leave 6x = 60. Divide both sides by 6 to get x = 10.",
     "id": "maths:M10-WEB-SC4-C2-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q1"
   },
@@ -1159,9 +1084,6 @@
     "hint": "On the left, what operation would undo +8? What would remain with x?",
     "method_note": "Subtract 8 from both sides to leave 7x = 63. Divide both sides by 7 to get x = 9.",
     "id": "maths:M10-WEB-SC4-C2-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q2"
   },
@@ -1206,9 +1128,6 @@
     "hint": "On the left, what operation would undo +6? What would remain with x?",
     "method_note": "Subtract 6 from both sides to leave 7x = -35. Divide both sides by 7 to get x = -5.",
     "id": "maths:M10-WEB-SC4-C2-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q3"
   },
@@ -1253,9 +1172,6 @@
     "hint": "On the left, what operation would undo −9? What would remain with x?",
     "method_note": "Add 9 to both sides to leave 6x = 48. Divide both sides by 6 to get x = 8.",
     "id": "maths:M10-WEB-SC4-C2-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q4"
   },
@@ -1301,12 +1217,11 @@
       "0",
       "8"
     ],
-    "hint": "On the left, which terms contain x? What would that side look like after collecting them?",
+    "hint": {
+      "textRef": "collect-like-terms-hint"
+    },
     "method_note": "Collect the x-terms first. Subtract 8 from both sides to leave 6x = 0. Divide both sides by 6 to get x = 0.",
     "id": "maths:M10-WEB-SC4-C2-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q5"
   },
@@ -1351,9 +1266,6 @@
     "hint": "On the left, what operation would undo −3? What would remain with x?",
     "method_note": "Add 3 to both sides to leave 2x = -8. Divide both sides by 2 to get x = -4.",
     "id": "maths:M10-WEB-SC4-C2-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 1,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C2-Q6"
   },
@@ -1402,9 +1314,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract 2x from both sides to leave x − 9 = -11. Add 9 to both sides to leave x = -2.",
     "id": "maths:M10-WEB-SC4-C3-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q1"
   },
@@ -1454,9 +1363,6 @@
     "hint": "What number divides every term in 5x + 10 = 20? What would the equation look like after dividing both sides by it?",
     "method_note": "Divide every term by 5: 10 ÷ 5 = 2 and 20 ÷ 5 = 4. Then isolate x.",
     "id": "maths:M10-WEB-SC4-C3-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q2"
   },
@@ -1506,9 +1412,6 @@
     "hint": "What number divides every term in 3x + 12 = 9? What would the equation look like after dividing both sides by it?",
     "method_note": "Divide every term by 3: 12 ÷ 3 = 4 and 9 ÷ 3 = 3. Then isolate x.",
     "id": "maths:M10-WEB-SC4-C3-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q3"
   },
@@ -1562,9 +1465,6 @@
     "hint": "In 4x + 2 = x + 14, what could you subtract from both sides to leave x-terms on just one side?",
     "method_note": "After simplifying, subtract x from both sides to leave 3x + 2 = 14. Subtract 2 from both sides, then divide by 3.",
     "id": "maths:M10-WEB-SC4-C3-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q4"
   },
@@ -1622,9 +1522,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract x from both sides to leave 4x − 15 = 69. Add 15 to both sides, then divide by 4.",
     "id": "maths:M10-WEB-SC4-C3-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q5"
   },
@@ -1674,9 +1571,6 @@
     "hint": "What number divides every term in 6x + 12 = 126? What would the equation look like after dividing both sides by it?",
     "method_note": "Divide every term by 6: 12 ÷ 6 = 2 and 126 ÷ 6 = 21. Then isolate x.",
     "id": "maths:M10-WEB-SC4-C3-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "scaffolded",
     "level": 2,
     "source": "Four-question scaffolded extension, adapted from maths:M10-S04-C3-Q6"
   }

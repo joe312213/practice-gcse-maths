@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M04-WEB-DEMO-C1-Q1",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "demo",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "Travelling time and resting time are in the ratio 2 : 5. Together they take 133 minutes. How many minutes are spent resting?",
     "answer": "95",
     "answerUnit": "minutes",
@@ -47,12 +42,21 @@
         "outputUnit": "minutes"
       }
     ],
-    "hint": "Does 133 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-    "method_note": "Find the value of one ratio part Find the requested second amount.",
+    "hint": {
+      "textRef": "match-known-quantity",
+      "values": {
+        "amount": "133"
+      }
+    },
+    "method_note": {
+      "textRef": "find-requested-share"
+    },
     "check": "One ratio part is 19. The two quantities are 38 and 95, in the named order. Check their total against the given amount, then check you answered the requested question.",
     "wrong": "665/2",
     "error_note": "The known total matches 7 parts, not 2. Find one part before scaling to the requested quantity.",
-    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "source": {
+      "textRef": "question-source"
+    },
     "operationCount": 3,
     "ratioModel": {
       "a": 2,
@@ -81,12 +85,7 @@
   },
   {
     "id": "maths:M04-WEB-DEMO-C2-Q1",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "demo",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "£160 is shared between Ada and Ben in the ratio 6 : 10. How much does Ben receive?",
     "answer": "100",
     "answerUnit": "£",
@@ -139,7 +138,9 @@
     "check": "The two amounts are 60 and 100. Dividing both by 20 gives 3 : 5, equivalent to 6 : 10.",
     "wrong": "160",
     "error_note": "£160 is the total for both people. Ben receives only his 5 of the 8 simplified parts.",
-    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "source": {
+      "textRef": "question-source"
+    },
     "operationCount": 4,
     "ratioModel": {
       "a": 6,
@@ -169,12 +170,7 @@
   },
   {
     "id": "maths:M04-WEB-DEMO-C3-Q1",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "demo",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "Red paint and white paint are in the ratio 3 : 7. There are 28 litres more white paint than red paint. White paint costs £3 per litre. What is the cost of the white paint?",
     "answer": "147",
     "answerUnit": "£",
@@ -223,15 +219,21 @@
         "input": "49 × 3",
         "output": "147",
         "outputUnit": "£",
-        "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        "note": {
+          "textRef": "finish-linked-calculation"
+        }
       }
     ],
     "hint": "Before considering the price per litre, match the given difference of 28 litres to its ratio parts. Find the second named quantity first.",
-    "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+    "method_note": {
+      "textRef": "linked-ratio-method"
+    },
     "check": "The original quantities are 21 litres and 49 litres. Check their difference against the given 28 litres. Multiply the ratio amount by the stated rate or number of batches. The final answer is £147.",
     "wrong": "49",
     "error_note": "49 litres is only the intermediate ratio amount. Multiply the ratio amount by the stated rate or number of batches.",
-    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+    "source": {
+      "textRef": "linked-source"
+    },
     "operationCount": 4,
     "ratioModel": {
       "a": 3,

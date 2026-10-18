@@ -1,8 +1,14 @@
 <!--
   Purpose: Supply the topic stage labels and actions to shared chevron steps.
-  Used By: TopicPractice.
-  Uses: ChevronSteps and the domain stage order.
-  Libs: Svelte props/snippets.
+
+  Main contents:
+  - Topic stage labels and callbacks composed through ChevronSteps.
+
+  Used By: website/src/lib/components/practice/TopicPractice.svelte.
+
+  Uses: website/src/lib/components/ui/ChevronSteps.svelte, website/src/lib/domain/stages.mjs.
+
+  Libs: none.
 -->
 <script>
   import ChevronSteps from '#lib/components/ui/ChevronSteps.svelte';

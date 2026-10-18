@@ -1,16 +1,23 @@
-import { readTopicBank } from '../read-topic-bank.mjs';
 /**
- * Purpose: Check responsive question layout, working-pad interaction and controlled demo playback.
+ * Purpose: Check responsive question layout, working-pad interaction and controlled demo
+ * playback.
  *
  * Main contents:
  * - checkPresentation
  *
- * Used By: website/scripts/browser-checks.mjs
+ * Used By: website/scripts/browser-checks.mjs.
  *
- * Uses: website/scripts/browser/support.mjs.
+ * Uses: website/scripts/read-topic-bank.mjs, website/scripts/browser/handwriting-checks.mjs,
+ * website/src/lib/content/topic-routes.mjs, website/scripts/browser/support.mjs.
  *
- * Libs: node:assert/strict (assertions).
+ * Libs: node:assert/strict (assertions), @playwright/test (browser automation and assertions).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
  */
+import { readTopicBank } from '../read-topic-bank.mjs';
+
 import assert from 'node:assert/strict';
 import { expect } from '@playwright/test';
 import { checkHandwriting } from './handwriting-checks.mjs';
@@ -290,7 +297,7 @@ export async function checkPresentation(browser, base) {
     await page.setViewportSize({ width: 1280, height: 1000 });
     await selectTopic(page, originalTopic);
     await page.locator('[data-mode="plain"]').click();
-    await page.locator('#level').selectOption('2');
+    await page.locator('.question-panel [data-level="2"]').click();
     const pad = page.locator('#working');
     /**
      * Return the working canvas PNG data URL for before/after stroke comparisons.
@@ -486,7 +493,7 @@ export async function checkPresentation(browser, base) {
     // Phone cards use the available viewport width; short questions pair without shrinking maths.
     await selectTopic(page, 'M01');
     await page.locator('[data-mode="plain"]').click();
-    await page.locator('#level').selectOption('0');
+    await page.locator('.question-panel [data-level="0"]').click();
     for (const width of [360, 390, 440, 767, 768]) {
       await page.setViewportSize({ width, height: 956 });
       const mobile = await page.locator('.question-panel').evaluate((panel) => {
@@ -531,13 +538,22 @@ export async function checkPresentation(browser, base) {
           fullPage: true,
         });
     }
-    await page.locator('#level').selectOption('2');
+    await page.locator('.question-panel [data-level="2"]').click();
     for (const width of [360, 394, 768]) {
       await page.setViewportSize({ width, height: 956 });
       await page.clock.runFor(32);
       // ResizeObserver regrouping is native; a virtual-clock step does not guarantee its delivery.
       await page.waitForFunction(() => document.documentElement.scrollWidth <= innerWidth);
-      assert.equal(await page.getByRole('combobox', { name: 'Level', exact: true }).count(), 1);
+      const levels = page
+        .locator('.question-panel')
+        .getByRole('group', { name: 'Level', exact: true });
+      assert.equal(await levels.count(), 1);
+      assert.deepEqual(await levels.getByRole('button').allTextContents(), [
+        'Start',
+        'Build',
+        'Confidence',
+      ]);
+      assert.equal(await levels.locator('[aria-pressed="true"]').textContent(), 'Confidence');
       const header = await page.locator('.practice-question-header').evaluate((row) => {
         const heading = row.querySelector('.practice-question-heading').getBoundingClientRect();
         const tools = row.querySelector('.practice-question-tools').getBoundingClientRect();
@@ -611,7 +627,7 @@ export async function checkPresentation(browser, base) {
     }
     await selectTopic(page, originalTopic);
     await page.locator('[data-mode="plain"]').click();
-    await page.locator('#level').selectOption('2');
+    await page.locator('.question-panel [data-level="2"]').click();
     await page.setViewportSize({ width: 360, height: 1000 });
     await page.clock.runFor(50);
     assert.equal(await page.locator('.question-prefix').innerText(), 'Solve the equation');

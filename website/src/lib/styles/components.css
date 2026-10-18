@@ -115,8 +115,8 @@ main {
   @apply flex items-center flex-wrap;
   gap: var(--control-gap);
 }
-[data-demo-level][aria-pressed='true'] {
-  outline: 2px solid var(--brand);
+.level-selector [aria-pressed='true'] {
+  outline: 2px solid var(--level-selected-outline);
   background: var(--soft);
 }
 :focus-visible {
@@ -1149,7 +1149,7 @@ footer a {
 .question-workspace > * {
   min-width: 0;
 }
-/* Feedback uses the full workspace; the writing surface keeps its own top breathing room. */
+/* Detailed feedback can span both columns; brief success feedback stays beside the canvas. */
 .question-workspace > .feedback {
   grid-column: 1 / -1;
 }
@@ -1176,7 +1176,7 @@ footer a {
 .active-question-content {
   margin-inline-start: 2em;
 }
-.active-question-content > .selected-equation {
+.active-question-content .question-transition > .selected-equation {
   /* Reduce the standard 15px question margin by the requested half rem. */
   margin-block-end: calc(15px - 0.5rem);
 }

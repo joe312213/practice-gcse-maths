@@ -1,5 +1,15 @@
-/** Pack topic cards in source order into the shortest column, taking the leftmost tie.
+/**
+ * Purpose: Pack topic cards in source order into the shortest column, taking the leftmost tie.
  * CSS owns column widths/gaps; the unenhanced grid remains a usable static fallback.
+ *
+ * Main contents:
+ * - topicMasonry.
+ *
+ * Used By: website/src/routes/+page.svelte.
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: none.
  */
 export function topicMasonry(container) {
   let frame = 0,

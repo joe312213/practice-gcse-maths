@@ -1,11 +1,31 @@
-/** Authored bank order defines distinct full pages within each topic, stage and level. */
+/**
+ * Purpose: Authored bank order defines distinct full pages within each topic, stage and level.
+ *
+ * Main contents:
+ * - TOPIC_PAGE_SIZES, findQuestion, topicPages, assessmentPage, discardRetiredAttempts.
+ *
+ * Used By: tests/draft-topics.test.mjs, tests/error-investigation.test.mjs,
+ * tests/topic-pages.test.mjs, website/src/lib/application/session.mjs,
+ * website/src/lib/components/practice/PracticeActivity.svelte,
+ * website/src/lib/components/practice/QuestionList.svelte,
+ * website/src/lib/components/practice/TopicPractice.svelte.
+ *
+ * Uses: ../content/topic-runtime.mjs for selected-question expansion.
+ *
+ * Libs: none.
+ */
+import { resolveQuestion } from '../content/topic-runtime.mjs';
+
 export const TOPIC_PAGE_SIZES = { plain: 12, scaffolded: 4, errors: 4, problem: 6 };
 
 /** Historical records can resolve retired IDs; retired definitions never enter new draws. */
 export function findQuestion(bank, id) {
-  return bank.questions.find((q) => q.id === id) ?? bank.retiredQuestions?.find((q) => q.id === id);
+  return resolveQuestion(
+    bank.questions.find((q) => q.id === id) ?? bank.retiredQuestions?.find((q) => q.id === id),
+  );
 }
 
+/** Group a bank’s authored questions into ordered pages for the supplied activity mode and level. Called by ordinary session navigation; stable IDs preserve page identity. */
 export function topicPages(bank, mode, level) {
   const size = TOPIC_PAGE_SIZES[mode];
   if (!size) return [];

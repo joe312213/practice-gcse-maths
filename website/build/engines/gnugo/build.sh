@@ -1,5 +1,20 @@
 #!/bin/sh
 # GNU Go browser build, GPL-3.0-or-later. Copyright (c) 2026 Joe Hudson.
+#
+# Purpose: Reproduce the optional GNU Go browser engine from the pinned source
+# archive, building native pattern generators before cross-compiling WebAssembly.
+#
+# Main contents:
+# - Compiler compatibility patches; native/wasm builds; bridge export/link flags.
+#
+# Used By: manual engine maintenance, not ordinary npm builds or verification.
+#
+# Uses: gnugo-3.8.tar.gz and bridge.c beside this script; writes gnugo.js/gnugo.wasm
+# back to that asset directory. Intermediate sources and logs go in the supplied directory.
+#
+# Libs: GNU Go 3.8 for analysis; Emscripten for the worker/wasm module; Python 3
+# for deterministic compatibility patches. Existing copyright/licence files are retained.
+#
 # Requirements: Emscripten 4.0.22 on PATH, native C compiler, make, Python 3.
 # Usage: sh build.sh /absolute/path/to/an/empty/build-directory
 set -eu

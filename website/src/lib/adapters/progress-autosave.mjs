@@ -1,10 +1,22 @@
-import { progressTask } from './progress-ownership.mjs';
 /**
- * Save linked progress at practice boundaries and browser lifecycle opportunities.
- * The browser copy is always saved first. File writes are serial, verified and never
- * prompt for permission in the background. A pending marker survives interrupted exits.
- * Used by TopicPractice; dependencies are injectable for lifecycle/failure tests.
+ * Purpose: Save linked progress at practice boundaries and browser lifecycle opportunities.
+ * Browser data is saved first; file writes are serial, verified and never request permissions in
+ * the background. Pending work survives interrupted exits.
+ *
+ * Main contents:
+ * - createProgressAutosave, bindProgressAutosave.
+ *
+ * Used By: tests/progress-autosave.test.mjs, website/scripts/audit-progress-concurrency.mjs,
+ * website/src/lib/components/practice/TopicPractice.svelte.
+ *
+ * Uses: website/src/lib/adapters/progress-ownership.mjs,
+ * website/src/lib/domain/progress-transfer.mjs, website/src/lib/domain/progress.mjs,
+ * website/src/lib/adapters/progress-file.mjs.
+ *
+ * Libs: none.
  */
+import { progressTask } from './progress-ownership.mjs';
+
 import { exportProgress } from '../domain/progress-transfer.mjs';
 import { recordExport } from '../domain/progress.mjs';
 import {
@@ -16,6 +28,7 @@ import {
   newerLinkedProgress,
 } from './progress-file.mjs';
 
+/** Create the injectable file-saving coordinator for a learner store. Queues boundary saves, checks linked-file freshness and reports status; bindProgressAutosave owns browser events. Example: createProgressAutosave({ data, save, status }). */
 export function createProgressAutosave({
   data,
   save,

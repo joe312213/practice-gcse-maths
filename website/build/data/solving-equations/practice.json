@@ -31,9 +31,6 @@
     "hint": "On the left, what operation would undo +6? What would remain with x?",
     "method_note": "Subtract 6 from both sides to leave x = -8.",
     "id": "maths:M10-S04-C1-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -72,9 +69,6 @@
     "hint": "On the right, what operation would undo −6? What would remain with x?",
     "method_note": "Add 6 to both sides to leave x = 14.",
     "id": "maths:M10-S04-C1-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -109,9 +103,6 @@
     "hint": "On the left, what operation would undo −7? What would remain with x?",
     "method_note": "Add 7 to both sides to leave x = 25.",
     "id": "maths:M10-S04-C1-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -146,9 +137,6 @@
     "hint": "On the left, what operation would undo −9? What would remain with x?",
     "method_note": "Add 9 to both sides to leave x = 5.",
     "id": "maths:M10-S04-C1-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -187,9 +175,6 @@
     "hint": "In 189 = 7x, 7x means 7 times x. How could you find the value of one x?",
     "method_note": "Divide both sides by 7: x = 189 ÷ 7 = 27.",
     "id": "maths:M10-S04-C1-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -224,9 +209,6 @@
     "hint": "In 4x = 4, 4x means 4 times x. How could you find the value of one x?",
     "method_note": "Divide both sides by 4: x = 4 ÷ 4 = 1.",
     "id": "maths:M10-S04-C1-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -270,9 +252,6 @@
     "hint": "On the left, what operation would undo −3? What would remain with x?",
     "method_note": "Add 3 to both sides to leave 6x = 60. Divide both sides by 6 to get x = 10.",
     "id": "maths:M10-S04-C2-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -316,9 +295,6 @@
     "hint": "On the left, what operation would undo +8? What would remain with x?",
     "method_note": "Subtract 8 from both sides to leave 7x = 63. Divide both sides by 7 to get x = 9.",
     "id": "maths:M10-S04-C2-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -362,9 +338,6 @@
     "hint": "On the left, what operation would undo +6? What would remain with x?",
     "method_note": "Subtract 6 from both sides to leave 7x = -35. Divide both sides by 7 to get x = -5.",
     "id": "maths:M10-S04-C2-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -408,9 +381,6 @@
     "hint": "On the left, what operation would undo −9? What would remain with x?",
     "method_note": "Add 9 to both sides to leave 6x = 48. Divide both sides by 6 to get x = 8.",
     "id": "maths:M10-S04-C2-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -455,12 +425,11 @@
       "0",
       "8"
     ],
-    "hint": "On the left, which terms contain x? What would that side look like after collecting them?",
+    "hint": {
+      "textRef": "collect-like-terms-hint"
+    },
     "method_note": "Collect the x-terms first. Subtract 8 from both sides to leave 6x = 0. Divide both sides by 6 to get x = 0.",
     "id": "maths:M10-S04-C2-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -504,9 +473,6 @@
     "hint": "On the left, what operation would undo −3? What would remain with x?",
     "method_note": "Add 3 to both sides to leave 2x = -8. Divide both sides by 2 to get x = -4.",
     "id": "maths:M10-S04-C2-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -554,9 +520,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract 2x from both sides to leave x − 9 = -11. Add 9 to both sides to leave x = -2.",
     "id": "maths:M10-S04-C3-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -605,9 +568,6 @@
     "hint": "What number divides every term in 5x + 10 = 20? What would the equation look like after dividing both sides by it?",
     "method_note": "Divide every term by 5: 10 ÷ 5 = 2 and 20 ÷ 5 = 4. Then isolate x.",
     "id": "maths:M10-S04-C3-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -656,9 +616,6 @@
     "hint": "What number divides every term in 3x + 12 = 9? What would the equation look like after dividing both sides by it?",
     "method_note": "Divide every term by 3: 12 ÷ 3 = 4 and 9 ÷ 3 = 3. Then isolate x.",
     "id": "maths:M10-S04-C3-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -711,9 +668,6 @@
     "hint": "In 4x + 2 = x + 14, what could you subtract from both sides to leave x-terms on just one side?",
     "method_note": "After simplifying, subtract x from both sides to leave 3x + 2 = 14. Subtract 2 from both sides, then divide by 3.",
     "id": "maths:M10-S04-C3-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -770,9 +724,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract x from both sides to leave 4x − 15 = 69. Add 15 to both sides, then divide by 4.",
     "id": "maths:M10-S04-C3-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -821,9 +772,6 @@
     "hint": "What number divides every term in 6x + 12 = 126? What would the equation look like after dividing both sides by it?",
     "method_note": "Divide every term by 6: 12 ÷ 6 = 2 and 126 ÷ 6 = 21. Then isolate x.",
     "id": "maths:M10-S04-C3-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -858,9 +806,6 @@
     "hint": "On the left, what operation would undo +8? What would remain with x?",
     "method_note": "Subtract 8 from both sides to leave x = 20.",
     "id": "maths:M10-S05-C1-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -899,9 +844,6 @@
     "hint": "On the right, what operation would undo −8? What would remain with x?",
     "method_note": "Add 8 to both sides to leave x = -6.",
     "id": "maths:M10-S05-C1-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -936,9 +878,6 @@
     "hint": "In 5x = 65, 5x means 5 times x. How could you find the value of one x?",
     "method_note": "Divide both sides by 5: x = 65 ÷ 5 = 13.",
     "id": "maths:M10-S05-C1-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -973,9 +912,6 @@
     "hint": "Here x is divided by 2. What operation would undo that on both sides?",
     "method_note": "Multiply both sides by 2 to undo division by 2: x = 11 × 2 = 22.",
     "id": "maths:M10-S05-C1-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -1014,9 +950,6 @@
     "hint": "On the right, what operation would undo +9? What would remain with x?",
     "method_note": "Subtract 9 from both sides to leave x = 18.",
     "id": "maths:M10-S05-C1-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -1051,9 +984,6 @@
     "hint": "In 6x = 90, 6x means 6 times x. How could you find the value of one x?",
     "method_note": "Divide both sides by 6: x = 90 ÷ 6 = 15.",
     "id": "maths:M10-S05-C1-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -1097,9 +1027,6 @@
     "hint": "On the left, what operation would undo −9? What would remain with x?",
     "method_note": "Add 9 to both sides to leave 5x = -35. Divide both sides by 5 to get x = -7.",
     "id": "maths:M10-S05-C2-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -1144,12 +1071,11 @@
       "0",
       "121"
     ],
-    "hint": "On the left, which terms contain x? What would that side look like after collecting them?",
+    "hint": {
+      "textRef": "collect-like-terms-hint"
+    },
     "method_note": "Collect the x-terms first. Subtract 6 from both sides to leave 5x = 115. Divide both sides by 5 to get x = 23.",
     "id": "maths:M10-S05-C2-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -1193,9 +1119,6 @@
     "hint": "On the left, what operation would undo +8? What would remain with x?",
     "method_note": "Subtract 8 from both sides to leave 5x = -15. Divide both sides by 5 to get x = -3.",
     "id": "maths:M10-S05-C2-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -1239,9 +1162,6 @@
     "hint": "On the left, what operation would undo +8? What would remain with x?",
     "method_note": "Subtract 8 from both sides to leave 3x = 72. Divide both sides by 3 to get x = 24.",
     "id": "maths:M10-S05-C2-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -1285,9 +1205,6 @@
     "hint": "On the left, what operation would undo −5? What would remain with x?",
     "method_note": "Add 5 to both sides to leave 3x = 78. Divide both sides by 3 to get x = 26.",
     "id": "maths:M10-S05-C2-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -1331,9 +1248,6 @@
     "hint": "On the left, what operation would undo +4? What would remain with x?",
     "method_note": "Subtract 4 from both sides to leave 2x = 14. Divide both sides by 2 to get x = 7.",
     "id": "maths:M10-S05-C2-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -1390,9 +1304,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract 2x from both sides to leave 5x − 35 = 50. Add 35 to both sides, then divide by 5.",
     "id": "maths:M10-S05-C3-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -1449,9 +1360,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract x from both sides to leave 5x + 12 = 92. Subtract 12 from both sides, then divide by 5.",
     "id": "maths:M10-S05-C3-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -1508,9 +1416,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract 3x from both sides to leave 3x − 30 = -12. Add 30 to both sides, then divide by 3.",
     "id": "maths:M10-S05-C3-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -1563,9 +1468,6 @@
     "hint": "In 4x − 9 = 2x − 3, what could you subtract from both sides to leave x-terms on just one side?",
     "method_note": "After simplifying, subtract 2x from both sides to leave 2x − 9 = -3. Add 9 to both sides, then divide by 2.",
     "id": "maths:M10-S05-C3-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -1613,9 +1515,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract 4x from both sides to leave x − 35 = -23. Add 35 to both sides to leave x = 12.",
     "id": "maths:M10-S05-C3-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -1664,9 +1563,6 @@
     "hint": "What number divides every term in 3x + 15 = 108? What would the equation look like after dividing both sides by it?",
     "method_note": "Divide every term by 3: 15 ÷ 3 = 5 and 108 ÷ 3 = 36. Then isolate x.",
     "id": "maths:M10-S05-C3-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -1701,9 +1597,6 @@
     "hint": "On the left, what operation would undo −8? What would remain with x?",
     "method_note": "Add 8 to both sides to leave x = -2.",
     "id": "maths:M10-S06-C1-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -1738,9 +1631,6 @@
     "hint": "Here x is divided by 3. What operation would undo that on both sides?",
     "method_note": "Multiply both sides by 3 to undo division by 3: x = -1 × 3 = -3.",
     "id": "maths:M10-S06-C1-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -1772,9 +1662,6 @@
     "hint": "Here x is divided by 2. What operation would undo that on both sides?",
     "method_note": "Multiply both sides by 2 to undo division by 2: x = 0 × 2 = 0. Dividing 0 by 2 also happens to give 0, but it does not undo the division by 2. Show the inverse operation in your working.",
     "id": "maths:M10-S06-C1-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -1809,9 +1696,6 @@
     "hint": "Here x is divided by 2. What operation would undo that on both sides?",
     "method_note": "Multiply both sides by 2 to undo division by 2: x = 2 × 2 = 4.",
     "id": "maths:M10-S06-C1-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -1850,9 +1734,6 @@
     "hint": "On the right, what operation would undo +2? What would remain with x?",
     "method_note": "Subtract 2 from both sides to leave x = 26.",
     "id": "maths:M10-S06-C1-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -1887,9 +1768,6 @@
     "hint": "On the left, what operation would undo +8? What would remain with x?",
     "method_note": "Subtract 8 from both sides to leave x = 8.",
     "id": "maths:M10-S06-C1-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -1934,12 +1812,11 @@
       "0",
       "33"
     ],
-    "hint": "On the left, which terms contain x? What would that side look like after collecting them?",
+    "hint": {
+      "textRef": "collect-like-terms-hint"
+    },
     "method_note": "Collect the x-terms first. Add 9 to both sides to leave 2x = 42. Divide both sides by 2 to get x = 21.",
     "id": "maths:M10-S06-C2-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -1984,12 +1861,11 @@
       "0",
       "21"
     ],
-    "hint": "On the left, which terms contain x? What would that side look like after collecting them?",
+    "hint": {
+      "textRef": "collect-like-terms-hint"
+    },
     "method_note": "Collect the x-terms first. Add 9 to both sides to leave 3x = 30. Divide both sides by 3 to get x = 10.",
     "id": "maths:M10-S06-C2-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -2034,12 +1910,11 @@
       "0",
       "88"
     ],
-    "hint": "On the left, which terms contain x? What would that side look like after collecting them?",
+    "hint": {
+      "textRef": "collect-like-terms-hint"
+    },
     "method_note": "Collect the x-terms first. Subtract 4 from both sides to leave 7x = 84. Divide both sides by 7 to get x = 12.",
     "id": "maths:M10-S06-C2-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -2083,9 +1958,6 @@
     "hint": "On the left, what operation would undo +8? What would remain with x?",
     "method_note": "Subtract 8 from both sides to leave 6x = -30. Divide both sides by 6 to get x = -5.",
     "id": "maths:M10-S06-C2-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -2133,9 +2005,6 @@
     "hint": "On the right, what operation would undo +2? What would remain with x?",
     "method_note": "Subtract 2 from both sides to leave 7x = 21. Divide both sides by 7 to get x = 3.",
     "id": "maths:M10-S06-C2-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -2179,9 +2048,6 @@
     "hint": "On the left, what operation would undo +8? What would remain with x?",
     "method_note": "Subtract 8 from both sides to leave 7x = 77. Divide both sides by 7 to get x = 11.",
     "id": "maths:M10-S06-C2-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -2234,9 +2100,6 @@
     "hint": "In 6x + 4 = 3x + 79, what could you subtract from both sides to leave x-terms on just one side?",
     "method_note": "After simplifying, subtract 3x from both sides to leave 3x + 4 = 79. Subtract 4 from both sides, then divide by 3.",
     "id": "maths:M10-S06-C3-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -2280,9 +2143,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "Expanding gives 5x + 30 = 165. A shorter route is to divide both sides by 5 first: x + 6 = 33.",
     "id": "maths:M10-S06-C3-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -2335,9 +2195,6 @@
     "hint": "In 6x − 9 = 3x + 60, what could you subtract from both sides to leave x-terms on just one side?",
     "method_note": "After simplifying, subtract 3x from both sides to leave 3x − 9 = 60. Add 9 to both sides, then divide by 3.",
     "id": "maths:M10-S06-C3-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -2386,9 +2243,6 @@
     "hint": "What number divides every term in 2x − 6 = 12? What would the equation look like after dividing both sides by it?",
     "method_note": "Divide every term by 2: -6 ÷ 2 = -3 and 12 ÷ 2 = 6. Then isolate x.",
     "id": "maths:M10-S06-C3-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -2432,9 +2286,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "Expanding gives 6x − 18 = 90. A shorter route is to divide both sides by 6 first: x − 3 = 15.",
     "id": "maths:M10-S06-C3-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -2487,9 +2338,6 @@
     "hint": "In 6x + 8 = 4x + 56, what could you subtract from both sides to leave x-terms on just one side?",
     "method_note": "After simplifying, subtract 4x from both sides to leave 2x + 8 = 56. Subtract 8 from both sides, then divide by 2.",
     "id": "maths:M10-S06-C3-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -2524,9 +2372,6 @@
     "hint": "In 7x = 140, 7x means 7 times x. How could you find the value of one x?",
     "method_note": "Divide both sides by 7: x = 140 ÷ 7 = 20.",
     "id": "maths:M10-S07-C1-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -2565,9 +2410,6 @@
     "hint": "On the right, what operation would undo −6? What would remain with x?",
     "method_note": "Add 6 to both sides to leave x = 17.",
     "id": "maths:M10-S07-C1-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -2602,9 +2444,6 @@
     "hint": "Here x is divided by 5. What operation would undo that on both sides?",
     "method_note": "Multiply both sides by 5 to undo division by 5: x = 22 × 5 = 110.",
     "id": "maths:M10-S07-C1-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -2639,9 +2478,6 @@
     "hint": "In 2x = 2, 2x means 2 times x. How could you find the value of one x?",
     "method_note": "Divide both sides by 2: x = 2 ÷ 2 = 1.",
     "id": "maths:M10-S07-C1-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -2676,9 +2512,6 @@
     "hint": "Here x is divided by 2. What operation would undo that on both sides?",
     "method_note": "Multiply both sides by 2 to undo division by 2: x = 5 × 2 = 10.",
     "id": "maths:M10-S07-C1-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -2713,9 +2546,6 @@
     "hint": "On the left, what operation would undo +7? What would remain with x?",
     "method_note": "Subtract 7 from both sides to leave x = -6.",
     "id": "maths:M10-S07-C1-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0
   },
   {
@@ -2759,9 +2589,6 @@
     "hint": "On the left, what operation would undo −3? What would remain with x?",
     "method_note": "Add 3 to both sides to leave 3x = 57. Divide both sides by 3 to get x = 19.",
     "id": "maths:M10-S07-C2-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -2806,12 +2633,11 @@
       "0",
       "100"
     ],
-    "hint": "On the left, which terms contain x? What would that side look like after collecting them?",
+    "hint": {
+      "textRef": "collect-like-terms-hint"
+    },
     "method_note": "Collect the x-terms first. Add 5 to both sides to leave 7x = 105. Divide both sides by 7 to get x = 15.",
     "id": "maths:M10-S07-C2-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -2855,9 +2681,6 @@
     "hint": "On the left, what operation would undo +2? What would remain with x?",
     "method_note": "Subtract 2 from both sides to leave 4x = 24. Divide both sides by 4 to get x = 6.",
     "id": "maths:M10-S07-C2-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -2902,12 +2725,11 @@
       "0",
       "-11"
     ],
-    "hint": "On the left, which terms contain x? What would that side look like after collecting them?",
+    "hint": {
+      "textRef": "collect-like-terms-hint"
+    },
     "method_note": "Collect the x-terms first. Add 3 to both sides to leave 2x = -8. Divide both sides by 2 to get x = -4.",
     "id": "maths:M10-S07-C2-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -2951,9 +2773,6 @@
     "hint": "On the left, what operation would undo +6? What would remain with x?",
     "method_note": "Subtract 6 from both sides to leave 2x = -16. Divide both sides by 2 to get x = -8.",
     "id": "maths:M10-S07-C2-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -2998,12 +2817,11 @@
       "0",
       "69"
     ],
-    "hint": "On the left, which terms contain x? What would that side look like after collecting them?",
+    "hint": {
+      "textRef": "collect-like-terms-hint"
+    },
     "method_note": "Collect the x-terms first. Add 9 to both sides to leave 6x = 78. Divide both sides by 6 to get x = 13.",
     "id": "maths:M10-S07-C2-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1
   },
   {
@@ -3047,9 +2865,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "Expanding gives 4x + 24 = 80. A shorter route is to divide both sides by 4 first: x + 6 = 20.",
     "id": "maths:M10-S07-C3-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -3098,9 +2913,6 @@
     "hint": "What number divides every term in 2x − 14 = -6? What would the equation look like after dividing both sides by it?",
     "method_note": "Divide every term by 2: -14 ÷ 2 = -7 and -6 ÷ 2 = -3. Then isolate x.",
     "id": "maths:M10-S07-C3-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -3144,9 +2956,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "Expanding gives 4x − 12 = -24. A shorter route is to divide both sides by 4 first: x − 3 = -6.",
     "id": "maths:M10-S07-C3-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -3199,9 +3008,6 @@
     "hint": "In 3x + 8 = x + 40, what could you subtract from both sides to leave x-terms on just one side?",
     "method_note": "After simplifying, subtract x from both sides to leave 2x + 8 = 40. Subtract 8 from both sides, then divide by 2.",
     "id": "maths:M10-S07-C3-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -3245,9 +3051,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "Expanding gives 5x + 20 = -15. A shorter route is to divide both sides by 5 first: x + 4 = -3.",
     "id": "maths:M10-S07-C3-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
@@ -3291,16 +3094,10 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "Expanding gives 7x + 42 = 91. A shorter route is to divide both sides by 7 first: x + 6 = 13.",
     "id": "maths:M10-S07-C3-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2
   },
   {
     "id": "maths:M10-P3-PL-C1-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "x + 17 = 8",
     "answer": "-9",
@@ -3334,9 +3131,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C1-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "x − 13 = -4",
     "answer": "9",
@@ -3370,9 +3164,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C1-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "7x = 84",
     "answer": "12",
@@ -3406,9 +3197,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C1-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "x / 6 = 9",
     "answer": "54",
@@ -3442,9 +3230,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C1-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "18 = x + 7",
     "answer": "11",
@@ -3478,9 +3263,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C1-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "-3x = 24",
     "answer": "-8",
@@ -3514,9 +3296,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C1-Q7",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "x / 4 = -6",
     "answer": "-24",
@@ -3550,9 +3329,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C1-Q8",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "5x = 17",
     "answer": "3.4",
@@ -3586,9 +3362,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C1-Q9",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "x + 8 = -3",
     "answer": "-11",
@@ -3622,9 +3395,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C1-Q10",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "x − 7 = -12",
     "answer": "-5",
@@ -3658,9 +3428,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C1-Q11",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "12 = x / 3",
     "answer": "36",
@@ -3694,9 +3461,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C1-Q12",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 0,
     "q": "9x = -18",
     "answer": "-2",
@@ -3730,9 +3494,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "4x + 9 = 37",
     "answer": "7",
@@ -3775,9 +3536,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "7x − 12 = 23",
     "answer": "5",
@@ -3820,9 +3578,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "5x + 8 = -12",
     "answer": "-4",
@@ -3865,9 +3620,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "6x − 11 = 7",
     "answer": "3",
@@ -3910,9 +3662,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "x / 3 + 7 = 12",
     "answer": "15",
@@ -3955,9 +3704,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "x / 5 − 4 = 3",
     "answer": "35",
@@ -4000,9 +3746,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q7",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "-3x + 8 = 23",
     "answer": "-5",
@@ -4045,9 +3788,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q8",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "8x + 5 = 17",
     "answer": "1.5",
@@ -4090,9 +3830,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q9",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "9x − 7 = -25",
     "answer": "-2",
@@ -4135,9 +3872,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q10",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "x / 4 + 6 = 1",
     "answer": "-20",
@@ -4180,9 +3914,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q11",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "6x + 13 = 4",
     "answer": "-1.5",
@@ -4225,9 +3956,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C2-Q12",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 1,
     "q": "x / 7 − 2 = -6",
     "answer": "-28",
@@ -4270,9 +3998,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "5(x + 3) = 2x + 39",
     "answer": "8",
@@ -4328,9 +4053,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q2",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "4(x − 6) = x − 3",
     "answer": "7",
@@ -4386,9 +4108,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q3",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "7(x + 2) = 3x + 38",
     "answer": "6",
@@ -4444,9 +4163,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q4",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "3(x − 5) = 5x − 7",
     "answer": "-4",
@@ -4502,9 +4218,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q5",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "8x + 11 = 3x − 9",
     "answer": "-4",
@@ -4556,9 +4269,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q6",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "6x − 17 = 2x + 5",
     "answer": "5.5",
@@ -4610,9 +4320,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q7",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "6(x − 4) = 2x + 10",
     "answer": "8.5",
@@ -4668,9 +4375,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q8",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "5(x − 7) = 3x − 43",
     "answer": "-4",
@@ -4726,9 +4430,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q9",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "9x − 8 = 4x + 7",
     "answer": "3",
@@ -4780,9 +4481,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q10",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "8(x + 3) = 2x − 6",
     "answer": "-5",
@@ -4838,9 +4536,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q11",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "4x + 19 = 7x − 2",
     "answer": "7",
@@ -4892,9 +4587,6 @@
   },
   {
     "id": "maths:M10-P3-PL-C3-Q12",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "plain",
     "level": 2,
     "q": "7(x − 5) = 4x − 20",
     "answer": "5",

@@ -1,14 +1,33 @@
 <!--
-  Purpose: Initialize the practice session and connect navigation, profile selection and activity components.
+  Purpose: Initialize the practice session and connect navigation, profile selection and
+  activity components.
 
   Main contents:
   - switchStage
 
-  Used By: SvelteKit route loading.
+  Used By: website/src/routes/[subject]/[topic]/+page.svelte.
 
-  Uses: storage, working-cache and practice-time adapters; session.mjs; LearningSteps.svelte; topic-routes.mjs and practice-pages.json; SiteHeader, SiteFooter, ProfileDialog, Progress, PracticeSets, PracticeActivity and MethodDemo.
+  Uses: website/src/lib/domain/topic-pages.mjs, website/src/lib/adapters/header-layout.mjs,
+  website/src/lib/adapters/practice-time.mjs, website/src/lib/adapters/progress-autosave.mjs,
+  website/src/lib/domain/progress-transfer.mjs, website/src/lib/adapters/progress-file.mjs,
+  website/src/lib/adapters/working-cache.mjs, website/src/lib/content/topic-routes.mjs,
+  website/src/lib/components/ui/SiteHeader.svelte,
+  website/src/lib/components/ui/SiteFooter.svelte,
+  website/src/lib/adapters/progress-ownership.mjs, website/src/lib/adapters/storage.mjs,
+  website/src/lib/application/session.mjs,
+  website/src/lib/components/practice/LearningSteps.svelte,
+  website/src/lib/content/practice-pages.json,
+  website/src/lib/components/practice/PracticeSets.svelte,
+  website/src/lib/components/practice/CombinedPractice.svelte,
+  website/src/lib/components/progress/OneDriveReminder.svelte,
+  website/src/lib/components/ui/ProfileDialog.svelte,
+  website/src/lib/components/practice/Progress.svelte,
+  website/src/lib/components/practice/PracticeActivity.svelte,
+  website/src/lib/components/teaching/MethodDemo.svelte.
 
-  Libs: bits-ui (dialog/popover interaction), svelte (component lifecycle and state), $app/paths (base-aware URLs).
+  Libs: bits-ui (accessible dialogs, popovers and choices), $app/navigation (SvelteKit
+  navigation/route state), $app/state (SvelteKit navigation/route state), svelte (component
+  state, lifecycle and transitions), $app/paths (SvelteKit navigation/route state).
 -->
 <script>
   import { findQuestion } from '#lib/domain/topic-pages.mjs';
@@ -27,7 +46,7 @@
   import { foundationTopics, topicPath } from '#lib/content/topic-routes.mjs';
   import { goto, replaceState } from '$app/navigation';
   import { page } from '$app/state';
-  let { topicId } = $props();
+  let { topicId, bankVersions } = $props();
   import SiteHeader from '#lib/components/ui/SiteHeader.svelte';
   import SiteFooter from '#lib/components/ui/SiteFooter.svelte';
   import { onMount, tick } from 'svelte';
@@ -70,12 +89,12 @@
     await goto(resolve(topicPath(id)));
   }
   /** Select/create learner name and open the URL topic/set. Called by ProfileDialog; create confirms a new name. */
-  function chooseName(name, create) {
+  async function chooseName(name, create) {
     const setCode = new URLSearchParams(location.search).get('set');
     const result = session.chooseName(name, create);
     if (result.profile) {
       session.switchTopic(combined ? 'M01' : topicId);
-      if (setCode) openSet(setCode);
+      if (setCode) await openSet(setCode);
     }
     return result;
   }
@@ -84,11 +103,12 @@
     !initialTopics.length ||
     (saved?.topics?.length === initialTopics.length &&
       initialTopics.every((topic) => saved.topics.includes(topic)));
-  function openSet(code) {
+  async function openSet(code) {
     try {
-      if (view.savedSet?.code === code && matchesTopics(view.savedSet)) session.resumePracticeSet();
+      if (view.savedSet?.code === code && matchesTopics(view.savedSet))
+        await session.resumePracticeSet();
       else
-        session.startPracticeSet(code, null, {
+        await session.startPracticeSet(code, null, {
           topics: initialTopics.length ? initialTopics : undefined,
         });
     } catch (cause) {
@@ -152,9 +172,26 @@
               ),
           ]),
         );
+        const params = new URLSearchParams(location.search);
+        const needsAll = combined || params.has('set') || params.has('recommendation');
+        const fetchTopic = ({ file }) =>
+          loadBank(`${asset(`data/${file}.json`)}?v=${bankVersions[file]}`);
         const banks = await Promise.all(
-          foundationTopics.map(({ file }) => loadBank(asset(`data/${file}.json`))),
+          foundationTopics.filter((topic) => needsAll || topic.bank === topicId).map(fetchTopic),
         );
+        // Multi-topic sets load extra banks only when requested; ordinary topic visits stay small.
+        let loadingBanks;
+        const ensureBanks = () =>
+          (loadingBanks ??= Promise.all(
+            foundationTopics
+              .filter((topic) => !banks.some((bank) => bank.topic === topic.bank))
+              .map(fetchTopic),
+          )
+            .then((extra) => banks.push(...extra))
+            .catch((cause) => {
+              loadingBanks = null;
+              throw cause;
+            }));
         const bank = combined ? banks[0] : banks.find((b) => b.topic === topicId);
         initialTopics = (new URLSearchParams(location.search).get('topics') ?? '')
           .split(',')
@@ -166,7 +203,12 @@
         } catch {
           /* In-memory working remains usable. */
         }
-        session = createSession({
+        // A plain topic URL leaves a saved set parked until Resume is selected.
+        if (!needsAll) {
+          const learner = progress.data.profiles.find((item) => item.key === progress.data.last);
+          if (learner?.practiceSet) learner.practiceSet.active = false;
+        }
+        const api = createSession({
           workingCache: createWorkingCache(temporaryStorage, (text) => (warning = text)),
           bank,
           banks,
@@ -174,6 +216,17 @@
           data: progress.data,
           save: progress.save,
         });
+        session = {
+          ...api,
+          async startPracticeSet(...args) {
+            await ensureBanks();
+            if (!disposed) return api.startPracticeSet(...args);
+          },
+          async resumePracticeSet(...args) {
+            await ensureBanks();
+            if (!disposed) return api.resumePracticeSet(...args);
+          },
+        };
         const setCode = new URLSearchParams(location.search).get('set');
         unsubscribe = session.subscribe((value) => {
           view = value;
@@ -188,7 +241,7 @@
         if (view.profile) {
           if (!setCode || view.practiceSet?.code !== setCode || !matchesTopics(view.practiceSet)) {
             session.switchTopic(combined ? 'M01' : topicId);
-            if (setCode) openSet(setCode);
+            if (setCode) await openSet(setCode);
           }
         }
         const recommendationId = new URLSearchParams(window.location.search).get('recommendation');
@@ -202,7 +255,7 @@
               throw Error(
                 'Choose the learner who owns this recommendation from the Progress page.',
               );
-            session.startPracticeSet(recommended.code, recommendationId);
+            await session.startPracticeSet(recommended.code, recommendationId);
           } catch (cause) {
             warning = cause.message;
           }
@@ -279,18 +332,21 @@
   }}
 >
   {#snippet before()}<span id="welcome" class="welcome"
-      >{view?.profile ? `Welcome back, ${view.profile.name}!` : ''}</span
+      >{view?.profile?.anonymous
+        ? 'Practice for this visit'
+        : view?.profile
+          ? `Welcome back, ${view.profile.name}!`
+          : ''}</span
     ><button
       bind:this={profileTrigger}
       id="profile-button"
       class="action-button quiet"
       disabled={!session}
-      onclick={() => (profileOpen = true)}>{view?.profile ? 'Not you?' : 'Choose name'}</button
+      onclick={() => (profileOpen = true)}
+      >{view?.profile && !view.profile.anonymous ? 'Not you?' : 'Choose name'}</button
     >{/snippet}
 
-  {#if view?.profile}
-    <a class="action-button quiet" href={resolve('/progress.html')}>Progress</a>
-  {/if}
+  <a class="action-button quiet" href={resolve('/progress.html')}>Progress</a>
   {#snippet menuItems()}
     {#if view?.profile}
       <button
@@ -325,9 +381,13 @@
       <button id="begin" class="action-button primary" onclick={() => (profileOpen = true)}
         >Choose your name to begin</button
       >
+      <p>Enter a name to keep your progress beyond this visit. It is optional.</p>
+      <button class="action-button" id="begin-anonymous" onclick={() => session.beginAnonymous()}
+        >Continue without a name</button
+      >
     </section>
   {:else}
-    {#if currentLearner}<OneDriveReminder
+    {#if currentLearner && !currentLearner.anonymous}<OneDriveReminder
         profile={currentLearner}
         onsaved={() => progressAdapter.save(progressAdapter.data)}
       />{/if}
@@ -460,5 +520,6 @@
 {#if session}<ProfileDialog
     bind:open={profileOpen}
     {chooseName}
+    onanonymous={() => session.beginAnonymous()}
     returnFocus={profileTrigger}
   />{/if}

@@ -1,4 +1,18 @@
-<!-- Explicit local profile controls; saved external files are never deleted or reset here. -->
+<!--
+  Purpose: Explicit local profile controls; saved external files are never deleted or reset
+  here.
+
+  Main contents:
+  - Rename/reset/delete forms with name confirmation and storage/file-link cleanup.
+
+  Used By: website/src/routes/progress.html/+page.svelte.
+
+  Uses: website/src/lib/adapters/progress-ownership.mjs,
+  website/src/lib/domain/profile-management.mjs, website/src/lib/adapters/working-cache.mjs,
+  website/src/lib/adapters/progress-file.mjs.
+
+  Libs: bits-ui (accessible dialogs, popovers and choices).
+-->
 <script>
   import { progressTask } from '#lib/adapters/progress-ownership.mjs';
   import { Dialog } from 'bits-ui';

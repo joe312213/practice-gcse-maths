@@ -37,13 +37,8 @@
     "method_note": "Adding a positive moves right. Start at −4. Move 7 right to 3.",
     "check": "Undo the final operation: 3 − 7 = −4.",
     "wrong": "-11",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q1",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "3 − 8",
@@ -83,13 +78,8 @@
     "method_note": "Subtracting a positive moves left. Start at 3. Move 8 left to −5.",
     "check": "Undo the final operation: (−5) + 8 = 3.",
     "wrong": "11",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q2",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−6 + 9",
@@ -129,13 +119,8 @@
     "method_note": "Adding a positive moves right. Start at −6. Move 9 right to 3.",
     "check": "Undo the final operation: 3 − 9 = −6.",
     "wrong": "-15",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q3",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "5 − 12",
@@ -175,13 +160,8 @@
     "method_note": "Subtracting a positive moves left. Start at 5. Move 12 left to −7.",
     "check": "Undo the final operation: (−7) + 12 = 5.",
     "wrong": "17",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q4",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−9 + 4",
@@ -221,13 +201,8 @@
     "method_note": "Adding a positive moves right. Start at −9. Move 4 right to −5.",
     "check": "Undo the final operation: (−5) − 4 = −9.",
     "wrong": "-13",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q5",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "7 − 15",
@@ -267,13 +242,8 @@
     "method_note": "Subtracting a positive moves left. Start at 7. Move 15 left to −8.",
     "check": "Undo the final operation: (−8) + 15 = 7.",
     "wrong": "22",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q6",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−12 + 5",
@@ -313,13 +283,8 @@
     "method_note": "Adding a positive moves right. Start at −12. Move 5 right to −7.",
     "check": "Undo the final operation: (−7) − 5 = −12.",
     "wrong": "-17",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q7",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "2 − 11",
@@ -359,13 +324,8 @@
     "method_note": "Subtracting a positive moves left. Start at 2. Move 11 left to −9.",
     "check": "Undo the final operation: (−9) + 11 = 2.",
     "wrong": "13",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q8",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−8 + 13",
@@ -405,13 +365,8 @@
     "method_note": "Adding a positive moves right. Start at −8. Move 13 right to 5.",
     "check": "Undo the final operation: 5 − 13 = −8.",
     "wrong": "-21",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q9",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "9 − 6",
@@ -451,13 +406,8 @@
     "method_note": "Subtracting a positive moves left. Start at 9. Move 6 left to 3.",
     "check": "Undo the final operation: 3 + 6 = 9.",
     "wrong": "15",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q10",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−15 + 8",
@@ -497,13 +447,8 @@
     "method_note": "Adding a positive moves right. Start at −15. Move 8 right to −7.",
     "check": "Undo the final operation: (−7) − 8 = −15.",
     "wrong": "-23",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q11",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "4 − 9",
@@ -543,13 +488,8 @@
     "method_note": "Subtracting a positive moves left. Start at 4. Move 9 left to −5.",
     "check": "Undo the final operation: (−5) + 9 = 4.",
     "wrong": "13",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q12",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−3 + 3",
@@ -589,13 +529,8 @@
     "method_note": "Adding a positive moves right. Start at −3. Move 3 right to 0.",
     "check": "Undo the final operation: 0 − 3 = −3.",
     "wrong": "-6",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q13",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "0 − 7",
@@ -635,13 +570,8 @@
     "method_note": "Subtracting a positive moves left. Start at 0. Move 7 left to −7.",
     "check": "Undo the final operation: (−7) + 7 = 0.",
     "wrong": "7",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q14",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−7 + 12",
@@ -681,13 +611,8 @@
     "method_note": "Adding a positive moves right. Start at −7. Move 12 right to 5.",
     "check": "Undo the final operation: 5 − 12 = −7.",
     "wrong": "-19",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q15",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "11 − 18",
@@ -727,13 +652,8 @@
     "method_note": "Subtracting a positive moves left. Start at 11. Move 18 left to −7.",
     "check": "Undo the final operation: (−7) + 18 = 11.",
     "wrong": "29",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q16",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−18 + 9",
@@ -773,13 +693,8 @@
     "method_note": "Adding a positive moves right. Start at −18. Move 9 right to −9.",
     "check": "Undo the final operation: (−9) − 9 = −18.",
     "wrong": "-27",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q17",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "6 − 14",
@@ -819,13 +734,8 @@
     "method_note": "Subtracting a positive moves left. Start at 6. Move 14 left to −8.",
     "check": "Undo the final operation: (−8) + 14 = 6.",
     "wrong": "20",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q18",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−2 + 16",
@@ -865,13 +775,8 @@
     "method_note": "Adding a positive moves right. Start at −2. Move 16 right to 14.",
     "check": "Undo the final operation: 14 − 16 = −2.",
     "wrong": "-18",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q19",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "13 − 5",
@@ -911,13 +816,8 @@
     "method_note": "Subtracting a positive moves left. Start at 13. Move 5 left to 8.",
     "check": "Undo the final operation: 8 + 5 = 13.",
     "wrong": "18",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q20",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−11 + 7",
@@ -957,13 +857,8 @@
     "method_note": "Adding a positive moves right. Start at −11. Move 7 right to −4.",
     "check": "Undo the final operation: (−4) − 7 = −11.",
     "wrong": "-18",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q21",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "8 − 19",
@@ -1003,13 +898,8 @@
     "method_note": "Subtracting a positive moves left. Start at 8. Move 19 left to −11.",
     "check": "Undo the final operation: (−11) + 19 = 8.",
     "wrong": "27",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q22",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−16 + 20",
@@ -1049,13 +939,8 @@
     "method_note": "Adding a positive moves right. Start at −16. Move 20 right to 4.",
     "check": "Undo the final operation: 4 − 20 = −16.",
     "wrong": "-36",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q23",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "10 − 17",
@@ -1095,13 +980,8 @@
     "method_note": "Subtracting a positive moves left. Start at 10. Move 17 left to −7.",
     "check": "Undo the final operation: (−7) + 17 = 10.",
     "wrong": "27",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q24",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−5 + 14",
@@ -1141,13 +1021,8 @@
     "method_note": "Adding a positive moves right. Start at −5. Move 14 right to 9.",
     "check": "Undo the final operation: 9 − 14 = −5.",
     "wrong": "-19",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q25",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "1 − 9",
@@ -1187,13 +1062,8 @@
     "method_note": "Subtracting a positive moves left. Start at 1. Move 9 left to −8.",
     "check": "Undo the final operation: (−8) + 9 = 1.",
     "wrong": "10",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q26",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−14 + 6",
@@ -1233,13 +1103,8 @@
     "method_note": "Adding a positive moves right. Start at −14. Move 6 right to −8.",
     "check": "Undo the final operation: (−8) − 6 = −14.",
     "wrong": "-20",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q27",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "12 − 21",
@@ -1279,13 +1144,8 @@
     "method_note": "Subtracting a positive moves left. Start at 12. Move 21 left to −9.",
     "check": "Undo the final operation: (−9) + 21 = 12.",
     "wrong": "33",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q28",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−20 + 13",
@@ -1325,13 +1185,8 @@
     "method_note": "Adding a positive moves right. Start at −20. Move 13 right to −7.",
     "check": "Undo the final operation: (−7) − 13 = −20.",
     "wrong": "-33",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q29",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "15 − 8",
@@ -1371,13 +1226,8 @@
     "method_note": "Subtracting a positive moves left. Start at 15. Move 8 left to 7.",
     "check": "Undo the final operation: 7 + 8 = 15.",
     "wrong": "23",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q30",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−13 + 18",
@@ -1417,13 +1267,8 @@
     "method_note": "Adding a positive moves right. Start at −13. Move 18 right to 5.",
     "check": "Undo the final operation: 5 − 18 = −13.",
     "wrong": "-31",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q31",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "16 − 23",
@@ -1463,13 +1308,8 @@
     "method_note": "Subtracting a positive moves left. Start at 16. Move 23 left to −7.",
     "check": "Undo the final operation: (−7) + 23 = 16.",
     "wrong": "39",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q32",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−17 + 10",
@@ -1509,13 +1349,8 @@
     "method_note": "Adding a positive moves right. Start at −17. Move 10 right to −7.",
     "check": "Undo the final operation: (−7) − 10 = −17.",
     "wrong": "-27",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q33",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "14 − 22",
@@ -1555,13 +1390,8 @@
     "method_note": "Subtracting a positive moves left. Start at 14. Move 22 left to −8.",
     "check": "Undo the final operation: (−8) + 22 = 14.",
     "wrong": "36",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q34",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "−21 + 12",
@@ -1601,13 +1431,8 @@
     "method_note": "Adding a positive moves right. Start at −21. Move 12 right to −9.",
     "check": "Undo the final operation: (−9) − 12 = −21.",
     "wrong": "-33",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q35",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "18 − 25",
@@ -1647,13 +1472,8 @@
     "method_note": "Subtracting a positive moves left. Start at 18. Move 25 left to −7.",
     "check": "Undo the final operation: (−7) + 25 = 18.",
     "wrong": "43",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C1-Q36",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "6 + (−3)",
@@ -1693,13 +1513,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 6. Move 3 left to 3.",
     "check": "Undo the final operation: 3 − (−3) = 6.",
     "wrong": "9",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q1",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−5 − (−9)",
@@ -1739,13 +1554,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −5. Move 9 right to 4.",
     "check": "Undo the final operation: 4 + (−9) = −5.",
     "wrong": "-14",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q2",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "4 + (−7)",
@@ -1785,13 +1595,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 4. Move 7 left to −3.",
     "check": "Undo the final operation: (−3) − (−7) = 4.",
     "wrong": "11",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q3",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−8 − (−6)",
@@ -1831,13 +1636,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −8. Move 6 right to −2.",
     "check": "Undo the final operation: (−2) + (−6) = −8.",
     "wrong": "-14",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q4",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "12 + (−5)",
@@ -1877,13 +1677,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 12. Move 5 left to 7.",
     "check": "Undo the final operation: 7 − (−5) = 12.",
     "wrong": "17",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q5",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−7 − (−12)",
@@ -1923,13 +1718,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −7. Move 12 right to 5.",
     "check": "Undo the final operation: 5 + (−12) = −7.",
     "wrong": "-19",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q6",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "9 + (−14)",
@@ -1969,13 +1759,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 9. Move 14 left to −5.",
     "check": "Undo the final operation: (−5) − (−14) = 9.",
     "wrong": "23",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q7",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−11 − (−4)",
@@ -2015,13 +1800,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −11. Move 4 right to −7.",
     "check": "Undo the final operation: (−7) + (−4) = −11.",
     "wrong": "-15",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q8",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "3 + (−8)",
@@ -2061,13 +1841,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 3. Move 8 left to −5.",
     "check": "Undo the final operation: (−5) − (−8) = 3.",
     "wrong": "11",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q9",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−13 − (−7)",
@@ -2107,13 +1882,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −13. Move 7 right to −6.",
     "check": "Undo the final operation: (−6) + (−7) = −13.",
     "wrong": "-20",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q10",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "15 + (−9)",
@@ -2153,13 +1923,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 15. Move 9 left to 6.",
     "check": "Undo the final operation: 6 − (−9) = 15.",
     "wrong": "24",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q11",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−4 − (−16)",
@@ -2199,13 +1964,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −4. Move 16 right to 12.",
     "check": "Undo the final operation: 12 + (−16) = −4.",
     "wrong": "-20",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q12",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "8 + (−8)",
@@ -2245,13 +2005,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 8. Move 8 left to 0.",
     "check": "Undo the final operation: 0 − (−8) = 8.",
     "wrong": "16",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q13",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−6 − (−6)",
@@ -2291,13 +2046,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −6. Move 6 right to 0.",
     "check": "Undo the final operation: 0 + (−6) = −6.",
     "wrong": "-12",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q14",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "2 + (−11)",
@@ -2337,13 +2087,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 2. Move 11 left to −9.",
     "check": "Undo the final operation: (−9) − (−11) = 2.",
     "wrong": "13",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q15",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−15 − (−3)",
@@ -2383,13 +2128,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −15. Move 3 right to −12.",
     "check": "Undo the final operation: (−12) + (−3) = −15.",
     "wrong": "-18",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q16",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "17 + (−6)",
@@ -2429,13 +2169,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 17. Move 6 left to 11.",
     "check": "Undo the final operation: 11 − (−6) = 17.",
     "wrong": "23",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q17",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−9 − (−13)",
@@ -2475,13 +2210,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −9. Move 13 right to 4.",
     "check": "Undo the final operation: 4 + (−13) = −9.",
     "wrong": "-22",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q18",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "5 + (−18)",
@@ -2521,13 +2251,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 5. Move 18 left to −13.",
     "check": "Undo the final operation: (−13) − (−18) = 5.",
     "wrong": "23",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q19",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−12 − (−8)",
@@ -2567,13 +2292,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −12. Move 8 right to −4.",
     "check": "Undo the final operation: (−4) + (−8) = −12.",
     "wrong": "-20",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q20",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "14 + (−7)",
@@ -2613,13 +2333,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 14. Move 7 left to 7.",
     "check": "Undo the final operation: 7 − (−7) = 14.",
     "wrong": "21",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q21",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−3 − (−15)",
@@ -2659,13 +2374,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −3. Move 15 right to 12.",
     "check": "Undo the final operation: 12 + (−15) = −3.",
     "wrong": "-18",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q22",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "7 + (−19)",
@@ -2705,13 +2415,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 7. Move 19 left to −12.",
     "check": "Undo the final operation: (−12) − (−19) = 7.",
     "wrong": "26",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q23",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−16 − (−9)",
@@ -2751,13 +2456,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −16. Move 9 right to −7.",
     "check": "Undo the final operation: (−7) + (−9) = −16.",
     "wrong": "-25",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q24",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "11 + (−11)",
@@ -2797,13 +2497,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 11. Move 11 left to 0.",
     "check": "Undo the final operation: 0 − (−11) = 11.",
     "wrong": "22",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q25",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−10 − (−5)",
@@ -2843,13 +2538,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −10. Move 5 right to −5.",
     "check": "Undo the final operation: (−5) + (−5) = −10.",
     "wrong": "-15",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q26",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "1 + (−14)",
@@ -2889,13 +2579,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 1. Move 14 left to −13.",
     "check": "Undo the final operation: (−13) − (−14) = 1.",
     "wrong": "15",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q27",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−18 − (−7)",
@@ -2935,13 +2620,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −18. Move 7 right to −11.",
     "check": "Undo the final operation: (−11) + (−7) = −18.",
     "wrong": "-25",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q28",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "19 + (−12)",
@@ -2981,13 +2661,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 19. Move 12 left to 7.",
     "check": "Undo the final operation: 7 − (−12) = 19.",
     "wrong": "31",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q29",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−14 − (−17)",
@@ -3027,13 +2702,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −14. Move 17 right to 3.",
     "check": "Undo the final operation: 3 + (−17) = −14.",
     "wrong": "-31",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q30",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "10 + (−16)",
@@ -3073,13 +2743,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 10. Move 16 left to −6.",
     "check": "Undo the final operation: (−6) − (−16) = 10.",
     "wrong": "26",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q31",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−2 − (−20)",
@@ -3119,13 +2784,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −2. Move 20 right to 18.",
     "check": "Undo the final operation: 18 + (−20) = −2.",
     "wrong": "-22",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q32",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "16 + (−4)",
@@ -3165,13 +2825,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 16. Move 4 left to 12.",
     "check": "Undo the final operation: 12 − (−4) = 16.",
     "wrong": "20",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q33",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−19 − (−10)",
@@ -3211,13 +2866,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −19. Move 10 right to −9.",
     "check": "Undo the final operation: (−9) + (−10) = −19.",
     "wrong": "-29",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q34",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "13 + (−21)",
@@ -3257,13 +2907,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 13. Move 21 left to −8.",
     "check": "Undo the final operation: (−8) − (−21) = 13.",
     "wrong": "34",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q35",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−17 − (−11)",
@@ -3303,13 +2948,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −17. Move 11 right to −6.",
     "check": "Undo the final operation: (−6) + (−11) = −17.",
     "wrong": "-28",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C2-Q36",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−5 + 8 − (−2)",
@@ -3364,13 +3004,8 @@
     "method_note": "Adding a positive moves right. Start at −5. Move 8 right to 3. Subtracting a negative is adding its size. Start at 3. Move 2 right to 5.",
     "check": "Undo the final operation: 5 + (−2) = 3.",
     "wrong": "-11",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q1",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "7 − (−2) + (−12)",
@@ -3425,13 +3060,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at 7. Move 2 right to 9. Adding a negative is subtracting its size. Start at 9. Move 12 left to −3.",
     "check": "Undo the final operation: (−3) − (−12) = 9.",
     "wrong": "-7",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q2",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−8 + 5 − (−4)",
@@ -3486,13 +3116,8 @@
     "method_note": "Adding a positive moves right. Start at −8. Move 5 right to −3. Subtracting a negative is adding its size. Start at −3. Move 4 right to 1.",
     "check": "Undo the final operation: 1 + (−4) = −3.",
     "wrong": "-9",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q3",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "12 + (−7) + (−9)",
@@ -3547,13 +3172,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 12. Move 7 left to 5. Adding a negative is subtracting its size. Start at 5. Move 9 left to −4.",
     "check": "Undo the final operation: (−4) − (−9) = 5.",
     "wrong": "10",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q4",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−9 + (−6) + 14",
@@ -3608,13 +3228,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at −9. Move 6 left to −15. Adding a positive moves right. Start at −15. Move 14 right to −1.",
     "check": "Undo the final operation: (−1) − 14 = −15.",
     "wrong": "11",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q5",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "4 − (−11) − (−8)",
@@ -3669,13 +3284,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at 4. Move 11 right to 15. Subtracting a negative is adding its size. Start at 15. Move 8 right to 23.",
     "check": "Undo the final operation: 23 + (−8) = 15.",
     "wrong": "1",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q6",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−13 + 7 − (−10)",
@@ -3730,13 +3340,8 @@
     "method_note": "Adding a positive moves right. Start at −13. Move 7 right to −6. Subtracting a negative is adding its size. Start at −6. Move 10 right to 4.",
     "check": "Undo the final operation: 4 + (−10) = −6.",
     "wrong": "-10",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q7",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "15 − (−4) + (−18)",
@@ -3791,13 +3396,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at 15. Move 4 right to 19. Adding a negative is subtracting its size. Start at 19. Move 18 left to 1.",
     "check": "Undo the final operation: 1 − (−18) = 19.",
     "wrong": "-7",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q8",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−6 + (−8) − 19",
@@ -3852,13 +3452,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at −6. Move 8 left to −14. Subtracting a positive moves left. Start at −14. Move 19 left to −33.",
     "check": "Undo the final operation: (−33) + 19 = −14.",
     "wrong": "-17",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q9",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "11 + (−9) + (−5)",
@@ -3913,13 +3508,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 11. Move 9 left to 2. Adding a negative is subtracting its size. Start at 2. Move 5 left to −3.",
     "check": "Undo the final operation: (−3) − (−5) = 2.",
     "wrong": "15",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q10",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−7 + 16 + (−3)",
@@ -3974,13 +3564,8 @@
     "method_note": "Adding a positive moves right. Start at −7. Move 16 right to 9. Adding a negative is subtracting its size. Start at 9. Move 3 left to 6.",
     "check": "Undo the final operation: 6 − (−3) = 9.",
     "wrong": "-26",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q11",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "18 − (−12) − (−9)",
@@ -4035,13 +3620,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at 18. Move 12 right to 30. Subtracting a negative is adding its size. Start at 30. Move 9 right to 39.",
     "check": "Undo the final operation: 39 + (−9) = 30.",
     "wrong": "15",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q12",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−12 + 4 − (−8)",
@@ -4096,13 +3676,8 @@
     "method_note": "Adding a positive moves right. Start at −12. Move 4 right to −8. Subtracting a negative is adding its size. Start at −8. Move 8 right to 0.",
     "check": "Undo the final operation: 0 + (−8) = −8.",
     "wrong": "-8",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q13",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "5 − (−13) + (−6)",
@@ -4157,13 +3732,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at 5. Move 13 right to 18. Adding a negative is subtracting its size. Start at 18. Move 6 left to 12.",
     "check": "Undo the final operation: 12 − (−6) = 18.",
     "wrong": "-14",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q14",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−14 + (−5) − 21",
@@ -4218,13 +3788,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at −14. Move 5 left to −19. Subtracting a positive moves left. Start at −19. Move 21 left to −40.",
     "check": "Undo the final operation: (−40) + 21 = −19.",
     "wrong": "-30",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q15",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "9 + (−8) + (−12)",
@@ -4279,13 +3844,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 9. Move 8 left to 1. Adding a negative is subtracting its size. Start at 1. Move 12 left to −11.",
     "check": "Undo the final operation: (−11) − (−12) = 1.",
     "wrong": "5",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q16",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−11 + 18 + (−4)",
@@ -4340,13 +3900,8 @@
     "method_note": "Adding a positive moves right. Start at −11. Move 18 right to 7. Adding a negative is subtracting its size. Start at 7. Move 4 left to 3.",
     "check": "Undo the final operation: 3 − (−4) = 7.",
     "wrong": "-33",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q17",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "14 − (−6) − (−17)",
@@ -4401,13 +3956,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at 14. Move 6 right to 20. Subtracting a negative is adding its size. Start at 20. Move 17 right to 37.",
     "check": "Undo the final operation: 37 + (−17) = 20.",
     "wrong": "25",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q18",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−16 + (−7) − 25",
@@ -4462,13 +4012,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at −16. Move 7 left to −23. Subtracting a positive moves left. Start at −23. Move 25 left to −48.",
     "check": "Undo the final operation: (−48) + 25 = −23.",
     "wrong": "-34",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q19",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "8 − (−15) + (−10)",
@@ -4523,13 +4068,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at 8. Move 15 right to 23. Adding a negative is subtracting its size. Start at 23. Move 10 left to 13.",
     "check": "Undo the final operation: 13 − (−10) = 23.",
     "wrong": "-17",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q20",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−3 + 11 − (−9)",
@@ -4584,13 +4124,8 @@
     "method_note": "Adding a positive moves right. Start at −3. Move 11 right to 8. Subtracting a negative is adding its size. Start at 8. Move 9 right to 17.",
     "check": "Undo the final operation: 17 + (−9) = 8.",
     "wrong": "-5",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q21",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "17 + (−14) + (−8)",
@@ -4645,13 +4180,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 17. Move 14 left to 3. Adding a negative is subtracting its size. Start at 3. Move 8 left to −5.",
     "check": "Undo the final operation: (−5) − (−8) = 3.",
     "wrong": "23",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q22",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−18 + (−4) + 15",
@@ -4706,13 +4236,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at −18. Move 4 left to −22. Adding a positive moves right. Start at −22. Move 15 right to −7.",
     "check": "Undo the final operation: (−7) − 15 = −22.",
     "wrong": "1",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q23",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "6 − (−17) − (−13)",
@@ -4767,13 +4292,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at 6. Move 17 right to 23. Subtracting a negative is adding its size. Start at 23. Move 13 right to 36.",
     "check": "Undo the final operation: 36 + (−13) = 23.",
     "wrong": "2",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q24",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−10 + 15 − (−6)",
@@ -4828,13 +4348,8 @@
     "method_note": "Adding a positive moves right. Start at −10. Move 15 right to 5. Subtracting a negative is adding its size. Start at 5. Move 6 right to 11.",
     "check": "Undo the final operation: 11 + (−6) = 5.",
     "wrong": "-19",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q25",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "13 − (−5) + (−19)",
@@ -4889,13 +4404,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at 13. Move 5 right to 18. Adding a negative is subtracting its size. Start at 18. Move 19 left to −1.",
     "check": "Undo the final operation: (−1) − (−19) = 18.",
     "wrong": "-11",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q26",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−15 + (−9) − 28",
@@ -4950,13 +4460,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at −15. Move 9 left to −24. Subtracting a positive moves left. Start at −24. Move 28 left to −52.",
     "check": "Undo the final operation: (−52) + 28 = −24.",
     "wrong": "-34",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q27",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "16 + (−11) + (−7)",
@@ -5011,13 +4516,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 16. Move 11 left to 5. Adding a negative is subtracting its size. Start at 5. Move 7 left to −2.",
     "check": "Undo the final operation: (−2) − (−7) = 5.",
     "wrong": "20",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q28",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−19 + 12 + (−14)",
@@ -5072,13 +4572,8 @@
     "method_note": "Adding a positive moves right. Start at −19. Move 12 right to −7. Adding a negative is subtracting its size. Start at −7. Move 14 left to −21.",
     "check": "Undo the final operation: (−21) − (−14) = −7.",
     "wrong": "-45",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q29",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "10 − (−18) − (−3)",
@@ -5133,13 +4628,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at 10. Move 18 right to 28. Subtracting a negative is adding its size. Start at 28. Move 3 right to 31.",
     "check": "Undo the final operation: 31 + (−3) = 28.",
     "wrong": "-5",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q30",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−4 + (−16) − 23",
@@ -5194,13 +4684,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at −4. Move 16 left to −20. Subtracting a positive moves left. Start at −20. Move 23 left to −43.",
     "check": "Undo the final operation: (−43) + 23 = −20.",
     "wrong": "-11",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q31",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "21 − (−8) + (−15)",
@@ -5255,13 +4740,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at 21. Move 8 right to 29. Adding a negative is subtracting its size. Start at 29. Move 15 left to 14.",
     "check": "Undo the final operation: 14 − (−15) = 29.",
     "wrong": "-2",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q32",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−17 + 9 − (−11)",
@@ -5316,13 +4796,8 @@
     "method_note": "Adding a positive moves right. Start at −17. Move 9 right to −8. Subtracting a negative is adding its size. Start at −8. Move 11 right to 3.",
     "check": "Undo the final operation: 3 + (−11) = −8.",
     "wrong": "-15",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q33",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "19 + (−13) + (−16)",
@@ -5377,13 +4852,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 19. Move 13 left to 6. Adding a negative is subtracting its size. Start at 6. Move 16 left to −10.",
     "check": "Undo the final operation: (−10) − (−16) = 6.",
     "wrong": "16",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q34",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "−20 + (−12) + 27",
@@ -5438,13 +4908,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at −20. Move 12 left to −32. Adding a positive moves right. Start at −32. Move 27 right to −5.",
     "check": "Undo the final operation: (−5) − 27 = −32.",
     "wrong": "19",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q35",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "22 − (−7) − (−18)",
@@ -5499,12 +4964,7 @@
     "method_note": "Subtracting a negative is adding its size. Start at 22. Move 7 right to 29. Subtracting a negative is adding its size. Start at 29. Move 18 right to 47.",
     "check": "Undo the final operation: 47 + (−18) = 29.",
     "wrong": "33",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-PLAIN-C3-Q36",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "plain",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   }
 ]

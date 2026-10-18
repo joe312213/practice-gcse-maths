@@ -1,17 +1,26 @@
-import { latestAssessment, assessmentStatus } from '../domain/assessment.mjs';
-import { earlyReattempt, latestResponse, countsForProgress } from '../domain/reattempts.mjs';
 /**
- * Purpose: Coordinate learner actions, adaptive pages, marking and practice sets through injected dependencies.
+ * Purpose: Coordinate learner actions, adaptive pages, marking and practice sets through
+ * injected dependencies.
  *
  * Main contents:
  * - createSession
  *
- * Used By: tests/practice-set.test.mjs, tests/progress.test.mjs, tests/session.test.mjs, website/src/lib/components/practice/TopicPractice.svelte
+ * Used By: tests/anonymous.test.mjs, tests/arithmetic.test.mjs,
+ * tests/error-investigation.test.mjs, tests/practice-set.test.mjs,
+ * tests/problem-solving.test.mjs, tests/progress.test.mjs, tests/reattempts.test.mjs.
  *
- * Uses: website/src/lib/adapters/working-cache.mjs, website/src/lib/domain/progress.mjs, website/src/lib/domain/revision.mjs, website/src/lib/domain/engine.mjs, website/src/lib/domain/profiles.mjs, website/src/lib/domain/errors.mjs, website/src/lib/domain/practice-code.mjs.
+ * Uses: website/src/lib/domain/assessment.mjs, website/src/lib/domain/reattempts.mjs,
+ * website/src/lib/domain/stages.mjs, website/src/lib/domain/topic-pages.mjs,
+ * website/src/lib/adapters/working-cache.mjs, website/src/lib/domain/progress.mjs,
+ * website/src/lib/domain/revision.mjs, website/src/lib/domain/engine.mjs,
+ * website/src/lib/domain/anonymous.mjs, website/src/lib/domain/errors.mjs,
+ * website/src/lib/domain/practice-code.mjs.
  *
  * Libs: none.
  */
+import { latestAssessment, assessmentStatus } from '../domain/assessment.mjs';
+import { earlyReattempt, latestResponse, countsForProgress } from '../domain/reattempts.mjs';
+
 import { topicStages } from '../domain/stages.mjs';
 import {
   findQuestion,
@@ -32,7 +41,7 @@ import {
   resolveChoice,
   markAnswer,
 } from '../domain/engine.mjs';
-import { chooseProfile } from '../domain/profiles.mjs';
+import { beginAnonymous, nameAnonymous } from '../domain/anonymous.mjs';
 import { markErrors } from '../domain/errors.mjs';
 import {
   decodePracticeSet,
@@ -250,11 +259,9 @@ export function createSession({
     bank.combined
       ? (profile.topics[`${q.subject}:${q.topic}`] ??= { tracks: {}, pages: {}, history: [] })
       : topic();
-  /** Assessment and set retries are practice only, after their original run is finished. */
+  /** Retries are separate practice; original assessment/set answers and totals stay fixed. */
   function canRetry() {
     if (!profile || mode === 'demo' || !current() || page().pendingChoice) return false;
-    if (activeSet() && !activeSet().finished) return false;
-    if (mode === 'assessment' && !page().complete) return false;
     const response = latestResponse(page(), current().id);
     return Boolean(response && (!response.correct || response.earlyReattempt));
   }
@@ -476,8 +483,15 @@ export function createSession({
       timingDeadline: retrying ? null : (activeSet()?.deadline ?? null),
       retrying,
       canRetry: canRetry(),
-      profile: profile ? { id: profile.id, name: profile.name, key: profile.key } : null,
-      backup: backupStatus(profile, now()),
+      profile: profile
+        ? {
+            id: profile.id,
+            name: profile.name,
+            key: profile.key,
+            anonymous: Boolean(profile.anonymous),
+          }
+        : null,
+      backup: profile?.anonymous ? null : backupStatus(profile, now()),
       demoSpeed: profile?.settings?.demoSpeed ?? 1,
       assessment: profile ? assessmentStatus(topic().history, now()) : null,
       practiceSet: activeSet()
@@ -556,14 +570,23 @@ export function createSession({
       fn(snapshot());
       return () => listeners.delete(fn);
     },
+    /** Start a fresh anonymous visit and its first page; called by Continue without a name. */
+    beginAnonymous() {
+      bank = homeBank;
+      profile = beginAnonymous(data);
+      restoreStage();
+      resetActivity();
+      ensurePage();
+      publish(true);
+    },
     /**
      * Select or explicitly create the named local learner.
      * Parameter name: learner display name before normalization.
      * Parameter create: whether learner creation was confirmed.
-     * Calls: chooseProfile, resetActivity, restoreSet, ensurePage, publish.
+     * Calls: nameAnonymous, resetActivity, restoreSet, ensurePage, publish.
      */
     chooseName(name, create = false) {
-      const result = chooseProfile(data, name, create);
+      const result = nameAnonymous(data, name, create);
       if (!result.profile) return result;
       profile = result.profile;
       homeBank = banks.find((item) => item.topic === profile.lastTopic) ?? banks[0];
@@ -852,7 +875,7 @@ export function createSession({
       if (completeRecommendation(profile, run, now()))
         message = 'Well done! Your focused practice will help your grades.';
       publish(true);
-      return { advanced: next !== undefined, correct: result.correct };
+      return { advanced: next !== undefined, correct: result.correct, response };
     },
     /**
      * Start another ordinary activity page; active practice sets use their own navigation.

@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M03-S02-C1-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "42 packs each contain 15 pens. How many pens are there?",
     "answer": "630",
     "answerUnit": "pens",
@@ -38,12 +33,7 @@
   },
   {
     "id": "maths:M03-S02-C2-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "215 apples go into bags of 6. How many completely full bags can be made?",
     "answer": "35",
     "answerUnit": "bags",
@@ -69,7 +59,9 @@
         "title": "Answer the question in context",
         "input": "35",
         "output": "35",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "bags"
       }
     ],
@@ -82,12 +74,7 @@
   },
   {
     "id": "maths:M03-S02-C3-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A painter charges £18 per hour for 32 hours, plus £120 for paint. Find the total bill.",
     "answer": "696",
     "answerUnit": "£",
@@ -130,12 +117,7 @@
   },
   {
     "id": "maths:M03-S03-C1-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "168 students form 7 equal groups. How many students are in each group?",
     "answer": "24",
     "answerUnit": "students",
@@ -167,12 +149,7 @@
   },
   {
     "id": "maths:M03-S03-C2-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A worker earns £16 per hour. They work 27 hours one week and 7 hours the next. What are their total wages?",
     "answer": "544",
     "answerUnit": "£",
@@ -215,12 +192,7 @@
   },
   {
     "id": "maths:M03-S03-C3-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "157 passengers need vans with 8 passenger seats each. Hire costs £45 per van. Find the total hire cost.",
     "answer": "900",
     "answerUnit": "£",
@@ -250,7 +222,9 @@
         "title": "Answer the question in context",
         "input": "19 + 1",
         "output": "20",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+        "note": {
+          "textRef": "round-up-groups"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -269,12 +243,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C1-Q13",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop receives 19 trays of 26 pots. How many pots arrive?",
     "answer": "494",
     "answerUnit": "pots",
@@ -306,12 +275,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C1-Q14",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A 252 cm ribbon is cut into 6 equal lengths. Find each length.",
     "answer": "42",
     "answerUnit": "cm",
@@ -343,12 +307,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C1-Q15",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A hall has 18 rows of 36 chairs. How many chairs are there?",
     "answer": "648",
     "answerUnit": "chairs",
@@ -380,12 +339,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C1-Q16",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "368 leaflets are shared equally among 8 volunteers. How many does each get?",
     "answer": "46",
     "answerUnit": "leaflets",
@@ -417,12 +371,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C2-Q13",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "298 stickers go into full sheets of 9. How many full sheets are there?",
     "answer": "33",
     "answerUnit": "sheets",
@@ -448,7 +397,9 @@
         "title": "Answer the question in context",
         "input": "33",
         "output": "33",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "sheets"
       }
     ],
@@ -461,12 +412,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C2-Q14",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "146 people need vans with 8 passenger seats. How many vans are needed?",
     "answer": "19",
     "answerUnit": "vans",
@@ -492,7 +438,9 @@
         "title": "Answer the question in context",
         "input": "18 + 1",
         "output": "19",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "vans"
       }
     ],
@@ -505,12 +453,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C2-Q15",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A 427 cm strip is cut into 18 cm pieces. How many centimetres remain?",
     "answer": "13",
     "answerUnit": "cm",
@@ -549,12 +492,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C2-Q16",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A £217 bill is split equally between 4 friends. How much does each pay?",
     "answer": "54.25",
     "answerUnit": "£",
@@ -586,12 +524,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C3-Q13",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A hire firm charges £47 for each van with 9 passenger seats. Find the cost for 164 passengers.",
     "answer": "893",
     "answerUnit": "£",
@@ -621,7 +554,9 @@
         "title": "Answer the question in context",
         "input": "18 + 1",
         "output": "19",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+        "note": {
+          "textRef": "round-up-groups"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -640,12 +575,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C3-Q14",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A cafe packs 374 biscuits in full bags of 8, selling each bag for £3. Find the income.",
     "answer": "138",
     "answerUnit": "£",
@@ -675,7 +605,9 @@
         "title": "Answer the question in context",
         "input": "46",
         "output": "46",
-        "note": "Only completely full groups count; leave the remainder out."
+        "note": {
+          "textRef": "full-groups-only"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -694,12 +626,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C3-Q15",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "Five friends share the cost of 18 tickets at £15 each equally. How much does each pay?",
     "answer": "54",
     "answerUnit": "£",
@@ -742,12 +669,7 @@
   },
   {
     "id": "maths:M03-WEB-SCAFFOLDED-C3-Q16",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A club orders 23 packs of 18 badges and gives away 167 badges. How many are left?",
     "answer": "247",
     "answerUnit": "badges",
@@ -789,12 +711,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C1-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A library has 14 shelves with 32 books on each. How many books are there?",
     "answer": "448",
     "answerUnit": "books",
@@ -826,12 +743,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C1-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "105 students form 7 equal groups. How many students are in each group?",
     "answer": "15",
     "answerUnit": "students",
@@ -863,12 +775,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C1-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop has 26 crates with 41 bottles in each. How many bottles are there?",
     "answer": "1066",
     "answerUnit": "bottles",
@@ -900,12 +807,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C1-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A 148 m rope is cut into 4 equal pieces. How long is each piece?",
     "answer": "37",
     "answerUnit": "m",
@@ -937,12 +839,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C1-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A hall has 13 rows of 85 seats. How many seats are there?",
     "answer": "1105",
     "answerUnit": "seats",
@@ -974,12 +871,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C1-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "£175 is shared equally among 5 people. How much does each person receive?",
     "answer": "35",
     "answerUnit": "£",
@@ -1011,12 +903,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C2-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "130 eggs are packed in cartons of 6. How many full cartons can be packed?",
     "answer": "21",
     "answerUnit": "cartons",
@@ -1042,7 +929,9 @@
         "title": "Answer the question in context",
         "input": "21",
         "output": "21",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "cartons"
       }
     ],
@@ -1055,12 +944,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C2-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "32 passengers need cars with 5 passenger seats each. How many cars are needed?",
     "answer": "7",
     "answerUnit": "cars",
@@ -1086,7 +970,9 @@
         "title": "Answer the question in context",
         "input": "6 + 1",
         "output": "7",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "cars"
       }
     ],
@@ -1099,12 +985,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C2-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "250 chocolates are packed in boxes of 12. How many chocolates are left over?",
     "answer": "10",
     "answerUnit": "chocolates",
@@ -1143,12 +1024,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C2-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A worker earns £17 per hour. They work 28 hours one week and 7 hours the next. What are their total wages?",
     "answer": "595",
     "answerUnit": "£",
@@ -1191,12 +1067,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C2-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "142 rolls are sold in bags of 6. How many full bags can be made?",
     "answer": "23",
     "answerUnit": "bags",
@@ -1222,7 +1093,9 @@
         "title": "Answer the question in context",
         "input": "23",
         "output": "23",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "bags"
       }
     ],
@@ -1235,12 +1108,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C2-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "A £132 bill is shared equally by 8 friends. How much does each pay?",
     "answer": "16.5",
     "answerUnit": "£",
@@ -1272,12 +1140,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C3-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "45 tickets cost £16 each. A group gets £50 off the total. How much does it pay?",
     "answer": "670",
     "answerUnit": "£",
@@ -1320,12 +1183,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C3-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "115 passengers need vans with 8 passenger seats each. Hire costs £65 per van. Find the total cost.",
     "answer": "975",
     "answerUnit": "£",
@@ -1355,7 +1213,9 @@
         "title": "Answer the question in context",
         "input": "14 + 1",
         "output": "15",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+        "note": {
+          "textRef": "round-up-groups"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -1374,12 +1234,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C3-Q3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A gym costs £22 per month plus a £30 joining fee. Find the cost for 14 months.",
     "answer": "338",
     "answerUnit": "£",
@@ -1422,12 +1277,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C3-Q4",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "430 cases fill boxes of 12. Each full box sells for £9. Find the income from full boxes.",
     "answer": "315",
     "answerUnit": "£",
@@ -1457,7 +1307,9 @@
         "title": "Answer the question in context",
         "input": "35",
         "output": "35",
-        "note": "Only completely full groups count; leave the remainder out."
+        "note": {
+          "textRef": "full-groups-only"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -1476,12 +1328,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C3-Q5",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A contractor charges £24 per hour for 15 hours, plus £45 for materials. Find the total bill.",
     "answer": "405",
     "answerUnit": "£",
@@ -1524,12 +1371,7 @@
   },
   {
     "id": "maths:M03-WEB-SC4-C3-Q6",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "scaffolded",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A shop sells 15 boxes of 12 headphones at £8 per headphone. Find the total sales income.",
     "answer": "1440",
     "answerUnit": "£",

@@ -1,14 +1,21 @@
 /**
- * Purpose: Check active Markdown links and INDEX coverage of project Markdown discovered through Git.
+ * Purpose: Check actionable Markdown links and documentation-index coverage for maintained
+ * Git-listed project files. Historical content links and fenced examples are excluded from the
+ * active-link audit.
  *
  * Main contents:
- * - Module initialization and configuration.
+ * - Git file discovery, INDEX coverage and local-link validation.
  *
- * Used By: Verification command entry points.
+ * Used By: the documented command below.
  *
  * Uses: no local module imports.
  *
- * Libs: node:fs/promises (asynchronous file access), node:child_process (Git/build subprocesses), node:path (filesystem paths).
+ * Libs: node:fs/promises (asynchronous file access), node:child_process (Git and verification
+ * subprocesses), node:path (filesystem path resolution).
+ *
+ * Usage and output: From website/: node scripts/verification/docs.mjs, normally selected by
+ * verify:changed. Reads Git-listed Markdown and docs/INDEX.md; reports broken local links or
+ * missing index entries. No writes or network requests.
  */
 import { readFile, access } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';

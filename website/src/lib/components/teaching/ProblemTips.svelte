@@ -1,4 +1,18 @@
-<!-- Level-matched application guidance shares the normal player and calculation renderer. -->
+<!--
+  Purpose: Level-matched application guidance shares the normal player and calculation renderer.
+
+  Main contents:
+  - Level-specific application tips and worked examples using the shared player.
+
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte.
+
+  Uses: website/src/lib/application/calculation-demo.mjs, website/src/lib/domain/engine.mjs,
+  website/src/lib/components/teaching/MathText.svelte,
+  website/src/lib/components/teaching/CalculationWorking.svelte,
+  website/src/lib/components/teaching/ShowDemo.svelte.
+
+  Libs: none.
+-->
 <script>
   import { calculationFrames } from '#lib/application/calculation-demo.mjs';
   import { LEVELS } from '#lib/domain/engine.mjs';

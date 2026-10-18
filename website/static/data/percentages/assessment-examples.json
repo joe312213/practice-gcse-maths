@@ -1,7 +1,6 @@
 [
   {
     "q": "Find 50% of £48.",
-    "prose": true,
     "answer": "24",
     "answerUnit": "£",
     "model": {
@@ -34,19 +33,18 @@
     "method_note": "The whole amount, £48, represents 100%. Multiply the value of 1% by 50.",
     "check": "Reverse check: 24 ÷ 50 × 100 = 48, the original whole.",
     "wrong": "-2",
-    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
-    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "error_note": {
+      "textRef": "percentage-not-amount"
+    },
+    "repair": {
+      "textRef": "find-percentage-amount"
+    },
     "id": "maths:M06-WEB-ASSESSMENT-C1-Q1",
-    "subject": "maths",
-    "topic": "M06",
-    "type": "assessment",
     "level": 0,
-    "method": "calculation",
     "questionPrefix": "Solve the problem"
   },
   {
     "q": "Find 75% of 72 g.",
-    "prose": true,
     "answer": "54",
     "answerUnit": "g",
     "model": {
@@ -79,19 +77,18 @@
     "method_note": "The whole amount, 72 g, represents 100%. Multiply the value of 1% by 75.",
     "check": "Reverse check: 54 ÷ 75 × 100 = 72, the original whole.",
     "wrong": "-3",
-    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
-    "repair": "Find one percent of the amount, then scale it to the required percentage.",
+    "error_note": {
+      "textRef": "percentage-not-amount"
+    },
+    "repair": {
+      "textRef": "find-percentage-amount"
+    },
     "id": "maths:M06-WEB-ASSESSMENT-C1-Q2",
-    "subject": "maths",
-    "topic": "M06",
-    "type": "assessment",
     "level": 0,
-    "method": "calculation",
     "questionPrefix": "Solve the problem"
   },
   {
     "q": "A shop has weekly sales of £48. It increases by 50%. Find the new weekly sales.",
-    "prose": true,
     "answer": "72",
     "answerUnit": "£",
     "model": {
@@ -124,19 +121,18 @@
     "method_note": "Calculate 50% of the original £48. Add the change for an increase; subtract it for a decrease. The question asks for the new weekly sales.",
     "check": "Reverse check: 72 − 24 = 48, the original amount.",
     "wrong": "24",
-    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
-    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "error_note": {
+      "textRef": "apply-percentage-change"
+    },
+    "repair": {
+      "textRef": "use-change-amount"
+    },
     "id": "maths:M06-WEB-ASSESSMENT-C2-Q1",
-    "subject": "maths",
-    "topic": "M06",
-    "type": "assessment",
     "level": 1,
-    "method": "calculation",
     "questionPrefix": "Solve the problem"
   },
   {
     "q": "A bag has a mass of 72 g. It decreases by 75%. Find the new mass.",
-    "prose": true,
     "answer": "18",
     "answerUnit": "g",
     "model": {
@@ -169,19 +165,18 @@
     "method_note": "Calculate 75% of the original 72 g. Add the change for an increase; subtract it for a decrease. The question asks for the new mass.",
     "check": "Reverse check: 18 + 54 = 72, the original amount.",
     "wrong": "54",
-    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
-    "repair": "Use the percentage amount as the change; apply it to the original amount.",
+    "error_note": {
+      "textRef": "apply-percentage-change"
+    },
+    "repair": {
+      "textRef": "use-change-amount"
+    },
     "id": "maths:M06-WEB-ASSESSMENT-C2-Q2",
-    "subject": "maths",
-    "topic": "M06",
-    "type": "assessment",
     "level": 1,
-    "method": "calculation",
     "questionPrefix": "Solve the problem"
   },
   {
     "q": "The weekly sales change from £48 to £72. Find the percentage increase.",
-    "prose": true,
     "answer": "50",
     "answerUnit": "%",
     "model": {
@@ -221,19 +216,18 @@
     "method_note": "Find the size of the change in £. The original amount is £48; use that as the denominator. The change is a 50% increase.",
     "check": "48 × 50 ÷ 100 = £24, the change between the two amounts.",
     "wrong": "100/3",
-    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
-    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "error_note": {
+      "textRef": "use-original-whole"
+    },
+    "repair": {
+      "textRef": "percentage-change-method"
+    },
     "id": "maths:M06-WEB-ASSESSMENT-C3-Q1",
-    "subject": "maths",
-    "topic": "M06",
-    "type": "assessment",
     "level": 2,
-    "method": "calculation",
     "questionPrefix": "Solve the problem"
   },
   {
     "q": "The mass changes from 72 g to 18 g. Find the percentage decrease.",
-    "prose": true,
     "answer": "75",
     "answerUnit": "%",
     "model": {
@@ -273,14 +267,14 @@
     "method_note": "Find the size of the change in g. The original amount is 72 g; use that as the denominator. The change is a 75% decrease.",
     "check": "72 × 75 ÷ 100 = 54 g, the change between the two amounts.",
     "wrong": "300",
-    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
-    "repair": "Divide the change by the original amount before multiplying by one hundred.",
+    "error_note": {
+      "textRef": "use-original-whole"
+    },
+    "repair": {
+      "textRef": "percentage-change-method"
+    },
     "id": "maths:M06-WEB-ASSESSMENT-C3-Q2",
-    "subject": "maths",
-    "topic": "M06",
-    "type": "assessment",
     "level": 2,
-    "method": "calculation",
     "questionPrefix": "Solve the problem"
   }
 ]

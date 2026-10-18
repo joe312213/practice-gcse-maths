@@ -1,0 +1,67 @@
+{
+  "defaults": {
+    "recap": {
+      "subject": "maths",
+      "topic": "M03",
+      "type": "recap",
+      "method": "calculation",
+      "prose": true,
+      "source": "Accepted M03 source slide 2; saved deck text checked"
+    },
+    "spot-errors": {
+      "subject": "maths",
+      "topic": "M03",
+      "type": "errors",
+      "method": "investigation",
+      "prose": true,
+      "investigation": true,
+      "method_note": {
+        "textRef": "investigation-task"
+      }
+    },
+    "assessment-examples": {
+      "subject": "maths",
+      "topic": "M03",
+      "type": "assessment",
+      "method": "calculation",
+      "prose": true,
+      "source": "Accepted M03 source slide 4; saved deck text checked"
+    },
+    "practice": {
+      "subject": "maths",
+      "topic": "M03",
+      "type": "plain",
+      "method": "calculation",
+      "prose": true
+    },
+    "problem-solving": {
+      "subject": "maths",
+      "topic": "M03",
+      "type": "problem",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "application-source"
+      }
+    },
+    "demos": {
+      "subject": "maths",
+      "topic": "M03",
+      "type": "demo",
+      "method": "calculation",
+      "prose": true
+    },
+    "scaffolded": {
+      "subject": "maths",
+      "topic": "M03",
+      "type": "scaffolded",
+      "method": "calculation",
+      "prose": true
+    }
+  },
+  "phrases": {
+    "round-up-groups": "Everyone or everything needs a place; add one group when there is a remainder.",
+    "full-groups-only": "Only completely full groups count; leave the remainder out.",
+    "equal-groups-hint": "Which quantity is shared into {groups} equal groups? Check whether anything must be removed first."
+  }
+}

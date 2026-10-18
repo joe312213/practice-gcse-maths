@@ -1,5 +1,19 @@
+/**
+ * Purpose: Defined pages partition banks; new authored equations are checked independently by
+ * substitution.
+ *
+ * Main contents:
+ * - evaluate, balanced.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/domain/topic-pages.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions), node:fs/promises (asynchronous
+ * file access).
+ */
 import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
-/** Defined pages partition banks; new authored equations are checked independently by substitution. */
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
@@ -70,6 +84,7 @@ test("every topic/stage/level has three full, distinct authored pages", () => {
 });
 
 // Only trusted arithmetic tokens are accepted before evaluating the authored test expression.
+/** Evaluate a supported equation side independently for the page-bank audit. */
 function evaluate(expression, x) {
   const source = expression
     .replaceAll("−", "-")
@@ -79,6 +94,7 @@ function evaluate(expression, x) {
   assert.match(source, /^[\d\s.x+*/()\-]+$/);
   return Function("x", `return (${source});`)(x);
 }
+/** Check that the fixture equation evaluates equally on both sides for the supplied value. */
 function balanced(row, x) {
   return Math.abs(evaluate(row.l, x) - evaluate(row.r, x)) < 1e-8;
 }

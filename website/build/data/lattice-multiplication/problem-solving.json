@@ -49,8 +49,15 @@
         "method_note": "Find the total number of pens.",
         "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140. Compare the final size with your answer; this is a ballpark check.",
         "wrong": "24",
-        "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "complete-calculation",
+          "values": {
+            "firstStep": "find the total number of pens"
+          }
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       },
       {
         "id": "maths:M01-WEB-PS-C2-Q100",
@@ -97,8 +104,15 @@
         "method_note": "Find the total number of pens Remove the 9 pens.",
         "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 − 9 = 131. Compare the final size with your answer; this is a ballpark check.",
         "wrong": "168",
-        "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "complete-calculation",
+          "values": {
+            "firstStep": "find the total number of pens"
+          }
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       },
       {
         "id": "maths:M01-WEB-PS-C3-Q100",
@@ -156,20 +170,22 @@
         "method_note": "Find the total number of pens Find the price of all the items Apply the discount once.",
         "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 × 7 = 980; 980 − 9 = 971. Compare the final size with your answer; this is a ballpark check.",
         "wrong": "168",
-        "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "complete-calculation",
+          "values": {
+            "firstStep": "find the total number of pens"
+          }
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       }
     ]
   },
   "questions": [
     {
       "id": "maths:M01-WEB-PS-C1-Q1",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 12 boxes with 7 pens in each. How many pens are there altogether?",
       "answer": "84",
       "answerUnit": "pens",
@@ -196,18 +212,17 @@
       "method_note": "Find the total number of pens.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 7 = 70. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "12",
-      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of pens"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q2",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 13 rows with 8 seats in each. How many seats are there altogether?",
       "answer": "104",
       "answerUnit": "seats",
@@ -234,18 +249,17 @@
       "method_note": "Find the total number of seats.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 8 = 80. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "13",
-      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of seats"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q3",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 14 packs with 9 cards in each. How many cards are there altogether?",
       "answer": "126",
       "answerUnit": "cards",
@@ -272,18 +286,17 @@
       "method_note": "Find the total number of cards.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 9 = 90. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "14",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q4",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 15 shelves with 10 books in each. How many books are there altogether?",
       "answer": "150",
       "answerUnit": "books",
@@ -310,18 +323,17 @@
       "method_note": "Find the total number of books.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "15",
-      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of books"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q5",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 16 trays with 11 cakes in each. How many cakes are there altogether?",
       "answer": "176",
       "answerUnit": "cakes",
@@ -348,18 +360,17 @@
       "method_note": "Find the total number of cakes.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "16",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cakes"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q6",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 17 bags with 12 beads in each. How many beads are there altogether?",
       "answer": "204",
       "answerUnit": "beads",
@@ -386,18 +397,17 @@
       "method_note": "Find the total number of beads.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "17",
-      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of beads"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q7",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 15 boxes with 7 pens in each. How many pens are there altogether?",
       "answer": "105",
       "answerUnit": "pens",
@@ -424,18 +434,17 @@
       "method_note": "Find the total number of pens.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "15",
-      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of pens"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q8",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 16 rows with 8 seats in each. How many seats are there altogether?",
       "answer": "128",
       "answerUnit": "seats",
@@ -462,18 +471,17 @@
       "method_note": "Find the total number of seats.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "16",
-      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of seats"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q9",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 17 packs with 9 cards in each. How many cards are there altogether?",
       "answer": "153",
       "answerUnit": "cards",
@@ -500,18 +508,17 @@
       "method_note": "Find the total number of cards.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "17",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q10",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 18 shelves with 10 books in each. How many books are there altogether?",
       "answer": "180",
       "answerUnit": "books",
@@ -538,18 +545,17 @@
       "method_note": "Find the total number of books.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "18",
-      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of books"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q11",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 19 trays with 11 cakes in each. How many cakes are there altogether?",
       "answer": "209",
       "answerUnit": "cakes",
@@ -576,18 +582,17 @@
       "method_note": "Find the total number of cakes.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "19",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cakes"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q12",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 20 bags with 12 beads in each. How many beads are there altogether?",
       "answer": "240",
       "answerUnit": "beads",
@@ -614,18 +619,17 @@
       "method_note": "Find the total number of beads.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "20",
-      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of beads"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q13",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 18 boxes with 7 pens in each. How many pens are there altogether?",
       "answer": "126",
       "answerUnit": "pens",
@@ -652,18 +656,17 @@
       "method_note": "Find the total number of pens.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "18",
-      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of pens"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q14",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 19 rows with 8 seats in each. How many seats are there altogether?",
       "answer": "152",
       "answerUnit": "seats",
@@ -690,18 +693,17 @@
       "method_note": "Find the total number of seats.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "19",
-      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of seats"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q15",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 20 packs with 9 cards in each. How many cards are there altogether?",
       "answer": "180",
       "answerUnit": "cards",
@@ -728,18 +730,17 @@
       "method_note": "Find the total number of cards.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "20",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q16",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 21 shelves with 10 books in each. How many books are there altogether?",
       "answer": "210",
       "answerUnit": "books",
@@ -766,18 +767,17 @@
       "method_note": "Find the total number of books.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "21",
-      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of books"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q17",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 22 trays with 11 cakes in each. How many cakes are there altogether?",
       "answer": "242",
       "answerUnit": "cakes",
@@ -804,18 +804,17 @@
       "method_note": "Find the total number of cakes.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "22",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cakes"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C1-Q18",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 23 bags with 12 beads in each. How many beads are there altogether?",
       "answer": "276",
       "answerUnit": "beads",
@@ -842,18 +841,17 @@
       "method_note": "Find the total number of beads.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "23",
-      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of beads"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q1",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 12 boxes with 7 pens in each. 5 pens are removed. How many remain?",
       "answer": "79",
       "answerUnit": "pens",
@@ -891,18 +889,17 @@
       "method_note": "Find the total number of pens Remove the 5 pens.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 7 = 70; 70 − 5 = 65. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "84",
-      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of pens"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q2",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 13 rows with 8 seats in each. 5 seats are removed. How many remain?",
       "answer": "99",
       "answerUnit": "seats",
@@ -940,18 +937,17 @@
       "method_note": "Find the total number of seats Remove the 5 seats.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 8 = 80; 80 − 5 = 75. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "104",
-      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of seats"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q3",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 14 packs with 9 cards in each. 5 cards are removed. How many remain?",
       "answer": "121",
       "answerUnit": "cards",
@@ -989,18 +985,17 @@
       "method_note": "Find the total number of cards Remove the 5 cards.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 9 = 90; 90 − 5 = 85. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q4",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 15 shelves with 10 books in each. 5 books are removed. How many remain?",
       "answer": "145",
       "answerUnit": "books",
@@ -1038,18 +1033,17 @@
       "method_note": "Find the total number of books Remove the 5 books.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 5 = 195. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "150",
-      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of books"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q5",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 16 trays with 11 cakes in each. 5 cakes are removed. How many remain?",
       "answer": "171",
       "answerUnit": "cakes",
@@ -1087,18 +1081,17 @@
       "method_note": "Find the total number of cakes Remove the 5 cakes.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 5 = 195. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "176",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cakes"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q6",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 17 bags with 12 beads in each. 5 beads are removed. How many remain?",
       "answer": "199",
       "answerUnit": "beads",
@@ -1136,18 +1129,17 @@
       "method_note": "Find the total number of beads Remove the 5 beads.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 5 = 195. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "204",
-      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of beads"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q7",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 15 boxes with 7 pens in each. 6 pens are removed. How many remain?",
       "answer": "99",
       "answerUnit": "pens",
@@ -1185,18 +1177,17 @@
       "method_note": "Find the total number of pens Remove the 6 pens.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 − 6 = 134. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "105",
-      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of pens"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q8",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 16 rows with 8 seats in each. 6 seats are removed. How many remain?",
       "answer": "122",
       "answerUnit": "seats",
@@ -1234,18 +1225,17 @@
       "method_note": "Find the total number of seats Remove the 6 seats.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160; 160 − 6 = 154. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "128",
-      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of seats"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q9",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 17 packs with 9 cards in each. 6 cards are removed. How many remain?",
       "answer": "147",
       "answerUnit": "cards",
@@ -1283,18 +1273,17 @@
       "method_note": "Find the total number of cards Remove the 6 cards.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180; 180 − 6 = 174. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "153",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q10",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 18 shelves with 10 books in each. 6 books are removed. How many remain?",
       "answer": "174",
       "answerUnit": "books",
@@ -1332,18 +1321,17 @@
       "method_note": "Find the total number of books Remove the 6 books.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 6 = 194. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of books"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q11",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 19 trays with 11 cakes in each. 6 cakes are removed. How many remain?",
       "answer": "203",
       "answerUnit": "cakes",
@@ -1381,18 +1369,17 @@
       "method_note": "Find the total number of cakes Remove the 6 cakes.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 6 = 194. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "209",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cakes"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q12",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 20 bags with 12 beads in each. 6 beads are removed. How many remain?",
       "answer": "234",
       "answerUnit": "beads",
@@ -1430,18 +1417,17 @@
       "method_note": "Find the total number of beads Remove the 6 beads.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 6 = 194. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "240",
-      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of beads"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q13",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 18 boxes with 7 pens in each. 7 pens are removed. How many remain?",
       "answer": "119",
       "answerUnit": "pens",
@@ -1479,18 +1465,17 @@
       "method_note": "Find the total number of pens Remove the 7 pens.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 − 7 = 133. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of pens"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q14",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 19 rows with 8 seats in each. 7 seats are removed. How many remain?",
       "answer": "145",
       "answerUnit": "seats",
@@ -1528,18 +1513,17 @@
       "method_note": "Find the total number of seats Remove the 7 seats.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160; 160 − 7 = 153. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "152",
-      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of seats"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q15",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 20 packs with 9 cards in each. 7 cards are removed. How many remain?",
       "answer": "173",
       "answerUnit": "cards",
@@ -1577,18 +1561,17 @@
       "method_note": "Find the total number of cards Remove the 7 cards.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180; 180 − 7 = 173. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q16",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 21 shelves with 10 books in each. 7 books are removed. How many remain?",
       "answer": "203",
       "answerUnit": "books",
@@ -1626,18 +1609,17 @@
       "method_note": "Find the total number of books Remove the 7 books.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 7 = 193. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "210",
-      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of books"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q17",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 22 trays with 11 cakes in each. 7 cakes are removed. How many remain?",
       "answer": "235",
       "answerUnit": "cakes",
@@ -1675,18 +1657,17 @@
       "method_note": "Find the total number of cakes Remove the 7 cakes.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 7 = 193. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "242",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cakes"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C2-Q18",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 23 bags with 12 beads in each. 7 beads are removed. How many remain?",
       "answer": "269",
       "answerUnit": "beads",
@@ -1724,18 +1705,17 @@
       "method_note": "Find the total number of beads Remove the 7 beads.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 − 7 = 193. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "276",
-      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of beads"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q1",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 12 boxes with 7 pens in each. A customer buys all the pens. Each pen sells for £3. There is a £5 discount on the whole order. What is the final price?",
       "answer": "247",
       "answerUnit": "£",
@@ -1784,18 +1764,17 @@
       "method_note": "Find the total number of pens Find the price of all the items Apply the discount once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 7 = 70; 70 × 3 = 210; 210 − 5 = 205. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "84",
-      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of pens"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q2",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 13 rows with 8 seats in each. A customer buys all the seats. Each seat sells for £3. There is a £5 discount on the whole order. Delivery costs £6. What is the final price?",
       "answer": "313",
       "answerUnit": "£",
@@ -1855,18 +1834,17 @@
       "method_note": "Find the total number of seats Find the price of all the items Apply the discount once Add delivery once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 8 = 80; 80 × 3 = 240; 240 − 5 = 235; 235 + 6 = 241. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "104",
-      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of seats"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q3",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 14 packs with 9 cards in each. A customer buys all the cards. Each card sells for £3. There is a £5 discount on the whole order. What is the final price?",
       "answer": "373",
       "answerUnit": "£",
@@ -1915,18 +1893,17 @@
       "method_note": "Find the total number of cards Find the price of all the items Apply the discount once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 10 × 9 = 90; 90 × 3 = 270; 270 − 5 = 265. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q4",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 15 shelves with 10 books in each. A customer buys all the books. Each book sells for £3. There is a £5 discount on the whole order. Delivery costs £6. What is the final price?",
       "answer": "451",
       "answerUnit": "£",
@@ -1986,18 +1963,17 @@
       "method_note": "Find the total number of books Find the price of all the items Apply the discount once Add delivery once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 3 = 600; 600 − 5 = 595; 595 + 6 = 601. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "150",
-      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of books"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q5",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 16 trays with 11 cakes in each. A customer buys all the cakes. Each cake sells for £3. There is a £5 discount on the whole order. What is the final price?",
       "answer": "523",
       "answerUnit": "£",
@@ -2046,18 +2022,17 @@
       "method_note": "Find the total number of cakes Find the price of all the items Apply the discount once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 3 = 600; 600 − 5 = 595. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "176",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cakes"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q6",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 17 bags with 12 beads in each. A customer buys all the beads. Each bead sells for £3. There is a £5 discount on the whole order. Delivery costs £6. What is the final price?",
       "answer": "613",
       "answerUnit": "£",
@@ -2117,18 +2092,17 @@
       "method_note": "Find the total number of beads Find the price of all the items Apply the discount once Add delivery once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 3 = 600; 600 − 5 = 595; 595 + 6 = 601. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "204",
-      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of beads"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q7",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 15 boxes with 7 pens in each. A customer buys all the pens. Each pen sells for £4. There is a £6 discount on the whole order. What is the final price?",
       "answer": "414",
       "answerUnit": "£",
@@ -2177,18 +2151,17 @@
       "method_note": "Find the total number of pens Find the price of all the items Apply the discount once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 × 4 = 560; 560 − 6 = 554. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "105",
-      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of pens"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q8",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 16 rows with 8 seats in each. A customer buys all the seats. Each seat sells for £4. There is a £6 discount on the whole order. Delivery costs £7. What is the final price?",
       "answer": "513",
       "answerUnit": "£",
@@ -2248,18 +2221,17 @@
       "method_note": "Find the total number of seats Find the price of all the items Apply the discount once Add delivery once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160; 160 × 4 = 640; 640 − 6 = 634; 634 + 7 = 641. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "128",
-      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of seats"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q9",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 17 packs with 9 cards in each. A customer buys all the cards. Each card sells for £4. There is a £6 discount on the whole order. What is the final price?",
       "answer": "606",
       "answerUnit": "£",
@@ -2308,18 +2280,17 @@
       "method_note": "Find the total number of cards Find the price of all the items Apply the discount once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180; 180 × 4 = 720; 720 − 6 = 714. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "153",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q10",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 18 shelves with 10 books in each. A customer buys all the books. Each book sells for £4. There is a £6 discount on the whole order. Delivery costs £7. What is the final price?",
       "answer": "721",
       "answerUnit": "£",
@@ -2379,18 +2350,17 @@
       "method_note": "Find the total number of books Find the price of all the items Apply the discount once Add delivery once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 4 = 800; 800 − 6 = 794; 794 + 7 = 801. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of books"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q11",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 19 trays with 11 cakes in each. A customer buys all the cakes. Each cake sells for £4. There is a £6 discount on the whole order. What is the final price?",
       "answer": "830",
       "answerUnit": "£",
@@ -2439,18 +2409,17 @@
       "method_note": "Find the total number of cakes Find the price of all the items Apply the discount once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 4 = 800; 800 − 6 = 794. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "209",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cakes"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q12",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 20 bags with 12 beads in each. A customer buys all the beads. Each bead sells for £4. There is a £6 discount on the whole order. Delivery costs £7. What is the final price?",
       "answer": "961",
       "answerUnit": "£",
@@ -2510,18 +2479,17 @@
       "method_note": "Find the total number of beads Find the price of all the items Apply the discount once Add delivery once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 4 = 800; 800 − 6 = 794; 794 + 7 = 801. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "240",
-      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of beads"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q13",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 18 boxes with 7 pens in each. A customer buys all the pens. Each pen sells for £5. There is a £7 discount on the whole order. What is the final price?",
       "answer": "623",
       "answerUnit": "£",
@@ -2570,18 +2538,17 @@
       "method_note": "Find the total number of pens Find the price of all the items Apply the discount once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 7 = 140; 140 × 5 = 700; 700 − 7 = 693. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “find the total number of pens”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of pens"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q14",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 19 rows with 8 seats in each. A customer buys all the seats. Each seat sells for £5. There is a £7 discount on the whole order. Delivery costs £8. What is the final price?",
       "answer": "761",
       "answerUnit": "£",
@@ -2641,18 +2608,17 @@
       "method_note": "Find the total number of seats Find the price of all the items Apply the discount once Add delivery once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 8 = 160; 160 × 5 = 800; 800 − 7 = 793; 793 + 8 = 801. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "152",
-      "error_note": "This has not completed the requested calculation. After “find the total number of seats”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of seats"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q15",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 20 packs with 9 cards in each. A customer buys all the cards. Each card sells for £5. There is a £7 discount on the whole order. What is the final price?",
       "answer": "893",
       "answerUnit": "£",
@@ -2701,18 +2667,17 @@
       "method_note": "Find the total number of cards Find the price of all the items Apply the discount once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 9 = 180; 180 × 5 = 900; 900 − 7 = 893. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q16",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 21 shelves with 10 books in each. A customer buys all the books. Each book sells for £5. There is a £7 discount on the whole order. Delivery costs £8. What is the final price?",
       "answer": "1051",
       "answerUnit": "£",
@@ -2772,18 +2737,17 @@
       "method_note": "Find the total number of books Find the price of all the items Apply the discount once Add delivery once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 5 = 1,000; 1,000 − 7 = 993; 993 + 8 = 1,001. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "210",
-      "error_note": "This has not completed the requested calculation. After “find the total number of books”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of books"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q17",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 22 trays with 11 cakes in each. A customer buys all the cakes. Each cake sells for £5. There is a £7 discount on the whole order. What is the final price?",
       "answer": "1203",
       "answerUnit": "£",
@@ -2832,18 +2796,17 @@
       "method_note": "Find the total number of cakes Find the price of all the items Apply the discount once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 5 = 1,000; 1,000 − 7 = 993. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "242",
-      "error_note": "This has not completed the requested calculation. After “find the total number of cakes”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of cakes"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M01-WEB-PS-C3-Q18",
-      "subject": "maths",
-      "topic": "M01",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "There are 23 bags with 12 beads in each. A customer buys all the beads. Each bead sells for £5. There is a £7 discount on the whole order. Delivery costs £8. What is the final price?",
       "answer": "1381",
       "answerUnit": "£",
@@ -2903,8 +2866,12 @@
       "method_note": "Find the total number of beads Find the price of all the items Apply the discount once Add delivery once.",
       "check": "Round the two initial factors to 1 significant figure, then estimate the remaining steps: 20 × 10 = 200; 200 × 5 = 1,000; 1,000 − 7 = 993; 993 + 8 = 1,001. Compare the final size with your answer; this is a ballpark check.",
       "wrong": "276",
-      "error_note": "This has not completed the requested calculation. After “find the total number of beads”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the total number of beads"
+        }
+      },
       "questionPrefix": "Solve the problem"
     }
   ]

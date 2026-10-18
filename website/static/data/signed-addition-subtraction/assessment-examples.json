@@ -37,13 +37,8 @@
     "method_note": "Adding a positive moves right. Start at −9. Move 4 right to −5.",
     "check": "Undo the final operation: (−5) − 4 = −9.",
     "wrong": "-13",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-ASSESSMENT-C1-Q1",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "assessment",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "7 − 15",
@@ -83,13 +78,8 @@
     "method_note": "Subtracting a positive moves left. Start at 7. Move 15 left to −8.",
     "check": "Undo the final operation: (−8) + 15 = 7.",
     "wrong": "22",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-ASSESSMENT-C1-Q2",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "assessment",
-    "level": 0,
-    "method": "calculation"
+    "level": 0
   },
   {
     "q": "12 + (−5)",
@@ -129,13 +119,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at 12. Move 5 left to 7.",
     "check": "Undo the final operation: 7 − (−5) = 12.",
     "wrong": "17",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-ASSESSMENT-C2-Q1",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "assessment",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−7 − (−12)",
@@ -175,13 +160,8 @@
     "method_note": "Subtracting a negative is adding its size. Start at −7. Move 12 right to 5.",
     "check": "Undo the final operation: 5 + (−12) = −7.",
     "wrong": "-19",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-ASSESSMENT-C2-Q2",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "assessment",
-    "level": 1,
-    "method": "calculation"
+    "level": 1
   },
   {
     "q": "−9 + (−6) + 14",
@@ -236,13 +216,8 @@
     "method_note": "Adding a negative is subtracting its size. Start at −9. Move 6 left to −15. Adding a positive moves right. Start at −15. Move 14 right to −1.",
     "check": "Undo the final operation: (−1) − 14 = −15.",
     "wrong": "11",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-ASSESSMENT-C3-Q1",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "assessment",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   },
   {
     "q": "4 − (−11) − (−8)",
@@ -297,12 +272,7 @@
     "method_note": "Subtracting a negative is adding its size. Start at 4. Move 11 right to 15. Subtracting a negative is adding its size. Start at 15. Move 8 right to 23.",
     "check": "Undo the final operation: 23 + (−8) = 15.",
     "wrong": "1",
-    "error_note": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
     "id": "maths:M13-WEB-ASSESSMENT-C3-Q2",
-    "subject": "maths",
-    "topic": "M13",
-    "type": "assessment",
-    "level": 2,
-    "method": "calculation"
+    "level": 2
   }
 ]

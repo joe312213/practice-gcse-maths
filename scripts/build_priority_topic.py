@@ -1,30 +1,24 @@
-"""Purpose: Build one explicitly requested priority topic, then compile saved topics.
+"""Purpose: Historical M10 publisher: render the structured equation bank as editable slides with
+balance-line working, HTML answers and topic Markdown, register the topic, then compile saved
+decks.
 
 Main contents:
-- headers
-- base
-- newdeck
-- equation_recap
-- assessment
-- demo
-- practice
-- errors
-- independent
-- card
-- compact_assessment_steps
-- method_columns
-- answer_body
-- content_md
-- validate
-- main
+- headers, base, newdeck, equation_recap, assessment, demo, practice, errors, independent, card,
+  compact_assessment_steps, method_columns, answer_body, content_md, validate, main.
 
 Used By: scripts/build_fraction_topic.py, scripts/refresh_answers.py.
 
-Uses: scripts/build_ratio.py, scripts/compile_starters.py, scripts/rendering/equations.py, scripts/update_structure.py.
+Uses: scripts/build_ratio.py, scripts/compile_starters.py, scripts/rendering/equations.py,
+scripts/update_structure.py.
 
-Libs: Pillow (font measurement/image rendering), compile_starters, python-pptx (editable slides and deck inspection).
+Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck
+inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Reads content/M10_equations.json; writes topics/equations outputs,
+content/M10_solving_equations.md and topic_registry.json before compile_all.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 import json,sys,html,re
@@ -70,7 +64,7 @@ def equation_recap(p,d):
  Calls: base, headers, b.rect, b.text.
  Used by: main.
 
- Example in the caller's context: equation_recap(p, d)
+ Example: equation_recap(p, d)
  """
  s=base(p,d,'Technique recap • Simplify first, then keep both sides equal.','M10-RECAP');left,cw=headers(s)
  blocks=[('Keep the balance',[dict(l='x + 7',r='19'),dict(l='− 7',r='− 7',kind='op'),dict(l='x',r='12')],
@@ -116,7 +110,7 @@ def practice(p,d,idx):
  Calls: base, headers, b.rect, b.text, b.line, b.progression.
  Used by: main.
 
- Example in the caller's context: practice(p, d, idx)
+ Example: practice(p, d, idx)
  """
  s=base(p,d,f'Step-by-step practice {idx+1} • Copy the centre line and show each operation.','M10-S0'+str(idx+2));left,cw=headers(s,True)
  y=1.73;heights=[.65,1.05,2.05,1.15,1.68]
@@ -165,7 +159,7 @@ def card(e,heading,wrong=False):
  include deliberately incorrect working.
  Used by: answer_body.
 
- Example in the caller's context: card(e, heading, wrong)
+ Example: card(e, heading, wrong)
  """
  rows=e['balance'];out='<article><h4>'+html.escape(heading+' — '+e['q'])+'</h4>'
  if wrong:
@@ -207,7 +201,7 @@ def answer_body(d):
  Calls: compact_assessment_steps, method_columns, card.
  Used by: main.
 
- Example in the caller's context: answer_body(d)
+ Example: answer_body(d)
  """
  out=[u.answer_layout.opening('M10','Solving equations')+'<h3>M10-IA — Initial assessment</h3>']
  out.append(u.answer_layout.assessment_cell([f'<strong>Q{i+1}. x = {e["answer"]}</strong>'+balance(compact_assessment_steps(e['balance'])) for i,e in enumerate(d['assessment'])]))
@@ -235,7 +229,7 @@ def content_md(d):
  Parameters: d — structured topic or working data.
  Used by: main.
 
- Example in the caller's context: content_md(d)
+ Example: content_md(d)
  """
  out=['# M10 — Solving equations','', '**Status: Built for review under the user’s instruction.** Replaces the earlier patterned draft. Exact structured source: `M10_equations.json`.','', 'Method: vertical line through the equals sign; apply operations to both whole sides. Simplify like terms, factorise a common factor where helpful, divide out an outer multiplier before expanding when shorter, and remove the smaller x-term first when convenient. Check by substituting into the original equation.','']
  sets=[('IA',d['assessment']),('S01',d['demo']),('S02',d['practice'][0]),('S03',d['practice'][1])]
@@ -254,7 +248,7 @@ def validate(d):
  Parameters: d — structured topic or working data.
  Used by: main.
 
- Example in the caller's context: validate(d)
+ Example: validate(d)
  """
  for e in d['assessment']+d['demo']+sum(d['practice'],[])+[e for cols in d['banks'] for col in cols for e in col]:
   a,b0,c,d0=map(Fraction,e['coefficients']);x=Fraction(e['answer']);assert a*x+b0==c*x+d0,e['q']
@@ -281,7 +275,7 @@ def main():
  Calls: newdeck, assessment, equation_recap, demo, practice, errors, independent, validate, u.save,
  u.page, answer_body, u.save_text, content_md.
 
- Example in the caller's context: main()
+ Example: main()
  """
  d=json.loads((ROOT/'content/M10_equations.json').read_text());p=newdeck()
  assessment(p,d);equation_recap(p,d);demo(p,d)

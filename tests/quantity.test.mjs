@@ -1,5 +1,21 @@
+/**
+ * Purpose: Units are presentation metadata; arithmetic and accepted numeric answers stay
+ * unchanged.
+ *
+ * Main contents:
+ * - money signs, fraction units and percentage symbols are formatted without changing precision;
+ *   journey rates, times and distances carry the appropriate intermediate units; money working
+ *   distinguishes item counts, ratio parts and percentage proportions from prices.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/domain/quantity.mjs,
+ * website/src/lib/domain/engine.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
-/** Units are presentation metadata; arithmetic and accepted numeric answers stay unchanged. */
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import { formatQuantity } from "../website/src/lib/domain/quantity.mjs";

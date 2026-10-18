@@ -6,7 +6,9 @@
  * - maintainRecommendations
  * - completeRecommendation
  *
- * Used By: tests/progress.test.mjs, website/src/lib/application/session.mjs, website/src/routes/progress.html/+page.svelte
+ * Used By: tests/progress.test.mjs, tests/topic-discovery.test.mjs,
+ * website/src/lib/application/session.mjs, website/src/lib/domain/combined-practice.mjs,
+ * website/src/routes/+page.svelte, website/src/routes/progress.html/+page.svelte.
  *
  * Uses: website/src/lib/domain/progress.mjs, website/src/lib/domain/practice-code.mjs.
  *

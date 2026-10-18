@@ -5,37 +5,37 @@
       "aim": "Use the lattice to keep each product in its place.",
       "steps": [
         [
-          "Draw the grid and ",
+          "Count the digits first: draw one column for each digit in the first number and one row for each digit in the second number. For 237 × 46, draw 3 columns and 2 rows. Draw a ",
           {
             "concept": "diagonals",
-            "text": "diagonals"
+            "text": "diagonal"
           },
-          "."
+          " from top right to bottom left through every cell, extending the lines beyond the bottom and left edges for the answer. Leave space above and to the right for the numbers."
         ],
-        "First number across the top; second number down the right edge.",
+        "Write one digit of the first number above each column, from left to right. Write one digit of the second number beside each row on the right, from top to bottom.",
         [
-          "Multiply each row and column digit. ",
+          "Multiply the digit above each column by the digit beside its row, writing the ",
           {
             "concept": "tens-and-units",
-            "text": "Tens"
+            "text": "tens"
           },
-          " above; units below. Write a tens zero if the product is below 10."
+          " above the cell’s diagonal and units below it. Write a tens zero for a product below 10; for 6 × 7 = 42, write 4 above and 2 below."
         ],
         [
-          "Start at the bottom right. Add each diagonal and any ",
+          "Start at the bottom-right diagonal and add its digits, including any incoming ",
           {
             "concept": "carry",
             "text": "carry"
           },
-          ". Write its result digit at the bottom end. Put the next carry at the bottom end of the next diagonal in smaller text."
+          ". Write the units digit at its bottom end, then carry the tens in smaller writing to the next diagonal on the left; repeat until all diagonals are added."
         ],
         [
-          "Read down the left edge, then along the bottom. Omit ",
+          "Read the answer down the left edge, then along the bottom, omitting only ",
           {
             "concept": "leading-zeros",
             "text": "leading zeros"
           },
-          ". This is the answer."
+          " before the first non-zero digit. Keep zeros between other digits and estimate the product to check its size."
         ]
       ]
     },
@@ -55,6 +55,18 @@
         "name": "Keep a zero in a cell product",
         "submethods": [],
         "question": "maths:M01-S04-C1-Q2"
+      },
+      {
+        "key": "s04-c1-q3",
+        "name": "Multiply 45 × 3 with a diagonal carry",
+        "submethods": [],
+        "question": "maths:M01-S04-C1-Q3"
+      },
+      {
+        "key": "s04-c1-q4",
+        "name": "Multiply 72 × 6",
+        "submethods": [],
+        "question": "maths:M01-S04-C1-Q4"
       }
     ],
     "build": [
@@ -69,6 +81,18 @@
         "name": "Carry between diagonal totals",
         "submethods": [],
         "question": "maths:M01-S04-C2-Q3"
+      },
+      {
+        "key": "s04-c2-q2",
+        "name": "Multiply 26 × 34 with carries",
+        "submethods": [],
+        "question": "maths:M01-S04-C2-Q2"
+      },
+      {
+        "key": "s04-c2-q6",
+        "name": "Multiply 82 × 57",
+        "submethods": [],
+        "question": "maths:M01-S04-C2-Q6"
       }
     ],
     "confidence": [
@@ -83,6 +107,18 @@
         "name": "Handle several diagonal carries",
         "submethods": [],
         "question": "maths:M01-S04-C3-Q1"
+      },
+      {
+        "key": "s04-c3-q2",
+        "name": "Draw three columns and four rows",
+        "submethods": [],
+        "question": "maths:M01-S04-C3-Q2"
+      },
+      {
+        "key": "s04-c3-q5",
+        "name": "Keep zero products in a four-by-four grid",
+        "submethods": [],
+        "question": "maths:M01-S04-C3-Q5"
       }
     ]
   },

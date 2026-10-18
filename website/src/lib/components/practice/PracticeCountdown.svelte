@@ -1,9 +1,14 @@
 <!--
   Purpose: A learner-started page countdown with adjustment, pause and a soft expiry chime.
-  Main contents: Transient timer controls and one expiry announcement.
-  Used By: PracticeActivity, keyed by page attempt.
-  Uses: countdown domain arithmetic and chime adapter.
-  Libs: Svelte lifecycle; browser interval/visibility events only repaint the deadline.
+
+  Main contents:
+  Transient timer controls and one expiry announcement.
+
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte.
+
+  Uses: website/src/lib/domain/countdown.mjs, website/src/lib/adapters/chime.mjs.
+
+  Libs: svelte (component state, lifecycle and transitions).
 -->
 <script>
   import { onMount, untrack } from 'svelte';

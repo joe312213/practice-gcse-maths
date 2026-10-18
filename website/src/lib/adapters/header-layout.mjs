@@ -1,6 +1,17 @@
-/** Measure the header's natural contents so tools stay top-right without a viewport breakpoint.
- * The clones are inert, hidden and removed in the same frame. Grid owns the final layout.
- * Used by SiteHeader; observe content changes as well as available width (learner names vary).
+/**
+ * Purpose: Measure available header space and choose a layout without guessing from device
+ * names. Resize observers coordinate intrinsic action widths and the learning-stage/progress
+ * fit.
+ *
+ * Main contents:
+ * - bindHeaderLayout, fitLearningHeader.
+ *
+ * Used By: website/src/lib/components/practice/TopicPractice.svelte,
+ * website/src/lib/components/ui/SiteHeader.svelte.
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: none.
  */
 export function bindHeaderLayout(header) {
   const brand = header.querySelector('.brand');

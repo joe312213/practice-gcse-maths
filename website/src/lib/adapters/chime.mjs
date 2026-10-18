@@ -1,11 +1,15 @@
 /**
  * Purpose: A quiet, optional timer chime unlocked by the user's Start action.
  *
- * Main contents: Lazy AudioContext creation, short bell tones and disposal.
+ * Main contents:
+ * Lazy AudioContext creation, short bell tones and disposal.
  *
- * Used By: PracticeCountdown.
+ * Used By: tests/countdown.test.mjs,
+ * website/src/lib/components/practice/PracticeCountdown.svelte.
  *
- * Uses: None. Libs: Native Web Audio; no downloaded sound asset.
+ * Uses: no local module imports.
+ *
+ * Libs: none.
  */
 export function createChime(Audio = globalThis.AudioContext ?? globalThis.webkitAudioContext) {
   let context;

@@ -1,8 +1,27 @@
+/**
+ * Purpose: Exercise the calculation methods in the real app, including exact marking and
+ * persisted page navigation.
+ *
+ * Main contents:
+ * - checkDraftTopics.
+ *
+ * Used By: website/scripts/browser/new-topics-checks.mjs.
+ *
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/content/topic-routes.mjs,
+ * website/scripts/browser/support.mjs.
+ *
+ * Libs: node:assert/strict (assertions).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
+ */
 import { readTopicBank } from '../read-topic-bank.mjs';
-/** Exercise the calculation methods in the real app, including exact marking and persisted page navigation. */
+
 import assert from 'node:assert/strict';
 import { foundationTopics, topicPath } from '../../src/lib/content/topic-routes.mjs';
 import { createTestContext, artifacts, selectWrapped } from './support.mjs';
+/** Run this focused browser scenario against the supplied browser and base URL. Called by the shared suite runner; isolated contexts and finally cleanup protect other sessions. Example: await checkDraftTopics(browser, base). */
 export async function checkDraftTopics(browser, base) {
   const context = await createTestContext(browser, { viewport: { width: 390, height: 900 } });
   const page = await context.newPage();
@@ -121,7 +140,7 @@ export async function checkDraftTopics(browser, base) {
           await tips.click();
         }
         if (topic.bank === 'M04' && mode === 'scaffolded') {
-          await page.locator('#level').selectOption('2');
+          await page.locator('.question-panel [data-level="2"]').click();
           assert.match(
             await page.locator('#active-question .guidance').innerText(),
             /further calculation/,

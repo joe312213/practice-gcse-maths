@@ -1,7 +1,23 @@
-/** Purpose: Verify real glyph rendering, missing-symbol honesty and cancellable preview playback. */
+/**
+ * Purpose: Verify real glyph rendering, missing-symbol honesty and cancellable preview playback.
+ *
+ * Main contents:
+ * - checkHandwriting.
+ *
+ * Used By: website/scripts/browser/presentation-checks.mjs.
+ *
+ * Uses: website/scripts/browser/support.mjs.
+ *
+ * Libs: node:assert/strict (assertions).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
+ */
 import assert from 'node:assert/strict';
 import { artifacts, createTestContext } from './support.mjs';
 
+/** Run this focused browser scenario against the supplied browser and base URL. Called by the shared suite runner; isolated contexts and finally cleanup protect other sessions. Example: await checkHandwriting(browser, base). */
 export async function checkHandwriting(browser, base) {
   const context = await createTestContext(browser, { viewport: { width: 1280, height: 1000 } });
   const page = await context.newPage();

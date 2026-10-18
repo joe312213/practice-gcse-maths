@@ -1,8 +1,8 @@
 """Purpose: Finished short division: aligned digits, carried remainders and decimal extension.
 
 Main contents:
-- state
-- draw
+- state: Compute aligned short-division digits, quotient digits and carried remainders.
+- draw: Render aligned short division as SVG and optionally editable PowerPoint shapes.
 
 Used By: scripts/answer_layout.py, scripts/rendering/applications.py.
 
@@ -10,7 +10,9 @@ Uses: scripts/rendering/canvas.py.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Import from legacy answer/deck publishers; pass the operands or working
+records to the listed functions. Returns SVG/HTML, or draws into a caller-supplied slide; does
+not save files.
 """
 from fractions import Fraction
 from .canvas import Canvas
@@ -22,7 +24,7 @@ def state(a,b,decimal=False):
  extend division into decimal digits.
  Used by: draw.
 
- Example in the caller's context: state(43, 6)
+ Example: state(43, 6)
  """
  ds=list(str(a));qs=[];rs=[];r=0
  for d in ds:
@@ -45,7 +47,7 @@ def draw(a,b,decimal=False,slide=None,x=0,y=0):
  in inches; y — vertical coordinate in inches.
  Calls: state, c.line, c.text, c.finish.
 
- Example in the caller's context: draw(a, b, decimal, slide, x, y)
+ Example: draw(a, b, decimal, slide, x, y)
  """
  ds,qs,rs,r=state(a,b,decimal);step=.46;w=max(3.5,len(ds)*step+1.15);c=Canvas(w,1.80,slide,x,y);gx=.63;gy=.64
  c.line(gx-.08,gy,gx+len(ds)*step+.08,gy,width=1.5);c.line(gx-.08,gy,gx-.08,gy+.43,width=1.5);c.text(.03,gy+.06,.43,.35,b,24,'right')

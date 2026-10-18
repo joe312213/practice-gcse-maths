@@ -19,7 +19,12 @@
         "title": "Use a common denominator",
         "input": "{4/9} − {1/9}",
         "output": "{4/9} − {1/9}",
-        "note": "Both denominators are 9, so the parts already have equal size. Keep this denominator."
+        "note": {
+          "textRef": "matching-denominators",
+          "values": {
+            "denominator": "9"
+          }
+        }
       },
       {
         "title": "Add or subtract numerators",
@@ -31,7 +36,9 @@
         "title": "Simplify",
         "input": "{3/9}",
         "output": "{1/3}",
-        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+        "note": {
+          "textRef": "simplify-fraction"
+        }
       }
     ],
     "diagram": {
@@ -40,13 +47,16 @@
       "b": "1/9",
       "denominator": 9
     },
-    "hint": "The parts are already the same size: 9 per whole. Which numbers count how many parts you have?",
+    "hint": {
+      "textRef": "matching-parts-hint",
+      "values": {
+        "denominator": "9"
+      }
+    },
     "method_note": "Use denominator 9: 4/9 − 1/9. Combine the numerators, then simplify.",
     "check": "Reverse the operation: {1/3} + {1/9} = {4/9}.",
     "wrong": "1/6",
-    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
-    "title": "Another worked example",
-    "method": "calculation"
+    "title": "Another worked example"
   },
   {
     "q": "{3/8} − {1/4}",
@@ -68,7 +78,12 @@
         "title": "Use a common denominator",
         "input": "{3/8} − {1/4}",
         "output": "{3/8} − {2/8}",
-        "note": "Use 8 equal parts per whole. Multiply each numerator and denominator by the same factor."
+        "note": {
+          "textRef": "equivalent-parts",
+          "values": {
+            "denominator": "8"
+          }
+        }
       },
       {
         "title": "Add or subtract numerators",
@@ -80,7 +95,9 @@
         "title": "Simplify",
         "input": "{1/8}",
         "output": "{1/8}",
-        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+        "note": {
+          "textRef": "simplify-fraction"
+        }
       }
     ],
     "diagram": {
@@ -93,9 +110,7 @@
     "method_note": "Use denominator 8: 3/8 − 2/8. Combine the numerators, then simplify.",
     "check": "Reverse the operation: {1/8} + {1/4} = {3/8}.",
     "wrong": "1/6",
-    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
-    "title": "Another worked example",
-    "method": "calculation"
+    "title": "Another worked example"
   },
   {
     "q": "1 {2/5} − 1 {1/4}",
@@ -111,13 +126,20 @@
         "title": "Prepare the fractions",
         "input": "1 {2/5} − 1 {1/4}",
         "output": "{7/5} − {5/4}",
-        "note": "Convert any mixed number: whole number × denominator + numerator; keep the denominator."
+        "note": {
+          "textRef": "convert-mixed-number"
+        }
       },
       {
         "title": "Use a common denominator",
         "input": "{7/5} − {5/4}",
         "output": "{28/20} − {25/20}",
-        "note": "Use 20 equal parts per whole. Multiply each numerator and denominator by the same factor."
+        "note": {
+          "textRef": "equivalent-parts",
+          "values": {
+            "denominator": "20"
+          }
+        }
       },
       {
         "title": "Add or subtract numerators",
@@ -129,7 +151,9 @@
         "title": "Simplify",
         "input": "{3/20}",
         "output": "{3/20}",
-        "note": "Divide top and bottom by a common factor until none remains. An equivalent mixed number is also valid."
+        "note": {
+          "textRef": "simplify-fraction"
+        }
       }
     ],
     "diagram": {
@@ -142,8 +166,6 @@
     "method_note": "Use denominator 20: 28/20 − 25/20. Combine the numerators, then simplify.",
     "check": "Reverse the operation: {3/20} + {5/4} = {7/5}.",
     "wrong": "2/9",
-    "error_note": "The denominator counts equal-sized parts. Do not add denominators or change a denominator without changing its numerator.",
-    "title": "Another worked example",
-    "method": "calculation"
+    "title": "Another worked example"
   }
 ]

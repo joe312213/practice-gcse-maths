@@ -4,11 +4,17 @@
  * Main contents:
  * - checkVisuals
  *
- * Used By: website/scripts/browser-checks.mjs
+ * Used By: website/scripts/browser-checks.mjs.
  *
  * Uses: website/scripts/browser/support.mjs.
  *
- * Libs: node:assert/strict (assertions), node:child_process (Git/build subprocesses), node:fs/promises (asynchronous file access), node:os (temporary directories), node:path (filesystem paths), node:url.
+ * Libs: node:assert/strict (assertions), node:child_process (Git and verification subprocesses),
+ * node:fs/promises (asynchronous file access), node:os (temporary directories), node:path
+ * (filesystem path resolution), node:url (module/file URL conversion).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
  */
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';

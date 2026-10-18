@@ -1,7 +1,7 @@
 """Purpose: Render labelled ratio calculations as a compact written-work block.
 
 Main contents:
-- draw
+- draw: Render left/right labelled ratio working and the final answer.
 
 Used By: scripts/answer_layout.py.
 
@@ -9,7 +9,9 @@ Uses: scripts/rendering/canvas.py.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Import from legacy answer/deck publishers; pass the operands or working
+records to the listed functions. Returns SVG/HTML, or draws into a caller-supplied slide; does
+not save files.
 """
 from .canvas import Canvas
 

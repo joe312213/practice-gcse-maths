@@ -10,9 +10,14 @@
  * - backupStatus
  * - recordExport
  *
- * Used By: tests/progress.test.mjs, website/src/lib/application/session.mjs, website/src/lib/components/progress/ProgressTransfer.svelte, website/src/lib/domain/revision.mjs, website/src/routes/progress.html/+page.svelte
+ * Used By: tests/progress.test.mjs, tests/reattempts.test.mjs,
+ * website/src/lib/adapters/progress-autosave.mjs, website/src/lib/application/session.mjs,
+ * website/src/lib/components/progress/OneDriveReminder.svelte,
+ * website/src/lib/components/progress/ProgressTransfer.svelte,
+ * website/src/lib/domain/combined-practice.mjs.
  *
- * Uses: website/src/lib/domain/engine.mjs, website/src/lib/domain/practice-code.mjs.
+ * Uses: website/src/lib/domain/engine.mjs, website/src/lib/domain/practice-code.mjs,
+ * website/src/lib/domain/reattempts.mjs.
  *
  * Libs: none.
  */

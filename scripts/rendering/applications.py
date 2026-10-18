@@ -1,7 +1,7 @@
 """Purpose: Compose complete arithmetic diagrams for an application without inventing a method.
 
 Main contents:
-- draw
+- draw: Compose multiplication or division diagrams for the supplied ordered application steps.
 
 Used By: scripts/answer_layout.py.
 
@@ -9,7 +9,9 @@ Uses: scripts/rendering/bus_stop.py, scripts/rendering/lattice.py.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Import from legacy answer/deck publishers; pass the operands or working
+records to the listed functions. Returns SVG/HTML, or draws into a caller-supplied slide; does
+not save files.
 """
 from .lattice import draw as lattice
 from .bus_stop import draw as division

@@ -1,9 +1,23 @@
-<!-- Configurable combined practice uses the same resolver and persisted attempts as Practice sets. -->
+<!--
+  Purpose: Configurable combined practice uses the same resolver and persisted attempts as
+  Practice sets.
+
+  Main contents:
+  - start.
+
+  Used By: website/src/lib/components/practice/TopicPractice.svelte.
+
+  Uses: website/src/lib/components/ui/LevelSelector.svelte, website/src/lib/domain/practice-code.mjs,
+  website/src/lib/domain/combined-practice.mjs.
+
+  Libs: svelte (component state, lifecycle and transitions), $app/navigation (SvelteKit
+  navigation/route state), $app/state (SvelteKit navigation/route state).
+-->
 <script>
   import { untrack } from 'svelte';
   import { replaceState } from '$app/navigation';
   import { page } from '$app/state';
-  import { LEVELS } from '#lib/domain/engine.mjs';
+  import LevelSelector from '../ui/LevelSelector.svelte';
   import { encodePracticeSet } from '#lib/domain/practice-code.mjs';
   import { COMBINED_CODE } from '#lib/domain/combined-practice.mjs';
   let { catalogue, session, initialTopics = [] } = $props();
@@ -18,7 +32,7 @@
   let level = $state(0),
     mode = $state(3),
     error = $state('');
-  function start() {
+  async function start() {
     error = '';
     try {
       const code = encodePracticeSet({
@@ -26,7 +40,7 @@
         timing: 0,
         pages: [{ topic: COMBINED_CODE, type: mode, slot: 0 }],
       });
-      session.startPracticeSet(code, null, { topics: selected });
+      await session.startPracticeSet(code, null, { topics: selected });
       const url = new URL(location.href);
       url.searchParams.set('topics', selected.join(','));
       replaceState(url, page.state);
@@ -54,11 +68,7 @@
       </div>
     </fieldset>
     <div class="level-row">
-      <label
-        >Level <select class="choice-field" bind:value={level}
-          >{#each LEVELS as label, i}<option value={i}>{label}</option>{/each}</select
-        ></label
-      >
+      <LevelSelector {level} onchange={(value) => (level = value)} />
       <label
         >Practice <select class="choice-field" bind:value={mode}
           ><option value={3}>Combined problems</option><option value={2}>Mixed revision</option

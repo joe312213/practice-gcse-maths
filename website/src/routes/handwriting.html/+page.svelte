@@ -1,4 +1,19 @@
-<!-- Purpose: Local, interactive evaluation of stroke-font clarity, coverage and writing motion. -->
+<!--
+  Purpose: Local, interactive evaluation of stroke-font clarity, coverage and writing motion.
+
+  Main contents:
+  - Interactive handwriting specimens, symbol coverage and playback controls.
+
+  Used By: SvelteKit route loading/prerendering.
+
+  Uses: website/src/lib/components/ui/SiteHeader.svelte,
+  website/src/lib/components/ui/SiteFooter.svelte,
+  website/src/lib/components/teaching/StrokeSample.svelte,
+  website/src/lib/application/handwriting.mjs.
+
+  Libs: svelte (component state, lifecycle and transitions), $app/paths (SvelteKit
+  navigation/route state).
+-->
 <script>
   import { onMount } from 'svelte';
   import { asset } from '$app/paths';

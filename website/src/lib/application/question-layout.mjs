@@ -1,6 +1,17 @@
 /**
- * Purpose: Fit short question previews to equal-width rows without shrinking below 0.875rem (14px at the default root).
- * Used by: QuestionList.svelte. Uses: CSS-owned preferred column count. Libs: browser observers.
+ * Purpose: Fit question tiles to measured content, balancing rows while retaining full-width
+ * slots for long expressions. DOM observers update layout when available width or text metrics
+ * change.
+ *
+ * Main contents:
+ * - balancedQuestionRows, fitQuestionRows.
+ *
+ * Used By: tests/question-layout.test.mjs,
+ * website/src/lib/components/practice/QuestionList.svelte.
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: none.
  */
 /** Use the fewest rows allowed by capacity, then distribute items as evenly as possible. */
 export function balancedQuestionRows(count, capacity) {
@@ -11,6 +22,7 @@ export function balancedQuestionRows(count, capacity) {
   );
 }
 
+/** Bind question-grid measurement to the supplied question-list element. Balance row sizes using measured content and return observer cleanup; called as a Svelte action by QuestionList. */
 export function fitQuestionRows(list) {
   let frame = 0,
     disposed = false;

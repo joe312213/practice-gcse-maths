@@ -4,11 +4,19 @@
   Main contents:
   - Topic cards; legacy-link forwarding.
 
-  Used By: SvelteKit root route.
+  Used By: SvelteKit route loading/prerendering.
 
-  Uses: topic-routes.mjs; ArithmeticWorking, EquationWorking, SiteHeader and SiteFooter.
+  Uses: website/src/lib/components/teaching/CalculationWorking.svelte,
+  website/src/lib/components/teaching/MathText.svelte,
+  website/src/lib/components/teaching/ArithmeticWorking.svelte,
+  website/src/lib/components/teaching/EquationWorking.svelte,
+  website/src/lib/content/topic-routes.mjs, website/src/lib/components/ui/SiteHeader.svelte,
+  website/src/lib/components/ui/SiteFooter.svelte, website/src/lib/adapters/storage.mjs,
+  website/src/lib/domain/progress.mjs, website/src/lib/domain/revision.mjs,
+  website/src/lib/application/topic-masonry.mjs.
 
-  Libs: Svelte (mount lifecycle); $app/navigation and $app/paths (base-aware navigation).
+  Libs: svelte (component state, lifecycle and transitions), $app/navigation (SvelteKit
+  navigation/route state), $app/paths (SvelteKit navigation/route state).
 -->
 <script>
   import CalculationWorking from '#lib/components/teaching/CalculationWorking.svelte';

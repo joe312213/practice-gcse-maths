@@ -1,4 +1,23 @@
-<!-- Render authored {numerator/denominator} tokens as accessible stacked fractions; never HTML. -->
+<!--
+  Purpose: Render authored {numerator/denominator} tokens as accessible stacked fractions; never
+  HTML.
+
+  Main contents:
+  - Fraction token parsing and accessible stacked numerator/denominator markup.
+
+  Used By: website/src/lib/components/practice/Feedback.svelte,
+  website/src/lib/components/practice/PracticeActivity.svelte,
+  website/src/lib/components/practice/QuestionList.svelte,
+  website/src/lib/components/teaching/ArithmeticWorking.svelte,
+  website/src/lib/components/teaching/CalculationWorking.svelte,
+  website/src/lib/components/teaching/DemoPlayer.svelte,
+  website/src/lib/components/teaching/EquationWorking.svelte.
+
+  Uses: website/src/lib/components/teaching/WrittenInk.svelte,
+  website/src/lib/domain/quantity.mjs.
+
+  Libs: none.
+-->
 <script>
   import WrittenInk from './WrittenInk.svelte';
   import { formatQuantity } from '#lib/domain/quantity.mjs';

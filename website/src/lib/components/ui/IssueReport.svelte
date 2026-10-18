@@ -1,14 +1,15 @@
 <!--
-  Purpose: Let learners review and copy an issue report or open an email draft; never send reports automatically.
+  Purpose: Let learners review and copy an issue report or open an email draft; never send
+  reports automatically.
 
   Main contents:
   - prepare; submit; report dialog.
 
-  Used By: SiteFooter.svelte.
+  Used By: website/src/lib/components/ui/SiteFooter.svelte.
 
-  Uses: domain/issue-report.mjs.
+  Uses: website/src/lib/domain/issue-report.mjs.
 
-  Libs: Bits UI (accessible dialog); Svelte (state and derived report).
+  Libs: bits-ui (accessible dialogs, popovers and choices).
 -->
 <script>
   import { Dialog } from 'bits-ui';

@@ -1,0 +1,54 @@
+{
+  "defaults": {
+    "spot-errors": {
+      "subject": "maths",
+      "topic": "M01",
+      "type": "errors",
+      "method": "investigation",
+      "prose": true,
+      "investigation": true,
+      "method_note": {
+        "textRef": "investigation-task"
+      }
+    },
+    "assessment-examples": {
+      "subject": "maths",
+      "topic": "M01",
+      "type": "assessment",
+      "method": "lattice"
+    },
+    "practice": {
+      "subject": "maths",
+      "topic": "M01",
+      "type": "plain",
+      "method": "lattice"
+    },
+    "problem-solving": {
+      "subject": "maths",
+      "topic": "M01",
+      "type": "problem",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "application-source"
+      }
+    },
+    "demos": {
+      "subject": "maths",
+      "topic": "M01",
+      "type": "demo",
+      "method": "lattice"
+    },
+    "scaffolded": {
+      "subject": "maths",
+      "topic": "M01",
+      "type": "scaffolded",
+      "method": "lattice"
+    }
+  },
+  "phrases": {
+    "check-cells-and-carries": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "check-diagonal-halves": "Keep the tens and units halves in their own diagonals; check the result by dividing back.",
+    "check-digit-product": "Multiply each top digit by its matching right-hand digit; check both halves of the cell."
+  }
+}

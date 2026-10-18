@@ -1,32 +1,24 @@
-"""Purpose: Build the editable starter deck and its teacher answer key. Requires python-pptx.
+"""Purpose: Historical starter-deck publisher and shared drawing library for multiplication,
+division and applications. Generates editable slides, mathematical checks, slide notes and a
+teacher answer key.
 
 Main contents:
-- box
-- text
-- new_slide
-- headers
-- grid
-- diagram_digit
-- diagram_line
-- lattice
-- bus_stop
-- notes
-- num
-- division_answer
-- arithmetic_matrix
-- make_multiplication
-- make_division
-- q
-- make_application
-- validate
+- box, text, new_slide, headers, grid, diagram_digit, diagram_line, lattice, bus_stop, notes,
+  num, division_answer, arithmetic_matrix, make_multiplication, make_division, q,
+  make_application, validate.
 
 Used By: scripts/student_workings.py, scripts/update_structure.py.
 
 Uses: no local module imports.
 
-Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck inspection).
+Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck
+inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Imported for layout/working helpers. Its guarded command writes the starter
+PowerPoint and Markdown key at the OUT and KEY paths; check those historical destinations first.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 from fractions import Fraction
@@ -72,7 +64,7 @@ def box(slide, x, y, w, h, fill, line=None):
     line — optional outline colour.
     Used by: new_slide, headers, grid, lattice, arithmetic_matrix, make_application.
 
-    Example in the caller's context: box(slide, x, y, w, h, fill, line)
+    Example: box(slide, x, y, w, h, fill, line)
     """
     shape = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(x), Inches(y), Inches(w), Inches(h))
     shape.fill.solid(); shape.fill.fore_color.rgb = RGBColor.from_string(fill)
@@ -94,7 +86,7 @@ def text(slide, x, y, w, h, value, size=20, color=INK, bold=False, valign=MSO_AN
     use bold text; valign — vertical text alignment.
     Used by: new_slide, headers, grid, arithmetic_matrix, make_application.
 
-    Example in the caller's context: text(slide, x, y, w, h, value, size, color, bold, valign)
+    Example: text(slide, x, y, w, h, value, size, color, bold, valign)
     """
     shape = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
     tf = shape.text_frame
@@ -121,7 +113,7 @@ def new_slide(module, title, subtitle, local):
     Calls: box, text.
     Used by: arithmetic_matrix, make_multiplication, make_division, make_application.
 
-    Example in the caller's context: new_slide(module, title, subtitle, local)
+    Example: new_slide(module, title, subtitle, local)
     """
     s = prs.slides.add_slide(prs.slide_layouts[6])
     s.background.fill.solid(); s.background.fill.fore_color.rgb = RGBColor.from_string(BG)
@@ -141,7 +133,7 @@ def headers(s, grid=True, descriptors=None):
     Calls: box, text.
     Used by: grid, arithmetic_matrix, make_application.
 
-    Example in the caller's context: headers(s, grid, descriptors)
+    Example: headers(s, grid, descriptors)
     """
     start, width = (GRID_X, COL_W) if grid else (MARGIN, FULL_W/3)
     for c in range(3):
@@ -162,7 +154,7 @@ def grid(s, questions, row_labels, cells, heights, qheight=.65, sizes=None, diag
     Calls: headers, box, text, lattice, bus_stop.
     Used by: make_multiplication, make_division, make_application.
 
-    Example in the caller's context: grid(s, questions, row_labels, cells, heights, qheight, sizes,
+    Example: grid(s, questions, row_labels, cells, heights, qheight, sizes,
     diagrams)
     """
     headers(s)
@@ -205,7 +197,7 @@ def diagram_digit(group,x,y,w,h,value,size=18,color=INK,bold=False):
     use bold text.
     Used by: lattice, bus_stop.
 
-    Example in the caller's context: diagram_digit(group, x, y, w, h, value, size, color, bold)
+    Example: diagram_digit(group, x, y, w, h, value, size, color, bold)
     """
     shape=group.shapes.add_textbox(Inches(x),Inches(y),Inches(w),Inches(h))
     tf=shape.text_frame
@@ -239,7 +231,7 @@ def lattice(s,x,y,w,h,a,b,c):
     Calls: diagram_digit, box, diagram_line.
     Used by: grid.
 
-    Example in the caller's context: lattice(s, x, y, w, h, a, b, c)
+    Example: lattice(s, x, y, w, h, a, b, c)
     """
     group=s.shapes.add_group_shape()
     group.name=f'Editable lattice {a} × {b}'
@@ -287,7 +279,7 @@ def bus_stop(s,x,y,w,h,a,b,c,decimal=False):
     Calls: diagram_line, diagram_digit.
     Used by: grid.
 
-    Example in the caller's context: bus_stop(s, x, y, w, h, a, b, c, decimal)
+    Example: bus_stop(s, x, y, w, h, a, b, c, decimal)
     """
     group=s.shapes.add_group_shape(); group.name=f'Editable bus stop {a} ÷ {b}'
     digits=list(str(a)); remainder=0; quot=[]; carries=[]
@@ -346,7 +338,7 @@ def division_answer(a,b,decimal=False):
     to extend division into decimal digits.
     Used by: arithmetic_matrix, make_division.
 
-    Example in the caller's context: division_answer(a, b, decimal)
+    Example: division_answer(a, b, decimal)
     """
     if decimal:
         f = Fraction(a,b)
@@ -387,7 +379,7 @@ def arithmetic_matrix(module, title, bank, index):
     Calls: new_slide, headers, box, text, num, division_answer, notes.
     Used by: make_multiplication, make_division.
 
-    Example in the caller's context: arithmetic_matrix(module, title, bank, index)
+    Example: arithmetic_matrix(module, title, bank, index)
     """
     desc = ['2 digits × 1 digit','2 digits × 2 digits','Up to 4 digits × 4 digits'] if module==1 else ['No carrying','Carrying; give remainders','Includes 2-digit divisors; give decimals']
     s = new_slide(module,title,f'Independent practice {index+1}  •  Choose a column. Show the full written method.',index+4)
@@ -411,7 +403,7 @@ def make_multiplication():
     """Append the lattice-multiplication teaching sequence.
     Calls: new_slide, grid, notes, num, arithmetic_matrix.
 
-    Example in the caller's context: make_multiplication()
+    Example: make_multiplication()
     """
     s=new_slide(1,'Lattice Multiplication','Worked demo  •  Follow each step down your column. Small orange numbers show carries.',1)
     cells=[
@@ -447,7 +439,7 @@ def make_division():
     """Append the short-division teaching sequence.
     Calls: new_slide, grid, notes, num, division_answer, arithmetic_matrix.
 
-    Example in the caller's context: make_division()
+    Example: make_division()
     """
     s=new_slide(2,'Bus Stop Division','Worked demo  •  Start: exact answer. Build: remainder. Confidence: decimal answer.',1)
     cells=[
@@ -576,7 +568,7 @@ def make_application():
     """Append multiplication/division application questions and their teaching sequence.
     Calls: new_slide, grid, notes, q, headers, box, text.
 
-    Example in the caller's context: make_application()
+    Example: make_application()
     """
     s=new_slide(3,'Application to Exam Problems','Worked demo  •  Choose the calculation, use a written method, then check.',1)
     questions=['84 tins are shared equally among 4 boxes. How many tins go in each box?',
@@ -632,7 +624,7 @@ def make_application():
 def validate():
     """Assert authored mathematical answers and content invariants before publishing outputs.
 
-    Example in the caller's context: validate()
+    Example: validate()
     """
     assert len(prs.slides)==21
     for banks in (mul_sets,div_sets):

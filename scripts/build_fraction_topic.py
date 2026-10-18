@@ -1,26 +1,23 @@
-"""Purpose: Build M15 from reviewed structured content; compile all saved topics afterwards.
+"""Purpose: Historical M15 publisher: turn the structured fractions source into editable question
+slides and HTML worked answers, update the topic Markdown, then recompile registered saved
+topics.
 
 Main contents:
-- base
-- card
-- assessment
-- recap
-- demo
-- practice
-- errors
-- independent
-- answer_card
-- method_columns
-- answers
-- main
+- base, card, assessment, recap, demo, practice, errors, independent, answer_card,
+  method_columns, answers, main.
 
 Used By: scripts/refresh_answers.py.
 
-Uses: scripts/build_priority_topic.py, scripts/build_ratio.py, scripts/compile_starters.py, scripts/rendering/canvas.py, scripts/rendering/fractions.py, scripts/update_structure.py.
+Uses: scripts/build_priority_topic.py, scripts/build_ratio.py, scripts/compile_starters.py,
+scripts/rendering/canvas.py, scripts/rendering/fractions.py, scripts/update_structure.py.
 
-Libs: build_priority_topic, compile_starters.
+Libs: compile_starters.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Reads content/M15_fractions.json; writes the fractions topic outputs and
+source Markdown, then invokes compile_all. It does not build the Svelte website.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 import json,html
@@ -67,7 +64,7 @@ def recap(p,d):
  Calls: base, b.headers, card, b.text.
  Used by: main.
 
- Example in the caller's context: recap(p, d)
+ Example: recap(p, d)
  """
  s=base(p,d,'Technique recap • Equal-sized parts before adding or subtracting.','M15-RECAP');left,cw=b.headers(s)
  for t in range(3):card(s,left+t*cw,1.75,cw-.04,6.65)
@@ -100,7 +97,7 @@ def practice(p,d,idx):
  Calls: base, b.headers, b.rect, b.text, card, b.progression.
  Used by: main.
 
- Example in the caller's context: practice(p, d, idx)
+ Example: practice(p, d, idx)
  """
  s=base(p,d,f'Step-by-step practice {idx+1} • Calculate and simplify.','M15-S0'+str(idx+2));left,cw=b.headers(s,True)
  labels=['Question','Prepare the Fractions','Use a Common Denominator','Add or Subtract','Simplify the Answer'];prompts=['','Convert mixed numbers to improper fractions if needed.','Find a common multiple. Change top and bottom together.','Work with the numerators; keep the common denominator.','Divide top and bottom by a common factor. Give a mixed answer if greater than 1.'];y=1.73
@@ -166,7 +163,7 @@ def answers(d):
  Calls: method_columns, answer_card.
  Used by: main.
 
- Example in the caller's context: answers(d)
+ Example: answers(d)
  """
  out=[u.answer_layout.opening('M15',d['title']),'<h3>M15-IA — Initial assessment</h3>']
  out.append(u.answer_layout.assessment_cell([f'<strong>Q{i+1}</strong>'+draw(e['lines']) for i,e in enumerate(d['assessment'])]))
@@ -188,7 +185,7 @@ def main():
  Calls: assessment, recap, demo, practice, errors, independent, u.save, u.save_text, u.page,
  answers.
 
- Example in the caller's context: main()
+ Example: main()
  """
  d=json.loads((ROOT/'content/M15_fractions.json').read_text());p=newdeck();assessment(p,d);recap(p,d);demo(p,d)
  for i in range(2):practice(p,d,i)

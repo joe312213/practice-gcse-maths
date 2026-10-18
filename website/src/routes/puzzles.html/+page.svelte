@@ -4,11 +4,20 @@
   Main contents:
   - Type/challenge selection, variation navigation and source attribution.
 
-  Used By: SvelteKit route loading.
+  Used By: SvelteKit route loading/prerendering.
 
-  Uses: PuzzlePlayer, SiteHeader, SiteFooter and puzzle theme styles.
+  Uses: website/src/lib/components/ui/SiteHeader.svelte,
+  website/src/lib/components/ui/SiteFooter.svelte,
+  website/src/lib/components/ui/PageNavigation.svelte,
+  website/src/lib/components/puzzles/PuzzlePlayer.svelte, website/src/lib/styles/puzzles.css.
 
-  Libs: Svelte lifecycle, SvelteKit URLs and the pinned puzzle package catalogue, metadata, graphics and styles.
+  Libs: svelte (component state, lifecycle and transitions), $app/paths (SvelteKit
+  navigation/route state), $app/state (SvelteKit navigation/route state), $app/environment
+  (SvelteKit navigation/route state), $app/navigation (SvelteKit navigation/route state),
+  @subject-apps/puzzles/metadata (shared puzzle package metadata),
+  @subject-apps/puzzles/graphics (shared puzzle package graphics), @subject-apps/puzzles/styles
+  (shared puzzle package styles), @subject-apps/puzzles/catalogue (shared puzzle package
+  catalogue).
 -->
 <script>
   import SiteHeader from '#lib/components/ui/SiteHeader.svelte';

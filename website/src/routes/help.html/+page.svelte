@@ -1,8 +1,15 @@
 <!--
   Purpose: Keep progress explanations and recovery guidance available outside practice pages.
-  Used By: Static route loading and the shared footer.
-  Uses: SiteHeader, SiteFooter and the progress policy.
-  Libs: SvelteKit base-aware URLs.
+
+  Main contents:
+  - Topic-selection/stage guide and preserved saving, timer and troubleshooting answers.
+
+  Used By: SvelteKit route loading/prerendering.
+
+  Uses: website/src/lib/components/ui/SiteHeader.svelte,
+  website/src/lib/components/ui/SiteFooter.svelte.
+
+  Libs: $app/paths (SvelteKit navigation/route state).
 -->
 <script>
   import { resolve } from '$app/paths';
@@ -10,11 +17,47 @@
   import SiteFooter from '#lib/components/ui/SiteFooter.svelte';
 </script>
 
-<svelte:head><title>FAQ &amp; troubleshooting · Maths practice</title></svelte:head>
+<svelte:head><title>How To &amp; FAQ · Maths practice</title></svelte:head>
 <SiteHeader section="help" back />
 <main id="main" tabindex="-1">
-  <h1>FAQ &amp; troubleshooting</h1>
+  <h1>How To &amp; FAQ</h1>
   <section class="card page-panel">
+    <h2>Choose a topic and work through the stages</h2>
+    <p>
+      On Topics selection page (home), choose a card to learn about that topic and develop the skills you need to answers questions on that topic. Use search to find a topic, or change the
+      sort order. On a topic page, you can use the Topic selector to switch topics. Follow the suggested
+      order when you are unsure where to start.
+    </p>
+    <ol>
+      <li>
+        <strong>Initial assessment:</strong> try a few questions without help to find a useful starting
+        level. Try your best, but don't worry about getting any questions wrong. It's just to see where you're currently at for that topic.
+      </li>
+      <li>
+        <strong>Learn the method:</strong> read the setup, open linked words for fuller explanations, and play
+        or step through examples. Try another example or level when ready.
+      </li>
+      <li>
+        <strong>Scaffolded practice:</strong> practise with the steps beside you to build confidence before
+        working independently.
+      </li>
+      <li>
+        <strong>Spot the error:</strong> find and repair mistakes in someone else’s working. Finding and explaining
+        an error helps you avoid it yourself and be more accurate in your working.
+      </li>
+      <li>
+        <strong>Independent practice:</strong> answer without prompts to check what you can do. Use a
+        hint or Check method whenever you need help. (Assisted answers are practice, but not counted as independent progress).
+      </li>
+      <li>
+        <strong>Problem solving:</strong> choose and apply the topic method(s) in a word based problem. This helps you to recognised where to apply the method(s), if the question isn't already stated directly as maths process. Watch out for where the answer requires units, and make sure you use the right one.
+      </li>
+    </ol>
+    <p>
+      Problem-solving topics have five stages: their Independent practice already covers problem
+      solving. You can revisit any stage. After a wrong answer, tap the answer field to try again
+      when retry is available. (correct retries within two hours do not raise your progress score).
+    </p>
     <h2>How do I save my progress?</h2>
     <p>
       Your answers save in this browser as you work. To keep a copy in OneDrive, select

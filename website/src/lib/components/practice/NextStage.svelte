@@ -4,9 +4,9 @@
   Main contents:
   - Component markup, input props and event bindings.
 
-  Used By: website/src/lib/components/practice/Completion.svelte, website/src/routes/+page.svelte
+  Used By: Vite development/build commands.
 
-  Uses: website/src/lib/domain/stages.mjs.
+  Uses: website/src/lib/components/ui/PageNavigation.svelte, website/src/lib/domain/stages.mjs.
 
   Libs: none.
 -->

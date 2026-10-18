@@ -1,22 +1,31 @@
-"""Purpose: Shared student HTML layout and deterministic worked-example rendering.
+"""Purpose: Build student-facing answer HTML from saved topic records: shared page styles,
+assessment cells, worked-method diagrams and checks. This is a legacy renderer, separate from
+Svelte teaching components.
 
 Main contents:
-- stylesheet
-- opening
-- worked
-- corrected
-- method_title
-- clean_method_source
-- assessment_cell
-- method_table
+- stylesheet: Read the legacy shared answer stylesheet from its historical path.
+- opening: Open an HTML topic section with its stable anchor and navigation rail.
+- worked: Render a worked-method section with topic-specific diagrams where supported.
+- corrected: Render corrected working and a reasonableness check for an error-spotting example.
+- method_title: Name the method/error section for a scaffolded or independent practice slide.
+- clean_method_source: Remove editorial layout instructions while retaining the authored method
+  content.
+- assessment_cell: Wrap assessment answers in the shared HTML table layout.
+- method_table: Render Start, Build and Confidence method/error/check columns.
 
 Used By: scripts/update_structure.py.
 
-Uses: scripts/rendering/__init__.py, scripts/rendering/applications.py, scripts/rendering/bus_stop.py, scripts/rendering/estimates.py, scripts/rendering/lattice.py, scripts/rendering/ratio.py, scripts/rendering/signed_numbers.py.
+Uses: scripts/rendering/__init__.py, scripts/rendering/applications.py,
+scripts/rendering/bus_stop.py, scripts/rendering/estimates.py, scripts/rendering/lattice.py,
+scripts/rendering/ratio.py, scripts/rendering/signed_numbers.py.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Imported helpers return HTML/SVG strings; they do not publish files. Callers
+supply topic records and own output paths.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 import html,re
 from rendering import lattice,bus_stop,estimates,applications,signed_numbers,ratio
@@ -41,7 +50,7 @@ def worked(mid,body,markdown,sn):
  Calls: clean_method_source, applications.draw, b.replace, estimates.multiplication, lattice.draw,
  estimates.division, bus_stop.draw.
 
- Example in the caller's context: worked(mid, body, markdown, sn)
+ Example: worked(mid, body, markdown, sn)
  """
  body=clean_method_source(body,sn)
  if mid=='M03' and '### Worked method continuation' in body:
@@ -75,7 +84,7 @@ def corrected(mid,e):
  Parameters: mid — stable topic ID; e — structured question/example.
  Calls: lattice.draw, bus_stop.draw, b.replace, signed_numbers.draw, ratio.draw, applications.draw.
 
- Example in the caller's context: corrected(mid, e)
+ Example: corrected(mid, e)
  """
  if mid=='M01':visual=lattice.draw(e['a'],e['b'])
  elif mid=='M02':

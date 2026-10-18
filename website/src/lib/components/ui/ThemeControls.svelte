@@ -4,11 +4,12 @@
   Main contents:
   - Component markup, input props and event bindings.
 
-  Used By: website/src/lib/components/ui/SiteHeader.svelte
+  Used By: website/src/lib/components/ui/SiteHeader.svelte.
 
   Uses: website/src/lib/theme/preferences.mjs.
 
-  Libs: svelte (component lifecycle and state), bits-ui (dialog/popover interaction).
+  Libs: svelte (component state, lifecycle and transitions), bits-ui (accessible dialogs,
+  popovers and choices).
 -->
 <script>
   import { getContext } from 'svelte';

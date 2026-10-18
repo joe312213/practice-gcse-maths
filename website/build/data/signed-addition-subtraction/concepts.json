@@ -4,7 +4,8 @@
     "explanation": "A sign attached to a number tells you whether it is positive or negative. The operation between numbers tells you what to do.",
     "guidance": "Separate the operation from the sign of the next number.",
     "examples": [
-      "In 5 − (−3), the operation is subtraction and the next number is negative three."
+      "In 5 − (−3), the operation is subtraction and the next number is negative three.",
+      "−6 + (−2): the first number is negative six, the operation is addition and the next number is negative two. Start at −6 and move 2 left, ending at −8."
     ]
   },
   "subtract-negative": {
@@ -12,7 +13,8 @@
     "explanation": "Subtracting a number is the same as adding its opposite.",
     "guidance": "Change the subtraction to addition and change the sign of the number being subtracted.",
     "examples": [
-      "5 − (−3) = 5 + 3 = 8. Also, 5 − 3 = 5 + (−3) = 2."
+      "5 − (−3) = 5 + 3 = 8. Also, 5 − 3 = 5 + (−3) = 2.",
+      "−4 − (−7) = −4 + 7 = 3. Removing a negative has the effect of adding a positive, so move 7 right from −4."
     ]
   },
   "inverse-check": {
@@ -20,7 +22,8 @@
     "explanation": "You can undo an addition with subtraction, or a subtraction with addition.",
     "guidance": "Start with your answer and undo the operation to recover the starting number.",
     "examples": [
-      "−4 + 7 = 3. Check: 3 − 7 = −4."
+      "−4 + 7 = 3. Check: 3 − 7 = −4.",
+      "−2 − 5 = −7. Undo subtracting 5 by adding 5: −7 + 5 = −2, the original number."
     ]
   }
 }

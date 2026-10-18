@@ -1,4 +1,21 @@
-<!-- Human game controls belong to the app; rules, geometry and pointer handling to the puzzle module. -->
+<!--
+  Purpose: Human game controls belong to the app; rules, geometry and pointer handling to the
+  puzzle module.
+
+  Main contents:
+  - resetBoard, refreshClock, play.
+
+  Used By: website/src/routes/go.html/+page.svelte.
+
+  Uses: website/src/lib/components/puzzles/GoClock.svelte.
+
+  Libs: svelte (component state, lifecycle and transitions), @subject-apps/puzzles/go-board
+  (shared puzzle package go-board), @subject-apps/puzzles/go-press (shared puzzle package
+  go-press), @subject-apps/puzzles/rules/go-game (shared puzzle package go-game),
+  @subject-apps/puzzles/rules/go-clock (shared puzzle package go-clock),
+  @subject-apps/puzzles/gnugo-client (shared puzzle package gnugo-client), $app/paths (SvelteKit
+  navigation/route state).
+-->
 <script>
   import { onMount, tick } from 'svelte';
   import { renderGoBoard } from '@subject-apps/puzzles/go-board';

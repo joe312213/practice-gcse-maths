@@ -1,8 +1,19 @@
 /**
  * Purpose: Author the app's Pacifico maths extension as a standalone stroke-font asset.
- * Uses: original vendored Vara Pacifico paths; original maths paths below, under SIL OFL 1.1.
- * Run from website/: node scripts/prepare-pacifico-maths.mjs. No other banks/assets are rewritten.
- * Exported construction also lets coverage tests detect stale generated data.
+ *
+ * Main contents:
+ * - extendPacifico.
+ *
+ * Used By: tests/handwriting.test.mjs.
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: node:fs/promises (asynchronous file access), node:url (module/file URL conversion),
+ * node:path (filesystem path resolution).
+ *
+ * Usage and output: From website/: node scripts/prepare-pacifico-maths.mjs. Reads the pinned
+ * Pacifico stroke data and writes static/handwriting/pacifico-maths.json. Import the exported
+ * constructor for read-only coverage checks.
  */
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';

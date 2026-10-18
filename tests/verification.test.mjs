@@ -4,7 +4,7 @@
  * Main contents:
  * - selected
  *
- * Used By: Node test runner.
+ * Used By: verify:changed logic job and Node test runner.
  *
  * Uses: website/scripts/verification/plan.mjs.
  *

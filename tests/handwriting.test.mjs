@@ -1,4 +1,17 @@
-/** Purpose: Keep glyph coverage honest and prevent malformed bundled stroke data. */
+/**
+ * Purpose: Keep glyph coverage honest and prevent malformed bundled stroke data.
+ *
+ * Main contents:
+ * - Stroke fonts cover the example and report exact missing Unicode symbols; Pacifico maths
+ *   covers the audited symbols and preserves original strokes with matching indices.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/scripts/prepare-pacifico-maths.mjs, website/src/lib/application/handwriting.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions), node:fs (filesystem
+ * reads/watchers).
+ */
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";

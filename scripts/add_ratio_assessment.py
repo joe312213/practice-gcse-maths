@@ -1,7 +1,8 @@
-"""Purpose: Create new ratio versions with a first-slide assessment; preserve existing slides.
+"""Purpose: Historical one-off patch: add four ratio assessment questions to the saved question and
+answer decks and write the next named deck versions. The loop executes at import time.
 
 Main contents:
-- Module-level setup and legacy command flow.
+- Top-level historical one-off patch.
 
 Used By: manual legacy command invocation.
 
@@ -9,7 +10,11 @@ Uses: scripts/build_ratio.py.
 
 Libs: python-pptx (editable slides and deck inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Reads the old deck names in the source and writes the new names under
+topics/ratio/ via /private/tmp staging.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 raise SystemExit('Retired assessment migration: assessments are already in current decks; historical outputs are kept in Git.')
 from pathlib import Path

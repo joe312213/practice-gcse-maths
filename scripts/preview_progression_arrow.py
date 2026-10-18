@@ -1,10 +1,10 @@
-"""Purpose: Preview a native vector progression arrow without rebuilding either deck.
-The PNG is a raster preview of the same vector paths, not an edit of the user's image.
+"""Purpose: Historical design preview for the curved progression arrow: render the same geometry as
+SVG and PNG without opening or rebuilding a PowerPoint deck. Executes at import time.
 
 Main contents:
-- rotate
-- bezier
-- pixel
+- rotate: Rotate an arrow control point around its reference centre.
+- bezier: Evaluate the arrow shaft cubic Bezier curve at parameter t.
+- pixel: Map an arrow control point into preview-image pixel coordinates.
 
 Used By: manual legacy command invocation.
 
@@ -12,7 +12,11 @@ Uses: no local module imports.
 
 Libs: Pillow (font measurement/image rendering).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Reads font/geometry constants in this file; writes progression_arrow.svg and
+progression_arrow.png under topics/ratio/arrow_preview/.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 import math

@@ -1,4 +1,19 @@
-<!-- Shared navigation for ordered pages/questions; callers own availability and transitions. -->
+<!--
+  Purpose: Shared navigation for ordered pages/questions; callers own availability and
+  transitions.
+
+  Main contents:
+  - Previous/next controls, disabled state, labels and optional page summary snippet.
+
+  Used By: website/src/lib/components/practice/NextStage.svelte,
+  website/src/lib/components/practice/PracticeActivity.svelte,
+  website/src/lib/components/practice/PracticeSets.svelte,
+  website/src/routes/puzzles.html/+page.svelte.
+
+  Uses: no local module imports.
+
+  Libs: none.
+-->
 <script>
   let {
     onprevious,

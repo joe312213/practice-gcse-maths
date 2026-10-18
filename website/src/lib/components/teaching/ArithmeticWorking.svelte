@@ -4,11 +4,18 @@
   Main contents:
   - Lattice and bus stop diagrams with text explanations.
 
-  Used By: DemoPlayer and Feedback.
+  Used By: website/src/lib/components/practice/Feedback.svelte,
+  website/src/lib/components/teaching/DemoPlayer.svelte,
+  website/src/lib/components/teaching/InvestigationWorking.svelte,
+  website/src/lib/components/teaching/LatticeErrorInvestigation.svelte,
+  website/src/routes/+page.svelte.
 
-  Uses: arithmetic-demo.mjs.
+  Uses: website/src/lib/application/error-working.mjs,
+  website/src/lib/components/teaching/WrittenInk.svelte,
+  website/src/lib/components/teaching/MathText.svelte,
+  website/src/lib/application/arithmetic-demo.mjs.
 
-  Libs: Svelte reactive derivation.
+  Libs: none.
 -->
 <script>
   import { markerPath } from '#lib/application/error-working.mjs';

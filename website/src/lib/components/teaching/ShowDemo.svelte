@@ -1,15 +1,18 @@
 <!--
-  Purpose: Render method-specific frames with shared playback controls and a stable reading position.
+  Purpose: Render method-specific frames with shared playback controls and a stable reading
+  position.
 
   Main contents:
   - play
   - go
 
-  Used By: DemoPlayer.svelte
+  Used By: website/src/lib/components/teaching/DemoPlayer.svelte,
+  website/src/lib/components/teaching/ProblemTips.svelte.
 
-  Uses: application/player.mjs and application/demo-motion.mjs.
+  Uses: website/src/lib/application/demo-motion.mjs, website/src/lib/application/player.mjs.
 
-  Libs: svelte (component lifecycle and state).
+  Libs: svelte (component state, lifecycle and transitions), $app/paths (SvelteKit
+  navigation/route state).
 -->
 <script>
   import { onMount, tick } from 'svelte';

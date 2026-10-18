@@ -1,4 +1,3 @@
-import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /**
  * Purpose: Verify progress aggregation, revision recommendations and learner data transfer.
  *
@@ -7,12 +6,18 @@ import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
  * - learner
  * - answers
  *
- * Used By: Node test runner.
+ * Used By: verify:changed logic job and Node test runner.
  *
- * Uses: website/src/lib/domain/progress.mjs, website/src/lib/domain/revision.mjs, website/src/lib/domain/progress-transfer.mjs, website/src/lib/domain/engine.mjs, website/src/lib/domain/practice-code.mjs, website/src/lib/application/session.mjs.
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/domain/progress.mjs,
+ * website/src/lib/domain/revision.mjs, website/src/lib/domain/progress-transfer.mjs,
+ * website/src/lib/domain/engine.mjs, website/src/lib/domain/practice-code.mjs,
+ * website/src/lib/application/session.mjs.
  *
- * Libs: node:test (test runner), node:assert/strict (assertions), node:fs/promises (asynchronous file access).
+ * Libs: node:test (test runner), node:assert/strict (assertions), node:fs/promises (asynchronous
+ * file access).
  */
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";

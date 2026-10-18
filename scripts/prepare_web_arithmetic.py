@@ -1,13 +1,27 @@
-"""Purpose: Reconstruct M01/M02 reference candidates without replacing current application content.
+"""Purpose: Reconstruct M01/M02 historical import candidates from saved arithmetic sources and
+decks. Candidate banks, catalogue changes and provenance are isolated for comparison; reviewed
+live content remains authoritative.
 
 Main contents:
-- clean, operands, answer_and_check, verify_answer, prepare_topic, main.
+- clean: Remove presentation markup from authored text; used by prepare_topic.
+- operands: Parse integer ×/÷ text into left operand, operator and right operand; used by
+  prepare_topic.
+- answer_and_check: Return an answer and inverse check, using remainder notation at Build level.
+- verify_answer: Check a saved correction against its operands; called by prepare_topic before
+  accepting it.
+- prepare_topic: Return a bank, catalogue pages, provenance and SVG text without writing files.
+- main: Validate both reference topics, then write all candidates together into a fresh
+  temporary directory.
 
 Used By: optional manual reference reconstruction; never routine website builds.
 
 Uses: historical content Markdown/JSON and saved decks/answer HTML; bank_candidates.py.
 
-Libs: python-pptx for reading assessment examples; Python standard library for exact answers and JSON.
+Libs: python-pptx for reading assessment examples; Python standard library for exact answers and
+JSON.
+
+Usage and output: From repository root: python3 scripts/prepare_web_arithmetic.py. Reads
+historical Markdown/JSON/decks; write_candidates writes only a new temporary review directory.
 """
 from pathlib import Path
 from hashlib import sha256

@@ -5,14 +5,14 @@
       "aim": "The original whole is 100%; a changed price is a different percentage of it.",
       "steps": [
         [
-          "Identify the ",
+          "Write “original = 100%”, the stated increase or decrease, and the known final amount with its units. Leave a line beside the final amount for its percentage of the ",
           {
             "concept": "original-whole",
-            "text": "original 100%"
+            "text": "original whole"
           },
-          " and remove any separate delivery charge."
+          ". Keep any separate fixed charge on its own line."
         ],
-        "For a reduction subtract the rate from 100%; for an increase add it.",
+        "For a reduction subtract the rate from 100%; for an increase add it. If a fixed charge was added after the percentage change, subtract that charge from the known bill first.",
         [
           "Divide the resulting percentage by 100 to form a ",
           {
@@ -22,12 +22,12 @@
           ", then divide the known amount by it."
         ],
         [
-          "Apply any final quantity requested and ",
+          "If the question asks for several items or batches, multiply the original amount for one by the required number. ",
           {
             "concept": "reverse-check",
-            "text": "check"
+            "text": "Check"
           },
-          " by applying the original percentage change."
+          " by applying the original percentage change to your recovered amount; add back any separate fixed charge when comparing with the given bill."
         ]
       ]
     },
@@ -102,6 +102,22 @@
           "whole"
         ],
         "recap": 0
+      },
+      {
+        "key": "web-plain-c1-q1",
+        "name": "Find the whole from 15%",
+        "submethods": [
+          "whole"
+        ],
+        "question": "maths:M07-WEB-PLAIN-C1-Q1"
+      },
+      {
+        "key": "web-plain-c1-q4",
+        "name": "Find the whole from 30%",
+        "submethods": [
+          "whole"
+        ],
+        "question": "maths:M07-WEB-PLAIN-C1-Q4"
       }
     ],
     "build": [
@@ -120,6 +136,22 @@
           "increase"
         ],
         "question": "maths:M07-WEB-PLAIN-C2-Q2"
+      },
+      {
+        "key": "web-plain-c2-q1",
+        "name": "Undo a 15% discount",
+        "submethods": [
+          "discount"
+        ],
+        "question": "maths:M07-WEB-PLAIN-C2-Q1"
+      },
+      {
+        "key": "web-plain-c2-q4",
+        "name": "Undo a 30% increase",
+        "submethods": [
+          "increase"
+        ],
+        "question": "maths:M07-WEB-PLAIN-C2-Q4"
       }
     ],
     "confidence": [
@@ -140,6 +172,24 @@
           "increase"
         ],
         "question": "maths:M07-WEB-PLAIN-C3-Q2"
+      },
+      {
+        "key": "web-plain-c3-q1",
+        "name": "Remove delivery then undo a discount",
+        "submethods": [
+          "charge",
+          "discount"
+        ],
+        "question": "maths:M07-WEB-PLAIN-C3-Q1"
+      },
+      {
+        "key": "web-plain-c3-q4",
+        "name": "Remove delivery then undo an increase",
+        "submethods": [
+          "charge",
+          "increase"
+        ],
+        "question": "maths:M07-WEB-PLAIN-C3-Q4"
       }
     ]
   },

@@ -1,0 +1,65 @@
+{
+  "defaults": {
+    "recap": {
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "method": "calculation",
+      "prose": true
+    },
+    "spot-errors": {
+      "subject": "maths",
+      "topic": "M04",
+      "type": "errors",
+      "method": "investigation",
+      "prose": true,
+      "investigation": true,
+      "method_note": {
+        "textRef": "investigation-task"
+      }
+    },
+    "assessment-examples": {
+      "subject": "maths",
+      "topic": "M04",
+      "type": "assessment",
+      "method": "calculation",
+      "prose": true
+    },
+    "practice": {
+      "subject": "maths",
+      "topic": "M04",
+      "type": "plain",
+      "method": "calculation",
+      "prose": true
+    },
+    "problem-solving": {
+      "subject": "maths",
+      "topic": "M04",
+      "type": "problem",
+      "method": "calculation",
+      "prose": true
+    },
+    "demos": {
+      "subject": "maths",
+      "topic": "M04",
+      "type": "demo",
+      "method": "calculation",
+      "prose": true
+    },
+    "scaffolded": {
+      "subject": "maths",
+      "topic": "M04",
+      "type": "scaffolded",
+      "method": "calculation",
+      "prose": true
+    }
+  },
+  "phrases": {
+    "match-known-quantity": "Does {amount} describe the total, one named amount or the difference? Match it to the correct number of parts.",
+    "find-requested-share": "Find the value of one ratio part Find the requested second amount.",
+    "linked-ratio-method": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+    "finish-linked-calculation": "Use the ratio result in the further calculation; do not stop at the intermediate amount.",
+    "question-source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "linked-source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026"
+  }
+}

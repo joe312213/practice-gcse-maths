@@ -1,8 +1,25 @@
-/** Assemble the canonical topic files without changing their authored questions.
- * Used by the Vite server/prerender loader and Node validation tools.
- * File roles are fixed here; builds never write back to these source files.
+/**
+ * Purpose: Assemble the canonical topic files without changing their authored questions. Used by
+ * the Vite server/prerender loader and Node validation tools. File roles are fixed here; builds
+ * never write back to these source files.
+ *
+ * Main contents:
+ * - TOPIC_FILES, assembleTopic, resolveMethodExamples, resolveTeaching, resolveInvestigations,
+ *   resolveLocations, guidanceFor.
+ *
+ * Used By: tests/content-quality.test.mjs, tests/topic-content.test.mjs, tests/website.test.mjs,
+ * website/scripts/read-topic-bank.mjs,
+ * website/src/lib/components/practice/PracticeActivity.svelte,
+ * website/src/lib/components/teaching/DemoPlayer.svelte, website/src/lib/server/topic-banks.mjs.
+ *
+ * Uses: text-references.mjs for shared wording and question defaults.
+ *
+ * Libs: none.
  */
+import { expandParts } from './text-references.mjs';
+
 export const TOPIC_FILES = [
+  'text',
   'topic',
   'method',
   'concepts',
@@ -17,9 +34,11 @@ export const TOPIC_FILES = [
   'retired-questions',
 ];
 
+/** Assemble named JSON parts into the runtime bank; resolve concepts, examples and error templates without mutating the sources. Used by the server and Node reader. Example: assembleTopic(partsByFilename). */
 export function assembleTopic(parts) {
   for (const file of TOPIC_FILES)
     if (!Object.hasOwn(parts, file)) throw Error(`Missing topic content: ${file}.json`);
+  parts = expandParts(parts);
   const questions = [
     ...parts['assessment-examples'],
     ...parts.demos,
@@ -61,8 +80,8 @@ export function resolveMethodExamples(method, questions, recaps, renderer) {
   return Object.fromEntries(
     levels.map((level, index) => {
       const examples = method.examples[level];
-      if (!Array.isArray(examples) || examples.length < 2)
-        throw Error(`At least two method examples required: ${level}`);
+      if (!Array.isArray(examples) || examples.length < 4)
+        throw Error(`At least four method examples required: ${level}`);
       const keys = new Set(),
         names = new Set(),
         covered = new Set();
@@ -127,6 +146,25 @@ export function resolveTeaching(teaching, concepts) {
       !help.examples.every((text) => typeof text === 'string' && text.trim())
     )
       throw Error(`Incomplete concept: ${key}`);
+    if (help.visual && !['lattice-cells', 'lattice-diagonals'].includes(help.visual))
+      throw Error(`Unknown concept visual: ${key}`);
+    if (
+      help.table &&
+      (typeof help.table.caption !== 'string' ||
+        !help.table.caption.trim() ||
+        !Array.isArray(help.table.headers) ||
+        help.table.headers.length < 2 ||
+        !help.table.headers.every((text) => typeof text === 'string' && text.trim()) ||
+        !Array.isArray(help.table.rows) ||
+        !help.table.rows.length ||
+        !help.table.rows.every(
+          (row) =>
+            Array.isArray(row) &&
+            row.length === help.table.headers.length &&
+            row.every((text) => typeof text === 'string' && text.trim()),
+        ))
+    )
+      throw Error(`Invalid concept table: ${key}`);
   }
   const resolve = (guide) => ({
     ...guide,
@@ -179,6 +217,7 @@ export function resolveInvestigations(questions, catalog) {
   }
   return questions.map((question) => ({
     ...question,
+    locations: resolveLocations(question.locations),
     options: Object.entries(question.options).map(([id, reference]) => ({
       id,
       text: reason(reference),
@@ -193,6 +232,35 @@ export function resolveInvestigations(questions, catalog) {
       return { ...error, feedback: reason(error.feedback) };
     }),
   }));
+}
+
+/**
+ * Expand optional named text targets into selectable locations, preserving original row IDs/text.
+ * Called by resolveInvestigations for build audits and selected browser questions. Each target
+ * is a consecutive substring of its row; e.g. numerator, denominator and resulting fraction.
+ * Correct targets remain selectable too, so the available controls do not disclose the error.
+ */
+export function resolveLocations(locations) {
+  const ids = new Set(locations.map((location) => location.id));
+  return locations.flatMap((location) => {
+    if (!location.targets) return [location];
+    let cursor = 0;
+    const extra = [];
+    for (const target of location.targets) {
+      const start = location.text.indexOf(target.text, cursor);
+      if (!target.text?.trim() || !target.label?.trim() || !target.id || start < 0)
+        throw Error(`Invalid working target in ${location.id}`);
+      cursor = start + target.text.length;
+      if (target.id !== location.id) {
+        if (ids.has(target.id)) throw Error(`Duplicate working target: ${target.id}`);
+        ids.add(target.id);
+        extra.push({ ...target, within: location.id });
+      }
+    }
+    if (location.targets.filter((target) => target.id === location.id).length !== 1)
+      throw Error(`Working targets must retain row ID: ${location.id}`);
+    return [location, ...extra];
+  });
 }
 
 /** A named level replaces the whole default guide; shared wording is authored once. */

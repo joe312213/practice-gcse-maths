@@ -12,7 +12,19 @@
       {
         "id": "step-2",
         "label": "Percentage amount",
-        "text": "12.5% of 160 kg = 12.5 kg"
+        "text": "12.5% of 160 kg = 12.5 kg",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Percentage amount: calculation",
+            "text": "12.5% of 160 kg"
+          },
+          {
+            "id": "step-2",
+            "label": "Percentage amount: result",
+            "text": "12.5 kg"
+          }
+        ]
       }
     ],
     "options": {
@@ -46,18 +58,13 @@
     ],
     "hint": "Compare the percentage amount with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 12.5% of 160 kg.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "kg",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C1-Q02",
@@ -72,7 +79,19 @@
       {
         "id": "step-2",
         "label": "Percentage amount",
-        "text": "50% of 74 kg = 50 kg"
+        "text": "50% of 74 kg = 50 kg",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Percentage amount: calculation",
+            "text": "50% of 74 kg"
+          },
+          {
+            "id": "step-2",
+            "label": "Percentage amount: result",
+            "text": "50 kg"
+          }
+        ]
       }
     ],
     "options": {
@@ -106,18 +125,13 @@
     ],
     "hint": "Compare the percentage amount with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 50% of 74 kg.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "kg",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C1-Q03",
@@ -132,7 +146,19 @@
       {
         "id": "step-2",
         "label": "Percentage amount",
-        "text": "75% of 120 kg = 75 kg"
+        "text": "75% of 120 kg = 75 kg",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Percentage amount: calculation",
+            "text": "75% of 120 kg"
+          },
+          {
+            "id": "step-2",
+            "label": "Percentage amount: result",
+            "text": "75 kg"
+          }
+        ]
       }
     ],
     "options": {
@@ -166,18 +192,13 @@
     ],
     "hint": "Compare the percentage amount with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 75% of 120 kg.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "kg",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C1-Q04",
@@ -192,7 +213,19 @@
       {
         "id": "step-2",
         "label": "Amount",
-        "text": "25% of £120 = £25"
+        "text": "25% of £120 = £25",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Amount: calculation",
+            "text": "25% of £120"
+          },
+          {
+            "id": "step-2",
+            "label": "Amount: result",
+            "text": "£25"
+          }
+        ]
       }
     ],
     "options": {
@@ -228,18 +261,13 @@
     ],
     "hint": "Compare the amount with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 25% of £120.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C1-Q05",
@@ -254,12 +282,36 @@
       {
         "id": "step-2",
         "label": "Decimal conversion",
-        "text": "5% = 0.5"
+        "text": "5% = 0.5",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Decimal conversion: calculation",
+            "text": "5%"
+          },
+          {
+            "id": "step-2",
+            "label": "Decimal conversion: result",
+            "text": "0.5"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Length",
-        "text": "140 × 0.5 = 70 m"
+        "text": "140 × 0.5 = 70 m",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Length: calculation",
+            "text": "140 × 0.5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Length: result",
+            "text": "70 m"
+          }
+        ]
       }
     ],
     "options": {
@@ -301,18 +353,13 @@
     ],
     "hint": "Compare the decimal conversion with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 5% of 140 metres.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C1-Q06",
@@ -327,12 +374,36 @@
       {
         "id": "step-2",
         "label": "Decimal conversion",
-        "text": "5% = 0.5"
+        "text": "5% = 0.5",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Decimal conversion: calculation",
+            "text": "5%"
+          },
+          {
+            "id": "step-2",
+            "label": "Decimal conversion: result",
+            "text": "0.5"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Length",
-        "text": "280 × 0.5 = 140 m"
+        "text": "280 × 0.5 = 140 m",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Length: calculation",
+            "text": "280 × 0.5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Length: result",
+            "text": "140 m"
+          }
+        ]
       }
     ],
     "options": {
@@ -374,18 +445,13 @@
     ],
     "hint": "Compare the decimal conversion with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 5% of 280 metres.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C1-Q07",
@@ -400,7 +466,19 @@
       {
         "id": "step-2",
         "label": "Amount",
-        "text": "15% of £160 = £15"
+        "text": "15% of £160 = £15",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Amount: calculation",
+            "text": "15% of £160"
+          },
+          {
+            "id": "step-2",
+            "label": "Amount: result",
+            "text": "£15"
+          }
+        ]
       }
     ],
     "options": {
@@ -436,18 +514,13 @@
     ],
     "hint": "Compare the amount with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 15% of £160.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C1-Q08",
@@ -462,12 +535,36 @@
       {
         "id": "step-2",
         "label": "Decimal conversion",
-        "text": "12% = 1.2"
+        "text": "12% = 1.2",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Decimal conversion: calculation",
+            "text": "12%"
+          },
+          {
+            "id": "step-2",
+            "label": "Decimal conversion: result",
+            "text": "1.2"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Length",
-        "text": "180 × 1.2 = 216 m"
+        "text": "180 × 1.2 = 216 m",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Length: calculation",
+            "text": "180 × 1.2"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Length: result",
+            "text": "216 m"
+          }
+        ]
       }
     ],
     "options": {
@@ -509,18 +606,13 @@
     ],
     "hint": "Compare the decimal conversion with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 12% of 180 metres.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C1-Q09",
@@ -535,12 +627,36 @@
       {
         "id": "step-2",
         "label": "Decimal conversion",
-        "text": "12% = 1.2"
+        "text": "12% = 1.2",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Decimal conversion: calculation",
+            "text": "12%"
+          },
+          {
+            "id": "step-2",
+            "label": "Decimal conversion: result",
+            "text": "1.2"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Length",
-        "text": "320 × 1.2 = 384 m"
+        "text": "320 × 1.2 = 384 m",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Length: calculation",
+            "text": "320 × 1.2"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Length: result",
+            "text": "384 m"
+          }
+        ]
       }
     ],
     "options": {
@@ -582,18 +698,13 @@
     ],
     "hint": "Compare the decimal conversion with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 12% of 320 metres.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C1-Q10",
@@ -608,7 +719,19 @@
       {
         "id": "step-2",
         "label": "Amount",
-        "text": "35% of £200 = £35"
+        "text": "35% of £200 = £35",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Amount: calculation",
+            "text": "35% of £200"
+          },
+          {
+            "id": "step-2",
+            "label": "Amount: result",
+            "text": "£35"
+          }
+        ]
       }
     ],
     "options": {
@@ -644,18 +767,13 @@
     ],
     "hint": "Compare the amount with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 35% of £200.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C1-Q11",
@@ -670,12 +788,36 @@
       {
         "id": "step-2",
         "label": "Decimal conversion",
-        "text": "7% = 0.7"
+        "text": "7% = 0.7",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Decimal conversion: calculation",
+            "text": "7%"
+          },
+          {
+            "id": "step-2",
+            "label": "Decimal conversion: result",
+            "text": "0.7"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Length",
-        "text": "220 × 0.7 = 154 m"
+        "text": "220 × 0.7 = 154 m",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Length: calculation",
+            "text": "220 × 0.7"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Length: result",
+            "text": "154 m"
+          }
+        ]
       }
     ],
     "options": {
@@ -717,18 +859,13 @@
     ],
     "hint": "Compare the decimal conversion with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 7% of 220 metres.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C1-Q12",
@@ -743,12 +880,36 @@
       {
         "id": "step-2",
         "label": "Decimal conversion",
-        "text": "7% = 0.7"
+        "text": "7% = 0.7",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Decimal conversion: calculation",
+            "text": "7%"
+          },
+          {
+            "id": "step-2",
+            "label": "Decimal conversion: result",
+            "text": "0.7"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Length",
-        "text": "360 × 0.7 = 252 m"
+        "text": "360 × 0.7 = 252 m",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Length: calculation",
+            "text": "360 × 0.7"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Length: result",
+            "text": "252 m"
+          }
+        ]
       }
     ],
     "options": {
@@ -790,18 +951,13 @@
     ],
     "hint": "Compare the decimal conversion with the quantities and operation in the question.",
     "draftId": "M06-DRAFT-ERRORS-C1-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Find 7% of 360 metres.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q01",
@@ -816,12 +972,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "25% = 0.25"
+        "text": "25% = 0.25",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: calculation",
+            "text": "25%"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Percentage multiplier: result",
+            "text": "0.25"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "160 × 0.25 = £40"
+        "text": "160 × 0.25 = £40",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "160 × 0.25"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "£40"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -860,18 +1040,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A price of £160 increases by 25%. Find the new price.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be greater than £160 by 25%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be greater than £160 by 25%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q02",
@@ -886,12 +1059,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "15% = 0.15"
+        "text": "15% = 0.15",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: calculation",
+            "text": "15%"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Percentage multiplier: result",
+            "text": "0.15"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "240 × 0.15 = 36 litres"
+        "text": "240 × 0.15 = 36 litres",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "240 × 0.15"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "36 litres"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -930,18 +1127,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A water volume of 240 litres decreases by 15%. Find the new water volume.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "litres",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be less than 240 litres by 15%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be less than 240 litres by 15%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q03",
@@ -956,12 +1146,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "20% = 0.2"
+        "text": "20% = 0.2",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: calculation",
+            "text": "20%"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Percentage multiplier: result",
+            "text": "0.2"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "350 × 0.2 = 70 people"
+        "text": "350 × 0.2 = 70 people",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "350 × 0.2"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "70 people"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -1000,18 +1214,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A membership of 350 people increases by 20%. Find the new membership.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "people",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be greater than 350 people by 20%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be greater than 350 people by 20%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q04",
@@ -1026,12 +1233,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "10% = 0.1"
+        "text": "10% = 0.1",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: calculation",
+            "text": "10%"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Percentage multiplier: result",
+            "text": "0.1"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "480 × 0.1 = 48 m"
+        "text": "480 × 0.1 = 48 m",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "480 × 0.1"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "48 m"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -1070,18 +1301,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A length of 480 m decreases by 10%. Find the new length.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be less than 480 m by 10%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be less than 480 m by 10%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q05",
@@ -1096,12 +1320,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "30% = 0.3"
+        "text": "30% = 0.3",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: calculation",
+            "text": "30%"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Percentage multiplier: result",
+            "text": "0.3"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "180 × 0.3 = 54 people"
+        "text": "180 × 0.3 = 54 people",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "180 × 0.3"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "54 people"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -1140,18 +1388,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A attendance of 180 people increases by 30%. Find the new attendance.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "people",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be greater than 180 people by 30%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be greater than 180 people by 30%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q06",
@@ -1166,12 +1407,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "12% = 0.12"
+        "text": "12% = 0.12",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: calculation",
+            "text": "12%"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Percentage multiplier: result",
+            "text": "0.12"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "320 × 0.12 = 192/5 kg"
+        "text": "320 × 0.12 = 192/5 kg",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "320 × 0.12"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "192/5 kg"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -1212,18 +1477,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A mass of 320 kg decreases by 12%. Find the new mass.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "kg",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be less than 320 kg by 12%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be less than 320 kg by 12%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q07",
@@ -1238,12 +1496,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "35% = 0.35"
+        "text": "35% = 0.35",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: calculation",
+            "text": "35%"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Percentage multiplier: result",
+            "text": "0.35"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "260 × 0.35 = £91"
+        "text": "260 × 0.35 = £91",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "260 × 0.35"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "£91"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -1282,18 +1564,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A price of £260 increases by 35%. Find the new price.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be greater than £260 by 35%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be greater than £260 by 35%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q08",
@@ -1308,12 +1583,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "16% = 0.16"
+        "text": "16% = 0.16",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: calculation",
+            "text": "16%"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Percentage multiplier: result",
+            "text": "0.16"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "450 × 0.16 = 72 GB"
+        "text": "450 × 0.16 = 72 GB",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "450 × 0.16"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "72 GB"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -1352,18 +1651,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A capacity of 450 GB decreases by 16%. Find the new capacity.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "GB",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be less than 450 GB by 16%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be less than 450 GB by 16%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q09",
@@ -1378,12 +1670,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "15% = 0.15"
+        "text": "15% = 0.15",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: calculation",
+            "text": "15%"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Percentage multiplier: result",
+            "text": "0.15"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "220 × 0.15 = 33 tickets"
+        "text": "220 × 0.15 = 33 tickets",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "220 × 0.15"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "33 tickets"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -1422,18 +1738,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A ticket sales of 220 tickets increases by 15%. Find the new ticket sales.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "tickets",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be greater than 220 tickets by 15%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be greater than 220 tickets by 15%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q10",
@@ -1448,12 +1757,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "5% = 0.5"
+        "text": "5% = 0.5",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Percentage multiplier: calculation",
+            "text": "5%"
+          },
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: result",
+            "text": "0.5"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "180 × 0.5 = £90"
+        "text": "180 × 0.5 = £90",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "180 × 0.5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "£90"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -1509,18 +1842,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A price of £180 decreases by 5%. Find the new price.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be less than £180 by 5%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be less than £180 by 5%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q11",
@@ -1535,12 +1861,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "10% = 1"
+        "text": "10% = 1",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Percentage multiplier: calculation",
+            "text": "10%"
+          },
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: result",
+            "text": "1"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "340 × 1 = 340 litres"
+        "text": "340 × 1 = 340 litres",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "340 × 1"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "340 litres"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -1596,18 +1946,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A volume of 340 litres decreases by 10%. Find the new volume.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "litres",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be less than 340 litres by 10%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be less than 340 litres by 10%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C2-Q12",
@@ -1622,12 +1965,36 @@
       {
         "id": "step-2",
         "label": "Percentage multiplier",
-        "text": "20% = 2"
+        "text": "20% = 2",
+        "targets": [
+          {
+            "id": "step-2-part-1",
+            "label": "Percentage multiplier: calculation",
+            "text": "20%"
+          },
+          {
+            "id": "step-2",
+            "label": "Percentage multiplier: result",
+            "text": "2"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Change amount",
-        "text": "260 × 2 = 520 m"
+        "text": "260 × 2 = 520 m",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Change amount: calculation",
+            "text": "260 × 2"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Change amount: result",
+            "text": "520 m"
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -1683,18 +2050,11 @@
     ],
     "hint": "Separate the percentage change from the final amount requested.",
     "draftId": "M06-DRAFT-ERRORS-C2-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "A length of 260 m decreases by 20%. Find the new length.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The new amount should be less than 260 m by 20%.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "The new amount should be less than 260 m by 20%."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q01",
@@ -1709,12 +2069,36 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "325 − 260 = 65"
+        "text": "325 − 260 = 65",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "325 − 260"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "65"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "65 ÷ 260 = 1/4%"
+        "text": "65 ÷ 260 = 1/4%",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Percentage change: calculation",
+            "text": "65 ÷ 260"
+          },
+          {
+            "id": "step-3",
+            "label": "Percentage change: result",
+            "text": "1/4%"
+          }
+        ]
       }
     ],
     "options": {
@@ -1754,18 +2138,11 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The price changes from £260 to £325. Find the percentage increase.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "25% of £260 is £65; add this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "25% of £260 is £65; add this to recover the new amount."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q02",
@@ -1780,12 +2157,46 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "240 − 204 = 36"
+        "text": "240 − 204 = 36",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "240 − 204"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "36"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "36 ÷ 204 × 100 = 300/17%"
+        "text": "36 ÷ 204 × 100 = 300/17%",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Percentage change: quantity",
+            "text": "36"
+          },
+          {
+            "id": "step-3",
+            "label": "Percentage change: divisor",
+            "text": "204"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Percentage change: percentage scale",
+            "text": "100"
+          },
+          {
+            "id": "step-3-part-4",
+            "label": "Percentage change: result",
+            "text": "300/17%"
+          }
+        ]
       }
     ],
     "options": {
@@ -1825,18 +2236,11 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The water volume changes from 240 litres to 204 litres. Find the percentage decrease.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "15% of 240 litres is 36 litres; subtract this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "15% of 240 litres is 36 litres; subtract this to recover the new amount."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q03",
@@ -1851,12 +2255,46 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "320 − 208 = 112"
+        "text": "320 − 208 = 112",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "320 − 208"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "112"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "208 ÷ 320 × 100 = 65%"
+        "text": "208 ÷ 320 × 100 = 65%",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Percentage change: quantity",
+            "text": "208"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Percentage change: divisor",
+            "text": "320"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Percentage change: percentage scale",
+            "text": "100"
+          },
+          {
+            "id": "step-3-part-4",
+            "label": "Percentage change: result",
+            "text": "65%"
+          }
+        ]
       }
     ],
     "options": {
@@ -1896,18 +2334,11 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The club membership changes from 320 people to 208 people. Find the percentage decrease.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "35% of 320 people is 112 people; subtract this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "35% of 320 people is 112 people; subtract this to recover the new amount."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q04",
@@ -1922,12 +2353,46 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "216 − 180 = 36"
+        "text": "216 − 180 = 36",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "216 − 180"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "36"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "180 ÷ 36 × 100 = 500%"
+        "text": "180 ÷ 36 × 100 = 500%",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Percentage change: quantity",
+            "text": "180"
+          },
+          {
+            "id": "step-3",
+            "label": "Percentage change: divisor",
+            "text": "36"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Percentage change: percentage scale",
+            "text": "100"
+          },
+          {
+            "id": "step-3-part-4",
+            "label": "Percentage change: result",
+            "text": "500%"
+          }
+        ]
       }
     ],
     "options": {
@@ -1967,18 +2432,11 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The ribbon length changes from 180 m to 216 m. Find the percentage increase.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "20% of 180 m is 36 m; add this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "20% of 180 m is 36 m; add this to recover the new amount."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q05",
@@ -1993,12 +2451,36 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "350 − 308 = 42"
+        "text": "350 − 308 = 42",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "350 − 308"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "42"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "42 ÷ 350 = 3/25%"
+        "text": "42 ÷ 350 = 3/25%",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Percentage change: calculation",
+            "text": "42 ÷ 350"
+          },
+          {
+            "id": "step-3",
+            "label": "Percentage change: result",
+            "text": "3/25%"
+          }
+        ]
       }
     ],
     "options": {
@@ -2038,18 +2520,11 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The attendance changes from 350 people to 308 people. Find the percentage decrease.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "12% of 350 people is 42 people; subtract this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "12% of 350 people is 42 people; subtract this to recover the new amount."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q06",
@@ -2064,12 +2539,46 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "624 − 480 = 144"
+        "text": "624 − 480 = 144",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "624 − 480"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "144"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "144 ÷ 624 × 100 = 300/13%"
+        "text": "144 ÷ 624 × 100 = 300/13%",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Percentage change: quantity",
+            "text": "144"
+          },
+          {
+            "id": "step-3",
+            "label": "Percentage change: divisor",
+            "text": "624"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Percentage change: percentage scale",
+            "text": "100"
+          },
+          {
+            "id": "step-3-part-4",
+            "label": "Percentage change: result",
+            "text": "300/13%"
+          }
+        ]
       }
     ],
     "options": {
@@ -2109,18 +2618,11 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The pallet mass changes from 480 kg to 624 kg. Find the percentage increase.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "30% of 480 kg is 144 kg; add this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "30% of 480 kg is 144 kg; add this to recover the new amount."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q07",
@@ -2135,12 +2637,46 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "232 − 160 = 72"
+        "text": "232 − 160 = 72",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "232 − 160"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "72"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "232 ÷ 160 × 100 = 145%"
+        "text": "232 ÷ 160 × 100 = 145%",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Percentage change: quantity",
+            "text": "232"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Percentage change: divisor",
+            "text": "160"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Percentage change: percentage scale",
+            "text": "100"
+          },
+          {
+            "id": "step-3-part-4",
+            "label": "Percentage change: result",
+            "text": "145%"
+          }
+        ]
       }
     ],
     "options": {
@@ -2180,18 +2716,11 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The entry price changes from £160 to £232. Find the percentage increase.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "45% of £160 is £72; add this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "45% of £160 is £72; add this to recover the new amount."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q08",
@@ -2206,12 +2735,46 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "450 − 378 = 72"
+        "text": "450 − 378 = 72",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "450 − 378"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "72"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "450 ÷ 72 × 100 = 625%"
+        "text": "450 ÷ 72 × 100 = 625%",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Percentage change: quantity",
+            "text": "450"
+          },
+          {
+            "id": "step-3",
+            "label": "Percentage change: divisor",
+            "text": "72"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Percentage change: percentage scale",
+            "text": "100"
+          },
+          {
+            "id": "step-3-part-4",
+            "label": "Percentage change: result",
+            "text": "625%"
+          }
+        ]
       }
     ],
     "options": {
@@ -2251,18 +2814,11 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The storage capacity changes from 450 GB to 378 GB. Find the percentage decrease.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "16% of 450 GB is 72 GB; subtract this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "16% of 450 GB is 72 GB; subtract this to recover the new amount."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q09",
@@ -2277,12 +2833,36 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "392 − 280 = 112"
+        "text": "392 − 280 = 112",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "392 − 280"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "112"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "112 ÷ 280 = 2/5%"
+        "text": "112 ÷ 280 = 2/5%",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Percentage change: calculation",
+            "text": "112 ÷ 280"
+          },
+          {
+            "id": "step-3",
+            "label": "Percentage change: result",
+            "text": "2/5%"
+          }
+        ]
       }
     ],
     "options": {
@@ -2322,18 +2902,11 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The ticket-sales count changes from 280 tickets to 392 tickets. Find the percentage increase.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "40% of 280 tickets is 112 tickets; add this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "40% of 280 tickets is 112 tickets; add this to recover the new amount."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q10",
@@ -2348,12 +2921,46 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "360 − 270 = 90"
+        "text": "360 − 270 = 90",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "360 − 270"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "90"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "90 ÷ 270 × 100 = 100/3%"
+        "text": "90 ÷ 270 × 100 = 100/3%",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Percentage change: quantity",
+            "text": "90"
+          },
+          {
+            "id": "step-3",
+            "label": "Percentage change: divisor",
+            "text": "270"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Percentage change: percentage scale",
+            "text": "100"
+          },
+          {
+            "id": "step-3-part-4",
+            "label": "Percentage change: result",
+            "text": "100/3%"
+          }
+        ]
       }
     ],
     "options": {
@@ -2393,18 +3000,11 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The fuel volume changes from 360 litres to 270 litres. Find the percentage decrease.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "25% of 360 litres is 90 litres; subtract this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "25% of 360 litres is 90 litres; subtract this to recover the new amount."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q11",
@@ -2419,12 +3019,46 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "708 − 600 = 108"
+        "text": "708 − 600 = 108",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "708 − 600"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "108"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "708 ÷ 600 × 100 = 118%"
+        "text": "708 ÷ 600 × 100 = 118%",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Percentage change: quantity",
+            "text": "708"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Percentage change: divisor",
+            "text": "600"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Percentage change: percentage scale",
+            "text": "100"
+          },
+          {
+            "id": "step-3-part-4",
+            "label": "Percentage change: result",
+            "text": "118%"
+          }
+        ]
       }
     ],
     "options": {
@@ -2464,18 +3098,11 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The fund balance changes from £600 to £708. Find the percentage increase.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "18% of £600 is £108; add this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "18% of £600 is £108; add this to recover the new amount."
   },
   {
     "id": "maths:M06-WEB-ERRORS-R2-C3-Q12",
@@ -2490,12 +3117,46 @@
       {
         "id": "step-2",
         "label": "Size of change",
-        "text": "250 − 230 = 20"
+        "text": "250 − 230 = 20",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Size of change: calculation",
+            "text": "250 − 230"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Size of change: result",
+            "text": "20"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Percentage change",
-        "text": "250 ÷ 20 × 100 = 1250%"
+        "text": "250 ÷ 20 × 100 = 1250%",
+        "targets": [
+          {
+            "id": "step-3-part-1",
+            "label": "Percentage change: quantity",
+            "text": "250"
+          },
+          {
+            "id": "step-3",
+            "label": "Percentage change: divisor",
+            "text": "20"
+          },
+          {
+            "id": "step-3-part-3",
+            "label": "Percentage change: percentage scale",
+            "text": "100"
+          },
+          {
+            "id": "step-3-part-4",
+            "label": "Percentage change: result",
+            "text": "1250%"
+          }
+        ]
       }
     ],
     "options": {
@@ -2535,17 +3196,10 @@
     ],
     "hint": "Identify the original whole and the size of the change before forming a percentage.",
     "draftId": "M06-DRAFT-ERRORS-C3-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "The route length changes from 250 km to 230 km. Find the percentage decrease.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "%",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "8% of 250 km is 20 km; subtract this to recover the new amount.",
-    "subject": "maths",
-    "topic": "M06"
+    "check": "8% of 250 km is 20 km; subtract this to recover the new amount."
   }
 ]

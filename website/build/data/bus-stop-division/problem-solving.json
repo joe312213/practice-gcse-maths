@@ -45,12 +45,24 @@
             "outputUnit": "cards"
           }
         ],
-        "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+        "hint": {
+          "textRef": "equal-groups-hint",
+          "values": {
+            "groups": "7"
+          }
+        },
         "method_note": "Find the size of one equal share.",
         "check": "Reverse the calculation chain: 24 × 7 = 168.",
         "wrong": "168",
-        "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "complete-calculation",
+          "values": {
+            "firstStep": "find the size of one equal share"
+          }
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       },
       {
         "id": "maths:M02-WEB-PS-C2-Q100",
@@ -93,12 +105,24 @@
             "outputUnit": "£"
           }
         ],
-        "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+        "hint": {
+          "textRef": "equal-groups-hint",
+          "values": {
+            "groups": "7"
+          }
+        },
         "method_note": "Find the size of one equal share Add materials to one share.",
         "check": "Reverse the calculation chain: 33 − 9 = 24; 24 × 7 = 168.",
         "wrong": "24",
-        "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "complete-calculation",
+          "values": {
+            "firstStep": "find the size of one equal share"
+          }
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       },
       {
         "id": "maths:M02-WEB-PS-C3-Q100",
@@ -152,24 +176,31 @@
             "outputUnit": "£"
           }
         ],
-        "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+        "hint": {
+          "textRef": "equal-groups-hint",
+          "values": {
+            "groups": "7"
+          }
+        },
         "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs.",
         "check": "Reverse the calculation chain: 168 ÷ 7 = 24; 24 × 7 = 168; 168 + 9 = 177.",
         "wrong": "169",
-        "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "complete-calculation",
+          "values": {
+            "firstStep": "remove damaged cards"
+          }
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       }
     ]
   },
   "questions": [
     {
       "id": "maths:M02-WEB-PS-C1-Q1",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "84 cards are shared equally among 7 friends. How many cards does each receive?",
       "answer": "12",
       "answerUnit": "cards",
@@ -192,22 +223,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "7"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 12 × 7 = 84.",
       "wrong": "84",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q2",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "104 cards are shared equally among 8 teams. How many cards does each receive?",
       "answer": "13",
       "answerUnit": "cards",
@@ -230,22 +265,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 8 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "8"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 13 × 8 = 104.",
       "wrong": "104",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q3",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "126 cards are shared equally among 9 clubs. How many cards does each receive?",
       "answer": "14",
       "answerUnit": "cards",
@@ -268,22 +307,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 9 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "9"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 14 × 9 = 126.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q4",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "150 cards are shared equally among 10 classes. How many cards does each receive?",
       "answer": "15",
       "answerUnit": "cards",
@@ -306,22 +349,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 10 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "10"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 15 × 10 = 150.",
       "wrong": "150",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q5",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "176 cards are shared equally among 11 families. How many cards does each receive?",
       "answer": "16",
       "answerUnit": "cards",
@@ -344,22 +391,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 11 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "11"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 16 × 11 = 176.",
       "wrong": "176",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q6",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "204 cards are shared equally among 12 volunteers. How many cards does each receive?",
       "answer": "17",
       "answerUnit": "cards",
@@ -382,22 +433,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 12 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "12"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 17 × 12 = 204.",
       "wrong": "204",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q7",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "105 cards are shared equally among 7 friends. How many cards does each receive?",
       "answer": "15",
       "answerUnit": "cards",
@@ -420,22 +475,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "7"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 15 × 7 = 105.",
       "wrong": "105",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q8",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "128 cards are shared equally among 8 teams. How many cards does each receive?",
       "answer": "16",
       "answerUnit": "cards",
@@ -458,22 +517,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 8 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "8"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 16 × 8 = 128.",
       "wrong": "128",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q9",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "153 cards are shared equally among 9 clubs. How many cards does each receive?",
       "answer": "17",
       "answerUnit": "cards",
@@ -496,22 +559,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 9 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "9"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 17 × 9 = 153.",
       "wrong": "153",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q10",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "180 cards are shared equally among 10 classes. How many cards does each receive?",
       "answer": "18",
       "answerUnit": "cards",
@@ -534,22 +601,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 10 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "10"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 18 × 10 = 180.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q11",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "209 cards are shared equally among 11 families. How many cards does each receive?",
       "answer": "19",
       "answerUnit": "cards",
@@ -572,22 +643,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 11 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "11"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 19 × 11 = 209.",
       "wrong": "209",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q12",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "240 cards are shared equally among 12 volunteers. How many cards does each receive?",
       "answer": "20",
       "answerUnit": "cards",
@@ -610,22 +685,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 12 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "12"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 20 × 12 = 240.",
       "wrong": "240",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q13",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "126 cards are shared equally among 7 friends. How many cards does each receive?",
       "answer": "18",
       "answerUnit": "cards",
@@ -648,22 +727,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "7"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 18 × 7 = 126.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q14",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "152 cards are shared equally among 8 teams. How many cards does each receive?",
       "answer": "19",
       "answerUnit": "cards",
@@ -686,22 +769,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 8 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "8"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 19 × 8 = 152.",
       "wrong": "152",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q15",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "180 cards are shared equally among 9 clubs. How many cards does each receive?",
       "answer": "20",
       "answerUnit": "cards",
@@ -724,22 +811,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 9 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "9"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 20 × 9 = 180.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q16",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "210 cards are shared equally among 10 classes. How many cards does each receive?",
       "answer": "21",
       "answerUnit": "cards",
@@ -762,22 +853,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 10 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "10"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 21 × 10 = 210.",
       "wrong": "210",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q17",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "242 cards are shared equally among 11 families. How many cards does each receive?",
       "answer": "22",
       "answerUnit": "cards",
@@ -800,22 +895,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 11 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "11"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 22 × 11 = 242.",
       "wrong": "242",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C1-Q18",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "276 cards are shared equally among 12 volunteers. How many cards does each receive?",
       "answer": "23",
       "answerUnit": "cards",
@@ -838,22 +937,26 @@
           "outputUnit": "cards"
         }
       ],
-      "hint": "Which quantity is shared into 12 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "12"
+        }
+      },
       "method_note": "Find the size of one equal share.",
       "check": "Reverse the calculation chain: 23 × 12 = 276.",
       "wrong": "276",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q1",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £84 cost is shared equally among 7 friends. Each also pays £5 for materials. How much does each pay?",
       "answer": "17",
       "answerUnit": "£",
@@ -887,22 +990,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "7"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 17 − 5 = 12; 12 × 7 = 84.",
       "wrong": "12",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q2",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £104 cost is shared equally among 8 teams. Each also pays £5 for materials. How much does each pay?",
       "answer": "18",
       "answerUnit": "£",
@@ -936,22 +1043,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 8 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "8"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 18 − 5 = 13; 13 × 8 = 104.",
       "wrong": "13",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q3",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £126 cost is shared equally among 9 clubs. Each also pays £5 for materials. How much does each pay?",
       "answer": "19",
       "answerUnit": "£",
@@ -985,22 +1096,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 9 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "9"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 19 − 5 = 14; 14 × 9 = 126.",
       "wrong": "14",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q4",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £150 cost is shared equally among 10 classes. Each also pays £5 for materials. How much does each pay?",
       "answer": "20",
       "answerUnit": "£",
@@ -1034,22 +1149,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 10 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "10"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 20 − 5 = 15; 15 × 10 = 150.",
       "wrong": "15",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q5",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £176 cost is shared equally among 11 families. Each also pays £5 for materials. How much does each pay?",
       "answer": "21",
       "answerUnit": "£",
@@ -1083,22 +1202,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 11 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "11"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 21 − 5 = 16; 16 × 11 = 176.",
       "wrong": "16",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q6",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £204 cost is shared equally among 12 volunteers. Each also pays £5 for materials. How much does each pay?",
       "answer": "22",
       "answerUnit": "£",
@@ -1132,22 +1255,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 12 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "12"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 22 − 5 = 17; 17 × 12 = 204.",
       "wrong": "17",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q7",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £105 cost is shared equally among 7 friends. Each also pays £6 for materials. How much does each pay?",
       "answer": "21",
       "answerUnit": "£",
@@ -1181,22 +1308,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "7"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 21 − 6 = 15; 15 × 7 = 105.",
       "wrong": "15",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q8",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £128 cost is shared equally among 8 teams. Each also pays £6 for materials. How much does each pay?",
       "answer": "22",
       "answerUnit": "£",
@@ -1230,22 +1361,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 8 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "8"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 22 − 6 = 16; 16 × 8 = 128.",
       "wrong": "16",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q9",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £153 cost is shared equally among 9 clubs. Each also pays £6 for materials. How much does each pay?",
       "answer": "23",
       "answerUnit": "£",
@@ -1279,22 +1414,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 9 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "9"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 23 − 6 = 17; 17 × 9 = 153.",
       "wrong": "17",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q10",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £180 cost is shared equally among 10 classes. Each also pays £6 for materials. How much does each pay?",
       "answer": "24",
       "answerUnit": "£",
@@ -1328,22 +1467,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 10 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "10"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 24 − 6 = 18; 18 × 10 = 180.",
       "wrong": "18",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q11",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £209 cost is shared equally among 11 families. Each also pays £6 for materials. How much does each pay?",
       "answer": "25",
       "answerUnit": "£",
@@ -1377,22 +1520,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 11 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "11"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 25 − 6 = 19; 19 × 11 = 209.",
       "wrong": "19",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q12",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £240 cost is shared equally among 12 volunteers. Each also pays £6 for materials. How much does each pay?",
       "answer": "26",
       "answerUnit": "£",
@@ -1426,22 +1573,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 12 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "12"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 26 − 6 = 20; 20 × 12 = 240.",
       "wrong": "20",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q13",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £126 cost is shared equally among 7 friends. Each also pays £7 for materials. How much does each pay?",
       "answer": "25",
       "answerUnit": "£",
@@ -1475,22 +1626,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "7"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 25 − 7 = 18; 18 × 7 = 126.",
       "wrong": "18",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q14",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £152 cost is shared equally among 8 teams. Each also pays £7 for materials. How much does each pay?",
       "answer": "26",
       "answerUnit": "£",
@@ -1524,22 +1679,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 8 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "8"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 26 − 7 = 19; 19 × 8 = 152.",
       "wrong": "19",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q15",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £180 cost is shared equally among 9 clubs. Each also pays £7 for materials. How much does each pay?",
       "answer": "27",
       "answerUnit": "£",
@@ -1573,22 +1732,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 9 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "9"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 27 − 7 = 20; 20 × 9 = 180.",
       "wrong": "20",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q16",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £210 cost is shared equally among 10 classes. Each also pays £7 for materials. How much does each pay?",
       "answer": "28",
       "answerUnit": "£",
@@ -1622,22 +1785,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 10 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "10"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 28 − 7 = 21; 21 × 10 = 210.",
       "wrong": "21",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q17",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £242 cost is shared equally among 11 families. Each also pays £7 for materials. How much does each pay?",
       "answer": "29",
       "answerUnit": "£",
@@ -1671,22 +1838,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 11 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "11"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 29 − 7 = 22; 22 × 11 = 242.",
       "wrong": "22",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C2-Q18",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A £276 cost is shared equally among 12 volunteers. Each also pays £7 for materials. How much does each pay?",
       "answer": "30",
       "answerUnit": "£",
@@ -1720,22 +1891,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 12 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "12"
+        }
+      },
       "method_note": "Find the size of one equal share Add materials to one share.",
       "check": "Reverse the calculation chain: 30 − 7 = 23; 23 × 12 = 276.",
       "wrong": "23",
-      "error_note": "This has not completed the requested calculation. After “find the size of one equal share”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the size of one equal share"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q1",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 89 cards. 5 are damaged. The rest fill packs of 7. All full packs are sold for £3 each. How much money is received from the sales?",
       "answer": "36",
       "answerUnit": "£",
@@ -1780,22 +1955,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "7"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs.",
       "check": "Reverse the calculation chain: 36 ÷ 3 = 12; 12 × 7 = 84; 84 + 5 = 89.",
       "wrong": "84",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q2",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 109 cards. 5 are damaged. The rest fill packs of 8. All full packs are sold for £3 each. Packaging costs £6 in total. How much money is received from the sales after paying for packaging?",
       "answer": "33",
       "answerUnit": "£",
@@ -1851,22 +2030,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 8 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "8"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs Subtract the total packaging cost.",
       "check": "Reverse the calculation chain: 33 + 6 = 39; 39 ÷ 3 = 13; 13 × 8 = 104; 104 + 5 = 109.",
       "wrong": "104",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q3",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 131 cards. 5 are damaged. The rest fill packs of 9. All full packs are sold for £3 each. How much money is received from the sales?",
       "answer": "42",
       "answerUnit": "£",
@@ -1911,22 +2094,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 9 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "9"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs.",
       "check": "Reverse the calculation chain: 42 ÷ 3 = 14; 14 × 9 = 126; 126 + 5 = 131.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q4",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 155 cards. 5 are damaged. The rest fill packs of 10. All full packs are sold for £3 each. Packaging costs £6 in total. How much money is received from the sales after paying for packaging?",
       "answer": "39",
       "answerUnit": "£",
@@ -1982,22 +2169,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 10 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "10"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs Subtract the total packaging cost.",
       "check": "Reverse the calculation chain: 39 + 6 = 45; 45 ÷ 3 = 15; 15 × 10 = 150; 150 + 5 = 155.",
       "wrong": "150",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q5",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 181 cards. 5 are damaged. The rest fill packs of 11. All full packs are sold for £3 each. How much money is received from the sales?",
       "answer": "48",
       "answerUnit": "£",
@@ -2042,22 +2233,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 11 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "11"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs.",
       "check": "Reverse the calculation chain: 48 ÷ 3 = 16; 16 × 11 = 176; 176 + 5 = 181.",
       "wrong": "176",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q6",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 209 cards. 5 are damaged. The rest fill packs of 12. All full packs are sold for £3 each. Packaging costs £6 in total. How much money is received from the sales after paying for packaging?",
       "answer": "45",
       "answerUnit": "£",
@@ -2113,22 +2308,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 12 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "12"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs Subtract the total packaging cost.",
       "check": "Reverse the calculation chain: 45 + 6 = 51; 51 ÷ 3 = 17; 17 × 12 = 204; 204 + 5 = 209.",
       "wrong": "204",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q7",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 111 cards. 6 are damaged. The rest fill packs of 7. All full packs are sold for £4 each. How much money is received from the sales?",
       "answer": "60",
       "answerUnit": "£",
@@ -2173,22 +2372,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "7"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs.",
       "check": "Reverse the calculation chain: 60 ÷ 4 = 15; 15 × 7 = 105; 105 + 6 = 111.",
       "wrong": "105",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q8",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 134 cards. 6 are damaged. The rest fill packs of 8. All full packs are sold for £4 each. Packaging costs £7 in total. How much money is received from the sales after paying for packaging?",
       "answer": "57",
       "answerUnit": "£",
@@ -2244,22 +2447,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 8 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "8"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs Subtract the total packaging cost.",
       "check": "Reverse the calculation chain: 57 + 7 = 64; 64 ÷ 4 = 16; 16 × 8 = 128; 128 + 6 = 134.",
       "wrong": "128",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q9",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 159 cards. 6 are damaged. The rest fill packs of 9. All full packs are sold for £4 each. How much money is received from the sales?",
       "answer": "68",
       "answerUnit": "£",
@@ -2304,22 +2511,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 9 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "9"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs.",
       "check": "Reverse the calculation chain: 68 ÷ 4 = 17; 17 × 9 = 153; 153 + 6 = 159.",
       "wrong": "153",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q10",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 186 cards. 6 are damaged. The rest fill packs of 10. All full packs are sold for £4 each. Packaging costs £7 in total. How much money is received from the sales after paying for packaging?",
       "answer": "65",
       "answerUnit": "£",
@@ -2375,22 +2586,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 10 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "10"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs Subtract the total packaging cost.",
       "check": "Reverse the calculation chain: 65 + 7 = 72; 72 ÷ 4 = 18; 18 × 10 = 180; 180 + 6 = 186.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q11",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 215 cards. 6 are damaged. The rest fill packs of 11. All full packs are sold for £4 each. How much money is received from the sales?",
       "answer": "76",
       "answerUnit": "£",
@@ -2435,22 +2650,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 11 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "11"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs.",
       "check": "Reverse the calculation chain: 76 ÷ 4 = 19; 19 × 11 = 209; 209 + 6 = 215.",
       "wrong": "209",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q12",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 246 cards. 6 are damaged. The rest fill packs of 12. All full packs are sold for £4 each. Packaging costs £7 in total. How much money is received from the sales after paying for packaging?",
       "answer": "73",
       "answerUnit": "£",
@@ -2506,22 +2725,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 12 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "12"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs Subtract the total packaging cost.",
       "check": "Reverse the calculation chain: 73 + 7 = 80; 80 ÷ 4 = 20; 20 × 12 = 240; 240 + 6 = 246.",
       "wrong": "240",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q13",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 133 cards. 7 are damaged. The rest fill packs of 7. All full packs are sold for £5 each. How much money is received from the sales?",
       "answer": "90",
       "answerUnit": "£",
@@ -2566,22 +2789,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 7 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "7"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs.",
       "check": "Reverse the calculation chain: 90 ÷ 5 = 18; 18 × 7 = 126; 126 + 7 = 133.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q14",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 159 cards. 7 are damaged. The rest fill packs of 8. All full packs are sold for £5 each. Packaging costs £8 in total. How much money is received from the sales after paying for packaging?",
       "answer": "87",
       "answerUnit": "£",
@@ -2637,22 +2864,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 8 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "8"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs Subtract the total packaging cost.",
       "check": "Reverse the calculation chain: 87 + 8 = 95; 95 ÷ 5 = 19; 19 × 8 = 152; 152 + 7 = 159.",
       "wrong": "152",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q15",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 187 cards. 7 are damaged. The rest fill packs of 9. All full packs are sold for £5 each. How much money is received from the sales?",
       "answer": "100",
       "answerUnit": "£",
@@ -2697,22 +2928,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 9 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "9"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs.",
       "check": "Reverse the calculation chain: 100 ÷ 5 = 20; 20 × 9 = 180; 180 + 7 = 187.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q16",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 217 cards. 7 are damaged. The rest fill packs of 10. All full packs are sold for £5 each. Packaging costs £8 in total. How much money is received from the sales after paying for packaging?",
       "answer": "97",
       "answerUnit": "£",
@@ -2768,22 +3003,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 10 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "10"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs Subtract the total packaging cost.",
       "check": "Reverse the calculation chain: 97 + 8 = 105; 105 ÷ 5 = 21; 21 × 10 = 210; 210 + 7 = 217.",
       "wrong": "210",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q17",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 249 cards. 7 are damaged. The rest fill packs of 11. All full packs are sold for £5 each. How much money is received from the sales?",
       "answer": "110",
       "answerUnit": "£",
@@ -2828,22 +3067,26 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 11 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "11"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs.",
       "check": "Reverse the calculation chain: 110 ÷ 5 = 22; 22 × 11 = 242; 242 + 7 = 249.",
       "wrong": "242",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M02-WEB-PS-C3-Q18",
-      "subject": "maths",
-      "topic": "M02",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A shop has 283 cards. 7 are damaged. The rest fill packs of 12. All full packs are sold for £5 each. Packaging costs £8 in total. How much money is received from the sales after paying for packaging?",
       "answer": "107",
       "answerUnit": "£",
@@ -2899,12 +3142,21 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Which quantity is shared into 12 equal groups? Check whether anything must be removed first.",
+      "hint": {
+        "textRef": "equal-groups-hint",
+        "values": {
+          "groups": "12"
+        }
+      },
       "method_note": "Remove damaged cards Find the number of full packs Find the income from all packs Subtract the total packaging cost.",
       "check": "Reverse the calculation chain: 107 + 8 = 115; 115 ÷ 5 = 23; 23 × 12 = 276; 276 + 7 = 283.",
       "wrong": "276",
-      "error_note": "This has not completed the requested calculation. After “remove damaged cards”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove damaged cards"
+        }
+      },
       "questionPrefix": "Solve the problem"
     }
   ]

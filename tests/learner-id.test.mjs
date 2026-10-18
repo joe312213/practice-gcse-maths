@@ -1,4 +1,21 @@
-/** Stable additive identities preserve schema-2 progress and survive portable-file round trips. */
+/**
+ * Purpose: Stable additive identities preserve schema-2 progress and survive portable-file round
+ * trips.
+ *
+ * Main contents:
+ * - existing data gains one stable ID without rewriting names, topics or pages; portable
+ *   identity survives imports; legacy files keep the confirmed browser identity; same ID matches
+ *   renamed imports, but a name already held by another learner cannot be overwritten; schema-2
+ *   migration preserves complete maths state, identity and shared settings; other subjects and
+ *   account linkage survive maths browser and file saves.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/src/lib/domain/profiles.mjs, website/src/lib/domain/progress-transfer.mjs,
+ * website/src/lib/adapters/storage.mjs, website/src/lib/domain/profile-management.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import test from "node:test";
 import assert from "node:assert/strict";
 import {

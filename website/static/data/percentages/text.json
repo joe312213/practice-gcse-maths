@@ -1,0 +1,65 @@
+{
+  "defaults": {
+    "recap": {
+      "method": "calculation",
+      "prose": true
+    },
+    "spot-errors": {
+      "subject": "maths",
+      "topic": "M06",
+      "type": "errors",
+      "method": "investigation",
+      "prose": true,
+      "investigation": true,
+      "method_note": {
+        "textRef": "investigation-task"
+      }
+    },
+    "assessment-examples": {
+      "subject": "maths",
+      "topic": "M06",
+      "type": "assessment",
+      "method": "calculation",
+      "prose": true
+    },
+    "practice": {
+      "subject": "maths",
+      "topic": "M06",
+      "type": "plain",
+      "method": "calculation",
+      "prose": true
+    },
+    "problem-solving": {
+      "subject": "maths",
+      "topic": "M06",
+      "type": "problem",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "application-source"
+      }
+    },
+    "demos": {
+      "subject": "maths",
+      "topic": "M06",
+      "type": "demo",
+      "method": "calculation",
+      "prose": true
+    },
+    "scaffolded": {
+      "subject": "maths",
+      "topic": "M06",
+      "type": "scaffolded",
+      "method": "calculation",
+      "prose": true
+    }
+  },
+  "phrases": {
+    "percentage-not-amount": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
+    "find-percentage-amount": "Find one percent of the amount, then scale it to the required percentage.",
+    "apply-percentage-change": "This is only the change. Apply it to the original amount to find the new amount.",
+    "use-change-amount": "Use the percentage amount as the change; apply it to the original amount.",
+    "use-original-whole": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
+    "percentage-change-method": "Divide the change by the original amount before multiplying by one hundred."
+  }
+}

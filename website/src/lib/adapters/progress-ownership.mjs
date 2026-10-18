@@ -1,4 +1,22 @@
-/** One writable application per origin. Drain complete operations before releasing its lease. */
+/**
+ * Purpose: Give one application tab per origin permission to write progress, draining pending
+ * operations before handover. Web Locks own the lease; messages coordinate requests and the UI
+ * reports waiting/paused state.
+ *
+ * Main contents:
+ * - progressTask, onProgressPause, pauseProgress, ownProgress.
+ *
+ * Used By: tests/progress-ownership.test.mjs, website/src/lib/adapters/progress-autosave.mjs,
+ * website/src/lib/adapters/progress-file.mjs,
+ * website/src/lib/components/practice/TopicPractice.svelte,
+ * website/src/lib/components/progress/OneDriveReminder.svelte,
+ * website/src/lib/components/progress/ProfileManagement.svelte,
+ * website/src/lib/components/progress/ProgressTransfer.svelte.
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: none.
+ */
 const pending = new Set();
 const pauses = new Set();
 
@@ -19,6 +37,7 @@ export function onProgressPause(stop) {
   return () => pauses.delete(stop);
 }
 
+/** Stop registered practice listeners and drain complete pending operations before a tab yields its writer lease. Called by the layout ownership controller; new pending work is included before return. */
 export async function pauseProgress() {
   for (const stop of pauses) stop();
   while (pending.size) await Promise.allSettled([...pending]);

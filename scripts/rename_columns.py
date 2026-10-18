@@ -1,9 +1,10 @@
-"""Purpose: Migrate current decks and active textual sources to Start / Build / Confidence.
+"""Purpose: Historical migration to Start / Build / Confidence labels across saved slides and
+textual sources. This is a broad in-place migration, not an ordinary website build step.
 
 Main contents:
-- rename_text
-- visit
-- main
+- rename_text: Replace old challenge labels with Start, Build and Confidence.
+- visit: Recursively rename text in slide shapes while retaining the first run formatting.
+- main: Run the rename columns command using its configured input and output paths.
 
 Used By: manual legacy command invocation.
 
@@ -11,7 +12,11 @@ Uses: scripts/update_structure.py.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Reads and rewrites the explicitly listed Markdown sources, AGENTS.md and
+registered question decks. Review its historical path list before any separately authorised use.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 import json,re
@@ -35,7 +40,7 @@ def visit(shapes):
  Calls: rename_text.
  Used by: main.
 
- Example in the caller's context: visit(shapes)
+ Example: visit(shapes)
  """
  for sh in shapes:
   if hasattr(sh,'shapes'):visit(sh.shapes)
@@ -52,7 +57,7 @@ def main():
  """Run the rename columns command using its configured input and output paths.
  Calls: rename_text, u.Presentation, visit, u.save.
 
- Example in the caller's context: main()
+ Example: main()
  """
  for f in [*ROOT.glob('scripts/*.py'),*ROOT.glob('content/*.md'),*ROOT.glob('content/answers/*.md'),ROOT/'AGENTS.md']:
   s=f.read_text();new=rename_text(s)

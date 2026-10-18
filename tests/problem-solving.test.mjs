@@ -1,5 +1,27 @@
+/**
+ * Purpose: Problem mathematics, help assistance and combined source attribution are independent
+ * of rendering.
+ *
+ * Main contents:
+ * - all application problems have one to four operations, distinct pages and independently
+ *   correct answers; ratio questions request an unknown quantity and agree with the ratio, not
+ *   just their calculation chain; sixth-stage tips count as assistance, including after
+ *   selecting another question; combined problems use selected topics, retain exact questions on
+ *   resume and credit actual source topics; new topic codes are unique and resolve to their own
+ *   banks without changing existing addresses.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/content/topic-routes.mjs,
+ * website/src/lib/domain/engine.mjs, website/src/lib/application/session.mjs,
+ * website/src/lib/domain/stages.mjs, website/src/lib/domain/profiles.mjs,
+ * website/src/lib/domain/practice-code.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions), node:fs/promises (asynchronous
+ * file access).
+ */
 import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
-/** Problem mathematics, help assistance and combined source attribution are independent of rendering. */
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";

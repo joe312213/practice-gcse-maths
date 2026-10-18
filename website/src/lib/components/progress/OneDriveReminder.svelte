@@ -1,7 +1,16 @@
 <!--
   Purpose: Offer existing and new browser learners a direct, non-blocking OneDrive setup.
-  Uses: portable JSON export and file adapter; host supplies the real learner and persistence callback.
-  No automatic picker, file overwrite or account connection; Later lasts for this tab session.
+
+  Main contents:
+  - downloadBackup, later.
+
+  Used By: website/src/lib/components/practice/TopicPractice.svelte.
+
+  Uses: website/src/lib/adapters/progress-ownership.mjs,
+  website/src/lib/adapters/progress-file.mjs, website/src/lib/domain/progress-transfer.mjs,
+  website/src/lib/domain/progress.mjs.
+
+  Libs: $app/paths (SvelteKit navigation/route state).
 -->
 <script>
   import { progressTask } from '#lib/adapters/progress-ownership.mjs';

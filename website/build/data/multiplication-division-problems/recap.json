@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M03-WEB-RECAP-C1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "recap",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "42 packs each contain 15 pens. How many pens are there?",
     "answer": "630",
     "answerUnit": "pens",
@@ -33,17 +28,11 @@
     "method_note": "Find the total for these equal groups.",
     "check": "630 ÷ 15 = 42.",
     "wrong": "57",
-    "error_note": "Adding 42 and 15 does not count all the equal groups. Multiply 42 by 15.",
-    "source": "Accepted M03 source slide 2; saved deck text checked"
+    "error_note": "Adding 42 and 15 does not count all the equal groups. Multiply 42 by 15."
   },
   {
     "id": "maths:M03-WEB-RECAP-C2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "recap",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "215 apples go into bags of 6. How many completely full bags can be made?",
     "answer": "35",
     "answerUnit": "bags",
@@ -69,7 +58,9 @@
         "title": "Answer the question in context",
         "input": "35",
         "output": "35",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "bags"
       }
     ],
@@ -77,17 +68,11 @@
     "method_note": "35 complete groups of 6, with 5 left over. Only completely full groups count; leave the remainder out.",
     "check": "35 × 6 + 5 = 215; 5 is less than 6.",
     "wrong": "36",
-    "error_note": "36 groups would need 216, more than the 215 available. Count only full groups.",
-    "source": "Accepted M03 source slide 2; saved deck text checked"
+    "error_note": "36 groups would need 216, more than the 215 available. Count only full groups."
   },
   {
     "id": "maths:M03-WEB-RECAP-C3",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "recap",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "A painter charges £18 per hour for 32 hours, plus £120 for paint. Find the total bill.",
     "answer": "696",
     "answerUnit": "£",
@@ -125,7 +110,6 @@
     "method_note": "Find the total for these equal groups. Include the extra amount once.",
     "check": "576 ÷ 32 = 18. 696 − 120 = 576.",
     "wrong": "576",
-    "error_note": "This is only the first cost. Include the extra £120 once.",
-    "source": "Accepted M03 source slide 2; saved deck text checked"
+    "error_note": "This is only the first cost. Include the extra £120 once."
   }
 ]

@@ -5,25 +5,28 @@
       "aim": "Find a percentage of an amount.",
       "steps": [
         [
-          "Identify the ",
+          "Write down the known amounts and the percentage, with their units. Label the original ",
           {
             "concept": "whole",
             "text": "whole"
-          }
+          },
+          " as 100%, and write what you need to find: a percentage part, a new amount or a percentage change."
         ],
         [
           {
             "concept": "percentage-calculation",
             "text": "Choose the calculation"
-          }
+          },
+          ": for a percentage part, divide the whole by 100 and multiply by the percentage; for a new amount, then add or subtract that part. For percentage change, find the difference between the new and original amounts, divide it by the original and multiply by 100."
         ],
-        "Calculate",
+        "Carry out your chosen calculation, writing each intermediate amount with its units. Keep unrounded values until the final answer if using a calculator.",
         [
           "Check the ",
           {
             "concept": "percentage-change",
             "text": "requested amount"
-          }
+          },
+          ": give the part, the new total or the percentage change that the question asks for. An increase should make the amount larger and a decrease smaller; include the correct units or % sign."
         ]
       ]
     },
@@ -32,25 +35,28 @@
         "aim": "Apply a percentage increase or decrease to find a new amount.",
         "steps": [
           [
-            "Identify the ",
+            "Write down the known amounts and the percentage, with their units. Label the original ",
             {
               "concept": "whole",
               "text": "whole"
-            }
+            },
+            " as 100%, and write what you need to find: a percentage part, a new amount or a percentage change."
           ],
           [
             {
               "concept": "percentage-calculation",
               "text": "Choose the calculation"
-            }
+            },
+            ": for a percentage part, divide the whole by 100 and multiply by the percentage; for a new amount, then add or subtract that part. For percentage change, find the difference between the new and original amounts, divide it by the original and multiply by 100."
           ],
-          "Calculate",
+          "Carry out your chosen calculation, writing each intermediate amount with its units. Keep unrounded values until the final answer if using a calculator.",
           [
             "Check the ",
             {
               "concept": "percentage-change",
               "text": "requested amount"
-            }
+            },
+            ": give the part, the new total or the percentage change that the question asks for. An increase should make the amount larger and a decrease smaller; include the correct units or % sign."
           ]
         ]
       },
@@ -58,25 +64,28 @@
         "aim": "Find a percentage change using the original amount.",
         "steps": [
           [
-            "Identify the ",
+            "Write down the known amounts and the percentage, with their units. Label the original ",
             {
               "concept": "whole",
               "text": "whole"
-            }
+            },
+            " as 100%, and write what you need to find: a percentage part, a new amount or a percentage change."
           ],
           [
             {
               "concept": "percentage-calculation",
               "text": "Choose the calculation"
-            }
+            },
+            ": for a percentage part, divide the whole by 100 and multiply by the percentage; for a new amount, then add or subtract that part. For percentage change, find the difference between the new and original amounts, divide it by the original and multiply by 100."
           ],
-          "Calculate",
+          "Carry out your chosen calculation, writing each intermediate amount with its units. Keep unrounded values until the final answer if using a calculator.",
           [
             "Check the ",
             {
               "concept": "percentage-change",
               "text": "requested amount"
-            }
+            },
+            ": give the part, the new total or the percentage change that the question asks for. An increase should make the amount larger and a decrease smaller; include the correct units or % sign."
           ]
         ]
       }
@@ -161,6 +170,22 @@
           "amount"
         ],
         "recap": 0
+      },
+      {
+        "key": "web-plain-c1-q3",
+        "name": "Find 15% of 240 litres",
+        "submethods": [
+          "amount"
+        ],
+        "question": "maths:M06-WEB-PLAIN-C1-Q3"
+      },
+      {
+        "key": "web-plain-c1-q4",
+        "name": "Find 35% of 360 km",
+        "submethods": [
+          "amount"
+        ],
+        "question": "maths:M06-WEB-PLAIN-C1-Q4"
       }
     ],
     "build": [
@@ -179,6 +204,22 @@
           "decrease"
         ],
         "recap": 1
+      },
+      {
+        "key": "web-plain-c2-q3",
+        "name": "Increase a volume by 15%",
+        "submethods": [
+          "increase"
+        ],
+        "question": "maths:M06-WEB-PLAIN-C2-Q3"
+      },
+      {
+        "key": "web-plain-c2-q4",
+        "name": "Decrease a distance by 35%",
+        "submethods": [
+          "decrease"
+        ],
+        "question": "maths:M06-WEB-PLAIN-C2-Q4"
       }
     ],
     "confidence": [
@@ -197,6 +238,22 @@
           "percentage-decrease"
         ],
         "recap": 2
+      },
+      {
+        "key": "web-plain-c3-q3",
+        "name": "Find the percentage increase in volume",
+        "submethods": [
+          "percentage-increase"
+        ],
+        "question": "maths:M06-WEB-PLAIN-C3-Q3"
+      },
+      {
+        "key": "web-plain-c3-q4",
+        "name": "Find the percentage decrease in distance",
+        "submethods": [
+          "percentage-decrease"
+        ],
+        "question": "maths:M06-WEB-PLAIN-C3-Q4"
       }
     ]
   },

@@ -1,5 +1,6 @@
 /**
- * Purpose: Validate subject-scoped storage and select local learner identities without authentication.
+ * Purpose: Validate subject-scoped storage and select local learner identities without
+ * authentication.
  *
  * Main contents:
  * - KEY
@@ -7,7 +8,9 @@
  * - load
  * - chooseProfile
  *
- * Used By: tests/practice-set.test.mjs, tests/session.test.mjs, tests/website.test.mjs, website/src/lib/adapters/storage.mjs, website/src/lib/application/session.mjs
+ * Used By: tests/anonymous.test.mjs, tests/arithmetic.test.mjs,
+ * tests/error-investigation.test.mjs, tests/learner-id.test.mjs, tests/practice-set.test.mjs,
+ * tests/problem-solving.test.mjs, tests/reattempts.test.mjs.
  *
  * Uses: website/src/lib/domain/engine.mjs.
  *
@@ -71,6 +74,7 @@ function learnerHash(id) {
     hash = BigInt.asUintN(64, (hash ^ BigInt(character.charCodeAt(0))) * 0x100000001b3n);
   return hash;
 }
+/** Derive a short stable filename suffix from the learner UUID via learnerHash; called by progressFilename. This is an identity tag, not an authentication token. */
 function learnerFileTag(id) {
   return learnerHash(id).toString(36).padStart(12, '0').slice(-12);
 }

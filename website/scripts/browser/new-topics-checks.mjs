@@ -1,16 +1,24 @@
-import { readTopicBank } from '../read-topic-bank.mjs';
 /**
  * Purpose: Exercise student arithmetic and the actual portable puzzle control in the app.
  *
  * Main contents:
  * - Topic switching, guide persistence, demos, marking and puzzle lifecycle.
  *
- * Used By: focused browser runner.
+ * Used By: website/scripts/browser-checks.mjs.
  *
- * Uses: browser support and published banks.
+ * Uses: website/scripts/read-topic-bank.mjs, website/scripts/browser/draft-topics-checks.mjs,
+ * website/src/lib/content/topic-routes.mjs, website/vendor/puzzles/catalogue.js,
+ * website/vendor/puzzles/rules/go-rules.js, website/scripts/browser/support.mjs.
  *
- * Libs: Node assertions, Playwright through shared support.
+ * Libs: node:assert/strict (assertions), @axe-core/playwright (accessibility assertions),
+ * @playwright/test (browser automation and assertions).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
  */
+import { readTopicBank } from '../read-topic-bank.mjs';
+
 import { checkDraftTopics } from './draft-topics-checks.mjs';
 import assert from 'node:assert/strict';
 import AxeBuilder from '@axe-core/playwright';
@@ -64,6 +72,7 @@ async function checkMasonry(page) {
     .toEqual([]);
 }
 
+/** Run this focused browser scenario against the supplied browser and base URL. Called by the shared suite runner; isolated contexts and finally cleanup protect other sessions. Example: await checkNewTopics(browser, base). */
 export async function checkNewTopics(browser, base) {
   await checkDraftTopics(browser, base);
   const context = await createTestContext(browser, { viewport: { width: 390, height: 844 } });
@@ -278,13 +287,13 @@ export async function checkNewTopics(browser, base) {
     await page.locator('.topic-card').filter({ hasText: 'Bus stop division' }).click();
     await page.waitForURL(`${base}fm/bus-stop-division/`);
     await page.reload();
-    await page.locator('#begin').waitFor();
+    await expect(page.locator('#profile-button')).toBeEnabled();
     await page.goBack();
     await page.getByRole('heading', { name: 'Choose a topic', exact: true }).waitFor();
     // Previously shared query links remain usable and settle on the canonical address.
     await page.goto(`${base}?topic=M02`);
     await page.waitForURL(`${base}fm/bus-stop-division/`);
-    await page.locator('#begin').click();
+    await page.locator('#profile-button').click();
     await page.locator('#username').fill('Arithmetic learner');
     await page.getByRole('button', { name: 'Continue', exact: true }).click();
     if (await page.locator('#profile-message').isVisible())
@@ -456,7 +465,7 @@ export async function checkNewTopics(browser, base) {
         )
         .waitFor();
       await page.locator('[data-mode="plain"]').click();
-      await page.locator('#level').selectOption('1');
+      await page.locator('.question-panel [data-level="1"]').click();
       const pageNav = page.getByRole('navigation', { name: 'Practice page navigation' });
       const beforeNavigation = await page.evaluate(
         (topic) =>
@@ -575,7 +584,7 @@ export async function checkNewTopics(browser, base) {
         document.documentElement.dataset.theme = theme;
       }, originalTheme);
       for (const level of [0, 1, 2]) {
-        await page.locator('#level').selectOption(String(level));
+        await page.locator(`.question-panel [data-level="${level}"]`).click();
         const added = bank.questions.find(
           (q) => q.id === `maths:${topic}-WEB-ERRORS-R2-C${level + 1}-Q04`,
         );

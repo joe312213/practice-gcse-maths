@@ -1,0 +1,76 @@
+{
+  "defaults": {
+    "recap": {
+      "method": "calculation",
+      "error_note": {
+        "textRef": "check-first-direction"
+      }
+    },
+    "spot-errors": {
+      "subject": "maths",
+      "topic": "M13",
+      "type": "errors",
+      "method": "investigation",
+      "prose": true,
+      "investigation": true,
+      "method_note": {
+        "textRef": "investigation-task"
+      }
+    },
+    "assessment-examples": {
+      "subject": "maths",
+      "topic": "M13",
+      "type": "assessment",
+      "method": "calculation",
+      "error_note": {
+        "textRef": "check-first-direction"
+      }
+    },
+    "practice": {
+      "subject": "maths",
+      "topic": "M13",
+      "type": "plain",
+      "method": "calculation",
+      "error_note": {
+        "textRef": "check-first-direction"
+      }
+    },
+    "problem-solving": {
+      "subject": "maths",
+      "topic": "M13",
+      "type": "problem",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "application-source"
+      },
+      "error_note": {
+        "textRef": "follow-all-changes"
+      }
+    },
+    "demos": {
+      "subject": "maths",
+      "topic": "M13",
+      "type": "demo",
+      "method": "calculation",
+      "error_note": {
+        "textRef": "check-first-direction"
+      }
+    },
+    "scaffolded": {
+      "subject": "maths",
+      "topic": "M13",
+      "type": "scaffolded",
+      "method": "calculation",
+      "error_note": {
+        "textRef": "check-first-direction"
+      }
+    }
+  },
+  "phrases": {
+    "check-first-direction": "The first move goes in the wrong direction. Read the operation and the sign of the number separately.",
+    "follow-all-changes": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
+    "signed-changes-hint": "Start at {start}. An increase moves right; a decrease moves left. Follow the changes in order.",
+    "keep-intermediate-result": "Keep the intermediate result and consider the direction of each separate change."
+  }
+}

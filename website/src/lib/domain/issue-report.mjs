@@ -1,14 +1,15 @@
 /**
- * Purpose: Prepare reviewable report text and email draft URLs, adapted from T-Level starters issue-report.js.
+ * Purpose: Prepare reviewable report text and email draft URLs, adapted from T-Level starters
+ * issue-report.js.
  *
  * Main contents:
  * - makeReport; emailURL.
  *
- * Used By: IssueReport.svelte.
+ * Used By: website/src/lib/components/ui/IssueReport.svelte.
  *
- * Uses: No local modules.
+ * Uses: no local module imports.
  *
- * Libs: None.
+ * Libs: none.
  */
 /**
  * Format context, issue kind and learner description into a subject/body. Called by IssueReport; no sending or storage.

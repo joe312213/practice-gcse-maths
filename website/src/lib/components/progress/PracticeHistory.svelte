@@ -1,14 +1,15 @@
 <!--
-  Purpose: Show measured practice time and weekly success by topic, activity and challenge level.
+  Purpose: Show measured practice time and weekly success by topic, activity and challenge
+  level.
 
   Main contents:
   - Topic/type filters; current/previous week summary; weekly table.
 
-  Used By: progress.html/+page.svelte.
+  Used By: website/src/routes/progress.html/+page.svelte.
 
-  Uses: domain/practice-history.mjs and practice-code.mjs.
+  Uses: website/src/lib/domain/practice-history.mjs, website/src/lib/domain/practice-code.mjs.
 
-  Libs: Svelte (reactive filters and derived rows).
+  Libs: none.
 -->
 <script>
   import { practiceHistory, practiceWeeks } from '#lib/domain/practice-history.mjs';

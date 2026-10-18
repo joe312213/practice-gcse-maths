@@ -4,11 +4,12 @@
  * Main contents:
  * - Injected timer scenarios, history aggregation and JSON round trips.
  *
- * Used By: Node test runner.
+ * Used By: verify:changed logic job and Node test runner.
  *
- * Uses: practice-time adapter, practice-history domain and progress-transfer domain.
+ * Uses: website/src/lib/adapters/practice-time.mjs, website/src/lib/domain/practice-history.mjs,
+ * website/src/lib/domain/progress-transfer.mjs.
  *
- * Libs: node:test and node:assert/strict for tests and assertions.
+ * Libs: node:test (test runner), node:assert/strict (assertions).
  */
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -21,6 +22,7 @@ import {
   exportProgress,
   parseProgress,
 } from "../website/src/lib/domain/progress-transfer.mjs";
+/** Build this test module’s isolated state and injected dependencies; each call starts a fresh scenario. */
 function setup(start = Date.UTC(2026, 9, 4, 22, 59, 30)) {
   let time = start,
     serial = 0;

@@ -5,24 +5,28 @@
       "aim": "Choose multiplication or division for equal groups, then check the units.",
       "steps": [
         [
+          "Write the known numbers with what they count or measure, then write what the question asks for. Sketch or list the ",
           {
             "concept": "equal-groups",
-            "text": "Choose the calculation"
-          }
+            "text": "equal groups"
+          },
+          ", labelling the number of groups, amount in each group and total; put a ? for the missing quantity."
         ],
-        "Use a written method",
+        "Choose multiplication to find a total from equal groups, or division to find a group size or number of groups. Work through any linked calculations in order, keeping the meaning and units of each result.",
         [
           {
             "concept": "interpret-remainder",
             "text": "Check in context"
-          }
+          },
+          ". Decide what a remainder means here: use another whole group to fit everything, count only complete groups, report what is left, or continue into decimals for an exact share."
         ],
         [
           "Answer with ",
           {
             "concept": "units",
             "text": "units"
-          }
+          },
+          " to state what the result counts or measures, and check it answers the question. Use an estimate to check that its size is sensible."
         ]
       ]
     },
@@ -31,24 +35,28 @@
         "aim": "Combine given quantities where needed, then decide whether the answer needs full groups, another group, a remainder or an exact share.",
         "steps": [
           [
+            "Write the known numbers with what they count or measure, then write what the question asks for. Sketch or list the ",
             {
               "concept": "equal-groups",
-              "text": "Choose the calculation"
-            }
+              "text": "equal groups"
+            },
+            ", labelling the number of groups, amount in each group and total; put a ? for the missing quantity."
           ],
-          "Use a written method",
+          "Choose multiplication to find a total from equal groups, or division to find a group size or number of groups. Work through any linked calculations in order, keeping the meaning and units of each result.",
           [
             {
               "concept": "interpret-remainder",
               "text": "Check in context"
-            }
+            },
+            ". Decide what a remainder means here: use another whole group to fit everything, count only complete groups, report what is left, or continue into decimals for an exact share."
           ],
           [
             "Answer with ",
             {
               "concept": "units",
               "text": "units"
-            }
+            },
+            " to state what the result counts or measures, and check it answers the question. Use an estimate to check that its size is sensible."
           ]
         ]
       },
@@ -56,24 +64,28 @@
         "aim": "Link calculations and interpret an intermediate result before using it.",
         "steps": [
           [
+            "Write the known numbers with what they count or measure, then write what the question asks for. Sketch or list the ",
             {
               "concept": "equal-groups",
-              "text": "Choose the calculation"
-            }
+              "text": "equal groups"
+            },
+            ", labelling the number of groups, amount in each group and total; put a ? for the missing quantity."
           ],
-          "Use a written method",
+          "Choose multiplication to find a total from equal groups, or division to find a group size or number of groups. Work through any linked calculations in order, keeping the meaning and units of each result.",
           [
             {
               "concept": "interpret-remainder",
               "text": "Check in context"
-            }
+            },
+            ". Decide what a remainder means here: use another whole group to fit everything, count only complete groups, report what is left, or continue into decimals for an exact share."
           ],
           [
             "Answer with ",
             {
               "concept": "units",
               "text": "units"
-            }
+            },
+            " to state what the result counts or measures, and check it answers the question. Use an estimate to check that its size is sensible."
           ]
         ]
       }
@@ -232,6 +244,22 @@
           "total"
         ],
         "recap": 0
+      },
+      {
+        "key": "s04-c1-q1",
+        "name": "Count books on equal shelves",
+        "submethods": [
+          "total"
+        ],
+        "question": "maths:M03-S04-C1-Q1"
+      },
+      {
+        "key": "s04-c1-q2",
+        "name": "Share students into equal groups",
+        "submethods": [
+          "share"
+        ],
+        "question": "maths:M03-S04-C1-Q2"
       }
     ],
     "build": [

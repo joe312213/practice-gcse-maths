@@ -1,4 +1,17 @@
-/** Handover must drain full asynchronous operations, including their final local save. */
+/**
+ * Purpose: Handover must drain full asynchronous operations, including their final local save.
+ *
+ * Main contents:
+ * - pause stops timers first and waits for file transactions and nested final saves; exclusive
+ *   ownership is released only after cleanup; failed cleanup retains it; initial competing
+ *   startup never requests an unapproved handover.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/src/lib/adapters/progress-ownership.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import test from "node:test";
 import assert from "node:assert/strict";
 import {

@@ -1,14 +1,20 @@
 /**
- * Purpose: Compare rendered themes with the frozen reference and optionally audit user adjustments.
+ * Purpose: Compare rendered themes with the frozen reference and optionally audit user
+ * adjustments.
  *
  * Main contents:
  * - checkThemes
  *
- * Used By: website/scripts/browser-checks.mjs
+ * Used By: website/scripts/browser-checks.mjs.
  *
  * Uses: website/scripts/browser/support.mjs.
  *
- * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), @axe-core/playwright (accessibility checks).
+ * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access),
+ * @axe-core/playwright (accessibility assertions).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
  */
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';

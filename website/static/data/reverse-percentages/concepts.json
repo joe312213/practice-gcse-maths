@@ -4,7 +4,8 @@
     "explanation": "The original amount is the whole, represented by 100%. A changed amount can represent more or less than 100%.",
     "guidance": "Identify which percentage the known amount represents.",
     "examples": [
-      "After a 20% reduction, the sale price represents 80% of the original price."
+      "After a 20% reduction, the sale price represents 80% of the original price.",
+      "After a 15% increase, £92 represents 115%, not 100%. The original price must be below £92 because an increase made it larger."
     ]
   },
   "reverse-multiplier": {
@@ -12,7 +13,8 @@
     "explanation": "A multiplier expresses the percentage as a decimal.",
     "guidance": "Divide the known amount by the multiplier to undo the percentage calculation.",
     "examples": [
-      "After a 20% reduction, £48 is 80%: 48 ÷ 0.8 = £60."
+      "After a 20% reduction, £48 is 80%: 48 ÷ 0.8 = £60.",
+      "After a 15% increase, the multiplier is 1.15. An amount of £92 came from 92 ÷ 1.15 = £80. Subtracting 15% of £92 would use the wrong whole."
     ]
   },
   "reverse-check": {
@@ -20,7 +22,8 @@
     "explanation": "A check should rebuild the known amount from the original amount you found.",
     "guidance": "Apply the stated increase or decrease, and then any separate charge.",
     "examples": [
-      "An original £60 reduced by 20% gives 60 × 0.8 = £48."
+      "An original £60 reduced by 20% gives 60 × 0.8 = £48.",
+      "An item is reduced by 20%, then a £4 delivery charge is added, giving £52. Remove delivery first: 52 − 4 = 48. Original = 48 ÷ 0.8 = £60. Check: 60 × 0.8 + 4 = 52."
     ]
   }
 }

@@ -1,9 +1,15 @@
 /**
  * Purpose: Check the authored live spot-error banks without building or rewriting content.
- * Main contents: complete live-bank arithmetic and coverage check.
- * Used By: Node test runner and change-selected verification.
- * Uses: scripts/review_spot_error_drafts.py and website/static/data/.
- * Libs: node:test, node:child_process and node:url for the read-only Python audit.
+ *
+ * Main contents:
+ * complete live-bank arithmetic and coverage check.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: no local module imports.
+ *
+ * Libs: node:test (test runner), node:child_process (Git and verification subprocesses),
+ * node:url (module/file URL conversion).
  */
 import test from "node:test";
 import { execFileSync } from "node:child_process";

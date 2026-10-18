@@ -1,4 +1,17 @@
-/** Boundary/lifecycle saves must coalesce, skip unchanged progress and retain work on failure. */
+/**
+ * Purpose: Boundary/lifecycle saves must coalesce, skip unchanged progress and retain work on
+ * failure.
+ *
+ * Main contents:
+ * - fixture.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/src/lib/adapters/progress-autosave.mjs,
+ * website/src/lib/adapters/progress-file.mjs, website/src/lib/domain/progress-transfer.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import test from "node:test";
 import assert from "node:assert/strict";
 import {

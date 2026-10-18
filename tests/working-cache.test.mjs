@@ -1,16 +1,18 @@
-import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /**
  * Purpose: Verify temporary working restoration and its separation from durable progress.
  *
  * Main contents:
  * - Cache expiry, isolation, storage failures and session restoration scenarios.
  *
- * Used By: Node test runner.
+ * Used By: verify:changed logic job and Node test runner.
  *
- * Uses: working-cache adapter, session, profiles and the equation bank.
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/adapters/working-cache.mjs,
+ * website/src/lib/application/session.mjs, website/src/lib/domain/profiles.mjs.
  *
- * Libs: node:test, node:assert/strict and node:fs/promises for tests, assertions and fixture loading.
+ * Libs: node:test (test runner), node:assert/strict (assertions).
  */
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
@@ -20,6 +22,7 @@ import {
 import { createSession } from "../website/src/lib/application/session.mjs";
 import { emptyStore } from "../website/src/lib/domain/profiles.mjs";
 const bank = await readTopicBank("solving-equations");
+/** Create a Storage-compatible in-memory map for persistence tests; never touches browser or disk storage. */
 function storage() {
   const data = new Map();
   return {

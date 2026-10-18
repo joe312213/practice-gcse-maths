@@ -4,7 +4,7 @@
     "default": {
       "aim": "Choose the relationship using the quantity requested and matching units.",
       "steps": [
-        "Identify distance, speed and time, and the quantity requested.",
+        "Write three labelled lines: distance, speed and time. Fill in the known values with their units and put a ? beside the quantity to find. For several journey stages, make a row for each stage, including any stop.",
         [
           "Use hours with km/h: ",
           {
@@ -27,7 +27,8 @@
             "concept": "average-speed",
             "text": "total distance and total time"
           },
-          "; round only the final result and include units."
+          "; round only the final result and include units.",
+          " Divide the total distance by the full elapsed time, including stops when requested; do not average the individual speeds."
         ]
       ]
     },
@@ -135,6 +136,14 @@
           "distance"
         ],
         "question": "maths:M12-WEB-PLAIN-C1-Q2"
+      },
+      {
+        "key": "web-plain-c1-q1",
+        "name": "Find a cyclist’s speed over three quarters of an hour",
+        "submethods": [
+          "speed"
+        ],
+        "question": "maths:M12-WEB-PLAIN-C1-Q1"
       }
     ],
     "build": [
@@ -155,6 +164,24 @@
           "distance"
         ],
         "question": "maths:M12-WEB-PLAIN-C2-Q2"
+      },
+      {
+        "key": "web-plain-c2-q1",
+        "name": "Convert 45 minutes to find speed",
+        "submethods": [
+          "minutes",
+          "speed"
+        ],
+        "question": "maths:M12-WEB-PLAIN-C2-Q1"
+      },
+      {
+        "key": "web-plain-c2-q5",
+        "name": "Convert 135 minutes to find distance",
+        "submethods": [
+          "minutes",
+          "distance"
+        ],
+        "question": "maths:M12-WEB-PLAIN-C2-Q5"
       }
     ],
     "confidence": [
@@ -174,6 +201,23 @@
           "stops"
         ],
         "question": "maths:M12-WEB-PLAIN-C3-Q2"
+      },
+      {
+        "key": "web-plain-c3-q1",
+        "name": "Average a two-stage cycle ride",
+        "submethods": [
+          "journey"
+        ],
+        "question": "maths:M12-WEB-PLAIN-C3-Q1"
+      },
+      {
+        "key": "web-plain-c3-q4",
+        "name": "Include a stop in a train journey",
+        "submethods": [
+          "journey",
+          "stops"
+        ],
+        "question": "maths:M12-WEB-PLAIN-C3-Q4"
       }
     ]
   },

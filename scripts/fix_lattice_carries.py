@@ -1,16 +1,22 @@
-"""Purpose: Reposition saved lattice carries without rebuilding accepted teaching content.
+"""Purpose: Historical saved-deck repair: reposition lattice carry digits, replace affected lattice
+error slides and recompile the saved topics. It changes slide layout without regenerating
+independent questions.
 
 Main contents:
-- patch_group
-- main
+- patch_group: Reposition carry digits in a saved lattice group and report whether it changed.
+- main: Run the fix lattice carries command using its configured input and output paths.
 
 Used By: manual legacy command invocation.
 
 Uses: scripts/compile_starters.py, scripts/update_structure.py.
 
-Libs: compile_starters, python-pptx (editable slides and deck inspection).
+Libs: python-pptx (editable slides and deck inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Reads the topic registry and saved decks; overwrites affected decks and the
+consolidated outputs through compile_all.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 import re,json
 from pptx.util import Inches
@@ -22,7 +28,7 @@ def patch_group(group):
  Parameters: group — saved shape group.
  Used by: main.
 
- Example in the caller's context: patch_group(group)
+ Example: patch_group(group)
  """
  rects=[s for s in group.shapes if s.shape_type==1 and abs(s.width-s.height)<1000 and s.width>Inches(.1)]
  if not rects:return 0
@@ -43,7 +49,7 @@ def main():
  """Run the fix lattice carries command using its configured input and output paths.
  Calls: u.Presentation, patch_group, u.texts, u.remove, u.insert_before, u.errors, u.save.
 
- Example in the caller's context: main()
+ Example: main()
  """
  for topic in json.loads((u.ROOT/'content/topic_registry.json').read_text()):
   path=u.ROOT/'topics'/topic['folder']/(topic['stem']+'_questions.pptx');p=u.Presentation(path);count=0

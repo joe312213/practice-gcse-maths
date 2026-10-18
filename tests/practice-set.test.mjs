@@ -1,6 +1,6 @@
-import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
 /**
- * Purpose: Verify practice-set codes, page selection, timers and session restoration with deterministic fixtures.
+ * Purpose: Verify practice-set codes, page selection, timers and session restoration with
+ * deterministic fixtures.
  *
  * Main contents:
  * - entry
@@ -8,12 +8,16 @@ import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
  * - setup
  * - complete
  *
- * Used By: Node test runner.
+ * Used By: verify:changed logic job and Node test runner.
  *
- * Uses: website/src/lib/domain/practice-code.mjs, website/src/lib/application/session.mjs, website/src/lib/domain/profiles.mjs.
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/domain/practice-code.mjs,
+ * website/src/lib/application/session.mjs, website/src/lib/domain/profiles.mjs.
  *
- * Libs: node:test (test runner), node:assert/strict (assertions), node:fs/promises (asynchronous file access).
+ * Libs: node:test (test runner), node:assert/strict (assertions), node:fs/promises (asynchronous
+ * file access).
  */
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";

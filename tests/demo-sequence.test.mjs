@@ -1,19 +1,25 @@
-import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
-const [multiplicationBank, divisionBank] = await Promise.all(
-  ["lattice-multiplication", "bus-stop-division"].map(readTopicBank),
-);
 /**
  * Purpose: Verify equation reveal frames and method-independent playback ordering.
  *
  * Main contents:
- * - Module initialization and configuration.
+ * - equation playback draws the line, then left, equals and right; operations skip equals;
+ *   lattice writes operand digits and cell tens/units separately in row order; lattice sums each
+ *   diagonal before writing its digit and carrying to the next; division calculates before
+ *   writing, then transfers a remainder to the next numeric place; construction is a named
+ *   standalone step before arithmetic setup at every level.
  *
- * Used By: Node test runner.
+ * Used By: verify:changed logic job and Node test runner.
  *
- * Uses: website/src/lib/application/equation-demo.mjs.
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/application/arithmetic-demo.mjs,
+ * website/src/lib/application/equation-demo.mjs.
  *
  * Libs: node:test (test runner), node:assert/strict (assertions).
  */
+import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
+const [multiplicationBank, divisionBank] = await Promise.all(
+  ["lattice-multiplication", "bus-stop-division"].map(readTopicBank),
+);
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import {

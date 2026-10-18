@@ -1,11 +1,23 @@
 /**
  * Purpose: Share marker geometry and adapt authored erroneous lattice data to teaching geometry.
- * Main contents: markerPath, investigationLattice.
- * Used By: ArithmeticWorking and InvestigationWorking.
- * Uses: arithmetic-demo.mjs. Libs: none.
+ *
+ * Main contents:
+ * markerPath, investigationLattice, workingParts, workingText.
+ *
+ * Used By: tests/error-investigation.test.mjs, tests/topic-content.test.mjs,
+ * website/scripts/browser/error-investigation-checks.mjs,
+ * website/src/lib/components/practice/Feedback.svelte,
+ * website/src/lib/components/teaching/ArithmeticWorking.svelte,
+ * website/src/lib/components/teaching/ErrorInvestigation.svelte,
+ * website/src/lib/components/teaching/InvestigationWorking.svelte.
+ *
+ * Uses: website/src/lib/application/arithmetic-demo.mjs.
+ *
+ * Libs: none.
  */
 import { latticeModel } from './arithmetic-demo.mjs';
 // Chisel-tip ends; the quadratic midpoint bows by 3% of the mark's length.
+/** Return the curved chisel-marker outline for the supplied working bounds. Shared by selectable equation/diagram regions; geometry follows written content rather than label width. */
 export function markerPath(region, active) {
   const half = active ? 0.23 : 0.19;
   const vertical = region.kind === 'operand';
@@ -87,4 +99,22 @@ export function workingText(text) {
       (_, row, col) => `row ${Number(row) + 1}, column ${Number(col) + 1}`,
     )
     .replace(/10\^(\d+)/g, (_, power) => `${10 ** Number(power)}s`);
+}
+
+/**
+ * Split a validated working row into selectable targets and intervening notation, in order.
+ * Used by InvestigationWorking; preserves the complete text without repeated offset calculations.
+ * Example: workingParts({text: '2 + 3 = 5', targets: [{id: 'sum', text: '2 + 3'}]}).
+ */
+export function workingParts(location) {
+  let cursor = 0;
+  const parts = [];
+  for (const target of location.targets) {
+    const start = location.text.indexOf(target.text, cursor);
+    if (start > cursor) parts.push({ text: location.text.slice(cursor, start) });
+    parts.push(target);
+    cursor = start + target.text.length;
+  }
+  if (cursor < location.text.length) parts.push({ text: location.text.slice(cursor) });
+  return parts;
 }

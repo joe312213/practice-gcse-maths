@@ -1,6 +1,6 @@
-import { readTopicBank } from './read-topic-bank.mjs';
 /**
- * Purpose: Run selected browser scenarios against a static build and coordinate browser/server cleanup.
+ * Purpose: Run selected browser scenarios against a static build and coordinate browser/server
+ * cleanup.
  *
  * Main contents:
  * - state
@@ -11,12 +11,28 @@ import { readTopicBank } from './read-topic-bank.mjs';
  * - accessibility
  * - shot
  *
- * Used By: Verification command entry points.
+ * Used By: the documented command below.
  *
- * Uses: website/scripts/browser/progress-checks.mjs, website/scripts/browser/support.mjs, website/scripts/browser/visual-checks.mjs, website/scripts/browser/startup-checks.mjs, website/scripts/browser/theme-checks.mjs, website/scripts/browser/presentation-checks.mjs, website/scripts/browser/practice-set-checks.mjs, website/scripts/browser/colour-checks.mjs.
+ * Uses: website/scripts/read-topic-bank.mjs,
+ * website/scripts/browser/error-investigation-checks.mjs,
+ * website/scripts/browser/method-playback-checks.mjs,
+ * website/scripts/browser/new-topics-checks.mjs, website/scripts/browser/progress-checks.mjs,
+ * website/scripts/browser/support.mjs, website/scripts/browser/visual-checks.mjs,
+ * website/scripts/browser/startup-checks.mjs, website/scripts/browser/theme-checks.mjs,
+ * website/scripts/browser/presentation-checks.mjs,
+ * website/scripts/browser/practice-set-checks.mjs, website/scripts/browser/colour-checks.mjs.
  *
- * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), node:url, @axe-core/playwright (accessibility checks).
+ * Libs: node:assert/strict (assertions), node:fs/promises (asynchronous file access), node:url
+ * (module/file URL conversion), @axe-core/playwright (accessibility assertions).
+ *
+ * Usage and output: From website/: node scripts/browser-checks.mjs after a build, normally
+ * selected by npm run verify:changed. Optional --startup-only, --presentation-only,
+ * --progress-only, --practice-sets-only, --new-topics-only, --method-playback-only,
+ * --colours-only or --error-investigation-only selects one suite. Writes test-results artifacts;
+ * owns and closes isolated browsers and its temporary server. BASE_URL uses an existing server.
  */
+import { readTopicBank } from './read-topic-bank.mjs';
+
 import { checkErrorInvestigation } from './browser/error-investigation-checks.mjs';
 import { checkMethodPlayback } from './browser/method-playback-checks.mjs';
 import { checkNewTopics } from './browser/new-topics-checks.mjs';
@@ -211,11 +227,15 @@ try {
   assert.equal(await page.locator('#new-page, .summary').count(), 0);
   await page.locator('[data-mode="demo"]').click();
   assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title');
-  assert.equal(await page.locator('.guidance li').count(), 2);
+  assert.equal(await page.locator('.guidance li').count(), 5);
+  assert.match(
+    await page.locator('.guidance li').first().innerText(),
+    /Write the original equation.*dividing line/,
+  );
   await page.locator('#demo-play').click();
   await page.getByRole('button', { name: 'Replay', exact: true }).waitFor({ timeout: 12000 });
   await page.locator('[data-demo-level="2"]').click();
-  assert.equal(await page.locator('.guidance li').count(), 4);
+  assert.equal(await page.locator('.guidance li').count(), 7);
   await page.locator('[data-demo-example]').click();
   await page.getByRole('option', { name: /^2\./ }).click();
   assert.match(await page.locator('.demo-status').innerText(), /Draw the dividing line/);
@@ -252,8 +272,8 @@ try {
   await shot('demo');
   await page.locator('[data-mode="scaffolded"]').click();
   assert.equal(await page.evaluate(() => document.activeElement.id), 'stage-title');
-  await page.locator('#level').selectOption('2');
-  assert.equal(await page.locator('.guidance li').count(), 4);
+  await page.locator('.question-panel [data-level="2"]').click();
+  assert.equal(await page.locator('.guidance li').count(), 7);
   await page.locator('#typed-working').fill('draft working');
   assert.equal(await page.locator('#typed-working').inputValue(), 'draft working');
   await page.reload();
@@ -277,7 +297,7 @@ try {
   await page.reload();
   await page.locator('[data-mode="plain"]').click();
   assert.equal((await active('plain')).complete, true);
-  await page.locator('#level').selectOption('1');
+  await page.locator('.question-panel [data-level="1"]').click();
   await page.locator('#hint').click();
   const hintedId = (await active('plain')).items[0].id;
   const hinted = bank.questions.find((q) => q.id === hintedId);
@@ -295,7 +315,7 @@ try {
   await page.locator('#close-reference').click();
   await page.locator('[data-mode="errors"]').click();
   await submitCorrect('errors', 0, true);
-  await page.locator('#level').selectOption('2');
+  await page.locator('.question-panel [data-level="2"]').click();
   // Search successive small pages until the authored two-error item is selected.
   let two = -1;
   for (let attempt = 0; attempt < 8; attempt++) {
@@ -410,8 +430,8 @@ try {
   await page.getByRole('heading', { name: 'About Maths practice' }).waitFor();
   assert.equal(await page.evaluate(() => document.documentElement.dataset.palette), 'blue');
   await accessibility('about');
-  await page.getByRole('link', { name: 'FAQ & troubleshooting', exact: true }).click();
-  await page.getByRole('heading', { name: 'FAQ & troubleshooting', exact: true }).waitFor();
+  await page.getByRole('link', { name: 'How To & FAQ', exact: true }).click();
+  await page.getByRole('heading', { name: 'How To & FAQ', exact: true }).waitFor();
   await accessibility('help');
   await page.goBack();
   await page.getByRole('heading', { name: 'About Maths practice' }).waitFor();

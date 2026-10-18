@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M03-WEB-IA-C1-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "assessment",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "A library has 14 shelves with 32 books on each. How many books are there?",
     "answer": "448",
     "answerUnit": "books",
@@ -33,17 +28,11 @@
     "method_note": "Find the total for these equal groups.",
     "check": "448 ÷ 32 = 14.",
     "wrong": "46",
-    "error_note": "Adding 14 and 32 does not count all the equal groups. Multiply 14 by 32.",
-    "source": "Accepted M03 source slide 4; saved deck text checked"
+    "error_note": "Adding 14 and 32 does not count all the equal groups. Multiply 14 by 32."
   },
   {
     "id": "maths:M03-WEB-IA-C1-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "assessment",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "105 students form 7 equal groups. How many students are in each group?",
     "answer": "15",
     "answerUnit": "students",
@@ -70,17 +59,11 @@
     "method_note": "Share the whole amount equally.",
     "check": "15 × 7 = 105.",
     "wrong": "735",
-    "error_note": "The fixed total 105 is being shared into 7 equal parts. Divide it rather than multiplying.",
-    "source": "Accepted M03 source slide 4; saved deck text checked"
+    "error_note": "The fixed total 105 is being shared into 7 equal parts. Divide it rather than multiplying."
   },
   {
     "id": "maths:M03-WEB-IA-C2-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "assessment",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "130 eggs are packed in cartons of 6. How many full cartons can be packed?",
     "answer": "21",
     "answerUnit": "cartons",
@@ -106,7 +89,9 @@
         "title": "Answer the question in context",
         "input": "21",
         "output": "21",
-        "note": "Only completely full groups count; leave the remainder out.",
+        "note": {
+          "textRef": "full-groups-only"
+        },
         "outputUnit": "cartons"
       }
     ],
@@ -114,17 +99,11 @@
     "method_note": "21 complete groups of 6, with 4 left over. Only completely full groups count; leave the remainder out.",
     "check": "21 × 6 + 4 = 130; 4 is less than 6.",
     "wrong": "22",
-    "error_note": "22 groups would need 132, more than the 130 available. Count only full groups.",
-    "source": "Accepted M03 source slide 4; saved deck text checked"
+    "error_note": "22 groups would need 132, more than the 130 available. Count only full groups."
   },
   {
     "id": "maths:M03-WEB-IA-C2-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "assessment",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "32 passengers need cars with 5 passenger seats each. How many cars are needed?",
     "answer": "7",
     "answerUnit": "cars",
@@ -150,7 +129,9 @@
         "title": "Answer the question in context",
         "input": "6 + 1",
         "output": "7",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder.",
+        "note": {
+          "textRef": "round-up-groups"
+        },
         "outputUnit": "cars"
       }
     ],
@@ -158,17 +139,11 @@
     "method_note": "6 complete groups of 5, with 2 left over. Everyone or everything needs a place; add one group when there is a remainder.",
     "check": "6 × 5 + 2 = 32; 2 is less than 5.",
     "wrong": "6",
-    "error_note": "6 groups provide only 30 places. The remaining 2 still need a place.",
-    "source": "Accepted M03 source slide 4; saved deck text checked"
+    "error_note": "6 groups provide only 30 places. The remaining 2 still need a place."
   },
   {
     "id": "maths:M03-WEB-IA-C3-Q1",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "assessment",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "45 tickets cost £16 each. A group gets £50 off the total. How much does it pay?",
     "answer": "670",
     "answerUnit": "£",
@@ -206,17 +181,11 @@
     "method_note": "Find the total for these equal groups. Take away the amount used or discounted.",
     "check": "720 ÷ 16 = 45. 670 + 50 = 720.",
     "wrong": "770",
-    "error_note": "The amount 50 is used or discounted, so subtract it from 720.",
-    "source": "Accepted M03 source slide 4; saved deck text checked"
+    "error_note": "The amount 50 is used or discounted, so subtract it from 720."
   },
   {
     "id": "maths:M03-WEB-IA-C3-Q2",
-    "subject": "maths",
-    "topic": "M03",
-    "type": "assessment",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "115 passengers need vans with 8 passenger seats each. Hire costs £65 per van. Find the total cost.",
     "answer": "975",
     "answerUnit": "£",
@@ -246,7 +215,9 @@
         "title": "Answer the question in context",
         "input": "14 + 1",
         "output": "15",
-        "note": "Everyone or everything needs a place; add one group when there is a remainder."
+        "note": {
+          "textRef": "round-up-groups"
+        }
       },
       {
         "title": "Use the intermediate result",
@@ -260,7 +231,6 @@
     "method_note": "14 complete groups of 8, with 3 left over. Everyone or everything needs a place; add one group when there is a remainder. Find the total for these equal groups.",
     "check": "14 × 8 + 3 = 115; 3 is less than 8. 975 ÷ 65 = 15.",
     "wrong": "910",
-    "error_note": "14 groups of 8 have only 112 places. Include one more group before multiplying by £65.",
-    "source": "Accepted M03 source slide 4; saved deck text checked"
+    "error_note": "14 groups of 8 have only 112 places. Include one more group before multiplying by £65."
   }
 ]

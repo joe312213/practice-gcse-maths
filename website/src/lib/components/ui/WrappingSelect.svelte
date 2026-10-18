@@ -1,4 +1,19 @@
-<!-- Shared accessible choice control for prose options that must wrap at any width. -->
+<!--
+  Purpose: Shared accessible choice control for prose options that must wrap at any width.
+
+  Main contents:
+  - Bits UI single-choice trigger and wrapping option text with explicit value/change props.
+
+  Used By: website/src/lib/components/practice/AnswerForm.svelte,
+  website/src/lib/components/teaching/DemoPlayer.svelte,
+  website/src/lib/components/teaching/ErrorEntries.svelte,
+  website/src/lib/components/teaching/ErrorInvestigation.svelte,
+  website/src/lib/components/teaching/LatticeErrorInvestigation.svelte.
+
+  Uses: no local module imports.
+
+  Libs: bits-ui (accessible dialogs, popovers and choices).
+-->
 <script>
   import { Select } from 'bits-ui';
   let {

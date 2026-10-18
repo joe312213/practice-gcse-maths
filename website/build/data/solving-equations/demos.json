@@ -31,9 +31,6 @@
     "hint": "On the left, what operation would undo −7? What would remain with x?",
     "method_note": "Add 7 to both sides to leave x = 12.",
     "id": "maths:M10-S01-C1-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "demo",
     "level": 0
   },
   {
@@ -77,9 +74,6 @@
     "hint": "On the left, what operation would undo +3? What would remain with x?",
     "method_note": "Subtract 3 from both sides to leave 4x = 28. Divide both sides by 4 to get x = 7.",
     "id": "maths:M10-S01-C2-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "demo",
     "level": 1
   },
   {
@@ -136,9 +130,6 @@
     "hint": "What would the left side look like after expanding the brackets? Does it help?",
     "method_note": "After simplifying, subtract x from both sides to leave 2x + 6 = 24. Subtract 6 from both sides, then divide by 2.",
     "id": "maths:M10-S01-C3-Q1",
-    "subject": "maths",
-    "topic": "M10",
-    "type": "demo",
     "level": 2
   }
 ]

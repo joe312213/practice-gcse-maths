@@ -12,7 +12,19 @@
       {
         "id": "step-2",
         "label": "Number of pieces",
-        "text": "4 ÷ 20 = 1/5"
+        "text": "4 ÷ 20 = 1/5",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Number of pieces: calculation",
+            "text": "4 ÷ 20"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Number of pieces: result",
+            "text": "1/5"
+          }
+        ]
       }
     ],
     "options": {
@@ -50,18 +62,13 @@
     ],
     "hint": "Compare the number of pieces with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Cut 4 m of ribbon into 20 cm pieces with no waste from cutting. How many complete pieces?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "pieces",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C1-Q02",
@@ -76,7 +83,19 @@
       {
         "id": "step-2",
         "label": "Apples per box",
-        "text": "119 × 7 = 833"
+        "text": "119 × 7 = 833",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Apples per box: calculation",
+            "text": "119 × 7"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Apples per box: result",
+            "text": "833"
+          }
+        ]
       }
     ],
     "options": {
@@ -102,18 +121,13 @@
     ],
     "hint": "Compare the apples per box with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "119 apples are shared equally between 7 boxes. How many apples go in each box?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "apples",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C1-Q03",
@@ -128,7 +142,19 @@
       {
         "id": "step-2",
         "label": "Total",
-        "text": "11 + 8 = 19"
+        "text": "11 + 8 = 19",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Total: calculation",
+            "text": "11 + 8"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Total: result",
+            "text": "19"
+          }
+        ]
       }
     ],
     "options": {
@@ -154,18 +180,13 @@
     ],
     "hint": "Compare the total with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "There are 11 trays, each holding 8 muffins. How many muffins altogether?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "muffins",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C1-Q04",
@@ -180,7 +201,19 @@
       {
         "id": "step-2",
         "label": "Number of bags",
-        "text": "8 ÷ 96 = 1/12"
+        "text": "8 ÷ 96 = 1/12",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Number of bags: calculation",
+            "text": "8 ÷ 96"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Number of bags: result",
+            "text": "1/12"
+          }
+        ]
       }
     ],
     "options": {
@@ -206,18 +239,13 @@
     ],
     "hint": "Compare the number of bags with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Pack 96 biscuits into bags holding 8 biscuits each. How many bags are filled?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "bags",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C1-Q05",
@@ -232,7 +260,19 @@
       {
         "id": "step-2",
         "label": "Number of pieces",
-        "text": "5 ÷ 10 = 1/2"
+        "text": "5 ÷ 10 = 1/2",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Number of pieces: calculation",
+            "text": "5 ÷ 10"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Number of pieces: result",
+            "text": "1/2"
+          }
+        ]
       }
     ],
     "options": {
@@ -270,18 +310,13 @@
     ],
     "hint": "Compare the number of pieces with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Cut 5 m of ribbon into 10 cm pieces with no waste from cutting. How many complete pieces?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "pieces",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C1-Q06",
@@ -296,7 +331,19 @@
       {
         "id": "step-2",
         "label": "Apples per box",
-        "text": "152 × 8 = 1216"
+        "text": "152 × 8 = 1216",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Apples per box: calculation",
+            "text": "152 × 8"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Apples per box: result",
+            "text": "1216"
+          }
+        ]
       }
     ],
     "options": {
@@ -322,18 +369,13 @@
     ],
     "hint": "Compare the apples per box with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "152 apples are shared equally between 8 boxes. How many apples go in each box?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "apples",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C1-Q07",
@@ -348,7 +390,19 @@
       {
         "id": "step-2",
         "label": "Total",
-        "text": "7 + 6 = 13"
+        "text": "7 + 6 = 13",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Total: calculation",
+            "text": "7 + 6"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Total: result",
+            "text": "13"
+          }
+        ]
       }
     ],
     "options": {
@@ -374,18 +428,13 @@
     ],
     "hint": "Compare the total with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "There are 7 trays, each holding 6 muffins. How many muffins altogether?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "muffins",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C1-Q08",
@@ -400,7 +449,19 @@
       {
         "id": "step-2",
         "label": "Number of bags",
-        "text": "6 ÷ 48 = 1/8"
+        "text": "6 ÷ 48 = 1/8",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Number of bags: calculation",
+            "text": "6 ÷ 48"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Number of bags: result",
+            "text": "1/8"
+          }
+        ]
       }
     ],
     "options": {
@@ -426,18 +487,13 @@
     ],
     "hint": "Compare the number of bags with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Pack 48 biscuits into bags holding 6 biscuits each. How many bags are filled?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "bags",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C1-Q09",
@@ -452,7 +508,19 @@
       {
         "id": "step-2",
         "label": "Number of pieces",
-        "text": "3 ÷ 25 = 3/25"
+        "text": "3 ÷ 25 = 3/25",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Number of pieces: calculation",
+            "text": "3 ÷ 25"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Number of pieces: result",
+            "text": "3/25"
+          }
+        ]
       }
     ],
     "options": {
@@ -490,18 +558,13 @@
     ],
     "hint": "Compare the number of pieces with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Cut 3 m of ribbon into 25 cm pieces with no waste from cutting. How many complete pieces?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "pieces",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C1-Q10",
@@ -516,7 +579,19 @@
       {
         "id": "step-2",
         "label": "Apples per box",
-        "text": "90 × 6 = 540"
+        "text": "90 × 6 = 540",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Apples per box: calculation",
+            "text": "90 × 6"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Apples per box: result",
+            "text": "540"
+          }
+        ]
       }
     ],
     "options": {
@@ -542,18 +617,13 @@
     ],
     "hint": "Compare the apples per box with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "90 apples are shared equally between 6 boxes. How many apples go in each box?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "apples",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C1-Q11",
@@ -568,7 +638,19 @@
       {
         "id": "step-2",
         "label": "Total",
-        "text": "9 + 7 = 16"
+        "text": "9 + 7 = 16",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Total: calculation",
+            "text": "9 + 7"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Total: result",
+            "text": "16"
+          }
+        ]
       }
     ],
     "options": {
@@ -594,18 +676,13 @@
     ],
     "hint": "Compare the total with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "There are 9 trays, each holding 7 muffins. How many muffins altogether?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "muffins",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C1-Q12",
@@ -620,7 +697,19 @@
       {
         "id": "step-2",
         "label": "Number of bags",
-        "text": "7 ÷ 70 = 1/10"
+        "text": "7 ÷ 70 = 1/10",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Number of bags: calculation",
+            "text": "7 ÷ 70"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Number of bags: result",
+            "text": "1/10"
+          }
+        ]
       }
     ],
     "options": {
@@ -646,18 +735,13 @@
     ],
     "hint": "Compare the number of bags with the quantities and operation in the question.",
     "draftId": "M03-DRAFT-ERRORS-C1-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Pack 70 biscuits into bags holding 7 biscuits each. How many bags are filled?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "bags",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q01",
@@ -667,7 +751,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "69÷6 = 11 remainder 3"
+        "text": "69÷6 = 11 remainder 3",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "69÷6"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "11 remainder 3"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -704,18 +800,11 @@
     ],
     "hint": "Distinguish the number of full pieces from the metres left.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Cut as many complete 6 m lengths as possible from 69 m of ribbon. How many metres remain?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "11 × 6 + 3 = 69.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "11 × 6 + 3 = 69."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q02",
@@ -725,7 +814,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "83÷7 = 11 remainder 6"
+        "text": "83÷7 = 11 remainder 6",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "83÷7"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "11 remainder 6"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -762,18 +863,11 @@
     ],
     "hint": "Distinguish the number of full pieces from the metres left.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Cut as many complete 7 m lengths as possible from 83 m of wire. How many metres remain?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "11 × 7 + 6 = 83.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "11 × 7 + 6 = 83."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q03",
@@ -783,7 +877,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "97÷8 = 12 remainder 1"
+        "text": "97÷8 = 12 remainder 1",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "97÷8"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "12 remainder 1"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -820,18 +926,11 @@
     ],
     "hint": "Distinguish the number of full pieces from the metres left.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Cut as many complete 8 m lengths as possible from 97 m of fabric. How many metres remain?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "m",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "12 × 8 + 1 = 97.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "12 × 8 + 1 = 97."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q04",
@@ -884,18 +983,11 @@
     ],
     "hint": "Count everybody who needs a passenger place before dividing.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "26 pupils and 5 adults need minibuses, each with 10 passenger places excluding the driver. What is the minimum number of minibuses?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "3 groups hold 30, fewer than 31; 4 hold 40.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "3 groups hold 30, fewer than 31; 4 hold 40."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q05",
@@ -948,18 +1040,11 @@
     ],
     "hint": "Count everybody who needs a passenger place before dividing.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "38 pupils and 6 adults need boats, each with 6 passenger places excluding the driver. What is the minimum number of boats?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "7 groups hold 42, fewer than 44; 8 hold 48.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "7 groups hold 42, fewer than 44; 8 hold 48."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q06",
@@ -1012,18 +1097,11 @@
     ],
     "hint": "Count everybody who needs a passenger place before dividing.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "57 pupils and 8 adults need vehicles, each with 8 passenger places excluding the driver. What is the minimum number of vehicles?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "8 groups hold 64, fewer than 65; 9 hold 72.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "8 groups hold 64, fewer than 65; 9 hold 72."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q07",
@@ -1033,7 +1111,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "62÷6 = 10 remainder 2"
+        "text": "62÷6 = 10 remainder 2",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "62÷6"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "10 remainder 2"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -1069,18 +1159,11 @@
     ],
     "hint": "Decide whether leftovers must be accommodated or excluded from the count.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "62 people need 6-seat vehicles. What is the minimum number of vehicles?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "10 × 6 + 2 = 62.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "10 × 6 + 2 = 62."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q08",
@@ -1090,7 +1173,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "98÷6 = 16 remainder 2"
+        "text": "98÷6 = 16 remainder 2",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "98÷6"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "16 remainder 2"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -1126,18 +1221,11 @@
     ],
     "hint": "Decide whether leftovers must be accommodated or excluded from the count.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "From 98 biscuits, how many complete packs of 6 can be made?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "16 × 6 + 2 = 98.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "16 × 6 + 2 = 98."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q09",
@@ -1147,7 +1235,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "87÷8 = 10 remainder 7"
+        "text": "87÷8 = 10 remainder 7",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "87÷8"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "10 remainder 7"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -1183,18 +1283,11 @@
     ],
     "hint": "Decide whether leftovers must be accommodated or excluded from the count.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "87 people need 8-seat vehicles. What is the minimum number of vehicles?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "10 × 8 + 7 = 87.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "10 × 8 + 7 = 87."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q10",
@@ -1204,7 +1297,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "127÷7 = 18 remainder 1"
+        "text": "127÷7 = 18 remainder 1",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "127÷7"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "18 remainder 1"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -1240,18 +1345,11 @@
     ],
     "hint": "Decide whether leftovers must be accommodated or excluded from the count.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "From 127 biscuits, how many complete packs of 7 can be made?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "18 × 7 + 1 = 127.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "18 × 7 + 1 = 127."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q11",
@@ -1261,7 +1359,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "113÷9 = 12 remainder 5"
+        "text": "113÷9 = 12 remainder 5",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "113÷9"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "12 remainder 5"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -1297,18 +1407,11 @@
     ],
     "hint": "Decide whether leftovers must be accommodated or excluded from the count.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "113 people need 9-seat vehicles. What is the minimum number of vehicles?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "12 × 9 + 5 = 113.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "12 × 9 + 5 = 113."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C2-Q12",
@@ -1318,7 +1421,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "165÷8 = 20 remainder 5"
+        "text": "165÷8 = 20 remainder 5",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "165÷8"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "20 remainder 5"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -1354,18 +1469,11 @@
     ],
     "hint": "Decide whether leftovers must be accommodated or excluded from the count.",
     "draftId": "M03-DRAFT-ERRORS-C2-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "From 165 biscuits, how many complete packs of 8 can be made?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "20 × 8 + 5 = 165.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": "20 × 8 + 5 = 165."
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q01",
@@ -1375,7 +1483,19 @@
       {
         "id": "step-1",
         "label": "Capacity calculation",
-        "text": "74÷6 = 12 remainder 2"
+        "text": "74÷6 = 12 remainder 2",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Capacity calculation: calculation",
+            "text": "74÷6"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Capacity calculation: result",
+            "text": "12 remainder 2"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -1385,7 +1505,19 @@
       {
         "id": "step-3",
         "label": "Cost",
-        "text": "74 × £20 = £1480"
+        "text": "74 × £20 = £1480",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Cost: calculation",
+            "text": "74 × £20"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Cost: result",
+            "text": "£1480"
+          }
+        ]
       }
     ],
     "options": {
@@ -1422,18 +1554,13 @@
     ],
     "hint": "Interpret the remainder before deciding which count to price.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "74 people need vehicles holding 6 each. Each costs £20. Find the minimum total cost.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q02",
@@ -1443,12 +1570,36 @@
       {
         "id": "step-1",
         "label": "Item cost",
-        "text": "13 × £5 = £65"
+        "text": "13 × £5 = £65",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Item cost: calculation",
+            "text": "13 × £5"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Item cost: result",
+            "text": "£65"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Extra charge",
-        "text": "13 × £3 = £39"
+        "text": "13 × £3 = £39",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Extra charge: calculation",
+            "text": "13 × £3"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Extra charge: result",
+            "text": "£39"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -1487,18 +1638,13 @@
     ],
     "hint": "Identify what is charged per item and what is charged once.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Buy 13 tickets at £5 each, plus one £3 booking fee for the whole order. Find the total cost.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q03",
@@ -1508,7 +1654,19 @@
       {
         "id": "step-1",
         "label": "Capacity calculation",
-        "text": "53÷4 = 13 remainder 1"
+        "text": "53÷4 = 13 remainder 1",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Capacity calculation: calculation",
+            "text": "53÷4"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Capacity calculation: result",
+            "text": "13 remainder 1"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -1518,7 +1676,19 @@
       {
         "id": "step-3",
         "label": "Cost",
-        "text": "53 × £35 = £1855"
+        "text": "53 × £35 = £1855",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Cost: calculation",
+            "text": "53 × £35"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Cost: result",
+            "text": "£1855"
+          }
+        ]
       }
     ],
     "options": {
@@ -1555,18 +1725,13 @@
     ],
     "hint": "Interpret the remainder before deciding which count to price.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "53 campers need tents holding 4 each. Each costs £35. Find the minimum total cost.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q04",
@@ -1576,12 +1741,36 @@
       {
         "id": "step-1",
         "label": "Item cost",
-        "text": "9 × £12 = £108"
+        "text": "9 × £12 = £108",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Item cost: calculation",
+            "text": "9 × £12"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Item cost: result",
+            "text": "£108"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Extra charge",
-        "text": "9 × £7 = £63"
+        "text": "9 × £7 = £63",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Extra charge: calculation",
+            "text": "9 × £7"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Extra charge: result",
+            "text": "£63"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -1620,18 +1809,13 @@
     ],
     "hint": "Identify what is charged per item and what is charged once.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Buy 9 boxes at £12 each, plus one £7 delivery charge for the whole order. Find the total cost.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q05",
@@ -1641,7 +1825,19 @@
       {
         "id": "step-1",
         "label": "Capacity calculation",
-        "text": "137÷12 = 11 remainder 5"
+        "text": "137÷12 = 11 remainder 5",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Capacity calculation: calculation",
+            "text": "137÷12"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Capacity calculation: result",
+            "text": "11 remainder 5"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -1651,7 +1847,19 @@
       {
         "id": "step-3",
         "label": "Cost",
-        "text": "137 × £8 = £1096"
+        "text": "137 × £8 = £1096",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Cost: calculation",
+            "text": "137 × £8"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Cost: result",
+            "text": "£1096"
+          }
+        ]
       }
     ],
     "options": {
@@ -1688,18 +1896,13 @@
     ],
     "hint": "Interpret the remainder before deciding which count to price.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "137 bottles need crates holding 12 each. Each costs £8. Find the minimum total cost.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q06",
@@ -1709,12 +1912,36 @@
       {
         "id": "step-1",
         "label": "Item cost",
-        "text": "8 × £15 = £120"
+        "text": "8 × £15 = £120",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Item cost: calculation",
+            "text": "8 × £15"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Item cost: result",
+            "text": "£120"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Extra charge",
-        "text": "8 × £11 = £88"
+        "text": "8 × £11 = £88",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Extra charge: calculation",
+            "text": "8 × £11"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Extra charge: result",
+            "text": "£88"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -1753,18 +1980,13 @@
     ],
     "hint": "Identify what is charged per item and what is charged once.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Buy 8 tools at £15 each, plus one £11 handling charge for the whole order. Find the total cost.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q07",
@@ -1789,12 +2011,36 @@
       {
         "id": "step-4",
         "label": "Order fee",
-        "text": "5 × £8 = £40"
+        "text": "5 × £8 = £40",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Order fee: calculation",
+            "text": "5 × £8"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Order fee: result",
+            "text": "£40"
+          }
+        ]
       },
       {
         "id": "step-5",
         "label": "Total cost",
-        "text": "5 × £25 + £40 = £165"
+        "text": "5 × £25 + £40 = £165",
+        "targets": [
+          {
+            "id": "step-5",
+            "label": "Total cost: calculation",
+            "text": "5 × £25 + £40"
+          },
+          {
+            "id": "step-5-part-2",
+            "label": "Total cost: result",
+            "text": "£165"
+          }
+        ]
       }
     ],
     "options": {
@@ -1840,18 +2086,13 @@
     ],
     "hint": "Count both groups, interpret the remainder, then distinguish per-group and one-off costs.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "46 pupils and 5 adults need minibuses with 10 passenger seats each, excluding drivers. Each bus costs £25, plus one £8 order fee. Find the minimum total cost.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q08",
@@ -1876,12 +2117,36 @@
       {
         "id": "step-4",
         "label": "Order fee",
-        "text": "7 × £12 = £84"
+        "text": "7 × £12 = £84",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Order fee: calculation",
+            "text": "7 × £12"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Order fee: result",
+            "text": "£84"
+          }
+        ]
       },
       {
         "id": "step-5",
         "label": "Total cost",
-        "text": "7 × £18 + £84 = £210"
+        "text": "7 × £18 + £84 = £210",
+        "targets": [
+          {
+            "id": "step-5",
+            "label": "Total cost: calculation",
+            "text": "7 × £18 + £84"
+          },
+          {
+            "id": "step-5-part-2",
+            "label": "Total cost: result",
+            "text": "£210"
+          }
+        ]
       }
     ],
     "options": {
@@ -1927,18 +2192,13 @@
     ],
     "hint": "Count both groups, interpret the remainder, then distinguish per-group and one-off costs.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "38 campers and 7 leaders need tents sleeping 6 people each. Each tent costs £18, plus one £12 order fee. Find the minimum total cost.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q09",
@@ -1963,12 +2223,36 @@
       {
         "id": "step-4",
         "label": "Order fee",
-        "text": "7 × £5 = £35"
+        "text": "7 × £5 = £35",
+        "targets": [
+          {
+            "id": "step-4",
+            "label": "Order fee: calculation",
+            "text": "7 × £5"
+          },
+          {
+            "id": "step-4-part-2",
+            "label": "Order fee: result",
+            "text": "£35"
+          }
+        ]
       },
       {
         "id": "step-5",
         "label": "Total cost",
-        "text": "7 × £6 + £35 = £77"
+        "text": "7 × £6 + £35 = £77",
+        "targets": [
+          {
+            "id": "step-5",
+            "label": "Total cost: calculation",
+            "text": "7 × £6 + £35"
+          },
+          {
+            "id": "step-5-part-2",
+            "label": "Total cost: result",
+            "text": "£77"
+          }
+        ]
       }
     ],
     "options": {
@@ -2014,18 +2298,13 @@
     ],
     "hint": "Count both groups, interpret the remainder, then distinguish per-group and one-off costs.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "74 parcels are ready and 13 more arrive. Pack them in crates holding 12 parcels each. Each crate costs £6, plus one £5 order fee. Find the minimum total cost.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q10",
@@ -2035,7 +2314,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "83÷7 = 11 remainder 6"
+        "text": "83÷7 = 11 remainder 6",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "83÷7"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "11 remainder 6"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -2045,7 +2336,19 @@
       {
         "id": "step-3",
         "label": "Money received",
-        "text": "11 × £3 = £33"
+        "text": "11 × £3 = £33",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Money received: calculation",
+            "text": "11 × £3"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Money received: result",
+            "text": "£33"
+          }
+        ]
       }
     ],
     "options": {
@@ -2078,18 +2381,13 @@
     ],
     "hint": "First decide which part of the division result represents metres left.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Cut as many complete 7 m lengths as possible from 83 m of rope. Sell the leftover material at £3 per metre. How much money is received?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q11",
@@ -2099,7 +2397,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "93÷8 = 11 remainder 5"
+        "text": "93÷8 = 11 remainder 5",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "93÷8"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "11 remainder 5"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -2109,7 +2419,19 @@
       {
         "id": "step-3",
         "label": "Money received",
-        "text": "11 × £4 = £44"
+        "text": "11 × £4 = £44",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Money received: calculation",
+            "text": "11 × £4"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Money received: result",
+            "text": "£44"
+          }
+        ]
       }
     ],
     "options": {
@@ -2142,18 +2464,13 @@
     ],
     "hint": "First decide which part of the division result represents metres left.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Cut as many complete 8 m lengths as possible from 93 m of fabric. Sell the leftover material at £4 per metre. How much money is received?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   },
   {
     "id": "maths:M03-WEB-ERRORS-R2-C3-Q12",
@@ -2163,7 +2480,19 @@
       {
         "id": "step-1",
         "label": "Division",
-        "text": "101÷9 = 11 remainder 2"
+        "text": "101÷9 = 11 remainder 2",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Division: calculation",
+            "text": "101÷9"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Division: result",
+            "text": "11 remainder 2"
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -2173,7 +2502,19 @@
       {
         "id": "step-3",
         "label": "Money received",
-        "text": "11 × £5 = £55"
+        "text": "11 × £5 = £55",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Money received: calculation",
+            "text": "11 × £5"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Money received: result",
+            "text": "£55"
+          }
+        ]
       }
     ],
     "options": {
@@ -2206,17 +2547,12 @@
     ],
     "hint": "First decide which part of the division result represents metres left.",
     "draftId": "M03-DRAFT-ERRORS-C3-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Cut as many complete 9 m lengths as possible from 101 m of cable. Sell the leftover material at £5 per metre. How much money is received?",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "£",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Substitute the corrected result into the original quantities and check the requested unit.",
-    "subject": "maths",
-    "topic": "M03"
+    "check": {
+      "textRef": "check-requested-unit"
+    }
   }
 ]

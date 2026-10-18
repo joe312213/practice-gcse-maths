@@ -1,14 +1,20 @@
 <!--
-  Purpose: Share the brand, skip link, theme controls, a universal menu and route-specific header actions.
+  Purpose: Share the brand, skip link, theme controls, a universal menu and route-specific
+  header actions.
 
   Main contents:
   - SiteHeader with shared navigation and optional page-specific menu items.
 
-  Used By: Homepage, TopicPractice, Progress, Puzzles and About routes.
+  Used By: website/src/lib/components/practice/TopicPractice.svelte,
+  website/src/routes/+page.svelte, website/src/routes/about.html/+page.svelte,
+  website/src/routes/go.html/+page.svelte, website/src/routes/handwriting.html/+page.svelte,
+  website/src/routes/help.html/+page.svelte, website/src/routes/progress.html/+page.svelte.
 
-  Uses: ThemeControls.svelte.
+  Uses: website/src/lib/components/ui/ThemeControls.svelte,
+  website/src/lib/adapters/header-layout.mjs.
 
-  Libs: Bits UI (popover); Svelte (props/snippets); $app/paths (base-aware links).
+  Libs: $app/paths (SvelteKit navigation/route state), bits-ui (accessible dialogs, popovers and
+  choices), svelte (component state, lifecycle and transitions).
 -->
 <script>
   import { resolve } from '$app/paths';

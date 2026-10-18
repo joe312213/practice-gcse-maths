@@ -1,4 +1,18 @@
-/** Practice duration rounding and elapsed-time display do not depend on interval frequency. */
+/**
+ * Purpose: Practice duration rounding and elapsed-time display do not depend on interval
+ * frequency.
+ *
+ * Main contents:
+ * - page defaults round up, delayed updates expire and display rounds remaining seconds up;
+ *   unavailable audio is optional and never prevents timer use; gesture unlock reuses one audio
+ *   context and expiry schedules two quiet tones.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/src/lib/domain/countdown.mjs, website/src/lib/adapters/chime.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import test from "node:test";
 import assert from "node:assert/strict";
 import {

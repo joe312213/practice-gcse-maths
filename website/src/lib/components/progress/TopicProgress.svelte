@@ -4,11 +4,13 @@
   Main contents:
   - date
 
-  Used By: website/src/routes/progress.html/+page.svelte
+  Used By: website/src/routes/progress.html/+page.svelte.
 
-  Uses: website/src/lib/domain/practice-code.mjs.
+  Uses: website/src/lib/components/ui/ChevronSteps.svelte,
+  website/src/lib/content/topic-routes.mjs, website/src/lib/domain/practice-code.mjs.
 
-  Libs: bits-ui (dialog/popover interaction).
+  Libs: bits-ui (accessible dialogs, popovers and choices), $app/paths (SvelteKit
+  navigation/route state), svelte (component state, lifecycle and transitions).
 -->
 <script>
   import ChevronSteps from '#lib/components/ui/ChevronSteps.svelte';

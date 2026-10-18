@@ -1,7 +1,6 @@
 [
   {
     "q": "Find 20% of 150 people.",
-    "prose": true,
     "answer": "30",
     "answerUnit": "people",
     "model": {
@@ -34,14 +33,16 @@
     "method_note": "The whole amount, 150 people, represents 100%. Multiply the value of 1% by 20.",
     "check": "Reverse check: 30 ÷ 20 × 100 = 150, the original whole.",
     "wrong": "130",
-    "error_note": "This subtracts a percentage number as though it were an amount. Find the stated percentage of the whole instead.",
-    "repair": "Find one percent of the amount, then scale it to the required percentage.",
-    "title": "Another worked example",
-    "method": "calculation"
+    "error_note": {
+      "textRef": "percentage-not-amount"
+    },
+    "repair": {
+      "textRef": "find-percentage-amount"
+    },
+    "title": "Another worked example"
   },
   {
     "q": "A club has a membership of 150 people. It decreases by 20%. Find the new membership.",
-    "prose": true,
     "answer": "120",
     "answerUnit": "people",
     "model": {
@@ -74,14 +75,16 @@
     "method_note": "Calculate 20% of the original 150 people. Add the change for an increase; subtract it for a decrease. The question asks for the new membership.",
     "check": "Reverse check: 120 + 30 = 150, the original amount.",
     "wrong": "30",
-    "error_note": "This is only the change. Apply it to the original amount to find the new amount.",
-    "repair": "Use the percentage amount as the change; apply it to the original amount.",
-    "title": "Another worked example",
-    "method": "calculation"
+    "error_note": {
+      "textRef": "apply-percentage-change"
+    },
+    "repair": {
+      "textRef": "use-change-amount"
+    },
+    "title": "Another worked example"
   },
   {
     "q": "The membership changes from 150 people to 120 people. Find the percentage decrease.",
-    "prose": true,
     "answer": "20",
     "answerUnit": "%",
     "model": {
@@ -121,9 +124,12 @@
     "method_note": "Find the size of the change in people. The original amount is 150 people; use that as the denominator. The change is a 20% decrease.",
     "check": "150 × 20 ÷ 100 = 30 people, the change between the two amounts.",
     "wrong": "25",
-    "error_note": "This uses the new amount as the whole. Divide the change by the original amount, then multiply by 100.",
-    "repair": "Divide the change by the original amount before multiplying by one hundred.",
-    "title": "Another worked example",
-    "method": "calculation"
+    "error_note": {
+      "textRef": "use-original-whole"
+    },
+    "repair": {
+      "textRef": "percentage-change-method"
+    },
+    "title": "Another worked example"
   }
 ]

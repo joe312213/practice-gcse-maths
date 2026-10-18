@@ -1,6 +1,21 @@
-/** Trim authored error SVG canvases without changing any working shapes or text.
- * Run with --write to update assets; otherwise report whether their bounds need cropping.
- * Native dimensions retain 20–22-unit writing at 15–16.5 CSS pixels, with no CSS enlargement.
+/**
+ * Purpose: Trim authored error SVG canvases without changing any working shapes or text. Run
+ * with --write to update assets; otherwise report whether their bounds need cropping. Native
+ * dimensions retain 20–22-unit writing at 15–16.5 CSS pixels, with no CSS enlargement.
+ *
+ * Main contents:
+ * - Referenced SVG discovery, browser getBBox measurements and optional root-bound updates.
+ *
+ * Used By: the documented command below.
+ *
+ * Uses: website/scripts/browser/support.mjs, website/scripts/read-topic-bank.mjs,
+ * website/src/lib/content/topic-routes.mjs.
+ *
+ * Libs: node:fs/promises (asynchronous file access).
+ *
+ * Usage and output: From website/: node scripts/crop-error-working.mjs checks existing SVG
+ * bounds; --write updates their root bounds/dimensions. Reads referenced error diagrams and uses
+ * an isolated browser for SVG measurements; preserves mathematical paths and text.
  */
 import { readFile, writeFile } from 'node:fs/promises';
 import { launchBrowser } from './browser/support.mjs';

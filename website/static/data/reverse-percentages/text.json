@@ -1,0 +1,83 @@
+{
+  "defaults": {
+    "recap": {
+      "subject": "maths",
+      "topic": "M07",
+      "type": "problem",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      }
+    },
+    "spot-errors": {
+      "subject": "maths",
+      "topic": "M07",
+      "type": "errors",
+      "method": "investigation",
+      "prose": true,
+      "investigation": true,
+      "method_note": {
+        "textRef": "investigation-task"
+      }
+    },
+    "assessment-examples": {
+      "subject": "maths",
+      "topic": "M07",
+      "type": "assessment",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      }
+    },
+    "practice": {
+      "subject": "maths",
+      "topic": "M07",
+      "type": "plain",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      }
+    },
+    "problem-solving": {
+      "subject": "maths",
+      "topic": "M07",
+      "type": "problem",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      }
+    },
+    "demos": {
+      "subject": "maths",
+      "topic": "M07",
+      "type": "demo",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      }
+    },
+    "scaffolded": {
+      "subject": "maths",
+      "topic": "M07",
+      "type": "scaffolded",
+      "method": "calculation",
+      "prose": true,
+      "source": {
+        "textRef": "question-source"
+      }
+    }
+  },
+  "phrases": {
+    "recover-whole-by-division": "The known amount is already a percentage of the whole. Multiplying by the percentage again makes it smaller; recover the whole by division.",
+    "separate-delivery-method": "Remove delivery before using the percentage Divide by the percentage multiplier to find the original.",
+    "identify-percentage": "The item amount represents {percentage}% of the original. Keep any delivery charge separate.",
+    "avoid-forward-percentage": "This applies a new percentage to the changed price. Instead identify the amount representing {percentage}% of the original.",
+    "separate-fixed-fee": "Separate the fixed fee from the changed item price before identifying what represents 100%.",
+    "question-source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved."
+  }
+}

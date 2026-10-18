@@ -6,11 +6,13 @@
   - action
   - makeCode
 
-  Used By: website/src/routes/+page.svelte
+  Used By: website/src/lib/components/practice/TopicPractice.svelte.
 
-  Uses: website/src/lib/domain/practice-code.mjs.
+  Uses: website/src/lib/components/ui/PageNavigation.svelte,
+  website/src/lib/domain/practice-code.mjs.
 
-  Libs: bits-ui (dialog/popover interaction), svelte (component lifecycle and state).
+  Libs: bits-ui (accessible dialogs, popovers and choices), svelte (component state, lifecycle
+  and transitions).
 -->
 <script>
   import PageNavigation from '../ui/PageNavigation.svelte';
@@ -61,7 +63,7 @@
   async function action(fn) {
     error = '';
     try {
-      fn();
+      await fn();
       await tick();
       document.getElementById('stage-title')?.focus();
     } catch (cause) {

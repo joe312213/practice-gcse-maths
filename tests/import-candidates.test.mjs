@@ -4,11 +4,12 @@
  * Main contents:
  * - Isolated candidate-directory and path-escape checks.
  *
- * Used By: Node test runner.
+ * Used By: verify:changed logic job and Node test runner.
  *
- * Uses: scripts/bank_candidates.py.
+ * Uses: no local module imports.
  *
- * Libs: node:test/assert/child_process; Python standard library, no slide dependencies.
+ * Libs: node:test (test runner), node:assert/strict (assertions), node:child_process (Git and
+ * verification subprocesses), node:url (module/file URL conversion).
  */
 import test from "node:test";
 import assert from "node:assert/strict";

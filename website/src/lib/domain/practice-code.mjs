@@ -1,4 +1,3 @@
-import { combinedBank, combinedQuestions } from './combined-practice.mjs';
 /**
  * Purpose: Encode and decode nine-character practice-set codes and resolve their authored pages.
  *
@@ -12,12 +11,16 @@ import { combinedBank, combinedQuestions } from './combined-practice.mjs';
  * - resolvePracticePage
  * - setSecondsRemaining
  *
- * Used By: tests/practice-set.test.mjs, tests/progress.test.mjs, website/scripts/browser/practice-set-checks.mjs, website/src/lib/application/session.mjs, website/src/lib/components/practice/PracticeSets.svelte, website/src/lib/components/progress/TopicProgress.svelte, website/src/lib/domain/progress-transfer.mjs, website/src/lib/domain/progress.mjs, website/src/lib/domain/revision.mjs, website/src/routes/progress.html/+page.svelte
+ * Used By: tests/arithmetic.test.mjs, tests/practice-set.test.mjs,
+ * tests/problem-solving.test.mjs, tests/progress.test.mjs, tests/reattempts.test.mjs,
+ * website/scripts/browser/practice-set-checks.mjs, website/scripts/validate-bank.mjs.
  *
- * Uses: no local module imports.
+ * Uses: website/src/lib/domain/combined-practice.mjs.
  *
  * Libs: none.
  */
+import { combinedBank, combinedQuestions } from './combined-practice.mjs';
+
 // Fixed 54-bit format; the selected subject supplies the code's namespace.
 // Header: challenge(2), pageCount-1(2), timing(2). Four entries: topic(5), type(3), slot(4).
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';

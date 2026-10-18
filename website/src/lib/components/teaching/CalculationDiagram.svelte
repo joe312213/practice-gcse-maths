@@ -1,4 +1,15 @@
-<!-- Numerical diagrams use the same operands as the authored written calculation. -->
+<!--
+  Purpose: Numerical diagrams use the same operands as the authored written calculation.
+
+  Main contents:
+  - Number-line moves, fraction bars and percentage-bar diagrams from question operands.
+
+  Used By: website/src/lib/components/teaching/DemoPlayer.svelte.
+
+  Uses: no local module imports.
+
+  Libs: none.
+-->
 <script>
   let { question, frame = null } = $props();
   const diagram = $derived(question.diagram);

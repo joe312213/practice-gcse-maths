@@ -1,5 +1,20 @@
+/**
+ * Purpose: Independently check draft-bank mathematics, page coverage and deterministic teaching
+ * phases.
+ *
+ * Main contents:
+ * - expected.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/scripts/read-topic-bank.mjs, website/src/lib/domain/engine.mjs,
+ * website/src/lib/domain/errors.mjs, website/src/lib/domain/topic-pages.mjs,
+ * website/src/lib/application/calculation-demo.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import { readTopicBank } from "../website/scripts/read-topic-bank.mjs";
-/** Independently check draft-bank mathematics, page coverage and deterministic teaching phases. */
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import { rational, markAnswer } from "../website/src/lib/domain/engine.mjs";
@@ -17,6 +32,7 @@ const banks = await Promise.all(
     "multiplication-division-problems",
   ].map(async (file) => await readTopicBank(`${file}`)),
 );
+/** Compute an independent expected answer from the authored model for comparison with the bank. */
 function expected(m) {
   if (m.kind === "application") {
     let [n, d] = rational(String(m.start));

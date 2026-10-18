@@ -49,8 +49,15 @@
         "method_note": "Find the price of one ticket.",
         "check": "Reverse the calculation chain: 24 × 7 = 168.",
         "wrong": "168",
-        "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "complete-calculation",
+          "values": {
+            "firstStep": "find the price of one ticket"
+          }
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       },
       {
         "id": "maths:M10-WEB-PS-C2-Q100",
@@ -97,8 +104,15 @@
         "method_note": "Remove the fixed booking fee Find the price of one ticket.",
         "check": "Reverse the calculation chain: 24 × 7 = 168; 168 + 9 = 177.",
         "wrong": "168",
-        "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "complete-calculation",
+          "values": {
+            "firstStep": "remove the fixed booking fee"
+          }
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       },
       {
         "id": "maths:M10-WEB-PS-C3-Q100",
@@ -167,20 +181,22 @@
         "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
         "check": "Reverse the calculation chain: 177 − 9 = 168; 168 ÷ 7 = 24; 24 × 7 = 168; 168 + 9 = 177.",
         "wrong": "168",
-        "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "complete-calculation",
+          "values": {
+            "firstStep": "remove the fixed booking fee"
+          }
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       }
     ]
   },
   "questions": [
     {
       "id": "maths:M10-WEB-PS-C1-Q1",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "7 identical tickets cost £84 altogether. What is the price of one ticket?",
       "answer": "12",
       "answerUnit": "£",
@@ -207,18 +223,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 12 × 7 = 84.",
       "wrong": "84",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q2",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "8 identical tickets cost £104 altogether. What is the price of one ticket?",
       "answer": "13",
       "answerUnit": "£",
@@ -245,18 +260,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 13 × 8 = 104.",
       "wrong": "104",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q3",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "9 identical tickets cost £126 altogether. What is the price of one ticket?",
       "answer": "14",
       "answerUnit": "£",
@@ -283,18 +297,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 14 × 9 = 126.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q4",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "10 identical tickets cost £150 altogether. What is the price of one ticket?",
       "answer": "15",
       "answerUnit": "£",
@@ -321,18 +334,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 15 × 10 = 150.",
       "wrong": "150",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q5",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "11 identical tickets cost £176 altogether. What is the price of one ticket?",
       "answer": "16",
       "answerUnit": "£",
@@ -359,18 +371,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 16 × 11 = 176.",
       "wrong": "176",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q6",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "12 identical tickets cost £204 altogether. What is the price of one ticket?",
       "answer": "17",
       "answerUnit": "£",
@@ -397,18 +408,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 17 × 12 = 204.",
       "wrong": "204",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q7",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "7 identical tickets cost £105 altogether. What is the price of one ticket?",
       "answer": "15",
       "answerUnit": "£",
@@ -435,18 +445,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 15 × 7 = 105.",
       "wrong": "105",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q8",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "8 identical tickets cost £128 altogether. What is the price of one ticket?",
       "answer": "16",
       "answerUnit": "£",
@@ -473,18 +482,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 16 × 8 = 128.",
       "wrong": "128",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q9",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "9 identical tickets cost £153 altogether. What is the price of one ticket?",
       "answer": "17",
       "answerUnit": "£",
@@ -511,18 +519,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 17 × 9 = 153.",
       "wrong": "153",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q10",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "10 identical tickets cost £180 altogether. What is the price of one ticket?",
       "answer": "18",
       "answerUnit": "£",
@@ -549,18 +556,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 18 × 10 = 180.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q11",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "11 identical tickets cost £209 altogether. What is the price of one ticket?",
       "answer": "19",
       "answerUnit": "£",
@@ -587,18 +593,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 19 × 11 = 209.",
       "wrong": "209",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q12",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "12 identical tickets cost £240 altogether. What is the price of one ticket?",
       "answer": "20",
       "answerUnit": "£",
@@ -625,18 +630,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 20 × 12 = 240.",
       "wrong": "240",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q13",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "7 identical tickets cost £126 altogether. What is the price of one ticket?",
       "answer": "18",
       "answerUnit": "£",
@@ -663,18 +667,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 18 × 7 = 126.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q14",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "8 identical tickets cost £152 altogether. What is the price of one ticket?",
       "answer": "19",
       "answerUnit": "£",
@@ -701,18 +704,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 19 × 8 = 152.",
       "wrong": "152",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q15",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "9 identical tickets cost £180 altogether. What is the price of one ticket?",
       "answer": "20",
       "answerUnit": "£",
@@ -739,18 +741,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 20 × 9 = 180.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q16",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "10 identical tickets cost £210 altogether. What is the price of one ticket?",
       "answer": "21",
       "answerUnit": "£",
@@ -777,18 +778,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 21 × 10 = 210.",
       "wrong": "210",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q17",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "11 identical tickets cost £242 altogether. What is the price of one ticket?",
       "answer": "22",
       "answerUnit": "£",
@@ -815,18 +815,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 22 × 11 = 242.",
       "wrong": "242",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C1-Q18",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "12 identical tickets cost £276 altogether. What is the price of one ticket?",
       "answer": "23",
       "answerUnit": "£",
@@ -853,18 +852,17 @@
       "method_note": "Find the price of one ticket.",
       "check": "Reverse the calculation chain: 23 × 12 = 276.",
       "wrong": "276",
-      "error_note": "This has not completed the requested calculation. After “find the price of one ticket”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "find the price of one ticket"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q1",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "7 identical tickets and a £5 booking fee cost £89 altogether. What is the price of one ticket?",
       "answer": "12",
       "answerUnit": "£",
@@ -902,18 +900,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 12 × 7 = 84; 84 + 5 = 89.",
       "wrong": "84",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q2",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "8 identical tickets and a £5 booking fee cost £109 altogether. What is the price of one ticket?",
       "answer": "13",
       "answerUnit": "£",
@@ -951,18 +948,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 13 × 8 = 104; 104 + 5 = 109.",
       "wrong": "104",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q3",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "9 identical tickets and a £5 booking fee cost £131 altogether. What is the price of one ticket?",
       "answer": "14",
       "answerUnit": "£",
@@ -1000,18 +996,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 14 × 9 = 126; 126 + 5 = 131.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q4",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "10 identical tickets and a £5 booking fee cost £155 altogether. What is the price of one ticket?",
       "answer": "15",
       "answerUnit": "£",
@@ -1049,18 +1044,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 15 × 10 = 150; 150 + 5 = 155.",
       "wrong": "150",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q5",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "11 identical tickets and a £5 booking fee cost £181 altogether. What is the price of one ticket?",
       "answer": "16",
       "answerUnit": "£",
@@ -1098,18 +1092,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 16 × 11 = 176; 176 + 5 = 181.",
       "wrong": "176",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q6",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "12 identical tickets and a £5 booking fee cost £209 altogether. What is the price of one ticket?",
       "answer": "17",
       "answerUnit": "£",
@@ -1147,18 +1140,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 17 × 12 = 204; 204 + 5 = 209.",
       "wrong": "204",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q7",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "7 identical tickets and a £6 booking fee cost £111 altogether. What is the price of one ticket?",
       "answer": "15",
       "answerUnit": "£",
@@ -1196,18 +1188,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 15 × 7 = 105; 105 + 6 = 111.",
       "wrong": "105",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q8",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "8 identical tickets and a £6 booking fee cost £134 altogether. What is the price of one ticket?",
       "answer": "16",
       "answerUnit": "£",
@@ -1245,18 +1236,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 16 × 8 = 128; 128 + 6 = 134.",
       "wrong": "128",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q9",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "9 identical tickets and a £6 booking fee cost £159 altogether. What is the price of one ticket?",
       "answer": "17",
       "answerUnit": "£",
@@ -1294,18 +1284,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 17 × 9 = 153; 153 + 6 = 159.",
       "wrong": "153",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q10",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "10 identical tickets and a £6 booking fee cost £186 altogether. What is the price of one ticket?",
       "answer": "18",
       "answerUnit": "£",
@@ -1343,18 +1332,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 18 × 10 = 180; 180 + 6 = 186.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q11",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "11 identical tickets and a £6 booking fee cost £215 altogether. What is the price of one ticket?",
       "answer": "19",
       "answerUnit": "£",
@@ -1392,18 +1380,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 19 × 11 = 209; 209 + 6 = 215.",
       "wrong": "209",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q12",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "12 identical tickets and a £6 booking fee cost £246 altogether. What is the price of one ticket?",
       "answer": "20",
       "answerUnit": "£",
@@ -1441,18 +1428,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 20 × 12 = 240; 240 + 6 = 246.",
       "wrong": "240",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q13",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "7 identical tickets and a £7 booking fee cost £133 altogether. What is the price of one ticket?",
       "answer": "18",
       "answerUnit": "£",
@@ -1490,18 +1476,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 18 × 7 = 126; 126 + 7 = 133.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q14",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "8 identical tickets and a £7 booking fee cost £159 altogether. What is the price of one ticket?",
       "answer": "19",
       "answerUnit": "£",
@@ -1539,18 +1524,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 19 × 8 = 152; 152 + 7 = 159.",
       "wrong": "152",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q15",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "9 identical tickets and a £7 booking fee cost £187 altogether. What is the price of one ticket?",
       "answer": "20",
       "answerUnit": "£",
@@ -1588,18 +1572,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 20 × 9 = 180; 180 + 7 = 187.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q16",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "10 identical tickets and a £7 booking fee cost £217 altogether. What is the price of one ticket?",
       "answer": "21",
       "answerUnit": "£",
@@ -1637,18 +1620,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 21 × 10 = 210; 210 + 7 = 217.",
       "wrong": "210",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q17",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "11 identical tickets and a £7 booking fee cost £249 altogether. What is the price of one ticket?",
       "answer": "22",
       "answerUnit": "£",
@@ -1686,18 +1668,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 22 × 11 = 242; 242 + 7 = 249.",
       "wrong": "242",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C2-Q18",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "12 identical tickets and a £7 booking fee cost £283 altogether. What is the price of one ticket?",
       "answer": "23",
       "answerUnit": "£",
@@ -1735,18 +1716,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket.",
       "check": "Reverse the calculation chain: 23 × 12 = 276; 276 + 7 = 283.",
       "wrong": "276",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q1",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "7 identical tickets and a £5 booking fee cost £89 altogether. A second group buys 3 tickets and pays the same booking fee. What does it pay?",
       "answer": "41",
       "answerUnit": "£",
@@ -1806,18 +1786,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 41 − 5 = 36; 36 ÷ 3 = 12; 12 × 7 = 84; 84 + 5 = 89.",
       "wrong": "84",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q2",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "8 identical tickets and a £5 booking fee cost £109 altogether. A second group buys 3 tickets and pays the same booking fee. What does it pay?",
       "answer": "44",
       "answerUnit": "£",
@@ -1877,18 +1856,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 44 − 5 = 39; 39 ÷ 3 = 13; 13 × 8 = 104; 104 + 5 = 109.",
       "wrong": "104",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q3",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "9 identical tickets and a £5 booking fee cost £131 altogether. A second group buys 3 tickets and pays the same booking fee. What does it pay?",
       "answer": "47",
       "answerUnit": "£",
@@ -1948,18 +1926,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 47 − 5 = 42; 42 ÷ 3 = 14; 14 × 9 = 126; 126 + 5 = 131.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q4",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "10 identical tickets and a £5 booking fee cost £155 altogether. A second group buys 3 tickets and pays the same booking fee. What does it pay?",
       "answer": "50",
       "answerUnit": "£",
@@ -2019,18 +1996,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 50 − 5 = 45; 45 ÷ 3 = 15; 15 × 10 = 150; 150 + 5 = 155.",
       "wrong": "150",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q5",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "11 identical tickets and a £5 booking fee cost £181 altogether. A second group buys 3 tickets and pays the same booking fee. What does it pay?",
       "answer": "53",
       "answerUnit": "£",
@@ -2090,18 +2066,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 53 − 5 = 48; 48 ÷ 3 = 16; 16 × 11 = 176; 176 + 5 = 181.",
       "wrong": "176",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q6",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "12 identical tickets and a £5 booking fee cost £209 altogether. A second group buys 3 tickets and pays the same booking fee. What does it pay?",
       "answer": "56",
       "answerUnit": "£",
@@ -2161,18 +2136,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 56 − 5 = 51; 51 ÷ 3 = 17; 17 × 12 = 204; 204 + 5 = 209.",
       "wrong": "204",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q7",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "7 identical tickets and a £6 booking fee cost £111 altogether. A second group buys 4 tickets and pays the same booking fee. What does it pay?",
       "answer": "66",
       "answerUnit": "£",
@@ -2232,18 +2206,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 66 − 6 = 60; 60 ÷ 4 = 15; 15 × 7 = 105; 105 + 6 = 111.",
       "wrong": "105",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q8",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "8 identical tickets and a £6 booking fee cost £134 altogether. A second group buys 4 tickets and pays the same booking fee. What does it pay?",
       "answer": "70",
       "answerUnit": "£",
@@ -2303,18 +2276,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 70 − 6 = 64; 64 ÷ 4 = 16; 16 × 8 = 128; 128 + 6 = 134.",
       "wrong": "128",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q9",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "9 identical tickets and a £6 booking fee cost £159 altogether. A second group buys 4 tickets and pays the same booking fee. What does it pay?",
       "answer": "74",
       "answerUnit": "£",
@@ -2374,18 +2346,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 74 − 6 = 68; 68 ÷ 4 = 17; 17 × 9 = 153; 153 + 6 = 159.",
       "wrong": "153",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q10",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "10 identical tickets and a £6 booking fee cost £186 altogether. A second group buys 4 tickets and pays the same booking fee. What does it pay?",
       "answer": "78",
       "answerUnit": "£",
@@ -2445,18 +2416,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 78 − 6 = 72; 72 ÷ 4 = 18; 18 × 10 = 180; 180 + 6 = 186.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q11",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "11 identical tickets and a £6 booking fee cost £215 altogether. A second group buys 4 tickets and pays the same booking fee. What does it pay?",
       "answer": "82",
       "answerUnit": "£",
@@ -2516,18 +2486,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 82 − 6 = 76; 76 ÷ 4 = 19; 19 × 11 = 209; 209 + 6 = 215.",
       "wrong": "209",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q12",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "12 identical tickets and a £6 booking fee cost £246 altogether. A second group buys 4 tickets and pays the same booking fee. What does it pay?",
       "answer": "86",
       "answerUnit": "£",
@@ -2587,18 +2556,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 86 − 6 = 80; 80 ÷ 4 = 20; 20 × 12 = 240; 240 + 6 = 246.",
       "wrong": "240",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q13",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "7 identical tickets and a £7 booking fee cost £133 altogether. A second group buys 5 tickets and pays the same booking fee. What does it pay?",
       "answer": "97",
       "answerUnit": "£",
@@ -2658,18 +2626,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 97 − 7 = 90; 90 ÷ 5 = 18; 18 × 7 = 126; 126 + 7 = 133.",
       "wrong": "126",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q14",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "8 identical tickets and a £7 booking fee cost £159 altogether. A second group buys 5 tickets and pays the same booking fee. What does it pay?",
       "answer": "102",
       "answerUnit": "£",
@@ -2729,18 +2696,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 102 − 7 = 95; 95 ÷ 5 = 19; 19 × 8 = 152; 152 + 7 = 159.",
       "wrong": "152",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q15",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "9 identical tickets and a £7 booking fee cost £187 altogether. A second group buys 5 tickets and pays the same booking fee. What does it pay?",
       "answer": "107",
       "answerUnit": "£",
@@ -2800,18 +2766,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 107 − 7 = 100; 100 ÷ 5 = 20; 20 × 9 = 180; 180 + 7 = 187.",
       "wrong": "180",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q16",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "10 identical tickets and a £7 booking fee cost £217 altogether. A second group buys 5 tickets and pays the same booking fee. What does it pay?",
       "answer": "112",
       "answerUnit": "£",
@@ -2871,18 +2836,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 112 − 7 = 105; 105 ÷ 5 = 21; 21 × 10 = 210; 210 + 7 = 217.",
       "wrong": "210",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q17",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "11 identical tickets and a £7 booking fee cost £249 altogether. A second group buys 5 tickets and pays the same booking fee. What does it pay?",
       "answer": "117",
       "answerUnit": "£",
@@ -2942,18 +2906,17 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 117 − 7 = 110; 110 ÷ 5 = 22; 22 × 11 = 242; 242 + 7 = 249.",
       "wrong": "242",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M10-WEB-PS-C3-Q18",
-      "subject": "maths",
-      "topic": "M10",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "12 identical tickets and a £7 booking fee cost £283 altogether. A second group buys 5 tickets and pays the same booking fee. What does it pay?",
       "answer": "122",
       "answerUnit": "£",
@@ -3013,8 +2976,12 @@
       "method_note": "Remove the fixed booking fee Find the price of one ticket Find the second group’s ticket cost Add its booking fee.",
       "check": "Reverse the calculation chain: 122 − 7 = 115; 115 ÷ 5 = 23; 23 × 12 = 276; 276 + 7 = 283.",
       "wrong": "276",
-      "error_note": "This has not completed the requested calculation. After “remove the fixed booking fee”, check what quantity the question asks you to find.",
-      "source": "Original website application-stage content, 12 October 2026",
+      "error_note": {
+        "textRef": "complete-calculation",
+        "values": {
+          "firstStep": "remove the fixed booking fee"
+        }
+      },
       "questionPrefix": "Solve the problem"
     }
   ]

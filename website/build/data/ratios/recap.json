@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M04-WEB-PS-C1-Q85",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "problem",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "The ratio of red paint to white paint is 2 : 3. There is 18 litres more white paint than red paint. Find the amount of white paint.",
     "answer": "54",
     "answerUnit": "litres",
@@ -47,12 +42,21 @@
         "outputUnit": "litres"
       }
     ],
-    "hint": "Does 18 describe the total, one named amount or the difference? Match it to the correct number of parts.",
-    "method_note": "Find the value of one ratio part Find the requested second amount.",
+    "hint": {
+      "textRef": "match-known-quantity",
+      "values": {
+        "amount": "18"
+      }
+    },
+    "method_note": {
+      "textRef": "find-requested-share"
+    },
     "check": "One ratio part is 18. The two quantities are 36 and 54, in the named order. Check their difference against the given amount, then check you answered the requested question.",
     "wrong": "27",
     "error_note": "The known difference matches 1 part, not 2. Find one part before scaling to the requested quantity.",
-    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.",
+    "source": {
+      "textRef": "question-source"
+    },
     "operationCount": 3,
     "ratioModel": {
       "a": 2,
@@ -88,12 +92,7 @@
   },
   {
     "id": "maths:M04-WEB-PS-C2-Q85",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "problem",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "Red beads and blue beads are in the ratio 1 : 2. There are 12 red beads. Then 5 blue beads are used. How many blue beads remain?",
     "answer": "19",
     "answerUnit": "beads",
@@ -194,12 +193,7 @@
   },
   {
     "id": "maths:M04-WEB-PS-C3-Q85",
-    "subject": "maths",
-    "topic": "M04",
-    "type": "problem",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "The lengths of ribbon A and ribbon B are in the ratio 5 : 9. Ribbon A is 75 cm long. What is the length of ribbon B in metres?",
     "answer": "1.35",
     "answerUnit": "m",
@@ -241,15 +235,21 @@
         "input": "135 ÷ 100",
         "output": "1.35",
         "outputUnit": "m",
-        "note": "Use the ratio result in the further calculation; do not stop at the intermediate amount."
+        "note": {
+          "textRef": "finish-linked-calculation"
+        }
       }
     ],
     "hint": "Before considering the change of units, match the given first of 75 cm to its ratio parts. Find the second named quantity first.",
-    "method_note": "Match the given quantity to ratio parts, find one part, find the second quantity, then complete the further calculation.",
+    "method_note": {
+      "textRef": "linked-ratio-method"
+    },
     "check": "The original quantities are 75 cm and 135 cm. Check their first amount against the given 75 cm. Divide the centimetre length by 100 to express it in metres. The final answer is 1.35 m.",
     "wrong": "135",
     "error_note": "135 cm is only the intermediate ratio amount. Divide the centimetre length by 100 to express it in metres.",
-    "source": "Original website extension of content/M04_ratio.md; 12 October 2026. Historical authored source preserved.; Confidence linked calculation reviewed 13 October 2026",
+    "source": {
+      "textRef": "linked-source"
+    },
     "operationCount": 3,
     "ratioModel": {
       "a": 5,

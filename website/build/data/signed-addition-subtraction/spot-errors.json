@@ -7,12 +7,31 @@
       {
         "id": "step-1",
         "label": "Magnitudes",
-        "text": "13 − 3 = 10"
+        "text": "13 − 3 = 10",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Magnitudes: calculation",
+            "text": "13 − 3"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Magnitudes: result",
+            "text": "10"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Sign of answer",
-        "text": "The answer is +10"
+        "text": "The answer is +10",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Sign of answer: signed answer",
+            "text": "+10"
+          }
+        ]
       }
     ],
     "options": {
@@ -42,18 +61,13 @@
     ],
     "hint": "Compare the sign of answer with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C1-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out −13 + 3.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C1-Q02",
@@ -68,7 +82,19 @@
       {
         "id": "step-2",
         "label": "Number-line move",
-        "text": "Count the starting tick as move 1, then move 2 intervals right to -12"
+        "text": "Count the starting tick as move 1, then move 2 intervals right to -12",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Number-line move: starting tick",
+            "text": "Count the starting tick as move 1"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Number-line move: remaining move",
+            "text": "then move 2 intervals right to -12"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -117,18 +143,13 @@
       "direction": "right"
     },
     "draftId": "M13-DRAFT-ERRORS-C1-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Use the number line to work out −14 + 3.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C1-Q03",
@@ -182,18 +203,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C1-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out −5 + 4.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C1-Q04",
@@ -208,7 +224,19 @@
       {
         "id": "step-2",
         "label": "Sign rule",
-        "text": "Two minus signs cancel: 8 + 4"
+        "text": "Two minus signs cancel: 8 + 4",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Sign rule: sign rule",
+            "text": "Two minus signs cancel"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Sign rule: rewritten calculation",
+            "text": "8 + 4"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -241,18 +269,13 @@
     ],
     "hint": "Compare the sign rule with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C1-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out −8 − 4.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C1-Q05",
@@ -262,12 +285,31 @@
       {
         "id": "step-1",
         "label": "Magnitudes",
-        "text": "9 − 4 = 5"
+        "text": "9 − 4 = 5",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Magnitudes: calculation",
+            "text": "9 − 4"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Magnitudes: result",
+            "text": "5"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Sign of answer",
-        "text": "The answer is +5"
+        "text": "The answer is +5",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Sign of answer: signed answer",
+            "text": "+5"
+          }
+        ]
       }
     ],
     "options": {
@@ -297,18 +339,13 @@
     ],
     "hint": "Compare the sign of answer with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C1-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out −9 + 4.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C1-Q06",
@@ -372,18 +409,13 @@
       "direction": "left"
     },
     "draftId": "M13-DRAFT-ERRORS-C1-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Use the number line to work out −10 + 4.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C1-Q07",
@@ -393,12 +425,31 @@
       {
         "id": "step-1",
         "label": "Magnitudes",
-        "text": "14 − 4 = 10"
+        "text": "14 − 4 = 10",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Magnitudes: calculation",
+            "text": "14 − 4"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Magnitudes: result",
+            "text": "10"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Sign of answer",
-        "text": "The answer is +10"
+        "text": "The answer is +10",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Sign of answer: signed answer",
+            "text": "+10"
+          }
+        ]
       }
     ],
     "options": {
@@ -428,18 +479,13 @@
     ],
     "hint": "Compare the sign of answer with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C1-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out −14 + 4.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C1-Q08",
@@ -454,7 +500,19 @@
       {
         "id": "step-2",
         "label": "Number-line move",
-        "text": "Count the starting tick as move 1, then move 3 intervals right to -12"
+        "text": "Count the starting tick as move 1, then move 3 intervals right to -12",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Number-line move: starting tick",
+            "text": "Count the starting tick as move 1"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Number-line move: remaining move",
+            "text": "then move 3 intervals right to -12"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -503,18 +561,13 @@
       "direction": "right"
     },
     "draftId": "M13-DRAFT-ERRORS-C1-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Use the number line to work out −15 + 4.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C1-Q09",
@@ -568,18 +621,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C1-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out −4 + 3.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C1-Q10",
@@ -594,7 +642,19 @@
       {
         "id": "step-2",
         "label": "Sign rule",
-        "text": "Two minus signs cancel: 7 + 3"
+        "text": "Two minus signs cancel: 7 + 3",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Sign rule: sign rule",
+            "text": "Two minus signs cancel"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "Sign rule: rewritten calculation",
+            "text": "7 + 3"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -627,18 +687,13 @@
     ],
     "hint": "Compare the sign rule with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C1-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out −7 − 3.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C1-Q11",
@@ -648,12 +703,31 @@
       {
         "id": "step-1",
         "label": "Magnitudes",
-        "text": "8 − 3 = 5"
+        "text": "8 − 3 = 5",
+        "targets": [
+          {
+            "id": "step-1",
+            "label": "Magnitudes: calculation",
+            "text": "8 − 3"
+          },
+          {
+            "id": "step-1-part-2",
+            "label": "Magnitudes: result",
+            "text": "5"
+          }
+        ]
       },
       {
         "id": "step-2",
         "label": "Sign of answer",
-        "text": "The answer is +5"
+        "text": "The answer is +5",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "Sign of answer: signed answer",
+            "text": "+5"
+          }
+        ]
       }
     ],
     "options": {
@@ -683,18 +757,13 @@
     ],
     "hint": "Compare the sign of answer with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C1-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out −8 + 3.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C1-Q12",
@@ -758,18 +827,13 @@
       "direction": "left"
     },
     "draftId": "M13-DRAFT-ERRORS-C1-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Use the number line to work out −9 + 3.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q01",
@@ -825,18 +889,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 8 − (−5).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q02",
@@ -892,18 +951,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 17 − (−6).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q03",
@@ -959,18 +1013,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 23 − (−9).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q04",
@@ -1026,18 +1075,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 19 − (−7).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q05",
@@ -1093,18 +1137,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 28 − (−11).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q06",
@@ -1160,18 +1199,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 5 + (−3).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q07",
@@ -1227,18 +1261,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 6 − (−3).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q08",
@@ -1294,18 +1323,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 11 + (−3).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q09",
@@ -1361,18 +1385,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 12 − (−3).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q10",
@@ -1428,18 +1447,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 6 + (−4).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q11",
@@ -1495,18 +1509,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 7 − (−4).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C2-Q12",
@@ -1562,18 +1571,13 @@
     ],
     "hint": "Compare the rewrite with the quantities and operation in the question.",
     "draftId": "M13-DRAFT-ERRORS-C2-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 7 + (−5).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q01",
@@ -1588,7 +1592,19 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "-14 + (9) = -5"
+        "text": "-14 + (9) = -5",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "-14 + (9)"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "-5"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -1631,20 +1647,15 @@
       "-5 + 8",
       "3"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out -14 + (9) − (-8).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is 17; applying it to -14 gives 3.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is 17; applying it to -14 gives 3."
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q02",
@@ -1659,7 +1670,19 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "-6 + (17) = 11"
+        "text": "-6 + (17) = 11",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "-6 + (17)"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "11"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -1702,20 +1725,15 @@
       "11 + 4",
       "15"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out -6 + (17) − (-4).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is 21; applying it to -6 gives 15.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is 21; applying it to -6 gives 15."
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q03",
@@ -1730,12 +1748,36 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "-13 + (8) = -5"
+        "text": "-13 + (8) = -5",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "-13 + (8)"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "-5"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second move",
-        "text": "Start again at 0: 0 + (7) = 7"
+        "text": "Start again at 0: 0 + (7) = 7",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Second move: calculation",
+            "text": "Start again at 0: 0 + (7)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Second move: result",
+            "text": "7"
+          }
+        ]
       }
     ],
     "options": {
@@ -1764,20 +1806,15 @@
       "-13 + (8) = -5",
       "Continue from -5: -5 + (7) = 2"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out -13 + (8) + (7).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is 15; applying it to -13 gives 2.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is 15; applying it to -13 gives 2."
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q04",
@@ -1792,12 +1829,36 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "16 + (-9) = 7"
+        "text": "16 + (-9) = 7",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "16 + (-9)"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "7"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second move",
-        "text": "Start again at 0: 0 − (5) = -5"
+        "text": "Start again at 0: 0 − (5) = -5",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Second move: calculation",
+            "text": "Start again at 0: 0 − (5)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Second move: result",
+            "text": "-5"
+          }
+        ]
       }
     ],
     "options": {
@@ -1826,20 +1887,15 @@
       "16 + (-9) = 7",
       "Continue from 7: 7 − (5) = 2"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 16 + (-9) − (5).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is -14; applying it to 16 gives 2.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is -14; applying it to 16 gives 2."
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q05",
@@ -1854,12 +1910,36 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "-7 + (19) = 12"
+        "text": "-7 + (19) = 12",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "-7 + (19)"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "12"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second move",
-        "text": "Start again at 0: 0 − (15) = -15"
+        "text": "Start again at 0: 0 − (15) = -15",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Second move: calculation",
+            "text": "Start again at 0: 0 − (15)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Second move: result",
+            "text": "-15"
+          }
+        ]
       }
     ],
     "options": {
@@ -1888,20 +1968,15 @@
       "-7 + (19) = 12",
       "Continue from 12: 12 − (15) = -3"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out -7 + (19) − (15).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is 4; applying it to -7 gives -3.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is 4; applying it to -7 gives -3."
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q06",
@@ -1916,12 +1991,36 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "21 + (-13) = 8"
+        "text": "21 + (-13) = 8",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "21 + (-13)"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "8"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second move",
-        "text": "Start again at 0: 0 + (-6) = -6"
+        "text": "Start again at 0: 0 + (-6) = -6",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Second move: calculation",
+            "text": "Start again at 0: 0 + (-6)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Second move: result",
+            "text": "-6"
+          }
+        ]
       }
     ],
     "options": {
@@ -1950,20 +2049,15 @@
       "21 + (-13) = 8",
       "Continue from 8: 8 + (-6) = 2"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 21 + (-13) + (-6).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is -19; applying it to 21 gives 2.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is -19; applying it to 21 gives 2."
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q07",
@@ -1978,12 +2072,36 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "-18 + (11) = -7"
+        "text": "-18 + (11) = -7",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "-18 + (11)"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "-7"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second move",
-        "text": "Start again at 0: 0 − (-3) = 3"
+        "text": "Start again at 0: 0 − (-3) = 3",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Second move: calculation",
+            "text": "Start again at 0: 0 − (-3)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Second move: result",
+            "text": "3"
+          }
+        ]
       }
     ],
     "options": {
@@ -2012,20 +2130,15 @@
       "-18 + (11) = -7",
       "Continue from -7: -7 − (-3) = -4"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out -18 + (11) − (-3).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is 14; applying it to -18 gives -4.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is 14; applying it to -18 gives -4."
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q08",
@@ -2040,12 +2153,36 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "8 + (-14) = -6"
+        "text": "8 + (-14) = -6",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "8 + (-14)"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "-6"
+          }
+        ]
       },
       {
         "id": "step-3",
         "label": "Second move",
-        "text": "Start again at 0: 0 + (10) = 10"
+        "text": "Start again at 0: 0 + (10) = 10",
+        "targets": [
+          {
+            "id": "step-3",
+            "label": "Second move: calculation",
+            "text": "Start again at 0: 0 + (10)"
+          },
+          {
+            "id": "step-3-part-2",
+            "label": "Second move: result",
+            "text": "10"
+          }
+        ]
       }
     ],
     "options": {
@@ -2074,20 +2211,15 @@
       "8 + (-14) = -6",
       "Continue from -6: -6 + (10) = 4"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 8 + (-14) + (10).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is -4; applying it to 8 gives 4.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is -4; applying it to 8 gives 4."
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q09",
@@ -2102,7 +2234,19 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "15 + 8 = 23"
+        "text": "15 + 8 = 23",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "15 + 8"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "23"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -2159,20 +2303,15 @@
       "7 + 4",
       "11"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 15 + (-8) − (-4).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is -4; applying it to 15 gives 11.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is -4; applying it to 15 gives 11."
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q10",
@@ -2187,7 +2326,19 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "-12 + 5 = -7"
+        "text": "-12 + 5 = -7",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "-12 + 5"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "-7"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -2244,20 +2395,15 @@
       "-17 + 9",
       "-8"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out -12 + (-5) − (-9).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is 4; applying it to -12 gives -8.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is 4; applying it to -12 gives -8."
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q11",
@@ -2272,7 +2418,19 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "7 + 11 = 18"
+        "text": "7 + 11 = 18",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "7 + 11"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "18"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -2329,20 +2487,15 @@
       "-4 + 6",
       "2"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 7 + (-11) − (-6).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is -5; applying it to 7 gives 2.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is -5; applying it to 7 gives 2."
   },
   {
     "id": "maths:M13-WEB-ERRORS-R2-C3-Q12",
@@ -2357,7 +2510,19 @@
       {
         "id": "step-2",
         "label": "First change",
-        "text": "-9 + 4 = -5"
+        "text": "-9 + 4 = -5",
+        "targets": [
+          {
+            "id": "step-2",
+            "label": "First change: calculation",
+            "text": "-9 + 4"
+          },
+          {
+            "id": "step-2-part-2",
+            "label": "First change: result",
+            "text": "-5"
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -2414,19 +2579,14 @@
       "-13 + 7",
       "-6"
     ],
-    "hint": "Keep the intermediate result and consider the direction of each separate change.",
+    "hint": {
+      "textRef": "keep-intermediate-result"
+    },
     "draftId": "M13-DRAFT-ERRORS-C3-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out -9 + (-4) − (-7).",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "The combined change is 3; applying it to -9 gives -6.",
-    "subject": "maths",
-    "topic": "M13"
+    "check": "The combined change is 3; applying it to -9 gives -6."
   }
 ]

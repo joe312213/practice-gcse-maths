@@ -4,11 +4,14 @@
  * Main contents:
  * - WORKING_TTL; createWorkingCache.
  *
- * Used By: TopicPractice.svelte, session.mjs and working-cache tests.
+ * Used By: tests/error-investigation.test.mjs, tests/profile-management.test.mjs,
+ * tests/working-cache.test.mjs, website/src/lib/application/session.mjs,
+ * website/src/lib/components/practice/TopicPractice.svelte,
+ * website/src/lib/components/progress/ProfileManagement.svelte.
  *
- * Uses: domain/working.mjs for the default canvas height.
+ * Uses: website/src/lib/domain/working.mjs.
  *
- * Libs: None; accepts an injected Storage-compatible object and clock.
+ * Libs: none.
  */
 import { DEFAULT_WORKING_HEIGHT } from '../domain/working.mjs';
 

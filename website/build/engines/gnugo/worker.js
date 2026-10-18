@@ -1,5 +1,17 @@
 /* GNU Go worker interface, GPL-3.0-or-later. Copyright (c) 2026 Joe Hudson.
- * Loaded only when the user requests estimation. See COPYING and build.sh.
+ *
+ * Purpose: Validate a requested Go position and run the optional GNU Go estimate
+ * outside the UI thread. Loaded only when the learner requests an estimate.
+ *
+ * Main contents:
+ * - Shared engine initialization; request/result messages keyed by request ID.
+ *
+ * Used By: the portable puzzle gnugo-client module through HumanGo.svelte.
+ *
+ * Uses: gnugo.js/gnugo.wasm and bridge.c's estimate_position export.
+ *
+ * Libs: GNU Go 3.8 for position analysis; Emscripten ccall for the C/JS boundary.
+ * See COPYING and build.sh. No learner progress or files are written.
  */
 import createGnuGo from './gnugo.js';
 const engine = createGnuGo();

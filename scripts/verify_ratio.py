@@ -1,7 +1,9 @@
-"""Purpose: Verify ratio v5 maths, variety, Markdown/slide agreement and diagnostic examples.
+"""Purpose: Read-only audit of historical ratio v5 source/deck agreement, exact answers, diagnostic
+examples, question variety and editable progression-arrow placement. Assertions execute at
+import time.
 
 Main contents:
-- cells
+- cells: Split a Markdown row into cells for ratio source verification.
 
 Used By: manual legacy command invocation.
 
@@ -9,7 +11,11 @@ Uses: no local module imports.
 
 Libs: python-pptx (editable slides and deck inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Historical invocation: python3 scripts/verify_ratio.py. Reads the explicit
+ratio Markdown/deck paths and prints checks; no generated content is written.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 from fractions import Fraction

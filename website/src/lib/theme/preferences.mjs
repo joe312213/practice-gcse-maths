@@ -6,7 +6,8 @@
  * - readTheme
  * - createThemeController
  *
- * Used By: website/src/lib/components/ui/ThemeControls.svelte, website/src/routes/+layout.svelte
+ * Used By: website/src/lib/components/ui/ThemeControls.svelte,
+ * website/src/routes/+layout.svelte.
  *
  * Uses: no local module imports.
  *

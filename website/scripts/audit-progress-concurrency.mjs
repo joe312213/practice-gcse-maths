@@ -1,6 +1,21 @@
-/** Opt-in reproduction of stale-tab data loss using production storage/file adapters.
+/**
+ * Purpose: Opt-in reproduction of stale-tab data loss using production storage/file adapters.
  * Uses isolated browser storage and an in-memory file handle; never opens user data.
- * Run: node scripts/audit-progress-concurrency.mjs
+ *
+ * Main contents:
+ * - Two-tab storage/file races, recorded save evidence and JSON audit output.
+ *
+ * Used By: the documented command below.
+ *
+ * Uses: website/scripts/browser/support.mjs, website/src/lib/domain/profiles.mjs,
+ * website/src/lib/adapters/progress-autosave.mjs, website/src/lib/adapters/progress-file.mjs,
+ * website/src/lib/domain/progress-transfer.mjs, website/scripts/storage.mjs.
+ *
+ * Libs: node:fs/promises (asynchronous file access).
+ *
+ * Usage and output: From website/: node scripts/audit-progress-concurrency.mjs after a build.
+ * Opt-in reproduction using isolated browser profiles and in-memory file handles; writes audit
+ * evidence under test-results. Never opens learner files.
  */
 import { writeFile } from 'node:fs/promises';
 import { launchBrowser, serveStatic, artifacts } from './browser/support.mjs';

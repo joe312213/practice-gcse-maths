@@ -4,11 +4,12 @@
  * Main contents:
  * - guideFrames.
  *
- * Used By: equation-demo.mjs and arithmetic-demo.mjs.
+ * Used By: website/src/lib/application/arithmetic-demo.mjs,
+ * website/src/lib/application/equation-demo.mjs.
  *
- * Uses: No local modules.
+ * Uses: no local module imports.
  *
- * Libs: None.
+ * Libs: none.
  */
 /**
  * Return construction frames carrying method-owned detail. Called by equationFrames and arithmeticFrames.

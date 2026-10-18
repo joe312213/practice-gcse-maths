@@ -1,9 +1,23 @@
-"""Read-only level and variety guards for live spot-error banks.
+"""Purpose: Read-only pedagogical guards for the live spot-error audit: check the agreed challenge
+levels, operation families, operand demands and variety. These rules supplement human review of
+wording and distractors.
 
-Called by review_spot_error_drafts.validate; regression fixtures exercise rejected
-content. These guards supplement the page-by-page review in SPOT_ERRORS_PROCESS,
-not semantic judgement of every distractor. Arithmetic is supplied by the audit's
-restricted exact evaluator; this module never generates or writes questions.
+Main contents:
+- equation_side: Evaluate the authored linear expression, including implicit multiplication.
+- fraction_expression: Extract the numeric calculation, preserving mixed-number values exactly.
+- families
+- check_quality: Guard the agreed level progression and the audited sources of repetition.
+
+Used By: scripts/review_spot_error_drafts.py and tests/spot_error_quality_test.py.
+
+Uses: scripts/review_spot_error_drafts.py supplied arithmetic callbacks.
+
+Libs: Python standard library: ast for expression inspection, fractions for exact arithmetic,
+math/re for numeric and text checks.
+
+Usage and output: Imported by review_spot_error_drafts.validate and regression tests.
+check_quality(bank, calculate, answer_value) raises an assertion naming the failed rule; it
+writes nothing.
 """
 import ast
 from fractions import Fraction
@@ -27,6 +41,7 @@ def fraction_expression(prompt):
 
 
 def families(question):
+    """Return misconception IDs in one question; used by check_quality variety assertions."""
     return {e['misconception'] for e in question['errors']}
 
 

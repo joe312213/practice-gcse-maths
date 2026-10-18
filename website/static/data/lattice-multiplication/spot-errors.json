@@ -83,7 +83,9 @@
       "Diagonal 10^2: total 5, write 5, carry 0",
       "Answer: 560"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 80,
@@ -173,18 +175,13 @@
       "normalReadOff": "650"
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 80 × 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C1-Q02",
@@ -260,7 +257,9 @@
       "Diagonal 10^2: total 6, write 6, carry 0",
       "Answer: 602"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 86,
@@ -350,18 +349,13 @@
       "normalReadOff": "702"
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 86 × 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C1-Q03",
@@ -463,7 +457,9 @@
       "Diagonal 10^3: total 2, write 2, carry 0",
       "Answer: 2184"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 84,
@@ -604,18 +600,13 @@
       "normalReadOff": "5208"
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 84 × 26.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q01",
@@ -736,7 +727,9 @@
       "Diagonal 10^4: total 2, write 2, carry 0",
       "Answer: 25715"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 695,
@@ -928,18 +921,13 @@
       "normalReadOff": "50735"
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 695 × 37.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q02",
@@ -1051,7 +1039,9 @@
       "Diagonal 10^4: total 2, write 2, carry 0",
       "Answer: 25092"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 697,
@@ -1246,18 +1236,13 @@
       ]
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 697 × 36.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q03",
@@ -1370,7 +1355,9 @@
       "Diagonal 10^4: total 2, write 2, carry 0",
       "Answer: 25164"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 699,
@@ -1562,18 +1549,13 @@
       "normalReadOff": "97164"
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 699 × 36.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q01",
@@ -2079,18 +2061,11 @@
       "normalReadOff": "4530784"
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q01",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 7648 × 583.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 8,000 × 600 = 4,800,000. Check that the exact answer ends in 4.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 8,000 × 600 = 4,800,000. Check that the exact answer ends in 4."
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q02",
@@ -2709,18 +2684,11 @@
       "normalReadOff": "24370078"
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q02",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 6794 × 3587.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 7,000 × 4,000 = 28,000,000. Check that the exact answer ends in 8.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 7,000 × 4,000 = 28,000,000. Check that the exact answer ends in 8."
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q03",
@@ -2921,7 +2889,9 @@
       "Diagonal 10^7: total 2, write 2, carry 0",
       "Answer: 23918796"
     ],
-    "hint": "Multiply each top digit by its matching right-hand digit; check both halves of the cell.",
+    "hint": {
+      "textRef": "check-digit-product"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 6897,
@@ -3346,18 +3316,11 @@
       "normalReadOff": "23924796"
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q03",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 6897 × 3468.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 7,000 × 3,000 = 21,000,000. Check that the exact answer ends in 6.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 7,000 × 3,000 = 21,000,000. Check that the exact answer ends in 6."
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C1-Q04",
@@ -3428,7 +3391,9 @@
     "correctWorking": [
       "89×7=623"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 89,
@@ -3521,18 +3486,13 @@
       ]
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 89 × 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q04",
@@ -3630,7 +3590,9 @@
       "Diagonal 10^4: total 0, write 0, carry 0",
       "Answer: 7021"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 1003,
@@ -3782,18 +3744,13 @@
       "normalReadOff": "7021"
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 1003 × 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q04",
@@ -4308,18 +4265,11 @@
       "normalReadOff": "7548651"
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q04",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 957 × 6843.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 1,000 × 7,000 = 7,000,000. Check that the exact answer ends in 1.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 1,000 × 7,000 = 7,000,000. Check that the exact answer ends in 1."
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C1-Q05",
@@ -4396,7 +4346,9 @@
       "Diagonal 10^2: total 6, write 6, carry 0",
       "Answer: 616"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 88,
@@ -4486,18 +4438,13 @@
       "normalReadOff": "1156"
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 88 × 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C1-Q06",
@@ -4583,7 +4530,9 @@
       "Diagonal 10^3: total 0, write 0, carry 0",
       "Answer: 606"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 101,
@@ -4704,18 +4653,13 @@
       "normalReadOff": "606"
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 101 × 6.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C1-Q07",
@@ -4800,7 +4744,9 @@
       "Diagonal 10^2: total 6, write 6, carry 0",
       "Answer: 644"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 92,
@@ -4890,18 +4836,13 @@
       "normalReadOff": "544"
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 92 × 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C1-Q08",
@@ -5005,7 +4946,9 @@
       "Diagonal 10^3: total 0, write 0, carry 0",
       "Answer: 805"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 115,
@@ -5126,18 +5069,13 @@
       "normalReadOff": "1705"
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 115 × 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C1-Q09",
@@ -5223,7 +5161,9 @@
       "Diagonal 10^2: total 6, write 6, carry 0",
       "Answer: 672"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 96,
@@ -5313,18 +5253,13 @@
       "normalReadOff": "402"
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 96 × 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C1-Q10",
@@ -5412,7 +5347,9 @@
       "Diagonal 10^3: total 1, write 1, carry 0",
       "Answer: 1022"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 146,
@@ -5533,18 +5470,13 @@
       "normalReadOff": "1122"
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 146 × 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C1-Q11",
@@ -5629,7 +5561,9 @@
       "Diagonal 10^2: total 5, write 5, carry 0",
       "Answer: 532"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 76,
@@ -5719,18 +5653,13 @@
       "normalReadOff": "432"
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 76 × 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C1-Q12",
@@ -5806,7 +5735,9 @@
       "Diagonal 10^2: total 5, write 5, carry 0",
       "Answer: 546"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 78,
@@ -5896,18 +5827,13 @@
       "normalReadOff": "446"
     },
     "draftId": "M01-DRAFT-ERRORS-C1-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 78 × 7.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q05",
@@ -6028,7 +5954,9 @@
       "Diagonal 10^4: total 2, write 2, carry 0",
       "Answer: 25308"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 703,
@@ -6220,18 +6148,13 @@
       "normalReadOff": "15308"
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 703 × 36.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q06",
@@ -6359,7 +6282,9 @@
       "Diagonal 10^4: total 2, write 2, carry 0",
       "Answer: 25416"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 706,
@@ -6551,18 +6476,13 @@
       "normalReadOff": "35316"
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 706 × 36.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q07",
@@ -6684,7 +6604,9 @@
       "Diagonal 10^4: total 2, write 2, carry 0",
       "Answer: 25452"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 707,
@@ -6876,18 +6798,13 @@
       "normalReadOff": "16452"
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 707 × 36.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q08",
@@ -6999,7 +6916,9 @@
       "Diagonal 10^4: total 2, write 2, carry 0",
       "Answer: 25524"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 709,
@@ -7191,18 +7110,13 @@
       "normalReadOff": "25624"
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 709 × 36.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q09",
@@ -7323,7 +7237,9 @@
       "Diagonal 10^4: total 2, write 2, carry 0",
       "Answer: 24732"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 687,
@@ -7515,18 +7431,13 @@
       "normalReadOff": "14732"
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 687 × 36.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q10",
@@ -7638,7 +7549,9 @@
       "Diagonal 10^4: total 2, write 2, carry 0",
       "Answer: 24804"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 689,
@@ -7830,18 +7743,13 @@
       "normalReadOff": "24604"
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 689 × 36.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q11",
@@ -7963,7 +7871,9 @@
       "Diagonal 10^4: total 2, write 2, carry 0",
       "Answer: 24876"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 691,
@@ -8155,18 +8065,13 @@
       "normalReadOff": "87876"
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 691 × 36.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C2-Q12",
@@ -8279,7 +8184,9 @@
       "Diagonal 10^4: total 2, write 2, carry 0",
       "Answer: 24948"
     ],
-    "hint": "Check the factor order and cell values, then trace each diagonal and its carries.",
+    "hint": {
+      "textRef": "check-cells-and-carries"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 693,
@@ -8471,18 +8378,13 @@
       "normalReadOff": "25048"
     },
     "draftId": "M01-DRAFT-ERRORS-C2-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 693 × 36.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Check each corrected step against the original quantities and requested answer.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": {
+      "textRef": "check-original-quantities"
+    }
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q05",
@@ -8653,7 +8555,9 @@
       "Diagonal 10^6: total 5, write 5, carry 0",
       "Answer: 5168394"
     ],
-    "hint": "Multiply each top digit by its matching right-hand digit; check both halves of the cell.",
+    "hint": {
+      "textRef": "check-digit-product"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 7458,
@@ -8987,18 +8891,11 @@
       "normalReadOff": "5195394"
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q05",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 7458 × 693.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 7,000 × 700 = 4,900,000. Check that the exact answer ends in 4.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 7,000 × 700 = 4,900,000. Check that the exact answer ends in 4."
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q06",
@@ -9620,18 +9517,11 @@
       "normalReadOff": "49640694"
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q06",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 8639 × 5746.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 9,000 × 6,000 = 54,000,000. Check that the exact answer ends in 4.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 9,000 × 6,000 = 54,000,000. Check that the exact answer ends in 4."
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q07",
@@ -9831,7 +9721,9 @@
       "Diagonal 10^7: total 3, write 3, carry 0",
       "Answer: 37189152"
     ],
-    "hint": "Multiply each top digit by its matching right-hand digit; check both halves of the cell.",
+    "hint": {
+      "textRef": "check-digit-product"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 8736,
@@ -10256,18 +10148,11 @@
       "normalReadOff": "37199152"
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q07",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 8736 × 4257.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 9,000 × 4,000 = 36,000,000. Check that the exact answer ends in 2.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 9,000 × 4,000 = 36,000,000. Check that the exact answer ends in 2."
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q08",
@@ -10767,18 +10652,11 @@
       "normalReadOff": "8282332"
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q08",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 876 × 9457.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 900 × 9,000 = 8,100,000. Check that the exact answer ends in 2.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 900 × 9,000 = 8,100,000. Check that the exact answer ends in 2."
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q09",
@@ -10979,7 +10857,9 @@
       "Diagonal 10^7: total 4, write 4, carry 0",
       "Answer: 43000386"
     ],
-    "hint": "Multiply each top digit by its matching right-hand digit; check both halves of the cell.",
+    "hint": {
+      "textRef": "check-digit-product"
+    },
     "diagram": {
       "kind": "lattice",
       "a": 9867,
@@ -11404,18 +11284,11 @@
       "normalReadOff": "47500386"
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q09",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 9867 × 4358.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 10,000 × 4,000 = 40,000,000. Check that the exact answer ends in 6.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 10,000 × 4,000 = 40,000,000. Check that the exact answer ends in 6."
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q10",
@@ -11915,18 +11788,11 @@
       "normalReadOff": "3256394"
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q10",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 7586 × 429.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 8,000 × 400 = 3,200,000. Check that the exact answer ends in 4.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 8,000 × 400 = 3,200,000. Check that the exact answer ends in 4."
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q11",
@@ -12442,18 +12308,11 @@
       "normalReadOff": "2290432"
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q11",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 8947 × 652.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 9,000 × 700 = 6,300,000. Check that the exact answer ends in 4.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 9,000 × 700 = 6,300,000. Check that the exact answer ends in 4."
   },
   {
     "id": "maths:M01-WEB-ERRORS-R2-C3-Q12",
@@ -13077,17 +12936,10 @@
       ]
     },
     "draftId": "M01-DRAFT-ERRORS-C3-Q12",
-    "type": "errors",
-    "investigation": true,
-    "method": "investigation",
     "q": "Work out 6489 × 7835.",
-    "prose": true,
     "questionPrefix": "",
     "answerUnit": "",
     "calculator": false,
-    "method_note": "Find the independent mistakes and complete the corrected working.",
-    "check": "Estimate: 6,000 × 8,000 = 48,000,000. Check that the exact answer ends in 5.",
-    "subject": "maths",
-    "topic": "M01"
+    "check": "Estimate: 6,000 × 8,000 = 48,000,000. Check that the exact answer ends in 5."
   }
 ]

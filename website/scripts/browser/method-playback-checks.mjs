@@ -1,7 +1,24 @@
-/** Focused checks for playback cosmetics, final highlights and the three working renderers. */
+/**
+ * Purpose: Focused checks for playback cosmetics, final highlights and the three working
+ * renderers.
+ *
+ * Main contents:
+ * - checkMethodPlayback.
+ *
+ * Used By: website/scripts/browser-checks.mjs.
+ *
+ * Uses: website/scripts/browser/support.mjs.
+ *
+ * Libs: node:assert/strict (assertions).
+ *
+ * Usage and output: Imported by the browser suite runner; call the exported check with its
+ * browser/base URL arguments. Uses isolated test contexts and assertions, closing owned contexts
+ * on exit. Normal entry point: npm run verify:changed from website/.
+ */
 import assert from 'node:assert/strict';
 import { artifacts, createTestContext } from './support.mjs';
 
+/** Compare equation preview bounds at the supplied viewport widths. Called by checkMethodPlayback; assertions cover proportional scaling without inspecting screenshots. */
 async function checkEquationWidths(page) {
   for (const width of [320, 360, 390]) {
     await page.setViewportSize({ width, height: 900 });
@@ -9,7 +26,10 @@ async function checkEquationWidths(page) {
       await page.locator(`[data-demo-level="${level}"]`).click();
       for (const example of ['demo', 'recap']) {
         await page.locator('[data-demo-example]').click();
-        await page.getByRole('listbox').getByRole('option', { name: example === 'demo' ? /^1\./ : /^2\./ }).click();
+        await page
+          .getByRole('listbox')
+          .getByRole('option', { name: example === 'demo' ? /^1\./ : /^2\./ })
+          .click();
         await page.waitForFunction(() => !document.querySelector('#demo-play')?.disabled);
         if (await page.locator('#demo-all').isEnabled()) await page.locator('#demo-all').click();
         await page.waitForFunction(() => document.querySelector('.balance [data-stroke]'));
@@ -47,6 +67,7 @@ async function checkEquationWidths(page) {
   await page.setViewportSize({ width: 360, height: 900 });
 }
 
+/** Run this focused browser scenario against the supplied browser and base URL. Called by the shared suite runner; isolated contexts and finally cleanup protect other sessions. Example: await checkMethodPlayback(browser, base). */
 export async function checkMethodPlayback(browser, base) {
   const context = await createTestContext(browser, { viewport: { width: 360, height: 900 } });
   const page = await context.newPage();
@@ -73,7 +94,7 @@ export async function checkMethodPlayback(browser, base) {
       assert.match(await chooser.innerText(), /^1\. /);
       await chooser.click();
       const names = await page.getByRole('listbox').getByRole('option').allTextContents();
-      assert.ok(names.length >= 2);
+      assert.ok(names.length >= 4);
       names.forEach((name, index) => {
         assert.match(name.replace('✓', '').trim(), new RegExp(`^${index + 1}\\. `));
         assert.doesNotMatch(name, /worked example/i);
@@ -88,6 +109,7 @@ export async function checkMethodPlayback(browser, base) {
       );
       await page.locator('[data-demo-level="0"]').click();
       const help = page.locator('.guidance .concept-help').first();
+      assert.notEqual((await help.innerText()).trim(), '?');
       assert.equal(await help.getAttribute('aria-expanded'), 'false');
       await help.focus();
       await page.keyboard.press('Enter');

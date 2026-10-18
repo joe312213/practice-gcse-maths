@@ -1,15 +1,20 @@
-"""Purpose: Reconstruct M10 reference candidates from historical JSON sources, never replace the live bank.
+"""Purpose: Reconstruct the historical M10 equation import using exact arithmetic and stable source
+IDs. Its output is an isolated comparison candidate, never a replacement for the reviewed live
+topic folder.
 
 Main contents:
-- verify_answer
-- prepare_bank
-- main
+- verify_answer: Check a question's exact solution against its coefficients, when provided.
+- prepare_bank: Build and validate an M10 candidate from historical source JSON, with no writes.
+- main: Prepare the reference bank, then call write_candidates to output it for review only.
 
 Used By: optional manual reference reconstruction; never routine website builds.
 
 Uses: content/M10*.json, web_assessments.json, bank_candidates.py.
 
 Libs: Python standard library for exact fractions, hashing and JSON. No PowerPoint dependency.
+
+Usage and output: From repository root: python3 scripts/prepare_web_equations.py. Reads
+content/M10*.json and web_assessments.json; writes candidates only through write_candidates.
 """
 from pathlib import Path
 from fractions import Fraction

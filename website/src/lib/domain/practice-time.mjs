@@ -1,14 +1,15 @@
 /**
- * Purpose: Apply active-time rules adapted from T-Level starters commit 69560b2. Clocks are transient and never recover absence as practice.
+ * Purpose: Apply active-time rules adapted from T-Level starters commit 69560b2. Clocks are
+ * transient and never recover absence as practice.
  *
  * Main contents:
  * - Inactivity constants; initialise, settle, engage, interact, poll and pause operations.
  *
- * Used By: adapters/practice-time.mjs.
+ * Used By: website/src/lib/adapters/practice-time.mjs.
  *
- * Uses: No local modules.
+ * Uses: no local module imports.
  *
- * Libs: None.
+ * Libs: none.
  */
 export const IDLE_MS = 120000;
 export const INTERACTION_POLL_MS = 5000;

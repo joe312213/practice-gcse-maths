@@ -4,11 +4,14 @@
   Main contents:
   - SiteFooter.
 
-  Used By: Homepage, TopicPractice, Progress, Puzzles and About routes.
+  Used By: website/src/lib/components/practice/TopicPractice.svelte,
+  website/src/routes/+page.svelte, website/src/routes/about.html/+page.svelte,
+  website/src/routes/go.html/+page.svelte, website/src/routes/handwriting.html/+page.svelte,
+  website/src/routes/help.html/+page.svelte, website/src/routes/progress.html/+page.svelte.
 
-  Uses: IssueReport.svelte.
+  Uses: website/src/lib/components/ui/IssueReport.svelte.
 
-  Libs: Svelte (props/snippets); $app/paths (base-aware links).
+  Libs: $app/paths (SvelteKit navigation/route state).
 -->
 <script>
   import { resolve } from '$app/paths';
@@ -21,7 +24,7 @@
   {#if children}<p>{@render children()}</p>{/if}
   <div class="footer-links">
     <a href={resolve('/about.html')}>About</a>
-    <a href={resolve('/help.html')}>FAQ &amp; troubleshooting</a>
+    <a href={resolve('/help.html')}>How To &amp; FAQ</a>
     <IssueReport {question} {topic} />
   </div>
 </footer>

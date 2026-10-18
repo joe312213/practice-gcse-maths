@@ -4,9 +4,10 @@
  * Main contents:
  * - equationFrames
  *
- * Used By: tests/demo-sequence.test.mjs, website/src/lib/components/teaching/DemoPlayer.svelte
+ * Used By: tests/demo-sequence.test.mjs, tests/topic-content.test.mjs,
+ * website/src/lib/components/teaching/DemoPlayer.svelte.
  *
- * Uses: demo-guide.mjs (guideFrames).
+ * Uses: website/src/lib/application/demo-guide.mjs.
  *
  * Libs: none.
  */

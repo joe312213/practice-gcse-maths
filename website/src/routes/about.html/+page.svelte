@@ -4,11 +4,12 @@
   Main contents:
   - Component markup, input props and event bindings.
 
-  Used By: SvelteKit route loading.
+  Used By: SvelteKit route loading/prerendering.
 
-  Uses: SiteHeader.svelte and SiteFooter.svelte.
+  Uses: website/src/lib/components/ui/SiteHeader.svelte,
+  website/src/lib/components/ui/SiteFooter.svelte.
 
-  Libs: $app/paths (base-aware URLs).
+  Libs: $app/paths (SvelteKit navigation/route state).
 -->
 <script>
   import SiteHeader from '#lib/components/ui/SiteHeader.svelte';

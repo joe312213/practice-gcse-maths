@@ -1,4 +1,19 @@
-/** Profile changes require explicit identity checks and never affect another learner's records. */
+/**
+ * Purpose: Profile changes require explicit identity checks and never affect another learner's
+ * records.
+ *
+ * Main contents:
+ * - rename preserves identity, history and settings, and rejects name collisions; reset and
+ *   delete require the displayed name and only affect the selected learner; temporary working
+ *   follows a rename without extending expiry; reset removes only that learner.
+ *
+ * Used By: verify:changed logic job and Node test runner.
+ *
+ * Uses: website/src/lib/domain/profile-management.mjs,
+ * website/src/lib/adapters/working-cache.mjs.
+ *
+ * Libs: node:test (test runner), node:assert/strict (assertions).
+ */
 import test from "node:test";
 import assert from "node:assert/strict";
 import { editProfile } from "../website/src/lib/domain/profile-management.mjs";

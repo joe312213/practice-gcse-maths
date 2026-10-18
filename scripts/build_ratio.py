@@ -1,28 +1,24 @@
-"""Purpose: Build the standalone M04 ratio question and answer decks from Markdown.
-Does not read or overwrite the consolidated deck. Requires python-pptx and Pillow.
+"""Purpose: Retired standalone ratio-deck builder and reusable PowerPoint drawing helpers. It
+parses the reviewed ratio Markdown and answer source; the direct command is deliberately
+disabled.
 
 Main contents:
-- splitcells
-- section
-- source_questions
-- answer_section
-- rect
-- text
-- line
-- base
-- headers
-- progression
-- bars
-- worked_grid
-- make
+- splitcells, section, source_questions, answer_section, rect, text, line, base, headers,
+  progression, bars, worked_grid, make.
 
-Used By: scripts/add_ratio_assessment.py, scripts/build_fraction_topic.py, scripts/build_priority_topic.py, scripts/build_signed.py.
+Used By: scripts/add_ratio_assessment.py, scripts/build_fraction_topic.py,
+scripts/build_priority_topic.py, scripts/build_signed.py.
 
 Uses: no local module imports.
 
-Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck inspection).
+Libs: Pillow (font measurement/image rendering), python-pptx (editable slides and deck
+inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Import drawing helpers from legacy publishers. The __main__ guard exits before
+make(); make() itself writes standalone ratio question/answer decks.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 import re, hashlib, zipfile, math, json
@@ -160,7 +156,7 @@ def progression(s,grid=False):
  Calls: rotate, bezier, pt.
  Used by: worked_grid, make.
 
- Example in the caller's context: progression(s, grid)
+ Example: progression(s, grid)
  """
  shaft=[(110,160),(285,800),(770,865),(1275,550)]
  head=[(890,545),(1275,550),(1080,865)]
@@ -226,7 +222,7 @@ def bars(s,x,y,w,h,a,b,names,known,kind,part,t):
  Calls: text, rect, line.
  Used by: worked_grid.
 
- Example in the caller's context: bars(s, x, y, w, h, a, b, names, known, kind, part, t)
+ Example: bars(s, x, y, w, h, a, b, names, known, kind, part, t)
  """
  group=s.shapes.add_group_shape();group.name=f'Ratio bars {names[0]}:{names[1]} = {a}:{b}, {kind}'
  labelw=1.0;bx=x+labelw;cell=min(.43,(w-labelw-.2)/max(a,b));bh=.23;rowgap=.41
@@ -256,7 +252,7 @@ def worked_grid(prs,sn,answer=False):
  answer_section.
  Used by: make.
 
- Example in the caller's context: worked_grid(prs, sn, answer)
+ Example: worked_grid(prs, sn, answer)
  """
  title='Ratio: sharing and missing amounts' if not answer else 'Ratio: answers and worked method'
  sub='Worked demo • Follow each step down your column.' if sn==1 else ('Answers to step-by-step practice '+str(sn-1) if answer else 'Step-by-step practice '+str(sn-1)+' • Complete each step in your booklet or webapp.')
@@ -290,7 +286,7 @@ def make():
  Calls: worked_grid, base, headers, source_questions, rect, text, progression, answer_section,
  p.save.
 
- Example in the caller's context: make()
+ Example: make()
  """
  qprs=Presentation();aprs=Presentation()
  for p in [qprs,aprs]:p.slide_width=Inches(16);p.slide_height=Inches(9);p.core_properties.author='Maths teaching resources'

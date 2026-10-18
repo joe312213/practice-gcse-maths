@@ -1,12 +1,7 @@
 [
   {
     "id": "maths:M07-WEB-PS-C1-Q85",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "problem",
     "level": 0,
-    "method": "calculation",
-    "prose": true,
     "q": "15% of an amount is £57.6. Find the whole amount.",
     "answer": "384",
     "answerUnit": "£",
@@ -29,12 +24,18 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 15% of the original. Keep any delivery charge separate.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "15"
+      }
+    },
     "method_note": "Divide the known part by its percentage multiplier.",
     "check": "Reverse the calculation chain: 384 × 0.15 = 57.6.",
     "wrong": "216/25",
-    "error_note": "The known amount is already a percentage of the whole. Multiplying by the percentage again makes it smaller; recover the whole by division.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "recover-whole-by-division"
+    },
     "errorSteps": [
       {
         "title": "Student finds a percentage of the known part",
@@ -55,12 +56,7 @@
   },
   {
     "id": "maths:M07-WEB-PS-C2-Q85",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "problem",
     "level": 1,
-    "method": "calculation",
-    "prose": true,
     "q": "After a 15% discount, a price is £326.4. Find the original price.",
     "answer": "384",
     "answerUnit": "£",
@@ -83,12 +79,21 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 85% of the original. Keep any delivery charge separate.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "85"
+      }
+    },
     "method_note": "Divide the changed price by its percentage multiplier.",
     "check": "Reverse the calculation chain: 384 × 0.85 = 326.4.",
     "wrong": "9384/25",
-    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 85% of the original.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "avoid-forward-percentage",
+      "values": {
+        "percentage": "85"
+      }
+    },
     "errorSteps": [
       {
         "title": "Student applies the opposite percentage",
@@ -109,12 +114,7 @@
   },
   {
     "id": "maths:M07-WEB-PS-C3-Q85",
-    "subject": "maths",
-    "topic": "M07",
-    "type": "problem",
     "level": 2,
-    "method": "calculation",
-    "prose": true,
     "q": "An item has a 15% discount, then £5 delivery is added. The bill is £331.4. Find the original item price.",
     "answer": "384",
     "answerUnit": "£",
@@ -148,12 +148,23 @@
         "outputUnit": "£"
       }
     ],
-    "hint": "The item amount represents 85% of the original. Keep any delivery charge separate.",
-    "method_note": "Remove delivery before using the percentage Divide by the percentage multiplier to find the original.",
+    "hint": {
+      "textRef": "identify-percentage",
+      "values": {
+        "percentage": "85"
+      }
+    },
+    "method_note": {
+      "textRef": "separate-delivery-method"
+    },
     "check": "Reverse the calculation chain: 384 × 0.85 = 326.4; 326.4 + 5 = 331.4.",
     "wrong": "9384/25",
-    "error_note": "This applies a new percentage to the changed price. Instead identify the amount representing 85% of the original.",
-    "source": "Original website extension of content/M07_reverse_percentages.md; 12 October 2026. Historical authored source preserved.",
+    "error_note": {
+      "textRef": "avoid-forward-percentage",
+      "values": {
+        "percentage": "85"
+      }
+    },
     "errorSteps": [
       {
         "title": "Student applies the opposite percentage",

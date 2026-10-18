@@ -5,11 +5,12 @@
   - Canvas rendering and single-pointer stroke lifecycle.
   - Typed working, method guides and a pointer/keyboard canvas resize handle.
 
-  Used By: PracticeActivity.svelte, which supplies the draft and update callbacks.
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte.
 
-  Uses: drawing-assist.mjs, drawing.mjs and domain/working.mjs; onworking updates the parent session.
+  Uses: website/src/lib/domain/working.mjs, website/src/lib/application/drawing.mjs,
+  website/src/lib/application/drawing-assist.mjs.
 
-  Libs: Svelte onMount.
+  Libs: svelte (component state, lifecycle and transitions).
 -->
 <script>
   import { onMount } from 'svelte';

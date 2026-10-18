@@ -4,11 +4,13 @@
   Main contents:
   - Component markup, input props and event bindings.
 
-  Used By: SvelteKit route loading.
+  Used By: SvelteKit route loading/prerendering.
 
-  Uses: website/src/lib/theme/preferences.mjs, website/src/lib/styles/app.css.
+  Uses: website/src/lib/adapters/progress-ownership.mjs, website/src/lib/theme/preferences.mjs,
+  website/src/lib/styles/app.css.
 
-  Libs: svelte (component lifecycle and state), svelte/store.
+  Libs: svelte (component state, lifecycle and transitions), $app/navigation (SvelteKit
+  navigation/route state), svelte/store (reactive store subscriptions).
 -->
 <script>
   import { onMount, setContext, tick } from 'svelte';

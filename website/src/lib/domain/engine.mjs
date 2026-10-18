@@ -15,7 +15,9 @@
  * - profileKey
  * - distance
  *
- * Used By: tests/progress.test.mjs, tests/website.test.mjs, website/scripts/validate-bank.mjs, website/src/lib/application/session.mjs, website/src/lib/components/practice/PracticeActivity.svelte, website/src/lib/components/practice/Progress.svelte, website/src/lib/components/practice/QuestionList.svelte, website/src/lib/components/teaching/DemoPlayer.svelte, website/src/lib/domain/errors.mjs, website/src/lib/domain/profiles.mjs, website/src/lib/domain/progress-transfer.mjs, website/src/lib/domain/progress.mjs
+ * Used By: tests/arithmetic.test.mjs, tests/draft-topics.test.mjs,
+ * tests/problem-solving.test.mjs, tests/progress.test.mjs, tests/quantity.test.mjs,
+ * tests/website.test.mjs, website/scripts/validate-bank.mjs.
  *
  * Uses: no local module imports.
  *

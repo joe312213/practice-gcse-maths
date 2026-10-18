@@ -4,15 +4,15 @@
   Main contents:
   - Keyed TopicPractice component.
 
-  Used By: SvelteKit subject/topic route.
+  Used By: SvelteKit route loading/prerendering.
 
-  Uses: TopicPractice.svelte; adjacent route loader.
+  Uses: website/src/lib/components/practice/TopicPractice.svelte.
 
-  Libs: Svelte (props and keyed lifecycle).
+  Libs: none.
 -->
 <script>
   import TopicPractice from '#lib/components/practice/TopicPractice.svelte';
   let { data } = $props();
 </script>
 
-{#key data.topicId}<TopicPractice topicId={data.topicId} />{/key}
+{#key data.topicId}<TopicPractice topicId={data.topicId} bankVersions={data.bankVersions} />{/key}

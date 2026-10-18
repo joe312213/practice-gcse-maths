@@ -1,9 +1,11 @@
-"""Purpose: Explicit, reproducible M15 question content, using exact rational arithmetic.
+"""Purpose: Historical reproducible M15 source generator: use exact fractions to construct
+assessments, demonstrations, practice banks and diagnostic errors with worked answers.
 
 Main contents:
-- raw
-- example
-- make
+- raw: Encode a numerator and denominator in the fraction renderer token syntax.
+- example: Compute exact fraction addition/subtraction with common-denominator working and
+  checks.
+- make: Construct deterministic fraction assessment, demo, practice and error-question banks.
 
 Used By: manual legacy command invocation.
 
@@ -11,7 +13,11 @@ Uses: scripts/rendering/fractions.py.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Running make() overwrites content/M15_fractions.json and returns the generated
+dictionary. It does not update current website banks.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 from fractions import Fraction as F
@@ -34,7 +40,7 @@ def example(a,b,sign='+',show_mixed=False):
  Calls: raw.
  Used by: make.
 
- Example in the caller's context: example(F(1, 3), F(1, 6))
+ Example: example(F(1, 3), F(1, 6))
  """
  a,b=F(a),F(b);v=a+b if sign=='+' else a-b;den=lcm(a.denominator,b.denominator);an=a.numerator*(den//a.denominator);bn=b.numerator*(den//b.denominator);num=an+bn if sign=='+' else an-bn
  fmt=mixed if show_mixed else token;q=fmt(a)+' '+sign+' '+fmt(b);lines=[q]
@@ -48,7 +54,7 @@ def make():
  """Construct deterministic fraction assessment, demo, practice and error-question banks.
  Calls: example.
 
- Example in the caller's context: make()
+ Example: make()
  """
  ia=[example(F(2,7),F(3,7)),example(F(7,9),F(2,9),'−'),example(F(1,3),F(1,6)),example(F(4,3),F(3,4),'−',True)]
  demo=[example(F(3,8),F(1,8)),example(F(5,6),F(1,3),'−'),example(F(4,3),F(3,4),'−',True)]

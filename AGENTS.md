@@ -31,6 +31,26 @@ Use the two project-local skills above when relevant; they live in `.agents/skil
 
 Keep responsibilities distinct: standing requirements in UI_UX_RULES; dated decisions/progress/issues in DEV_LOG; **only current state and next steps in HANDOFF**. Update HANDOFF at meaningful milestones during longer work, before a risky transition or pause, and at the end—not just when a session finishes. Record incomplete edits, running processes, last evidence, failures and exact next action so interruptions are recoverable. Never disguise an untested change as verified or overwrite historical results with present-tense claims.
 
+The DEV_LOG is for dated and titled entries recording:
+
+- concise summaries of work done and issues or bugs identified and the general area(s) of focus
+- decisions made and considered, with the rationale and any main rejected options and reasons for rejection.
+- files edited or created and for what purpose
+- any use of new frameworks or libraries (with the justification) and any discontinued use of such and why.
+- what app features or requirements are related to the work carried out or decisions made.
+- the key challenges being focused on and any remaining issues or uncertainties (it's very important to be honest here so issues don't get minimized or forgotten)
+
+Apply these rules to dev log entries:
+
+- Verification: record what was checked, the outcome, and anything not verified. Distinguish automated checks from visual inspection or user acceptance.
+- Status: distinguish proposed, agreed, implemented and verified work. State explicitly whether anything was committed or deployed when relevant.
+- Historical integrity: record later corrections or changed decisions in a subsequent dated entry; don’t rewrite earlier uncertainty or failures as though they never happened.
+- Cover the applicable points; do not create empty sections or repeat unchanged information. Group files by purpose where helpful, using explicit paths.
+
+Language in the dev log should be concise, but not so compressed that it becomes hard to figure out what took place and why in the codebase when looking back. Be precise but avoid jargon, unless technical terms are justified. Be consistent in terminology and avoid uncessarily calling the same thing by different names (call a spade a spade).
+
+In DEV_LOG, use exactly one blank line between paragraphs and around headings. When appending entries, account for existing trailing newlines so extra blank lines are not introduced.
+
 HANDOFF should normally include a short, ordered outline of the logical next work slices, not just a backlog or the immediate next command. State each slice's outcome, dependencies and decisions still needed; distinguish proposed later work from authorised work. Refresh the outline when priorities change.
 
 When adding/removing documentation, update INDEX; link rather than duplicate rules. Keep skill instructions narrow and concise.

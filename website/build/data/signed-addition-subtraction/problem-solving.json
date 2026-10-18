@@ -45,12 +45,21 @@
             "outputUnit": "°C"
           }
         ],
-        "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+        "hint": {
+          "textRef": "signed-changes-hint",
+          "values": {
+            "start": "-12"
+          }
+        },
         "method_note": "It rises by 8°C.",
         "check": "Undo the changes in reverse order: -4 − 8 = -12.",
         "wrong": "-12",
-        "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "follow-all-changes"
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       },
       {
         "id": "maths:M13-WEB-PS-C2-Q100",
@@ -93,12 +102,21 @@
             "outputUnit": "°C"
           }
         ],
-        "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+        "hint": {
+          "textRef": "signed-changes-hint",
+          "values": {
+            "start": "-12"
+          }
+        },
         "method_note": "It rises by 8°C. It falls by 9°C.",
         "check": "Undo the changes in reverse order: -13 + 9 = -4; -4 − 8 = -12.",
         "wrong": "-12",
-        "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "follow-all-changes"
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       },
       {
         "id": "maths:M13-WEB-PS-C3-Q100",
@@ -163,24 +181,28 @@
             "outputUnit": "°C"
           }
         ],
-        "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+        "hint": {
+          "textRef": "signed-changes-hint",
+          "values": {
+            "start": "-12"
+          }
+        },
         "method_note": "It rises by 8°C. It falls by 9°C. It rises by 7°C. It falls by 4°C.",
         "check": "Undo the changes in reverse order: -10 + 4 = -6; -6 − 7 = -13; -13 + 9 = -4; -4 − 8 = -12.",
         "wrong": "-12",
-        "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-        "source": "Original website application-stage content, 12 October 2026"
+        "error_note": {
+          "textRef": "follow-all-changes"
+        },
+        "source": {
+          "textRef": "application-source"
+        }
       }
     ]
   },
   "questions": [
     {
       "id": "maths:M13-WEB-PS-C1-Q1",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -8°C. It rises by 11°C. What is the final temperature?",
       "answer": "3",
       "answerUnit": "°C",
@@ -203,22 +225,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -8. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-8"
+        }
+      },
       "method_note": "It rises by 11°C.",
       "check": "Undo the changes in reverse order: 3 − 11 = -8.",
       "wrong": "-8",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q2",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A diver is 9 m below sea level (position -9 m). They rise 6 m. What is the final signed position relative to sea level?",
       "answer": "-3",
       "answerUnit": "m",
@@ -241,22 +261,20 @@
           "outputUnit": "m"
         }
       ],
-      "hint": "Start at -9. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-9"
+        }
+      },
       "method_note": "They rise 6 m.",
       "check": "Undo the changes in reverse order: -3 − 6 = -9.",
       "wrong": "-9",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q3",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A game score is -10. The player gains 17 points. What is the final score?",
       "answer": "7",
       "answerUnit": "points",
@@ -279,22 +297,20 @@
           "outputUnit": "points"
         }
       ],
-      "hint": "Start at -10. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-10"
+        }
+      },
       "method_note": "The player gains 17 points.",
       "check": "Undo the changes in reverse order: 7 − 17 = -10.",
       "wrong": "-10",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q4",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A bank balance is −£11. £6 is paid in. What is the final balance?",
       "answer": "-5",
       "answerUnit": "£",
@@ -317,22 +333,20 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Start at -11. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-11"
+        }
+      },
       "method_note": "£6 is paid in.",
       "check": "Undo the changes in reverse order: -5 − 6 = -11.",
       "wrong": "-11",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q5",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A lift is at floor -12. It rises 13 floors. What is the final floor number?",
       "answer": "1",
       "answerUnit": "",
@@ -354,22 +368,20 @@
           "note": "It rises 13 floors."
         }
       ],
-      "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-12"
+        }
+      },
       "method_note": "It rises 13 floors.",
       "check": "Undo the changes in reverse order: 1 − 13 = -12.",
       "wrong": "-12",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q6",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -13°C. It rises by 22°C. What is the final temperature?",
       "answer": "9",
       "answerUnit": "°C",
@@ -392,22 +404,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -13. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-13"
+        }
+      },
       "method_note": "It rises by 22°C.",
       "check": "Undo the changes in reverse order: 9 − 22 = -13.",
       "wrong": "-13",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q7",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -9°C. It rises by 13°C. What is the final temperature?",
       "answer": "4",
       "answerUnit": "°C",
@@ -430,22 +440,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -9. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-9"
+        }
+      },
       "method_note": "It rises by 13°C.",
       "check": "Undo the changes in reverse order: 4 − 13 = -9.",
       "wrong": "-9",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q8",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A diver is 10 m below sea level (position -10 m). They rise 6 m. What is the final signed position relative to sea level?",
       "answer": "-4",
       "answerUnit": "m",
@@ -468,22 +476,20 @@
           "outputUnit": "m"
         }
       ],
-      "hint": "Start at -10. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-10"
+        }
+      },
       "method_note": "They rise 6 m.",
       "check": "Undo the changes in reverse order: -4 − 6 = -10.",
       "wrong": "-10",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q9",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A game score is -11. The player gains 19 points. What is the final score?",
       "answer": "8",
       "answerUnit": "points",
@@ -506,22 +512,20 @@
           "outputUnit": "points"
         }
       ],
-      "hint": "Start at -11. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-11"
+        }
+      },
       "method_note": "The player gains 19 points.",
       "check": "Undo the changes in reverse order: 8 − 19 = -11.",
       "wrong": "-11",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q10",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A bank balance is −£12. £8 is paid in. What is the final balance?",
       "answer": "-4",
       "answerUnit": "£",
@@ -544,22 +548,20 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-12"
+        }
+      },
       "method_note": "£8 is paid in.",
       "check": "Undo the changes in reverse order: -4 − 8 = -12.",
       "wrong": "-12",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q11",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A lift is at floor -13. It rises 15 floors. What is the final floor number?",
       "answer": "2",
       "answerUnit": "",
@@ -581,22 +583,20 @@
           "note": "It rises 15 floors."
         }
       ],
-      "hint": "Start at -13. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-13"
+        }
+      },
       "method_note": "It rises 15 floors.",
       "check": "Undo the changes in reverse order: 2 − 15 = -13.",
       "wrong": "-13",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q12",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -14°C. It rises by 24°C. What is the final temperature?",
       "answer": "10",
       "answerUnit": "°C",
@@ -619,22 +619,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -14. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-14"
+        }
+      },
       "method_note": "It rises by 24°C.",
       "check": "Undo the changes in reverse order: 10 − 24 = -14.",
       "wrong": "-14",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q13",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -10°C. It rises by 15°C. What is the final temperature?",
       "answer": "5",
       "answerUnit": "°C",
@@ -657,22 +655,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -10. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-10"
+        }
+      },
       "method_note": "It rises by 15°C.",
       "check": "Undo the changes in reverse order: 5 − 15 = -10.",
       "wrong": "-10",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q14",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A diver is 11 m below sea level (position -11 m). They rise 6 m. What is the final signed position relative to sea level?",
       "answer": "-5",
       "answerUnit": "m",
@@ -695,22 +691,20 @@
           "outputUnit": "m"
         }
       ],
-      "hint": "Start at -11. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-11"
+        }
+      },
       "method_note": "They rise 6 m.",
       "check": "Undo the changes in reverse order: -5 − 6 = -11.",
       "wrong": "-11",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q15",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A game score is -12. The player gains 21 points. What is the final score?",
       "answer": "9",
       "answerUnit": "points",
@@ -733,22 +727,20 @@
           "outputUnit": "points"
         }
       ],
-      "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-12"
+        }
+      },
       "method_note": "The player gains 21 points.",
       "check": "Undo the changes in reverse order: 9 − 21 = -12.",
       "wrong": "-12",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q16",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A bank balance is −£13. £10 is paid in. What is the final balance?",
       "answer": "-3",
       "answerUnit": "£",
@@ -771,22 +763,20 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Start at -13. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-13"
+        }
+      },
       "method_note": "£10 is paid in.",
       "check": "Undo the changes in reverse order: -3 − 10 = -13.",
       "wrong": "-13",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q17",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "A lift is at floor -14. It rises 17 floors. What is the final floor number?",
       "answer": "3",
       "answerUnit": "",
@@ -808,22 +798,20 @@
           "note": "It rises 17 floors."
         }
       ],
-      "hint": "Start at -14. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-14"
+        }
+      },
       "method_note": "It rises 17 floors.",
       "check": "Undo the changes in reverse order: 3 − 17 = -14.",
       "wrong": "-14",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C1-Q18",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 0,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -15°C. It rises by 26°C. What is the final temperature?",
       "answer": "11",
       "answerUnit": "°C",
@@ -846,22 +834,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -15. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-15"
+        }
+      },
       "method_note": "It rises by 26°C.",
       "check": "Undo the changes in reverse order: 11 − 26 = -15.",
       "wrong": "-15",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q1",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -8°C. It rises by 11°C. It falls by 5°C. What is the final temperature?",
       "answer": "-2",
       "answerUnit": "°C",
@@ -895,22 +881,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -8. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-8"
+        }
+      },
       "method_note": "It rises by 11°C. It falls by 5°C.",
       "check": "Undo the changes in reverse order: -2 + 5 = 3; 3 − 11 = -8.",
       "wrong": "-8",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q2",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A diver is 9 m below sea level (position -9 m). They rise 6 m. They descend 5 m. What is the final signed position relative to sea level?",
       "answer": "-8",
       "answerUnit": "m",
@@ -944,22 +928,20 @@
           "outputUnit": "m"
         }
       ],
-      "hint": "Start at -9. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-9"
+        }
+      },
       "method_note": "They rise 6 m. They descend 5 m.",
       "check": "Undo the changes in reverse order: -8 + 5 = -3; -3 − 6 = -9.",
       "wrong": "-9",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q3",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A game score is -10. The player gains 17 points. The player loses 5 points. What is the final score?",
       "answer": "2",
       "answerUnit": "points",
@@ -993,22 +975,20 @@
           "outputUnit": "points"
         }
       ],
-      "hint": "Start at -10. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-10"
+        }
+      },
       "method_note": "The player gains 17 points. The player loses 5 points.",
       "check": "Undo the changes in reverse order: 2 + 5 = 7; 7 − 17 = -10.",
       "wrong": "-10",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q4",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A bank balance is −£11. £6 is paid in. £5 is withdrawn. What is the final balance?",
       "answer": "-10",
       "answerUnit": "£",
@@ -1042,22 +1022,20 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Start at -11. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-11"
+        }
+      },
       "method_note": "£6 is paid in. £5 is withdrawn.",
       "check": "Undo the changes in reverse order: -10 + 5 = -5; -5 − 6 = -11.",
       "wrong": "-11",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q5",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A lift is at floor -12. It rises 13 floors. It descends 5 floors. What is the final floor number?",
       "answer": "-4",
       "answerUnit": "",
@@ -1089,22 +1067,20 @@
           "note": "It descends 5 floors."
         }
       ],
-      "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-12"
+        }
+      },
       "method_note": "It rises 13 floors. It descends 5 floors.",
       "check": "Undo the changes in reverse order: -4 + 5 = 1; 1 − 13 = -12.",
       "wrong": "-12",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q6",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -13°C. It rises by 22°C. It falls by 5°C. What is the final temperature?",
       "answer": "4",
       "answerUnit": "°C",
@@ -1138,22 +1114,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -13. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-13"
+        }
+      },
       "method_note": "It rises by 22°C. It falls by 5°C.",
       "check": "Undo the changes in reverse order: 4 + 5 = 9; 9 − 22 = -13.",
       "wrong": "-13",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q7",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -9°C. It rises by 13°C. It falls by 6°C. What is the final temperature?",
       "answer": "-2",
       "answerUnit": "°C",
@@ -1187,22 +1161,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -9. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-9"
+        }
+      },
       "method_note": "It rises by 13°C. It falls by 6°C.",
       "check": "Undo the changes in reverse order: -2 + 6 = 4; 4 − 13 = -9.",
       "wrong": "-9",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q8",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A diver is 10 m below sea level (position -10 m). They rise 6 m. They descend 6 m. What is the final signed position relative to sea level?",
       "answer": "-10",
       "answerUnit": "m",
@@ -1236,22 +1208,20 @@
           "outputUnit": "m"
         }
       ],
-      "hint": "Start at -10. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-10"
+        }
+      },
       "method_note": "They rise 6 m. They descend 6 m.",
       "check": "Undo the changes in reverse order: -10 + 6 = -4; -4 − 6 = -10.",
       "wrong": "-9",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q9",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A game score is -11. The player gains 19 points. The player loses 6 points. What is the final score?",
       "answer": "2",
       "answerUnit": "points",
@@ -1285,22 +1255,20 @@
           "outputUnit": "points"
         }
       ],
-      "hint": "Start at -11. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-11"
+        }
+      },
       "method_note": "The player gains 19 points. The player loses 6 points.",
       "check": "Undo the changes in reverse order: 2 + 6 = 8; 8 − 19 = -11.",
       "wrong": "-11",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q10",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A bank balance is −£12. £8 is paid in. £6 is withdrawn. What is the final balance?",
       "answer": "-10",
       "answerUnit": "£",
@@ -1334,22 +1302,20 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-12"
+        }
+      },
       "method_note": "£8 is paid in. £6 is withdrawn.",
       "check": "Undo the changes in reverse order: -10 + 6 = -4; -4 − 8 = -12.",
       "wrong": "-12",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q11",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A lift is at floor -13. It rises 15 floors. It descends 6 floors. What is the final floor number?",
       "answer": "-4",
       "answerUnit": "",
@@ -1381,22 +1347,20 @@
           "note": "It descends 6 floors."
         }
       ],
-      "hint": "Start at -13. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-13"
+        }
+      },
       "method_note": "It rises 15 floors. It descends 6 floors.",
       "check": "Undo the changes in reverse order: -4 + 6 = 2; 2 − 15 = -13.",
       "wrong": "-13",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q12",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -14°C. It rises by 24°C. It falls by 6°C. What is the final temperature?",
       "answer": "4",
       "answerUnit": "°C",
@@ -1430,22 +1394,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -14. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-14"
+        }
+      },
       "method_note": "It rises by 24°C. It falls by 6°C.",
       "check": "Undo the changes in reverse order: 4 + 6 = 10; 10 − 24 = -14.",
       "wrong": "-14",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q13",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -10°C. It rises by 15°C. It falls by 7°C. What is the final temperature?",
       "answer": "-2",
       "answerUnit": "°C",
@@ -1479,22 +1441,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -10. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-10"
+        }
+      },
       "method_note": "It rises by 15°C. It falls by 7°C.",
       "check": "Undo the changes in reverse order: -2 + 7 = 5; 5 − 15 = -10.",
       "wrong": "-10",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q14",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A diver is 11 m below sea level (position -11 m). They rise 6 m. They descend 7 m. What is the final signed position relative to sea level?",
       "answer": "-12",
       "answerUnit": "m",
@@ -1528,22 +1488,20 @@
           "outputUnit": "m"
         }
       ],
-      "hint": "Start at -11. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-11"
+        }
+      },
       "method_note": "They rise 6 m. They descend 7 m.",
       "check": "Undo the changes in reverse order: -12 + 7 = -5; -5 − 6 = -11.",
       "wrong": "-11",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q15",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A game score is -12. The player gains 21 points. The player loses 7 points. What is the final score?",
       "answer": "2",
       "answerUnit": "points",
@@ -1577,22 +1535,20 @@
           "outputUnit": "points"
         }
       ],
-      "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-12"
+        }
+      },
       "method_note": "The player gains 21 points. The player loses 7 points.",
       "check": "Undo the changes in reverse order: 2 + 7 = 9; 9 − 21 = -12.",
       "wrong": "-12",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q16",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A bank balance is −£13. £10 is paid in. £7 is withdrawn. What is the final balance?",
       "answer": "-10",
       "answerUnit": "£",
@@ -1626,22 +1582,20 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Start at -13. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-13"
+        }
+      },
       "method_note": "£10 is paid in. £7 is withdrawn.",
       "check": "Undo the changes in reverse order: -10 + 7 = -3; -3 − 10 = -13.",
       "wrong": "-13",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q17",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "A lift is at floor -14. It rises 17 floors. It descends 7 floors. What is the final floor number?",
       "answer": "-4",
       "answerUnit": "",
@@ -1673,22 +1627,20 @@
           "note": "It descends 7 floors."
         }
       ],
-      "hint": "Start at -14. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-14"
+        }
+      },
       "method_note": "It rises 17 floors. It descends 7 floors.",
       "check": "Undo the changes in reverse order: -4 + 7 = 3; 3 − 17 = -14.",
       "wrong": "-14",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C2-Q18",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 1,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -15°C. It rises by 26°C. It falls by 7°C. What is the final temperature?",
       "answer": "4",
       "answerUnit": "°C",
@@ -1722,22 +1674,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -15. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-15"
+        }
+      },
       "method_note": "It rises by 26°C. It falls by 7°C.",
       "check": "Undo the changes in reverse order: 4 + 7 = 11; 11 − 26 = -15.",
       "wrong": "-15",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q1",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -8°C. It rises by 11°C. It falls by 5°C. It rises by 3°C. It falls by 4°C. What is the final temperature?",
       "answer": "-3",
       "answerUnit": "°C",
@@ -1793,22 +1743,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -8. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-8"
+        }
+      },
       "method_note": "It rises by 11°C. It falls by 5°C. It rises by 3°C. It falls by 4°C.",
       "check": "Undo the changes in reverse order: -3 + 4 = 1; 1 − 3 = -2; -2 + 5 = 3; 3 − 11 = -8.",
       "wrong": "-8",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q2",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A diver is 9 m below sea level (position -9 m). They rise 6 m. They descend 5 m. They rise 3 m. They descend 5 m. What is the final signed position relative to sea level?",
       "answer": "-10",
       "answerUnit": "m",
@@ -1864,22 +1812,20 @@
           "outputUnit": "m"
         }
       ],
-      "hint": "Start at -9. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-9"
+        }
+      },
       "method_note": "They rise 6 m. They descend 5 m. They rise 3 m. They descend 5 m.",
       "check": "Undo the changes in reverse order: -10 + 5 = -5; -5 − 3 = -8; -8 + 5 = -3; -3 − 6 = -9.",
       "wrong": "-9",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q3",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A game score is -10. The player gains 17 points. The player loses 5 points. The player gains 3 points. The player loses 6 points. What is the final score?",
       "answer": "-1",
       "answerUnit": "points",
@@ -1935,22 +1881,20 @@
           "outputUnit": "points"
         }
       ],
-      "hint": "Start at -10. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-10"
+        }
+      },
       "method_note": "The player gains 17 points. The player loses 5 points. The player gains 3 points. The player loses 6 points.",
       "check": "Undo the changes in reverse order: -1 + 6 = 5; 5 − 3 = 2; 2 + 5 = 7; 7 − 17 = -10.",
       "wrong": "-10",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q4",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A bank balance is −£11. £6 is paid in. £5 is withdrawn. £3 is paid in. £7 is withdrawn. What is the final balance?",
       "answer": "-14",
       "answerUnit": "£",
@@ -2006,22 +1950,20 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Start at -11. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-11"
+        }
+      },
       "method_note": "£6 is paid in. £5 is withdrawn. £3 is paid in. £7 is withdrawn.",
       "check": "Undo the changes in reverse order: -14 + 7 = -7; -7 − 3 = -10; -10 + 5 = -5; -5 − 6 = -11.",
       "wrong": "-11",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q5",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A lift is at floor -12. It rises 13 floors. It descends 5 floors. It rises 3 floors. It descends 8 floors. What is the final floor number?",
       "answer": "-9",
       "answerUnit": "",
@@ -2073,22 +2015,20 @@
           "note": "It descends 8 floors."
         }
       ],
-      "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-12"
+        }
+      },
       "method_note": "It rises 13 floors. It descends 5 floors. It rises 3 floors. It descends 8 floors.",
       "check": "Undo the changes in reverse order: -9 + 8 = -1; -1 − 3 = -4; -4 + 5 = 1; 1 − 13 = -12.",
       "wrong": "-12",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q6",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -13°C. It rises by 22°C. It falls by 5°C. It rises by 3°C. It falls by 9°C. What is the final temperature?",
       "answer": "-2",
       "answerUnit": "°C",
@@ -2144,22 +2084,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -13. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-13"
+        }
+      },
       "method_note": "It rises by 22°C. It falls by 5°C. It rises by 3°C. It falls by 9°C.",
       "check": "Undo the changes in reverse order: -2 + 9 = 7; 7 − 3 = 4; 4 + 5 = 9; 9 − 22 = -13.",
       "wrong": "-13",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q7",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -9°C. It rises by 13°C. It falls by 6°C. It rises by 4°C. It falls by 4°C. What is the final temperature?",
       "answer": "-2",
       "answerUnit": "°C",
@@ -2215,22 +2153,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -9. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-9"
+        }
+      },
       "method_note": "It rises by 13°C. It falls by 6°C. It rises by 4°C. It falls by 4°C.",
       "check": "Undo the changes in reverse order: -2 + 4 = 2; 2 − 4 = -2; -2 + 6 = 4; 4 − 13 = -9.",
       "wrong": "-9",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q8",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A diver is 10 m below sea level (position -10 m). They rise 6 m. They descend 6 m. They rise 4 m. They descend 5 m. What is the final signed position relative to sea level?",
       "answer": "-11",
       "answerUnit": "m",
@@ -2286,22 +2222,20 @@
           "outputUnit": "m"
         }
       ],
-      "hint": "Start at -10. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-10"
+        }
+      },
       "method_note": "They rise 6 m. They descend 6 m. They rise 4 m. They descend 5 m.",
       "check": "Undo the changes in reverse order: -11 + 5 = -6; -6 − 4 = -10; -10 + 6 = -4; -4 − 6 = -10.",
       "wrong": "-10",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q9",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A game score is -11. The player gains 19 points. The player loses 6 points. The player gains 4 points. The player loses 6 points. What is the final score?",
       "answer": "0",
       "answerUnit": "points",
@@ -2357,22 +2291,20 @@
           "outputUnit": "points"
         }
       ],
-      "hint": "Start at -11. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-11"
+        }
+      },
       "method_note": "The player gains 19 points. The player loses 6 points. The player gains 4 points. The player loses 6 points.",
       "check": "Undo the changes in reverse order: 0 + 6 = 6; 6 − 4 = 2; 2 + 6 = 8; 8 − 19 = -11.",
       "wrong": "-11",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q10",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A bank balance is −£12. £8 is paid in. £6 is withdrawn. £4 is paid in. £7 is withdrawn. What is the final balance?",
       "answer": "-13",
       "answerUnit": "£",
@@ -2428,22 +2360,20 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-12"
+        }
+      },
       "method_note": "£8 is paid in. £6 is withdrawn. £4 is paid in. £7 is withdrawn.",
       "check": "Undo the changes in reverse order: -13 + 7 = -6; -6 − 4 = -10; -10 + 6 = -4; -4 − 8 = -12.",
       "wrong": "-12",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q11",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A lift is at floor -13. It rises 15 floors. It descends 6 floors. It rises 4 floors. It descends 8 floors. What is the final floor number?",
       "answer": "-8",
       "answerUnit": "",
@@ -2495,22 +2425,20 @@
           "note": "It descends 8 floors."
         }
       ],
-      "hint": "Start at -13. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-13"
+        }
+      },
       "method_note": "It rises 15 floors. It descends 6 floors. It rises 4 floors. It descends 8 floors.",
       "check": "Undo the changes in reverse order: -8 + 8 = 0; 0 − 4 = -4; -4 + 6 = 2; 2 − 15 = -13.",
       "wrong": "-13",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q12",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -14°C. It rises by 24°C. It falls by 6°C. It rises by 4°C. It falls by 9°C. What is the final temperature?",
       "answer": "-1",
       "answerUnit": "°C",
@@ -2566,22 +2494,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -14. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-14"
+        }
+      },
       "method_note": "It rises by 24°C. It falls by 6°C. It rises by 4°C. It falls by 9°C.",
       "check": "Undo the changes in reverse order: -1 + 9 = 8; 8 − 4 = 4; 4 + 6 = 10; 10 − 24 = -14.",
       "wrong": "-14",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q13",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -10°C. It rises by 15°C. It falls by 7°C. It rises by 5°C. It falls by 4°C. What is the final temperature?",
       "answer": "-1",
       "answerUnit": "°C",
@@ -2637,22 +2563,20 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -10. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-10"
+        }
+      },
       "method_note": "It rises by 15°C. It falls by 7°C. It rises by 5°C. It falls by 4°C.",
       "check": "Undo the changes in reverse order: -1 + 4 = 3; 3 − 5 = -2; -2 + 7 = 5; 5 − 15 = -10.",
       "wrong": "-10",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q14",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A diver is 11 m below sea level (position -11 m). They rise 6 m. They descend 7 m. They rise 5 m. They descend 5 m. What is the final signed position relative to sea level?",
       "answer": "-12",
       "answerUnit": "m",
@@ -2708,22 +2632,20 @@
           "outputUnit": "m"
         }
       ],
-      "hint": "Start at -11. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-11"
+        }
+      },
       "method_note": "They rise 6 m. They descend 7 m. They rise 5 m. They descend 5 m.",
       "check": "Undo the changes in reverse order: -12 + 5 = -7; -7 − 5 = -12; -12 + 7 = -5; -5 − 6 = -11.",
       "wrong": "-11",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q15",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A game score is -12. The player gains 21 points. The player loses 7 points. The player gains 5 points. The player loses 6 points. What is the final score?",
       "answer": "1",
       "answerUnit": "points",
@@ -2779,22 +2701,20 @@
           "outputUnit": "points"
         }
       ],
-      "hint": "Start at -12. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-12"
+        }
+      },
       "method_note": "The player gains 21 points. The player loses 7 points. The player gains 5 points. The player loses 6 points.",
       "check": "Undo the changes in reverse order: 1 + 6 = 7; 7 − 5 = 2; 2 + 7 = 9; 9 − 21 = -12.",
       "wrong": "-12",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q16",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A bank balance is −£13. £10 is paid in. £7 is withdrawn. £5 is paid in. £7 is withdrawn. What is the final balance?",
       "answer": "-12",
       "answerUnit": "£",
@@ -2850,22 +2770,20 @@
           "outputUnit": "£"
         }
       ],
-      "hint": "Start at -13. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-13"
+        }
+      },
       "method_note": "£10 is paid in. £7 is withdrawn. £5 is paid in. £7 is withdrawn.",
       "check": "Undo the changes in reverse order: -12 + 7 = -5; -5 − 5 = -10; -10 + 7 = -3; -3 − 10 = -13.",
       "wrong": "-13",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q17",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "A lift is at floor -14. It rises 17 floors. It descends 7 floors. It rises 5 floors. It descends 8 floors. What is the final floor number?",
       "answer": "-7",
       "answerUnit": "",
@@ -2917,22 +2835,20 @@
           "note": "It descends 8 floors."
         }
       ],
-      "hint": "Start at -14. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-14"
+        }
+      },
       "method_note": "It rises 17 floors. It descends 7 floors. It rises 5 floors. It descends 8 floors.",
       "check": "Undo the changes in reverse order: -7 + 8 = 1; 1 − 5 = -4; -4 + 7 = 3; 3 − 17 = -14.",
       "wrong": "-14",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     },
     {
       "id": "maths:M13-WEB-PS-C3-Q18",
-      "subject": "maths",
-      "topic": "M13",
-      "type": "problem",
       "level": 2,
-      "method": "calculation",
-      "prose": true,
       "q": "The temperature is -15°C. It rises by 26°C. It falls by 7°C. It rises by 5°C. It falls by 9°C. What is the final temperature?",
       "answer": "0",
       "answerUnit": "°C",
@@ -2988,12 +2904,15 @@
           "outputUnit": "°C"
         }
       ],
-      "hint": "Start at -15. An increase moves right; a decrease moves left. Follow the changes in order.",
+      "hint": {
+        "textRef": "signed-changes-hint",
+        "values": {
+          "start": "-15"
+        }
+      },
       "method_note": "It rises by 26°C. It falls by 7°C. It rises by 5°C. It falls by 9°C.",
       "check": "Undo the changes in reverse order: 0 + 9 = 9; 9 − 5 = 4; 4 + 7 = 11; 11 − 26 = -15.",
       "wrong": "-15",
-      "error_note": "This does not follow all the signed changes. Start at the given value and apply each increase or decrease in order.",
-      "source": "Original website application-stage content, 12 October 2026",
       "questionPrefix": "Solve the problem"
     }
   ]

@@ -4,9 +4,13 @@
   Main contents:
   - Component markup, input props and event bindings.
 
-  Used By: website/src/lib/components/practice/PracticeActivity.svelte
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte.
 
-  Uses: website/src/lib/components/teaching/EquationWorking.svelte and ArithmeticWorking.svelte.
+  Uses: website/src/lib/application/error-working.mjs,
+  website/src/lib/components/teaching/CalculationWorking.svelte,
+  website/src/lib/components/teaching/MathText.svelte,
+  website/src/lib/components/teaching/ArithmeticWorking.svelte,
+  website/src/lib/components/teaching/EquationWorking.svelte.
 
   Libs: none.
 -->

@@ -1,5 +1,6 @@
 /**
- * Purpose: Provide isolated browser contexts and a temporary static server for browser verification.
+ * Purpose: Provide isolated browser contexts and a temporary static server for browser
+ * verification.
  *
  * Main contents:
  * - artifacts
@@ -7,11 +8,23 @@
  * - serveStatic
  * - createTestContext
  *
- * Used By: website/scripts/browser-checks.mjs, website/scripts/browser/colour-checks.mjs, website/scripts/browser/practice-set-checks.mjs, website/scripts/browser/presentation-checks.mjs, website/scripts/browser/progress-checks.mjs, website/scripts/browser/startup-checks.mjs, website/scripts/browser/theme-checks.mjs, website/scripts/browser/visual-checks.mjs
+ * Used By: website/scripts/audit-progress-concurrency.mjs,
+ * website/scripts/browser/colour-checks.mjs, website/scripts/browser/draft-topics-checks.mjs,
+ * website/scripts/browser/error-investigation-checks.mjs,
+ * website/scripts/browser/handwriting-checks.mjs,
+ * website/scripts/browser/method-playback-checks.mjs,
+ * website/scripts/browser/new-topics-checks.mjs.
  *
- * Uses: no local module imports.
+ * Uses: website/src/lib/content/topic-routes.mjs, website/src/lib/content/practice-pages.json.
  *
- * Libs: @playwright/test (browser automation), node:fs (file access), node:fs/promises (asynchronous file access), node:http (local test server), node:url, node:path (filesystem paths).
+ * Libs: @playwright/test (browser automation and assertions), node:fs (filesystem
+ * reads/watchers), node:fs/promises (asynchronous file access), node:http (temporary static test
+ * server), node:url (module/file URL conversion), node:path (filesystem path resolution).
+ *
+ * Usage and output: Imported test infrastructure only.
+ * serveStatic/launchBrowser/createTestContext return owned resources; callers must close them in
+ * finally blocks. Writes optional artifacts under test-results and does not use a learner
+ * browser profile.
  */
 import { topicPath } from '../../src/lib/content/topic-routes.mjs';
 import catalogue from '../../src/lib/content/practice-pages.json' with { type: 'json' };

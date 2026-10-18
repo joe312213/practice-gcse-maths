@@ -1,16 +1,22 @@
 /**
- * Purpose: Run affected verification jobs serially, retaining passing fingerprints and named failure logs.
+ * Purpose: Run affected verification jobs serially, retaining passing fingerprints and named
+ * failure logs.
  *
  * Main contents:
  * - snapshot
  * - outputHash
  * - command
  *
- * Used By: Verification command entry points.
+ * Used By: the documented command below.
  *
  * Uses: website/scripts/verification/plan.mjs.
  *
- * Libs: node:fs/promises (asynchronous file access), node:child_process (Git/build subprocesses), node:url, node:path (filesystem paths).
+ * Libs: node:fs/promises (asynchronous file access), node:child_process (Git and verification
+ * subprocesses), node:url (module/file URL conversion), node:path (filesystem path resolution).
+ *
+ * Usage and output: From website/: npm run verify:changed. -- --plan reports selected jobs; --
+ * --force ignores passing cache evidence. Reads source/build fingerprints, writes
+ * test-results/verification logs/cache and refreshes build output only when needed.
  */
 import { readFile, writeFile, mkdir, readdir, stat } from 'node:fs/promises';
 import { execFileSync, spawn } from 'node:child_process';

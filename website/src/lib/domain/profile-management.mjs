@@ -1,5 +1,20 @@
-/** Validate explicit profile edits and return a new store, preserving unrelated learners. */
+/**
+ * Purpose: Validate explicit rename, reset and delete actions and return an isolated updated
+ * store. Other learners and external files remain untouched; destructive actions require the
+ * displayed-name confirmation.
+ *
+ * Main contents:
+ * - editProfile.
+ *
+ * Used By: tests/learner-id.test.mjs, tests/profile-management.test.mjs,
+ * website/src/lib/components/progress/ProfileManagement.svelte.
+ *
+ * Uses: website/src/lib/domain/engine.mjs.
+ *
+ * Libs: none.
+ */
 import { profileKey } from './engine.mjs';
+/** Apply a validated rename/reset/delete request to a cloned store. Parameters identify the learner and action/name/confirmation; called by ProfileManagement. Throws before any persistence on invalid input. Example: editProfile(store, key, { action: "rename", name: "Sam" }). */
 export function editProfile(store, key, { action, name, confirmation }) {
   const next = structuredClone(store);
   const index = next.profiles.findIndex((profile) => profile.key === key);

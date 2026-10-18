@@ -1,8 +1,14 @@
 <!--
   Purpose: Configure and display the human game's optional two-player clock.
-  Main contents: Main time, Japanese byo-yomi, player displays and clock controls.
-  Used By: HumanGo. Uses: countdown display helper; game clock supplied by the parent.
-  Libs: Svelte props/state only; elapsed-time rules stay in the puzzle module.
+
+  Main contents:
+  Main time, Japanese byo-yomi, player displays and clock controls.
+
+  Used By: website/src/lib/components/puzzles/HumanGo.svelte.
+
+  Uses: website/src/lib/domain/countdown.mjs.
+
+  Libs: none.
 -->
 <script>
   import { clockText } from '#lib/domain/countdown.mjs';

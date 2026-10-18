@@ -4,11 +4,12 @@
   Main contents:
   - Mount/dispose boundary, check, hint and solution actions.
 
-  Used By: puzzles route.
+  Used By: website/src/routes/puzzles.html/+page.svelte.
 
-  Uses: GoPuzzle.
+  Uses: website/src/lib/components/puzzles/GoPuzzle.svelte.
 
-  Libs: Svelte lifecycle; @subject-apps/puzzles/player for portable puzzle controls.
+  Libs: svelte (component state, lifecycle and transitions), @subject-apps/puzzles/player
+  (shared puzzle package player).
 -->
 <script>
   import { onMount } from 'svelte';

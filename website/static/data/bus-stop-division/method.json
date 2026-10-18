@@ -4,13 +4,14 @@
     "default": {
       "aim": "Divide from left to right.",
       "steps": [
-        "Draw the bus stop.",
+        "Draw a bus-stop bracket: a vertical line on the left joined to a horizontal line above. Leave enough room inside for every digit of the number being divided, space above for the answer and space outside on the left for the divisor.",
         [
+          "Write the ",
           {
             "concept": "dividend",
-            "text": "Dividend"
+            "text": "dividend"
           },
-          " inside; divisor outside on the left. Space the digits clearly."
+          " (the number being divided) inside the bracket, and the divisor (the number you divide by) outside on the left. Leave clear spaces between the digits."
         ],
         [
           "Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the ",
@@ -21,25 +22,25 @@
           " as a small prefix to the next digit."
         ],
         [
-          "Check the final ",
+          "The final ",
           {
             "concept": "remainder",
             "text": "remainder"
           },
-          ". Build: write any remainder as r. Confidence: add a ",
+          " must be smaller than the divisor: write it using r if a remainder is requested. For a decimal answer, add a ",
           {
             "concept": "decimal-extension",
             "text": "decimal point and zeros"
           },
-          ". Continue until the remainder is 0."
+          " and continue dividing until the remainder is zero."
         ],
         [
-          "Write the complete answer. Keep ",
+          "Keep ",
           {
             "concept": "place-value-zeros",
             "text": "place-value zeros"
           },
-          ". Align decimal points."
+          " when the divisor does not fit, and align any decimal points. Check by multiplying the answer by the divisor and adding any remainder to recover the dividend."
         ]
       ]
     },
@@ -47,13 +48,14 @@
       "build": {
         "aim": "Carry remainders; give any final remainder using r.",
         "steps": [
-          "Draw the bus stop.",
+          "Draw a bus-stop bracket: a vertical line on the left joined to a horizontal line above. Leave enough room inside for every digit of the number being divided, space above for the answer and space outside on the left for the divisor.",
           [
+            "Write the ",
             {
               "concept": "dividend",
-              "text": "Dividend"
+              "text": "dividend"
             },
-            " inside; divisor outside on the left. Space the digits clearly."
+            " (the number being divided) inside the bracket, and the divisor (the number you divide by) outside on the left. Leave clear spaces between the digits."
           ],
           [
             "Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the ",
@@ -64,38 +66,39 @@
             " as a small prefix to the next digit."
           ],
           [
-            "Check the final ",
+            "The final ",
             {
               "concept": "remainder",
               "text": "remainder"
             },
-            ". Build: write any remainder as r. Confidence: add a ",
+            " must be smaller than the divisor: write it using r if a remainder is requested. For a decimal answer, add a ",
             {
               "concept": "decimal-extension",
               "text": "decimal point and zeros"
             },
-            ". Continue until the remainder is 0."
+            " and continue dividing until the remainder is zero."
           ],
           [
-            "Write the complete answer. Keep ",
+            "Keep ",
             {
               "concept": "place-value-zeros",
               "text": "place-value zeros"
             },
-            ". Align decimal points."
+            " when the divisor does not fit, and align any decimal points. Check by multiplying the answer by the divisor and adding any remainder to recover the dividend."
           ]
         ]
       },
       "confidence": {
         "aim": "Continue with decimal places until there is no remainder.",
         "steps": [
-          "Draw the bus stop.",
+          "Draw a bus-stop bracket: a vertical line on the left joined to a horizontal line above. Leave enough room inside for every digit of the number being divided, space above for the answer and space outside on the left for the divisor.",
           [
+            "Write the ",
             {
               "concept": "dividend",
-              "text": "Dividend"
+              "text": "dividend"
             },
-            " inside; divisor outside on the left. Space the digits clearly."
+            " (the number being divided) inside the bracket, and the divisor (the number you divide by) outside on the left. Leave clear spaces between the digits."
           ],
           [
             "Work left to right. Write how many whole times the divisor fits above the matching digit. Carry the ",
@@ -106,25 +109,25 @@
             " as a small prefix to the next digit."
           ],
           [
-            "Check the final ",
+            "The final ",
             {
               "concept": "remainder",
               "text": "remainder"
             },
-            ". Build: write any remainder as r. Confidence: add a ",
+            " must be smaller than the divisor: write it using r if a remainder is requested. For a decimal answer, add a ",
             {
               "concept": "decimal-extension",
               "text": "decimal point and zeros"
             },
-            ". Continue until the remainder is 0."
+            " and continue dividing until the remainder is zero."
           ],
           [
-            "Write the complete answer. Keep ",
+            "Keep ",
             {
               "concept": "place-value-zeros",
               "text": "place-value zeros"
             },
-            ". Align decimal points."
+            " when the divisor does not fit, and align any decimal points. Check by multiplying the answer by the divisor and adding any remainder to recover the dividend."
           ]
         ]
       }
@@ -141,7 +144,9 @@
         "Draw the bus stop and align the operands.",
         "Divide from left to right, placing each quotient digit above its dividend digit."
       ],
-      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+      "check": {
+        "textRef": "check-division"
+      }
     },
     "carry": {
       "name": "Carry a remainder to the next place",
@@ -155,7 +160,9 @@
         "The remainder becomes ten times as much in the next place; combine it with the next digit.",
         "Divide the combined amount."
       ],
-      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+      "check": {
+        "textRef": "check-division"
+      }
     },
     "zero": {
       "name": "Keep a zero in the quotient",
@@ -169,7 +176,9 @@
         "Write 0 above that place.",
         "Carry the remaining amount into the next place before dividing again."
       ],
-      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+      "check": {
+        "textRef": "check-division"
+      }
     },
     "final-remainder": {
       "name": "Give a whole-number remainder",
@@ -181,7 +190,9 @@
         "Finish the whole-number division.",
         "Write the leftover amount using r; it must be smaller than the divisor."
       ],
-      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+      "check": {
+        "textRef": "check-division"
+      }
     },
     "decimal": {
       "name": "Continue into decimal places",
@@ -194,7 +205,9 @@
         "Align the quotient decimal point.",
         "Continue dividing until the remainder is zero."
       ],
-      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+      "check": {
+        "textRef": "check-division"
+      }
     },
     "two-digit-divisor": {
       "name": "Divide by a two-digit divisor",
@@ -207,7 +220,9 @@
         "Choose the largest multiple of the divisor that fits.",
         "Record its quotient digit and carry the remainder."
       ],
-      "check": "Multiply the quotient by the divisor and add any final whole-number remainder to recover the dividend."
+      "check": {
+        "textRef": "check-division"
+      }
     }
   },
   "examples": {
@@ -235,6 +250,14 @@
           "zero"
         ],
         "question": "maths:M02-S06-C1-Q6"
+      },
+      {
+        "key": "s04-c1-q1",
+        "name": "Divide 48 by 4 in place",
+        "submethods": [
+          "exact"
+        ],
+        "question": "maths:M02-S04-C1-Q1"
       }
     ],
     "build": [
@@ -256,6 +279,23 @@
           "final-remainder"
         ],
         "question": "maths:M02-S07-C2-Q2"
+      },
+      {
+        "key": "s04-c2-q2",
+        "name": "Carry a remainder within 135 ÷ 5",
+        "submethods": [
+          "carry"
+        ],
+        "question": "maths:M02-S04-C2-Q2"
+      },
+      {
+        "key": "s04-c2-q4",
+        "name": "Finish 218 ÷ 6 with a remainder",
+        "submethods": [
+          "carry",
+          "final-remainder"
+        ],
+        "question": "maths:M02-S04-C2-Q4"
       }
     ],
     "confidence": [
@@ -279,6 +319,24 @@
           "two-digit-divisor"
         ],
         "question": "maths:M02-P3-PL-C3-Q3"
+      },
+      {
+        "key": "s04-c3-q1",
+        "name": "Continue 514 ÷ 4 into tenths",
+        "submethods": [
+          "carry",
+          "decimal"
+        ],
+        "question": "maths:M02-S04-C3-Q1"
+      },
+      {
+        "key": "s04-c3-q4",
+        "name": "Divide 3,816 by a two-digit divisor",
+        "submethods": [
+          "carry",
+          "two-digit-divisor"
+        ],
+        "question": "maths:M02-S04-C3-Q4"
       }
     ]
   },

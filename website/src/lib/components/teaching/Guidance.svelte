@@ -4,9 +4,10 @@
   Main contents:
   - Component markup, input props and event bindings.
 
-  Used By: website/src/lib/components/practice/PracticeActivity.svelte, website/src/lib/components/teaching/DemoPlayer.svelte
+  Used By: website/src/lib/components/practice/PracticeActivity.svelte,
+  website/src/lib/components/teaching/DemoPlayer.svelte.
 
-  Uses: no local module imports.
+  Uses: website/src/lib/components/teaching/MethodStep.svelte.
 
   Libs: none.
 -->

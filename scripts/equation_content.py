@@ -1,14 +1,17 @@
-"""Purpose: Create the explicit M10 source bank using exact linear arithmetic.
+"""Purpose: Historical reproducible M10 source generator: build linear equations, exact solutions,
+balance rows, checks and deliberate errors. This source is a reference; it is not upstream of
+current website topic folders.
 
 Main contents:
-- n
-- signed
-- ax
-- affine
-- eq
-- op
-- make
-- build
+- n: Format an exact rational as an integer, terminating decimal or fraction.
+- signed: Format a signed additive term, omitting zero.
+- ax: Format an x coefficient, suppressing unit magnitude.
+- affine: Format ax + b with normalized signs.
+- eq: Create a balanced equation row from left and right text.
+- op: Create an operation row applying the same operation to both sides.
+- make: Construct a linear equation with known solution and explicit balanced working for the
+  selected.
+- build: Create reproducible equation examples and write the structured source bank.
 
 Used By: manual legacy command invocation.
 
@@ -16,7 +19,11 @@ Uses: no local module imports.
 
 Libs: Python standard library only.
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Running build() overwrites content/M10_equations.json. No browser bank or
+saved deck is written directly.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 from pathlib import Path
 from fractions import Fraction as F
@@ -79,7 +86,7 @@ def make(kind,s,a=3,b=4,c=1,flip=False):
  Calls: signed, eq, n, op, ax, affine.
  Used by: build.
 
- Example in the caller's context: make(kind, s, a, b, c, flip)
+ Example: make(kind, s, a, b, c, flip)
  """
  s=F(s);balance=[]
  if kind in ('add','sub'):
@@ -131,7 +138,7 @@ def build():
  """Create reproducible equation examples and write the structured source bank.
  Calls: make, eq, op.
 
- Example in the caller's context: build()
+ Example: build()
  """
  rng=random.Random(10012026)
  # Mix solutions rather than keeping the consecutive answer sequences in the old draft.

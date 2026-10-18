@@ -1,15 +1,21 @@
-"""Purpose: Refresh current HTML only, preserving every saved question slide.
+"""Purpose: Historical HTML-only publisher: reconstruct answer pages from saved topic sources while
+retaining the existing question slides. It updates per-topic and consolidated answer HTML.
 
 Main contents:
-- main
+- main: Run the refresh answers command using its configured input and output paths.
 
 Used By: manual legacy command invocation.
 
-Uses: scripts/build_fraction_topic.py, scripts/build_priority_topic.py, scripts/update_structure.py.
+Uses: scripts/build_fraction_topic.py, scripts/build_priority_topic.py,
+scripts/update_structure.py.
 
-Libs: build_fraction_topic, build_priority_topic, python-pptx (editable slides and deck inspection).
+Libs: python-pptx (editable slides and deck inspection).
 
-Legacy tooling: historical resource paths are retained; documentation changes do not authorize running it.
+Usage and output: Reads topic_registry.json, saved decks and structured sources; writes topic
+answer HTML and GCSE_Maths_Revision_Starters_answers.html. No question deck is rewritten.
+
+Status: legacy tooling; retained paths describe historical behaviour. Comment updates do not
+authorise running publishers or restoring old paths.
 """
 import json
 import update_structure as u
@@ -20,7 +26,7 @@ def main():
  """Run the refresh answers command using its configured input and output paths.
  Calls: u.errors, u.answers, u.save_text, u.page.
 
- Example in the caller's context: main()
+ Example: main()
  """
  registry=json.loads((ROOT/'content/topic_registry.json').read_text());sections=[]
  for t in registry:
