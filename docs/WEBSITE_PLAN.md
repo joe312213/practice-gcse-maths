@@ -119,9 +119,23 @@ Implementation would add one small content-copy command shared by build/dev star
 
 Suggested sequence: (1) agree ownership and inventory references; (2) move live banks/assets/catalogue without content changes, compare every published data file byte-for-byte and verify URLs/IDs/progress; (3) clarify and group historical sources/tools, testing comparison commands separately; (4) consolidate overlapping prose only after preserving directly authored wording and checking links. Keep content rewriting separate from relocation so each review can establish what changed. This is a proposal only; user approval is still required before refactoring.
 
+## Structured authoring prototypes — agreed direction, 24 October 2026
+
+**Paused after documentation at the user's request. Do not start detailed planning or implementation until the user resumes.** The maintained [authoring design brief](convenient_expressive_authoring_for_cohersive_teaching_and_content_derivation.md#9-shared-question-forms-and-constrained-instances--agreed-24-october) owns the full agreement, GoLearn review evidence, storage/delivery trade-offs, open decisions and intended prototype outcomes.
+
+- Initial prototypes cover **solving equations and ratios**, using a common `given`/`find` vocabulary and forms per challenge level. Parameter domains, derived values, relationship restrictions and set-selection rules generate concrete instances; methods, concepts, mistakes and identifiable reasons are shared. Exact syntax/algorithms remain undecided.
+- Use Tiptap rich authoring and GoLearn's outline/edit/preview-and-checks workflow, including variant/marking test mode and repairable drafts. mathjs is a candidate computational dependency to evaluate. Adopt useful GoLearn concepts without making its full unfinished DSL, Allium cleanup, sync or native stack a release dependency.
+- Use SQLite authoring storage for shared records/relationships, with JSON fields for rich documents and expression structures. Preserve readable deterministic exports for Git review and explicit import. The schema, local authoring host and revision strategy remain for later design.
+- Evaluate **prepared SQLite banks alongside JSON learner packages** using identical approved content, realistic queries and cold/cached browser measurements, including engine transfer/startup and WASM memory. SQL script dumps are distinct from prepared databases. No delivery format or performance advantage is established. A static read-only content bank does not require sync or moving learner progress into SQL.
+- Preserve reviewed content, stable IDs, current progress, provenance and alternative valid mathematics. Teaching review remains a prerequisite to conversion. No new library, schema, generator, bank conversion or benchmark is implemented.
+
+After explicit resumption: confirm teaching review and representative forms → agree bounded design/acceptance cases → build the author/edit/generate/render/mark/restore prototype → exercise derived teaching and a reviewed error rule → compare delivery and decide release/extension scope. These are future work slices, not authority to begin during this pause. Detailed planning, example selection and implementation sequencing remain outstanding.
+
+This update supersedes the earlier one-topic pilot preference and moves the SQLite-versus-JSON evaluation into the prototype. It also supersedes Markdown as the primary editing proposal. The 18 October teaching/reuse requirements below remain relevant; their dated sequence is retained as history.
+
 ## Teaching methods and simpler authoring — agreed sequence, 18 October 2026
 
-**Status:** the user agrees with the direction below, but will review topic methods and teaching steps in a later session before implementation continues. Save the plan now; do not start converting banks or refining teaching content ahead of that review. Existing readable phrase references, stage defaults, dictionary delivery and selected-question expansion are implemented; the shared mathematical/method definitions and further delivery packing below are not.
+**Historical sequence, updated by the 24 October agreement above:** the teaching-review prerequisite still applies, but the pilot now covers equations and ratios, with Tiptap/SQLite authoring and a delivery-format comparison. The explicit pause also precedes detailed planning. Existing readable phrase references, stage defaults, dictionary delivery and selected-question expansion are implemented; shared mathematical/method definitions and further delivery changes are not.
 
 ### Purpose and authoring contract
 

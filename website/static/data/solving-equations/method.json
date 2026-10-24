@@ -4,28 +4,27 @@
     "default": {
       "aim": "Find the value of one x. Undo the operation attached to x, using the same operation on both sides.",
       "steps": [
-        "Write the original equation. Draw a vertical dividing line down from the middle of the equals sign, leaving room on both sides for the same operation and for a simplified equation on each new line.",
+        "Write the original equation. Draw a dividing line down from the middle of the equals sign, leaving room on the left hand side (LHS) and right hand side (RHS) underneath for the working out steps.",
         [
           "Decide your ",
           {
             "concept": "choose-approach",
             "text": "approach"
           },
-          ": simplify each side, then choose an ",
+          ": the aim is to keep simplifying each side, and choosing",
           {
             "concept": "opposite-operation",
-            "text": "opposite operation"
+            "text": "opposite (inverse) operations"
           },
-          " that brings you closer to one x. More than one path can work; if a path becomes awkward, return to the original equation and try another."
+          " that brings you closer to having one x on the LHS and a number value on the RHS. When you have that, you have 'solved the equation'. More than one path can work; if a path becomes awkward, return to the original equation and try another."
         ],
         [
-          "Choose the ",
+          "Choose an opposite operation (an operator with a ",
           {
-            "concept": "opposite-operation",
-            "text": "opposite operation"
-          },
-          " to undo what is happening to x.",
-          " Addition is undone by subtraction, and multiplication by division; reverse subtraction with addition and division with multiplication."
+            "concept": "value",
+            "text": "value"
+           }, 
+           ", e.g.  + 7, -2, x 4x, /3), then write it underneath on a new row, for both LSH and RSH. Addition is undone by subtraction, and vice versa. Multiplication is undone by division, and vice versa."
         ],
         [
           "Apply your chosen operation to ",
@@ -33,12 +32,13 @@
             "concept": "balance",
             "text": "both sides"
           },
-          " to keep them equal. Simplify the left and right sides before deciding whether another operation is needed to leave x on its own."
+          " to keep them equal. Simplify the LHS and RHS before deciding whether another operation is needed to leave x on its own. If so, repeat the previous step as needed"
         ],
         [
+          "Once you're done, test your solution by ",
           {
             "concept": "substitution",
-            "text": "Substitute"
+            "text": "substituting"
           },
           " your answer for every x in the original equation. Calculate both sides; they must give the same value."
         ]

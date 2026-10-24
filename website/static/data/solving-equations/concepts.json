@@ -1,4 +1,14 @@
 {
+  "value": {
+    "title": "values",
+    "explanation": "Values can be written as numbers (1, 2, 3, -5.8) variables (x, y, z, a, b, c) or expressions (e.g. 5 - 4x).",
+    "guidance": "Values written as numbers are straight foward, but remember that variables or expressions also represent values, even if they are not known or can change. This useful because even if a value can change, we might want to show how it is related to another value. E.g. we might not know the number of hours a taxi driver will drive in a week, but we can say that their pay will be closely related to that number, e.g. p = kh, where p is pay, h is number of hours worked and k is the pay per hour.",
+    "examples": [
+      "normal numbers, including whole numbers and fractions: -1000, 23, 5, 3.14, 2.71",
+      "variables: a, b, c, x, y, z, etc.",
+      "expressions (combinations of numbers, variables and operators): 5x - 9, (23 - 2y)/4"
+    ]
+  },
   "opposite-operation": {
     "title": "opposite operation",
     "explanation": "An opposite (inverse) operation undoes another operation: addition undoes subtraction, and division undoes multiplication.",

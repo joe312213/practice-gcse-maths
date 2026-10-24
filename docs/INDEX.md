@@ -40,6 +40,7 @@ Directly authored `web_format.md` is protected; the progress requirements append
 
 ## Teaching content
 
+- [Expressive authoring, cohesive teaching and derived content](convenient_expressive_authoring_for_cohersive_teaching_and_content_derivation.md) — agreed equations/ratios prototype direction: shared forms and constraints, Tiptap, SQLite authoring, SQLite-versus-JSON delivery evaluation, GoLearn evidence, open decisions and explicit pause before detailed planning/implementation.
 - [Topic JSON file map](../website/static/data/README.md) — each topic file’s contents, app usage, guidance fields, assessment selection and editing rules.
 - [Spot-error content and review guide](../content/spot-errors-drafts/README.md) — 360 live questions in the authoritative topic banks; read-only validation and HTML review.
 
